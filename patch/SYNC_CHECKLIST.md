@@ -1,12 +1,26 @@
 # Specter Patch — Multiplayer Sync Checklist
 
-**Status:** PASS — Phase 4 Turkey AD/MLRS complete (incl. TRG-230)  
+**Status:** PASS — Turkey faction completion (General Star + AAB assault/transport)  
 **Last audit:** `sync_audit.py` errors=0 (vendor Data.zip warn only)  
 **Package:** `SYNC_MANIFEST.sha256` present
 
 ---
 
-## Phase 4 unit gate (this drop)
+## Turkey playable gate (this drop)
+
+| System | Status |
+|--------|--------|
+| Ground army (WF T–T3 + MIC) | AD + MLRS/Bora + armor/IFV |
+| Air defense | HISAR-A/O, SIPER, Korkut, Sungur + HisarNetwork |
+| Missile/artillery | TRG-230/300, TRLG-230, Bora + BoraGuidance |
+| Helicopter assault | T129, Mi-28NE, Mi-35M3 on AAB; Mi35Mk3 + AirAssault upgrades |
+| Transport helicopter | Mi-8T on AAB (TRANSPORT); Mi-35 TRANSPORT |
+| Advanced Air Base | 6-pad heavies + assault/transport; MIC prereq OR airfield |
+| General Star | AirPower / AirAssault / Strategic sciences + AAB upgrade |
+
+---
+
+## Phase 4 unit gate
 
 | Unit | Object ID | LinkKey | Button | Baked cost |
 |------|-----------|---------|--------|------------|
@@ -20,8 +34,9 @@
 | Korkut | `Turkey_Korkut` | Patch_AirDefense | ConstructTurkey_Korkut | baked |
 
 Weapons overlay: `Weapon_Turkey_Phase4.ini`  
-Upgrades: `Upgrade_Turkey_HisarNetwork`, `Upgrade_Turkey_BoraGuidance`  
-Production: WarFactory T–T3 + MIC + AI WF (player Object IDs)
+Upgrades: `Upgrade_Turkey_HisarNetwork`, `Upgrade_Turkey_BoraGuidance`, `Upgrade_Turkey_GeneralAirAssault`  
+Sciences: `SCIENCE_Turkey_GeneralAirPower`, `…GeneralAirAssault`, `…GeneralStrategic`  
+Production: WarFactory T–T3 + MIC + AAB + AI WF (player Object IDs)
 
 ---
 

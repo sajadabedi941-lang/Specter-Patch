@@ -124,3 +124,17 @@ Upgrades: HisarNetwork, BoraGuidance
 Wired into WarFactory tiers T–T3 and MIC CommandSets.
 Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini
   + tools/economy/apply_build_limits.py (all countries)
+
+Turkey faction completion (before other countries)
+--------------------------------------------------
+- MIC prereq accepts Advanced Air Base (AAB-only air path viable)
+- Worker builds WF_T, AAB, D30 Howitzer (parity with VT72B dozer)
+- AAB produces Mi-28NE / Mi-35M3 / Mi-8T + heavies; AirAssault upgrade slot 18
+- Mi-35 TRANSPORT + Mi35Mk3 upgrade live; Mi-8 transport support
+- HisarNetwork / BoraGuidance MaxHealthUpgrade wired on AD / Bora
+- General Star sciences: AirPower, AirAssault, Strategic
+  (gate AWACS/Recon, Paradrop/SF Insertion, FOAB/Tu22)
+- FOAB / Tu22 SP IDs aligned: SuperweaponTurkey_* on CC, science objects, weapons
+- Tu22 shortcut button + purchase science buttons for General Star paths
+- MIC researches Turkey air upgrades (Countermeasures / Precision / Radar / AA)
+- sync_audit PASS; SYNC_MANIFEST regenerated

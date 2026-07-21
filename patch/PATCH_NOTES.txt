@@ -143,3 +143,16 @@ Turkey faction completion (before other countries)
 - AI Airfield T3 / full Airfield CS: assault helos + Tu-22 / heavies parity
 - Worker/VT72B defense parity (DefenseSite + Fahad3SamSite + Sam2)
 - sync_audit PASS; SYNC_MANIFEST regenerated
+
+North Korea faction completion (playable)
+-----------------------------------------
+Method: Iraq-copy wiring template cloned from finished Turkey tree into
+  patch/Data/INI/Object/Specter/North Korea/ with full NorthKorea_* IDs.
+Overlays: CommandButton/Set, Science, SpecialPower, Upgrade, OCL, Weapon_Phase4.
+PlayerTemplate FactionNorthKorea + ControlBarScheme NorthKorea8x6.
+Systems: buildings, ground, AD, missile/artillery, helo assault/transport,
+  AAB (6-pad), General Star (AirPower/AirAssault/Strategic), CountryBalance bake,
+  AI Side=NorthKorea + Airfield T3 parity, unique OCL/SP/button IDs for MP.
+Duplicate NorthKorea_AdvancedAirBase removed from PatchSystems (lives in Buildings/).
+sync_audit PASS; SYNC_MANIFEST regenerated.
+Other countries still stubs — do not expand until NK lobby-validated.

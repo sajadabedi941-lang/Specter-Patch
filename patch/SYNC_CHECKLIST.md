@@ -1,26 +1,30 @@
 # Specter Patch — Multiplayer Sync Checklist
 
-**Status:** PASS — Turkey full audit completion (playable finished faction)  
+**Status:** PASS — North Korea full playable faction added (Turkey remains complete)  
 **Last audit:** `sync_audit.py` errors=0 (vendor Data.zip warn only)  
 **Package:** `SYNC_MANIFEST.sha256` present
 
 ---
 
-## Turkey playable gate
+## North Korea playable gate
 
 | System | Status |
 |--------|--------|
-| PlayerTemplate PlayableSide | Yes |
-| Building tree (Power→Supply→WF/AAB→Radar→MIC) | PowerPlant CS fixed; Worker=VT72B parity |
-| Ground army (WF T–T3 + MIC) | AD + MLRS/Bora + armor/IFV + T72B3 |
-| Air defense | HISAR/SIPER/Korkut/Sungur + HisarNetwork; Sam2/DefenseSite/Fahad3 site |
-| Missile/artillery | TRG-230/300, TRLG-230, Bora + BoraGuidance |
-| Helicopter assault | T129, Mi-28NE, Mi-35M3 (player AAB + AI Airfield T3) |
-| Transport helicopter | Mi-8T; Mi-35 TRANSPORT |
-| Advanced Air Base | 6-pad + heavies + Tu-22M3 + assault/transport |
-| General Star | AirPower / AirAssault / Strategic + MIC AirAssault upgrade (science-gated) |
-| Trainable Worker | Barracks slot 10 |
-| Dead upgrades closed | AAMissile, Camouflage, T72B3, Precision/Radar extended |
+| PlayerTemplate PlayableSide | Yes (`FactionNorthKorea`) |
+| Object tree | `Object/Specter/North Korea/` Side=NorthKorea |
+| Overlays | CommandButton/Set, Science, SpecialPower, Upgrade, OCL, Weapon |
+| Buildings | CC→Power→Supply→WF/AAB→Radar→MIC; Worker/VT72B |
+| Ground / AD / missiles | WF T–T3 + MIC; Patch_AirDefense / Patch_StrategicLauncher |
+| Helicopter assault + transport | AAB + AI Airfield T3 |
+| Advanced Air Base | 6-pad + heavies + Tu-22; unique CS |
+| General Star | AirPower / AirAssault / Strategic |
+| Economy | CountryBalance NorthKorea Low bake |
+| AI | Side=NorthKorea; matching player CS |
+| MP IDs | Unique vs Turkey (no shared CommandButton/OCL/SP/Object) |
+
+## Turkey playable gate
+
+Still green (unchanged intent). See prior checklist history.
 
 ---
 
@@ -28,14 +32,12 @@
 
 ```bash
 python3 patch/tools/economy/sync_audit.py
-# expect: PASS, errors=0
 python3 patch/tools/economy/generate_sync_manifest.py --check
 ```
 
 - [x] `sync_audit.py` exits 0  
-- [x] No duplicate Object / CommandSet / CommandButton / Weapon / Upgrade IDs  
-- [x] No dual BuildCost/BuildTime  
-- [x] No player CommandSet `*_AI` constructs  
+- [x] No duplicate Object / CommandSet / CommandButton / Weapon / Upgrade / Science IDs  
+- [x] Unique OCL namespaces per faction overlay  
 - [x] LinkKeys on AD / strategic launchers  
 - [x] CountryBalance bake + PatchBaseCost markers  
 - [x] No Specter archive modifications  
@@ -49,4 +51,4 @@ python3 patch/tools/economy/generate_sync_manifest.py --check
 2. Never modify `Data.zip` / `Specter_Data*` / `_SPEC_*` / `.big` / `payload.rar`.  
 3. One identical patch package for the lobby (`SYNC_MANIFEST.sha256`).  
 4. Unique IDs; player production ≠ AI-only variants.  
-5. Faction-tree `Side` ownership matches folder.
+5. Faction-tree `Side` ownership matches folder (`North Korea` → `NorthKorea`).

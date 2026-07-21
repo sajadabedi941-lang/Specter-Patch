@@ -83,3 +83,25 @@ UPGRADE:Turkey_Countermeasures = Aircraft Countermeasures
 UPGRADE:Turkey_PrecisionMunitions = Precision Munitions
 UPGRADE:Turkey_AdvancedRadar = Advanced AESA Radar
 UPGRADE:Turkey_AAMissile = Advanced AA Missiles
+
+OBJECT:Patch_AdvancedAirBase = Advanced Air Base
+CONTROLBAR:ConstructTurkey_AdvancedAirBase = Advanced Air Base
+CONTROLBAR:ToolTipTurkeyBuildAdvancedAirBase = Large 6-pad runway. Builds tactical and heavy aircraft.
+OBJECT:Turkey_B2 = B-2 Spirit (Turkey)
+OBJECT:Turkey_B52 = B-52H Stratofortress (Turkey)
+OBJECT:Turkey_AWACS = E-3G AWACS (Turkey)
+OBJECT:Turkey_Tanker = Aerial Tanker (Turkey)
+OBJECT:Turkey_Transport = Heavy Transport (Turkey)
+CONTROLBAR:ConstructTurkey_B2 = B-2 Spirit
+CONTROLBAR:ConstructTurkey_B52 = B-52H
+CONTROLBAR:ConstructTurkey_AWACS = E-3G AWACS
+CONTROLBAR:ConstructTurkey_Tanker = Aerial Tanker
+CONTROLBAR:ConstructTurkey_Transport = Heavy Transport
+CONTROLBAR:ToolTipTurkeyBuildB2 = Stealth strategic bomber (scaled for runway).
+CONTROLBAR:ToolTipTurkeyBuildB52 = Heavy strategic bomber (scaled for runway).
+CONTROLBAR:ToolTipTurkeyBuildAWACS = Airborne early warning and control.
+CONTROLBAR:ToolTipTurkeyBuildTanker = Aerial refueling support aircraft.
+CONTROLBAR:ToolTipTurkeyBuildTransport = Heavy airlift transport.
+
+CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
+CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large 6-pad runway for tactical and heavy aircraft.

@@ -62,3 +62,18 @@ Buildable from Turkey Airfield CommandSets:
   Anka-3 (F-35C+DRONE), TB2 (MQ-9 NATO), Akıncı (MQ-9 USA)
 Weapons inherited from templates; costs/times set per aircraft.
 Upgrades: Countermeasures, Precision Munitions, Advanced Radar, AA Missile.
+
+Global Systems (before further aircraft work)
+---------------------------------------------
+Advanced Air Base (6-pad US_AirField, max 4 per faction):
+  - Shells for America/Russia/China/Iran/Iraq/Nato/GLA + Israel/AirF + future factions
+  - Turkey fully wired (dozer builds Turkey_AdvancedAirBase; heavy slots 8-12)
+
+Heavy aircraft (scaled 0.70-0.80 for runway/game scale):
+  Turkey_B2 (B1R proxy), Turkey_B52, Turkey_AWACS, Turkey_Tanker, Turkey_Transport
+
+Global build limits (MaxSimultaneousLinkKey) for every faction:
+  Patch_AirDefense=10, Patch_ArtillerySite=6,
+  Patch_StrategicLauncher=4, Patch_Nuclear=1
+  Turkey objects annotated; see GlobalBuildLimits_SpecterPatch.ini
+  and Object/Specter/PatchSystems/GLOBAL_SYSTEMS.txt

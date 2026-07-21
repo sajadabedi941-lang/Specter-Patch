@@ -1,4 +1,4 @@
-Specter-Patch Phase 1
-Target: Specter (Specter_Data / _SPEC_DATA_ONE)
-Status: structure-only
-Factions: Turkey, Ukraine, Pakistan, SaudiArabia, UAE, India, Japan
+Specter-Patch Phase 2
+Target: Specter
+Turkey: complete Iraq-copy rename + flag/color/faction entry
+Other factions: Phase 1 structure only

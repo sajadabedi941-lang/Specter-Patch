@@ -36,3 +36,13 @@ Not included yet
 - CommandButton definitions
 - CSF string table entries
 - Unique art/audio
+
+Phase 2 - Turkey (complete Iraq-copy rename)
+--------------------------------------------
+- Full Object tree copied from Iraq Army with all Object/Side IDs renamed to Turkey
+- CommandButton_Turkey.ini / CommandSet_Turkey.ini / Science_Turkey.ini
+- SpecialPower_Turkey.ini / Upgrade_Turkey.ini / ObjectCreationList_Turkey.ini
+- PlayerTemplate FactionTurkey wired to Turkey sciences, units, and flag images
+- PreferredColor R:227 G:10 B:23 (Turkish red)
+- Flag art: Art/Textures/WatermarkTurkey.tga (+ Gameinfo/Logo/Observer variants)
+- MappedImages: Data/INI/MappedImages/HandCreated/Turkey_FactionImages.INI

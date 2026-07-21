@@ -1,0 +1,38 @@
+;==============================================================================
+; SPECTER PATCH - Phase 1 structure scaffold
+; Compatible overlay for Generals Zero Hour Specter mod.
+; Does NOT modify original Specter archives.
+; Method: Iraq-copy (same pattern as FactionNorthKorea).
+; Status: STRUCTURE ONLY - unit/building content TBD in later phases.
+;==============================================================================
+
+; FILE: Data/English/STRINGS_TO_ADD.txt
+; Phase 2 will add these into generals.csf (do not replace original blindly).
+
+INI:FactionTurkey = Turkey Armed Forces
+TOOLTIP:BioStrategyLong_Turkey = TBD
+Science:Turkey = Turkey Armed Forces Technology
+
+INI:FactionUkraine = Ukrainian Armed Forces
+TOOLTIP:BioStrategyLong_Ukraine = TBD
+Science:Ukraine = Ukrainian Armed Forces Technology
+
+INI:FactionPakistan = Pakistan Armed Forces
+TOOLTIP:BioStrategyLong_Pakistan = TBD
+Science:Pakistan = Pakistan Armed Forces Technology
+
+INI:FactionSaudiArabia = Saudi Arabian Armed Forces
+TOOLTIP:BioStrategyLong_SaudiArabia = TBD
+Science:SaudiArabia = Saudi Arabian Armed Forces Technology
+
+INI:FactionUAE = United Arab Emirates
+TOOLTIP:BioStrategyLong_UAE = TBD
+Science:UAE = United Arab Emirates Technology
+
+INI:FactionIndia = Indian Armed Forces
+TOOLTIP:BioStrategyLong_India = TBD
+Science:India = Indian Armed Forces Technology
+
+INI:FactionJapan = Japan Self-Defense Forces
+TOOLTIP:BioStrategyLong_Japan = TBD
+Science:Japan = Japan Self-Defense Forces Technology

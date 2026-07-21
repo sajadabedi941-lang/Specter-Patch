@@ -1,0 +1,38 @@
+Specter Compatible Patch - Phase 1
+==================================
+
+Purpose
+-------
+Create a clean overlay folder that adds new playable faction templates
+without modifying original Specter BIG/ZIP files.
+
+Factions (Iraq-copy method)
+---------------------------
+- Turkey
+- Ukraine
+- Pakistan
+- Saudi Arabia (Side=SaudiArabia)
+- UAE
+- India
+- Japan
+
+Layout
+------
+patch/Data/INI/... is intended to be packed as a GenLauncher addon/patch
+or loaded as loose Data override on top of Specter.
+
+Phase 1 includes
+----------------
+- PlayerTemplate stubs for each new Side
+- ControlBarScheme stubs (Iraq chrome, new Side)
+- Science root stubs (reuse SCIENCE_Iraq for now, like NorthKorea)
+- CommandSet stubs for each Command Center
+- Object/Specter/<Country>/ directory tree mirroring Iraq Army
+- Placeholder CommandCenter.ini per country (renamed Iraq object)
+
+Not included yet
+----------------
+- Full building/unit/aircraft Object copies
+- CommandButton definitions
+- CSF string table entries
+- Unique art/audio

@@ -1,0 +1,28 @@
+SPECTER PATCH Phase 2 - Turkey Airfield Aircraft Slots
+=====================================================
+
+Current production slots (Iraq-copy airframes, Turkey IDs):
+  Slot 1  Su-25K          Command_ConstructTurkey_Su-25K
+  Slot 2  Su-24MK         Command_ConstructTurkey_Su-24MK
+  Slot 3  MiG-23ML        Command_ConstructTurkey_Mig-23ML
+  Slot 4  Mi-35M3         Command_ConstructTurkey_Mi-35M3
+  Slot 5  Mi-28NE         Command_ConstructTurkey_Mi-28NE
+  Slot 6  MiG-29A         Command_ConstructTurkey_Mig-29A
+  Slot 7  MiG-25BM        Command_ConstructTurkey_Mig-25BM
+  Slot 8  Tu-22M3         Command_ConstructTurkey_Tu-22M3
+  Slot 9  Su-22M3         Command_ConstructTurkey_Su-22M3
+  Slot 10 Su-24MR         Command_ConstructTurkey_Su-24MR
+  Slot 11 Mi-8T           Command_ConstructTurkey_Mi-8T
+  Slot 12 Mirage F1       Command_ConstructTurkey_mirageF1Bq
+
+Reserved future Turkey-unique slots (IDs reserved, not on build menu yet):
+  RES-A  F-16C            Object Turkey_F16C     / CONTROLBAR:ConstructTurkey_F16C
+  RES-B  T129 ATAK        Object Turkey_T129     / CONTROLBAR:ConstructTurkey_T129
+  RES-C  Bayraktar TB2    Object Turkey_TB2      / CONTROLBAR:ConstructTurkey_TB2
+  RES-D  ANKA             Object Turkey_ANKA     / CONTROLBAR:ConstructTurkey_ANKA
+  RES-E  Akıncı           Object Turkey_Akinci   / CONTROLBAR:ConstructTurkey_Akinci
+  RES-F  Hürjet           Object Turkey_Hurjet   / CONTROLBAR:ConstructTurkey_Hurjet
+  RES-G  KAAN             Object Turkey_KAAN     / CONTROLBAR:ConstructTurkey_KAAN
+
+Stub objects live in Airforce/ReservedSlots/*.ini
+Enable by adding CommandButtons and uncommenting entries in CommandSet_Turkey_AirSlots.ini

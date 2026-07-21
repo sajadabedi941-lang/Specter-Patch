@@ -13,9 +13,22 @@ What it does
 ------------
 - Country economic multipliers: Unit / Aircraft / Weapon / Upgrade cost keys
 - Origin + TechClass + Category + Asymmetric + Domestic layers
-- Supply / trade income AutoDeposit on SupplyCenter by country TradeIncomeMult
+- Version 2 country cost channels:
+    DroneCostMult, DomesticWeaponCostMult, DomesticDroneCostMult
+- Multi-channel income AutoDeposit (baked, deterministic):
+    SupplyCenter  → SupplyIncomeMult
+    CommandCenter → OilIncomeMult   (national oil wealth; no TechOilDerrick fork)
+    Port/Harbor   → PortIncomeMult
+    WarFactory/MIC→ IndustrialIncomeMult
 - Classifies units by path/name RULES — no per-unit cost hardcoding
 - Writes BuildCost / BuildTime; stores PatchBaseCost so re-runs are stable
+
+Design targets (CountryBalance.ini)
+-----------------------------------
+- USA: high IndustrialIncomeMult
+- Saudi Arabia / UAE: high OilIncomeMult
+- Iran: lower income; cheaper drones + domestic weapons
+- Turkey: balanced income; cheaper domestic UAV (DomesticDroneCostMult)
 
 MP determinism
 --------------

@@ -1,22 +1,30 @@
-; SPECTER PATCH — Port / Oil / Trade income wiring notes
-; Values come from CountryBalance.ini Country.*IncomeMult fields.
+; SPECTER PATCH — Port / Oil / Supply / Industrial income wiring
+; Values come from CountryBalance.ini Country.*IncomeMult + BalanceSystem bases.
+; Baked by tools/economy/apply_country_balance.py (MP deterministic).
 ;
-; Supply buildings: applicator injects ModuleTag_PatchResourceIncome
-;   DepositAmount = SupplyDepositBase × Country.TradeIncomeMult
+; SupplyCenter / SupplyStash:
+;   Behavior = AutoDepositUpdate ModuleTag_PatchResourceIncome
+;     DepositTiming = SupplyDepositTimingMS
+;     DepositAmount = round(SupplyDepositBase × Country.SupplyIncomeMult)
+;   End
 ;
-; Oil (TechOilDerrick is shared civilian): map makers / scripts should use
-;   Country.OilIncomeMult when granting capture bonuses. Do not fork the
-;   shared derrick Object per faction (breaks MP determinism on maps).
+; CommandCenter (national oil wealth — do NOT fork shared TechOilDerrick):
+;   Behavior = AutoDepositUpdate ModuleTag_PatchOilIncome
+;     DepositTiming = OilDepositTimingMS
+;     DepositAmount = round(OilDepositBase × Country.OilIncomeMult)
+;   End
 ;
-; Ports / trade centers (when faction Objects exist):
+; Port / Harbor / Seaport / NavalYard (when faction Objects exist):
 ;   Behavior = AutoDepositUpdate ModuleTag_PatchPortIncome
-;     DepositTiming = 12000
-;     DepositAmount = <round(20 × Country.PortIncomeMult)>
-;   End
-;   Behavior = AutoDepositUpdate ModuleTag_PatchTradeIncome
-;     DepositTiming = 10000
-;     DepositAmount = <round(20 × Country.TradeIncomeMult)>
+;     DepositTiming = PortDepositTimingMS
+;     DepositAmount = round(PortDepositBase × Country.PortIncomeMult)
 ;   End
 ;
-; apply_country_balance.py currently auto-wires SupplyCenter / SupplyStash.
-; Extend that tool when dedicated Port Objects are authored per Side.
+; WarFactory / MIC (industrial economy — USA high):
+;   Behavior = AutoDepositUpdate ModuleTag_PatchIndustrialIncome
+;     DepositTiming = IndustrialDepositTimingMS
+;     DepositAmount = round(IndustrialDepositBase × Country.IndustrialIncomeMult)
+;   End
+;
+; Shared civilian TechOilDerrick stays untouched for map MP sync.
+; Country.OilIncomeMult is expressed via faction CommandCenter oil-wealth deposits.

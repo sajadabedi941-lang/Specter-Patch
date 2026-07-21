@@ -36,4 +36,5 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Origin / TechClass / Category / Asymmetric / Domestic layers
    - Path-based classification only (no per-unit cost hardcoding)
    - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
-   - SupplyCenter trade/income AutoDeposit from Country.*IncomeMult
+   - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
+     (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)

@@ -6,6 +6,15 @@ Reads ONE central config: patch/Data/INI/CountryBalance.ini
 FinalCost = Base
   × Country.(Unit|Aircraft|Weapon|Upgrade)CostMult
   × Origin × TechClass × Category × Asymmetric × Domestic
+  × Country.DroneCostMult (Category=Drone)
+  × Country.DomesticDroneCostMult (Domestic + Drone)
+  × Country.DomesticWeaponCostMult (Domestic + weapon/vehicle/AD)
+
+Income AutoDeposit (deterministic bake):
+  SupplyCenter → SupplyIncomeMult
+  CommandCenter → OilIncomeMult
+  Port/Harbor → PortIncomeMult
+  WarFactory/MIC → IndustrialIncomeMult
 
 Deterministic for multiplayer: same INI + same BaseCost ⇒ same finals.
 No per-unit hardcoded overrides (UseUnitRegistry = No).
@@ -219,6 +228,28 @@ def compute(
         cost_m = eco * org_cost * tech_cost * cat_cost * asym_c * (dom_u if origin == "Domestic" else 1.0)
     else:
         cost_m = eco * org_cost * tech_cost * cat_cost * asym_c * (dom_c if origin == "Domestic" else 1.0)
+
+    # Version 2 country cost channels (deterministic; baked into BuildCost)
+    drone_m = weapon_m = domestic_drone_m = 1.0
+    if not is_upgrade:
+        if category == "Drone":
+            drone_m = fnum(country, "DroneCostMult", 1.0)
+            cost_m *= drone_m
+            if origin == "Domestic":
+                domestic_drone_m = fnum(country, "DomesticDroneCostMult", 1.0)
+                cost_m *= domestic_drone_m
+        elif origin == "Domestic" and category in (
+            "Missile",
+            "AirDefense",
+            "Tank",
+            "Vehicle",
+            "Infantry",
+            "Artillery",
+            "Ship",
+        ):
+            weapon_m = fnum(country, "DomesticWeaponCostMult", 1.0)
+            cost_m *= weapon_m
+
     time_m = org_time * tech_time * cat_time * asym_t * build_time_country
     if origin == "Domestic":
         time_m *= dom_t
@@ -234,6 +265,9 @@ def compute(
         "cost_m": round(cost_m, 4),
         "time_m": round(time_m, 4),
         "eco": eco,
+        "drone_m": round(drone_m, 4),
+        "weapon_m": round(weapon_m, 4),
+        "domestic_drone_m": round(domestic_drone_m, 4),
     }
     return final_cost, final_time, detail
 
@@ -285,7 +319,13 @@ def process_file(
         side = sm.group(1) if sm else None
         if is_upgrade:
             mside = re.match(r"Upgrade_([A-Za-z]+)_", name)
-            side = mside.group(1) if mside else side_filter
+            if mside:
+                side = mside.group(1)
+            elif re.match(r"Upgrade_Turkish", name, re.I):
+                side = "Turkey"
+            elif re.match(r"Upgrade_Patch_", name):
+                side = side or "Patch"
+            # Never invent Side from --side filter (would mis-price cross-country upgrades)
         if not side:
             continue
         if side_filter and side != side_filter:
@@ -343,18 +383,119 @@ def process_file(
     return reports
 
 
+def _income_mult(country: dict[str, str], key: str, tables: BalanceTables) -> float:
+    """Country.*IncomeMult with ResourceTier fallback by EconomyRating."""
+    if key in country:
+        return fnum(country, key, 1.0)
+    rating = country.get("EconomyRating", "Medium")
+    tier = tables.resource_tiers.get(rating, {})
+    return fnum(tier, key, 1.0)
+
+
+def _upsert_autodeposit(block: str, tag: str, timing: int, deposit: int) -> str:
+    module = (
+        f"  Behavior = AutoDepositUpdate {tag}\n"
+        f"    DepositTiming       = {timing}\n"
+        f"    DepositAmount       = {deposit}\n"
+        f"    InitialCaptureBonus = 0\n"
+        f"  End\n"
+    )
+    pat = re.compile(
+        rf"  Behavior = AutoDepositUpdate {re.escape(tag)}\n.*?  End\n",
+        re.S,
+    )
+    if pat.search(block):
+        return pat.sub(module, block, count=1)
+    beh = re.search(r"^(\s*Behavior\s*=)", block, re.M)
+    if beh:
+        return block[: beh.start()] + module + block[beh.start() :]
+    return block + "\n" + module
+
+
+def _income_channels(name: str) -> list[tuple[str, str, str, str]]:
+    """Return income channel tuples: (module_tag, mult_key, deposit_base_key, timing_key)."""
+    low = name.lower()
+    out: list[tuple[str, str, str, str]] = []
+    if "supplycenter" in low or "supplystash" in low:
+        # Legacy ModuleTag_PatchResourceIncome kept as primary supply tag
+        out.append(
+            (
+                "ModuleTag_PatchResourceIncome",
+                "SupplyIncomeMult",
+                "SupplyDepositBase",
+                "SupplyDepositTimingMS",
+            )
+        )
+    if "commandcenter" in low:
+        # National oil-wealth channel (do not fork shared TechOilDerrick)
+        out.append(
+            (
+                "ModuleTag_PatchOilIncome",
+                "OilIncomeMult",
+                "OilDepositBase",
+                "OilDepositTimingMS",
+            )
+        )
+    if any(x in low for x in ("port", "harbor", "harbour", "seaport", "navalyard", "dockyard")):
+        out.append(
+            (
+                "ModuleTag_PatchPortIncome",
+                "PortIncomeMult",
+                "PortDepositBase",
+                "PortDepositTimingMS",
+            )
+        )
+    if any(
+        x in low
+        for x in (
+            "warfactory",
+            "_mic",
+            "militaryindustrial",
+            "industrialcomplex",
+        )
+    ) or low.endswith("mic"):
+        # Skip AI-only warfactory shells that are not economy buildings
+        if "militarywarfactory" not in low:
+            out.append(
+                (
+                    "ModuleTag_PatchIndustrialIncome",
+                    "IndustrialIncomeMult",
+                    "IndustrialDepositBase",
+                    "IndustrialDepositTimingMS",
+                )
+            )
+    return out
+
+
 def apply_income(tables: BalanceTables, side_filter: str | None, dry_run: bool) -> list[str]:
-    notes = []
-    base_deposit = int(fnum(tables.system, "SupplyDepositBase", 20))
-    timing = int(fnum(tables.system, "SupplyDepositTimingMS", 15000))
+    """Bake deterministic AutoDeposit income for supply / oil / port / industry."""
+    notes: list[str] = []
+    # Candidate files by name (fast filter); channel match still uses Object name
+    name_hints = (
+        "SupplyCenter",
+        "SupplyStash",
+        "CommandCenter",
+        "WarFactory",
+        "MIC",
+        "Port",
+        "Harbor",
+        "Harbour",
+        "Seaport",
+        "NavalYard",
+        "DockYard",
+        "MilitaryIndustrial",
+    )
     for path in OBJECT_ROOT.rglob("*.ini"):
-        if "SupplyCenter" not in path.name and "SupplyStash" not in path.name:
+        if not any(h in path.name for h in name_hints):
+            continue
+        if path.name.endswith("_AI.ini") or "MilitaryWarfactory" in path.name:
             continue
         text = path.read_text(errors="replace")
         changed = False
         new_text = text
         for start, end, name, block in reversed(split_blocks(text, "Object")):
-            if "SupplyCenter" not in name and "SupplyStash" not in name:
+            channels = _income_channels(name)
+            if not channels:
                 continue
             sm = SIDE_RE.search(block)
             if not sm:
@@ -365,43 +506,20 @@ def apply_income(tables: BalanceTables, side_filter: str | None, dry_run: bool) 
             country = tables.countries.get(side)
             if not country:
                 continue
-            # Prefer TradeIncomeMult for passive supply-center income; Port for ports later
-            mult = fnum(country, "TradeIncomeMult", fnum(country, "SupplyIncomeMult", 1.0))
-            deposit = max(1, int(round(base_deposit * mult)))
-            module = (
-                f"  Behavior = AutoDepositUpdate ModuleTag_PatchResourceIncome\n"
-                f"    DepositTiming       = {timing}\n"
-                f"    DepositAmount       = {deposit}\n"
-                f"    InitialCaptureBonus = 0\n"
-                f"  End\n"
-            )
-            if "ModuleTag_PatchResourceIncome" in block:
-                nb = re.sub(
-                    r"(Behavior = AutoDepositUpdate ModuleTag_PatchResourceIncome\n"
-                    r".*?DepositAmount\s*=\s*)([0-9]+)",
-                    rf"\g<1>{deposit}",
-                    block,
-                    count=1,
-                    flags=re.S,
-                )
-                nb = re.sub(
-                    r"(ModuleTag_PatchResourceIncome\n\s*DepositTiming\s*=\s*)([0-9]+)",
-                    rf"\g<1>{timing}",
-                    nb,
-                    count=1,
-                )
-            else:
-                beh = re.search(r"^(\s*Behavior\s*=)", block, re.M)
-                if beh:
-                    nb = block[: beh.start()] + module + block[beh.start() :]
-                else:
-                    nb = block + "\n" + module
+            nb = block
+            parts: list[str] = []
+            for tag, mult_key, base_key, timing_key in channels:
+                base = int(fnum(tables.system, base_key, 20))
+                timing = int(fnum(tables.system, timing_key, 15000))
+                mult = _income_mult(country, mult_key, tables)
+                deposit = max(1, int(round(base * mult)))
+                nb = _upsert_autodeposit(nb, tag, timing, deposit)
+                parts.append(f"{tag.split('_')[-1]}={deposit}({mult_key}×{mult})")
             if nb != block:
                 new_text = new_text[:start] + nb + new_text[end:]
                 changed = True
             notes.append(
-                f"{name} ({side}/{country.get('EconomyRating')}): "
-                f"DepositAmount={deposit} Trade×{mult}"
+                f"{name} ({side}/{country.get('EconomyRating')}): " + ", ".join(parts)
             )
         if changed and not dry_run:
             path.write_text(new_text)

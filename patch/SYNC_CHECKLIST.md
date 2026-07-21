@@ -1,27 +1,28 @@
 # Specter Patch — Multiplayer Sync Checklist
 
-**Status:** PASS — Phase 4 Turkey AD/MLRS complete (incl. TRG-230)  
+**Status:** PASS — Iraq realistic playable faction completion  
 **Last audit:** `sync_audit.py` errors=0 (vendor Data.zip warn only)  
 **Package:** `SYNC_MANIFEST.sha256` present
 
 ---
 
-## Phase 4 unit gate (this drop)
+## Iraq playable gate (this drop)
 
-| Unit | Object ID | LinkKey | Button | Baked cost |
-|------|-----------|---------|--------|------------|
-| TRG-230 | `Turkey_TRG230` | Patch_StrategicLauncher | ConstructTurkey_TRG230 | 1197 / 13.0s |
-| TRG-300 Kaplan | `Turkey_TRG300` | Patch_StrategicLauncher | ConstructTurkey_TRG300 | baked |
-| TRLG-230 | `Turkey_TRLG230` | Patch_StrategicLauncher | ConstructTurkey_TRLG230 | baked |
-| Bora | `Turkey_Bora` | Patch_StrategicLauncher | ConstructTurkey_Bora | baked |
-| HISAR-A+ | `Turkey_HISAR_A` | Patch_AirDefense | ConstructTurkey_HISAR_A | baked |
-| HISAR-O+ | `Turkey_HISAR_O` | Patch_AirDefense | ConstructTurkey_HISAR_O | baked |
-| SIPER | `Turkey_SIPER` | Patch_AirDefense | ConstructTurkey_SIPER | baked |
-| Korkut | `Turkey_Korkut` | Patch_AirDefense | ConstructTurkey_Korkut | baked |
+| System | Status |
+|--------|--------|
+| Faction identity | Iraqi roster; FOAB/Tu-22/Mi-28/S-400-clones removed from player path |
+| Buildings / tech tree | CC→Power→Supply→WF/AAB→Radar→MIC; Worker parity |
+| Infantry / vehicles / tanks | RG infantry, T-72, BMP, BTR, Assad Babel |
+| Artillery / missiles | D-30, 2S1, BM-21, Scud/Al-Hussein (conventional) |
+| Air force | Su-25/22/24, Mirage, MiG-23/25/29 (no Tu-22M3) |
+| Helicopter assault / transport | Mi-35 + Mi-8 on Airfield/AAB |
+| Air defense | Roland, SA-6, Sam8, ZSU-23-4, Sam2/DefenseSite |
+| General Star | AirPower / AirAssault / Artillery |
+| Economy | CountryBalance Iraq Low + PatchBaseCost bake |
+| AI | Existing Iraq AI buildings retained; player CS no `*_AI` constructs |
+| MP | Lifetime pinned; LinkKeys; no dual costs |
 
-Weapons overlay: `Weapon_Turkey_Phase4.ini`  
-Upgrades: `Upgrade_Turkey_HisarNetwork`, `Upgrade_Turkey_BoraGuidance`  
-Production: WarFactory T–T3 + MIC + AI WF (player Object IDs)
+Turkey / North Korea trees were not modified in this drop.
 
 ---
 
@@ -29,16 +30,10 @@ Production: WarFactory T–T3 + MIC + AI WF (player Object IDs)
 
 ```bash
 python3 patch/tools/economy/sync_audit.py
-# expect: PASS, errors=0
 python3 patch/tools/economy/generate_sync_manifest.py --check
 ```
 
 - [x] `sync_audit.py` exits 0  
-- [x] No duplicate Object / CommandSet / CommandButton / Weapon / Upgrade IDs  
-- [x] No dual BuildCost/BuildTime  
-- [x] No player CommandSet `*_AI` constructs  
-- [x] LinkKeys on AD / strategic launchers  
-- [x] CountryBalance bake + PatchBaseCost markers  
 - [x] No Specter archive modifications  
 - [ ] Lobby clients install same patch package — host responsibility  
 
@@ -46,8 +41,7 @@ python3 patch/tools/economy/generate_sync_manifest.py --check
 
 ## Non-negotiable rules
 
-1. Deterministic data only; Lifetime Min==Max; no gameplay Random* assignments.  
+1. Deterministic data only; Lifetime Min==Max.  
 2. Never modify `Data.zip` / `Specter_Data*` / `_SPEC_*` / `.big` / `payload.rar`.  
-3. One identical patch package for the lobby (`SYNC_MANIFEST.sha256`).  
-4. Unique IDs; player production ≠ AI-only variants.  
-5. Faction-tree `Side` ownership matches folder.
+3. Unique IDs; player production ≠ AI-only variants.  
+4. Faction-tree `Side` matches folder (`Iraq Army` → `Iraq`).

@@ -124,3 +124,48 @@ Upgrades: HisarNetwork, BoraGuidance
 Wired into WarFactory tiers T–T3 and MIC CommandSets.
 Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini
   + tools/economy/apply_build_limits.py (all countries)
+
+Turkey faction completion (before other countries)
+--------------------------------------------------
+- MIC prereq accepts Advanced Air Base (AAB-only air path viable)
+- Worker builds WF_T, AAB, D30 Howitzer (parity with VT72B dozer)
+- AAB produces Mi-28NE / Mi-35M3 / Mi-8T + heavies; Tu-22M3 (SCIENCE_Turkey_Tu-22)
+- General Air Assault upgrade researched at MIC (science-gated)
+- Mi-35 TRANSPORT + Mi35Mk3 upgrade live; Mi-8 transport support
+- HisarNetwork / BoraGuidance MaxHealthUpgrade wired on AD / Bora
+- General Star sciences: AirPower, AirAssault, Strategic
+  (gate AWACS/Recon, Paradrop/SF Insertion, FOAB/Tu22)
+- FOAB / Tu22 SP IDs aligned: SuperweaponTurkey_* on CC, science objects, weapons
+- Tu22 shortcut button + purchase science buttons for General Star paths
+- MIC researches Turkey air upgrades + T72B3 + GeneralAirAssault
+- PowerPlant CommandSet fixed (sell-only); Worker trainable from Barracks
+- Dead upgrades wired: AAMissile (Hurjet), Camouflage (infantry), T72B3
+- AI Airfield T3 / full Airfield CS: assault helos + Tu-22 / heavies parity
+- Worker/VT72B defense parity (DefenseSite + Fahad3SamSite + Sam2)
+- sync_audit PASS; SYNC_MANIFEST regenerated
+
+North Korea faction completion (playable)
+-----------------------------------------
+Method: Iraq-copy wiring template cloned from finished Turkey tree into
+  patch/Data/INI/Object/Specter/North Korea/ with full NorthKorea_* IDs.
+Overlays: CommandButton/Set, Science, SpecialPower, Upgrade, OCL, Weapon_Phase4.
+PlayerTemplate FactionNorthKorea + ControlBarScheme NorthKorea8x6.
+Systems: buildings, ground, AD, missile/artillery, helo assault/transport,
+  AAB (6-pad), General Star (AirPower/AirAssault/Strategic), CountryBalance bake,
+  AI Side=NorthKorea + Airfield T3 parity, unique OCL/SP/button IDs for MP.
+Duplicate NorthKorea_AdvancedAirBase removed from PatchSystems (lives in Buildings/).
+sync_audit PASS; SYNC_MANIFEST regenerated.
+Other countries still stubs — do not expand until NK lobby-validated.
+
+Iraq faction completion (realistic identity)
+--------------------------------------------
+Overlay: Object/Specter/Iraq Army/ + CommandSet/Science/CommandButton_Iraq.ini
+Removed from player production / sciences:
+  FOAB, Tu-22 cruise strike, Tu-22M3 bomber, Mi-28NE, Fahad3/B340 (S-400 clones)
+Kept Iraqi roster: T-72/Assad Babel, BMP, BTR, BM-21, 2S1, D-30, Roland, SA-6,
+  ZSU-23-4 (wired), Sam2, Mi-35/Mi-8, Su-25/22/24, Mirage F1, MiG-23/25/29,
+  Scud/Al-Hussein (conventional), Republican Guard.
+General Star: AirPower, AirAssault, Artillery (gates AWACS/Recon, Paradrop/SF, cruise).
+AAB on dozer/Worker; MIC/Radar accept AAB; PowerPlant sell CS; Worker from Barracks.
+CountryBalance Iraq Low bake + Patch_* LinkKeys; Lifetime Min==Max; Side leaks fixed.
+Does not modify Turkey or North Korea faction trees.

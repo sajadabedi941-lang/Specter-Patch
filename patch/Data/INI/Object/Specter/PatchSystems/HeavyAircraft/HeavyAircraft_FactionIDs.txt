@@ -1,16 +1,16 @@
-; SPECTER PATCH - Heavy aircraft naming stubs for Specter / future factions
-; Full production units are implemented for Turkey first.
-; Other factions should copy Turkey Airforce heavy INIs and rename Side/Object prefix.
+; SPECTER PATCH - Heavy aircraft naming / ownership
+; Realism: B-2 Spirit and B-52 Stratofortress are USA-only operators.
+
+; IMPLEMENTED (player-buildable):
+;   America_B2  America_B52   (PatchSystems/HeavyBombers/, MaxSim=1, expensive)
+
+; PRODUCTION_DISABLED (objects may exist; not on player CommandSets):
+;   Turkey_B2 Turkey_B52 NorthKorea_B2 NorthKorea_B52
+
+; NOT authorized for other factions (do not clone to player CS):
+;   Russia/China/Iran/Iraq/Nato/GLA/Ukraine/... B2/B52 stubs — do not implement
 
 ; Scale contract (see HEAVY_AIRCRAFT_SCALE.txt):
 ;   B2/B52 ~0.70-0.75 | AWACS/Tanker/Transport ~0.75-0.80
 
-; Example object IDs (to be filled when faction air trees are authored):
-; America_B2 America_B52 America_AWACS America_Tanker America_Transport
-; Russia_B2  Russia_B52  Russia_AWACS  Russia_Tanker  Russia_Transport
-; China_B2   China_B52   China_AWACS   China_Tanker   China_Transport
-; Iran_B2    Iran_B52    Iran_AWACS    Iran_Tanker    Iran_Transport
-; Iraq_B2    Iraq_B52    Iraq_AWACS    Iraq_Tanker    Iraq_Transport
-; Nato_B2    Nato_B52    Nato_AWACS    Nato_Tanker    Nato_Transport
-; GLA_B2     GLA_B52     GLA_AWACS     GLA_Tanker     GLA_Transport
-; Ukraine_B2 ... Japan_Transport (future patch factions)
+; PLACEHOLDER: America_B2 / Turkey_B2 / NK_B2 use US_B1R model proxy until dedicated B-2 W3D

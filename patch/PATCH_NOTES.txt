@@ -97,3 +97,15 @@ Single source of truth: Data/INI/CountryBalance.ini
   - Global Origin/Tech/Category/Asymmetric/Domestic rules (no per-unit hardcoding)
   - Applicator: tools/economy/apply_country_balance.py (deterministic bake for MP)
   - Legacy Economy/*.ini tables superseded; do not edit for live balance
+
+
+Phase 4 - Turkey ground warfare
+-------------------------------
+Missile launchers (Patch_StrategicLauncher max 4):
+  TRG-300 Kaplan, TRLG-230, Bora ballistic TEL
+Air defense (Patch_AirDefense max 10):
+  HISAR-A+, HISAR-O+, SIPER, Korkut SPAAG, Sungur SHORAD
+Upgrades: HisarNetwork, BoraGuidance
+Wired into WarFactory tiers T–T3 and MIC CommandSets.
+Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini
+  + tools/economy/apply_build_limits.py (all countries)

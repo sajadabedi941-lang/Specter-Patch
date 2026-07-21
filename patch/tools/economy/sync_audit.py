@@ -23,6 +23,7 @@ REPO = ROOT.parent
 FOLDER_SIDE = {
     "Turkey Armed Forces": "Turkey",
     "North Korea": "NorthKorea",
+    "Iraq Army": "Iraq",
     "Ukrainian Armed Forces": "Ukraine",
     "Pakistan Armed Forces": "Pakistan",
     "Saudi Arabian Armed Forces": "SaudiArabia",

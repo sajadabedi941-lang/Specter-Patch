@@ -156,3 +156,16 @@ Systems: buildings, ground, AD, missile/artillery, helo assault/transport,
 Duplicate NorthKorea_AdvancedAirBase removed from PatchSystems (lives in Buildings/).
 sync_audit PASS; SYNC_MANIFEST regenerated.
 Other countries still stubs — do not expand until NK lobby-validated.
+
+Iraq faction completion (realistic identity)
+--------------------------------------------
+Overlay: Object/Specter/Iraq Army/ + CommandSet/Science/CommandButton_Iraq.ini
+Removed from player production / sciences:
+  FOAB, Tu-22 cruise strike, Tu-22M3 bomber, Mi-28NE, Fahad3/B340 (S-400 clones)
+Kept Iraqi roster: T-72/Assad Babel, BMP, BTR, BM-21, 2S1, D-30, Roland, SA-6,
+  ZSU-23-4 (wired), Sam2, Mi-35/Mi-8, Su-25/22/24, Mirage F1, MiG-23/25/29,
+  Scud/Al-Hussein (conventional), Republican Guard.
+General Star: AirPower, AirAssault, Artillery (gates AWACS/Recon, Paradrop/SF, cruise).
+AAB on dozer/Worker; MIC/Radar accept AAB; PowerPlant sell CS; Worker from Barracks.
+CountryBalance Iraq Low bake + Patch_* LinkKeys; Lifetime Min==Max; Side leaks fixed.
+Does not modify Turkey or North Korea faction trees.

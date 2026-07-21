@@ -1,42 +1,26 @@
 # Specter Patch — Multiplayer Sync Checklist
 
-**Status:** PASS — Turkey faction completion (General Star + AAB assault/transport)  
+**Status:** PASS — Turkey full audit completion (playable finished faction)  
 **Last audit:** `sync_audit.py` errors=0 (vendor Data.zip warn only)  
 **Package:** `SYNC_MANIFEST.sha256` present
 
 ---
 
-## Turkey playable gate (this drop)
+## Turkey playable gate
 
 | System | Status |
 |--------|--------|
-| Ground army (WF T–T3 + MIC) | AD + MLRS/Bora + armor/IFV |
-| Air defense | HISAR-A/O, SIPER, Korkut, Sungur + HisarNetwork |
+| PlayerTemplate PlayableSide | Yes |
+| Building tree (Power→Supply→WF/AAB→Radar→MIC) | PowerPlant CS fixed; Worker=VT72B parity |
+| Ground army (WF T–T3 + MIC) | AD + MLRS/Bora + armor/IFV + T72B3 |
+| Air defense | HISAR/SIPER/Korkut/Sungur + HisarNetwork; Sam2/DefenseSite/Fahad3 site |
 | Missile/artillery | TRG-230/300, TRLG-230, Bora + BoraGuidance |
-| Helicopter assault | T129, Mi-28NE, Mi-35M3 on AAB; Mi35Mk3 + AirAssault upgrades |
-| Transport helicopter | Mi-8T on AAB (TRANSPORT); Mi-35 TRANSPORT |
-| Advanced Air Base | 6-pad heavies + assault/transport; MIC prereq OR airfield |
-| General Star | AirPower / AirAssault / Strategic sciences + AAB upgrade |
-
----
-
-## Phase 4 unit gate
-
-| Unit | Object ID | LinkKey | Button | Baked cost |
-|------|-----------|---------|--------|------------|
-| TRG-230 | `Turkey_TRG230` | Patch_StrategicLauncher | ConstructTurkey_TRG230 | 1197 / 13.0s |
-| TRG-300 Kaplan | `Turkey_TRG300` | Patch_StrategicLauncher | ConstructTurkey_TRG300 | baked |
-| TRLG-230 | `Turkey_TRLG230` | Patch_StrategicLauncher | ConstructTurkey_TRLG230 | baked |
-| Bora | `Turkey_Bora` | Patch_StrategicLauncher | ConstructTurkey_Bora | baked |
-| HISAR-A+ | `Turkey_HISAR_A` | Patch_AirDefense | ConstructTurkey_HISAR_A | baked |
-| HISAR-O+ | `Turkey_HISAR_O` | Patch_AirDefense | ConstructTurkey_HISAR_O | baked |
-| SIPER | `Turkey_SIPER` | Patch_AirDefense | ConstructTurkey_SIPER | baked |
-| Korkut | `Turkey_Korkut` | Patch_AirDefense | ConstructTurkey_Korkut | baked |
-
-Weapons overlay: `Weapon_Turkey_Phase4.ini`  
-Upgrades: `Upgrade_Turkey_HisarNetwork`, `Upgrade_Turkey_BoraGuidance`, `Upgrade_Turkey_GeneralAirAssault`  
-Sciences: `SCIENCE_Turkey_GeneralAirPower`, `…GeneralAirAssault`, `…GeneralStrategic`  
-Production: WarFactory T–T3 + MIC + AAB + AI WF (player Object IDs)
+| Helicopter assault | T129, Mi-28NE, Mi-35M3 (player AAB + AI Airfield T3) |
+| Transport helicopter | Mi-8T; Mi-35 TRANSPORT |
+| Advanced Air Base | 6-pad + heavies + Tu-22M3 + assault/transport |
+| General Star | AirPower / AirAssault / Strategic + MIC AirAssault upgrade (science-gated) |
+| Trainable Worker | Barracks slot 10 |
+| Dead upgrades closed | AAMissile, Camouflage, T72B3, Precision/Radar extended |
 
 ---
 

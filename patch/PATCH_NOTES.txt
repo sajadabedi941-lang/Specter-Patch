@@ -105,8 +105,12 @@ Multiplayer desync prevention
 -----------------------------
 Gate document: patch/SYNC_CHECKLIST.md
 Audit tool: tools/economy/sync_audit.py (must PASS before new units)
+Covers: duplicate IDs, dual costs, Random* fields, Lifetime Min==Max,
+player CommandSet *_AI / MilitaryWarfactory, Side vs faction folder,
+AD/launcher LinkKeys, vendor archive git dirty.
 Rules: deterministic bake, no archive edits, unique IDs, no player→*_AI production,
 identical patch package on all clients.
+Do not add new content until sync_audit.py PASS.
 
 
 Phase 4 - Turkey ground warfare

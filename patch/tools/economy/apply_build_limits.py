@@ -31,8 +31,10 @@ RULES = [
 OBJ_RE = re.compile(r"^Object\s+(\S+)\s*$", re.M)
 SIDE_RE = re.compile(r"Side\s*=\s*\S+")
 COST_RE = re.compile(r"BuildCost\s*=")
+# Note: do NOT skip names containing "Combat" alone — BuildVariations like
+# Turkey_HISAR_A_Combat must receive the same LinkKey as the primary Object.
 SKIP = re.compile(
-    r"(Damaged|Debris|Hulk|Lock|Projectile|WeaponObject|FireControl|PackMode|CombatMode|Combat\b|TargetLock|"
+    r"(Damaged|Debris|Hulk|Lock|Projectile|WeaponObject|FireControl|PackMode|CombatMode|TargetLock|"
     r"WarFactory|CommandCenter|SupplyCenter|PowerPlant|Airfield|AirBase|Barracks|MIC\b|RadarStation)",
     re.I,
 )

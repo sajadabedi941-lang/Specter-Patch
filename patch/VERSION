@@ -1,4 +1,3 @@
-Specter-Patch MP Sync Gate Complete
-sync_audit PASS (Side/LinkKey/Lifetime/AI construct)
-No vendor archive modifications
-Ready for next content only after re-audit
+Specter-Patch Phase 4 — Turkey TRG-230 + AD/MLRS complete
+Fixed IDs, CountryBalance bake, Patch_StrategicLauncher/AirDefense limits
+MP sync: no Specter archive edits

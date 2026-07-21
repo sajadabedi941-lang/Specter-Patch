@@ -116,9 +116,10 @@ Do not add new content until sync_audit.py PASS.
 Phase 4 - Turkey ground warfare
 -------------------------------
 Missile launchers (Patch_StrategicLauncher max 4):
-  TRG-300 Kaplan, TRLG-230, Bora ballistic TEL
+  TRG-230, TRG-300 Kaplan, TRLG-230, Bora ballistic TEL
 Air defense (Patch_AirDefense max 10):
   HISAR-A+, HISAR-O+, SIPER, Korkut SPAAG, Sungur SHORAD
+Weapons overlay: Weapon_Turkey_Phase4.ini (TRG-230 salvo/HE)
 Upgrades: HisarNetwork, BoraGuidance
 Wired into WarFactory tiers T–T3 and MIC CommandSets.
 Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini

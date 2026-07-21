@@ -7,9 +7,12 @@ See patch/SYNC_CHECKLIST.md.
 
 from __future__ import annotations
 
+import hashlib
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from collections import defaultdict
 from pathlib import Path
 
@@ -80,6 +83,57 @@ def btn_object_map() -> dict[str, str]:
     return out
 
 
+def ini_digests(root: Path) -> dict[str, str]:
+    """Hash generated gameplay INIs for byte-idempotency checks."""
+    base = root / "Data" / "INI"
+    return {
+        path.relative_to(base).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in base.rglob("*.ini")
+    }
+
+
+def verify_bake_idempotency(errors: list[str]) -> None:
+    """Re-run deterministic generators in a temporary patch copy."""
+    with tempfile.TemporaryDirectory(prefix="specter-sync-") as temp:
+        copied = Path(temp) / "patch"
+        shutil.copytree(
+            ROOT,
+            copied,
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo"),
+        )
+        before = ini_digests(copied)
+        commands = (
+            copied / "tools" / "economy" / "apply_country_balance.py",
+            copied / "tools" / "economy" / "apply_build_limits.py",
+        )
+        for script in commands:
+            result = subprocess.run(
+                [sys.executable, str(script)],
+                cwd=copied.parent,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode:
+                errors.append(
+                    f"BAKE COMMAND FAILED {script.name}: "
+                    f"{result.stderr.strip() or result.stdout.strip()}"
+                )
+                return
+        after = ini_digests(copied)
+        changed = sorted(
+            path
+            for path in set(before) | set(after)
+            if before.get(path) != after.get(path)
+        )
+        if changed:
+            sample = ", ".join(changed[:8])
+            suffix = f" (+{len(changed) - 8} more)" if len(changed) > 8 else ""
+            errors.append(
+                f"NON-IDEMPOTENT BAKE changed {len(changed)} INIs: {sample}{suffix}"
+            )
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -111,9 +165,10 @@ def main() -> int:
                     f"(BuildCost×{len(costs)} BuildTime×{len(times)})"
                 )
 
-    # Gameplay Random* (exclude RandomBone cosmetic and comments)
+    # Active Random* assignments are forbidden. Cosmetic RandomBone is a
+    # ParticleSysBone token, not an assignment, and therefore is unaffected.
     rnd = re.compile(
-        r"^\s*(RandomValue|RandomDelay|RandomDuration|RandomRange|RandomNumber)\s*=",
+        r"^\s*(Random[A-Za-z0-9_]*)\s*=",
         re.M | re.I,
     )
     for p in INI.rglob("*.ini"):
@@ -156,7 +211,7 @@ def main() -> int:
 
     # CommandSet slots → CommandButton Object = *_AI / MilitaryWarfactory
     btn_map = btn_object_map()
-    slot_rx = re.compile(r"^\s*\d+\s*=\s*(\S+)\s*$", re.M)
+    slot_rx = re.compile(r"^\s*(\d+)\s*=\s*(\S+)(?:\s*;.*)?$", re.M)
     cs_rx = re.compile(r"^CommandSet\s+(\S+)\s*$", re.M)
     for p in INI.glob("CommandSet*.ini"):
         text = p.read_text(errors="replace")
@@ -165,10 +220,13 @@ def main() -> int:
         for i, m in enumerate(ms):
             end = ms[i + 1].start() if i + 1 < len(ms) else len(text)
             block = text[m.start() : end]
+            slots: dict[str, list[str]] = defaultdict(list)
             for sm in slot_rx.finditer(block):
-                btn = sm.group(1)
+                slot = sm.group(1)
+                btn = sm.group(2)
                 if btn.startswith(";"):
                     continue
+                slots[slot].append(btn)
                 obj = btn_map.get(btn)
                 if not obj:
                     continue
@@ -176,6 +234,12 @@ def main() -> int:
                     line = text[: m.start() + sm.start()].count("\n") + 1
                     errors.append(
                         f"PLAYER AI OBJECT {rel}:{line} {m.group(1)} -> {btn} -> {obj}"
+                    )
+            for slot, buttons in slots.items():
+                if len(buttons) > 1:
+                    errors.append(
+                        f"DUPLICATE COMMAND SLOT {rel} {m.group(1)} "
+                        f"slot={slot}: {buttons}"
                     )
 
     # Side ownership for faction-tree Objects with BuildCost
@@ -205,7 +269,7 @@ def main() -> int:
         (re.compile(r"(HISAR|SIPER|Korkut|Sungur)", re.I), "Patch_AirDefense"),
         (
             re.compile(
-                r"(TRG300|TRLG230|Bora|BM-21|AbbasLauncher|Alhussaien|9P117|AlNida|Karrar)",
+                r"(TRG230|TRG300|TRLG230|Bora|BM-21|AbbasLauncher|Alhussaien|9P117|AlNida|Karrar)",
                 re.I,
             ),
             "Patch_StrategicLauncher",
@@ -265,6 +329,23 @@ def main() -> int:
         warnings.append(
             "Vendor archive present at repo root (must remain unmodified): Data.zip"
         )
+
+    verify_bake_idempotency(errors)
+
+    manifest_tool = ROOT / "tools" / "economy" / "generate_sync_manifest.py"
+    manifest = ROOT / "SYNC_MANIFEST.sha256"
+    if not manifest.exists():
+        errors.append("MISSING SYNC_MANIFEST.sha256 (generate before distribution)")
+    elif manifest_tool.exists():
+        result = subprocess.run(
+            [sys.executable, str(manifest_tool), "--check"],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode:
+            errors.append(result.stdout.strip() or result.stderr.strip())
 
     print("Specter Patch sync_audit")
     print(f"  errors={len(errors)} warnings={len(warnings)}")

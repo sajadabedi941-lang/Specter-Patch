@@ -279,7 +279,12 @@ COST_RE = re.compile(r"^(\s*)BuildCost\s*=\s*([0-9]+)", re.M)
 TIME_RE = re.compile(r"^(\s*)BuildTime\s*=\s*([0-9.]+)", re.M)
 BASE_COST_RE = re.compile(r";\s*PatchBaseCost\s*=\s*([0-9.]+)")
 BASE_TIME_RE = re.compile(r";\s*PatchBaseTime\s*=\s*([0-9.]+)")
-APPLIED_RE = re.compile(r";\s*PatchPricing\s+.*\n|; \s*CountryBalance\s+.*\n")
+MARKER_BLOCK_RE = re.compile(
+    r"^;\s*PatchBaseCost\s*=\s*[0-9.]+\s*\n"
+    r";\s*PatchBaseTime\s*=\s*[0-9.]+\s*\n"
+    r";\s*(?:PatchPricing|CountryBalance)\s+.*\n",
+    re.M,
+)
 SKIP_NAME_RE = re.compile(
     r"(Damaged|Debris|Hulk|Lock|Projectile|WeaponObject|Explosion|Cloud|BombObject|Crashed)",
     re.I,
@@ -346,10 +351,6 @@ def process_file(
             base_cost, base_time, side, meta, tables, is_upgrade
         )
 
-        new_block = APPLIED_RE.sub("", block)
-        new_block = BASE_COST_RE.sub("", new_block)
-        new_block = BASE_TIME_RE.sub("", new_block)
-        header_end = new_block.find("\n") + 1
         marker = (
             f"; PatchBaseCost = {int(base_cost) if base_cost == int(base_cost) else base_cost}\n"
             f"; PatchBaseTime = {base_time}\n"
@@ -357,7 +358,14 @@ def process_file(
             f"cat={detail['category']} key={detail['cost_key']} rating={detail['rating']} "
             f"cost×{detail['cost_m']} time×{detail['time_m']} => {final_cost} / {final_time}s\n"
         )
-        new_block = new_block[:header_end] + marker + new_block[header_end:]
+        if MARKER_BLOCK_RE.search(block):
+            # Replace the complete marker block in place. Removing marker lines
+            # individually left their newlines behind and grew every Object by
+            # two blank lines on each bake.
+            new_block = MARKER_BLOCK_RE.sub(marker, block, count=1)
+        else:
+            header_end = block.find("\n") + 1
+            new_block = block[:header_end] + marker + block[header_end:]
         new_block, _ = COST_RE.subn(
             lambda m: f"{m.group(1)}BuildCost           = {final_cost}", new_block, count=1
         )

@@ -1,3 +1,3 @@
-Specter-Patch Phase 4 Turkey Ground Warfare
-TRG-300 TRLG-230 Bora + HISAR/SIPER/Korkut/Sungur
-Global AD=10 Artillery=6 Strategic=4 limits
+Specter-Patch MP Sync Hardening
+SYNC_CHECKLIST.md + sync_audit.py
+Fixed duplicate upgrades, AI constructs, dual costs, Side mismatches

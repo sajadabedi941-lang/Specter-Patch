@@ -98,6 +98,13 @@ Single source of truth: Data/INI/CountryBalance.ini
   - Applicator: tools/economy/apply_country_balance.py (deterministic bake for MP)
   - Legacy Economy/*.ini tables superseded; do not edit for live balance
 
+Multiplayer desync prevention
+-----------------------------
+Gate document: patch/SYNC_CHECKLIST.md
+Audit tool: tools/economy/sync_audit.py (must PASS before new units)
+Rules: deterministic bake, no archive edits, unique IDs, no player→*_AI production,
+identical patch package on all clients.
+
 
 Phase 4 - Turkey ground warfare
 -------------------------------

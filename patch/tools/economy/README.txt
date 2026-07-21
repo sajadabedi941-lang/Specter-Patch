@@ -15,3 +15,7 @@ Preview (no writes):
     --tech Gen5Fighter --category Aircraft
 
 apply_dynamic_pricing.py is a thin alias of apply_country_balance.py.
+
+Sync audit:
+  python3 patch/tools/economy/sync_audit.py
+  See patch/SYNC_CHECKLIST.md

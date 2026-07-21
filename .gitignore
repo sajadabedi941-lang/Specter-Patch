@@ -1,1 +1,5 @@
 __pycache__/
+*.pyc
+
+# Vendor Specter archives — never modify; distribute unchanged alongside patch/
+# (tracked copies in repo must remain byte-identical across clients)

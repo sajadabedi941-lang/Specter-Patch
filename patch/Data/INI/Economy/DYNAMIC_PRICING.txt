@@ -1,0 +1,69 @@
+SPECTER PATCH — Dynamic Pricing System (Global)
+================================================
+
+Engine limit
+------------
+SAGE stores a fixed BuildCost / BuildTime per Object or Upgrade ID.
+"Dynamic" pricing is therefore a **data framework + generator**:
+  FinalCost = BaseCost × EconomyModifier × OriginModifier × TechnologyModifier
+              × AsymmetricModifier × DomesticCostModifier
+
+The same equipment template can receive different finals when authored
+for different buyer factions (different Side / Object ID / Origin).
+
+Formula
+-------
+  FinalBuildCost = round(BaseCost
+      × Economy.PurchaseCostMult
+      × Origin.CostMult
+      × Tech.CostMult
+      × Asymmetric.CostMult(Category, EconomyTier)
+      × Domestic.CostMult(Origin))
+
+  FinalBuildTime = round(BaseTime
+      × Origin.TimeMult
+      × Tech.TimeMult
+      × Asymmetric.TimeMult(...)
+      × Domestic.TimeMult(Origin), 1 decimal)
+
+  FinalUpgradeCost / Time use the same formula with Domestic.UpgradeCostMult.
+
+Tables (this folder)
+--------------------
+  FactionEconomy.ini       EconomyRating per Side + purchase / income mults
+  EquipmentOrigin.ini      Domestic / Licensed / Imported multipliers
+  TechnologyClass.ini      Tech dependency multipliers (by class, not unit name)
+  AsymmetricBalance.ini    Low-economy discounts by Category
+  DomesticProduction.ini   Extra bonuses when Origin=Domestic
+  ResourceIncome.ini       Oil / port / trade / supply income by EconomyRating
+  UnitCategory.ini         Category enum used by asymmetric + defaults
+  PricingDefaults.ini      Path/KindOf → Category / default Origin / TechClass
+  UnitPricingRegistry.ini  Optional explicit BaseCost / Origin / TechClass / Category
+
+Tools
+-----
+  patch/tools/economy/apply_dynamic_pricing.py
+    Reads tables + Object/Upgrade INIs under patch/
+    Preserves BaseCost via `; PatchBaseCost = N` so re-runs do not compound
+    Writes Final BuildCost / BuildTime
+
+Resource income
+---------------
+  High EconomyRating → higher AutoDeposit / supply productivity overlays
+  See Object/Specter/PatchSystems/Economy/ResourceIncome_Overlays.ini
+
+Adding a new faction
+--------------------
+  1. Add FactionEconomy entry (EconomyRating + modifiers)
+  2. Author Object tree with Side=<Faction>
+  3. Optionally add PricingEntry rows (otherwise PricingDefaults apply)
+  4. Run apply_dynamic_pricing.py --side <Faction>
+
+Adding a new unit
+-----------------
+  1. Set BuildCost / BuildTime as Base values (or PricingEntry.BaseCost)
+  2. Tag Origin + TechClass via PricingEntry OR rely on PricingDefaults
+  3. Re-run generator for that Side
+
+Never hardcode one-off western jet examples into the formula tables.
+Use TechnologyClass (e.g. Gen5Fighter, StrategicBomber) instead.

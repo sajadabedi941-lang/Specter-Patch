@@ -77,3 +77,14 @@ Global build limits (MaxSimultaneousLinkKey) for every faction:
   Patch_StrategicLauncher=4, Patch_Nuclear=1
   Turkey objects annotated; see GlobalBuildLimits_SpecterPatch.ini
   and Object/Specter/PatchSystems/GLOBAL_SYSTEMS.txt
+
+Dynamic Pricing System (global)
+-------------------------------
+Reusable INI framework under Data/INI/Economy/:
+  FactionEconomy, EquipmentOrigin, TechnologyClass, AsymmetricBalance,
+  DomesticProduction, ResourceIncome, PricingDefaults, UnitPricingRegistry
+Formula: BaseCost × Economy × Origin × Tech × Asymmetric × Domestic
+Generator: tools/economy/apply_dynamic_pricing.py (idempotent via PatchBaseCost)
+Applied to Turkey tree + Advanced Air Base shells; future factions auto-use tables.
+Resource income: SupplyCenter AutoDeposit scaled by EconomyRating.
+Domestic MIC: Turkey_MIC grants Upgrade_Patch_DomesticIndustry (−5% VEHICLE/INFANTRY).

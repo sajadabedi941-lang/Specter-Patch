@@ -29,3 +29,10 @@ SPECTER PATCH — Global Systems Contract
 Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
 Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
+
+4) Dynamic Pricing (global economy)
+   - Tables: Data/INI/Economy/*.ini + DYNAMIC_PRICING.txt
+   - Formula: BaseCost × Economy × Origin × Tech × Asymmetric × Domestic
+   - Tool: tools/economy/apply_dynamic_pricing.py
+   - Resource income overlays on SupplyCenter (AutoDeposit by EconomyRating)
+   - Same design can price differently per buyer Side/Origin (see BUYER_PRICE_EXAMPLES.txt)

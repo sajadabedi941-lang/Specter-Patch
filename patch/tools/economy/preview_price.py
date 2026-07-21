@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print computed price for hypothetical BaseCost without editing INIs."""
+"""What-if price preview using central CountryBalance.ini (no file writes)."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from apply_dynamic_pricing import compute, load_tables  # noqa: E402
+from apply_country_balance import compute, load_central  # noqa: E402
 
 
 def main() -> int:
@@ -21,7 +21,7 @@ def main() -> int:
     ap.add_argument("--category", default="Vehicle")
     ap.add_argument("--upgrade", action="store_true")
     args = ap.parse_args()
-    tables = load_tables()
+    tables = load_central()
     meta = {
         "Origin": args.origin,
         "TechClass": args.tech,

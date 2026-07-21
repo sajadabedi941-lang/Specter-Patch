@@ -1,0 +1,28 @@
+SPECTER PATCH — Country Balance System
+======================================
+
+Central configuration (ONLY edit this for balance knobs):
+  patch/Data/INI/CountryBalance.ini
+
+Applicator (multiplayer-deterministic bake):
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_country_balance.py --side Turkey
+  python3 patch/tools/economy/apply_country_balance.py --dry-run --report /tmp/cb.csv
+
+What it does
+------------
+- Country economic multipliers: Unit / Aircraft / Weapon / Upgrade cost keys
+- Origin + TechClass + Category + Asymmetric + Domestic layers
+- Supply / trade income AutoDeposit on SupplyCenter by country TradeIncomeMult
+- Classifies units by path/name RULES — no per-unit cost hardcoding
+- Writes BuildCost / BuildTime; stores PatchBaseCost so re-runs are stable
+
+MP determinism
+--------------
+All players must load the same baked patch. Do not change CountryBalance.ini
+mid-match. Re-bake and redistribute the patch when tuning.
+
+Legacy Economy/*.ini
+--------------------
+Superseded by CountryBalance.ini. Kept as documentation mirrors only.
+The applicator reads the central file exclusively.

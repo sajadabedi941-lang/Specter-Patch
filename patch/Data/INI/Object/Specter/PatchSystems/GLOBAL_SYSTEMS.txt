@@ -1,0 +1,40 @@
+SPECTER PATCH — Global Systems Contract
+=======================================
+
+1) Advanced Air Base
+   - Object naming: <SidePrefix>_AdvancedAirBase
+   - Model: US_AirField (6 runway parking bones)
+   - ParkingPlaceBehavior NumRows=1 NumCols=6 HasRunways=Yes
+   - MaxSimultaneousOfType (air bases): 4 per faction
+   - Produces tactical + heavy aircraft (AWACS / bomber / tanker / transport)
+   - Replaces tiered "simple airfield upgrade" progression for new patch factions
+   - Files:
+       PatchSystems/AdvancedAirBase_AllFactions.ini   (America/Russia/China/Iran/Iraq/Nato/GLA)
+       PatchSystems/AdvancedAirBase_FutureFactions.ini (Israel/AirF, Ukraine…Japan, NorthKorea)
+       Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini (fully wired)
+
+2) Heavy aircraft scale
+   - Bombers / AWACS / tankers / transports: Scale 0.70 to 0.85
+   - Must fit US_AirField runway bones / game camera scale
+   - Guide: PatchSystems/HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt
+   - Turkey units: Turkey_B2, Turkey_B52, Turkey_AWACS, Turkey_Tanker, Turkey_Transport
+   - Note: Specter has no native B-2 model; Turkey_B2 uses B1R airframe as stealth-bomber proxy
+
+3) Global build limits (MaxSimultaneousLinkKey)
+   Patch_AirDefense        = 10   (SAM sites, AAA, SHORAD, AD installations)
+   Patch_ArtillerySite     = 6    (fixed artillery emplacements)
+   Patch_StrategicLauncher = 4    (MLRS / conventional strategic launchers)
+   Patch_Nuclear           = 1    (nuclear SW buildings OR nuclear launchers)
+
+Future factions MUST set these LinkKeys on matching objects.
+Turkey objects are annotated in this phase.
+Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
+
+4) Country Balance System (central)
+   - ONE config: Data/INI/CountryBalance.ini
+   - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
+   - Origin / TechClass / Category / Asymmetric / Domestic layers
+   - Path-based classification only (no per-unit cost hardcoding)
+   - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
+   - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
+     (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)

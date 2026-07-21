@@ -1,0 +1,126 @@
+Specter Compatible Patch - Phase 1
+==================================
+
+Purpose
+-------
+Create a clean overlay folder that adds new playable faction templates
+without modifying original Specter BIG/ZIP files.
+
+Factions (Iraq-copy method)
+---------------------------
+- Turkey
+- Ukraine
+- Pakistan
+- Saudi Arabia (Side=SaudiArabia)
+- UAE
+- India
+- Japan
+
+Layout
+------
+patch/Data/INI/... is intended to be packed as a GenLauncher addon/patch
+or loaded as loose Data override on top of Specter.
+
+Phase 1 includes
+----------------
+- PlayerTemplate stubs for each new Side
+- ControlBarScheme stubs (Iraq chrome, new Side)
+- Science root stubs (reuse SCIENCE_Iraq for now, like NorthKorea)
+- CommandSet stubs for each Command Center
+- Object/Specter/<Country>/ directory tree mirroring Iraq Army
+- Placeholder CommandCenter.ini per country (renamed Iraq object)
+
+Not included yet
+----------------
+- Full building/unit/aircraft Object copies
+- CommandButton definitions
+- CSF string table entries
+- Unique art/audio
+
+Phase 2 - Turkey (complete Iraq-copy rename)
+--------------------------------------------
+- Full Object tree copied from Iraq Army with all Object/Side IDs renamed to Turkey
+- CommandButton_Turkey.ini / CommandSet_Turkey.ini / Science_Turkey.ini
+- SpecialPower_Turkey.ini / Upgrade_Turkey.ini / ObjectCreationList_Turkey.ini
+- PlayerTemplate FactionTurkey wired to Turkey sciences, units, and flag images
+- PreferredColor R:227 G:10 B:23 (Turkish red)
+- Flag art: Art/Textures/WatermarkTurkey.tga (+ Gameinfo/Logo/Observer variants)
+- MappedImages: Data/INI/MappedImages/HandCreated/Turkey_FactionImages.INI
+
+Phase 2 Turkey details (flag / color / strings / air slots)
+----------------------------------------------------------
+- Flag TGAs refreshed (Watermark 128x64, Logo 128x128, Gameinfo/Observer 64x64, Turkey_Flag 256x128)
+- Army color locked: PreferredColor R:227 G:10 B:23
+- Unique strings in Data/English/generals.csf (Specter CSF + Turkey keys) and Turkey_FactionStrings.txt
+- Aircraft DisplayNames set to OBJECT:Turkey_* unique keys
+- Reserved future air slots: Airforce/ReservedSlots + AIRCRAFT_SLOTS.txt + CommandSet_Turkey_AirSlots.ini
+
+Phase 3 - Turkey unique aircraft (active)
+-----------------------------------------
+Buildable from Turkey Airfield CommandSets:
+  KAAN (F-22A AA), F-16V (F-16CM), Hürjet (F-16CJ), T129 (AH-64E),
+  Anka-3 (F-35C+DRONE), TB2 (MQ-9 NATO), Akıncı (MQ-9 USA)
+Weapons inherited from templates; costs/times set per aircraft.
+Upgrades: Countermeasures, Precision Munitions, Advanced Radar, AA Missile.
+
+Global Systems (before further aircraft work)
+---------------------------------------------
+Advanced Air Base (6-pad US_AirField, max 4 per faction):
+  - Shells for America/Russia/China/Iran/Iraq/Nato/GLA + Israel/AirF + future factions
+  - Turkey fully wired (dozer builds Turkey_AdvancedAirBase; heavy slots 8-12)
+
+Heavy aircraft (scaled 0.70-0.80 for runway/game scale):
+  Turkey_B2 (B1R proxy), Turkey_B52, Turkey_AWACS, Turkey_Tanker, Turkey_Transport
+
+Global build limits (MaxSimultaneousLinkKey) for every faction:
+  Patch_AirDefense=10, Patch_ArtillerySite=6,
+  Patch_StrategicLauncher=4, Patch_Nuclear=1
+  Turkey objects annotated; see GlobalBuildLimits_SpecterPatch.ini
+  and Object/Specter/PatchSystems/GLOBAL_SYSTEMS.txt
+
+Dynamic Pricing System (global)
+-------------------------------
+Reusable INI framework under Data/INI/Economy/:
+  FactionEconomy, EquipmentOrigin, TechnologyClass, AsymmetricBalance,
+  DomesticProduction, ResourceIncome, PricingDefaults, UnitPricingRegistry
+Formula: BaseCost × Economy × Origin × Tech × Asymmetric × Domestic
+Generator: tools/economy/apply_dynamic_pricing.py (idempotent via PatchBaseCost)
+Applied to Turkey tree + Advanced Air Base shells; future factions auto-use tables.
+Resource income: SupplyCenter AutoDeposit scaled by EconomyRating.
+Domestic MIC: Turkey_MIC grants Upgrade_Patch_DomesticIndustry (−5% VEHICLE/INFANTRY).
+
+Country Balance System (central INI)
+------------------------------------
+Single source of truth: Data/INI/CountryBalance.ini
+  - Per-country Unit/Aircraft/Weapon/Upgrade cost multipliers
+  - Version 2 income channels: Supply / Oil / Port / Industrial
+  - Version 2 cost channels: DroneCostMult, DomesticWeaponCostMult,
+    DomesticDroneCostMult (Iran cheaper drones/weapons; Turkey cheaper UAVs)
+  - USA high industrial income; Saudi/UAE high oil income
+  - Global Origin/Tech/Category/Asymmetric/Domestic rules (no per-unit hardcoding)
+  - Applicator: tools/economy/apply_country_balance.py (deterministic bake for MP)
+  - Legacy Economy/*.ini tables superseded; do not edit for live balance
+
+Multiplayer desync prevention
+-----------------------------
+Gate document: patch/SYNC_CHECKLIST.md
+Audit tool: tools/economy/sync_audit.py (must PASS before new units)
+Covers: duplicate IDs, dual costs, Random* fields, Lifetime Min==Max,
+player CommandSet *_AI / MilitaryWarfactory, Side vs faction folder,
+AD/launcher LinkKeys, vendor archive git dirty.
+Rules: deterministic bake, no archive edits, unique IDs, no player→*_AI production,
+identical patch package on all clients.
+Do not add new content until sync_audit.py PASS.
+
+
+Phase 4 - Turkey ground warfare
+-------------------------------
+Missile launchers (Patch_StrategicLauncher max 4):
+  TRG-230, TRG-300 Kaplan, TRLG-230, Bora ballistic TEL
+Air defense (Patch_AirDefense max 10):
+  HISAR-A+, HISAR-O+, SIPER, Korkut SPAAG, Sungur SHORAD
+Weapons overlay: Weapon_Turkey_Phase4.ini (TRG-230 salvo/HE)
+Upgrades: HisarNetwork, BoraGuidance
+Wired into WarFactory tiers T–T3 and MIC CommandSets.
+Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini
+  + tools/economy/apply_build_limits.py (all countries)

@@ -1,5 +1,5 @@
 # Specter-Patch deterministic package manifest v1
-# PackageSHA256 fb60e4df6c6ec5d7be0d3061ebc6d169d680414ea2edec87324b546c174ba490
+# PackageSHA256 9f07f73359a0541c229bf31758b8705e00c7e0cc89625cd31c883918d14d8489
 7f451296a363d00bcbd531b7b5bde6d085cfd8250783b873bf255d824686b07c  Art/Textures/GameinfoTurkey.tga
 6fcbd496a69a3f0dd7e9f2ee63db3d4f67e2da7254e4eb90a9a710473840dd23  Art/Textures/Patch_AdvancedAirBase.tga
 7f451296a363d00bcbd531b7b5bde6d085cfd8250783b873bf255d824686b07c  Art/Textures/SSObserverTurkey.tga
@@ -352,6 +352,7 @@ cd69f6719442592988d7f36b57342638e0871c4b3c2a6f2175705d394335b7a8  Data/INI/Objec
 6d8e03fa9a08343a85cfb603033087a9d348169b9b34831af1d1bf2c836b5000  Data/INI/Object/Specter/German Armed Forces/Wheeled/Germany_Centauro_B2.ini
 53e5c1f138e2072d9d23e4bd1a26aa6cdbfe7650a3e11a5b22adf66e755ac882  Data/INI/Object/Specter/German Armed Forces/Wheeled/Germany_Dozer.ini
 72282f00e3d83a8d0211063323e775a90e87c706521110e25dcbf66a40dce4b2  Data/INI/Object/Specter/German Armed Forces/Wheeled/Germany_VBCI.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Indian Armed Forces/AI/.gitkeep
 0430c248df66c80343b318670f68fd82f4676889bd3a4507c7e9bb09707a4038  Data/INI/Object/Specter/Indian Armed Forces/APC/BTR90.ini
 2caef9e6a6d7aa7097691e039df6a3cf81e2e22ff673e7dbd2dc837e87476ea1  Data/INI/Object/Specter/Indian Armed Forces/AirDefense Sites/SamSite.ini
 a6874a619464eb2423a92b27e51b0fcd504a05769fac65fff032f2a59acfde7f  Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
@@ -383,6 +384,8 @@ a3dde75fbe58406a4fdd01359b19ce85f78f55e2d0b2cdc0d33f2b5da7296eea  Data/INI/Objec
 b928c4c7e33578f5392fa7d25bff64f3fa29846147ac228447982b6607c230ac  Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
 aac5cb64c0b6749620b779f6bd97230d6872a3db10ad00fd297749cf9e5b5a94  Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini
 171fb8c2454d0bbcb52ebf2a72178f15b8d09f54c705436f139f1d9a864b8046  Data/INI/Object/Specter/Indian Armed Forces/Drones/India_StealthUAV.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Indian Armed Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Indian Armed Forces/Hulk/.gitkeep
 a4f01d8e423223574a5cc17250a02059e91878e1143047380a2fca858cd86c31  Data/INI/Object/Specter/Indian Armed Forces/IFV/Bmp1P.ini
 98f5b102fee69f739cb721c3b0cb06bdb1db6815be93c638a802d170ad3bbf13  Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
 b1b8f9ea92c97b0b9a95297c0b0e4bc9b1e4b0d7da3013f2ef24cf4511f711ce  Data/INI/Object/Specter/Indian Armed Forces/Infantry/AntiAir.ini
@@ -454,10 +457,22 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Objec
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Iraqi Armed Forces/ScienceObjects/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Iraqi Armed Forces/Tracked/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Iraqi Armed Forces/Wheeled/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/AI/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/APC/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/AirDefense Sites/.gitkeep
 4db9fdd2d93fc96f6877daad5a090ab1c1559e987ed98d18656a9320d6bdd43b  Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
 7293df168d2a3dea5e9345a7a3d915c5d14696503056ffacab855e4b0488e80d  Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Airforce/.gitkeep
 680f71bd3543f1e34e00406ae00dbd1cebda4fae81b6324451c13b58b610af75  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
 9ab99385e306e2be0ea1b15cb568e894c5051d7d99ee743816a567533b9d5417  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Drones/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Hulk/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/IFV/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Infantry/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/ScienceObjects/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Tracked/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Israel Defense Forces/Wheeled/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Italian Armed Forces/AI/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Italian Armed Forces/APC/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Italian Armed Forces/AirDefense Sites/.gitkeep
@@ -512,6 +527,9 @@ ed84cb54eba305c0b1af66803081ec92e23990f6de201e8f76bee2428b4558ee  Data/INI/Objec
 b651477cadd6794d9bded77f63c968c0f1b6196ca709844771da52936fbdecd4  Data/INI/Object/Specter/Italian Armed Forces/Wheeled/Italy_Centauro_B2.ini
 be4cd5e7a7535246868c9a68a772699b05d6d93cc59087958a1b6ba7513bcbe9  Data/INI/Object/Specter/Italian Armed Forces/Wheeled/Italy_Dozer.ini
 4d8e56d685310e5e1baa9fa51f66afcb8670b0dc5066bc6fbd15537e27039462  Data/INI/Object/Specter/Italian Armed Forces/Wheeled/Italy_VBCI.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/AI/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/APC/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense Sites/.gitkeep
 f2724626020dc2620db360c22987842f08c3986c6161c26f6a7774137df146f0  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini
 92e55ba10be9dbeb0331a89e1114997fffa3c77c47dba1b1a78da421a4a1951d  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_MD.ini
 4c21cecb5e1d9af97b540e5e7ba0afcc0be96fc7cd36cd6d8ae5e113f3a39888  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
@@ -538,6 +556,9 @@ ba793879093653ec61c30ea66929b719359975b42005975d60e06aea937017bf  Data/INI/Objec
 bcb932e800e7e91fb9624f483241b0481b295fd2ca34f1dc629f9b8ebd57c3e8  Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Warfactory.ini
 c07f822b79e874314af9a5c767b163af2de8ecc91d803c9a6e3c50c9b67e5d0f  Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
 e8df46b22cac413a941db32ea2968ec1526152dab9287838b78a3f161cb57c46  Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_StealthUAV.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/Hulk/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Japan Self-Defense Forces/IFV/.gitkeep
 d12299ba25f296cfe0125f774d0e75e8ebdf901808ade2b2d98269670a93d9fe  Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/Japan_ATGM_Team.ini
 d84f4f18af8a106e766cc0087bd75d7ddd1e674def5d7b55ca404be372e0abf0  Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/Japan_AntiAirOperator.ini
 89e34c0a699fc9fd1844c2d2b789f4332262cd9bec374e2f17afdbbd7a75e134  Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/Japan_EliteSAT.ini
@@ -638,6 +659,7 @@ ef24ed2cbb0a4dc4f42515c9158e4483c99370055f235fe67cfa835c2fed6417  Data/INI/Objec
 5f09a451e42544086e69952ca258371f75a35fb65a1bc72ad91cd86a1398c5ab  Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/AbbasLauncher.ini
 436e80b4c270f13a0d5816a3422d21913d9016dc4a9c4d9cc3b37d2f54ffc6d3  Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/Libya_BM-21.ini
 68dd457a1a2390e5b689c428715f02028899d806312edab9362661f43beb7461  Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/Libya_Ural375_Supply.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Pakistan Armed Forces/AI/.gitkeep
 c1a8647d3d1b69a1d8c1e774bec9a686c469ac33436cab7015efafbda8cfcc8a  Data/INI/Object/Specter/Pakistan Armed Forces/APC/BTR90.ini
 297f458abe4c834681a105442ecaabbedcb64c0c52bb6a0932df62bbcf5ac81e  Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense Sites/SamSite.ini
 a43449338f2a44524d7224a2371924f035842ece09ffd9a177ace36f339758d6  Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini
@@ -667,6 +689,8 @@ e3007dad8588103e614f736573b3b7969454cb71b0deb1710331168e9343aae4  Data/INI/Objec
 4bd464ed3d3b85f47125f0273ff55180c5eab69a9361e2189c8c15367f57dd6e  Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini
 96ddf6a8b688fe69d089a4b1f1c3046b28ea6def867eba1c3084b3331941916e  Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_HeavyUAV.ini
 549501c256cbd21058bcbc7201b2b34e9a0071a95245591d52f8886d8e0c2939  Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Pakistan Armed Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Pakistan Armed Forces/Hulk/.gitkeep
 eecf11d9aa10b62a86fe0b2eeb14ff9e8aa008f1cfea54482ff521184b159b01  Data/INI/Object/Specter/Pakistan Armed Forces/IFV/Bmp1P.ini
 a03205835b06c1bca66f76bae73d323788075872d40b657b1a05a20bac6aa926  Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/AntiAir.ini
 ed4f0718ebb63ba8cd10f532f0e2c81f673d6ba1e26ac5553e995f8124d69343  Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/Antitank.ini
@@ -877,6 +901,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Objec
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Russian Armed Forces/ScienceObjects/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Russian Armed Forces/Tracked/.gitkeep
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Russian Armed Forces/Wheeled/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Saudi Arabian Armed Forces/AI/.gitkeep
 9ad25a0d890295b5af09a87d5098bdcc99d02d9a89505cd2b8d350b874bcfb01  Data/INI/Object/Specter/Saudi Arabian Armed Forces/APC/BTR90.ini
 1c5ec64d325cc395068164bd508ccc0bad5c9f71d4e018fee176635c5813ca8a  Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense Sites/SamSite.ini
 bc2d1b469c4640f55fab1c7bd073cc4e25f21f7cce204961aee8d62f60d78283  Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/Roland3K.ini
@@ -903,6 +928,8 @@ a265d03b9315ac663cf4fee020feb006dee63c2ece9fd4078e1a120abc75553b  Data/INI/Objec
 90168cb0153771ae72e13140a071537ccc571d83ed664cf3d8e46dd1665c9043  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_SupplyCenter.ini
 2ebd4e7302576fe69dc281d301abfd303f7e1b2517db0e6bc8d17c57a04ac8bb  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_WarFactory.ini
 325f58871698a856379417e2b543c47eba7e51e08bad95523ed2d968ecbc57d0  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Hulk/.gitkeep
 a34f70df9af93e0efc14b15c910af711320c24425b892b5d9112b23324bf56e9  Data/INI/Object/Specter/Saudi Arabian Armed Forces/IFV/Bmp1P.ini
 bd50b1b1ca141941997480d67f9e5109d5c9373bebbd0e331b6db210dbb918a9  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/AntiAir.ini
 1938a1ac6e277c426fd1837dec37dbb47594a0a0a437d89c452fc4ab0efafe18  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/Antitank.ini
@@ -1177,6 +1204,7 @@ edba8c50a3087e702304504fbd9814fb6440a8818ac2cbc12a1da0ce6d42b54d  Data/INI/Objec
 faa3866a670e0fc6386b0e71bdb25e125673096832f044f51cd0c02cff7f53d8  Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_HeavyUAV.ini
 b68eb36dc455ca7387e38a25574ac2557f3cec20b89fc8120809519fe952161e  Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
 7b14d36674dea82695ff6bb10d32499cf93da2dac2dbe72b90efaaf74f24815d  Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_StealthUAV.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Turkey Armed Forces/Experimental/.gitkeep
 ddbfbe847784bbe8233c5745d4b209972e734f9526378d3342be537d0f60b2c8  Data/INI/Object/Specter/Turkey Armed Forces/Expermental/Expermental_Objects.ini
 4a60c3f6b56cd41321f54412e072fd93cc8a714c22c111e5e43f80509cb3d290  Data/INI/Object/Specter/Turkey Armed Forces/Hulk/2K12Hulk.ini
 687e9a4040ff1bf9ad95fcd2855020571874b9dba436aace1ad759ac94dfabfc  Data/INI/Object/Specter/Turkey Armed Forces/Hulk/9P117Hulk.ini
@@ -1253,6 +1281,7 @@ dab127f57747d8212b2c1dcd893c71089e988404c4c0060459c6f906ea12737a  Data/INI/Objec
 72dd63281c8a457934ad2411759a95c307dd077066a333480dacfa2cb5539db3  Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply.ini
 2a1b1375565d005002eca8ba58ba742a24ac7f80f32b33062424922e0cafb680  Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply_AI.ini
 e3b21739cade8e64ce1a0449bedc4b67c0b15cf443f7dafe3a57a52901e1c542  Data/INI/Object/Specter/Turkey Armed Forces/_ID_MAP.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Ukrainian Armed Forces/AI/.gitkeep
 552d4ef62d02eee2adb9aa6ab7fb68c4251e2fed4abfc508928577af4c53bcb4  Data/INI/Object/Specter/Ukrainian Armed Forces/APC/BTR90.ini
 2f74caad5f0ec63131de7114385564a86fe2bd79ca83fdcb39ccb14ff80389df  Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense Sites/SamSite.ini
 3c90c4a68eb41c81cc55a64f76a5bd77f8617b472316f75f3c4e1627452c58a8  Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Roland3K.ini
@@ -1281,6 +1310,8 @@ f505771efab5f8b0c0c1f8bc8e13bbd1e07bd846a2b2bcf917e07937e980f374  Data/INI/Objec
 b54386c6e1b0884f961185ddba64d172bc9688092bde596fcee516680803ce50  Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_HeavyUAV.ini
 3ed7fdecbb247ca3d7de8e101370af145b23b32c499ec33e412737ae22d14fa4  Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini
 3e57b785db9015046a0bca97a1989c92c1976fc56e2506c95ab6df72fcf9561a  Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Ukrainian Armed Forces/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/Ukrainian Armed Forces/Hulk/.gitkeep
 f551f4a8274b81e40abdd9fe1a4730aa61e69af7ad0dfba90a0d3e1a89f58e32  Data/INI/Object/Specter/Ukrainian Armed Forces/IFV/Bmp1P.ini
 bfadbb7668117b6eab60674d41850bfb667db5147479c7310b08d5b7725c9d0b  Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/AntiAir.ini
 6db6d4ec0c3ca092150fe2f080a5ce776630dfbb40b5a979b68e076f548d02ee  Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/Antitank.ini
@@ -1313,6 +1344,7 @@ ede8f4bd5f9e9a8bde102bfa21d9460205516ee17d40ca46337a95ccd6a72519  Data/INI/Objec
 665ca40ca532d9dd390cf090bc7640bcfa29a3e073c6d59d469ca611566d48e1  Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_BM-21.ini
 bdf2722a08d6528f074a01f43ee8f79c5f07254a8dca6b92f56393976f8e3b02  Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
 99aea15e84db578b32c513e55efadb12f4bf6634352a45a8b12823de0b5ffa13  Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_Ural375_Supply.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/United Arab Emirates/AI/.gitkeep
 af7a72acf2f68403a783d05ecd39a8a45e92759db8247a713dca361f904c4904  Data/INI/Object/Specter/United Arab Emirates/APC/BTR90.ini
 a6f989b2b23a447cf47d248d6bab3f6b4040b9e2130479d765b0598d3bebc729  Data/INI/Object/Specter/United Arab Emirates/AirDefense Sites/SamSite.ini
 20c87843f6f42363ee24d45a734b6373407ea6dd7313d4ef1382b97be1a33f6a  Data/INI/Object/Specter/United Arab Emirates/AirDefense/Roland3K.ini
@@ -1340,6 +1372,8 @@ c7c3fce2897a21a0ba15b652d6a0a12f549bcea6ca4f4b6d617e8ec1737c2bae  Data/INI/Objec
 53f9d5b491d7bc71fb31541924adbf664e7e23fe4206cad2ec31510a8085af77  Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini
 df5c36d3d44315ed95667b47b311acf07bdb8b50002a5b30521f3355bd3d3145  Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini
 9cb36cd326832699b732aab3fc44bc6bd88cce96fe8853a3038b52e3cd3d3d55  Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/United Arab Emirates/Experimental/.gitkeep
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  Data/INI/Object/Specter/United Arab Emirates/Hulk/.gitkeep
 f98c4153bb3fd8c39a1b217f9e3248ebb3315a4bd26350cd1b5a506c10376d87  Data/INI/Object/Specter/United Arab Emirates/IFV/Bmp1P.ini
 6d44aeb93e224d5569161b87646ab8069c6d4fe6f4012597858fa86c24885842  Data/INI/Object/Specter/United Arab Emirates/Infantry/AntiAir.ini
 b6e9ebaabdd18e80bc51900fdbf2636bbc0cdc721d4e8ae13374db8869d21422  Data/INI/Object/Specter/United Arab Emirates/Infantry/Antitank.ini

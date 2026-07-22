@@ -1,0 +1,84 @@
+CUSTOM UNITS FIX REPORT
+Specter-Patch | branch cursor/custom-units-repair-f792
+================================================================================
+
+SCOPE
+--------------------------------------------------------------------------------
+Audited and repaired custom / patch-added units:
+  B-2 / B-52, drones, custom fighters, helicopters, missile systems, air defense.
+
+Policy: fix broken links without removing existing content. Overlay-only (patch/).
+
+
+P0 FIXES APPLIED
+--------------------------------------------------------------------------------
+1) India / Pakistan air CommandSet ↔ CommandButton name mismatches
+   - MirageF1-Bq  → mirageF1Bq  (matches existing buttons)
+   - Mig-23BN     → Mig-23ML    (matches object/button names)
+   Files: CommandSet_India.ini, CommandSet_Pakistan.ini
+
+2) Missing General Star purchase buttons (sciences existed; buttons missing)
+   Added:
+     Command_PurchaseScience{India,Pakistan,Japan}GeneralAirPower
+     Command_PurchaseScience{India,Pakistan,Japan}GeneralAirAssault
+     Command_PurchaseScience{India,Pakistan,Japan}GeneralArtillery
+   Files: CommandButton_India.ini, CommandButton_Pakistan.ini, CommandButton_Japan.ini
+
+3) Japan RQ-4 was a DEBRIS/HULK stub on player Airfield/AAB
+   Replaced Japan_RQ4GlobalHawk.ini with a functional ISR UAV
+   (MQ-9 proxy art, Side=Japan, Japan airfield + GeneralAirPower prereqs).
+   File: Object/.../Japan Self-Defense Forces/Airforce/Japan_RQ4GlobalHawk.ini
+
+4) Japan prerequisites blocking player path
+   - Japan_F35A: SCIENCE_StealthFighter → SCIENCE_Japan_GeneralAirPower
+   - Japan_UH60J / Japan_CH47J: AmericaSupplyCenter → Japan_SupplyCenter
+
+5) North Korea PRODUCTION_DISABLED clones — Side-safe prereqs (objects kept)
+   - TB2: NatoAirfield/NatoStealthJet → NorthKorea airfield + GeneralAirPower
+   - Akinci: AmericaStrategyCenter → NorthKorea_MIC
+   - KAAN / Anka3: SCIENCE_StealthFighter → SCIENCE_NorthKorea_GeneralAirPower
+   (Still off player CommandSets; MaxSim B2/B52 remain 0)
+
+6) Future-faction Advanced Air Base supply prereqs
+   Relaxed missing Ukraine/Saudi/UAE/AirF SupplyCenter Object gates
+   (buildings not yet in patch; AAB CS remains rally/sell-only for those sides).
+
+
+VERIFIED STILL HEALTHY
+--------------------------------------------------------------------------------
+B-2 / B-52
+  America_B2 / America_B52 objects present (PatchSystems/HeavyBombers)
+  Buttons: Command_ConstructAmerica_B2 / B52
+  Player path: America_AdvancedAirBaseCommandSet (USA-only)
+  Turkey_*/NorthKorea_* B2/B52: PRODUCTION_DISABLED, not on player CS
+
+Turkey custom air / AD / missiles
+  KAAN, F16V, Hurjet, T129, Anka3, TB2, Akinci + HISAR/SIPER/TRG/Bora
+  Buttons + objects + Turkey CommandSets OK (prior audit retained)
+
+India / Pakistan / Japan unique fighters
+  India_Su30MKI, Pakistan_F16C, Japan F-15J / F-2 / F-35A / AH-64 / UH-60 / CH-47
+  Buttons + objects + Airfield/AAB CommandSets OK
+
+Nato / Iran / Israel / Russia / China AAB
+  Roster CommandSets present; Construct buttons rely on Specter stock (documented RISK)
+
+
+MISSING ASSETS
+--------------------------------------------------------------------------------
+See MISSING_ASSETS_FINAL_REPORT.txt (placeholder W3D proxies; no patch-local .w3d).
+
+
+TOOLING
+--------------------------------------------------------------------------------
+python3 patch/tools/economy/apply_country_balance.py
+python3 patch/tools/economy/apply_build_limits.py
+python3 patch/tools/economy/generate_sync_manifest.py
+python3 patch/tools/economy/sync_audit.py
+Result: PASS (errors=0; Data.zip vendor warning only)
+
+
+DELIVERABLES
+--------------------------------------------------------------------------------
+patch/CUSTOM_UNITS_FIX_REPORT.txt
+patch/MISSING_ASSETS_FINAL_REPORT.txt

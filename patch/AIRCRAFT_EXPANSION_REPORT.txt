@@ -1,0 +1,90 @@
+AIRCRAFT EXPANSION REPORT
+Specter-Patch | branch cursor/aircraft-expansion-f792
+================================================================================
+
+RULES ENFORCED
+--------------------------------------------------------------------------------
+- Do not give all countries the same aircraft.
+- Realistic country operators only.
+- B-2 / B-52 remain USA-only on player CommandSets.
+- NK retains Soviet-pattern air (no KAAN/TB2/Anka/F-16V).
+- Costs baked via CountryBalance; availability gated by Airfield/AAB tiers.
+
+
+5TH GENERATION (player path)
+--------------------------------------------------------------------------------
+Aircraft     Operators (patch CS)
+-----------  --------------------------------------------------
+F-35         USA (AAB), Nato (AF/AAB), Japan (F-35A AF/AAB), Israel (F-35I)
+F-22/Raptor  USA (AF stock + AAB)
+Su-57        Russia (AAB + Airfield T3/T4 overlay)
+J-20         China (PLA AF + AAB)
+KAAN         Turkey only (AF/AAB)
+
+
+MODERN FIGHTERS
+--------------------------------------------------------------------------------
+F-16 family  USA F-16C; Nato F-16D Blk52; Turkey F-16V; Pakistan F-16C;
+             Saudi/UAE Arabic F-16C_E (stock buttons on AAB)
+J-10C        China AAB
+Rafale       Nato Rafale F3; UAE EgyptJetRafaleDM (stock) on AAB
+Eurofighter  Nato EF2000 T4/AA/CAS; Saudi ArabJetEF2000 / ArabicArmy_EF2000
+MiG/Su       Russia Su-35/34/30/25/24 + MiG-31; Iran F-14/MiG-29/Su-22/24/25;
+             Iraq/NK/India/Pakistan MiG/Su kits; Ukraine interim Iraq MiG/Su AAB
+F-15         Japan F-15J; Israel F-15I; Saudi Arabic F-15SA; USA F-15E on AAB
+F-2          Japan only
+
+
+STRATEGIC AIRCRAFT
+--------------------------------------------------------------------------------
+Heavy bombers USA B-2 + B-52 + B-1R (AAB); Russia Tu-22M3M; Turkey/NK Tu-22M3
+              (conventional — not B-2/B-52)
+AWACS         Turkey + NK UNIT_BUILD; others science SP (Specter stock)
+Tanker        Turkey + NK AAB
+Transport     Turkey + NK AAB; Nato/Japan UH-60 + CH-47; USA UH-60 AAB
+
+
+DRONES / UAVs
+--------------------------------------------------------------------------------
+TB2 / Akıncı / Anka-3   Turkey only (NK clones OFF CS)
+MQ-9 / MQ-4             USA; Nato MQ-9 (AF overlay + AAB)
+RQ-4 Global Hawk        Japan (functional ISR UAV)
+Heron / Switchblade     Nato AAB
+Hermes / Harop          Israel AF/AAB
+Shahed / Arash          Iran AAB
+Ababil / Sarab          Iraq, NK, India, Pakistan (Japan Ababil OFF air CS)
+CH-4B                   Saudi / UAE AAB (Arabic stock)
+Orion / Lancet / Orlan  Russia AAB
+CH-5 / GJ-11 / Asn-301  China AAB
+
+
+IMPLEMENTATION THIS PASS
+--------------------------------------------------------------------------------
+P0
+  - RussiaAirfieldCommandSet_T3/T4: Russian-only (strip China jet leak)
+  - Israel AirF_AmericaAirfieldCommandSet: IDF-only (no USA uniques)
+  - NatoAirfieldCommandSet overlay: MQ-9 + Heron
+  - India/Pakistan/Japan Ababil recon buttons → faction Objects
+  - Saudi/UAE/Ukraine AAB filled with realistic operator buttons
+  - Saudi/UAE/Ukraine VT72B + dozer CS → faction AdvancedAirBase
+  - PlayerTemplate starts → faction VT72B
+  - America AAB: added F-15E slot
+
+NOT CHANGED (correct)
+  - USA-only B-2/B-52
+  - Turkey KAAN/TB2/Anka identity
+  - NK Turkish-clone air remains PRODUCTION_DISABLED
+
+
+BALANCE
+--------------------------------------------------------------------------------
+CountryBalance AircraftCostMult still applies (USA/Nato/China high;
+Iraq/Iran/NK cheaper). Heavy bombers remain MaxSim=1 / expensive tier.
+
+
+TOOLING
+--------------------------------------------------------------------------------
+apply_country_balance.py → apply_build_limits.py → generate_sync_manifest.py
+sync_audit.py → PASS
+
+See MISSING_AIRCRAFT_ASSETS.txt for placeholder art / stock dependencies.

@@ -1,0 +1,61 @@
+MISSING AIRCRAFT ASSETS
+Specter-Patch | branch cursor/aircraft-expansion-f792
+================================================================================
+
+PATCH-LOCAL .w3d
+--------------------------------------------------------------------------------
+None. All aircraft art uses Specter archive models (overlay-only policy).
+
+
+PLACEHOLDER / PROXY MODELS (documented, retained)
+--------------------------------------------------------------------------------
+Unit                 Model proxy      Notes
+-------------------  ---------------  ------------------------------------------
+America_B2           US_B1R           No dedicated B-2 W3D
+Turkey/NK B2         US_B1R           PRODUCTION_DISABLED
+Turkey_KAAN          US_F22A          5th-gen proxy
+Turkey_TB2/Akinci    US_MQ9           UAV proxy
+Turkey_Anka3         US_F35A          Proxy
+Turkey_T129/Hurjet   AH-64 / F-16     Proxies
+Japan_F15J           US_F15E          Proxy
+Japan_RQ4GlobalHawk  US_MQ9           ISR UAV proxy (functional aircraft)
+India_Su30MKI        Su-family art    Specter proxy
+Pakistan_F16C        F-16 art         Specter
+
+
+STOCK BUTTON DEPENDENCIES (not defined in patch/)
+--------------------------------------------------------------------------------
+These CommandSets reference Specter stock CommandButtons. Required for:
+  Nato / USA / Russia / China / Iran / Israel AAB & AF overlays
+  SaudiArabia_AdvancedAirBaseCommandSet:
+    Command_ConstructArabicF15SA, ArabicF16C_E, ArabJetEF2000AA,
+    ArabicArmy_EF2000, ArabicAH64D, Arab_UH60, ArabDroneCH4B
+  UAE_AdvancedAirBaseCommandSet:
+    ArabicF16C_E, EgyptJetRafaleDM, ArabJetEF2000AA, ArabicAH64D,
+    Arab_UH60, ArabDroneCH4B
+  Russia Airfield/AAB: Command_ConstructRussian_Su57, Su35, …
+  Israel: Command_ConstructIsrael_F15I_AA / F16I / F35I + Hermes/Harop
+
+If a future Specter build renames these buttons, re-audit and add patch aliases.
+
+
+OBJECTS NOT YET AUTHORED (future identity pass)
+--------------------------------------------------------------------------------
+Native Ukraine MiG-29 / Su-27 / Su-24 / Su-25 / Bayraktar objects
+Native Saudi F-15SA / F-16 / Typhoon objects (currently Arabic stock Side)
+Native UAE F-16E / Rafale objects (currently Arabic/Egypt stock Side)
+Dedicated AWACS/Tanker UNIT_BUILD for USA/Nato/Russia/India/Pakistan
+Iron Dome / Arrow aircraft-adjacent AD (see missile reports)
+
+
+SAFE POLICY WHEN ASSETS MISSING
+--------------------------------------------------------------------------------
+1. Keep Specter-existing W3D proxy; never Model=None on player aircraft.
+2. Prefer stock operator buttons over cloning USA uniques to other nations.
+3. Document proxies here; do not ship identical 5th-gen kits to every faction.
+
+
+STATUS
+--------------------------------------------------------------------------------
+Player-path aircraft expansion wired per AIRCRAFT_EXPANSION_REPORT.txt.
+sync_audit.py: PASS

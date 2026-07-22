@@ -1,0 +1,120 @@
+GROUND SYSTEMS EXPANSION REPORT
+Specter-Patch | branch cursor/ground-systems-expansion-f792
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Faction-specific missile launchers, artillery/rockets, and anti-ship TELs are
+wired by realistic operator. Patch-owned clones cover India/Pakistan/Turkey/
+Israel identity systems. USA/Russia/China/Iran use Specter stock Objects +
+CommandButtons (no invented button names). Kits are NOT shared across factions.
+
+
+1. USA
+--------------------------------------------------------------------------------
+System              Path                         Source
+------------------  ---------------------------  ------------------------------
+Patriot / MIM-104   AmericaDozer                 Stock CommandButtons
+HIMARS (M142)       AmericaWarFactory (stock)    Command_ConstructAmericaVehicleM142
+THAAD               AmericaWarFactory T2/T3/bare Stock Command_ConstructAmericaVehicleTHAAD
+LGM-30              AmericaDozer                 Strategic (separate audit)
+
+Nato dozer: NO US THAAD / LGM-30 (IRIS-T + Mantis + M777 instead).
+
+
+2. RUSSIA
+--------------------------------------------------------------------------------
+System              Path                         Source
+------------------  ---------------------------  ------------------------------
+S-400 / 91N6E       Dozer (91N6E) + WF (S400)    Stock
+S-500 style         WF slot 15 + Industrial Complex  Command_ConstructRussiaVehicleS500
+Iskander (9K720)    RussiaWarFactoryCommandSet   Stock button (patch re-asserts CS)
+Tornado-S family    WF Bm30                      Command_ConstructRussiaVehicleBm30
+Pantsir-S1M         WF                           Stock
+2A65 artillery site Dozer                        Stock
+
+Patch overrides RussiaWarFactoryCommandSet (Russian-only + S-500) and
+RussiaIndsturialComplexCommandSet (keeps S-500). Removed invented
+Command_ConstructRussiaIskander/TornadoS/Pantsir names from dozer.
+
+
+3. CHINA
+--------------------------------------------------------------------------------
+System              Path                         Source
+------------------  ---------------------------  ------------------------------
+HQ-9 site           ChinaDozer                   Command_ConstructChina_Hq9_Site
+HQ-9 vehicle        China/PLA WarFactory         Command_ConstructChinaVehicleHQ9
+PHL-03              China/PLA WarFactory         Command_ConstructChinaVehiclePHL03
+DF-21C              China/PLA WarFactory         Command_ConstructChinaVehicleDF21C
+DF-12 / DF-17 / DF-41  China/PLA WarFactory      Stock PLA buttons
+PLZ-05 artillery    China/PLA WarFactory         Stock
+
+ChinaWarFactoryCommandSet + PLAWarFactoryCommandSet overridden to PLA kit
+(stripped Russian T-72/S-400/Iskander cross-wires from stock China WF).
+
+
+4. IRAN
+--------------------------------------------------------------------------------
+System              Path                         Source
+------------------  ---------------------------  ------------------------------
+Bavar               IranDozer                    Command_ConstructIranBavarSiteAI
+Khordad-15          IranDozer                    Command_ConstructIranKhordad15SamSite
+Fateh-313           IranWarfactory (stock)       Command_ConstructIranVehicleFateh313
+Fattah / Khormshar  IranWarfactory (stock)       Stock
+Shahed launcher     IranWarfactory (stock)       Drone support TEL
+Sejjil silo         IranDozer                    Conventional policy
+
+
+5. TURKEY
+--------------------------------------------------------------------------------
+HISAR-A / HISAR-O / SIPER / Sungur / Korkut — Turkey WF (existing identity).
+Bora / TRG-230 / TRG-300 / TRLG — Turkey WF.
+SOM anti-ship/cruise TEL — NEW patch Object Turkey_SOM + button on WF T3/full.
+NK HISAR/SIPER/Bora clones remain PRODUCTION_DISABLED / off NK player CS.
+
+
+6. ISRAEL (AmericaAirForceGeneral)
+--------------------------------------------------------------------------------
+Iron Dome / David's Sling / Arrow — NEW patch AD site Objects + dozer buttons.
+Also: Patriot (AirF stock) + C-RAM (stock). Side=AmericaAirForceGeneral.
+
+
+7. INDIA
+--------------------------------------------------------------------------------
+Akash — dozer/worker via Command_ConstructIndia_Akash → IndiaFahad3SamSite
+        (spawn templates fixed to IndiaFahad3Launcher_*_AI).
+BrahMos — NEW India_BrahMos TEL on WarFactory / T3 (conventional AShM prereqs).
+
+
+8. PAKISTAN
+--------------------------------------------------------------------------------
+NASR — NEW Pakistan_NASR TEL (gated on SCIENCE_Pakistan_Alhussien).
+Babur — NEW Pakistan_Babur cruise TEL on WF / T3.
+
+
+9. OTHER COUNTRIES (country-specific, not shared USA/RU kits)
+--------------------------------------------------------------------------------
+Iraq / Saudi / UAE / Ukraine — Iraq-pattern Sam2/Fahad3/BM-21/Scud (no Patriot,
+  no HIMARS, no S-400, no PHL/DF).
+Japan — JapanFahad3SamSite on dozer (spawn → Japan launchers); no US THAAD.
+Nato — IRIS-T / Mantis / M777; optional stock Nato M142 on Nato WF only.
+
+
+10. FIXES THIS PASS
+--------------------------------------------------------------------------------
+- Removed invented CommandButtons from USA/Russia/China/Iran dozers.
+- Wired stock Specter button names for PHL/DF/Iskander/S-500/etc. via CS overrides.
+- Fixed India/Pakistan/Japan Fahad3 SpawnTemplateName ownership.
+- Softened BrahMos / SOM prereqs (no Al-Hussein science).
+- India dozer: Akash identity only (dropped duplicate Fahad3 slot).
+
+
+11. FILES
+--------------------------------------------------------------------------------
+CommandButton_GroundSystems_Expansion.ini
+CommandSet_FactionExpansion_Dozers.ini
+CommandSet_Russia_China_Completion.ini
+CommandSet_{India,Pakistan,Turkey}.ini
+Object/.../India_BrahMos.ini, Pakistan_{NASR,Babur}.ini, Turkey_SOM.ini
+Object/.../Israel_{IronDome,DavidsSling,Arrow}.ini
+Object/.../{India,Pakistan,Japan}/AirDefense Sites/Fahad3_AI.ini

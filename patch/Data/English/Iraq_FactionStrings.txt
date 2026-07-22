@@ -1,0 +1,9 @@
+INI:FactionIraq = Iraq
+TOOLTIP:BioStrategyLong_Iraq = Iraqi Armed Forces — conventional ground, air defense, Scud/Al-Hussein artillery, helicopter assault.
+GUI:BioFeatures_Iraq = Republican Guard, T-72/BMP force, Roland/SA-6 air defense, Mi-24/35 and Mi-8, Su-25/Mirage air arm. No FOAB or Tu-22 strike.
+SCIENCE:Iraq_GeneralAirPower = General Star: Air Power
+SCIENCE:Iraq_GeneralAirAssault = General Star: Air Assault
+SCIENCE:Iraq_GeneralArtillery = General Star: Artillery
+CONTROLBAR:ToolTipIraqGeneralAirPower = Unlocks Iraqi AWACS and reconnaissance sciences.
+CONTROLBAR:ToolTipIraqGeneralAirAssault = Unlocks Paradrop and Special Forces insertion.
+CONTROLBAR:ToolTipIraqGeneralArtillery = Unlocks conventional cruise/artillery strike upgrades.

@@ -1,0 +1,153 @@
+SPECTER PATCH — FINAL FACTION BALANCE REPORT
+============================================
+Date: 2026-07-22
+Branch: cursor/final-balance-audit-f792
+Scope: USA, NATO, Russia, China, Iran, Israel, Iraq, North Korea, Turkey,
+       India, Pakistan, Japan, Saudi Arabia, UAE, Ukraine
+
+Design rules applied
+--------------------
+1. Strong countries → stronger tech, higher Unit/AircraftCostMult + BuildTimeMult.
+2. Smaller / lower-economy countries → cheaper units, limited air/strategic depth.
+3. Nuclear capability stays realistic (NWS only; Japan/Nato/Iran/Turkey/Iraq non-NWS).
+4. No faction receives another country's unique aircraft without reason.
+5. Multiplayer sync: unique Object/Science/CommandButton IDs; LinkKeys; baked costs.
+
+
+A. ECONOMY INCOME (CountryBalance.ini — Oil / Supply / Industrial)
+------------------------------------------------------------------
+Country              Unit   Aircraft  BuildTime  Oil    Supply  Notes
+America              1.20   1.22      1.08       1.20   1.35    Top-tier tech premium
+AmericaAirForceGen   1.12   1.18      1.05       1.05   1.20    Israel Side bake target
+Israel               1.12   1.18      1.05       1.05   1.20    Aligned with AirF
+Nato                 1.18   1.20      1.06       1.10   1.30    High-tech, no independent nukes
+China                1.18   1.20      1.05       1.15   1.30    Peer competitor premium
+Russia               1.12   1.16      1.06       1.35   1.15    Oil tempered; air pricey
+Japan                1.08   1.14      1.02       0.90   1.20    High-tech air, energy-poor
+India                1.00   1.05      1.00       1.05   1.08    Mid power
+Turkey               0.98   1.02      1.00       0.95   1.00    Domestic drones favored
+SaudiArabia          1.05   1.08      1.02       1.10   1.05    Oil cut from 1.75 (was OP)
+UAE                  1.05   1.10      1.02       1.10   1.08    Oil cut from 1.70 (was OP)
+Iran                 0.90   0.92      0.98       1.05   0.85    Cheap asymmetric / drones
+Ukraine              0.95   0.98      1.00       0.90   0.92    Stub — PlayableSide=No
+Iraq                 0.85   0.88      0.95       1.15   0.88    Cheap army; oil tempered
+Pakistan             0.92   0.95      1.03       0.90   0.88    Cheap but limited
+NorthKorea           0.85   0.90      1.05       0.70   0.75    Cheap mass; slow build
+
+P0 fix: Saudi/UAE oil 1.75/1.70 + Iraq-cheap unit tree was an economy exploit.
+         OilIncomeMult reduced to 1.10 and stubs set PlayableSide=No until identity.
+
+
+B. UNIT COSTS / BUILD TIMES
+---------------------------
+- Costs/times are baked by patch/tools/economy/apply_country_balance.py from
+  PatchBaseCost markers × Country/Origin/TechClass/Category multipliers.
+- Strong sides (USA/NATO/China/Russia/Israel/Japan) pay more and build slower.
+- Iraq / Iran / NK / Pakistan stay cheaper with weaker air ceilings.
+- Domestic drones remain discounted via DroneCostMult / DomesticDroneCostMult.
+
+
+C. STARTING UNITS (PlayerTemplate_SpecterPatch.ini)
+---------------------------------------------------
+Playable:
+  Turkey / NK / Iraq / Pakistan / India / Japan → VT72B dozer + faction shortcut
+  Israel (AirF) → AirF dozer + Israel shortcut
+  USA / Nato / Russia / China / Iran → Specter base templates (unchanged this pass)
+
+Disabled stubs (PlayableSide=No):
+  SaudiArabia, UAE, Ukraine — still Iraq-copied CC/starts/sciences; not MP-safe.
+
+
+D. TECH PROGRESSION / NUCLEAR
+-----------------------------
+NWS / limited strategic:
+  USA          — full LGM/Trident (existing NuclearBalance)
+  North Korea  — Intrinsic NuclearCapability + Alhussien starter
+  Israel       — SCIENCE_IDFNukes Rank8 (Jericho), expensive
+  India        — Intrinsic NuclearCapability; Rank1 ballistic (Alhussien);
+                 Rank8 SCIENCE_India_StrategicNuclear;
+                 Abbas research/construct gated on StrategicNuclear
+  Pakistan     — Intrinsic NuclearCapability only (Alhussien no longer free);
+                 Rank1 ballistic; Rank8 SCIENCE_Pakistan_StrategicNuclear;
+                 Abbas research/construct gated on StrategicNuclear
+
+Non-NWS (no nuclear purchase):
+  Nato         — SCIENCE_NatoNukes IsGrantable=No
+  Japan        — Alhussien/FOAB/Tu-22 IsGrantable=No; Rank8 empty; Abbas research removed
+  Iran         — Sejjil conventional only
+  Turkey/Iraq  — FOAB/ballistic conventional; Turkey Abbas = Patch_StrategicLauncher
+                 (NOT Patch_Nuclear)
+
+Science button identity (MP-safe unique IDs):
+  Command_PurchaseScienceIndia_Alhussien / IndiaStrategicNuclear
+  Command_PurchaseSciencePakistan_Alhussien / PakistanStrategicNuclear
+  Command_PurchaseScienceIraq_Alhussien → SCIENCE_Alhussien
+  Command_PurchaseScienceTurkey_Alhussien → SCIENCE_Turkey_Alhussien
+  (Shared Command_PurchaseScienceAlhussien no longer used by non-Turkey ranks)
+
+
+E. AI PRODUCTION
+----------------
+- Added bare *_WarFactoryCommandSet aliases (T3 roster) for India, Pakistan,
+  Japan, Iraq so AI WF buildings resolving the bare name do not soft-fail.
+- Turkey/NK already had bare WF CommandSets.
+
+
+F. OVERPOWERED / IDENTITY FIXES
+-------------------------------
+1. Saudi/UAE high oil + cheap Iraq units → oil cut + PlayableSide=No.
+2. Ukraine Iraq stub → PlayableSide=No.
+3. Israel AAB stripped of USA Raptor / Comanche / Stealth / Aurora;
+   IDF-only: F-15I, F-16I, F-35I, Hermes, Harop.
+4. Turkey/NK leftover B-2/B-52 objects MaxSimultaneousOfType=0 (CS already disabled).
+5. India/Pakistan Abbas silos: MaxSim=1, LinkKey=Patch_Nuclear.
+6. Turkey Abbas: LinkKey=Patch_StrategicLauncher (non-NWS).
+7. NK F-16V (PRODUCTION_DISABLED) airfield prereq → NorthKorea_Airfield*.
+
+
+G. MISSING PREREQUISITES / REMAINING GAPS
+----------------------------------------
+FIXED this pass:
+  - India/Pakistan Rank8 unreachable StrategicNuclear (was dead Alhussien shared btn)
+  - India/Pakistan Abbas research/construct now require StrategicNuclear
+  - Japan nuclear-capable science buttons on Rank1/8
+  - Israel AAB stripped of USA uniques (balance leak; roster identity preserved as IDF)
+  - Shared Alhussien purchase button colliding Turkey vs Iraq sciences
+  - AI bare WarFactoryCommandSet missing for India/Pakistan/Japan/Iraq
+  - SYNC_MANIFEST regenerated; sync_audit PASS
+
+KNOWN remaining (out of scope / next identity pass):
+  - Saudi / UAE / Ukraine still lack faction-native Object trees (stubs).
+  - India / Pakistan / Japan ground trees still largely Iraq-derived chassis names;
+    air identity is in place (Su-30MKI / F-16C / F-15J roster).
+  - Israel jet CommandButtons live in Specter base data; patch only overrides CS.
+
+
+H. MULTIPLAYER SYNC
+-------------------
+Pipeline (must PASS):
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_build_limits.py
+  python3 patch/tools/economy/generate_sync_manifest.py
+  python3 patch/tools/economy/sync_audit.py
+
+Contracts enforced:
+  Unique Object / Science / CommandSet IDs
+  Lifetime Min==Max where required
+  PatchBaseCost bake idempotent
+  LinkKeys: Patch_AirDefense=10, Patch_StrategicLauncher=4,
+            Patch_ArtillerySite=6, Patch_Nuclear=1
+  SYNC_MANIFEST.sha256 regenerated
+
+
+I. VERDICT
+----------
+Playable balanced set: USA, NATO, Russia, China, Iran, Israel, Iraq, North Korea,
+Turkey, India, Pakistan, Japan.
+
+Not playable until identity complete: Saudi Arabia, UAE, Ukraine.
+
+Nuclear map is realistic. Unique aircraft no longer cross-leaked on Israel AAB.
+Economy follows strong=expensive / small=cheap.
+
+sync_audit.py: PASS (errors=0; vendor Data.zip warning only).

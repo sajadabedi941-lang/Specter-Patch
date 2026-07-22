@@ -23,7 +23,13 @@ RULES = [
     # (path substring, name regex, max, linkkey)
     ("/AirDefense Sites/", None, 10, "Patch_AirDefense"),
     ("/AirDefense/", None, 10, "Patch_AirDefense"),
-    ("/Buildings/", r".*(D30|Howitzer|100mm|Cannon|M777|FireBase|Artillery).*", 6, "Patch_ArtillerySite"),
+    # Exclude ParticleCannon / Jericho / LGM / Sejjil — those are Superweapon-class, not artillery sites
+    (
+        "/Buildings/",
+        r"^(?!.*(ParticleCannon|Jericho|Lgm30|LGM|Sejjil|Abbas)).*(D30|Howitzer|100mm|Cannon|M777|FireBase|Artillery).*",
+        6,
+        "Patch_ArtillerySite",
+    ),
     ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan).*", 4, "Patch_StrategicLauncher"),
     ("/Tracked/", r".*(MLRS|M270|Bm30).*", 4, "Patch_StrategicLauncher"),
 ]

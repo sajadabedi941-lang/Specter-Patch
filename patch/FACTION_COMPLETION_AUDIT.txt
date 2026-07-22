@@ -1,0 +1,76 @@
+FACTION COMPLETION AUDIT
+================================================================================
+Branch: cursor/faction-completion-audit-f792
+Overlay-only. Specter archives unmodified.
+sync_audit.py: PASS
+
+SUMMARY BY FACTION
+--------------------------------------------------------------------------------
+Faction     Ground/Air/AD/Arty/Naval     Economy   AI production   Gaps closed
+----------  ---------------------------  --------  --------------  -----------
+Russia      Specter stock (Su-57/35/34,  Yes        Stock WF/AF     AAB dozer +
+            Pantsir/S-400, Iskander,     Country    tiers           Russian-only
+            RS-28). Navy: none in stock. Russia                    AAB CS (was
+                                                                    China-mixed)
+China       Specter PLA (J-20/J-16/J-10, Yes        Stock           AAB dozer +
+            HQ-9, DF family). Navy: none Country                   PLA-only AAB
+                                         China                     CS; China
+                                                                   dozer cleaned
+                                                                   of Russia
+                                                                   constructs
+Iran        Specter + prior patch        Yes        Stock           Already wired
+            (F-14, Shahed, Sejjil        Country                   (prior PR)
+            conventional, Bavar)         Iran
+NATO        Specter Euro kit + prior     Yes        Stock           Already wired;
+            patch (no US LGM)            Nato                      single Side
+                                                                   (no DE/FR/UK
+                                                                   PlayerTemplates)
+USA         Specter + B-2/B-52/LGM       Yes        Stock `_T`      Already wired
+            patch                        America
+Israel      AirF/IDF kit + Jericho       Yes        Stock AirF      Already wired
+            (prior PR)                   Israel+
+                                         AirF
+India       NEW playable overlay         Yes        Player CS =     Stub→full:
+            Su-30MKI + MiG/Su/Mirage/    Country    AI factory IDs  Science,
+            Mi-35 identity air; Soviet-  India                     buttons, CS,
+            pattern ground from Iraq                               buildings,
+            rename (no Tu-22/Mi-28)                                unique air
+Pakistan    NEW playable overlay         Yes        Same            F-16C unique +
+            F-16C + Mirage/MiG/Su-22;    Country                   Mirage path;
+            nuclear start science        Pakistan                  NWS early path
+Japan       NEW playable overlay         Yes        Same            F-15J/F-2/
+            F-15J, F-2, F-35A, AH-64D,   Country                   F-35A/AH-64/
+            UH-60J, CH-47J, RQ-4;        Japan                     CH-47; NO
+            NO nuclear; no Scud/Abbas                              nuclear
+
+AIRCRAFT SHARING POLICY
+--------------------------------------------------------------------------------
+- USA B-2/B-52 / LGM: USA only
+- Russia Flankers / Su-57: Russia AAB only (China jets removed from Russia AAB)
+- China J-20/J-16/J-10: China only
+- India Su-30MKI: India-only Object (Russia proxy model)
+- Pakistan F-16C: Pakistan-only Object (USA proxy model) — historically operated
+- Japan F-15J/F-2/F-35A: Japan-only Objects (USA proxy models) — historically operated
+- Nato Eurofighter/Rafale: Nato only
+- Israel F-15I/F-16I/F-35I: Israel/AirF only
+
+NUCLEAR
+--------------------------------------------------------------------------------
+Russia/China/USA/Israel: Specter + prior nuclear balance overlays
+Pakistan: starts with SCIENCE_Pakistan_NuclearCapability + Alhussien
+India: SCIENCE_India_NuclearCapability + Rank8 StrategicNuclear purchasable
+Japan: non-nuclear — FOAB/Tu-22 cruise sciences non-grantable; no Scud/Abbas
+
+FILES ADDED (high level)
+--------------------------------------------------------------------------------
+CommandSet_Russia_China_Completion.ini
+CommandButton_{India,Pakistan,Japan}.ini
+CommandSet_{India,Pakistan,Japan}.ini
+Science_{India,Pakistan,Japan}.ini
+Object trees under Indian Armed Forces / Pakistan Armed Forces / Japan SDF
+FACTION_COMPLETION_AUDIT.txt (this file)
+
+PLACEHOLDER MODELS
+--------------------------------------------------------------------------------
+India_Su30MKI, Pakistan_F16C, Japan_F15J/F2/F35A/AH64D/UH60J/CH47J/RQ4 —
+Specter proxy art; documented in object headers.

@@ -1,0 +1,64 @@
+AIR SUPPORT AUDIT
+Specter-Patch | branch cursor/aircraft-support-awacs-f792
+================================================================================
+
+1. SUPPORT AIRCRAFT INVENTORY (patch-owned)
+--------------------------------------------------------------------------------
+Unit                Role                 CS / Button                         Status
+------------------  -------------------  ----------------------------------  --------
+Turkey_AWACS        AEW&C                AAB slot10 ConstructTurkey_AWACS    BUFFED
+Turkey_Tanker       Tanker               AAB slot11 ConstructTurkey_Tanker   BUFFED
+Turkey_Transport    Fixed-wing airlift   AAB slot12 ConstructTurkey_Transport BUFFED + cargo
+Turkey_Mi-8T        Heilo transport      Airfield/AAB ConstructTurkey_Mi-8T  BUFFED
+Turkey_IL-76        Heavy paradrop SP    ScienceObjects (OCL paradrop)       BUFFED
+US_E3G_AWACS        America SP spawn     SuperweaponAmerica_AWACS OCL        BUFFED overlay
+RUS_A50_AWACS       Russia SP spawn      SuperweaponRussianAWACS OCL         BUFFED overlay
+Arab_E3A_AWACS      Arabic SP spawn      SuperweaponArabicAWACS OCL          BUFFED overlay
+
+
+2. TANKER / TRANSPORT CHANGES
+--------------------------------------------------------------------------------
+Turkey_Tanker:
+  HP 1100→1600 | Vision 140→220 | Shroud 200→320
+  Prereq Turkey_AdvancedAirBase | LinkKey Patch_SupportAircraft
+  Locomotor B52H → Soloviev_D-30 (slightly improved cruise)
+
+Turkey_Transport:
+  HP 1200→1700 | Vision 140→200 | Shroud 200→300
+  Added TransportContain Slots=18 (INFANTRY+VEHICLE)
+  KindOf += TRANSPORT | Prereq AAB | LinkKey Patch_SupportAircraft
+
+Turkey_Mi-8T (air assault):
+  HP 500→750 | Vision 300→350 | Shroud 600→700
+  Transport slots 8→12 | MaxBoxes 8→10 | NumRopes 4→6
+  EvasionRate 45%→55% | PerRopeDelay Min=Max=1000 (MP deterministic)
+  MaxSimultaneousOfType = 4
+
+Turkey_IL-76 (heavy science transport):
+  HP 1000→1600 | Vision 140→280 | Slots remain 100 (paradrop)
+
+
+3. COMMAND BUTTONS / SETS / OBJECT LINKS
+--------------------------------------------------------------------------------
+Command_ConstructTurkey_AWACS     → Object Turkey_AWACS       OK
+Command_ConstructTurkey_Tanker    → Object Turkey_Tanker      OK
+Command_ConstructTurkey_Transport → Object Turkey_Transport   OK
+Command_ConstructTurkey_Mi-8T     → Object Turkey_Mi-8T       OK
+Turkey_AdvancedAirBaseCommandSet slots 10–12 unchanged (no removals)
+Airfield Mi-8 slots unchanged
+
+
+4. PREREQUISITES / BUILD LIMITS / AI
+--------------------------------------------------------------------------------
+AWACS: AAB + F-16V escort (buildable)
+Tanker/Transport: AAB
+Mi-8: SupplyCenter (unchanged)
+Shared fleet: Patch_SupportAircraft MaxSim=2 (AWACS counts as 1 of 2)
+Science AWACS: Rank/cost gated; long SP reload — AI uses existing SP buttons
+  (Command_*AWACS / FromShortcut) — not removed
+
+
+5. STOCK AMERICA SUPPORT (not removed)
+--------------------------------------------------------------------------------
+Chinook / CH-47 / UH-60 remain on stock America air/helo CommandSets.
+No patch override deletes those buttons.

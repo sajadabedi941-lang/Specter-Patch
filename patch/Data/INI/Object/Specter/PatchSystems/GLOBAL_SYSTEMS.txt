@@ -1,17 +1,23 @@
 SPECTER PATCH — Global Systems Contract
 =======================================
 
-1) Advanced Air Base
+1) Advanced Air Base (final global system)
    - Object naming: <SidePrefix>_AdvancedAirBase
-   - Model: US_AirField (6 runway parking bones)
-   - ParkingPlaceBehavior NumRows=1 NumCols=6 HasRunways=Yes
+   - Model: US_AirField (runway parking bones; ExtraPublicBones Runway1–8 + HeliPark)
+   - ParkingPlaceBehavior NumRows=2 NumCols=8 HasRunways=Yes (16 aircraft slots)
+   - HealAmountPerSecond=25 (parked repair / reload support)
+   - MaxHealth=3200 StructureArmor + BaseRegenerateUpdate
    - MaxSimultaneousOfType (air bases): 4 per faction
-   - Produces tactical + heavy aircraft (AWACS / bomber / tanker / transport)
-   - Replaces tiered "simple airfield upgrade" progression for new patch factions
+   - Produces fighters / bombers / AWACS / tanker / transport / heavy
+   - JetAIUpdate ReturnToBaseIdleTime + OutOfAmmoDamagePerSecond = fuel/RTB
+   - CommandSet_AdvancedAirBase.ini (production + dozer wiring)
+   - CommandButton_AdvancedAirBase_*.ini + Aircraft_AAB_Global.ini
+   - Replaces Strategy Center build role; stock Airfields keep tactical helos/fighters
    - Files:
        PatchSystems/AdvancedAirBase_AllFactions.ini   (America/Russia/China/Iran/Iraq/Nato/GLA)
-       PatchSystems/AdvancedAirBase_FutureFactions.ini (Israel/AirF, Ukraine…Japan, NorthKorea)
-       Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini (fully wired)
+       PatchSystems/AdvancedAirBase_FutureFactions.ini (AirF/Israel, Ukraine…Japan, NorthKorea)
+       PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+       Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini (KAAN / F-16V / heavies)
 
 2) Heavy aircraft scale
    - Bombers / AWACS / tankers / transports: Scale 0.70 to 0.85

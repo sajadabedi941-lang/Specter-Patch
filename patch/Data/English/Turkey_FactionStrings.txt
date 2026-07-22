@@ -184,3 +184,19 @@ CONTROLBAR:UpgradeTurkey_KAANAvionics = KAAN Avionics
 CONTROLBAR:ToolTipUpgradeTurkey_InfantryKit = Issues MPT-76 grenade kits and modern infantry loadouts.
 CONTROLBAR:ToolTipUpgradeTurkey_AltayFireControl = Improves Altay targeting and battle management.
 CONTROLBAR:ToolTipUpgradeTurkey_KAANAvionics = Improves KAAN sensor fusion and BVR employment.
+
+
+; ---- Turkey ground playable units ----
+OBJECT:Turkey_BMP-1 = ACV-15 / BMP-1 (Turkey)
+OBJECT:Turkey_BMP-2 = ACV / BMP-2 (Turkey)
+OBJECT:Turkey_BTR-90 = Otokar APC (Turkey)
+OBJECT:Turkey_Projectile_Altay_AP = Altay APFSDS
+OBJECT:Turkey_Projectile_Altay_HE = Altay HE
+OBJECT:Turkey_Projectile_HISAR_A = HISAR-A Missile
+OBJECT:Turkey_Projectile_HISAR_O = HISAR-O Missile
+OBJECT:Turkey_Projectile_Korkut = Korkut 35mm
+OBJECT:Turkey_Projectile_BMP = IFV Shell
+OBJECT:Turkey_Projectile_BTR = APC Shell
+OBJECT:Turkey_Projectile_Harith = Harith AT Missile
+OBJECT:Turkey_Projectile_Grenade = Rifle Grenade
+OBJECT:Turkey_Projectile_Sungur = Sungur Missile

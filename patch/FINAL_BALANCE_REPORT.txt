@@ -26,16 +26,16 @@ Russia               1.12   1.16      1.06       1.35   1.15    Oil tempered; ai
 Japan                1.08   1.14      1.02       0.90   1.20    High-tech air, energy-poor
 India                1.00   1.05      1.00       1.05   1.08    Mid power
 Turkey               0.98   1.02      1.00       0.95   1.00    Domestic drones favored
-SaudiArabia          1.05   1.08      1.02       1.10   1.05    Oil cut from 1.75 (was OP)
-UAE                  1.05   1.10      1.02       1.10   1.08    Oil cut from 1.70 (was OP)
+SaudiArabia          1.05   1.08      1.02       1.10   1.05    Playable; oil cut from 1.75
+UAE                  1.05   1.10      1.02       1.10   1.08    Playable; oil cut from 1.70
 Iran                 0.90   0.92      0.98       1.05   0.85    Cheap asymmetric / drones
-Ukraine              0.95   0.98      1.00       0.90   0.92    Stub — PlayableSide=No
+Ukraine              0.95   0.98      1.00       0.90   0.92    Playable (Iraq-copy start)
 Iraq                 0.85   0.88      0.95       1.15   0.88    Cheap army; oil tempered
 Pakistan             0.92   0.95      1.03       0.90   0.88    Cheap but limited
 NorthKorea           0.85   0.90      1.05       0.70   0.75    Cheap mass; slow build
 
-P0 fix: Saudi/UAE oil 1.75/1.70 + Iraq-cheap unit tree was an economy exploit.
-         OilIncomeMult reduced to 1.10 and stubs set PlayableSide=No until identity.
+P0 fix: Saudi/UAE oil 1.75/1.70 cut to 1.10 (economy). Factions remain playable
+         via Iraq-copy starts pending native identity trees.
 
 
 B. UNIT COSTS / BUILD TIMES
@@ -54,8 +54,8 @@ Playable:
   Israel (AirF) → AirF dozer + Israel shortcut
   USA / Nato / Russia / China / Iran → Specter base templates (unchanged this pass)
 
-Disabled stubs (PlayableSide=No):
-  SaudiArabia, UAE, Ukraine — still Iraq-copied CC/starts/sciences; not MP-safe.
+Playable Iraq-copy (pending native identity):
+  SaudiArabia, UAE, Ukraine — own CC Side; start Iraq_VT72B + Iraq sciences/shortcut.
 
 
 D. TECH PROGRESSION / NUCLEAR
@@ -145,7 +145,7 @@ I. VERDICT
 Playable balanced set: USA, NATO, Russia, China, Iran, Israel, Iraq, North Korea,
 Turkey, India, Pakistan, Japan.
 
-Not playable until identity complete: Saudi Arabia, UAE, Ukraine.
+All listed factions playable (Saudi/UAE/Ukraine via Iraq-copy starts).
 
 Nuclear map is realistic. Unique aircraft no longer cross-leaked on Israel AAB.
 Economy follows strong=expensive / small=cheap.

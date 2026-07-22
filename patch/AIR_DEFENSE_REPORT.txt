@@ -1,0 +1,84 @@
+AIR DEFENSE REPORT
+Specter-Patch | branch cursor/ground-systems-expansion-f792
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Air defense is faction-identity based. Strategic/long-range systems are not
+copied across rivals. LinkKey Patch_AirDefense (MaxSim=10) applies to patch
+AD sites with BuildCost.
+
+
+1. BY FACTION — PLAYER PATH
+--------------------------------------------------------------------------------
+Faction     Systems (player-constructable)
+----------  ----------------------------------------------------------------
+USA         Patriot Battery, MIM-104F (dozer); THAAD TEL (War Factory stock);
+            Avenger / Microwave SHORAD (stock WF)
+Nato        IRIS-T Sam site, Mantis C-RAM (dozer) — NO US Patriot/THAAD
+Russia      91N6E + Kashtan (dozer); S-400 vehicle, Pantsir-S1M, Tor-M2M,
+            S-500 (WF + Industrial Complex)
+China       HQ-9 site (dozer); HQ-9 vehicle, PGZ-04, Tor-M2 (PLA WF)
+Iran        Khordad-15, Bavar site (dozer); Pantsir-S1M / Tor (stock WF)
+Israel      Patriot (AirF), C-RAM, Iron Dome, David's Sling, Arrow (dozer)
+Turkey      HISAR-A/O, SIPER, Sungur, Korkut, SA-6, Roland, Sam2/Fahad3
+India       Akash (IndiaFahad3SamSite), Sam2, Roland, SA-6, Sam8, ZSU
+Pakistan    Fahad3 Sam site, Sam2, Roland, SA-6, Sam8, ZSU
+Japan       JapanFahad3SamSite, Sam2, Roland family (Iraq-pattern identity)
+Iraq/SA/UAE/UA  Sam2, Fahad3, Roland, SA-6, ZSU — no Western/Russian exclusive AD
+NK          Stock NK AD only; Turkish HISAR/SIPER clones OFF player CS
+
+
+2. PATCH-OWNED AD OBJECTS (this expansion)
+--------------------------------------------------------------------------------
+Object                  Side                      Prereq
+----------------------  ------------------------  ---------------------------
+Israel_IronDome         AmericaAirForceGeneral    AirF_AmericaPowerPlant
+Israel_DavidsSling      AmericaAirForceGeneral    AirF_AmericaPowerPlant
+Israel_Arrow            AmericaAirForceGeneral    AirF_AmericaPowerPlant
+IndiaFahad3SamSite      India                     India_PowerPlant
+PakistanFahad3SamSite   Pakistan                  Pakistan_PowerPlant
+JapanFahad3SamSite      Japan                     Japan_PowerPlant
+
+SpawnTemplateName ownership fixed:
+  India   → IndiaFahad3Launcher_{ABM,AAM}_AI
+  Pakistan→ PakistanFahad3Launcher_{ABM,AAM}_AI
+  Japan   → JapanFahad3Launcher_{ABM,AAM}_AI
+Israel sites still use Specter shared Iraq launcher slaves (no IDF launcher
+Object tree in patch); documented as stock-asset dependency.
+
+
+3. STOCK AD (not duplicated in patch Objects)
+--------------------------------------------------------------------------------
+AmericaPatriotBattery / AirF_AmericaPatriotBattery
+US_THAAD (AmericaVehicleTHAAD button)
+Russia91N6E, RussiaVehicleS400, RussiaVehicleS500, RussiaVehiclePantsirS1M
+China_Hq9_Site, ChinaVehicleHQ9
+IranKhordad15SamSite, IranBavarSiteAI
+NatoIRISTSamSite, NatoMantis
+IsraelBuildingC-RAM
+
+
+4. PREREQUISITES / COMMANDSETS
+--------------------------------------------------------------------------------
+Dozer CS: America / Nato / Iran / Israel(AirF) in CommandSet_FactionExpansion_Dozers.ini
+Russia / China dozers + WF AD vehicles in CommandSet_Russia_China_Completion.ini
+India Akash button: CommandButton_GroundSystems_Expansion.ini
+Turkey HISAR/SIPER: CommandButton_Turkey.ini + CommandSet_Turkey.ini
+
+
+5. WHAT WAS NOT SHARED (identity rule)
+--------------------------------------------------------------------------------
+- USA THAAD / HIMARS not given to Nato, Israel extras, or Iraq-pattern factions
+- Russia S-400/S-500/Pantsir not on China dozer/WF (China uses HQ-9 / PGZ)
+- China PHL/DF not on Russia WF
+- Turkey HISAR/SIPER/Bora not enabled for NK
+- Israel Iron Dome / Arrow not given to USA or Nato
+
+
+6. KNOWN GAPS / STOCK DEPENDENCY
+--------------------------------------------------------------------------------
+- Israel AD sites reuse Iraq launcher slave templates (models/weapons).
+- Display strings OBJECT:Israel_* may need localization table entries in art pack.
+- Command_ConstructIranBavarSiteAI name ends with _AI (Specter stock naming);
+  object is the player Bavar site — do not rename without stock Object change.

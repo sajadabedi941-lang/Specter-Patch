@@ -146,3 +146,8 @@ CONTROLBAR:ToolTipTurkeyUpgradeHisarNetwork = Improves layered HISAR/SIPER coord
 CONTROLBAR:ToolTipTurkeyUpgradeBoraGuidance = Improves Bora accuracy and response.
 UPGRADE:Turkey_HisarNetwork = HISAR Network Integration
 UPGRADE:Turkey_BoraGuidance = Bora Guidance Package
+
+; Faction selection / start-unit strings
+OBJECT:TurkeySystemSpecialPower = Special Powers
+CONTROLBAR:ConstructTurkey_VT72B = Dozer
+CONTROLBAR:ToolTipTurkey_VT72B = Turkish construction vehicle.

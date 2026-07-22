@@ -1,0 +1,75 @@
+TURKEY FACTION SELECTION INTEGRATION REPORT
+Specter-Patch | branch cursor/turkey-faction-selection-f792
+================================================================================
+
+SUMMARY
+-------
+Turkey is registered for Multiplayer and Skirmish faction selection via
+additive patch files only (NorthKorea / PlayableSide pattern). Original
+Specter archives were not modified. Compatibility audit PASS. sync_audit PASS.
+
+
+1. HOW SPECTER PICKS FACTIONS
+----------------------------
+Stock Specter has no FactionList.ini. Lobbies enumerate PlayerTemplate
+entries with PlayableSide = Yes (see stock FactionNorthKorea).
+
+
+2. PATCH WIRING (Turkey)
+------------------------
+PlayerTemplate FactionTurkey
+  File: Data/INI/PlayerTemplate_SpecterPatch.ini
+  PlayableSide = Yes          ← MP + Skirmish
+  Side / color  = Turkey / R:227 G:10 B:23
+  Tech root     = SCIENCE_Turkey + Rank1/3/8 CommandSets
+  Start         = Turkey_CommandCenter, Turkey_VT72B,
+                  TurkeySystemSpecialPowerShortcut
+  Flag / UI     = WatermarkTurkey, GameinfoTurkey, Turkey_Logo,
+                  SSObserverTurkey, LoadScreenImage=Turkey_Flag
+
+ControlBarScheme Turkey8x6 (Side Turkey)
+  File: Data/INI/ControlBarScheme_SpecterPatch.ini
+
+MappedImages + Art
+  MappedImages/HandCreated/Turkey_FactionImages.INI
+  Art/Textures/*.tga (flag, logo, watermark, observer, gameinfo)
+
+Basic tech tree
+  Science_Turkey.ini — SCIENCE_Turkey + General Star powers
+  Upgrade_Turkey.ini + Upgrade_FactionTech.ini (UAV/Fighter/ModernAD)
+  SCIENCE_Turkey_CommandSetRank* — doctrines / late-game abilities
+
+Registry notes (comment-only, engine-safe)
+  Data/INI/Multiplayer_Skirmish_FactionSelect_SpecterPatch.ini
+
+
+3. COMPATIBILITY / REFERENCES
+-----------------------------
+Tool: python3 patch/tools/economy/audit_turkey_faction_select.py
+
+Checked:
+  - Starting Objects exist (CC, VT72B, shortcut system)
+  - Rank + shortcut CommandSets exist
+  - SCIENCE_Turkey root exists
+  - MappedImages + TGA textures present
+  - ControlBarScheme Turkey8x6 Side=Turkey
+  - Picker strings in Turkey_FactionStrings.txt
+
+Fixes this pass:
+  - LoadScreenImage → Turkey_Flag (was GLA placeholder)
+  - SpecialPowerShortcutTurkeySystem: End token + UAVOverwatch slot
+  - Added OBJECT:TurkeySystemSpecialPower / VT72B construct strings
+
+
+4. WHAT WAS NOT DONE (by design)
+--------------------------------
+- No edits to Specter_Data* / Data.zip / stock PlayerTemplate.ini
+- No FactionList whitelist (would fight Specter’s auto-list)
+- ChallengeMode persona optional (not required for MP/skirmish)
+
+
+5. VERIFY
+---------
+  python3 patch/tools/economy/audit_turkey_faction_select.py
+  python3 patch/tools/economy/sync_audit.py
+Expected: both PASS

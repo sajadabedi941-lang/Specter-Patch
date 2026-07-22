@@ -148,3 +148,7 @@ SCIENCE:Turkey_GeneralStrategic = General Star: Strategic Forces
 CONTROLBAR:ToolTipTurkeyGeneralAirPower = Unlocks Turkey air-power science path (AWACS / Recon).
 CONTROLBAR:ToolTipTurkeyGeneralAirAssault = Unlocks Paradrop, SF Insertion, and AAB air-assault upgrades.
 CONTROLBAR:ToolTipTurkeyGeneralStrategic = Unlocks FOAB and Tu-22 cruise strike sciences.
+
+INI:FactionNorthKorea = North Korea
+TOOLTIP:BioStrategyLong_NorthKorea = North Korean Armed Forces — full playable Specter Patch faction.
+GUI:BioFeatures_NorthKorea = Ground army, layered air defense, missile forces, helicopter assault, Advanced Air Base, General Star powers.

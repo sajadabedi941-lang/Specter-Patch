@@ -1,0 +1,42 @@
+FACTION EXPANSION AUDIT — United States / NATO / Israel / Iran
+================================================================================
+Branch: cursor/faction-expansion-nuclear-f792
+Overlay-only under patch/. Specter archives unmodified.
+
+STATUS
+--------------------------------------------------------------------------------
+Faction          Playable source              Patch expansion
+---------------  ---------------------------  --------------------------------
+United States    Specter FactionAmerica       AAB + B-2/B-52 + LGM MaxSim=1
+                                              + dozer AAB + nuclear SP tiers
+NATO             Specter FactionNato          AAB Euro roster + dozer strip
+                                              America LGM/THAAD + NatoNukes OFF
+Israel           FactionIsrael (new) +        IDF kit on AmericaAirForceGeneral
+                 AirF branded as Israel       AAB F-15I/F-16I/F-35I/drones
+                                              Jericho limited nuclear
+Iran             Specter FactionIran          AAB F-14/Su/Shahed + Sejjil
+                                              CONVENTIONAL only (no nukes)
+
+UNIQUE IDENTITY (not shared across countries)
+--------------------------------------------------------------------------------
+USA:     F-22, F-35C, A-10, B-1R, B-2, B-52, AH-64, MQ-9, MQ-4, THAAD, Patriot,
+         LGM-30, Trident TEL
+NATO:    Rafale, Eurofighter, F-16D Blk52, F-35A, IRIS-T, Mantis, Caesar,
+         Leopard 2A7, Heron/Switchblade — NO USA LGM / B-2 / B-52
+Israel:  F-15I, F-16I, F-35I, Merkava, Iron Dome/C-RAM, Hermes 900, Harop,
+         Jericho III — NO USA LGM / B-2 / B-52
+Iran:    F-14A, MiG-29, Su-22/24/25, Panha 2091, Shahed 129/136, Arash-2,
+         Khordad-15, Bavar, Fateh/Fattah, Sejjil (conventional)
+
+ECONOMY
+--------------------------------------------------------------------------------
+CountryBalance: America, AmericaAirForceGeneral, Nato, Iran (existing)
+                Israel (added — High rating, drone domestic discount)
+PatchBaseCost bake on AmericaLgm30, Jericho, IranSejjilSilo
+
+MULTIPLAYER
+--------------------------------------------------------------------------------
+FOLDER_SIDE extended for USA / Israel / Iranian Army / NATO folders
+sync_audit.py must PASS after bake + manifest
+
+See also: NUCLEAR_CAPABILITY_BALANCE.txt

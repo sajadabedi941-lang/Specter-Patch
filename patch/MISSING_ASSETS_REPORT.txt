@@ -1,0 +1,59 @@
+MISSING ASSETS REPORT
+Specter-Patch custom units audit
+================================================================================
+
+PLACEHOLDER / PROXY MODELS (safe configuration retained)
+--------------------------------------------------------------------------------
+Unit              Model used     Notes
+----------------  -------------  ----------------------------------------------
+America_B2        US_B1R         PLACEHOLDER — no dedicated B-2 Spirit W3D in
+                                 Specter extract; B1R proxy + Scale=0.75.
+                                 Marked in object header + FIX_PATCH_FILES.
+Turkey_B2         US_B1R         Same proxy; PRODUCTION_DISABLED (USA-only).
+NorthKorea_B2     US_B1R         Same proxy; PRODUCTION_DISABLED (USA-only).
+
+America_B52       US_B52H        Specter has US_B52H — OK (not missing).
+Turkey_B52        US_B52H        OK; PRODUCTION_DISABLED.
+NorthKorea_B52    US_B52H        OK; PRODUCTION_DISABLED.
+
+Turkey_KAAN       US_F22A        Proxy for KAAN (Specter F-22A art).
+Turkey_F16V       US_F16CMB50    Specter F-16 art — OK.
+Turkey_Hurjet     US_F16CJ_*     F-16CJ proxy — OK.
+Turkey_T129       US_AH64E       AH-64E proxy for T129 — OK.
+Turkey_Anka3      US_F35A        F-35 proxy — OK.
+Turkey_TB2        US_MQ9*        MQ-9 proxy for TB2 — OK.
+Turkey_Akinci     US_MQ9*        MQ-9 proxy for Akıncı — OK.
+
+NK Turkish-clone objects use the same proxies but are PRODUCTION_DISABLED.
+
+PATCH-LOCAL .w3d
+--------------------------------------------------------------------------------
+None under patch/. All custom air art relies on Specter archive models.
+This is intentional overlay-only policy (do not edit Specter archives).
+
+SAFE PLACEHOLDER POLICY
+--------------------------------------------------------------------------------
+When a dedicated model is missing:
+  - Keep a Specter-existing W3D proxy (never Model = None on playable units).
+  - Document PLACEHOLDER_MODEL in object header and this report.
+  - Prefer Scale adjustment over inventing paths to non-existent files.
+
+OCL / WEAPON / PROJECTILE (Specter stock dependency)
+--------------------------------------------------------------------------------
+Custom bombers reference Specter stock:
+  OCL_AuroraDeathFinalBlowUp, OCL_AmericaJetB52DeathFinalBlowUp,
+  OCL_EjectPilots*, Mk82 / JASSM weapon templates, AN/ALQ-135, etc.
+These are NOT defined in patch/ — assumed present in Specter Data.zip.
+If a future Specter build removes them, re-audit and add patch stubs.
+
+BUTTON ART
+--------------------------------------------------------------------------------
+America_B2 / America_B52 buttons use ButtonImage = us_b1r (exists in Specter).
+Dedicated B-2 portrait not available — placeholder documented.
+
+ACTION ITEMS (optional future)
+--------------------------------------------------------------------------------
+1. Author or import a real B-2 W3D and swap America_B2 Model= lines.
+2. Add localized CONTROLBAR:ConstructAmerica_B2 / ToolTip strings if missing
+   from Specter string tables (engine may show raw keys until then).
+3. Consider Nato B-52 only if product design explicitly allows (currently NO).

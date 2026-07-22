@@ -1,0 +1,79 @@
+MISSILE SYSTEMS REPORT
+Specter-Patch | branch cursor/strategic-weapons-audit-f792
+================================================================================
+
+1. NUCLEAR / STRATEGIC SILOS
+--------------------------------------------------------------------------------
+System              Faction(s)           LinkKey / MaxSim        Notes
+------------------  -------------------  ----------------------  -----------------
+LGM-30 Minuteman    USA                  Patch_Nuclear / 1       Full ICBM
+Jericho III         Israel (AirF)        Patch_Nuclear / 1       Limited Rank8
+RS28                Russia               Specter stock           Full strategic
+ChinaNuclearMissile China                Specter stock           Full strategic
+Abbas silo          NK / India / Pakistan Patch_Nuclear / 1      NWS only
+Sejjil              Iran                 Superweapon             CONVENTIONAL
+Abbas               Iraq / Turkey        removed from player CS  Non-NWS
+
+
+2. BALLISTIC / CRUISE TELs (conventional unless noted)
+--------------------------------------------------------------------------------
+System              Factions on player CS              LinkKey
+------------------  ---------------------------------  -------------------------
+Scud / R11          Iraq pattern WFs (Iraq, IN, PK…)   Patch_StrategicLauncher
+Al-Hussein TEL      Iraq / NK / IN / PK WFs            Patch_StrategicLauncher
+BM-21               Iraq-pattern WFs                   Patch_StrategicLauncher
+TRG / Bora / TRLG   Turkey WF (identity)               Patch_StrategicLauncher
+NK TRG/Bora clones  PRODUCTION_DISABLED off NK CS      —
+Shahed drones       Iran AAB                           Drone (not nuclear)
+Tu-22 / cruise sci  Turkey Rank8 FOAB/Tu22 (FAE)       Conventional
+                    NK Rank8 FOAB/Tu22                 NWS conventional FAE ok
+
+
+3. AIR DEFENSE MISSILES
+--------------------------------------------------------------------------------
+System              Player path                        LinkKey
+------------------  ---------------------------------  -------------
+HISAR / SIPER       Turkey WF                          Patch_AirDefense
+Fahad3 / Sam sites  Iraq-pattern dozers                Patch_AirDefense
+Patriot / MIM-104   USA + Israel dozers                Specter stock
+C-RAM               Israel dozer                       Specter stock
+HQ-9 site           China dozer                        Specter stock
+S-400 / 91N6E       Russia dozer                       Specter stock
+Iron Dome           Not authored in patch objects      Future
+
+
+4. STRATEGIC BOMBERS
+--------------------------------------------------------------------------------
+America_B2 / America_B52 — USA Advanced Air Base only (expensive, MaxSim=1).
+No other faction receives B-2/B-52 on player CommandSets.
+
+
+5. HYPERSONIC PLACEHOLDERS
+--------------------------------------------------------------------------------
+SCIENCE_America_HypersonicPlaceholder  IsGrantable=No
+SCIENCE_Russia_HypersonicPlaceholder   IsGrantable=No
+SCIENCE_China_HypersonicPlaceholder    IsGrantable=No
+File: Data/INI/Science_NuclearBalance.ini
+No player purchase buttons (markers for future content only).
+
+
+6. COUNTRY-SPECIFIC NOTES
+--------------------------------------------------------------------------------
+USA      LGM + Trident SP cooldowns in SpecialPower_NuclearBalance.ini
+Russia   RS28 on RussiaDozerCommandSet; Tu-22M3 on AAB
+China    ChinaNuclearMissile restored on ChinaDozerCommandSet
+Israel   Jericho requires SCIENCE_IDFNukes (now Rank8 purchasable)
+Iran     Sejjil Enum SPECIAL_SCUD_STORM — conventional HE warhead policy
+NK       Starts with NuclearCapability + Alhussien; Abbas on dozer
+India/PK StrategicNuclear Rank8 gates Abbas research/construct; fire SP wired
+Japan    No nuclear; Abbas buttons annotated disabled (no object)
+Turkey   Conventional ballistic (TRG/Bora) retained; Abbas silo removed
+Saudi/UAE/Ukraine  Non-NWS Rank8 empty; Iraq dozer no longer builds Abbas
+
+
+7. REMAINING RISKS (Specter stock dependency)
+--------------------------------------------------------------------------------
+- Command_ConstructChinaNuclearMissile / Russia RS28 buttons live in Specter
+  stock CommandButton.ini (not duplicated in patch).
+- OCL SUPERWEAPON_AlabbasMissile shared across Abbas silos — Specter stock.
+- Iron Dome / Arrow as distinct objects not yet in patch.

@@ -171,3 +171,16 @@ CONTROLBAR:UpgradeTurkey_Tier3 = Tier III Production
 CONTROLBAR:ToolTipUpgradeTurkey_Tier1 = Unlocks expanded War Factory and Air Base production.
 CONTROLBAR:ToolTipUpgradeTurkey_Tier2 = Unlocks advanced vehicles and airframes.
 CONTROLBAR:ToolTipUpgradeTurkey_Tier3 = Unlocks elite armor and late air defense.
+
+
+; ---- Turkey identity content ----
+OBJECT:Turkey_Worker = Turkish Worker
+UPGRADE:Turkey_InfantryKit = Mehmetçik Combat Kit
+UPGRADE:Turkey_AltayFireControl = Altay Fire-Control Suite
+UPGRADE:Turkey_KAANAvionics = KAAN Avionics Package
+CONTROLBAR:UpgradeTurkey_InfantryKit = Infantry Combat Kit
+CONTROLBAR:UpgradeTurkey_AltayFireControl = Altay Fire Control
+CONTROLBAR:UpgradeTurkey_KAANAvionics = KAAN Avionics
+CONTROLBAR:ToolTipUpgradeTurkey_InfantryKit = Issues MPT-76 grenade kits and modern infantry loadouts.
+CONTROLBAR:ToolTipUpgradeTurkey_AltayFireControl = Improves Altay targeting and battle management.
+CONTROLBAR:ToolTipUpgradeTurkey_KAANAvionics = Improves KAAN sensor fusion and BVR employment.

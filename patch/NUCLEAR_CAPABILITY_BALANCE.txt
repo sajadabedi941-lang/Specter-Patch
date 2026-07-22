@@ -1,0 +1,29 @@
+NUCLEAR CAPABILITY BALANCE
+================================================================================
+
+Policy: nuclear weapons only for states with real nuclear capability.
+Different power levels and cooldowns via SpecialPower_NuclearBalance.ini.
+
+Faction            Nuclear?     Assets                         Cooldown / notes
+-----------------  -----------  -----------------------------  -----------------
+North Korea        YES (start)  Intrinsic Al-Hussein science   Early TEL path;
+                                Abbas / FOAB mid-late          FOAB = conventional FAE
+United States      YES (full)   LGM-30 silo (Rank8 dozer)      30 min (1800000 ms)
+                                Trident SP (Rank5)             12 min (720000 ms)
+                                M1075I TEL (Rank3 science)     theater
+                                B-2 / B-52 conventional/standoff MaxSim=1
+Israel             YES (limited) Jericho III (SCIENCE_IDFNukes  35 min (2100000 ms)
+                                Rank8, cost 5)                 MaxSim=1 silo
+NATO               NO           SCIENCE_NatoNukes disabled     US umbrella only
+                                LGM removed from Nato dozer
+Iran               NO           Sejjil = conventional MRBM     20 min SCUD_STORM
+                                HE weapons reinforced in patch No neutron enum
+Iraq               NO           FOAB/Tu-22 cruise disabled      Prior realism pass
+Turkey             NO nuclear   FOAB = conventional fuel-air   Not a NWS
+
+Files:
+  Science_NuclearBalance.ini
+  SpecialPower_NuclearBalance.ini
+  Weapon_Iran_ConventionalSejjil.ini
+  CommandSet_Nato_NuclearPolicy.ini
+  Object overlays: USA LGM30G, Israel Jericho, Iran SejjilSilo

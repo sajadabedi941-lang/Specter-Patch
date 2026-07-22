@@ -43,3 +43,11 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
    - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
      (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)
+
+5) Aircraft Combat System
+   - Role catalog + future model slots:
+       PatchSystems/AircraftCombat/AIRCRAFT_COMBAT_ROLES.txt
+       PatchSystems/AircraftCombat/FUTURE_MODEL_SLOTS.txt
+   - AWACS owns radar picture (Vision/Shroud >> fighters); slow / durable / expensive
+   - Gen4 / Gen5 TechClass rules for fighters; no Object removals
+   - Report: AIRCRAFT_COMBAT_SYSTEM_REPORT.txt

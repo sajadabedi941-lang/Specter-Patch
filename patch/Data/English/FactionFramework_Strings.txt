@@ -1,5 +1,6 @@
 // SPECTER PATCH - Faction framework strings (expansion)
-// Additive playable factions: structure only
+// Phase A: Specter-based frameworks only (temporary Nato/Iraq donors).
+// Additive playable factions: structure only — no unique unit rosters yet.
 
 INI:FactionBritain = Britain
 Side:Britain = Britain

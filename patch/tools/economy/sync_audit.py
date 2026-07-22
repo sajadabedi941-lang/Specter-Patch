@@ -21,6 +21,8 @@ INI = ROOT / "Data" / "INI"
 REPO = ROOT.parent
 
 FOLDER_SIDE = {
+    "PLA": "China",
+    "Armed Forces Of Russian Federation": "Russia",
     "United States Of America": "America",
     "Israel Defense Forces": "AmericaAirForceGeneral",
     "Iranian Army": "Iran",

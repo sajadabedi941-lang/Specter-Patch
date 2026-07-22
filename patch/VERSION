@@ -1,3 +1,3 @@
-Specter-Patch Phase B++ — unique ground/air/missile weapons (NO NAVAL)
-Faction Weapon_FactionExpansion.ini identities wired to MLRS/tank/AD/ballistic/AAM
-Britain F35BExpeditionary rename; sync_audit PASS; 0 ID collisions
+Specter-Patch Phases A–I — Ultimate Warfare Expansion + Safe Installer
+Use Install_SpecterPatch.bat (Windows). Never modifies .big / Data.zip / _SPEC_*.
+sync_audit PASS required for lobby package; verify with SYNC_MANIFEST.sha256

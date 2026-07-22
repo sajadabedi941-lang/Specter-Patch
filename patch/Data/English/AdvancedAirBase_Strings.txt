@@ -4,7 +4,7 @@
 
 OBJECT:Patch_AdvancedAirBase = Advanced Air Base
 CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = 16-pad advanced runway: fighters, bombers, AWACS, tanker, transport. Auto repair/reload/fuel at pads.
+CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large strategic air base: long runway, hangars, 16 pads, heavy aircraft support.
 
 OBJECT:Patch_America_F22 = F-22
 CONTROLBAR:ConstructPatch_America_F22 = F-22

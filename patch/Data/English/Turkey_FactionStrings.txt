@@ -104,7 +104,7 @@ CONTROLBAR:ToolTipTurkeyBuildTanker = Aerial refueling support aircraft.
 CONTROLBAR:ToolTipTurkeyBuildTransport = Heavy airlift transport.
 
 CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = 16-pad advanced runway for fighters, bombers, AWACS, tanker, and transport.
+CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large strategic air base: long runway, hangars, 16 pads, heavy aircraft support.
 
 OBJECT:Turkey_TRG230 = TRG-230
 OBJECT:Turkey_TRG300 = TRG-300 Kaplan

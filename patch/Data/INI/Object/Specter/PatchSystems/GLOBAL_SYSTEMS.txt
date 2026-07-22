@@ -18,6 +18,12 @@ SPECTER PATCH — Global Systems Contract
        PatchSystems/AdvancedAirBase_FutureFactions.ini (AirF/Israel, Ukraine…Japan, NorthKorea)
        PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
        Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini (KAAN / F-16V / heavies)
+   - Visual identity (presentation only):
+       Model US_AirField @ Scale 1.60 (larger than stock airfield)
+       Geometry ~180x118x40; portrait/button Patch_AdvancedAirBase
+       Damage states: DAMAGED / REALLYDAMAGED / RUBBLE
+       Art: Art/Textures/Patch_AdvancedAirBase.tga
+       MappedImage: MappedImages/HandCreated/AdvancedAirBase_Images.INI
 
 2) Heavy aircraft scale
    - Bombers / AWACS / tankers / transports: Scale 0.70 to 0.85

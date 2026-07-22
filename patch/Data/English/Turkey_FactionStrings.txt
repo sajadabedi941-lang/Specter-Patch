@@ -139,3 +139,35 @@ CONTROLBAR:ToolTipTurkeyUpgradeHisarNetwork = Improves layered HISAR/SIPER coord
 CONTROLBAR:ToolTipTurkeyUpgradeBoraGuidance = Improves Bora accuracy and response.
 UPGRADE:Turkey_HisarNetwork = HISAR Network Integration
 UPGRADE:Turkey_BoraGuidance = Bora Guidance Package
+
+
+; ---- Finished faction: selection / unique units / infantry / tiers ----
+OBJECT:TurkeySystemSpecialPower = Special Powers
+CONTROLBAR:ConstructTurkey_VT72B = Dozer
+CONTROLBAR:ToolTipTurkey_VT72B = Turkish construction vehicle.
+
+OBJECT:Turkey_Altay = Altay MBT
+CONTROLBAR:ConstructTurkey_Altay = Altay
+CONTROLBAR:ToolTipTurkeyBuildAltay = Turkish main battle tank — elite armor.
+
+OBJECT:Turkey_Infantry_Rifleman = Mehmetçik Rifleman
+OBJECT:Turkey_Infantry_MG = Mehmetçik Machine Gunner
+OBJECT:Turkey_Infantry_Engineer = Combat Engineer
+OBJECT:Turkey_Infantry_AT = Anti-Tank Infantry
+OBJECT:Turkey_Infantry_AA = MANPADS Team
+OBJECT:Turkey_Infantry_Mortar = Mortar Team
+OBJECT:Turkey_Infantry_Sniper = Sharpshooter
+OBJECT:Turkey_Infantry_ATGM = ATGM Team
+OBJECT:Turkey_Infantry_Mech = Mechanized Infantry
+OBJECT:Turkey_Infantry_Motor = Motorized Infantry
+OBJECT:Turkey_SpecialForces = Turkish Special Forces
+
+UPGRADE:Turkey_Tier1 = Industrial Expansion I
+UPGRADE:Turkey_Tier2 = Industrial Expansion II
+UPGRADE:Turkey_Tier3 = Industrial Expansion III
+CONTROLBAR:UpgradeTurkey_Tier1 = Tier I Production
+CONTROLBAR:UpgradeTurkey_Tier2 = Tier II Production
+CONTROLBAR:UpgradeTurkey_Tier3 = Tier III Production
+CONTROLBAR:ToolTipUpgradeTurkey_Tier1 = Unlocks expanded War Factory and Air Base production.
+CONTROLBAR:ToolTipUpgradeTurkey_Tier2 = Unlocks advanced vehicles and airframes.
+CONTROLBAR:ToolTipUpgradeTurkey_Tier3 = Unlocks elite armor and late air defense.

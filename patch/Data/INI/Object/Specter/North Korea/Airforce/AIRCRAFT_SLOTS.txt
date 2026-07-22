@@ -1,0 +1,19 @@
+SPECTER PATCH Phase 3 - NorthKorea Airfield Aircraft Slots (ACTIVE)
+================================================================
+
+Unique NorthKorea aircraft (buildable):
+  1 KAAN              NorthKorea_KAAN      cost 2200  time 22  template F-22A AA
+  2 F-16V             NorthKorea_F16V      cost 1800  time 16  template F-16CM Blk50
+  3 Hürjet            NorthKorea_Hurjet    cost 1300  time 14  template F-16CJ
+  4 T129 ATAK         NorthKorea_T129      cost 1500  time 18  template AH-64E
+  5 Anka-3            NorthKorea_Anka3     cost 1700  time 15  template F-35C (+DRONE)
+  6 Bayraktar TB2     NorthKorea_TB2       cost  900  time 10  template MQ-9 (NATO)
+  7 Bayraktar Akıncı  NorthKorea_Akinci    cost 1600  time 15  template MQ-9 (USA)
+
+Legacy Iraq-copy airframes remain available on full CommandSet (slots 8-10).
+
+Airfield upgrades:
+  Upgrade_NorthKorea_Countermeasures      1000 / 40s
+  Upgrade_NorthKorea_PrecisionMunitions   1200 / 45s
+  Upgrade_NorthKorea_AdvancedRadar        1500 / 50s
+  Upgrade_NorthKorea_AAMissile            1000 / 35s

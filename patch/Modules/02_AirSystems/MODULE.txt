@@ -1,0 +1,43 @@
+SPECTER PATCH — Module 02: Air Systems
+======================================
+Scope (later development; separate from faction creation):
+  - Advanced Air Base
+  - Aircraft Combat System (roles / future model slots)
+  - AWACS + air support aircraft
+  - Heavy aircraft (strategic bombers / scale notes)
+  - Global air-related system contracts
+  - Strategy Center → air doctrine science (global Patch/Nato; not Turkey faction select)
+
+Explicitly OUT of scope:
+  - Turkey (or any) faction selection / PlayerTemplate PlayableSide wiring
+  - Faction string picker keys for lobby display
+  - Turkey General Star / faction-tech doctrines
+  - Missile systems / ground combat
+  - Audit reports, SHA manifests, economy tooling
+
+Additive files in this module:
+  Modules/02_AirSystems/MODULE.txt
+  Data/INI/CommandSet_AdvancedAirBase.ini
+  Data/INI/CommandButton_StrategicAirBase.ini
+  Data/INI/Science_StrategicDoctrines.ini
+  Data/INI/Science_Z_AWACS_Balance.ini
+  Data/INI/SpecialPower_Z_AWACS_Balance.ini
+  Data/INI/Object/Specter/PatchSystems/AircraftCombat/AIRCRAFT_COMBAT_ROLES.txt
+  Data/INI/Object/Specter/PatchSystems/AircraftCombat/FUTURE_MODEL_SLOTS.txt
+  Data/INI/Object/Specter/PatchSystems/SupportAircraft/US_E3G_AWACS.ini
+  Data/INI/Object/Specter/PatchSystems/SupportAircraft/RUS_A50_AWACS.ini
+  Data/INI/Object/Specter/PatchSystems/SupportAircraft/Arab_E3A_AWACS.ini
+  Data/INI/Object/Specter/PatchSystems/HeavyAircraft/Russia_Tu160.ini
+  Data/INI/Object/Specter/PatchSystems/HeavyAircraft/China_H6.ini
+  Data/INI/Object/Specter/PatchSystems/HeavyAircraft/HeavyAircraft_FactionIDs.txt
+  Data/INI/Object/Specter/PatchSystems/GLOBAL_SYSTEMS.txt  (Module 02 pointer)
+
+Already on main (air foundations; owned by this module going forward):
+  Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+  Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+  Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+  Data/INI/Object/Specter/PatchSystems/HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt
+  Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini
+  Turkey Armed Forces/Airforce/* (unit content evolves here, not in Module 01)
+
+Module 01 (Turkey Faction Select) must not depend on this module to appear in lobbies.

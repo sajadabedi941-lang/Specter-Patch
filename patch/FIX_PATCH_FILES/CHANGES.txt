@@ -1,0 +1,40 @@
+CHANGES.txt — detailed repair list
+================================================================================
+
+P0 REALISM — B-2 / B-52
+--------------------------------------------------------------------------------
+[+ ] America_B2 / America_B52 objects (Side=America, MaxSim=1, Rank5+StrategyCenter)
+[+ ] Command_ConstructAmerica_B2 / B52 (UNIT_BUILD)
+[+ ] AmericaAirfieldCommandSet override adds slots 15-16
+[+ ] America_AdvancedAirBase uses America_AdvancedAirBaseCommandSet
+[- ] Turkey_AirfieldCommandSet / AAB: removed ConstructTurkey_B2/B52
+[- ] NorthKorea_AirfieldCommandSet / AAB: removed ConstructNorthKorea_B2/B52
+[i ] Turkey_* / NorthKorea_* B2/B52 objects kept with PRODUCTION_DISABLED banner
+
+P1 FUNCTIONAL — Turkey Prerequisites
+--------------------------------------------------------------------------------
+[f ] Turkey_F16V: AmericaAirfield → Turkey_Airfield Turkey_Airfield_T (all variants)
+[f ] Turkey_TB2: NatoAirfield + SCIENCE_NatoStealthJet → Turkey airfield + TR sciences
+[f ] Turkey_Akinci: AmericaStrategyCenter → Turkey_MIC + SCIENCE_Turkey_DroneCenter
+[f ] Turkey_KAAN / Turkey_Anka3: SCIENCE_StealthFighter → SCIENCE_Turkey_GeneralAirPower
+
+P1 IDENTITY — North Korea production
+--------------------------------------------------------------------------------
+[f ] Airfield T/T1/T2/T3/full + AAB: Turkish uniques → MiG/Su/Ababil/Sarab/Mi-35/Mi-8
+[f ] WarFactory T/T1/T2/T3/full: HISAR/TRG/Bora/SIPER/Korkut/Sungur → SA-6/ZSU/Sam8/Scud/BM-21
+[f ] MIC2/MIC3: SIPER/Bora/TRG/Hisar upgrades → Sam2/SA-6/Scud/Al-Hussein/Abbas/BM-21
+[i ] Clone Object INIs retained but PRODUCTION_DISABLED (not deleted — overlay safety)
+
+P2 DOCS / ASSETS
+--------------------------------------------------------------------------------
+[+ ] CUSTOM_UNITS_AUDIT.txt
+[+ ] MISSING_ASSETS_REPORT.txt
+[+ ] FIX_PATCH_FILES/*
+[i ] B-2 W3D missing → US_B1R placeholder documented
+
+POST-CHANGE TOOLING
+--------------------------------------------------------------------------------
+python3 patch/tools/economy/apply_country_balance.py
+python3 patch/tools/economy/apply_build_limits.py
+python3 patch/tools/economy/generate_sync_manifest.py
+python3 patch/tools/economy/sync_audit.py

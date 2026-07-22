@@ -97,11 +97,18 @@ CONTROLBAR:ConstructTurkey_B52 = B-52H
 CONTROLBAR:ConstructTurkey_AWACS = E-3G AWACS
 CONTROLBAR:ConstructTurkey_Tanker = Aerial Tanker
 CONTROLBAR:ConstructTurkey_Transport = Heavy Transport
-CONTROLBAR:ToolTipTurkeyBuildB2 = Stealth strategic bomber (scaled for runway).
-CONTROLBAR:ToolTipTurkeyBuildB52 = Heavy strategic bomber (scaled for runway).
+CONTROLBAR:ToolTipTurkeyBuildB2 = Limited-access stealth bomber. Requires Advanced Air Base + Rank 3. Max 1 strategic bomber.
+CONTROLBAR:ToolTipTurkeyBuildB52 = Limited-access heavy bomber. Requires Advanced Air Base + Rank 3. Max 1 strategic bomber.
 CONTROLBAR:ToolTipTurkeyBuildAWACS = Airborne early warning and control.
 CONTROLBAR:ToolTipTurkeyBuildTanker = Aerial refueling support aircraft.
 CONTROLBAR:ToolTipTurkeyBuildTransport = Heavy airlift transport.
+
+OBJECT:Russia_Tu160 = Tu-160 Blackjack
+CONTROLBAR:ConstructRussia_Tu160 = Tu-160
+CONTROLBAR:ToolTipRussiaBuildTu160 = Native Russian strategic bomber. Advanced Air Base. Up to 3 active.
+OBJECT:China_H6 = H-6 Strategic Bomber
+CONTROLBAR:ConstructChina_H6 = H-6
+CONTROLBAR:ToolTipChinaBuildH6 = Native Chinese strategic bomber. Advanced Air Base. Up to 3 active.
 
 CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
 CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large 6-pad runway for tactical and heavy aircraft.

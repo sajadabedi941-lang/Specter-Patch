@@ -5,6 +5,20 @@ Phases activated: A → I (land / air / missile / drone / air defense)
 Compatible with: Command & Conquer Generals Zero Hour + Specter mod
 Multiplayer: every lobby client must install THIS same package
 
+Exact installer files (must exist in this folder)
+-------------------------------------------------
+  patch/Install_SpecterPatch.bat
+  patch/Uninstall_SpecterPatch.bat
+  patch/Verify_SpecterPatch.bat
+  patch/INSTALLER_README.txt
+
+Companion engines (also required for full verify/rollback)
+---------------------------------------------------------
+  patch/Install_SpecterPatch.ps1
+  patch/Uninstall_SpecterPatch.ps1
+  patch/Verify_SpecterPatch.ps1
+  patch/SYNC_MANIFEST.sha256
+
 ---------------------------------------------------------
 QUICK START (Windows)
 ---------------------------------------------------------
@@ -16,10 +30,13 @@ QUICK START (Windows)
        generals.exe / GeneralsZH.exe / Data.zip / Art\ / Data\ ...
        patch\
          Install_SpecterPatch.bat
+         Uninstall_SpecterPatch.bat
+         Verify_SpecterPatch.bat
+         INSTALLER_README.txt
+         Install_SpecterPatch.ps1
          Data\
          Art\
          SYNC_MANIFEST.sha256
-         ...
 
 2. Right-click Install_SpecterPatch.bat → Run as administrator
    (recommended if the game is under Program Files)
@@ -90,14 +107,3 @@ Host and all clients must install the same patch package
 
 Do not mix partial copies. Do not edit files after install
 unless everyone updates together.
-
----------------------------------------------------------
-NOTE ABOUT .EXE
----------------------------------------------------------
-
-This package ships native Windows batch launchers that call
-PowerShell (built into Windows 10/11). No third-party .exe is
-required, and no Specter archives are rewritten.
-
-If your antivirus blocks .ps1 scripts, right-click the .bat
-files — they request ExecutionPolicy Bypass only for this run.

@@ -1,6 +1,6 @@
 @echo off
-setlocal EnableExtensions
-title Specter Ultimate Warfare Expansion ? Rollback / Uninstall
+setlocal EnableExtensions EnableDelayedExpansion
+title Specter Ultimate Warfare Expansion - Rollback / Uninstall
 cd /d "%~dp0"
 
 echo.
@@ -17,15 +17,21 @@ echo.
 set "PSEXE=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 if not exist "%PSEXE%" set "PSEXE=powershell.exe"
 
-"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Uninstall_SpecterPatch.ps1" %*
-set "ERR=%ERRORLEVEL%"
+if exist "%~dp0Uninstall_SpecterPatch.ps1" (
+  "%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Uninstall_SpecterPatch.ps1" %*
+  set "ERR=!ERRORLEVEL!"
+) else (
+  echo PowerShell uninstall script missing.
+  echo Manual rollback: restore files from SpecterPatch_Backup\<timestamp>\
+  set "ERR=1"
+)
 
 echo.
-if "%ERR%"=="0" (
+if "!ERR!"=="0" (
   echo UNINSTALL / ROLLBACK COMPLETED.
 ) else (
-  echo UNINSTALL FAILED  ^(exit code %ERR%^).
+  echo UNINSTALL FAILED  ^(exit code !ERR!^).
 )
 echo.
 pause
-exit /b %ERR%
+exit /b !ERR!

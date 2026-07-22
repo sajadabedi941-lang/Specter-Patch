@@ -1,0 +1,29 @@
+SPECTER PATCH — Module 01: Turkey Faction Select
+================================================
+Scope: Turkey appears and loads in Multiplayer + Skirmish faction selection.
+Does NOT include Advanced Air Base, aircraft combat, AWACS, or global air upgrades.
+
+Registration rule:
+  Specter has no FactionList.ini. PlayableSide=Yes on PlayerTemplate FactionTurkey
+  registers the side (same pattern as stock FactionNorthKorea).
+
+This module's delta files (vs main):
+  Data/INI/PlayerTemplate_SpecterPatch.ini   — LoadScreenImage=Turkey_Flag (+ comments)
+  Data/INI/CommandSet_Turkey.ini             — SpecialPowerShortcutTurkeySystem End token
+  Data/INI/CommandButton_Turkey.ini          — missing Tu22 shortcut button (CS slot 7)
+  Data/English/Turkey_FactionStrings.txt     — start-unit labels
+
+Already on main (required to appear/load; not reinvented here):
+  Data/INI/PlayerTemplate_SpecterPatch.ini   — FactionTurkey PlayableSide=Yes, color, start units
+  Data/INI/ControlBarScheme_SpecterPatch.ini — Turkey8x6
+  Data/INI/MappedImages/HandCreated/Turkey_FactionImages.INI
+  Art/Textures/{WatermarkTurkey,GameinfoTurkey,Turkey_Logo,SSObserverTurkey,Turkey_Flag}.tga
+  Data/INI/Science_Turkey.ini                — SCIENCE_Turkey root
+  Data/INI/CommandSet_Turkey.ini             — Rank + shortcut CommandSets
+  Data/INI/CommandButton_Turkey.ini          — Turkey buttons
+  Object/.../Turkey_CommandCenter.ini
+  Object/.../Tracked/VT72B.ini
+  Object/.../Turkey_Systems.ini              — TurkeySystemSpecialPowerShortcut
+
+Out of scope (Module 02 — Air Systems):
+  Advanced Air Base, Aircraft Combat, AWACS, air support, GLOBAL_SYSTEMS air upgrades

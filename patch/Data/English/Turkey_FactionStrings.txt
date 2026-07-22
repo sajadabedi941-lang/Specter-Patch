@@ -139,3 +139,74 @@ CONTROLBAR:ToolTipTurkeyUpgradeHisarNetwork = Improves layered HISAR/SIPER coord
 CONTROLBAR:ToolTipTurkeyUpgradeBoraGuidance = Improves Bora accuracy and response.
 UPGRADE:Turkey_HisarNetwork = HISAR Network Integration
 UPGRADE:Turkey_BoraGuidance = Bora Guidance Package
+
+
+; ---- Finished faction: selection / unique units / infantry / tiers ----
+OBJECT:TurkeySystemSpecialPower = Special Powers
+CONTROLBAR:ConstructTurkey_VT72B = Dozer
+CONTROLBAR:ToolTipTurkey_VT72B = Turkish construction vehicle.
+
+OBJECT:Turkey_Altay = Altay MBT
+CONTROLBAR:ConstructTurkey_Altay = Altay
+CONTROLBAR:ToolTipTurkeyBuildAltay = Turkish main battle tank — elite armor.
+
+OBJECT:Turkey_Infantry_Rifleman = Mehmetçik Rifleman
+OBJECT:Turkey_Infantry_MG = Mehmetçik Machine Gunner
+OBJECT:Turkey_Infantry_Engineer = Combat Engineer
+OBJECT:Turkey_Infantry_AT = Anti-Tank Infantry
+OBJECT:Turkey_Infantry_AA = MANPADS Team
+OBJECT:Turkey_Infantry_Mortar = Mortar Team
+OBJECT:Turkey_Infantry_Sniper = Sharpshooter
+OBJECT:Turkey_Infantry_ATGM = ATGM Team
+OBJECT:Turkey_Infantry_Mech = Mechanized Infantry
+OBJECT:Turkey_Infantry_Motor = Motorized Infantry
+OBJECT:Turkey_SpecialForces = Turkish Special Forces
+
+UPGRADE:Turkey_Tier1 = Industrial Expansion I
+UPGRADE:Turkey_Tier2 = Industrial Expansion II
+UPGRADE:Turkey_Tier3 = Industrial Expansion III
+CONTROLBAR:UpgradeTurkey_Tier1 = Tier I Production
+CONTROLBAR:UpgradeTurkey_Tier2 = Tier II Production
+CONTROLBAR:UpgradeTurkey_Tier3 = Tier III Production
+CONTROLBAR:ToolTipUpgradeTurkey_Tier1 = Unlocks expanded War Factory and Air Base production.
+CONTROLBAR:ToolTipUpgradeTurkey_Tier2 = Unlocks advanced vehicles and airframes.
+CONTROLBAR:ToolTipUpgradeTurkey_Tier3 = Unlocks elite armor and late air defense.
+
+
+; ---- Turkey identity content ----
+OBJECT:Turkey_Worker = Turkish Worker
+UPGRADE:Turkey_InfantryKit = Mehmetçik Combat Kit
+UPGRADE:Turkey_AltayFireControl = Altay Fire-Control Suite
+UPGRADE:Turkey_KAANAvionics = KAAN Avionics Package
+CONTROLBAR:UpgradeTurkey_InfantryKit = Infantry Combat Kit
+CONTROLBAR:UpgradeTurkey_AltayFireControl = Altay Fire Control
+CONTROLBAR:UpgradeTurkey_KAANAvionics = KAAN Avionics
+CONTROLBAR:ToolTipUpgradeTurkey_InfantryKit = Issues MPT-76 grenade kits and modern infantry loadouts.
+CONTROLBAR:ToolTipUpgradeTurkey_AltayFireControl = Improves Altay targeting and battle management.
+CONTROLBAR:ToolTipUpgradeTurkey_KAANAvionics = Improves KAAN sensor fusion and BVR employment.
+
+
+; ---- Turkey ground playable units ----
+OBJECT:Turkey_BMP-1 = ACV-15 / BMP-1 (Turkey)
+OBJECT:Turkey_BMP-2 = ACV / BMP-2 (Turkey)
+OBJECT:Turkey_BTR-90 = Otokar APC (Turkey)
+OBJECT:Turkey_Projectile_Altay_AP = Altay APFSDS
+OBJECT:Turkey_Projectile_Altay_HE = Altay HE
+OBJECT:Turkey_Projectile_HISAR_A = HISAR-A Missile
+OBJECT:Turkey_Projectile_HISAR_O = HISAR-O Missile
+OBJECT:Turkey_Projectile_Korkut = Korkut 35mm
+OBJECT:Turkey_Projectile_BMP = IFV Shell
+OBJECT:Turkey_Projectile_BTR = APC Shell
+OBJECT:Turkey_Projectile_Harith = Harith AT Missile
+OBJECT:Turkey_Projectile_Grenade = Rifle Grenade
+OBJECT:Turkey_Projectile_Sungur = Sungur Missile
+
+
+; ---- Final Turkey air projectiles / airfield ----
+OBJECT:Turkey_Projectile_KAAN_BVR = KAAN BVR Missile
+OBJECT:Turkey_Projectile_F16V_AA = F-16V AA Missile
+OBJECT:Turkey_Projectile_F16V_JDAM = F-16V JDAM
+OBJECT:Turkey_Projectile_TB2_MAML = Bayraktar MAM-L
+OBJECT:Turkey_Projectile_Akinci_MAM = Akıncı MAM
+CONTROLBAR:ConstructTurkey_Airfield = Airfield
+CONTROLBAR:ToolTipTurkeyBuildAirfield = Builds the Turkish Airfield.

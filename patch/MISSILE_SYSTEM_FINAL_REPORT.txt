@@ -1,0 +1,101 @@
+ADVANCED STRATEGIC MISSILE SYSTEM — FINAL REPORT
+Specter-Patch | branch cursor/strategic-missile-system-f792
+================================================================================
+
+SUMMARY
+-------
+Audited and expanded ballistic, cruise, hypersonic, mobile TEL, strategic base,
+and missile-defense integration layers. No existing missile units or weapons
+removed. Country identity stubs use stable Object IDs for future 3D swaps.
+sync_audit.py PASS.
+
+
+1. SYSTEMS
+----------
+Ballistic SRBM/MRBM   Fateh, Shahab, Khorramshahr, Iskander_Patch, DF21_Patch,
+                      Agni, Shaheen, Bora/TRG (Turkey), stock 9K720/DF*
+Cruise                America_CruiseTEL, SOM, BrahMos, Babur
+Hypersonic            LRHW, Zircon, DF17_Placeholder, Japan hypersonic
+Strategic / Nuclear   America_LGM_Placeholder (Patch_Nuclear), NASR, stock LGM/RS-28
+Mobile launchers      All TELs retain truck locomotor (relocate after fire)
+Strategic bases       USA/RU/CN StrategicMissileBase; Iran MissileWarningCenter
+Missile defense       HISAR/SIPER + Bavar/Khordad + stock Patriot/Pantsir/S-400/HQ-9
+                      + radar / warning vision buffs
+
+
+2. COUNTRY IDENTITY (patch + stock)
+-----------------------------------
+USA       LGM (stock dozer + LGM_Placeholder), CruiseTEL, LRHW, StrategicMissileBase,
+          Patriot (stock)
+Russia    Iskander (stock 9K720 + Iskander_Patch), Zircon, S-400/S-500 (stock),
+          StrategicMissileBase
+China     DF family (stock) + DF17_Placeholder + DF21_Patch, StrategicMissileBase, HQ-9
+Iran      Fateh, Shahab, Khorramshahr, Bavar/Khordad, MissileWarningCenter
+Turkey    Bora, SOM, SIPER/HISAR (Phase 4 + ground combat)
+India     BrahMos, Agni, Pinaka, Akash
+Pakistan  NASR (nuclear MaxSim=1), Shaheen, Babur
+
+
+3. BALANCE
+----------
+- Strategic TELs: high PatchBaseCost / long BuildTime (e.g. LGM 6500/40s, Agni 5000/34s)
+- Weapons (Weapon_StrategicMissiles.ini):
+    Cruise  range 900 / reload 120s
+    SRBM    range 750 / reload 150s
+    MRBM    range 1000 / reload 180s
+    Strategic ballistic range 1200 / reload 240s
+    Hypersonic range 1100 / reload 200s
+- Per-type MaxSim + shared Patch_StrategicLauncher / Patch_Nuclear
+- Hypersonic MaxSim=1; LGM/NASR MaxSim=1; MRBM identity MaxSim=2; Shahab=3
+- Strategic bases MaxSim=1 (no launcher LinkKey — does not eat TEL pool)
+
+
+4. DEFENSE / WARNING
+--------------------
+- Turkey RadarStation Vision 1800 / Shroud 2200 / Detection 2000
+- SIPER fire-control Detection/Vision retained high (prior ground combat)
+- Iran Bavar/Khordad detection raised; wired with Fateh/Shahab/Khorramshahr on AAB
+- USA/RU/CN StrategicMissileBase + Iran Warning Center: Vision 2200 / Detect 2400
+
+
+5. AI / SPAM PREVENTION
+-----------------------
+- Rank3–5 science gates on strategic TELs
+- LinkKey pools + per-type MaxSim (apply_build_limits.py tier rules)
+- High cost/time discourages early spam
+- AI notes: PatchSystems/MissileSystems/AI_MISSILE_USAGE.txt
+- Stock RU/CN WF kits retain tanks + AD + missiles for combined-arms AI
+
+
+6. AUDIT NOTES
+--------------
+Fixed / added this pass:
+  - Missing USA cruise + LGM patch identity
+  - Missing Iran Shahab / Khorramshahr
+  - Missing India Agni / Pakistan Shaheen
+  - Missing RU/CN patch identity forks (stock buttons retained)
+  - Strategic bases + Iran warning center
+  - Dedicated strategic weapons with long reload
+  - Hypersonic Rank5 + cost bump + MaxSim=1
+Kept:
+  All prior TELs, stock Specter buttons, Turkey Bora/SOM/HISAR/SIPER,
+  Ground-combat Iran tanks/AD, aircraft/AAB systems
+
+
+7. FILES
+--------
+Objects: PatchSystems/MissileSystems/* (new identity TELs)
+         PatchSystems/StrategicBases/*
+Weapons: Weapon_StrategicMissiles.ini
+Buttons: CommandButton_MissileSystems.ini (appended)
+CS: CommandSet_StrategicMissiles.ini, CommandSet_AdvancedAirBase.ini,
+    CommandSet_MissileSystems.ini
+Docs: MISSILE_ROLES / FUTURE_MODEL_SLOTS / AI_MISSILE_USAGE
+Report: patch/MISSILE_SYSTEM_FINAL_REPORT.txt
+Tools: apply_build_limits.py (tighter strategic MaxSim rules)
+
+
+8. SYNC
+-------
+Bake: apply_country_balance → apply_build_limits → generate_sync_manifest → sync_audit
+Result: PASS (errors=0)

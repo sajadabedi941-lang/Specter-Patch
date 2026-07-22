@@ -26,6 +26,11 @@ SPECTER PATCH — Global Systems Contract
    Patch_StrategicLauncher = 4    (MLRS / conventional strategic launchers)
    Patch_Nuclear           = 1    (nuclear SW buildings OR nuclear launchers)
 
+   Missile expansion Objects live under:
+     PatchSystems/MissileSystems/  and faction Wheeled/ trees
+   Hypersonic placeholders use StrategicLauncher with MaxSim 1–2.
+   Pakistan_NASR uses Patch_Nuclear (NWS tactical nuclear TEL).
+
 Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
 Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini

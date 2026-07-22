@@ -1,0 +1,129 @@
+ADVANCED AIR BASE REPORT
+Specter-Patch | branch cursor/advanced-airbase-finalize-f792
+================================================================================
+
+SUMMARY
+-------
+Advanced Air Base replaces Strategy Center as the strategic aviation / doctrine
+facility. Normal Airfield CommandSets stay stock (fighters/helicopters unchanged).
+Large aircraft (B-2, B-52, Tu-160, H-6, AWACS, Tanker, Transport, Tu-22, B-1R)
+build at Advanced Air Base by faction identity. No aircraft removed.
+sync_audit.py PASS.
+
+
+1. STRATEGY CENTER REMOVAL
+--------------------------
+Player dozers no longer build Strategy Center:
+  AmericaDozerCommandSet, NatoDozerCommandSet, AirF_AmericaDozerCommandSet
+  — slot 2 = *_AdvancedAirBase (not Strategy Center).
+
+Russia / China / Iran dozers: Advanced Air Base added (no Strategy Center role).
+
+All Strategy Center CommandSets (America / Nato / AirF / SupW / Lazr / tiers):
+  Sell-only — legacy buildings cannot produce upgrades/plans.
+
+
+2. ADVANCED AIR BASE BUILDING
+-----------------------------
+Object IDs (*_AdvancedAirBase):
+  America, Russia, China, Iran, Iraq, Nato, GLA, AirF_America,
+  Turkey, Ukraine, Pakistan, SaudiArabia, UAE, India, Japan, NorthKorea.
+
+DisplayName: OBJECT:Patch_AdvancedAirBase
+ParkingPlaceBehavior:
+  NumRows=2 NumCols=6 → 12 pads (vs normal airfield ~1×4)
+  HealAmountPerSecond=28 (repair / reload support)
+  HasRunways=Yes, ApproachHeight=100
+BattlePlanUpdate: ModuleTag_PatchBattlePlans (plans activate at AAB)
+PatchBaseCost class ~4200 (CountryBalance baked per Side)
+
+Files:
+  PatchSystems/AdvancedAirBase_AllFactions.ini
+  PatchSystems/AdvancedAirBase_FutureFactions.ini
+  Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini
+
+
+3. LARGE AIRCRAFT SUPPORT (AAB CommandSets)
+------------------------------------------
+Faction     AAB roster (identity)
+----------  ----------------------------------------------------------
+USA         B-1R + LRHW placeholder + battle plans
+Russia      Tu-22M3M + Tu-160 + Zircon placeholder
+China       H-6 + DF-17 hypersonic placeholder
+Turkey      B-2, B-52, AWACS, Tanker, Transport, Tu-22M3 + plans/upgrades
+Nato        Battle plans + HIMARS (no US strategic bombers)
+Iran        Fateh TEL (conventional) + pads
+Israel/AirF Battle plans shell
+Iraq/GLA/future  Pads + rally/sell (heavies when authored)
+
+Normal Airfield: NOT overridden — fighters/helos/drones remain.
+
+
+4. GENERAL POWERS / SCIENCE
+---------------------------
+Battle doctrines (Rank1 PurchaseScience):
+  America / Nato / Turkey / AirF — Bombardment, Hold the Line, Search and Destroy
+
+Former America Strategy Center upgrades → Rank3 sciences:
+  Chemical Suits, Composite Armor, Advanced Training, Supply Lines
+
+Activation: Command_InitiateBattlePlan* on Advanced Air Base.
+
+Files: Science_StrategicDoctrines.ini, CommandButton_StrategicAirBase.ini
+
+
+5. COMMANDSETS / BUTTONS / PREREQUISITES
+---------------------------------------
+Dozer construct buttons: CommandButton_AdvancedAirBase_SpecterFactions.ini
+  (all Specter + future faction Construct*_AdvancedAirBase)
+
+Authoritative AAB CS: CommandSet_AdvancedAirBase.ini
+Heavy aircraft Prerequisites: faction *_AdvancedAirBase
+  (Turkey B2/B52/AWACS/Tanker/Transport/Tu-22, Russia_Tu160, China_H6, etc.)
+
+Turkey dozer/worker: Command_ConstructTurkey_AdvancedAirBase
+Akinci: requires Turkey_AdvancedAirBase (not Strategy Center)
+
+
+6. AIRCRAFT SPAWN / CAPACITY / AI
+---------------------------------
+Spawn: ParkingPlaceBehavior 2×6 runway bones (US_AirField model family).
+Capacity: 12 simultaneous parked aircraft vs ~4 on normal airfield.
+Repair/reload: HealAmountPerSecond=28.
+AI: shared player dozer CS builds AAB instead of Strategy Center; Sell-only SC
+CommandSets prevent useful SC production if AI places a leftover SC.
+
+
+7. FACTION COMPATIBILITY
+------------------------
+All listed factions have AAB Objects + CommandSets (shell or roster).
+Future-faction construct buttons authored for Ukraine/Pakistan/Saudi/UAE/
+India/Japan/NorthKorea (wire to faction dozers when those CS are completed).
+Missile TELs on some AAB slots are additive and do not remove aircraft.
+
+
+8. AUDIT CHECKLIST
+------------------
+[x] Strategy Center removed from player America/Nato/AirF dozers
+[x] Russia/China/Iran dozers can build Advanced Air Base
+[x] SC CommandSets Sell-only
+[x] Doctrines / SC upgrades on General Stars
+[x] Large aircraft on AAB only (faction identity)
+[x] Normal airfields unchanged for fighters/helos
+[x] No aircraft removed
+[x] Prerequisites → *_AdvancedAirBase
+[x] Build buttons present
+[x] 12-pad parking + heal/repair
+[x] sync_audit.py PASS
+
+
+9. FILES
+--------
+CommandSet_AdvancedAirBase.ini
+CommandButton_AdvancedAirBase_SpecterFactions.ini
+CommandButton_StrategicAirBase.ini
+Science_StrategicDoctrines.ini
+Object/.../AdvancedAirBase_*.ini, Turkey_AdvancedAirBase.ini
+Object/.../HeavyAircraft/{Russia_Tu160,China_H6}.ini
+Turkey Airforce heavies (B2/B52/AWACS/Tanker/Transport/Tu-22)
+ADVANCED_AIRBASE_REPORT.txt (this file)

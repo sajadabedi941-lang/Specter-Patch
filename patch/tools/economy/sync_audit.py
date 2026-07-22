@@ -269,10 +269,14 @@ def main() -> int:
         (re.compile(r"(HISAR|SIPER|Korkut|Sungur)", re.I), "Patch_AirDefense"),
         (
             re.compile(
-                r"(TRG230|TRG300|TRLG230|Bora|BM-21|AbbasLauncher|Alhussaien|9P117|AlNida|Karrar)",
+                r"(TRG230|TRG300|TRLG230|Bora|BM-21|AbbasLauncher|Alhussaien|9P117|AlNida|BrahMos|Babur|SOM|Hrim|M142|ATACMS|Pinaka|FatehTEL)",
                 re.I,
             ),
             "Patch_StrategicLauncher",
+        ),
+        (
+            re.compile(r"NASR", re.I),
+            "Patch_Nuclear",
         ),
     ]
     for p in (INI / "Object").rglob("*.ini"):

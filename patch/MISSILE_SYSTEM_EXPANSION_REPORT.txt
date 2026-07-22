@@ -1,0 +1,118 @@
+MISSILE SYSTEM EXPANSION REPORT
+Specter-Patch | branch cursor/missile-system-expansion-f792
+================================================================================
+
+SUMMARY
+-------
+Audited missile/launcher/strategic weapon Objects and CommandSets. Fixed broken
+Turkey wiring, removed Iraq Sarab/Scud leakage from future-faction CCs, and
+added country-specific ballistic / cruise / hypersonic / mobile launcher systems
+without removing existing units. Faction identity preserved. Nuclear TELs gated
+to allowed NWS only (Pakistan NASR → Patch_Nuclear MaxSim=1).
+
+sync_audit.py: PASS (errors=0)
+
+
+FIXES
+-----
+1. Turkey_AlhussaienCommandSet: replaced missing Command_BuyAlhussaienMissile
+   with Command_Turkey_AlAbidMissileStrike (armed fire path).
+2. Added Command_Tu22CruiseMissileStrikeFromShortcut (was referenced, missing).
+3. Turkey_Karrar2: removed incorrect Patch_StrategicLauncher LinkKey (EW vehicle).
+4. Turkey_BM-21: added SupplyCenter prerequisite (was uncapped spam path).
+5. Future-faction CC CommandSets: Iraq Sarab7 / R11ScudB / Sarab3 replaced with
+   country missiles (CommandSet_MissileSystems.ini).
+6. India/Pakistan TEL prereqs softened to CommandCenter + Rank science (Supply/
+   Radar/Hussien buildings not present on this branch scaffold).
+7. Unit CommandSets for India/Pakistan TELs retargeted to Turkey_Alhussaien*
+   (missing India_/Pakistan_Alhussaien CommandSets).
+
+
+NUCLEAR POLICY
+--------------
+Allowed nuclear-capable systems (Patch_Nuclear / stock silos):
+  USA (LGM-30 stock), Russia (RS-28 stock), China (nuclear silo stock),
+  Pakistan NASR (patch TEL, MaxSim=1), Israel/India Abbas paths when authored.
+
+Conventional only (no new nuclear Objects):
+  Turkey, Nato, Iran, Japan, Saudi Arabia, UAE, Ukraine, GLA, Iraq.
+
+Existing Turkey_Abbas Object retained (do not remove units); no new nuclear
+handed to non-NWS factions.
+
+
+COUNTRY SYSTEMS ADDED / WIRED
+-----------------------------
+Faction        Systems                                      Path / Cap
+-------------  -------------------------------------------  ----------------------
+USA            LRHW hypersonic placeholder                  AAB; StratLauncher×2
+               (stock HIMARS/THAAD/LGM remain Specter)
+Russia         Iskander(9K720)/Bm30/Pantsir/S-400/S-500     WF stock buttons
+               Zircon hypersonic placeholder                AAB + WF; ×2
+China          PHL-03 / DF-21C / DF family / HQ-9           WF stock buttons
+               DF-17 hypersonic placeholder + H-6 AAB       AAB; ×2
+Nato           M142 HIMARS (patch)                          AAB; ×4
+Iran           Fateh ballistic TEL (conventional)           AAB; ×4
+Turkey         TRG/TRLG/Bora/BM-21/Scud/Alhussaien (exist)  WF; ×4
+               SOM cruise/anti-ship TEL (NEW)               WF T3/bare
+India          Pinaka MLRS + BrahMos TEL                    CC; ×4
+Pakistan       Babur cruise TEL + NASR (nuclear)            CC; Babur×4 NASR×1
+Ukraine        BM-21 + Hrim-2 ballistic                     CC; ×4
+Saudi Arabia   M142 HIMARS + ATACMS                         CC; ×4
+UAE            M142 HIMARS + ATACMS                         CC; ×4
+Japan          Type-12 SSM + hypersonic placeholder         CC; Type12×4 / Hyp×1
+
+
+BALANCE NOTES
+-------------
+- StrategicLauncher shared MaxSim=4 per faction (GlobalBuildLimits).
+- Hypersonic placeholders: expensive PatchBase (~4800–5500), Rank3/5, MaxSim 1–2.
+- NASR: Rank5 + Patch_Nuclear MaxSim=1 (tactical nuclear TEL).
+- BrahMos / Babur / SOM / ATACMS / Hrim-2: Rank3 + higher cost than Grad MLRS.
+- BM-21 / Pinaka / M142: lower tier conventional rockets.
+
+
+COMMANDSET / BUTTON FILES
+-------------------------
+  CommandButton_MissileSystems.ini   — patch Object construct buttons
+  CommandSet_MissileSystems.ini      — WF / AAB / future CC wiring
+  CommandSet_SpecterPatch.ini        — CC missile slots deferred to MissileSystems
+  CommandSet_AdvancedAirBase.ini     — America/RU/CN/Nato/Iran AAB moved to
+                                       MissileSystems (keeps Turkey + Iraq/GLA)
+  CommandSet_Turkey.ini / CommandButton_Turkey.ini — Turkey fixes + SOM
+
+
+OBJECTS (NEW)
+-------------
+  PatchSystems/MissileSystems/{America_LRHW,Russia_Zircon,China_DF17}_Placeholder.ini
+  PatchSystems/MissileSystems/{Nato_M142,Iran_FatehTEL}.ini
+  Indian Armed Forces/Wheeled/{India_BrahMos,India_Pinaka}.ini
+  Pakistan Armed Forces/Wheeled/{Pakistan_Babur,Pakistan_NASR}.ini
+  Turkey Armed Forces/Wheeled/Turkey_SOM.ini
+  Ukrainian Armed Forces/Wheeled/{Ukraine_BM21,Ukraine_Hrim2}.ini
+  Saudi Arabian Armed Forces/Wheeled/{SaudiArabia_M142,SaudiArabia_ATACMS}.ini
+  United Arab Emirates/Wheeled/{UAE_M142,UAE_ATACMS}.ini
+  Japan Self-Defense Forces/Wheeled/{Japan_Type12,Japan_Hypersonic_Placeholder}.ini
+
+
+HYPERSONIC PLACEHOLDERS
+-----------------------
+America_LRHW_Placeholder, Russia_Zircon_Placeholder, China_DF17_Placeholder,
+Japan_Hypersonic_Placeholder — use existing SRBM weapon templates as stand-ins
+until dedicated hypersonic Weapon INIs are authored. Player-buildable, expensive,
+capped.
+
+
+LEGACY RETAINED
+---------------
+All prior Turkey launchers (TRG230/300, TRLG230, Bora, BM-21, R11ScudB, Sarab7,
+Alhussaien, Abbas, Lamiaa) remain. No aircraft or AD units removed.
+
+
+SYNC
+----
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_build_limits.py
+  python3 patch/tools/economy/generate_sync_manifest.py
+  python3 patch/tools/economy/sync_audit.py
+  → PASS

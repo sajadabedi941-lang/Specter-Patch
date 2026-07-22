@@ -1,0 +1,37 @@
+; SPECTER PATCH - Future 3D model replacement slots (Ground Combat)
+; Do NOT invent new Object IDs when art arrives — swap Model= / Animation=
+; under existing Draw blocks. Keep Object names stable for MP sync.
+
+;------------------------------------------------------------------------------
+; Object ID                    Current Model proxy          Future art target
+;------------------------------------------------------------------------------
+; Turkey_Altay                 Irq_AsadBabel2               Altay MBT
+; Turkey_AssadBabel-2          Irq_AsadBabel2               (legacy elite; keep)
+; Turkey_T-72                  Irq_T72M1                    (line MBT proxy)
+; Turkey_HISAR_A               RUS_9A331M2                  HISAR-A+ TEL
+; Turkey_HISAR_O               Irq_2K12                     HISAR-O+ TEL
+; Turkey_SIPER                 Irq_Fahad3                   SIPER battery
+; Turkey_Korkut                (Korkut SPAAG proxy)         Korkut
+; Turkey_Sungur                Irq_Roland3k                 Sungur vehicle
+; India_Arjun                  Irq_T72M1                    Arjun Mk1A/Mk2
+; India_Akash                  Irq_2K12                     Akash / Akash-NG
+; Pakistan_AlKhalid            Irq_T72M1                    Al-Khalid / VT-4
+; Japan_Type90                 Irq_T72M1                    Type 90 / Type 10
+; Iran_Karrar                  Irq_AsadBabel2               Karrar MBT
+; Iran_Zulfiqar                Irq_T72M1                    Zulfiqar MBT
+; Iran_Khordad                 Irq_2K12                     Khordad-15
+; Iran_Bavar                   Irq_2K12                     Bavar-373
+; Iran_FatehTEL                Turkey_Bm21                  Fateh-110/313 TEL
+;------------------------------------------------------------------------------
+
+; Stock Specter (no patch Object rename — document only):
+; America Abrams / Bradley / Patriot / HIMARS
+; Russia T-90 / T-72B3M / BMP-3 / Pantsir / S-400 / S-500
+; China BattleMaster / ZBD / PGZ / HQ-9 / PHL
+
+; When replacing models:
+; 1) Keep Object <ID> unchanged
+; 2) Keep WeaponLaunchBone names or remap carefully
+; 3) Re-run sync_audit.py (Object ID uniqueness / Side / costs)
+; 4) Do not remove CommandButtons or CommandSet slots
+; 5) Do not delete legacy units (AssadBabel-2, Roland, T-72, etc.)

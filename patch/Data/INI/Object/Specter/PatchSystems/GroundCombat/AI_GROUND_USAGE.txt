@@ -1,0 +1,26 @@
+; SPECTER PATCH - Ground Combat AI usage notes
+; Production wiring (no *_AI unit cost forks on player path)
+
+; Turkey AI WarFactory (Turkey_WarFactory.ini):
+;   Starts Turkey_WarFactoryCommandSet_T
+;   Tier1 → T1 (Sungur, Korkut, HISAR_A, 2S1)
+;   Tier2 → T2 (+ ZSU-23-4, HISAR_O, BM-21, Sam8)
+;   Tier3 → T3 (Altay + AssadBabel, full AD ladder, Bora/SIPER/SOM)
+; Turkey Military WF (bare): Turkey_WarFactoryCommandSet — same Object IDs
+
+; Intended AI priorities (engine uses available CS slots):
+;   1) Line tanks (T-72) + IFV for push
+;   2) SHORAD (Sungur/Korkut) before air pressure
+;   3) Artillery (2S1 / BM-21) for structure/soft
+;   4) HISAR layer after MIC / ranks
+;   5) Elite Altay + SIPER / Bora late
+
+; Russia / China:
+;   CommandSet_MissileSystems.ini WF sets expose tanks, arty, Pantsir/Tor,
+;   S-400/S-500, HQ-9 — stock buttons, AI can produce full combined arms.
+
+; India / Pakistan / Japan:
+;   Command Center slots: national MBT (+ Akash for India) + missile TELs.
+
+; Iran:
+;   Advanced Air Base CS: Fateh + Karrar/Zulfiqar + Khordad/Bavar.

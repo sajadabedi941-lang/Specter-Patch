@@ -7,10 +7,14 @@
 
 ; Example object IDs (to be filled when faction air trees are authored):
 ; America_B2 America_B52 America_AWACS America_Tanker America_Transport
-; Russia_B2  Russia_B52  Russia_AWACS  Russia_Tanker  Russia_Transport
-; China_B2   China_B52   China_AWACS   China_Tanker   China_Transport
+; Russia_Tu160 (implemented — native strategic bomber)
+; China_H6 (implemented — native strategic bomber)
 ; Iran_B2    Iran_B52    Iran_AWACS    Iran_Tanker    Iran_Transport
 ; Iraq_B2    Iraq_B52    Iraq_AWACS    Iraq_Tanker    Iraq_Transport
 ; Nato_B2    Nato_B52    Nato_AWACS    Nato_Tanker    Nato_Transport
 ; GLA_B2     GLA_B52     GLA_AWACS     GLA_Tanker     GLA_Transport
 ; Ukraine_B2 ... Japan_Transport (future patch factions)
+;
+; Balance contract:
+;   USA / Russia / China native bombers → Patch_StrategicBomberNative (MaxSim=3)
+;   Other factions limited heavies → Patch_StrategicBomber (MaxSim=1), high cost, Rank3 + AAB

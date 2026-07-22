@@ -1,0 +1,18 @@
+; SPECTER PATCH - Strategic missile AI usage
+; Prevent unlimited missile spam via LinkKeys + Rank gates + high cost/time.
+
+; Production sources:
+;   USA AAB: LRHW, CruiseTEL, LGM_Placeholder; Dozer: LGM stock + StrategicMissileBase
+;   Russia WF: stock Iskander/S400/S500 + Zircon + Iskander_Patch; AAB: Tu-160/Zircon
+;   China WF: stock DF family + DF17_Placeholder + DF21_Patch; AAB: H-6/DF17
+;   Iran AAB: Fateh/Shahab/Khorramshahr + Bavar/Khordad MD; Dozer: Warning Center
+;   Turkey WF: Bora/SOM/TRG + HISAR/SIPER
+;   India CC: Agni + BrahMos + Pinaka
+;   Pakistan CC: Shaheen + Babur + NASR(nuclear MaxSim=1)
+
+; AI guidance:
+;   1) Do not mass TELs early — Rank3–5 gates + high BuildTime
+;   2) Prefer SHORAD/MR SAM before strategic launchers when air threatened
+;   3) Hypersonic / LGM / NASR — single-digit MaxSim; treat as decisive strike
+;   4) Mobile TELs relocate (truck locomotor); fire then move
+;   5) Strategic bases — one per side; provide missile warning vision

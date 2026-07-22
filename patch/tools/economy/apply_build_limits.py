@@ -2,7 +2,7 @@
 """Annotate MaxSimultaneousOfType + LinkKey on Objects by CategoryRule paths.
 
 Uses GlobalBuildLimits_SpecterPatch.ini contract:
-  AirDefense path → Patch_AirDefense = 10
+  AirDefense path → Patch_AirDefense (shared); per-type MaxSim for mobile SAM tiers
   Artillery buildings → Patch_ArtillerySite = 6
   Missile / MLRS / ballistic → Patch_StrategicLauncher = 4
 
@@ -21,11 +21,39 @@ OBJECT_ROOT = ROOT / "Data" / "INI" / "Object"
 
 RULES = [
     # (path substring, name regex, max, linkkey)
+    # Mobile SAM realistic per-type caps (still share Patch_AirDefense pool)
+    ("/AirDefense/", r".*SIPER.*", 2, "Patch_AirDefense"),
+    ("/AirDefense/", r".*HISAR_O.*", 4, "Patch_AirDefense"),
+    ("/AirDefense/", r".*HISAR_A.*", 5, "Patch_AirDefense"),
+    ("/AirDefense/", r".*Korkut.*", 6, "Patch_AirDefense"),
+    ("/AirDefense/", r".*(Sungur|Roland|ZSU).*", 8, "Patch_AirDefense"),
+    ("/AirDefense/", r".*Akash.*", 4, "Patch_AirDefense"),
     ("/AirDefense Sites/", None, 10, "Patch_AirDefense"),
     ("/AirDefense/", None, 10, "Patch_AirDefense"),
+    ("/GroundCombat/", r".*Bavar.*", 2, "Patch_AirDefense"),
+    ("/GroundCombat/", r".*Khordad.*", 4, "Patch_AirDefense"),
     ("/Buildings/", r".*(D30|Howitzer|100mm|Cannon|M777|FireBase|Artillery).*", 6, "Patch_ArtillerySite"),
-    ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan).*", 4, "Patch_StrategicLauncher"),
+    # Nuclear-capable TELs before general launcher rule
+    ("/Wheeled/", r".*NASR.*", 1, "Patch_Nuclear"),
+    ("/MissileSystems/", r".*(LGM_Placeholder).*", 1, "Patch_Nuclear"),
+    # Hypersonic placeholders — tighter caps
+    ("/Wheeled/", r".*(Hypersonic|LRHW|Zircon|DF17_Placeholder).*", 1, "Patch_StrategicLauncher"),
+    ("/MissileSystems/", r".*(Hypersonic|LRHW|Zircon|DF17).*", 1, "Patch_StrategicLauncher"),
+    # Strategic ballistic / cruise identity TELs — limited quantity
+    ("/MissileSystems/", r".*(Agni|Shaheen|Khorramshahr|CruiseTEL|Iskander_Patch|DF21_Patch).*", 2, "Patch_StrategicLauncher"),
+    ("/MissileSystems/", r".*Shahab.*", 3, "Patch_StrategicLauncher"),
+    ("/Wheeled/", r".*(Agni|Shaheen).*", 2, "Patch_StrategicLauncher"),
+    ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan|BrahMos|Babur|SOM|Hrim|M142|ATACMS|Type12|FatehTEL|Pinaka).*", 4, "Patch_StrategicLauncher"),
+    ("/MissileSystems/", r".*", 4, "Patch_StrategicLauncher"),
     ("/Tracked/", r".*(MLRS|M270|Bm30).*", 4, "Patch_StrategicLauncher"),
+    ("/Airforce/", r".*AWACS.*", 1, "Patch_SupportAircraft"),
+    ("/Airforce/", r".*(Tanker|Transport).*", 2, "Patch_SupportAircraft"),
+    ("/SupportAircraft/", r".*AWACS.*", 1, "Patch_SupportAircraft"),
+    ("/SupportAircraft/", r".*(Tanker|Transport|E3G|A50).*", 2, "Patch_SupportAircraft"),
+    # Limited-access strategic bombers (non USA/RU/CN): shared MaxSim=1
+    ("/Airforce/", r"(Turkey_B2|Turkey_B52|Turkey_Tu-22M3)", 1, "Patch_StrategicBomber"),
+    # Native strategic bombers (USA/RU/CN patch objects): shared MaxSim=3
+    ("/HeavyAircraft/", r".*(Tu160|H6|America_B|B1R).*", 3, "Patch_StrategicBomberNative"),
 ]
 
 OBJ_RE = re.compile(r"^Object\s+(\S+)\s*$", re.M)
@@ -35,7 +63,8 @@ COST_RE = re.compile(r"BuildCost\s*=")
 # Turkey_HISAR_A_Combat must receive the same LinkKey as the primary Object.
 SKIP = re.compile(
     r"(Damaged|Debris|Hulk|Lock|Projectile|WeaponObject|FireControl|PackMode|CombatMode|TargetLock|"
-    r"WarFactory|CommandCenter|SupplyCenter|PowerPlant|Airfield|AirBase|Barracks|MIC\b|RadarStation)",
+    r"WarFactory|CommandCenter|SupplyCenter|PowerPlant|Airfield|AirBase|Barracks|MIC\b|RadarStation|"
+    r"StrategicMissileBase|MissileWarningCenter)",
     re.I,
 )
 
@@ -55,10 +84,20 @@ def match_rule(rel: str, name: str):
         if name_rx and not re.search(name_rx, name, re.I):
             continue
         return mx, key
-    # AirDefense units by HISAR/SIPER/Korkut/Sungur name anywhere under faction tree
-    if re.search(r"(HISAR|SIPER|Korkut|Sungur|Roland|Fahad|SA-6|Sam8|ZSU|Pantsir|Tor)", name, re.I):
-        if "/Airforce/" in rel_n or "/Infantry/" in rel_n:
-            return None
+    # AirDefense units by name anywhere under faction tree (tiered MaxSim)
+    if "/Airforce/" in rel_n or "/Infantry/" in rel_n:
+        return None
+    if re.search(r"SIPER|Bavar", name, re.I):
+        return 2, "Patch_AirDefense"
+    if re.search(r"HISAR_O|Akash|Khordad", name, re.I):
+        return 4, "Patch_AirDefense"
+    if re.search(r"HISAR_A", name, re.I):
+        return 5, "Patch_AirDefense"
+    if re.search(r"Korkut", name, re.I):
+        return 6, "Patch_AirDefense"
+    if re.search(r"Sungur|Roland|ZSU", name, re.I):
+        return 8, "Patch_AirDefense"
+    if re.search(r"Fahad|SA-6|Sam8|Pantsir|Tor", name, re.I):
         return 10, "Patch_AirDefense"
     return None
 

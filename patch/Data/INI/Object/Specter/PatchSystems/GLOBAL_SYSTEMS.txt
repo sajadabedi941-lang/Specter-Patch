@@ -26,6 +26,11 @@ SPECTER PATCH — Global Systems Contract
    Patch_StrategicLauncher = 4    (MLRS / conventional strategic launchers)
    Patch_Nuclear           = 1    (nuclear SW buildings OR nuclear launchers)
 
+   Missile expansion Objects live under:
+     PatchSystems/MissileSystems/  and faction Wheeled/ trees
+   Hypersonic placeholders use StrategicLauncher with MaxSim 1–2.
+   Pakistan_NASR uses Patch_Nuclear (NWS tactical nuclear TEL).
+
 Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
 Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
@@ -38,3 +43,11 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
    - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
      (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)
+
+5) Aircraft Combat System
+   - Role catalog + future model slots:
+       PatchSystems/AircraftCombat/AIRCRAFT_COMBAT_ROLES.txt
+       PatchSystems/AircraftCombat/FUTURE_MODEL_SLOTS.txt
+   - AWACS owns radar picture (Vision/Shroud >> fighters); slow / durable / expensive
+   - Gen4 / Gen5 TechClass rules for fighters; no Object removals
+   - Report: AIRCRAFT_COMBAT_SYSTEM_REPORT.txt

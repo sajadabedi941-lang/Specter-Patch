@@ -1,0 +1,32 @@
+; SPECTER PATCH - Future 3D model replacement slots
+; Do NOT invent new Object IDs when art arrives — swap Model= / Animation=
+; under existing Draw = W3DModelDraw blocks. Keep Object names stable for MP sync.
+
+;------------------------------------------------------------------------------
+; Object ID                    Current Model proxy          Future art target
+;------------------------------------------------------------------------------
+; Turkey_KAAN                  (F-22 style stock)           KAAN national 3D
+; Turkey_F16V                  US_F16D_B52                  F-16V Block 70
+; Turkey_Hurjet                (F-16 family proxy)          Hürjet
+; Turkey_T129                  US_AH64E                     T129 ATAK
+; Turkey_Anka3                 (F-35/drone proxy)           ANKA-3
+; Turkey_TB2                   (MQ-9 proxy)                 Bayraktar TB2
+; Turkey_Akinci                (MQ-9 proxy)                 Bayraktar Akıncı
+; Turkey_AWACS                 US_E3G                       E-7 / Peace Eagle
+; Turkey_B2                    US_B1R                       B-2 (or national)
+; Turkey_B52                   US_B52H                      B-52H
+; Turkey_Tanker                (heavy jet proxy)            KC-135 / A400M tanker
+; Turkey_Transport             (heavy jet proxy)            A400M / C-130
+; Russia_Tu160                 Turkey_Tu22m3 proxy          Tu-160 Blackjack
+; China_H6                     US_B52H                      H-6K/N
+; US_E3G_AWACS                 US_E3G                       E-3G (stock OK)
+; RUS_A50_AWACS                US_E3G                       A-50U
+; Arab_E3A_AWACS               US_E3G                       E-3A
+;------------------------------------------------------------------------------
+
+; When replacing models:
+; 1) Keep Object <ID> unchanged
+; 2) Keep Scale contract (HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt)
+; 3) Keep WeaponLaunchBone names or remap carefully
+; 4) Re-run sync_audit.py (Object ID uniqueness / Side / costs)
+; 5) Do not remove CommandButtons or CommandSet slots

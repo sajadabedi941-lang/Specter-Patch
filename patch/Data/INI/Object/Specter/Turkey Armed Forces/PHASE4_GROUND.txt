@@ -7,12 +7,13 @@ Missile launchers (War Factory / MIC)  LinkKey=Patch_StrategicLauncher max=4
   Turkey_TRLG230  TRLG-230                Cost base 1600 / 18s
   Turkey_Bora     Bora ballistic TEL      Cost base 2800 / 22s
 
-Air defense (War Factory / MIC)  LinkKey=Patch_AirDefense max=10
-  Turkey_HISAR_A  HISAR-A+                Cost base 1300 / 12s
-  Turkey_HISAR_O  HISAR-O+                Cost base 1800 / 16s
-  Turkey_SIPER    SIPER                   Cost base 2600 / 18s
-  Turkey_Korkut   Korkut SPAAG            Cost base 1100 / 12s
-  Turkey_Sungur   Sungur SHORAD           Cost base 900 / 10s
+Air defense (War Factory / MIC)  LinkKey=Patch_AirDefense (shared pool 10)
+  Turkey_HISAR_A  HISAR-A+                MaxSim=5  Rank3+MIC  Cost base 1400 / 13s
+  Turkey_HISAR_O  HISAR-O+                MaxSim=4  Rank4+MIC  Cost base 2000 / 17s
+  Turkey_SIPER    SIPER                   MaxSim=2  Rank5+MIC  Cost base 3200 / 22s
+  Turkey_Korkut   Korkut SPAAG            MaxSim=6  Cost base 1200 / 12s
+  Turkey_Sungur   Sungur SHORAD           MaxSim=8  Cost base 950 / 10s
+  Turkey_Altay    Altay elite MBT         Rank4+MIC Cost base 2100 / 22s (AssadBabel-2 retained)
 
 Weapons (patch overlay)
   Weapon_Turkey_Phase4.ini

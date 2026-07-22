@@ -1,0 +1,70 @@
+FACTION TECH TREE REPORT
+Specter-Patch | branch cursor/faction-tech-general-stars-f792
+================================================================================
+
+SUMMARY
+-------
+Country-specific technology progression added for all requested playable
+countries. Existing buildings, units, and CommandSets retained (slots added
+only). Original Specter factions not broken. sync_audit.py PASS (errors=0).
+
+
+1. UPGRADE TREES (PLAYER_UPGRADE)
+--------------------------------
+File: Data/INI/Upgrade_FactionTech.ini
+
+USA            StealthSystems, PrecisionWeapons, AdvancedAircraft
+Russia         MissileTechnology, HeavyArmor, ElectronicWarfare
+China          DroneTechnology, MissileSystems, MassProduction
+Iran           MissileUpgrades, DroneTechnology, AirDefense
+Turkey         UAVTechnology, FighterTechnology, ModernAirDefense
+               (+ existing Upgrade_Turkey_* retained)
+India          StrategicWeapons, MissileImprovements
+Pakistan       StrategicWeapons, MissileImprovements
+Japan          AdvancedElectronics, DefensiveTechnology
+Ukraine        DroneSystems, DefensiveSystems
+Saudi Arabia   HighTechImport, AdvancedSystems (expensive import tier)
+UAE            HighTechImport, AdvancedSystems
+Iraq           MissileGuidance, AirDefense
+North Korea    MissileGuidance, ArtilleryNetwork
+
+
+2. RESEARCH WIRING (no CS removals)
+----------------------------------
+America AAB        slots 16–18 new USA upgrades (+ Countermeasures kept)
+Russia / China AAB slots 15–17 national upgrades
+Iran AAB           slots 8–10 missile/drone/AD upgrades
+Turkey MIC T3      slots 15–17 UAV/Fighter/ModernAD
+India/PK/JP/UA/SA/UAE CC  additive upgrade buttons
+Iraq AAB           MissileGuidance + AirDefense
+
+
+3. GENERAL STARS TECH SCIENCES
+------------------------------
+Rank3 sciences SCIENCE_<Side>_Tech_* (1–2 purchase points) for each theme.
+America Rank3 CS extended with Stealth/Precision/Aircraft doctrines.
+Turkey Rank3 CS extended with UAV/Fighter/ModernAD doctrines.
+National Rank1/3/8 CS for Ukraine, Pakistan, Saudi, UAE, India, Japan,
+Iran, Iraq, NorthKorea, Russia, China (CommandSet_FactionTech.ini).
+
+
+4. PLAYERTEMPLATES (patch factions)
+----------------------------------
+IntrinsicSciences = SCIENCE_Iraq SCIENCE_<Country> (Iraq kept for legacy
+unit/power compatibility).
+PurchaseScienceCommandSetRank* → SCIENCE_<Country>_CommandSetRank*
+SpecialPowerShortcut → SpecialPowerShortcut_<Country>
+
+
+5. LEGACY RETAINED
+-----------------
+All Upgrade_Turkey_*, PatchSC America sciences, doctrines, AAB battle plans,
+MIC/airfield upgrades, stock Specter research buttons.
+
+
+6. FILES
+--------
+Upgrade_FactionTech.ini, Science_FactionTech.ini,
+CommandButton_FactionTech.ini, CommandSet_FactionTech.ini,
+tools/economy/generate_faction_tech.py
+Report: FACTION_TECH_TREE_REPORT.txt

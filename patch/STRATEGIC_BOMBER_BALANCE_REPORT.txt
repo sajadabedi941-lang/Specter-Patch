@@ -1,0 +1,120 @@
+STRATEGIC BOMBER BALANCE REPORT
+Specter-Patch | branch cursor/strategic-bomber-balance-f792
+================================================================================
+
+SUMMARY
+-------
+Strategic bombers are split into two pools:
+  Patch_StrategicBomberNative (MaxSim=3) — USA / Russia / China native bombers
+  Patch_StrategicBomber       (MaxSim=1) — all other factions' limited heavy access
+
+No aircraft were removed. Faction identity rosters are preserved (Turkey keeps
+B-2 / B-52 / Tu-22M3; Russia keeps Tu-22M3M + Tu-160; USA keeps stock B-1R;
+China gains native H-6 at Advanced Air Base).
+
+RULES APPLIED
+-------------
+USA / Russia / China
+  - Native strategic bombers only (no cross-faction USA B-2/B-52 handout)
+  - Normal purchase cost and availability
+  - Shared native pool MaxSimultaneous = 3 (Patch_StrategicBomberNative)
+  - Produced at Advanced Air Base
+
+Other factions (Turkey implemented; contract for future faction heavies)
+  - Limited heavy bomber access kept (identity roster unchanged)
+  - Very high purchase cost (~8800–10200 after CountryBalance)
+  - Maximum 1 active bomber per faction (shared LinkKey across B2/B52/Tu-22)
+  - Normal heavy build time (~28–32s), not extreme
+  - Require Advanced Air Base
+  - Require high technology (SCIENCE_Rank3)
+
+FACTION MATRIX
+--------------
+Faction     Bomber(s)                         Pool / Max   Cost (rebaked)   Time    Prereqs
+USA         AmericaJetB1R (stock, AAB CS)     native / 3*  stock (unchanged) stock   stock AAB
+Russia      Russia_Tu-22M3M (stock) + Tu160   native / 3   Tu160 ~4052       ~30.4s  Russia AAB
+China       China_H6 (new patch object)       native / 3   ~4884             ~30.4s  China AAB
+Turkey      B2, B52, Tu-22M3 (+ AI variant)   limited / 1  ~9609 / 10174 / 8818  ~28–32s  AAB + Rank3
+Nato/Iran/Iraq/GLA/future                     (no bomber objects yet) — AAB shell only;
+                                              future limited heavies use Patch_StrategicBomber
+
+* USA B-1R remains stock Specter object (not overlayed). Cap applies when a
+  patch Object with Patch_StrategicBomberNative is authored; stock MaxSim
+  remains engine-default. Patch Russia_Tu160 + China_H6 share the native key.
+
+BALANCE DETAILS (PATCH OBJECTS)
+-------------------------------
+Limited (Turkey)
+  Turkey_B2        PatchBase 8500/30s  → 9609 / 30.4s   HP 750   LinkKey Patch_StrategicBomber
+  Turkey_B52       PatchBase 9000/32s  → 10174 / 32.4s  HP 1050  LinkKey Patch_StrategicBomber
+  Turkey_Tu-22M3   PatchBase 7800/28s  → 8818 / 28.3s   HP 700   LinkKey Patch_StrategicBomber
+  Turkey_Tu-22M3_AI same cost/limit (shares pool; AI-compatible Rank3 + AAB)
+
+Native
+  Russia_Tu160     PatchBase 3200/30s  → 4052 / 30.4s   HP 850   LinkKey Patch_StrategicBomberNative
+  China_H6         PatchBase 3600/30s  → 4884 / 30.4s   HP 1000  LinkKey Patch_StrategicBomberNative
+
+Spam prevention: Turkey B2 + B52 + Tu-22 share one LinkKey → only one of any
+type may be active. High cost + Rank3 + AAB gate keep late-game exclusivity.
+
+COMMAND SETS / BUTTONS
+----------------------
+America_AdvancedAirBaseCommandSet     → Command_ConstructAmericaJetB1R (unchanged)
+Russia_AdvancedAirBaseCommandSet      → Tu-22M3M + Command_ConstructRussia_Tu160
+China_AdvancedAirBaseCommandSet       → Command_ConstructChina_H6 (NEW)
+Turkey_AdvancedAirBaseCommandSet      → B2, B52, AWACS, Tanker, Transport, Tu-22 (unchanged roster)
+
+Normal Airfield CommandSets are NOT overridden (fighters/helos stay stock).
+
+SCIENCE / TECH
+--------------
+Limited bombers require SCIENCE_Rank3 (high technology). AI ranks unlock this
+naturally (AI-compatible). Native USA/RU/CN bombers do not require Rank3.
+
+GLOBAL BUILD LIMITS
+-------------------
+GlobalBuildLimits_SpecterPatch.ini:
+  Patch_StrategicBomber       MaxSim=1
+  Patch_StrategicBomberNative MaxSim=3
+
+apply_build_limits.py annotates matching Airforce / HeavyAircraft objects.
+
+CATEGORY / PRICING
+------------------
+CountryBalance CategoryRule StrategicBomberClass and PricingDefaults
+StrategicBomberNames now match Tu-22M3 / Tu160 / H6 / B1R / B2 / B52 so
+rebakes use TechClass StrategicBomber.
+
+LEGACY AIRCRAFT CHECK
+---------------------
+All prior aircraft retained:
+  Turkey_B2, Turkey_B52, Turkey_Tu-22M3, Turkey_Tu-22M3_AI,
+  Turkey fighters/helos/drones/support, Russia_Tu160, stock USA B-1R.
+
+NEW OBJECTS
+-----------
+  Object/Specter/PatchSystems/HeavyAircraft/China_H6.ini
+  Command_ConstructChina_H6 button
+
+SYNC
+----
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_build_limits.py
+  python3 patch/tools/economy/generate_sync_manifest.py
+  python3 patch/tools/economy/sync_audit.py
+  → PASS (errors=0; vendor Data.zip warning only)
+
+FILES TOUCHED (PRIMARY)
+-----------------------
+  Data/INI/GlobalBuildLimits_SpecterPatch.ini
+  Data/INI/CountryBalance.ini
+  Data/INI/Economy/PricingDefaults.ini
+  Data/INI/Economy/UnitPricingRegistry.ini
+  Data/INI/CommandSet_AdvancedAirBase.ini
+  Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+  Data/INI/Object/.../Turkey_{B2,B52,Tu-22M3,Tu-22M3_AI}.ini
+  Data/INI/Object/.../HeavyAircraft/{Russia_Tu160,China_H6}.ini
+  tools/economy/apply_build_limits.py
+  Data/English/{Turkey_FactionStrings,STRINGS_TO_ADD}.txt
+  STRATEGIC_BOMBER_BALANCE_REPORT.txt (this file)
+  SYNC_MANIFEST.sha256

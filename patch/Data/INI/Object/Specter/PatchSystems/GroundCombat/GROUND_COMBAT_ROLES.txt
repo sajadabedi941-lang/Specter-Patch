@@ -1,0 +1,39 @@
+; SPECTER PATCH - Ground Combat System role catalog
+; No 3D models added. Roles guide balance / AI / future model slots.
+; Object IDs are stable — replace Model= later without renaming Objects.
+
+;==============================================================================
+; ROLE                    OBJECTS (patch + stock Specter)
+;==============================================================================
+; Main Battle Tank        Turkey_T-72, Turkey_AssadBabel-2, Turkey_Altay,
+;                         India_Arjun, Pakistan_AlKhalid, Japan_Type90,
+;                         Iran_Karrar, Iran_Zulfiqar
+;                         (stock: Abrams / T-series / Type / BattleMaster)
+; IFV                     Turkey_BMP-1, Turkey_BMP-2
+;                         (stock: Bradley / BMP-3 / ZBD)
+; APC                     Turkey_BTR-90
+; Artillery (SPG)         Turkey_2S1
+;                         (stock: 2S19 / PLZ05)
+; MLRS / Missile TEL      Turkey_BM-21, Turkey_TRG*, Turkey_Bora, Turkey_SOM,
+;                         India_Pinaka, India_BrahMos, Pakistan_Babur,
+;                         Pakistan_NASR, Iran_FatehTEL, Nato/Saudi/UAE HIMARS
+; Mobile SAM (SHORAD)     Turkey_Sungur, Turkey_Korkut, Turkey_Roland3K,
+;                         Turkey_ZSU-23-4, Turkey_Sam8
+; Mobile SAM (MR)         Turkey_HISAR_A, Turkey_HISAR_O, India_Akash,
+;                         Iran_Khordad
+; Mobile SAM (LR)         Turkey_SIPER, Iran_Bavar
+;                         (stock: Patriot / Pantsir / S-400/S-500 / HQ-9)
+; Anti-Tank / Special     Turkey_VT72B, Turkey_Karrar2 (ATGM vehicle lineage)
+;==============================================================================
+
+; AD ladder (Turkey)
+;   Sungur/Korkut  — early WF tiers, MaxSim 8/6
+;   HISAR_A        — Rank3 + MIC, MaxSim 5
+;   HISAR_O        — Rank4 + MIC, MaxSim 4, Patch_Weapon_MediumSAM
+;   SIPER          — Rank5 + MIC, MaxSim 2, expensive
+
+; AI notes:
+;   Tanks: T-72 line / Altay elite / AssadBabel retained
+;   Artillery: 2S1 + BM-21 + Bora on WF T3 / bare AI WF
+;   Air defense: produce SHORAD early, layer HISAR, cap SIPER
+;   Russia/China WF CS already expose tanks + Pantsir/S400/HQ9

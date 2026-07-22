@@ -1,0 +1,38 @@
+; SPECTER PATCH - Aircraft Combat System role catalog
+; No 3D models added. Roles guide balance / AI / future model slots.
+; Object IDs are stable — replace Model= later without renaming Objects.
+
+;==============================================================================
+; ROLE                 OBJECTS (patch)
+;==============================================================================
+; Air-to-Air           Turkey_KAAN, Turkey_Mig-29A
+; Multirole            Turkey_F16V (+ Mixed/AGM/GBU24 variants)
+; Air-to-Ground        Turkey_Hurjet, Turkey_Su-25K, Turkey_Mig-23ML,
+;                      Turkey_Mig-25BM, Turkey_MirageF1_Bq, Turkey_Su-22M3
+; Bomber (tactical)    Turkey_Su-24MK
+; Bomber (strategic)   Turkey_B2, Turkey_B52, Turkey_Tu-22M3,
+;                      Russia_Tu160, China_H6
+; EW / Recce           Turkey_Su-24MR
+; AWACS                Turkey_AWACS, US_E3G_AWACS, RUS_A50_AWACS, Arab_E3A_AWACS
+; Tanker               Turkey_Tanker
+; Transport            Turkey_Transport, Turkey_Mi-8T
+; Attack Helicopter    Turkey_T129, Turkey_Mi-28NE, Turkey_Mi-35M3
+; UAV / Drone          Turkey_TB2, Turkey_Akinci, Turkey_Anka3,
+;                      Turkey_Quds5, Turkey_Ababil200, Turkey_Sarab3,
+;                      TurkeyDronesAbabil200Recon
+;==============================================================================
+
+; Country bonuses (via CountryBalance AircraftCostMult + TechClass):
+;   Gen5 (KAAN)          — Gen5Fighter cost/time
+;   Gen4 (F16V/Mig29/Hurjet) — Gen4Fighter
+;   Strategic bombers    — StrategicBomber
+;   AWACS/Tanker/Transport — HeavySupportAircraft
+;   Domestic UAVs        — DomesticUAV rule
+; Side AircraftCostMult differentiates USA/RU/CN/Turkey/etc. economies.
+
+; AI notes:
+;   AA fighters: air superiority / escort
+;   AG / CAS: ground attack, prefer Su-25 / Hurjet / F16V AG variants
+;   AWACS: support, requires escort (F16V prereq on Turkey_AWACS)
+;   Bombers: Advanced Air Base only (strategic LinkKeys)
+;   UAVs: cheap recon/strike, Rank gates where applicable

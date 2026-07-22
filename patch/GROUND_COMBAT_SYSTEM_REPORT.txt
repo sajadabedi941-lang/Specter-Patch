@@ -1,0 +1,114 @@
+GROUND COMBAT SYSTEM REPORT
+Specter-Patch | branch cursor/ground-combat-system-f792
+================================================================================
+
+SUMMARY
+-------
+Advanced Ground Combat System applied as balance / identity / AD ladder layer.
+No existing Specter or patch ground units removed. Stable Object IDs reserved
+for future 3D swaps. sync_audit.py PASS required after bake.
+
+
+1. SYSTEMS COVERED
+------------------
+Main Battle Tanks   T-72 line, AssadBabel-2 (retained), Altay (new),
+                    Arjun, Al-Khalid, Type90, Karrar, Zulfiqar
+IFV / APC           BMP-1/2, BTR-90 (HP/cost differentiated)
+Artillery           2S1 SPG + BM-21 / TRG / Bora / Pinaka TELs
+Mobile SAM          Sungur, Korkut, Roland, ZSU, HISAR-A/O, SIPER,
+                    Akash, Khordad, Bavar
+Missile Launchers   Prior missile expansion retained (HIMARS/BrahMos/NASR/…)
+Anti-Tank / Special VT72B, Karrar-2 lineage retained
+
+
+2. COUNTRY IDENTITY
+-------------------
+USA (stock Specter)     Abrams, Bradley, Patriot; Nato AAB HIMARS
+Russia (stock WF CS)    T-series, BMP-3, Pantsir, S-400/S-500
+China (stock WF CS)     Type/BattleMaster, Z-series, HQ-9
+Iran (patch)            Karrar, Zulfiqar, Bavar, Khordad, Fateh TEL
+Turkey (patch)          Altay (+ AssadBabel-2 kept), Korkut, HISAR, SIPER
+India (patch)           Arjun, Akash, BrahMos / Pinaka
+Pakistan (patch)        Al-Khalid, NASR / Babur
+Japan (patch)           Type90, Type-12 / hypersonic placeholder
+
+
+3. BALANCE
+----------
+- Armor/HP tiers: APC < IFV < line MBT < elite MBT (Altay 1500 HP)
+- Weapons: line 125mm_2A46M vs elite 125mm_2AB55; AD uses
+  Patch_Weapon_MediumSAM / Patch_Weapon_LongSAM
+- Ranges / reload: SAM attack range 420–520; ClipReload 18–24s
+- Mobility: existing locomotors retained (MBT vs SPAAG vs truck)
+- Cost: elite/LR AD expensive (Altay base 2100; SIPER base 3200; Bavar 2800)
+
+Mobile SAM realistic limits (MaxSimultaneousOfType; LinkKey Patch_AirDefense):
+  Sungur/Roland/ZSU 8 | Korkut 6 | HISAR_A 5 | HISAR_O/Akash/Khordad 4 | SIPER/Bavar 2
+  Enforced by tools/economy/apply_build_limits.py tier rules.
+
+
+4. AIR DEFENSE IMPROVEMENTS
+---------------------------
+- Vision / Shroud raised on mobile SAMs (Sungur 800, HISAR_O 1000, …)
+- Stealth DetectionRange / Rate improved on HISAR / SIPER fire-control
+- Turkey_9M336Missile: HP 180, Fuel 4000, Velocity 420 (better pursuit)
+- AD ladder prereqs fixed:
+    HISAR_A  Rank3 + MIC
+    HISAR_O  Rank4 + MIC
+    SIPER    Rank5 + MIC
+- AutoAcquire + MoodAttackCheckRate on mobile AD for AI engagement
+
+
+5. COMMANDSET / PREREQ / AI
+---------------------------
+Turkey WF T3 / bare: Altay + AssadBabel-2; Sungur restored; ZSU on T2
+India CC: Arjun + Akash + Pinaka/BrahMos
+Pakistan CC: Al-Khalid + Babur/NASR
+Japan CC: Type90 + Type12/Hypersonic
+Iran AAB: Fateh + Karrar/Zulfiqar + Khordad/Bavar
+Russia/China WF: tanks + artillery + Pantsir/S400/HQ9 (prior overlay)
+
+AI notes: PatchSystems/GroundCombat/AI_GROUND_USAGE.txt
+
+
+6. FUTURE MODEL STRUCTURE
+-------------------------
+PatchSystems/GroundCombat/{GROUND_COMBAT_ROLES,FUTURE_MODEL_SLOTS}.txt
+Replace Model=/Animation= only; keep Object IDs for MP sync.
+
+
+7. AUDIT NOTES
+--------------
+Fixed:
+  - Missing Turkey Altay elite MBT identity
+  - Inverted HISAR/SIPER rank ladder
+  - Sungur missing from T3/bare WF
+  - ZSU button orphaned from T2 CS
+  - India/Pakistan/Japan/Iran ground identity gaps (MBT/AD stubs)
+Kept (not deleted):
+  AssadBabel-2, Roland3K, T-72, legacy Iraq-DNA units, all prior TELs
+Known (documented, not removed):
+  T-55 CommandButton without Object (pre-existing orphan)
+  USA Abrams/Bradley/Patriot remain stock Specter (no patch Object fork)
+
+
+8. FILES
+--------
+Objects: Turkey_Altay; India_Arjun/Akash; Pakistan_AlKhalid; Japan_Type90;
+         Iran_{Karrar,Zulfiqar,Khordad,Bavar}
+Weapons: Weapon_GroundCombat.ini
+Buttons: CommandButton_GroundCombat.ini
+CS: CommandSet_Turkey.ini, CommandSet_MissileSystems.ini,
+    CommandSet_AdvancedAirBase.ini
+Docs: PatchSystems/GroundCombat/*
+Report: patch/GROUND_COMBAT_SYSTEM_REPORT.txt
+
+
+9. SYNC
+-------
+Bake order:
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_build_limits.py
+  python3 patch/tools/economy/generate_sync_manifest.py
+  python3 patch/tools/economy/sync_audit.py
+Expected: PASS

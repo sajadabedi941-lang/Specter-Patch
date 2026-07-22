@@ -1,0 +1,27 @@
+; SPECTER PATCH - Future 3D model slots (Strategic Missiles)
+; Swap Model=/Animation= only. Keep Object IDs for MP sync.
+
+; Object ID                         Current proxy          Future art
+; America_CruiseTEL                 Turkey_Bm21            Tomahawk TEL
+; America_LGM_Placeholder           Turkey_Bm21 / Abbas    LGM-30 / GBSD
+; America_LRHW_Placeholder          Turkey_Bm21            LRHW TEL
+; America_StrategicMissileBase      Irq_P3 radar           Silo / EW complex
+; Russia_Iskander_Patch             Turkey_Bm21            9K720 Iskander-M
+; Russia_Zircon_Placeholder         Turkey_Bm21            3M22 Zircon TEL
+; Russia_StrategicMissileBase       Irq_P3 radar           RVSN complex
+; China_DF21_Patch                  Turkey_Bm21            DF-21 TEL
+; China_DF17_Placeholder            Turkey_Bm21            DF-17 TEL
+; China_StrategicMissileBase        Irq_P3 radar           PLARF complex
+; Iran_FatehTEL                     Turkey_Bm21            Fateh-110/313
+; Iran_Shahab                       Turkey_Bm21            Shahab-3 / Emad
+; Iran_Khorramshahr                 Turkey_Bm21            Khorramshahr
+; Iran_MissileWarningCenter         Irq_P3 radar           Warning / Bavar net
+; India_Agni                        Turkey_Bm21            Agni-III/V
+; India_BrahMos                     Irq_Abbas_L            BrahMos TEL
+; Pakistan_Shaheen                  Turkey_Bm21            Shaheen-II/III
+; Pakistan_NASR                     Irq_Abbas_L            NASR / Hatf-IX
+; Turkey_Bora                       Irq_Abbas_L            Bora
+; Turkey_SOM                        (Bora family)          SOM cruise TEL
+
+; Stock Specter (do not fork Object IDs): AmericaLgm30, Russia 9K720/S400/S500,
+; China DF17/DF21C/DF41/HQ9, Patriot / MIM-104

@@ -1,0 +1,46 @@
+LEGACY AIRCRAFT CHECK
+Specter-Patch | branch cursor/aircraft-support-awacs-f792
+================================================================================
+
+VERDICT: PASS — no legacy aircraft removed in this pass.
+
+
+1. PATCH AIRFORCE OBJECT FILES (still present)
+--------------------------------------------------------------------------------
+Turkey (complete tree retained):
+  Turkey_KAAN, Turkey_F16V, Turkey_Hurjet, Turkey_T129
+  Turkey_Anka3, Turkey_TB2, Turkey_Akinci
+  Turkey_B2, Turkey_B52
+  Turkey_AWACS, Turkey_Tanker, Turkey_Transport
+  Turkey_Mi-8, Turkey_Mi-35M3, Turkey_Mi-28NE
+  Turkey_Mig-23BN, Turkey_Mig-25BM, Turkey_Mig-29A
+  Turkey_MirageF1-Bq, Turkey_Su-22M3, Turkey_Su-24MK, Turkey_Su-24MR
+  Turkey_Su-25K, Turkey_Tu-22M3, Turkey_Tu-22M3_AI
+
+Faction placeholders retained (India / Pakistan / Japan / Saudi / UAE / Ukraine).
+
+
+2. COMMANDSET SLOTS
+--------------------------------------------------------------------------------
+Turkey_AdvancedAirBaseCommandSet: slots 1–18 unchanged in membership
+  (support units buffed in Objects only; B-2/B-52/fighters/drones kept).
+Turkey airfield / AAB helo assault (Mi-8 / Mi-35) buttons kept.
+No CommandButton Object= retarget away from legacy airframes.
+
+
+3. SCIENCE / SPECIAL POWER AIRCRAFT
+--------------------------------------------------------------------------------
+All Superweapon *AWACS entries retained (America, Russia, Nato, Arabic, Iraqi,
+Turkish). Balance overlays adjust radius/reload/science cost only.
+Paradrop / cruise / FOAB science aircraft objects not deleted.
+
+
+4. THIS PASS TOUCHED ONLY
+--------------------------------------------------------------------------------
+- Stats / prereqs / LinkKeys on support aircraft
+- New PatchSystems SupportAircraft overlays (same stock Object names)
+- Science/SpecialPower balance INIs
+- Reports
+
+No fighter, bomber, attack helo, or custom drone Object files were deleted
+or stripped from player CommandSets.

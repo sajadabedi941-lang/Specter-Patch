@@ -1,0 +1,116 @@
+AIRCRAFT COMBAT SYSTEM REPORT
+Specter-Patch | branch cursor/aircraft-combat-system-f792
+================================================================================
+
+SUMMARY
+-------
+Advanced Aircraft Combat System applied as balance / role / structure layer.
+No aircraft Objects, CommandButtons, or models removed. Stock Specter fighters
+remain. Future 3D swaps documented without new models. sync_audit.py PASS.
+
+
+1. ROLES
+--------
+Air-to-Air          KAAN, Mig-29A
+Multirole           F16V (+ Mixed / AGM / GBU24 variants)
+Air-to-Ground       Hurjet, Su-25K, Mig-23ML, Mig-25BM, Mirage F1, Su-22M3
+Bomber (tactical)   Su-24MK
+Bomber (strategic)  B-2, B-52, Tu-22M3, Russia_Tu160, China_H6
+EW / Recce          Su-24MR
+AWACS               Turkey_AWACS + US_E3G / RUS_A50 / Arab_E3A overlays
+Tanker              Turkey_Tanker
+Transport           Turkey_Transport, Mi-8T
+Attack Helicopter   T129, Mi-28NE, Mi-35M3
+UAV / Drone         TB2, Akinci, Anka3, Quds5, Ababil200, Sarab3, Ababil Recon
+
+Catalog: PatchSystems/AircraftCombat/AIRCRAFT_COMBAT_ROLES.txt
+
+
+2. AWACS IMPROVEMENTS (all four airframes)
+-----------------------------------------
+Metric                 Before (prior pass)   After (combat system)
+---------------------  --------------------  ---------------------
+VisionRange            900                   2400
+ShroudClearingRange    1100                  2800
+Stealth DetectionRange 1600                  2200
+Stealth DetectionRate  900 ms                600 ms
+MaxHealth              1800                  2200
+PD ScanRange           550                   700
+PD ScanRate            700                   450 (faster)
+Locomotor              F100_PW_229           Soloviev_D-30 (slower)
+Turkey PatchBaseCost   4200 / 36s            5200 / 48s (high cost, slow build)
+Science AWACS LinkKey  (missing)             Patch_SupportAircraft MaxSim=1
+
+Escort gate retained: Turkey_AWACS requires Advanced Air Base + F-16V.
+Fighter vision capped below AWACS (KAAN 850, Mig-29 800) so AWACS owns the
+radar picture.
+
+
+3. COMBAT DIFFERENTIATION
+-------------------------
+- HP / vision / locomotor tuned per role (CAS tankier, AA faster / glassier).
+- Gen4 TechClass for F16V / Mig-29 / Hurjet; Gen5 for KAAN (CountryBalance).
+- Strategic bombers keep prior LinkKeys / AAB gates.
+- Tanker / Transport HP raised; slower support locomotors.
+- UAV HP/vision differentiated (TB2 lighter, Akinci tougher).
+- Ababil recon Vision 150→750 / Shroud 900.
+
+
+4. PREREQUISITE / COMMANDSET FIXES
+---------------------------------
+- Turkey_F16V: AmericaAirfield* → TurkeyMilitaryAirfield + Turkey_Airfield_T
+- Turkey_TB2: NatoAirfield + SCIENCE_NatoStealthJet → Turkey_Airfield_T + Rank3
+- Turkey_Akinci: AAB gate → Turkey_Airfield_T + Rank3 (matches airfield CS)
+- Orphans wired (no removals):
+  Airfield: Mig-23ML, Mig-25BM, Su-24MK, Mi-28NE
+  Airfield T2: Su-25K, Mi-35M3
+  Airfield T3: Mig-23ML, Su-22M3, Su-24MR, Mirage F1
+
+
+5. FUTURE MODEL STRUCTURE
+-------------------------
+PatchSystems/AircraftCombat/FUTURE_MODEL_SLOTS.txt maps each Object ID to
+current proxy Model and intended national art. Replace Model=/Animation= only;
+keep Object IDs for MP sync.
+
+
+6. COUNTRY BONUSES
+------------------
+CountryBalance AircraftCostMult per Side + TechClass:
+  Gen5Fighter / Gen4Fighter / StrategicBomber / HeavySupportAircraft / DomesticUAV
+No new 3D assets; economy layer differentiates nations.
+
+
+7. AI / BEHAVIOR NOTES
+----------------------
+- Different locomotors → different speeds (existing stock locomotor set).
+- AWACS slow + high HP + point-defense; fighters faster / lower HP.
+- Reload / OutOfAmmoDamage kept per airframe; support jets low OOA drain.
+- CommandSets: fighters/helos/drones on Airfield; heavies on Advanced Air Base.
+
+
+8. LEGACY RETAINED
+------------------
+All prior Specter/Turkey aircraft retained. Variants (F16V_*, T129_*, locks,
+sights) untouched except F16V prereq remaps. Strategic bomber / AAB / missile
+systems from prior patches unchanged in identity.
+
+
+9. SYNC
+-------
+  python3 patch/tools/economy/apply_country_balance.py
+  python3 patch/tools/economy/apply_build_limits.py
+  python3 patch/tools/economy/generate_sync_manifest.py
+  python3 patch/tools/economy/sync_audit.py
+  → PASS
+
+
+10. FILES
+---------
+Object/.../Airforce/*.ini (role HP/vision/loco/prereq)
+Object/.../SupportAircraft/*_AWACS.ini
+Object/.../AircraftCombat/{AIRCRAFT_COMBAT_ROLES,FUTURE_MODEL_SLOTS}.txt
+CommandSet_Turkey.ini (airfield orphan wiring)
+CountryBalance.ini (Gen4 / AttackHelicopter rules)
+Economy/UnitPricingRegistry.ini (AWACS base)
+AIRCRAFT_COMBAT_SYSTEM_REPORT.txt

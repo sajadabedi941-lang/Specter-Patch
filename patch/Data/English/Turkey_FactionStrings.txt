@@ -200,3 +200,13 @@ OBJECT:Turkey_Projectile_BTR = APC Shell
 OBJECT:Turkey_Projectile_Harith = Harith AT Missile
 OBJECT:Turkey_Projectile_Grenade = Rifle Grenade
 OBJECT:Turkey_Projectile_Sungur = Sungur Missile
+
+
+; ---- Final Turkey air projectiles / airfield ----
+OBJECT:Turkey_Projectile_KAAN_BVR = KAAN BVR Missile
+OBJECT:Turkey_Projectile_F16V_AA = F-16V AA Missile
+OBJECT:Turkey_Projectile_F16V_JDAM = F-16V JDAM
+OBJECT:Turkey_Projectile_TB2_MAML = Bayraktar MAM-L
+OBJECT:Turkey_Projectile_Akinci_MAM = Akıncı MAM
+CONTROLBAR:ConstructTurkey_Airfield = Airfield
+CONTROLBAR:ToolTipTurkeyBuildAirfield = Builds the Turkish Airfield.

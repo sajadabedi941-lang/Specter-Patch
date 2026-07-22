@@ -1,0 +1,90 @@
+STRATEGIC WEAPONS AUDIT
+Specter-Patch | branch cursor/strategic-weapons-audit-f792
+================================================================================
+
+POLICY (enforced)
+--------------------------------------------------------------------------------
+- Only nuclear-capable countries receive nuclear systems.
+- North Korea starts with nuclear capability (IntrinsicSciences).
+- USA / Russia / China get full strategic systems.
+- Other NWS (Israel, India, Pakistan) get limited realistic capability.
+- B-2 / B-52 remain USA-only on player CommandSets.
+- Japan / Nato / Iran / Turkey / Iraq / Saudi / UAE / Ukraine: no nuclear weapons.
+
+
+FACTION MATRIX
+--------------------------------------------------------------------------------
+Faction          Nuclear path                         Strategic bombers   Status
+---------------  -----------------------------------  ------------------  --------
+USA              LGM-30 Rank8 + Trident theater       America_B2/B52 AAB  OK
+Russia           RS28 silo on dozer                   Tu-22M3 AAB         OK
+China            ChinaNuclearMissile on dozer (stock) PLA AAB only        OK
+NATO             SCIENCE_NatoNukes IsGrantable=No     No B-2/B-52         OK
+Israel           SCIENCE_IDFNukes Rank8 → Jericho     No B-2/B-52         FIXED
+Iran             Sejjil CONVENTIONAL MRBM only        No                  OK
+Iraq             Abbas removed; Rank8 cleared         No                  FIXED
+North Korea      Intrinsic NuclearCapability+Alhussien No B-2/B-52        OK
+India            Rank8 StrategicNuclear + Abbas       No                  FIXED fire
+Pakistan         Rank8 StrategicNuclear + Abbas       No                  FIXED fire
+Japan            Rank8 empty; Alhussien IsGrantable=No No                 OK
+Turkey           Abbas removed (non-NWS)              No B-2/B-52         FIXED
+Ukraine          Empty Rank8; Iraq dozer no Abbas     No                  FIXED
+Saudi Arabia     Empty Rank8; Iraq dozer no Abbas     No                  FIXED
+UAE              Empty Rank8; Iraq dozer no Abbas     No                  FIXED
+
+
+P0 FIXES APPLIED
+--------------------------------------------------------------------------------
+1) Israel: Command_PurchaseScienceIDFNukes + AirF Rank8 overlay
+   Files: CommandButton_FactionExpansion_Nuclear.ini
+          CommandSet_FactionExpansion_Nuclear.ini
+
+2) Non-NWS Abbas stripped from player path
+   Iraq / Turkey: removed Construct*Abbas from dozer/worker CS
+   Iraq / Turkey: Abbas MIC research commented out
+   Iraq Rank8: cleared Alhussien purchase (Rank1 ballistic research retained)
+
+3) Saudi / UAE / Ukraine Rank8
+   PlayerTemplate → SCIENCE_*_CommandSetRank8 (empty, non-nuclear)
+   Inheritance of SCIENCE_Iraq_CommandSetRank8 Alhussien removed
+
+4) India / Pakistan Abbas fire path
+   Added SpecialPower {India,Pakistan}_AlabbasMissile
+   Added CommandSet {India,Pakistan}_AlAbbasCommandSet
+   Added Command_{India,Pakistan}_AlAbbasGroundAttack
+   (Build still gated on StrategicNuclear from prior balance pass)
+
+5) LinkKey contract
+   LGM-30 + Jericho → MaxSimultaneousLinkKey = Patch_Nuclear (MaxSim=1)
+
+6) China full strategic
+   ChinaDozerCommandSet slot 15 = Command_ConstructChinaNuclearMissile (Specter/ZH stock)
+
+7) Dead USA Trident shortcuts on Turkey/NK buttons
+   Gated with SCIENCE_NatoNukes (IsGrantable=No); annotated PRODUCTION_DISABLED
+
+8) Hypersonic placeholders
+   SCIENCE_{America,Russia,China}_HypersonicPlaceholder IsGrantable=No
+
+
+B-2 / B-52
+--------------------------------------------------------------------------------
+Player production: America_AdvancedAirBaseCommandSet only.
+Turkey_*/NorthKorea_* objects retained PRODUCTION_DISABLED / MaxSim=0.
+
+
+LINK / COMMANDSET HEALTH
+--------------------------------------------------------------------------------
+Broken AlAbbas CommandSets for India/Pakistan: FIXED
+Israel Rank8 missing IDFNukes: FIXED
+Non-NWS nuclear inheritance via Iraq: FIXED
+USA-only heavies: unchanged OK
+
+
+TOOLING
+--------------------------------------------------------------------------------
+python3 patch/tools/economy/generate_sync_manifest.py
+python3 patch/tools/economy/sync_audit.py
+Result: PASS
+
+See also: MISSILE_SYSTEMS_REPORT.txt

@@ -1,0 +1,29 @@
+; SPECTER PATCH - Advanced Strategic Missile System role catalog
+; Object IDs are stable — replace Model= later without renaming Objects.
+; Do NOT remove existing TELs / stock Specter buttons.
+
+;==============================================================================
+; ROLE                 OBJECTS
+;==============================================================================
+; Ballistic SRBM       Iran_FatehTEL, Iran_Shahab, Russia_Iskander_Patch,
+;                      Turkey_Bora, Turkey_TRG*, stock Russia 9K720
+; Ballistic MRBM       Iran_Khorramshahr, India_Agni, Pakistan_Shaheen,
+;                      China_DF21_Patch, stock China DF21C/DF41
+; Cruise               America_CruiseTEL, Turkey_SOM, India_BrahMos,
+;                      Pakistan_Babur
+; Hypersonic           America_LRHW_Placeholder, Russia_Zircon_Placeholder,
+;                      China_DF17_Placeholder, Japan_Hypersonic_Placeholder
+; Strategic / LGM      America_LGM_Placeholder (+ stock AmericaLgm30),
+;                      Pakistan_NASR (Patch_Nuclear), stock RS-28 / China silo
+; Mobile MLRS          Turkey_BM-21, India_Pinaka, Nato/Saudi/UAE M142, Ukraine_BM21
+; Strategic Bases      America/Russia/China_StrategicMissileBase,
+;                      Iran_MissileWarningCenter
+; Missile Defense      Turkey HISAR/SIPER/Korkut, Iran Bavar/Khordad,
+;                      stock Patriot / Pantsir / S-400/S-500 / HQ-9
+;==============================================================================
+
+; Spam prevention:
+;   Patch_StrategicLauncher shared pool + per-type MaxSim (hypersonic/LGM=1,
+;   MRBM/cruise identity=2, Shahab=3, MLRS=4)
+;   Patch_Nuclear MaxSim=1 (NASR, LGM placeholder)
+;   Strategic bases MaxSim=1 (no launcher LinkKey)

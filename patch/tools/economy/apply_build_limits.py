@@ -26,6 +26,10 @@ RULES = [
     ("/Buildings/", r".*(D30|Howitzer|100mm|Cannon|M777|FireBase|Artillery).*", 6, "Patch_ArtillerySite"),
     ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan).*", 4, "Patch_StrategicLauncher"),
     ("/Tracked/", r".*(MLRS|M270|Bm30).*", 4, "Patch_StrategicLauncher"),
+    ("/Airforce/", r".*AWACS.*", 1, "Patch_SupportAircraft"),
+    ("/Airforce/", r".*(Tanker|Transport).*", 2, "Patch_SupportAircraft"),
+    ("/SupportAircraft/", r".*AWACS.*", 1, "Patch_SupportAircraft"),
+    ("/SupportAircraft/", r".*(Tanker|Transport|E3G|A50).*", 2, "Patch_SupportAircraft"),
 ]
 
 OBJ_RE = re.compile(r"^Object\s+(\S+)\s*$", re.M)

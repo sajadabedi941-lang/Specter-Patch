@@ -24,7 +24,13 @@ RULES = [
     ("/AirDefense Sites/", None, 10, "Patch_AirDefense"),
     ("/AirDefense/", None, 10, "Patch_AirDefense"),
     ("/Buildings/", r".*(D30|Howitzer|100mm|Cannon|M777|FireBase|Artillery).*", 6, "Patch_ArtillerySite"),
-    ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan).*", 4, "Patch_StrategicLauncher"),
+    # Nuclear-capable TELs before general launcher rule
+    ("/Wheeled/", r".*NASR.*", 1, "Patch_Nuclear"),
+    # Hypersonic placeholders — tighter caps
+    ("/Wheeled/", r".*(Hypersonic|LRHW|Zircon|DF17_Placeholder).*", 1, "Patch_StrategicLauncher"),
+    ("/MissileSystems/", r".*(Hypersonic|LRHW|Zircon|DF17).*", 2, "Patch_StrategicLauncher"),
+    ("/Wheeled/", r".*(TRG230|TRG300|TRLG230|Bora|BM-21|BM21|Sarab|Scud|R11|Alhussaien|MLRS|Kaplan|BrahMos|Babur|SOM|Hrim|M142|ATACMS|Type12|FatehTEL|Pinaka).*", 4, "Patch_StrategicLauncher"),
+    ("/MissileSystems/", r".*", 4, "Patch_StrategicLauncher"),
     ("/Tracked/", r".*(MLRS|M270|Bm30).*", 4, "Patch_StrategicLauncher"),
     ("/Airforce/", r".*AWACS.*", 1, "Patch_SupportAircraft"),
     ("/Airforce/", r".*(Tanker|Transport).*", 2, "Patch_SupportAircraft"),

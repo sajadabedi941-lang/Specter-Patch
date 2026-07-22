@@ -1,0 +1,57 @@
+AWACS BALANCE REPORT
+Specter-Patch | branch cursor/aircraft-support-awacs-f792
+================================================================================
+
+POLICY
+--------------------------------------------------------------------------------
+Expansion / balance only. No aircraft Objects, CommandButtons, or CommandSet
+slots were removed. Legacy fighters/bombers/helos/custom units retained.
+
+
+1. BUILDABLE AWACS (Turkey_AWACS)
+--------------------------------------------------------------------------------
+Metric                 Before          After
+---------------------  --------------  ------------------------------
+VisionRange            350             900
+ShroudClearingRange    300             1100
+Stealth DetectionRange 1000            1600
+Stealth DetectionRate  1800 ms         900 ms (faster scans)
+MaxHealth              1000            1800
+Locomotor              CMF56_2         F100_PW_229 (slightly faster)
+MaxSimultaneousOfType  2               1
+LinkKey                (none)          Patch_SupportAircraft (cap 2)
+PatchBaseCost          2800            4200 (high cost retained/raised)
+Prerequisites          (none)          Turkey_AdvancedAirBase + Turkey_F16V
+Countermeasures        (none)          Upgrade_Turkey_Countermeasures
+KindOf                 +REVEALS_ENEMY_PATHS (kept) for battlefield awareness
+
+Escort rule: player must field an F-16V before AWACS can be built — forces
+fighter cover for the strategic support asset.
+
+
+2. SCIENCE / SPECIAL-POWER AWACS (stock OCL units)
+--------------------------------------------------------------------------------
+Overlays improve the spawned airframes (same Object names — not removals):
+  US_E3G_AWACS      Side=America   (America SP)
+  RUS_A50_AWACS     Side=Russia    (Russian SP)
+  Arab_E3A_AWACS    Side=Iraq      (Arabic SP)
+
+Same radar / HP / stealth-detect package as buildable AWACS (sans BuildCost).
+
+SpecialPower RadiusCursorRadius raised (awareness):
+  America 250→500 | Russia 200→480 | Nato 250→450 | Arabic 250→420
+  Iraqi ~→400 | Turkish 200→450
+ReloadTimes kept long (280–320s) for limited availability.
+
+Science purchase: Rank raised / cost=2 where applicable
+  (SCIENCE_TurkishAWACS Rank2 cost 2; America/Russian/Arabic/Iraqi Rank2 cost 2;
+   Nato remains Rank3 cost 2 per stock gate token SCIENCE_NATO).
+
+
+3. FILES
+--------------------------------------------------------------------------------
+Object/.../Turkey_AWACS.ini
+Object/.../PatchSystems/SupportAircraft/{US_E3G,RUS_A50,Arab_E3A}_AWACS.ini
+SpecialPower_Turkey.ini + SpecialPower_Z_AWACS_Balance.ini
+Science_Turkey.ini + Science_Z_AWACS_Balance.ini
+GlobalBuildLimits_SpecterPatch.ini (Patch_SupportAircraft=2)

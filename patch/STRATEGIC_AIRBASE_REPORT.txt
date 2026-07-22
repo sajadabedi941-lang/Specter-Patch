@@ -1,0 +1,84 @@
+STRATEGIC AIRBASE REPORT
+Specter-Patch | branch cursor/strategic-airbase-system-f792
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Strategy Center is removed from player build paths. Its role is replaced by the
+Strategic Air Base (existing *_AdvancedAirBase Objects, rebranded). Battle plans
+and former Strategy Center upgrades move into General Stars / faction research.
+No fighters, bombers, helicopters, or custom aircraft Objects were deleted.
+
+
+1. STRATEGY CENTER REMOVAL
+--------------------------------------------------------------------------------
+Player dozers no longer construct Strategy Center:
+  AmericaDozerCommandSet     — SC slots → America_AdvancedAirBase (Strategic Air Base)
+  NatoDozerCommandSet        — NatoStrategyCenter → Nato_AdvancedAirBase
+  AirF_AmericaDozerCommandSet — AirF StrategyCenter → AirF_AmericaAdvancedAirBase
+
+Strategy Center CommandSets reduced to Sell-only (legacy/AI buildings if present):
+  AmericaStrategyCenterCommandSet (+_T/_T1/_T2), AirF_*, Nato*, SupW_*, Lazr_*
+
+
+2. STRATEGIC AIR BASE
+--------------------------------------------------------------------------------
+Object IDs kept as *_AdvancedAirBase (compatibility). Presentation:
+  DisplayName = OBJECT:Patch_StrategicAirBase
+  Construct buttons use CONTROLBAR:ConstructPatch_StrategicAirBase
+
+Facility upgrades:
+  Parking 1×6 → 2×4 pads (8) | ApproachHeight 90 | larger Geometry (140×95×30)
+  PatchBaseCost raised toward 4200 (strategic building)
+  BattlePlanUpdate ModuleTag_PatchBattlePlans added (plans activate at SAB)
+
+CommandSets (*_StrategicAirBaseCommandSet):
+  Turkey: B-2, B-52, AWACS, Tanker, Transport, Tu-22M3 + battle plans + upgrades
+  America: B-1R + battle plans (fighters remain on Airfield)
+  Russia: Tu-22M3M (fighters/helos remain on Airfield; Tu-22 removed from airfield CS)
+  Other factions: rally/sell shells until faction heavy content is authored
+
+
+3. AIRFIELD VS STRATEGIC SPLIT
+--------------------------------------------------------------------------------
+Normal Airfield: fighters, helicopters, drones (America B1R removed from airfield CS;
+  Russia Tu-22 removed from airfield CS — aircraft still buildable at SAB).
+Strategic Air Base: large/strategic aircraft only.
+
+
+4. GENERAL STARS / RESEARCH
+--------------------------------------------------------------------------------
+Battle doctrines (PurchaseScience on Rank1):
+  America: SCIENCE_PatchDoctrine{Bombardment,HoldTheLine,SearchAndDestroy}
+  Turkey:  SCIENCE_TurkeyDoctrine*
+  Nato:    SCIENCE_NatoDoctrine*
+
+Former America Strategy Center upgrades → Rank3 sciences:
+  ChemicalSuits, CompositeArmor, AdvancedTraining, SupplyLines
+
+Activation of battle plans remains on Strategic Air Base CommandSet
+(Command_InitiateBattlePlan*) after doctrines are researched.
+
+
+5. PREREQUISITES / COSTS
+--------------------------------------------------------------------------------
+Heavy aircraft require Turkey_AdvancedAirBase (Strategic Air Base Object).
+Akinci no longer requires AmericaStrategyCenter.
+B-2 / B-52 PatchBaseCost raised (larger strategic platforms, MaxSim=1).
+
+
+6. FILES
+--------------------------------------------------------------------------------
+CommandSet_StrategicAirBase.ini
+CommandButton_StrategicAirBase.ini
+CommandButton_AdvancedAirBase_SpecterFactions.ini (labels)
+Science_StrategicDoctrines.ini
+Object/.../AdvancedAirBase_*.ini + Turkey_AdvancedAirBase.ini
+CommandSet_Turkey.ini / CommandSet_SpecterPatch.ini / CommandSet_Turkey_AirSlots.ini
+
+
+7. AI
+--------------------------------------------------------------------------------
+Player dozers no longer offer Strategy Center. AI-only THAAD construct removed from
+patched America/Nato/AirF dozer sets. AI that still owns a Strategy Center object
+can only Sell it (empty CS). Prefer Strategic Air Base for new AI build orders.

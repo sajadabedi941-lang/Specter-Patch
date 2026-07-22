@@ -38,3 +38,13 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
    - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
      (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)
+
+5) Module 02 — Air Systems (separate from faction creation)
+   Manifest: patch/Modules/02_AirSystems/MODULE.txt
+   - Advanced Air Base CommandSets: Data/INI/CommandSet_AdvancedAirBase.ini
+   - Strategic Air Base buttons: Data/INI/CommandButton_StrategicAirBase.ini
+   - Aircraft combat roles: PatchSystems/AircraftCombat/
+   - AWACS / support aircraft: PatchSystems/SupportAircraft/
+   - Heavy aircraft IDs: PatchSystems/HeavyAircraft/
+   - AWACS balance overlays: Science_Z_AWACS_Balance.ini, SpecialPower_Z_AWACS_Balance.ini
+   Do NOT put PlayerTemplate / faction-picker wiring in this module.

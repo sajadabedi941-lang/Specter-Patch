@@ -65,9 +65,11 @@ NWS / limited strategic:
   North Korea  — Intrinsic NuclearCapability + Alhussien starter
   Israel       — SCIENCE_IDFNukes Rank8 (Jericho), expensive
   India        — Intrinsic NuclearCapability; Rank1 ballistic (Alhussien);
-                 Rank8 SCIENCE_India_StrategicNuclear
+                 Rank8 SCIENCE_India_StrategicNuclear;
+                 Abbas research/construct gated on StrategicNuclear
   Pakistan     — Intrinsic NuclearCapability only (Alhussien no longer free);
-                 Rank1 ballistic; Rank8 SCIENCE_Pakistan_StrategicNuclear
+                 Rank1 ballistic; Rank8 SCIENCE_Pakistan_StrategicNuclear;
+                 Abbas research/construct gated on StrategicNuclear
 
 Non-NWS (no nuclear purchase):
   Nato         — SCIENCE_NatoNukes IsGrantable=No
@@ -107,10 +109,12 @@ G. MISSING PREREQUISITES / REMAINING GAPS
 ----------------------------------------
 FIXED this pass:
   - India/Pakistan Rank8 unreachable StrategicNuclear (was dead Alhussien shared btn)
+  - India/Pakistan Abbas research/construct now require StrategicNuclear
   - Japan nuclear-capable science buttons on Rank1/8
-  - Israel USA-unique AAB leak
+  - Israel AAB stripped of USA uniques (balance leak; roster identity preserved as IDF)
   - Shared Alhussien purchase button colliding Turkey vs Iraq sciences
   - AI bare WarFactoryCommandSet missing for India/Pakistan/Japan/Iraq
+  - SYNC_MANIFEST regenerated; sync_audit PASS
 
 KNOWN remaining (out of scope / next identity pass):
   - Saudi / UAE / Ukraine still lack faction-native Object trees (stubs).

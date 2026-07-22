@@ -1,0 +1,22 @@
+SPECTER PATCH — Iraq Realistic Identity Notes
+==============================================
+
+Player production intentionally EXCLUDES:
+  - FOAB / Nasr (SCIENCE_FOAB IsGrantable=No; removed from Rank8 + shortcut)
+  - Tu-22 cruise strike science and shortcut
+  - Tu-22M3 bomber (Airfield / AAB CommandSets)
+  - Mi-28NE (player air CommandSets)
+  - Fahad3 / B340 S-400-style vehicles (MIC CommandSets)
+
+Player production EMPHASIZES:
+  - Republican Guard infantry + Special Forces
+  - T-72 / Assad Babel, BMP-1/2, BTR, ZSU-23-4
+  - Roland, SA-6, Sam8, Sam2 / DefenseSite
+  - BM-21, 2S1, D-30, Scud / Al-Hussein (conventional)
+  - Mi-35 assault + Mi-8 transport
+  - Su-25 / Su-22 / Su-24 / Mirage F1 / MiG-23 / MiG-25 / MiG-29
+
+General Star:
+  AirPower → AWACS / Recon
+  AirAssault → Paradrop / SF Insertion
+  Artillery → Cruise strike tiers (conventional)

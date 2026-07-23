@@ -1,0 +1,677 @@
+FULL INI REPAIR ERROR REPORT
+============================
+Source: New folder.zip (56 files)
+Scope: complete pass on ALL files (not first-crash only)
+
+ROOT CAUSE
+----------
+Flat install of New folder into Data\INI\*.ini duplicates Objects under
+Data\INI\Object\Specter\<Faction>\... → ZH Uncaught Exception during initialization.
+AbbasLauncher.ini / SpecialForces.ini are Turkey units; flat filenames collide.
+
+Cross-file Object duplicates inside New folder set: 0
+
+NOTE: ModuleTag_01 reused across different Object blocks in one file is VALID.
+Only duplicate ModuleTags within the SAME Object are repaired.
+
+PHASE 1+3 — FILE BY FILE
+------------------------
+FILE: AIR_FORCE_EXPANSION.txt
+  DEST: Data/INI/Object/Specter/PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\AIR_FORCE_EXPANSION.txt
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: AbbasLauncher.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\AbbasLauncher.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Airborne.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Airborne.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Aircraft_AAB_Global.ini
+  DEST: Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Aircraft_AAB_Global.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Aircraft_AirForceExpansion.ini
+  DEST: Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Aircraft_AirForceExpansion.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Britain_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Britain_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Britain_F35B.ini
+  DEST: Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Britain_F35B.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Egypt_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Egypt_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Egypt_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Egypt_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: France_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\France_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Germany_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Germany_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: India_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\India_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: India_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\India_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: India_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\India_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: India_TejasMk2.ini
+  DEST: Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\India_TejasMk2.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Israel_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Israel_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Israel_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Israel_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Italy_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Italy_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Japan_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Japan_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Japan_MQ9.ini
+  DEST: Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Japan_MQ9.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Karrar-2.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Karrar-2.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Karrar-2.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Lamiaa.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Lamiaa.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Lamiaa.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Libya_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Libya_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Libya_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Libya_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: MilitaryHQ_StockFactions.ini
+  DEST: Data/INI/Object/Specter/PatchSystems/MilitaryHQ/MilitaryHQ_StockFactions.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\MilitaryHQ_StockFactions.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Pakistan_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Pakistan_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Pakistan_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Pakistan_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Russia_AD_TorM.ini
+  DEST: Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_TorM.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Russia_AD_TorM.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SaudiArabia_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SaudiArabia_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SaudiArabia_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SaudiArabia_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SaudiArabia_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SaudiArabia_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SouthAfrica_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SouthAfrica_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SouthAfrica_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SouthAfrica_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SouthKorea_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SouthKorea_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: SpecialForces.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\SpecialForces.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Sweden_CombatDrone.ini
+  DEST: Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Sweden_CombatDrone.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Syria_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Syria_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Syria_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Syria_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_AWACS.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_AWACS.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_AWACS.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_Akinci.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_Akinci.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_Bora.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Bora.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_Bora.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_EliteMaroonBerets.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_EliteMaroonBerets.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_EliteMaroonBerets.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_F16Block70.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_F16Block70.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_Kizilelma.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_Kizilelma.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_TB2.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_TB2.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_Tu-22M3.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_Tu-22M3.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Turkey_WeaponObjects.ini
+  DEST: Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Turkey_WeaponObjects.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: UAE_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\UAE_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: UAE_MQ9.ini
+  DEST: Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\UAE_MQ9.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: UAE_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\UAE_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Ukraine_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Ukraine_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Ukraine_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Ukraine_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Vietnam_CommandCenter.ini
+  DEST: Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_CommandCenter.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Vietnam_CommandCenter.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+FILE: Vietnam_MilitaryHQ.ini
+  DEST: Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_MilitaryHQ.ini
+  PRE-REPAIR AUDIT:
+    - CRITICAL_PATH: must not install as flat Data\INI\Vietnam_MilitaryHQ.ini
+  FIXES APPLIED:
+    - relocated to correct Specter faction/system path
+    - excluded from flat Data\INI\ install blacklist
+  POST-REPAIR ERRORS:
+    (none hard)
+
+GLOBAL
+------
+  ModuleTag uniquify: []
+  Syntax fixed: (none)
+  AbbasLauncher.ini -> Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+  SpecialForces.ini -> Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+
+PHASE 2 — PATH MAP
+------------------
+  British Armed Forces (2):
+    - Britain_CombatDrone.ini
+    - Britain_F35B.ini
+  Egyptian Armed Forces (2):
+    - Egypt_CommandCenter.ini
+    - Egypt_MilitaryHQ.ini
+  French Armed Forces (1):
+    - France_CombatDrone.ini
+  German Armed Forces (1):
+    - Germany_CombatDrone.ini
+  Indian Armed Forces (4):
+    - India_CombatDrone.ini
+    - India_CommandCenter.ini
+    - India_MilitaryHQ.ini
+    - India_TejasMk2.ini
+  Israel Defense Forces (2):
+    - Israel_CommandCenter.ini
+    - Israel_MilitaryHQ.ini
+  Italian Armed Forces (1):
+    - Italy_CombatDrone.ini
+  Japan Self-Defense Forces (2):
+    - Japan_CombatDrone.ini
+    - Japan_MQ9.ini
+  Libyan Armed Forces (2):
+    - Libya_CommandCenter.ini
+    - Libya_MilitaryHQ.ini
+  Pakistan Armed Forces (2):
+    - Pakistan_CommandCenter.ini
+    - Pakistan_MilitaryHQ.ini
+  PatchSystems (5):
+    - AIR_FORCE_EXPANSION.txt
+    - Aircraft_AAB_Global.ini
+    - Aircraft_AirForceExpansion.ini
+    - MilitaryHQ_StockFactions.ini
+    - Russia_AD_TorM.ini
+  Republic of Korea Armed Forces (1):
+    - SouthKorea_CombatDrone.ini
+  Saudi Arabian Armed Forces (3):
+    - SaudiArabia_CombatDrone.ini
+    - SaudiArabia_CommandCenter.ini
+    - SaudiArabia_MilitaryHQ.ini
+  South African National Defence Force (2):
+    - SouthAfrica_CommandCenter.ini
+    - SouthAfrica_MilitaryHQ.ini
+  Swedish Armed Forces (1):
+    - Sweden_CombatDrone.ini
+  Syrian Arab Army (2):
+    - Syria_CommandCenter.ini
+    - Syria_MilitaryHQ.ini
+  Turkey Armed Forces (16):
+    - AbbasLauncher.ini
+    - Airborne.ini
+    - Karrar-2.ini
+    - Lamiaa.ini
+    - SpecialForces.ini
+    - Turkey_AWACS.ini
+    - Turkey_Akinci.ini
+    - Turkey_Bora.ini
+    - Turkey_CommandCenter.ini
+    - Turkey_EliteMaroonBerets.ini
+    - Turkey_F16Block70.ini
+    - Turkey_Kizilelma.ini
+    - Turkey_MilitaryHQ.ini
+    - Turkey_TB2.ini
+    - Turkey_Tu-22M3.ini
+    - Turkey_WeaponObjects.ini
+  Ukrainian Armed Forces (2):
+    - Ukraine_CommandCenter.ini
+    - Ukraine_MilitaryHQ.ini
+  United Arab Emirates (3):
+    - UAE_CommandCenter.ini
+    - UAE_MQ9.ini
+    - UAE_MilitaryHQ.ini
+  Vietnam People's Army (2):
+    - Vietnam_CommandCenter.ini
+    - Vietnam_MilitaryHQ.ini
+
+FINAL COUNTS
+------------
+  Files audited              : 56
+  Relocated                  : 56
+  Wrong path notes           : 56
+  Object duplicate           : 0
+  ModuleTag dup (in-object)  : 0
+  Syntax                     : 0
+  Missing refs (advisory)    : 0
+  Files with hard post errs  : 0
+
+VERDICT: PASS
+Package-ready: all files under Object\Specter\... ; flat purge installer required.

@@ -192,6 +192,33 @@ function Ensure-Dir([string]$Path) {
   }
 }
 
+function Write-Utf8File([string]$Path, $Lines) {
+  <#
+    Always creates/overwrites $Path.
+    PowerShell Set-Content with an empty pipeline often does NOT create a file,
+    which previously broke Copy-Item of backup_map.txt on clean installs.
+  #>
+  $dir = Split-Path -Parent $Path
+  if ($dir) { Ensure-Dir $dir }
+  $arr = @()
+  if ($null -ne $Lines) { $arr = @($Lines) }
+  if ($arr.Count -eq 0) {
+    [System.IO.File]::WriteAllText($Path, "")
+  } else {
+    $arr | Set-Content -LiteralPath $Path -Encoding UTF8
+  }
+}
+
+function Ensure-FileExists([string]$Path) {
+  if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
+    $dir = Split-Path -Parent $Path
+    if ($dir) { Ensure-Dir $dir }
+    [System.IO.File]::WriteAllText($Path, "")
+    return $false
+  }
+  return $true
+}
+
 function Get-RelativePath([string]$Base, [string]$Full) {
   $baseFull = (Resolve-Path -LiteralPath $Base).Path.TrimEnd('\')
   $fullPath = (Resolve-Path -LiteralPath $Full).Path
@@ -234,6 +261,12 @@ $backupMapPath     = Join-Path $stateDir "backup_map.txt"
 $activeStampPath   = Join-Path $stateDir "ACTIVE_BACKUP.txt"
 $reportPath        = Join-Path $resolvedRoot "PATCH_INSTALLED.txt"
 $reportPathPatch   = Join-Path $PatchRoot "PATCH_INSTALLED.txt"
+
+# Ensure install-state files exist up front so a clean install never fails
+# looking for backup_map.txt (e.g. first install with no overwritten originals).
+Write-Utf8File -Path $backupMapPath -Lines @()
+Write-Utf8File -Path $installedListPath -Lines @()
+Write-Ok "Install state ready (backup_map.txt created if missing)"
 
 # Collect source files (Data + Art only)
 Write-Step "Scanning patch package..."
@@ -302,10 +335,19 @@ foreach ($item in $sources) {
 }
 Write-Progress -Activity "Installing Specter Patch (Phases A–I)" -Completed
 
-# Persist install state for uninstall
-$installed | Set-Content -LiteralPath $installedListPath -Encoding UTF8
-$backedUp  | Set-Content -LiteralPath $backupMapPath -Encoding UTF8
-$backupRoot | Set-Content -LiteralPath $activeStampPath -Encoding UTF8
+# Persist install state for uninstall (always create files, even when lists are empty)
+Write-Utf8File -Path $installedListPath -Lines $installed
+Write-Utf8File -Path $backupMapPath -Lines $backedUp
+Write-Utf8File -Path $activeStampPath -Lines @($backupRoot)
+
+# If anything deleted backup_map.txt mid-run, recreate empty rather than aborting
+if (-not (Ensure-FileExists -Path $backupMapPath)) {
+  Write-WarnLine "backup_map.txt was missing after install; created empty map and continuing."
+}
+if (-not (Ensure-FileExists -Path $installedListPath)) {
+  Write-WarnLine "installed_files.txt was missing after install; created empty list and continuing."
+}
+
 # Also keep a copy inside this backup snapshot
 Copy-Item -LiteralPath $installedListPath -Destination (Join-Path $backupRoot "installed_files.txt") -Force
 Copy-Item -LiteralPath $backupMapPath -Destination (Join-Path $backupRoot "backup_map.txt") -Force

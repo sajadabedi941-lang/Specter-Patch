@@ -110,3 +110,7 @@ Host and all clients must install the same patch package
 
 Do not mix partial copies. Do not edit files after install
 unless everyone updates together.
+
+Installer note (2026-07-23): backup_map.txt is always created automatically,
+even when no existing game files are overwritten (clean overlay install).
+

@@ -30,7 +30,26 @@ Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
 Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
 
-4) Country Balance System (central)
+4) Air Force Expansion (mod archive integration)
+   - Overlay-only Patch_* airframes from mod.zip audit (fighters/bombers/AWACS/gunship/UAV/helo)
+   - Tor-M2 AD: PatchSystems/AirDefense/Russia_AD_TorM.ini
+   - Weapons: Data/INI/Weapon_AirForceExpansion.ini
+   - Guide: PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+   - Audit: /MOD_CONTENT_AUDIT.md (repo root)
+   - Missing mod.z23/z24 blocks full W3D extract; Specter art used instead
+
+5) Advanced AWACS Command System
+   - AWACS = airborne command center (radar + battle management + EA + ground cue)
+   - Radar tiers: Normal +50% / Advanced +100% / UN-NATO +150%
+   - Country identity: USA/Russia/China/Turkey/India/UN profiles
+   - FAERIE_FIRE paint + WeaponBonus TARGET_FAERIE_FIRE for missile guidance
+   - Electronic Attack SP (fixed ReloadTime) → Specter RadioWave / Krasukha OCL
+   - Survival: health, flare/chaff, RTB to AAB heal
+   - Guide: PatchSystems/AdvancedAWACS/ADVANCED_AWACS_COMMAND.txt
+   - Weapons/SP/UI: Weapon_AdvancedAWACS.ini, SpecialPower_AdvancedAWACS.ini,
+     CommandButton_AdvancedAWACS.ini, CommandSet_AdvancedAWACS.ini
+
+6) Country Balance System (central)
    - ONE config: Data/INI/CountryBalance.ini
    - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
    - Origin / TechClass / Category / Asymmetric / Domestic layers
@@ -38,3 +57,10 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
    - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
      (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)
+
+7) Air Force Final Integration
+   - Every playable country: fighter, L/M/H bombers, AWACS, transport, helo, drone, strategic
+   - Heavy bomber USA base cost 10000; country-differentiated PatchBaseCost table
+   - Israel_AdvancedAirBase + full Patch_Israel_* fleet
+   - Russia Tu-160 NuclearBomberStrike + RSM-56 Bulava special powers
+   - Guide: PatchSystems/AirForceFinal/AIR_FORCE_FINAL.txt

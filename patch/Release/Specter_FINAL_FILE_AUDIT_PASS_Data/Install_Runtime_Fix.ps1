@@ -193,7 +193,8 @@ foreach ($c in $checks) {
 }
 
 Write-Host ""
-Write-Host "DONE. Backup: $Backup"
-Write-Host "No SHA256 verification (by design)."
-Write-Host "Launch Zero Hour now."
+Write-Host "[OK] Installation completed."
+Write-Host "     Backup kept at: $Backup"
+Write-Host "     No SHA256 verification (by design)."
+Write-Host "     Launch Generals Zero Hour / Specter now."
 Write-Host ""

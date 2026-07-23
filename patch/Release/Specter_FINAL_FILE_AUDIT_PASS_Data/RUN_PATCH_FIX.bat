@@ -10,7 +10,6 @@ echo  Automatic launcher - RUN_PATCH_FIX.bat
 echo ============================================================
 echo.
 
-REM --- Require installer files next to this launcher ---
 if not exist "%~dp0Install_Final_Audit_Pass.bat" (
   echo [ERROR] Install_Final_Audit_Pass.bat not found.
   echo Place RUN_PATCH_FIX.bat inside the extracted Specter_FINAL_FILE_AUDIT_PASS folder.
@@ -28,10 +27,14 @@ if not exist "%~dp0Install_Runtime_Fix.ps1" (
 set "PSEXE=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 if not exist "%PSEXE%" set "PSEXE=powershell.exe"
 
-REM --- Auto-detect GameRoot (handles spaces via PowerShell) ---
 echo [1/5] Detecting game folder...
-for /f "usebackq delims=" %%I in (`"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Detect_GameRoot.ps1" "%~dp0"`) do (
-  set "GAMEROOT=%%I"
+set "GAMEROOT="
+
+if exist "%~dp0Detect_GameRoot.ps1" (
+  for /f "usebackq delims=" %%I in (`"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Detect_GameRoot.ps1" "%~dp0"`) do set "GAMEROOT=%%I"
+) else (
+  REM Inline PowerShell fallback (spaces-safe) if Detect_GameRoot.ps1 is missing
+  for /f "usebackq delims=" %%I in (`"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -Command "$p='%~dp0'.TrimEnd('\'); function T([string]$x){ if(-not $x){return $false}; if(-not (Test-Path -LiteralPath $x)){return $false}; if(-not (Test-Path -LiteralPath (Join-Path $x 'Data'))){return $false}; foreach($e in @('generals.exe','Generals.exe','GeneralsZH.exe','generalszh.exe')){ if(Test-Path -LiteralPath (Join-Path $x $e)){ return $true } }; return $false }; if(T $p){ $p; exit 0 }; $c=$p; 1..4 | ForEach-Object { $c=Split-Path -Parent $c; if(T $c){ $c; exit 0 } }; Add-Type -AssemblyName System.Windows.Forms | Out-Null; $d=New-Object System.Windows.Forms.FolderBrowserDialog; $d.Description='Select Generals Zero Hour / Specter game folder (Data + generals.exe)'; $d.ShowNewFolderButton=$false; if($d.ShowDialog() -ne [System.Windows.Forms.DialogResult]::OK){ 'CANCEL'; exit 0 }; if(T $d.SelectedPath){ $d.SelectedPath } else { 'INVALID' }"`) do set "GAMEROOT=%%I"
 )
 
 if /I "!GAMEROOT!"=="CANCEL" (
@@ -56,25 +59,25 @@ if not defined GAMEROOT (
   exit /b 1
 )
 
-REM --- Validate GameRoot ---
 echo.
 echo [2/5] Game detected:
 echo       !GAMEROOT!
+
 if not exist "!GAMEROOT!\Data\" (
-  echo [ERROR] Data\ folder not found in selected game folder.
+  echo [ERROR] Data\ folder not found. Wrong folder selected.
   echo.
   pause
   exit /b 1
 )
+
 set "EXE_OK=0"
 if exist "!GAMEROOT!\generals.exe" set "EXE_OK=1"
 if exist "!GAMEROOT!\Generals.exe" set "EXE_OK=1"
 if exist "!GAMEROOT!\GeneralsZH.exe" set "EXE_OK=1"
 if exist "!GAMEROOT!\generalszh.exe" set "EXE_OK=1"
 if "!EXE_OK!"=="0" (
-  echo [ERROR] generals.exe / GeneralsZH.exe not found in:
-  echo       !GAMEROOT!
-  echo Wrong folder selected.
+  echo [ERROR] generals.exe / GeneralsZH.exe not found.
+  echo Wrong folder selected: !GAMEROOT!
   echo.
   pause
   exit /b 1
@@ -83,13 +86,11 @@ echo       Data\ OK
 echo       generals.exe OK
 echo.
 
-echo [3/5] Backup will be created automatically under:
-echo       SpecterPatch_Backup\RuntimeCrashFixV2_^<timestamp^>
+echo [3/5] Backup created automatically under SpecterPatch_Backup\...
 echo.
 echo [4/5] Patch installing...
 echo.
 
-REM Pass GameRoot quoted so spaces work; skip nested pause in child by env flag
 set "SPECTER_LAUNCHER=1"
 call "%~dp0Install_Final_Audit_Pass.bat" "!GAMEROOT!"
 set "ERR=!ERRORLEVEL!"

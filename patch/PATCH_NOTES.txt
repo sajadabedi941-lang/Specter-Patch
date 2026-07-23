@@ -143,3 +143,12 @@ Turkey faction completion (before other countries)
 - AI Airfield T3 / full Airfield CS: assault helos + Tu-22 / heavies parity
 - Worker/VT72B defense parity (DefenseSite + Fahad3SamSite + Sam2)
 - sync_audit PASS; SYNC_MANIFEST regenerated
+
+[2026-07-23] Structure fix + AAB runway + heavy scale + GeneralStar addon
+- Removed empty country/category scaffolds (kept all real INI content)
+- Advanced Air Base runway contract locked (Scale 1.60, 16 pads, ApproachHeight 90)
+- Heavy aircraft scale/geometry applied all factions (bombers/AWACS/transport/CH47)
+- Imported Science_GeneralStar_Addon.ini from payload (unique shared sciences)
+- Added Run_SpecterPatch.bat / .ps1 one-click activator
+- Peace Mission / mod.zip multi-volume archives incomplete in workspace (missing volumes); no binary archive merges applied
+

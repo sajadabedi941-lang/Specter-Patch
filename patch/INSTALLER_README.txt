@@ -7,6 +7,7 @@ Multiplayer: every lobby client must install THIS same package
 
 Exact installer files (must exist in this folder)
 -------------------------------------------------
+  patch/Run_SpecterPatch.bat          (one-click activator — recommended)
   patch/Install_SpecterPatch.bat
   patch/Uninstall_SpecterPatch.bat
   patch/Verify_SpecterPatch.bat
@@ -38,7 +39,9 @@ QUICK START (Windows)
          Art\
          SYNC_MANIFEST.sha256
 
-2. Right-click Install_SpecterPatch.bat → Run as administrator
+2. Double-click Run_SpecterPatch.bat  (or Install_SpecterPatch.bat)
+
+2b. Right-click Install_SpecterPatch.bat → Run as administrator
    (recommended if the game is under Program Files)
 
 3. Wait for progress + SYNC_MANIFEST verification

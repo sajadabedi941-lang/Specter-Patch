@@ -52,3 +52,22 @@ These files are configs for `patch/tools/economy/*.py`, not Generals INI. The en
 2. Install this branch’s `patch/` overlay.
 3. Launch ZH; confirm init completes.
 4. Spot-check: America/Russia/China dozer can place Advanced Air Base; Turkey shortcuts still fire FOAB/Tu-22 (via `Command_TurkeyPatch_*`).
+
+
+## Second audit (post-fix)
+
+**VERDICT: PASS** (static init-crash surface)
+
+Verified clean:
+- CommandSet / CommandButton / OCL: 0 NEW-vs-stock collisions; 0 intra-patch multi-file dups
+- Non-engine schemas absent from `Data/INI` (0 unknown top-level blocks)
+- Scale syntax: 976 valid `Scale =` forms; 0 bare `Scale N`
+- No literal `END`; no empty `CommandSet=`
+- All live `CommandSet=` refs resolve (`None` allowed; hyphenated Krasukha set valid)
+- All `CommandSet_*` button slots resolve
+- `sync_audit.py` PASS
+
+Extra fix found during second audit:
+- `Boss_Faction_Objects.ini`: removed trailing `;` glued to `GLAInfantryAngryMobCommandSet`
+
+Live ZH boot still not run in this environment.

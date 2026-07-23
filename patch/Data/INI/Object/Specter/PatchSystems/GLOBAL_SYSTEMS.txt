@@ -30,7 +30,15 @@ Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
 Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
 
-4) Country Balance System (central)
+4) Air Force Expansion (mod archive integration)
+   - Overlay-only Patch_* airframes from mod.zip audit (fighters/bombers/AWACS/gunship/UAV/helo)
+   - Tor-M2 AD: PatchSystems/AirDefense/Russia_AD_TorM.ini
+   - Weapons: Data/INI/Weapon_AirForceExpansion.ini
+   - Guide: PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+   - Audit: /MOD_CONTENT_AUDIT.md (repo root)
+   - Missing mod.z23/z24 blocks full W3D extract; Specter art used instead
+
+5) Country Balance System (central)
    - ONE config: Data/INI/CountryBalance.ini
    - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
    - Origin / TechClass / Category / Asymmetric / Domestic layers

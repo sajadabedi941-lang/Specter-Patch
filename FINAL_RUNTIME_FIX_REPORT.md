@@ -4,7 +4,7 @@
 **Auto-fix:** Applied under `patch/` only (vendor archives untouched).  
 **sync_audit.py:** **PASS** (errors=0; vendor `Data.zip` warn only).  
 **Package:** `patch/Release/FINAL_RUNTIME_FIX_PATCH.zip`  
-**SHA256:** `ba5ffbe202960de8207aa13ff61a592a71b1bb61d2e5dd11906ac65534dfa454`  
+**SHA256:** `8c24ceef088c50254776473f98a19eb810885ad7e471039f856feb82baa5e170`  
 **Date:** 2026-07-23
 
 ---

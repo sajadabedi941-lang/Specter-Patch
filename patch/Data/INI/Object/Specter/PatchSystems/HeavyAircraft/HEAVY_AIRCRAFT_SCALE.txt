@@ -1,16 +1,14 @@
-; SPECTER PATCH - Heavy Aircraft Scale Guide
-; Apply these Scale values so large airframes fit US_AirField (Advanced Air Base) parking bones.
+; SPECTER PATCH - Heavy Aircraft Scale (IMPLEMENTED for all factions)
+; Applied to Patch_* AAB heavies + faction E3A/CH47/Turkey heavies.
+; Target pad: Advanced Air Base (US_AirField @ building Scale 1.60, 16 pads)
 ;
-; Class              Recommended Scale
-; ------------------------------------
-; Stealth bomber (B-2 proxy / B-1)   0.70 - 0.75
-; Strategic bomber (B-52 / Tu-160)   0.70 - 0.75
-; AWACS (E-3 / A-50 / Adnan)         0.75 - 0.80
-; Tanker / Transport (KC / C-130)    0.75 - 0.80
-; Very large (Tu-160 / IL-76)        0.70 - 0.78
+; Class                              Scale     GeometryMajor x Minor
+; ------------------------------------------------------------------
+; Stealth/strategic bomber           0.72      36.0 x 12.0
+;   (B-2, B-21, B-52, Tu-160, Tu-22, H-6)
+; AWACS                              0.78      40.0 x 14.0
+;   (E-3, A-50, KJ-2000, Adnan, *_AWACS)
+; Tanker / Transport / Il-76         0.76      40.0 x 14.0
+; Heavy helicopter (CH-47)           0.82      22.0 x 10.0
 ;
-; Object naming for future factions:
-;   <Side>_B2  <Side>_B52  <Side>_AWACS  <Side>_Tanker  <Side>_Transport
-;
-; Turkey implementations live under:
-;   Object/Specter/Turkey Armed Forces/Airforce/Turkey_{B2,B52,AWACS,Tanker,Transport}.ini
+; GeometryIsSmall = No on all heavies.

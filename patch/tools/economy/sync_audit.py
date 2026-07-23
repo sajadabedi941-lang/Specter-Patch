@@ -28,6 +28,19 @@ FOLDER_SIDE = {
     "United Arab Emirates": "UAE",
     "Indian Armed Forces": "India",
     "Japan Self-Defense Forces": "Japan",
+    "Egyptian Armed Forces": "Egypt",
+    "Syrian Arab Army": "Syria",
+    "Libyan Armed Forces": "Libya",
+    "Vietnam People's Army": "Vietnam",
+    "Republic of Korea Armed Forces": "SouthKorea",
+    "Republic of China Armed Forces": "Taiwan",
+    "British Armed Forces": "Britain",
+    "French Armed Forces": "France",
+    "German Armed Forces": "Germany",
+    "Italian Armed Forces": "Italy",
+    "Swedish Armed Forces": "Sweden",
+    "South African National Defence Force": "SouthAfrica",
+    "United Nations Forces": "UN",
 }
 
 # Helpers / projectiles — Side still preferred, but BuildCost Side is hard error.

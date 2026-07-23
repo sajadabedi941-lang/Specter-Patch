@@ -56,8 +56,10 @@ def match_rule(rel: str, name: str):
             continue
         return mx, key
     # AirDefense units by HISAR/SIPER/Korkut/Sungur name anywhere under faction tree
-    if re.search(r"(HISAR|SIPER|Korkut|Sungur|Roland|Fahad|SA-6|Sam8|ZSU|Pantsir|Tor)", name, re.I):
-        if "/Airforce/" in rel_n or "/Infantry/" in rel_n:
+    if re.search(r"Tornado", name, re.I):
+        return None
+    if re.search(r"(HISAR|SIPER|Korkut|Sungur|Roland|Fahad|SA-6|Sam8|ZSU|Pantsir|\bTor\b)", name, re.I):
+        if "/Airforce/" in rel_n or "/Infantry/" in rel_n or "/AdvancedAirBase/" in rel_n:
             return None
         return 10, "Patch_AirDefense"
     return None

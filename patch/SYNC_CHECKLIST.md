@@ -1,6 +1,6 @@
 # Specter Patch — Multiplayer Sync Checklist
 
-**Status:** PASS — Turkey full audit completion (playable finished faction)  
+**Status:** PASS — Phase B+ unique aircraft/tech/AAB for expansion factions + Turkey  
 **Last audit:** `sync_audit.py` errors=0 (vendor Data.zip warn only)  
 **Package:** `SYNC_MANIFEST.sha256` present
 

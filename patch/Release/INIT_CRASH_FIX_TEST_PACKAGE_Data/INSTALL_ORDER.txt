@@ -1,0 +1,20 @@
+Specter Ultimate Warfare — INIT_CRASH_FIX_TEST_PACKAGE
+======================================================
+
+Purpose: live ZH verification of the initialization crash fix.
+
+1. Restore clean Specter Ultimate Data (or uninstall prior patch overlay).
+2. Extract this zip so you have:
+     <GameRoot>\patch\Install_SpecterPatch.bat
+     <GameRoot>\patch\Data\...
+3. REQUIRED if you previously installed any Specter patch overlay:
+     Delete stale crash files listed in REMOVE_FROM_GAMEROOT.txt
+     (or run: powershell -ExecutionPolicy Bypass -File patch\Remove_StaleInitCrashFiles.ps1 -GameRoot "<GameRoot>")
+4. Run: patch\Run_SpecterPatch.bat   (or Install_SpecterPatch.bat)
+5. Launch Zero Hour / Specter and confirm init completes.
+6. Spot-check: America/Russia/China dozer can place Advanced Air Base.
+
+Do NOT modify vendor archives (Data.zip / Specter_Data* / .big).
+
+See FIXED_FILES.txt for the exact fix list.
+See INIT_CRASH_AUDIT_FIX_REPORT.md for cause analysis.

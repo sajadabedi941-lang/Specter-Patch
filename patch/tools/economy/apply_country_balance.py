@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Specter Patch — Country Balance System applicator.
 
-Reads ONE central config: patch/Data/INI/CountryBalance.ini
+Reads ONE central config: patch/tools/economy/config/CountryBalance.ini
 
 FinalCost = Base
   × Country.(Unit|Aircraft|Weapon|Upgrade)CostMult
@@ -31,7 +31,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]  # patch/
-CENTRAL = ROOT / "Data" / "INI" / "CountryBalance.ini"
+CENTRAL = ROOT / "tools" / "economy" / "config" / "CountryBalance.ini"
 OBJECT_ROOT = ROOT / "Data" / "INI" / "Object"
 
 

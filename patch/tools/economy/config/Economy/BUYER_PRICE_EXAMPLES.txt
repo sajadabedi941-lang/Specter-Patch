@@ -1,0 +1,33 @@
+SPECTER PATCH — Same equipment, different buyer prices
+======================================================
+
+SAGE cannot change one Object ID's BuildCost per player at runtime.
+Buyer-specific prices are authored as separate faction Objects that share
+the same BaseCost + TechClass but different Side / Origin.
+
+Formula reminder:
+  Final = Base × Economy × Origin × Tech × Asymmetric × DomesticBonus
+
+Worked example (abstract Gen5 fighter, BaseCost = 2000, Category = Aircraft):
+
+  Buyer     EconomyRating  Origin     TechClass     Approx Final
+  --------  -------------  ---------  ------------  ------------
+  America   VeryHigh       Domestic   Gen5Fighter   2000×1.20×0.85×1.35×0.95 ≈ 2586
+  China     VeryHigh       Domestic   Gen5Fighter   2000×1.18×0.85×1.35×0.95 ≈ 2543
+  Turkey    Medium         Domestic   Gen5Fighter   2000×1.00×0.85×1.35×0.95 ≈ 2180
+  Turkey    Medium         Imported   Gen5Fighter   2000×1.00×1.25×1.35       = 3375
+  Iran      MediumLow      Imported   Gen5Fighter   2000×0.92×1.25×1.35       ≈ 3105
+  Iraq      Low            Imported   Gen5Fighter   2000×0.85×1.25×1.35       ≈ 2870
+
+Asymmetric example (drone, BaseCost = 1000, TechClass = Standard):
+
+  Buyer     Origin     Approx Final
+  --------  ---------  ------------
+  America   Imported   1000×1.20×1.25 = 1500
+  Turkey    Domestic   1000×1.00×0.85×0.90×0.95 ≈ 727
+  Iraq      Domestic   1000×0.85×0.85×0.75×0.95 ≈ 518
+
+Authoring steps for a new shared design:
+  1. Choose BaseCost / BaseTime once in UnitPricingRegistry (or INI BuildCost).
+  2. For each buyer faction Object, set Origin (Domestic / Licensed / Imported).
+  3. Run: python3 patch/tools/economy/apply_dynamic_pricing.py --side <Side>

@@ -75,12 +75,12 @@ Heavy aircraft (scaled 0.70-0.80 for runway/game scale):
 Global build limits (MaxSimultaneousLinkKey) for every faction:
   Patch_AirDefense=10, Patch_ArtillerySite=6,
   Patch_StrategicLauncher=4, Patch_Nuclear=1
-  Turkey objects annotated; see GlobalBuildLimits_SpecterPatch.ini
+  Turkey objects annotated; see tools/economy/config/GlobalBuildLimits_SpecterPatch.ini
   and Object/Specter/PatchSystems/GLOBAL_SYSTEMS.txt
 
 Dynamic Pricing System (global)
 -------------------------------
-Reusable INI framework under Data/INI/Economy/:
+Reusable INI framework under tools/economy/config/Economy/:
   FactionEconomy, EquipmentOrigin, TechnologyClass, AsymmetricBalance,
   DomesticProduction, ResourceIncome, PricingDefaults, UnitPricingRegistry
 Formula: BaseCost × Economy × Origin × Tech × Asymmetric × Domestic
@@ -91,7 +91,7 @@ Domestic MIC: Turkey_MIC grants Upgrade_Patch_DomesticIndustry (−5% VEHICLE/IN
 
 Country Balance System (central INI)
 ------------------------------------
-Single source of truth: Data/INI/CountryBalance.ini
+Single source of truth: tools/economy/config/CountryBalance.ini
   - Per-country Unit/Aircraft/Weapon/Upgrade cost multipliers
   - Version 2 income channels: Supply / Oil / Port / Industrial
   - Version 2 cost channels: DroneCostMult, DomesticWeaponCostMult,
@@ -122,7 +122,7 @@ Air defense (Patch_AirDefense max 10):
 Weapons overlay: Weapon_Turkey_Phase4.ini (TRG-230 salvo/HE)
 Upgrades: HisarNetwork, BoraGuidance
 Wired into WarFactory tiers T–T3 and MIC CommandSets.
-Global build-limit contract: GlobalBuildLimits_SpecterPatch.ini
+Global build-limit contract: tools/economy/config/GlobalBuildLimits_SpecterPatch.ini
   + tools/economy/apply_build_limits.py (all countries)
 
 Turkey faction completion (before other countries)

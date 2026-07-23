@@ -1,0 +1,15 @@
+MUST DELETE from GameRoot before / after install
+================================================
+If a previous Specter patch install left these under <GameRoot>\Data\INI,
+they WILL crash ZH init. The installer only merges files — it does not delete
+stale paths. Remove them manually (or run Remove_StaleInitCrashFiles.ps1).
+
+DELETE these if present:
+  <GameRoot>\Data\INI\CountryBalance.ini
+  <GameRoot>\Data\INI\GlobalBuildLimits_SpecterPatch.ini
+  <GameRoot>\Data\INI\CommandButton_RuntimeFix_RussiaRS24.ini
+  <GameRoot>\Data\INI\Economy\   (entire folder)
+
+Optional verify after delete:
+  dir /s <GameRoot>\Data\INI\CountryBalance.ini
+  dir /s <GameRoot>\Data\INI\Economy

@@ -1,0 +1,11 @@
+Specter Ultimate Warfare — FINAL_BOOT_FIX_PATCH
+==============================================
+
+1. Install Specter base + Ultimate Warfare patch overlay.
+2. Merge this patch's Data/INI over the game Data/INI (add/overwrite).
+3. Do not modify vendor archives (Data.zip / Specter_Data* / .big).
+
+Fixes:
+- Empty PowerPlant CommandSet assignments (boot parse cascade)
+- Multi-object Prerequisites collapsed to single valid Object=
+- Faction-local Prerequisite isolation where needed

@@ -1,0 +1,57 @@
+REPAIRED / PLACED FILES
+Data/INI/Object/Specter/PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini
+Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_CommandCenter.ini
+Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_MilitaryHQ.ini
+Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Karrar-2.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Lamiaa.ini
+Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_CommandCenter.ini
+Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_MilitaryHQ.ini
+Data/INI/Object/Specter/PatchSystems/MilitaryHQ/MilitaryHQ_StockFactions.ini
+Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini
+Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_MilitaryHQ.ini
+Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_TorM.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_MilitaryHQ.ini
+Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_CommandCenter.ini
+Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_MilitaryHQ.ini
+Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_CommandCenter.ini
+Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_MilitaryHQ.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_AWACS.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Bora.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_EliteMaroonBerets.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MilitaryHQ.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_CommandCenter.ini
+Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MilitaryHQ.ini
+Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini
+Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_MilitaryHQ.ini
+Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_CommandCenter.ini
+Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_MilitaryHQ.ini

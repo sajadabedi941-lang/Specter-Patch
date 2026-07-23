@@ -1,0 +1,471 @@
+PATCH_FINAL_AUDIT_REPORT
+========================
+
+VERDICT: PASS
+
+Counts:
+  Object duplicate     = 0
+  ModuleTag duplicate  = 0
+  Missing reference    = 0
+  Wrong path           = 0
+  Empty required INI   = 0
+
+Rules enforced:
+  - Faction objects only under Data/INI/Object/Specter/<Faction>/...
+  - Never Data/INI/*.ini or Data/INI/Object/*.ini for faction Objects
+  - All audited countries retained
+
+Per-file results:
+-----------------
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Egyptian Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Egypt_Alhussaien, Egypt_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: India_Alhussaien, India_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Libya_Alhussaien, Libya_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Pakistan_Alhussaien, Pakistan_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Saudi Arabian Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: SaudiArabia_Alhussaien, SaudiArabia_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/South African National Defence Force/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: SouthAfrica_Alhussaien, SouthAfrica_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Syrian Arab Army/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Syria_Alhussaien, Syria_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Turkey_Alhussaien, TurkeyAbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Ukraine_Alhussaien, Ukraine_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/United Arab Emirates/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: UAE_Alhussaien, UAE_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AbbasLauncher.ini
+  Path   : Data/INI/Object/Specter/Vietnam People's Army/Wheeled/AbbasLauncher.ini
+  Status : PASS
+  Objects: Vietnam_Alhussaien, Vietnam_AbbasLauncherHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: AIR_FORCE_EXPANSION.ini
+  Path   : Data/INI/Object/Specter/PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+  Status : OK_DOC
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Airborne.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini
+  Status : PASS
+  Objects: TurkeyInfantrySpecOps_Akms, TurkeyInfantrySpecOps_AKMGP, TurkeyInfantrySpecOps_Rpk, TurkeyInfantrySpecOps_Mks, TurkeyInfantryAirborneHeavySniper
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Aircraft_AAB_Global.ini
+  Path   : Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+  Status : PASS
+  Objects: Patch_America_F22, Patch_America_F35, Patch_America_F16C, Patch_America_F15E, Patch_America_A10, Patch_America_B2, Patch_America_B52, Patch_America_E3, Patch_America_KC135, Patch_America_C17, Patch_Russia_Su57, Patch_Russia_Su35...
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Aircraft_AirForceExpansion.ini
+  Path   : Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+  Status : PASS
+  Objects: Patch_America_Aurora, Patch_America_StealthHawk, Patch_America_AC130Spectre, Patch_America_E2C, Patch_America_B3, Patch_Russia_Su57Strike, Patch_Ukraine_Sokil, Patch_Ukraine_AN71, Patch_Ukraine_Dronecopter, Patch_Germany_JetBomber, Patch_France_Cayova, Patch_China_J10Strike
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Egypt_SpecialForces_Akms, Egypt_SpecialForces_AKMGP, Egypt_SpecialForces_Rpk, Egypt_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Indian Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: India_SpecialForces_Akms, India_SpecialForces_AKMGP, India_SpecialForces_Rpk, India_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Libyan Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Libya_SpecialForces_Akms, Libya_SpecialForces_AKMGP, Libya_SpecialForces_Rpk, Libya_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Pakistan_SpecialForces_Akms, Pakistan_SpecialForces_AKMGP, Pakistan_SpecialForces_Rpk, Pakistan_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: SaudiArabia_SpecialForces_Akms, SaudiArabia_SpecialForces_AKMGP, SaudiArabia_SpecialForces_Rpk, SaudiArabia_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/South African National Defence Force/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: SouthAfrica_SpecialForces_Akms, SouthAfrica_SpecialForces_AKMGP, SouthAfrica_SpecialForces_Rpk, SouthAfrica_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Syrian Arab Army/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Syria_SpecialForces_Akms, Syria_SpecialForces_AKMGP, Syria_SpecialForces_Rpk, Syria_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Turkey_SpecialForces_Akms, Turkey_SpecialForces_AKMGP, Turkey_SpecialForces_Rpk, Turkey_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Ukraine_SpecialForces_Akms, Ukraine_SpecialForces_AKMGP, Ukraine_SpecialForces_Rpk, Ukraine_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/United Arab Emirates/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: UAE_SpecialForces_Akms, UAE_SpecialForces_AKMGP, UAE_SpecialForces_Rpk, UAE_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SpecialForces.ini
+  Path   : Data/INI/Object/Specter/Vietnam People's Army/Infantry/SpecialForces.ini
+  Status : PASS
+  Objects: Vietnam_SpecialForces_Akms, Vietnam_SpecialForces_AKMGP, Vietnam_SpecialForces_Rpk, Vietnam_SpecialForces_Mks
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: MilitaryHQ_StockFactions.ini
+  Path   : Data/INI/Object/Specter/PatchSystems/MilitaryHQ/MilitaryHQ_StockFactions.ini
+  Status : PASS
+  Objects: America_MilitaryHQ, Russia_MilitaryHQ, China_MilitaryHQ, NorthKorea_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_Akinci.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+  Status : PASS
+  Objects: Turkey_Akinci
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_AWACS.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_AWACS.ini
+  Status : PASS
+  Objects: Turkey_AWACS
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_Bora.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Bora.ini
+  Status : PASS
+  Objects: Turkey_Bora, Turkey_BoraHulk
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini
+  Status : PASS
+  Objects: Turkey_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_EliteMaroonBerets.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_EliteMaroonBerets.ini
+  Status : PASS
+  Objects: Turkey_EliteMaroonBerets
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_F16Block70.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+  Status : PASS
+  Objects: Turkey_F16Block70
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_Kizilelma.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+  Status : PASS
+  Objects: Turkey_Kizilelma
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MilitaryHQ.ini
+  Status : PASS
+  Objects: Turkey_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_TB2.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+  Status : PASS
+  Objects: Turkey_TB2
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_Tu-22M3.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+  Status : PASS
+  Objects: Turkey_Tu-22M3
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Turkey_WeaponObjects.ini
+  Path   : Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+  Status : PASS
+  Objects: Turkey_7S118_MissileObject, Turkey_Fahad250_ABM_Object, Turkey_MRBM_Raad2_Object, Turkey_Kh-22B_Object, Turkey_AM39B2M2_Object, Turkey_KH-22B_CruiseMissile_Dummy, Turkey_Kh55M_Object_SpecialPower, Turkey_KH22B_SpecialPower, Turkey_155mm_Shell, Turkey_SS1E_Missile, Turkey_AlshaheedSuicideWeaponObject, Turkey_Fab-100...
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: UAE_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_CommandCenter.ini
+  Status : PASS
+  Objects: UAE_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: UAE_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MilitaryHQ.ini
+  Status : PASS
+  Objects: UAE_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: UAE_MQ9.ini
+  Path   : Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+  Status : PASS
+  Objects: UAE_MQ9
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SaudiArabia_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini
+  Status : PASS
+  Objects: SaudiArabia_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SaudiArabia_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_MilitaryHQ.ini
+  Status : PASS
+  Objects: SaudiArabia_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SaudiArabia_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+  Status : PASS
+  Objects: SaudiArabia_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Pakistan_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini
+  Status : PASS
+  Objects: Pakistan_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Pakistan_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_MilitaryHQ.ini
+  Status : PASS
+  Objects: Pakistan_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: India_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_CommandCenter.ini
+  Status : PASS
+  Objects: India_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: India_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_MilitaryHQ.ini
+  Status : PASS
+  Objects: India_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: India_TejaMk2.ini
+  Path   : Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+  Status : PASS
+  Objects: India_TejasMk2
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Japan_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_CommandCenter.ini
+  Status : PASS
+  Objects: Japan_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Japan_MQ9.ini
+  Path   : Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+  Status : PASS
+  Objects: Japan_MQ9
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SouthKorea_CommandDrone.ini
+  Path   : Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+  Status : PASS
+  Objects: SouthKorea_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SouthKorea_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Republic of Korea Armed Forces/Buildings/SouthKorea_MilitaryHQ.ini
+  Status : PASS
+  Objects: SouthKorea_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Britain_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  Status : PASS
+  Objects: Britain_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Britain_F35.ini
+  Path   : Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  Status : PASS
+  Objects: Britain_F35B
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: France_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+  Status : PASS
+  Objects: France_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Germany_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+  Status : PASS
+  Objects: Germany_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Italy_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+  Status : PASS
+  Objects: Italy_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Sweden_CombatDrone.ini
+  Path   : Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+  Status : PASS
+  Objects: Sweden_CombatDrone
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Egypt_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+  Status : PASS
+  Objects: Egypt_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Egypt_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+  Status : PASS
+  Objects: Egypt_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Israel_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+  Status : PASS
+  Objects: Israel_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Israel_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+  Status : PASS
+  Objects: Israel_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Syria_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_CommandCenter.ini
+  Status : PASS
+  Objects: Syria_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Syria_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_MilitaryHQ.ini
+  Status : PASS
+  Objects: Syria_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Libya_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_CommandCenter.ini
+  Status : PASS
+  Objects: Libya_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Libya_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_MilitaryHQ.ini
+  Status : PASS
+  Objects: Libya_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Ukraine_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini
+  Status : PASS
+  Objects: Ukraine_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Ukraine_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_MilitaryHQ.ini
+  Status : PASS
+  Objects: Ukraine_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Vietnam_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_CommandCenter.ini
+  Status : PASS
+  Objects: Vietnam_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Vietnam_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_MilitaryHQ.ini
+  Status : PASS
+  Objects: Vietnam_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SouthAfrica_CommandCenter.ini
+  Path   : Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_CommandCenter.ini
+  Status : PASS
+  Objects: SouthAfrica_CommandCenter
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: SouthAfrica_MilitaryHQ.ini
+  Path   : Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_MilitaryHQ.ini
+  Status : PASS
+  Objects: SouthAfrica_MilitaryHQ
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+FILE: Russia_AD_Torm.ini
+  Path   : Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_TorM.ini
+  Status : PASS
+  Objects: Russia_AD_TorM
+  Checks : Object uniqueness OK | ModuleTag OK | refs OK | path OK | not empty
+
+SUMMARY
+-------
+Files audited: 74
+PASS files   : 74
+FAIL files   : 0
+
+PASS criteria met. Final ZIP may be created.
+

@@ -38,7 +38,18 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
    - Audit: /MOD_CONTENT_AUDIT.md (repo root)
    - Missing mod.z23/z24 blocks full W3D extract; Specter art used instead
 
-5) Country Balance System (central)
+5) Advanced AWACS Command System
+   - AWACS = airborne command center (radar + battle management + EA + ground cue)
+   - Radar tiers: Normal +50% / Advanced +100% / UN-NATO +150%
+   - Country identity: USA/Russia/China/Turkey/India/UN profiles
+   - FAERIE_FIRE paint + WeaponBonus TARGET_FAERIE_FIRE for missile guidance
+   - Electronic Attack SP (fixed ReloadTime) → Specter RadioWave / Krasukha OCL
+   - Survival: health, flare/chaff, RTB to AAB heal
+   - Guide: PatchSystems/AdvancedAWACS/ADVANCED_AWACS_COMMAND.txt
+   - Weapons/SP/UI: Weapon_AdvancedAWACS.ini, SpecialPower_AdvancedAWACS.ini,
+     CommandButton_AdvancedAWACS.ini, CommandSet_AdvancedAWACS.ini
+
+6) Country Balance System (central)
    - ONE config: Data/INI/CountryBalance.ini
    - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
    - Origin / TechClass / Category / Asymmetric / Domestic layers

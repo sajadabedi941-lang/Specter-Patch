@@ -28,7 +28,8 @@ SPECTER PATCH — Global Systems Contract
 
 Future factions MUST set these LinkKeys on matching objects.
 Turkey objects are annotated in this phase.
-Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
+Reference: tools/economy/config/GlobalBuildLimits_SpecterPatch.ini
+(Tool-only — never ship under Data/INI; engine MaxSimultaneous* is baked onto Objects.)
 
 4) Air Force Expansion (mod archive integration)
    - Overlay-only Patch_* airframes from mod.zip audit (fighters/bombers/AWACS/gunship/UAV/helo)
@@ -50,7 +51,7 @@ Reference: Data/INI/GlobalBuildLimits_SpecterPatch.ini
      CommandButton_AdvancedAWACS.ini, CommandSet_AdvancedAWACS.ini
 
 6) Country Balance System (central)
-   - ONE config: Data/INI/CountryBalance.ini
+   - ONE config: tools/economy/config/CountryBalance.ini (tool-only, not under Data/INI)
    - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
    - Origin / TechClass / Category / Asymmetric / Domestic layers
    - Path-based classification only (no per-unit cost hardcoding)

@@ -1,0 +1,382 @@
+SPECTER ULTIMATE WARFARE EXPANSION
+INI INTEGRITY REPAIR REPORT
+Scope: patch/Data/INI/Object/Specter/
+Engine: C&C Generals Zero Hour
+Tool: patch/tools/ini_integrity_repair.py
+========================================================================
+
+POLICY
+- No countries deleted
+- No units/aircraft/weapons removed
+- Custom factions preserved
+- Overlay-only repairs (vendor archives untouched)
+
+SCAN RESULTS (pre/post)
+- Specter Object definitions indexed: 2333
+- Duplicate Object names: 0
+- Duplicate ModuleTags within Objects: 0
+
+SUMMARY
+- Fixed files (with repair markers / created): 108
+- Inline INI-REPAIR remaps: 193
+- Objects created: 15
+- Renamed objects: 1 (Israel_WarFactory_T -> Israel_WarFactory)
+- Removed duplicates: 0
+- Remaining cross-faction upgrade refs: 0
+
+CREATED OBJECTS
+  + Israel_WarFactory
+  + Israel_Barracks
+  + Israel_Airfield_T
+  + Israel_SupplyCenter
+  + Israel_PowerPlant
+  + Israel_RadarStation
+  + Britain_Barracks
+  + France_Barracks
+  + Germany_Barracks
+  + Italy_Barracks
+  + Japan_Barracks
+  + Taiwan_Barracks
+  + SouthKorea_Barracks
+  + Sweden_Barracks
+  + UN_Barracks
+
+RENAMED OBJECTS
+  ~ Israel_WarFactory_T -> Israel_WarFactory
+
+REMOVED DUPLICATES
+  (none — no duplicate Object/ModuleTag definitions found)
+
+ISRAEL BUILDINGS NOW PRESENT
+  * Israel_Airfield_T.ini
+  * Israel_Barracks.ini
+  * Israel_CommandCenter.ini
+  * Israel_MilitaryHQ.ini
+  * Israel_PowerPlant.ini
+  * Israel_RadarStation.ini
+  * Israel_SupplyCenter.ini
+  * Israel_WarFactory.ini
+
+SUPPORT FILES ADDED
+  * patch/Data/INI/Upgrade_Israel.ini
+  * patch/Data/INI/Upgrade_IntegrityFixes.ini
+  * patch/Data/INI/CommandSet_Israel_Integrity.ini
+  * patch/tools/ini_integrity_repair.py
+
+FIXED FILES
+  * patch/Data/INI/CommandSet_Israel_Integrity.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_Typhoon.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_Barracks.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini
+  * patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/Buildings/France_Barracks.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini
+  * patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini
+  * patch/Data/INI/Object/Specter/German Armed Forces/Airforce/Germany_Eurofighter.ini
+  * patch/Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_Barracks.ini
+  * patch/Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Tejas.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini
+  * patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Barracks.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_PowerPlant.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_SupplyCenter.ini
+  * patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini
+  * patch/Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_Barracks.ini
+  * patch/Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Barracks.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+  * patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini
+  * patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_CRAM.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Pantsir.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini
+  * patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini
+  * patch/Data/INI/Object/Specter/Republic of China Armed Forces/Buildings/Taiwan_Barracks.ini
+  * patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Buildings/SouthKorea_Barracks.ini
+  * patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+  * patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+  * patch/Data/INI/Object/Specter/Swedish Armed Forces/Buildings/Sweden_Barracks.ini
+  * patch/Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+  * patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini
+  * patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+  * patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+  * patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+  * patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+  * patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+  * patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+  * patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
+  * patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini
+  * patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+  * patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini
+  * patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini
+  * patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini
+  * patch/Data/INI/Object/Specter/United Nations Forces/Buildings/UN_Barracks.ini
+  * patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini
+  * patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini
+  * patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+  * patch/Data/INI/Upgrade_IntegrityFixes.ini
+  * patch/Data/INI/Upgrade_Israel.ini
+  * patch/tools/ini_integrity_repair.py
+
+REMAP ACTIONS (INI-REPAIR markers)
+  patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini:966: Side                = UAE ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini:977: Object = UAE_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini:1196: Side                = UAE ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini:2007: Side = UAE ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini:966: Side                = Syria ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini:977: Object = Syria_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini:1196: Side                = Syria ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini:2007: Side = Syria ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini:966: Side                = India ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini:977: Object = India_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini:1196: Side                = India ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini:2007: Side = India ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini:966: Side                = SouthAfrica ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini:977: Object = SouthAfrica_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini:1196: Side                = SouthAfrica ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini:2007: Side = SouthAfrica ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini:966: Side                = Egypt ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini:977: Object = Egypt_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini:1196: Side                = Egypt ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini:2007: Side = Egypt ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini:966: Side                = Libya ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini:977: Object = Libya_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini:1196: Side                = Libya ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini:2007: Side = Libya ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini:966: Side                = Pakistan ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini:977: Object = Pakistan_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini:1196: Side                = Pakistan ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini:2007: Side = Pakistan ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini:966: Side                = SaudiArabia ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini:977: Object = SaudiArabia_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini:1196: Side                = SaudiArabia ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini:2007: Side = SaudiArabia ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini:966: Side                = Ukraine ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini:977: Object = Ukraine_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini:1196: Side                = Ukraine ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini:2007: Side = Ukraine ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini:966: Side                = Vietnam ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini:977: Object = Vietnam_WarFactory_T ; INI-REPAIR was AmericaWarFactory
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini:1196: Side                = Vietnam ; INI-REPAIR was GLA
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini:2007: Side = Vietnam ; INI-REPAIR was America
+  patch/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Britain_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_Typhoon.ini:127: Object = Britain_StrategyCenter ; INI-REPAIR was BritainStrategyCenter
+  patch/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini:157: Object = Britain_StrategyCenter ; INI-REPAIR was BritainStrategyCenter
+  patch/Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini:72: Object = Britain_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini:385: Object = Britain_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini:386: Object = Britain_RadarGM406 ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini:387: Object = Britain_StrategyCenter ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini:210: TriggeredBy   = Upgrade_America_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini:211: TriggeredBy   = Upgrade_Iran_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini:210: TriggeredBy   = Upgrade_America_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini:173: TriggeredBy   = Upgrade_Russia_Armor ; INI-REPAIR was Upgrade_India_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Iran_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Pantsir.ini:191: TriggeredBy   = Upgrade_Russia_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_China_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini:211: TriggeredBy   = Upgrade_China_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini:173: TriggeredBy   = Upgrade_America_Armor ; INI-REPAIR was Upgrade_India_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini:210: TriggeredBy   = Upgrade_Russia_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini:211: TriggeredBy   = Upgrade_Russia_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_CRAM.ini:191: TriggeredBy   = Upgrade_America_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini:173: TriggeredBy   = Upgrade_America_Armor ; INI-REPAIR was Upgrade_India_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini:211: TriggeredBy   = Upgrade_China_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini:174: TriggeredBy   = Upgrade_Iran_Armor ; INI-REPAIR was Upgrade_India_Armor
+  patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini:174: TriggeredBy   = Upgrade_Iran_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_UAE_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini:80: Object = UAE_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini:95: Object = UAE_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini:147: TriggeredBy   = Upgrade_UAE_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini:152: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini:155: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini:169: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini:95: Object = UAE_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini:147: TriggeredBy   = Upgrade_UAE_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini:152: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini:155: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini:169: TriggeredBy           = Upgrade_UAE_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini:95: Object = Syria_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini:147: TriggeredBy   = Upgrade_Syria_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini:152: TriggeredBy           = Upgrade_Syria_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini:155: TriggeredBy           = Upgrade_Syria_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini:169: TriggeredBy           = Upgrade_Syria_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini:107: Object = Turkey_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini:72: Object = Turkey_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini:385: Object = Turkey_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini:386: Object = Turkey_RadarStation ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini:387: Object = Turkey_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini:149: Object = Turkey_CommandCenter ; INI-REPAIR was GLACommandCenter
+  patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini:159: Object = Turkey_CommandCenter ; INI-REPAIR was ChinaCommandCenter
+  patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini:173: TriggeredBy   = Upgrade_India_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_India_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini:174: TriggeredBy   = Upgrade_India_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini:130: Object = India_MIC ; INI-REPAIR was NatoStrategyCenter
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Tejas.ini:125: Object = India_MIC ; INI-REPAIR was NatoStrategyCenter
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini:95: Object = India_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini:147: TriggeredBy   = Upgrade_India_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini:152: TriggeredBy           = Upgrade_India_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini:155: TriggeredBy           = Upgrade_India_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini:169: TriggeredBy           = Upgrade_India_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini:72: Object = India_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini:388: Object = India_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini:387: Object = India_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini:398: Object = India_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini:72: Object = Sweden_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini:95: Object = SouthAfrica_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini:147: TriggeredBy   = Upgrade_SouthAfrica_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini:152: TriggeredBy           = Upgrade_SouthAfrica_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini:155: TriggeredBy           = Upgrade_SouthAfrica_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini:169: TriggeredBy           = Upgrade_SouthAfrica_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini:72: Object = Italy_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Japan_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini:210: TriggeredBy   = Upgrade_Japan_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini:174: TriggeredBy   = Upgrade_Japan_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini:79: Object = Japan_AdvancedAirBase ; INI-REPAIR was JapanAirfield
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini:72: Object = Japan_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini:385: Object = Japan_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini:386: Object = Japan_RadarGM406 ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini:387: Object = Japan_StrategyCenter ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini:95: Object = Egypt_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini:147: TriggeredBy   = Upgrade_Egypt_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini:152: TriggeredBy           = Upgrade_Egypt_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini:155: TriggeredBy           = Upgrade_Egypt_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini:169: TriggeredBy           = Upgrade_Egypt_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_France_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini:210: TriggeredBy   = Upgrade_France_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini:125: Object = France_StrategyCenter ; INI-REPAIR was NatoStrategyCenter
+  patch/Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini:72: Object = France_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini:385: Object = France_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini:386: Object = France_RadarGM406 ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini:387: Object = France_StrategyCenter ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini:191: TriggeredBy   = Upgrade_Israel_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini:174: TriggeredBy   = Upgrade_Israel_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini:95: Object = Libya_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini:147: TriggeredBy   = Upgrade_Libya_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini:152: TriggeredBy           = Upgrade_Libya_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini:155: TriggeredBy           = Upgrade_Libya_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini:169: TriggeredBy           = Upgrade_Libya_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Pakistan_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini:95: Object = Pakistan_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini:147: TriggeredBy   = Upgrade_Pakistan_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini:152: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini:155: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini:169: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini:95: Object = Pakistan_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini:147: TriggeredBy   = Upgrade_Pakistan_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini:152: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini:155: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini:169: TriggeredBy           = Upgrade_Pakistan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini:385: Object = Pakistan_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini:386: Object = Pakistan_RadarStation ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini:387: Object = Pakistan_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini:385: Object = Pakistan_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini:386: Object = Pakistan_RadarStation ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini:387: Object = Pakistan_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_SaudiArabia_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini:72: Object = SaudiArabia_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini:72: Object = SouthKorea_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Ukraine_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini:108: Object = Ukraine_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini:160: TriggeredBy   = Upgrade_Ukraine_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini:165: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini:168: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini:182: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini:95: Object = Ukraine_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini:147: TriggeredBy   = Upgrade_Ukraine_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini:152: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini:155: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini:169: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini:95: Object = Ukraine_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini:147: TriggeredBy   = Upgrade_Ukraine_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini:152: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini:155: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini:169: TriggeredBy           = Upgrade_Ukraine_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini:385: Object = Ukraine_SupplyCenter ; INI-REPAIR was India_SupplyCenter
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini:386: Object = Ukraine_RadarStation ; INI-REPAIR was India_RadarStation
+  patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini:387: Object = Ukraine_MIC ; INI-REPAIR was India_HussienResearchObject
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini:95: Object = Vietnam_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini:147: TriggeredBy   = Upgrade_Vietnam_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini:152: TriggeredBy           = Upgrade_Vietnam_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini:155: TriggeredBy           = Upgrade_Vietnam_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini:169: TriggeredBy           = Upgrade_Vietnam_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini:95: Object = UN_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini:147: TriggeredBy   = Upgrade_UN_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini:152: TriggeredBy           = Upgrade_UN_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini:155: TriggeredBy           = Upgrade_UN_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini:169: TriggeredBy           = Upgrade_UN_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini:95: Object = Taiwan_AdvancedAirBase ; INI-REPAIR was NatoAirfield
+  patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini:147: TriggeredBy   = Upgrade_Taiwan_AircraftWeapons ; INI-REPAIR was Upgrade_Turkey_PrecisionMunitions
+  patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini:152: TriggeredBy           = Upgrade_Taiwan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini:155: TriggeredBy           = Upgrade_Taiwan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini:169: TriggeredBy           = Upgrade_Taiwan_AircraftCountermeasures ; INI-REPAIR was Upgrade_Turkey_Countermeasures
+  patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini:173: TriggeredBy   = Upgrade_Germany_Armor ; INI-REPAIR was Upgrade_Britain_Armor
+  patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_AntiDrone.ini:191: TriggeredBy   = Upgrade_Germany_Armor ; INI-REPAIR was Upgrade_Turkey_HisarNetwork
+  patch/Data/INI/Object/Specter/German Armed Forces/Airforce/Germany_Eurofighter.ini:127: Object = Germany_StrategyCenter ; INI-REPAIR was NatoStrategyCenter
+  patch/Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini:72: Object = Germany_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+
+REMAINING ERRORS
+  (none) — cross-faction Turkey/Britain/India TriggeredBy remapped;
+  Object/ModuleTag duplicates not present; sync_audit.py PASS.
+
+NOTES
+- NATO-style factions already used BootCamp/Camp as barracks; unique
+  {Side}_Barracks objects were added for country isolation naming.
+- Stock Specter weapons/locomotors/commandsets living in vendor archives
+  are valid at runtime and are not treated as patch gaps.
+- sync_audit.py: PASS after CountryBalance bake + SYNC_MANIFEST refresh.
+
+END REPORT

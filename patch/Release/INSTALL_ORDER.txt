@@ -1,0 +1,365 @@
+SPECTER ULTIMATE WARFARE EXPANSION
+CLEAN RELEASE PATCH — INSTALL ORDER
+Generated: 2026-07-23 04:23 UTC
+Package: SpecterUltimateWarfare_CleanRelease.zip
+
+IMPORTANT
+- OVERLAY ONLY. Original Specter archives stay untouched.
+- NEVER modify/delete: Data.zip, Specter_Data*, _SPEC_*, *.big, payload.rar, mod.zip
+- Copy/merge only the Data/ tree from this ZIP into your game root.
+- Multiplayer clients must all use this same ZIP.
+
+QUICK INSTALL
+1. Close Generals ZH / GenLauncher.
+2. Extract this ZIP.
+3. Copy SpecterUltimateWarfare_CleanRelease/Data/ → <GameRoot>/Data/ (merge).
+4. Keep docs/ for reference (not required in game folder).
+
+CONTENTS: 18 new + 91 fixed overlay files
+
+STEP 1 — Upgrades
+  [NEW] Data/INI/Upgrade_IntegrityFixes.ini
+         -> <GameRoot>/Data/INI/Upgrade_IntegrityFixes.ini
+  [NEW] Data/INI/Upgrade_Israel.ini
+         -> <GameRoot>/Data/INI/Upgrade_Israel.ini
+
+STEP 2 — CommandSets
+  [NEW] Data/INI/CommandSet_Israel_Integrity.ini
+         -> <GameRoot>/Data/INI/CommandSet_Israel_Integrity.ini
+
+STEP 3 — PatchSystems Object overlays
+  [FIX] Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_CRAM.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_CRAM.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Pantsir.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Pantsir.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini
+  [FIX] Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini
+         -> <GameRoot>/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini
+
+STEP 4 — Israel buildings / units (new + fixed)
+  [FIX] Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
+  [FIX] Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_PowerPlant.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_PowerPlant.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_SupplyCenter.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_SupplyCenter.ini
+  [NEW] Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini
+
+STEP 5 — New Barracks aliases (NATO-style factions)
+  [NEW] Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_Barracks.ini
+  [NEW] Data/INI/Object/Specter/French Armed Forces/Buildings/France_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/Buildings/France_Barracks.ini
+  [NEW] Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Republic of China Armed Forces/Buildings/Taiwan_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Republic of China Armed Forces/Buildings/Taiwan_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Republic of Korea Armed Forces/Buildings/SouthKorea_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Republic of Korea Armed Forces/Buildings/SouthKorea_Barracks.ini
+  [NEW] Data/INI/Object/Specter/Swedish Armed Forces/Buildings/Sweden_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Swedish Armed Forces/Buildings/Sweden_Barracks.ini
+  [NEW] Data/INI/Object/Specter/United Nations Forces/Buildings/UN_Barracks.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Nations Forces/Buildings/UN_Barracks.ini
+
+STEP 6 — Country Object fixes (remaining)
+  [FIX] Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  [FIX] Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_Typhoon.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_Typhoon.ini
+  [FIX] Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini
+  [FIX] Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+  [FIX] Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini
+  [FIX] Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini
+  [FIX] Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini
+  [FIX] Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini
+         -> <GameRoot>/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini
+  [FIX] Data/INI/Object/Specter/German Armed Forces/Airforce/Germany_Eurofighter.ini
+         -> <GameRoot>/Data/INI/Object/Specter/German Armed Forces/Airforce/Germany_Eurofighter.ini
+  [FIX] Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Tejas.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Tejas.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini
+  [FIX] Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini
+  [FIX] Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+  [FIX] Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini
+  [FIX] Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini
+  [FIX] Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+  [FIX] Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+  [FIX] Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+  [FIX] Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini
+  [FIX] Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+  [FIX] Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+  [FIX] Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+  [FIX] Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+  [FIX] Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+  [FIX] Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+  [FIX] Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
+  [FIX] Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini
+  [FIX] Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+  [FIX] Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini
+  [FIX] Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini
+  [FIX] Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini
+  [FIX] Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini
+  [FIX] Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini
+  [FIX] Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+         -> <GameRoot>/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+
+FULL MANIFEST (status path)
+  A  Data/INI/CommandSet_Israel_Integrity.ini
+  M  Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  M  Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_Typhoon.ini
+  A  Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_Barracks.ini
+  M  Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  M  Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini
+  M  Data/INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+  M  Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+  M  Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini
+  M  Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini
+  A  Data/INI/Object/Specter/French Armed Forces/Buildings/France_Barracks.ini
+  M  Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+  M  Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini
+  M  Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini
+  M  Data/INI/Object/Specter/German Armed Forces/Airforce/Germany_Eurofighter.ini
+  A  Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_Barracks.ini
+  M  Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Tejas.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Drones/India_ReconDrone.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Wheeled/AbbasLauncher.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini
+  M  Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini
+  M  Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
+  M  Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_IronDome.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Barracks.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_PowerPlant.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_SupplyCenter.ini
+  A  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini
+  A  Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_Barracks.ini
+  M  Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+  A  Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Barracks.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+  M  Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+  M  Data/INI/Object/Specter/Libyan Armed Forces/Drones/Libya_CombatDrone.ini
+  M  Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_CombatDrone.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/Drones/Pakistan_LoiteringDrone.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini
+  M  Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini
+  M  Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+  M  Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_CRAM.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Pantsir.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini
+  M  Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini
+  A  Data/INI/Object/Specter/Republic of China Armed Forces/Buildings/Taiwan_Barracks.ini
+  M  Data/INI/Object/Specter/Republic of China Armed Forces/Drones/Taiwan_CombatDrone.ini
+  A  Data/INI/Object/Specter/Republic of Korea Armed Forces/Buildings/SouthKorea_Barracks.ini
+  M  Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+  M  Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+  M  Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+  M  Data/INI/Object/Specter/South African National Defence Force/Drones/SouthAfrica_CombatDrone.ini
+  M  Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+  A  Data/INI/Object/Specter/Swedish Armed Forces/Buildings/Sweden_Barracks.ini
+  M  Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+  M  Data/INI/Object/Specter/Syrian Arab Army/Drones/Syria_LoiteringDrone.ini
+  M  Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+  M  Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+  M  Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+  M  Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+  M  Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+  M  Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_BayraktarTB2.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_LoiteringDrone.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/Drones/Ukraine_ReconDrone.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+  M  Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
+  M  Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini
+  M  Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+  M  Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini
+  M  Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini
+  M  Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini
+  A  Data/INI/Object/Specter/United Nations Forces/Buildings/UN_Barracks.ini
+  M  Data/INI/Object/Specter/United Nations Forces/Drones/UN_ReconDrone.ini
+  M  Data/INI/Object/Specter/Vietnam People's Army/Drones/Vietnam_ReconDrone.ini
+  M  Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+  A  Data/INI/Upgrade_IntegrityFixes.ini
+  A  Data/INI/Upgrade_Israel.ini
+
+DOCS (optional)
+  DOC  docs/FINAL_CRASH_FREE_REPORT.md
+  DOC  docs/Repair_Report.txt
+
+END INSTALL_ORDER

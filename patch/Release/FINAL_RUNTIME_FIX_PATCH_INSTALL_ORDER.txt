@@ -1,0 +1,12 @@
+Specter Ultimate Warfare — FINAL_RUNTIME_FIX_PATCH
+=================================================
+
+1. Install base Specter (Specter_Data multi-volume) as usual.
+2. Install the main Specter Ultimate Warfare patch overlay (Data/INI).
+3. Merge this FINAL_RUNTIME_FIX_PATCH Data/INI on top (overwrite/add).
+4. Do not modify vendor archives (Data.zip / Specter_Data* / .big).
+
+Fixes included:
+- Boss_* faction objects (skirmish StartingBuilding + army)
+- Russia RS-24 button/object name correction + alias
+- America SentryDroneGun / DroneArmor / TOWMissile upgrades

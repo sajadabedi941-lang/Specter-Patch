@@ -1,65 +1,62 @@
 SPECTER FINAL BOOT-READY PATCH — VALIDATION REPORT
 ==================================================
-GeneratedUtc: 2026-07-24T11:21:38.336118+00:00
+GeneratedUtc: 2026-07-24T11:34:30.071052+00:00
 
 PACKAGE
 -------
-Patch\Data\...   (full Specter Ultimate Warfare Expansion overlay Data)
-Patch\Art\...    (overlay Art)
-No BAT / PowerShell / repair tools included.
+Patch\Data\
+Patch\Art\
+No BAT / PowerShell / repair tools.
+
+FIXES APPLIED
+-------------
+1) Added stock Specter core INIs to Data\INI\:
+   CommandSet.ini, CommandButton.ini, Weapon.ini, Armor.ini, Locomotor.ini
+2) Normalized uppercase END -> End in those core files (82 lines)
+3) Replaced CommandSet = None -> GenericCommandSet where found
+4) Full sweep repair for End; / END / PLACE_ON_GROUND / CommandSet None
+   Files touched this build: 0
 
 SCAN RESULTS
 ------------
-Total INIs checked : 1435
-  - Object\Specter : 1270
-  - Other Data\INI : 165
-Total fixed this build : 0
-Remaining boot-critical errors : 0
-Duplicate Object names (Specter) : 0
+Total INIs checked               : 1440
+Boot-syntax errors remaining     : 0
+Duplicate Object names           : 0
+Broken Object inheritance        : 0
+Missing CommandSet references    : 0
+Missing CommandButton references : 0
+Missing Weapon references        : 0
 
-BOOT-CRITICAL RULES CHECKED
----------------------------
-- End; trailing comments
-- Uppercase END
-- BuildCompletion = PLACE_ON_GROUND
-- Empty CommandSet =
-- Invalid { } braces
-- Unbalanced quotes
-- Duplicate Object definitions across Specter files
+SYMBOL TABLE
+------------
+Objects        : 2381
+Weapons        : 2149
+CommandSets    : 1262
+CommandButtons : 3505
 
-STARTUP SIMULATION (static)
----------------------------
-INIs in simulated startup set : 1435
-Passed boot-critical parse    : 1435
-Failed                        : 0
+KNOWN TARGETS
+-------------
+  OK  Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  OK  Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  OK  Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+  OK  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+  OK  Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
 
-KNOWN CRASH TARGETS
--------------------
-  OK Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
-  OK Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
-  OK Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
-  OK Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
-  OK Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+Britain_F35B CommandSet = GenericMultiRoleFighter_AG_CommandSet => FOUND
 
-RUNTIME LAUNCH
+FINAL BOOT-CRITICAL TOTAL
+-----------------------
+Remaining errors: 0
+VERDICT: PASS
+
+RUNTIME NOTE
+------------
+Static validation only (no generals.exe / Wine in build environment).
+Merge Patch into the Windows game root and launch Specter to confirm menu/Skirmish.
+
+HOW TO INSTALL
 --------------
-This package was built in a Linux agent environment without generals.exe / Wine.
-Live main-menu / Skirmish launch was NOT executed here.
-Static boot-critical remaining errors: 0 (must be 0).
-After copying Patch into your Windows game root, launch Specter to confirm:
-  - Main menu loads
-  - Skirmish loads
-  - Factions appear
-  - No Technical Difficulties / ReleaseCrashInfo INI parse crash
-
-HOW TO INSTALL (manual copy only)
----------------------------------
 1. Close the game.
-2. Copy the Patch folder contents into your game root
-   (merge Patch\Data into game Data, Patch\Art into game Art),
-   OR copy the whole Patch folder so its Data\ sits next to existing Data\
-   depending on your Specter layout.
-3. Recommended: merge:
-     Patch\Data\*  ->  <GameRoot>\Data\
-     Patch\Art\*   ->  <GameRoot>\Art\
+2. Merge Patch\Data\ into <GameRoot>\Data\
+3. Merge Patch\Art\ into <GameRoot>\Art\
 4. Launch Specter.

@@ -1,0 +1,86 @@
+FULL INI SCAN REPORT
+====================
+Specter: /workspace/patch/Data/INI/Object/Specter
+Scanned: 1270 INI files
+Issues: 14
+GeneratedUtc: 2026-07-23T23:35:33.367199Z
+
+SUMMARY BY CODE
+---------------
+  END_TRAILING_COMMENT         12
+  INVALID_BUILDCOMPLETION      2
+
+DETAILS
+-------
+FILE: Turkey Armed Forces/Turkey_WeaponObjects.ini
+LINE: 1745
+CODE: END_TRAILING_COMMENT
+DETAIL: End; ---- begin Projectile death behaviors
+
+FILE: Turkey Armed Forces/Turkey_WeaponObjects.ini
+LINE: 1824
+CODE: END_TRAILING_COMMENT
+DETAIL: End; ---- begin Projectile death behaviors
+
+FILE: British Armed Forces/Infantry/Britain_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: PatchSystems/RuntimeFix/Boss_Faction_Objects.ini
+LINE: 8639
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: Swedish Armed Forces/Infantry/Sweden_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: Italian Armed Forces/Infantry/Italy_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: Japan Self-Defense Forces/Infantry/Japan_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: French Armed Forces/Infantry/France_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+LINE: 68
+CODE: INVALID_BUILDCOMPLETION
+DETAIL: PLACE_ON_GROUND
+
+FILE: Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+LINE: 63
+CODE: INVALID_BUILDCOMPLETION
+DETAIL: PLACE_ON_GROUND
+
+FILE: Republic of Korea Armed Forces/Infantry/SouthKorea_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: United Nations Forces/Infantry/UN_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: Republic of China Armed Forces/Infantry/Taiwan_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+FILE: German Armed Forces/Infantry/Germany_HeavySniper.ini
+LINE: 134
+CODE: END_TRAILING_COMMENT
+DETAIL: End; --- Indicator
+
+CRITICAL_PARSE_ISSUES: 14
+VERDICT: FAIL

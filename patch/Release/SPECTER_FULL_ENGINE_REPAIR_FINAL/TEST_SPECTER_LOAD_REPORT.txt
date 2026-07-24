@@ -1,0 +1,12 @@
+TEST SPECTER LOAD REPORT
+========================
+Specter: patch/Data/INI/Object/Specter
+
+
+DUPLICATE OBJECTS (cross-file)
+------------------------------
+
+CriticalSyntax=0
+EmptyFiles=0
+DuplicateObjectNames=0
+VERDICT=PASS

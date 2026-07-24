@@ -1,0 +1,6 @@
+Israel_CommandCenterCommandSet removals:
+  1 = Command_ConstructIraq_VT72B  (Object Iraq_VT72B missing)
+  12 = Command_ConstructIraqDronesAbabil200Recon  (Object IraqDronesAbabil200Recon missing)
+  15 = Command_ConstructIraq_Sarab7  (Object Iraq_Sarab7 missing)
+  16 = Command_ConstructIraq_R11ScudB  (Object Iraq_R11ScudB missing)
+  17 = Command_ConstructIraq_Sarab3  (Object Iraq_Sarab3 missing)

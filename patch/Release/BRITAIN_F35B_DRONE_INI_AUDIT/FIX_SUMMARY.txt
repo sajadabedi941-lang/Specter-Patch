@@ -1,27 +1,44 @@
-BRITAIN F35B + COMBAT DRONE — FINAL OUTPUT
-Generated: 2026-07-24 20:43:59 UTC
+BRITAIN F35B + CombatDrone - USA-template rebuild
+=================================================
 
-See AUDIT_REPORT.txt for the full pre-fix audit.
+Method: replace ONLY these two broken units with working USA donor structures.
+No new units. No other countries. No new BIG files.
 
-==============================================================================
-FIXED (only these two files)
-==============================================================================
+Donors (stock Specter):
+  USA F-35  = Data\INI\Object\Specter\United States Of America\Airforce\F35C.ini
+              Object AmericaJetF35C
+  USA MQ-9  = Data\INI\Object\Specter\United States Of America\Drones\Mq9.ini
+              Object AmericaDronesMq9
 
-1) Britain_F35B.ini
-   Science = SCIENCE_BritainStealthJet
-     -> Science = SCIENCE_Britain_StealthJet
+Final paths (unchanged):
+  1) Data\INI\Object\Specter\British Armed Forces\Airforce\Britain_F35B.ini
+  2) Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini
 
-2) Britain_CombatDrone.ini
-   Science = SCIENCE_UAEStealthJet
-     -> Science = SCIENCE_Britain_StealthJet
-   Removed duplicate Shadow = SHADOW_VOLUME line
+Original errors:
+  Britain_F35B.ini
+    - Science = SCIENCE_BritainStealthJet (invalid name)
+    - Primary weapon override away from working USA F-35 loadout
+  Britain_CombatDrone.ini
+    - Science = SCIENCE_UAEStealthJet (UAE leftover; invalid)
+    - Prerequisites previously tied to UAEAirfield leftover path
+    - Duplicate Shadow = SHADOW_VOLUME
+    - Primary weapon override away from working USA MQ-9 weapons
 
-==============================================================================
-POST-FIX RE-PARSE
-==============================================================================
-Britain_F35B.ini remaining fixable errors: 0
-Britain_CombatDrone.ini remaining fixable errors: 0
-
-STATUS: Both files valid for listed crash/parse issues that are fixable
-inside these two INIs. Stock Specter BIG-resident flare/projectile
-dependencies unchanged (shared with sibling aircraft).
+Exact changes:
+  Britain_F35B.ini
+    - Full INI structure copied from AmericaJetF35C
+    - Object name kept: Britain_F35B
+    - Side = Britain
+    - Prerequisites Object = Britain_StrategyCenter
+    - Science = SCIENCE_StealthFighter (working USA science)
+    - Weapons/Draw/CommandSet from USA F-35C
+    - Removed broken SCIENCE_BritainStealthJet and Britain_Weapon_AAM_Medium primary override
+  Britain_CombatDrone.ini
+    - Full INI structure copied from AmericaDronesMq9
+    - Object name kept: Britain_CombatDrone
+    - Side = Britain
+    - Prerequisites Object = Britain_StrategyCenter
+    - Science = SCIENCE_Rank3 (working USA science)
+    - Weapons/Draw/CommandSet from USA MQ-9
+    - Removed all UAE leftovers and Britain_Weapon_ATGM primary override
+    - Single Shadow line kept

@@ -1,0 +1,48 @@
+SPECTER_CLEAN_PATCH_FINAL_FIXED — VALIDATION REPORT
+========================================================================
+Generated: 2026-07-24 14:47:29 UTC
+PackageSHA256: cd369533fc5f5c5a4bdd83080db837f0b4ff46abae311e996b1db933ec0c5502
+Original Specter stock INIs: NOT included (untouched).
+Installer/BAT/PS1: NOT included.
+Old manifests/caches/backups: NOT included.
+
+STRUCTURE
+------------------------------------------------------------------------
+Patch/Data/INI/Object/Specter/
+Patch/Data/INI/Weapon/
+Patch/Data/INI/CommandButton/
+Patch/Data/INI/CommandSet/
+Patch/Data/INI/*.ini (support)
+Patch/Art/
+Patch/SYNC_MANIFEST.sha256
+
+COUNTS
+------------------------------------------------------------------------
+Manifest entries: 1454
+  Object INIs: 1270
+  Weapon/: 27
+  CommandButton/: 34
+  CommandSet/: 27
+  INI root support: 77
+  Art files: 6
+Duplicate Object names: 0
+HASH_MISMATCH: 0
+Scoped folder missing manifest entries: 0
+Remaining validation errors: 0
+
+MANIFEST VERIFY
+------------------------------------------------------------------------
+MANIFEST VERIFY OK
+HASH_MISMATCH = 0
+
+REMAINING ERRORS: 0
+
+FINAL STATUS
+------------------------------------------------------------------------
+SUCCESS
+HASH_MISMATCH = 0
+Remaining errors = 0
+Manifest verification passed
+
+RUNTIME NOTE
+Static INI + SHA256 only — generals.exe not launched in this environment.

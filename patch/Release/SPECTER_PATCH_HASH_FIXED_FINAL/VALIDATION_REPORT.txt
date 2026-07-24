@@ -1,0 +1,29 @@
+SPECTER_PATCH_HASH_FIXED_FINAL — VALIDATION REPORT
+========================================================================
+Generated: 2026-07-24 15:35:04 UTC
+# PackageSHA256 79f3150a5c572ccaaeae9f6130dd8f9d570932ae9e0531c89989e0ab8e6b7e21
+Manifest entries: 1526
+
+FACTION VERIFY (Object/Specter listed armies)
+------------------------------------------------------------------------
+Matched files: 713
+HASH_MISMATCH: 0
+NO_ENTRY: 0
+
+INSTALLER-SCOPE VERIFY (Data/ + Art/)
+------------------------------------------------------------------------
+Matched: 1481
+HASH_MISMATCH: 0
+MISSING: 0
+
+SIMULATED INSTALL (copy Data/Art to GameRoot then verify)
+------------------------------------------------------------------------
+Matched: 1481
+Issues: 0
+
+FINAL STATUS
+------------------------------------------------------------------------
+HASH_MISMATCH = 0
+Manifest verify = PASS
+Remaining errors = 0
+SUCCESS

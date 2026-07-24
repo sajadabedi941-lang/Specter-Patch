@@ -1,0 +1,11 @@
+SPECTER PATCH — Dynamic Pricing / Country Balance
+=================================================
+
+SUPERSEDED entry docs. Live system:
+
+  Central INI:  Data/INI/CountryBalance.ini
+  Tool:         tools/economy/apply_country_balance.py
+  Overview:     Data/INI/Economy/COUNTRY_BALANCE.txt
+
+Economy/*.ini files in this folder are legacy mirrors / notes only.
+The applicator does NOT read them.

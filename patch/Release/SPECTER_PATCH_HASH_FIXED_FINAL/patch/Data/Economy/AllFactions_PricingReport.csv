@@ -1,0 +1,132 @@
+name,side,file,base_cost,final_cost,base_time,final_time,rating,origin,tech,category,cost_m,time_m
+NorthKorea_AdvancedAirBase,NorthKorea,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,2318,45.0,36.5,Low,Domestic,Standard,Building,0.6621,0.81
+Japan_AdvancedAirBase,Japan,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,3165,45.0,36.5,High,Domestic,Standard,Building,0.9044,0.81
+India_AdvancedAirBase,India,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,2968,45.0,36.5,MediumHigh,Domestic,Standard,Building,0.8479,0.81
+UAE_AdvancedAirBase,UAE,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,3165,45.0,36.5,High,Domestic,Standard,Building,0.9044,0.81
+SaudiArabia_AdvancedAirBase,SaudiArabia,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,3165,45.0,36.5,High,Domestic,Standard,Building,0.9044,0.81
+Pakistan_AdvancedAirBase,Pakistan,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,2402,45.0,36.5,Low,Domestic,Standard,Building,0.6864,0.81
+Ukraine_AdvancedAirBase,Ukraine,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,2544,45.0,36.5,MediumLow,Domestic,Standard,Building,0.7268,0.81
+AirF_AmericaAdvancedAirBase,AmericaAirForceGeneral,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini,3500.0,3392,45.0,36.5,VeryHigh,Domestic,Standard,Building,0.969,0.81
+GLA_AdvancedAirBase,GLA,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,2261,45.0,36.5,Low,Domestic,Standard,Building,0.646,0.81
+Nato_AdvancedAirBase,Nato,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,3335,45.0,36.5,VeryHigh,Domestic,Standard,Building,0.9528,0.81
+Iraq_AdvancedAirBase,Iraq,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,2402,45.0,36.5,Low,Domestic,Standard,Building,0.6864,0.81
+Iran_AdvancedAirBase,Iran,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,2600,45.0,36.5,MediumLow,Domestic,Standard,Building,0.7429,0.81
+China_AdvancedAirBase,China,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,3335,45.0,36.5,VeryHigh,Domestic,Standard,Building,0.9528,0.81
+Russia_AdvancedAirBase,Russia,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,3109,45.0,36.5,High,Domestic,Standard,Building,0.8882,0.81
+America_AdvancedAirBase,America,Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini,3500.0,3392,45.0,36.5,VeryHigh,Domestic,Standard,Building,0.969,0.81
+UAE_CommandCenter,UAE,Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_CommandCenter.ini,2000.0,1809,4.0,3.2,High,Domestic,Standard,Building,0.9044,0.81
+Turkey_SA-6,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/2K12.ini,1000.0,929,15.0,13.6,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+TurkeyVehicleFahad3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Fahad3.ini,2000.0,1857,15.0,13.6,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+TurkeyVehicleRoland3K,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Roland3K.ini,900.0,836,10.0,9.0,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_Sam8,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/9K33.ini,1200.0,1114,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_ZSU-23-4,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/ZSU23.ini,800.0,743,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+TurkeyVehicleB340,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/B340.ini,1200.0,1114,14.0,12.6,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_RepublicanGuard_Eng,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Enginer.ini,300.0,218,5.5,4.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuardMortar,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/MortarTeam.ini,800.0,581,8.0,6.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_SpecialForces_Mks,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_SpecialForces_Rpk,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_SpecialForces_AKMGP,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_SpecialForces_Akms,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini,800.0,581,10.0,7.7,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_V_AKMS,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Motorized.ini,300.0,218,5.5,4.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_RPG7,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Antitank.ini,300.0,218,5.5,4.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_V1_AK,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Mechanized.ini,300.0,218,5.5,4.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_AKMS,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Rifleman.ini,300.0,218,5.5,4.2,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+TurkeyInfantryAirborneHeavySniper,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini,1000.0,727,10.0,7.7,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+TurkeyInfantrySpecOps_Mks,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+TurkeyInfantrySpecOps_Rpk,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+TurkeyInfantrySpecOps_AKMGP,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini,800.0,581,6.0,4.6,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+TurkeyInfantrySpecOps_Akms,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini,800.0,581,10.0,7.7,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuardKornet,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/KornetTeam.ini,900.0,654,9.0,6.9,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_Worker,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_Worker.ini,200.0,145,1.0,0.8,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_TBK14,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/HeavySniper.ini,1000.0,727,10.0,7.7,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuard_Pkm,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Machineguner.ini,200.0,145,4.5,3.5,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_RepublicanGuardIgla,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Infantry/AntiAir.ini,600.0,436,10.0,7.7,Medium,Domestic,Standard,Infantry,0.7268,0.7695
+Turkey_BMP-1,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/IFV/Bmp1P.ini,600.0,484,13.0,10.5,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_BMP-2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/IFV/Turkey_BMP-2.ini,650.0,525,13.0,10.5,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_BTR-90,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/APC/BTR90.ini,800.0,800,12.0,12.0,Medium,Licensed,Standard,Vehicle,1.0,1.0
+Turkey_PowerPlant,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_PowerPlant.ini,2000.0,1615,12.0,9.7,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_Abbas_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Abbas_AI.ini,4000.0,4845,60.0,63.2,Medium,Domestic,NuclearStrategic,Building,1.2112,1.053
+Turkey_Barracks,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Barracks.ini,500.0,404,17.0,13.8,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_RadarStation,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_RadarStation.ini,1300.0,1050,20.0,16.2,Medium,Domestic,Standard,Building,0.8075,0.81
+TurkeyMilitaryAirfield,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_AI.ini,2000.0,1615,25.0,20.2,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_CommandCenter,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini,2000.0,1615,4.0,3.2,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_D30_Howitzer,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_D30.ini,1000.0,808,20.0,16.2,Medium,Domestic,Standard,Artillery,0.8075,0.81
+Turkey_AdvancedAirBase,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini,3500.0,2826,45.0,36.5,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_WarFactory_T,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini,1500.0,1211,16.0,13.0,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_SupplyCenter,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_SupplyCenter.ini,1000.0,808,10.0,8.1,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_MIC,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini,7000.0,5652,60.0,48.6,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_Abbas,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Abbas.ini,4000.0,4845,60.0,63.2,Medium,Domestic,NuclearStrategic,Building,1.2112,1.053
+Turkey_Airfield_T,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini,2000.0,1615,25.0,20.2,Medium,Domestic,Standard,Building,0.8075,0.81
+TurkeyMilitaryWarfactory,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory_AI.ini,1500.0,1211,16.0,13.0,Medium,Domestic,Standard,Building,0.8075,0.81
+Turkey_Mig-23ML,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-23BN.ini,2000.0,1615,24.0,19.4,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Mig-29A,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-29A.ini,1200.0,969,25.0,20.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Su-24MR,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-24MR.ini,5000.0,4038,35.0,28.4,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_B52,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_B52.ini,3500.0,6125,35.0,48.1,Medium,Imported,StrategicBomber,Aircraft,1.75,1.375
+Turkey_TB2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini,900.0,654,10.0,7.7,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_F16V_GBU24,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16V.ini,1800.0,1980,16.0,16.8,Medium,Licensed,Gen4Fighter,Aircraft,1.1,1.05
+Turkey_F16V_AGM,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16V.ini,1800.0,1980,16.0,16.8,Medium,Licensed,Gen4Fighter,Aircraft,1.1,1.05
+Turkey_F16V_Mixed,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16V.ini,1800.0,1980,16.0,16.8,Medium,Licensed,Gen4Fighter,Aircraft,1.1,1.05
+Turkey_F16V,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16V.ini,1800.0,1980,16.0,16.8,Medium,Licensed,Gen4Fighter,Aircraft,1.1,1.05
+Turkey_MirageF1_Bq,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_MirageF1-Bq.ini,2100.0,1696,25.0,20.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Su-25K,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-25K.ini,1000.0,808,20.0,16.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Hurjet,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Hurjet.ini,1300.0,1155,14.0,11.9,Medium,Domestic,Gen4Fighter,Aircraft,0.8882,0.8505
+Turkey_KAAN,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_KAAN.ini,2200.0,2398,22.0,21.4,Medium,Domestic,Gen5Fighter,Aircraft,1.0901,0.972
+Turkey_Tanker,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tanker.ini,2400.0,3600,26.0,31.5,Medium,Imported,HeavySupportAircraft,SupportAircraft,1.5,1.21
+Turkey_T129_Longbow,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_T129.ini,1500.0,1211,18.0,14.6,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_T129_Loiter,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_T129.ini,1500.0,1211,18.0,14.6,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_T129,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_T129.ini,1500.0,1211,18.0,14.6,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Su-24MK,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-24MK.ini,2000.0,1615,30.0,24.3,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Transport,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Transport.ini,2200.0,3300,24.0,29.0,Medium,Imported,HeavySupportAircraft,SupportAircraft,1.5,1.21
+Turkey_Mi-35M3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-35M3.ini,1000.0,808,15.0,12.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Tu-22M3_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3_AI.ini,5000.0,4845,30.0,26.7,Medium,Domestic,HeavySupportAircraft,SupportAircraft,0.969,0.891
+Turkey_Mi-28NE,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-28NE.ini,2800.0,2261,25.0,20.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Tu-22M3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini,2000.0,1938,30.0,26.7,Medium,Domestic,HeavySupportAircraft,SupportAircraft,0.969,0.891
+Turkey_Mig-25BM,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-25BM.ini,2400.0,1938,24.0,19.4,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_AWACS,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_AWACS.ini,2800.0,4550,28.0,35.4,Medium,Imported,AWACS,SupportAircraft,1.625,1.265
+Turkey_Su-22M3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-22M3.ini,4000.0,3230,28.0,22.7,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_Akinci,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini,1600.0,1163,15.0,11.5,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_Anka3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Anka3.ini,1700.0,1235,15.0,11.5,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_Mi-8T,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-8.ini,1200.0,969,20.0,16.2,Medium,Domestic,Standard,Aircraft,0.8075,0.81
+Turkey_B2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_B2.ini,3200.0,5600,30.0,41.2,Medium,Imported,StrategicBomber,Aircraft,1.75,1.375
+TurkeyDronesAbabil200Recon,Russia,Data/INI/Object/Specter/Turkey Armed Forces/Drones/Ababil200R.ini,1500.0,1332,14.0,11.3,High,Domestic,Standard,Drone,0.8882,0.81
+Turkey_Sarab3,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Drones/Sarab3.ini,1100.0,799,7.0,5.4,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_Ababil200,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Drones/Ababil200.ini,1500.0,1090,10.0,7.7,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_Quds5,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Drones/Quds5.ini,1600.0,1163,20.0,15.4,Medium,Domestic,Standard,Drone,0.7268,0.7695
+TurkeyDroneQuds5_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Drones/Quds5_AI.ini,1600.0,1163,20.0,15.4,Medium,Domestic,Standard,Drone,0.7268,0.7695
+Turkey_Sarab7,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AlNida.ini,1200.0,969,22.0,17.8,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Lamiaa,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Lamiaa.ini,500.0,404,10.0,8.1,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_BM-21,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_BM-21.ini,1000.0,808,15.0,12.2,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Alhussaien,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini,3000.0,2422,20.0,16.2,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Karrar2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Karrar-2.ini,2200.0,1776,30.0,24.3,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Ural375_Supply,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply.ini,500.0,404,10.0,8.1,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_R11ScudB,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/9P117.ini,1200.0,969,17.0,13.8,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Ural375_Supply_AI,GLAStealthGeneral,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply_AI.ini,500.0,404,10.0,8.1,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+TurkeyVehicleAlabbasLauncher,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher_AI.ini,2500.0,2019,20.0,16.2,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Alhussaien_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher_AI.ini,2500.0,2019,20.0,16.2,Medium,Domestic,Standard,Vehicle,0.8075,0.81
+Turkey_Airfield,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini,2000.0,2000,25.0,25.0,Medium,Licensed,Standard,Vehicle,1.0,1.0
+Turkey_WarFactory,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini,2500.0,2500,16.0,16.0,Medium,Licensed,Standard,Vehicle,1.0,1.0
+Turkey_Airfield_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini,2000.0,2000,25.0,25.0,Medium,Licensed,Standard,Vehicle,1.0,1.0
+TurkeyFahad3SamSite,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad3_AI.ini,1000.0,929,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_DefenseSite,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite.ini,1000.0,929,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_Sam2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SamSite.ini,1000.0,929,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_100mmCannon,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite_AI.ini,1000.0,929,12.0,10.8,Medium,Domestic,AdvancedAirDefense,AirDefense,0.9286,0.9036
+Turkey_VT72B,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Tracked/VT72B.ini,1100.0,888,5.0,4.1,Medium,Domestic,Standard,Tank,0.8075,0.81
+TurkeyTankAssadBabel2_AI,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2_AI.ini,1300.0,1050,18.0,14.6,Medium,Domestic,Standard,Tank,0.8075,0.81
+Turkey_AssadBabel-2,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2.ini,1300.0,1050,18.0,14.6,Medium,Domestic,Standard,Tank,0.8075,0.81
+Turkey_2S1,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Tracked/2S1.ini,1800.0,1454,16.0,13.0,Medium,Domestic,Standard,Tank,0.8075,0.81
+Turkey_T-72,Turkey,Data/INI/Object/Specter/Turkey Armed Forces/Tracked/T72M1.ini,1000.0,808,16.0,13.0,Medium,Domestic,Standard,Tank,0.8075,0.81
+India_CommandCenter,India,Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_CommandCenter.ini,2000.0,1696,4.0,3.2,MediumHigh,Domestic,Standard,Building,0.8479,0.81
+Japan_CommandCenter,Japan,Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_CommandCenter.ini,2000.0,1809,4.0,3.2,High,Domestic,Standard,Building,0.9044,0.81
+Pakistan_CommandCenter,Pakistan,Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini,2000.0,1373,4.0,3.2,Low,Domestic,Standard,Building,0.6864,0.81
+SaudiArabia_CommandCenter,SaudiArabia,Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini,2000.0,1809,4.0,3.2,High,Domestic,Standard,Building,0.9044,0.81
+Ukraine_CommandCenter,Ukraine,Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini,2000.0,1454,4.0,3.2,MediumLow,Domestic,Standard,Building,0.7268,0.81
+Upgrade_Turkey_AAMissile,Turkey,Data/INI/Upgrade_Turkey.ini,1000.0,994,35.0,32.6,Medium,Domestic,HighTechMissile,Upgrade,0.9945,0.9315
+Upgrade_Turkey_AdvancedRadar,Turkey,Data/INI/Upgrade_Turkey.ini,1500.0,1148,50.0,40.5,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_PrecisionMunitions,Turkey,Data/INI/Upgrade_Turkey.ini,1200.0,1193,45.0,41.9,Medium,Domestic,HighTechMissile,Upgrade,0.9945,0.9315
+Upgrade_Turkey_Countermeasures,Turkey,Data/INI/Upgrade_Turkey.ini,1000.0,765,40.0,32.4,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_TurkishCamoflage,Turkey,Data/INI/Upgrade_Turkey.ini,2000.0,1530,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_Mi35Mk3,Turkey,Data/INI/Upgrade_Turkey.ini,1000.0,765,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_BMP-1M3,Turkey,Data/INI/Upgrade_Turkey.ini,1200.0,918,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_T72B3,Turkey,Data/INI/Upgrade_Turkey.ini,2000.0,1530,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_BMP-2M2,Turkey,Data/INI/Upgrade_Turkey.ini,1000.0,765,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81
+Upgrade_Turkey_BMP-1M3,Turkey,Data/INI/Upgrade_Turkey.ini,800.0,612,30.0,24.3,Medium,Domestic,Standard,Upgrade,0.765,0.81

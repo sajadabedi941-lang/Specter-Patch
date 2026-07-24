@@ -1,0 +1,8 @@
+; SPECTER PATCH — Advanced AWACS Command System strings
+
+CONTROLBAR:Patch_AWACS_ElectronicAttack = Electronic Attack
+CONTROLBAR:ToolTipPatch_AWACS_ElectronicAttack = Jam enemy sensors and disrupt missile guidance (AWACS Electronic Attack).
+CONTROLBAR:ToolTipPatch_AWACS_ElectronicAttack_Russia = A-50 Electronic Attack — extended EW jam (Krasukha-class).
+CONTROLBAR:ToolTipPatch_AWACS_ElectronicAttack_UN = Network Electronic Attack — satellite-backed jam cycle.
+CONTROLBAR:Patch_AWACS_SARScan = SAR Scan
+CONTROLBAR:ToolTipPatch_AWACS_SARScan = Synthetic aperture radar scan — reveal area targets from AWACS.

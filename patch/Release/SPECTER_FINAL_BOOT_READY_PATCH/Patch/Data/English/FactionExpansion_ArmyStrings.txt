@@ -1,0 +1,3321 @@
+//--------------------------------------------------------------------------------
+// Faction expansion army strings
+//--------------------------------------------------------------------------------
+
+OBJECT:Ukraine_CommandCenter = Ukraine CommandCenter
+CONTROLBAR:ConstructUkraine_CommandCenter = Ukraine CommandCenter
+CONTROLBAR:ToolTipConstructUkraine_CommandCenter = Produce Ukraine CommandCenter.
+
+OBJECT:Ukraine_PowerPlant = Ukraine PowerPlant
+CONTROLBAR:ConstructUkraine_PowerPlant = Ukraine PowerPlant
+CONTROLBAR:ToolTipConstructUkraine_PowerPlant = Produce Ukraine PowerPlant.
+
+OBJECT:Ukraine_Barracks = Ukraine Barracks
+CONTROLBAR:ConstructUkraine_Barracks = Ukraine Barracks
+CONTROLBAR:ToolTipConstructUkraine_Barracks = Produce Ukraine Barracks.
+
+OBJECT:Ukraine_WarFactory_T = Ukraine WarFactory T
+CONTROLBAR:ConstructUkraine_WarFactory_T = Ukraine WarFactory T
+CONTROLBAR:ToolTipConstructUkraine_WarFactory_T = Produce Ukraine WarFactory T.
+
+OBJECT:Ukraine_Airfield_T = Ukraine Airfield T
+CONTROLBAR:ConstructUkraine_Airfield_T = Ukraine Airfield T
+CONTROLBAR:ToolTipConstructUkraine_Airfield_T = Produce Ukraine Airfield T.
+
+OBJECT:Ukraine_SupplyCenter = Ukraine SupplyCenter
+CONTROLBAR:ConstructUkraine_SupplyCenter = Ukraine SupplyCenter
+CONTROLBAR:ToolTipConstructUkraine_SupplyCenter = Produce Ukraine SupplyCenter.
+
+OBJECT:Ukraine_RadarStation = Ukraine RadarStation
+CONTROLBAR:ConstructUkraine_RadarStation = Ukraine RadarStation
+CONTROLBAR:ToolTipConstructUkraine_RadarStation = Produce Ukraine RadarStation.
+
+OBJECT:Ukraine_MIC = Ukraine MIC
+CONTROLBAR:ConstructUkraine_MIC = Ukraine MIC
+CONTROLBAR:ToolTipConstructUkraine_MIC = Produce Ukraine MIC.
+
+OBJECT:Ukraine_Abbas = Ukraine Abbas
+CONTROLBAR:ConstructUkraine_Abbas = Ukraine Abbas
+CONTROLBAR:ToolTipConstructUkraine_Abbas = Produce Ukraine Abbas.
+
+OBJECT:Ukraine_Sam2 = Ukraine Sam2
+CONTROLBAR:ConstructUkraine_Sam2 = Ukraine Sam2
+CONTROLBAR:ToolTipConstructUkraine_Sam2 = Produce Ukraine Sam2.
+
+OBJECT:Ukraine_Worker = Ukraine Worker
+CONTROLBAR:ConstructUkraine_Worker = Ukraine Worker
+CONTROLBAR:ToolTipConstructUkraine_Worker = Produce Ukraine Worker.
+
+OBJECT:Ukraine_RepublicanGuard_AKMS = Ukraine RepublicanGuard AKMS
+CONTROLBAR:ConstructUkraine_RepublicanGuard_AKMS = Ukraine RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructUkraine_RepublicanGuard_AKMS = Produce Ukraine RepublicanGuard AKMS.
+
+OBJECT:Ukraine_RepublicanGuard_RPG7 = Ukraine RepublicanGuard RPG7
+CONTROLBAR:ConstructUkraine_RepublicanGuard_RPG7 = Ukraine RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructUkraine_RepublicanGuard_RPG7 = Produce Ukraine RepublicanGuard RPG7.
+
+OBJECT:Ukraine_RepublicanGuardIgla = Ukraine RepublicanGuardIgla
+CONTROLBAR:ConstructUkraine_RepublicanGuardIgla = Ukraine RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructUkraine_RepublicanGuardIgla = Produce Ukraine RepublicanGuardIgla.
+
+OBJECT:Ukraine_SpecialForces_Akms = Ukraine SpecialForces Akms
+CONTROLBAR:ConstructUkraine_SpecialForces_Akms = Ukraine SpecialForces Akms
+CONTROLBAR:ToolTipConstructUkraine_SpecialForces_Akms = Produce Ukraine SpecialForces Akms.
+
+OBJECT:Ukraine_RepublicanGuard_TBK14 = Ukraine RepublicanGuard TBK14
+CONTROLBAR:ConstructUkraine_RepublicanGuard_TBK14 = Ukraine RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructUkraine_RepublicanGuard_TBK14 = Produce Ukraine RepublicanGuard TBK14.
+
+OBJECT:Ukraine_T-72 = Ukraine T-72
+CONTROLBAR:ConstructUkraine_T-72 = Ukraine T-72
+CONTROLBAR:ToolTipConstructUkraine_T-72 = Produce Ukraine T-72.
+
+OBJECT:Ukraine_VT72B = Ukraine VT72B
+CONTROLBAR:ConstructUkraine_VT72B = Ukraine VT72B
+CONTROLBAR:ToolTipConstructUkraine_VT72B = Produce Ukraine VT72B.
+
+OBJECT:Ukraine_BTR-90 = Ukraine BTR-90
+CONTROLBAR:ConstructUkraine_BTR-90 = Ukraine BTR-90
+CONTROLBAR:ToolTipConstructUkraine_BTR-90 = Produce Ukraine BTR-90.
+
+OBJECT:Ukraine_BMP-1 = Ukraine BMP-1
+CONTROLBAR:ConstructUkraine_BMP-1 = Ukraine BMP-1
+CONTROLBAR:ToolTipConstructUkraine_BMP-1 = Produce Ukraine BMP-1.
+
+OBJECT:Ukraine_BM-21 = Ukraine BM-21
+CONTROLBAR:ConstructUkraine_BM-21 = Ukraine BM-21
+CONTROLBAR:ToolTipConstructUkraine_BM-21 = Produce Ukraine BM-21.
+
+OBJECT:Ukraine_ZSU-23-4 = Ukraine ZSU-23-4
+CONTROLBAR:ConstructUkraine_ZSU-23-4 = Ukraine ZSU-23-4
+CONTROLBAR:ToolTipConstructUkraine_ZSU-23-4 = Produce Ukraine ZSU-23-4.
+
+OBJECT:Ukraine_VehicleRoland3K = Ukraine VehicleRoland3K
+CONTROLBAR:ConstructUkraine_VehicleRoland3K = Ukraine VehicleRoland3K
+CONTROLBAR:ToolTipConstructUkraine_VehicleRoland3K = Produce Ukraine VehicleRoland3K.
+
+OBJECT:Ukraine_Ural375_Supply = Ukraine Ural375 Supply
+CONTROLBAR:ConstructUkraine_Ural375_Supply = Ukraine Ural375 Supply
+CONTROLBAR:ToolTipConstructUkraine_Ural375_Supply = Produce Ukraine Ural375 Supply.
+
+OBJECT:Ukraine_Mig-29A = Ukraine Mig-29A
+CONTROLBAR:ConstructUkraine_Mig-29A = Ukraine Mig-29A
+CONTROLBAR:ToolTipConstructUkraine_Mig-29A = Produce Ukraine Mig-29A.
+
+OBJECT:Ukraine_MirageF1_Bq = Ukraine MirageF1 Bq
+CONTROLBAR:ConstructUkraine_MirageF1_Bq = Ukraine MirageF1 Bq
+CONTROLBAR:ToolTipConstructUkraine_MirageF1_Bq = Produce Ukraine MirageF1 Bq.
+
+OBJECT:Ukraine_Su-25K = Ukraine Su-25K
+CONTROLBAR:ConstructUkraine_Su-25K = Ukraine Su-25K
+CONTROLBAR:ToolTipConstructUkraine_Su-25K = Produce Ukraine Su-25K.
+
+OBJECT:Ukraine_Mi-8T = Ukraine Mi-8T
+CONTROLBAR:ConstructUkraine_Mi-8T = Ukraine Mi-8T
+CONTROLBAR:ToolTipConstructUkraine_Mi-8T = Produce Ukraine Mi-8T.
+
+OBJECT:Ukraine_IL-76 = Ukraine IL-76
+CONTROLBAR:ConstructUkraine_IL-76 = Ukraine IL-76
+CONTROLBAR:ToolTipConstructUkraine_IL-76 = Produce Ukraine IL-76.
+
+OBJECT:Ukraine_Alhussaien = Ukraine Alhussaien
+CONTROLBAR:ConstructUkraine_Alhussaien = Ukraine Alhussaien
+CONTROLBAR:ToolTipConstructUkraine_Alhussaien = Produce Ukraine Alhussaien.
+
+CONTROLBAR:UpgradeUkraine_Armor = Ukraine Armor Package
+CONTROLBAR:ToolTipUpgradeUkraine_Armor = Research Ukraine Armor Package.
+UPGRADE:Ukraine_Armor = Ukraine Armor Package
+
+CONTROLBAR:UpgradeUkraine_Weapons = Ukraine Weapon Package
+CONTROLBAR:ToolTipUpgradeUkraine_Weapons = Research Ukraine Weapon Package.
+UPGRADE:Ukraine_Weapons = Ukraine Weapon Package
+
+CONTROLBAR:UpgradeUkraine_AircraftWeapons = Ukraine Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeUkraine_AircraftWeapons = Research Ukraine Aircraft Weapons.
+UPGRADE:Ukraine_AircraftWeapons = Ukraine Aircraft Weapons
+
+CONTROLBAR:UpgradeUkraine_AircraftCountermeasures = Ukraine Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeUkraine_AircraftCountermeasures = Research Ukraine Aircraft Countermeasures.
+UPGRADE:Ukraine_AircraftCountermeasures = Ukraine Aircraft Countermeasures
+
+OBJECT:Pakistan_CommandCenter = Pakistan CommandCenter
+CONTROLBAR:ConstructPakistan_CommandCenter = Pakistan CommandCenter
+CONTROLBAR:ToolTipConstructPakistan_CommandCenter = Produce Pakistan CommandCenter.
+
+OBJECT:Pakistan_PowerPlant = Pakistan PowerPlant
+CONTROLBAR:ConstructPakistan_PowerPlant = Pakistan PowerPlant
+CONTROLBAR:ToolTipConstructPakistan_PowerPlant = Produce Pakistan PowerPlant.
+
+OBJECT:Pakistan_Barracks = Pakistan Barracks
+CONTROLBAR:ConstructPakistan_Barracks = Pakistan Barracks
+CONTROLBAR:ToolTipConstructPakistan_Barracks = Produce Pakistan Barracks.
+
+OBJECT:Pakistan_WarFactory_T = Pakistan WarFactory T
+CONTROLBAR:ConstructPakistan_WarFactory_T = Pakistan WarFactory T
+CONTROLBAR:ToolTipConstructPakistan_WarFactory_T = Produce Pakistan WarFactory T.
+
+OBJECT:Pakistan_Airfield_T = Pakistan Airfield T
+CONTROLBAR:ConstructPakistan_Airfield_T = Pakistan Airfield T
+CONTROLBAR:ToolTipConstructPakistan_Airfield_T = Produce Pakistan Airfield T.
+
+OBJECT:Pakistan_SupplyCenter = Pakistan SupplyCenter
+CONTROLBAR:ConstructPakistan_SupplyCenter = Pakistan SupplyCenter
+CONTROLBAR:ToolTipConstructPakistan_SupplyCenter = Produce Pakistan SupplyCenter.
+
+OBJECT:Pakistan_RadarStation = Pakistan RadarStation
+CONTROLBAR:ConstructPakistan_RadarStation = Pakistan RadarStation
+CONTROLBAR:ToolTipConstructPakistan_RadarStation = Produce Pakistan RadarStation.
+
+OBJECT:Pakistan_MIC = Pakistan MIC
+CONTROLBAR:ConstructPakistan_MIC = Pakistan MIC
+CONTROLBAR:ToolTipConstructPakistan_MIC = Produce Pakistan MIC.
+
+OBJECT:Pakistan_Abbas = Pakistan Abbas
+CONTROLBAR:ConstructPakistan_Abbas = Pakistan Abbas
+CONTROLBAR:ToolTipConstructPakistan_Abbas = Produce Pakistan Abbas.
+
+OBJECT:Pakistan_Sam2 = Pakistan Sam2
+CONTROLBAR:ConstructPakistan_Sam2 = Pakistan Sam2
+CONTROLBAR:ToolTipConstructPakistan_Sam2 = Produce Pakistan Sam2.
+
+OBJECT:Pakistan_Worker = Pakistan Worker
+CONTROLBAR:ConstructPakistan_Worker = Pakistan Worker
+CONTROLBAR:ToolTipConstructPakistan_Worker = Produce Pakistan Worker.
+
+OBJECT:Pakistan_RepublicanGuard_AKMS = Pakistan RepublicanGuard AKMS
+CONTROLBAR:ConstructPakistan_RepublicanGuard_AKMS = Pakistan RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructPakistan_RepublicanGuard_AKMS = Produce Pakistan RepublicanGuard AKMS.
+
+OBJECT:Pakistan_RepublicanGuard_RPG7 = Pakistan RepublicanGuard RPG7
+CONTROLBAR:ConstructPakistan_RepublicanGuard_RPG7 = Pakistan RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructPakistan_RepublicanGuard_RPG7 = Produce Pakistan RepublicanGuard RPG7.
+
+OBJECT:Pakistan_RepublicanGuardIgla = Pakistan RepublicanGuardIgla
+CONTROLBAR:ConstructPakistan_RepublicanGuardIgla = Pakistan RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructPakistan_RepublicanGuardIgla = Produce Pakistan RepublicanGuardIgla.
+
+OBJECT:Pakistan_SpecialForces_Akms = Pakistan SpecialForces Akms
+CONTROLBAR:ConstructPakistan_SpecialForces_Akms = Pakistan SpecialForces Akms
+CONTROLBAR:ToolTipConstructPakistan_SpecialForces_Akms = Produce Pakistan SpecialForces Akms.
+
+OBJECT:Pakistan_RepublicanGuard_TBK14 = Pakistan RepublicanGuard TBK14
+CONTROLBAR:ConstructPakistan_RepublicanGuard_TBK14 = Pakistan RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructPakistan_RepublicanGuard_TBK14 = Produce Pakistan RepublicanGuard TBK14.
+
+OBJECT:Pakistan_T-72 = Pakistan T-72
+CONTROLBAR:ConstructPakistan_T-72 = Pakistan T-72
+CONTROLBAR:ToolTipConstructPakistan_T-72 = Produce Pakistan T-72.
+
+OBJECT:Pakistan_VT72B = Pakistan VT72B
+CONTROLBAR:ConstructPakistan_VT72B = Pakistan VT72B
+CONTROLBAR:ToolTipConstructPakistan_VT72B = Produce Pakistan VT72B.
+
+OBJECT:Pakistan_BTR-90 = Pakistan BTR-90
+CONTROLBAR:ConstructPakistan_BTR-90 = Pakistan BTR-90
+CONTROLBAR:ToolTipConstructPakistan_BTR-90 = Produce Pakistan BTR-90.
+
+OBJECT:Pakistan_BMP-1 = Pakistan BMP-1
+CONTROLBAR:ConstructPakistan_BMP-1 = Pakistan BMP-1
+CONTROLBAR:ToolTipConstructPakistan_BMP-1 = Produce Pakistan BMP-1.
+
+OBJECT:Pakistan_BM-21 = Pakistan BM-21
+CONTROLBAR:ConstructPakistan_BM-21 = Pakistan BM-21
+CONTROLBAR:ToolTipConstructPakistan_BM-21 = Produce Pakistan BM-21.
+
+OBJECT:Pakistan_ZSU-23-4 = Pakistan ZSU-23-4
+CONTROLBAR:ConstructPakistan_ZSU-23-4 = Pakistan ZSU-23-4
+CONTROLBAR:ToolTipConstructPakistan_ZSU-23-4 = Produce Pakistan ZSU-23-4.
+
+OBJECT:Pakistan_VehicleRoland3K = Pakistan VehicleRoland3K
+CONTROLBAR:ConstructPakistan_VehicleRoland3K = Pakistan VehicleRoland3K
+CONTROLBAR:ToolTipConstructPakistan_VehicleRoland3K = Produce Pakistan VehicleRoland3K.
+
+OBJECT:Pakistan_Ural375_Supply = Pakistan Ural375 Supply
+CONTROLBAR:ConstructPakistan_Ural375_Supply = Pakistan Ural375 Supply
+CONTROLBAR:ToolTipConstructPakistan_Ural375_Supply = Produce Pakistan Ural375 Supply.
+
+OBJECT:Pakistan_Mig-29A = Pakistan Mig-29A
+CONTROLBAR:ConstructPakistan_Mig-29A = Pakistan Mig-29A
+CONTROLBAR:ToolTipConstructPakistan_Mig-29A = Produce Pakistan Mig-29A.
+
+OBJECT:Pakistan_MirageF1_Bq = Pakistan MirageF1 Bq
+CONTROLBAR:ConstructPakistan_MirageF1_Bq = Pakistan MirageF1 Bq
+CONTROLBAR:ToolTipConstructPakistan_MirageF1_Bq = Produce Pakistan MirageF1 Bq.
+
+OBJECT:Pakistan_Su-25K = Pakistan Su-25K
+CONTROLBAR:ConstructPakistan_Su-25K = Pakistan Su-25K
+CONTROLBAR:ToolTipConstructPakistan_Su-25K = Produce Pakistan Su-25K.
+
+OBJECT:Pakistan_Mi-8T = Pakistan Mi-8T
+CONTROLBAR:ConstructPakistan_Mi-8T = Pakistan Mi-8T
+CONTROLBAR:ToolTipConstructPakistan_Mi-8T = Produce Pakistan Mi-8T.
+
+OBJECT:Pakistan_IL-76 = Pakistan IL-76
+CONTROLBAR:ConstructPakistan_IL-76 = Pakistan IL-76
+CONTROLBAR:ToolTipConstructPakistan_IL-76 = Produce Pakistan IL-76.
+
+OBJECT:Pakistan_Alhussaien = Pakistan Alhussaien
+CONTROLBAR:ConstructPakistan_Alhussaien = Pakistan Alhussaien
+CONTROLBAR:ToolTipConstructPakistan_Alhussaien = Produce Pakistan Alhussaien.
+
+CONTROLBAR:UpgradePakistan_Armor = Pakistan Armor Package
+CONTROLBAR:ToolTipUpgradePakistan_Armor = Research Pakistan Armor Package.
+UPGRADE:Pakistan_Armor = Pakistan Armor Package
+
+CONTROLBAR:UpgradePakistan_Weapons = Pakistan Weapon Package
+CONTROLBAR:ToolTipUpgradePakistan_Weapons = Research Pakistan Weapon Package.
+UPGRADE:Pakistan_Weapons = Pakistan Weapon Package
+
+CONTROLBAR:UpgradePakistan_AircraftWeapons = Pakistan Aircraft Weapons
+CONTROLBAR:ToolTipUpgradePakistan_AircraftWeapons = Research Pakistan Aircraft Weapons.
+UPGRADE:Pakistan_AircraftWeapons = Pakistan Aircraft Weapons
+
+CONTROLBAR:UpgradePakistan_AircraftCountermeasures = Pakistan Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradePakistan_AircraftCountermeasures = Research Pakistan Aircraft Countermeasures.
+UPGRADE:Pakistan_AircraftCountermeasures = Pakistan Aircraft Countermeasures
+
+OBJECT:SaudiArabia_CommandCenter = SaudiArabia CommandCenter
+CONTROLBAR:ConstructSaudiArabia_CommandCenter = SaudiArabia CommandCenter
+CONTROLBAR:ToolTipConstructSaudiArabia_CommandCenter = Produce SaudiArabia CommandCenter.
+
+OBJECT:SaudiArabia_PowerPlant = SaudiArabia PowerPlant
+CONTROLBAR:ConstructSaudiArabia_PowerPlant = SaudiArabia PowerPlant
+CONTROLBAR:ToolTipConstructSaudiArabia_PowerPlant = Produce SaudiArabia PowerPlant.
+
+OBJECT:SaudiArabia_Barracks = SaudiArabia Barracks
+CONTROLBAR:ConstructSaudiArabia_Barracks = SaudiArabia Barracks
+CONTROLBAR:ToolTipConstructSaudiArabia_Barracks = Produce SaudiArabia Barracks.
+
+OBJECT:SaudiArabia_WarFactory_T = SaudiArabia WarFactory T
+CONTROLBAR:ConstructSaudiArabia_WarFactory_T = SaudiArabia WarFactory T
+CONTROLBAR:ToolTipConstructSaudiArabia_WarFactory_T = Produce SaudiArabia WarFactory T.
+
+OBJECT:SaudiArabia_Airfield_T = SaudiArabia Airfield T
+CONTROLBAR:ConstructSaudiArabia_Airfield_T = SaudiArabia Airfield T
+CONTROLBAR:ToolTipConstructSaudiArabia_Airfield_T = Produce SaudiArabia Airfield T.
+
+OBJECT:SaudiArabia_SupplyCenter = SaudiArabia SupplyCenter
+CONTROLBAR:ConstructSaudiArabia_SupplyCenter = SaudiArabia SupplyCenter
+CONTROLBAR:ToolTipConstructSaudiArabia_SupplyCenter = Produce SaudiArabia SupplyCenter.
+
+OBJECT:SaudiArabia_RadarStation = SaudiArabia RadarStation
+CONTROLBAR:ConstructSaudiArabia_RadarStation = SaudiArabia RadarStation
+CONTROLBAR:ToolTipConstructSaudiArabia_RadarStation = Produce SaudiArabia RadarStation.
+
+OBJECT:SaudiArabia_MIC = SaudiArabia MIC
+CONTROLBAR:ConstructSaudiArabia_MIC = SaudiArabia MIC
+CONTROLBAR:ToolTipConstructSaudiArabia_MIC = Produce SaudiArabia MIC.
+
+OBJECT:SaudiArabia_Abbas = SaudiArabia Abbas
+CONTROLBAR:ConstructSaudiArabia_Abbas = SaudiArabia Abbas
+CONTROLBAR:ToolTipConstructSaudiArabia_Abbas = Produce SaudiArabia Abbas.
+
+OBJECT:SaudiArabia_Sam2 = SaudiArabia Sam2
+CONTROLBAR:ConstructSaudiArabia_Sam2 = SaudiArabia Sam2
+CONTROLBAR:ToolTipConstructSaudiArabia_Sam2 = Produce SaudiArabia Sam2.
+
+OBJECT:SaudiArabia_Worker = SaudiArabia Worker
+CONTROLBAR:ConstructSaudiArabia_Worker = SaudiArabia Worker
+CONTROLBAR:ToolTipConstructSaudiArabia_Worker = Produce SaudiArabia Worker.
+
+OBJECT:SaudiArabia_RepublicanGuard_AKMS = SaudiArabia RepublicanGuard AKMS
+CONTROLBAR:ConstructSaudiArabia_RepublicanGuard_AKMS = SaudiArabia RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructSaudiArabia_RepublicanGuard_AKMS = Produce SaudiArabia RepublicanGuard AKMS.
+
+OBJECT:SaudiArabia_RepublicanGuard_RPG7 = SaudiArabia RepublicanGuard RPG7
+CONTROLBAR:ConstructSaudiArabia_RepublicanGuard_RPG7 = SaudiArabia RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructSaudiArabia_RepublicanGuard_RPG7 = Produce SaudiArabia RepublicanGuard RPG7.
+
+OBJECT:SaudiArabia_RepublicanGuardIgla = SaudiArabia RepublicanGuardIgla
+CONTROLBAR:ConstructSaudiArabia_RepublicanGuardIgla = SaudiArabia RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructSaudiArabia_RepublicanGuardIgla = Produce SaudiArabia RepublicanGuardIgla.
+
+OBJECT:SaudiArabia_SpecialForces_Akms = SaudiArabia SpecialForces Akms
+CONTROLBAR:ConstructSaudiArabia_SpecialForces_Akms = SaudiArabia SpecialForces Akms
+CONTROLBAR:ToolTipConstructSaudiArabia_SpecialForces_Akms = Produce SaudiArabia SpecialForces Akms.
+
+OBJECT:SaudiArabia_RepublicanGuard_TBK14 = SaudiArabia RepublicanGuard TBK14
+CONTROLBAR:ConstructSaudiArabia_RepublicanGuard_TBK14 = SaudiArabia RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructSaudiArabia_RepublicanGuard_TBK14 = Produce SaudiArabia RepublicanGuard TBK14.
+
+OBJECT:SaudiArabia_T-72 = SaudiArabia T-72
+CONTROLBAR:ConstructSaudiArabia_T-72 = SaudiArabia T-72
+CONTROLBAR:ToolTipConstructSaudiArabia_T-72 = Produce SaudiArabia T-72.
+
+OBJECT:SaudiArabia_VT72B = SaudiArabia VT72B
+CONTROLBAR:ConstructSaudiArabia_VT72B = SaudiArabia VT72B
+CONTROLBAR:ToolTipConstructSaudiArabia_VT72B = Produce SaudiArabia VT72B.
+
+OBJECT:SaudiArabia_BTR-90 = SaudiArabia BTR-90
+CONTROLBAR:ConstructSaudiArabia_BTR-90 = SaudiArabia BTR-90
+CONTROLBAR:ToolTipConstructSaudiArabia_BTR-90 = Produce SaudiArabia BTR-90.
+
+OBJECT:SaudiArabia_BMP-1 = SaudiArabia BMP-1
+CONTROLBAR:ConstructSaudiArabia_BMP-1 = SaudiArabia BMP-1
+CONTROLBAR:ToolTipConstructSaudiArabia_BMP-1 = Produce SaudiArabia BMP-1.
+
+OBJECT:SaudiArabia_BM-21 = SaudiArabia BM-21
+CONTROLBAR:ConstructSaudiArabia_BM-21 = SaudiArabia BM-21
+CONTROLBAR:ToolTipConstructSaudiArabia_BM-21 = Produce SaudiArabia BM-21.
+
+OBJECT:SaudiArabia_ZSU-23-4 = SaudiArabia ZSU-23-4
+CONTROLBAR:ConstructSaudiArabia_ZSU-23-4 = SaudiArabia ZSU-23-4
+CONTROLBAR:ToolTipConstructSaudiArabia_ZSU-23-4 = Produce SaudiArabia ZSU-23-4.
+
+OBJECT:SaudiArabia_VehicleRoland3K = SaudiArabia VehicleRoland3K
+CONTROLBAR:ConstructSaudiArabia_VehicleRoland3K = SaudiArabia VehicleRoland3K
+CONTROLBAR:ToolTipConstructSaudiArabia_VehicleRoland3K = Produce SaudiArabia VehicleRoland3K.
+
+OBJECT:SaudiArabia_Ural375_Supply = SaudiArabia Ural375 Supply
+CONTROLBAR:ConstructSaudiArabia_Ural375_Supply = SaudiArabia Ural375 Supply
+CONTROLBAR:ToolTipConstructSaudiArabia_Ural375_Supply = Produce SaudiArabia Ural375 Supply.
+
+OBJECT:SaudiArabia_Mig-29A = SaudiArabia Mig-29A
+CONTROLBAR:ConstructSaudiArabia_Mig-29A = SaudiArabia Mig-29A
+CONTROLBAR:ToolTipConstructSaudiArabia_Mig-29A = Produce SaudiArabia Mig-29A.
+
+OBJECT:SaudiArabia_MirageF1_Bq = SaudiArabia MirageF1 Bq
+CONTROLBAR:ConstructSaudiArabia_MirageF1_Bq = SaudiArabia MirageF1 Bq
+CONTROLBAR:ToolTipConstructSaudiArabia_MirageF1_Bq = Produce SaudiArabia MirageF1 Bq.
+
+OBJECT:SaudiArabia_Su-25K = SaudiArabia Su-25K
+CONTROLBAR:ConstructSaudiArabia_Su-25K = SaudiArabia Su-25K
+CONTROLBAR:ToolTipConstructSaudiArabia_Su-25K = Produce SaudiArabia Su-25K.
+
+OBJECT:SaudiArabia_Mi-8T = SaudiArabia Mi-8T
+CONTROLBAR:ConstructSaudiArabia_Mi-8T = SaudiArabia Mi-8T
+CONTROLBAR:ToolTipConstructSaudiArabia_Mi-8T = Produce SaudiArabia Mi-8T.
+
+OBJECT:SaudiArabia_IL-76 = SaudiArabia IL-76
+CONTROLBAR:ConstructSaudiArabia_IL-76 = SaudiArabia IL-76
+CONTROLBAR:ToolTipConstructSaudiArabia_IL-76 = Produce SaudiArabia IL-76.
+
+OBJECT:SaudiArabia_Alhussaien = SaudiArabia Alhussaien
+CONTROLBAR:ConstructSaudiArabia_Alhussaien = SaudiArabia Alhussaien
+CONTROLBAR:ToolTipConstructSaudiArabia_Alhussaien = Produce SaudiArabia Alhussaien.
+
+CONTROLBAR:UpgradeSaudiArabia_Armor = SaudiArabia Armor Package
+CONTROLBAR:ToolTipUpgradeSaudiArabia_Armor = Research SaudiArabia Armor Package.
+UPGRADE:SaudiArabia_Armor = SaudiArabia Armor Package
+
+CONTROLBAR:UpgradeSaudiArabia_Weapons = SaudiArabia Weapon Package
+CONTROLBAR:ToolTipUpgradeSaudiArabia_Weapons = Research SaudiArabia Weapon Package.
+UPGRADE:SaudiArabia_Weapons = SaudiArabia Weapon Package
+
+CONTROLBAR:UpgradeSaudiArabia_AircraftWeapons = SaudiArabia Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeSaudiArabia_AircraftWeapons = Research SaudiArabia Aircraft Weapons.
+UPGRADE:SaudiArabia_AircraftWeapons = SaudiArabia Aircraft Weapons
+
+CONTROLBAR:UpgradeSaudiArabia_AircraftCountermeasures = SaudiArabia Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeSaudiArabia_AircraftCountermeasures = Research SaudiArabia Aircraft Countermeasures.
+UPGRADE:SaudiArabia_AircraftCountermeasures = SaudiArabia Aircraft Countermeasures
+
+OBJECT:UAE_CommandCenter = UAE CommandCenter
+CONTROLBAR:ConstructUAE_CommandCenter = UAE CommandCenter
+CONTROLBAR:ToolTipConstructUAE_CommandCenter = Produce UAE CommandCenter.
+
+OBJECT:UAE_PowerPlant = UAE PowerPlant
+CONTROLBAR:ConstructUAE_PowerPlant = UAE PowerPlant
+CONTROLBAR:ToolTipConstructUAE_PowerPlant = Produce UAE PowerPlant.
+
+OBJECT:UAE_Barracks = UAE Barracks
+CONTROLBAR:ConstructUAE_Barracks = UAE Barracks
+CONTROLBAR:ToolTipConstructUAE_Barracks = Produce UAE Barracks.
+
+OBJECT:UAE_WarFactory_T = UAE WarFactory T
+CONTROLBAR:ConstructUAE_WarFactory_T = UAE WarFactory T
+CONTROLBAR:ToolTipConstructUAE_WarFactory_T = Produce UAE WarFactory T.
+
+OBJECT:UAE_Airfield_T = UAE Airfield T
+CONTROLBAR:ConstructUAE_Airfield_T = UAE Airfield T
+CONTROLBAR:ToolTipConstructUAE_Airfield_T = Produce UAE Airfield T.
+
+OBJECT:UAE_SupplyCenter = UAE SupplyCenter
+CONTROLBAR:ConstructUAE_SupplyCenter = UAE SupplyCenter
+CONTROLBAR:ToolTipConstructUAE_SupplyCenter = Produce UAE SupplyCenter.
+
+OBJECT:UAE_RadarStation = UAE RadarStation
+CONTROLBAR:ConstructUAE_RadarStation = UAE RadarStation
+CONTROLBAR:ToolTipConstructUAE_RadarStation = Produce UAE RadarStation.
+
+OBJECT:UAE_MIC = UAE MIC
+CONTROLBAR:ConstructUAE_MIC = UAE MIC
+CONTROLBAR:ToolTipConstructUAE_MIC = Produce UAE MIC.
+
+OBJECT:UAE_Abbas = UAE Abbas
+CONTROLBAR:ConstructUAE_Abbas = UAE Abbas
+CONTROLBAR:ToolTipConstructUAE_Abbas = Produce UAE Abbas.
+
+OBJECT:UAE_Sam2 = UAE Sam2
+CONTROLBAR:ConstructUAE_Sam2 = UAE Sam2
+CONTROLBAR:ToolTipConstructUAE_Sam2 = Produce UAE Sam2.
+
+OBJECT:UAE_Worker = UAE Worker
+CONTROLBAR:ConstructUAE_Worker = UAE Worker
+CONTROLBAR:ToolTipConstructUAE_Worker = Produce UAE Worker.
+
+OBJECT:UAE_RepublicanGuard_AKMS = UAE RepublicanGuard AKMS
+CONTROLBAR:ConstructUAE_RepublicanGuard_AKMS = UAE RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructUAE_RepublicanGuard_AKMS = Produce UAE RepublicanGuard AKMS.
+
+OBJECT:UAE_RepublicanGuard_RPG7 = UAE RepublicanGuard RPG7
+CONTROLBAR:ConstructUAE_RepublicanGuard_RPG7 = UAE RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructUAE_RepublicanGuard_RPG7 = Produce UAE RepublicanGuard RPG7.
+
+OBJECT:UAE_RepublicanGuardIgla = UAE RepublicanGuardIgla
+CONTROLBAR:ConstructUAE_RepublicanGuardIgla = UAE RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructUAE_RepublicanGuardIgla = Produce UAE RepublicanGuardIgla.
+
+OBJECT:UAE_SpecialForces_Akms = UAE SpecialForces Akms
+CONTROLBAR:ConstructUAE_SpecialForces_Akms = UAE SpecialForces Akms
+CONTROLBAR:ToolTipConstructUAE_SpecialForces_Akms = Produce UAE SpecialForces Akms.
+
+OBJECT:UAE_RepublicanGuard_TBK14 = UAE RepublicanGuard TBK14
+CONTROLBAR:ConstructUAE_RepublicanGuard_TBK14 = UAE RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructUAE_RepublicanGuard_TBK14 = Produce UAE RepublicanGuard TBK14.
+
+OBJECT:UAE_T-72 = UAE T-72
+CONTROLBAR:ConstructUAE_T-72 = UAE T-72
+CONTROLBAR:ToolTipConstructUAE_T-72 = Produce UAE T-72.
+
+OBJECT:UAE_VT72B = UAE VT72B
+CONTROLBAR:ConstructUAE_VT72B = UAE VT72B
+CONTROLBAR:ToolTipConstructUAE_VT72B = Produce UAE VT72B.
+
+OBJECT:UAE_BTR-90 = UAE BTR-90
+CONTROLBAR:ConstructUAE_BTR-90 = UAE BTR-90
+CONTROLBAR:ToolTipConstructUAE_BTR-90 = Produce UAE BTR-90.
+
+OBJECT:UAE_BMP-1 = UAE BMP-1
+CONTROLBAR:ConstructUAE_BMP-1 = UAE BMP-1
+CONTROLBAR:ToolTipConstructUAE_BMP-1 = Produce UAE BMP-1.
+
+OBJECT:UAE_BM-21 = UAE BM-21
+CONTROLBAR:ConstructUAE_BM-21 = UAE BM-21
+CONTROLBAR:ToolTipConstructUAE_BM-21 = Produce UAE BM-21.
+
+OBJECT:UAE_ZSU-23-4 = UAE ZSU-23-4
+CONTROLBAR:ConstructUAE_ZSU-23-4 = UAE ZSU-23-4
+CONTROLBAR:ToolTipConstructUAE_ZSU-23-4 = Produce UAE ZSU-23-4.
+
+OBJECT:UAE_VehicleRoland3K = UAE VehicleRoland3K
+CONTROLBAR:ConstructUAE_VehicleRoland3K = UAE VehicleRoland3K
+CONTROLBAR:ToolTipConstructUAE_VehicleRoland3K = Produce UAE VehicleRoland3K.
+
+OBJECT:UAE_Ural375_Supply = UAE Ural375 Supply
+CONTROLBAR:ConstructUAE_Ural375_Supply = UAE Ural375 Supply
+CONTROLBAR:ToolTipConstructUAE_Ural375_Supply = Produce UAE Ural375 Supply.
+
+OBJECT:UAE_Mig-29A = UAE Mig-29A
+CONTROLBAR:ConstructUAE_Mig-29A = UAE Mig-29A
+CONTROLBAR:ToolTipConstructUAE_Mig-29A = Produce UAE Mig-29A.
+
+OBJECT:UAE_MirageF1_Bq = UAE MirageF1 Bq
+CONTROLBAR:ConstructUAE_MirageF1_Bq = UAE MirageF1 Bq
+CONTROLBAR:ToolTipConstructUAE_MirageF1_Bq = Produce UAE MirageF1 Bq.
+
+OBJECT:UAE_Su-25K = UAE Su-25K
+CONTROLBAR:ConstructUAE_Su-25K = UAE Su-25K
+CONTROLBAR:ToolTipConstructUAE_Su-25K = Produce UAE Su-25K.
+
+OBJECT:UAE_Mi-8T = UAE Mi-8T
+CONTROLBAR:ConstructUAE_Mi-8T = UAE Mi-8T
+CONTROLBAR:ToolTipConstructUAE_Mi-8T = Produce UAE Mi-8T.
+
+OBJECT:UAE_IL-76 = UAE IL-76
+CONTROLBAR:ConstructUAE_IL-76 = UAE IL-76
+CONTROLBAR:ToolTipConstructUAE_IL-76 = Produce UAE IL-76.
+
+OBJECT:UAE_Alhussaien = UAE Alhussaien
+CONTROLBAR:ConstructUAE_Alhussaien = UAE Alhussaien
+CONTROLBAR:ToolTipConstructUAE_Alhussaien = Produce UAE Alhussaien.
+
+CONTROLBAR:UpgradeUAE_Armor = UAE Armor Package
+CONTROLBAR:ToolTipUpgradeUAE_Armor = Research UAE Armor Package.
+UPGRADE:UAE_Armor = UAE Armor Package
+
+CONTROLBAR:UpgradeUAE_Weapons = UAE Weapon Package
+CONTROLBAR:ToolTipUpgradeUAE_Weapons = Research UAE Weapon Package.
+UPGRADE:UAE_Weapons = UAE Weapon Package
+
+CONTROLBAR:UpgradeUAE_AircraftWeapons = UAE Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeUAE_AircraftWeapons = Research UAE Aircraft Weapons.
+UPGRADE:UAE_AircraftWeapons = UAE Aircraft Weapons
+
+CONTROLBAR:UpgradeUAE_AircraftCountermeasures = UAE Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeUAE_AircraftCountermeasures = Research UAE Aircraft Countermeasures.
+UPGRADE:UAE_AircraftCountermeasures = UAE Aircraft Countermeasures
+
+OBJECT:India_CommandCenter = India CommandCenter
+CONTROLBAR:ConstructIndia_CommandCenter = India CommandCenter
+CONTROLBAR:ToolTipConstructIndia_CommandCenter = Produce India CommandCenter.
+
+OBJECT:India_PowerPlant = India PowerPlant
+CONTROLBAR:ConstructIndia_PowerPlant = India PowerPlant
+CONTROLBAR:ToolTipConstructIndia_PowerPlant = Produce India PowerPlant.
+
+OBJECT:India_Barracks = India Barracks
+CONTROLBAR:ConstructIndia_Barracks = India Barracks
+CONTROLBAR:ToolTipConstructIndia_Barracks = Produce India Barracks.
+
+OBJECT:India_WarFactory_T = India WarFactory T
+CONTROLBAR:ConstructIndia_WarFactory_T = India WarFactory T
+CONTROLBAR:ToolTipConstructIndia_WarFactory_T = Produce India WarFactory T.
+
+OBJECT:India_Airfield_T = India Airfield T
+CONTROLBAR:ConstructIndia_Airfield_T = India Airfield T
+CONTROLBAR:ToolTipConstructIndia_Airfield_T = Produce India Airfield T.
+
+OBJECT:India_SupplyCenter = India SupplyCenter
+CONTROLBAR:ConstructIndia_SupplyCenter = India SupplyCenter
+CONTROLBAR:ToolTipConstructIndia_SupplyCenter = Produce India SupplyCenter.
+
+OBJECT:India_RadarStation = India RadarStation
+CONTROLBAR:ConstructIndia_RadarStation = India RadarStation
+CONTROLBAR:ToolTipConstructIndia_RadarStation = Produce India RadarStation.
+
+OBJECT:India_MIC = India MIC
+CONTROLBAR:ConstructIndia_MIC = India MIC
+CONTROLBAR:ToolTipConstructIndia_MIC = Produce India MIC.
+
+OBJECT:India_Abbas = India Abbas
+CONTROLBAR:ConstructIndia_Abbas = India Abbas
+CONTROLBAR:ToolTipConstructIndia_Abbas = Produce India Abbas.
+
+OBJECT:India_Sam2 = India Sam2
+CONTROLBAR:ConstructIndia_Sam2 = India Sam2
+CONTROLBAR:ToolTipConstructIndia_Sam2 = Produce India Sam2.
+
+OBJECT:India_Worker = India Worker
+CONTROLBAR:ConstructIndia_Worker = India Worker
+CONTROLBAR:ToolTipConstructIndia_Worker = Produce India Worker.
+
+OBJECT:India_RepublicanGuard_AKMS = India RepublicanGuard AKMS
+CONTROLBAR:ConstructIndia_RepublicanGuard_AKMS = India RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructIndia_RepublicanGuard_AKMS = Produce India RepublicanGuard AKMS.
+
+OBJECT:India_RepublicanGuard_RPG7 = India RepublicanGuard RPG7
+CONTROLBAR:ConstructIndia_RepublicanGuard_RPG7 = India RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructIndia_RepublicanGuard_RPG7 = Produce India RepublicanGuard RPG7.
+
+OBJECT:India_RepublicanGuardIgla = India RepublicanGuardIgla
+CONTROLBAR:ConstructIndia_RepublicanGuardIgla = India RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructIndia_RepublicanGuardIgla = Produce India RepublicanGuardIgla.
+
+OBJECT:India_SpecialForces_Akms = India SpecialForces Akms
+CONTROLBAR:ConstructIndia_SpecialForces_Akms = India SpecialForces Akms
+CONTROLBAR:ToolTipConstructIndia_SpecialForces_Akms = Produce India SpecialForces Akms.
+
+OBJECT:India_RepublicanGuard_TBK14 = India RepublicanGuard TBK14
+CONTROLBAR:ConstructIndia_RepublicanGuard_TBK14 = India RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructIndia_RepublicanGuard_TBK14 = Produce India RepublicanGuard TBK14.
+
+OBJECT:India_T-72 = India T-72
+CONTROLBAR:ConstructIndia_T-72 = India T-72
+CONTROLBAR:ToolTipConstructIndia_T-72 = Produce India T-72.
+
+OBJECT:India_VT72B = India VT72B
+CONTROLBAR:ConstructIndia_VT72B = India VT72B
+CONTROLBAR:ToolTipConstructIndia_VT72B = Produce India VT72B.
+
+OBJECT:India_BTR-90 = India BTR-90
+CONTROLBAR:ConstructIndia_BTR-90 = India BTR-90
+CONTROLBAR:ToolTipConstructIndia_BTR-90 = Produce India BTR-90.
+
+OBJECT:India_BMP-1 = India BMP-1
+CONTROLBAR:ConstructIndia_BMP-1 = India BMP-1
+CONTROLBAR:ToolTipConstructIndia_BMP-1 = Produce India BMP-1.
+
+OBJECT:India_BM-21 = India BM-21
+CONTROLBAR:ConstructIndia_BM-21 = India BM-21
+CONTROLBAR:ToolTipConstructIndia_BM-21 = Produce India BM-21.
+
+OBJECT:India_ZSU-23-4 = India ZSU-23-4
+CONTROLBAR:ConstructIndia_ZSU-23-4 = India ZSU-23-4
+CONTROLBAR:ToolTipConstructIndia_ZSU-23-4 = Produce India ZSU-23-4.
+
+OBJECT:India_VehicleRoland3K = India VehicleRoland3K
+CONTROLBAR:ConstructIndia_VehicleRoland3K = India VehicleRoland3K
+CONTROLBAR:ToolTipConstructIndia_VehicleRoland3K = Produce India VehicleRoland3K.
+
+OBJECT:India_Ural375_Supply = India Ural375 Supply
+CONTROLBAR:ConstructIndia_Ural375_Supply = India Ural375 Supply
+CONTROLBAR:ToolTipConstructIndia_Ural375_Supply = Produce India Ural375 Supply.
+
+OBJECT:India_Mig-29A = India Mig-29A
+CONTROLBAR:ConstructIndia_Mig-29A = India Mig-29A
+CONTROLBAR:ToolTipConstructIndia_Mig-29A = Produce India Mig-29A.
+
+OBJECT:India_MirageF1_Bq = India MirageF1 Bq
+CONTROLBAR:ConstructIndia_MirageF1_Bq = India MirageF1 Bq
+CONTROLBAR:ToolTipConstructIndia_MirageF1_Bq = Produce India MirageF1 Bq.
+
+OBJECT:India_Su-25K = India Su-25K
+CONTROLBAR:ConstructIndia_Su-25K = India Su-25K
+CONTROLBAR:ToolTipConstructIndia_Su-25K = Produce India Su-25K.
+
+OBJECT:India_Mi-8T = India Mi-8T
+CONTROLBAR:ConstructIndia_Mi-8T = India Mi-8T
+CONTROLBAR:ToolTipConstructIndia_Mi-8T = Produce India Mi-8T.
+
+OBJECT:India_IL-76 = India IL-76
+CONTROLBAR:ConstructIndia_IL-76 = India IL-76
+CONTROLBAR:ToolTipConstructIndia_IL-76 = Produce India IL-76.
+
+OBJECT:India_Alhussaien = India Alhussaien
+CONTROLBAR:ConstructIndia_Alhussaien = India Alhussaien
+CONTROLBAR:ToolTipConstructIndia_Alhussaien = Produce India Alhussaien.
+
+CONTROLBAR:UpgradeIndia_Armor = India Armor Package
+CONTROLBAR:ToolTipUpgradeIndia_Armor = Research India Armor Package.
+UPGRADE:India_Armor = India Armor Package
+
+CONTROLBAR:UpgradeIndia_Weapons = India Weapon Package
+CONTROLBAR:ToolTipUpgradeIndia_Weapons = Research India Weapon Package.
+UPGRADE:India_Weapons = India Weapon Package
+
+CONTROLBAR:UpgradeIndia_AircraftWeapons = India Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeIndia_AircraftWeapons = Research India Aircraft Weapons.
+UPGRADE:India_AircraftWeapons = India Aircraft Weapons
+
+CONTROLBAR:UpgradeIndia_AircraftCountermeasures = India Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeIndia_AircraftCountermeasures = Research India Aircraft Countermeasures.
+UPGRADE:India_AircraftCountermeasures = India Aircraft Countermeasures
+
+OBJECT:Egypt_CommandCenter = Egypt CommandCenter
+CONTROLBAR:ConstructEgypt_CommandCenter = Egypt CommandCenter
+CONTROLBAR:ToolTipConstructEgypt_CommandCenter = Produce Egypt CommandCenter.
+
+OBJECT:Egypt_PowerPlant = Egypt PowerPlant
+CONTROLBAR:ConstructEgypt_PowerPlant = Egypt PowerPlant
+CONTROLBAR:ToolTipConstructEgypt_PowerPlant = Produce Egypt PowerPlant.
+
+OBJECT:Egypt_Barracks = Egypt Barracks
+CONTROLBAR:ConstructEgypt_Barracks = Egypt Barracks
+CONTROLBAR:ToolTipConstructEgypt_Barracks = Produce Egypt Barracks.
+
+OBJECT:Egypt_WarFactory_T = Egypt WarFactory T
+CONTROLBAR:ConstructEgypt_WarFactory_T = Egypt WarFactory T
+CONTROLBAR:ToolTipConstructEgypt_WarFactory_T = Produce Egypt WarFactory T.
+
+OBJECT:Egypt_Airfield_T = Egypt Airfield T
+CONTROLBAR:ConstructEgypt_Airfield_T = Egypt Airfield T
+CONTROLBAR:ToolTipConstructEgypt_Airfield_T = Produce Egypt Airfield T.
+
+OBJECT:Egypt_SupplyCenter = Egypt SupplyCenter
+CONTROLBAR:ConstructEgypt_SupplyCenter = Egypt SupplyCenter
+CONTROLBAR:ToolTipConstructEgypt_SupplyCenter = Produce Egypt SupplyCenter.
+
+OBJECT:Egypt_RadarStation = Egypt RadarStation
+CONTROLBAR:ConstructEgypt_RadarStation = Egypt RadarStation
+CONTROLBAR:ToolTipConstructEgypt_RadarStation = Produce Egypt RadarStation.
+
+OBJECT:Egypt_MIC = Egypt MIC
+CONTROLBAR:ConstructEgypt_MIC = Egypt MIC
+CONTROLBAR:ToolTipConstructEgypt_MIC = Produce Egypt MIC.
+
+OBJECT:Egypt_Abbas = Egypt Abbas
+CONTROLBAR:ConstructEgypt_Abbas = Egypt Abbas
+CONTROLBAR:ToolTipConstructEgypt_Abbas = Produce Egypt Abbas.
+
+OBJECT:Egypt_Sam2 = Egypt Sam2
+CONTROLBAR:ConstructEgypt_Sam2 = Egypt Sam2
+CONTROLBAR:ToolTipConstructEgypt_Sam2 = Produce Egypt Sam2.
+
+OBJECT:Egypt_Worker = Egypt Worker
+CONTROLBAR:ConstructEgypt_Worker = Egypt Worker
+CONTROLBAR:ToolTipConstructEgypt_Worker = Produce Egypt Worker.
+
+OBJECT:Egypt_RepublicanGuard_AKMS = Egypt RepublicanGuard AKMS
+CONTROLBAR:ConstructEgypt_RepublicanGuard_AKMS = Egypt RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructEgypt_RepublicanGuard_AKMS = Produce Egypt RepublicanGuard AKMS.
+
+OBJECT:Egypt_RepublicanGuard_RPG7 = Egypt RepublicanGuard RPG7
+CONTROLBAR:ConstructEgypt_RepublicanGuard_RPG7 = Egypt RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructEgypt_RepublicanGuard_RPG7 = Produce Egypt RepublicanGuard RPG7.
+
+OBJECT:Egypt_RepublicanGuardIgla = Egypt RepublicanGuardIgla
+CONTROLBAR:ConstructEgypt_RepublicanGuardIgla = Egypt RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructEgypt_RepublicanGuardIgla = Produce Egypt RepublicanGuardIgla.
+
+OBJECT:Egypt_SpecialForces_Akms = Egypt SpecialForces Akms
+CONTROLBAR:ConstructEgypt_SpecialForces_Akms = Egypt SpecialForces Akms
+CONTROLBAR:ToolTipConstructEgypt_SpecialForces_Akms = Produce Egypt SpecialForces Akms.
+
+OBJECT:Egypt_RepublicanGuard_TBK14 = Egypt RepublicanGuard TBK14
+CONTROLBAR:ConstructEgypt_RepublicanGuard_TBK14 = Egypt RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructEgypt_RepublicanGuard_TBK14 = Produce Egypt RepublicanGuard TBK14.
+
+OBJECT:Egypt_T-72 = Egypt T-72
+CONTROLBAR:ConstructEgypt_T-72 = Egypt T-72
+CONTROLBAR:ToolTipConstructEgypt_T-72 = Produce Egypt T-72.
+
+OBJECT:Egypt_VT72B = Egypt VT72B
+CONTROLBAR:ConstructEgypt_VT72B = Egypt VT72B
+CONTROLBAR:ToolTipConstructEgypt_VT72B = Produce Egypt VT72B.
+
+OBJECT:Egypt_BTR-90 = Egypt BTR-90
+CONTROLBAR:ConstructEgypt_BTR-90 = Egypt BTR-90
+CONTROLBAR:ToolTipConstructEgypt_BTR-90 = Produce Egypt BTR-90.
+
+OBJECT:Egypt_BMP-1 = Egypt BMP-1
+CONTROLBAR:ConstructEgypt_BMP-1 = Egypt BMP-1
+CONTROLBAR:ToolTipConstructEgypt_BMP-1 = Produce Egypt BMP-1.
+
+OBJECT:Egypt_BM-21 = Egypt BM-21
+CONTROLBAR:ConstructEgypt_BM-21 = Egypt BM-21
+CONTROLBAR:ToolTipConstructEgypt_BM-21 = Produce Egypt BM-21.
+
+OBJECT:Egypt_ZSU-23-4 = Egypt ZSU-23-4
+CONTROLBAR:ConstructEgypt_ZSU-23-4 = Egypt ZSU-23-4
+CONTROLBAR:ToolTipConstructEgypt_ZSU-23-4 = Produce Egypt ZSU-23-4.
+
+OBJECT:Egypt_VehicleRoland3K = Egypt VehicleRoland3K
+CONTROLBAR:ConstructEgypt_VehicleRoland3K = Egypt VehicleRoland3K
+CONTROLBAR:ToolTipConstructEgypt_VehicleRoland3K = Produce Egypt VehicleRoland3K.
+
+OBJECT:Egypt_Ural375_Supply = Egypt Ural375 Supply
+CONTROLBAR:ConstructEgypt_Ural375_Supply = Egypt Ural375 Supply
+CONTROLBAR:ToolTipConstructEgypt_Ural375_Supply = Produce Egypt Ural375 Supply.
+
+OBJECT:Egypt_Mig-29A = Egypt Mig-29A
+CONTROLBAR:ConstructEgypt_Mig-29A = Egypt Mig-29A
+CONTROLBAR:ToolTipConstructEgypt_Mig-29A = Produce Egypt Mig-29A.
+
+OBJECT:Egypt_MirageF1_Bq = Egypt MirageF1 Bq
+CONTROLBAR:ConstructEgypt_MirageF1_Bq = Egypt MirageF1 Bq
+CONTROLBAR:ToolTipConstructEgypt_MirageF1_Bq = Produce Egypt MirageF1 Bq.
+
+OBJECT:Egypt_Su-25K = Egypt Su-25K
+CONTROLBAR:ConstructEgypt_Su-25K = Egypt Su-25K
+CONTROLBAR:ToolTipConstructEgypt_Su-25K = Produce Egypt Su-25K.
+
+OBJECT:Egypt_Mi-8T = Egypt Mi-8T
+CONTROLBAR:ConstructEgypt_Mi-8T = Egypt Mi-8T
+CONTROLBAR:ToolTipConstructEgypt_Mi-8T = Produce Egypt Mi-8T.
+
+OBJECT:Egypt_IL-76 = Egypt IL-76
+CONTROLBAR:ConstructEgypt_IL-76 = Egypt IL-76
+CONTROLBAR:ToolTipConstructEgypt_IL-76 = Produce Egypt IL-76.
+
+OBJECT:Egypt_Alhussaien = Egypt Alhussaien
+CONTROLBAR:ConstructEgypt_Alhussaien = Egypt Alhussaien
+CONTROLBAR:ToolTipConstructEgypt_Alhussaien = Produce Egypt Alhussaien.
+
+CONTROLBAR:UpgradeEgypt_Armor = Egypt Armor Package
+CONTROLBAR:ToolTipUpgradeEgypt_Armor = Research Egypt Armor Package.
+UPGRADE:Egypt_Armor = Egypt Armor Package
+
+CONTROLBAR:UpgradeEgypt_Weapons = Egypt Weapon Package
+CONTROLBAR:ToolTipUpgradeEgypt_Weapons = Research Egypt Weapon Package.
+UPGRADE:Egypt_Weapons = Egypt Weapon Package
+
+CONTROLBAR:UpgradeEgypt_AircraftWeapons = Egypt Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeEgypt_AircraftWeapons = Research Egypt Aircraft Weapons.
+UPGRADE:Egypt_AircraftWeapons = Egypt Aircraft Weapons
+
+CONTROLBAR:UpgradeEgypt_AircraftCountermeasures = Egypt Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeEgypt_AircraftCountermeasures = Research Egypt Aircraft Countermeasures.
+UPGRADE:Egypt_AircraftCountermeasures = Egypt Aircraft Countermeasures
+
+OBJECT:Libya_CommandCenter = Libya CommandCenter
+CONTROLBAR:ConstructLibya_CommandCenter = Libya CommandCenter
+CONTROLBAR:ToolTipConstructLibya_CommandCenter = Produce Libya CommandCenter.
+
+OBJECT:Libya_PowerPlant = Libya PowerPlant
+CONTROLBAR:ConstructLibya_PowerPlant = Libya PowerPlant
+CONTROLBAR:ToolTipConstructLibya_PowerPlant = Produce Libya PowerPlant.
+
+OBJECT:Libya_Barracks = Libya Barracks
+CONTROLBAR:ConstructLibya_Barracks = Libya Barracks
+CONTROLBAR:ToolTipConstructLibya_Barracks = Produce Libya Barracks.
+
+OBJECT:Libya_WarFactory_T = Libya WarFactory T
+CONTROLBAR:ConstructLibya_WarFactory_T = Libya WarFactory T
+CONTROLBAR:ToolTipConstructLibya_WarFactory_T = Produce Libya WarFactory T.
+
+OBJECT:Libya_Airfield_T = Libya Airfield T
+CONTROLBAR:ConstructLibya_Airfield_T = Libya Airfield T
+CONTROLBAR:ToolTipConstructLibya_Airfield_T = Produce Libya Airfield T.
+
+OBJECT:Libya_SupplyCenter = Libya SupplyCenter
+CONTROLBAR:ConstructLibya_SupplyCenter = Libya SupplyCenter
+CONTROLBAR:ToolTipConstructLibya_SupplyCenter = Produce Libya SupplyCenter.
+
+OBJECT:Libya_RadarStation = Libya RadarStation
+CONTROLBAR:ConstructLibya_RadarStation = Libya RadarStation
+CONTROLBAR:ToolTipConstructLibya_RadarStation = Produce Libya RadarStation.
+
+OBJECT:Libya_MIC = Libya MIC
+CONTROLBAR:ConstructLibya_MIC = Libya MIC
+CONTROLBAR:ToolTipConstructLibya_MIC = Produce Libya MIC.
+
+OBJECT:Libya_Abbas = Libya Abbas
+CONTROLBAR:ConstructLibya_Abbas = Libya Abbas
+CONTROLBAR:ToolTipConstructLibya_Abbas = Produce Libya Abbas.
+
+OBJECT:Libya_Sam2 = Libya Sam2
+CONTROLBAR:ConstructLibya_Sam2 = Libya Sam2
+CONTROLBAR:ToolTipConstructLibya_Sam2 = Produce Libya Sam2.
+
+OBJECT:Libya_Worker = Libya Worker
+CONTROLBAR:ConstructLibya_Worker = Libya Worker
+CONTROLBAR:ToolTipConstructLibya_Worker = Produce Libya Worker.
+
+OBJECT:Libya_RepublicanGuard_AKMS = Libya RepublicanGuard AKMS
+CONTROLBAR:ConstructLibya_RepublicanGuard_AKMS = Libya RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructLibya_RepublicanGuard_AKMS = Produce Libya RepublicanGuard AKMS.
+
+OBJECT:Libya_RepublicanGuard_RPG7 = Libya RepublicanGuard RPG7
+CONTROLBAR:ConstructLibya_RepublicanGuard_RPG7 = Libya RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructLibya_RepublicanGuard_RPG7 = Produce Libya RepublicanGuard RPG7.
+
+OBJECT:Libya_RepublicanGuardIgla = Libya RepublicanGuardIgla
+CONTROLBAR:ConstructLibya_RepublicanGuardIgla = Libya RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructLibya_RepublicanGuardIgla = Produce Libya RepublicanGuardIgla.
+
+OBJECT:Libya_SpecialForces_Akms = Libya SpecialForces Akms
+CONTROLBAR:ConstructLibya_SpecialForces_Akms = Libya SpecialForces Akms
+CONTROLBAR:ToolTipConstructLibya_SpecialForces_Akms = Produce Libya SpecialForces Akms.
+
+OBJECT:Libya_RepublicanGuard_TBK14 = Libya RepublicanGuard TBK14
+CONTROLBAR:ConstructLibya_RepublicanGuard_TBK14 = Libya RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructLibya_RepublicanGuard_TBK14 = Produce Libya RepublicanGuard TBK14.
+
+OBJECT:Libya_T-72 = Libya T-72
+CONTROLBAR:ConstructLibya_T-72 = Libya T-72
+CONTROLBAR:ToolTipConstructLibya_T-72 = Produce Libya T-72.
+
+OBJECT:Libya_VT72B = Libya VT72B
+CONTROLBAR:ConstructLibya_VT72B = Libya VT72B
+CONTROLBAR:ToolTipConstructLibya_VT72B = Produce Libya VT72B.
+
+OBJECT:Libya_BTR-90 = Libya BTR-90
+CONTROLBAR:ConstructLibya_BTR-90 = Libya BTR-90
+CONTROLBAR:ToolTipConstructLibya_BTR-90 = Produce Libya BTR-90.
+
+OBJECT:Libya_BMP-1 = Libya BMP-1
+CONTROLBAR:ConstructLibya_BMP-1 = Libya BMP-1
+CONTROLBAR:ToolTipConstructLibya_BMP-1 = Produce Libya BMP-1.
+
+OBJECT:Libya_BM-21 = Libya BM-21
+CONTROLBAR:ConstructLibya_BM-21 = Libya BM-21
+CONTROLBAR:ToolTipConstructLibya_BM-21 = Produce Libya BM-21.
+
+OBJECT:Libya_ZSU-23-4 = Libya ZSU-23-4
+CONTROLBAR:ConstructLibya_ZSU-23-4 = Libya ZSU-23-4
+CONTROLBAR:ToolTipConstructLibya_ZSU-23-4 = Produce Libya ZSU-23-4.
+
+OBJECT:Libya_VehicleRoland3K = Libya VehicleRoland3K
+CONTROLBAR:ConstructLibya_VehicleRoland3K = Libya VehicleRoland3K
+CONTROLBAR:ToolTipConstructLibya_VehicleRoland3K = Produce Libya VehicleRoland3K.
+
+OBJECT:Libya_Ural375_Supply = Libya Ural375 Supply
+CONTROLBAR:ConstructLibya_Ural375_Supply = Libya Ural375 Supply
+CONTROLBAR:ToolTipConstructLibya_Ural375_Supply = Produce Libya Ural375 Supply.
+
+OBJECT:Libya_Mig-29A = Libya Mig-29A
+CONTROLBAR:ConstructLibya_Mig-29A = Libya Mig-29A
+CONTROLBAR:ToolTipConstructLibya_Mig-29A = Produce Libya Mig-29A.
+
+OBJECT:Libya_MirageF1_Bq = Libya MirageF1 Bq
+CONTROLBAR:ConstructLibya_MirageF1_Bq = Libya MirageF1 Bq
+CONTROLBAR:ToolTipConstructLibya_MirageF1_Bq = Produce Libya MirageF1 Bq.
+
+OBJECT:Libya_Su-25K = Libya Su-25K
+CONTROLBAR:ConstructLibya_Su-25K = Libya Su-25K
+CONTROLBAR:ToolTipConstructLibya_Su-25K = Produce Libya Su-25K.
+
+OBJECT:Libya_Mi-8T = Libya Mi-8T
+CONTROLBAR:ConstructLibya_Mi-8T = Libya Mi-8T
+CONTROLBAR:ToolTipConstructLibya_Mi-8T = Produce Libya Mi-8T.
+
+OBJECT:Libya_IL-76 = Libya IL-76
+CONTROLBAR:ConstructLibya_IL-76 = Libya IL-76
+CONTROLBAR:ToolTipConstructLibya_IL-76 = Produce Libya IL-76.
+
+OBJECT:Libya_Alhussaien = Libya Alhussaien
+CONTROLBAR:ConstructLibya_Alhussaien = Libya Alhussaien
+CONTROLBAR:ToolTipConstructLibya_Alhussaien = Produce Libya Alhussaien.
+
+CONTROLBAR:UpgradeLibya_Armor = Libya Armor Package
+CONTROLBAR:ToolTipUpgradeLibya_Armor = Research Libya Armor Package.
+UPGRADE:Libya_Armor = Libya Armor Package
+
+CONTROLBAR:UpgradeLibya_Weapons = Libya Weapon Package
+CONTROLBAR:ToolTipUpgradeLibya_Weapons = Research Libya Weapon Package.
+UPGRADE:Libya_Weapons = Libya Weapon Package
+
+CONTROLBAR:UpgradeLibya_AircraftWeapons = Libya Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeLibya_AircraftWeapons = Research Libya Aircraft Weapons.
+UPGRADE:Libya_AircraftWeapons = Libya Aircraft Weapons
+
+CONTROLBAR:UpgradeLibya_AircraftCountermeasures = Libya Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeLibya_AircraftCountermeasures = Research Libya Aircraft Countermeasures.
+UPGRADE:Libya_AircraftCountermeasures = Libya Aircraft Countermeasures
+
+OBJECT:Syria_CommandCenter = Syria CommandCenter
+CONTROLBAR:ConstructSyria_CommandCenter = Syria CommandCenter
+CONTROLBAR:ToolTipConstructSyria_CommandCenter = Produce Syria CommandCenter.
+
+OBJECT:Syria_PowerPlant = Syria PowerPlant
+CONTROLBAR:ConstructSyria_PowerPlant = Syria PowerPlant
+CONTROLBAR:ToolTipConstructSyria_PowerPlant = Produce Syria PowerPlant.
+
+OBJECT:Syria_Barracks = Syria Barracks
+CONTROLBAR:ConstructSyria_Barracks = Syria Barracks
+CONTROLBAR:ToolTipConstructSyria_Barracks = Produce Syria Barracks.
+
+OBJECT:Syria_WarFactory_T = Syria WarFactory T
+CONTROLBAR:ConstructSyria_WarFactory_T = Syria WarFactory T
+CONTROLBAR:ToolTipConstructSyria_WarFactory_T = Produce Syria WarFactory T.
+
+OBJECT:Syria_Airfield_T = Syria Airfield T
+CONTROLBAR:ConstructSyria_Airfield_T = Syria Airfield T
+CONTROLBAR:ToolTipConstructSyria_Airfield_T = Produce Syria Airfield T.
+
+OBJECT:Syria_SupplyCenter = Syria SupplyCenter
+CONTROLBAR:ConstructSyria_SupplyCenter = Syria SupplyCenter
+CONTROLBAR:ToolTipConstructSyria_SupplyCenter = Produce Syria SupplyCenter.
+
+OBJECT:Syria_RadarStation = Syria RadarStation
+CONTROLBAR:ConstructSyria_RadarStation = Syria RadarStation
+CONTROLBAR:ToolTipConstructSyria_RadarStation = Produce Syria RadarStation.
+
+OBJECT:Syria_MIC = Syria MIC
+CONTROLBAR:ConstructSyria_MIC = Syria MIC
+CONTROLBAR:ToolTipConstructSyria_MIC = Produce Syria MIC.
+
+OBJECT:Syria_Abbas = Syria Abbas
+CONTROLBAR:ConstructSyria_Abbas = Syria Abbas
+CONTROLBAR:ToolTipConstructSyria_Abbas = Produce Syria Abbas.
+
+OBJECT:Syria_Sam2 = Syria Sam2
+CONTROLBAR:ConstructSyria_Sam2 = Syria Sam2
+CONTROLBAR:ToolTipConstructSyria_Sam2 = Produce Syria Sam2.
+
+OBJECT:Syria_Worker = Syria Worker
+CONTROLBAR:ConstructSyria_Worker = Syria Worker
+CONTROLBAR:ToolTipConstructSyria_Worker = Produce Syria Worker.
+
+OBJECT:Syria_RepublicanGuard_AKMS = Syria RepublicanGuard AKMS
+CONTROLBAR:ConstructSyria_RepublicanGuard_AKMS = Syria RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructSyria_RepublicanGuard_AKMS = Produce Syria RepublicanGuard AKMS.
+
+OBJECT:Syria_RepublicanGuard_RPG7 = Syria RepublicanGuard RPG7
+CONTROLBAR:ConstructSyria_RepublicanGuard_RPG7 = Syria RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructSyria_RepublicanGuard_RPG7 = Produce Syria RepublicanGuard RPG7.
+
+OBJECT:Syria_RepublicanGuardIgla = Syria RepublicanGuardIgla
+CONTROLBAR:ConstructSyria_RepublicanGuardIgla = Syria RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructSyria_RepublicanGuardIgla = Produce Syria RepublicanGuardIgla.
+
+OBJECT:Syria_SpecialForces_Akms = Syria SpecialForces Akms
+CONTROLBAR:ConstructSyria_SpecialForces_Akms = Syria SpecialForces Akms
+CONTROLBAR:ToolTipConstructSyria_SpecialForces_Akms = Produce Syria SpecialForces Akms.
+
+OBJECT:Syria_RepublicanGuard_TBK14 = Syria RepublicanGuard TBK14
+CONTROLBAR:ConstructSyria_RepublicanGuard_TBK14 = Syria RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructSyria_RepublicanGuard_TBK14 = Produce Syria RepublicanGuard TBK14.
+
+OBJECT:Syria_T-72 = Syria T-72
+CONTROLBAR:ConstructSyria_T-72 = Syria T-72
+CONTROLBAR:ToolTipConstructSyria_T-72 = Produce Syria T-72.
+
+OBJECT:Syria_VT72B = Syria VT72B
+CONTROLBAR:ConstructSyria_VT72B = Syria VT72B
+CONTROLBAR:ToolTipConstructSyria_VT72B = Produce Syria VT72B.
+
+OBJECT:Syria_BTR-90 = Syria BTR-90
+CONTROLBAR:ConstructSyria_BTR-90 = Syria BTR-90
+CONTROLBAR:ToolTipConstructSyria_BTR-90 = Produce Syria BTR-90.
+
+OBJECT:Syria_BMP-1 = Syria BMP-1
+CONTROLBAR:ConstructSyria_BMP-1 = Syria BMP-1
+CONTROLBAR:ToolTipConstructSyria_BMP-1 = Produce Syria BMP-1.
+
+OBJECT:Syria_BM-21 = Syria BM-21
+CONTROLBAR:ConstructSyria_BM-21 = Syria BM-21
+CONTROLBAR:ToolTipConstructSyria_BM-21 = Produce Syria BM-21.
+
+OBJECT:Syria_ZSU-23-4 = Syria ZSU-23-4
+CONTROLBAR:ConstructSyria_ZSU-23-4 = Syria ZSU-23-4
+CONTROLBAR:ToolTipConstructSyria_ZSU-23-4 = Produce Syria ZSU-23-4.
+
+OBJECT:Syria_VehicleRoland3K = Syria VehicleRoland3K
+CONTROLBAR:ConstructSyria_VehicleRoland3K = Syria VehicleRoland3K
+CONTROLBAR:ToolTipConstructSyria_VehicleRoland3K = Produce Syria VehicleRoland3K.
+
+OBJECT:Syria_Ural375_Supply = Syria Ural375 Supply
+CONTROLBAR:ConstructSyria_Ural375_Supply = Syria Ural375 Supply
+CONTROLBAR:ToolTipConstructSyria_Ural375_Supply = Produce Syria Ural375 Supply.
+
+OBJECT:Syria_Mig-29A = Syria Mig-29A
+CONTROLBAR:ConstructSyria_Mig-29A = Syria Mig-29A
+CONTROLBAR:ToolTipConstructSyria_Mig-29A = Produce Syria Mig-29A.
+
+OBJECT:Syria_MirageF1_Bq = Syria MirageF1 Bq
+CONTROLBAR:ConstructSyria_MirageF1_Bq = Syria MirageF1 Bq
+CONTROLBAR:ToolTipConstructSyria_MirageF1_Bq = Produce Syria MirageF1 Bq.
+
+OBJECT:Syria_Su-25K = Syria Su-25K
+CONTROLBAR:ConstructSyria_Su-25K = Syria Su-25K
+CONTROLBAR:ToolTipConstructSyria_Su-25K = Produce Syria Su-25K.
+
+OBJECT:Syria_Mi-8T = Syria Mi-8T
+CONTROLBAR:ConstructSyria_Mi-8T = Syria Mi-8T
+CONTROLBAR:ToolTipConstructSyria_Mi-8T = Produce Syria Mi-8T.
+
+OBJECT:Syria_IL-76 = Syria IL-76
+CONTROLBAR:ConstructSyria_IL-76 = Syria IL-76
+CONTROLBAR:ToolTipConstructSyria_IL-76 = Produce Syria IL-76.
+
+OBJECT:Syria_Alhussaien = Syria Alhussaien
+CONTROLBAR:ConstructSyria_Alhussaien = Syria Alhussaien
+CONTROLBAR:ToolTipConstructSyria_Alhussaien = Produce Syria Alhussaien.
+
+CONTROLBAR:UpgradeSyria_Armor = Syria Armor Package
+CONTROLBAR:ToolTipUpgradeSyria_Armor = Research Syria Armor Package.
+UPGRADE:Syria_Armor = Syria Armor Package
+
+CONTROLBAR:UpgradeSyria_Weapons = Syria Weapon Package
+CONTROLBAR:ToolTipUpgradeSyria_Weapons = Research Syria Weapon Package.
+UPGRADE:Syria_Weapons = Syria Weapon Package
+
+CONTROLBAR:UpgradeSyria_AircraftWeapons = Syria Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeSyria_AircraftWeapons = Research Syria Aircraft Weapons.
+UPGRADE:Syria_AircraftWeapons = Syria Aircraft Weapons
+
+CONTROLBAR:UpgradeSyria_AircraftCountermeasures = Syria Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeSyria_AircraftCountermeasures = Research Syria Aircraft Countermeasures.
+UPGRADE:Syria_AircraftCountermeasures = Syria Aircraft Countermeasures
+
+OBJECT:SouthAfrica_CommandCenter = SouthAfrica CommandCenter
+CONTROLBAR:ConstructSouthAfrica_CommandCenter = SouthAfrica CommandCenter
+CONTROLBAR:ToolTipConstructSouthAfrica_CommandCenter = Produce SouthAfrica CommandCenter.
+
+OBJECT:SouthAfrica_PowerPlant = SouthAfrica PowerPlant
+CONTROLBAR:ConstructSouthAfrica_PowerPlant = SouthAfrica PowerPlant
+CONTROLBAR:ToolTipConstructSouthAfrica_PowerPlant = Produce SouthAfrica PowerPlant.
+
+OBJECT:SouthAfrica_Barracks = SouthAfrica Barracks
+CONTROLBAR:ConstructSouthAfrica_Barracks = SouthAfrica Barracks
+CONTROLBAR:ToolTipConstructSouthAfrica_Barracks = Produce SouthAfrica Barracks.
+
+OBJECT:SouthAfrica_WarFactory_T = SouthAfrica WarFactory T
+CONTROLBAR:ConstructSouthAfrica_WarFactory_T = SouthAfrica WarFactory T
+CONTROLBAR:ToolTipConstructSouthAfrica_WarFactory_T = Produce SouthAfrica WarFactory T.
+
+OBJECT:SouthAfrica_Airfield_T = SouthAfrica Airfield T
+CONTROLBAR:ConstructSouthAfrica_Airfield_T = SouthAfrica Airfield T
+CONTROLBAR:ToolTipConstructSouthAfrica_Airfield_T = Produce SouthAfrica Airfield T.
+
+OBJECT:SouthAfrica_SupplyCenter = SouthAfrica SupplyCenter
+CONTROLBAR:ConstructSouthAfrica_SupplyCenter = SouthAfrica SupplyCenter
+CONTROLBAR:ToolTipConstructSouthAfrica_SupplyCenter = Produce SouthAfrica SupplyCenter.
+
+OBJECT:SouthAfrica_RadarStation = SouthAfrica RadarStation
+CONTROLBAR:ConstructSouthAfrica_RadarStation = SouthAfrica RadarStation
+CONTROLBAR:ToolTipConstructSouthAfrica_RadarStation = Produce SouthAfrica RadarStation.
+
+OBJECT:SouthAfrica_MIC = SouthAfrica MIC
+CONTROLBAR:ConstructSouthAfrica_MIC = SouthAfrica MIC
+CONTROLBAR:ToolTipConstructSouthAfrica_MIC = Produce SouthAfrica MIC.
+
+OBJECT:SouthAfrica_Abbas = SouthAfrica Abbas
+CONTROLBAR:ConstructSouthAfrica_Abbas = SouthAfrica Abbas
+CONTROLBAR:ToolTipConstructSouthAfrica_Abbas = Produce SouthAfrica Abbas.
+
+OBJECT:SouthAfrica_Sam2 = SouthAfrica Sam2
+CONTROLBAR:ConstructSouthAfrica_Sam2 = SouthAfrica Sam2
+CONTROLBAR:ToolTipConstructSouthAfrica_Sam2 = Produce SouthAfrica Sam2.
+
+OBJECT:SouthAfrica_Worker = SouthAfrica Worker
+CONTROLBAR:ConstructSouthAfrica_Worker = SouthAfrica Worker
+CONTROLBAR:ToolTipConstructSouthAfrica_Worker = Produce SouthAfrica Worker.
+
+OBJECT:SouthAfrica_RepublicanGuard_AKMS = SouthAfrica RepublicanGuard AKMS
+CONTROLBAR:ConstructSouthAfrica_RepublicanGuard_AKMS = SouthAfrica RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructSouthAfrica_RepublicanGuard_AKMS = Produce SouthAfrica RepublicanGuard AKMS.
+
+OBJECT:SouthAfrica_RepublicanGuard_RPG7 = SouthAfrica RepublicanGuard RPG7
+CONTROLBAR:ConstructSouthAfrica_RepublicanGuard_RPG7 = SouthAfrica RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructSouthAfrica_RepublicanGuard_RPG7 = Produce SouthAfrica RepublicanGuard RPG7.
+
+OBJECT:SouthAfrica_RepublicanGuardIgla = SouthAfrica RepublicanGuardIgla
+CONTROLBAR:ConstructSouthAfrica_RepublicanGuardIgla = SouthAfrica RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructSouthAfrica_RepublicanGuardIgla = Produce SouthAfrica RepublicanGuardIgla.
+
+OBJECT:SouthAfrica_SpecialForces_Akms = SouthAfrica SpecialForces Akms
+CONTROLBAR:ConstructSouthAfrica_SpecialForces_Akms = SouthAfrica SpecialForces Akms
+CONTROLBAR:ToolTipConstructSouthAfrica_SpecialForces_Akms = Produce SouthAfrica SpecialForces Akms.
+
+OBJECT:SouthAfrica_RepublicanGuard_TBK14 = SouthAfrica RepublicanGuard TBK14
+CONTROLBAR:ConstructSouthAfrica_RepublicanGuard_TBK14 = SouthAfrica RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructSouthAfrica_RepublicanGuard_TBK14 = Produce SouthAfrica RepublicanGuard TBK14.
+
+OBJECT:SouthAfrica_T-72 = SouthAfrica T-72
+CONTROLBAR:ConstructSouthAfrica_T-72 = SouthAfrica T-72
+CONTROLBAR:ToolTipConstructSouthAfrica_T-72 = Produce SouthAfrica T-72.
+
+OBJECT:SouthAfrica_VT72B = SouthAfrica VT72B
+CONTROLBAR:ConstructSouthAfrica_VT72B = SouthAfrica VT72B
+CONTROLBAR:ToolTipConstructSouthAfrica_VT72B = Produce SouthAfrica VT72B.
+
+OBJECT:SouthAfrica_BTR-90 = SouthAfrica BTR-90
+CONTROLBAR:ConstructSouthAfrica_BTR-90 = SouthAfrica BTR-90
+CONTROLBAR:ToolTipConstructSouthAfrica_BTR-90 = Produce SouthAfrica BTR-90.
+
+OBJECT:SouthAfrica_BMP-1 = SouthAfrica BMP-1
+CONTROLBAR:ConstructSouthAfrica_BMP-1 = SouthAfrica BMP-1
+CONTROLBAR:ToolTipConstructSouthAfrica_BMP-1 = Produce SouthAfrica BMP-1.
+
+OBJECT:SouthAfrica_BM-21 = SouthAfrica BM-21
+CONTROLBAR:ConstructSouthAfrica_BM-21 = SouthAfrica BM-21
+CONTROLBAR:ToolTipConstructSouthAfrica_BM-21 = Produce SouthAfrica BM-21.
+
+OBJECT:SouthAfrica_ZSU-23-4 = SouthAfrica ZSU-23-4
+CONTROLBAR:ConstructSouthAfrica_ZSU-23-4 = SouthAfrica ZSU-23-4
+CONTROLBAR:ToolTipConstructSouthAfrica_ZSU-23-4 = Produce SouthAfrica ZSU-23-4.
+
+OBJECT:SouthAfrica_VehicleRoland3K = SouthAfrica VehicleRoland3K
+CONTROLBAR:ConstructSouthAfrica_VehicleRoland3K = SouthAfrica VehicleRoland3K
+CONTROLBAR:ToolTipConstructSouthAfrica_VehicleRoland3K = Produce SouthAfrica VehicleRoland3K.
+
+OBJECT:SouthAfrica_Ural375_Supply = SouthAfrica Ural375 Supply
+CONTROLBAR:ConstructSouthAfrica_Ural375_Supply = SouthAfrica Ural375 Supply
+CONTROLBAR:ToolTipConstructSouthAfrica_Ural375_Supply = Produce SouthAfrica Ural375 Supply.
+
+OBJECT:SouthAfrica_Mig-29A = SouthAfrica Mig-29A
+CONTROLBAR:ConstructSouthAfrica_Mig-29A = SouthAfrica Mig-29A
+CONTROLBAR:ToolTipConstructSouthAfrica_Mig-29A = Produce SouthAfrica Mig-29A.
+
+OBJECT:SouthAfrica_MirageF1_Bq = SouthAfrica MirageF1 Bq
+CONTROLBAR:ConstructSouthAfrica_MirageF1_Bq = SouthAfrica MirageF1 Bq
+CONTROLBAR:ToolTipConstructSouthAfrica_MirageF1_Bq = Produce SouthAfrica MirageF1 Bq.
+
+OBJECT:SouthAfrica_Su-25K = SouthAfrica Su-25K
+CONTROLBAR:ConstructSouthAfrica_Su-25K = SouthAfrica Su-25K
+CONTROLBAR:ToolTipConstructSouthAfrica_Su-25K = Produce SouthAfrica Su-25K.
+
+OBJECT:SouthAfrica_Mi-8T = SouthAfrica Mi-8T
+CONTROLBAR:ConstructSouthAfrica_Mi-8T = SouthAfrica Mi-8T
+CONTROLBAR:ToolTipConstructSouthAfrica_Mi-8T = Produce SouthAfrica Mi-8T.
+
+OBJECT:SouthAfrica_IL-76 = SouthAfrica IL-76
+CONTROLBAR:ConstructSouthAfrica_IL-76 = SouthAfrica IL-76
+CONTROLBAR:ToolTipConstructSouthAfrica_IL-76 = Produce SouthAfrica IL-76.
+
+OBJECT:SouthAfrica_Alhussaien = SouthAfrica Alhussaien
+CONTROLBAR:ConstructSouthAfrica_Alhussaien = SouthAfrica Alhussaien
+CONTROLBAR:ToolTipConstructSouthAfrica_Alhussaien = Produce SouthAfrica Alhussaien.
+
+CONTROLBAR:UpgradeSouthAfrica_Armor = SouthAfrica Armor Package
+CONTROLBAR:ToolTipUpgradeSouthAfrica_Armor = Research SouthAfrica Armor Package.
+UPGRADE:SouthAfrica_Armor = SouthAfrica Armor Package
+
+CONTROLBAR:UpgradeSouthAfrica_Weapons = SouthAfrica Weapon Package
+CONTROLBAR:ToolTipUpgradeSouthAfrica_Weapons = Research SouthAfrica Weapon Package.
+UPGRADE:SouthAfrica_Weapons = SouthAfrica Weapon Package
+
+CONTROLBAR:UpgradeSouthAfrica_AircraftWeapons = SouthAfrica Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeSouthAfrica_AircraftWeapons = Research SouthAfrica Aircraft Weapons.
+UPGRADE:SouthAfrica_AircraftWeapons = SouthAfrica Aircraft Weapons
+
+CONTROLBAR:UpgradeSouthAfrica_AircraftCountermeasures = SouthAfrica Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeSouthAfrica_AircraftCountermeasures = Research SouthAfrica Aircraft Countermeasures.
+UPGRADE:SouthAfrica_AircraftCountermeasures = SouthAfrica Aircraft Countermeasures
+
+OBJECT:Vietnam_CommandCenter = Vietnam CommandCenter
+CONTROLBAR:ConstructVietnam_CommandCenter = Vietnam CommandCenter
+CONTROLBAR:ToolTipConstructVietnam_CommandCenter = Produce Vietnam CommandCenter.
+
+OBJECT:Vietnam_PowerPlant = Vietnam PowerPlant
+CONTROLBAR:ConstructVietnam_PowerPlant = Vietnam PowerPlant
+CONTROLBAR:ToolTipConstructVietnam_PowerPlant = Produce Vietnam PowerPlant.
+
+OBJECT:Vietnam_Barracks = Vietnam Barracks
+CONTROLBAR:ConstructVietnam_Barracks = Vietnam Barracks
+CONTROLBAR:ToolTipConstructVietnam_Barracks = Produce Vietnam Barracks.
+
+OBJECT:Vietnam_WarFactory_T = Vietnam WarFactory T
+CONTROLBAR:ConstructVietnam_WarFactory_T = Vietnam WarFactory T
+CONTROLBAR:ToolTipConstructVietnam_WarFactory_T = Produce Vietnam WarFactory T.
+
+OBJECT:Vietnam_Airfield_T = Vietnam Airfield T
+CONTROLBAR:ConstructVietnam_Airfield_T = Vietnam Airfield T
+CONTROLBAR:ToolTipConstructVietnam_Airfield_T = Produce Vietnam Airfield T.
+
+OBJECT:Vietnam_SupplyCenter = Vietnam SupplyCenter
+CONTROLBAR:ConstructVietnam_SupplyCenter = Vietnam SupplyCenter
+CONTROLBAR:ToolTipConstructVietnam_SupplyCenter = Produce Vietnam SupplyCenter.
+
+OBJECT:Vietnam_RadarStation = Vietnam RadarStation
+CONTROLBAR:ConstructVietnam_RadarStation = Vietnam RadarStation
+CONTROLBAR:ToolTipConstructVietnam_RadarStation = Produce Vietnam RadarStation.
+
+OBJECT:Vietnam_MIC = Vietnam MIC
+CONTROLBAR:ConstructVietnam_MIC = Vietnam MIC
+CONTROLBAR:ToolTipConstructVietnam_MIC = Produce Vietnam MIC.
+
+OBJECT:Vietnam_Abbas = Vietnam Abbas
+CONTROLBAR:ConstructVietnam_Abbas = Vietnam Abbas
+CONTROLBAR:ToolTipConstructVietnam_Abbas = Produce Vietnam Abbas.
+
+OBJECT:Vietnam_Sam2 = Vietnam Sam2
+CONTROLBAR:ConstructVietnam_Sam2 = Vietnam Sam2
+CONTROLBAR:ToolTipConstructVietnam_Sam2 = Produce Vietnam Sam2.
+
+OBJECT:Vietnam_Worker = Vietnam Worker
+CONTROLBAR:ConstructVietnam_Worker = Vietnam Worker
+CONTROLBAR:ToolTipConstructVietnam_Worker = Produce Vietnam Worker.
+
+OBJECT:Vietnam_RepublicanGuard_AKMS = Vietnam RepublicanGuard AKMS
+CONTROLBAR:ConstructVietnam_RepublicanGuard_AKMS = Vietnam RepublicanGuard AKMS
+CONTROLBAR:ToolTipConstructVietnam_RepublicanGuard_AKMS = Produce Vietnam RepublicanGuard AKMS.
+
+OBJECT:Vietnam_RepublicanGuard_RPG7 = Vietnam RepublicanGuard RPG7
+CONTROLBAR:ConstructVietnam_RepublicanGuard_RPG7 = Vietnam RepublicanGuard RPG7
+CONTROLBAR:ToolTipConstructVietnam_RepublicanGuard_RPG7 = Produce Vietnam RepublicanGuard RPG7.
+
+OBJECT:Vietnam_RepublicanGuardIgla = Vietnam RepublicanGuardIgla
+CONTROLBAR:ConstructVietnam_RepublicanGuardIgla = Vietnam RepublicanGuardIgla
+CONTROLBAR:ToolTipConstructVietnam_RepublicanGuardIgla = Produce Vietnam RepublicanGuardIgla.
+
+OBJECT:Vietnam_SpecialForces_Akms = Vietnam SpecialForces Akms
+CONTROLBAR:ConstructVietnam_SpecialForces_Akms = Vietnam SpecialForces Akms
+CONTROLBAR:ToolTipConstructVietnam_SpecialForces_Akms = Produce Vietnam SpecialForces Akms.
+
+OBJECT:Vietnam_RepublicanGuard_TBK14 = Vietnam RepublicanGuard TBK14
+CONTROLBAR:ConstructVietnam_RepublicanGuard_TBK14 = Vietnam RepublicanGuard TBK14
+CONTROLBAR:ToolTipConstructVietnam_RepublicanGuard_TBK14 = Produce Vietnam RepublicanGuard TBK14.
+
+OBJECT:Vietnam_T-72 = Vietnam T-72
+CONTROLBAR:ConstructVietnam_T-72 = Vietnam T-72
+CONTROLBAR:ToolTipConstructVietnam_T-72 = Produce Vietnam T-72.
+
+OBJECT:Vietnam_VT72B = Vietnam VT72B
+CONTROLBAR:ConstructVietnam_VT72B = Vietnam VT72B
+CONTROLBAR:ToolTipConstructVietnam_VT72B = Produce Vietnam VT72B.
+
+OBJECT:Vietnam_BTR-90 = Vietnam BTR-90
+CONTROLBAR:ConstructVietnam_BTR-90 = Vietnam BTR-90
+CONTROLBAR:ToolTipConstructVietnam_BTR-90 = Produce Vietnam BTR-90.
+
+OBJECT:Vietnam_BMP-1 = Vietnam BMP-1
+CONTROLBAR:ConstructVietnam_BMP-1 = Vietnam BMP-1
+CONTROLBAR:ToolTipConstructVietnam_BMP-1 = Produce Vietnam BMP-1.
+
+OBJECT:Vietnam_BM-21 = Vietnam BM-21
+CONTROLBAR:ConstructVietnam_BM-21 = Vietnam BM-21
+CONTROLBAR:ToolTipConstructVietnam_BM-21 = Produce Vietnam BM-21.
+
+OBJECT:Vietnam_ZSU-23-4 = Vietnam ZSU-23-4
+CONTROLBAR:ConstructVietnam_ZSU-23-4 = Vietnam ZSU-23-4
+CONTROLBAR:ToolTipConstructVietnam_ZSU-23-4 = Produce Vietnam ZSU-23-4.
+
+OBJECT:Vietnam_VehicleRoland3K = Vietnam VehicleRoland3K
+CONTROLBAR:ConstructVietnam_VehicleRoland3K = Vietnam VehicleRoland3K
+CONTROLBAR:ToolTipConstructVietnam_VehicleRoland3K = Produce Vietnam VehicleRoland3K.
+
+OBJECT:Vietnam_Ural375_Supply = Vietnam Ural375 Supply
+CONTROLBAR:ConstructVietnam_Ural375_Supply = Vietnam Ural375 Supply
+CONTROLBAR:ToolTipConstructVietnam_Ural375_Supply = Produce Vietnam Ural375 Supply.
+
+OBJECT:Vietnam_Mig-29A = Vietnam Mig-29A
+CONTROLBAR:ConstructVietnam_Mig-29A = Vietnam Mig-29A
+CONTROLBAR:ToolTipConstructVietnam_Mig-29A = Produce Vietnam Mig-29A.
+
+OBJECT:Vietnam_MirageF1_Bq = Vietnam MirageF1 Bq
+CONTROLBAR:ConstructVietnam_MirageF1_Bq = Vietnam MirageF1 Bq
+CONTROLBAR:ToolTipConstructVietnam_MirageF1_Bq = Produce Vietnam MirageF1 Bq.
+
+OBJECT:Vietnam_Su-25K = Vietnam Su-25K
+CONTROLBAR:ConstructVietnam_Su-25K = Vietnam Su-25K
+CONTROLBAR:ToolTipConstructVietnam_Su-25K = Produce Vietnam Su-25K.
+
+OBJECT:Vietnam_Mi-8T = Vietnam Mi-8T
+CONTROLBAR:ConstructVietnam_Mi-8T = Vietnam Mi-8T
+CONTROLBAR:ToolTipConstructVietnam_Mi-8T = Produce Vietnam Mi-8T.
+
+OBJECT:Vietnam_IL-76 = Vietnam IL-76
+CONTROLBAR:ConstructVietnam_IL-76 = Vietnam IL-76
+CONTROLBAR:ToolTipConstructVietnam_IL-76 = Produce Vietnam IL-76.
+
+OBJECT:Vietnam_Alhussaien = Vietnam Alhussaien
+CONTROLBAR:ConstructVietnam_Alhussaien = Vietnam Alhussaien
+CONTROLBAR:ToolTipConstructVietnam_Alhussaien = Produce Vietnam Alhussaien.
+
+CONTROLBAR:UpgradeVietnam_Armor = Vietnam Armor Package
+CONTROLBAR:ToolTipUpgradeVietnam_Armor = Research Vietnam Armor Package.
+UPGRADE:Vietnam_Armor = Vietnam Armor Package
+
+CONTROLBAR:UpgradeVietnam_Weapons = Vietnam Weapon Package
+CONTROLBAR:ToolTipUpgradeVietnam_Weapons = Research Vietnam Weapon Package.
+UPGRADE:Vietnam_Weapons = Vietnam Weapon Package
+
+CONTROLBAR:UpgradeVietnam_AircraftWeapons = Vietnam Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeVietnam_AircraftWeapons = Research Vietnam Aircraft Weapons.
+UPGRADE:Vietnam_AircraftWeapons = Vietnam Aircraft Weapons
+
+CONTROLBAR:UpgradeVietnam_AircraftCountermeasures = Vietnam Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeVietnam_AircraftCountermeasures = Research Vietnam Aircraft Countermeasures.
+UPGRADE:Vietnam_AircraftCountermeasures = Vietnam Aircraft Countermeasures
+
+OBJECT:Britain_CommandCenter = Britain CommandCenter
+CONTROLBAR:ConstructBritain_CommandCenter = Britain CommandCenter
+CONTROLBAR:ToolTipConstructBritain_CommandCenter = Produce Britain CommandCenter.
+
+OBJECT:Britain_PowerStation = Britain PowerStation
+CONTROLBAR:ConstructBritain_PowerStation = Britain PowerStation
+CONTROLBAR:ToolTipConstructBritain_PowerStation = Produce Britain PowerStation.
+
+OBJECT:Britain_BootCamp = Britain BootCamp
+CONTROLBAR:ConstructBritain_BootCamp = Britain BootCamp
+CONTROLBAR:ToolTipConstructBritain_BootCamp = Produce Britain BootCamp.
+
+OBJECT:Britain_WarFactory = Britain WarFactory
+CONTROLBAR:ConstructBritain_WarFactory = Britain WarFactory
+CONTROLBAR:ToolTipConstructBritain_WarFactory = Produce Britain WarFactory.
+
+OBJECT:Britain_Airfield = Britain Airfield
+CONTROLBAR:ConstructBritain_Airfield = Britain Airfield
+CONTROLBAR:ToolTipConstructBritain_Airfield = Produce Britain Airfield.
+
+OBJECT:Britain_SupplyCenter = Britain SupplyCenter
+CONTROLBAR:ConstructBritain_SupplyCenter = Britain SupplyCenter
+CONTROLBAR:ToolTipConstructBritain_SupplyCenter = Produce Britain SupplyCenter.
+
+OBJECT:Britain_RadarGM406 = Britain RadarGM406
+CONTROLBAR:ConstructBritain_RadarGM406 = Britain RadarGM406
+CONTROLBAR:ToolTipConstructBritain_RadarGM406 = Produce Britain RadarGM406.
+
+OBJECT:Britain_StrategyCenter = Britain StrategyCenter
+CONTROLBAR:ConstructBritain_StrategyCenter = Britain StrategyCenter
+CONTROLBAR:ToolTipConstructBritain_StrategyCenter = Produce Britain StrategyCenter.
+
+OBJECT:Britain_Mantis = Britain Mantis
+CONTROLBAR:ConstructBritain_Mantis = Britain Mantis
+CONTROLBAR:ToolTipConstructBritain_Mantis = Produce Britain Mantis.
+
+OBJECT:Britain_VehicleDozer = Britain VehicleDozer
+CONTROLBAR:ConstructBritain_VehicleDozer = Britain VehicleDozer
+CONTROLBAR:ToolTipConstructBritain_VehicleDozer = Produce Britain VehicleDozer.
+
+OBJECT:Britain_InfantryRifleman = Britain InfantryRifleman
+CONTROLBAR:ConstructBritain_InfantryRifleman = Britain InfantryRifleman
+CONTROLBAR:ToolTipConstructBritain_InfantryRifleman = Produce Britain InfantryRifleman.
+
+OBJECT:Britain_InfantryNlawOperator = Britain InfantryNlawOperator
+CONTROLBAR:ConstructBritain_InfantryNlawOperator = Britain InfantryNlawOperator
+CONTROLBAR:ToolTipConstructBritain_InfantryNlawOperator = Produce Britain InfantryNlawOperator.
+
+OBJECT:Britain_InfantryAntiAirOperator = Britain InfantryAntiAirOperator
+CONTROLBAR:ConstructBritain_InfantryAntiAirOperator = Britain InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructBritain_InfantryAntiAirOperator = Produce Britain InfantryAntiAirOperator.
+
+OBJECT:Britain_InfantryHeavySniper = Britain InfantryHeavySniper
+CONTROLBAR:ConstructBritain_InfantryHeavySniper = Britain InfantryHeavySniper
+CONTROLBAR:ToolTipConstructBritain_InfantryHeavySniper = Produce Britain InfantryHeavySniper.
+
+OBJECT:Britain_InfantryMechanized = Britain InfantryMechanized
+CONTROLBAR:ConstructBritain_InfantryMechanized = Britain InfantryMechanized
+CONTROLBAR:ToolTipConstructBritain_InfantryMechanized = Produce Britain InfantryMechanized.
+
+OBJECT:Britain_TankLeopard2A7Plus = Britain TankLeopard2A7Plus
+CONTROLBAR:ConstructBritain_TankLeopard2A7Plus = Britain TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructBritain_TankLeopard2A7Plus = Produce Britain TankLeopard2A7Plus.
+
+OBJECT:Britain_TankPuma = Britain TankPuma
+CONTROLBAR:ConstructBritain_TankPuma = Britain TankPuma
+CONTROLBAR:ToolTipConstructBritain_TankPuma = Produce Britain TankPuma.
+
+OBJECT:Britain_VehicleVBCI = Britain VehicleVBCI
+CONTROLBAR:ConstructBritain_VehicleVBCI = Britain VehicleVBCI
+CONTROLBAR:ToolTipConstructBritain_VehicleVBCI = Produce Britain VehicleVBCI.
+
+OBJECT:Britain_VehicleCentauroB2 = Britain VehicleCentauroB2
+CONTROLBAR:ConstructBritain_VehicleCentauroB2 = Britain VehicleCentauroB2
+CONTROLBAR:ToolTipConstructBritain_VehicleCentauroB2 = Produce Britain VehicleCentauroB2.
+
+OBJECT:Britain_VehicleCaesar = Britain VehicleCaesar
+CONTROLBAR:ConstructBritain_VehicleCaesar = Britain VehicleCaesar
+CONTROLBAR:ToolTipConstructBritain_VehicleCaesar = Produce Britain VehicleCaesar.
+
+OBJECT:Britain_VehicleCortaleMK3 = Britain VehicleCortaleMK3
+CONTROLBAR:ConstructBritain_VehicleCortaleMK3 = Britain VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructBritain_VehicleCortaleMK3 = Produce Britain VehicleCortaleMK3.
+
+OBJECT:Britain_VehicleIRIST = Britain VehicleIRIST
+CONTROLBAR:ConstructBritain_VehicleIRIST = Britain VehicleIRIST
+CONTROLBAR:ToolTipConstructBritain_VehicleIRIST = Produce Britain VehicleIRIST.
+
+OBJECT:Britain_JetF35C = Britain JetF35C
+CONTROLBAR:ConstructBritain_JetF35C = Britain JetF35C
+CONTROLBAR:ToolTipConstructBritain_JetF35C = Produce Britain JetF35C.
+
+OBJECT:Britain_JetEF2000T4 = Britain JetEF2000T4
+CONTROLBAR:ConstructBritain_JetEF2000T4 = Britain JetEF2000T4
+CONTROLBAR:ToolTipConstructBritain_JetEF2000T4 = Produce Britain JetEF2000T4.
+
+OBJECT:Britain_JetEF2000T4_CAS = Britain JetEF2000T4 CAS
+CONTROLBAR:ConstructBritain_JetEF2000T4_CAS = Britain JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructBritain_JetEF2000T4_CAS = Produce Britain JetEF2000T4 CAS.
+
+OBJECT:Britain_HelicopterCH47F = Britain HelicopterCH47F
+CONTROLBAR:ConstructBritain_HelicopterCH47F = Britain HelicopterCH47F
+CONTROLBAR:ToolTipConstructBritain_HelicopterCH47F = Produce Britain HelicopterCH47F.
+
+OBJECT:Britain_E3A = Britain E3A
+CONTROLBAR:ConstructBritain_E3A = Britain E3A
+CONTROLBAR:ToolTipConstructBritain_E3A = Produce Britain E3A.
+
+OBJECT:Britain_JetF16DBlk52 = Britain JetF16DBlk52
+CONTROLBAR:ConstructBritain_JetF16DBlk52 = Britain JetF16DBlk52
+CONTROLBAR:ToolTipConstructBritain_JetF16DBlk52 = Produce Britain JetF16DBlk52.
+
+CONTROLBAR:UpgradeBritain_Armor = Britain Armor Package
+CONTROLBAR:ToolTipUpgradeBritain_Armor = Research Britain Armor Package.
+UPGRADE:Britain_Armor = Britain Armor Package
+
+CONTROLBAR:UpgradeBritain_Weapons = Britain Weapon Package
+CONTROLBAR:ToolTipUpgradeBritain_Weapons = Research Britain Weapon Package.
+UPGRADE:Britain_Weapons = Britain Weapon Package
+
+CONTROLBAR:UpgradeBritain_AircraftWeapons = Britain Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeBritain_AircraftWeapons = Research Britain Aircraft Weapons.
+UPGRADE:Britain_AircraftWeapons = Britain Aircraft Weapons
+
+CONTROLBAR:UpgradeBritain_AircraftCountermeasures = Britain Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeBritain_AircraftCountermeasures = Research Britain Aircraft Countermeasures.
+UPGRADE:Britain_AircraftCountermeasures = Britain Aircraft Countermeasures
+
+OBJECT:France_CommandCenter = France CommandCenter
+CONTROLBAR:ConstructFrance_CommandCenter = France CommandCenter
+CONTROLBAR:ToolTipConstructFrance_CommandCenter = Produce France CommandCenter.
+
+OBJECT:France_PowerStation = France PowerStation
+CONTROLBAR:ConstructFrance_PowerStation = France PowerStation
+CONTROLBAR:ToolTipConstructFrance_PowerStation = Produce France PowerStation.
+
+OBJECT:France_BootCamp = France BootCamp
+CONTROLBAR:ConstructFrance_BootCamp = France BootCamp
+CONTROLBAR:ToolTipConstructFrance_BootCamp = Produce France BootCamp.
+
+OBJECT:France_WarFactory = France WarFactory
+CONTROLBAR:ConstructFrance_WarFactory = France WarFactory
+CONTROLBAR:ToolTipConstructFrance_WarFactory = Produce France WarFactory.
+
+OBJECT:France_Airfield = France Airfield
+CONTROLBAR:ConstructFrance_Airfield = France Airfield
+CONTROLBAR:ToolTipConstructFrance_Airfield = Produce France Airfield.
+
+OBJECT:France_SupplyCenter = France SupplyCenter
+CONTROLBAR:ConstructFrance_SupplyCenter = France SupplyCenter
+CONTROLBAR:ToolTipConstructFrance_SupplyCenter = Produce France SupplyCenter.
+
+OBJECT:France_RadarGM406 = France RadarGM406
+CONTROLBAR:ConstructFrance_RadarGM406 = France RadarGM406
+CONTROLBAR:ToolTipConstructFrance_RadarGM406 = Produce France RadarGM406.
+
+OBJECT:France_StrategyCenter = France StrategyCenter
+CONTROLBAR:ConstructFrance_StrategyCenter = France StrategyCenter
+CONTROLBAR:ToolTipConstructFrance_StrategyCenter = Produce France StrategyCenter.
+
+OBJECT:France_Mantis = France Mantis
+CONTROLBAR:ConstructFrance_Mantis = France Mantis
+CONTROLBAR:ToolTipConstructFrance_Mantis = Produce France Mantis.
+
+OBJECT:France_VehicleDozer = France VehicleDozer
+CONTROLBAR:ConstructFrance_VehicleDozer = France VehicleDozer
+CONTROLBAR:ToolTipConstructFrance_VehicleDozer = Produce France VehicleDozer.
+
+OBJECT:France_InfantryRifleman = France InfantryRifleman
+CONTROLBAR:ConstructFrance_InfantryRifleman = France InfantryRifleman
+CONTROLBAR:ToolTipConstructFrance_InfantryRifleman = Produce France InfantryRifleman.
+
+OBJECT:France_InfantryNlawOperator = France InfantryNlawOperator
+CONTROLBAR:ConstructFrance_InfantryNlawOperator = France InfantryNlawOperator
+CONTROLBAR:ToolTipConstructFrance_InfantryNlawOperator = Produce France InfantryNlawOperator.
+
+OBJECT:France_InfantryAntiAirOperator = France InfantryAntiAirOperator
+CONTROLBAR:ConstructFrance_InfantryAntiAirOperator = France InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructFrance_InfantryAntiAirOperator = Produce France InfantryAntiAirOperator.
+
+OBJECT:France_InfantryHeavySniper = France InfantryHeavySniper
+CONTROLBAR:ConstructFrance_InfantryHeavySniper = France InfantryHeavySniper
+CONTROLBAR:ToolTipConstructFrance_InfantryHeavySniper = Produce France InfantryHeavySniper.
+
+OBJECT:France_InfantryMechanized = France InfantryMechanized
+CONTROLBAR:ConstructFrance_InfantryMechanized = France InfantryMechanized
+CONTROLBAR:ToolTipConstructFrance_InfantryMechanized = Produce France InfantryMechanized.
+
+OBJECT:France_TankLeopard2A7Plus = France TankLeopard2A7Plus
+CONTROLBAR:ConstructFrance_TankLeopard2A7Plus = France TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructFrance_TankLeopard2A7Plus = Produce France TankLeopard2A7Plus.
+
+OBJECT:France_TankPuma = France TankPuma
+CONTROLBAR:ConstructFrance_TankPuma = France TankPuma
+CONTROLBAR:ToolTipConstructFrance_TankPuma = Produce France TankPuma.
+
+OBJECT:France_VehicleVBCI = France VehicleVBCI
+CONTROLBAR:ConstructFrance_VehicleVBCI = France VehicleVBCI
+CONTROLBAR:ToolTipConstructFrance_VehicleVBCI = Produce France VehicleVBCI.
+
+OBJECT:France_VehicleCentauroB2 = France VehicleCentauroB2
+CONTROLBAR:ConstructFrance_VehicleCentauroB2 = France VehicleCentauroB2
+CONTROLBAR:ToolTipConstructFrance_VehicleCentauroB2 = Produce France VehicleCentauroB2.
+
+OBJECT:France_VehicleCaesar = France VehicleCaesar
+CONTROLBAR:ConstructFrance_VehicleCaesar = France VehicleCaesar
+CONTROLBAR:ToolTipConstructFrance_VehicleCaesar = Produce France VehicleCaesar.
+
+OBJECT:France_VehicleCortaleMK3 = France VehicleCortaleMK3
+CONTROLBAR:ConstructFrance_VehicleCortaleMK3 = France VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructFrance_VehicleCortaleMK3 = Produce France VehicleCortaleMK3.
+
+OBJECT:France_VehicleIRIST = France VehicleIRIST
+CONTROLBAR:ConstructFrance_VehicleIRIST = France VehicleIRIST
+CONTROLBAR:ToolTipConstructFrance_VehicleIRIST = Produce France VehicleIRIST.
+
+OBJECT:France_JetF35C = France JetF35C
+CONTROLBAR:ConstructFrance_JetF35C = France JetF35C
+CONTROLBAR:ToolTipConstructFrance_JetF35C = Produce France JetF35C.
+
+OBJECT:France_JetEF2000T4 = France JetEF2000T4
+CONTROLBAR:ConstructFrance_JetEF2000T4 = France JetEF2000T4
+CONTROLBAR:ToolTipConstructFrance_JetEF2000T4 = Produce France JetEF2000T4.
+
+OBJECT:France_JetEF2000T4_CAS = France JetEF2000T4 CAS
+CONTROLBAR:ConstructFrance_JetEF2000T4_CAS = France JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructFrance_JetEF2000T4_CAS = Produce France JetEF2000T4 CAS.
+
+OBJECT:France_HelicopterCH47F = France HelicopterCH47F
+CONTROLBAR:ConstructFrance_HelicopterCH47F = France HelicopterCH47F
+CONTROLBAR:ToolTipConstructFrance_HelicopterCH47F = Produce France HelicopterCH47F.
+
+OBJECT:France_E3A = France E3A
+CONTROLBAR:ConstructFrance_E3A = France E3A
+CONTROLBAR:ToolTipConstructFrance_E3A = Produce France E3A.
+
+OBJECT:France_JetF16DBlk52 = France JetF16DBlk52
+CONTROLBAR:ConstructFrance_JetF16DBlk52 = France JetF16DBlk52
+CONTROLBAR:ToolTipConstructFrance_JetF16DBlk52 = Produce France JetF16DBlk52.
+
+CONTROLBAR:UpgradeFrance_Armor = France Armor Package
+CONTROLBAR:ToolTipUpgradeFrance_Armor = Research France Armor Package.
+UPGRADE:France_Armor = France Armor Package
+
+CONTROLBAR:UpgradeFrance_Weapons = France Weapon Package
+CONTROLBAR:ToolTipUpgradeFrance_Weapons = Research France Weapon Package.
+UPGRADE:France_Weapons = France Weapon Package
+
+CONTROLBAR:UpgradeFrance_AircraftWeapons = France Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeFrance_AircraftWeapons = Research France Aircraft Weapons.
+UPGRADE:France_AircraftWeapons = France Aircraft Weapons
+
+CONTROLBAR:UpgradeFrance_AircraftCountermeasures = France Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeFrance_AircraftCountermeasures = Research France Aircraft Countermeasures.
+UPGRADE:France_AircraftCountermeasures = France Aircraft Countermeasures
+
+OBJECT:Germany_CommandCenter = Germany CommandCenter
+CONTROLBAR:ConstructGermany_CommandCenter = Germany CommandCenter
+CONTROLBAR:ToolTipConstructGermany_CommandCenter = Produce Germany CommandCenter.
+
+OBJECT:Germany_PowerStation = Germany PowerStation
+CONTROLBAR:ConstructGermany_PowerStation = Germany PowerStation
+CONTROLBAR:ToolTipConstructGermany_PowerStation = Produce Germany PowerStation.
+
+OBJECT:Germany_BootCamp = Germany BootCamp
+CONTROLBAR:ConstructGermany_BootCamp = Germany BootCamp
+CONTROLBAR:ToolTipConstructGermany_BootCamp = Produce Germany BootCamp.
+
+OBJECT:Germany_WarFactory = Germany WarFactory
+CONTROLBAR:ConstructGermany_WarFactory = Germany WarFactory
+CONTROLBAR:ToolTipConstructGermany_WarFactory = Produce Germany WarFactory.
+
+OBJECT:Germany_Airfield = Germany Airfield
+CONTROLBAR:ConstructGermany_Airfield = Germany Airfield
+CONTROLBAR:ToolTipConstructGermany_Airfield = Produce Germany Airfield.
+
+OBJECT:Germany_SupplyCenter = Germany SupplyCenter
+CONTROLBAR:ConstructGermany_SupplyCenter = Germany SupplyCenter
+CONTROLBAR:ToolTipConstructGermany_SupplyCenter = Produce Germany SupplyCenter.
+
+OBJECT:Germany_RadarGM406 = Germany RadarGM406
+CONTROLBAR:ConstructGermany_RadarGM406 = Germany RadarGM406
+CONTROLBAR:ToolTipConstructGermany_RadarGM406 = Produce Germany RadarGM406.
+
+OBJECT:Germany_StrategyCenter = Germany StrategyCenter
+CONTROLBAR:ConstructGermany_StrategyCenter = Germany StrategyCenter
+CONTROLBAR:ToolTipConstructGermany_StrategyCenter = Produce Germany StrategyCenter.
+
+OBJECT:Germany_Mantis = Germany Mantis
+CONTROLBAR:ConstructGermany_Mantis = Germany Mantis
+CONTROLBAR:ToolTipConstructGermany_Mantis = Produce Germany Mantis.
+
+OBJECT:Germany_VehicleDozer = Germany VehicleDozer
+CONTROLBAR:ConstructGermany_VehicleDozer = Germany VehicleDozer
+CONTROLBAR:ToolTipConstructGermany_VehicleDozer = Produce Germany VehicleDozer.
+
+OBJECT:Germany_InfantryRifleman = Germany InfantryRifleman
+CONTROLBAR:ConstructGermany_InfantryRifleman = Germany InfantryRifleman
+CONTROLBAR:ToolTipConstructGermany_InfantryRifleman = Produce Germany InfantryRifleman.
+
+OBJECT:Germany_InfantryNlawOperator = Germany InfantryNlawOperator
+CONTROLBAR:ConstructGermany_InfantryNlawOperator = Germany InfantryNlawOperator
+CONTROLBAR:ToolTipConstructGermany_InfantryNlawOperator = Produce Germany InfantryNlawOperator.
+
+OBJECT:Germany_InfantryAntiAirOperator = Germany InfantryAntiAirOperator
+CONTROLBAR:ConstructGermany_InfantryAntiAirOperator = Germany InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructGermany_InfantryAntiAirOperator = Produce Germany InfantryAntiAirOperator.
+
+OBJECT:Germany_InfantryHeavySniper = Germany InfantryHeavySniper
+CONTROLBAR:ConstructGermany_InfantryHeavySniper = Germany InfantryHeavySniper
+CONTROLBAR:ToolTipConstructGermany_InfantryHeavySniper = Produce Germany InfantryHeavySniper.
+
+OBJECT:Germany_InfantryMechanized = Germany InfantryMechanized
+CONTROLBAR:ConstructGermany_InfantryMechanized = Germany InfantryMechanized
+CONTROLBAR:ToolTipConstructGermany_InfantryMechanized = Produce Germany InfantryMechanized.
+
+OBJECT:Germany_TankLeopard2A7Plus = Germany TankLeopard2A7Plus
+CONTROLBAR:ConstructGermany_TankLeopard2A7Plus = Germany TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructGermany_TankLeopard2A7Plus = Produce Germany TankLeopard2A7Plus.
+
+OBJECT:Germany_TankPuma = Germany TankPuma
+CONTROLBAR:ConstructGermany_TankPuma = Germany TankPuma
+CONTROLBAR:ToolTipConstructGermany_TankPuma = Produce Germany TankPuma.
+
+OBJECT:Germany_VehicleVBCI = Germany VehicleVBCI
+CONTROLBAR:ConstructGermany_VehicleVBCI = Germany VehicleVBCI
+CONTROLBAR:ToolTipConstructGermany_VehicleVBCI = Produce Germany VehicleVBCI.
+
+OBJECT:Germany_VehicleCentauroB2 = Germany VehicleCentauroB2
+CONTROLBAR:ConstructGermany_VehicleCentauroB2 = Germany VehicleCentauroB2
+CONTROLBAR:ToolTipConstructGermany_VehicleCentauroB2 = Produce Germany VehicleCentauroB2.
+
+OBJECT:Germany_VehicleCaesar = Germany VehicleCaesar
+CONTROLBAR:ConstructGermany_VehicleCaesar = Germany VehicleCaesar
+CONTROLBAR:ToolTipConstructGermany_VehicleCaesar = Produce Germany VehicleCaesar.
+
+OBJECT:Germany_VehicleCortaleMK3 = Germany VehicleCortaleMK3
+CONTROLBAR:ConstructGermany_VehicleCortaleMK3 = Germany VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructGermany_VehicleCortaleMK3 = Produce Germany VehicleCortaleMK3.
+
+OBJECT:Germany_VehicleIRIST = Germany VehicleIRIST
+CONTROLBAR:ConstructGermany_VehicleIRIST = Germany VehicleIRIST
+CONTROLBAR:ToolTipConstructGermany_VehicleIRIST = Produce Germany VehicleIRIST.
+
+OBJECT:Germany_JetF35C = Germany JetF35C
+CONTROLBAR:ConstructGermany_JetF35C = Germany JetF35C
+CONTROLBAR:ToolTipConstructGermany_JetF35C = Produce Germany JetF35C.
+
+OBJECT:Germany_JetEF2000T4 = Germany JetEF2000T4
+CONTROLBAR:ConstructGermany_JetEF2000T4 = Germany JetEF2000T4
+CONTROLBAR:ToolTipConstructGermany_JetEF2000T4 = Produce Germany JetEF2000T4.
+
+OBJECT:Germany_JetEF2000T4_CAS = Germany JetEF2000T4 CAS
+CONTROLBAR:ConstructGermany_JetEF2000T4_CAS = Germany JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructGermany_JetEF2000T4_CAS = Produce Germany JetEF2000T4 CAS.
+
+OBJECT:Germany_HelicopterCH47F = Germany HelicopterCH47F
+CONTROLBAR:ConstructGermany_HelicopterCH47F = Germany HelicopterCH47F
+CONTROLBAR:ToolTipConstructGermany_HelicopterCH47F = Produce Germany HelicopterCH47F.
+
+OBJECT:Germany_E3A = Germany E3A
+CONTROLBAR:ConstructGermany_E3A = Germany E3A
+CONTROLBAR:ToolTipConstructGermany_E3A = Produce Germany E3A.
+
+OBJECT:Germany_JetF16DBlk52 = Germany JetF16DBlk52
+CONTROLBAR:ConstructGermany_JetF16DBlk52 = Germany JetF16DBlk52
+CONTROLBAR:ToolTipConstructGermany_JetF16DBlk52 = Produce Germany JetF16DBlk52.
+
+CONTROLBAR:UpgradeGermany_Armor = Germany Armor Package
+CONTROLBAR:ToolTipUpgradeGermany_Armor = Research Germany Armor Package.
+UPGRADE:Germany_Armor = Germany Armor Package
+
+CONTROLBAR:UpgradeGermany_Weapons = Germany Weapon Package
+CONTROLBAR:ToolTipUpgradeGermany_Weapons = Research Germany Weapon Package.
+UPGRADE:Germany_Weapons = Germany Weapon Package
+
+CONTROLBAR:UpgradeGermany_AircraftWeapons = Germany Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeGermany_AircraftWeapons = Research Germany Aircraft Weapons.
+UPGRADE:Germany_AircraftWeapons = Germany Aircraft Weapons
+
+CONTROLBAR:UpgradeGermany_AircraftCountermeasures = Germany Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeGermany_AircraftCountermeasures = Research Germany Aircraft Countermeasures.
+UPGRADE:Germany_AircraftCountermeasures = Germany Aircraft Countermeasures
+
+OBJECT:Italy_CommandCenter = Italy CommandCenter
+CONTROLBAR:ConstructItaly_CommandCenter = Italy CommandCenter
+CONTROLBAR:ToolTipConstructItaly_CommandCenter = Produce Italy CommandCenter.
+
+OBJECT:Italy_PowerStation = Italy PowerStation
+CONTROLBAR:ConstructItaly_PowerStation = Italy PowerStation
+CONTROLBAR:ToolTipConstructItaly_PowerStation = Produce Italy PowerStation.
+
+OBJECT:Italy_BootCamp = Italy BootCamp
+CONTROLBAR:ConstructItaly_BootCamp = Italy BootCamp
+CONTROLBAR:ToolTipConstructItaly_BootCamp = Produce Italy BootCamp.
+
+OBJECT:Italy_WarFactory = Italy WarFactory
+CONTROLBAR:ConstructItaly_WarFactory = Italy WarFactory
+CONTROLBAR:ToolTipConstructItaly_WarFactory = Produce Italy WarFactory.
+
+OBJECT:Italy_Airfield = Italy Airfield
+CONTROLBAR:ConstructItaly_Airfield = Italy Airfield
+CONTROLBAR:ToolTipConstructItaly_Airfield = Produce Italy Airfield.
+
+OBJECT:Italy_SupplyCenter = Italy SupplyCenter
+CONTROLBAR:ConstructItaly_SupplyCenter = Italy SupplyCenter
+CONTROLBAR:ToolTipConstructItaly_SupplyCenter = Produce Italy SupplyCenter.
+
+OBJECT:Italy_RadarGM406 = Italy RadarGM406
+CONTROLBAR:ConstructItaly_RadarGM406 = Italy RadarGM406
+CONTROLBAR:ToolTipConstructItaly_RadarGM406 = Produce Italy RadarGM406.
+
+OBJECT:Italy_StrategyCenter = Italy StrategyCenter
+CONTROLBAR:ConstructItaly_StrategyCenter = Italy StrategyCenter
+CONTROLBAR:ToolTipConstructItaly_StrategyCenter = Produce Italy StrategyCenter.
+
+OBJECT:Italy_Mantis = Italy Mantis
+CONTROLBAR:ConstructItaly_Mantis = Italy Mantis
+CONTROLBAR:ToolTipConstructItaly_Mantis = Produce Italy Mantis.
+
+OBJECT:Italy_VehicleDozer = Italy VehicleDozer
+CONTROLBAR:ConstructItaly_VehicleDozer = Italy VehicleDozer
+CONTROLBAR:ToolTipConstructItaly_VehicleDozer = Produce Italy VehicleDozer.
+
+OBJECT:Italy_InfantryRifleman = Italy InfantryRifleman
+CONTROLBAR:ConstructItaly_InfantryRifleman = Italy InfantryRifleman
+CONTROLBAR:ToolTipConstructItaly_InfantryRifleman = Produce Italy InfantryRifleman.
+
+OBJECT:Italy_InfantryNlawOperator = Italy InfantryNlawOperator
+CONTROLBAR:ConstructItaly_InfantryNlawOperator = Italy InfantryNlawOperator
+CONTROLBAR:ToolTipConstructItaly_InfantryNlawOperator = Produce Italy InfantryNlawOperator.
+
+OBJECT:Italy_InfantryAntiAirOperator = Italy InfantryAntiAirOperator
+CONTROLBAR:ConstructItaly_InfantryAntiAirOperator = Italy InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructItaly_InfantryAntiAirOperator = Produce Italy InfantryAntiAirOperator.
+
+OBJECT:Italy_InfantryHeavySniper = Italy InfantryHeavySniper
+CONTROLBAR:ConstructItaly_InfantryHeavySniper = Italy InfantryHeavySniper
+CONTROLBAR:ToolTipConstructItaly_InfantryHeavySniper = Produce Italy InfantryHeavySniper.
+
+OBJECT:Italy_InfantryMechanized = Italy InfantryMechanized
+CONTROLBAR:ConstructItaly_InfantryMechanized = Italy InfantryMechanized
+CONTROLBAR:ToolTipConstructItaly_InfantryMechanized = Produce Italy InfantryMechanized.
+
+OBJECT:Italy_TankLeopard2A7Plus = Italy TankLeopard2A7Plus
+CONTROLBAR:ConstructItaly_TankLeopard2A7Plus = Italy TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructItaly_TankLeopard2A7Plus = Produce Italy TankLeopard2A7Plus.
+
+OBJECT:Italy_TankPuma = Italy TankPuma
+CONTROLBAR:ConstructItaly_TankPuma = Italy TankPuma
+CONTROLBAR:ToolTipConstructItaly_TankPuma = Produce Italy TankPuma.
+
+OBJECT:Italy_VehicleVBCI = Italy VehicleVBCI
+CONTROLBAR:ConstructItaly_VehicleVBCI = Italy VehicleVBCI
+CONTROLBAR:ToolTipConstructItaly_VehicleVBCI = Produce Italy VehicleVBCI.
+
+OBJECT:Italy_VehicleCentauroB2 = Italy VehicleCentauroB2
+CONTROLBAR:ConstructItaly_VehicleCentauroB2 = Italy VehicleCentauroB2
+CONTROLBAR:ToolTipConstructItaly_VehicleCentauroB2 = Produce Italy VehicleCentauroB2.
+
+OBJECT:Italy_VehicleCaesar = Italy VehicleCaesar
+CONTROLBAR:ConstructItaly_VehicleCaesar = Italy VehicleCaesar
+CONTROLBAR:ToolTipConstructItaly_VehicleCaesar = Produce Italy VehicleCaesar.
+
+OBJECT:Italy_VehicleCortaleMK3 = Italy VehicleCortaleMK3
+CONTROLBAR:ConstructItaly_VehicleCortaleMK3 = Italy VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructItaly_VehicleCortaleMK3 = Produce Italy VehicleCortaleMK3.
+
+OBJECT:Italy_VehicleIRIST = Italy VehicleIRIST
+CONTROLBAR:ConstructItaly_VehicleIRIST = Italy VehicleIRIST
+CONTROLBAR:ToolTipConstructItaly_VehicleIRIST = Produce Italy VehicleIRIST.
+
+OBJECT:Italy_JetF35C = Italy JetF35C
+CONTROLBAR:ConstructItaly_JetF35C = Italy JetF35C
+CONTROLBAR:ToolTipConstructItaly_JetF35C = Produce Italy JetF35C.
+
+OBJECT:Italy_JetEF2000T4 = Italy JetEF2000T4
+CONTROLBAR:ConstructItaly_JetEF2000T4 = Italy JetEF2000T4
+CONTROLBAR:ToolTipConstructItaly_JetEF2000T4 = Produce Italy JetEF2000T4.
+
+OBJECT:Italy_JetEF2000T4_CAS = Italy JetEF2000T4 CAS
+CONTROLBAR:ConstructItaly_JetEF2000T4_CAS = Italy JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructItaly_JetEF2000T4_CAS = Produce Italy JetEF2000T4 CAS.
+
+OBJECT:Italy_HelicopterCH47F = Italy HelicopterCH47F
+CONTROLBAR:ConstructItaly_HelicopterCH47F = Italy HelicopterCH47F
+CONTROLBAR:ToolTipConstructItaly_HelicopterCH47F = Produce Italy HelicopterCH47F.
+
+OBJECT:Italy_E3A = Italy E3A
+CONTROLBAR:ConstructItaly_E3A = Italy E3A
+CONTROLBAR:ToolTipConstructItaly_E3A = Produce Italy E3A.
+
+OBJECT:Italy_JetF16DBlk52 = Italy JetF16DBlk52
+CONTROLBAR:ConstructItaly_JetF16DBlk52 = Italy JetF16DBlk52
+CONTROLBAR:ToolTipConstructItaly_JetF16DBlk52 = Produce Italy JetF16DBlk52.
+
+CONTROLBAR:UpgradeItaly_Armor = Italy Armor Package
+CONTROLBAR:ToolTipUpgradeItaly_Armor = Research Italy Armor Package.
+UPGRADE:Italy_Armor = Italy Armor Package
+
+CONTROLBAR:UpgradeItaly_Weapons = Italy Weapon Package
+CONTROLBAR:ToolTipUpgradeItaly_Weapons = Research Italy Weapon Package.
+UPGRADE:Italy_Weapons = Italy Weapon Package
+
+CONTROLBAR:UpgradeItaly_AircraftWeapons = Italy Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeItaly_AircraftWeapons = Research Italy Aircraft Weapons.
+UPGRADE:Italy_AircraftWeapons = Italy Aircraft Weapons
+
+CONTROLBAR:UpgradeItaly_AircraftCountermeasures = Italy Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeItaly_AircraftCountermeasures = Research Italy Aircraft Countermeasures.
+UPGRADE:Italy_AircraftCountermeasures = Italy Aircraft Countermeasures
+
+OBJECT:Sweden_CommandCenter = Sweden CommandCenter
+CONTROLBAR:ConstructSweden_CommandCenter = Sweden CommandCenter
+CONTROLBAR:ToolTipConstructSweden_CommandCenter = Produce Sweden CommandCenter.
+
+OBJECT:Sweden_PowerStation = Sweden PowerStation
+CONTROLBAR:ConstructSweden_PowerStation = Sweden PowerStation
+CONTROLBAR:ToolTipConstructSweden_PowerStation = Produce Sweden PowerStation.
+
+OBJECT:Sweden_BootCamp = Sweden BootCamp
+CONTROLBAR:ConstructSweden_BootCamp = Sweden BootCamp
+CONTROLBAR:ToolTipConstructSweden_BootCamp = Produce Sweden BootCamp.
+
+OBJECT:Sweden_WarFactory = Sweden WarFactory
+CONTROLBAR:ConstructSweden_WarFactory = Sweden WarFactory
+CONTROLBAR:ToolTipConstructSweden_WarFactory = Produce Sweden WarFactory.
+
+OBJECT:Sweden_Airfield = Sweden Airfield
+CONTROLBAR:ConstructSweden_Airfield = Sweden Airfield
+CONTROLBAR:ToolTipConstructSweden_Airfield = Produce Sweden Airfield.
+
+OBJECT:Sweden_SupplyCenter = Sweden SupplyCenter
+CONTROLBAR:ConstructSweden_SupplyCenter = Sweden SupplyCenter
+CONTROLBAR:ToolTipConstructSweden_SupplyCenter = Produce Sweden SupplyCenter.
+
+OBJECT:Sweden_RadarGM406 = Sweden RadarGM406
+CONTROLBAR:ConstructSweden_RadarGM406 = Sweden RadarGM406
+CONTROLBAR:ToolTipConstructSweden_RadarGM406 = Produce Sweden RadarGM406.
+
+OBJECT:Sweden_StrategyCenter = Sweden StrategyCenter
+CONTROLBAR:ConstructSweden_StrategyCenter = Sweden StrategyCenter
+CONTROLBAR:ToolTipConstructSweden_StrategyCenter = Produce Sweden StrategyCenter.
+
+OBJECT:Sweden_Mantis = Sweden Mantis
+CONTROLBAR:ConstructSweden_Mantis = Sweden Mantis
+CONTROLBAR:ToolTipConstructSweden_Mantis = Produce Sweden Mantis.
+
+OBJECT:Sweden_VehicleDozer = Sweden VehicleDozer
+CONTROLBAR:ConstructSweden_VehicleDozer = Sweden VehicleDozer
+CONTROLBAR:ToolTipConstructSweden_VehicleDozer = Produce Sweden VehicleDozer.
+
+OBJECT:Sweden_InfantryRifleman = Sweden InfantryRifleman
+CONTROLBAR:ConstructSweden_InfantryRifleman = Sweden InfantryRifleman
+CONTROLBAR:ToolTipConstructSweden_InfantryRifleman = Produce Sweden InfantryRifleman.
+
+OBJECT:Sweden_InfantryNlawOperator = Sweden InfantryNlawOperator
+CONTROLBAR:ConstructSweden_InfantryNlawOperator = Sweden InfantryNlawOperator
+CONTROLBAR:ToolTipConstructSweden_InfantryNlawOperator = Produce Sweden InfantryNlawOperator.
+
+OBJECT:Sweden_InfantryAntiAirOperator = Sweden InfantryAntiAirOperator
+CONTROLBAR:ConstructSweden_InfantryAntiAirOperator = Sweden InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructSweden_InfantryAntiAirOperator = Produce Sweden InfantryAntiAirOperator.
+
+OBJECT:Sweden_InfantryHeavySniper = Sweden InfantryHeavySniper
+CONTROLBAR:ConstructSweden_InfantryHeavySniper = Sweden InfantryHeavySniper
+CONTROLBAR:ToolTipConstructSweden_InfantryHeavySniper = Produce Sweden InfantryHeavySniper.
+
+OBJECT:Sweden_InfantryMechanized = Sweden InfantryMechanized
+CONTROLBAR:ConstructSweden_InfantryMechanized = Sweden InfantryMechanized
+CONTROLBAR:ToolTipConstructSweden_InfantryMechanized = Produce Sweden InfantryMechanized.
+
+OBJECT:Sweden_TankLeopard2A7Plus = Sweden TankLeopard2A7Plus
+CONTROLBAR:ConstructSweden_TankLeopard2A7Plus = Sweden TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructSweden_TankLeopard2A7Plus = Produce Sweden TankLeopard2A7Plus.
+
+OBJECT:Sweden_TankPuma = Sweden TankPuma
+CONTROLBAR:ConstructSweden_TankPuma = Sweden TankPuma
+CONTROLBAR:ToolTipConstructSweden_TankPuma = Produce Sweden TankPuma.
+
+OBJECT:Sweden_VehicleVBCI = Sweden VehicleVBCI
+CONTROLBAR:ConstructSweden_VehicleVBCI = Sweden VehicleVBCI
+CONTROLBAR:ToolTipConstructSweden_VehicleVBCI = Produce Sweden VehicleVBCI.
+
+OBJECT:Sweden_VehicleCentauroB2 = Sweden VehicleCentauroB2
+CONTROLBAR:ConstructSweden_VehicleCentauroB2 = Sweden VehicleCentauroB2
+CONTROLBAR:ToolTipConstructSweden_VehicleCentauroB2 = Produce Sweden VehicleCentauroB2.
+
+OBJECT:Sweden_VehicleCaesar = Sweden VehicleCaesar
+CONTROLBAR:ConstructSweden_VehicleCaesar = Sweden VehicleCaesar
+CONTROLBAR:ToolTipConstructSweden_VehicleCaesar = Produce Sweden VehicleCaesar.
+
+OBJECT:Sweden_VehicleCortaleMK3 = Sweden VehicleCortaleMK3
+CONTROLBAR:ConstructSweden_VehicleCortaleMK3 = Sweden VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructSweden_VehicleCortaleMK3 = Produce Sweden VehicleCortaleMK3.
+
+OBJECT:Sweden_VehicleIRIST = Sweden VehicleIRIST
+CONTROLBAR:ConstructSweden_VehicleIRIST = Sweden VehicleIRIST
+CONTROLBAR:ToolTipConstructSweden_VehicleIRIST = Produce Sweden VehicleIRIST.
+
+OBJECT:Sweden_JetF35C = Sweden JetF35C
+CONTROLBAR:ConstructSweden_JetF35C = Sweden JetF35C
+CONTROLBAR:ToolTipConstructSweden_JetF35C = Produce Sweden JetF35C.
+
+OBJECT:Sweden_JetEF2000T4 = Sweden JetEF2000T4
+CONTROLBAR:ConstructSweden_JetEF2000T4 = Sweden JetEF2000T4
+CONTROLBAR:ToolTipConstructSweden_JetEF2000T4 = Produce Sweden JetEF2000T4.
+
+OBJECT:Sweden_JetEF2000T4_CAS = Sweden JetEF2000T4 CAS
+CONTROLBAR:ConstructSweden_JetEF2000T4_CAS = Sweden JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructSweden_JetEF2000T4_CAS = Produce Sweden JetEF2000T4 CAS.
+
+OBJECT:Sweden_HelicopterCH47F = Sweden HelicopterCH47F
+CONTROLBAR:ConstructSweden_HelicopterCH47F = Sweden HelicopterCH47F
+CONTROLBAR:ToolTipConstructSweden_HelicopterCH47F = Produce Sweden HelicopterCH47F.
+
+OBJECT:Sweden_E3A = Sweden E3A
+CONTROLBAR:ConstructSweden_E3A = Sweden E3A
+CONTROLBAR:ToolTipConstructSweden_E3A = Produce Sweden E3A.
+
+OBJECT:Sweden_JetF16DBlk52 = Sweden JetF16DBlk52
+CONTROLBAR:ConstructSweden_JetF16DBlk52 = Sweden JetF16DBlk52
+CONTROLBAR:ToolTipConstructSweden_JetF16DBlk52 = Produce Sweden JetF16DBlk52.
+
+CONTROLBAR:UpgradeSweden_Armor = Sweden Armor Package
+CONTROLBAR:ToolTipUpgradeSweden_Armor = Research Sweden Armor Package.
+UPGRADE:Sweden_Armor = Sweden Armor Package
+
+CONTROLBAR:UpgradeSweden_Weapons = Sweden Weapon Package
+CONTROLBAR:ToolTipUpgradeSweden_Weapons = Research Sweden Weapon Package.
+UPGRADE:Sweden_Weapons = Sweden Weapon Package
+
+CONTROLBAR:UpgradeSweden_AircraftWeapons = Sweden Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeSweden_AircraftWeapons = Research Sweden Aircraft Weapons.
+UPGRADE:Sweden_AircraftWeapons = Sweden Aircraft Weapons
+
+CONTROLBAR:UpgradeSweden_AircraftCountermeasures = Sweden Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeSweden_AircraftCountermeasures = Research Sweden Aircraft Countermeasures.
+UPGRADE:Sweden_AircraftCountermeasures = Sweden Aircraft Countermeasures
+
+OBJECT:SouthKorea_CommandCenter = SouthKorea CommandCenter
+CONTROLBAR:ConstructSouthKorea_CommandCenter = SouthKorea CommandCenter
+CONTROLBAR:ToolTipConstructSouthKorea_CommandCenter = Produce SouthKorea CommandCenter.
+
+OBJECT:SouthKorea_PowerStation = SouthKorea PowerStation
+CONTROLBAR:ConstructSouthKorea_PowerStation = SouthKorea PowerStation
+CONTROLBAR:ToolTipConstructSouthKorea_PowerStation = Produce SouthKorea PowerStation.
+
+OBJECT:SouthKorea_BootCamp = SouthKorea BootCamp
+CONTROLBAR:ConstructSouthKorea_BootCamp = SouthKorea BootCamp
+CONTROLBAR:ToolTipConstructSouthKorea_BootCamp = Produce SouthKorea BootCamp.
+
+OBJECT:SouthKorea_WarFactory = SouthKorea WarFactory
+CONTROLBAR:ConstructSouthKorea_WarFactory = SouthKorea WarFactory
+CONTROLBAR:ToolTipConstructSouthKorea_WarFactory = Produce SouthKorea WarFactory.
+
+OBJECT:SouthKorea_Airfield = SouthKorea Airfield
+CONTROLBAR:ConstructSouthKorea_Airfield = SouthKorea Airfield
+CONTROLBAR:ToolTipConstructSouthKorea_Airfield = Produce SouthKorea Airfield.
+
+OBJECT:SouthKorea_SupplyCenter = SouthKorea SupplyCenter
+CONTROLBAR:ConstructSouthKorea_SupplyCenter = SouthKorea SupplyCenter
+CONTROLBAR:ToolTipConstructSouthKorea_SupplyCenter = Produce SouthKorea SupplyCenter.
+
+OBJECT:SouthKorea_RadarGM406 = SouthKorea RadarGM406
+CONTROLBAR:ConstructSouthKorea_RadarGM406 = SouthKorea RadarGM406
+CONTROLBAR:ToolTipConstructSouthKorea_RadarGM406 = Produce SouthKorea RadarGM406.
+
+OBJECT:SouthKorea_StrategyCenter = SouthKorea StrategyCenter
+CONTROLBAR:ConstructSouthKorea_StrategyCenter = SouthKorea StrategyCenter
+CONTROLBAR:ToolTipConstructSouthKorea_StrategyCenter = Produce SouthKorea StrategyCenter.
+
+OBJECT:SouthKorea_Mantis = SouthKorea Mantis
+CONTROLBAR:ConstructSouthKorea_Mantis = SouthKorea Mantis
+CONTROLBAR:ToolTipConstructSouthKorea_Mantis = Produce SouthKorea Mantis.
+
+OBJECT:SouthKorea_VehicleDozer = SouthKorea VehicleDozer
+CONTROLBAR:ConstructSouthKorea_VehicleDozer = SouthKorea VehicleDozer
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleDozer = Produce SouthKorea VehicleDozer.
+
+OBJECT:SouthKorea_InfantryRifleman = SouthKorea InfantryRifleman
+CONTROLBAR:ConstructSouthKorea_InfantryRifleman = SouthKorea InfantryRifleman
+CONTROLBAR:ToolTipConstructSouthKorea_InfantryRifleman = Produce SouthKorea InfantryRifleman.
+
+OBJECT:SouthKorea_InfantryNlawOperator = SouthKorea InfantryNlawOperator
+CONTROLBAR:ConstructSouthKorea_InfantryNlawOperator = SouthKorea InfantryNlawOperator
+CONTROLBAR:ToolTipConstructSouthKorea_InfantryNlawOperator = Produce SouthKorea InfantryNlawOperator.
+
+OBJECT:SouthKorea_InfantryAntiAirOperator = SouthKorea InfantryAntiAirOperator
+CONTROLBAR:ConstructSouthKorea_InfantryAntiAirOperator = SouthKorea InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructSouthKorea_InfantryAntiAirOperator = Produce SouthKorea InfantryAntiAirOperator.
+
+OBJECT:SouthKorea_InfantryHeavySniper = SouthKorea InfantryHeavySniper
+CONTROLBAR:ConstructSouthKorea_InfantryHeavySniper = SouthKorea InfantryHeavySniper
+CONTROLBAR:ToolTipConstructSouthKorea_InfantryHeavySniper = Produce SouthKorea InfantryHeavySniper.
+
+OBJECT:SouthKorea_InfantryMechanized = SouthKorea InfantryMechanized
+CONTROLBAR:ConstructSouthKorea_InfantryMechanized = SouthKorea InfantryMechanized
+CONTROLBAR:ToolTipConstructSouthKorea_InfantryMechanized = Produce SouthKorea InfantryMechanized.
+
+OBJECT:SouthKorea_TankLeopard2A7Plus = SouthKorea TankLeopard2A7Plus
+CONTROLBAR:ConstructSouthKorea_TankLeopard2A7Plus = SouthKorea TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructSouthKorea_TankLeopard2A7Plus = Produce SouthKorea TankLeopard2A7Plus.
+
+OBJECT:SouthKorea_TankPuma = SouthKorea TankPuma
+CONTROLBAR:ConstructSouthKorea_TankPuma = SouthKorea TankPuma
+CONTROLBAR:ToolTipConstructSouthKorea_TankPuma = Produce SouthKorea TankPuma.
+
+OBJECT:SouthKorea_VehicleVBCI = SouthKorea VehicleVBCI
+CONTROLBAR:ConstructSouthKorea_VehicleVBCI = SouthKorea VehicleVBCI
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleVBCI = Produce SouthKorea VehicleVBCI.
+
+OBJECT:SouthKorea_VehicleCentauroB2 = SouthKorea VehicleCentauroB2
+CONTROLBAR:ConstructSouthKorea_VehicleCentauroB2 = SouthKorea VehicleCentauroB2
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleCentauroB2 = Produce SouthKorea VehicleCentauroB2.
+
+OBJECT:SouthKorea_VehicleCaesar = SouthKorea VehicleCaesar
+CONTROLBAR:ConstructSouthKorea_VehicleCaesar = SouthKorea VehicleCaesar
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleCaesar = Produce SouthKorea VehicleCaesar.
+
+OBJECT:SouthKorea_VehicleCortaleMK3 = SouthKorea VehicleCortaleMK3
+CONTROLBAR:ConstructSouthKorea_VehicleCortaleMK3 = SouthKorea VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleCortaleMK3 = Produce SouthKorea VehicleCortaleMK3.
+
+OBJECT:SouthKorea_VehicleIRIST = SouthKorea VehicleIRIST
+CONTROLBAR:ConstructSouthKorea_VehicleIRIST = SouthKorea VehicleIRIST
+CONTROLBAR:ToolTipConstructSouthKorea_VehicleIRIST = Produce SouthKorea VehicleIRIST.
+
+OBJECT:SouthKorea_JetF35C = SouthKorea JetF35C
+CONTROLBAR:ConstructSouthKorea_JetF35C = SouthKorea JetF35C
+CONTROLBAR:ToolTipConstructSouthKorea_JetF35C = Produce SouthKorea JetF35C.
+
+OBJECT:SouthKorea_JetEF2000T4 = SouthKorea JetEF2000T4
+CONTROLBAR:ConstructSouthKorea_JetEF2000T4 = SouthKorea JetEF2000T4
+CONTROLBAR:ToolTipConstructSouthKorea_JetEF2000T4 = Produce SouthKorea JetEF2000T4.
+
+OBJECT:SouthKorea_JetEF2000T4_CAS = SouthKorea JetEF2000T4 CAS
+CONTROLBAR:ConstructSouthKorea_JetEF2000T4_CAS = SouthKorea JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructSouthKorea_JetEF2000T4_CAS = Produce SouthKorea JetEF2000T4 CAS.
+
+OBJECT:SouthKorea_HelicopterCH47F = SouthKorea HelicopterCH47F
+CONTROLBAR:ConstructSouthKorea_HelicopterCH47F = SouthKorea HelicopterCH47F
+CONTROLBAR:ToolTipConstructSouthKorea_HelicopterCH47F = Produce SouthKorea HelicopterCH47F.
+
+OBJECT:SouthKorea_E3A = SouthKorea E3A
+CONTROLBAR:ConstructSouthKorea_E3A = SouthKorea E3A
+CONTROLBAR:ToolTipConstructSouthKorea_E3A = Produce SouthKorea E3A.
+
+OBJECT:SouthKorea_JetF16DBlk52 = SouthKorea JetF16DBlk52
+CONTROLBAR:ConstructSouthKorea_JetF16DBlk52 = SouthKorea JetF16DBlk52
+CONTROLBAR:ToolTipConstructSouthKorea_JetF16DBlk52 = Produce SouthKorea JetF16DBlk52.
+
+CONTROLBAR:UpgradeSouthKorea_Armor = SouthKorea Armor Package
+CONTROLBAR:ToolTipUpgradeSouthKorea_Armor = Research SouthKorea Armor Package.
+UPGRADE:SouthKorea_Armor = SouthKorea Armor Package
+
+CONTROLBAR:UpgradeSouthKorea_Weapons = SouthKorea Weapon Package
+CONTROLBAR:ToolTipUpgradeSouthKorea_Weapons = Research SouthKorea Weapon Package.
+UPGRADE:SouthKorea_Weapons = SouthKorea Weapon Package
+
+CONTROLBAR:UpgradeSouthKorea_AircraftWeapons = SouthKorea Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeSouthKorea_AircraftWeapons = Research SouthKorea Aircraft Weapons.
+UPGRADE:SouthKorea_AircraftWeapons = SouthKorea Aircraft Weapons
+
+CONTROLBAR:UpgradeSouthKorea_AircraftCountermeasures = SouthKorea Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeSouthKorea_AircraftCountermeasures = Research SouthKorea Aircraft Countermeasures.
+UPGRADE:SouthKorea_AircraftCountermeasures = SouthKorea Aircraft Countermeasures
+
+OBJECT:Taiwan_CommandCenter = Taiwan CommandCenter
+CONTROLBAR:ConstructTaiwan_CommandCenter = Taiwan CommandCenter
+CONTROLBAR:ToolTipConstructTaiwan_CommandCenter = Produce Taiwan CommandCenter.
+
+OBJECT:Taiwan_PowerStation = Taiwan PowerStation
+CONTROLBAR:ConstructTaiwan_PowerStation = Taiwan PowerStation
+CONTROLBAR:ToolTipConstructTaiwan_PowerStation = Produce Taiwan PowerStation.
+
+OBJECT:Taiwan_BootCamp = Taiwan BootCamp
+CONTROLBAR:ConstructTaiwan_BootCamp = Taiwan BootCamp
+CONTROLBAR:ToolTipConstructTaiwan_BootCamp = Produce Taiwan BootCamp.
+
+OBJECT:Taiwan_WarFactory = Taiwan WarFactory
+CONTROLBAR:ConstructTaiwan_WarFactory = Taiwan WarFactory
+CONTROLBAR:ToolTipConstructTaiwan_WarFactory = Produce Taiwan WarFactory.
+
+OBJECT:Taiwan_Airfield = Taiwan Airfield
+CONTROLBAR:ConstructTaiwan_Airfield = Taiwan Airfield
+CONTROLBAR:ToolTipConstructTaiwan_Airfield = Produce Taiwan Airfield.
+
+OBJECT:Taiwan_SupplyCenter = Taiwan SupplyCenter
+CONTROLBAR:ConstructTaiwan_SupplyCenter = Taiwan SupplyCenter
+CONTROLBAR:ToolTipConstructTaiwan_SupplyCenter = Produce Taiwan SupplyCenter.
+
+OBJECT:Taiwan_RadarGM406 = Taiwan RadarGM406
+CONTROLBAR:ConstructTaiwan_RadarGM406 = Taiwan RadarGM406
+CONTROLBAR:ToolTipConstructTaiwan_RadarGM406 = Produce Taiwan RadarGM406.
+
+OBJECT:Taiwan_StrategyCenter = Taiwan StrategyCenter
+CONTROLBAR:ConstructTaiwan_StrategyCenter = Taiwan StrategyCenter
+CONTROLBAR:ToolTipConstructTaiwan_StrategyCenter = Produce Taiwan StrategyCenter.
+
+OBJECT:Taiwan_Mantis = Taiwan Mantis
+CONTROLBAR:ConstructTaiwan_Mantis = Taiwan Mantis
+CONTROLBAR:ToolTipConstructTaiwan_Mantis = Produce Taiwan Mantis.
+
+OBJECT:Taiwan_VehicleDozer = Taiwan VehicleDozer
+CONTROLBAR:ConstructTaiwan_VehicleDozer = Taiwan VehicleDozer
+CONTROLBAR:ToolTipConstructTaiwan_VehicleDozer = Produce Taiwan VehicleDozer.
+
+OBJECT:Taiwan_InfantryRifleman = Taiwan InfantryRifleman
+CONTROLBAR:ConstructTaiwan_InfantryRifleman = Taiwan InfantryRifleman
+CONTROLBAR:ToolTipConstructTaiwan_InfantryRifleman = Produce Taiwan InfantryRifleman.
+
+OBJECT:Taiwan_InfantryNlawOperator = Taiwan InfantryNlawOperator
+CONTROLBAR:ConstructTaiwan_InfantryNlawOperator = Taiwan InfantryNlawOperator
+CONTROLBAR:ToolTipConstructTaiwan_InfantryNlawOperator = Produce Taiwan InfantryNlawOperator.
+
+OBJECT:Taiwan_InfantryAntiAirOperator = Taiwan InfantryAntiAirOperator
+CONTROLBAR:ConstructTaiwan_InfantryAntiAirOperator = Taiwan InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructTaiwan_InfantryAntiAirOperator = Produce Taiwan InfantryAntiAirOperator.
+
+OBJECT:Taiwan_InfantryHeavySniper = Taiwan InfantryHeavySniper
+CONTROLBAR:ConstructTaiwan_InfantryHeavySniper = Taiwan InfantryHeavySniper
+CONTROLBAR:ToolTipConstructTaiwan_InfantryHeavySniper = Produce Taiwan InfantryHeavySniper.
+
+OBJECT:Taiwan_InfantryMechanized = Taiwan InfantryMechanized
+CONTROLBAR:ConstructTaiwan_InfantryMechanized = Taiwan InfantryMechanized
+CONTROLBAR:ToolTipConstructTaiwan_InfantryMechanized = Produce Taiwan InfantryMechanized.
+
+OBJECT:Taiwan_TankLeopard2A7Plus = Taiwan TankLeopard2A7Plus
+CONTROLBAR:ConstructTaiwan_TankLeopard2A7Plus = Taiwan TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructTaiwan_TankLeopard2A7Plus = Produce Taiwan TankLeopard2A7Plus.
+
+OBJECT:Taiwan_TankPuma = Taiwan TankPuma
+CONTROLBAR:ConstructTaiwan_TankPuma = Taiwan TankPuma
+CONTROLBAR:ToolTipConstructTaiwan_TankPuma = Produce Taiwan TankPuma.
+
+OBJECT:Taiwan_VehicleVBCI = Taiwan VehicleVBCI
+CONTROLBAR:ConstructTaiwan_VehicleVBCI = Taiwan VehicleVBCI
+CONTROLBAR:ToolTipConstructTaiwan_VehicleVBCI = Produce Taiwan VehicleVBCI.
+
+OBJECT:Taiwan_VehicleCentauroB2 = Taiwan VehicleCentauroB2
+CONTROLBAR:ConstructTaiwan_VehicleCentauroB2 = Taiwan VehicleCentauroB2
+CONTROLBAR:ToolTipConstructTaiwan_VehicleCentauroB2 = Produce Taiwan VehicleCentauroB2.
+
+OBJECT:Taiwan_VehicleCaesar = Taiwan VehicleCaesar
+CONTROLBAR:ConstructTaiwan_VehicleCaesar = Taiwan VehicleCaesar
+CONTROLBAR:ToolTipConstructTaiwan_VehicleCaesar = Produce Taiwan VehicleCaesar.
+
+OBJECT:Taiwan_VehicleCortaleMK3 = Taiwan VehicleCortaleMK3
+CONTROLBAR:ConstructTaiwan_VehicleCortaleMK3 = Taiwan VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructTaiwan_VehicleCortaleMK3 = Produce Taiwan VehicleCortaleMK3.
+
+OBJECT:Taiwan_VehicleIRIST = Taiwan VehicleIRIST
+CONTROLBAR:ConstructTaiwan_VehicleIRIST = Taiwan VehicleIRIST
+CONTROLBAR:ToolTipConstructTaiwan_VehicleIRIST = Produce Taiwan VehicleIRIST.
+
+OBJECT:Taiwan_JetF35C = Taiwan JetF35C
+CONTROLBAR:ConstructTaiwan_JetF35C = Taiwan JetF35C
+CONTROLBAR:ToolTipConstructTaiwan_JetF35C = Produce Taiwan JetF35C.
+
+OBJECT:Taiwan_JetEF2000T4 = Taiwan JetEF2000T4
+CONTROLBAR:ConstructTaiwan_JetEF2000T4 = Taiwan JetEF2000T4
+CONTROLBAR:ToolTipConstructTaiwan_JetEF2000T4 = Produce Taiwan JetEF2000T4.
+
+OBJECT:Taiwan_JetEF2000T4_CAS = Taiwan JetEF2000T4 CAS
+CONTROLBAR:ConstructTaiwan_JetEF2000T4_CAS = Taiwan JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructTaiwan_JetEF2000T4_CAS = Produce Taiwan JetEF2000T4 CAS.
+
+OBJECT:Taiwan_HelicopterCH47F = Taiwan HelicopterCH47F
+CONTROLBAR:ConstructTaiwan_HelicopterCH47F = Taiwan HelicopterCH47F
+CONTROLBAR:ToolTipConstructTaiwan_HelicopterCH47F = Produce Taiwan HelicopterCH47F.
+
+OBJECT:Taiwan_E3A = Taiwan E3A
+CONTROLBAR:ConstructTaiwan_E3A = Taiwan E3A
+CONTROLBAR:ToolTipConstructTaiwan_E3A = Produce Taiwan E3A.
+
+OBJECT:Taiwan_JetF16DBlk52 = Taiwan JetF16DBlk52
+CONTROLBAR:ConstructTaiwan_JetF16DBlk52 = Taiwan JetF16DBlk52
+CONTROLBAR:ToolTipConstructTaiwan_JetF16DBlk52 = Produce Taiwan JetF16DBlk52.
+
+CONTROLBAR:UpgradeTaiwan_Armor = Taiwan Armor Package
+CONTROLBAR:ToolTipUpgradeTaiwan_Armor = Research Taiwan Armor Package.
+UPGRADE:Taiwan_Armor = Taiwan Armor Package
+
+CONTROLBAR:UpgradeTaiwan_Weapons = Taiwan Weapon Package
+CONTROLBAR:ToolTipUpgradeTaiwan_Weapons = Research Taiwan Weapon Package.
+UPGRADE:Taiwan_Weapons = Taiwan Weapon Package
+
+CONTROLBAR:UpgradeTaiwan_AircraftWeapons = Taiwan Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeTaiwan_AircraftWeapons = Research Taiwan Aircraft Weapons.
+UPGRADE:Taiwan_AircraftWeapons = Taiwan Aircraft Weapons
+
+CONTROLBAR:UpgradeTaiwan_AircraftCountermeasures = Taiwan Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeTaiwan_AircraftCountermeasures = Research Taiwan Aircraft Countermeasures.
+UPGRADE:Taiwan_AircraftCountermeasures = Taiwan Aircraft Countermeasures
+
+OBJECT:UN_CommandCenter = UN CommandCenter
+CONTROLBAR:ConstructUN_CommandCenter = UN CommandCenter
+CONTROLBAR:ToolTipConstructUN_CommandCenter = Produce UN CommandCenter.
+
+OBJECT:UN_PowerStation = UN PowerStation
+CONTROLBAR:ConstructUN_PowerStation = UN PowerStation
+CONTROLBAR:ToolTipConstructUN_PowerStation = Produce UN PowerStation.
+
+OBJECT:UN_BootCamp = UN BootCamp
+CONTROLBAR:ConstructUN_BootCamp = UN BootCamp
+CONTROLBAR:ToolTipConstructUN_BootCamp = Produce UN BootCamp.
+
+OBJECT:UN_WarFactory = UN WarFactory
+CONTROLBAR:ConstructUN_WarFactory = UN WarFactory
+CONTROLBAR:ToolTipConstructUN_WarFactory = Produce UN WarFactory.
+
+OBJECT:UN_Airfield = UN Airfield
+CONTROLBAR:ConstructUN_Airfield = UN Airfield
+CONTROLBAR:ToolTipConstructUN_Airfield = Produce UN Airfield.
+
+OBJECT:UN_SupplyCenter = UN SupplyCenter
+CONTROLBAR:ConstructUN_SupplyCenter = UN SupplyCenter
+CONTROLBAR:ToolTipConstructUN_SupplyCenter = Produce UN SupplyCenter.
+
+OBJECT:UN_RadarGM406 = UN RadarGM406
+CONTROLBAR:ConstructUN_RadarGM406 = UN RadarGM406
+CONTROLBAR:ToolTipConstructUN_RadarGM406 = Produce UN RadarGM406.
+
+OBJECT:UN_StrategyCenter = UN StrategyCenter
+CONTROLBAR:ConstructUN_StrategyCenter = UN StrategyCenter
+CONTROLBAR:ToolTipConstructUN_StrategyCenter = Produce UN StrategyCenter.
+
+OBJECT:UN_Mantis = UN Mantis
+CONTROLBAR:ConstructUN_Mantis = UN Mantis
+CONTROLBAR:ToolTipConstructUN_Mantis = Produce UN Mantis.
+
+OBJECT:UN_VehicleDozer = UN VehicleDozer
+CONTROLBAR:ConstructUN_VehicleDozer = UN VehicleDozer
+CONTROLBAR:ToolTipConstructUN_VehicleDozer = Produce UN VehicleDozer.
+
+OBJECT:UN_InfantryRifleman = UN InfantryRifleman
+CONTROLBAR:ConstructUN_InfantryRifleman = UN InfantryRifleman
+CONTROLBAR:ToolTipConstructUN_InfantryRifleman = Produce UN InfantryRifleman.
+
+OBJECT:UN_InfantryNlawOperator = UN InfantryNlawOperator
+CONTROLBAR:ConstructUN_InfantryNlawOperator = UN InfantryNlawOperator
+CONTROLBAR:ToolTipConstructUN_InfantryNlawOperator = Produce UN InfantryNlawOperator.
+
+OBJECT:UN_InfantryAntiAirOperator = UN InfantryAntiAirOperator
+CONTROLBAR:ConstructUN_InfantryAntiAirOperator = UN InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructUN_InfantryAntiAirOperator = Produce UN InfantryAntiAirOperator.
+
+OBJECT:UN_InfantryHeavySniper = UN InfantryHeavySniper
+CONTROLBAR:ConstructUN_InfantryHeavySniper = UN InfantryHeavySniper
+CONTROLBAR:ToolTipConstructUN_InfantryHeavySniper = Produce UN InfantryHeavySniper.
+
+OBJECT:UN_InfantryMechanized = UN InfantryMechanized
+CONTROLBAR:ConstructUN_InfantryMechanized = UN InfantryMechanized
+CONTROLBAR:ToolTipConstructUN_InfantryMechanized = Produce UN InfantryMechanized.
+
+OBJECT:UN_TankLeopard2A7Plus = UN TankLeopard2A7Plus
+CONTROLBAR:ConstructUN_TankLeopard2A7Plus = UN TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructUN_TankLeopard2A7Plus = Produce UN TankLeopard2A7Plus.
+
+OBJECT:UN_TankPuma = UN TankPuma
+CONTROLBAR:ConstructUN_TankPuma = UN TankPuma
+CONTROLBAR:ToolTipConstructUN_TankPuma = Produce UN TankPuma.
+
+OBJECT:UN_VehicleVBCI = UN VehicleVBCI
+CONTROLBAR:ConstructUN_VehicleVBCI = UN VehicleVBCI
+CONTROLBAR:ToolTipConstructUN_VehicleVBCI = Produce UN VehicleVBCI.
+
+OBJECT:UN_VehicleCentauroB2 = UN VehicleCentauroB2
+CONTROLBAR:ConstructUN_VehicleCentauroB2 = UN VehicleCentauroB2
+CONTROLBAR:ToolTipConstructUN_VehicleCentauroB2 = Produce UN VehicleCentauroB2.
+
+OBJECT:UN_VehicleCaesar = UN VehicleCaesar
+CONTROLBAR:ConstructUN_VehicleCaesar = UN VehicleCaesar
+CONTROLBAR:ToolTipConstructUN_VehicleCaesar = Produce UN VehicleCaesar.
+
+OBJECT:UN_VehicleCortaleMK3 = UN VehicleCortaleMK3
+CONTROLBAR:ConstructUN_VehicleCortaleMK3 = UN VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructUN_VehicleCortaleMK3 = Produce UN VehicleCortaleMK3.
+
+OBJECT:UN_VehicleIRIST = UN VehicleIRIST
+CONTROLBAR:ConstructUN_VehicleIRIST = UN VehicleIRIST
+CONTROLBAR:ToolTipConstructUN_VehicleIRIST = Produce UN VehicleIRIST.
+
+OBJECT:UN_JetF35C = UN JetF35C
+CONTROLBAR:ConstructUN_JetF35C = UN JetF35C
+CONTROLBAR:ToolTipConstructUN_JetF35C = Produce UN JetF35C.
+
+OBJECT:UN_JetEF2000T4 = UN JetEF2000T4
+CONTROLBAR:ConstructUN_JetEF2000T4 = UN JetEF2000T4
+CONTROLBAR:ToolTipConstructUN_JetEF2000T4 = Produce UN JetEF2000T4.
+
+OBJECT:UN_JetEF2000T4_CAS = UN JetEF2000T4 CAS
+CONTROLBAR:ConstructUN_JetEF2000T4_CAS = UN JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructUN_JetEF2000T4_CAS = Produce UN JetEF2000T4 CAS.
+
+OBJECT:UN_HelicopterCH47F = UN HelicopterCH47F
+CONTROLBAR:ConstructUN_HelicopterCH47F = UN HelicopterCH47F
+CONTROLBAR:ToolTipConstructUN_HelicopterCH47F = Produce UN HelicopterCH47F.
+
+OBJECT:UN_E3A = UN E3A
+CONTROLBAR:ConstructUN_E3A = UN E3A
+CONTROLBAR:ToolTipConstructUN_E3A = Produce UN E3A.
+
+OBJECT:UN_JetF16DBlk52 = UN JetF16DBlk52
+CONTROLBAR:ConstructUN_JetF16DBlk52 = UN JetF16DBlk52
+CONTROLBAR:ToolTipConstructUN_JetF16DBlk52 = Produce UN JetF16DBlk52.
+
+CONTROLBAR:UpgradeUN_Armor = UN Armor Package
+CONTROLBAR:ToolTipUpgradeUN_Armor = Research UN Armor Package.
+UPGRADE:UN_Armor = UN Armor Package
+
+CONTROLBAR:UpgradeUN_Weapons = UN Weapon Package
+CONTROLBAR:ToolTipUpgradeUN_Weapons = Research UN Weapon Package.
+UPGRADE:UN_Weapons = UN Weapon Package
+
+CONTROLBAR:UpgradeUN_AircraftWeapons = UN Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeUN_AircraftWeapons = Research UN Aircraft Weapons.
+UPGRADE:UN_AircraftWeapons = UN Aircraft Weapons
+
+CONTROLBAR:UpgradeUN_AircraftCountermeasures = UN Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeUN_AircraftCountermeasures = Research UN Aircraft Countermeasures.
+UPGRADE:UN_AircraftCountermeasures = UN Aircraft Countermeasures
+
+OBJECT:Japan_CommandCenter = Japan CommandCenter
+CONTROLBAR:ConstructJapan_CommandCenter = Japan CommandCenter
+CONTROLBAR:ToolTipConstructJapan_CommandCenter = Produce Japan CommandCenter.
+
+OBJECT:Japan_PowerStation = Japan PowerStation
+CONTROLBAR:ConstructJapan_PowerStation = Japan PowerStation
+CONTROLBAR:ToolTipConstructJapan_PowerStation = Produce Japan PowerStation.
+
+OBJECT:Japan_BootCamp = Japan BootCamp
+CONTROLBAR:ConstructJapan_BootCamp = Japan BootCamp
+CONTROLBAR:ToolTipConstructJapan_BootCamp = Produce Japan BootCamp.
+
+OBJECT:Japan_WarFactory = Japan WarFactory
+CONTROLBAR:ConstructJapan_WarFactory = Japan WarFactory
+CONTROLBAR:ToolTipConstructJapan_WarFactory = Produce Japan WarFactory.
+
+OBJECT:Japan_Airfield = Japan Airfield
+CONTROLBAR:ConstructJapan_Airfield = Japan Airfield
+CONTROLBAR:ToolTipConstructJapan_Airfield = Produce Japan Airfield.
+
+OBJECT:Japan_SupplyCenter = Japan SupplyCenter
+CONTROLBAR:ConstructJapan_SupplyCenter = Japan SupplyCenter
+CONTROLBAR:ToolTipConstructJapan_SupplyCenter = Produce Japan SupplyCenter.
+
+OBJECT:Japan_RadarGM406 = Japan RadarGM406
+CONTROLBAR:ConstructJapan_RadarGM406 = Japan RadarGM406
+CONTROLBAR:ToolTipConstructJapan_RadarGM406 = Produce Japan RadarGM406.
+
+OBJECT:Japan_StrategyCenter = Japan StrategyCenter
+CONTROLBAR:ConstructJapan_StrategyCenter = Japan StrategyCenter
+CONTROLBAR:ToolTipConstructJapan_StrategyCenter = Produce Japan StrategyCenter.
+
+OBJECT:Japan_Mantis = Japan Mantis
+CONTROLBAR:ConstructJapan_Mantis = Japan Mantis
+CONTROLBAR:ToolTipConstructJapan_Mantis = Produce Japan Mantis.
+
+OBJECT:Japan_VehicleDozer = Japan VehicleDozer
+CONTROLBAR:ConstructJapan_VehicleDozer = Japan VehicleDozer
+CONTROLBAR:ToolTipConstructJapan_VehicleDozer = Produce Japan VehicleDozer.
+
+OBJECT:Japan_InfantryRifleman = Japan InfantryRifleman
+CONTROLBAR:ConstructJapan_InfantryRifleman = Japan InfantryRifleman
+CONTROLBAR:ToolTipConstructJapan_InfantryRifleman = Produce Japan InfantryRifleman.
+
+OBJECT:Japan_InfantryNlawOperator = Japan InfantryNlawOperator
+CONTROLBAR:ConstructJapan_InfantryNlawOperator = Japan InfantryNlawOperator
+CONTROLBAR:ToolTipConstructJapan_InfantryNlawOperator = Produce Japan InfantryNlawOperator.
+
+OBJECT:Japan_InfantryAntiAirOperator = Japan InfantryAntiAirOperator
+CONTROLBAR:ConstructJapan_InfantryAntiAirOperator = Japan InfantryAntiAirOperator
+CONTROLBAR:ToolTipConstructJapan_InfantryAntiAirOperator = Produce Japan InfantryAntiAirOperator.
+
+OBJECT:Japan_InfantryHeavySniper = Japan InfantryHeavySniper
+CONTROLBAR:ConstructJapan_InfantryHeavySniper = Japan InfantryHeavySniper
+CONTROLBAR:ToolTipConstructJapan_InfantryHeavySniper = Produce Japan InfantryHeavySniper.
+
+OBJECT:Japan_InfantryMechanized = Japan InfantryMechanized
+CONTROLBAR:ConstructJapan_InfantryMechanized = Japan InfantryMechanized
+CONTROLBAR:ToolTipConstructJapan_InfantryMechanized = Produce Japan InfantryMechanized.
+
+OBJECT:Japan_TankLeopard2A7Plus = Japan TankLeopard2A7Plus
+CONTROLBAR:ConstructJapan_TankLeopard2A7Plus = Japan TankLeopard2A7Plus
+CONTROLBAR:ToolTipConstructJapan_TankLeopard2A7Plus = Produce Japan TankLeopard2A7Plus.
+
+OBJECT:Japan_TankPuma = Japan TankPuma
+CONTROLBAR:ConstructJapan_TankPuma = Japan TankPuma
+CONTROLBAR:ToolTipConstructJapan_TankPuma = Produce Japan TankPuma.
+
+OBJECT:Japan_VehicleVBCI = Japan VehicleVBCI
+CONTROLBAR:ConstructJapan_VehicleVBCI = Japan VehicleVBCI
+CONTROLBAR:ToolTipConstructJapan_VehicleVBCI = Produce Japan VehicleVBCI.
+
+OBJECT:Japan_VehicleCentauroB2 = Japan VehicleCentauroB2
+CONTROLBAR:ConstructJapan_VehicleCentauroB2 = Japan VehicleCentauroB2
+CONTROLBAR:ToolTipConstructJapan_VehicleCentauroB2 = Produce Japan VehicleCentauroB2.
+
+OBJECT:Japan_VehicleCaesar = Japan VehicleCaesar
+CONTROLBAR:ConstructJapan_VehicleCaesar = Japan VehicleCaesar
+CONTROLBAR:ToolTipConstructJapan_VehicleCaesar = Produce Japan VehicleCaesar.
+
+OBJECT:Japan_VehicleCortaleMK3 = Japan VehicleCortaleMK3
+CONTROLBAR:ConstructJapan_VehicleCortaleMK3 = Japan VehicleCortaleMK3
+CONTROLBAR:ToolTipConstructJapan_VehicleCortaleMK3 = Produce Japan VehicleCortaleMK3.
+
+OBJECT:Japan_VehicleIRIST = Japan VehicleIRIST
+CONTROLBAR:ConstructJapan_VehicleIRIST = Japan VehicleIRIST
+CONTROLBAR:ToolTipConstructJapan_VehicleIRIST = Produce Japan VehicleIRIST.
+
+OBJECT:Japan_JetF35C = Japan JetF35C
+CONTROLBAR:ConstructJapan_JetF35C = Japan JetF35C
+CONTROLBAR:ToolTipConstructJapan_JetF35C = Produce Japan JetF35C.
+
+OBJECT:Japan_JetEF2000T4 = Japan JetEF2000T4
+CONTROLBAR:ConstructJapan_JetEF2000T4 = Japan JetEF2000T4
+CONTROLBAR:ToolTipConstructJapan_JetEF2000T4 = Produce Japan JetEF2000T4.
+
+OBJECT:Japan_JetEF2000T4_CAS = Japan JetEF2000T4 CAS
+CONTROLBAR:ConstructJapan_JetEF2000T4_CAS = Japan JetEF2000T4 CAS
+CONTROLBAR:ToolTipConstructJapan_JetEF2000T4_CAS = Produce Japan JetEF2000T4 CAS.
+
+OBJECT:Japan_HelicopterCH47F = Japan HelicopterCH47F
+CONTROLBAR:ConstructJapan_HelicopterCH47F = Japan HelicopterCH47F
+CONTROLBAR:ToolTipConstructJapan_HelicopterCH47F = Produce Japan HelicopterCH47F.
+
+OBJECT:Japan_E3A = Japan E3A
+CONTROLBAR:ConstructJapan_E3A = Japan E3A
+CONTROLBAR:ToolTipConstructJapan_E3A = Produce Japan E3A.
+
+OBJECT:Japan_JetF16DBlk52 = Japan JetF16DBlk52
+CONTROLBAR:ConstructJapan_JetF16DBlk52 = Japan JetF16DBlk52
+CONTROLBAR:ToolTipConstructJapan_JetF16DBlk52 = Produce Japan JetF16DBlk52.
+
+CONTROLBAR:UpgradeJapan_Armor = Japan Armor Package
+CONTROLBAR:ToolTipUpgradeJapan_Armor = Research Japan Armor Package.
+UPGRADE:Japan_Armor = Japan Armor Package
+
+CONTROLBAR:UpgradeJapan_Weapons = Japan Weapon Package
+CONTROLBAR:ToolTipUpgradeJapan_Weapons = Research Japan Weapon Package.
+UPGRADE:Japan_Weapons = Japan Weapon Package
+
+CONTROLBAR:UpgradeJapan_AircraftWeapons = Japan Aircraft Weapons
+CONTROLBAR:ToolTipUpgradeJapan_AircraftWeapons = Research Japan Aircraft Weapons.
+UPGRADE:Japan_AircraftWeapons = Japan Aircraft Weapons
+
+CONTROLBAR:UpgradeJapan_AircraftCountermeasures = Japan Aircraft Countermeasures
+CONTROLBAR:ToolTipUpgradeJapan_AircraftCountermeasures = Research Japan Aircraft Countermeasures.
+UPGRADE:Japan_AircraftCountermeasures = Japan Aircraft Countermeasures
+
+// Phase B science strings — Ukraine
+SCIENCE:Ukraine = Ukraine
+SCIENCE:Ukraine_GeneralAirPower = Ukraine Air Power Doctrine
+CONTROLBAR:ToolTipUkraineGeneralAirPower = Unlock Ukraine air-power sciences.
+SCIENCE:Ukraine_GeneralAirAssault = Ukraine Air Assault Doctrine
+CONTROLBAR:ToolTipUkraineGeneralAirAssault = Unlock Ukraine air-assault sciences.
+SCIENCE:Ukraine_GeneralStrategic = Ukraine Strategic Doctrine
+CONTROLBAR:ToolTipUkraineGeneralStrategic = Unlock Ukraine strategic sciences.
+SCIENCE:UkraineAWACS = Ukraine AWACS
+CONTROLBAR:UkraineAWACS = Call Ukraine AWACS support.
+CONTROLBAR:ToolTipUkraineAWACS = Deploy Ukraine AWACS.
+SCIENCE:UkraineReconnaissance = Ukraine Reconnaissance
+CONTROLBAR:ToolTipUkraineReconnaissance = Ukraine recon strike.
+CONTROLBAR:UkraineReconnaissance = Ukraine Reconnaissance
+CONTROLBAR:ToolTipUkraineReconnaissance = Reveal and mark a target area.
+SCIENCE:UkraineCruiseStrike = Ukraine Cruise Strike
+CONTROLBAR:ToolTipUkraineCruiseStrike = Ukraine cruise missile barrage.
+CONTROLBAR:UkraineCruiseStrike = Ukraine Cruise Strike
+SCIENCE:UkraineParadrop = Ukraine Paradrop
+CONTROLBAR:ToolTipUkraineParadrop = Drop Ukraine infantry by air.
+CONTROLBAR:UkraineParadrop = Ukraine Paradrop
+SCIENCE:UkraineSFInsertion = Ukraine SF Insertion
+CONTROLBAR:ToolTipUkraineSFInsertion = Insert Ukraine special forces.
+CONTROLBAR:UkraineSFInsertion = Ukraine SF Insertion
+CONTROLBAR:UkraineFOAB = Ukraine FOAB
+CONTROLBAR:ToolTipUkraineFOAB = Ukraine fuel-air strike.
+CONTROLBAR:UkraineTu22CruiseMissileStrike = Ukraine Tu-22 Strike
+CONTROLBAR:ToolTipUkraineTu22CruiseMissileStrike = Ukraine Tu-22 cruise strike.
+CONTROLBAR:UkraineEmergencyRepair = Ukraine Emergency Repair
+CONTROLBAR:ToolTipUkraineEmergencyRepair = Repair vehicles in an area.
+OBJECT:UkraineSystemSpecialPower = Ukraine Special Powers
+
+// Phase B science strings — Pakistan
+SCIENCE:Pakistan = Pakistan
+SCIENCE:Pakistan_GeneralAirPower = Pakistan Air Power Doctrine
+CONTROLBAR:ToolTipPakistanGeneralAirPower = Unlock Pakistan air-power sciences.
+SCIENCE:Pakistan_GeneralAirAssault = Pakistan Air Assault Doctrine
+CONTROLBAR:ToolTipPakistanGeneralAirAssault = Unlock Pakistan air-assault sciences.
+SCIENCE:Pakistan_GeneralStrategic = Pakistan Strategic Doctrine
+CONTROLBAR:ToolTipPakistanGeneralStrategic = Unlock Pakistan strategic sciences.
+SCIENCE:PakistanAWACS = Pakistan AWACS
+CONTROLBAR:PakistanAWACS = Call Pakistan AWACS support.
+CONTROLBAR:ToolTipPakistanAWACS = Deploy Pakistan AWACS.
+SCIENCE:PakistanReconnaissance = Pakistan Reconnaissance
+CONTROLBAR:ToolTipPakistanReconnaissance = Pakistan recon strike.
+CONTROLBAR:PakistanReconnaissance = Pakistan Reconnaissance
+CONTROLBAR:ToolTipPakistanReconnaissance = Reveal and mark a target area.
+SCIENCE:PakistanCruiseStrike = Pakistan Cruise Strike
+CONTROLBAR:ToolTipPakistanCruiseStrike = Pakistan cruise missile barrage.
+CONTROLBAR:PakistanCruiseStrike = Pakistan Cruise Strike
+SCIENCE:PakistanParadrop = Pakistan Paradrop
+CONTROLBAR:ToolTipPakistanParadrop = Drop Pakistan infantry by air.
+CONTROLBAR:PakistanParadrop = Pakistan Paradrop
+SCIENCE:PakistanSFInsertion = Pakistan SF Insertion
+CONTROLBAR:ToolTipPakistanSFInsertion = Insert Pakistan special forces.
+CONTROLBAR:PakistanSFInsertion = Pakistan SF Insertion
+CONTROLBAR:PakistanFOAB = Pakistan FOAB
+CONTROLBAR:ToolTipPakistanFOAB = Pakistan fuel-air strike.
+CONTROLBAR:PakistanTu22CruiseMissileStrike = Pakistan Tu-22 Strike
+CONTROLBAR:ToolTipPakistanTu22CruiseMissileStrike = Pakistan Tu-22 cruise strike.
+CONTROLBAR:PakistanEmergencyRepair = Pakistan Emergency Repair
+CONTROLBAR:ToolTipPakistanEmergencyRepair = Repair vehicles in an area.
+OBJECT:PakistanSystemSpecialPower = Pakistan Special Powers
+
+// Phase B science strings — Saudi Arabia
+SCIENCE:SaudiArabia = Saudi Arabia
+SCIENCE:SaudiArabia_GeneralAirPower = Saudi Arabia Air Power Doctrine
+CONTROLBAR:ToolTipSaudiArabiaGeneralAirPower = Unlock Saudi Arabia air-power sciences.
+SCIENCE:SaudiArabia_GeneralAirAssault = Saudi Arabia Air Assault Doctrine
+CONTROLBAR:ToolTipSaudiArabiaGeneralAirAssault = Unlock Saudi Arabia air-assault sciences.
+SCIENCE:SaudiArabia_GeneralStrategic = Saudi Arabia Strategic Doctrine
+CONTROLBAR:ToolTipSaudiArabiaGeneralStrategic = Unlock Saudi Arabia strategic sciences.
+SCIENCE:SaudiArabiaAWACS = Saudi Arabia AWACS
+CONTROLBAR:SaudiArabiaAWACS = Call Saudi Arabia AWACS support.
+CONTROLBAR:ToolTipSaudiArabiaAWACS = Deploy Saudi Arabia AWACS.
+SCIENCE:SaudiArabiaReconnaissance = Saudi Arabia Reconnaissance
+CONTROLBAR:ToolTipSaudiArabiaReconnaissance = Saudi Arabia recon strike.
+CONTROLBAR:SaudiArabiaReconnaissance = Saudi Arabia Reconnaissance
+CONTROLBAR:ToolTipSaudiArabiaReconnaissance = Reveal and mark a target area.
+SCIENCE:SaudiArabiaCruiseStrike = Saudi Arabia Cruise Strike
+CONTROLBAR:ToolTipSaudiArabiaCruiseStrike = Saudi Arabia cruise missile barrage.
+CONTROLBAR:SaudiArabiaCruiseStrike = Saudi Arabia Cruise Strike
+SCIENCE:SaudiArabiaParadrop = Saudi Arabia Paradrop
+CONTROLBAR:ToolTipSaudiArabiaParadrop = Drop Saudi Arabia infantry by air.
+CONTROLBAR:SaudiArabiaParadrop = Saudi Arabia Paradrop
+SCIENCE:SaudiArabiaSFInsertion = Saudi Arabia SF Insertion
+CONTROLBAR:ToolTipSaudiArabiaSFInsertion = Insert Saudi Arabia special forces.
+CONTROLBAR:SaudiArabiaSFInsertion = Saudi Arabia SF Insertion
+CONTROLBAR:SaudiArabiaFOAB = Saudi Arabia FOAB
+CONTROLBAR:ToolTipSaudiArabiaFOAB = Saudi Arabia fuel-air strike.
+CONTROLBAR:SaudiArabiaTu22CruiseMissileStrike = Saudi Arabia Tu-22 Strike
+CONTROLBAR:ToolTipSaudiArabiaTu22CruiseMissileStrike = Saudi Arabia Tu-22 cruise strike.
+CONTROLBAR:SaudiArabiaEmergencyRepair = Saudi Arabia Emergency Repair
+CONTROLBAR:ToolTipSaudiArabiaEmergencyRepair = Repair vehicles in an area.
+OBJECT:SaudiArabiaSystemSpecialPower = Saudi Arabia Special Powers
+
+// Phase B science strings — UAE
+SCIENCE:UAE = UAE
+SCIENCE:UAE_GeneralAirPower = UAE Air Power Doctrine
+CONTROLBAR:ToolTipUAEGeneralAirPower = Unlock UAE air-power sciences.
+SCIENCE:UAE_GeneralAirAssault = UAE Air Assault Doctrine
+CONTROLBAR:ToolTipUAEGeneralAirAssault = Unlock UAE air-assault sciences.
+SCIENCE:UAE_GeneralStrategic = UAE Strategic Doctrine
+CONTROLBAR:ToolTipUAEGeneralStrategic = Unlock UAE strategic sciences.
+SCIENCE:UAEAWACS = UAE AWACS
+CONTROLBAR:UAEAWACS = Call UAE AWACS support.
+CONTROLBAR:ToolTipUAEAWACS = Deploy UAE AWACS.
+SCIENCE:UAEReconnaissance = UAE Reconnaissance
+CONTROLBAR:ToolTipUAEReconnaissance = UAE recon strike.
+CONTROLBAR:UAEReconnaissance = UAE Reconnaissance
+CONTROLBAR:ToolTipUAEReconnaissance = Reveal and mark a target area.
+SCIENCE:UAECruiseStrike = UAE Cruise Strike
+CONTROLBAR:ToolTipUAECruiseStrike = UAE cruise missile barrage.
+CONTROLBAR:UAECruiseStrike = UAE Cruise Strike
+SCIENCE:UAEParadrop = UAE Paradrop
+CONTROLBAR:ToolTipUAEParadrop = Drop UAE infantry by air.
+CONTROLBAR:UAEParadrop = UAE Paradrop
+SCIENCE:UAESFInsertion = UAE SF Insertion
+CONTROLBAR:ToolTipUAESFInsertion = Insert UAE special forces.
+CONTROLBAR:UAESFInsertion = UAE SF Insertion
+CONTROLBAR:UAEFOAB = UAE FOAB
+CONTROLBAR:ToolTipUAEFOAB = UAE fuel-air strike.
+CONTROLBAR:UAETu22CruiseMissileStrike = UAE Tu-22 Strike
+CONTROLBAR:ToolTipUAETu22CruiseMissileStrike = UAE Tu-22 cruise strike.
+CONTROLBAR:UAEEmergencyRepair = UAE Emergency Repair
+CONTROLBAR:ToolTipUAEEmergencyRepair = Repair vehicles in an area.
+OBJECT:UAESystemSpecialPower = UAE Special Powers
+
+// Phase B science strings — India
+SCIENCE:India = India
+SCIENCE:India_GeneralAirPower = India Air Power Doctrine
+CONTROLBAR:ToolTipIndiaGeneralAirPower = Unlock India air-power sciences.
+SCIENCE:India_GeneralAirAssault = India Air Assault Doctrine
+CONTROLBAR:ToolTipIndiaGeneralAirAssault = Unlock India air-assault sciences.
+SCIENCE:India_GeneralStrategic = India Strategic Doctrine
+CONTROLBAR:ToolTipIndiaGeneralStrategic = Unlock India strategic sciences.
+SCIENCE:IndiaAWACS = India AWACS
+CONTROLBAR:IndiaAWACS = Call India AWACS support.
+CONTROLBAR:ToolTipIndiaAWACS = Deploy India AWACS.
+SCIENCE:IndiaReconnaissance = India Reconnaissance
+CONTROLBAR:ToolTipIndiaReconnaissance = India recon strike.
+CONTROLBAR:IndiaReconnaissance = India Reconnaissance
+CONTROLBAR:ToolTipIndiaReconnaissance = Reveal and mark a target area.
+SCIENCE:IndiaCruiseStrike = India Cruise Strike
+CONTROLBAR:ToolTipIndiaCruiseStrike = India cruise missile barrage.
+CONTROLBAR:IndiaCruiseStrike = India Cruise Strike
+SCIENCE:IndiaParadrop = India Paradrop
+CONTROLBAR:ToolTipIndiaParadrop = Drop India infantry by air.
+CONTROLBAR:IndiaParadrop = India Paradrop
+SCIENCE:IndiaSFInsertion = India SF Insertion
+CONTROLBAR:ToolTipIndiaSFInsertion = Insert India special forces.
+CONTROLBAR:IndiaSFInsertion = India SF Insertion
+CONTROLBAR:IndiaFOAB = India FOAB
+CONTROLBAR:ToolTipIndiaFOAB = India fuel-air strike.
+CONTROLBAR:IndiaTu22CruiseMissileStrike = India Tu-22 Strike
+CONTROLBAR:ToolTipIndiaTu22CruiseMissileStrike = India Tu-22 cruise strike.
+CONTROLBAR:IndiaEmergencyRepair = India Emergency Repair
+CONTROLBAR:ToolTipIndiaEmergencyRepair = Repair vehicles in an area.
+OBJECT:IndiaSystemSpecialPower = India Special Powers
+
+// Phase B science strings — Egypt
+SCIENCE:Egypt = Egypt
+SCIENCE:Egypt_GeneralAirPower = Egypt Air Power Doctrine
+CONTROLBAR:ToolTipEgyptGeneralAirPower = Unlock Egypt air-power sciences.
+SCIENCE:Egypt_GeneralAirAssault = Egypt Air Assault Doctrine
+CONTROLBAR:ToolTipEgyptGeneralAirAssault = Unlock Egypt air-assault sciences.
+SCIENCE:Egypt_GeneralStrategic = Egypt Strategic Doctrine
+CONTROLBAR:ToolTipEgyptGeneralStrategic = Unlock Egypt strategic sciences.
+SCIENCE:EgyptAWACS = Egypt AWACS
+CONTROLBAR:EgyptAWACS = Call Egypt AWACS support.
+CONTROLBAR:ToolTipEgyptAWACS = Deploy Egypt AWACS.
+SCIENCE:EgyptReconnaissance = Egypt Reconnaissance
+CONTROLBAR:ToolTipEgyptReconnaissance = Egypt recon strike.
+CONTROLBAR:EgyptReconnaissance = Egypt Reconnaissance
+CONTROLBAR:ToolTipEgyptReconnaissance = Reveal and mark a target area.
+SCIENCE:EgyptCruiseStrike = Egypt Cruise Strike
+CONTROLBAR:ToolTipEgyptCruiseStrike = Egypt cruise missile barrage.
+CONTROLBAR:EgyptCruiseStrike = Egypt Cruise Strike
+SCIENCE:EgyptParadrop = Egypt Paradrop
+CONTROLBAR:ToolTipEgyptParadrop = Drop Egypt infantry by air.
+CONTROLBAR:EgyptParadrop = Egypt Paradrop
+SCIENCE:EgyptSFInsertion = Egypt SF Insertion
+CONTROLBAR:ToolTipEgyptSFInsertion = Insert Egypt special forces.
+CONTROLBAR:EgyptSFInsertion = Egypt SF Insertion
+CONTROLBAR:EgyptFOAB = Egypt FOAB
+CONTROLBAR:ToolTipEgyptFOAB = Egypt fuel-air strike.
+CONTROLBAR:EgyptTu22CruiseMissileStrike = Egypt Tu-22 Strike
+CONTROLBAR:ToolTipEgyptTu22CruiseMissileStrike = Egypt Tu-22 cruise strike.
+CONTROLBAR:EgyptEmergencyRepair = Egypt Emergency Repair
+CONTROLBAR:ToolTipEgyptEmergencyRepair = Repair vehicles in an area.
+OBJECT:EgyptSystemSpecialPower = Egypt Special Powers
+
+// Phase B science strings — Syria
+SCIENCE:Syria = Syria
+SCIENCE:Syria_GeneralAirPower = Syria Air Power Doctrine
+CONTROLBAR:ToolTipSyriaGeneralAirPower = Unlock Syria air-power sciences.
+SCIENCE:Syria_GeneralAirAssault = Syria Air Assault Doctrine
+CONTROLBAR:ToolTipSyriaGeneralAirAssault = Unlock Syria air-assault sciences.
+SCIENCE:Syria_GeneralStrategic = Syria Strategic Doctrine
+CONTROLBAR:ToolTipSyriaGeneralStrategic = Unlock Syria strategic sciences.
+SCIENCE:SyriaAWACS = Syria AWACS
+CONTROLBAR:SyriaAWACS = Call Syria AWACS support.
+CONTROLBAR:ToolTipSyriaAWACS = Deploy Syria AWACS.
+SCIENCE:SyriaReconnaissance = Syria Reconnaissance
+CONTROLBAR:ToolTipSyriaReconnaissance = Syria recon strike.
+CONTROLBAR:SyriaReconnaissance = Syria Reconnaissance
+CONTROLBAR:ToolTipSyriaReconnaissance = Reveal and mark a target area.
+SCIENCE:SyriaCruiseStrike = Syria Cruise Strike
+CONTROLBAR:ToolTipSyriaCruiseStrike = Syria cruise missile barrage.
+CONTROLBAR:SyriaCruiseStrike = Syria Cruise Strike
+SCIENCE:SyriaParadrop = Syria Paradrop
+CONTROLBAR:ToolTipSyriaParadrop = Drop Syria infantry by air.
+CONTROLBAR:SyriaParadrop = Syria Paradrop
+SCIENCE:SyriaSFInsertion = Syria SF Insertion
+CONTROLBAR:ToolTipSyriaSFInsertion = Insert Syria special forces.
+CONTROLBAR:SyriaSFInsertion = Syria SF Insertion
+CONTROLBAR:SyriaFOAB = Syria FOAB
+CONTROLBAR:ToolTipSyriaFOAB = Syria fuel-air strike.
+CONTROLBAR:SyriaTu22CruiseMissileStrike = Syria Tu-22 Strike
+CONTROLBAR:ToolTipSyriaTu22CruiseMissileStrike = Syria Tu-22 cruise strike.
+CONTROLBAR:SyriaEmergencyRepair = Syria Emergency Repair
+CONTROLBAR:ToolTipSyriaEmergencyRepair = Repair vehicles in an area.
+OBJECT:SyriaSystemSpecialPower = Syria Special Powers
+
+// Phase B science strings — Libya
+SCIENCE:Libya = Libya
+SCIENCE:Libya_GeneralAirPower = Libya Air Power Doctrine
+CONTROLBAR:ToolTipLibyaGeneralAirPower = Unlock Libya air-power sciences.
+SCIENCE:Libya_GeneralAirAssault = Libya Air Assault Doctrine
+CONTROLBAR:ToolTipLibyaGeneralAirAssault = Unlock Libya air-assault sciences.
+SCIENCE:Libya_GeneralStrategic = Libya Strategic Doctrine
+CONTROLBAR:ToolTipLibyaGeneralStrategic = Unlock Libya strategic sciences.
+SCIENCE:LibyaAWACS = Libya AWACS
+CONTROLBAR:LibyaAWACS = Call Libya AWACS support.
+CONTROLBAR:ToolTipLibyaAWACS = Deploy Libya AWACS.
+SCIENCE:LibyaReconnaissance = Libya Reconnaissance
+CONTROLBAR:ToolTipLibyaReconnaissance = Libya recon strike.
+CONTROLBAR:LibyaReconnaissance = Libya Reconnaissance
+CONTROLBAR:ToolTipLibyaReconnaissance = Reveal and mark a target area.
+SCIENCE:LibyaCruiseStrike = Libya Cruise Strike
+CONTROLBAR:ToolTipLibyaCruiseStrike = Libya cruise missile barrage.
+CONTROLBAR:LibyaCruiseStrike = Libya Cruise Strike
+SCIENCE:LibyaParadrop = Libya Paradrop
+CONTROLBAR:ToolTipLibyaParadrop = Drop Libya infantry by air.
+CONTROLBAR:LibyaParadrop = Libya Paradrop
+SCIENCE:LibyaSFInsertion = Libya SF Insertion
+CONTROLBAR:ToolTipLibyaSFInsertion = Insert Libya special forces.
+CONTROLBAR:LibyaSFInsertion = Libya SF Insertion
+CONTROLBAR:LibyaFOAB = Libya FOAB
+CONTROLBAR:ToolTipLibyaFOAB = Libya fuel-air strike.
+CONTROLBAR:LibyaTu22CruiseMissileStrike = Libya Tu-22 Strike
+CONTROLBAR:ToolTipLibyaTu22CruiseMissileStrike = Libya Tu-22 cruise strike.
+CONTROLBAR:LibyaEmergencyRepair = Libya Emergency Repair
+CONTROLBAR:ToolTipLibyaEmergencyRepair = Repair vehicles in an area.
+OBJECT:LibyaSystemSpecialPower = Libya Special Powers
+
+// Phase B science strings — Vietnam
+SCIENCE:Vietnam = Vietnam
+SCIENCE:Vietnam_GeneralAirPower = Vietnam Air Power Doctrine
+CONTROLBAR:ToolTipVietnamGeneralAirPower = Unlock Vietnam air-power sciences.
+SCIENCE:Vietnam_GeneralAirAssault = Vietnam Air Assault Doctrine
+CONTROLBAR:ToolTipVietnamGeneralAirAssault = Unlock Vietnam air-assault sciences.
+SCIENCE:Vietnam_GeneralStrategic = Vietnam Strategic Doctrine
+CONTROLBAR:ToolTipVietnamGeneralStrategic = Unlock Vietnam strategic sciences.
+SCIENCE:VietnamAWACS = Vietnam AWACS
+CONTROLBAR:VietnamAWACS = Call Vietnam AWACS support.
+CONTROLBAR:ToolTipVietnamAWACS = Deploy Vietnam AWACS.
+SCIENCE:VietnamReconnaissance = Vietnam Reconnaissance
+CONTROLBAR:ToolTipVietnamReconnaissance = Vietnam recon strike.
+CONTROLBAR:VietnamReconnaissance = Vietnam Reconnaissance
+CONTROLBAR:ToolTipVietnamReconnaissance = Reveal and mark a target area.
+SCIENCE:VietnamCruiseStrike = Vietnam Cruise Strike
+CONTROLBAR:ToolTipVietnamCruiseStrike = Vietnam cruise missile barrage.
+CONTROLBAR:VietnamCruiseStrike = Vietnam Cruise Strike
+SCIENCE:VietnamParadrop = Vietnam Paradrop
+CONTROLBAR:ToolTipVietnamParadrop = Drop Vietnam infantry by air.
+CONTROLBAR:VietnamParadrop = Vietnam Paradrop
+SCIENCE:VietnamSFInsertion = Vietnam SF Insertion
+CONTROLBAR:ToolTipVietnamSFInsertion = Insert Vietnam special forces.
+CONTROLBAR:VietnamSFInsertion = Vietnam SF Insertion
+CONTROLBAR:VietnamFOAB = Vietnam FOAB
+CONTROLBAR:ToolTipVietnamFOAB = Vietnam fuel-air strike.
+CONTROLBAR:VietnamTu22CruiseMissileStrike = Vietnam Tu-22 Strike
+CONTROLBAR:ToolTipVietnamTu22CruiseMissileStrike = Vietnam Tu-22 cruise strike.
+CONTROLBAR:VietnamEmergencyRepair = Vietnam Emergency Repair
+CONTROLBAR:ToolTipVietnamEmergencyRepair = Repair vehicles in an area.
+OBJECT:VietnamSystemSpecialPower = Vietnam Special Powers
+
+// Phase B science strings — South Africa
+SCIENCE:SouthAfrica = South Africa
+SCIENCE:SouthAfrica_GeneralAirPower = South Africa Air Power Doctrine
+CONTROLBAR:ToolTipSouthAfricaGeneralAirPower = Unlock South Africa air-power sciences.
+SCIENCE:SouthAfrica_GeneralAirAssault = South Africa Air Assault Doctrine
+CONTROLBAR:ToolTipSouthAfricaGeneralAirAssault = Unlock South Africa air-assault sciences.
+SCIENCE:SouthAfrica_GeneralStrategic = South Africa Strategic Doctrine
+CONTROLBAR:ToolTipSouthAfricaGeneralStrategic = Unlock South Africa strategic sciences.
+SCIENCE:SouthAfricaAWACS = South Africa AWACS
+CONTROLBAR:SouthAfricaAWACS = Call South Africa AWACS support.
+CONTROLBAR:ToolTipSouthAfricaAWACS = Deploy South Africa AWACS.
+SCIENCE:SouthAfricaReconnaissance = South Africa Reconnaissance
+CONTROLBAR:ToolTipSouthAfricaReconnaissance = South Africa recon strike.
+CONTROLBAR:SouthAfricaReconnaissance = South Africa Reconnaissance
+CONTROLBAR:ToolTipSouthAfricaReconnaissance = Reveal and mark a target area.
+SCIENCE:SouthAfricaCruiseStrike = South Africa Cruise Strike
+CONTROLBAR:ToolTipSouthAfricaCruiseStrike = South Africa cruise missile barrage.
+CONTROLBAR:SouthAfricaCruiseStrike = South Africa Cruise Strike
+SCIENCE:SouthAfricaParadrop = South Africa Paradrop
+CONTROLBAR:ToolTipSouthAfricaParadrop = Drop South Africa infantry by air.
+CONTROLBAR:SouthAfricaParadrop = South Africa Paradrop
+SCIENCE:SouthAfricaSFInsertion = South Africa SF Insertion
+CONTROLBAR:ToolTipSouthAfricaSFInsertion = Insert South Africa special forces.
+CONTROLBAR:SouthAfricaSFInsertion = South Africa SF Insertion
+CONTROLBAR:SouthAfricaFOAB = South Africa FOAB
+CONTROLBAR:ToolTipSouthAfricaFOAB = South Africa fuel-air strike.
+CONTROLBAR:SouthAfricaTu22CruiseMissileStrike = South Africa Tu-22 Strike
+CONTROLBAR:ToolTipSouthAfricaTu22CruiseMissileStrike = South Africa Tu-22 cruise strike.
+CONTROLBAR:SouthAfricaEmergencyRepair = South Africa Emergency Repair
+CONTROLBAR:ToolTipSouthAfricaEmergencyRepair = Repair vehicles in an area.
+OBJECT:SouthAfricaSystemSpecialPower = South Africa Special Powers
+
+// Phase B science strings — Japan
+SCIENCE:Japan = Japan
+SCIENCE:Japan_GeneralAirPower = Japan Air Power Doctrine
+CONTROLBAR:ToolTipJapanGeneralAirPower = Unlock Japan air-power sciences.
+SCIENCE:Japan_GeneralAirAssault = Japan Air Assault Doctrine
+CONTROLBAR:ToolTipJapanGeneralAirAssault = Unlock Japan air-assault sciences.
+SCIENCE:Japan_GeneralStrategic = Japan Strategic Doctrine
+CONTROLBAR:ToolTipJapanGeneralStrategic = Unlock Japan strategic sciences.
+SCIENCE:JapanAWACS = Japan AWACS
+CONTROLBAR:JapanAWACS = Call Japan AWACS support.
+CONTROLBAR:ToolTipJapanAWACS = Deploy Japan AWACS.
+SCIENCE:JapanReconnaissance = Japan Reconnaissance
+CONTROLBAR:ToolTipJapanReconnaissance = Japan recon strike.
+CONTROLBAR:JapanReconnaissance = Japan Reconnaissance
+CONTROLBAR:ToolTipJapanReconnaissance = Reveal and mark a target area.
+SCIENCE:JapanCruiseStrike = Japan Cruise Strike
+CONTROLBAR:ToolTipJapanCruiseStrike = Japan cruise missile barrage.
+CONTROLBAR:JapanCruiseStrike = Japan Cruise Strike
+SCIENCE:JapanParadrop = Japan Paradrop
+CONTROLBAR:ToolTipJapanParadrop = Drop Japan infantry by air.
+CONTROLBAR:JapanParadrop = Japan Paradrop
+SCIENCE:JapanSFInsertion = Japan SF Insertion
+CONTROLBAR:ToolTipJapanSFInsertion = Insert Japan special forces.
+CONTROLBAR:JapanSFInsertion = Japan SF Insertion
+CONTROLBAR:JapanFOAB = Japan FOAB
+CONTROLBAR:ToolTipJapanFOAB = Japan fuel-air strike.
+CONTROLBAR:JapanTu22CruiseMissileStrike = Japan Tu-22 Strike
+CONTROLBAR:ToolTipJapanTu22CruiseMissileStrike = Japan Tu-22 cruise strike.
+CONTROLBAR:JapanEmergencyRepair = Japan Emergency Repair
+CONTROLBAR:ToolTipJapanEmergencyRepair = Repair vehicles in an area.
+OBJECT:JapanSystemSpecialPower = Japan Special Powers
+
+// Phase B science strings — Britain
+SCIENCE:Britain = Britain
+SCIENCE:Britain_GeneralAirPower = Britain Air Power Doctrine
+CONTROLBAR:ToolTipBritainGeneralAirPower = Unlock Britain air-power sciences.
+SCIENCE:Britain_GeneralAirAssault = Britain Air Assault Doctrine
+CONTROLBAR:ToolTipBritainGeneralAirAssault = Unlock Britain air-assault sciences.
+SCIENCE:Britain_GeneralStrategic = Britain Strategic Doctrine
+CONTROLBAR:ToolTipBritainGeneralStrategic = Unlock Britain strategic sciences.
+SCIENCE:BritainAWACS = Britain AWACS
+CONTROLBAR:BritainAWACS = Call Britain AWACS support.
+CONTROLBAR:ToolTipBritainAWACS = Deploy Britain AWACS.
+SCIENCE:BritainReconnaissance = Britain Reconnaissance
+CONTROLBAR:ToolTipBritainReconnaissance = Britain recon strike.
+CONTROLBAR:BritainReconnaissance = Britain Reconnaissance
+CONTROLBAR:ToolTipBritainReconnaissance = Reveal and mark a target area.
+SCIENCE:BritainCruiseStrike = Britain Cruise Strike
+CONTROLBAR:ToolTipBritainCruiseStrike = Britain cruise missile barrage.
+CONTROLBAR:BritainCruiseStrike = Britain Cruise Strike
+SCIENCE:BritainParadrop = Britain Paradrop
+CONTROLBAR:ToolTipBritainParadrop = Drop Britain infantry by air.
+CONTROLBAR:BritainParadrop = Britain Paradrop
+SCIENCE:BritainSFInsertion = Britain SF Insertion
+CONTROLBAR:ToolTipBritainSFInsertion = Insert Britain special forces.
+CONTROLBAR:BritainSFInsertion = Britain SF Insertion
+CONTROLBAR:BritainFOAB = Britain FOAB
+CONTROLBAR:ToolTipBritainFOAB = Britain fuel-air strike.
+CONTROLBAR:BritainTu22CruiseMissileStrike = Britain Tu-22 Strike
+CONTROLBAR:ToolTipBritainTu22CruiseMissileStrike = Britain Tu-22 cruise strike.
+CONTROLBAR:BritainEmergencyRepair = Britain Emergency Repair
+CONTROLBAR:ToolTipBritainEmergencyRepair = Repair vehicles in an area.
+OBJECT:BritainSystemSpecialPower = Britain Special Powers
+
+// Phase B science strings — France
+SCIENCE:France = France
+SCIENCE:France_GeneralAirPower = France Air Power Doctrine
+CONTROLBAR:ToolTipFranceGeneralAirPower = Unlock France air-power sciences.
+SCIENCE:France_GeneralAirAssault = France Air Assault Doctrine
+CONTROLBAR:ToolTipFranceGeneralAirAssault = Unlock France air-assault sciences.
+SCIENCE:France_GeneralStrategic = France Strategic Doctrine
+CONTROLBAR:ToolTipFranceGeneralStrategic = Unlock France strategic sciences.
+SCIENCE:FranceAWACS = France AWACS
+CONTROLBAR:FranceAWACS = Call France AWACS support.
+CONTROLBAR:ToolTipFranceAWACS = Deploy France AWACS.
+SCIENCE:FranceReconnaissance = France Reconnaissance
+CONTROLBAR:ToolTipFranceReconnaissance = France recon strike.
+CONTROLBAR:FranceReconnaissance = France Reconnaissance
+CONTROLBAR:ToolTipFranceReconnaissance = Reveal and mark a target area.
+SCIENCE:FranceCruiseStrike = France Cruise Strike
+CONTROLBAR:ToolTipFranceCruiseStrike = France cruise missile barrage.
+CONTROLBAR:FranceCruiseStrike = France Cruise Strike
+SCIENCE:FranceParadrop = France Paradrop
+CONTROLBAR:ToolTipFranceParadrop = Drop France infantry by air.
+CONTROLBAR:FranceParadrop = France Paradrop
+SCIENCE:FranceSFInsertion = France SF Insertion
+CONTROLBAR:ToolTipFranceSFInsertion = Insert France special forces.
+CONTROLBAR:FranceSFInsertion = France SF Insertion
+CONTROLBAR:FranceFOAB = France FOAB
+CONTROLBAR:ToolTipFranceFOAB = France fuel-air strike.
+CONTROLBAR:FranceTu22CruiseMissileStrike = France Tu-22 Strike
+CONTROLBAR:ToolTipFranceTu22CruiseMissileStrike = France Tu-22 cruise strike.
+CONTROLBAR:FranceEmergencyRepair = France Emergency Repair
+CONTROLBAR:ToolTipFranceEmergencyRepair = Repair vehicles in an area.
+OBJECT:FranceSystemSpecialPower = France Special Powers
+
+// Phase B science strings — Germany
+SCIENCE:Germany = Germany
+SCIENCE:Germany_GeneralAirPower = Germany Air Power Doctrine
+CONTROLBAR:ToolTipGermanyGeneralAirPower = Unlock Germany air-power sciences.
+SCIENCE:Germany_GeneralAirAssault = Germany Air Assault Doctrine
+CONTROLBAR:ToolTipGermanyGeneralAirAssault = Unlock Germany air-assault sciences.
+SCIENCE:Germany_GeneralStrategic = Germany Strategic Doctrine
+CONTROLBAR:ToolTipGermanyGeneralStrategic = Unlock Germany strategic sciences.
+SCIENCE:GermanyAWACS = Germany AWACS
+CONTROLBAR:GermanyAWACS = Call Germany AWACS support.
+CONTROLBAR:ToolTipGermanyAWACS = Deploy Germany AWACS.
+SCIENCE:GermanyReconnaissance = Germany Reconnaissance
+CONTROLBAR:ToolTipGermanyReconnaissance = Germany recon strike.
+CONTROLBAR:GermanyReconnaissance = Germany Reconnaissance
+CONTROLBAR:ToolTipGermanyReconnaissance = Reveal and mark a target area.
+SCIENCE:GermanyCruiseStrike = Germany Cruise Strike
+CONTROLBAR:ToolTipGermanyCruiseStrike = Germany cruise missile barrage.
+CONTROLBAR:GermanyCruiseStrike = Germany Cruise Strike
+SCIENCE:GermanyParadrop = Germany Paradrop
+CONTROLBAR:ToolTipGermanyParadrop = Drop Germany infantry by air.
+CONTROLBAR:GermanyParadrop = Germany Paradrop
+SCIENCE:GermanySFInsertion = Germany SF Insertion
+CONTROLBAR:ToolTipGermanySFInsertion = Insert Germany special forces.
+CONTROLBAR:GermanySFInsertion = Germany SF Insertion
+CONTROLBAR:GermanyFOAB = Germany FOAB
+CONTROLBAR:ToolTipGermanyFOAB = Germany fuel-air strike.
+CONTROLBAR:GermanyTu22CruiseMissileStrike = Germany Tu-22 Strike
+CONTROLBAR:ToolTipGermanyTu22CruiseMissileStrike = Germany Tu-22 cruise strike.
+CONTROLBAR:GermanyEmergencyRepair = Germany Emergency Repair
+CONTROLBAR:ToolTipGermanyEmergencyRepair = Repair vehicles in an area.
+OBJECT:GermanySystemSpecialPower = Germany Special Powers
+
+// Phase B science strings — Italy
+SCIENCE:Italy = Italy
+SCIENCE:Italy_GeneralAirPower = Italy Air Power Doctrine
+CONTROLBAR:ToolTipItalyGeneralAirPower = Unlock Italy air-power sciences.
+SCIENCE:Italy_GeneralAirAssault = Italy Air Assault Doctrine
+CONTROLBAR:ToolTipItalyGeneralAirAssault = Unlock Italy air-assault sciences.
+SCIENCE:Italy_GeneralStrategic = Italy Strategic Doctrine
+CONTROLBAR:ToolTipItalyGeneralStrategic = Unlock Italy strategic sciences.
+SCIENCE:ItalyAWACS = Italy AWACS
+CONTROLBAR:ItalyAWACS = Call Italy AWACS support.
+CONTROLBAR:ToolTipItalyAWACS = Deploy Italy AWACS.
+SCIENCE:ItalyReconnaissance = Italy Reconnaissance
+CONTROLBAR:ToolTipItalyReconnaissance = Italy recon strike.
+CONTROLBAR:ItalyReconnaissance = Italy Reconnaissance
+CONTROLBAR:ToolTipItalyReconnaissance = Reveal and mark a target area.
+SCIENCE:ItalyCruiseStrike = Italy Cruise Strike
+CONTROLBAR:ToolTipItalyCruiseStrike = Italy cruise missile barrage.
+CONTROLBAR:ItalyCruiseStrike = Italy Cruise Strike
+SCIENCE:ItalyParadrop = Italy Paradrop
+CONTROLBAR:ToolTipItalyParadrop = Drop Italy infantry by air.
+CONTROLBAR:ItalyParadrop = Italy Paradrop
+SCIENCE:ItalySFInsertion = Italy SF Insertion
+CONTROLBAR:ToolTipItalySFInsertion = Insert Italy special forces.
+CONTROLBAR:ItalySFInsertion = Italy SF Insertion
+CONTROLBAR:ItalyFOAB = Italy FOAB
+CONTROLBAR:ToolTipItalyFOAB = Italy fuel-air strike.
+CONTROLBAR:ItalyTu22CruiseMissileStrike = Italy Tu-22 Strike
+CONTROLBAR:ToolTipItalyTu22CruiseMissileStrike = Italy Tu-22 cruise strike.
+CONTROLBAR:ItalyEmergencyRepair = Italy Emergency Repair
+CONTROLBAR:ToolTipItalyEmergencyRepair = Repair vehicles in an area.
+OBJECT:ItalySystemSpecialPower = Italy Special Powers
+
+// Phase B science strings — Sweden
+SCIENCE:Sweden = Sweden
+SCIENCE:Sweden_GeneralAirPower = Sweden Air Power Doctrine
+CONTROLBAR:ToolTipSwedenGeneralAirPower = Unlock Sweden air-power sciences.
+SCIENCE:Sweden_GeneralAirAssault = Sweden Air Assault Doctrine
+CONTROLBAR:ToolTipSwedenGeneralAirAssault = Unlock Sweden air-assault sciences.
+SCIENCE:Sweden_GeneralStrategic = Sweden Strategic Doctrine
+CONTROLBAR:ToolTipSwedenGeneralStrategic = Unlock Sweden strategic sciences.
+SCIENCE:SwedenAWACS = Sweden AWACS
+CONTROLBAR:SwedenAWACS = Call Sweden AWACS support.
+CONTROLBAR:ToolTipSwedenAWACS = Deploy Sweden AWACS.
+SCIENCE:SwedenReconnaissance = Sweden Reconnaissance
+CONTROLBAR:ToolTipSwedenReconnaissance = Sweden recon strike.
+CONTROLBAR:SwedenReconnaissance = Sweden Reconnaissance
+CONTROLBAR:ToolTipSwedenReconnaissance = Reveal and mark a target area.
+SCIENCE:SwedenCruiseStrike = Sweden Cruise Strike
+CONTROLBAR:ToolTipSwedenCruiseStrike = Sweden cruise missile barrage.
+CONTROLBAR:SwedenCruiseStrike = Sweden Cruise Strike
+SCIENCE:SwedenParadrop = Sweden Paradrop
+CONTROLBAR:ToolTipSwedenParadrop = Drop Sweden infantry by air.
+CONTROLBAR:SwedenParadrop = Sweden Paradrop
+SCIENCE:SwedenSFInsertion = Sweden SF Insertion
+CONTROLBAR:ToolTipSwedenSFInsertion = Insert Sweden special forces.
+CONTROLBAR:SwedenSFInsertion = Sweden SF Insertion
+CONTROLBAR:SwedenFOAB = Sweden FOAB
+CONTROLBAR:ToolTipSwedenFOAB = Sweden fuel-air strike.
+CONTROLBAR:SwedenTu22CruiseMissileStrike = Sweden Tu-22 Strike
+CONTROLBAR:ToolTipSwedenTu22CruiseMissileStrike = Sweden Tu-22 cruise strike.
+CONTROLBAR:SwedenEmergencyRepair = Sweden Emergency Repair
+CONTROLBAR:ToolTipSwedenEmergencyRepair = Repair vehicles in an area.
+OBJECT:SwedenSystemSpecialPower = Sweden Special Powers
+
+// Phase B science strings — South Korea
+SCIENCE:SouthKorea = South Korea
+SCIENCE:SouthKorea_GeneralAirPower = South Korea Air Power Doctrine
+CONTROLBAR:ToolTipSouthKoreaGeneralAirPower = Unlock South Korea air-power sciences.
+SCIENCE:SouthKorea_GeneralAirAssault = South Korea Air Assault Doctrine
+CONTROLBAR:ToolTipSouthKoreaGeneralAirAssault = Unlock South Korea air-assault sciences.
+SCIENCE:SouthKorea_GeneralStrategic = South Korea Strategic Doctrine
+CONTROLBAR:ToolTipSouthKoreaGeneralStrategic = Unlock South Korea strategic sciences.
+SCIENCE:SouthKoreaAWACS = South Korea AWACS
+CONTROLBAR:SouthKoreaAWACS = Call South Korea AWACS support.
+CONTROLBAR:ToolTipSouthKoreaAWACS = Deploy South Korea AWACS.
+SCIENCE:SouthKoreaReconnaissance = South Korea Reconnaissance
+CONTROLBAR:ToolTipSouthKoreaReconnaissance = South Korea recon strike.
+CONTROLBAR:SouthKoreaReconnaissance = South Korea Reconnaissance
+CONTROLBAR:ToolTipSouthKoreaReconnaissance = Reveal and mark a target area.
+SCIENCE:SouthKoreaCruiseStrike = South Korea Cruise Strike
+CONTROLBAR:ToolTipSouthKoreaCruiseStrike = South Korea cruise missile barrage.
+CONTROLBAR:SouthKoreaCruiseStrike = South Korea Cruise Strike
+SCIENCE:SouthKoreaParadrop = South Korea Paradrop
+CONTROLBAR:ToolTipSouthKoreaParadrop = Drop South Korea infantry by air.
+CONTROLBAR:SouthKoreaParadrop = South Korea Paradrop
+SCIENCE:SouthKoreaSFInsertion = South Korea SF Insertion
+CONTROLBAR:ToolTipSouthKoreaSFInsertion = Insert South Korea special forces.
+CONTROLBAR:SouthKoreaSFInsertion = South Korea SF Insertion
+CONTROLBAR:SouthKoreaFOAB = South Korea FOAB
+CONTROLBAR:ToolTipSouthKoreaFOAB = South Korea fuel-air strike.
+CONTROLBAR:SouthKoreaTu22CruiseMissileStrike = South Korea Tu-22 Strike
+CONTROLBAR:ToolTipSouthKoreaTu22CruiseMissileStrike = South Korea Tu-22 cruise strike.
+CONTROLBAR:SouthKoreaEmergencyRepair = South Korea Emergency Repair
+CONTROLBAR:ToolTipSouthKoreaEmergencyRepair = Repair vehicles in an area.
+OBJECT:SouthKoreaSystemSpecialPower = South Korea Special Powers
+
+// Phase B science strings — Taiwan
+SCIENCE:Taiwan = Taiwan
+SCIENCE:Taiwan_GeneralAirPower = Taiwan Air Power Doctrine
+CONTROLBAR:ToolTipTaiwanGeneralAirPower = Unlock Taiwan air-power sciences.
+SCIENCE:Taiwan_GeneralAirAssault = Taiwan Air Assault Doctrine
+CONTROLBAR:ToolTipTaiwanGeneralAirAssault = Unlock Taiwan air-assault sciences.
+SCIENCE:Taiwan_GeneralStrategic = Taiwan Strategic Doctrine
+CONTROLBAR:ToolTipTaiwanGeneralStrategic = Unlock Taiwan strategic sciences.
+SCIENCE:TaiwanAWACS = Taiwan AWACS
+CONTROLBAR:TaiwanAWACS = Call Taiwan AWACS support.
+CONTROLBAR:ToolTipTaiwanAWACS = Deploy Taiwan AWACS.
+SCIENCE:TaiwanReconnaissance = Taiwan Reconnaissance
+CONTROLBAR:ToolTipTaiwanReconnaissance = Taiwan recon strike.
+CONTROLBAR:TaiwanReconnaissance = Taiwan Reconnaissance
+CONTROLBAR:ToolTipTaiwanReconnaissance = Reveal and mark a target area.
+SCIENCE:TaiwanCruiseStrike = Taiwan Cruise Strike
+CONTROLBAR:ToolTipTaiwanCruiseStrike = Taiwan cruise missile barrage.
+CONTROLBAR:TaiwanCruiseStrike = Taiwan Cruise Strike
+SCIENCE:TaiwanParadrop = Taiwan Paradrop
+CONTROLBAR:ToolTipTaiwanParadrop = Drop Taiwan infantry by air.
+CONTROLBAR:TaiwanParadrop = Taiwan Paradrop
+SCIENCE:TaiwanSFInsertion = Taiwan SF Insertion
+CONTROLBAR:ToolTipTaiwanSFInsertion = Insert Taiwan special forces.
+CONTROLBAR:TaiwanSFInsertion = Taiwan SF Insertion
+CONTROLBAR:TaiwanFOAB = Taiwan FOAB
+CONTROLBAR:ToolTipTaiwanFOAB = Taiwan fuel-air strike.
+CONTROLBAR:TaiwanTu22CruiseMissileStrike = Taiwan Tu-22 Strike
+CONTROLBAR:ToolTipTaiwanTu22CruiseMissileStrike = Taiwan Tu-22 cruise strike.
+CONTROLBAR:TaiwanEmergencyRepair = Taiwan Emergency Repair
+CONTROLBAR:ToolTipTaiwanEmergencyRepair = Repair vehicles in an area.
+OBJECT:TaiwanSystemSpecialPower = Taiwan Special Powers
+
+// Phase B science strings — UN
+SCIENCE:UN = UN
+SCIENCE:UN_GeneralAirPower = UN Air Power Doctrine
+CONTROLBAR:ToolTipUNGeneralAirPower = Unlock UN air-power sciences.
+SCIENCE:UN_GeneralAirAssault = UN Air Assault Doctrine
+CONTROLBAR:ToolTipUNGeneralAirAssault = Unlock UN air-assault sciences.
+SCIENCE:UN_GeneralStrategic = UN Strategic Doctrine
+CONTROLBAR:ToolTipUNGeneralStrategic = Unlock UN strategic sciences.
+SCIENCE:UNAWACS = UN AWACS
+CONTROLBAR:UNAWACS = Call UN AWACS support.
+CONTROLBAR:ToolTipUNAWACS = Deploy UN AWACS.
+SCIENCE:UNReconnaissance = UN Reconnaissance
+CONTROLBAR:ToolTipUNReconnaissance = UN recon strike.
+CONTROLBAR:UNReconnaissance = UN Reconnaissance
+CONTROLBAR:ToolTipUNReconnaissance = Reveal and mark a target area.
+SCIENCE:UNCruiseStrike = UN Cruise Strike
+CONTROLBAR:ToolTipUNCruiseStrike = UN cruise missile barrage.
+CONTROLBAR:UNCruiseStrike = UN Cruise Strike
+SCIENCE:UNParadrop = UN Paradrop
+CONTROLBAR:ToolTipUNParadrop = Drop UN infantry by air.
+CONTROLBAR:UNParadrop = UN Paradrop
+SCIENCE:UNSFInsertion = UN SF Insertion
+CONTROLBAR:ToolTipUNSFInsertion = Insert UN special forces.
+CONTROLBAR:UNSFInsertion = UN SF Insertion
+CONTROLBAR:UNFOAB = UN FOAB
+CONTROLBAR:ToolTipUNFOAB = UN fuel-air strike.
+CONTROLBAR:UNTu22CruiseMissileStrike = UN Tu-22 Strike
+CONTROLBAR:ToolTipUNTu22CruiseMissileStrike = UN Tu-22 cruise strike.
+CONTROLBAR:UNEmergencyRepair = UN Emergency Repair
+CONTROLBAR:ToolTipUNEmergencyRepair = Repair vehicles in an area.
+OBJECT:UNSystemSpecialPower = UN Special Powers
+
+// Phase B+ unique tech strings
+
+UPGRADE:Ukraine_DroneWarfare = Ukraine DroneWarfare
+CONTROLBAR:UpgradeUkraine_DroneWarfare = DroneWarfare
+CONTROLBAR:ToolTipUpgradeUkraine_DroneWarfare = UAV network & loitering munitions.
+UPGRADE:Ukraine_MissileDefense = Ukraine MissileDefense
+CONTROLBAR:UpgradeUkraine_MissileDefense = MissileDefense
+CONTROLBAR:ToolTipUpgradeUkraine_MissileDefense = Short-range missile intercept package.
+UPGRADE:Ukraine_SuUpgrade = Ukraine SuUpgrade
+CONTROLBAR:UpgradeUkraine_SuUpgrade = SuUpgrade
+CONTROLBAR:ToolTipUpgradeUkraine_SuUpgrade = MiG/Su avionics & weapon pylons.
+UPGRADE:Pakistan_JF17BlockUpgrade = Pakistan JF17BlockUpgrade
+CONTROLBAR:UpgradePakistan_JF17BlockUpgrade = JF17BlockUpgrade
+CONTROLBAR:ToolTipUpgradePakistan_JF17BlockUpgrade = JF-17 Block weapons & radar package.
+UPGRADE:Pakistan_MissileTech = Pakistan MissileTech
+CONTROLBAR:UpgradePakistan_MissileTech = MissileTech
+CONTROLBAR:ToolTipUpgradePakistan_MissileTech = Ballistic/cruise missile guidance.
+UPGRADE:Pakistan_F16Upgrade = Pakistan F16Upgrade
+CONTROLBAR:UpgradePakistan_F16Upgrade = F16Upgrade
+CONTROLBAR:ToolTipUpgradePakistan_F16Upgrade = F-16 Block 52+ weapons suite.
+UPGRADE:SaudiArabia_F15SAUpgrade = SaudiArabia F15SAUpgrade
+CONTROLBAR:UpgradeSaudiArabia_F15SAUpgrade = F15SAUpgrade
+CONTROLBAR:ToolTipUpgradeSaudiArabia_F15SAUpgrade = F-15SA AESA & munitions package.
+UPGRADE:SaudiArabia_TyphoonWeapons = SaudiArabia TyphoonWeapons
+CONTROLBAR:UpgradeSaudiArabia_TyphoonWeapons = TyphoonWeapons
+CONTROLBAR:ToolTipUpgradeSaudiArabia_TyphoonWeapons = Eurofighter Meteor/Storm Shadow kit.
+UPGRADE:SaudiArabia_StrategicAir = SaudiArabia StrategicAir
+CONTROLBAR:UpgradeSaudiArabia_StrategicAir = StrategicAir
+CONTROLBAR:ToolTipUpgradeSaudiArabia_StrategicAir = Strategic tanker/AWACS network.
+UPGRADE:UAE_PrecisionWeapons = UAE PrecisionWeapons
+CONTROLBAR:UpgradeUAE_PrecisionWeapons = PrecisionWeapons
+CONTROLBAR:ToolTipUpgradeUAE_PrecisionWeapons = Precision strike munitions suite.
+UPGRADE:UAE_DroneSystems = UAE DroneSystems
+CONTROLBAR:UpgradeUAE_DroneSystems = DroneSystems
+CONTROLBAR:ToolTipUpgradeUAE_DroneSystems = MQ-9 / Wing Loong integration.
+UPGRADE:UAE_WesternAvionics = UAE WesternAvionics
+CONTROLBAR:UpgradeUAE_WesternAvionics = WesternAvionics
+CONTROLBAR:ToolTipUpgradeUAE_WesternAvionics = Western avionics & datalink package.
+UPGRADE:India_TejasMk1A = India TejasMk1A
+CONTROLBAR:UpgradeIndia_TejasMk1A = TejasMk1A
+CONTROLBAR:ToolTipUpgradeIndia_TejasMk1A = Tejas Mk1A radar & weapons.
+UPGRADE:India_Su30MKIUpgrade = India Su30MKIUpgrade
+CONTROLBAR:UpgradeIndia_Su30MKIUpgrade = Su30MKIUpgrade
+CONTROLBAR:ToolTipUpgradeIndia_Su30MKIUpgrade = Su-30MKI BrahMos/air-to-air suite.
+UPGRADE:India_BrahMos = India BrahMos
+CONTROLBAR:UpgradeIndia_BrahMos = BrahMos
+CONTROLBAR:ToolTipUpgradeIndia_BrahMos = BrahMos strike doctrine.
+UPGRADE:Japan_F35Integration = Japan F35Integration
+CONTROLBAR:UpgradeJapan_F35Integration = F35Integration
+CONTROLBAR:ToolTipUpgradeJapan_F35Integration = F-35 sensor fusion package.
+UPGRADE:Japan_MissileDefense = Japan MissileDefense
+CONTROLBAR:UpgradeJapan_MissileDefense = MissileDefense
+CONTROLBAR:ToolTipUpgradeJapan_MissileDefense = Aegis-ashore style AD network.
+UPGRADE:Japan_PrecisionStrike = Japan PrecisionStrike
+CONTROLBAR:UpgradeJapan_PrecisionStrike = PrecisionStrike
+CONTROLBAR:ToolTipUpgradeJapan_PrecisionStrike = Precision strike munitions.
+UPGRADE:Egypt_RafaleUpgrade = Egypt RafaleUpgrade
+CONTROLBAR:UpgradeEgypt_RafaleUpgrade = RafaleUpgrade
+CONTROLBAR:ToolTipUpgradeEgypt_RafaleUpgrade = Rafale SPECTRA & munitions.
+UPGRADE:Egypt_ArmorDoctrine = Egypt ArmorDoctrine
+CONTROLBAR:UpgradeEgypt_ArmorDoctrine = ArmorDoctrine
+CONTROLBAR:ToolTipUpgradeEgypt_ArmorDoctrine = Armor modernization package.
+UPGRADE:Egypt_F16Block52 = Egypt F16Block52
+CONTROLBAR:UpgradeEgypt_F16Block52 = F16Block52
+CONTROLBAR:ToolTipUpgradeEgypt_F16Block52 = F-16 Block 52 weapons.
+UPGRADE:Syria_DefensiveDoctrine = Syria DefensiveDoctrine
+CONTROLBAR:UpgradeSyria_DefensiveDoctrine = DefensiveDoctrine
+CONTROLBAR:ToolTipUpgradeSyria_DefensiveDoctrine = Integrated air defense doctrine.
+UPGRADE:Syria_MissileSystems = Syria MissileSystems
+CONTROLBAR:UpgradeSyria_MissileSystems = MissileSystems
+CONTROLBAR:ToolTipUpgradeSyria_MissileSystems = Tactical missile mass fires.
+UPGRADE:Libya_MobileWarfare = Libya MobileWarfare
+CONTROLBAR:UpgradeLibya_MobileWarfare = MobileWarfare
+CONTROLBAR:ToolTipUpgradeLibya_MobileWarfare = Light armor mobility doctrine.
+UPGRADE:Libya_DesertOps = Libya DesertOps
+CONTROLBAR:UpgradeLibya_DesertOps = DesertOps
+CONTROLBAR:ToolTipUpgradeLibya_DesertOps = Desert logistics & raiding.
+UPGRADE:Vietnam_Su30Doctrine = Vietnam Su30Doctrine
+CONTROLBAR:UpgradeVietnam_Su30Doctrine = Su30Doctrine
+CONTROLBAR:ToolTipUpgradeVietnam_Su30Doctrine = Su-30 maritime strike package.
+UPGRADE:Vietnam_CoastalDefense = Vietnam CoastalDefense
+CONTROLBAR:UpgradeVietnam_CoastalDefense = CoastalDefense
+CONTROLBAR:ToolTipUpgradeVietnam_CoastalDefense = Coastal/AD missile package.
+UPGRADE:SouthAfrica_GripenLink = SouthAfrica GripenLink
+CONTROLBAR:UpgradeSouthAfrica_GripenLink = GripenLink
+CONTROLBAR:ToolTipUpgradeSouthAfrica_GripenLink = Gripen networked warfare.
+UPGRADE:SouthAfrica_RooivalkDoctrine = SouthAfrica RooivalkDoctrine
+CONTROLBAR:UpgradeSouthAfrica_RooivalkDoctrine = RooivalkDoctrine
+CONTROLBAR:ToolTipUpgradeSouthAfrica_RooivalkDoctrine = Attack helo / CAS doctrine.
+UPGRADE:Britain_TyphoonAESA = Britain TyphoonAESA
+CONTROLBAR:UpgradeBritain_TyphoonAESA = TyphoonAESA
+CONTROLBAR:ToolTipUpgradeBritain_TyphoonAESA = Typhoon AESA & Meteor.
+UPGRADE:Britain_F35BExpeditionary = Britain F35BExpeditionary
+CONTROLBAR:UpgradeBritain_F35BExpeditionary = F35BExpeditionary
+CONTROLBAR:ToolTipUpgradeBritain_F35BExpeditionary = F-35B expeditionary package.
+UPGRADE:France_RafaleF4 = France RafaleF4
+CONTROLBAR:UpgradeFrance_RafaleF4 = RafaleF4
+CONTROLBAR:ToolTipUpgradeFrance_RafaleF4 = Rafale F4 standard.
+UPGRADE:France_NuclearDeterrent = France NuclearDeterrent
+CONTROLBAR:UpgradeFrance_NuclearDeterrent = NuclearDeterrent
+CONTROLBAR:ToolTipUpgradeFrance_NuclearDeterrent = Air-delivered deterrent doctrine.
+UPGRADE:Germany_EurofighterUpgrade = Germany EurofighterUpgrade
+CONTROLBAR:UpgradeGermany_EurofighterUpgrade = EurofighterUpgrade
+CONTROLBAR:ToolTipUpgradeGermany_EurofighterUpgrade = Eurofighter combat upgrade.
+UPGRADE:Germany_TornadoECR = Germany TornadoECR
+CONTROLBAR:UpgradeGermany_TornadoECR = TornadoECR
+CONTROLBAR:ToolTipUpgradeGermany_TornadoECR = Tornado ECR SEAD package.
+UPGRADE:Italy_F35AIntegration = Italy F35AIntegration
+CONTROLBAR:UpgradeItaly_F35AIntegration = F35AIntegration
+CONTROLBAR:ToolTipUpgradeItaly_F35AIntegration = F-35A integration.
+UPGRADE:Italy_EurofighterWeapons = Italy EurofighterWeapons
+CONTROLBAR:UpgradeItaly_EurofighterWeapons = EurofighterWeapons
+CONTROLBAR:ToolTipUpgradeItaly_EurofighterWeapons = Eurofighter weapons suite.
+UPGRADE:Sweden_GripenE = Sweden GripenE
+CONTROLBAR:UpgradeSweden_GripenE = GripenE
+CONTROLBAR:ToolTipUpgradeSweden_GripenE = Gripen E package.
+UPGRADE:Sweden_NetworkCentric = Sweden NetworkCentric
+CONTROLBAR:UpgradeSweden_NetworkCentric = NetworkCentric
+CONTROLBAR:ToolTipUpgradeSweden_NetworkCentric = Network-centric warfare.
+UPGRADE:SouthKorea_F15KUpgrade = SouthKorea F15KUpgrade
+CONTROLBAR:UpgradeSouthKorea_F15KUpgrade = F15KUpgrade
+CONTROLBAR:ToolTipUpgradeSouthKorea_F15KUpgrade = F-15K Slam Eagle package.
+UPGRADE:SouthKorea_KFDefense = SouthKorea KFDefense
+CONTROLBAR:UpgradeSouthKorea_KFDefense = KFDefense
+CONTROLBAR:ToolTipUpgradeSouthKorea_KFDefense = Homeland layered AD.
+UPGRADE:Taiwan_F16VUpgrade = Taiwan F16VUpgrade
+CONTROLBAR:UpgradeTaiwan_F16VUpgrade = F16VUpgrade
+CONTROLBAR:ToolTipUpgradeTaiwan_F16VUpgrade = F-16V Viper package.
+UPGRADE:Taiwan_IDFChingKuo = Taiwan IDFChingKuo
+CONTROLBAR:UpgradeTaiwan_IDFChingKuo = IDFChingKuo
+CONTROLBAR:ToolTipUpgradeTaiwan_IDFChingKuo = IDF avionics refresh.
+UPGRADE:UN_CoalitionInterop = UN CoalitionInterop
+CONTROLBAR:UpgradeUN_CoalitionInterop = CoalitionInterop
+CONTROLBAR:ToolTipUpgradeUN_CoalitionInterop = Coalition datalink standards.
+UPGRADE:UN_PeaceOps = UN PeaceOps
+CONTROLBAR:UpgradeUN_PeaceOps = PeaceOps
+CONTROLBAR:ToolTipUpgradeUN_PeaceOps = Peace support munitions limits.
+OBJECT:SaudiArabia_F15SA = SaudiArabia F15SA
+CONTROLBAR:ConstructSaudiArabia_F15SA = F15SA
+CONTROLBAR:ToolTipConstructSaudiArabia_F15SA = Produce SaudiArabia_F15SA.
+OBJECT:SaudiArabia_Typhoon = SaudiArabia Typhoon
+CONTROLBAR:ConstructSaudiArabia_Typhoon = Typhoon
+CONTROLBAR:ToolTipConstructSaudiArabia_Typhoon = Produce SaudiArabia_Typhoon.
+OBJECT:Pakistan_JF17 = Pakistan JF17
+CONTROLBAR:ConstructPakistan_JF17 = JF17
+CONTROLBAR:ToolTipConstructPakistan_JF17 = Produce Pakistan_JF17.
+OBJECT:Pakistan_F16Blk52 = Pakistan F16Blk52
+CONTROLBAR:ConstructPakistan_F16Blk52 = F16Blk52
+CONTROLBAR:ToolTipConstructPakistan_F16Blk52 = Produce Pakistan_F16Blk52.
+OBJECT:India_Su30MKI = India Su30MKI
+CONTROLBAR:ConstructIndia_Su30MKI = Su30MKI
+CONTROLBAR:ToolTipConstructIndia_Su30MKI = Produce India_Su30MKI.
+OBJECT:India_Tejas = India Tejas
+CONTROLBAR:ConstructIndia_Tejas = Tejas
+CONTROLBAR:ToolTipConstructIndia_Tejas = Produce India_Tejas.
+OBJECT:UAE_F16Blk60 = UAE F16Blk60
+CONTROLBAR:ConstructUAE_F16Blk60 = F16Blk60
+CONTROLBAR:ToolTipConstructUAE_F16Blk60 = Produce UAE_F16Blk60.
+OBJECT:UAE_MQ9 = UAE MQ9
+CONTROLBAR:ConstructUAE_MQ9 = MQ9
+CONTROLBAR:ToolTipConstructUAE_MQ9 = Produce UAE_MQ9.
+OBJECT:Egypt_Rafale = Egypt Rafale
+CONTROLBAR:ConstructEgypt_Rafale = Rafale
+CONTROLBAR:ToolTipConstructEgypt_Rafale = Produce Egypt_Rafale.
+OBJECT:Egypt_F16C = Egypt F16C
+CONTROLBAR:ConstructEgypt_F16C = F16C
+CONTROLBAR:ToolTipConstructEgypt_F16C = Produce Egypt_F16C.
+OBJECT:Egypt_Mig29M2 = Egypt Mig29M2
+CONTROLBAR:ConstructEgypt_Mig29M2 = Mig29M2
+CONTROLBAR:ToolTipConstructEgypt_Mig29M2 = Produce Egypt_Mig29M2.
+OBJECT:Ukraine_Su24MK = Ukraine Su24MK
+CONTROLBAR:ConstructUkraine_Su24MK = Su24MK
+CONTROLBAR:ToolTipConstructUkraine_Su24MK = Produce Ukraine_Su24MK.
+OBJECT:Ukraine_BayraktarTB2 = Ukraine BayraktarTB2
+CONTROLBAR:ConstructUkraine_BayraktarTB2 = BayraktarTB2
+CONTROLBAR:ToolTipConstructUkraine_BayraktarTB2 = Produce Ukraine_BayraktarTB2.
+OBJECT:Britain_Typhoon = Britain Typhoon
+CONTROLBAR:ConstructBritain_Typhoon = Typhoon
+CONTROLBAR:ToolTipConstructBritain_Typhoon = Produce Britain_Typhoon.
+OBJECT:Britain_F35B = Britain F35B
+CONTROLBAR:ConstructBritain_F35B = F35B
+CONTROLBAR:ToolTipConstructBritain_F35B = Produce Britain_F35B.
+OBJECT:France_Rafale = France Rafale
+CONTROLBAR:ConstructFrance_Rafale = Rafale
+CONTROLBAR:ToolTipConstructFrance_Rafale = Produce France_Rafale.
+OBJECT:Germany_Eurofighter = Germany Eurofighter
+CONTROLBAR:ConstructGermany_Eurofighter = Eurofighter
+CONTROLBAR:ToolTipConstructGermany_Eurofighter = Produce Germany_Eurofighter.
+OBJECT:Japan_MQ9 = Japan MQ9
+CONTROLBAR:ConstructJapan_MQ9 = MQ9
+CONTROLBAR:ToolTipConstructJapan_MQ9 = Produce Japan_MQ9.
+OBJECT:SouthKorea_F15K = SouthKorea F15K
+CONTROLBAR:ConstructSouthKorea_F15K = F15K
+CONTROLBAR:ToolTipConstructSouthKorea_F15K = Produce SouthKorea_F15K.
+OBJECT:Taiwan_F16V = Taiwan F16V
+CONTROLBAR:ConstructTaiwan_F16V = F16V
+CONTROLBAR:ToolTipConstructTaiwan_F16V = Produce Taiwan_F16V.

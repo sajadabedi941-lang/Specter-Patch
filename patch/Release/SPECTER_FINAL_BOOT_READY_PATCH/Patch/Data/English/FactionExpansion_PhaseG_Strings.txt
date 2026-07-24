@@ -1,0 +1,73 @@
+
+//--------------------------------------------------------------------------------
+// Phase G unique identity strings
+//--------------------------------------------------------------------------------
+OBJECT:Patch_America_B21 = Patch America B21
+CONTROLBAR:ConstructPatch_America_B21 = Patch America B21
+CONTROLBAR:ToolTipConstructPatch_America_B21 = Produce America B-21 Raider. Strategic stealth bomber.
+OBJECT:Patch_Russia_Su75 = Patch Russia Su75
+CONTROLBAR:ConstructPatch_Russia_Su75 = Patch Russia Su75
+CONTROLBAR:ToolTipConstructPatch_Russia_Su75 = Produce Russia Su-75 Checkmate. Light 5th-gen fighter.
+OBJECT:Turkey_F16Block70 = Turkey F16Block70
+CONTROLBAR:ConstructTurkey_F16Block70 = Turkey F16Block70
+CONTROLBAR:ToolTipConstructTurkey_F16Block70 = Produce Turkey F-16 Block 70. Advanced AESA fighter.
+OBJECT:India_TejasMk2 = India TejasMk2
+CONTROLBAR:ConstructIndia_TejasMk2 = India TejasMk2
+CONTROLBAR:ToolTipConstructIndia_TejasMk2 = Produce India Tejas Mk2. Enhanced indigenous fighter.
+OBJECT:Pakistan_JF17BlockIII = Pakistan JF17BlockIII
+CONTROLBAR:ConstructPakistan_JF17BlockIII = Pakistan JF17BlockIII
+CONTROLBAR:ToolTipConstructPakistan_JF17BlockIII = Produce Pakistan JF-17 Block III. PL-15E class loadout.
+OBJECT:America_PrSMTEL = America PrSMTEL
+CONTROLBAR:ConstructAmerica_PrSMTEL = America PrSMTEL
+CONTROLBAR:ToolTipConstructAmerica_PrSMTEL = Deploy America PrSM battery. Limited strategic precision strike.
+OBJECT:America_AD_Patriot = America AD Patriot
+CONTROLBAR:ConstructAmerica_AD_Patriot = America AD Patriot
+CONTROLBAR:ToolTipConstructAmerica_AD_Patriot = Deploy America Patriot. Unique air defense layer.
+OBJECT:America_AD_Patriot = America Patriot
+OBJECT:America_AD_THAAD = America AD THAAD
+CONTROLBAR:ConstructAmerica_AD_THAAD = America AD THAAD
+CONTROLBAR:ToolTipConstructAmerica_AD_THAAD = Deploy America THAAD. Unique air defense layer.
+OBJECT:America_AD_THAAD = America THAAD
+OBJECT:Russia_AD_S400 = Russia AD S400
+CONTROLBAR:ConstructRussia_AD_S400 = Russia AD S400
+CONTROLBAR:ToolTipConstructRussia_AD_S400 = Deploy Russia S-400. Unique air defense layer.
+OBJECT:Russia_AD_S400 = Russia S-400
+OBJECT:India_AD_Akash = India AD Akash
+CONTROLBAR:ConstructIndia_AD_Akash = India AD Akash
+CONTROLBAR:ToolTipConstructIndia_AD_Akash = Deploy India Akash. Unique air defense layer.
+OBJECT:India_AD_Akash = India Akash
+OBJECT:Japan_AD_Patriot = Japan AD Patriot
+CONTROLBAR:ConstructJapan_AD_Patriot = Japan AD Patriot
+CONTROLBAR:ToolTipConstructJapan_AD_Patriot = Deploy Japan Patriot PAC-3. Unique air defense layer.
+OBJECT:Japan_AD_Patriot = Japan Patriot PAC-3
+OBJECT:Britain_AD_SkySabre = Britain AD SkySabre
+CONTROLBAR:ConstructBritain_AD_SkySabre = Britain AD SkySabre
+CONTROLBAR:ToolTipConstructBritain_AD_SkySabre = Deploy Britain Sky Sabre. Unique air defense layer.
+OBJECT:Britain_AD_SkySabre = Britain Sky Sabre
+OBJECT:France_AD_SAMPT = France AD SAMPT
+CONTROLBAR:ConstructFrance_AD_SAMPT = France AD SAMPT
+CONTROLBAR:ToolTipConstructFrance_AD_SAMPT = Deploy France SAMP/T. Unique air defense layer.
+OBJECT:France_AD_SAMPT = France SAMP/T
+OBJECT:Germany_AD_IRIST = Germany AD IRIST
+CONTROLBAR:ConstructGermany_AD_IRIST = Germany AD IRIST
+CONTROLBAR:ToolTipConstructGermany_AD_IRIST = Deploy Germany IRIS-T SLM. Unique air defense layer.
+OBJECT:Germany_AD_IRIST = Germany IRIS-T SLM
+SCIENCE:India_TechTejasMk2 = Tejas Mk2 Program
+CONTROLBAR:ToolTipIndia_TechTejasMk2 = Research Tejas Mk2 Program.
+SCIENCE:Turkey_TechF16Block70 = F-16 Block 70 Program
+CONTROLBAR:ToolTipTurkey_TechF16Block70 = Research F-16 Block 70 Program.
+
+OBJECT:Russia_AD_Buk = Russia Buk
+CONTROLBAR:ConstructRussia_AD_Buk = Russia Buk
+CONTROLBAR:ToolTipConstructRussia_AD_Buk = Deploy Russia Buk medium SAM. Distinct from S-400 layer.
+OBJECT:America_AD_NASAMS = America NASAMS
+CONTROLBAR:ConstructAmerica_AD_NASAMS = America NASAMS
+CONTROLBAR:ToolTipConstructAmerica_AD_NASAMS = Deploy America NASAMS medium network SAM.
+OBJECT:America_AD_Hawk = America Hawk
+CONTROLBAR:ConstructAmerica_AD_Hawk = America Hawk
+CONTROLBAR:ToolTipConstructAmerica_AD_Hawk = Deploy America Hawk short-medium SAM.
+SCIENCE:India_TechTejasMk2 = Tejas Mk2 Program
+CONTROLBAR:ToolTipIndia_TechTejasMk2 = Unlock Tejas Mk2 fighter production.
+SCIENCE:Turkey_TechF16Block70 = F-16 Block 70 Program
+CONTROLBAR:ToolTipTurkey_TechF16Block70 = Unlock F-16 Block 70 fighter production.
+

@@ -1,0 +1,102 @@
+// SPECTER PATCH - Faction framework strings (expansion)
+// Phase A: Specter-based frameworks only (temporary Nato/Iraq donors).
+// Additive playable factions: structure only — no unique unit rosters yet.
+
+INI:FactionBritain = Britain
+Side:Britain = Britain
+FACTION:Britain = Britain
+SCIENCE:Britain = Britain Technology
+TOOLTIP:BioStrategyLong_Britain = Britain — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Britain = Framework scaffold. Content coming in later phases.
+
+INI:FactionEgypt = Egypt
+Side:Egypt = Egypt
+FACTION:Egypt = Egypt
+SCIENCE:Egypt = Egypt Technology
+TOOLTIP:BioStrategyLong_Egypt = Egypt — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Egypt = Framework scaffold. Content coming in later phases.
+
+INI:FactionFrance = France
+Side:France = France
+FACTION:France = France
+SCIENCE:France = France Technology
+TOOLTIP:BioStrategyLong_France = France — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_France = Framework scaffold. Content coming in later phases.
+
+INI:FactionGermany = Germany
+Side:Germany = Germany
+FACTION:Germany = Germany
+SCIENCE:Germany = Germany Technology
+TOOLTIP:BioStrategyLong_Germany = Germany — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Germany = Framework scaffold. Content coming in later phases.
+
+INI:FactionIsrael = Israel
+Side:Israel = Israel
+FACTION:Israel = Israel
+SCIENCE:Israel = Israel Technology
+TOOLTIP:BioStrategyLong_Israel = Israel — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Israel = Framework scaffold. Content coming in later phases.
+
+INI:FactionItaly = Italy
+Side:Italy = Italy
+FACTION:Italy = Italy
+SCIENCE:Italy = Italy Technology
+TOOLTIP:BioStrategyLong_Italy = Italy — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Italy = Framework scaffold. Content coming in later phases.
+
+INI:FactionLibya = Libya
+Side:Libya = Libya
+FACTION:Libya = Libya
+SCIENCE:Libya = Libya Technology
+TOOLTIP:BioStrategyLong_Libya = Libya — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Libya = Framework scaffold. Content coming in later phases.
+
+INI:FactionSouthAfrica = South Africa
+Side:SouthAfrica = South Africa
+FACTION:SouthAfrica = South Africa
+SCIENCE:SouthAfrica = South Africa Technology
+TOOLTIP:BioStrategyLong_SouthAfrica = South Africa — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_SouthAfrica = Framework scaffold. Content coming in later phases.
+
+INI:FactionSouthKorea = South Korea
+Side:SouthKorea = South Korea
+FACTION:SouthKorea = South Korea
+SCIENCE:SouthKorea = South Korea Technology
+TOOLTIP:BioStrategyLong_SouthKorea = South Korea — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_SouthKorea = Framework scaffold. Content coming in later phases.
+
+INI:FactionSweden = Sweden
+Side:Sweden = Sweden
+FACTION:Sweden = Sweden
+SCIENCE:Sweden = Sweden Technology
+TOOLTIP:BioStrategyLong_Sweden = Sweden — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Sweden = Framework scaffold. Content coming in later phases.
+
+INI:FactionSyria = Syria
+Side:Syria = Syria
+FACTION:Syria = Syria
+SCIENCE:Syria = Syria Technology
+TOOLTIP:BioStrategyLong_Syria = Syria — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Syria = Framework scaffold. Content coming in later phases.
+
+INI:FactionTaiwan = Taiwan
+Side:Taiwan = Taiwan
+FACTION:Taiwan = Taiwan
+SCIENCE:Taiwan = Taiwan Technology
+TOOLTIP:BioStrategyLong_Taiwan = Taiwan — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Taiwan = Framework scaffold. Content coming in later phases.
+
+INI:FactionUN = UN
+Side:UN = UN
+FACTION:UN = UN
+SCIENCE:UN = UN Technology
+TOOLTIP:BioStrategyLong_UN = UN — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_UN = Framework scaffold. Content coming in later phases.
+
+INI:FactionVietnam = Vietnam
+Side:Vietnam = Vietnam
+FACTION:Vietnam = Vietnam
+SCIENCE:Vietnam = Vietnam Technology
+TOOLTIP:BioStrategyLong_Vietnam = Vietnam — faction framework placeholder. Unit roster TBD.
+GUI:BioFeatures_Vietnam = Framework scaffold. Content coming in later phases.
+

@@ -1,0 +1,53 @@
+; SPECTER PATCH — Air Force Expansion strings (mod-sourced overlay units)
+
+OBJECT:Patch_America_Aurora = Aurora Strike
+CONTROLBAR:ConstructPatch_America_Aurora = Aurora Strike
+CONTROLBAR:ToolTipConstructPatch_America_Aurora = High-speed strike aircraft from Advanced Air Base (America).
+
+OBJECT:Patch_America_StealthHawk = Stealth Hawk
+CONTROLBAR:ConstructPatch_America_StealthHawk = Stealth Hawk
+CONTROLBAR:ToolTipConstructPatch_America_StealthHawk = Stealth air-superiority fighter from Advanced Air Base (America).
+
+OBJECT:Patch_America_AC130Spectre = AC-130 Spectre
+CONTROLBAR:ConstructPatch_America_AC130Spectre = AC-130 Spectre
+CONTROLBAR:ToolTipConstructPatch_America_AC130Spectre = Gunship with ground howitzer fire from Advanced Air Base (America).
+
+OBJECT:Patch_America_E2C = E-2C Hawkeye
+CONTROLBAR:ConstructPatch_America_E2C = E-2C Hawkeye
+CONTROLBAR:ToolTipConstructPatch_America_E2C = AEW aircraft from Advanced Air Base (America).
+
+OBJECT:Patch_America_B3 = B-3 Bomber
+CONTROLBAR:ConstructPatch_America_B3 = B-3 Bomber
+CONTROLBAR:ToolTipConstructPatch_America_B3 = Next-gen strategic bomber from Advanced Air Base (America).
+
+OBJECT:Patch_Russia_Su57Strike = Su-57 Strike
+CONTROLBAR:ConstructPatch_Russia_Su57Strike = Su-57 Strike
+CONTROLBAR:ToolTipConstructPatch_Russia_Su57Strike = Su-57 ground-strike loadout from Advanced Air Base (Russia).
+
+OBJECT:Patch_Ukraine_Sokil = Su-Sokil
+CONTROLBAR:ConstructPatch_Ukraine_Sokil = Su-Sokil
+CONTROLBAR:ToolTipConstructPatch_Ukraine_Sokil = Indigenous fighter from Advanced Air Base (Ukraine).
+
+OBJECT:Patch_Ukraine_AN71 = An-71 AWACS
+CONTROLBAR:ConstructPatch_Ukraine_AN71 = An-71 AWACS
+CONTROLBAR:ToolTipConstructPatch_Ukraine_AN71 = AEW&C aircraft from Advanced Air Base (Ukraine).
+
+OBJECT:Patch_Ukraine_Dronecopter = Dronecopter
+CONTROLBAR:ConstructPatch_Ukraine_Dronecopter = Dronecopter
+CONTROLBAR:ToolTipConstructPatch_Ukraine_Dronecopter = Armed VTOL UAV from Advanced Air Base (Ukraine).
+
+OBJECT:Patch_Germany_JetBomber = Jet Bomber
+CONTROLBAR:ConstructPatch_Germany_JetBomber = Jet Bomber
+CONTROLBAR:ToolTipConstructPatch_Germany_JetBomber = Tactical bomber from Advanced Air Base (Germany).
+
+OBJECT:Patch_France_Cayova = Cayova
+CONTROLBAR:ConstructPatch_France_Cayova = Cayova
+CONTROLBAR:ToolTipConstructPatch_France_Cayova = Attack helicopter from Advanced Air Base (France).
+
+OBJECT:Patch_China_J10Strike = J-10 Strike
+CONTROLBAR:ConstructPatch_China_J10Strike = J-10 Strike
+CONTROLBAR:ToolTipConstructPatch_China_J10Strike = Precision strike J-10 from Advanced Air Base (China).
+
+OBJECT:Russia_AD_TorM = Tor-M2
+CONTROLBAR:ConstructRussia_AD_TorM = Tor-M2
+CONTROLBAR:ToolTipConstructRussia_AD_TorM = Short-range SAM system (Russia).

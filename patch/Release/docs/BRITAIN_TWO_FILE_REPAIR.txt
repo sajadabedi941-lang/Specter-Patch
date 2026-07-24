@@ -1,0 +1,53 @@
+SPECTER_BIG_MERGE_PLAYABLE — BRITAIN TWO-FILE REPAIR PLAN
+Generated: 2026-07-24 20:56:38 UTC
+Base: SPECTER_BIG_MERGE_PLAYABLE.zip / existing playable BIG package
+New output: SPECTER_BIG_MERGE_PLAYABLE_REPAIRED.zip
+No new GitHub release tag — attach to existing specter-big-merge-playable.
+
+==============================================================================
+1) ORIGINAL PROBLEMS (exact)
+==============================================================================
+
+Britain_F35B.ini
+  Problem: Prerequisites Science = SCIENCE_BritainStealthJet
+  Why: Invalid science name (missing underscore). Real science is
+       SCIENCE_Britain_StealthJet in Science_Britain.ini.
+  Fix applied in source: SCIENCE_Britain_StealthJet
+
+Britain_CombatDrone.ini
+  Problem A: Prerequisites Science = SCIENCE_UAEStealthJet
+  Why: Invalid UAE leftover; SCIENCE_UAEStealthJet does not exist.
+  Fix applied in source: SCIENCE_Britain_StealthJet
+  Problem B: Duplicate Shadow = SHADOW_VOLUME lines
+  Fix applied in source: single Shadow line kept
+
+==============================================================================
+2) EXACT PATHS INSIDE PACKAGE / BIG
+==============================================================================
+
+Both repaired files replace existing entries inside _SPEC_DATA_ONE.big at:
+
+  1) Data\INI\Object\Specter\British Armed Forces\Airforce\Britain_F35B.ini
+  2) Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini
+
+ZIP layout (same as SPECTER_BIG_MERGE_PLAYABLE + repair notes):
+  SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/
+    _SPEC_DATA_ONE.big          <- updated with the two INI fixes only
+    _SPEC_ART_ONE.big           <- unchanged from playable base
+    README_INSTALL.txt
+    VERIFY_REPORT.txt           <- original + repair appendix
+    BRITAIN_TWO_FILE_REPAIR.txt <- this file
+    _SPEC_DATA_ONE.big.sha256
+    _SPEC_ART_ONE.big.sha256
+
+No empty folders. No other country files modified. No Specter entries removed.
+
+==============================================================================
+3) BUILD RESULT
+==============================================================================
+_SPEC_DATA_ONE.big SHA256: e875e959ce2be5c919b29732643053824e237181ebf7fe92fc77a9bc4c09b60c
+_SPEC_ART_ONE.big  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+DATA entries: 2887 (unchanged count)
+Updated paths only:
+  Data\INI\Object\Specter\British Armed Forces\Airforce\Britain_F35B.ini
+  Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini

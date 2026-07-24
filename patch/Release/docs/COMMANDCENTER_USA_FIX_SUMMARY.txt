@@ -1,0 +1,18 @@
+FIX SUMMARY
+===========
+Replaced 12 country CommandCenter INIs with full USA AmericaCommandCenter structure.
+
+Kept per country:
+- Object <Country>_CommandCenter
+- Side = <Country>
+- <Country>_CommandCenterCommandSet (valid faction CommandSet)
+
+From USA donor:
+- Dual Draw modules (building + strobes)
+- Full behavior stack (BaseRegenerate, special powers, die FX, GrantScienceUpgrade, etc.)
+- Single Shadow
+- Working upgrade modules
+
+Removed:
+- Incomplete truncated CommandCenter implementations
+- UAE SCIENCE leftovers (UAE file)

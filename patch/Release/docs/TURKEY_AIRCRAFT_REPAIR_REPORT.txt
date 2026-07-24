@@ -1,0 +1,113 @@
+TURKEY AIRCRAFT REPAIR REPORT
+=============================
+Date: 2026-07-24
+Branch: cursor/turkey-aircraft-repair-f792
+Scope: Repair broken Turkey fighter/UAV/bomber INIs using working Specter donors.
+Units were NOT deleted. Turkey Side / names / costs / faction prereqs preserved.
+
+--------------------------------------------------------------------
+1) BROKEN AIRCRAFT FOUND
+--------------------------------------------------------------------
+
+A) Turkey_Kizilelma.ini
+   - Invalid Science: SCIENCE_UAEStealthJet (NOT defined in Science.ini)
+   - Crash risk on load / unlock
+   - Had MQ-9 art already, but prereq science made unit unusable/crash-prone
+
+B) Turkey_TB2.ini
+   - Gated by SCIENCE_NatoStealthJet (foreign/non-Turkey progression)
+   - Structure otherwise MQ-9 based; rebuilt to healthy USA MQ-9 donor pattern
+     (same approach as Saudi CombatDrone repair)
+
+C) Turkey_Akinci.ini
+   - Already MQ-9 based; rebuilt from healthy USA MQ-9 donor for consistent
+     Draw/Model/Animation/WeaponSet/CommandSet/Locomotor/Behavior modules
+
+D) Turkey_Tu-22M3.ini  (CRITICAL)
+   - Invalid Model: Turkey_Tu22m3 (NO matching Art/W3D in _SPEC_ART_ONE.big)
+   - Invalid Animation: Turkey_Tu22m3.Turkey_Tu22m3
+   - Iraqi leftover portrait: irq_tu22
+   - Header marked as Iraq-copy; would crash / invisible / missing art
+
+E) Turkey_F16Block70.ini
+   - Models US_F16CMB50 / US_F16D_B52 were already valid
+   - Rebuilt from healthy USA F-16C AG donor to ensure full Draw/WeaponSet/
+     CommandSet/Locomotor/Behavior integrity for multirole loadout
+
+F) Turkey_WeaponObjects.ini
+   - Audited for aircraft projectiles used by these units
+   - Fighter/UAV projectiles live under Projectiles/ (US_AIM120 etc.) and are valid
+   - NO changes required in Turkey_WeaponObjects.ini for these aircraft loadouts
+
+Related crash companions also fixed (same invalid Tu-22 model):
+   - Turkey_Tu-22M3_AI.ini
+   - ScienceObjects/Tu22.ini
+
+--------------------------------------------------------------------
+2) DONOR AIRCRAFT USED
+--------------------------------------------------------------------
+
+| Turkey unit          | Role                              | Donor                                      |
+|----------------------|-----------------------------------|--------------------------------------------|
+| Turkey_F16Block70    | Multirole fighter (AA + AG)       | USA AmericaJetF-16C_AG (F16CM_BLK50_DB52)  |
+| Turkey_Kizilelma     | UCAV (AG priority + limited AA)   | USA AmericaDronesMq9 (Mq9.ini)             |
+| Turkey_TB2           | UAV ground attack / recon         | USA AmericaDronesMq9 (Mq9.ini)             |
+| Turkey_Akinci        | Heavy UAV missile strike          | USA AmericaDronesMq9 (Mq9.ini)             |
+| Turkey_Tu-22M3       | Strategic bomber                  | Russia RussiaJetTu22M3M (TU22M3M.ini)      |
+
+Iraqi donors were intentionally NOT used for Tu-22 (user rule: no Iraqi leftovers).
+
+--------------------------------------------------------------------
+3) IDENTITY PRESERVED
+--------------------------------------------------------------------
+
+- Object names kept (Turkey_*)
+- Side = Turkey
+- Costs / build times kept (post CountryBalance values)
+- Icons kept where stock/working (us_f16cb50, Nat_mq9); Tu-22 uses rus_tu22m3m
+  (working non-Iraq portrait for RUS_TU22M3M model)
+- Turkey sciences / buildings:
+  - F16: SCIENCE_Turkey_TechF16Block70 + Turkey_AdvancedAirBase
+  - Drones: SCIENCE_Rank3 + Turkey_AdvancedAirBase
+  - Tu-22: SCIENCE_Turkey_Tu-22 + Turkey_MIC
+- Turkey upgrades: Upgrade_Turkey_Countermeasures / PrecisionMunitions
+
+Role loadouts:
+- F16 Block 70: PRIMARY Turkey_Weapon_AIM120D_F16Block70;
+  PLAYER_UPGRADE AGM-154C_JSOW_F16C + Sniper XR (multirole)
+- Kizilelma: PRIMARY 4x_AGM114N_Mq9; SECONDARY Turkey_Weapon_AAM_Medium;
+  TERTIARY 2x_GBU12II_Mq9
+- TB2 / Akinci: 4x_AGM114N_Mq9 + 2x_GBU12II_Mq9
+- Tu-22M3: Russia Tu-22M3M FAB-500 racks + KH101 upgrade set (matches RUS model bones)
+
+--------------------------------------------------------------------
+4) FILES CHANGED
+--------------------------------------------------------------------
+
+1. patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+2. patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+3. patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+4. patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+5. patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+6. patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3_AI.ini
+7. patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/Tu22.ini
+8. patch/Release/docs/TURKEY_AIRCRAFT_REPAIR_REPORT.txt  (this report)
+
+NOT changed:
+- Turkey_WeaponObjects.ini (no aircraft-critical fixes required)
+- Other countries' aircraft files
+
+--------------------------------------------------------------------
+5) VERIFICATION SUMMARY
+--------------------------------------------------------------------
+
+- Models present in ART BIG: US_F16CMB50, US_F16D_B52, US_MQ9(+D/R), RUS_TU22M3M
+- Weapons defined: AIM120D Turkey, MQ-9 Hellfire/GBU, Russia Tu-22M3M sets
+- CommandSets: F16C_AG_CommandSet, GenericTacticalBomberCommandSet
+- Locomotors: F100_PW_229, HoneyWellTPE331_10TurboProp, NK-32-02_JetEngine
+- Sciences defined: SCIENCE_Turkey_TechF16Block70, SCIENCE_Turkey_Tu-22, SCIENCE_Rank3
+- No SCIENCE_UAEStealthJet / irq_tu22 / Turkey_Tu22m3 in active (non-comment) lines
+- No other-country files modified
+
+STATUS: TURKEY AIRCRAFT REPAIR COMPLETE (source INI)
+Note: Game loads BIG archives; rebuild/release BIGs separately for in-game play.

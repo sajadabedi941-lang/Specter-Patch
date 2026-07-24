@@ -1,0 +1,35 @@
+SPECTER_MANIFEST_HASH_FIX — VERIFY REPORT
+========================================================================
+Generated: 2026-07-24 14:19:19 UTC
+# PackageSHA256 94337bb3c3866cbc4f2c60958d8127f2f7f41ed6adec6417b266b7922a3587eb
+Manifest entries: 1526
+
+LISTED FILE VERIFY
+------------------------------------------------------------------------
+OK Data/INI/Object/Specter/British Armed Forces/Infantry/Britain_HeavySniper.ini
+OK Data/INI/Object/Specter/French Armed Forces/Infantry/France_HeavySniper.ini
+OK Data/INI/Object/Specter/German Armed Forces/Infantry/Germany_HeavySniper.ini
+OK Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+OK Data/INI/Object/Specter/Italian Armed Forces/Infantry/Italy_HeavySniper.ini
+OK Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/Japan_HeavySniper.ini
+OK Data/INI/Object/Specter/Republic of China Armed Forces/Infantry/Taiwan_HeavySniper.ini
+OK Data/INI/Object/Specter/Republic of Korea Armed Forces/Infantry/SouthKorea_HeavySniper.ini
+OK Data/INI/Object/Specter/Swedish Armed Forces/Infantry/Sweden_HeavySniper.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+MISSING (not on disk; skipped by installer if absent from manifest): Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/P30.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/P30.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/ZPU4.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/IFV/Bmp2K.ini
+OK Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+
+INSTALLER-SCOPE VERIFY (Data/ + Art/ only)
+------------------------------------------------------------------------
+Matched: 1481
+Skipped (non Data/Art): 45
+HASH_MISMATCH: 0
+MISSING: 0
+
+MANIFEST VERIFY OK
+HASH_MISMATCH = 0
+INSTALL SUCCESSFUL (simulated verify against patch payload)

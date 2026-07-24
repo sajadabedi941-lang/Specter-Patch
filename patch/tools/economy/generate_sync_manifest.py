@@ -17,7 +17,11 @@ def package_files() -> list[Path]:
         if not path.is_file() or path == MANIFEST:
             continue
         rel = path.relative_to(ROOT)
-        if "__pycache__" in rel.parts or path.suffix in {".pyc", ".pyo"}:
+        # Release/ holds distribution ZIPs/reports — not install payload.
+        # Including it causes chicken-egg HASH_MISMATCH whenever a ZIP is rebuilt.
+        if "Release" in rel.parts or "__pycache__" in rel.parts:
+            continue
+        if path.suffix in {".pyc", ".pyo"}:
             continue
         files.append(path)
     return sorted(files, key=lambda p: p.relative_to(ROOT).as_posix())

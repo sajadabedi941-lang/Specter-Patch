@@ -1,0 +1,14 @@
+FIX SUMMARY
+===========
+Britain_F35B.ini:
+  Replaced full structure from USA AmericaJetF35C (F35C.ini)
+  Kept Object Britain_F35B, Side=Britain, Britain_StrategyCenter
+  USA Draw/Weapons/CommandSet/SCIENCE_StealthFighter/Stealth+Radar modules
+  Removed Britain_Weapon_AAM_Medium primary override and Britain stealth science path
+
+SaudiArabia_CombatDrone.ini:
+  Cleared Saudi Drones folder; rebuilt from USA AmericaDronesMq9 (Mq9.ini)
+  Kept Object SaudiArabia_CombatDrone, Side=SaudiArabia
+  Prereq SaudiArabia_AdvancedAirBase + SCIENCE_Rank3
+  USA weapons 4x_AGM114N_Mq9 / 2x_GBU12II_Mq9 + GenericTacticalBomberCommandSet
+  Removed UAE leftovers, invalid science, duplicate Shadow, Saudi ATGM override

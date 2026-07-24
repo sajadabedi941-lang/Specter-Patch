@@ -1,0 +1,33 @@
+PRE-FIX REPORT — CommandCenter USA rebuild
+==========================================
+NOTE ON PATHS:
+Specter stores CommandCenters as:
+  Data\INI\Object\Specter\<Country>\Buildings\<CountryPrefix>_CommandCenter.ini
+There is no separate CommandCenter\ folder. Only those CommandCenter INI files
+are replaced (other Buildings files untouched).
+
+Donor:
+  Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+  Object AmericaCommandCenter
+
+Problems found per country (Buildings/*_CommandCenter.ini):
+
+Common (Egypt, India, Libya, Pakistan, Saudi Arabia, South Africa, Syria,
+Turkey, Ukraine, Vietnam, UAE):
+- Incomplete vs USA donor (~7.5KB vs USA 11.2KB)
+- Only 1 Draw module (USA has 2: main building + strobes)
+- Missing USA modules: BaseRegenerateUpdate, ObjectCreationUpgrade,
+  GrantScienceUpgrade, FireWeaponWhenDeadBehavior
+- Incomplete CommandCenter behavior set vs working USA implementation
+
+Israel:
+- Severely truncated (~2.4KB)
+- Missing most CommandCenter modules (only 4 behaviors)
+- Only 1 Draw; incomplete production/die/special-power stack
+
+United Arab Emirates:
+- Same incomplete module set as above
+- SCIENCE_UAE leftover references inside UpgradeOCL / special-power block
+
+No duplicate Shadow found on current files; USA single Shadow will be preserved.
+Country CommandSets currently exist and will be KEPT for faction identity.

@@ -1,0 +1,69 @@
+SPECTER BIG MERGE — ANALYSIS AND MERGE REPORT
+========================================================================
+Generated: 2026-07-24 16:49:29 UTC
+
+SOURCE ARCHIVES
+------------------------------------------------------------------------
+_SPEC_DATA_ONE.big original: 349348307 bytes, 1430 files
+_SPEC_ART_ONE.big original:  445953809 bytes, 2683 files
+Format: BIGF (Generals/ZH)
+
+CURSOR PATCH SOURCES MERGED
+------------------------------------------------------------------------
+patch/Data/INI/Object/Specter/**
+patch/Data/** (other INI/support; stock cores skipped)
+patch/Art/**
+
+STOCK CORES NOT OVERWRITTEN (preserve original Specter)
+------------------------------------------------------------------------
+  data\ini\armor.ini
+  data\ini\commandbutton.ini
+  data\ini\commandset.ini
+  data\ini\locomotor.ini
+  data\ini\weapon.ini
+Skipped stock overwrite attempts: 5
+  Data\INI\Armor.ini
+  Data\INI\CommandButton.ini
+  Data\INI\CommandSet.ini
+  Data\INI\Locomotor.ini
+  Data\INI\Weapon.ini
+
+DATA MERGE COUNTS
+------------------------------------------------------------------------
+Original entries preserved: 1430
+Added:   1457
+Updated: 12
+Identical skip: 1
+Final entries: 2887
+
+ART MERGE COUNTS
+------------------------------------------------------------------------
+Original entries preserved: 2683
+Added:   6
+Updated: 0
+Final entries: 2689
+
+OBJECT NAME CONFLICTS (same Object name already in original BIG)
+------------------------------------------------------------------------
+Count: 0
+Note: Conflicts are reported; files were still merged (Specter often
+redefines/extends via load order). Review if boot issues appear.
+
+OUTPUT
+------------------------------------------------------------------------
+_SPEC_DATA_ONE.big: 384506586 bytes  SHA256=382cc26404aa7f8aa0c299f8c35ae31be842ef2554c9557e9dc2f8ca4ed28f40
+_SPEC_ART_ONE.big:  446216323 bytes  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+Round-trip verify errors DATA=0 ART=0
+
+INSTALL
+------------------------------------------------------------------------
+Replace the game Specter BIG files with these updated copies:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+Keep backups of the originals first.
+Do not delete other Specter archives.
+
+RUNTIME NOTE
+------------------------------------------------------------------------
+This environment cannot launch generals.exe. Validation is archive
+integrity + merge accounting only.

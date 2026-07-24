@@ -1,0 +1,36 @@
+GLOBAL REFERENCE AUDIT
+======================
+GeneratedUtc: 2026-07-24T10:09:36.653928+00:00
+Scope: loose patch Data\INI + Object\Specter (stock .big definitions NOT indexed)
+
+SYMBOL TABLE COUNTS
+-------------------
+  Object: 2381
+  CommandButton: 1972
+  CommandSet: 544
+  Weapon: 419
+  Science: 378
+  Upgrade: 240
+  SpecialPower: 181
+  PlayerTemplate: 21
+  ObjectCreationList: 12
+  Locomotor: 6
+
+DUPLICATE OBJECT DEFINITIONS (across Specter files)
+--------------------------------------------------
+  0 (patch Specter tree)
+
+NEW-FOLDER MISSING REF KINDS (Specter-named tokens not in loose INI)
+-------------------------------------------------------------------
+  Weapon: 65
+  Science: 34
+  Locomotor: 27
+  Armor: 19
+  CommandSet: 14
+  SpecialPower: 2
+
+NOTE
+----
+Armor / many Locomotors / stock CommandSets often live inside vendor .big archives.
+MISSING in this audit does NOT always mean missing at runtime if the base Specter .big is installed.
+Parse crashes (Error parsing INI file) are prioritized over unresolved .big-only symbols.

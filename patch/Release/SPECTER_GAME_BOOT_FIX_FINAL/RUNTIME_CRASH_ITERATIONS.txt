@@ -1,0 +1,20 @@
+RUNTIME CRASH ITERATIONS
+========================
+GeneratedUtc: 2026-07-24T10:13:31.507386+00:00
+
+Iteration 0 — Environment
+  result: generals.exe / game.dat / Wine NOT FOUND
+  diagnosis: cannot execute Generals ZH in this Linux agent
+  next: static repair + installer package
+
+Iteration 1 — Static boot-critical repair + Fixed payload
+  reported files addressed: Britain_F35B.ini, Britain_CombatDrone.ini,
+    Turkey_WeaponObjects.ini, Israel_CommandCenter.ini, Israel_MilitaryHQ.ini,
+    and all other New folder.zip Object INIs (55) at correct Specter paths
+  diagnosis: parse defects + flat-duplicate install path
+  fix: repaired content in Fixed\ + INSTALL bat deploys with backup
+  launch result: NOT RUN HERE
+
+Iteration 2 — REQUIRED ON USER PC
+  action: INSTALL_SPECTER_GAME_BOOT_FIX.bat then launch Specter
+  success criteria: main menu, Skirmish opens, no ReleaseCrashInfo INI parse error

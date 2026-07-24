@@ -1,0 +1,37 @@
+SPECTER ENGINE REPAIR REPORT
+============================
+GeneratedUtc : 2026-07-24T00:10:02.575230+00:00
+NOTE: This file is overwritten when you run RUN_SPECTER_ENGINE_REPAIR.bat
+
+PACKAGE PRE-CHECK (patch Specter tree)
+--------------------------------------
+Scanned      : 1270 INI files under Data/INI/Object/Specter
+Critical    : 0
+Verdict     : PASS
+
+SANDBOX PROOF (injected defects then auto-repaired)
+--------------------------------------------------
+Injected into Britain_F35B.ini (End;) and Britain_CombatDrone.ini (END)
+Repaired    : 2
+Skipped     : 0
+Final verify: PASS (0 remaining)
+
+REPAIRED FILES (sandbox)
+------------------------
+FILE: British Armed Forces\Airforce\Britain_F35B.ini
+ERROR: L36 END_TRAILING_COMMENT: End; broken
+FIX: L36: End; trailing comment -> End + comment line | Added trailing newline
+
+FILE: British Armed Forces\Drones\Britain_CombatDrone.ini
+ERROR: L31 UPPERCASE_END: Use End not END
+FIX: L31: END -> End
+
+KNOWN CRASH TARGETS
+-------------------
+  British Armed Forces\Airforce\Britain_F35B.ini — covered
+  British Armed Forces\Drones\Britain_CombatDrone.ini — covered
+
+FINAL VERIFICATION RESULT
+-------------------------
+Package ready. Run RUN_SPECTER_ENGINE_REPAIR.bat inside the game folder.
+VERDICT: READY

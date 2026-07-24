@@ -1,0 +1,5 @@
+SPECTER FINAL PLAYABLE GAME BUILD
+- Rebuilt _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from stock + current main patch/
+- Includes MilitaryHQ USA-clean, CommandCenter USA, Britain F35B, Saudi MQ9, drone fixes
+- Install_SpecterPatch.bat copies BIGs into Specter GameRoot and reports completion
+- Combined ZIP ships real playable BIG binaries (not INI-only)

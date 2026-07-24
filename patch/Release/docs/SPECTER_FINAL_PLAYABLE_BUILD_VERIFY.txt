@@ -1,0 +1,29 @@
+SPECTER_FINAL_PLAYABLE_BUILD — VERIFY REPORT
+Generated: 2026-07-24 UTC
+
+Rebuild method:
+  merge_patch_into_spec_big.py
+  --data-big stock _SPEC_DATA_ONE.big
+  --art-big  stock _SPEC_ART_ONE.big
+  --patch-root patch/ (current main)
+
+DATA entries: 2885 (stock 1430 + patch added/updated)
+ART entries:  2689
+
+Verification inside _SPEC_DATA_ONE.big:
+  PASS MilitaryHQ_StockFactions.ini — us_commandcenter / US_Command; no irq_comndcntr / Irq_Command; byte-match source
+  PASS 12-country CommandCenter USA assets (Egypt..Vietnam) — us_commandcenter present; irq_comndcntr absent
+  PASS Egypt_MilitaryHQ + country MilitaryHQ USA-clean assets
+  PASS Britain_F35B.ini — USA F35 donor (US_F35A, GBU_31V2_JDAM_F35C / AmericaJetF35C); no broken SCIENCE_*StealthJet
+  PASS SaudiArabia_CombatDrone.ini — USA MQ-9 (US_MQ9 / AmericaDronesMq9)
+  PASS France/Germany/India/Italy/Japan/SouthKorea/Sweden CombatDrones — US_MQ9
+
+Note: Iraq faction CommandCenter intentionally retains Iraqi art.
+North Korea CommandCenter portrait tokens remain pre-existing on main (NKr models).
+
+
+DATA SHA256:  eb617ef80339068303a8f0d92ded498086dbf4793fc40a86f058960c853f893e
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP SHA256:   29d67676a308dabdfc22d68b1ce3b7de5c24b9a522beac5073f5d0e119894da7
+
+STATUS: FINAL PLAYABLE BIG ARCHIVES READY

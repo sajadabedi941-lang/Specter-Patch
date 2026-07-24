@@ -1,0 +1,27 @@
+BRITAIN F35B + COMBAT DRONE — FINAL OUTPUT
+Generated: 2026-07-24 20:43:59 UTC
+
+See AUDIT_REPORT.txt for the full pre-fix audit.
+
+==============================================================================
+FIXED (only these two files)
+==============================================================================
+
+1) Britain_F35B.ini
+   Science = SCIENCE_BritainStealthJet
+     -> Science = SCIENCE_Britain_StealthJet
+
+2) Britain_CombatDrone.ini
+   Science = SCIENCE_UAEStealthJet
+     -> Science = SCIENCE_Britain_StealthJet
+   Removed duplicate Shadow = SHADOW_VOLUME line
+
+==============================================================================
+POST-FIX RE-PARSE
+==============================================================================
+Britain_F35B.ini remaining fixable errors: 0
+Britain_CombatDrone.ini remaining fixable errors: 0
+
+STATUS: Both files valid for listed crash/parse issues that are fixable
+inside these two INIs. Stock Specter BIG-resident flare/projectile
+dependencies unchanged (shared with sibling aircraft).

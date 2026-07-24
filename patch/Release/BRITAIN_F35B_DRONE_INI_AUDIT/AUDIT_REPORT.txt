@@ -1,0 +1,105 @@
+BRITAIN F35B + COMBAT DRONE — COMPLETE AUDIT (NO FIXES YET)
+Generated: 2026-07-24 20:43:23 UTC
+Scope: ONLY these two files
+  1. Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+  2. Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+Symbol index: Specter_Data stock INI + patch/Data/INI
+
+==============================================================================
+1) ERROR REPORT — Britain_F35B.ini
+==============================================================================
+
+CRASH / PARSE RISK (must fix in this file)
+------------------------------------------
+[SCIENCE] Prerequisites Science = SCIENCE_BritainStealthJet
+  Status : MISSING (invalid name)
+  Actual : SCIENCE_Britain_StealthJet exists in Science_Britain.ini
+  Note   : Sibling Britain_F35A.ini uses SCIENCE_NatoStealthJet (also valid).
+           Britain_F35B uses a non-existent name (missing underscore).
+           Can break science/prerequisite lookup at load or unlock time.
+
+CHECKED OK (no issue in this file)
+----------------------------------
+[INHERIT]        No From inheritance used
+[COMMANDSET]     GenericMultiRoleFighter_AG_CommandSet — FOUND
+[COMMAND BUTTON] (via CommandSet) — set exists in stock/patch index
+[WEAPON]         Britain_Weapon_AAM_Medium — FOUND (Weapon_Britain.ini)
+                 GBU_31V2_JDAM_F35C — FOUND (stock Weapon.ini)
+                 AN/APG81_AESA_Radar_AGMode — FOUND
+                 AN/ALQ-135 / AN/ALQ-135_AHAM — FOUND
+                 RadarWaveEmitter — FOUND
+[PROJECTILE]     Britain_Weapon_AAM_Medium -> Britain_Meteor_Projectile — FOUND
+[PREREQ OBJECT]  Britain_StrategyCenter — FOUND
+[SCIENCE]        SCIENCE_Rank4 — FOUND
+[ARMOR]          AirplaneArmor_P / CountermeasuresAirplaneArmor_P — FOUND
+[LOCOMOTOR]      Pratt_Whitney_F135 / BasicJetTaxiLocomotor — FOUND
+[UPGRADE]        Upgrade_AmericaCountermeasures, Upgrade_MTS,
+                 Upgrade_AmericaAdvancedTraining, Upgrade_ChaffUpgrade — FOUND
+[SPECIALPOWER]   SuperweaponRadioWaveDisabler — FOUND
+[OCL]            OCL_StealthDeathFinalBlowUp, OCL_EjectPilot*,
+                 OCL_RadioWaveDisabler — FOUND
+[FX]             FX_JetOnGroundDeath, FX_StealthFighterDeathInitial,
+                 FX_MIGDamageTransition, etc. — FOUND
+[SYNTAX]         Object End present; no End;/uppercase END;
+                 no empty CommandSet; no PLACE_ON_GROUND
+[SIDE]           Side = Britain — present
+
+STOCK SPECTER DEPENDENCIES (referenced by this file, not unique defects)
+-----------------------------------------------------------------------
+These are shared with stock/sibling Specter aircraft (e.g. Britain_F35A).
+Not defined in Specter_Data loose INI index; typically provided by Specter BIG:
+  - FlareTemplateName = CountermeasureFlare
+  - FlareTemplateName = CountermeasureCHAFF
+  - Weapon GBU_31V2_JDAM_F35C -> ProjectileObject GBU-31V2
+Cannot be repaired inside Britain_F35B.ini without changing loadout/weapons
+or editing stock Weapon.ini / adding new Objects (out of scope).
+
+==============================================================================
+2) ERROR REPORT — Britain_CombatDrone.ini
+==============================================================================
+
+CRASH / PARSE RISK (must fix in this file)
+------------------------------------------
+[SCIENCE] Prerequisites Science = SCIENCE_UAEStealthJet
+  Status : MISSING (invalid name — UAE leftover from donor clone)
+  Actual : No SCIENCE_UAEStealthJet / SCIENCE_UAE_StealthJet exists
+  Fix    : Must use a valid Britain science, e.g. SCIENCE_Britain_StealthJet
+           Wrong-faction invalid science can fail INI/science resolution.
+
+[SYNTAX] Duplicate Shadow = SHADOW_VOLUME (lines ~192 and ~193)
+  Status : Accidental duplicate; last wins
+  Risk   : Low parse risk, but invalid/sloppy INI; clean to one Shadow line
+
+CHECKED OK (no issue in this file)
+----------------------------------
+[INHERIT]        No From inheritance used
+[COMMANDSET]     GenericTacticalBomberCommandSet — FOUND
+[WEAPON]         Britain_Weapon_ATGM — FOUND (Weapon_Britain.ini)
+                 2x_GBU12II_Mq9 — FOUND (stock Weapon.ini; digit-leading name)
+[PROJECTILE]     Britain_Weapon_ATGM -> Britain_Projectile_ATGM — FOUND
+[PREREQ OBJECT]  Britain_AdvancedAirBase — FOUND
+[SCIENCE]        SCIENCE_Rank3 — FOUND
+[ARMOR]          CountermeasuresCASAirplaneArmor_P — FOUND
+[LOCOMOTOR]      HoneyWellTPE331_10TurboProp — FOUND
+[UPGRADE]        Upgrade_AmericaCountermeasures — FOUND
+[OCL]/FX]       OCL_Mq9DeadHulk / FX_Jet* / FX_Mig* — FOUND
+[SIDE]           Side = Britain — present
+[SYNTAX]         Object End present; no End;/uppercase END; no empty CS
+
+STOCK SPECTER DEPENDENCIES (shared, out of scope for these two files)
+--------------------------------------------------------------------
+  - FlareTemplateName CountermeasureFlare / CountermeasureCHAFF
+  - Weapon 2x_GBU12II_Mq9 -> ProjectileObject Gbu-12II
+    (projectile not in loose Specter_Data index; stock weapon dependency)
+
+==============================================================================
+3) FIX PLAN (after this report — only these two files)
+==============================================================================
+Britain_F35B.ini:
+  - SCIENCE_BritainStealthJet -> SCIENCE_Britain_StealthJet
+
+Britain_CombatDrone.ini:
+  - SCIENCE_UAEStealthJet -> SCIENCE_Britain_StealthJet
+  - Remove duplicate Shadow line
+
+No other files will be modified.

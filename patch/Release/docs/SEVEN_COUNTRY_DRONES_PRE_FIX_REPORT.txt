@@ -1,0 +1,52 @@
+SEVEN-COUNTRY DRONES PRE-FIX REPORT
+===================================
+Target countries: France, Germany, South Korea, Sweden, India, Italy, Japan
+Donor: stock USA AmericaDronesMq9
+  Data\INI\Object\Specter\United States Of America\Drones\Mq9.ini
+
+Scope: ONLY each country's Drones folder. No Airforce/Vehicles/Infantry/Buildings.
+No new countries. No Specter core edits. Patch files only.
+
+------------------------------------------------------------------------------
+PROBLEMS FOUND (before fix)
+------------------------------------------------------------------------------
+
+France / French Armed Forces/Drones/France_CombatDrone.ini
+- Science = SCIENCE_UAEStealthJet (invalid/missing)
+- UAE leftover comment/path: was UAEAirfield
+- Duplicate Shadow = SHADOW_VOLUME
+- Primary weapon is country ATGM override (not USA MQ-9 working primary)
+
+Germany / German Armed Forces/Drones/Germany_CombatDrone.ini
+- Science = SCIENCE_UAEStealthJet (invalid/missing)
+- UAE leftover: was UAEAirfield
+- Duplicate Shadow
+- Non-USA primary weapon override
+
+South Korea / Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+- Science = SCIENCE_UAEStealthJet (invalid/missing)
+- UAE leftover: was UAEAirfield
+- Duplicate Shadow
+- Non-USA primary weapon override
+
+Sweden / Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+- Science = SCIENCE_UAEStealthJet (invalid/missing)
+- UAE leftover: was UAEAirfield
+- Duplicate Shadow
+- Non-USA primary weapon override
+
+India / Indian Armed Forces/Drones/
+- India_CombatDrone.ini: SCIENCE_UAEStealthJet, UAEAirfield leftover, duplicate Shadow, non-USA primary
+- India_ReconDrone.ini: duplicate Shadow; fragile clone prerequisites
+- India_StealthUAV.ini: UAE leftover weapon UAE_Weapon_ATGM
+
+Italy / Italian Armed Forces/Drones/Italy_CombatDrone.ini
+- Science = SCIENCE_UAEStealthJet (invalid/missing)
+- UAE leftover: was UAEAirfield
+- Duplicate Shadow
+- Non-USA primary weapon override
+
+Japan / Japan Self-Defense Forces/Drones/
+- Japan_CombatDrone.ini: SCIENCE_UAEStealthJet, UAEAirfield leftover, duplicate Shadow, non-USA primary
+- Japan_StealthUAV.ini: UAE leftover weapon UAE_Weapon_ATGM
+

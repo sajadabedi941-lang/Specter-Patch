@@ -1,0 +1,46 @@
+SPECTER_CLEAN_PATCH_FINAL — VALIDATION REPORT
+========================================================================
+Generated: 2026-07-24 12:42:33 UTC
+Original Specter stock INIs: NOT included (untouched).
+GameRoot originals: NOT modified.
+Uploaded mod Data/Art archives: reference only — not merged raw into Patch.
+
+STRUCTURE
+------------------------------------------------------------------------
+Patch/Data/INI/Object/Specter/
+Patch/Data/INI/Weapon/
+Patch/Data/INI/CommandButton/
+Patch/Data/INI/CommandSet/
+Patch/Data/INI/*.ini  (Upgrade/Science/SpecialPower/OCL/FX support)
+Patch/Art/
+
+COUNTS
+------------------------------------------------------------------------
+Total files scanned (sources + stock reference): 1517
+Added to Patch: 1441
+  Object INIs: 1270
+  Weapon/: 27
+  CommandButton/: 34
+  CommandSet/: 27
+  INI root support: 77
+  Art files: 6
+Skipped stock Specter cores (not shipped): 5 — Armor.ini, CommandButton.ini, CommandSet.ini, Locomotor.ini, Weapon.ini
+Fixed files (syntax normalize on copy): 0
+Duplicate Object names in Patch: 0
+Remaining validation errors: 0
+
+REMAINING ERRORS: none
+Checks: duplicate Objects, inheritance, weapons, command sets/buttons,
+broken End/CommandSet/BuildCompletion syntax. Stock Specter used as
+reference index only (not shipped).
+
+INSTALL (manual copy only)
+------------------------------------------------------------------------
+  Copy Patch\Data  →  GameRoot\Data
+  Copy Patch\Art   →  GameRoot\Art
+No installer. No BAT. No old manifests. No hashes inside Patch.
+
+RUNTIME NOTE
+------------------------------------------------------------------------
+This build environment cannot launch generals.exe / Wine.
+Validation is static INI analysis only — not a live ZH boot test.

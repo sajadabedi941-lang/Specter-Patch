@@ -21,7 +21,7 @@ Iraqi leftovers: ABSENT from repaired Turkey aircraft objects
 Missing model refs: NONE (all W3D present in ART BIG)
 INI load-sanity (Object/Draw/Side/CommandSet/End structure): PASS
 
-ZIP SHA256:   46d721d6cc3a2d7bb47a1147e0eff760acb023e00714c4772d2c419c7232f205
+ZIP SHA256:   39f24f68af0dbe6c61dfcc243ee9439489697bd3c91aff026d570b0e25455926
 
 STATUS: PLAYABLE BIG ARCHIVES READY (TURKEY AIRCRAFT)
 Note: Full generals.exe boot cannot run in this Linux cloud; structural

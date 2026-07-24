@@ -1,0 +1,193 @@
+SPECTER CRASH REFERENCE REPORT
+==============================
+GeneratedUtc : 2026-07-24T09:39:41.193496+00:00
+Mode         : READ-ONLY (no file modifications)
+NOTE         : Sample dry-run using synthetic ReleaseCrashInfo.txt + Britain_F35B.ini
+               Running RUN_CRASH_DIAGNOSE.bat overwrites this file against your real crash log.
+
+CRASH INFO
+----------
+File        : /tmp/specter_crash_diagnose_game/ReleaseCrashInfo.txt
+INI hint    : Data\INI\Object\Specter\British Armed Forces\Airforce\Britain_F35B.ini
+Object name : Britain_F35B
+Crash named missing : Weapon Specter_FakeMissingWeapon_XYZ
+
+BROKEN / FAILING FILE
+---------------------
+Full path : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+Relative  : British Armed Forces/Airforce/Britain_F35B.ini
+
+REFERENCE CHECK SUMMARY
+-----------------------
+Object analyzed     : Britain_F35B
+References checked  : 20
+Missing / suspicious: 18
+Weapons indexed     : 419
+CommandSets indexed : 544
+Objects indexed     : 2381
+
+MISSING REFERENCES
+------------------
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 33
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 38
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 42
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 87
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 94
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 104
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 118
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Model = US_F35A
+LINE NUMBER       : 124
+CONTEXT           : Model               = US_F35A [no loose .w3d checked in sandbox]
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Ensure the W3D/model asset for 'US_F35A' exists in Art folders, or change Model = to a shipped model.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Weapon = Specter_FakeMissingWeapon_XYZ
+LINE NUMBER       : 163
+CONTEXT           : Weapon              = PRIMARY    Specter_FakeMissingWeapon_XYZ
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Weapon Specter_FakeMissingWeapon_XYZ' in Data\INI\Weapon_*.ini (or the faction weapon INI), and ensure that file loads.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Weapon = GBU_31V2_JDAM_F35C
+LINE NUMBER       : 167
+CONTEXT           : Weapon              = PRIMARY    GBU_31V2_JDAM_F35C
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Weapon GBU_31V2_JDAM_F35C' in Data\INI\Weapon_*.ini (or the faction weapon INI), and ensure that file loads.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Weapon = AN/APG81_AESA_Radar_AGMode
+LINE NUMBER       : 168
+CONTEXT           : Weapon              = SECONDARY  AN/APG81_AESA_Radar_AGMode
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Weapon AN/APG81_AESA_Radar_AGMode' in Data\INI\Weapon_*.ini (or the faction weapon INI), and ensure that file loads.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Armor = AirplaneArmor_P
+LINE NUMBER       : 172
+CONTEXT           : Armor           = AirplaneArmor_P
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Armor AirplaneArmor_P' in an Armor INI under Data\INI\, or retarget Armor = to an existing armor set.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Armor = CountermeasuresAirplaneArmor_P
+LINE NUMBER       : 177
+CONTEXT           : Armor                 = CountermeasuresAirplaneArmor_P
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Armor CountermeasuresAirplaneArmor_P' in an Armor INI under Data\INI\, or retarget Armor = to an existing armor set.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : CommandSet = GenericMultiRoleFighter_AG_CommandSet
+LINE NUMBER       : 188
+CONTEXT           : CommandSet = GenericMultiRoleFighter_AG_CommandSet
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'CommandSet GenericMultiRoleFighter_AG_CommandSet' in Data\INI\CommandSet_*.ini, or change CommandSet = on the Object to an existing set.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Weapon = AN/ALQ-135
+LINE NUMBER       : 308
+CONTEXT           : WeaponTemplate        = AN/ALQ-135
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Weapon AN/ALQ-135' in Data\INI\Weapon_*.ini (or the faction weapon INI), and ensure that file loads.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Weapon = AN/ALQ-135_AHAM
+LINE NUMBER       : 315
+CONTEXT           : WeaponTemplate        = AN/ALQ-135_AHAM
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Weapon AN/ALQ-135_AHAM' in Data\INI\Weapon_*.ini (or the faction weapon INI), and ensure that file loads.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Locomotor = Pratt_Whitney_F135
+LINE NUMBER       : 326
+CONTEXT           : Locomotor = SET_NORMAL Pratt_Whitney_F135
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Locomotor Pratt_Whitney_F135' in a Locomotor INI under Data\INI\, or retarget Locomotor = to an existing locomotor.
+
+BROKEN FILE       : /tmp/specter_crash_diagnose_game/Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECT            : Britain_F35B
+MISSING REFERENCE : Locomotor = BasicJetTaxiLocomotor
+LINE NUMBER       : 327
+CONTEXT           : Locomotor = SET_TAXIING BasicJetTaxiLocomotor
+STATUS            : MISSING
+SPECTER SEARCH    : not found as a definition under Object\Specter (also checked Data\INI)
+FIX SUGGESTION    : Add or restore 'Locomotor BasicJetTaxiLocomotor' in a Locomotor INI under Data\INI\, or retarget Locomotor = to an existing locomotor.
+
+FINAL VERDICT: MISSING_REFERENCES_FOUND

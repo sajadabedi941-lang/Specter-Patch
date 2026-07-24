@@ -1,0 +1,32 @@
+PRE-FIX REPORT — Britain_F35B + Saudi Arabia Drones
+===================================================
+Scope ONLY:
+  1) British Armed Forces/Airforce/Britain_F35B.ini
+  2) Saudi Arabian Armed Forces/Drones/ (entire folder)
+
+No other countries. No other Airforce files. No Vehicles/Infantry/Buildings/core.
+
+------------------------------------------------------------------------------
+FIX 1 — Britain_F35B.ini
+Path: Data\INI\Object\Specter\British Armed Forces\Airforce\Britain_F35B.ini
+
+Problems found:
+- Still not a full USA F-35 donor rebuild (keeps non-USA primary loadout).
+- Primary Weapon override: Britain_Weapon_AAM_Medium (not USA F35C working primary).
+- Science uses Britain stealth science path instead of working USA SCIENCE_StealthFighter.
+- User-required broken BritainStealthJet / broken weapon override pattern must be removed
+  by replacing with USA AmericaJetF35C (F35C.ini) structure.
+
+Keep: Object Britain_F35B, Side = Britain, Britain path/naming.
+
+------------------------------------------------------------------------------
+FIX 2 — Saudi Arabia Drones
+Path: Data\INI\Object\Specter\Saudi Arabian Armed Forces\Drones\SaudiArabia_CombatDrone.ini
+
+Problems found:
+- Science = SCIENCE_UAEStealthJet (invalid / missing)
+- UAE leftovers: UAEAirfield comment + UAE science
+- Duplicate Shadow = SHADOW_VOLUME
+- Primary weapon override SaudiArabia_Weapon_ATGM (not USA MQ-9 working primary)
+
+SaudiArabia_StrategyCenter does not exist; AdvancedAirBase does.

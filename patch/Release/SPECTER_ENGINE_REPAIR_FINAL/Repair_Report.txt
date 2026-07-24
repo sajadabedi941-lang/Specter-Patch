@@ -1,0 +1,87 @@
+SPECTER ENGINE REPAIR REPORT
+============================
+GeneratedUtc : 2026-07-24T00:21:35.538241+00:00
+Package      : SPECTER_ENGINE_REPAIR_FINAL
+Repaired     : 13 files written into Fixed/ and patch tree
+Fixed count  : 14
+Final verify : PASS
+
+KNOWN TARGETS
+-------------
+  OK  British Armed Forces/Airforce/Britain_F35B.ini
+  OK  Turkey Armed Forces/Turkey_WeaponObjects.ini
+  OK  Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+  OK  Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+
+REPAIRED FILES
+--------------
+FILE: British Armed Forces/Infantry/Britain_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: French Armed Forces/Infantry/France_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: German Armed Forces/Infantry/Germany_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+ERROR: L68 PLACE_ON_GROUND: BuildCompletion = PLACE_ON_GROUND
+FIX: L68: PLACE_ON_GROUND -> PLACED_BY_PLAYER
+ACTION: Replaced in patch + Fixed/
+
+FILE: Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+ERROR: L63 PLACE_ON_GROUND: BuildCompletion = PLACE_ON_GROUND
+FIX: L63: PLACE_ON_GROUND -> PLACED_BY_PLAYER
+ACTION: Replaced in patch + Fixed/
+
+FILE: Italian Armed Forces/Infantry/Italy_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: Japan Self-Defense Forces/Infantry/Japan_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: PatchSystems/RuntimeFix/Boss_Faction_Objects.ini
+ERROR: L8639 END_SEMI: End; --- Indicator
+FIX: L8639: End; trailing comment -> End + comment line
+ACTION: Replaced in patch + Fixed/
+
+FILE: Republic of China Armed Forces/Infantry/Taiwan_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: Republic of Korea Armed Forces/Infantry/SouthKorea_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: Swedish Armed Forces/Infantry/Sweden_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FILE: Turkey Armed Forces/Turkey_WeaponObjects.ini
+ERROR: L1745 END_SEMI: End; ---- begin Projectile death behaviors | L1824 END_SEMI: End; ---- begin Projectile death behaviors
+FIX: L1745: End; trailing comment -> End + comment line | L1824: End; trailing comment -> End + comment line
+ACTION: Replaced in patch + Fixed/
+
+FILE: United Nations Forces/Infantry/UN_HeavySniper.ini
+ERROR: L134 END_SEMI: End; --- Indicator
+FIX: L134: End; trailing comment -> End + comment line | Added trailing newline
+ACTION: Replaced in patch + Fixed/
+
+FINAL VERIFICATION RESULT
+-------------------------
+VERDICT: PASS
+NOTE: Running INSTALL_SPECTER_REPAIR.bat will overwrite Repair_Report.txt
+      and replace matching files under Data\INI\Object\Specter\ in the game.

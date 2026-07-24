@@ -1,0 +1,41 @@
+SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE
+=====================================
+
+These are the REAL playable merged Specter BIG archives.
+Not reports. Not scripts. Binary .big files ready to install.
+
+Base: SPECTER_BIG_MERGE_PLAYABLE
+Change: ONLY Drones folders for France, Germany, South Korea, Sweden, India, Italy, Japan
+        rebuilt from working USA MQ-9 (AmericaDronesMq9).
+
+FILES (required):
+  _SPEC_DATA_ONE.big     384493410 bytes
+  _SPEC_ART_ONE.big      446216323 bytes
+
+SHA256:
+  DATA  f7015742326898d6b8ad54f42778539835a14a3bbbf8a64d49599027b3cdf1ab
+  ART   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+UPDATED PATHS INSIDE DATA BIG:
+  Data\INI\Object\Specter\French Armed Forces\Drones\France_CombatDrone.ini
+  Data\INI\Object\Specter\German Armed Forces\Drones\Germany_CombatDrone.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Drones\SouthKorea_CombatDrone.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Drones\Sweden_CombatDrone.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_CombatDrone.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Drones\Italy_CombatDrone.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Drones\Japan_CombatDrone.ini
+
+REMOVED (broken extra drone clones cleared from those Drones folders):
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_ReconDrone.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_StealthUAV.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Drones\Japan_StealthUAV.ini
+
+INSTALL:
+1. Close Generals Zero Hour / Specter
+2. Backup GameRoot _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Copy these two files into Specter GameRoot (replace)
+4. Launch Specter
+
+No loose Patch\Data overlay needed for this package.
+
+See PRE_FIX_REPORT.txt for original problems.

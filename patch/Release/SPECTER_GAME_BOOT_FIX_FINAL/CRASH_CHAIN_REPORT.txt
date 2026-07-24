@@ -1,0 +1,27 @@
+CRASH CHAIN REPORT
+==================
+GeneratedUtc: 2026-07-24T10:09:36.653928+00:00
+
+ReleaseCrashInfo.txt: NOT PRESENT in this agent workspace.
+User-reported chain (from prior sessions / user statements):
+
+1) Error parsing INI file → British Armed Forces\Airforce\Britain_F35B.ini
+2) After disable/skip → British Armed Forces\Drones\Britain_CombatDrone.ini
+3) Pattern: crash moves to the next broken/duplicate/misplaced INI (chained)
+
+Root causes identified across this expansion:
+A) Classic ZH parse defects in Specter Object INIs:
+   - End; trailing comments on same line
+   - Invalid BuildCompletion = PLACE_ON_GROUND
+   - Empty CommandSet = ;comment (fixed in earlier boot pass)
+B) Flat install of New folder.zip into Data\INI\ creating duplicate Object definitions
+C) Remaining reference gaps for stock Armor/Locomotor living only in .big (not a parse crash)
+
+Documents / prior reports scanned in repo:
+- FINAL_BOOT_FIX_REPORT.md
+- FINAL_CRASH_FREE_REPORT.md
+- FINAL_RUNTIME_FIX_REPORT.md
+- patch/Release/SPECTER_ENGINE_REPAIR_FINAL/Repair_Report.txt
+- patch/Release/REPAIR_REPORT_INI_SYNTAX.txt
+
+Chronological note: No ReleaseCrashInfoPrev.txt or Documents crash logs available here.

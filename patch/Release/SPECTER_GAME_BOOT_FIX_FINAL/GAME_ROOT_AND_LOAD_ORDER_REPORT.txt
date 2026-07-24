@@ -1,0 +1,44 @@
+GAME ROOT AND LOAD ORDER REPORT
+================================
+GeneratedUtc: 2026-07-24T10:09:36.653928+00:00
+
+ENVIRONMENT
+-----------
+Agent OS: Linux cloud VM
+generals.exe: NOT FOUND in workspace
+game.dat: NOT FOUND
+Wine/Proton: NOT AVAILABLE
+Actual Windows game launch: NOT POSSIBLE in this environment
+
+MOD / OVERLAY ROOTS FOUND
+-------------------------
+1) /workspace/patch/          — Specter Ultimate Warfare Expansion overlay (authoritative for this package)
+2) /workspace/New folder.zip  — 55 loose Object INIs (must map under Object\Specter\... never flat Data\INI\)
+3) /workspace/Data.zip (+ .z01-.z14) — vendor Data archive (DO NOT modify)
+4) /workspace/Specter_Data.zip (+ splits) — vendor Specter data (DO NOT modify)
+5) /workspace/SPECTER FINAL (GeneralsMode.com).zip (+ splits) — full Specter distribution (DO NOT modify)
+6) /workspace/mod.zip (+ splits) — vendor mod archive (DO NOT modify)
+
+EXPECTED USER GAME ROOT (Windows)
+---------------------------------
+Folder containing:
+  generals.exe / GeneralsZH.exe / launcher
+  Data\
+  Data\INI\Object\Specter\
+
+LOAD PRIORITY (Generals ZH typical)
+-----------------------------------
+1. Loose files under GameRoot\Data\... override
+2. .big / .zh.big archives
+3. Patch overlays copied into Data\
+
+DUPLICATE RISK
+--------------
+If New folder\*.ini are copied FLAT into Data\INI\ they DUPLICATE Objects
+already under Data\INI\Object\Specter\... and cause parse/load crashes.
+Correct placement is documented in Fixed\ relative paths.
+
+INSTALLER GAME ROOT DETECTION
+-----------------------------
+INSTALL_SPECTER_GAME_BOOT_FIX.bat detects GameRoot by walking parents of %~dp0
+until Data\INI\Object\Specter exists (or folder picker).

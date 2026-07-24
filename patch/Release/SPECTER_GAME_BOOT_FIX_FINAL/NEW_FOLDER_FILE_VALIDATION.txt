@@ -1,0 +1,554 @@
+NEW FOLDER FILE VALIDATION (boot-critical)
+============================================
+GeneratedUtc: 2026-07-24T10:11:29.685977+00:00
+
+FILE: AbbasLauncher.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+OBJECTS DEFINED: Turkey_Alhussaien, TurkeyAbbasLauncherHulk
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Airborne.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini
+OBJECTS DEFINED: TurkeyInfantrySpecOps_Akms, TurkeyInfantrySpecOps_AKMGP, TurkeyInfantrySpecOps_Rpk, TurkeyInfantrySpecOps_Mks, TurkeyInfantryAirborneHeavySniper
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Aircraft_AAB_Global.ini
+DEST: Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+OBJECTS DEFINED: Patch_America_F22, Patch_America_F35, Patch_America_F16C, Patch_America_F15E, Patch_America_A10, Patch_America_B2, Patch_America_B52, Patch_America_E3, Patch_America_KC135, Patch_America_C17, Patch_Russia_Su57, Patch_Russia_Su35, Patch_Russia_Mig29, Patch_Russia_Mig31, Patch_Russia_Su34, Patch_Russia_Tu22M3, Patch_Russia_Tu160, Patch_Russia_A50, Patch_Russia_Il78, Patch_Russia_Il76, Patch_China_J20, Patch_China_J10, Patch_China_J11, Patch_China_J16, Patch_China_JH7, Patch_China_H6, Patch_China_KJ2000, Patch_China_HY6, Patch_China_Y20, Patch_Iran_F14, Patch_Iran_Mig29, Patch_Iran_Su24, Patch_Iran_F4, Patch_Iran_AWACS, Patch_Iran_Tanker, Patch_Iran_Transport, Patch_Iraq_F16IQ, Patch_Iraq_Su25, Patch_Iraq_MirageF1, Patch_Iraq_AWACS, Patch_Iraq_Transport, Patch_NK_Mig29, Patch_NK_Mig21, Patch_NK_Mig23, Patch_NK_Su25, Patch_NK_AWACS, Patch_NK_Transport, Patch_Turkey_E7, Patch_Turkey_KC135R, Patch_Turkey_A400M, Patch_Ukraine_Mig29, Patch_Ukraine_Su27, Patch_Ukraine_Su24, Patch_Ukraine_Su25, Patch_Ukraine_A50U, Patch_Ukraine_Transport, Patch_India_Su30MKI, Patch_India_Rafale, Patch_India_Tejas, Patch_India_Mirage2000, Patch_India_Jaguar, Patch_India_AWACS, Patch_India_Transport, Patch_Pakistan_JF17, Patch_Pakistan_F16, Patch_Pakistan_Mirage, Patch_Pakistan_JF17B, Patch_Pakistan_AWACS, Patch_Pakistan_Transport, Patch_Japan_F15J, Patch_Japan_F2, Patch_Japan_F35J, Patch_Japan_E767, Patch_Japan_KC767, Patch_Japan_Transport, Patch_Saudi_F15SA, Patch_Saudi_Eurofighter, Patch_Saudi_Tornado, Patch_Saudi_E3, Patch_Saudi_Tanker, Patch_Saudi_Transport, Patch_UAE_F16E, Patch_UAE_Mirage2000, Patch_UAE_F35, Patch_UAE_AWACS, Patch_UAE_Transport, Patch_Nato_F35, Patch_Nato_F16V, Patch_Nato_AWACS, Patch_Nato_Tanker, Patch_Nato_Transport, Patch_GLA_Mig29, Patch_GLA_Su25, Patch_GLA_AWACS, Patch_GLA_Transport, Patch_Egypt_Rafale, Patch_Egypt_F16C, Patch_Egypt_Mig29M2, Patch_Egypt_AWACS, Patch_Egypt_Tanker, Patch_Egypt_Transport, Patch_Syria_Mig29, Patch_Syria_Su24, Patch_Syria_Su25, Patch_Syria_Mig23, Patch_Syria_AWACS, Patch_Syria_Transport, Patch_Libya_MirageF1, Patch_Libya_Mig23, Patch_Libya_Su22, Patch_Libya_AWACS, Patch_Libya_Transport, Patch_Vietnam_Su30, Patch_Vietnam_Mig21, Patch_Vietnam_Su22, Patch_Vietnam_AWACS, Patch_Vietnam_Transport, Patch_SouthAfrica_Gripen, Patch_SouthAfrica_Hawk, Patch_SouthAfrica_Rooivalk, Patch_SouthAfrica_AWACS, Patch_SouthAfrica_Transport, Patch_Britain_Typhoon, Patch_Britain_F35B, Patch_Britain_Tornado, Patch_Britain_E3D, Patch_Britain_Voyager, Patch_Britain_Transport, Patch_France_Rafale, Patch_France_Mirage2000, Patch_France_AWACS, Patch_France_Tanker, Patch_France_Transport, Patch_Germany_Eurofighter, Patch_Germany_Tornado, Patch_Germany_AWACS, Patch_Germany_Tanker, Patch_Germany_Transport, Patch_Italy_Eurofighter, Patch_Italy_F35A, Patch_Italy_Tornado, Patch_Italy_AWACS, Patch_Italy_Transport, Patch_Sweden_GripenE, Patch_Sweden_GripenC, Patch_Sweden_AWACS, Patch_Sweden_Transport, Patch_SouthKorea_F15K, Patch_SouthKorea_F35A, Patch_SouthKorea_F16, Patch_SouthKorea_AWACS, Patch_SouthKorea_Tanker, Patch_SouthKorea_Transport, Patch_Taiwan_F16V, Patch_Taiwan_Mirage2000, Patch_Taiwan_IDF, Patch_Taiwan_E2K, Patch_Taiwan_Transport, Patch_UN_F16, Patch_UN_F35, Patch_UN_AWACS, Patch_UN_Tanker, Patch_UN_Transport, Patch_Ukraine_BayraktarTB2, Patch_Pakistan_MQ9, Patch_UAE_MQ9, Patch_UAE_WingLoong, Patch_India_BrahMos, Patch_China_J35, Patch_America_EA18G, Patch_Russia_EW, Patch_China_EW, Patch_Turkey_EW, Patch_India_EW, Patch_Japan_EW, Patch_Britain_EW, Patch_France_EW, Patch_America_B21, Patch_Russia_Su75, Patch_America_F15EX, Patch_America_F16V, Patch_Pakistan_J10C
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Aircraft_AirForceExpansion.ini
+DEST: Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+OBJECTS DEFINED: Patch_America_Aurora, Patch_America_StealthHawk, Patch_America_AC130Spectre, Patch_America_E2C, Patch_America_B3, Patch_Russia_Su57Strike, Patch_Ukraine_Sokil, Patch_Ukraine_AN71, Patch_Ukraine_Dronecopter, Patch_Germany_JetBomber, Patch_France_Cayova, Patch_China_J10Strike
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Britain_CombatDrone.ini
+DEST: Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+OBJECTS DEFINED: Britain_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Britain_F35B.ini
+DEST: Data/INI/Object/Specter/British Armed Forces/Airforce/Britain_F35B.ini
+OBJECTS DEFINED: Britain_F35B
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Egypt_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+OBJECTS DEFINED: Egypt_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Egypt_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+OBJECTS DEFINED: Egypt_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: France_CombatDrone.ini
+DEST: Data/INI/Object/Specter/French Armed Forces/Drones/France_CombatDrone.ini
+OBJECTS DEFINED: France_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Germany_CombatDrone.ini
+DEST: Data/INI/Object/Specter/German Armed Forces/Drones/Germany_CombatDrone.ini
+OBJECTS DEFINED: Germany_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: India_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Indian Armed Forces/Drones/India_CombatDrone.ini
+OBJECTS DEFINED: India_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: India_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_CommandCenter.ini
+OBJECTS DEFINED: India_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: India_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_MilitaryHQ.ini
+OBJECTS DEFINED: India_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: India_TejasMk2.ini
+DEST: Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini
+OBJECTS DEFINED: India_TejasMk2
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Israel_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+OBJECTS DEFINED: Israel_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Israel_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+OBJECTS DEFINED: Israel_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Italy_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Italian Armed Forces/Drones/Italy_CombatDrone.ini
+OBJECTS DEFINED: Italy_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Japan_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+OBJECTS DEFINED: Japan_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Japan_MQ9.ini
+DEST: Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+OBJECTS DEFINED: Japan_MQ9
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Karrar-2.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Karrar-2.ini
+OBJECTS DEFINED: Turkey_Karrar2
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Lamiaa.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Lamiaa.ini
+OBJECTS DEFINED: Turkey_Lamiaa
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Libya_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_CommandCenter.ini
+OBJECTS DEFINED: Libya_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Libya_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_MilitaryHQ.ini
+OBJECTS DEFINED: Libya_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: MilitaryHQ_StockFactions.ini
+DEST: Data/INI/Object/Specter/PatchSystems/MilitaryHQ/MilitaryHQ_StockFactions.ini
+OBJECTS DEFINED: America_MilitaryHQ, Russia_MilitaryHQ, China_MilitaryHQ, NorthKorea_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Pakistan_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini
+OBJECTS DEFINED: Pakistan_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Pakistan_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_MilitaryHQ.ini
+OBJECTS DEFINED: Pakistan_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Russia_AD_TorM.ini
+DEST: Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_TorM.ini
+OBJECTS DEFINED: Russia_AD_TorM
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SaudiArabia_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+OBJECTS DEFINED: SaudiArabia_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SaudiArabia_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini
+OBJECTS DEFINED: SaudiArabia_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SaudiArabia_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_MilitaryHQ.ini
+OBJECTS DEFINED: SaudiArabia_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SouthAfrica_CommandCenter.ini
+DEST: Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_CommandCenter.ini
+OBJECTS DEFINED: SouthAfrica_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SouthAfrica_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_MilitaryHQ.ini
+OBJECTS DEFINED: SouthAfrica_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SouthKorea_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+OBJECTS DEFINED: SouthKorea_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: SpecialForces.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+OBJECTS DEFINED: Turkey_SpecialForces_Akms, Turkey_SpecialForces_AKMGP, Turkey_SpecialForces_Rpk, Turkey_SpecialForces_Mks
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Sweden_CombatDrone.ini
+DEST: Data/INI/Object/Specter/Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+OBJECTS DEFINED: Sweden_CombatDrone
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Syria_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_CommandCenter.ini
+OBJECTS DEFINED: Syria_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Syria_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_MilitaryHQ.ini
+OBJECTS DEFINED: Syria_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_AWACS.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_AWACS.ini
+OBJECTS DEFINED: Turkey_AWACS
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_Akinci.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+OBJECTS DEFINED: Turkey_Akinci
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_Bora.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Bora.ini
+OBJECTS DEFINED: Turkey_Bora, Turkey_BoraHulk
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini
+OBJECTS DEFINED: Turkey_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_EliteMaroonBerets.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_EliteMaroonBerets.ini
+OBJECTS DEFINED: Turkey_EliteMaroonBerets
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_F16Block70.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+OBJECTS DEFINED: Turkey_F16Block70
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_Kizilelma.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+OBJECTS DEFINED: Turkey_Kizilelma
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MilitaryHQ.ini
+OBJECTS DEFINED: Turkey_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_TB2.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_TB2.ini
+OBJECTS DEFINED: Turkey_TB2
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_Tu-22M3.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+OBJECTS DEFINED: Turkey_Tu-22M3
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Turkey_WeaponObjects.ini
+DEST: Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+OBJECTS DEFINED: Turkey_7S118_MissileObject, Turkey_Fahad250_ABM_Object, Turkey_MRBM_Raad2_Object, Turkey_Kh-22B_Object, Turkey_AM39B2M2_Object, Turkey_KH-22B_CruiseMissile_Dummy, Turkey_Kh55M_Object_SpecialPower, Turkey_KH22B_SpecialPower, Turkey_155mm_Shell, Turkey_SS1E_Missile, Turkey_AlshaheedSuicideWeaponObject, Turkey_Fab-100, Turkey_Fab-250, Turkey_Fab-500FF, Turkey_Kab500, Turkey_Sarab-5Missile, Turkey_Turkey_Sarab-5MissileB, Turkey_Sarab-6Missile, Turkey_AlraadMissile, Turkey_NissanMissileObject, Turkey_Alraad_HE_Object, Turkey_Sarab-7Missile, Turkey_Sarab-7CMissile, TurkeyCruiseMissileLauncher, Turkey_255mmAl-FawCannon, Turkey_255mmShell, Turkey_Sarab-8CuirseMissile, Turkey_Turkey_Fab-250_Scripted, Turkey_Fab2000, Turkey_Nasr5000, Turkey_Nasr1500, Turkey_AlAbidMissile, Turkey_AlAbidWarheadReentryProjectile, Turkey_HussieanMissile, Turkey_HussieanWarheadReentryProjectile, Turkey_122mm_m21OF_Grad_Missile, Turkey_Turkey_122mm_m21OF_Grad_Missile1, Turkey_Turkey_122mm_m21OF_Grad_Missile2, Turkey_Turkey_122mm_m21OF_Grad_Missile3, Turkey_Turkey_122mm_m21OF_Grad_Missile_Short, Turkey_GuidedMissileDefenderMissile, Turkey_MissileDefenderLaserMissile, Turkey_RPGMissileObject, Turkey_Abbas_Missile, Turkey_Nasr2500, Turkey_Sa8OSAmissile, Turkey_S75D_MissileObject, Turkey_S125_MissileObject, Turkey_Turkey_S125_MissileObject1, Turkey_Turkey_S125_MissileObject2, Turkey_Turkey_S125_MissileObject3, Turkey_9M336Missile, Turkey_KH58_MissileObject, Turkey_R-27_MissileObject, Turkey_R-40_MissileObject, Turkey_KH-25ML_MissileObject, Turkey_122mm_ClusterShell, Turkey_Alraad2Missile, Turkey_Alraad2_WarheadCells, Turkey_125mm_ABAPS2_APFSDS, Turkey_Turkey_125mm_ABAPS2_APFSDS1, Turkey_Turkey_125mm_ABAPS2_APFSDS2, Turkey_Turkey_125mm_ABAPS2_APFSDS3, Turkey_ALHIJARAH_SRBM_Object, Turkey_SUMOD2_MRBM_Object, Turkey_ALHIJARAH_MRBM_Object, Turkey_R11_HE_INS_Missile_Object, Turkey_R11_ScudB_Object, Turkey_R11WarheadReentryProjectile, Turkey_R11_ScudB_CH_Object, Turkey_R11_CH_WarheadReentryProjectile, Turkey_S25OF_Projectile, Turkey_Quds5Object, Turkey_SRBM_SUMOD2_WeaponObject, Turkey_SRBM_SUMOD2_CH_WeaponObject, Turkey_SRBM_SUMOD2_TH_WeaponObject, Turkey_Sumod2WarheadReentryProjectile_HE, Turkey_Sumod2WarheadReentryProjectile_CH, Turkey_Sumod2WarheadReentryProjectile_TH, Turkey_9M14_MissileObject, Turkey_KH29L_MissileObject
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: UAE_CommandCenter.ini
+DEST: Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_CommandCenter.ini
+OBJECTS DEFINED: UAE_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: UAE_MQ9.ini
+DEST: Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MQ9.ini
+OBJECTS DEFINED: UAE_MQ9
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: UAE_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MilitaryHQ.ini
+OBJECTS DEFINED: UAE_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Ukraine_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini
+OBJECTS DEFINED: Ukraine_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Ukraine_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_MilitaryHQ.ini
+OBJECTS DEFINED: Ukraine_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Vietnam_CommandCenter.ini
+DEST: Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_CommandCenter.ini
+OBJECTS DEFINED: Vietnam_CommandCenter
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+
+FILE: Vietnam_MilitaryHQ.ini
+DEST: Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_MilitaryHQ.ini
+OBJECTS DEFINED: Vietnam_MilitaryHQ
+SYNTAX ERRORS: (none — boot-critical rules)
+DUPLICATE DEFINITIONS: (none within file)
+MISSING REFERENCES: see GLOBAL_REFERENCE_AUDIT.txt (loose-INI index; .big symbols excluded)
+INCORRECT PARAMETERS: (none)
+FIX APPLIED: (already clean in patch; deployed to Fixed)
+FINAL STATUS: CLEAN
+

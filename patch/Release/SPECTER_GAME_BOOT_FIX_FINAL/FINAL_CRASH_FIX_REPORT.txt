@@ -1,0 +1,36 @@
+FINAL CRASH FIX REPORT
+======================
+GeneratedUtc: 2026-07-24T10:13:31.507386+00:00
+
+ROOT CAUSE
+----------
+1) ZH parse defects in loose Specter Object INIs (historically: End; comments,
+   PLACE_ON_GROUND BuildCompletion, empty CommandSet = ;comment).
+2) New folder.zip INIs installed FLAT under Data\INI\ duplicate Objects already
+   defined under Data\INI\Object\Specter\... — load order then crashes on the
+   first bad/duplicate file (often Britain_F35B.ini), then the next (Britain_CombatDrone.ini).
+
+FIX DELIVERED
+-------------
+- 55 New folder Object INIs mapped to correct Specter faction paths in Fixed\
+- Additional repaired Specter INIs included (65 Fixed\*.ini total)
+- Installer backs up, replaces, and verifies boot-critical parse rules
+- Patch tree Object\Specter boot-critical defects: 0 remaining (static)
+
+CHANGED FILE COUNT (Fixed payload)
+----------------------------------
+65 INI files under Fixed\
+
+HIGH-RISK TARGETS INCLUDED
+--------------------------
+British Armed Forces/Airforce/Britain_F35B.ini
+British Armed Forces/Drones/Britain_CombatDrone.ini
+Turkey Armed Forces/Turkey_WeaponObjects.ini
+Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+
+RUNTIME EVIDENCE
+----------------
+Game executable was NOT launched in the build environment.
+Static verification: PASS (0 boot-critical defects in patch Specter + Fixed payload).
+User Windows launch required for main menu / Skirmish confirmation.

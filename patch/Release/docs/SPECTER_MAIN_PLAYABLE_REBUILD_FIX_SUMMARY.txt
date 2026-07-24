@@ -1,0 +1,9 @@
+MAIN PLAYABLE BIG REBUILD
+=========================
+Why: game was still loading old BIG content while INI sources on main were updated.
+
+Action:
+- Rebuilt _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from stock Specter BIGs
+  merged with current main patch/Data and patch/Art
+- Verified MilitaryHQ_StockFactions + 12 country MilitaryHQ USA-clean files
+  are present and byte-identical inside the new DATA BIG

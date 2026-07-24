@@ -1,0 +1,20 @@
+SPECTER_MAIN_PLAYABLE_REBUILD — VERIFY REPORT
+Generated: 2026-07-24 UTC
+
+Rebuild method:
+  merge_patch_into_spec_big.py
+  --data-big stock _SPEC_DATA_ONE.big
+  --art-big  stock _SPEC_ART_ONE.big
+  --patch-root patch/ (current main)
+
+DATA entries: 2885 (stock 1430 + patch added/updated)
+ART entries:  2689
+DATA SHA256:  eb617ef80339068303a8f0d92ded498086dbf4793fc40a86f058960c853f893e
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+MilitaryHQ_StockFactions.ini inside DATA BIG: PASS (byte-match patch source)
+  us_commandcenter / US_Command present
+  irq_comndcntr / Irq_Command absent
+All 12 country MilitaryHQ.ini inside DATA BIG: PASS (byte-match)
+
+STATUS: PLAYABLE BIG ARCHIVES READY (MAIN REBUILD)

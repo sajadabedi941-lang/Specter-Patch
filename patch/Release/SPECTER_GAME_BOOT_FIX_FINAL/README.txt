@@ -13,6 +13,7 @@ HOW TO USE
    (same place as Data\ and Generals.exe).
 4. Double-click ONLY:
      INSTALL_SPECTER_GAME_BOOT_FIX.bat
+   (Pure Windows batch - cmd.exe batch only)
 5. Wait for: INSTALL SUCCESSFUL
 6. Launch Specter and confirm main menu / Skirmish.
 
@@ -45,10 +46,7 @@ FILES IN THIS PACKAGE
 INSTALL_SPECTER_GAME_BOOT_FIX.bat
 UNINSTALL_SPECTER_GAME_BOOT_FIX.bat
 VERIFY_SPECTER_GAME_BOOT_FIX.bat
-INSTALL_SPECTER_GAME_BOOT_FIX.ps1
-UNINSTALL_SPECTER_GAME_BOOT_FIX.ps1
-VERIFY_SPECTER_GAME_BOOT_FIX.ps1
-Fixed\
+UNFixed\
 README.txt
 FINAL_CRASH_FIX_REPORT.txt
 RUNTIME_CRASH_ITERATIONS.txt

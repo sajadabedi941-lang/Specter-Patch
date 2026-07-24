@@ -1,0 +1,14 @@
+FIX SUMMARY
+===========
+1) Built clean USA MilitaryHQ_StockFactions master from America_MilitaryHQ
+2) Replaced leftover art:
+   irq_comndcntr -> us_commandcenter
+   Irq_Command / Irq_Command.Irq_Command -> US_Command / US_Command.US_Command
+3) Replaced leftover special-power OCLs/gunship with USA equivalents
+4) Updated MilitaryHQ_StockFactions.ini
+5) Replaced only MilitaryHQ for:
+   Egypt, India, Israel, Libya, Pakistan, Saudi Arabia, South Africa,
+   Syria, Turkey, UAE, Ukraine, Vietnam
+
+Kept CommandSet/Production/Armor/Health/Shadow/valid behaviors.
+No other buildings or units touched.

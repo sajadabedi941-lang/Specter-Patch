@@ -1,0 +1,16 @@
+PRE-FIX REPORT — MilitaryHQ USA clean
+=====================================
+Reference: MilitaryHQ_StockFactions.ini
+
+Leftovers found:
+- SelectPortrait/ButtonImage = irq_comndcntr
+- Model = Irq_Command
+- Animation = Irq_Command.Irq_Command
+- OCL SUPERWEAPON_Iraqi* / SUPERWEAPON_IraqReconnaissance
+- GunshipTemplateName = Iraq_Adnan1
+- Israel_MilitaryHQ truncated vs full MilitaryHQ structure
+
+USA Command Center replacement assets:
+- us_commandcenter
+- US_Command / US_Command.US_Command
+- USA OCL/gunship equivalents for former special-power payloads

@@ -1,0 +1,6 @@
+FULL INI SCAN REPORT (AFTER REPAIR)
+===================================
+Scanned: 1270
+Critical: 0
+VERDICT: PASS
+

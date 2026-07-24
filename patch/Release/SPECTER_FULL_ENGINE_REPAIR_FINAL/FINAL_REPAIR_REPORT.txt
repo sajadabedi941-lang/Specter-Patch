@@ -1,0 +1,101 @@
+FINAL REPAIR REPORT
+===================
+Specter: /workspace/patch/Data/INI/Object/Specter
+Backup: /tmp/specter_engine_repair_backup
+Files: 1270
+
+FILE: Turkey Armed Forces/Turkey_WeaponObjects.ini
+STATUS: REPAIRED
+ERROR: END_SEMI,END_SEMI
+FIX:
+  - L1745: End; -> End + comment
+  - L1824: End; -> End + comment
+
+FILE: British Armed Forces/Infantry/Britain_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: PatchSystems/RuntimeFix/Boss_Faction_Objects.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L8639: End; -> End + comment
+
+FILE: Swedish Armed Forces/Infantry/Sweden_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: Italian Armed Forces/Infantry/Italy_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: Japan Self-Defense Forces/Infantry/Japan_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: French Armed Forces/Infantry/France_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+STATUS: REPAIRED
+ERROR: PLACE_ON_GROUND
+FIX:
+  - L68: PLACE_ON_GROUND->PLACED_BY_PLAYER
+
+FILE: Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+STATUS: REPAIRED
+ERROR: PLACE_ON_GROUND
+FIX:
+  - L63: PLACE_ON_GROUND->PLACED_BY_PLAYER
+
+FILE: Republic of Korea Armed Forces/Infantry/SouthKorea_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: United Nations Forces/Infantry/UN_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: Republic of China Armed Forces/Infantry/Taiwan_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+FILE: German Armed Forces/Infantry/Germany_HeavySniper.ini
+STATUS: REPAIRED
+ERROR: END_SEMI
+FIX:
+  - L134: End; -> End + comment
+  - trailing newline
+
+SUMMARY
+-------
+Repaired : 13
+Fallback : 0
+Unchanged: 1257
+Failed   : 0
+VERDICT  : PASS

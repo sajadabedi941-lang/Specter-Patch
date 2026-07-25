@@ -1,0 +1,93 @@
+{
+  "checks": [
+    [
+      "Side=Turkey",
+      "OK"
+    ],
+    [
+      "Portrait rus_rs24",
+      "OK"
+    ],
+    [
+      "Model RS24_Bones",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24Camo",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24HL",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24_A",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24_D",
+      "OK"
+    ],
+    [
+      "Model RUS_RS24_WL",
+      "OK"
+    ],
+    [
+      "Anim RUS_RS24.RUS_RS24",
+      "OK"
+    ],
+    [
+      "Anim RUS_RS24Camo.RUS_RS24Camo",
+      "OK"
+    ],
+    [
+      "Anim RUS_RS24_A.RUS_RS24_A",
+      "OK"
+    ],
+    [
+      "Anim RUS_RS24_D.RUS_RS24_D",
+      "OK"
+    ],
+    [
+      "Anim RUS_RS24_WL.RUS_RS24_WL",
+      "OK"
+    ],
+    [
+      "Weapon Turkey_AlAbidMissileWeapon",
+      "OK"
+    ],
+    [
+      "Weapon Turkey_HussieanMissileWeapon",
+      "OK"
+    ],
+    [
+      "CommandSet Turkey_AlhussaienCommandSet",
+      "OK"
+    ],
+    [
+      "Locomotor Generic8x8Locomotor_H",
+      "OK"
+    ],
+    [
+      "No irq code",
+      "OK"
+    ],
+    [
+      "No irq_alabbas in buttons",
+      "OK"
+    ],
+    [
+      "INI ZERO_ERRORS",
+      "OK"
+    ],
+    [
+      "BuildCost 2301",
+      "OK"
+    ]
+  ],
+  "irq_baseline_lines": 55
+}

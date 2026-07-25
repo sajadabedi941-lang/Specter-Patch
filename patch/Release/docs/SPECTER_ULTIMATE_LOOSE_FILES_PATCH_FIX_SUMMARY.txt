@@ -1,0 +1,21 @@
+SPECTER ULTIMATE LOOSE FILES PATCH
+==================================
+
+Converted Ultimate Expansion playable BIGs to loose Data/ + Art/ folders.
+
+ZIP: SPECTER_ULTIMATE_LOOSE_FILES_PATCH.zip
+ZIP SHA256: b6bdfcd17d1a84e6b950b203c2db9fe8228a39e51fea05a5c2c97b7ab68af462
+
+Source BIGs (unchanged content extracted):
+  DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+  ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Package contains:
+  Data/   (2780 files from DATA BIG + structure)
+  Art/    (2689 files)
+  North Korea/  (105 paths preserved exactly as stored in Specter DATA BIG)
+  README.txt
+
+No .big files. No installer. Copy folders into game directory.
+
+Tool: patch/tools/big/extract_spec_big_to_loose.py

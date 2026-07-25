@@ -1,0 +1,21 @@
+SPECTER ULTIMATE WORKING INSTALLER
+ZIP SHA256: 02619dac2dd2bbb6f89d783117a5f790c408e98483b65fb531d79f1d60724e08
+==================================
+
+Replaces broken EXE / non-running BAT installers with a clean CRLF
+batch installer that requests Administrator rights.
+
+ZIP: SPECTER_ULTIMATE_WORKING_INSTALLER.zip
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  Install_SpecterPatch.bat
+  Launch_Specter.bat
+  README.txt
+
+BIG files are unchanged from Ultimate Expansion playable:
+  DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+  ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Install: extract folder into game directory (next to generals.exe),
+run Install_SpecterPatch.bat as Administrator.

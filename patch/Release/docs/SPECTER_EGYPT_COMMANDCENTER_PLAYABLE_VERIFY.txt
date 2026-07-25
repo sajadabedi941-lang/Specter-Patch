@@ -1,0 +1,8 @@
+INI PARSE CHECK: PASS
+Egypt_CommandCenter loads without errors: PASS
+Donor: USA AmericaCommandCenter
+Removed irq_comndcntr + America special leftovers
+Kept Egypt_CommandCenter / Side=Egypt / cost 2000 / time 45 / HP 5000
+DATA fa97b6a938881cdb17c0a26898acdb353acf0a61891ff502577ece2a0f2bc617
+ART bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP c04b7bd1423254fa96d486a952042d171429f74d562f7140136cec8537f87387

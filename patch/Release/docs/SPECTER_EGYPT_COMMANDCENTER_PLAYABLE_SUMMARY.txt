@@ -1,0 +1,2 @@
+Replaced Egypt_CommandCenter.ini with USA AmericaCommandCenter donor structure.
+Egypt identity/balance/CommandSet kept; Egypt specials used; Iraqi button fixed.

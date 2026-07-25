@@ -1,0 +1,5 @@
+SPECTER MULTI-UNIT INI PLAYABLE
+- Repaired TejasMk2, TorM, Karrar-2, Lamiaa, Abbas, Airborne, SpecialForces, AAB/AFE aircraft
+- Removed Iraqi art leftovers; used USA/Russia/Iran healthy donors where needed
+- Rebuilt playable _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+- Install_SpecterPatch.bat backs up and installs BIGs

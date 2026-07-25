@@ -1,1 +1,1 @@
-B-2 integrated from Specter AmericaJetB2Spirit Draw/ART; AAB USA-only; Scale 0.72.
+Multi-faction AAB B-2/B-52 access with USA/major/other cost tiers; max 1 bomber; Scale 0.72.

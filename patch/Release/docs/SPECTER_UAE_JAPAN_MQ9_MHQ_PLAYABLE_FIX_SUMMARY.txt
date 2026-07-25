@@ -1,0 +1,5 @@
+SPECTER UAE/JAPAN MQ9 + MilitaryHQ PLAYABLE
+- Repaired UAE_MQ9 and Japan_MQ9 from USA AmericaDronesMq9 donor
+- MilitaryHQ_StockFactions verified USA-clean (no Iraqi leftovers)
+- Rebuilt playable _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+- Install_SpecterPatch.bat backs up and installs BIGs

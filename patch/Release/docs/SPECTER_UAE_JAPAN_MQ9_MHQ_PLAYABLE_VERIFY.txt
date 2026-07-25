@@ -1,0 +1,25 @@
+SPECTER_UAE_JAPAN_MQ9_MHQ_PLAYABLE — VERIFY REPORT
+Generated: 2026-07-25 UTC
+
+Rebuild: stock DATA/ART + current patch/ (UAE/Japan MQ9 + MHQ repairs)
+
+DATA SHA256:  8bbca48d96be28b6f3fa2c0c2bb67a3020cef2d3ad1228357a48d0e3ff505f15
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Inside _SPEC_DATA_ONE.big:
+  PASS UAE_MQ9 — Side=UAE; US_MQ9 models/anims; 4x_AGM114N_Mq9; SCIENCE_Rank3;
+                 no SCIENCE_UAEStealthJet; src byte-match
+  PASS Japan_MQ9 — Side=Japan; US_MQ9 models/anims; 4x_AGM114N_Mq9; SCIENCE_Rank3;
+                   no SCIENCE_JapanStealthJet; src byte-match
+  PASS MilitaryHQ_StockFactions — America/Russia/China/NorthKorea present;
+       us_commandcenter / US_Command; CommandSets preserved; no Iraqi leftovers
+
+Missing model refs: NONE
+INI load-sanity: PASS
+Faction selection sanity (MHQ sides/CommandSets): PASS
+
+ZIP SHA256:   0f1a74c32048ef335a45f71e62fa608f47406427f7d0903d99b19245fdf85ff9
+
+STATUS: PLAYABLE BIG ARCHIVES READY
+Note: generals.exe cannot run in this Linux cloud; structural BIG/INI
+load-sanity verification passed for UAE MQ9, Japan MQ9, and MilitaryHQ.

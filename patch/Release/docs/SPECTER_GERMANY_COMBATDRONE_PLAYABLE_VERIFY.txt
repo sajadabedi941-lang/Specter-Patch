@@ -1,0 +1,6 @@
+INI PARSE CHECK: PASS (ZERO errors)
+Germany_CombatDrone loads without errors: PASS
+Donor USA MQ-9; behavior identical; Germany identity kept
+DATA 7234789fa7571d30c81bc88d18379fd8b5b6e53b5866cee6f9949af8eb293d2e
+ART bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP be1d750fe18900292adb35b2906713e5b527302def780c1e1400ab4f596ca239

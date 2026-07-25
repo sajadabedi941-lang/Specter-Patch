@@ -1,6 +1,6 @@
-ZIP SHA256=5f8f5af10d4689baa718a2b2ba169be1b13ef47f0231946fbe42d4be39504df7
-DATA SHA256=3389fffa20ae1f8e61210f6701e03724cb4b3c996295fbbef508bcfc57c4a543
+ZIP SHA256=3cbc0d61feb023c49e95f4290486e227f0497e790af22280db25a6017cb8425f
+DATA SHA256=a6bf9f9c8feb8da0cf9fb27714b9af3803c818b7158f51b5ffe4d6126f01e4f8
 ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
-Patch_America_B2 PASS (US_B1R proxy, GBU38_JDAM_F16C, AAB, Scale 0.72)
-Patch_America_B52 PASS (US_B52H, GBU38_JDAM_F16C, AAB, Scale 0.72, us_b52h art)
-Turkey B2/B52 construct REMOVED
+Patch_America_B2 Draw = AmericaJetB2Spirit (Specter General B-2 Spirit)
+Model/texture = US_B1R / us_b1r (official Specter B-2 art)
+Weapon/balance kept: GBU38_JDAM_F16C, Scale 0.72, AAB America-only

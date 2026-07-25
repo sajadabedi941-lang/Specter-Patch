@@ -1,0 +1,12 @@
+FIX SUMMARY - Egypt_MilitaryHQ
+==============================
+Problem: Egypt MilitaryHQ crash/compatibility (Iraqi leftovers + non-ASCII INI)
+
+Repair:
+  Donor: USA America_MilitaryHQ / US_Command / us_commandcenter
+  Keep: Egypt_MilitaryHQ, Side=Egypt, Egypt command set/specials/balance
+  CommandButton: irq_comndcntr -> us_commandcenter
+  ModuleTags: Adnan* -> EgyptAWACS*
+  ART BIG unchanged
+
+Egypt faction NOT deleted - repaired and kept playable as StartingBuilding.

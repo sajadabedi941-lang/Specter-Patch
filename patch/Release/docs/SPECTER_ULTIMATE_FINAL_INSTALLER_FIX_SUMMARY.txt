@@ -1,0 +1,22 @@
+SPECTER ULTIMATE FINAL INSTALLER (BAT only)
+===========================================
+
+ZIP: SPECTER_ULTIMATE_FINAL_INSTALLER.zip
+ZIP SHA256: a39cfb3ccd6a3b2cd9f91032fa4060fda1ad428950092d3cd27143883aa04086
+
+Contents (no EXE):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  Install_SpecterPatch.bat
+  Launch_Specter.bat
+  README_INSTALL.txt
+
+DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Same Ultimate Expansion BIGs (Turkey, UAE/Japan MQ-9, MilitaryHQ,
+multi-unit, Air Force Expansion, seven-country drones, etc.).
+
+Install:
+  Extract ZIP into SPECTER FINAL (GeneralsMode.com), run
+  SPECTER_ULTIMATE_FINAL_INSTALLER\Install_SpecterPatch.bat

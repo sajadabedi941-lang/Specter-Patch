@@ -1,0 +1,13 @@
+SPECTER ULTIMATE REAL LAUNCHER
+==============================
+
+ZIP: SPECTER_ULTIMATE_REAL_LAUNCHER.zip
+ZIP SHA256: d79c2ffe6329f093c84695bc2ddefb40f6f6940c4d4aa9890b1d2dc9b1fde58a
+
+Real launcher (not an empty shortcut):
+  - Detects PATCH_DIR=%~dp0
+  - Verifies BIG files and generals.exe
+  - Loads both _SPEC_*.big into GameRoot
+  - Starts generals.exe from GameRoot
+
+BIG contents unchanged from Ultimate Expansion playable.

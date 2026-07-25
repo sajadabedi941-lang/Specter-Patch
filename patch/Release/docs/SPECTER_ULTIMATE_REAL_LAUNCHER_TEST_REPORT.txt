@@ -1,0 +1,13 @@
+SPECTER REAL LAUNCHER - TEST REPORT
+===================================
+Tested with Windows CMD via Wine before packaging.
+
+PASS: Syncs _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into GameRoot
+PASS: Starts generals.exe from GameRoot working directory
+PASS: ERROR + pause when BIG files missing
+PASS: ERROR + pause when generals.exe missing
+
+Method:
+  ZH -mod supports only one BIG. Specter needs two SPEC BIGs.
+  Launcher copies both into GameRoot then launches generals.exe so
+  ArchiveFileSystem auto-loads the patch archives.

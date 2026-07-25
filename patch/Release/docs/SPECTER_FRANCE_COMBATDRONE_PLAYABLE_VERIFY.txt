@@ -1,0 +1,6 @@
+INI PARSE CHECK: PASS
+France_CombatDrone loads without errors: PASS
+Donor USA MQ-9; ButtonImage SACRaptor->Nat_mq9
+DATA 97455b8bab7346c9856ca0766dbac76efc2c1571c4eab420499002a80b6efe2a
+ART bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP aa7a1a44c50abe7b38b7375257892b49dbab10c995445d6598fc0ccf6220ed0b

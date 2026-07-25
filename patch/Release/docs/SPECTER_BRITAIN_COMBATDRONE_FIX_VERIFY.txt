@@ -1,0 +1,17 @@
+VERIFY REPORT
+=============
+DATA updated entries: Britain_CombatDrone.ini only (merge updated=1)
+ART unchanged from Ultimate Expansion
+
+DATA SHA256: 2250ec1f0f0ae23c3e46fca7b3e1c906d5eb74dd175488fde35292ee980b4d63
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Pre-publish tests: PASS
+  - BIG entry == repaired source
+  - ASCII-only
+  - Module sequence == France_CombatDrone donor
+  - Britain_Weapon_ATGM + Britain_Projectile_ATGM present
+  - 2x_GBU12II_Mq9 present
+  - Britain_AdvancedAirBase present
+  - Command_ConstructBritain_CombatDrone present
+  - US_MQ9 / US_MQ9D / US_MQ9R W3D present in ART

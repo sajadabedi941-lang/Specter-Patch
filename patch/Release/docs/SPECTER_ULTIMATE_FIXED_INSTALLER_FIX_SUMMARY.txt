@@ -4,7 +4,7 @@ SPECTER ULTIMATE FIXED INSTALLER
 Replaces flashing/closing installers with a simple flat GameRoot BAT.
 
 ZIP: SPECTER_ULTIMATE_FIXED_INSTALLER.zip
-ZIP SHA256: e49936ca81d3f960bc72fee943e2065c5f13dffd8cf68bfe3205daf53e31213f
+ZIP SHA256: f3af497e64ddc974b79dad29d4d04fb1be261a66fd904fc6ed67929e857b349c
 
 Contents:
   _SPEC_DATA_ONE.big

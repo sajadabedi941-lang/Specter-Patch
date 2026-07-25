@@ -1,0 +1,12 @@
+VERIFY REPORT
+=============
+Pre-rebuild INI validation: PASS
+Post-rebuild BIG entry match: PASS
+CommandButton image: us_commandcenter PASS
+No Iraq/Adnan leftovers in Egypt_MilitaryHQ.ini: PASS
+W3D US_Command present: PASS
+MappedImage us_commandcenter + us-icons05.dds: PASS
+Britain CombatDrone ASCII fix preserved: PASS
+
+DATA SHA256: a00152f4efed62c64db46df35d46370d8b92d85165f735d89271b7680ed51ae7
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73

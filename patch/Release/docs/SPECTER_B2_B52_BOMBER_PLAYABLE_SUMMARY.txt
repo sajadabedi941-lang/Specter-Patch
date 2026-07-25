@@ -1,0 +1,1 @@
+B-2 / B-52 bomber status fix: USA donor Draw + WeaponA01 + Scale 0.72; Turkey access removed; AAB America-only.

@@ -1,0 +1,21 @@
+SPECTER ULTIMATE FIXED INSTALLER
+================================
+
+Replaces flashing/closing installers with a simple flat GameRoot BAT.
+
+ZIP: SPECTER_ULTIMATE_FIXED_INSTALLER.zip
+ZIP SHA256: e49936ca81d3f960bc72fee943e2065c5f13dffd8cf68bfe3205daf53e31213f
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  Install_SpecterPatch.bat
+  Launch_Specter.bat
+  README.txt
+
+No EXE. BIG files unchanged.
+DATA: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+ART:  bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Usage: copy all files into the Generals Zero Hour folder next to generals.exe,
+then run Install_SpecterPatch.bat

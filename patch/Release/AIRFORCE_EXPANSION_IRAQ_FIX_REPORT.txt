@@ -1,0 +1,72 @@
+AIRCRAFT_AIRFORCEEXPANSION.INI COMPLETE IRAQ/BROKEN-ART REPAIR REPORT
+========================================================================
+
+Primary file: patch/Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+Related: patch/Data/INI/CommandButton_AirForceExpansion.ini (Cayova construct still had irq_mi8t)
+
+Units preserved (not removed):
+  - Patch_America_Aurora
+  - Patch_America_StealthHawk
+  - Patch_America_AC130Spectre
+  - Patch_America_E2C
+  - Patch_America_B3
+  - Patch_Russia_Su57Strike
+  - Patch_Ukraine_Sokil
+  - Patch_Ukraine_AN71
+  - Patch_Ukraine_Dronecopter
+  - Patch_Germany_JetBomber
+  - Patch_France_Cayova
+  - Patch_China_J10Strike
+
+A) Fixes applied in Aircraft_AirForceExpansion.ini
+------------------------------------------------------------------------
+  Line 348: [Patch_America_StealthHawk] SelectPortrait: us_f22 -> us_f22a
+  Line 349: [Patch_America_StealthHawk] ButtonImage: us_f22 -> us_f22a
+  Line 808: [Patch_America_AC130Spectre] ButtonImage: us_airfield -> us_ac130
+  Line 809: [Patch_America_AC130Spectre] SelectPortrait: us_airfield -> us_ac130
+  Line 1013: [Patch_America_E2C] SelectPortrait: us_e3 -> us_e3g
+  Line 1014: [Patch_America_E2C] ButtonImage: us_e3 -> us_e3g
+  Line 1226: [Patch_America_B3] SelectPortrait: us_b1 -> us_b1r
+  Line 1227: [Patch_America_B3] ButtonImage: us_b1 -> us_b1r
+  Line 1834: [Patch_Ukraine_Sokil] SelectPortrait: us_f22 -> us_f22a
+  Line 1835: [Patch_Ukraine_Sokil] ButtonImage: us_f22 -> us_f22a
+  Line 2219: [Patch_Ukraine_AN71] SelectPortrait: us_e3 -> us_e3g
+  Line 2220: [Patch_Ukraine_AN71] ButtonImage: us_e3 -> us_e3g
+  Line 2622: [Patch_Germany_JetBomber] SelectPortrait: us_b1 -> us_b1r
+  Line 2623: [Patch_Germany_JetBomber] ButtonImage: us_b1 -> us_b1r
+  Line 2914: [Patch_France_Cayova] SelectPortrait: rus_mi8mtv5 -> rus_mi17
+  Line 2915: [Patch_France_Cayova] ButtonImage: rus_mi8mtv5 -> rus_mi17
+  Line 3135: [Patch_China_J10Strike] SelectPortrait: chi_j10c -> pla_j10c
+  Line 3136: [Patch_China_J10Strike] ButtonImage: chi_j10c -> pla_j10c
+
+B) Fixes applied in CommandButton_AirForceExpansion.ini
+------------------------------------------------------------------------
+  Line 97: [Command_ConstructPatch_France_Cayova] ButtonImage: irq_mi8t -> rus_mi17
+  Line 25: [Command_ConstructPatch_America_AC130Spectre] ButtonImage: us_airfield -> us_ac130
+  Line 52: [Command_ConstructPatch_Russia_Su57Strike] ButtonImage: us_f22a -> rus_su57
+  Line 79: [Command_ConstructPatch_Ukraine_Dronecopter] ButtonImage: us_f16cb50 -> Nat_mq9
+  Line 106: [Command_ConstructPatch_China_J10Strike] ButtonImage: us_f16cb50 -> pla_j10c
+
+C) Iraq leftover map from pre-repair baseline (irq_mi8t / Irq_Mi8T)
+------------------------------------------------------------------------
+  Broken L1061: [Patch_France_Cayova] SelectPortrait: irq_mi8t -> rus_mi17
+  Broken L1062: [Patch_France_Cayova] ButtonImage: irq_mi8t -> rus_mi17
+  Broken L1065: [Patch_France_Cayova] Model: Irq_Mi8T -> RUS_MI8MTV5
+  Broken L1069: [Patch_France_Cayova] Model: Irq_Mi8T -> RUS_MI8MTV5
+
+D) Faction coverage in this file
+  America: Aurora, StealthHawk, AC130Spectre, E2C, B3
+  Russia: Su57Strike
+  Ukraine: Sokil, AN71, Dronecopter
+  Germany: JetBomber
+  France: Cayova (Mi-8 role) — was irq_mi8t/Irq_Mi8T
+  China: J10Strike
+  Turkey: no Patch_* aircraft object in this file (Turkey uses separate Turkey_Mi-8.ini)
+
+E) Donor choices
+  Mi-8 heli: model RUS_MI8MTV5 + portrait rus_mi17 (stock RussiaHelicopterMi8AMTSh)
+  F-22 portraits: us_f22a
+  AWACS portraits: us_e3g
+  Bomber portraits: us_b1r
+  J-10 portraits: pla_j10c
+  AC-130 portraits: us_ac130

@@ -1,0 +1,22 @@
+RUSSIA_AD_TORM.INI COMPLETE REPAIR REPORT
+========================================================================
+Unit preserved: Russia_AD_TorM (Side=Russia Tor-M2 AD overlay)
+Balance kept: BuildCost=1529 BuildTime=14.9 MaxHealth=420 VisionRange=700
+
+Fixes:
+  [Russia_AD_TorM.ini] CommandSet: GenericCommandSet -> GenericTankCommandSet
+  [CommandButton_AirForceExpansion.ini] ButtonImage: rus_pantsirs1m -> rus_torm2u
+  [Weapon_AirForceExpansion.ini] DamageType: PENALTY -> CRUSH
+  [Weapon_AirForceExpansion.ini] FireFX: None -> FX_MSRSAM_ColdLaunch
+  [Weapon_AirForceExpansion.ini] FireOCL: (missing) -> OCL_9A331TargetLock
+  [Weapon_AirForceExpansion.ini] FireSound: RaptorJetMissileWeapon -> SAM_Launch
+  [Weapon_AirForceExpansion.ini] AutoReloadsClip: RETURN_TO_BASE -> Yes
+  [Weapon_AirForceExpansion.ini] AntiSmallMissile: (missing) -> Yes
+  [Weapon_AirForceExpansion.ini] AntiBallisticMissile: (missing) -> Yes
+  [Projectiles_AirForceExpansion.ini] Model: US_AIM120 -> RUS_Tor_M / RUS_Tor_M2
+  [Projectiles_AirForceExpansion.ini] Armor: LightBVRAntiAirMissileArmor -> LightAntiAirMissileArmor
+
+Validated OK: Model RUS_9A331M2/D, Portrait/Button rus_torm2u,
+  Patch_Weapon_TorM, Patch_Projectile_TorM, V-55_diesel, GenericTankCommandSet,
+  AA+ABM targeting (aircraft + ballistic missiles)
+INI parse: ZERO_ERRORS

@@ -1,13 +1,36 @@
-SPECTER REAL LAUNCHER - TEST REPORT
-===================================
-Tested with Windows CMD via Wine before packaging.
+SPECTER REAL LAUNCHER - FINAL TEST REPORT
+=========================================
+Tested with Windows CMD via Wine against packaged ZIP before publish.
 
-PASS: Syncs _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into GameRoot
-PASS: Starts generals.exe from GameRoot working directory
-PASS: ERROR + pause when BIG files missing
-PASS: ERROR + pause when generals.exe missing
+ZIP: SPECTER_ULTIMATE_REAL_LAUNCHER.zip
+ZIP SHA256: a937c58f95f2977314ad114cbbaf070a5d990dab43a3fd99a3c33c43a4e65ba2
 
-Method:
-  ZH -mod supports only one BIG. Specter needs two SPEC BIGs.
-  Launcher copies both into GameRoot then launches generals.exe so
-  ArchiveFileSystem auto-loads the patch archives.
+ZIP CONTENTS (exact)
+--------------------
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  Launch_Specter.bat
+  Install_SpecterPatch.bat
+  README.txt
+
+Launch_Specter.bat CHECKS VERIFIED
+----------------------------------
+PASS: Finds own directory via cd /d "%~dp0" and PATCH_DIR=%~dp0
+PASS: Checks _SPEC_DATA_ONE.big exists (ERROR + pause if missing)
+PASS: Checks _SPEC_ART_ONE.big exists (ERROR + pause if missing)
+PASS: Checks generals.exe exists in same or parent folder (ERROR + pause)
+PASS: Flat extract into game folder: BIGs already in place, no self-copy
+PASS: Subfolder extract: copies both BIGs into GameRoot correctly
+PASS: Launches generals.exe from GameRoot working directory
+PASS: ERROR + pause on every failure path
+
+USER FLOW
+---------
+1. Extract ZIP into game folder (contains generals.exe)
+2. Double-click Launch_Specter.bat
+3. Game launch requested with Specter BIGs active
+
+NOTE
+----
+Wine validates BAT logic, file checks, copy, and launch request.
+It cannot prove a real Windows Specter boot.

@@ -1,0 +1,240 @@
+{
+  "fixes": [],
+  "btn_fixes": [
+    {
+      "line": 160,
+      "file": "CommandButton_Turkey.ini",
+      "field": "ButtonImage",
+      "old": "irq_karrar",
+      "new": "irn_karrar"
+    }
+  ],
+  "iraq_baseline": [
+    {
+      "broken_line": 38,
+      "object": "Turkey_Karrar2",
+      "field": "SelectPortrait",
+      "old": "irq_karrar",
+      "new": "irn_karrar"
+    },
+    {
+      "broken_line": 39,
+      "object": "Turkey_Karrar2",
+      "field": "ButtonImage",
+      "old": "irq_karrar",
+      "new": "irn_karrar"
+    },
+    {
+      "broken_line": 44,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 48,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 52,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 57,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 58,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 63,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 64,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 70,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 71,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 75,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 76,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 81,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 85,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_A",
+      "new": "Iran_Karrar"
+    },
+    {
+      "broken_line": 86,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_A.Irq_Karrar_A",
+      "new": "Iran_Karrar.Iran_Karrar"
+    },
+    {
+      "broken_line": 91,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_D",
+      "new": "Iran_KarrarD"
+    },
+    {
+      "broken_line": 92,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_D.Irq_Karrar_D",
+      "new": "Iran_KarrarD.Iran_KarrarD"
+    },
+    {
+      "broken_line": 97,
+      "object": "Turkey_Karrar2",
+      "field": "Model",
+      "old": "Irq_Karrar_D",
+      "new": "Iran_KarrarD"
+    },
+    {
+      "broken_line": 98,
+      "object": "Turkey_Karrar2",
+      "field": "Animation",
+      "old": "Irq_Karrar_D.Irq_Karrar_D",
+      "new": "Iran_KarrarD.Iran_KarrarD"
+    }
+  ],
+  "checks": [
+    [
+      "Side=Turkey",
+      "OK"
+    ],
+    [
+      "Portrait irn_karrar",
+      "OK"
+    ],
+    [
+      "Model Iran_Karrar",
+      "OK"
+    ],
+    [
+      "Model Iran_KarrarD",
+      "OK"
+    ],
+    [
+      "Weapon Karrar2_ElectronicWarfarePackage",
+      "OK"
+    ],
+    [
+      "Weapon Karrar2_Deploy",
+      "OK"
+    ],
+    [
+      "Weapon Karar2_DroneSignalJammer",
+      "OK"
+    ],
+    [
+      "Weapon Karrar2_MissileJammer",
+      "OK"
+    ],
+    [
+      "Weapon Karrar2_CruiseMissileJammer",
+      "OK"
+    ],
+    [
+      "Weapon Krasukha4_RadioWaveDisabler_AA_T",
+      "OK"
+    ],
+    [
+      "Weapon Krasukha4_GPS_Blocker",
+      "OK"
+    ],
+    [
+      "Weapon Turkey_DecalCollisionDummyWeapon",
+      "OK"
+    ],
+    [
+      "Weapon Turkey_DeployedRadarDecalWeapon",
+      "FAIL"
+    ],
+    [
+      "CommandSet Krasukha-4_CommandSet",
+      "OK"
+    ],
+    [
+      "Locomotor Generic8x8Locomotor",
+      "OK"
+    ],
+    [
+      "Science SCIENCE_TurkeyReconnaissance",
+      "OK"
+    ],
+    [
+      "Object Turkey_MIC",
+      "OK"
+    ],
+    [
+      "Armor ElectronicWarfareVehicleArmor",
+      "OK"
+    ],
+    [
+      "Button irn_karrar",
+      "OK"
+    ],
+    [
+      "No irq_/Irq_ code",
+      "OK"
+    ],
+    [
+      "INI ZERO_ERRORS",
+      "OK"
+    ]
+  ]
+}

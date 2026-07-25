@@ -1,0 +1,30 @@
+SPECTER ULTIMATE FIXED INSTALLER — REAL CMD TEST REPORT
+=======================================================
+Environment: Wine 9.0 (Windows CMD.exe PE) on Linux CI
+
+TEST 1: ZIP subfolder inside game folder (primary real-world case)
+  Layout:
+    Game\generals.exe
+    Game\_SPEC_*.big (old)
+    Game\SPECTER_ULTIMATE_FIXED_INSTALLER\Install_SpecterPatch.bat
+    Game\SPECTER_ULTIMATE_FIXED_INSTALLER\_SPEC_*.big (new)
+  Result: PASS
+    - Detected parent game root
+    - Backed up old BIGs to Backup_SpecterPatch
+    - Copied new BIGs into game root
+    - Printed SPECTER PATCH INSTALLATION COMPLETED SUCCESSFULLY
+
+TEST 2: Missing BIG files
+  Result: PASS — shows ERROR and pause
+
+TEST 3: Missing generals.exe
+  Result: PASS — shows ERROR and pause
+
+TEST 4: Success banner present
+  Result: PASS
+
+NOTES
+-----
+  - pause waits for a key on a real Windows console (double-click).
+  - Wine without a TTY may not block on pause; Windows Explorer does.
+  - No EXE, no Python, no network in the installer.

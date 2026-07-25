@@ -1,0 +1,3 @@
+Replaced Germany_CombatDrone with complete USA AmericaDronesMq9 donor.
+Kept Germany_CombatDrone / Side=Germany / Germany_StrategyCenter / WarFactory button.
+Behavior and modules match USA CombatDrone exactly.

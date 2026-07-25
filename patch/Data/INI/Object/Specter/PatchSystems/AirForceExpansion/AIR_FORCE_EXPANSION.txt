@@ -31,3 +31,23 @@ EU_GermanyJetBomber           -> Patch_Germany_JetBomber
 EU_FranceHelicopterCayova     -> Patch_France_Cayova
 ChinaJetJ-10                  -> Patch_China_J10Strike
 TorMMissile / TORMissileWeapon-> Russia_AD_TorM + Patch_Weapon_TorM
+
+Donor repair (playable BIG rebuild)
+-----------------------------------
+Broken/invalid model-weapon stubs replaced with healthy Specter donor structures.
+Country identity, Patch_* IDs, roles, Patch_Weapon_* loadouts, and balance preserved.
+Turkey AdvancedAirBase CommandSets are not modified by this repair.
+
+  Aurora          <- USA F16CM_BLK50_DB52 (US_F16CMB50)
+  Stealth Hawk    <- USA F22A_AG (US_F22A)
+  AC130 Spectre   <- USA AC130W (US_AC130W)
+  E2C Hawkeye     <- USA E3G (US_E3G)
+  B3 Bomber       <- USA B1R (US_B1R)
+  Su57 Strike     <- Russia SU57 (RUS_SU57)
+  Ukraine Sokil   <- USA F22A_AG (US_F22A)
+  AN-71           <- USA E3G (US_E3G)
+  Dronecopter     <- USA MQ-9 (US_MQ9)
+  Germany Jet Bomber <- USA B1R (US_B1R)
+  France Cayova   <- Russia Mi8AMTSh (RUS_MI8MTV5)
+  China J-10      <- PLA J10C (CHI_J10C)
+  Tor-M           <- Russia TorM2M (RUS_9A331M2) as Russia_AD_TorM

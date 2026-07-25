@@ -1,0 +1,16 @@
+FIX SUMMARY - Britain_CombatDrone
+=================================
+Problem: INI parser crash on Britain_CombatDrone.ini
+
+Root causes addressed:
+  - Non-ASCII UTF-8 characters in file (em-dash / multiply signs)
+  - Unit not fully rebuilt from proven USA MQ-9 donor structure
+
+Repair:
+  Donor: USA AmericaDronesMq9 / healthy France_CombatDrone module sequence
+  Keep: Britain_CombatDrone, Side=Britain, Britain_Weapon_ATGM, 2x_GBU12II_Mq9,
+        BuildCost 1147, BuildTime 11.1, US_MQ9 models, Britain_AdvancedAirBase
+  Science: SCIENCE_Rank3 (healthy donor path; removed stealth-jet prereq from drone)
+  ART BIG unchanged
+
+Validation: ASCII-only, End-balanced, W3D present, weapon/projectile/command refs OK

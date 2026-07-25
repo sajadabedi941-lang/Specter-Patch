@@ -771,3 +771,11 @@ CONTROLBAR:ToolTipConstructPatch_GLA_B2 = Produce B-2 from Advanced Air Base (GL
 OBJECT:Patch_GLA_B52 = B-52
 CONTROLBAR:ConstructPatch_GLA_B52 = B-52
 CONTROLBAR:ToolTipConstructPatch_GLA_B52 = Produce B-52 from Advanced Air Base (GLA). Expensive imported strategic bomber. Max 1.
+
+; ---- Global strategic AAB extras ----
+OBJECT:Patch_America_B1 = B-1B Lancer
+CONTROLBAR:ConstructPatch_America_B1 = B-1B Lancer
+CONTROLBAR:ToolTipConstructPatch_America_B1 = Produce B-1B Lancer from Advanced Air Base (America).
+OBJECT:Patch_Russia_Tu95 = Tu-95
+CONTROLBAR:ConstructPatch_Russia_Tu95 = Tu-95
+CONTROLBAR:ToolTipConstructPatch_Russia_Tu95 = Produce Tu-95 from Advanced Air Base (Russia).

@@ -1,0 +1,76 @@
+{
+  "fixes": [],
+  "btn_fixes": [
+    {
+      "line": 412,
+      "file": "CommandButton_Turkey.ini",
+      "field": "ButtonImage",
+      "old": "irq_lamiaa",
+      "new": "rus_rs24"
+    }
+  ],
+  "iraq_baseline": [
+    {
+      "broken_line": 41,
+      "object": "Turkey_Lamiaa",
+      "field": "SelectPortrait",
+      "old": "irq_lamiaa",
+      "new": "rus_rs24"
+    },
+    {
+      "broken_line": 42,
+      "object": "Turkey_Lamiaa",
+      "field": "ButtonImage",
+      "old": "irq_lamiaa",
+      "new": "rus_rs24"
+    },
+    {
+      "broken_line": 48,
+      "object": "Turkey_Lamiaa",
+      "field": "Model",
+      "old": "Irq_Lamiaa",
+      "new": "RUS_RS24"
+    },
+    {
+      "broken_line": 54,
+      "object": "Turkey_Lamiaa",
+      "field": "Model",
+      "old": "Irq_Lamiaa",
+      "new": "RUS_RS24"
+    },
+    {
+      "broken_line": 60,
+      "object": "Turkey_Lamiaa",
+      "field": "Model",
+      "old": "Irq_Lamiaa",
+      "new": "RUS_RS24"
+    }
+  ],
+  "current_assets": [
+    {
+      "line": 35,
+      "field": "SelectPortrait",
+      "value": "rus_rs24"
+    },
+    {
+      "line": 36,
+      "field": "ButtonImage",
+      "value": "rus_rs24"
+    },
+    {
+      "line": 42,
+      "field": "Model",
+      "value": "RUS_RS24"
+    },
+    {
+      "line": 48,
+      "field": "Model",
+      "value": "RUS_RS24"
+    },
+    {
+      "line": 54,
+      "field": "Model",
+      "value": "RUS_RS24"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+TURKEY LAMIAA.INI COMPLETE IRAQ/BROKEN-ASSET REPAIR REPORT
+========================================================================
+Unit preserved: Turkey_Lamiaa (Side=Turkey missile/drone launcher)
+Kept: Quds5Launching, Turkey_Bm21CommandSet, Zil-375V8, SCIENCE_Turkey_Tu-22, balance
+
+A) Fixes applied this pass
+------------------------------------------------------------------------
+  Lamiaa.ini object portraits/models already healthy (rus_rs24 / RUS_RS24)
+  Line 412: [CommandButton_Turkey.ini] ButtonImage: irq_lamiaa -> rus_rs24
+
+B) Current healthy art refs
+------------------------------------------------------------------------
+  Line 35: SelectPortrait = rus_rs24
+  Line 36: ButtonImage = rus_rs24
+  Line 42: Model = RUS_RS24
+  Line 48: Model = RUS_RS24
+  Line 54: Model = RUS_RS24
+
+C) Iraq leftover map (pre-repair baseline -> healthy)
+------------------------------------------------------------------------
+  Broken L41: [Turkey_Lamiaa] SelectPortrait: irq_lamiaa -> rus_rs24
+  Broken L42: [Turkey_Lamiaa] ButtonImage: irq_lamiaa -> rus_rs24
+  Broken L48: [Turkey_Lamiaa] Model: Irq_Lamiaa -> RUS_RS24
+  Broken L54: [Turkey_Lamiaa] Model: Irq_Lamiaa -> RUS_RS24
+  Broken L60: [Turkey_Lamiaa] Model: Irq_Lamiaa -> RUS_RS24
+
+D) Notes
+  - No Tur_Lamiaa W3D in ART; Specter RUS_RS24 used (same donor as Turkey AbbasLauncher)
+  - OkToChangeModelColor=Yes preserves Turkey player colors
+  - Rejected irq_lamiaa / Irq_Lamiaa (Iraq leftovers)

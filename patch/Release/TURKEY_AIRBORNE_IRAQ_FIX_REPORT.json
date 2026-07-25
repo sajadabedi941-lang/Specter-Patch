@@ -1,0 +1,203 @@
+{
+  "file": "patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini",
+  "portrait_fixes_applied_now": [
+    {
+      "line": 46,
+      "object": "TurkeyInfantrySpecOps_Akms",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_exp"
+    },
+    {
+      "line": 47,
+      "object": "TurkeyInfantrySpecOps_Akms",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_exp"
+    },
+    {
+      "line": 599,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_at"
+    },
+    {
+      "line": 600,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_at"
+    },
+    {
+      "line": 1067,
+      "object": "TurkeyInfantrySpecOps_Rpk",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mg"
+    },
+    {
+      "line": 1068,
+      "object": "TurkeyInfantrySpecOps_Rpk",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mg"
+    },
+    {
+      "line": 1557,
+      "object": "TurkeyInfantrySpecOps_Mks",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mks"
+    },
+    {
+      "line": 1558,
+      "object": "TurkeyInfantrySpecOps_Mks",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mks"
+    },
+    {
+      "line": 2069,
+      "object": "TurkeyInfantryAirborneHeavySniper",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "rus_heavysniper"
+    },
+    {
+      "line": 2070,
+      "object": "TurkeyInfantryAirborneHeavySniper",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "rus_heavysniper"
+    }
+  ],
+  "iraq_leftovers_from_pre_repair_baseline": [
+    {
+      "broken_line": 43,
+      "object": "TurkeyInfantrySpecOps_Akms",
+      "field": "SelectPortrait",
+      "old": "irq_specialforce",
+      "new": "us_seal_exp"
+    },
+    {
+      "broken_line": 44,
+      "object": "TurkeyInfantrySpecOps_Akms",
+      "field": "ButtonImage",
+      "old": "irq_specialforce",
+      "new": "us_seal_exp"
+    },
+    {
+      "broken_line": 57,
+      "object": "TurkeyInfantrySpecOps_Akms",
+      "field": "Model",
+      "old": "Irq_SF_Akms",
+      "new": "RUS_SpetsNaz_AK"
+    },
+    {
+      "broken_line": 596,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "SelectPortrait",
+      "old": "irq_spfs",
+      "new": "us_seal_at"
+    },
+    {
+      "broken_line": 597,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "ButtonImage",
+      "old": "irq_spfs",
+      "new": "us_seal_at"
+    },
+    {
+      "broken_line": 610,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AKMGP",
+      "new": "RUS_SpetsNaz_AK"
+    },
+    {
+      "broken_line": 723,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AT",
+      "new": "Spec_SF_Ind_T"
+    },
+    {
+      "broken_line": 733,
+      "object": "TurkeyInfantrySpecOps_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AT",
+      "new": "Spec_SF_Ind_T"
+    },
+    {
+      "broken_line": 1064,
+      "object": "TurkeyInfantrySpecOps_Rpk",
+      "field": "SelectPortrait",
+      "old": "irq_spfmg",
+      "new": "us_seal_mg"
+    },
+    {
+      "broken_line": 1065,
+      "object": "TurkeyInfantrySpecOps_Rpk",
+      "field": "ButtonImage",
+      "old": "irq_spfmg",
+      "new": "us_seal_mg"
+    },
+    {
+      "broken_line": 1078,
+      "object": "TurkeyInfantrySpecOps_Rpk",
+      "field": "Model",
+      "old": "Irq_SF_RPK",
+      "new": "RUS_SpetsNaz_MG"
+    },
+    {
+      "broken_line": 1554,
+      "object": "TurkeyInfantrySpecOps_Mks",
+      "field": "SelectPortrait",
+      "old": "irq_spfmks",
+      "new": "us_seal_mks"
+    },
+    {
+      "broken_line": 1555,
+      "object": "TurkeyInfantrySpecOps_Mks",
+      "field": "ButtonImage",
+      "old": "irq_spfmks",
+      "new": "us_seal_mks"
+    },
+    {
+      "broken_line": 1568,
+      "object": "TurkeyInfantrySpecOps_Mks",
+      "field": "Model",
+      "old": "Irq_SF_Tabuk",
+      "new": "RUS_SpetsNaz_MK"
+    },
+    {
+      "broken_line": 2066,
+      "object": "TurkeyInfantryAirborneHeavySniper",
+      "field": "SelectPortrait",
+      "old": "irq_sniper",
+      "new": "rus_heavysniper"
+    },
+    {
+      "broken_line": 2067,
+      "object": "TurkeyInfantryAirborneHeavySniper",
+      "field": "ButtonImage",
+      "old": "irq_sniper",
+      "new": "rus_heavysniper"
+    },
+    {
+      "broken_line": 2080,
+      "object": "TurkeyInfantryAirborneHeavySniper",
+      "field": "Model",
+      "old": "Irq_Sniper",
+      "new": "Spec_infInd_SN"
+    }
+  ],
+  "objects_preserved": [
+    "TurkeyInfantrySpecOps_Akms",
+    "TurkeyInfantrySpecOps_AKMGP",
+    "TurkeyInfantrySpecOps_Rpk",
+    "TurkeyInfantrySpecOps_Mks",
+    "TurkeyInfantryAirborneHeavySniper"
+  ]
+}

@@ -1,0 +1,1 @@
+AAB aircraft identity fix: F-35/F-15/A-10/EA-18G and allied F-35s use real Specter donor models.

@@ -1,0 +1,188 @@
+{
+  "fixes": [
+    {
+      "file": "Russia_AD_TorM.ini",
+      "field": "CommandSet",
+      "old": "GenericCommandSet",
+      "new": "GenericTankCommandSet"
+    },
+    {
+      "file": "CommandButton_AirForceExpansion.ini",
+      "field": "ButtonImage",
+      "old": "rus_pantsirs1m",
+      "new": "rus_torm2u"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "DamageType",
+      "old": "PENALTY",
+      "new": "CRUSH"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "FireFX",
+      "old": "None",
+      "new": "FX_MSRSAM_ColdLaunch"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "FireOCL",
+      "old": "(missing)",
+      "new": "OCL_9A331TargetLock"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "FireSound",
+      "old": "RaptorJetMissileWeapon",
+      "new": "SAM_Launch"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "AutoReloadsClip",
+      "old": "RETURN_TO_BASE",
+      "new": "Yes"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "AntiSmallMissile",
+      "old": "(missing)",
+      "new": "Yes"
+    },
+    {
+      "file": "Weapon_AirForceExpansion.ini",
+      "field": "AntiBallisticMissile",
+      "old": "(missing)",
+      "new": "Yes"
+    },
+    {
+      "file": "Projectiles_AirForceExpansion.ini",
+      "field": "Model",
+      "old": "US_AIM120",
+      "new": "RUS_Tor_M / RUS_Tor_M2"
+    },
+    {
+      "file": "Projectiles_AirForceExpansion.ini",
+      "field": "Armor",
+      "old": "LightBVRAntiAirMissileArmor",
+      "new": "LightAntiAirMissileArmor"
+    }
+  ],
+  "checks": [
+    [
+      "Side=Russia",
+      "OK"
+    ],
+    [
+      "Portrait rus_torm2u",
+      "OK"
+    ],
+    [
+      "Button rus_torm2u",
+      "OK"
+    ],
+    [
+      "Model RUS_9A331M2",
+      "OK"
+    ],
+    [
+      "Model RUS_9A331M2D",
+      "OK"
+    ],
+    [
+      "Model Spec_Indic_ABM",
+      "OK"
+    ],
+    [
+      "Weapon Patch_Weapon_TorM",
+      "OK"
+    ],
+    [
+      "Weapon 9K332_Radar_Power",
+      "OK"
+    ],
+    [
+      "Locomotor V-55_diesel",
+      "OK"
+    ],
+    [
+      "CommandSet GenericTankCommandSet",
+      "OK"
+    ],
+    [
+      "Armor AATankArmor",
+      "OK"
+    ],
+    [
+      "Prereq Russia_AdvancedAirBase",
+      "OK"
+    ],
+    [
+      "Projectile Patch_Projectile_TorM",
+      "OK"
+    ],
+    [
+      "Proj model RUS_Tor_M",
+      "OK"
+    ],
+    [
+      "Proj model RUS_Tor_M2",
+      "OK"
+    ],
+    [
+      "Armor LightAntiAirMissileArmor",
+      "OK"
+    ],
+    [
+      "Loco AIM-120CLocomotor",
+      "OK"
+    ],
+    [
+      "Construct button rus_torm2u",
+      "OK"
+    ],
+    [
+      "AntiAirborneVehicle Yes",
+      "OK"
+    ],
+    [
+      "AntiBallisticMissile Yes",
+      "OK"
+    ],
+    [
+      "AntiSmallMissile Yes",
+      "OK"
+    ],
+    [
+      "AutoReloadsClip Yes",
+      "OK"
+    ],
+    [
+      "PreferredAgainst aircraft+BM",
+      "OK"
+    ],
+    [
+      "Balance BuildCost 1529",
+      "OK"
+    ],
+    [
+      "Balance BuildTime 14.9",
+      "OK"
+    ],
+    [
+      "Balance MaxHealth 420",
+      "OK"
+    ],
+    [
+      "INI parse Russia_AD_TorM ZERO_ERRORS",
+      "FAIL"
+    ],
+    [
+      "INI parse Patch_Weapon_TorM ZERO_ERRORS",
+      "OK"
+    ],
+    [
+      "INI parse Patch_Projectile_TorM ZERO_ERRORS",
+      "OK"
+    ]
+  ]
+}

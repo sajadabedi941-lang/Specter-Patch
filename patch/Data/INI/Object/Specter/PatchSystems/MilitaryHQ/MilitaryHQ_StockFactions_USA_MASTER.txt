@@ -1,3 +1,7 @@
+; REFERENCE ONLY — not loaded as Object INI
+; America_MilitaryHQ is defined solely in MilitaryHQ_StockFactions.ini
+; This file documents the USA-clean MilitaryHQ art baseline (US_Command).
+;
 ; CLEAN USA MilitaryHQ_StockFactions MASTER
 ; Derived from MilitaryHQ_StockFactions.ini America_MilitaryHQ
 ; Former leftover art removed; USA Command Center assets applied:

@@ -1,0 +1,25 @@
+SPECTER ULTIMATE EXPANSION — Combined Final Playable
+====================================================
+
+DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Merged packages
+---------------
+  specter-turkey-aircraft-playable
+  specter-uae-japan-mq9-mhq-playable
+  specter-multi-unit-ini-playable
+  specter-airforce-expansion-playable
+  (+ prior MilitaryHQ / final playable baseline on main)
+
+Duplicate Object ID resolution
+------------------------------
+  America_MilitaryHQ was defined in both MilitaryHQ_StockFactions.ini
+  and MilitaryHQ_StockFactions_USA_MASTER.ini.
+  USA_MASTER converted to .txt reference (not loaded as Object INI).
+  Patch Object ID scan after merge: 0 duplicates across patch/Data INIs.
+
+Build method
+------------
+  Stock _SPEC_* BIGs + full patch/ merge via merge_patch_into_spec_big.py
+  Single DATA archive + single ART archive for GameRoot install.

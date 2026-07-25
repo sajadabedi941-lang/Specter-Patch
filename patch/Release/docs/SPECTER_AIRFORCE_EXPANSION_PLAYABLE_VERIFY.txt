@@ -1,0 +1,38 @@
+SPECTER AIR FORCE EXPANSION — LOAD SANITY VERIFY
+================================================
+Date: 2026-07-25
+Environment: Linux cloud agent (generals.exe not runnable here)
+
+BIG integrity
+-------------
+DATA entries: 2885
+ART  entries: 2689
+DATA SHA256: 7cb895ec95c84dab974f58e1c70b7b1c79c11e5304d05fe0e59dd520998b761e
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+AFE object IDs in DATA BIG (exact source match):
+  Patch_America_Aurora
+  Patch_America_StealthHawk
+  Patch_America_AC130Spectre
+  Patch_America_E2C
+  Patch_America_B3
+  Patch_Russia_Su57Strike
+  Patch_Ukraine_Sokil
+  Patch_Ukraine_AN71
+  Patch_Ukraine_Dronecopter
+  Patch_Germany_JetBomber
+  Patch_France_Cayova
+  Patch_China_J10Strike
+  Russia_AD_TorM
+
+Checks
+------
+[PASS] Aircraft_AirForceExpansion.ini bytes match patch source
+[PASS] Russia_AD_TorM.ini bytes match patch source
+[PASS] No irq_/Irq_ leftovers in AFE or Tor-M
+[PASS] All referenced W3D models present in ART BIG
+[PASS] Patch_Weapon_* definitions present in Weapon_AirForceExpansion.ini
+[PASS] CommandButton_AirForceExpansion.ini wired for all listed units
+[PASS] Turkey CommandSet_Turkey.ini not modified on this branch
+[PASS] Balance (BuildCost/BuildTime/Side) matches intended AFE values
+[INFO] Windows generals.exe INI boot not executed in this environment

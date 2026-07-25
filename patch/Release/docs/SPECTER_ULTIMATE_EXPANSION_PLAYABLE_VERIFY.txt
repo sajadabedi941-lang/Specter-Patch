@@ -1,0 +1,43 @@
+SPECTER ULTIMATE EXPANSION — VERIFY
+===================================
+Date: 2026-07-25
+Environment: Linux cloud agent (generals.exe not runnable here)
+
+Archives
+--------
+DATA entries: 2885
+ART  entries: 2689
+DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Source match inside DATA BIG
+----------------------------
+[PASS] Aircraft_AirForceExpansion.ini
+[PASS] Russia_AD_TorM.ini
+[PASS] UAE_MQ9.ini / Japan_MQ9.ini
+[PASS] MilitaryHQ_StockFactions.ini
+[PASS] Turkey_F16Block70.ini
+[PASS] India_TejasMk2.ini
+
+Key objects present
+-------------------
+[PASS] Patch_* AFE aircraft (12) + Russia_AD_TorM
+[PASS] Turkey_F16Block70 / TB2 / Akinci / Kizilelma / Tu22
+[PASS] UAE_MQ9 / Japan_MQ9
+[PASS] America/Russia/China_MilitaryHQ (US_Command art)
+[PASS] India_TejasMk2
+
+Countries
+---------
+[PASS] SpecterPatch PlayerTemplates: 21 factions
+[PASS] Specter country folders present (Turkey, UAE, Japan, India,
+       Ukraine, Germany, France, China/PLA, USA, Russia, etc.)
+[PASS] No country units removed by this merge
+
+Other
+-----
+[PASS] No live SCIENCE_UAEStealthJet / SCIENCE_JapanStealthJet
+[PASS] No live irq_ leftovers in AFE / Tor / UAE / Japan / Turkey wheeled repairs
+[PASS] Referenced W3D models present in ART BIG
+[PASS] usa_master.ini absent from DATA (duplicate resolved)
+[INFO] Windows generals.exe boot not executed in this environment

@@ -1,0 +1,27 @@
+SPECTER_MULTI_UNIT_INI_PLAYABLE — VERIFY REPORT
+Generated: 2026-07-25 UTC
+
+Rebuild: stock DATA/ART + repaired patch/
+
+DATA SHA256:  9ca06fdc3ddff0d07270e6691c4497f23f2243e77883923b1394f8736dafb7f1
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Inside _SPEC_DATA_ONE.big (byte-match sources):
+  PASS India_TejasMk2 — Side=India; Egy_RafaleM; AstraMk2 weapon; no Iraqi leftovers
+  PASS Russia_AD_TorM — Side=Russia; RUS_9A331M2 Tor art; Patch_Weapon_TorM
+  PASS Karrar-2 — Turkey_Karrar2; Iran_Karrar art; no Irq_Karrar
+  PASS Lamiaa — Turkey_Lamiaa; RUS_RS24; no Irq_Lamiaa
+  PASS Airborne / SpecialForces — RUS_SpetsNaz / Spec_SF; no Irq_SF
+  PASS AbbasLauncher — RUS_RS24*; no Irq_Abbas
+  PASS Aircraft_AirForceExpansion — RUS_MI8MTV5; no Irq_Mi8T
+  PASS Aircraft_AAB_Global — no active Iraqi leftovers; objects preserved
+
+Missing model refs (exact W3D stems): NONE on repaired units
+INI load-sanity: PASS
+Faction selection sanity: PASS (Object/Side/CommandSets preserved)
+
+ZIP SHA256:   95c4d72bda9b68aa8599229356f7dafdb57e2821cf7a5ffec6445096ab966389
+
+STATUS: PLAYABLE BIG ARCHIVES READY
+Note: generals.exe cannot run in this Linux cloud; structural BIG/INI
+verification passed for all repaired units.

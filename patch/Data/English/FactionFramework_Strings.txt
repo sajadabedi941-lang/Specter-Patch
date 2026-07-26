@@ -100,3 +100,11 @@ SCIENCE:Vietnam = Vietnam Technology
 TOOLTIP:BioStrategyLong_Vietnam = Vietnam — faction framework placeholder. Unit roster TBD.
 GUI:BioFeatures_Vietnam = Framework scaffold. Content coming in later phases.
 
+; Audit remediation — missing BioFeatures
+GUI:BioFeatures_Ukraine = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_Pakistan = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_SaudiArabia = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_UAE = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_India = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_Japan = Framework scaffold. Content coming in later phases.
+GUI:BioFeatures_Nato = Framework scaffold. Content coming in later phases.

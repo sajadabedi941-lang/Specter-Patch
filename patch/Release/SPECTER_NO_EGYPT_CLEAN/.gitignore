@@ -1,0 +1,4 @@
+*.big
+*.zip
+_extracted_Data/
+_reextract_validate/

@@ -1,0 +1,230 @@
+DELETE FILE INI/Weapon_Egypt.ini
+DELETE FILE INI/Upgrade_Egypt.ini
+DELETE FILE INI/SpecialPower_Egypt.ini
+DELETE FILE INI/Science_Egypt.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_Ural375_Supply.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_BM-21.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/AbbasLauncher.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/VT72B.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/T72M1.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/Egypt_M1A1.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/ScienceObjects/IL-76.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Tank.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_SHORAD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_SAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MLRSShort.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MLRS.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Cruise.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Ballistic.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_ATGM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_ADSAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_MICA_Projectile.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/SpecialForces.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Rifleman.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/HeavySniper.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_Worker.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_EliteSaka.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Antitank.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/AntiAir.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/IFV/Bmp1P.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_WarFactory.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_SupplyCenter.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_RadarStation.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_PowerPlant.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MIC.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Barracks.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Airfield_T.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_AdvancedAirBase.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Abbas.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Su-25K.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Rafale.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_MirageF1-Bq.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mig29M2.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mig-29A.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mi-8.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_F16C.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense Sites/SamSite.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/ZSU23.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Roland3K.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_SHORAD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_SAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_MD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/APC/BTR90.ini
+DELETE FILE INI/CommandSet_Egypt.ini
+DELETE FILE INI/CommandButton_Egypt_PhaseB.ini
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Wheeled
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Tracked
+RMDIR INI/Object/Specter/Egyptian Armed Forces/ScienceObjects
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Projectiles
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Infantry
+RMDIR INI/Object/Specter/Egyptian Armed Forces/IFV
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Drones
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Buildings
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Airforce
+RMDIR INI/Object/Specter/Egyptian Armed Forces/AirDefense Sites
+RMDIR INI/Object/Specter/Egyptian Armed Forces/AirDefense
+RMDIR INI/Object/Specter/Egyptian Armed Forces/APC
+RMDIR INI/Object/Specter/Egyptian Armed Forces
+SCRUB patch/Data/INI/CommandButton.ini blocks=23 lines=2
+SCRUB patch/Data/INI/CommandButton_AdvancedAirBase_Aircraft.ini blocks=8 lines=0
+SCRUB patch/Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini blocks=1 lines=0
+SCRUB patch/Data/INI/CommandButton_AirForceFinal.ini blocks=5 lines=0
+SCRUB patch/Data/INI/CommandButton_FactionExpansion_Armies.ini blocks=40 lines=0
+SCRUB patch/Data/INI/CommandButton_PhaseC_Doctrine.ini blocks=4 lines=0
+SCRUB patch/Data/INI/CommandButton_PhaseD_Elite.ini blocks=7 lines=0
+SCRUB patch/Data/INI/CommandButton_PhaseF_Systems.ini blocks=6 lines=0
+SCRUB patch/Data/INI/CommandSet.ini blocks=5 lines=2
+SCRUB patch/Data/INI/CommandSet_AdvancedAirBase.ini blocks=1 lines=0
+SCRUB patch/Data/INI/CommandSet_India.ini blocks=0 lines=1
+SCRUB patch/Data/INI/ControlBarScheme_SpecterPatch.ini blocks=1 lines=0
+SCRUB patch/Data/INI/CountryDoctrine_PhaseCD.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_TejasMk2.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Barracks.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_PowerPlant.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini blocks=0 lines=2
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_SupplyCenter.ini blocks=0 lines=2
+SCRUB patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini blocks=6 lines=19
+SCRUB patch/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_StrategicBombers.ini blocks=2 lines=6
+SCRUB patch/Data/INI/Object/Specter/PatchSystems/AirForceFinal/Aircraft_AirForceFinal.ini blocks=5 lines=10
+SCRUB patch/Data/INI/Object/Specter/PatchSystems/RuntimeFix/Boss_Faction_Objects.ini blocks=0 lines=1
+SCRUB patch/Data/INI/PlayerTemplate_SpecterPatch.ini blocks=1 lines=0
+SCRUB patch/Data/INI/Science_SpecterPatch.ini blocks=0 lines=1
+SCRUB patch/Data/INI/Weapon_Japan.ini blocks=0 lines=1
+DELETE FILE INI/Weapon_Egypt.ini
+DELETE FILE INI/Upgrade_Egypt.ini
+DELETE FILE INI/SpecialPower_Egypt.ini
+DELETE FILE INI/Science_Egypt.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/Hwasong7.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_Ural375_Supply.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_BM-21.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Wheeled/AbbasLauncher.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/UAV/Wingloong1.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/UAV/Rq20B.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/YPR765.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/VT72B.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/T90MS.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/T72M1.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/M270.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/M1A1S.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Tracked/Egypt_M1A1.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/ScienceObjects/IL-76.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/SamSite/IRIST_Site.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/SamSite/IRIST_SLM_Launcher_ABM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/SamSite/IRIST_SLM_Launcher.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Tank.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_SHORAD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_SAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MLRSShort.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MLRS.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_MD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Cruise.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_Ballistic.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_ATGM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_Projectile_ADSAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Projectiles/Egypt_MICA_Projectile.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/SpecialForces.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Rifleman.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/MortarOperator.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Medic.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Mechanized.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Machingunner.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/KornetOperator.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/HeavySniper.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Engineer.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_Worker.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_EliteSaka.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/Antitank.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Infantry/AntiAir.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/IFV/Bmp1P.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Hulk/S300VM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Hulk/9S19M2.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Egypt_WeaponObjects.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Drones/Egypt_CombatDrone.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_WarFactory.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_SupplyCenter.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_RadarStation.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_PowerPlant.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MIC.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Barracks.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Airfield_T.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_AdvancedAirBase.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Abbas.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Buildings/Camp.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Su35BM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Rafale_DM_AA.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Rafale_DM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Mig29M2.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Mi17.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Ka52.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/F16C.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Su-25K.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Rafale.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_MirageF1-Bq.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mig29M2.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mig-29A.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mi-8.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_F16C.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/CH47F.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airforce/AH64D.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airdefense/S300VM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airdefense/9S19M2.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/Airdefense/9K317.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense Sites/SamSite.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/ZSU23.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Roland3K.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_SHORAD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_SAM.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_MD.ini
+DELETE FILE INI/Object/Specter/Egyptian Armed Forces/APC/BTR90.ini
+DELETE FILE INI/CommandSet_Egypt.ini
+DELETE FILE INI/CommandButton_Egypt_PhaseB.ini
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Wheeled
+RMDIR INI/Object/Specter/Egyptian Armed Forces/UAV
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Tracked
+RMDIR INI/Object/Specter/Egyptian Armed Forces/ScienceObjects
+RMDIR INI/Object/Specter/Egyptian Armed Forces/SamSite
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Projectiles
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Infantry
+RMDIR INI/Object/Specter/Egyptian Armed Forces/IFV
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Hulk
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Drones
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Buildings
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Airforce
+RMDIR INI/Object/Specter/Egyptian Armed Forces/Airdefense
+RMDIR INI/Object/Specter/Egyptian Armed Forces/AirDefense Sites
+RMDIR INI/Object/Specter/Egyptian Armed Forces/AirDefense
+RMDIR INI/Object/Specter/Egyptian Armed Forces/APC
+RMDIR INI/Object/Specter/Egyptian Armed Forces
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/AdvancedAirBase_Strings.txt blocks=0 lines=24
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/AirForceFinal_Strings.txt blocks=0 lines=15
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/FactionExpansion_ArmyStrings.txt blocks=0 lines=151
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/FactionExpansion_PhaseC_Strings.txt blocks=0 lines=46
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/FactionExpansion_PhaseD_Strings.txt blocks=0 lines=22
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/FactionExpansion_PhaseF_Strings.txt blocks=0 lines=19
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/FactionFramework_Strings.txt blocks=0 lines=6
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/STRINGS_TO_ADD.txt blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/English/generals.csf blocks=0 lines=11
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/MappedImages/HandCreated/HandCreatedMappedImages.INI blocks=0 lines=1
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/CivilianBuilding.ini blocks=3 lines=0
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Airforce/AH64D.ini blocks=0 lines=1
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Buildings/Airfield_T.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Buildings/Camp.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Buildings/IndustryPlanet.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Buildings/Warfactory.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Infantry/HeavySniper.ini blocks=0 lines=1
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Infantry/Mechanized.ini blocks=0 lines=1
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Arabic Alliance/Wheeled/Dozer.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/Armed Forces Of Russian Federation/AirDefense/9K317.ini blocks=0 lines=1
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Object/Specter/North Korea/NorthKorea_Systems.ini blocks=0 lines=3
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/ObjectCreationList.ini blocks=0 lines=5
+SCRUB patch/Release/SPECTER_NO_EGYPT_CLEAN/_extracted_Data/INI/Upgrade.ini blocks=1 lines=0

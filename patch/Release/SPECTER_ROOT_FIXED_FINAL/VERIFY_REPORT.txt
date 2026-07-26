@@ -1,0 +1,42 @@
+SPECTER ROOT FIXED FINAL — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_ROOT_FIXED_FINAL.big
+SHA256: bbb4f810f0cc6eb7fd0b4f0b8d26af7dc543543d9fc2dda9ac94b3b80403f1b2
+Size: 383406135 bytes
+Entries: 2787
+
+Build method: EXTRACT SPEC DATA -> overlay patch/Data -> delete all
+Egypt_CommandCenter.ini -> write ONE USA-donor -> pack NEW BIG.
+NOT an in-place patch of an old BIG. NOT a reuse/rename of _SPEC_DATA_ONE.big.
+
+Egypt content SHA256: bf48e3f93da1c0564017517a39670e8827f0099cd3c18425c5c492eb61d79607
+Broken SPEC egypt SHA (must be absent): 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Pre-scan Egypt copies found: 94 (broken=6)
+Deleted from rebuild tree: 1
+
+PASS lines: 21  FAIL lines: 0
+
+PASS: only one Egypt_CommandCenter.ini: INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+PASS: Object Egypt_CommandCenter unique
+PASS: Object duplicate count = 0 (Egypt_CommandCenter)
+PASS: 0 CommandCenter/MilitaryHQ/AAB Object name dups
+PASS: INI parser PASS (Egypt_CommandCenter)
+PASS: Side=Egypt
+PASS: Egypt_CommandCenterCommandSet
+PASS: us_commandcenter
+PASS: US_Command
+PASS: US_COM_Strb
+PASS: US_E3G_AWACS
+PASS: Geometry
+PASS: ProductionUpdate
+PASS: DestroyDie
+PASS: BuildCost=2000
+PASS: BuildTime=45
+PASS: MaxHealth=5000
+PASS: NOT broken SPEC sha
+PASS: NO irq_/Irq_/Iraq/Iraqi/SUPERWEAPON_Iraq/Iraq_PlayerTemplate
+PASS: BIG path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+PASS: BIG egypt content sha matches written clean file
+
+FINAL: PASS

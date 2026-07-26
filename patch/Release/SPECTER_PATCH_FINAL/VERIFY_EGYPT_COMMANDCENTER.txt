@@ -1,0 +1,13 @@
+Egypt_CommandCenter FINAL REPAIR VERIFY
+=======================================
+Base: USA AmericaCommandCenter complete structure
+ART: us_commandcenter / US_Command / US_COM_Strb
+Side=Egypt
+CommandSet=Egypt_CommandCenterCommandSet
+GunshipTemplateName=US_E3G_AWACS
+Egypt special powers retained (SpecialPower_Egypt.ini)
+Balance preserved: BuildCost/BuildTime/HP
+Iraq identity: NONE
+Duplicate Object Egypt_CommandCenter: NONE (1 definition)
+INI parse validation: PASS
+BIG: _SPECTER_PATCH_FINAL.big contains single Egypt_CommandCenter.ini path

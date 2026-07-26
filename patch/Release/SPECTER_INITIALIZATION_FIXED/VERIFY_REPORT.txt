@@ -1,0 +1,71 @@
+SPECTER INITIALIZATION FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_INITIALIZATION_FIXED.big
+SHA256: a1554d57d6ddcdb4067a50543aac4c28e244b2f09c62f4519fcd3a678b36ebbe
+Size: 382376947 bytes
+Entries: 2696
+
+Link-only repairs on _SPECTER_NO_EGYPT_CLEAN.big (no new content).
+
+REPAIRS:
+  - PT:94 SCIENCE_NorthKorea_CommandSetRank1 -> SCIENCE_Iraq_CommandSetRank1
+  - PT:95 SCIENCE_NorthKorea_CommandSetRank3 -> SCIENCE_Iraq_CommandSetRank3
+  - PT:96 SCIENCE_NorthKorea_CommandSetRank8 -> SCIENCE_Iraq_CommandSetRank8
+  - PT:97 SpecialPowerShortcutNorthKorea -> SpecialPowerShortcutNorthKoreaSystem
+  - PT:306 AirF_AmericaVehicleDozer -> AmericaVehicleDozer
+  - AABOnly: Command_ConstructAmericaJetE3AWACS -> Command_ConstructPatch_America_E3 (x5)
+  - AABOnly: Command_ConstructRussiaJetSu75Checkmate -> Command_ConstructPatch_Russia_Su75 (x1)
+  - AABOnly: remove dead Su47Recon slot (x1)
+  - AdvancedAirBase.ini:277 remove Command_ConstructPatch_US_E3G_AWACS (x1)
+  - CommandSet.ini:2878/3176 fix Demo toxin button name (x2)
+  - CommandButton.ini Object= RussiaTankT72B3 -> RussiaTankT72B3M (x1)
+  - CommandButton.ini Object= Russia_Su35S -> RussiaJetSu35S (x1)
+  - CommandButton.ini Object= Russia_Su57_AA -> RussiaJetSu57AA (x1)
+  - CommandButton.ini Object= Russia_Su57 -> RussiaJetSu57 (x1)
+  - CommandButton.ini Object= Russia_Su34 -> RussiaJetSu34 (x1)
+  - CommandButton.ini Object= Russia_Su-25T -> RussiaJetSU25T (x1)
+  - CommandButton.ini Object= Russia_Su-24M2 -> RussiaJetSU24M2 (x1)
+  - CommandButton.ini Object= Russia_Su-24MP -> RussiaJetSU24MP (x1)
+  - CommandButton.ini Object= Russia_Mig-31K -> RussiaJetMig31K (x1)
+  - CommandButton.ini Object= Russia_Mi-28NE -> RussiaHelicopterMi28N (x1)
+  - CommandButton.ini Object= Russia_Mi-17 -> RussiaHelicopterMi8AMTSh (x1)
+  - CommandButton.ini Object= Russia_Su30MK3 -> RussiaJetSu30SM2 (x1)
+  - CommandButton.ini Object= Russia_Su35S_TS -> RussiaJetSu35AG (x1)
+  - CommandButton.ini Object= Russian_T15 -> RussianTankT15 (x1)
+  - CommandButton.ini Object= Russia_Tu-22M3M -> Patch_Russia_Tu22M3 (x1)
+  - CommandButton.ini Object= Russia_S400_Site_AI -> RussiaS400Site_AI (x1)
+  - CommandButton.ini Object= Russia_S400_AI -> RussiaS400Site_AI (x1)
+  - CommandButton.ini Object= Russia_92N6R_AI -> Russia_92N6R_CombatMode (x1)
+  - CommandButton.ini Object= Russia_92N6R -> Russia_92N6R_CombatMode (x1)
+  - INI/Object/FactionBuilding.ini: fix CommandSet = = syntax (x1)
+  - INI/Object/Specter/PLA/China_System.ini: CommandSet= ChinaWZ8ReconCommandSet -> ChinaJetMIGCommandSet (x1)
+  - INI/Object/Specter/PLA/China_System.ini: CommandSet= ChinaKJ500CommandSet -> ChinaJetMIGCommandSet (x1)
+  - INI/Object/Specter/North Korea/NorthKorea_Systems.ini: CommandSet= NorthKorea_MICCommandSet3 -> Iraq_MICCommandSet3 (x1)
+  - INI/Object/Specter/North Korea/NorthKorea_Systems.ini: CommandSet= NorthKorea_MICCommandSet2 -> Iraq_MICCommandSet2 (x1)
+  - INI/Object/Specter/North Korea/NorthKorea_Systems.ini: CommandSet= NorthKorea_MICCommandSet -> Iraq_MICCommandSet (x1)
+  - INI/Object/Specter/United States Of America/Buildings/ShipYard.ini: CommandSet= AmericaShipYardCommandSet -> GenericCommandSet (x1)
+  - INI/Object/Specter/Iranian Army/Buildings/Airfield.ini: CommandSet= IranExpandedAirfieldCommandSet -> IranAirfieldCommandSet (x1)
+  - INI/Object/Specter/Iranian Army/Buildings/RadarStation.ini: CommandSet= IranExpandedRadarCommandSet -> IranRadarStationCommandSet (x1)
+  - INI/Object/Specter/North Korea/Buildings/NorthKorea_SupplyCenter.ini: CommandSet= NorthKorea_SupplyCenterCommandSet -> Iraq_SupplyCenterCommandSet (x1)
+  - INI/Object/Specter/North Korea/Buildings/NorthKorea_NuclearCenter.ini: CommandSet= NorthKorea_AlAbbasCommandSet -> Iraq_AlAbbasCommandSet (x1)
+  - INI/Object/Specter/North Korea/Buildings/NorthKorea_RadarStation.ini: CommandSet= NorthKorea_RadarStationCommandSet -> Iraq_RadarStationCommandSet (x1)
+  - INI/Object/Specter/North Korea/Buildings/NorthKorea_Airfield.ini: CommandSet= NorthKorea_AirfieldCommandSet -> Iraq_AirfieldCommandSet (x1)
+  - INI/Object/Specter/North Korea/Buildings/NorthKorea_WarFactory.ini: CommandSet= NorthKorea_WarFactoryCommandSet -> Iraq_WarFactoryCommandSet (x4)
+  - INI/Object/Specter/North Korea/Tracked/NorthKorea_VT72B.ini: CommandSet= NorthKorea_VT72BCommandSet -> Iraq_VT72BCommandSet (x1)
+  - INI/Object/Specter/Armed Forces Of Russian Federation/Buildings/Kashtan.ini: CommandSet= RussiaGattlingCannonCommandSet -> ChinaGattlingCannonCommandSet (x1)
+  - INI/Object/Specter/Armed Forces Of Russian Federation/SamSite/S400_BDS_Site.ini: CommandSet= RussiaGattlingCannonCommandSet -> ChinaGattlingCannonCommandSet (x1)
+  - INI/Object/Specter/Armed Forces Of Russian Federation/SamSite/S400_BDS_ABM_Site.ini: CommandSet= RussiaGattlingCannonCommandSet -> ChinaGattlingCannonCommandSet (x1)
+
+PASS: 8  FAIL: 0
+
+PASS: Egypt still absent
+PASS: Object duplicate check PASS
+PASS: CommandSet→CommandButton/Object links PASS
+PASS: PlayerTemplate links PASS
+PASS: INI parser PASS (edited files)
+PASS: Object CommandSet= links PASS
+PASS: Startup validation PASS
+PASS: Zero broken init-critical references
+
+FINAL: PASS

@@ -1,0 +1,48 @@
+EXACT INITIALIZATION CRASH CAUSES
+=================================
+Scanned BIG: _SPECTER_NO_EGYPT_CLEAN.big
+SHA256: 3dca571472aeb8b24966ed5a768f2f77615aea77d0be8626c2761a6762897995
+
+Primary init crash (PlayerTemplate load — missing CommandSet names):
+1) Data\INI\PlayerTemplate.ini:94
+   PurchaseScienceCommandSetRank1 = SCIENCE_NorthKorea_CommandSetRank1
+   FIX: retarget -> SCIENCE_Iraq_CommandSetRank1 (FactionNorthKorea BaseSide/IntrinsicSciences already Iraq)
+2) Data\INI\PlayerTemplate.ini:95
+   PurchaseScienceCommandSetRank3 = SCIENCE_NorthKorea_CommandSetRank3
+   FIX: retarget -> SCIENCE_Iraq_CommandSetRank3
+3) Data\INI\PlayerTemplate.ini:96
+   PurchaseScienceCommandSetRank8 = SCIENCE_NorthKorea_CommandSetRank8
+   FIX: retarget -> SCIENCE_Iraq_CommandSetRank8
+4) Data\INI\PlayerTemplate.ini:97
+   SpecialPowerShortcutCommandSet = SpecialPowerShortcutNorthKorea
+   FIX: retarget -> SpecialPowerShortcutNorthKoreaSystem (exists)
+5) Data\INI\PlayerTemplate.ini:306
+   StartingUnit0 = AirF_AmericaVehicleDozer
+   FIX: retarget -> AmericaVehicleDozer (exists)
+
+CommandSet slots pointing at missing CommandButtons (loaded during init):
+6) Data\INI\CommandSet_StrategicBombers_AABOnly.ini:21,32,45,59,75
+   Command_ConstructAmericaJetE3AWACS
+   FIX: retarget -> Command_ConstructPatch_America_E3
+7) Data\INI\CommandSet_StrategicBombers_AABOnly.ini:82
+   Command_ConstructRussiaJetSu75Checkmate
+   FIX: retarget -> Command_ConstructPatch_Russia_Su75
+8) Data\INI\CommandSet_StrategicBombers_AABOnly.ini:89
+   Command_ConstructRussiaJetSu47Recon
+   FIX: remove dead slot (no existing Su47 CommandButton)
+9) Data\INI\CommandSet_AdvancedAirBase.ini:277
+   Command_ConstructPatch_US_E3G_AWACS
+   FIX: remove dead slot (Iraq AWACS already slot 4)
+10) Data\INI\CommandSet.ini:2878 and :3176
+    Demo_Command_ConstructGLAVehicleToxinTruck;TOXIN TRACTOR
+    FIX: retarget -> Demo_Command_ConstructGLAVehicleToxinTruck
+
+Object CommandSet= dead links (retarget to existing CS — no new content):
+11) North Korea buildings/systems → Iraq_* CommandSets
+12) IranExpandedAirfield/Radar → IranAirfieldCommandSet / IranRadarStationCommandSet
+13) RussiaGattlingCannonCommandSet → ChinaGattlingCannonCommandSet
+14) ChinaWZ8ReconCommandSet / ChinaKJ500CommandSet → ChinaJetMIGCommandSet
+15) AmericaShipYardCommandSet → GenericCommandSet
+16) FactionBuilding.ini:4275 CommandSet = = GLADemoTrapCommandSet → GLADemoTrapCommandSet
+
+Policy: no new Objects/CommandButtons/CommandSets added — link repairs only.

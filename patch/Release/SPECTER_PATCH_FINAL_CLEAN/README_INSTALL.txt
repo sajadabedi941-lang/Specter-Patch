@@ -1,18 +1,21 @@
-SPECTER PATCH FINAL CLEAN overlay
-=================================
+SPECTER PATCH FINAL CLEAN — Zero Hour install
+==============================================
 
-Copy into Generals Zero Hour / Specter game folder beside:
+Copy into your Generals Zero Hour / Specter game folder:
+
+  _SPECTER_PATCH_FINAL_CLEAN.big
+
+Place beside (do NOT replace):
   _SPEC_ART_ONE.big
   _SPEC_DATA_ONE.big
   EnglishZH.big
   AudioZH.big
 
-File: _SPECTER_PATCH_FINAL_CLEAN.big
-SHA256: 049d23db54d2ec76d2a3f3e1ebe3382a1be03c008b26306aed36e59662e8e10e
+Load order (case-insensitive):
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  _SPECTER_PATCH_FINAL_CLEAN.big
 
-Loads AFTER _SPEC_DATA_ONE.big (case-insensitive name order) and overrides
-Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
-with the latest repaired version (USA ART + US_E3G_AWACS).
+SHA256: c2790f3e62b3e47d59446ea14c7fbb8b1d744df6fd096a1017795503be132673
 
-Do NOT copy old Release/*/Egypt_CommandCenter.ini trees into the game folder.
-Do NOT replace original Specter BIGs.
+Validation: PASS

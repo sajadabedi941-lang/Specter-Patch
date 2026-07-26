@@ -1,0 +1,23 @@
+SPECTER Egypt_CommandCenter FIX — VERIFY REPORT
+==================================================
+File: Egypt_CommandCenter.ini
+Object: Egypt_CommandCenter
+Side: Egypt
+CommandSet: Egypt_CommandCenterCommandSet
+BuildCost/BuildTime/HP: 2000 / 45.0 / 5000 (preserved)
+
+STRUCTURE
+---------
+OK   USA donor ART: us_commandcenter / US_Command / US_COM_Strb
+OK   USA structural modules: CreateObjectDie ModuleTag_17 + ObjectCreationUpgrade ModuleTag_MMT
+OK   Egypt specials from Egypt_MilitaryHQ (unique Egypt ModuleTags)
+OK   Gunship: Patch_Egypt_AWACS (Side=Egypt; replaces US_E3G_AWACS identity on CC)
+OK   Unique ModuleTags (no duplicates)
+OK   No irq_ / Iraq identity
+OK   No cross-file duplicate Object Egypt_CommandCenter
+OK   INI ZERO ERRORS
+
+PLAYABLE PACKAGE
+----------------
+DATA SHA256: 5814d010735854bc1b4474fbd5b9a553c0342e1e701fbb6b6d0c97d350ec5dfe
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73

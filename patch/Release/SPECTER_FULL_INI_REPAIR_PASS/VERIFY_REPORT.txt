@@ -1,0 +1,15 @@
+SPECTER FULL INI REPAIR PASS — VERIFY
+==================================================
+irq SelectPortrait/ButtonImage (non-Iraq): 0 OK
+Iraqi special/upgrade/faction leftovers (excl Model/Anim/Patch_Iraq): 0 OK
+Objects missing End: 0 OK
+Egypt_CommandCenter USA ART: OK
+Egypt_CommandCenter Side: OK
+Upgrade_Specter_Tier defs: OK
+Cross-file duplicate Objects: 0 OK
+
+NOTE: Model=/Animation= Irq_* W3D asset filenames retained where meshes live in _SPEC_ART_ONE.big.
+Renaming those mesh tokens without new ART would break rendering. UI/SpecialPower/OCL/Side identity cleaned.
+
+RESULT: PASS
+INI ZERO PARSE ERRORS (Object End / identity gates)

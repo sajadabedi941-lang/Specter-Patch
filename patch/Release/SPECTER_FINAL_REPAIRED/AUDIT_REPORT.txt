@@ -1,0 +1,118 @@
+SPECTER PATCH COMPLETE AUDIT REPORT (REPORT ONLY — BEFORE REPAIR)
+======================================================================
+Merged source of truth audited: SPEC _SPEC_DATA_ONE.big Data\* + overlay patch/Data
+Merged entries: 2787
+Objects defined: 4871
+Duplicate Object names in merge: 0
+CommandSets: 1268 | CommandButtons: 3564 | PlayerTemplates: 33
+Egypt_CommandCenter.ini paths in merge: 1 (USA-donor overlay from patch/Data)
+Faction folders under Object/Specter: 32
+BIGs in Release that contain Egypt_CommandCenter.ini: 87
+Broken Egypt (sha 1b559b9e… / irq_comndcntr) BIG copies: 6
+
+NOTE ON INI "PARSER" HEURISTICS:
+A naive End-balance scanner without full ZH opener coverage (TransitionState,
+ReplaceModule, etc.) produces thousands of false positives. Real structural
+checks below focus on Object uniqueness, critical building refs, CommandSet/
+CommandButton duplicate defs, PlayerTemplate StartingBuilding, and load-order.
+
+======================================================================
+PROBLEMS (Problem / File path / Cause / Required fix)
+======================================================================
+
+[1] [CRITICAL] Load-order conflict: many Data BIGs each ship Egypt_CommandCenter.ini
+    PATH: patch/Release/** (87 BIGs) including _SPEC_DATA_ONE.big copies and
+          _SPECTER_* CLEAN/V2/TEST/ROOT/COMPLETE overlay/full merges
+    CAUSE: Zero Hour loads all *.big; alphabetical later archives can override
+           or resurrect broken/old Egypt_CommandCenter while "fixed" BIGs also exist
+    FIX: Ship ONE final Data BIG only; replace _SPEC_DATA_ONE.big; remove all other
+         Specter Data/test/clean/fixed overlay BIGs from the game folder
+
+[2] [CRITICAL] Broken Egypt_CommandCenter still present in vendor/old SPEC copies
+    PATH:
+      patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+      patch/Release/SPECTER_BIG_MERGE_PLAYABLE/_SPEC_DATA_ONE.big
+      patch/Release/SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/_SPEC_DATA_ONE.big
+      patch/Release/SPECTER_BRITAIN_F35B_SAUDI_DRONE_PLAYABLE/_SPEC_DATA_ONE.big
+      patch/Release/SPECTER_MILITARYHQ_USA_PLAYABLE/_SPEC_DATA_ONE.big
+      patch/Release/SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE/_SPEC_DATA_ONE.big
+      :: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+    CAUSE: irq_comndcntr / Irq_Command / Iraq_Adnan1 / SUPERWEAPON_Iraq (sha 1b559b9e…)
+    FIX: Do not install these BIGs; final repaired BIG must contain one USA-donor Egypt CC
+
+[3] [HIGH] Missing CommandSet for IranCommandCenter
+    PATH: Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini
+    CAUSE: CommandSet = IranExpandedHQCommandSet but that CommandSet is not defined
+           (IranHQCommandSet exists in Data\INI\CommandSet.ini)
+    FIX: Retarget IranCommandCenter to IranHQCommandSet (keep Iran playable)
+
+[4] [HIGH] Duplicate CommandButton Command_ConstructPatch_Iraq_AWACS
+    PATH:
+      Data\INI\CommandButton_AdvancedAirBase_Aircraft.ini
+      Data\INI\CommandButton_AirForceFinal.ini
+    CAUSE: Same CommandButton defined twice (near-identical); last-wins load order
+    FIX: Keep one definition (AAB Aircraft); remove duplicate from AirForceFinal
+
+[5] [HIGH] Duplicate CommandButton definitions inside CommandButton.ini
+    PATH: Data\INI\CommandButton.ini
+    CAUSE: Second copies of:
+      Command_ConstructRussiaAirfield_T (lines ~12483 and ~13623)
+      Command_ConstructRussiaArtillery2S7M (~3251 and ~13776)
+      Command_ConstructRussiaTankT90A (~3243 and ~13816)
+      Command_ConstructRussiaVehicleS500 (~12724 and ~13728)
+      Command_ConstructRussiaWarFactory_T (~12491 and ~13687)
+    FIX: Keep first definition; delete later duplicate blocks
+
+[6] [HIGH] Duplicate Airfield CommandSet definitions (base + AAB override file)
+    PATH:
+      Data\INI\CommandSet.ini
+      Data\INI\CommandSet_StrategicBombers_AABOnly.ini
+    CAUSE: Both define AmericaAirfieldCommandSet(+_T/_T1/_T2/_T3), ChinaAirfieldCommandSet,
+           RussiaAirfieldCommandSet — load-order dependent source of truth
+    FIX: Keep AABOnly versions as sole defs; remove those CommandSet blocks from CommandSet.ini
+
+[7] [MEDIUM] Obsolete stub Egypt_CommandCenter.ini loose files (271 bytes)
+    PATH:
+      patch/Release/SPECTER_CLEAN_PATCH_FINAL/Patch/Data/.../Egypt_CommandCenter.ini
+      patch/Release/SPECTER_CLEAN_PATCH_FINAL_FIXED/Patch/Data/.../Egypt_CommandCenter.ini
+      patch/Release/SPECTER_FINAL_BOOT_READY_PATCH/Patch/Data/.../Egypt_CommandCenter.ini
+      patch/Release/SPECTER_PATCH_HASH_FIXED_FINAL/patch/Data/.../Egypt_CommandCenter.ini
+      patch/Release/Specter_FULL_INI_REPAIR_PASS_Data/Data/.../Egypt_CommandCenter.ini
+      patch/Release/Specter_FULL_REPAIR_RUNNER/Specter_FULL_REPAIR_Data/.../Egypt_CommandCenter.ini
+    CAUSE: Old repair stubs, not valid Object bodies
+    FIX: Do not pack; ignore/delete from tooling paths (not part of patch/Data)
+
+[8] [MEDIUM] Iraq / AI_IraqiArmy faction trees remain in SPEC merge
+    PATH:
+      Data\INI\Object\Specter\Iraq Army\...
+      Data\INI\Object\Specter\AI_IraqiArmy\...
+      PlayerTemplate FactionIraq in Data\INI\PlayerTemplate.ini
+    CAUSE: Upstream Specter content; Irq_* ART on Iraq_CommandCenter is faction-local
+    FIX: Keep as non-Egypt content (do not remove working faction). Ensure Egypt CC has
+         zero irq_/Iraq tokens. Do not wire Iraq leftovers into other countries.
+
+[9] [HIGH] Multiplayer sync risk from mixed BIG stacks
+    PATH: Game folder *.big load order
+    CAUSE: Clients with different CLEAN/V2/TEST/SPEC combinations resolve different
+           Egypt_CommandCenter / CommandSet last-wins results → desync
+    FIX: All clients install identical _SPECTER_FINAL_REPAIRED.big as sole Data BIG
+
+[10] [INFO] Merged tree Object uniqueness already OK
+    PATH: SPEC+patch merge
+    CAUSE: N/A — 0 duplicate Object names after patch overlay
+    FIX: Preserve; rebuild final BIG from cleaned merge; re-validate after pack
+
+[11] [INFO] Critical buildings CommandCenter/MilitaryHQ/AdvancedAirBase
+    PATH: Object/Specter/** 
+    CAUSE: No multi-definition Object names for these classes in merge
+           AAB objects: 30, all have defined CommandSets
+    FIX: Keep; only fix Iran CC CommandSet ref ([3])
+
+[12] [INFO] PlayerTemplate StartingBuilding refs
+    PATH: PlayerTemplate.ini / PlayerTemplate_SpecterPatch.ini
+    CAUSE: All StartingBuilding Object names resolve in merge (including Egypt_MilitaryHQ)
+    FIX: Keep
+
+======================================================================
+END AUDIT (no fixes applied in this file)
+Rebuild proceeds next → _SPECTER_FINAL_REPAIRED.big

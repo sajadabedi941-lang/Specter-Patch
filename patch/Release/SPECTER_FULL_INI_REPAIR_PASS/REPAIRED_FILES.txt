@@ -1,0 +1,450 @@
+patch/Data/INI/CommandButton.ini
+patch/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_MD.ini
+patch/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_SAM.ini
+patch/Data/INI/Object/Specter/British Armed Forces/AirDefense/Britain_AD_SkySabre.ini
+patch/Data/INI/Object/Specter/British Armed Forces/Wheeled/Britain_StormShadowTEL.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_MD.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/AirDefense/Egypt_AD_SAM.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mi-8.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Mig-29A.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Airforce/Egypt_Su-25K.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_Airfield_T.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_MIC.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_RadarStation.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Egypt_WarFactory.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_EliteSaka.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_BM-21.ini
+patch/Data/INI/Object/Specter/Egyptian Armed Forces/Wheeled/Egypt_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_MD.ini
+patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAM.ini
+patch/Data/INI/Object/Specter/French Armed Forces/AirDefense/France_AD_SAMPT.ini
+patch/Data/INI/Object/Specter/French Armed Forces/Wheeled/France_SCALPTEL.ini
+patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_IRIST.ini
+patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_MD.ini
+patch/Data/INI/Object/Specter/German Armed Forces/AirDefense/Germany_AD_SAM.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Akash.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_Barak8.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_MD.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/India_AD_SAM.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Mi-8.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Mig-29A.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/India_Su-25K.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_Airfield_T.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_MIC.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_RadarStation.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_WarFactory.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/India_EliteParaSF.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Tracked/India_T90S.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_AgniTEL.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BM-21.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_BrahMosIITEL.ini
+patch/Data/INI/Object/Specter/Indian Armed Forces/Wheeled/India_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/Israel Defense Forces/AirDefense/Israel_AD_Barak8.ini
+patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_Airfield_T.ini
+patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_RadarStation.ini
+patch/Data/INI/Object/Specter/Israel Defense Forces/Buildings/Israel_WarFactory.ini
+patch/Data/INI/Object/Specter/Italian Armed Forces/AirDefense/Italy_AD_MD.ini
+patch/Data/INI/Object/Specter/Italian Armed Forces/AirDefense/Italy_AD_SAM.ini
+patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_MD.ini
+patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Patriot.ini
+patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_SAM.ini
+patch/Data/INI/Object/Specter/Japan Self-Defense Forces/AirDefense/Japan_AD_Type03.ini
+patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/AirDefense/Libya_AD_MD.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/AirDefense/Libya_AD_SAM.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/Libya_Mi-8.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/Libya_Mig-29A.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/Libya_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/Libya_Su-25K.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_Airfield_T.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_MIC.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_RadarStation.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Buildings/Libya_WarFactory.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Tracked/Libya_T72Mobile.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/Libya_BM-21.ini
+patch/Data/INI/Object/Specter/Libyan Armed Forces/Wheeled/Libya_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_MD.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Pakistan_AD_SAM.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/Pakistan_Mi-8.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/Pakistan_Mig-29A.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/Pakistan_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/Pakistan_Su-25K.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_Airfield_T.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_MIC.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_RadarStation.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Buildings/Pakistan_WarFactory.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/Pakistan_EliteSSG.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Tracked/Pakistan_AlKhalid.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_AbabeelTEL.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_BM-21.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_ShaheenTEL.ini
+patch/Data/INI/Object/Specter/Pakistan Armed Forces/Wheeled/Pakistan_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Hawk.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_NASAMS.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_Patriot.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/America_AD_THAAD.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ22.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/China_AD_HQ9.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Bavar373.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Khordad15.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Iran_AD_Majid.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_Buk.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S400.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirDefense/Russia_AD_S500.ini
+patch/Data/INI/Object/Specter/PatchSystems/AirForceFinal/Aircraft_AirForceFinal.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/America_ARRWTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/America_PGSTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/America_PrSMTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/America_TomahawkTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/China_DF17TEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/China_DF21TEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/China_DF26TEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Iran_FatehTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Iran_FattahTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Iran_KhorramshahrTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Iran_SejjilTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Russia_AvangardTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Russia_IskanderTEL.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Russia_KinzhalBattery.ini
+patch/Data/INI/Object/Specter/PatchSystems/Missiles/Russia_ZirconBattery.ini
+patch/Data/INI/Object/Specter/Republic of China Armed Forces/AirDefense/Taiwan_AD_MD.ini
+patch/Data/INI/Object/Specter/Republic of China Armed Forces/AirDefense/Taiwan_AD_SAM.ini
+patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/AirDefense/SouthKorea_AD_MD.ini
+patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/AirDefense/SouthKorea_AD_SAM.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_MD.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiArabia_AD_SAM.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Airforce/SaudiArabia_Mi-8.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Airforce/SaudiArabia_Mig-29A.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Airforce/SaudiArabia_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Airforce/SaudiArabia_Su-25K.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_Airfield_T.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_MIC.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_RadarStation.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Buildings/SaudiArabia_WarFactory.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/SaudiArabia_EliteSF.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Wheeled/SaudiArabia_BM-21.ini
+patch/Data/INI/Object/Specter/Saudi Arabian Armed Forces/Wheeled/SaudiArabia_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/APC/BTR90.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/AirDefense/SouthAfrica_AD_MD.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/AirDefense/SouthAfrica_AD_SAM.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfrica_Mi-8.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfrica_Mig-29A.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfrica_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfrica_Su-25K.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_Airfield_T.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_MIC.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_RadarStation.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Buildings/SouthAfrica_WarFactory.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Wheeled/SouthAfrica_BM-21.ini
+patch/Data/INI/Object/Specter/South African National Defence Force/Wheeled/SouthAfrica_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/Swedish Armed Forces/AirDefense/Sweden_AD_MD.ini
+patch/Data/INI/Object/Specter/Swedish Armed Forces/AirDefense/Sweden_AD_SAM.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/AirDefense/Syria_AD_MD.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/AirDefense/Syria_AD_SAM.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/Syria_Mi-8.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/Syria_Mig-29A.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/Syria_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/Syria_Su-25K.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_Airfield_T.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_MIC.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_RadarStation.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Buildings/Syria_WarFactory.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Infantry/Syria_EliteTiger.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Tracked/Syria_T72B3Defender.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Wheeled/Syria_BM-21.ini
+patch/Data/INI/Object/Specter/Syrian Arab Army/Wheeled/Syria_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/92N6E_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad250_ABM_Launcher.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad3_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad3_AI_Launcher_AAM.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad3_AI_Launcher_ABM.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SNR75.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/2K12.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/9K33.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/B340.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Fahad3.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/P30.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/S125_Launcher.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/S75D_Launcher.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Turkey_AD_MD.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Turkey_AD_SAM.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Turkey_HISAR_O.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Turkey_SIPER.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Turkey_Sungur.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/ZPU4.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-28NE.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-35M3.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mi-8.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-23BN.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-25BM.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-29A.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-22M3.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-24MK.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-24MR.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Su-25K.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/CombatTrench.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_100mmCannon_S.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Abbas.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Abbas_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Barracks.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_D30.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_PowerPlant.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_RadarStation.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_SupplyCenter.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Ababil200.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Ababil200R.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Quds5.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Quds5_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Drones/Sarab3.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Expermental/Expermental_Objects.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/2K12Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/9P117Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/AssadBabel2Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/BM21Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/BMP1PHulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/BTR90Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/Sarab7Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/T72M1Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Hulk/ZSU23Hulk.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/IFV/Bmp2K.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/IFV/Turkey_BMP-2.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Enginer.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/KornetTeam.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Machineguner.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Mechanized.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/MortarTeam.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Motorized.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Turkey_Worker.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/Adnan1.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/Mi-8T.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/Mig25RB.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/ScienceObjects/Tu16K.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Tracked/2S1.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Turkey_Shells.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Turkey_Systems.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Turkey_WeaponObjects.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/9P117.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher_AI.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AlNida.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_BM-21.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TRG230.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TRLG230.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_TayfunTEL.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Turkey_Ural375_Supply_AI.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_MD.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/Ukraine_AD_SAM.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_Mi-8.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_Mig-29A.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_Su-25K.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/Ukraine_Su24MK.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_Airfield_T.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_MIC.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_RadarStation.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Buildings/Ukraine_WarFactory.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/Ukraine_EliteSSO.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Tracked/Ukraine_T84Oplot.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_BM-21.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_NeptuneTEL.ini
+patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Wheeled/Ukraine_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/APC/BTR90.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_MD.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_SAM.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Mi-8.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Mig-29A.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Su-25K.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_Airfield_T.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MIC.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_RadarStation.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Infantry/UAE_ElitePresidential.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/UAE_Systems.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Wheeled/UAE_BM-21.ini
+patch/Data/INI/Object/Specter/United Arab Emirates/Wheeled/UAE_Ural375_Supply.ini
+patch/Data/INI/Object/Specter/United Nations Forces/AirDefense/UN_AD_MD.ini
+patch/Data/INI/Object/Specter/United Nations Forces/AirDefense/UN_AD_SAM.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/APC/BTR90.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/AirDefense Sites/SamSite.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/AirDefense/Roland3K.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/AirDefense/Vietnam_AD_MD.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/AirDefense/Vietnam_AD_SAM.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/AirDefense/ZSU23.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/Vietnam_Mi-8.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/Vietnam_Mig-29A.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/Vietnam_MirageF1-Bq.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/Vietnam_Su-25K.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_Airfield_T.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_MIC.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_RadarStation.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Buildings/Vietnam_WarFactory.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/IFV/Bmp1P.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Infantry/AntiAir.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Infantry/Antitank.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Infantry/HeavySniper.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Infantry/Rifleman.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Infantry/SpecialForces.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/ScienceObjects/IL-76.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Tracked/T72M1.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Tracked/VT72B.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Tracked/Vietnam_T90Ambush.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Wheeled/Vietnam_BM-21.ini
+patch/Data/INI/Object/Specter/Vietnam People's Army/Wheeled/Vietnam_Ural375_Supply.ini
+patch/Data/INI/Upgrade_SpecterTiers.ini
+patch/Release/SPECTER_FULL_INI_REPAIR_PASS/README_INSTALL.txt
+patch/Release/SPECTER_FULL_INI_REPAIR_PASS/REPAIRED_FILES.txt
+patch/Release/SPECTER_FULL_INI_REPAIR_PASS/VERIFY_REPORT.txt
+patch/Release/SPECTER_FULL_INI_REPAIR_PASS/_SPECTER_PATCH_FINAL.big

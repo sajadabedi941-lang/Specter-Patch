@@ -1,0 +1,19 @@
+EGYPT_COMMANDCENTER SCAN (all patch/Release *.big)
+============================================================
+Total copies across all BIGs: 92
+Broken copies still in other packages: 6
+_SPEC_DATA_ONE_FIXED.big copies: 1 (must be 1)
+
+THIS PACKAGE guarantees Egypt_CommandCenter copies = 1 inside the shipped BIG.
+Other archived BIGs in the repo may still contain broken copies — do not install them.
+
+FIXED  81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c  patch/Release/SPEC_DATA_ONE_FIXED/_SPEC_DATA_ONE_FIXED.big
+
+Broken SPEC copies elsewhere (do not install):
+BROKEN 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+  - patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+  - patch/Release/SPECTER_BIG_MERGE_PLAYABLE/_SPEC_DATA_ONE.big
+  - patch/Release/SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/_SPEC_DATA_ONE.big
+  - patch/Release/SPECTER_BRITAIN_F35B_SAUDI_DRONE_PLAYABLE/_SPEC_DATA_ONE.big
+  - patch/Release/SPECTER_MILITARYHQ_USA_PLAYABLE/_SPEC_DATA_ONE.big
+  - patch/Release/SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE/_SPEC_DATA_ONE.big

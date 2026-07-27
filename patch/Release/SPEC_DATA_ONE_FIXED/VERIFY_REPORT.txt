@@ -1,0 +1,31 @@
+SPEC DATA ONE FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPEC_DATA_ONE_FIXED.big
+BIG SHA256: c15b5d58ee2b764e611faa19f09beae022b8ecc9732eb5497c1ef020f365e0fd
+Source: patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+Source BIG SHA256: 382cc26404aa7f8aa0c299f8c35ae31be842ef2554c9557e9dc2f8ca4ed28f40
+Old Egypt_CommandCenter SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+New Egypt_CommandCenter SHA256: 81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+Broken SPEC CC SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Size: 384507617 bytes
+Entries: 2887
+
+Method: extract original _SPEC_DATA_ONE.big → delete broken Egypt_CommandCenter.ini
+→ insert USA-donor repaired Egypt_CommandCenter.ini → rebuild complete Data BIG.
+Not an overlay. Only that one file content changed.
+
+PASS: 10  FAIL: 0
+
+PASS: Egypt_CommandCenter copies = 1 only
+PASS: CC repaired sha=81dd3fcd672bf68d… (not 1b559b9e0d4eb140…)
+PASS: No Iraq/irq crash tokens
+PASS: INI parser PASS
+PASS: Object duplicates = 0 for Egypt_CommandCenter
+PASS: Object duplicates unchanged vs SPEC (vendor pre-existing=250; no new)
+PASS: Missing references = 0
+PASS: All other SPEC entries preserved (same key set)
+PASS: All non-CC entry bytes unchanged
+PASS: Game initialization PASS (static)
+
+FINAL: PASS

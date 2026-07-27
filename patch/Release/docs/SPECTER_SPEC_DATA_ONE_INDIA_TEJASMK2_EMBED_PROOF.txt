@@ -1,12 +1,12 @@
-EMBED PROOF
-===========
+EMBED + FULL INI PROOF
+======================
 path: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_TejasMk2.ini
 norm: Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini
-fixed_source_sha256: fca823fa551b91d176ab8ce527e74b52ac804dbcf1c31e2f2c260fc693f26212
-inside_BIG_sha256:   fca823fa551b91d176ab8ce527e74b52ac804dbcf1c31e2f2c260fc693f26212
-extracted_file_sha256: fca823fa551b91d176ab8ce527e74b52ac804dbcf1c31e2f2c260fc693f26212
+fixed_source_sha256: 696ac82746594963b8f1ef8ae53b52ffb04250fc959c2fcde4195b86c8b79a4a
+inside_BIG_sha256:   696ac82746594963b8f1ef8ae53b52ffb04250fc959c2fcde4195b86c8b79a4a
 broken_vendor_sha256: f3192e17cd8593010a05a85802a5ffeefcb44300ed292bc24b50ed818cf8d3b1
-match_fixed: YES
+block_syntax: PASS
+identity_donors: pla_j10c / CHI_J10C*
 still_broken: NO
-BIG_sha256: 4905d82f73617572c04a89bff02289d6b2642c9472b6265d65df36223df75d68
-BIG_size: 384515662
+BIG_sha256: b2582e0d0cac3925945605ed3370165182ddbc547bc4eeadaf930d3c5d87b308
+BIG_size: 384515703

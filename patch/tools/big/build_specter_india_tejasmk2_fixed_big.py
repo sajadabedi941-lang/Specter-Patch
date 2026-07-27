@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Patch India_TejasMk2.ini inside _SPEC_DATA_ONE.big (ASCII / parse repair).
+"""Patch India_TejasMk2.ini inside _SPEC_DATA_ONE.big (full INI validation).
 
-Crash pattern: non-ASCII comments (em-dash / multiply) in Phase G header.
-Object block / Shadow / modules are otherwise intact; keep India identity,
-weapons, balance, models, and prereqs.
+Fixes beyond hash-only checks:
+  - non-ASCII comments (em-dash / multiply)
+  - Egypt Rafale donors (Nat_rafalem / Egy_RafaleM/MD) -> pla_j10c / CHI_J10C*
+  - Spectra_ECM_Rafale_AHAM -> Thales_Spectra_ECM_Pod
+  - unindented Scale = 0.9
+  - duplicate Shadow
+  - full Object/Draw/Behavior/WeaponSet/End stack validation
 
 Source: SPECTER_SPEC_DATA_ONE_GERMANY_DRONE_FIXED/_SPEC_DATA_ONE.big
 """
@@ -14,6 +18,7 @@ import re
 import shutil
 import struct
 import zipfile
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,7 +43,6 @@ SYNC_DIRS = [
     ROOT / "Release" / "SPECTER_FINAL_EGYPT_BRITAIN_FIXED",
 ]
 
-# Prior in-BIG fixes that must remain preserved
 PRESERVE = {
     r"Data\INI\Object\Specter\French Armed Forces\Drones\France_CombatDrone.ini": (
         "7512cca46c234c6951a54d5a982184209d203668738c4e1336fdaab1e1ba8df2"
@@ -47,6 +51,21 @@ PRESERVE = {
         "663b32b1de6111bd1496463bc042f642d204782a525f103c63440d92d380e8b2"
     ),
 }
+
+OPENERS = [
+    (re.compile(r"^\s*Object\s+(?![=])\S+"), "Object"),
+    (re.compile(r"^\s*Draw\s*="), "Draw"),
+    (re.compile(r"^\s*Behavior\s*="), "Behavior"),
+    (re.compile(r"^\s*Body\s*="), "Body"),
+    (re.compile(r"^\s*ArmorSet\b"), "ArmorSet"),
+    (re.compile(r"^\s*WeaponSet\b"), "WeaponSet"),
+    (re.compile(r"^\s*Prerequisites\b"), "Prerequisites"),
+    (re.compile(r"^\s*UnitSpecificSounds\b"), "UnitSpecificSounds"),
+    (re.compile(r"^\s*DefaultConditionState\b"), "DefaultConditionState"),
+    (re.compile(r"^\s*ConditionState\s*="), "ConditionState"),
+    (re.compile(r"^\s*TransitionState\s*="), "TransitionState"),
+    (re.compile(r"^\s*LocomotorSet\b"), "LocomotorSet"),
+]
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -109,99 +128,127 @@ def write_big(path: Path, entries) -> None:
     path.write_bytes(bytes(out))
 
 
-def parse_check(text: str) -> tuple[bool, int]:
-    open_re = re.compile(
-        r"^\s*(?:Object\s+(?![=])\S+|Draw\s*=|Behavior\s*=|ArmorSet\b|Body\s*=|"
-        r"UnitSpecificSounds\b|ConditionState\s*=|TransitionState\s*=|WeaponSet\b|"
-        r"Prerequisites\b|LocomotorSet\b|DefaultConditionState\b)"
-    )
-    depth = 0
-    hard = False
-    for line in text.splitlines():
-        code = line.split(";", 1)[0]
-        if not code.strip():
-            continue
-        if re.match(r"^\s*End\s*$", code):
-            depth -= 1
-            if depth < 0:
-                hard = True
-                depth = 0
-            continue
-        if open_re.match(code):
-            depth += 1
-    return (not hard and depth == 0), depth
-
-
-def ascii_safe_comment(s: str) -> str:
-    """Replace common UTF-8 punctuation that crashes ZH INI parser."""
+def ascii_safe(s: str) -> str:
     repl = {
-        "\u2014": "-",  # em dash
-        "\u2013": "-",  # en dash
+        "\u2014": "-",
+        "\u2013": "-",
         "\u2018": "'",
         "\u2019": "'",
         "\u201c": '"',
         "\u201d": '"',
-        "\u00d7": "x",  # multiply
+        "\u00d7": "x",
         "\u00a0": " ",
     }
-    out = []
-    for ch in s:
-        if ord(ch) < 128:
-            out.append(ch)
-        elif ch in repl:
-            out.append(repl[ch])
-        else:
-            out.append("?")
-    return "".join(out)
+    return "".join(ch if ord(ch) < 128 else repl.get(ch, "?") for ch in s)
+
+
+def full_block_check(text: str) -> tuple[bool, list[str]]:
+    """Validate Object/Draw/Behavior/WeaponSet/ConditionState End matching."""
+    issues: list[str] = []
+    stack: list[tuple[str, int]] = []
+    for i, line in enumerate(text.splitlines(), 1):
+        code = line.split(";", 1)[0]
+        if not code.strip():
+            continue
+        if re.match(r"^\s*End\s*$", code):
+            if not stack:
+                issues.append(f"line {i}: EXTRA End with empty stack")
+            else:
+                stack.pop()
+            continue
+        for rx, kind in OPENERS:
+            if rx.match(code):
+                stack.append((kind, i))
+                break
+    if stack:
+        issues.append(
+            "UNCLOSED blocks: "
+            + ", ".join(f"{k}@{ln}" for k, ln in stack)
+        )
+    return (not issues), issues
+
+
+def code_only(text: str) -> str:
+    return "\n".join(line.split(";", 1)[0] for line in text.splitlines())
 
 
 def repair_tejas(raw: bytes) -> str:
     text = raw.decode("utf-8", "replace").replace("\r\n", "\n").replace("\r", "\n")
-    # Drop any prior broken repair headers with mojibake; keep one clean header.
+    text = "\n".join(ascii_safe(line) for line in text.split("\n"))
+
+    # Strip old banners / repair headers until Object line.
     lines = text.split("\n")
-    # If file already starts with SPECTER REPAIR, strip leading repair block until Object
     while lines and (
         lines[0].strip() == ""
         or (
             lines[0].lstrip().startswith(";")
-            and "SPECTER REPAIR" in lines[0]
-            or (
-                lines
-                and lines[0].lstrip().startswith(";")
-                and not lines[0].lstrip().startswith("; SPECTER PATCH")
-                and "Object " not in lines[0]
-                and any(
-                    x in lines[0]
-                    for x in (
-                        "SPECTER REPAIR",
-                        "Validated:",
-                        "Identity fix",
-                        "No Iraqi",
-                        "Stand-in",
-                        "Preserved:",
-                    )
-                )
-            )
+            and not re.match(r"^\s*Object\s+", lines[0])
         )
     ):
-        # Only strip explicit prior repair headers, not Phase G content yet
-        if lines[0].lstrip().startswith(";") and (
-            "SPECTER REPAIR" in lines[0]
-            or lines[0].lstrip().startswith("; Validated:")
-            or lines[0].lstrip().startswith("; Identity fix")
-            or lines[0].lstrip().startswith("; Stand-in")
-            or lines[0].lstrip().startswith("; Preserved:")
-            or lines[0].lstrip().startswith("; No Iraqi")
-        ):
-            lines.pop(0)
-            continue
-        break
+        # Keep going while leading comments/blank; stop at Object
+        if re.match(r"^\s*Object\s+", lines[0]):
+            break
+        lines.pop(0)
+        if lines and re.match(r"^\s*Object\s+", lines[0]):
+            break
+    # If first remaining is still comments before Object, find Object
+    obj_idx = next(
+        (i for i, l in enumerate(lines) if re.match(r"^\s*Object\s+India_TejasMk2\b", l)),
+        None,
+    )
+    if obj_idx is None:
+        raise SystemExit("Object India_TejasMk2 missing in source")
+    lines = lines[obj_idx:]
 
     text = "\n".join(lines)
-    # Sanitize every line to ASCII (comments are the crash source)
-    text = "\n".join(ascii_safe_comment(line) for line in text.split("\n"))
 
-    # Deduplicate Shadow = SHADOW_VOLUME if present
+    # Identity repair: remove Egypt Rafale donors (known init crash pattern).
+    text = re.sub(
+        r"(?m)^(  SelectPortrait\s*=\s*)\S+\s*$",
+        r"\1pla_j10c",
+        text,
+        count=1,
+    )
+    text = re.sub(
+        r"(?m)^(  ButtonImage\s*=\s*)\S+\s*$",
+        r"\1pla_j10c",
+        text,
+        count=1,
+    )
+    text = re.sub(
+        r"(?m)^(      Model\s*=\s*)Egy_RafaleM\s*$",
+        r"\1CHI_J10C",
+        text,
+    )
+    text = re.sub(
+        r"(?m)^(      Model\s*=\s*)Egy_RafaleMD\s*$",
+        r"\1CHI_J10C_D",
+        text,
+    )
+    # Rubble states should use rubble model when present.
+    # After MD->D replacement, set RUBBLE blocks to CHI_J10C_R.
+    def rubble_model(block: str) -> str:
+        return re.sub(
+            r"(?m)^(      Model\s*=\s*)CHI_J10C_D\s*$",
+            r"\1CHI_J10C_R",
+            block,
+        )
+
+    text = re.sub(
+        r"(?ms)(^\s*ConditionState\s*=\s*RUBBLE(?:[^\n]*)\n.*?^\s*End)",
+        lambda m: rubble_model(m.group(1)),
+        text,
+    )
+    text = re.sub(
+        r"(WeaponTemplate\s*=\s*)Spectra_ECM_Rafale_AHAM",
+        r"\1Thales_Spectra_ECM_Pod",
+        text,
+    )
+
+    # Indent Scale under Object (was column-0).
+    text = re.sub(r"(?m)^Scale\s*=\s*", "  Scale = ", text)
+
+    # Deduplicate Shadow = SHADOW_VOLUME
     seen_shadow = False
     out_lines = []
     for line in text.split("\n"):
@@ -212,6 +259,18 @@ def repair_tejas(raw: bytes) -> str:
         out_lines.append(line)
     text = "\n".join(out_lines)
 
+    header = (
+        "; SPECTER FIX - India_TejasMk2 (full INI validation)\n"
+        "; ASCII repair + identity donors: pla_j10c / CHI_J10C / CHI_J10C_D / CHI_J10C_R\n"
+        "; Keep: Object India_TejasMk2 / Side=India / India weapons and balance\n"
+        "; Weapons: India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG + Thales radar\n"
+        "; Prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6\n"
+        "; Removed: non-ASCII, Nat_rafalem/Egy_Rafale*, Spectra_ECM_Rafale_AHAM, col0 Scale\n"
+        "\n"
+    )
+    text = header + text
+
+    code = code_only(text)
     if not re.search(r"(?m)^Object\s+India_TejasMk2\b", text):
         raise SystemExit("Object India_TejasMk2 missing")
     if not re.search(r"(?m)^  Side\s*=\s*India\s*$", text):
@@ -219,32 +278,39 @@ def repair_tejas(raw: bytes) -> str:
     if "India_Weapon_AstraMk2_TejasMk2" not in text:
         raise SystemExit("Astra Mk2 weapon missing")
     if any(ord(c) > 127 for c in text):
-        bad = sorted({hex(ord(c)) for c in text if ord(c) > 127})
-        raise SystemExit(f"non-ascii remain: {bad}")
-
-    header = (
-        "; SPECTER FIX - India_TejasMk2\n"
-        "; ASCII/parse repair (same non-ASCII comment crash as CombatDrone)\n"
-        "; Keep: Object India_TejasMk2 / Side=India / India weapons and balance\n"
-        "; Weapons: India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG + Thales radar\n"
-        "; Prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6\n"
-        "; Removed: non-ASCII comments; duplicate Shadow if any\n"
-        "\n"
-    )
-    # Avoid double Object if we prepend before existing Object line
-    # Strip a leading Phase G banner only if we add our header (keep rest)
-    body_lines = text.split("\n")
-    # Remove old Phase G title line if present (now ASCII-sanitized)
-    if body_lines and "SPECTER PATCH Phase G" in body_lines[0]:
-        body_lines = body_lines[1:]
-        while body_lines and body_lines[0].strip() == "":
-            body_lines.pop(0)
-    text = header + "\n".join(body_lines)
-    if text.count("Object India_TejasMk2") != 1 and len(
-        re.findall(r"(?m)^Object\s+India_TejasMk2\b", text)
-    ) != 1:
-        raise SystemExit("Object count wrong")
+        raise SystemExit("non-ascii remain")
+    if re.search(r"(?m)^Scale\s*=", text):
+        raise SystemExit("unindented Scale remain")
+    if re.search(r"(?m)^\s*(?:SelectPortrait|ButtonImage)\s*=\s*Nat_rafalem\b", code):
+        raise SystemExit("Nat_rafalem remain in code")
+    if re.search(r"(?m)^\s*Model\s*=\s*Egy_Rafale", code):
+        raise SystemExit("Egy_Rafale model remain in code")
+    if "Spectra_ECM_Rafale_AHAM" in code:
+        raise SystemExit("Spectra_ECM_Rafale_AHAM remain in code")
+    if "CHI_J10C" not in code or "pla_j10c" not in code:
+        raise SystemExit("CHI_J10C/pla_j10c identity missing")
+    ok_blocks, block_issues = full_block_check(text)
+    if not ok_blocks:
+        raise SystemExit("block syntax fail: " + "; ".join(block_issues))
     return text.replace("\n", "\r\n")
+
+
+def catalog_all(entries):
+    cats: dict[str, set[str]] = defaultdict(set)
+    for n, b in entries:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = b.decode("utf-8", "replace")
+        cats["Object"].update(re.findall(r"(?m)^Object\s+(?![=])(\S+)", t))
+        cats["CommandSet"].update(re.findall(r"(?m)^CommandSet\s+(\S+)", t))
+        cats["Weapon"].update(re.findall(r"(?m)^Weapon\s+(\S+)", t))
+        cats["Science"].update(re.findall(r"(?m)^Science\s+(\S+)", t))
+        cats["Upgrade"].update(re.findall(r"(?m)^Upgrade\s+(\S+)", t))
+        cats["Armor"].update(re.findall(r"(?m)^Armor\s+(\S+)", t))
+        cats["Locomotor"].update(re.findall(r"(?m)^Locomotor\s+(\S+)", t))
+        cats["MappedImage"].update(re.findall(r"(?m)^MappedImage\s+(\S+)", t))
+        cats["OCL"].update(re.findall(r"(?m)^ObjectCreationList\s+(\S+)", t))
+    return cats
 
 
 def main() -> int:
@@ -262,22 +328,7 @@ def main() -> int:
 
     art_entries = parse_big(ART) if ART.is_file() else []
     data_join = b"\n".join(b for _, b in entries)
-
-    def catalog(kind_re: str) -> set[str]:
-        out: set[str] = set()
-        for n, b in entries:
-            if not n.lower().endswith(".ini"):
-                continue
-            for m in re.finditer(kind_re, b.decode("utf-8", "replace"), re.M):
-                out.add(m.group(1))
-        return out
-
-    objects = catalog(r"(?m)^Object\s+(?![=])(\S+)")
-    commandsets = catalog(r"(?m)^CommandSet\s+(\S+)")
-    weapons = catalog(r"(?m)^Weapon\s+(\S+)")
-    sciences = catalog(r"(?m)^Science\s+(\S+)")
-    upgrades = catalog(r"(?m)^Upgrade\s+(\S+)")
-    armors = catalog(r"(?m)^Armor\s+(\S+)")
+    cats = catalog_all(entries)
 
     checks: list[tuple[str, bool]] = []
 
@@ -285,69 +336,97 @@ def main() -> int:
         checks.append((name, ok))
         print(("PASS" if ok else "FAIL"), name)
 
+    code = code_only(fixed)
     cs = re.findall(r"(?m)^\s*CommandSet\s*=\s*(\S+)", fixed)
     weps = re.findall(r"(?m)^\s*Weapon\s*=\s*\S+\s+(\S+)", fixed)
+    wtemplates = re.findall(r"(?m)^\s*WeaponTemplate\s*=\s*(\S+)", fixed)
     models = set(re.findall(r"(?m)^\s*Model\s*=\s*(\S+)", fixed))
     prereq_obj = re.findall(r"(?m)^\s*Object\s*=\s*(\S+)", fixed)
     sci = re.findall(r"(?m)^\s*Science\s*=\s*(\S+)", fixed)
-    upg = re.findall(r"(?m)^\s*UpgradeCameo\d*\s*=\s*(\S+)", fixed)
+    upg = re.findall(
+        r"(?m)^\s*(?:UpgradeCameo\d*|TriggeredBy|UpgradeToGrant)\s*=\s*(\S+)",
+        fixed,
+    )
     arm = re.findall(r"(?m)^\s*Armor\s*=\s*(\S+)", fixed)
-    ocl = re.findall(r"(?m)^\s*OCL\s*=\s*(\S+)", fixed)
-    code_only = "\n".join(line.split(";", 1)[0] for line in fixed.splitlines())
+    loco = re.findall(r"(?m)^\s*Locomotor\s*=\s*\S+\s+(\S+)", fixed)
+    imgs = re.findall(r"(?m)^\s*(?:SelectPortrait|ButtonImage)\s*=\s*(\S+)", fixed)
+    ocl = re.findall(
+        r"(?m)^\s*(?:OCLOnGroundDeath|OCLFinalBlowUp|GroundCreationList|"
+        r"AirCreationList|CreationList)\s*=\s*(\S+)",
+        fixed,
+    )
     module_tags = re.findall(r"ModuleTag_\S+", fixed)
+    draws = re.findall(r"(?m)^\s*Draw\s*=\s*(\S+)\s+(\S+)", fixed)
+    shadows = re.findall(r"(?m)^\s*Shadow\s*=\s*(\S+)", fixed)
+
+    ok_blocks, block_issues = full_block_check(fixed)
 
     chk("Object=India_TejasMk2", bool(re.search(r"(?m)^Object\s+India_TejasMk2\b", fixed)))
+    chk("single Object declaration", len(re.findall(r"(?m)^Object\s+\S+", fixed)) == 1)
     chk("Side=India", bool(re.search(r"(?m)^  Side\s*=\s*India\s*$", fixed)))
-    chk("CommandSet resolves", all(c in commandsets or c.encode() in data_join for c in cs))
-    chk("Weapon refs resolve", all(w in weapons or w.encode() in data_join for w in weps))
-    if art_entries:
-        chk(
-            "Model refs in ART",
-            all(any(m.lower() in knorm(n) for n, _ in art_entries) for m in models),
-        )
-    else:
-        chk("Model refs in ART (skipped, no ART)", True)
-    chk("Draw modules present", "W3DModelDraw" in fixed)
-    chk("Geometry present", "Geometry" in fixed and "GeometryMajorRadius" in fixed)
-    chk("Behavior modules present", bool(re.search(r"(?m)^\s*Behavior\s*=", fixed)))
-    chk("Upgrade refs resolve", all(u in upgrades or u.encode() in data_join for u in upg))
-    chk("OCL none or resolve", all(o.encode() in data_join for o in ocl))
-    chk("Prerequisite Object resolves", all(o in objects for o in prereq_obj))
-    chk("Science refs defined", all(s in sciences for s in sci))
+    chk("Object/Draw/Behavior/End stack PASS", ok_blocks)
+    chk("Draw W3DModelDraw present", bool(draws) and draws[0][0] == "W3DModelDraw")
+    chk("single Shadow", len(shadows) == 1 and shadows[0] == "SHADOW_VOLUME")
+    chk("no duplicate ModuleTag", len(module_tags) == len(set(module_tags)))
+    chk("Scale indented", bool(re.search(r"(?m)^  Scale\s*=\s*0\.9\s*$", fixed)))
+    chk("no col0 Scale", not re.search(r"(?m)^Scale\s*=", fixed))
+    chk("ASCII-only", all(ord(c) < 128 for c in fixed))
+    chk("no Nat_rafalem in code", "Nat_rafalem" not in code)
+    chk("no Egy_Rafale in code", "Egy_Rafale" not in code)
+    chk("no Spectra_ECM_Rafale in code", "Spectra_ECM_Rafale" not in code)
+    chk("pla_j10c portrait", "pla_j10c" in code)
+    chk("CHI_J10C models", "CHI_J10C" in code and "CHI_J10C_D" in code and "CHI_J10C_R" in code)
     chk("India Astra weapon kept", "India_Weapon_AstraMk2_TejasMk2" in fixed)
     chk("BuildCost=1744", bool(re.search(r"(?m)^  BuildCost\s*=\s*1744\s*$", fixed)))
     chk("BuildTime=13.8", bool(re.search(r"(?m)^  BuildTime\s*=\s*13\.8\b", fixed)))
-    chk(
-        "Armor refs resolve",
-        all(a == "None" or a in armors or a.encode() in data_join for a in arm),
-    )
-    chk("ASCII-only", all(ord(c) < 128 for c in fixed))
-    chk(
-        "no duplicate Shadow",
-        len(re.findall(r"(?m)^\s*Shadow\s*=\s*SHADOW_VOLUME\s*$", fixed)) <= 1,
-    )
-    chk("no duplicate ModuleTag", len(module_tags) == len(set(module_tags)))
-    ok_parse, _ = parse_check(fixed)
-    chk("INI parser PASS", ok_parse)
+    chk("Geometry present", "Geometry" in fixed and "GeometryMajorRadius" in fixed)
+    chk("Behavior modules present", bool(re.search(r"(?m)^\s*Behavior\s*=", fixed)))
 
     missing: list[str] = []
-    for kind, vals, cat in [
-        ("CommandSet", cs, commandsets),
-        ("Weapon", weps, weapons),
-        ("Science", sci, sciences),
-        ("PrereqObject", prereq_obj, objects),
-        ("Upgrade", upg, upgrades),
-        ("Armor", [a for a in arm if a != "None"], armors),
-    ]:
+
+    def resolve(kind: str, vals: list[str], allow_none: bool = False) -> bool:
+        ok_all = True
         for v in vals:
-            if v not in cat and v.encode() not in data_join:
+            if allow_none and v == "None":
+                continue
+            ok = v in cats[kind] or v.encode() in data_join
+            if not ok:
                 missing.append(f"{kind}={v}")
-    if art_entries:
-        for m in models:
-            if not any(m.lower() in knorm(n) for n, _ in art_entries):
-                missing.append(f"Model={m}")
+                ok_all = False
+        return ok_all
+
+    chk("CommandSet resolves", resolve("CommandSet", cs))
+    chk("Weapon slots resolve", resolve("Weapon", weps))
+    chk("WeaponTemplate resolve", resolve("Weapon", wtemplates))
+    chk("Science resolve", resolve("Science", sci))
+    chk("Upgrade resolve", resolve("Upgrade", upg))
+    chk("Armor resolve", resolve("Armor", [a for a in arm if a != "None"]))
+    chk("Prereq Object resolve", resolve("Object", prereq_obj))
+    chk("Locomotor resolve", resolve("Locomotor", loco))
+    chk("MappedImage resolve", resolve("MappedImage", imgs))
+    chk("OCL resolve", resolve("OCL", [o for o in ocl if o != "None"]))
+
+    model_ok = True
+    for m in models:
+        w3d_hits = [
+            n
+            for n, _ in art_entries
+            if m.lower() in knorm(n) and n.lower().endswith(".w3d")
+        ]
+        if not w3d_hits:
+            missing.append(f"ModelW3D={m}")
+            model_ok = False
+    chk("Model W3D present in ART", model_ok)
     chk("Missing references = 0", not missing)
-    chk("Object duplicates = 0", len(re.findall(r"(?m)^Object\s+\S+", fixed)) == 1)
+
+    if block_issues:
+        print("BLOCK ISSUES:")
+        for iss in block_issues:
+            print(" ", iss)
+    if missing:
+        print("MISSING:")
+        for m in missing:
+            print(" ", m)
 
     ok_all = all(ok for _, ok in checks)
     if not ok_all:
@@ -355,7 +434,6 @@ def main() -> int:
         for n, ok in checks:
             if not ok:
                 print(" FAIL:", n)
-        print("Missing=", missing)
         return 1
 
     new_entries = []
@@ -367,26 +445,26 @@ def main() -> int:
 
     OUT.mkdir(parents=True, exist_ok=True)
     out_big = OUT / "_SPEC_DATA_ONE.big"
-    # Remove any stale BIG so we never verify against a previous artifact.
     if out_big.exists():
         out_big.unlink()
     write_big(out_big, new_entries)
 
-    # --- HARD EMBED PROOF: re-open from disk, extract path, compare bytes ---
-    disk_bytes = out_big.read_bytes()
-    if disk_bytes[:4] != b"BIGF":
-        raise SystemExit("written BIG missing BIGF magic")
+    # Hard embed proof: extract from disk and re-validate structure.
     rebuilt_entries = parse_big(out_big)
     rebuilt_by = {knorm(n): (n, b) for n, b in rebuilt_entries}
     if knorm(TEJAS_PATH) not in rebuilt_by:
-        raise SystemExit(
-            "EMBED FAIL: India_TejasMk2.ini path missing after write "
-            f"(looked for {TEJAS_PATH!r})"
-        )
-    # Case-insensitive path the game/user checks:
-    # Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini
+        raise SystemExit("EMBED FAIL: Tejas path missing after write")
     extracted_name, extracted = rebuilt_by[knorm(TEJAS_PATH)]
-    extract_dir = OUT / "_EXTRACT_VERIFY" / "Data" / "INI" / "Object" / "Specter" / "Indian Armed Forces" / "Airforce"
+    extract_dir = (
+        OUT
+        / "_EXTRACT_VERIFY"
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "Indian Armed Forces"
+        / "Airforce"
+    )
     extract_dir.mkdir(parents=True, exist_ok=True)
     extract_path = extract_dir / "India_TejasMk2.ini"
     extract_path.write_bytes(extracted)
@@ -394,30 +472,22 @@ def main() -> int:
     tejas_sha = sha256_bytes(fixed_bytes)
     broken_sha = sha256_bytes(broken)
     extracted_sha = sha256_bytes(extracted)
-    extract_file_sha = sha256_file(extract_path)
-
     if extracted != fixed_bytes or extracted_sha != tejas_sha:
         raise SystemExit(
-            "EMBED FAIL: inside-BIG India_TejasMk2.ini != fixed source\n"
-            f"  fixed_sha={tejas_sha}\n"
-            f"  inside_sha={extracted_sha}\n"
-            f"  broken_sha={broken_sha}\n"
-            f"  entry_name={extracted_name!r}"
+            "EMBED FAIL: inside-BIG != fixed source\n"
+            f" fixed={tejas_sha}\n inside={extracted_sha}"
         )
-    if extract_file_sha != tejas_sha:
-        raise SystemExit("EMBED FAIL: extracted-on-disk file hash mismatch")
     if extracted_sha == broken_sha:
-        raise SystemExit("EMBED FAIL: inside-BIG content is still the broken vendor file")
-    if b"SPECTER PATCH Phase G" in extracted and b"\xe2\x80\x94" in extracted:
-        raise SystemExit("EMBED FAIL: non-ASCII em-dash still present inside BIG")
-    rebuilt_text = extracted.decode("ascii")
-    if any(ord(c) > 127 for c in rebuilt_text):
-        raise SystemExit("rebuilt non-ascii")
-    print("EMBED PROOF PASS")
-    print(f"  entry_name={extracted_name}")
-    print(f"  inside_BIG_sha={extracted_sha}")
-    print(f"  fixed_src_sha={tejas_sha}")
-    print(f"  extracted_path={extract_path}")
+        raise SystemExit("EMBED FAIL: still broken vendor content")
+    extracted_text = extracted.decode("ascii")
+    ok_ext, ext_issues = full_block_check(extracted_text)
+    if not ok_ext:
+        raise SystemExit("EMBED FAIL: extracted block syntax: " + "; ".join(ext_issues))
+    ext_code = code_only(extracted_text)
+    if "Egy_Rafale" in ext_code or "Nat_rafalem" in ext_code or "Spectra_ECM_Rafale" in ext_code:
+        raise SystemExit("EMBED FAIL: bad donors still in extracted code")
+    if any(ord(c) > 127 for c in extracted_text):
+        raise SystemExit("EMBED FAIL: non-ascii in extracted")
 
     src_by = {knorm(n): b for n, b in entries}
     for n, b in rebuilt_entries:
@@ -426,11 +496,15 @@ def main() -> int:
             continue
         if src_by[k] != b:
             raise SystemExit(f"other file changed: {n}")
-
     for path, expect_sha in PRESERVE.items():
         got = sha256_bytes(rebuilt_by[knorm(path)][1])
         if got != expect_sha:
             raise SystemExit(f"preserved fix lost for {path}: {got}")
+
+    print("EMBED + FULL INI PROOF PASS")
+    print(f"  entry_name={extracted_name}")
+    print(f"  inside_BIG_sha={extracted_sha}")
+    print(f"  extracted_path={extract_path}")
 
     TREE.parent.mkdir(parents=True, exist_ok=True)
     TREE.write_bytes(fixed_bytes)
@@ -440,48 +514,39 @@ def main() -> int:
     big_size = out_big.stat().st_size
 
     report = (
-        "SPECTER INDIA TEJAS MK2 FIXED - VERIFY REPORT\n"
+        "SPECTER INDIA TEJAS MK2 FIXED - FULL INI VERIFY REPORT\n"
         "============================================================\n"
-        f"VERDICT: {'PASS' if ok_all else 'FAIL'}\n"
+        f"VERDICT: PASS\n"
         "Scope: India_TejasMk2.ini patched INSIDE _SPEC_DATA_ONE.big\n"
-        "Overlay-only: NO (file is inside DATA BIG)\n"
+        "Validation: full Object/Draw/Behavior/End + refs + W3D + identity\n"
         f"\nSource BIG (Germany drone fixed): {sha256_file(SRC)}\n"
         f"Patched BIG SHA256: {big_sha}\n"
         f"Patched BIG SIZE:   {big_size}\n"
         f"Broken TejasMk2 SHA: {broken_sha}\n"
         f"Fixed TejasMk2 SHA:  {tejas_sha}\n"
         f"Fixed TejasMk2 SIZE: {len(fixed_bytes)}\n"
-        "France/Germany drone fixes: preserved\n"
-        "\nRoot cause:\n"
-        "  - Non-ASCII UTF-8 comments (em-dash / multiply) crash ZH INI parser\n"
-        "\nRepair:\n"
+        "\nProblems fixed:\n"
+        "  - Non-ASCII comments\n"
+        "  - Nat_rafalem / Egy_RafaleM/MD donors -> pla_j10c / CHI_J10C*\n"
+        "  - Spectra_ECM_Rafale_AHAM -> Thales_Spectra_ECM_Pod\n"
+        "  - Unindented Scale = 0.9\n"
+        "  - Shadow uniqueness + ModuleTag uniqueness\n"
+        "\nKept India values:\n"
         "  Object=India_TejasMk2 Side=India\n"
-        "  Keep weapons: India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG\n"
-        "  Keep balance: BuildCost=1744 BuildTime=13.8\n"
-        "  Keep prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6\n"
-        "  ASCII-only comments; Shadow/ModuleTag uniqueness verified\n"
-        "\nEMBED PROOF (extract-after-write):\n"
-        f"  entry: {extracted_name}\n"
-        f"  inside_BIG_sha == fixed_sha == {tejas_sha}\n"
-        f"  extracted_path: _EXTRACT_VERIFY/.../India_TejasMk2.ini\n"
-        f"  still_broken: NO (broken was {broken_sha})\n"
-        f"\nPASS: {sum(1 for _, ok in checks if ok)}  FAIL: {sum(1 for _, ok in checks if not ok)}\n\n"
-        + "\n".join(f"{'PASS' if ok else 'FAIL'}: {n}" for n, ok in checks)
-        + f"\n\nMissing={missing}\n\nFINAL: {'PASS' if ok_all else 'FAIL'}\n"
+        "  Weapons=India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG\n"
+        "  BuildCost=1744 BuildTime=13.8\n"
+        "  Prereq=SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6\n"
+        f"\nPASS: {sum(1 for _, ok in checks if ok)}  FAIL: 0\n\n"
+        + "\n".join(f"PASS: {n}" for n, _ in checks)
+        + f"\n\nMissing={missing}\nBlockIssues={block_issues}\n\nFINAL: PASS\n"
     )
     (OUT / "VERIFY_REPORT.txt").write_text(report, encoding="ascii")
     (OUT / "README_INSTALL.txt").write_text(
-        "SPECTER INDIA TEJAS MK2 FIXED\n"
-        "=============================\n\n"
-        "This package replaces Data\\_SPEC_DATA_ONE.big with India_TejasMk2\n"
-        "already patched INSIDE the archive (not an external overlay).\n"
-        "Also retains prior France/Germany CombatDrone in-BIG fixes.\n\n"
-        "INSTALL:\n"
-        "1. Close Generals Zero Hour.\n"
-        "2. Backup existing Data\\_SPEC_DATA_ONE.big.\n"
-        "3. Copy _SPEC_DATA_ONE.big into <Game>\\Data\\\n"
-        "4. Keep Data\\_SPEC_ART_ONE.big unchanged.\n"
-        "5. Launch and confirm India Tejas Mk2 no longer crashes init.\n",
+        "SPECTER INDIA TEJAS MK2 FIXED (FULL INI VALIDATION)\n"
+        "==================================================\n\n"
+        "Replace Data\\_SPEC_DATA_ONE.big with the archive in this package.\n"
+        "Keep Data\\_SPEC_ART_ONE.big unchanged.\n"
+        "India_TejasMk2 is patched INSIDE the BIG (not overlay-only).\n",
         encoding="ascii",
     )
     hashes = (
@@ -491,20 +556,38 @@ def main() -> int:
         f"Source Germany-fixed BIG SHA256={sha256_file(SRC)}\n"
     )
     (OUT / "HASHES.txt").write_text(hashes, encoding="ascii")
+    embed_report = (
+        "EMBED + FULL INI PROOF\n"
+        "======================\n"
+        f"path: {extracted_name}\n"
+        f"norm: Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini\n"
+        f"fixed_source_sha256: {tejas_sha}\n"
+        f"inside_BIG_sha256:   {extracted_sha}\n"
+        f"broken_vendor_sha256: {broken_sha}\n"
+        f"block_syntax: PASS\n"
+        f"identity_donors: pla_j10c / CHI_J10C*\n"
+        f"still_broken: NO\n"
+        f"BIG_sha256: {big_sha}\n"
+        f"BIG_size: {big_size}\n"
+    )
+    (OUT / "EMBED_PROOF.txt").write_text(embed_report, encoding="ascii")
 
     for sync in SYNC_DIRS:
         if sync.is_dir():
             shutil.copy2(out_big, sync / "_SPEC_DATA_ONE.big")
             print("synced", sync / "_SPEC_DATA_ONE.big")
 
-    # Refresh FINAL zip so it cannot keep a stale broken BIG.
     final_dir = ROOT / "Release" / "SPECTER_SPEC_DATA_ONE_FINAL"
     final_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy2(out_big, final_dir / "_SPEC_DATA_ONE.big")
-    shutil.copy2(OUT / "HASHES.txt", final_dir / "HASHES.txt")
-    shutil.copy2(OUT / "VERIFY_REPORT.txt", final_dir / "VERIFY_REPORT.txt")
-    shutil.copy2(OUT / "README_INSTALL.txt", final_dir / "README_INSTALL.txt")
-    shutil.copy2(OUT / "India_TejasMk2.ini", final_dir / "India_TejasMk2.ini")
+    for name in (
+        "HASHES.txt",
+        "VERIFY_REPORT.txt",
+        "README_INSTALL.txt",
+        "India_TejasMk2.ini",
+        "EMBED_PROOF.txt",
+    ):
+        shutil.copy2(OUT / name, final_dir / name)
     final_zip = final_dir / "_SPEC_DATA_ONE_FINAL.zip"
     if final_zip.exists():
         final_zip.unlink()
@@ -514,10 +597,11 @@ def main() -> int:
         zf.write(OUT / "VERIFY_REPORT.txt", "VERIFY_REPORT.txt")
         zf.write(OUT / "README_INSTALL.txt", "README_INSTALL.txt")
         zf.write(OUT / "HASHES.txt", "HASHES.txt")
-    # Prove FINAL.zip embeds fixed Tejas (this was previously stale/broken).
+        zf.write(OUT / "EMBED_PROOF.txt", "EMBED_PROOF.txt")
     with zipfile.ZipFile(final_zip, "r") as zf:
         zip_big = zf.read("_SPEC_DATA_ONE.big")
-    zip_entries = []
+    # prove zip
+    zentries = []
     pos = 16
     count = struct.unpack(">I", zip_big[8:12])[0]
     for _ in range(count):
@@ -526,14 +610,11 @@ def main() -> int:
         end = zip_big.index(b"\x00", pos)
         name = zip_big[pos:end].decode("latin-1")
         pos = end + 1
-        zip_entries.append((name, zip_big[offset : offset + size]))
-    zip_tejas = next(b for n, b in zip_entries if knorm(n) == knorm(TEJAS_PATH))
+        zentries.append((name, zip_big[offset : offset + size]))
+    zip_tejas = next(b for n, b in zentries if knorm(n) == knorm(TEJAS_PATH))
     if sha256_bytes(zip_tejas) != tejas_sha:
-        raise SystemExit(
-            "EMBED FAIL: FINAL.zip inside-BIG Tejas hash != fixed source "
-            f"({sha256_bytes(zip_tejas)} != {tejas_sha})"
-        )
-    print("FINAL.zip EMBED PROOF PASS", final_zip, sha256_file(final_zip))
+        raise SystemExit("FINAL.zip embed fail")
+    print("FINAL.zip EMBED PROOF PASS")
 
     zpath = OUT / "_SPEC_DATA_ONE_INDIA_TEJASMK2_FIXED.zip"
     if zpath.exists():
@@ -544,44 +625,8 @@ def main() -> int:
         zf.write(OUT / "VERIFY_REPORT.txt", "VERIFY_REPORT.txt")
         zf.write(OUT / "README_INSTALL.txt", "README_INSTALL.txt")
         zf.write(OUT / "HASHES.txt", "HASHES.txt")
+        zf.write(OUT / "EMBED_PROOF.txt", "EMBED_PROOF.txt")
         zf.write(extract_path, "EXTRACT_VERIFY/India_TejasMk2.ini")
-    with zipfile.ZipFile(zpath, "r") as zf:
-        zip_big = zf.read("_SPEC_DATA_ONE.big")
-        zip_extract = zf.read("EXTRACT_VERIFY/India_TejasMk2.ini")
-    # Re-parse India package zip BIG and compare
-    pos = 16
-    count = struct.unpack(">I", zip_big[8:12])[0]
-    zip_tejas = None
-    for _ in range(count):
-        offset, size = struct.unpack(">II", zip_big[pos : pos + 8])
-        pos += 8
-        end = zip_big.index(b"\x00", pos)
-        name = zip_big[pos:end].decode("latin-1")
-        pos = end + 1
-        if knorm(name) == knorm(TEJAS_PATH):
-            zip_tejas = zip_big[offset : offset + size]
-            break
-    if zip_tejas is None or sha256_bytes(zip_tejas) != tejas_sha:
-        raise SystemExit("EMBED FAIL: India package zip BIG does not contain fixed Tejas")
-    if sha256_bytes(zip_extract) != tejas_sha:
-        raise SystemExit("EMBED FAIL: India package EXTRACT_VERIFY mismatch")
-
-    embed_report = (
-        "EMBED PROOF\n"
-        "===========\n"
-        f"path: {extracted_name}\n"
-        f"norm: Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini\n"
-        f"fixed_source_sha256: {tejas_sha}\n"
-        f"inside_BIG_sha256:   {extracted_sha}\n"
-        f"extracted_file_sha256: {extract_file_sha}\n"
-        f"broken_vendor_sha256: {broken_sha}\n"
-        f"match_fixed: YES\n"
-        f"still_broken: NO\n"
-        f"BIG_sha256: {big_sha}\n"
-        f"BIG_size: {big_size}\n"
-    )
-    (OUT / "EMBED_PROOF.txt").write_text(embed_report, encoding="ascii")
-    (final_dir / "EMBED_PROOF.txt").write_text(embed_report, encoding="ascii")
 
     print(report)
     print(embed_report)

@@ -1,0 +1,52 @@
+SPECTER INDIA TEJAS MK2 FIXED - VERIFY REPORT
+============================================================
+VERDICT: PASS
+Scope: India_TejasMk2.ini patched INSIDE _SPEC_DATA_ONE.big
+Overlay-only: NO (file is inside DATA BIG)
+
+Source BIG (Germany drone fixed): ee390bcf3fbe6318eaea4d14e2d30ebb7bf3107ac6b1e0d1b4e977e6dbac08e0
+Patched BIG SHA256: 4905d82f73617572c04a89bff02289d6b2642c9472b6265d65df36223df75d68
+Patched BIG SIZE:   384515662
+Broken TejasMk2 SHA: f3192e17cd8593010a05a85802a5ffeefcb44300ed292bc24b50ed818cf8d3b1
+Fixed TejasMk2 SHA:  fca823fa551b91d176ab8ce527e74b52ac804dbcf1c31e2f2c260fc693f26212
+Fixed TejasMk2 SIZE: 13086
+France/Germany drone fixes: preserved
+
+Root cause:
+  - Non-ASCII UTF-8 comments (em-dash / multiply) crash ZH INI parser
+
+Repair:
+  Object=India_TejasMk2 Side=India
+  Keep weapons: India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG
+  Keep balance: BuildCost=1744 BuildTime=13.8
+  Keep prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6
+  ASCII-only comments; Shadow/ModuleTag uniqueness verified
+
+PASS: 22  FAIL: 0
+
+PASS: Object=India_TejasMk2
+PASS: Side=India
+PASS: CommandSet resolves
+PASS: Weapon refs resolve
+PASS: Model refs in ART
+PASS: Draw modules present
+PASS: Geometry present
+PASS: Behavior modules present
+PASS: Upgrade refs resolve
+PASS: OCL none or resolve
+PASS: Prerequisite Object resolves
+PASS: Science refs defined
+PASS: India Astra weapon kept
+PASS: BuildCost=1744
+PASS: BuildTime=13.8
+PASS: Armor refs resolve
+PASS: ASCII-only
+PASS: no duplicate Shadow
+PASS: no duplicate ModuleTag
+PASS: INI parser PASS
+PASS: Missing references = 0
+PASS: Object duplicates = 0
+
+Missing=[]
+
+FINAL: PASS

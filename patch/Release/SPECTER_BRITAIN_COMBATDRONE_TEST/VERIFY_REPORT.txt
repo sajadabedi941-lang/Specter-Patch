@@ -1,0 +1,54 @@
+SPECTER BRITAIN COMBATDRONE TEST — VERIFY REPORT
+============================================================
+VERDICT: PASS
+Scope: Britain_CombatDrone.ini ONLY
+Egypt: untouched
+F35B: untouched
+Other factions: untouched
+Merge with previous Egypt/F35 packages: NO
+
+Broken vendor SHA256: d8a91591562c9c2a627193875eb4bc3f561c6d2cd6924899bd05a8e0db83e849
+Fixed SHA256:         152a97ea6c766c91c1499af9a8a6dc0f21f6e544377bd9082f5f1d30b16a7b1f
+
+Root causes:
+  - Non-ASCII UTF-8 comments (parser crash)
+  - Science prereq SCIENCE_UAEStealthJet (not a defined Science)
+  - Duplicate Shadow = SHADOW_VOLUME
+
+Repair (USA MQ9 donor):
+  Object=Britain_CombatDrone Side=Britain
+  CommandSet=GenericTacticalBomberCommandSet
+  Weapons=Britain_Weapon_ATGM + 2x_GBU12II_Mq9
+  Models=US_MQ9 / US_MQ9D / US_MQ9R
+  Prereq=Britain_AdvancedAirBase + SCIENCE_Rank3
+  ASCII-only, single Shadow
+
+PASS: 22  FAIL: 0
+
+PASS: Object=Britain_CombatDrone
+PASS: Side=Britain
+PASS: CommandSet resolves
+PASS: Weapon refs resolve
+PASS: Model refs in ART
+PASS: Draw modules present
+PASS: Geometry present
+PASS: Behavior modules present
+PASS: Upgrade refs resolve
+PASS: OCL none or resolve
+PASS: Prerequisite Object resolves
+PASS: Science refs defined
+PASS: no invalid foreign Science prereq
+PASS: Armor refs resolve
+PASS: ASCII-only
+PASS: no duplicate Shadow
+PASS: INI parser PASS
+PASS: Missing references = 0
+PASS: Object duplicates = 0
+PASS: Egypt untouched
+PASS: F35B untouched
+PASS: Other factions untouched
+
+Refs: CommandSet=['GenericTacticalBomberCommandSet'] Weapons=['Britain_Weapon_ATGM', '2x_GBU12II_Mq9'] Science=['SCIENCE_Rank3'] Models=['US_MQ9', 'US_MQ9D', 'US_MQ9R']
+Missing=[]
+
+FINAL: PASS

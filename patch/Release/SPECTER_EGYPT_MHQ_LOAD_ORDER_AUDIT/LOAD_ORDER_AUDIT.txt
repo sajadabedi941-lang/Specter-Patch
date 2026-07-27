@@ -1,0 +1,103 @@
+EGYPT_MILITARYHQ BIG LOAD ORDER AUDIT
+============================================================
+Total BIG files scanned: 175
+Archives containing Egypt_MilitaryHQ.ini: 97
+Fixed SHA256:  16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a
+Broken vendor SHA256: 5ee7d870b9bdd0b20b8f38ec7e2071226fde174b4ed48ed6118fcf49c08d2b7b
+Partial/other SHA256: d7128187fe7be807606db93ac1d20ca585b11e9305b9cf8886ce5dcd68c8506b  (USA art but still non-ASCII + ModuleTag_Adnan*)
+
+1) ALL ARCHIVES CONTAINING Egypt_MilitaryHQ.ini
+------------------------------------------------------------
+See INVENTORY.tsv (97 rows). Summary by content:
+  FIXED         16339c721169d6de…  — 77 copies (pre-repair inventory)
+  BROKEN_VENDOR 5ee7d870b9bdd0b2…  — 9 copies (Iraq art + Iraqi OCLs + non-ASCII)
+  OTHER         d7128187fe7be807…  — 11 copies (non-ASCII parse crash remains)
+
+Key broken archives (pre-repair):
+  patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_FINAL_EGYPT_BRITAIN_FIXED/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_DATA_ONE_FINAL_EGYPT_FIXED/_SPEC_DATA_ONE.big
+  (+ BIG_MERGE_PLAYABLE, BRITAIN_F35B_SAUDI, COMMANDCENTER_USA_PLAYABLE, ...)
+
+_SPEC_ART_ONE.big: does NOT contain Egypt_MilitaryHQ.ini (ART-only).
+
+2) LOAD PRIORITY / ORDER
+------------------------------------------------------------
+Rule (Generals Zero Hour): BIG files in <Game>\ and <Game>\Data\ load in
+case-insensitive alphabetical order; LAST loaded wins for the same path.
+
+Case-fold ambiguity (_SPEC_ vs _SPECTER_):
+  lower-fold:  _SPEC_*  then  _SPECTER_*   => overlay can win
+  upper-fold:  _SPECTER_*  then  _SPEC_*   => _SPEC_DATA_ONE.big WINS and
+               OVERRIDES any _SPECTER_* overlay
+
+Practical Specter install set:
+  1. _SPEC_ART_ONE.big          (no Egypt_MilitaryHQ)
+  2. _SPEC_DATA_ONE.big         (HAS Egypt_MilitaryHQ — critical)
+  3. optional _SPECTER_*.big    overlays
+
+If _SPEC_DATA_ONE.big still embeds BROKEN Egypt_MilitaryHQ, it either:
+  - is the sole source (broken always active), or
+  - can override a fixed overlay under upper-fold Windows sort.
+
+3) WHICH ARCHIVE OVERRIDES / WAS OVERRIDING THE FIXED VERSION
+------------------------------------------------------------
+PRE-REPAIR (FINAL_EGYPT_BRITAIN install without overlay):
+  Winner: _SPEC_DATA_ONE.big
+  Content: BROKEN vendor Egypt_MilitaryHQ (5ee7d870b9bdd0b2…)
+  Effect: Fixed overlay/_SPECTER_EGYPT_MILITARYHQ_TEST.big can lose.
+
+POST-REPAIR (this change):
+  Replaced ONLY Egypt_MilitaryHQ.ini inside:
+    - patch/Release/SPECTER_FINAL_EGYPT_BRITAIN_FIXED/_SPEC_DATA_ONE.big
+      old=5ee7d870b9bdd0b2… -> new=16339c721169d6de… changed=True
+    - patch/Release/SPECTER_DATA_ONE_FINAL_EGYPT_FIXED/_SPEC_DATA_ONE.big
+      old=5ee7d870b9bdd0b2… -> new=16339c721169d6de… changed=True
+  Current FINAL_EGYPT_BRITAIN _SPEC_DATA_ONE.big SHA256: 827a06ad24d8821f7bc6e53319c7d96a9f6072a3ec5e381fb64b2cde4ae856fa
+  Egypt_MilitaryHQ inside it: 16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a (FIXED)
+  Other countries: untouched (byte-identical except this one INI).
+
+4) EXACT BAD LINES CAUSING PARSE ERROR (broken vendor)
+------------------------------------------------------------
+PRIMARY PARSE ERROR — non-ASCII in comments (INI tokenizer crash):
+  Line 1: ; SPECTER PATCH Phase F — Advanced Military Headquarters (no naval)
+           bad_chars=['—'] codepoints=['0x2014']
+  Line 5: ; CountryBalance side=Egypt origin=Domestic tech=Standard cat=Building key=UnitCostMult rating=Medium cost×0.8075 time×0.81 => 1615 / 3.2s
+           bad_chars=['×'] codepoints=['0xd7']
+
+IRAQ DONOR REFS (init crash class — same as Egypt_CommandCenter):
+  Line 11:   SelectPortrait         = irq_comndcntr
+  Line 12:   ButtonImage            = irq_comndcntr
+  Line 21:       Model              = Irq_Command
+  Line 22:       Animation          = Irq_Command.Irq_Command
+  Line 27:       Model              = Irq_Command
+  Line 28:       Animation          = Irq_Command.Irq_Command
+  Line 32:       Model              = Irq_Command
+  Line 33:       Animation          = Irq_Command.Irq_Command
+  Line 114:     OCL                  = SUPERWEAPON_IraqiSFInsertion
+  Line 125:   Behavior = SpecialAbility ModuleTag_Adnan1SP
+  Line 130:   Behavior = SpectreGunshipDeploymentUpdate ModuleTag_Adnan1
+  Line 132:     GunshipTemplateName = Iraq_Adnan1
+  Line 139:     OCL                  = SUPERWEAPON_IraqiParadrop
+  Line 145:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike3 SUPERWEAPON_IraqiCruiseStrike3
+  Line 146:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike2 SUPERWEAPON_IraqiCruiseStrike2
+  Line 147:     OCL                  = SUPERWEAPON_IraqiCruiseStrike1
+  Line 158:     OCL                  = SUPERWEAPON_IraqReconnaissance
+
+5) ACTION TAKEN — REMOVE DUPLICATE BROKEN ENTRIES
+------------------------------------------------------------
+Removed/replaced ONLY the broken Egypt_MilitaryHQ.ini content inside the
+active playable _SPEC_DATA_ONE.big archives listed above.
+Did NOT modify other countries.
+Did NOT modify _SPEC_ART_ONE.big.
+Vendor SPECTER_BIG_MERGE copy left as historical reference (still broken);
+install must use the repaired FINAL package DATA BIG.
+
+INSTALL:
+  Replace <Game>\Data\_SPEC_DATA_ONE.big with the repaired file from
+  SPECTER_FINAL_EGYPT_BRITAIN_FIXED (or this audit package).
+  Keep _SPEC_ART_ONE.big.
+  Optional: remove _SPECTER_EGYPT_MILITARYHQ_TEST.big overlay (no longer required
+  once DATA embeds the fixed INI).
+
+FINAL: Egypt_MilitaryHQ in active DATA = FIXED (16339c721169d6de…)

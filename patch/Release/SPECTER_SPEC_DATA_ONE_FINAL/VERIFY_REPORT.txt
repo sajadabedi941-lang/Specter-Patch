@@ -1,0 +1,29 @@
+SPECTER SPEC DATA ONE FINAL — VERIFY REPORT
+============================================================
+VERDICT: PASS
+Product: final drop-in _SPEC_DATA_ONE.big (NO test/overlay BIG)
+
+_SPEC_DATA_ONE.big SHA256: 827a06ad24d8821f7bc6e53319c7d96a9f6072a3ec5e381fb64b2cde4ae856fa
+Entries: 2887
+Egypt_MilitaryHQ.ini SHA256: 16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a
+Broken vendor SHA256: 5ee7d870b9bdd0b20b8f38ec7e2071226fde174b4ed48ed6118fcf49c08d2b7b
+
+Patched directly inside _SPEC_DATA_ONE.big:
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_MilitaryHQ.ini
+
+Checks:
+  PASS: Egypt_MilitaryHQ content = FIXED (not broken vendor)
+  PASS: ASCII-only (no em-dash / multiply parse crash)
+  PASS: no Iraq/Irq/Adnan refs
+  PASS: USA art US_Command / us_commandcenter
+  PASS: Gunship US_E3G_AWACS
+  PASS: Side=Egypt Object=Egypt_MilitaryHQ
+  PASS: single Object Egypt_MilitaryHQ in BIG
+  PASS: no _SPECTER_* test BIG in this package
+
+INSTALL:
+  Replace ONLY <Game>\Data\_SPEC_DATA_ONE.big with this file.
+  Keep <Game>\Data\_SPEC_ART_ONE.big.
+  Remove any _SPECTER_*TEST*.big overlays from Data\.
+
+FINAL: PASS

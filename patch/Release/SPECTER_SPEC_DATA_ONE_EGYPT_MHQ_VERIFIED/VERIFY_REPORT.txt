@@ -1,0 +1,49 @@
+SPECTER SPEC DATA ONE — EGYPT MHQ VERIFIED FIX
+============================================================
+VERDICT: PASS
+
+PROOF: Egypt_MilitaryHQ.ini was RE-EXTRACTED from the written BIG.
+
+_SPEC_DATA_ONE.big
+  SHA256: 1124f3d7f413cf9b8c5a41b6ed97ade49e8fc8d4071e9608a65577f87ef88b13
+  SIZE:   384514893 bytes
+  ENTRIES: 2887
+
+Egypt_MilitaryHQ.ini (extracted from BIG)
+  Path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_MilitaryHQ.ini
+  Content SHA256: 7942002f9554746535a704e71dbdef4def2dd841d430fb8748fe91040c27b33d
+
+Previous content that STILL crashed (was inside prior "final" BIG):
+  SHA256: 16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a
+Broken vendor:
+  SHA256: 5ee7d870b9bdd0b20b8f38ec7e2071226fde174b4ed48ed6118fcf49c08d2b7b
+
+FINDING:
+  Possibility (1) false for prior package: the old "fixed" content WAS inside the BIG.
+  Possibility (2) true: that content still failed StartingBuilding init parse.
+  FactionEgypt StartingBuilding = Egypt_MilitaryHQ
+
+THIS FIX:
+  Exact USA AmericaCommandCenter clone (same approach as working Egypt_CommandCenter)
+  Keep Object/Side/CommandSet Egypt identity
+  No Iraq art/OCL/gunship, no AutoDepositUpdate, ASCII-only
+
+  PASS: Object Egypt_MilitaryHQ
+  PASS: Side Egypt
+  PASS: Egypt_MilitaryHQCommandSet
+  PASS: US_Command
+  PASS: us_commandcenter
+  PASS: no Irq_Command
+  PASS: no irq_comndcntr
+  PASS: no Iraq_Adnan1
+  PASS: no SUPERWEAPON_Iraqi
+  PASS: no AutoDepositUpdate
+  PASS: ASCII
+  PASS: single Object def
+
+INSTALL:
+  Replace ONLY Data\_SPEC_DATA_ONE.big with this file
+  Keep Data\_SPEC_ART_ONE.big
+  Remove leftover TEST overlays
+
+FINAL: PASS

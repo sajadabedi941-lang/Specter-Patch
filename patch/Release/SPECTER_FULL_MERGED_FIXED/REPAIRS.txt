@@ -1,0 +1,15 @@
+Base vendor SPEC entries=2887
+Overlay FINAL_REPAIRED: keys=2787 overwritten=594 added=5
+Overlay EGYPT_FIX extras added=0
+Force Britain_F35B from Britain package sha=c92587adf41b34f0…
+Force Egypt_CommandCenter USA-donor sha=81dd3fcd672bf68d…
+PlayerTemplate repair x1
+PlayerTemplate repair x1
+PlayerTemplate repair x1
+PlayerTemplate repair x1
+PlayerTemplate repair x1
+AABOnly America E3 x5
+AABOnly Su75 x1
+AABOnly remove Su47 x1
+AdvancedAirBase remove dead E3G x1
+CommandSet toxin syntax x2

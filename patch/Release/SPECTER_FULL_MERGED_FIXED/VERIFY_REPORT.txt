@@ -1,0 +1,49 @@
+SPECTER FULL MERGED FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG (install name): _SPEC_DATA_ONE.big
+SHA256: 6152f44c6ed0358e8a3a9eb8c377529300363ccacbaf1f3e8912078190fd3289
+Entries: 2892
+Size: 384758435 bytes
+
+Merge: vendor SPEC ← FINAL_REPAIRED ← playable extras
+Egypt_CommandCenter: USA AmericaCommandCenter donor only
+Britain_F35B: USA F35 donor fix retained
+No factions/content removed from vendor SPEC key set.
+
+REPAIRS / MERGE LOG:
+  - Base vendor SPEC entries=2887
+  - Overlay FINAL_REPAIRED: keys=2787 overwritten=594 added=5
+  - Overlay EGYPT_FIX extras added=0
+  - Force Britain_F35B from Britain package sha=c92587adf41b34f0…
+  - Force Egypt_CommandCenter USA-donor sha=81dd3fcd672bf68d…
+  - PlayerTemplate repair x1
+  - PlayerTemplate repair x1
+  - PlayerTemplate repair x1
+  - PlayerTemplate repair x1
+  - PlayerTemplate repair x1
+  - AABOnly America E3 x5
+  - AABOnly Su75 x1
+  - AABOnly remove Su47 x1
+  - AdvancedAirBase remove dead E3G x1
+  - CommandSet toxin syntax x2
+
+PASS: 15  FAIL: 0
+
+PASS: Egypt_CommandCenter copies = 1
+PASS: Egypt_CommandCenter USA-donor sha=81dd3fcd672bf68d…
+PASS: No Iraq/irq crash tokens in Egypt_CommandCenter
+PASS: INI parser PASS (Egypt CC + PlayerTemplate)
+PASS: Object duplicates = 0 for Egypt_CommandCenter
+PASS: Object duplicates = 0 new (vendor pre-existing retained=250; content kept)
+PASS: Britain_F35B present (USA F35 donor ART) sha=c92587adf41b34f0…
+PASS: All vendor SPEC keys retained (2887)
+PASS: Faction/content marker OK: Egypt_CommandCenter
+PASS: Faction/content marker OK: AmericaCommandCenter
+PASS: Faction/content marker OK: Britain_F35B
+PASS: Faction/content marker OK: Iraq_CommandCenter
+PASS: Faction/content marker OK: Turkey_Adnan1
+PASS: Missing references = 0 (Egypt CC + CS slots + PlayerTemplate)
+PASS: Game initialization PASS (static)
+
+FINAL: PASS

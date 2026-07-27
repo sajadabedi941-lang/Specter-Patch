@@ -367,16 +367,57 @@ def main() -> int:
 
     OUT.mkdir(parents=True, exist_ok=True)
     out_big = OUT / "_SPEC_DATA_ONE.big"
+    # Remove any stale BIG so we never verify against a previous artifact.
+    if out_big.exists():
+        out_big.unlink()
     write_big(out_big, new_entries)
 
+    # --- HARD EMBED PROOF: re-open from disk, extract path, compare bytes ---
+    disk_bytes = out_big.read_bytes()
+    if disk_bytes[:4] != b"BIGF":
+        raise SystemExit("written BIG missing BIGF magic")
     rebuilt_entries = parse_big(out_big)
     rebuilt_by = {knorm(n): (n, b) for n, b in rebuilt_entries}
-    rebuilt = rebuilt_by[knorm(TEJAS_PATH)][1]
-    if rebuilt != fixed_bytes:
-        raise SystemExit("round-trip Tejas content mismatch")
-    rebuilt_text = rebuilt.decode("ascii")
+    if knorm(TEJAS_PATH) not in rebuilt_by:
+        raise SystemExit(
+            "EMBED FAIL: India_TejasMk2.ini path missing after write "
+            f"(looked for {TEJAS_PATH!r})"
+        )
+    # Case-insensitive path the game/user checks:
+    # Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini
+    extracted_name, extracted = rebuilt_by[knorm(TEJAS_PATH)]
+    extract_dir = OUT / "_EXTRACT_VERIFY" / "Data" / "INI" / "Object" / "Specter" / "Indian Armed Forces" / "Airforce"
+    extract_dir.mkdir(parents=True, exist_ok=True)
+    extract_path = extract_dir / "India_TejasMk2.ini"
+    extract_path.write_bytes(extracted)
+
+    tejas_sha = sha256_bytes(fixed_bytes)
+    broken_sha = sha256_bytes(broken)
+    extracted_sha = sha256_bytes(extracted)
+    extract_file_sha = sha256_file(extract_path)
+
+    if extracted != fixed_bytes or extracted_sha != tejas_sha:
+        raise SystemExit(
+            "EMBED FAIL: inside-BIG India_TejasMk2.ini != fixed source\n"
+            f"  fixed_sha={tejas_sha}\n"
+            f"  inside_sha={extracted_sha}\n"
+            f"  broken_sha={broken_sha}\n"
+            f"  entry_name={extracted_name!r}"
+        )
+    if extract_file_sha != tejas_sha:
+        raise SystemExit("EMBED FAIL: extracted-on-disk file hash mismatch")
+    if extracted_sha == broken_sha:
+        raise SystemExit("EMBED FAIL: inside-BIG content is still the broken vendor file")
+    if b"SPECTER PATCH Phase G" in extracted and b"\xe2\x80\x94" in extracted:
+        raise SystemExit("EMBED FAIL: non-ASCII em-dash still present inside BIG")
+    rebuilt_text = extracted.decode("ascii")
     if any(ord(c) > 127 for c in rebuilt_text):
         raise SystemExit("rebuilt non-ascii")
+    print("EMBED PROOF PASS")
+    print(f"  entry_name={extracted_name}")
+    print(f"  inside_BIG_sha={extracted_sha}")
+    print(f"  fixed_src_sha={tejas_sha}")
+    print(f"  extracted_path={extract_path}")
 
     src_by = {knorm(n): b for n, b in entries}
     for n, b in rebuilt_entries:
@@ -397,8 +438,6 @@ def main() -> int:
 
     big_sha = sha256_file(out_big)
     big_size = out_big.stat().st_size
-    tejas_sha = sha256_bytes(fixed_bytes)
-    broken_sha = sha256_bytes(broken)
 
     report = (
         "SPECTER INDIA TEJAS MK2 FIXED - VERIFY REPORT\n"
@@ -421,6 +460,11 @@ def main() -> int:
         "  Keep balance: BuildCost=1744 BuildTime=13.8\n"
         "  Keep prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6\n"
         "  ASCII-only comments; Shadow/ModuleTag uniqueness verified\n"
+        "\nEMBED PROOF (extract-after-write):\n"
+        f"  entry: {extracted_name}\n"
+        f"  inside_BIG_sha == fixed_sha == {tejas_sha}\n"
+        f"  extracted_path: _EXTRACT_VERIFY/.../India_TejasMk2.ini\n"
+        f"  still_broken: NO (broken was {broken_sha})\n"
         f"\nPASS: {sum(1 for _, ok in checks if ok)}  FAIL: {sum(1 for _, ok in checks if not ok)}\n\n"
         + "\n".join(f"{'PASS' if ok else 'FAIL'}: {n}" for n, ok in checks)
         + f"\n\nMissing={missing}\n\nFINAL: {'PASS' if ok_all else 'FAIL'}\n"
@@ -453,15 +497,94 @@ def main() -> int:
             shutil.copy2(out_big, sync / "_SPEC_DATA_ONE.big")
             print("synced", sync / "_SPEC_DATA_ONE.big")
 
+    # Refresh FINAL zip so it cannot keep a stale broken BIG.
+    final_dir = ROOT / "Release" / "SPECTER_SPEC_DATA_ONE_FINAL"
+    final_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(out_big, final_dir / "_SPEC_DATA_ONE.big")
+    shutil.copy2(OUT / "HASHES.txt", final_dir / "HASHES.txt")
+    shutil.copy2(OUT / "VERIFY_REPORT.txt", final_dir / "VERIFY_REPORT.txt")
+    shutil.copy2(OUT / "README_INSTALL.txt", final_dir / "README_INSTALL.txt")
+    shutil.copy2(OUT / "India_TejasMk2.ini", final_dir / "India_TejasMk2.ini")
+    final_zip = final_dir / "_SPEC_DATA_ONE_FINAL.zip"
+    if final_zip.exists():
+        final_zip.unlink()
+    with zipfile.ZipFile(final_zip, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(out_big, "_SPEC_DATA_ONE.big")
+        zf.write(OUT / "India_TejasMk2.ini", "India_TejasMk2.ini")
+        zf.write(OUT / "VERIFY_REPORT.txt", "VERIFY_REPORT.txt")
+        zf.write(OUT / "README_INSTALL.txt", "README_INSTALL.txt")
+        zf.write(OUT / "HASHES.txt", "HASHES.txt")
+    # Prove FINAL.zip embeds fixed Tejas (this was previously stale/broken).
+    with zipfile.ZipFile(final_zip, "r") as zf:
+        zip_big = zf.read("_SPEC_DATA_ONE.big")
+    zip_entries = []
+    pos = 16
+    count = struct.unpack(">I", zip_big[8:12])[0]
+    for _ in range(count):
+        offset, size = struct.unpack(">II", zip_big[pos : pos + 8])
+        pos += 8
+        end = zip_big.index(b"\x00", pos)
+        name = zip_big[pos:end].decode("latin-1")
+        pos = end + 1
+        zip_entries.append((name, zip_big[offset : offset + size]))
+    zip_tejas = next(b for n, b in zip_entries if knorm(n) == knorm(TEJAS_PATH))
+    if sha256_bytes(zip_tejas) != tejas_sha:
+        raise SystemExit(
+            "EMBED FAIL: FINAL.zip inside-BIG Tejas hash != fixed source "
+            f"({sha256_bytes(zip_tejas)} != {tejas_sha})"
+        )
+    print("FINAL.zip EMBED PROOF PASS", final_zip, sha256_file(final_zip))
+
     zpath = OUT / "_SPEC_DATA_ONE_INDIA_TEJASMK2_FIXED.zip"
+    if zpath.exists():
+        zpath.unlink()
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_big, "_SPEC_DATA_ONE.big")
         zf.write(OUT / "India_TejasMk2.ini", "India_TejasMk2.ini")
         zf.write(OUT / "VERIFY_REPORT.txt", "VERIFY_REPORT.txt")
         zf.write(OUT / "README_INSTALL.txt", "README_INSTALL.txt")
         zf.write(OUT / "HASHES.txt", "HASHES.txt")
+        zf.write(extract_path, "EXTRACT_VERIFY/India_TejasMk2.ini")
+    with zipfile.ZipFile(zpath, "r") as zf:
+        zip_big = zf.read("_SPEC_DATA_ONE.big")
+        zip_extract = zf.read("EXTRACT_VERIFY/India_TejasMk2.ini")
+    # Re-parse India package zip BIG and compare
+    pos = 16
+    count = struct.unpack(">I", zip_big[8:12])[0]
+    zip_tejas = None
+    for _ in range(count):
+        offset, size = struct.unpack(">II", zip_big[pos : pos + 8])
+        pos += 8
+        end = zip_big.index(b"\x00", pos)
+        name = zip_big[pos:end].decode("latin-1")
+        pos = end + 1
+        if knorm(name) == knorm(TEJAS_PATH):
+            zip_tejas = zip_big[offset : offset + size]
+            break
+    if zip_tejas is None or sha256_bytes(zip_tejas) != tejas_sha:
+        raise SystemExit("EMBED FAIL: India package zip BIG does not contain fixed Tejas")
+    if sha256_bytes(zip_extract) != tejas_sha:
+        raise SystemExit("EMBED FAIL: India package EXTRACT_VERIFY mismatch")
+
+    embed_report = (
+        "EMBED PROOF\n"
+        "===========\n"
+        f"path: {extracted_name}\n"
+        f"norm: Data/INI/Object/specter/indian armed forces/airforce/india_tejasmk2.ini\n"
+        f"fixed_source_sha256: {tejas_sha}\n"
+        f"inside_BIG_sha256:   {extracted_sha}\n"
+        f"extracted_file_sha256: {extract_file_sha}\n"
+        f"broken_vendor_sha256: {broken_sha}\n"
+        f"match_fixed: YES\n"
+        f"still_broken: NO\n"
+        f"BIG_sha256: {big_sha}\n"
+        f"BIG_size: {big_size}\n"
+    )
+    (OUT / "EMBED_PROOF.txt").write_text(embed_report, encoding="ascii")
+    (final_dir / "EMBED_PROOF.txt").write_text(embed_report, encoding="ascii")
 
     print(report)
+    print(embed_report)
     print("ZIP", zpath, sha256_file(zpath))
     print("BIG", out_big, big_sha, big_size)
     return 0

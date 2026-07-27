@@ -22,6 +22,12 @@ Repair:
   Keep prereq: SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6
   ASCII-only comments; Shadow/ModuleTag uniqueness verified
 
+EMBED PROOF (extract-after-write):
+  entry: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_TejasMk2.ini
+  inside_BIG_sha == fixed_sha == fca823fa551b91d176ab8ce527e74b52ac804dbcf1c31e2f2c260fc693f26212
+  extracted_path: _EXTRACT_VERIFY/.../India_TejasMk2.ini
+  still_broken: NO (broken was f3192e17cd8593010a05a85802a5ffeefcb44300ed292bc24b50ed818cf8d3b1)
+
 PASS: 22  FAIL: 0
 
 PASS: Object=India_TejasMk2

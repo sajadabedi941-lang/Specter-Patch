@@ -1,0 +1,37 @@
+SPECTER EGYPT COMMANDCENTER FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_EGYPT_COMMANDCENTER_FIXED.big
+SHA256: 488b4351358e63f9808d6764ac589b29f0de9d5ca220f05fdccdf70b0eeeed9f
+Size: 383397865 bytes
+Entries: 2787
+
+Rebuilt Egypt_CommandCenter.ini from USA AmericaCommandCenter donor.
+Egypt faction retained. USA/Iraq factions not converted.
+
+REPAIRS:
+  - Installed USA-donor rebuilt Egypt_CommandCenter.ini
+  - PlayerTemplate.ini repair x1: (^\s*PurchaseScienceCommandSetRank1\s*=\s*)SCIENCE_NorthKore...
+  - PlayerTemplate.ini repair x1: (^\s*PurchaseScienceCommandSetRank3\s*=\s*)SCIENCE_NorthKore...
+  - PlayerTemplate.ini repair x1: (^\s*PurchaseScienceCommandSetRank8\s*=\s*)SCIENCE_NorthKore...
+  - PlayerTemplate.ini repair x1: (^\s*SpecialPowerShortcutCommandSet\s*=\s*)SpecialPowerShort...
+  - PlayerTemplate.ini repair x1: (^\s*StartingUnit0\s*=\s*)AirF_AmericaVehicleDozer\b...
+  - AABOnly America E3 retarget x5
+  - AABOnly Su75 retarget x1
+  - AABOnly remove Su47 slot x1
+  - AdvancedAirBase remove dead US_E3G slot x1
+  - CommandSet.ini toxin syntax x2
+
+PASS: 9  FAIL: 0
+
+PASS: Object duplicates = 0
+PASS: Egypt_CommandCenter single definition
+PASS: AmericaCommandCenter preserved
+PASS: Missing references = 0 (Egypt_CommandCenter)
+PASS: INI parser PASS (Egypt_CommandCenter)
+PASS: No Iraq/irq donor crash refs in Egypt_CommandCenter
+PASS: Egypt PlayerTemplate links OK
+PASS: Game initialization PASS (static)
+PASS: Zero broken Egypt_CommandCenter references
+
+FINAL: PASS

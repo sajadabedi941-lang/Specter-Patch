@@ -1,0 +1,17 @@
+FULL DEPENDENCY SCAN — _SPEC_DATA_ONE.big (FULL MERGED FIXED)
+============================================================
+Objects=4874 CommandSets=1268 CommandButtons=3564
+Egypt CC missing refs: 0
+CommandSet slot missing: 0
+PlayerTemplate missing: 0
+Init-critical missing TOTAL: 0
+
+--- Egypt_CommandCenter ---
+  (none)
+
+--- CommandSet slots ---
+  (none)
+
+--- PlayerTemplate ---
+  (none)
+

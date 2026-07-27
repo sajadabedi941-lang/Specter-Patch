@@ -1,0 +1,20 @@
+EXACT BROKEN REFERENCES (vendor SPEC Egypt_CommandCenter)
+=======================================================
+File: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+
+SPEC (broken Iraq-donor clone) crash refs:
+1) SelectPortrait/ButtonImage = irq_comndcntr
+2) Model = Irq_Command
+3) GunshipTemplateName = Iraq_Adnan1
+4) OCL = SUPERWEAPON_IraqiSFInsertion
+5) OCL = SUPERWEAPON_IraqiParadrop
+6) OCL = SUPERWEAPON_IraqiCruiseStrike1/2/3
+7) OCL = SUPERWEAPON_IraqReconnaissance
+8) MaxHealth = 2000 (wrong), BuildCost = 1615 (wrong)
+
+FIX: Rebuild from USA AmericaCommandCenter donor structure.
+- Object Egypt_CommandCenter / Side=Egypt / CommandSet=Egypt_CommandCenterCommandSet
+- ART us_commandcenter / US_Command / US_COM_Strb
+- BuildCost=2000 BuildTime=45 MaxHealth=5000
+- Egypt Superweapons + safe existing OCL/Object targets
+- USA AWACS module pattern (SpecialAbility + SpectreGunshipDeploymentUpdate)

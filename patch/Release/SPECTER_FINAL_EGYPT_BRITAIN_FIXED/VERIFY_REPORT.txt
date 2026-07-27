@@ -41,3 +41,7 @@ PASS: INI parser PASS Britain_F35B
 PASS: Game initialization PASS (static)
 
 FINAL: PASS
+
+POST-AUDIT: Egypt_MilitaryHQ replaced with FIXED (16339c721169d6de…) inside this DATA BIG.
+Other countries untouched.
+DATA SHA256: 827a06ad24d8821f7bc6e53319c7d96a9f6072a3ec5e381fb64b2cde4ae856fa

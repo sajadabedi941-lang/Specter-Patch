@@ -1,0 +1,21 @@
+SPECTER AIR FORCE EXPANSION PARSE FIX - VERIFY REPORT
+=====================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Entry: Data\INI\Object\Specter\PatchSystems\AirForceExpansion\Aircraft_AirForceExpansion.ini
+Objects validated: 12
+WeaponSet blocks validated: 12
+Non-ASCII characters removed: 53
+Invalid ArmorSetFlag fields removed: 2
+Air Force Expansion identity/functionality otherwise unchanged
+Object/Draw/Shadow/ModuleTag/Behavior/WeaponSet/End: PASS
+ArmorUpgrade module schema: PASS
+Exact W3D/art/weapon/commandset/armor/upgrade/OCL/special-power refs: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Old INI SHA256: 091464300b4444ee037ffe8c4aeb217a50ade8db66decfdefa9b172fb5de9d87
+New INI SHA256: f03c2fd864a1bc0225283d3975e6de6fd6fb6acfd5b66b768d638e9d4dec8b5d
+BIG SHA256: 342e31979364f52b95d3ece3dd8f467f63e206cd3670f5b0db0efde61d3dfbc2
+BIG SIZE: 384631692
+FINAL: PASS

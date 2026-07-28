@@ -1,0 +1,42 @@
+SPECTER INDIA TEJASMK2 REMOVED / REPLACED - VERIFY REPORT
+============================================================
+VERDICT: PASS
+Action: REMOVE India_TejasMk2 completely; REPLACE with ChinaJetJ10C donor clone
+Removed path: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_TejasMk2.ini
+Added path:   Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_MultiroleFighter.ini
+Object: India_MultiroleFighter  Side=India
+Donor: ChinaJetJ10C (Data\INI\Object\Specter\PLA\Airforce\J10C.ini)
+
+Patched BIG SHA256: 11ab19f4ad75cb9ad4c0496cd5ff49f9834e2dcf3b7970b1b2c4d3ef572f4b01
+Patched BIG SIZE:   384514854
+Replacement INI SHA256: 4f52514f667cf24a765d46c37b10cd830eaefabd1e3daa7aace908878111c4ad
+Patched support files: 6
+  - Data\English\FactionExpansion_PhaseG_Strings.txt
+  - Data\INI\CommandButton_PhaseG_Identity.ini
+  - Data\INI\CommandSet_AdvancedAirBase.ini
+  - Data\INI\CommandSet_India.ini
+  - Data\INI\Science_India.ini
+  - Data\INI\Weapon_India.ini
+
+PASS: removed India_TejasMk2.ini entry
+PASS: added India_MultiroleFighter.ini
+PASS: Object India_MultiroleFighter
+PASS: Side=India
+PASS: donor weapon kept
+PASS: CHI_J10C models
+PASS: CommandSet GenericTacticalBomber
+PASS: ASCII replacement
+PASS: replacement block syntax
+PASS: weapon resolves
+PASS: portrait resolves
+PASS: prereq object resolves
+PASS: science resolves
+PASS: model W3D in ART
+PASS: Command_ConstructIndia_MultiroleFighter present
+PASS: Object = India_MultiroleFighter in buttons
+PASS: SCIENCE_India_TechEliteAir present
+PASS: no TejasMk2 markers remain
+PASS: no India_TejasMk2.ini path remain
+PASS: no Object India_TejasMk2
+
+FINAL: PASS

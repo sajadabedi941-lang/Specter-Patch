@@ -1,0 +1,11 @@
+EMBED + EXTRACT TEST
+====================
+entry=Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini
+source_sha256=3f3c52f78450e1a9ac7480292ddf0fa7bdb065ce0c00043826b5cf024887b14e
+embedded_sha256=3f3c52f78450e1a9ac7480292ddf0fa7bdb065ce0c00043826b5cf024887b14e
+extracted_sha256=3f3c52f78450e1a9ac7480292ddf0fa7bdb065ce0c00043826b5cf024887b14e
+byte_match=YES
+full_validation=PASS
+ArmorSetFlag_remaining=0
+unrelated_changed=0
+BIG_sha256=8ed07b1ccd41798fa73ea57db7f376d3c53f7dc1cd3336ceae3094910271ec67

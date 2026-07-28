@@ -1,0 +1,9 @@
+EMBED + EXTRACT TEST
+====================
+Multirole present: NO
+EliteStrike entry: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_EliteStrike.ini
+embedded_sha256: 23803f8bbcafde0221a74187352956c69aead11abd9906eef607bdc4559f4ff5
+extracted_sha256: 23803f8bbcafde0221a74187352956c69aead11abd9906eef607bdc4559f4ff5
+full_ini_validation: PASS
+BIG_sha256: 690749adbccff52d899b405a0c6d5479f3c981f4e65178aa54b4c4a3ed8313dc
+BIG_size: 384518994

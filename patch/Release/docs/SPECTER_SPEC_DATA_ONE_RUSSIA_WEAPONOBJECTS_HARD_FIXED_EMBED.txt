@@ -1,0 +1,8 @@
+HARD DELETE+INSERT PROOF
+removed_paths=['Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Russia_WeaponObjects.ini']
+removed_shas=['a5d5eedc4217ec4d198bd1238c82b0318b144b64390cdf6bfd53708c597958ad']
+new_path=Data\INI\Object\Specter\Armed Forces Of Russian Federation\Russia_WeaponObjects.ini
+new_sha256=3c3cb49a72a386302c1eba37d3c69552f3fe25a296d72fcb80e2d1b2e72d4bd8
+old_hash_reuse=NO
+final_wo_count=1
+BIG_sha256=c8460ef0f80eb5c3d05f6220dfe54271408af492ad66f495202b9a9ce9c855fa

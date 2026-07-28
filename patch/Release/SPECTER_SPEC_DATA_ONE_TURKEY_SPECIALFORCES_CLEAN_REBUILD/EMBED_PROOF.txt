@@ -1,0 +1,9 @@
+DELETE + INSERT PROOF
+=====================
+removed_count=1
+removed_shas=['da8ec200742728f7b5ca2447ebae412e5d21f9cae9a9bb65677e3b2dea697410']
+new_sha256=2c31b95c8674ecba7c6d4c8eab85fa39a15024336ab32d70244c2def8e60caba
+old_hash_reuse=NO
+header=SPECTER CLEAN REBUILD
+CommandSet=Turkey_SpecialForcesCommandSet
+BIG_sha256=02f0f64f55fa2ae30cbb18097ea4c26ead6137ea701c105ba817baeaac7707e4

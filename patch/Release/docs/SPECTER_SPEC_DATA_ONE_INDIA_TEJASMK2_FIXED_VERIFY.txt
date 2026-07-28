@@ -1,0 +1,65 @@
+SPECTER INDIA TEJAS MK2 FIXED - FULL INI VERIFY REPORT
+============================================================
+VERDICT: PASS
+Scope: India_TejasMk2.ini patched INSIDE _SPEC_DATA_ONE.big
+Validation: full Object/Draw/Behavior/End + refs + W3D + identity
+
+Source BIG (Germany drone fixed): ee390bcf3fbe6318eaea4d14e2d30ebb7bf3107ac6b1e0d1b4e977e6dbac08e0
+Patched BIG SHA256: b2582e0d0cac3925945605ed3370165182ddbc547bc4eeadaf930d3c5d87b308
+Patched BIG SIZE:   384515703
+Broken TejasMk2 SHA: f3192e17cd8593010a05a85802a5ffeefcb44300ed292bc24b50ed818cf8d3b1
+Fixed TejasMk2 SHA:  696ac82746594963b8f1ef8ae53b52ffb04250fc959c2fcde4195b86c8b79a4a
+Fixed TejasMk2 SIZE: 13127
+
+Problems fixed:
+  - Non-ASCII comments
+  - Nat_rafalem / Egy_RafaleM/MD donors -> pla_j10c / CHI_J10C*
+  - Spectra_ECM_Rafale_AHAM -> Thales_Spectra_ECM_Pod
+  - Unindented Scale = 0.9
+  - Shadow uniqueness + ModuleTag uniqueness
+
+Kept India values:
+  Object=India_TejasMk2 Side=India
+  Weapons=India_Weapon_AstraMk2_TejasMk2 + 2x_ALCM_ScalpEG
+  BuildCost=1744 BuildTime=13.8
+  Prereq=SCIENCE_India_TechTejasMk2 + India_MIC + SCIENCE_Rank6
+
+PASS: 32  FAIL: 0
+
+PASS: Object=India_TejasMk2
+PASS: single Object declaration
+PASS: Side=India
+PASS: Object/Draw/Behavior/End stack PASS
+PASS: Draw W3DModelDraw present
+PASS: single Shadow
+PASS: no duplicate ModuleTag
+PASS: Scale indented
+PASS: no col0 Scale
+PASS: ASCII-only
+PASS: no Nat_rafalem in code
+PASS: no Egy_Rafale in code
+PASS: no Spectra_ECM_Rafale in code
+PASS: pla_j10c portrait
+PASS: CHI_J10C models
+PASS: India Astra weapon kept
+PASS: BuildCost=1744
+PASS: BuildTime=13.8
+PASS: Geometry present
+PASS: Behavior modules present
+PASS: CommandSet resolves
+PASS: Weapon slots resolve
+PASS: WeaponTemplate resolve
+PASS: Science resolve
+PASS: Upgrade resolve
+PASS: Armor resolve
+PASS: Prereq Object resolve
+PASS: Locomotor resolve
+PASS: MappedImage resolve
+PASS: OCL resolve
+PASS: Model W3D present in ART
+PASS: Missing references = 0
+
+Missing=[]
+BlockIssues=[]
+
+FINAL: PASS

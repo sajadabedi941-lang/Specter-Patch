@@ -1,0 +1,19 @@
+SPECTER TURKEY F16BLOCK70 USA DONOR REBUILD - VERIFY REPORT
+===========================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Entry: Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_F16Block70.ini
+Duplicates of Turkey_F16Block70.ini: 0 (single entry)
+Donor: AmericaJetF-16C_AG (USA F16CM_BLK50_DB52)
+Object=Turkey_F16Block70 Side=Turkey
+Modules copied: Draw, WeaponSet, Locomotor, Geometry, CommandSet, Voice, FX
+BuildVariations: REMOVED (no foreign/missing variant refs)
+Weapon/Locomotor/Model W3D/CommandSet/Upgrade validation: PASS
+Turkey aircraft foreign-BuildVariations scan: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+INI SHA256: 20d2ef3d1aa9fa73f9da9b373133e4bbc5d41d1737016dcf2e0665427f5b54de
+BIG SHA256: e06e22898fe075fc3e7b316125f842150a7ad10fcb111a42dff99c8a72d0b943
+BIG SIZE: 384587068
+FINAL: PASS

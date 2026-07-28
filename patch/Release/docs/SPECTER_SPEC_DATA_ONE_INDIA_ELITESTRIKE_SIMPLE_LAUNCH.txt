@@ -1,0 +1,24 @@
+LAUNCH TEST REPORT - India_EliteStrike (Egypt Su-25K donor)
+============================================================
+Date: 2026-07-27
+
+1) DATA BIG under test
+   SHA256: e41d887ffd0a60f4caac24a2c4b15ab4f0c4a7533e22534eb3d77dda6a1ac430
+   SIZE: 384513380
+   Embedded India_EliteStrike SHA256: 0f9af6019f0976cd219d393f94fda3e17bb6d74eeb933513a0f48aa13b665533
+   Object=India_EliteStrike Side=India Model=Irq_Su25k Cost=1700 Time=14
+   F35C/US_F35A: ABSENT
+   AmericaCountermeasures: ABSENT
+
+2) Launch attempt
+   Command: /usr/lib/wine/wine64 ./generals.exe -win (cwd=/tmp/india_elitestrike_launch)
+   Result: wine started; available generals.exe is a Wine PE32+ stub / cmd builtin
+           (~1.7MB), NOT authentic C&C Generals Zero Hour.
+   No game.dat / real GeneralsZH binary on this cloud host.
+   wine32 missing for authentic 32-bit Generals even if binary were present.
+
+3) Pre-launch structural gate: PASS
+   Full INI validation + extract-from-BIG + ref/W3D checks + drone preserve
+
+VERDICT: Package rebuilt without F35C. Agent launch attempted; full in-engine
+         boot requires user machine with real Generals.exe + this DATA BIG.

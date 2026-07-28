@@ -1,0 +1,13 @@
+EMBED + EXTRACT TEST
+====================
+Israel: embedded=657c71921fa27d3b481afc0f6c8f49f0b88e556fabc63e71cb94762cb551574d match=YES validation=PASS
+Libya: embedded=baaf45170a05c841d0dc98dc98cddbe29ba7ee8f902e30d265cd022239230636 match=YES validation=PASS
+Pakistan: embedded=88972f8ad239d363fcd2ecbff790070069301232b872f89256a57e564517f624 match=YES validation=PASS
+SaudiArabia: embedded=bcccc9a4535cd66d7c8c1e6bbdb95e54893e191ce53a60a016d3a0ac54c7dce0 match=YES validation=PASS
+SouthAfrica: embedded=b50ce1d699a5033a43e81725f0618b5c9736b551ea41b175a27529a479c9ccfa match=YES validation=PASS
+Syria: embedded=1aa7acb9990d4a02d972979dae1b175d0d69bb205eab4f3e67e8ba0cebbdc118 match=YES validation=PASS
+Turkey: embedded=8e74a086328a83832ca59e98826a465513f8f5d8b65a305fa4919d945f384d17 match=YES validation=PASS
+Ukraine: embedded=7136b01c73fd99e1e020dfc6006cd3f34b995084badf6fe502bd96578c23eed8 match=YES validation=PASS
+Vietnam: embedded=786db4c2739cca3b3c84934eb4638abd7cf2e01183213dfedab73b1651a6ac3c match=YES validation=PASS
+BIG_sha256=d7199cb3bcac617f04dc258b5e3d516152f30d0d9d127558b2a926d9d1e986df
+BIG_size=384610880

@@ -1,0 +1,19 @@
+SPECTER TURKEY ELITE MAROON BERETS CLEAN DELETE+REBUILD - VERIFY REPORT
+=======================================================================
+VERDICT: PASS
+Method: DELETE prior Turkey_EliteMaroonBerets.ini, INSERT USA NavySeal Assault clone
+Donor: USA AmericaInfantryNavySeals_Assault (validated US_NavySeal / Spec_SF_Ind_A W3D)
+Old Iraq-art leftover content: NOT reused
+Removed entries: 1
+Final Object=Turkey_EliteMaroonBerets Side=Turkey CommandSet=Turkey_EliteMaroonBeretsCommandSet
+DisplayName=Turkey Elite Maroon Berets (key OBJECT:Turkey_EliteMaroonBerets)
+Modules: Object/Draw/WeaponSet/Armor/Locomotor/Behavior/Effects
+Prior Turkey_Airborne + Turkey_SpecialForces fixes: PRESERVED
+Turkey integrity hard gate: PASS
+Turkey integrity soft-warns (pre-existing outside MaroonBerets): 96
+INI/W3D/Weapon/Armor validation: PASS
+
+Turkey_EliteMaroonBerets.ini SHA256: 8262fa373603fb5582732c5b892967daa801614cc102781ee56e29b3ce20d0fd
+BIG SHA256: cb5363ef3fb17320a4cc8a365b1a5b75870c8ab74df113c3fff8e630e258fe94
+BIG SIZE: 384477184
+FINAL: PASS

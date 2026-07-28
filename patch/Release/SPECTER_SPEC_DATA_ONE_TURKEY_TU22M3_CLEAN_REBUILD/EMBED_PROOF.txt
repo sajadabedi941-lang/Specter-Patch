@@ -1,0 +1,9 @@
+DELETE + INSERT PROOF
+=====================
+removed_count=2
+removed_shas=['6e1cca455ad3685e9eff8c35f6f5b87acb39d2a5d9eb8e455f82ed3c4116f839', 'e947c211613322486adfdc929e5ab0b168d86094509c0914bc4ae564e4b2a19f']
+new_main_sha256=9d45d99c23bfda68e04e65741d6ae992d9d60967632296c04dec4ce4de843c58
+old_hash_reuse=NO
+su34_model=ABSENT
+header=SPECTER CLEAN REBUILD
+BIG_sha256=92b20709320115bdc295f5582064932f91cbb7214f7ee044f79b57069ac1d9cf

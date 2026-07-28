@@ -1,0 +1,18 @@
+SPECTER JAPAN_MQ9 + UAE_MQ9 FIX - VERIFY REPORT
+==============================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Donor: USA AmericaDronesMq9 (France/Germany CombatDrone pattern)
+Targets: Japan_MQ9.ini, UAE_MQ9.ini (UAE combat drone / MQ9 role)
+Side: Japan / UAE (faction token; UnitedArabEmirates unused in DATA)
+Removed: non-ASCII, duplicate Shadow, SCIENCE_*StealthJet
+Preserved MQ9 art: Nat_mq9 / US_MQ9 / US_MQ9D / US_MQ9R
+
+BIG SHA256: 07249047c049c8939dc36fed126d0e79a9ff3cc349722a478c557b3922cceee3
+BIG SIZE:   384521859
+Japan_MQ9 SHA256: 34c8dcffc78caaeb559f8f8e5dbc5e64842fc10291b19bcef22efcdb7d4014cf cost/time=('1105', '9.5')
+UAE_MQ9 SHA256:   6fe4ad1b0a98ac50b069f2b6d6e6082b81620bd24e998516ef4dc985d347fa09 cost/time=('1114', '9.7')
+
+Validation: pre-write PASS, extract-from-BIG PASS, byte match PASS
+Preserved: France/Germany/Japan CombatDrone batch + India EliteStrike/CC/MHQ
+FINAL: PASS

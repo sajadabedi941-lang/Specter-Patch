@@ -1,0 +1,10 @@
+EMBED + EXTRACT TEST
+====================
+India_CommandCenter entry: Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+embedded_sha256: 29d084b8c5fa23fe047961bf9cc3ce33714a64c4168f09bce275d00938f1b93b
+extracted_sha256: 29d084b8c5fa23fe047961bf9cc3ce33714a64c4168f09bce275d00938f1b93b
+bytes_match_replacement: YES
+full_ini_validation: PASS
+Iraq_Irq_tokens: NONE
+BIG_sha256: 701e14461f61dff829dacf878a2bbea167c5e011c6668a95066597a12dd3dc50
+BIG_size: 384517337

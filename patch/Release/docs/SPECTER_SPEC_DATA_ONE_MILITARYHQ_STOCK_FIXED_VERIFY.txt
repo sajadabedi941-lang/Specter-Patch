@@ -1,0 +1,19 @@
+SPECTER MILITARYHQ STOCK FACTIONS FIX - VERIFY REPORT
+=====================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Objects: America_MilitaryHQ, Russia_MilitaryHQ, China_MilitaryHQ, NorthKorea_MilitaryHQ
+Preserved: Side, DisplayName, faction CommandSet, cost/time, health/range, income
+Donor core: AmericaCommandCenter US_Command art/production/death structure
+Removed: Iraqi art and inherited Iraqi special-power modules
+Non-ASCII: 0
+Object/Draw/Shadow/ModuleTag/Behavior/CommandSet/End: PASS x4
+W3D/art/reference validation: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Old INI SHA256: edbda037820febdf4051780247910d44fe9db9f3cd54ed89779a7331a6f71abe
+New INI SHA256: a8ae41cbace672cd0016f3053a8e85fb4f578e56df9266a5d4d41ec0fa38d79c
+BIG SHA256: 88369d95b410ff6a58149de32b78c12285782d4846eff4bfaf9c85fd0e44fc14
+BIG SIZE: 384632722
+FINAL: PASS

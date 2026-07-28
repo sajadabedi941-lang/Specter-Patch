@@ -1,0 +1,20 @@
+SPECTER AIRCRAFT AAB GLOBAL PARSE FIX - VERIFY REPORT
+=====================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Entry: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini
+Repair: ASCII-sanitize parser-breaking comments only
+AdvancedAirBase objects/identity/balance/behavior unchanged
+Removed non-ASCII characters: 632
+Objects validated: 182
+WeaponSet blocks validated: 140
+Object/Draw/Shadow/ModuleTag/Behavior/WeaponSet/End: PASS
+W3D/Art/Weapon/CommandSet/Armor/Upgrade/OCL/SpecialPower refs: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Old INI SHA256: eb59cd6f3e31877fd5890b7c2a3eecdcb1e25ed2eecd89d5a139a4c7683c0a80
+New INI SHA256: 3c7e7d404cd62e3014310b3c62247c8274ae81c3a50e9c6d5acf8fcee8180baf
+BIG SHA256: 20309b99ead463f412f0b407933a789f3d4a3c38ffdfdbb95f7756fac7e9712d
+BIG SIZE: 384628111
+FINAL: PASS

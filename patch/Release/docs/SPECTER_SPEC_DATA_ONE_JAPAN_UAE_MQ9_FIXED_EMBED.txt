@@ -1,0 +1,6 @@
+EMBED + EXTRACT TEST
+====================
+Japan_MQ9: embedded=34c8dcffc78caaeb559f8f8e5dbc5e64842fc10291b19bcef22efcdb7d4014cf match=YES
+UAE_MQ9: embedded=6fe4ad1b0a98ac50b069f2b6d6e6082b81620bd24e998516ef4dc985d347fa09 match=YES
+BIG_sha256=07249047c049c8939dc36fed126d0e79a9ff3cc349722a478c557b3922cceee3
+BIG_size=384521859

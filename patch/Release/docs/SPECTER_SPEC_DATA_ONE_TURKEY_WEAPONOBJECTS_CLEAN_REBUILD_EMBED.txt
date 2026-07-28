@@ -1,0 +1,11 @@
+DELETE + INSERT PROOF
+=====================
+removed_count=1
+removed_shas=['24aab85d221175559f4acb05baac1e9c6d2ee724f81c9e93e0b738828c08731d']
+new_sha256=8e376d8d5d18c2dc23e55034f6292f9336720d7d7d36c4c53b4ebbc6a77a4a5d
+old_hash_reuse=NO
+header=SPECTER CLEAN REBUILD
+objects=81
+clientupdate_ends_removed=3
+model_remaps=['AVTankShel->Irq_255mm_Roundx2', 'SCUD_M-IRAQ->Irq_R11_M', 'Turkey_Shaheed->Irq_Quds5', 'Turkey_Sarab7_M->Iraq_Sarab7_Mx5', 'Turkey_Alhusain_W->Iraq_Alhusain_Wx4', 'ExMsslTm->US_FGM114x4', 'EXStinger01->US_Stinger', 'AVRaptor_M->AIM-120', 'UVRockBug_m->122mmGrad']
+BIG_sha256=49f0636dfeff44b97a540d9e134b8398e7c78cb6fa542c4ebb89f2f133f35b4e

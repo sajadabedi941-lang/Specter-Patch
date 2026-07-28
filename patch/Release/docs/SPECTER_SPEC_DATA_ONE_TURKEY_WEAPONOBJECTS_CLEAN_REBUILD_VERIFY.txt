@@ -1,0 +1,17 @@
+SPECTER TURKEY WEAPONOBJECTS CLEAN DELETE+REBUILD - VERIFY REPORT
+=================================================================
+VERDICT: PASS
+Method: DELETE prior Turkey_WeaponObjects.ini, INSERT cleaned rebuild
+Objects preserved: 81 Turkey_* weapon/projectile objects
+Stray ClientUpdate End removed: 3
+Missing W3D remapped to USA/Iraq ART donors: 9
+BuildVariations: GenericDefeatedTankShell removed
+Damage/FX/OCL/Locomotor/Weapon refs: PRESERVED
+Prior Turkey_Airborne/SpecialForces/MaroonBerets fixes: PRESERVED
+Turkey integrity hard gate: PASS
+Turkey integrity soft-warns: 97
+
+Turkey_WeaponObjects.ini SHA256: 8e376d8d5d18c2dc23e55034f6292f9336720d7d7d36c4c53b4ebbc6a77a4a5d
+BIG SHA256: 49f0636dfeff44b97a540d9e134b8398e7c78cb6fa542c4ebb89f2f133f35b4e
+BIG SIZE: 384477071
+FINAL: PASS

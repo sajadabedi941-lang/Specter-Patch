@@ -1,0 +1,3 @@
+_SPEC_DATA_ONE.big SHA256=11ab19f4ad75cb9ad4c0496cd5ff49f9834e2dcf3b7970b1b2c4d3ef572f4b01 SIZE=384514854
+India_MultiroleFighter.ini SHA256=4f52514f667cf24a765d46c37b10cd830eaefabd1e3daa7aace908878111c4ad
+Removed: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_TejasMk2.ini

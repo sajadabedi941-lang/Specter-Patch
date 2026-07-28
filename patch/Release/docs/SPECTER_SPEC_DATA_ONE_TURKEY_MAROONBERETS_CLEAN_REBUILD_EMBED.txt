@@ -1,0 +1,10 @@
+DELETE + INSERT PROOF
+=====================
+removed_count=1
+removed_shas=['eb300c7779315a841812cb6e1143937aedabcc9f2fabec6ead1a85faa8b59435']
+new_sha256=8262fa373603fb5582732c5b892967daa801614cc102781ee56e29b3ce20d0fd
+old_hash_reuse=NO
+header=SPECTER CLEAN REBUILD
+CommandSet=Turkey_EliteMaroonBeretsCommandSet
+DisplayName=Turkey Elite Maroon Berets
+BIG_sha256=cb5363ef3fb17320a4cc8a365b1a5b75870c8ab74df113c3fff8e630e258fe94

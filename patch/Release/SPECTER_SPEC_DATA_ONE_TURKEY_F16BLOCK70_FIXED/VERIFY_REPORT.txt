@@ -1,0 +1,22 @@
+SPECTER TURKEY F16BLOCK70 PARSE FIX - VERIFY REPORT
+===================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Exact error pattern: BuildVariations referenced foreign America/Russia
+  Objects after roster clone; Turkey_F16V Mixed/AGM/GBU24 variants missing.
+Repair:
+- Restored Turkey_F16Block70.ini + Turkey_F16V.ini (4 Objects) from
+  Turkey-faction-validated BIG with Side=Turkey
+- Removed foreign BuildVariations on Turkey aircraft
+- Remapped Upgrade_America* -> Upgrade_Turkey_*
+- Removed foreign ReplaceObject targets
+Validation: Object/Draw/Shadow/Weapon/Locomotor/Model/CommandSet/End PASS
+All Turkey Airforce+Drones scanned for same pattern: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+Files changed: 28
+Stats: {'buildvariations': 4, 'replaceobject': 5, 'usa_upgrade': 102}
+
+BIG SHA256: fe90e209ca2daf61e9922d8a4adc35b9eb6fd377790c7e5f59e11f713a3328b9
+BIG SIZE: 384586960
+FINAL: PASS

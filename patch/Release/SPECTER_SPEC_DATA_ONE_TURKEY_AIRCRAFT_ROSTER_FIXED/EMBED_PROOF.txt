@@ -1,0 +1,8 @@
+EMBED + EXTRACT + INTEGRITY
+===========================
+replaced=34
+changed=34
+byte_match=YES
+integrity=PASS
+unrelated_changed=0
+BIG_sha256=9ed2dcbf1081a7220b70fe2c05a543df4ad258225a2373f53cdc8e1f9bbb02ef

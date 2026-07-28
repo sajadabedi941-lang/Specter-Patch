@@ -1,0 +1,21 @@
+SPECTER_BOOT_MENU_FIX — VALIDATION
+========================================================================
+Generated: 2026-07-24 15:18:30 UTC
+PackageSHA256: 6643ad972913f33d28ead73779714b2ca7959493a861362674778bbf29de4953
+Layout: expansion Weapon/CB/CS at Data/INI ROOT (boot-safe).
+Object INIs: 1270
+INI root files: 165
+Art: 6
+Fixed files: 0
+Skipped stock: ['Armor.ini', 'CommandButton.ini', 'CommandSet.ini', 'Locomotor.ini', 'Weapon.ini']
+Duplicates: 0
+HASH_MISMATCH: 0
+Remaining errors: 0
+
+REMAINING ERRORS: 0
+
+SUCCESS
+HASH_MISMATCH = 0
+Remaining errors = 0
+Manifest verification passed
+RUNTIME: static only — generals.exe not launched here.

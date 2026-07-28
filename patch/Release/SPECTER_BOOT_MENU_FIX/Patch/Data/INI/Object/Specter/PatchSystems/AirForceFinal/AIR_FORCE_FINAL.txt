@@ -1,0 +1,35 @@
+SPECTER PATCH — Air Force Final Integration
+===========================================
+Master pass: every playable country gets a complete AAB air roster.
+
+Roles (all countries)
+---------------------
+- Fighter (existing Patch_* and/or new Patch_Turkey_*/Israel_F35I)
+- Light / Medium / Heavy Bomber classes (country-priced)
+- AWACS (existing Advanced AWACS system)
+- Transport (existing)
+- Assault helicopter (Patch_*_AssaultHelo; France keeps Cayova)
+- Combat drone (Patch_*_CombatDrone; PK/UAE/UA keep existing UAVs)
+- Strategic named aircraft where specified
+
+Bomber class prices (PatchBaseCost before CountryBalance bake)
+--------------------------------------------------------------
+Heavy (strategic class):
+  USA / Nato / UN = 10000
+  Israel = 10200
+  Britain/France = 9900
+  Russia = 9800 … down to GLA = 7500
+Medium ≈ 58% of Heavy | Light ≈ 32% of Heavy
+
+Damage: Light 720 / Medium 1050 / Heavy 1450 primary
+
+Strategic named
+---------------
+USA: B-2 (base 10000), B-52 (9500), B-3, AC-130 Spectre, E-3 (existing + cost update)
+Russia: Tu-160 / Tu-22M3 + NuclearBomberStrike + RSM-56 Bulava abilities on Tu-160
+China: H-6 + HypersonicBomber
+Iraq: Tu-22 Cruise, Nasr-2500, Adnan-1
+Israel: F-35I, StealthStrike, FAB bomber, AWACS, Transport, bomber classes, helo, drone
+        + Israel_AdvancedAirBase (16-pad)
+
+Overlay rules: unique Patch_* IDs, no vendor archive edits, sync_audit PASS, NO NAVAL.

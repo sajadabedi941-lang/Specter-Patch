@@ -1,0 +1,33 @@
+SPECTER PATCH — Air Force Expansion
+====================================
+Overlay-only integration of audited mod.zip air roles into Patch_* IDs.
+
+Rules
+-----
+- Never overwrite Specter/vendor archives or stock Object IDs.
+- Unique Patch_* / Russia_AD_TorM IDs only.
+- Specter art models (US_/RU_/CN_/Irq_) — no dependency on incomplete mod.z23/z24 W3D.
+- Heavy scales: bomber 0.72, AWACS 0.78, transport/gunship 0.76, heavy helo 0.82.
+- Fixed weapon timings for multiplayer sync.
+- NO NAVAL (aircarrier / corvette content audited but not imported).
+
+AAB wiring
+----------
+Expansion airframes are slotted into existing *_AdvancedAirBaseCommandSet sets
+(CommandSet_AdvancedAirBase.ini) without removing prior Turkey/AAB entries.
+
+Source mapping (mod Object -> Patch Object)
+------------------------------------------
+AmericaJetAurora              -> Patch_America_Aurora
+AmericaJetHAWK                -> Patch_America_StealthHawk
+AmericaJetSpectreGunship      -> Patch_America_AC130Spectre
+AmericaJetHAWKEY              -> Patch_America_E2C
+Lazr_AmericaB3Bomber          -> Patch_America_B3
+Eurasian_RussiaJetPakFAStriker-> Patch_Russia_Su57Strike
+EEA_UkraineJetSU-Sokil        -> Patch_Ukraine_Sokil
+EEA_UkrainePlaneAN-71         -> Patch_Ukraine_AN71
+EEA_UkraineDronecopter        -> Patch_Ukraine_Dronecopter
+EU_GermanyJetBomber           -> Patch_Germany_JetBomber
+EU_FranceHelicopterCayova     -> Patch_France_Cayova
+ChinaJetJ-10                  -> Patch_China_J10Strike
+TorMMissile / TORMissileWeapon-> Russia_AD_TorM + Patch_Weapon_TorM

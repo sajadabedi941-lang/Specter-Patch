@@ -1,0 +1,16 @@
+SPECTER RUSSIA WEAPONOBJECTS HARD FIX - VERIFY REPORT
+====================================================
+VERDICT: PASS
+Crash: EXCEPTION_ACCESS_VIOLATION @ NULL
+Cause: Cyrillic/corrupt 9M317 weapon+locomotor names (missing templates)
+Fix: DELETE ALL russia_weaponobjects.ini; INSERT one clean file;
+     normalize 9M317 across Weapon/Locomotor/9K317/WO
+Objects preserved: 135
+Russia WO entries in BIG: 1
+Old broken hash reused: NO
+Russia unit weapon templates: PASS
+Extract byte-match: PASS
+BIG SHA256: c8460ef0f80eb5c3d05f6220dfe54271408af492ad66f495202b9a9ce9c855fa
+WO SHA256: 3c3cb49a72a386302c1eba37d3c69552f3fe25a296d72fcb80e2d1b2e72d4bd8
+BIG SIZE: 384415698
+FINAL: PASS

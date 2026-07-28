@@ -1,0 +1,77 @@
+SPECTER INITIALIZATION CRASH REPORT
+============================================================
+Source BIG scanned: _SPECTER_NO_EGYPT_CLEAN.big
+SHA256: 3dca571472aeb8b24966ed5a768f2f77615aea77d0be8626c2761a6762897995
+Entries: 2696
+Symptom: Uncaught Exception during initialization
+
+SUMMARY
+-------
+Egypt removal itself left zero Egypt tokens (good). The init crash is from
+BROKEN REFERENCES: CommandSets / PlayerTemplates pointing at CommandButtons,
+CommandSets, and Objects that are missing after patch overlays + Egypt scrub
+side-effects / pre-existing holes exposed by the cleaned load set.
+
+Object duplicate count in BIG: 0
+Egypt paths/content: 0
+
+============================================================
+PROBLEMS (init-critical)
+============================================================
+
+[1] [CRITICAL] Missing CommandButton referenced by America airfield CommandSets
+    PATH: Data\INI\CommandSet_StrategicBombers_AABOnly.ini
+          CommandSets: AmericaAirfieldCommandSet (+_T/_T1/_T2/_T3)
+    CAUSE: Slot references Command_ConstructAmericaJetE3AWACS but button is absent
+           from packed CommandButton.ini (exists in vendor SPEC, not in overlay)
+    FIX: Restore CommandButton Command_ConstructAmericaJetE3AWACS from SPEC
+         (Object AmericaJetE3AWACS already present in USA_System.ini)
+
+[2] [CRITICAL] Missing CommandButtons referenced by RussiaAirfieldCommandSet
+    PATH: Data\INI\CommandSet_StrategicBombers_AABOnly.ini
+    CAUSE: Slots reference Command_ConstructRussiaJetSu75Checkmate and
+           Command_ConstructRussiaJetSu47Recon — buttons missing from overlay pack
+    FIX: Restore both CommandButtons from SPEC
+         (Objects RussiaJetSu75Checkmate / RussiaJetSu47Recon already present)
+
+[3] [CRITICAL] Missing CommandSets for FactionNorthKorea PlayerTemplate
+    PATH: Data\INI\PlayerTemplate.ini (FactionNorthKorea)
+    CAUSE: PurchaseScienceCommandSetRank1/3/8 = SCIENCE_NorthKorea_CommandSetRank*
+           SpecialPowerShortcutCommandSet = SpecialPowerShortcutNorthKorea
+           These CommandSets exist in vendor SPEC CommandSet.ini but were lost when
+           patch CommandSet.ini overlaid SPEC (not present in overlay file)
+    FIX: Restore the 4 CommandSets from SPEC into an init-fix INI
+
+[4] [CRITICAL] Missing StartingUnit Object for FactionAmericaAirForceGeneral
+    PATH: Data\INI\PlayerTemplate.ini
+    CAUSE: StartingUnit0 = AirF_AmericaVehicleDozer
+           Vendor defined it in Israel Defense Forces\Wheeled\Dozer.ini, but patch
+           overlays that file with Israel_VehicleDozer only — AirF dozer Object gone
+    FIX: Restore Object AirF_AmericaVehicleDozer from SPEC into a USA/PatchSystems
+         INI (do not modify Israel gameplay file beyond restoring missing USAF object)
+
+[5] [HIGH] Nonexistent CommandButton on Iraq Advanced Air Base
+    PATH: Data\INI\CommandSet_AdvancedAirBase.ini
+          Iraq_AdvancedAirBaseCommandSet slot 15 = Command_ConstructPatch_US_E3G_AWACS
+    CAUSE: Button never defined (not in SPEC or clean). Iraq AWACS already on slot 4
+           (Command_ConstructPatch_Iraq_AWACS)
+    FIX: Remove dead slot 15 only (no gameplay loss; slot 4 remains)
+
+[6] [HIGH] Broken CommandSet slot syntax (embedded ; flag)
+    PATH: Data\INI\CommandSet.ini
+          Demo_GLAArmsDealerCommandSet(+Upgrade) slot 5 =
+          Demo_Command_ConstructGLAVehicleToxinTruck;TOXIN
+    CAUSE: Invalid CommandButton name (semicolon). Real button is
+           Demo_Command_ConstructGLAVehicleToxinTruck
+    FIX: Retarget slot to the real CommandButton name
+
+NON-INIT / OUT OF SCOPE (noted, not blocking this repair)
+---------------------------------------------------------
+- ~276 stock Generals CommandButtons pointing at Tank_/AirF_/GC_Slth_ Objects
+  resolved via ReplaceModule inheritance (pre-existing; not introduced by Egypt removal)
+- Shared weapon Objects that lived only under Egyptian Armed Forces folder were
+  removed with Egypt (intentional). No additional restore unless a remaining
+  non-Egypt CommandSet/Button hard-requires them for init (none found in CS scan).
+
+============================================================
+END CRASH REPORT — repairs follow

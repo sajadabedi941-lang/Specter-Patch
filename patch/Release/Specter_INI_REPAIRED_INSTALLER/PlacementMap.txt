@@ -1,0 +1,55 @@
+AbbasLauncher.ini|Turkey Armed Forces/Wheeled/AbbasLauncher.ini
+Airborne.ini|Turkey Armed Forces/Infantry/Airborne.ini
+Aircraft_AAB_Global.ini|PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+Aircraft_AirForceExpansion.ini|PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini
+Britain_CombatDrone.ini|British Armed Forces/Drones/Britain_CombatDrone.ini
+Britain_F35B.ini|British Armed Forces/Airforce/Britain_F35B.ini
+Egypt_CommandCenter.ini|Egyptian Armed Forces/Buildings/Egypt_CommandCenter.ini
+Egypt_MilitaryHQ.ini|Egyptian Armed Forces/Buildings/Egypt_MilitaryHQ.ini
+France_CombatDrone.ini|French Armed Forces/Drones/France_CombatDrone.ini
+Germany_CombatDrone.ini|German Armed Forces/Drones/Germany_CombatDrone.ini
+India_CombatDrone.ini|Indian Armed Forces/Drones/India_CombatDrone.ini
+India_CommandCenter.ini|Indian Armed Forces/Buildings/India_CommandCenter.ini
+India_MilitaryHQ.ini|Indian Armed Forces/Buildings/India_MilitaryHQ.ini
+India_TejasMk2.ini|Indian Armed Forces/Airforce/India_TejasMk2.ini
+Israel_CommandCenter.ini|Israel Defense Forces/Buildings/Israel_CommandCenter.ini
+Israel_MilitaryHQ.ini|Israel Defense Forces/Buildings/Israel_MilitaryHQ.ini
+Italy_CombatDrone.ini|Italian Armed Forces/Drones/Italy_CombatDrone.ini
+Japan_CombatDrone.ini|Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+Japan_MQ9.ini|Japan Self-Defense Forces/Airforce/Japan_MQ9.ini
+Karrar-2.ini|Turkey Armed Forces/Wheeled/Karrar-2.ini
+Lamiaa.ini|Turkey Armed Forces/Wheeled/Lamiaa.ini
+Libya_CommandCenter.ini|Libyan Armed Forces/Buildings/Libya_CommandCenter.ini
+Libya_MilitaryHQ.ini|Libyan Armed Forces/Buildings/Libya_MilitaryHQ.ini
+MilitaryHQ_StockFactions.ini|PatchSystems/MilitaryHQ/MilitaryHQ_StockFactions.ini
+Pakistan_CommandCenter.ini|Pakistan Armed Forces/Buildings/Pakistan_CommandCenter.ini
+Pakistan_MilitaryHQ.ini|Pakistan Armed Forces/Buildings/Pakistan_MilitaryHQ.ini
+Russia_AD_TorM.ini|PatchSystems/AirDefense/Russia_AD_TorM.ini
+SaudiArabia_CombatDrone.ini|Saudi Arabian Armed Forces/Drones/SaudiArabia_CombatDrone.ini
+SaudiArabia_CommandCenter.ini|Saudi Arabian Armed Forces/Buildings/SaudiArabia_CommandCenter.ini
+SaudiArabia_MilitaryHQ.ini|Saudi Arabian Armed Forces/Buildings/SaudiArabia_MilitaryHQ.ini
+SouthAfrica_CommandCenter.ini|South African National Defence Force/Buildings/SouthAfrica_CommandCenter.ini
+SouthAfrica_MilitaryHQ.ini|South African National Defence Force/Buildings/SouthAfrica_MilitaryHQ.ini
+SouthKorea_CombatDrone.ini|Republic of Korea Armed Forces/Drones/SouthKorea_CombatDrone.ini
+SpecialForces.ini|Turkey Armed Forces/Infantry/SpecialForces.ini
+Sweden_CombatDrone.ini|Swedish Armed Forces/Drones/Sweden_CombatDrone.ini
+Syria_CommandCenter.ini|Syrian Arab Army/Buildings/Syria_CommandCenter.ini
+Syria_MilitaryHQ.ini|Syrian Arab Army/Buildings/Syria_MilitaryHQ.ini
+Turkey_AWACS.ini|Turkey Armed Forces/Airforce/Turkey_AWACS.ini
+Turkey_Akinci.ini|Turkey Armed Forces/Airforce/Turkey_Akinci.ini
+Turkey_Bora.ini|Turkey Armed Forces/Wheeled/Turkey_Bora.ini
+Turkey_CommandCenter.ini|Turkey Armed Forces/Buildings/Turkey_CommandCenter.ini
+Turkey_EliteMaroonBerets.ini|Turkey Armed Forces/Infantry/Turkey_EliteMaroonBerets.ini
+Turkey_F16Block70.ini|Turkey Armed Forces/Airforce/Turkey_F16Block70.ini
+Turkey_Kizilelma.ini|Turkey Armed Forces/Drones/Turkey_Kizilelma.ini
+Turkey_MilitaryHQ.ini|Turkey Armed Forces/Buildings/Turkey_MilitaryHQ.ini
+Turkey_TB2.ini|Turkey Armed Forces/Airforce/Turkey_TB2.ini
+Turkey_Tu-22M3.ini|Turkey Armed Forces/Airforce/Turkey_Tu-22M3.ini
+Turkey_WeaponObjects.ini|Turkey Armed Forces/Turkey_WeaponObjects.ini
+UAE_CommandCenter.ini|United Arab Emirates/Buildings/UAE_CommandCenter.ini
+UAE_MQ9.ini|United Arab Emirates/Airforce/UAE_MQ9.ini
+UAE_MilitaryHQ.ini|United Arab Emirates/Buildings/UAE_MilitaryHQ.ini
+Ukraine_CommandCenter.ini|Ukrainian Armed Forces/Buildings/Ukraine_CommandCenter.ini
+Ukraine_MilitaryHQ.ini|Ukrainian Armed Forces/Buildings/Ukraine_MilitaryHQ.ini
+Vietnam_CommandCenter.ini|Vietnam People's Army/Buildings/Vietnam_CommandCenter.ini
+Vietnam_MilitaryHQ.ini|Vietnam People's Army/Buildings/Vietnam_MilitaryHQ.ini

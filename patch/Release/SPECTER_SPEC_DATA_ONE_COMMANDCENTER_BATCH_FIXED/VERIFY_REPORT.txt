@@ -1,0 +1,26 @@
+SPECTER COMMANDCENTER BATCH FIX (9 COUNTRIES) - VERIFY REPORT
+=============================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Donor: AmericaCommandCenter (Egypt/India CC method)
+Countries: Libya, Pakistan, SaudiArabia, SouthAfrica, Syria, Turkey, Israel, Ukraine, Vietnam
+Removed: Irq_Command/irq_comndcntr/Iraq_Adnan1/SUPERWEAPON_Iraqi*, non-ASCII, dup Shadow
+Kept: Object/Side/DisplayName/CommandSet/cost-time; art US_Command/us_commandcenter
+
+BIG SHA256: f26e3aee13536cfdd17de7eb26de982b8d15e84e150f498aba84140c2957d4c5
+BIG SIZE:   384562424
+
+Per-country SHA256:
+  Libya_CommandCenter.ini 2d1268d8632d435f0174edb1692fa3b21af3cd9f7c934bef48da2c1cc5c7b75a cost=1454 time=3.4 CS=Libya_CommandCenterCommandSet
+  Pakistan_CommandCenter.ini f569c8ffb5822d39e2f334cd077e9d24a4900ab0b41e1cd47875d54bdebf2e6e cost=1373 time=3.2 CS=Pakistan_CommandCenterCommandSet
+  SaudiArabia_CommandCenter.ini 026ad6416fa7c02a8fb19399b6b691fa4f2b3f8e4d34d825927e34d47a758764 cost=1809 time=3.2 CS=SaudiArabia_CommandCenterCommandSet
+  SouthAfrica_CommandCenter.ini 96b286aa669bf1c146a209bd9b27e6e4250826e58469e5cf3aa383982ac8d5b8 cost=1615 time=3.2 CS=SouthAfrica_CommandCenterCommandSet
+  Syria_CommandCenter.ini 86f5b1f44c83fa6baabd2a9b64f8ea2b57205f52cb3ac9df61571429dc9a7976 cost=1421 time=3.4 CS=Syria_CommandCenterCommandSet
+  Turkey_CommandCenter.ini 51d934aa00a4e96f0b94d224e84fc48963b5349f037e1ef329e39249e71f9c63 cost=1615 time=3.2 CS=Turkey_CommandCenterCommandSet
+  Israel_CommandCenter.ini ffceba90e9d764faa7a10d308f6b094d2bbaa5a0818abfba680f6995fbd73e31 cost=1776 time=3.1 CS=Israel_CommandCenterCommandSet
+  Ukraine_CommandCenter.ini 9606f25bafb6400bc13f1aa061389213c5a76ddfb3439a59c8b4c89cad83c4f0 cost=1454 time=3.2 CS=Ukraine_CommandCenterCommandSet
+  Vietnam_CommandCenter.ini a7cb4c7127f95f68853b597eeae80c1bf3ae20ecff951858122d99c765603084 cost=1534 time=3.3 CS=Vietnam_CommandCenterCommandSet
+
+Validation: donor PASS, pre-write PASS x9, extract-from-BIG PASS x9
+Preserved: Egypt/India CC, France/Germany drones, Japan/UAE MQ9, India MHQ
+FINAL: PASS

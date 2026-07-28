@@ -1,0 +1,20 @@
+SPECTER TURKEY F16BLOCK70 CLEAN DELETE+REBUILD - VERIFY REPORT
+==============================================================
+VERDICT: PASS
+Method: DELETE all prior Turkey_F16Block70 BIG entries, then INSERT
+        a brand-new clone of USA AmericaJetF-16C_AG.
+Old broken Turkey F16 file content: NOT reused
+Removed entries: 1
+Final entries named *f16block70*: 1
+Object=Turkey_F16Block70 Side=Turkey
+Modules: Object/Draw/WeaponSet/Locomotor/Geometry/CommandSet/Voice/FX
+BuildVariations: ABSENT
+Prerequisites: Object=Turkey_AdvancedAirBase only
+INI parse structure / W3D / Weapon / Locomotor / CommandSet: PASS
+Old broken hashes absent: PASS
+Full integrity check: PASS
+
+INI SHA256: 1ad5e2bacf00cc25a6435a9bf1194a083acf9107f6ed49e9b693b1f3ef1374a2
+BIG SHA256: e0a5d81dd7d7c2e08200691e3c9d9c1ef40e9e87b766859ca5f23e60b3f6ffb4
+BIG SIZE: 384586902
+FINAL: PASS

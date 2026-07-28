@@ -1,0 +1,29 @@
+SPECTER TURKEY FACTION INI BATCH FIX - VERIFY REPORT
+====================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Turkey_* files validated: 90
+Turkey_* files changed: 70
+Non-ASCII characters removed: 151
+Invalid ArmorSetFlag fields removed: 1
+Duplicate Shadow=SHADOW_VOLUME removed: 8
+Bare invalid lines commented: 1
+Tree-synced cleaned donors: Akinci/F16Block70/TB2/Tu-22M3/Tu-22M3_AI/Kizilelma
+Object/Draw/Shadow/Side/ArmorSetFlag/ASCII validation: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Focus files:
+- Turkey_AWACS.ini: sha256=62793f79d73487cfdaa54b6171622938bec0ea1c4f2bb6acfa13b9cc19fcae0c origin=big
+- Turkey_Akinci.ini: sha256=7d31b96f8022b0585c2f05b15f1e7182beecae97ab9902fa80fa8d00f3a23db7 origin=tree
+- Turkey_Bora.ini: sha256=f6f360f3e3f30dd0dbeb212f6861085f51cda9583fef1ccf164cf714e08a4737 origin=big
+- Turkey_EliteMaroonBerets.ini: sha256=10b488e4a99a888d58a9b2f247d4602b7357b8b719d2ed6738911ce66d6f194e origin=big
+- Turkey_F16Block70.ini: sha256=68d3d231c8eb3cbca254004212cb75616d05540ce8fa5753205075e1f85832ae origin=tree
+- Turkey_Kizilelma.ini: sha256=529612ded82bbb249072cc8bfb2940d8f0cdbb64218525e37897e8714bffc69a origin=tree
+- Turkey_TB2.ini: sha256=a201031876be6af923ebc66899b6078bce17a50f1d097a876da5f0aa45dece6d origin=tree
+- Turkey_Tu-22M3.ini: sha256=625d8effbfae120e4150cf390ea5da40fb143c13bf911e7cc0422c144b62d0f9 origin=tree
+- Turkey_WeaponObjects.ini: sha256=24aab85d221175559f4acb05baac1e9c6d2ee724f81c9e93e0b738828c08731d origin=big
+
+BIG SHA256: 73a7ceb017866149b4d3e6cd760e10d0de5b360ce55fb8048d11e643bb69417b
+BIG SIZE: 384630559
+FINAL: PASS

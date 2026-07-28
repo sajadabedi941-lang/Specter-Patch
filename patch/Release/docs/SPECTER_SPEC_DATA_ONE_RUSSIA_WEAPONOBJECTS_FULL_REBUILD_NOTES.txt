@@ -1,0 +1,8 @@
+RUSSIA WEAPONOBJECTS FULL REBUILD
+================================
+deleted_shas=['3c3cb49a72a386302c1eba37d3c69552f3fe25a296d72fcb80e2d1b2e72d4bd8']
+new_sha=d8dee913410cfb98f219d1f05f468619332e065df283028355f0d28e24078813
+stats={'kind_shell': 31, 'rebuilt_shell': 31, 'kind_missile': 81, 'rebuilt_missile': 81, 'kind_bv_parent': 17, 'rebuilt_bv': 17, 'kind_bomb': 3, 'rebuilt_bomb': 3, 'kind_stub': 3, 'rebuilt_stub': 3, 'objects': 135}
+donors=RaptorJetMissile,SpectreHowitzerShell,AuroraBomb
+clientupdate=REMOVED
+side=Russia

@@ -1,0 +1,26 @@
+SPECTER INDIA ELITE STRIKE (EGYPT SU-25K DONOR) - VERIFY REPORT
+===============================================================
+VERDICT: PASS
+Replaced: India_EliteStrike.ini (removed USA F35C clone)
+Donor:    Egypt_Su-25K (complete working fighter from another faction)
+Changes vs donor: Object/Side/DisplayName/BuildCost/Time ONLY
+Removed USA-only: Upgrade_AmericaCountermeasures cameos + modules
+Fixed: duplicate Shadow
+
+BIG SHA256: e41d887ffd0a60f4caac24a2c4b15ab4f0c4a7533e22534eb3d77dda6a1ac430
+BIG SIZE:   384513380
+EliteStrike SHA256: 0f9af6019f0976cd219d393f94fda3e17bb6d74eeb933513a0f48aa13b665533
+Patched support files: ['Data\\English\\FactionExpansion_PhaseG_Strings.txt', 'Data\\INI\\CommandButton_PhaseG_Identity.ini']
+
+Validation: pre-write PASS, extract-from-BIG PASS
+PASS: replaced EliteStrike file
+PASS: EliteStrike object present
+PASS: Side India
+PASS: uses Irq_Su25k model
+PASS: uses irq_su25k portrait
+PASS: no F35C / US_F35A
+PASS: no AmericaCountermeasures
+PASS: single Shadow
+PASS: Construct command present
+PASS: no TejasMk2
+FINAL: PASS

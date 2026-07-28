@@ -1,0 +1,19 @@
+SPECTER RUSSIA AD TOR-M FIX - VERIFY REPORT
+==========================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Donor: RussiaTankTorM2M from current DATA BIG
+Identity: Russia_AD_TorM / Side Russia / OBJECT:Russia_AD_TorM
+Balance: cost=1529 time=14.9 health=420 vision=300 shroud=260
+Role: Patch_Weapon_TorM vs BALLISTIC_MISSILE AIRCRAFT
+Non-ASCII: 0
+Object/Draw/Shadow/ModuleTag/WeaponSet/Behavior/End: PASS
+W3D/art/weapon/armor/locomotor/prerequisite refs: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Old INI SHA256: a72d1291fdeb3da3aa72b3049d0abc8d34857c20d906d4068f19e717754021f3
+New INI SHA256: e17421da0ebd12d7bc4aac9375c6fc27797d7309d80840c66f6621eb38399230
+BIG SHA256: b07014d031c9f5a808898583e49a45fb09fcec0bf521714b50ad335a64133a48
+BIG SIZE: 384630637
+FINAL: PASS

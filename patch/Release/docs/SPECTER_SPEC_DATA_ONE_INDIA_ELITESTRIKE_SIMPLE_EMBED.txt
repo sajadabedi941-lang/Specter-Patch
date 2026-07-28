@@ -1,0 +1,10 @@
+EMBED + EXTRACT TEST
+====================
+EliteStrike entry: Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_EliteStrike.ini
+Donor: Egypt_Su-25K
+embedded_sha256: 0f9af6019f0976cd219d393f94fda3e17bb6d74eeb933513a0f48aa13b665533
+extracted_sha256: 0f9af6019f0976cd219d393f94fda3e17bb6d74eeb933513a0f48aa13b665533
+full_ini_validation: PASS
+USA_F35C_refs: NONE
+BIG_sha256: e41d887ffd0a60f4caac24a2c4b15ab4f0c4a7533e22534eb3d77dda6a1ac430
+BIG_size: 384513380

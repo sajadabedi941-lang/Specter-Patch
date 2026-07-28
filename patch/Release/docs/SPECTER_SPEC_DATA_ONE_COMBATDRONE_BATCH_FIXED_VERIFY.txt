@@ -1,0 +1,23 @@
+SPECTER COMBATDRONE BATCH FIX - VERIFY REPORT
+============================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Donor: USA AmericaDronesMq9 (France/Germany pattern)
+Countries: India, Sweden, SouthKorea, SaudiArabia, Japan, Italy
+Removed per file: non-ASCII, SCIENCE_UAEStealthJet, duplicate Shadow
+Kept: Object/Side/Country_Weapon_ATGM/Country_AdvancedAirBase/cost-time
+
+BIG SHA256: 5bd79435e43c75b986e5720e3380ef840dd1c418adc1d2030af84a9bf02b46a0
+BIG SIZE:   384522253
+
+Per-country SHA256:
+  India_CombatDrone.ini 943aa7ef3ac7ee5fdafcdf95c437b2662baea0c35a351272400c12cae436e73c cost=794 time=11.3
+  Sweden_CombatDrone.ini b238e23a241f157187f6872293b7944c486c641853327a04e9e0f45cf766a183 cost=945 time=11.1
+  SouthKorea_CombatDrone.ini f96d8def39477687791fdc46507fd42af52fdfc958ce8079a7c37745f264a6ff cost=826 time=10.9
+  SaudiArabia_CombatDrone.ini 0898b8b5a5313516a542d41ea2db91b195c9a24dbe96949b4e0030e19b40bf82 cost=1068 time=11.3
+  Japan_CombatDrone.ini 33b349eb4b48ee01f105dc201671e1e1ca43fdb0325eeaee68cf2119d10aa53f cost=1049 time=11.1
+  Italy_CombatDrone.ini 62367ab5460f230a377b7a20fd650b93058bb1dd38aa0477b3426890b7e8dcd4 cost=988 time=11.3
+
+Validation: donor PASS, pre-write PASS, extract-from-BIG PASS (all 6)
+Preserved: France/Germany CombatDrone, India EliteStrike/CC/MHQ
+FINAL: PASS

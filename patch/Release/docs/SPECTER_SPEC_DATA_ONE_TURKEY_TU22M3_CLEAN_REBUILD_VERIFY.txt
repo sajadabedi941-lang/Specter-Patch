@@ -1,0 +1,19 @@
+SPECTER TURKEY TU-22M3 CLEAN DELETE+REBUILD - VERIFY REPORT
+===========================================================
+VERDICT: PASS
+Method: DELETE prior Turkey_Tu-22M3(+AI) BIG entries, INSERT new clones
+Donor: Russia RussiaJetTu22M3M (validated RUS_TU22M3M W3D)
+Old Su-34 roster clone content: NOT reused
+Removed entries: 2
+Final Turkey Tu-22M3 INI entries: 2 (main + AI)
+Object=Turkey_Tu-22M3 / Turkey_Tu-22M3_AI Side=Turkey
+Modules: Object/Draw/WeaponSet/Locomotor/Geometry/CommandSet/Effects
+BuildVariations: ABSENT
+Turkey aircraft foreign-BuildVariations scan: PASS
+INI/W3D/Weapon/Locomotor validation: PASS
+Old broken hashes absent: PASS
+
+Turkey_Tu-22M3.ini SHA256: 9d45d99c23bfda68e04e65741d6ae992d9d60967632296c04dec4ce4de843c58
+BIG SHA256: 92b20709320115bdc295f5582064932f91cbb7214f7ee044f79b57069ac1d9cf
+BIG SIZE: 384581575
+FINAL: PASS

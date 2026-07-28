@@ -1,0 +1,18 @@
+SPECTER TURKEY AIRBORNE CLEAN DELETE+REBUILD - VERIFY REPORT
+============================================================
+VERDICT: PASS
+Method: DELETE prior Turkey Airborne.ini, INSERT clean USA NavySeal Assault clone
+Donor: USA AmericaInfantryNavySeals_Assault (validated US_NavySeal / Spec_SF_Ind_A W3D)
+Old SpecOps multi-object / Iraq leftover content: NOT reused
+Removed entries: 1
+Final Object=Turkey_Airborne Side=Turkey CommandSet=Turkey_AirborneCommandSet
+Modules: Object/Draw/WeaponSet/Locomotor/Geometry/Behavior/Effects
+OCL parachute payloads retargeted to Turkey_Airborne
+Turkey integrity hard gate (Airborne/BV/dangling SpecOps): PASS
+Turkey integrity soft-warns (pre-existing outside Airborne): 97
+INI/W3D validation (Turkey_Airborne): PASS
+
+Turkey_Airborne.ini / Airborne.ini SHA256: 38cb575153978291e33d2edd9f91387336d61c2a15eaf6cbcd9b469e124ea536
+BIG SHA256: cf06a04d73eb55eee0c4d5a4138dad2acee6fd024bf5ec560e742dd7ea03cdfe
+BIG SIZE: 384523481
+FINAL: PASS

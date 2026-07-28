@@ -1,0 +1,19 @@
+SPECTER AIRCRAFT AAB GLOBAL RUNTIME FIX - VERIFY REPORT
+=======================================================
+VERDICT: PASS
+Rechecked downloaded GitHub release BIG: MATCH
+Prior embedded ASCII-fixed INI: MATCH
+Root cause: invalid ArmorSetFlag fields inside ArmorUpgrade modules
+Invalid fields removed: 27
+Objects validated: 182
+Object/Draw/Shadow/ModuleTag/Behavior/WeaponSet/End: PASS
+ArmorUpgrade module schema: PASS
+W3D/Art/Weapon/CommandSet/Armor/Upgrade/OCL/SpecialPower refs: PASS
+Extract-from-BIG byte match: PASS
+Unrelated BIG entries changed: 0
+
+Old INI SHA256: 3c7e7d404cd62e3014310b3c62247c8274ae81c3a50e9c6d5acf8fcee8180baf
+New INI SHA256: 3f3c52f78450e1a9ac7480292ddf0fa7bdb065ce0c00043826b5cf024887b14e
+BIG SHA256: 8ed07b1ccd41798fa73ea57db7f376d3c53f7dc1cd3336ceae3094910271ec67
+BIG SIZE: 384627166
+FINAL: PASS

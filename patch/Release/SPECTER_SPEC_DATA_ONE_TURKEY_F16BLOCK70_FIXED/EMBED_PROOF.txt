@@ -1,0 +1,8 @@
+EMBED + EXTRACT
+===============
+Turkey_F16Block70 restored+validated
+Turkey_F16V variants restored
+changed=28
+byte_match=YES
+foreign_BuildVariations=0
+BIG_sha256=fe90e209ca2daf61e9922d8a4adc35b9eb6fd377790c7e5f59e11f713a3328b9

@@ -1,0 +1,11 @@
+EMBED + EXTRACT TEST
+====================
+entry=Data\INI\Object\Specter\PatchSystems\AirForceExpansion\Aircraft_AirForceExpansion.ini
+source_sha256=f03c2fd864a1bc0225283d3975e6de6fd6fb6acfd5b66b768d638e9d4dec8b5d
+embedded_sha256=f03c2fd864a1bc0225283d3975e6de6fd6fb6acfd5b66b768d638e9d4dec8b5d
+extracted_sha256=f03c2fd864a1bc0225283d3975e6de6fd6fb6acfd5b66b768d638e9d4dec8b5d
+byte_match=YES
+full_validation=PASS
+ArmorSetFlag_remaining=0
+unrelated_changed=0
+BIG_sha256=342e31979364f52b95d3ece3dd8f467f63e206cd3670f5b0db0efde61d3dfbc2

@@ -1,0 +1,20 @@
+SPECTER TURKEY SPECIALFORCES CLEAN DELETE+REBUILD - VERIFY REPORT
+=================================================================
+VERDICT: PASS
+Method: DELETE prior Turkey SpecialForces.ini, INSERT clean USA NavySeals clone
+Donor: USA AmericaInfantryNavySeals (validated US_NavySeal / Spec_SF_Ind_E W3D)
+Old multi-object Iraq-copy content: NOT reused
+Removed entries: 1
+Final Object=Turkey_SpecialForces Side=Turkey CommandSet=Turkey_SpecialForcesCommandSet
+Modules: Object/Draw/WeaponSet/Armor/Locomotor/Behavior/Effects
+Construct button Object retargeted to Turkey_SpecialForces
+MaroonBerets BuildVariations to deleted variants: REMOVED
+Prior Turkey_Airborne fix: PRESERVED
+Turkey integrity hard gate: PASS
+Turkey integrity soft-warns (pre-existing outside SF): 96
+INI/W3D/Weapon/Armor validation (Turkey_SpecialForces): PASS
+
+Turkey_SpecialForces.ini / SpecialForces.ini SHA256: 2c31b95c8674ecba7c6d4c8eab85fa39a15024336ab32d70244c2def8e60caba
+BIG SHA256: 02f0f64f55fa2ae30cbb18097ea4c26ead6137ea701c105ba817baeaac7707e4
+BIG SIZE: 384475601
+FINAL: PASS

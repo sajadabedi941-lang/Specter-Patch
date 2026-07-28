@@ -1,0 +1,12 @@
+SPECTER RUSSIA WEAPONOBJECTS CRASH FIX - VERIFY REPORT
+======================================================
+VERDICT: PASS
+Crash file: Russia_WeaponObjects.ini
+Fix: DELETE+INSERT Russia_WeaponObjects; CU Ends; W3D/BV remaps; Model=None donors
+Objects preserved: 135
+Russia unit weapon->projectile W3D scan: PASS
+Extract byte-match: PASS
+BIG SHA256: f5c7cf07455150734a65911ee5c0c53849239b5b0492bc9dafdc2c6a4c224560
+WO SHA256: a5d5eedc4217ec4d198bd1238c82b0318b144b64390cdf6bfd53708c597958ad
+BIG SIZE: 384429326
+FINAL: PASS

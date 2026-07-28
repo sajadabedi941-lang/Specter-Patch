@@ -1,0 +1,11 @@
+MISSING W3D MODEL REMAPS (USA/Iraq ART donors)
+==============================================
+AVTankShel->Irq_255mm_Roundx2
+SCUD_M-IRAQ->Irq_R11_M
+Turkey_Shaheed->Irq_Quds5
+Turkey_Sarab7_M->Iraq_Sarab7_Mx5
+Turkey_Alhusain_W->Iraq_Alhusain_Wx4
+ExMsslTm->US_FGM114x4
+EXStinger01->US_Stinger
+AVRaptor_M->AIM-120
+UVRockBug_m->122mmGrad

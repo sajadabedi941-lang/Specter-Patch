@@ -1,0 +1,16 @@
+SPECTER RUSSIA WEAPONOBJECTS FULL REBUILD - VERIFY REPORT
+========================================================
+VERDICT: PASS
+Crash: EXCEPTION_ACCESS_VIOLATION @ 00000000
+Fix: FULL recreate of Russia_WeaponObjects from USA/stock donors
+Objects preserved: 135
+ClientUpdate: NONE
+Russia WO entries in BIG: 1
+Old broken hash reused: NO
+Weapon/Projectile/FX/Locomotor/Armor validation: PASS
+Russia unit weapon->projectile W3D scan: PASS
+Extract byte-match: PASS
+BIG SHA256: 09bf072732737fa8bff438179c57e644f20d5404d3b28fd7c809d4d9e72fef32
+WO SHA256: d8dee913410cfb98f219d1f05f468619332e065df283028355f0d28e24078813
+BIG SIZE: 384342868
+FINAL: PASS

@@ -1,0 +1,10 @@
+EMBED + EXTRACT TEST
+====================
+India_MilitaryHQ entry: Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_MilitaryHQ.ini
+embedded_sha256: 8ee8db3c9d91901bc6b60c4489429dd555664cf42b77482c99e5cedd15d4ec43
+extracted_sha256: 8ee8db3c9d91901bc6b60c4489429dd555664cf42b77482c99e5cedd15d4ec43
+bytes_match_replacement: YES
+full_ini_validation: PASS
+Irq_Adnan_tokens: NONE
+BIG_sha256: 50460a94ec6c05325466bc8d8377caf8cdd06fe706a7bb9c69a5bc84b5f5b8a2
+BIG_size: 384521707

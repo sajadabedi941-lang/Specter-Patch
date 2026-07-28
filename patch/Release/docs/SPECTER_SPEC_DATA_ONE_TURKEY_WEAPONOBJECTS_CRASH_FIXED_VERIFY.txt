@@ -1,0 +1,13 @@
+SPECTER TURKEY WEAPONOBJECTS NULL CRASH FIX - VERIFY REPORT
+===========================================================
+VERDICT: PASS
+Crash: EXCEPTION_ACCESS_VIOLATION @ 00000000
+Cause: corrupted/missing projectile W3D (Turkey_9M14 / UVRockBug_m chains)
+Fix: DELETE+INSERT Turkey_WeaponObjects; retarget 9M14_AT-3A; remap W3D
+Objects preserved: 81
+Turkey unit weapon->projectile W3D scan: PASS
+Extract byte-match: PASS
+BIG SHA256: 509229e4ee1ccc06b9facda6f63f03b6683250a46dbd45919921f686bf8b28f0
+WO SHA256: 6da34a98c9cd84695709793802d19c9b730e07deb81e246d5bba3b8f58128f24
+BIG SIZE: 384440279
+FINAL: PASS

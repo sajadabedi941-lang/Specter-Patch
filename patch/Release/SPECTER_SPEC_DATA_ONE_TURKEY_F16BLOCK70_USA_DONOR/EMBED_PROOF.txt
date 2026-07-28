@@ -1,0 +1,11 @@
+EMBED + EXTRACT
+===============
+entry=Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_F16Block70.ini
+source_sha256=20d2ef3d1aa9fa73f9da9b373133e4bbc5d41d1737016dcf2e0665427f5b54de
+embedded_sha256=20d2ef3d1aa9fa73f9da9b373133e4bbc5d41d1737016dcf2e0665427f5b54de
+extracted_sha256=20d2ef3d1aa9fa73f9da9b373133e4bbc5d41d1737016dcf2e0665427f5b54de
+byte_match=YES
+donor=AmericaJetF-16C_AG
+BuildVariations=REMOVED
+Side=Turkey
+BIG_sha256=e06e22898fe075fc3e7b316125f842150a7ad10fcb111a42dff99c8a72d0b943

@@ -1,0 +1,11 @@
+DELETE + INSERT PROOF
+=====================
+removed_count=1
+removed_shas=['20d2ef3d1aa9fa73f9da9b373133e4bbc5d41d1737016dcf2e0665427f5b54de']
+new_sha256=1ad5e2bacf00cc25a6435a9bf1194a083acf9107f6ed49e9b693b1f3ef1374a2
+embedded_sha256=1ad5e2bacf00cc25a6435a9bf1194a083acf9107f6ed49e9b693b1f3ef1374a2
+extracted_sha256=1ad5e2bacf00cc25a6435a9bf1194a083acf9107f6ed49e9b693b1f3ef1374a2
+old_hash_reuse=NO
+byte_match=YES
+header=SPECTER CLEAN REBUILD
+BIG_sha256=e0a5d81dd7d7c2e08200691e3c9d9c1ef40e9e87b766859ca5f23e60b3f6ffb4

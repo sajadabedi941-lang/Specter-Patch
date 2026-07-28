@@ -1,0 +1,10 @@
+EMBED + EXTRACT TEST
+====================
+turkey_star_count=90
+changed_count=70
+byte_match=YES
+full_validation=PASS
+ArmorSetFlag_remaining=0
+non_ascii_remaining=0
+unrelated_changed=0
+BIG_sha256=73a7ceb017866149b4d3e6cd760e10d0de5b360ce55fb8048d11e643bb69417b

@@ -1,0 +1,32 @@
+SPECTER INDIA MILITARY HQ (USA DONOR / EGYPT MHQ METHOD) - VERIFY REPORT
+=======================================================================
+VERDICT: PASS
+Patched INSIDE: _SPEC_DATA_ONE.big
+Path: Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_MilitaryHQ.ini
+Donor: AmericaCommandCenter (same method as verified Egypt_MilitaryHQ)
+Keep: Object/Side=India/India_MilitaryHQCommandSet/DisplayName
+Removed: Irq_Command, irq_comndcntr, Iraq_Adnan1, SUPERWEAPON_Iraqi*, non-ASCII
+
+Old India_MHQ SHA256: 71cd4feb1ba02eb1dd0ee07ab38de0c6d1b4864b8aea5f4fabaed27bff860eb0
+New India_MHQ SHA256: 8ee8db3c9d91901bc6b60c4489429dd555664cf42b77482c99e5cedd15d4ec43
+BIG SHA256: 50460a94ec6c05325466bc8d8377caf8cdd06fe706a7bb9c69a5bc84b5f5b8a2
+BIG SIZE:   384521707
+
+Validation: donor PASS, pre-write PASS, extract-from-BIG PASS
+Checked: Object/Draw/Shadow/ModuleTags/Ends/W3D/CommandSet/OCL/SpecialPower
+Preserved: France/Germany CombatDrone, India_EliteStrike, India_CommandCenter
+PASS: replaced India_MilitaryHQ
+PASS: Object India_MilitaryHQ
+PASS: Side India
+PASS: India CommandSet
+PASS: USA model US_Command
+PASS: USA portrait
+PASS: no Irq_Command
+PASS: no irq_comndcntr
+PASS: no Iraq_Adnan1
+PASS: no SUPERWEAPON_Iraqi
+PASS: single Shadow
+PASS: ASCII only
+PASS: COMMANDCENTER KindOf
+PASS: Draw present
+FINAL: PASS

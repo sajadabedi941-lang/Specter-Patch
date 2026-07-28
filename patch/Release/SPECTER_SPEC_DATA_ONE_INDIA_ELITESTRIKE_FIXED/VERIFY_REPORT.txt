@@ -1,0 +1,27 @@
+SPECTER INDIA ELITE STRIKE (USA F35C DONOR) - VERIFY REPORT
+============================================================
+VERDICT: PASS
+Removed: India_MultiroleFighter.ini (crashing J10C clone)
+Added:   India_EliteStrike.ini
+Donor:   AmericaJetF35C / F35C.ini (proven working Object structure)
+Changes vs donor: Object/Side/DisplayName/Prereq/BuildCost/Time ONLY
+
+BIG SHA256: 690749adbccff52d899b405a0c6d5479f3c981f4e65178aa54b4c4a3ed8313dc
+BIG SIZE:   384518994
+EliteStrike SHA256: 23803f8bbcafde0221a74187352956c69aead11abd9906eef607bdc4559f4ff5
+Patched support files: ['Data\\English\\FactionExpansion_PhaseG_Strings.txt', 'Data\\INI\\CommandButton_PhaseG_Identity.ini', 'Data\\INI\\CommandSet_AdvancedAirBase.ini', 'Data\\INI\\CommandSet_India.ini']
+
+Validation: donor PASS, pre-write PASS, extract-from-BIG PASS
+Checked: Object/Draw/WeaponSet/Shadow/ModuleTags/Ends/Weapon refs/W3D
+PASS: removed Multirole file
+PASS: added EliteStrike file
+PASS: no Multirole object
+PASS: no Multirole path
+PASS: EliteStrike object present
+PASS: Construct command present
+PASS: button Object=India_EliteStrike
+PASS: uses USA F35C CommandSet
+PASS: uses US_F35A model
+PASS: uses Nat_f35a portrait
+PASS: no TejasMk2
+FINAL: PASS

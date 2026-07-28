@@ -1,5 +1,5 @@
 TURKEY FACTION FULL RESET — VALIDATION REPORT
-Turkey Objects defined: 185
+Turkey Objects defined: 170
 Turkey_WeaponObjects Objects remaining: 0 (want 0)
 Projectiles Objects remaining: 0 (want 0)
 
@@ -11,11 +11,7 @@ KEY AIRCRAFT:
   PASS Turkey_Kizilelma: objects=['Turkey_Kizilelma'] side=['Turkey'] weapons=['4x_AGM114N_Mq9', '2x_GBU12II_Mq9']
   PASS Turkey_Tu-22M3: objects=['Turkey_Tu-22M3'] side=['Turkey'] weapons=['Russia_Weapon_Kh32_Tu22M3']
 
-CRASH-LEVEL ISSUES: 0
+CRASH-LEVEL ISSUES: 1
+  MISSING_PREREQ_OBJECT: RussiaIndustrialComplex <- Data/INI/Object/Specter/Turkey Armed Forces/Airforce/Turkey_Mig-25BM.ini
 
-RESULT: PASS — no missing Weapon/ProjectileObject/Prereq/OCL refs for Turkey reset scope.
-
-SKIRMISH TEST STATUS:
-  Automated Windows Zero Hour Skirmish cannot run in this Linux cloud environment.
-  Overlay BIG packed and INI crash-level validation: PASS.
-  Manual Skirmish checklist is in README_INSTALL.txt.
+RESULT: FAIL

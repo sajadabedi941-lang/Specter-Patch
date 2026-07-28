@@ -1,0 +1,105 @@
+EXACT CRASH FORENSICS — FINAL VERDICT
+=====================================
+
+A) Exact crash reason
+---------------------
+Game initializes Object Egypt_CommandCenter from:
+
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+
+inside vendor _SPEC_DATA_ONE.big (SHA of that INI =
+1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61).
+
+That INI is an Iraq-donor clone of Egypt's Command Center. During object bind,
+it wires Egypt's CommandCenter to Iraq portraits/models/gunship/OCLs:
+
+  SelectPortrait/ButtonImage = irq_comndcntr
+  Model                      = Irq_Command
+  GunshipTemplateName        = Iraq_Adnan1
+  OCL                        = SUPERWEAPON_IraqiSFInsertion
+  OCL                        = SUPERWEAPON_IraqiParadrop
+  OCL/UpgradeOCL             = SUPERWEAPON_IraqiCruiseStrike1/2/3
+  OCL                        = SUPERWEAPON_IraqReconnaissance
+
+Uncaught Exception is raised while loading that file.
+
+Install root cause:
+  Many "fix" packages leave the broken vendor _SPEC_DATA_ONE.big in place
+  (or reinstall a playable package that still embeds sha 1b559b9e…).
+  If that BIG is what the game loads for Data, Egypt_CommandCenter crashes.
+
+B) Exact file and line
+----------------------
+File: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+BIG:  _SPEC_DATA_ONE.big (vendor SPECTER_BIG_MERGE and several playable copies)
+
+  L18:  Object Egypt_CommandCenter
+  L25:  SelectPortrait         = irq_comndcntr
+  L26:  ButtonImage            = irq_comndcntr
+  L35:  Model                  = Irq_Command
+  L128: OCL                    = SUPERWEAPON_IraqiSFInsertion
+  L146: GunshipTemplateName    = Iraq_Adnan1
+  L153: OCL                    = SUPERWEAPON_IraqiParadrop
+  L159: UpgradeOCL             = … SUPERWEAPON_IraqiCruiseStrike3
+  L160: UpgradeOCL             = … SUPERWEAPON_IraqiCruiseStrike2
+  L161: OCL                    = SUPERWEAPON_IraqiCruiseStrike1
+  L172: OCL                    = SUPERWEAPON_IraqReconnaissance
+
+C) Exact broken references
+--------------------------
+  irq_comndcntr
+  Irq_Command
+  Iraq_Adnan1
+  SUPERWEAPON_IraqiSFInsertion
+  SUPERWEAPON_IraqiParadrop
+  SUPERWEAPON_IraqiCruiseStrike1
+  SUPERWEAPON_IraqiCruiseStrike2
+  SUPERWEAPON_IraqiCruiseStrike3
+  SUPERWEAPON_IraqReconnaissance
+
+Note: several of these names exist elsewhere as Iraq faction assets/OCLs.
+The failure mode is using them as Egypt_CommandCenter's identity/bindings
+in the vendor Egypt CC INI that the game actually loads — not "Egypt deleted".
+
+D) All duplicate copies
+-----------------------
+Scan of release BIGs: 93 Egypt_CommandCenter.ini copies / 12 unique content SHAs.
+
+BROKEN sha 1b559b9e… locations include:
+  patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_BIG_MERGE_PLAYABLE/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_BRITAIN_F35B_SAUDI_DRONE_PLAYABLE/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_MILITARYHQ_USA_PLAYABLE/_SPEC_DATA_ONE.big
+  patch/Release/SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE/_SPEC_DATA_ONE.big
+
+Inside a correct single Data BIG:
+  Object Egypt_CommandCenter definitions = 1
+  AmericaCommandCenter = separate object (kept)
+  Iraq_CommandCenter   = separate object (kept)
+
+Load order (Windows case-insensitive alphabetical, later wins):
+  _SPECTER_* can override _SPEC_DATA_ONE IF both are installed.
+  If only broken SPEC Data is installed, broken Egypt CC always wins.
+  Reliable fix: REPLACE _SPEC_DATA_ONE.big; remove other Data overlays.
+
+E) Recommended / applied fix plan
+---------------------------------
+1. Do NOT delete Egypt faction / Object Egypt_CommandCenter / Side=Egypt.
+2. Ship a FULL Data BIG as drop-in _SPEC_DATA_ONE.big that:
+   - Keeps all vendor Specter content + prior expansion repairs
+   - Contains exactly one Egypt_CommandCenter.ini
+   - Rebuilds that INI from USA AmericaCommandCenter donor
+   - ART: us_commandcenter / US_Command / US_COM_Strb
+   - Gunship: US_E3G_AWACS
+   - Safe OCLs: Paradrop1 / Tu22 / Tomahawk / FOAB / SpySatellite
+   - AWACS: SpecialAbility + SpectreGunshipDeploymentUpdate
+   - BuildCost=2000 BuildTime=45 MaxHealth=5000
+   - CommandSet=Egypt_CommandCenterCommandSet
+3. Keep _SPEC_ART_ONE.big; delete other Specter Data BIGs.
+4. Validate parser / Egypt Object dups 0 / missing Egypt CC refs 0.
+
+Forensic artifacts in this folder:
+  FORENSIC_01_BIG_COPIES.txt
+  FORENSIC_02_TO_07.txt
+  CRASH_FORENSIC_VERDICT.txt

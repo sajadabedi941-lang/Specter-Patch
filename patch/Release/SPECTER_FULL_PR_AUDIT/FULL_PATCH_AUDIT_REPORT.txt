@@ -1,0 +1,31 @@
+SPECTER PATCH AUDIT (post-remediation)
+============================================================
+INI files: 1442
+Objects=2435 dups=0
+Critical Iraq identity hits: 3
+irq_ UI image refs (ButtonImage/SelectPortrait): 582
+CommandSet missing defs: 0
+Turkey: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Turkey', '2000', '45.0           ; in seconds', '5000.0', 'Turkey_CommandCenterCommandSet') MHQ=('Turkey', '1615', '3.2           ; in seconds', '2400.0', 'Turkey_MilitaryHQCommandSet')
+Egypt: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Egypt', '2000', '45.0           ; in seconds', '5000.0', 'Egypt_CommandCenterCommandSet') MHQ=('Egypt', '1615', '3.2           ; in seconds', '2400.0', 'Egypt_MilitaryHQCommandSet')
+India: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('India', '2000', '45.0           ; in seconds', '5000.0', 'India_CommandCenterCommandSet') MHQ=('India', '1696', '3.2           ; in seconds', '2400.0', 'India_MilitaryHQCommandSet')
+Pakistan: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Pakistan', '2000', '45.0           ; in seconds', '5000.0', 'Pakistan_CommandCenterCommandSet') MHQ=('Pakistan', '1373', '3.2           ; in seconds', '2400.0', 'Pakistan_MilitaryHQCommandSet')
+UAE: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('UAE', '2000', '45.0           ; in seconds', '5000.0', 'UAE_CommandCenterCommandSet') MHQ=('UAE', '1809', '3.2           ; in seconds', '2400.0', 'UAE_MilitaryHQCommandSet')
+SaudiArabia: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('SaudiArabia', '2000', '45.0           ; in seconds', '5000.0', 'SaudiArabia_CommandCenterCommandSet') MHQ=('SaudiArabia', '1809', '3.2           ; in seconds', '2400.0', 'SaudiArabia_MilitaryHQCommandSet')
+Israel: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Israel', '?', '?', '?', 'Israel_CommandCenterCommandSet') MHQ=('Israel', '1776', '3.1           ; in seconds', '2400.0', 'Israel_MilitaryHQCommandSet')
+Ukraine: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Ukraine', '2000', '45.0           ; in seconds', '5000.0', 'Ukraine_CommandCenterCommandSet') MHQ=('Ukraine', '1454', '3.2           ; in seconds', '2400.0', 'Ukraine_MilitaryHQCommandSet')
+Syria: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Syria', '2000', '45.0           ; in seconds', '5000.0', 'Syria_CommandCenterCommandSet') MHQ=('Syria', '1421', '3.4           ; in seconds', '2400.0', 'Syria_MilitaryHQCommandSet')
+Libya: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('Libya', '2000', '45.0           ; in seconds', '5000.0', 'Libya_CommandCenterCommandSet') MHQ=('Libya', '1454', '3.4           ; in seconds', '2400.0', 'Libya_MilitaryHQCommandSet')
+SouthAfrica: CC=1 MHQ=1 CC(Side,cost,time,HP,CS)=('SouthAfrica', '2000', '45.0           ; in seconds', '5000.0', 'SouthAfrica_CommandCenterCommandSet') MHQ=('SouthAfrica', '1615', '3.2           ; in seconds', '2400.0', 'SouthAfrica_MilitaryHQCommandSet')
+
+ERRORS
+
+Total errors: 0
+
+CRITICAL IRAQ HITS
+Data/INI/CommandButton.ini:9755: Object        = Iraq_VT72B
+Data/INI/CommandButton.ini:14720: Object           = IraqSystemSpecialPowerShortcut
+Data/INI/CommandSet.ini:6837: CommandSet SpecialPowerShortcutIraq
+
+Total critical: 3
+
+MISSING COMMANDSETS

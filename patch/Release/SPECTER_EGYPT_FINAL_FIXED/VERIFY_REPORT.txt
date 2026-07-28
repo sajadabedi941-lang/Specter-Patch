@@ -1,0 +1,31 @@
+SPECTER EGYPT FINAL FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_EGYPT_FINAL_FIXED.big
+BIG SHA256: c1d6dc12801dfa0b908bc060997797a1edf2690c9c3dbf19977f4d4362b317be
+Egypt_CommandCenter.ini SHA256: 81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+Broken SPEC CC SHA256 (must not match): 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Size: 383397892 bytes
+Entries: 2787
+Source: patch/Release/SPECTER_EGYPT_COMMANDCENTER_FIXED/_SPECTER_EGYPT_COMMANDCENTER_FIXED.big
+
+INSTALL (mandatory):
+  Rename/copy this BIG over Data\_SPEC_DATA_ONE.big
+  Remove ALL other Specter Data overlay BIGs
+  Keep _SPEC_ART_ONE.big
+
+PASS: 11  FAIL: 0
+
+PASS: ONLY ONE Egypt_CommandCenter.ini entry
+PASS: CC content sha != broken SPEC (81dd3fcd672bf68d…)
+PASS: Duplicate Objects = 0
+PASS: Duplicate CommandSets (same-file) = 0
+PASS: Egypt_CommandCenter Object defined once
+PASS: No Iraq/irq crash tokens in Egypt_CommandCenter
+PASS: INI parser PASS
+PASS: Missing references = 0
+PASS: Egypt identity + USA donor ART OK
+PASS: AmericaCommandCenter preserved
+PASS: Game initialization PASS (static)
+
+FINAL: PASS

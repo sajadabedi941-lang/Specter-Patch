@@ -1,0 +1,168 @@
+{
+  "fixes": [
+    {
+      "line": 45,
+      "object": "Turkey_SpecialForces_Akms",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_exp"
+    },
+    {
+      "line": 46,
+      "object": "Turkey_SpecialForces_Akms",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_exp"
+    },
+    {
+      "line": 600,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_at"
+    },
+    {
+      "line": 601,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_at"
+    },
+    {
+      "line": 1068,
+      "object": "Turkey_SpecialForces_Rpk",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mg"
+    },
+    {
+      "line": 1069,
+      "object": "Turkey_SpecialForces_Rpk",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mg"
+    },
+    {
+      "line": 1558,
+      "object": "Turkey_SpecialForces_Mks",
+      "field": "SelectPortrait",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mks"
+    },
+    {
+      "line": 1559,
+      "object": "Turkey_SpecialForces_Mks",
+      "field": "ButtonImage",
+      "old": "rus_spetsnaz",
+      "new": "us_seal_mks"
+    }
+  ],
+  "btn_fixes": [
+    {
+      "line": 538,
+      "field": "ButtonImage",
+      "old": "irq_specialforce",
+      "new": "us_seal_exp"
+    }
+  ],
+  "iraq_baseline": [
+    {
+      "broken_line": 43,
+      "object": "Turkey_SpecialForces_Akms",
+      "field": "SelectPortrait",
+      "old": "irq_specialforce",
+      "new": "us_seal_exp"
+    },
+    {
+      "broken_line": 44,
+      "object": "Turkey_SpecialForces_Akms",
+      "field": "ButtonImage",
+      "old": "irq_specialforce",
+      "new": "us_seal_exp"
+    },
+    {
+      "broken_line": 57,
+      "object": "Turkey_SpecialForces_Akms",
+      "field": "Model",
+      "old": "Irq_SF_Akms",
+      "new": "RUS_SpetsNaz_AK"
+    },
+    {
+      "broken_line": 598,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "SelectPortrait",
+      "old": "irq_spfs",
+      "new": "us_seal_at"
+    },
+    {
+      "broken_line": 599,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "ButtonImage",
+      "old": "irq_spfs",
+      "new": "us_seal_at"
+    },
+    {
+      "broken_line": 612,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AKMGP",
+      "new": "RUS_SpetsNaz_AK"
+    },
+    {
+      "broken_line": 725,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AT",
+      "new": "Spec_SF_Ind_T"
+    },
+    {
+      "broken_line": 735,
+      "object": "Turkey_SpecialForces_AKMGP",
+      "field": "Model",
+      "old": "Irq_SF_AT",
+      "new": "Spec_SF_Ind_T"
+    },
+    {
+      "broken_line": 1066,
+      "object": "Turkey_SpecialForces_Rpk",
+      "field": "SelectPortrait",
+      "old": "irq_spfmg",
+      "new": "us_seal_mg"
+    },
+    {
+      "broken_line": 1067,
+      "object": "Turkey_SpecialForces_Rpk",
+      "field": "ButtonImage",
+      "old": "irq_spfmg",
+      "new": "us_seal_mg"
+    },
+    {
+      "broken_line": 1080,
+      "object": "Turkey_SpecialForces_Rpk",
+      "field": "Model",
+      "old": "Irq_SF_RPK",
+      "new": "RUS_SpetsNaz_MG"
+    },
+    {
+      "broken_line": 1556,
+      "object": "Turkey_SpecialForces_Mks",
+      "field": "SelectPortrait",
+      "old": "irq_spfmks",
+      "new": "us_seal_mks"
+    },
+    {
+      "broken_line": 1557,
+      "object": "Turkey_SpecialForces_Mks",
+      "field": "ButtonImage",
+      "old": "irq_spfmks",
+      "new": "us_seal_mks"
+    },
+    {
+      "broken_line": 1570,
+      "object": "Turkey_SpecialForces_Mks",
+      "field": "Model",
+      "old": "Irq_SF_Tabuk",
+      "new": "RUS_SpetsNaz_MK"
+    }
+  ]
+}

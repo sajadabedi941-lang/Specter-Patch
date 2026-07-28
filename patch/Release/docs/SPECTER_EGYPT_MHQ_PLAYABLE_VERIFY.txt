@@ -1,0 +1,7 @@
+INI PARSE CHECK: PASS
+Egypt_MilitaryHQ loads without errors: PASS
+DATA a00152f4efed62c64db46df35d46370d8b92d85165f735d89271b7680ed51ae7
+ART  bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP 6d3ac2de1db83139ca22c5007dd90a8994ac33583b5adc240caa5733a4da0e26
+Replaced irq leftovers with USA MilitaryHQ donor.
+Kept Object Egypt_MilitaryHQ / Side=Egypt / Egypt command logic.

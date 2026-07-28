@@ -1,0 +1,17 @@
+TURKEY ABBASLAUNCHER.INI IRAQ/BROKEN-ASSET REPAIR REPORT
+========================================================================
+Unit preserved: Turkey_Alhussaien (+ TurkeyAbbasLauncherHulk)
+Kept: Side=Turkey, AlAbid/Hussiean weapons, Turkey_AlhussaienCommandSet, Generic8x8Locomotor_H, BuildCost 2301
+
+A) Fixes
+------------------------------------------------------------------------
+  Portrait/Button (object): irq_alabbas -> rus_rs24 (already applied in prior repair)
+  Models: Irq_Abbas_* -> RUS_RS24* (already applied in prior repair)
+  Animation: RU_RS28_DA.RU_RS28_DA -> RUS_RS24Camo.RUS_RS24Camo (missing donor)
+  [Command_ConstructTurkey_Alhussaien] ButtonImage = rus_rs24
+  [Command_ConstructTurkey_Alhussaien_AI] ButtonImage = rus_rs24
+  [Command_TurkeyPatch_UpgradeHussienResearchProgram] ButtonImage = rus_rs24
+  [Command_TurkeyPatch_PurchaseScienceAlhussien] ButtonImage = rus_rs24
+
+B) Pre-repair Iraq leftover asset lines: 55
+C) Validation: PASS ZERO_ERRORS

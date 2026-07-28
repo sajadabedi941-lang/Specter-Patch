@@ -1,0 +1,41 @@
+SPECTER FINAL REPAIRED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_FINAL_REPAIRED.big
+SHA256: 666fec3cfe123299bc80c879aae0d78e8a2baa474e61a85a1a5b12bed6b24d5d
+Size: 383399094 bytes
+Entries: 2787
+
+Build: EXTRACT SPEC -> overlay patch/Data -> audit repairs -> pack NEW BIG
+Re-extracted packed BIG and re-scanned before PASS.
+Not an overlay. Not a rename of _SPEC_DATA_ONE.big.
+
+PROBLEMS FIXED:
+  - Deleted all Egypt_CommandCenter.ini from rebuild tree; wrote ONE USA-donor
+    Egypt_CommandCenter.ini (sha 21c8223a35002839b6a97a936a2adcfdee294627768a1c292677816005b15423)
+  - IranCommandCenter CommandSet IranExpandedHQCommandSet -> IranHQCommandSet
+  - Removed duplicate CommandButton Command_ConstructPatch_Iraq_AWACS from
+    CommandButton_AirForceFinal.ini (kept AdvancedAirBase_Aircraft)
+  - Removed duplicate Russia CommandButtons from CommandButton.ini (kept first)
+  - Removed duplicate Airfield CommandSets from CommandSet.ini (kept
+    CommandSet_StrategicBombers_AABOnly.ini as sole source)
+  - Install guidance: one Data BIG only (eliminates broken SPEC / overlay load-order)
+
+PASS: 29  FAIL: 0
+
+PASS: Object uniqueness: 0 duplicate Object names
+PASS: One Egypt_CommandCenter.ini
+PASS: Object Egypt_CommandCenter unique
+PASS: Egypt not broken SPEC sha
+PASS: INI parser PASS (Egypt_CommandCenter)
+PASS: Egypt forbid-token scrub PASS
+PASS: CC us_commandcenter / US_Command / Side=Egypt / CommandSet / US_E3G_AWACS
+PASS: Airfield CommandSets unique
+PASS: Repaired CommandButtons unique
+PASS: IranCommandCenter CommandSet OK (IranHQCommandSet)
+PASS: PlayerTemplate StartingBuilding refs resolve
+PASS: Advanced Air Base CommandSet refs OK
+PASS: Specter/Patch aircraft CommandButton Object refs OK
+PASS: Stock Generals missing-ref note (not patch scope): 15
+
+FINAL: PASS

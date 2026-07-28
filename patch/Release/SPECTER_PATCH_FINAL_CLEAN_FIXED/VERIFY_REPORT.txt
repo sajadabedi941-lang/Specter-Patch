@@ -1,0 +1,24 @@
+VERIFY BY SCANNING FINAL BIG CONTENTS (not loose INI)
+BIG: _SPECTER_PATCH_FINAL_CLEAN_FIXED.big
+SHA256: 6213035cc4b39324ed9b8cb8a20871503838357ffb72be62ee76165bcc80b63f
+Entries: 2787
+egypt_commandcenter.ini paths: ['Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Buildings\\Egypt_CommandCenter.ini']
+PATH: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+size=11038 content_sha=e8a77d8d40f955654b3ed988bd04855c9d7c6de73255b7ebe2433ed12bc9bcff
+PASS: Object Egypt_CommandCenter
+PASS: Side=Egypt
+PASS: Egypt_CommandCenterCommandSet
+PASS: BuildCost=2000
+PASS: BuildTime=45
+PASS: MaxHealth=5000
+PASS: us_commandcenter
+PASS: US_Command
+PASS: US_COM_Strb
+PASS: US_E3G_AWACS
+PASS: NO irq_comndcntr/irq_comdcntr
+PASS: NO Iraq_Adnan1
+PASS: NO SUPERWEAPON_Iraq
+PASS: NOT broken SPEC sha
+PASS: NO irq_/Iraq/Iraqi in code
+INSTALL: REPLACE _SPEC_DATA_ONE.big with _SPECTER_PATCH_FINAL_CLEAN_FIXED.big (this is the full merged Data). Keep _SPEC_ART_ONE.big. Remove old _SPECTER_PATCH_FINAL_CLEAN.big to avoid duplicate Objects.
+VERDICT: PASS

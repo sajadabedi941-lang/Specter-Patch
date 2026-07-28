@@ -1,0 +1,10 @@
+Egypt_CommandCenter USA-CLONE VERIFY
+====================================
+Source: USA AmericaCommandCenter (complete structure)
+ART: us_commandcenter / US_Command / US_COM_Strb
+Identity: Egypt_CommandCenter / Side=Egypt / Egypt_CommandCenterCommandSet
+Specials: Egypt_MilitaryHQ set + Patch_Egypt_AWACS
+Balance: cost 2000 / time 45 / HP 5000
+USA structure retained: ModuleTag_17 CreateObjectDie + ModuleTag_MMT ObjectCreationUpgrade
+Iraq identity: NONE
+INI validation: PASS

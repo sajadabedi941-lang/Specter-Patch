@@ -1,0 +1,72 @@
+SPECTER PATCH FINAL — VERIFY REPORT
+==================================================
+Generated: 2026-07-26T01:44:25.081374+00:00
+
+STEP 1/3 — CommandCenter + MilitaryHQ audit
+----------------------------------------
+OK   Turkey_CommandCenter (USA ART, Side=Turkey, unique ModuleTags)
+OK   Turkey_MilitaryHQ (USA ART, Side=Turkey, unique ModuleTags)
+OK   India_CommandCenter (USA ART, Side=India, unique ModuleTags)
+OK   India_MilitaryHQ (USA ART, Side=India, unique ModuleTags)
+OK   Israel_CommandCenter (USA ART, Side=Israel, unique ModuleTags)
+OK   Israel_MilitaryHQ (USA ART, Side=Israel, unique ModuleTags)
+OK   Libya_CommandCenter (USA ART, Side=Libya, unique ModuleTags)
+OK   Libya_MilitaryHQ (USA ART, Side=Libya, unique ModuleTags)
+OK   Pakistan_CommandCenter (USA ART, Side=Pakistan, unique ModuleTags)
+OK   Pakistan_MilitaryHQ (USA ART, Side=Pakistan, unique ModuleTags)
+OK   SaudiArabia_CommandCenter (USA ART, Side=SaudiArabia, unique ModuleTags)
+OK   SaudiArabia_MilitaryHQ (USA ART, Side=SaudiArabia, unique ModuleTags)
+OK   UAE_CommandCenter (USA ART, Side=UAE, unique ModuleTags)
+OK   UAE_MilitaryHQ (USA ART, Side=UAE, unique ModuleTags)
+OK   SouthAfrica_CommandCenter (USA ART, Side=SouthAfrica, unique ModuleTags)
+OK   SouthAfrica_MilitaryHQ (USA ART, Side=SouthAfrica, unique ModuleTags)
+OK   Syria_CommandCenter (USA ART, Side=Syria, unique ModuleTags)
+OK   Syria_MilitaryHQ (USA ART, Side=Syria, unique ModuleTags)
+OK   Ukraine_CommandCenter (USA ART, Side=Ukraine, unique ModuleTags)
+OK   Ukraine_MilitaryHQ (USA ART, Side=Ukraine, unique ModuleTags)
+OK   Vietnam_CommandCenter (USA ART, Side=Vietnam, unique ModuleTags)
+OK   Vietnam_MilitaryHQ (USA ART, Side=Vietnam, unique ModuleTags)
+OK   Egypt_CommandCenter (USA ART, Side=Egypt, unique ModuleTags)
+OK   Egypt_MilitaryHQ (USA ART, Side=Egypt, unique ModuleTags)
+OK   Japan_CommandCenter (USA ART, Side=Japan, unique ModuleTags)
+OK   Japan_MilitaryHQ (USA ART, Side=Japan, unique ModuleTags)
+
+STEP 2/3 — Buildings portrait identity (listed countries)
+----------------------------------------
+OK   no irq_ SelectPortrait/ButtonImage in listed-country Buildings
+
+STEP 3/3 — Global Object IDs + construct buttons
+----------------------------------------
+Object definitions: 2434
+OK   no cross-file duplicate Object IDs
+OK   non-Iraq construct buttons clear of irq_comndcntr
+OK   Side=Iraq in listed country trees: 0
+
+SUMMARY
+----------------------------------------
+RESULT: PASS
+INI ZERO ERRORS
+All previous repairs included and BIG ready for testing.
+
+PACKAGE
+----------------------------------------
+File: _SPECTER_PATCH_FINAL.big
+SHA256: 067a52f6dbcf184eafbbaeced2eaf47ae38647f1ff8f29f8ea9c13cf0e1090b5
+Entries: 1481 (Data=1475, Art=6)
+Size: 40441361 bytes
+
+INCLUDED REPAIRS
+----------------
+OK   CommandCenter final fixes: Turkey India Israel Libya Pakistan SaudiArabia UAE SouthAfrica Syria Ukraine Vietnam Egypt Japan
+OK   MilitaryHQ repairs (Israel India-special leftovers cleared -> USA donor specials)
+OK   Listed-country Buildings portraits remapped irq_* -> USA (us_powerplant/us_camp/us_warfactory/us_airfield/us_supplycenter/us_radarstation/us_stratcenter/us_m777N)
+OK   Country construct CommandButtons remapped for listed factions
+OK   Egypt_CommandCenter Patch_Egypt_AWACS + USA structural modules
+OK   Turkey / India / Japan / UAV / aircraft prior patch DATA overlays in patch/Data
+
+NOTE: Standalone overlay BIG. Original _SPEC_ART_ONE.big / _SPEC_DATA_ONE.big are NOT modified.
+Load after _SPEC_* via filename _SPECTER_PATCH_FINAL.big (case-insensitive sort).
+
+FINAL
+-----
+All previous repairs included and BIG ready for testing.

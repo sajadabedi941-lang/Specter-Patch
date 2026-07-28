@@ -1,0 +1,66 @@
+SPECTER PATCH FINAL V2 — VERIFY REPORT
+==================================================
+Generated: 2026-07-26T01:17:10.085141+00:00
+
+COMMANDCENTER FINAL-FIX VALIDATION
+----------------------------------------
+OK   Ukraine_CommandCenter (USA ART donor, unique ModuleTags, Side=Ukraine)
+OK   Vietnam_CommandCenter (USA ART donor, unique ModuleTags, Side=Vietnam)
+OK   UAE_CommandCenter (USA ART donor, unique ModuleTags, Side=UAE)
+OK   Turkey_CommandCenter (USA ART donor, unique ModuleTags, Side=Turkey)
+OK   SouthAfrica_CommandCenter (USA ART donor, unique ModuleTags, Side=SouthAfrica)
+OK   Syria_CommandCenter (USA ART donor, unique ModuleTags, Side=Syria)
+OK   SaudiArabia_CommandCenter (USA ART donor, unique ModuleTags, Side=SaudiArabia)
+OK   Libya_CommandCenter (USA ART donor, unique ModuleTags, Side=Libya)
+OK   Israel_CommandCenter (USA ART donor, unique ModuleTags, Side=Israel)
+OK   Pakistan_CommandCenter (USA ART donor, unique ModuleTags, Side=Pakistan)
+OK   India_CommandCenter (USA ART donor, unique ModuleTags, Side=India)
+OK   Egypt_CommandCenter (USA ART donor, unique ModuleTags, Side=Egypt)
+
+CONSTRUCT BUTTON irq_comndcntr
+----------------------------------------
+OK   non-Iraq construct buttons cleared of irq_comndcntr
+KEEP Command_ConstructIraq_CommandCenter (CommandButton.ini) (Iraq faction native ART)
+
+GLOBAL OBJECT ID UNIQUENESS (patch/Data/INI)
+----------------------------------------
+INI files scanned: 1439
+Object definitions: 2434
+OK   no cross-file duplicate Object IDs
+
+ART / MODEL REFERENCES (repaired CommandCenters)
+----------------------------------------
+OK   USA donor ART present: us_commandcenter / US_Command / US_COM_Strb
+NOTE Base W3D for US_Command / US_COM_Strb remains in original _SPEC_ART_ONE.big
+OK   patch/Art overlay files: 6
+
+INI STRUCTURE (repaired CommandCenters)
+----------------------------------------
+OK   INI ZERO_ERRORS on repaired CommandCenter set (structure/End/Object/ModuleTags)
+
+SUMMARY
+----------------------------------------
+RESULT: PASS
+INI ZERO ERRORS
+No irq_ references in repaired country CommandCenters
+No Iraq identity leftovers in repaired country CommandCenters
+No missing USA ART/model references on repaired CommandCenters
+No duplicate Object IDs across patch Data/INI
+No duplicate ModuleTags within repaired CommandCenters
+
+PACKAGE
+----------------------------------------
+File: _SPECTER_PATCH_FINAL_V2.big
+SHA256: b1d5347bd23684f1de3b8d7a49543e2d63288f212feaba59f0921930adcf16dd
+Entries: 1481 (Data=1475, Art=6)
+Size: 40440216 bytes
+
+OK   Ukraine/Vietnam/UAE/Turkey/SouthAfrica/Syria/SaudiArabia/Libya/Israel/Pakistan CommandCenter final fixes
+OK   India/Egypt CommandCenter USA-structure donors
+OK   Turkey / India / Israel / Libya / Pakistan / Saudi / UAE / SouthAfrica / Syria / Ukraine / Vietnam related patch DATA
+OK   PhaseF MHQ + Vietnam CC construct buttons use us_commandcenter
+OK   NorthKorea CC construct button cleared of irq_comndcntr
+
+NOTE: Standalone overlay BIG. Original _SPEC_* BIGs are NOT replaced.
+Load after _SPEC_ART_ONE / _SPEC_DATA_ONE via filename _SPECTER_PATCH_FINAL_V2.big
+(case-insensitive sort places it after _SPEC_* so repaired Data/INI and Art win).

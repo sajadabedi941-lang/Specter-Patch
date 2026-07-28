@@ -1,0 +1,3 @@
+Completely rebuilt MilitaryHQ_StockFactions.ini from USA MilitaryHQ/CommandCenter donor.
+Kept America/Russia/China/NorthKorea identity and balance.
+Removed Adnan tags, India specials, irq_comndcntr buttons.

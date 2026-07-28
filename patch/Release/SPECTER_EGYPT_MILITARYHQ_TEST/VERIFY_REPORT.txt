@@ -1,0 +1,48 @@
+SPECTER EGYPT MILITARYHQ TEST — VERIFY REPORT
+============================================================
+VERDICT: PASS
+Scope: Egypt_MilitaryHQ.ini ONLY
+Other countries: untouched
+
+Broken vendor SHA256: 5ee7d870b9bdd0b20b8f38ec7e2071226fde174b4ed48ed6118fcf49c08d2b7b
+Fixed SHA256:         16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a
+
+Root causes:
+  - non-ASCII comments (x/em-dash)
+  - SelectPortrait/ButtonImage=irq_comndcntr (Iraq)
+  - Model=Irq_Command (Iraq)
+  - GunshipTemplateName=Iraq_Adnan1
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiSFInsertion
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiParadrop
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike1
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike2
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike3
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqReconnaissance
+  - ModuleTag_Adnan* (Iraq leftover naming)
+
+PASS: 21  FAIL: 0
+
+PASS: Object=Egypt_MilitaryHQ
+PASS: Side=Egypt
+PASS: CommandSet=Egypt_MilitaryHQCommandSet
+PASS: CommandSet exists in DATA
+PASS: CommandSet buttons resolve
+PASS: Models are USA US_Command
+PASS: Models present in ART
+PASS: Portraits us_commandcenter
+PASS: Portrait mapped in DATA
+PASS: Weapon refs resolve (none or OK)
+PASS: OCL refs defined
+PASS: no Iraqi SUPERWEAPON OCL
+PASS: Gunship US_E3G_AWACS
+PASS: SpecialPower Egypt templates exist
+PASS: no Iraq/Irq/Adnan in code
+PASS: ASCII-only
+PASS: INI parser PASS
+PASS: vendor Object duplicates Egypt_MilitaryHQ = 0 extras
+PASS: fixed Object duplicates in file = 0
+PASS: Other countries untouched
+PASS: Missing references = 0
+
+Missing=[]
+FINAL: PASS

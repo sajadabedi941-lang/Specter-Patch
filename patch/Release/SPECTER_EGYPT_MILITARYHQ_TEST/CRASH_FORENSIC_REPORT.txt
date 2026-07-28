@@ -1,0 +1,44 @@
+EGYPT_MILITARYHQ CRASH — FULL ROOT CAUSE REPORT
+============================================================
+File: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_MilitaryHQ.ini
+Broken vendor SHA256: 5ee7d870b9bdd0b20b8f38ec7e2071226fde174b4ed48ed6118fcf49c08d2b7b
+Fixed SHA256:         16339c721169d6de6eb23149170c9a64746d4acaf22aaf8552c559da2534412a
+Scope: Egypt_MilitaryHQ ONLY (no other countries modified)
+
+IDENTITY (broken — OK):
+  Object = Egypt_MilitaryHQ
+  Side   = Egypt
+  CommandSet = Egypt_MilitaryHQCommandSet (exists)
+  Duplicate Object Egypt_MilitaryHQ in DATA = 1 (unique path)
+
+INVALID / CRASH REFS IN BROKEN FILE:
+  - non-ASCII comments (x/em-dash)
+  - SelectPortrait/ButtonImage=irq_comndcntr (Iraq)
+  - Model=Irq_Command (Iraq)
+  - GunshipTemplateName=Iraq_Adnan1
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiSFInsertion
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiParadrop
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike1
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike2
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqiCruiseStrike3
+  - OCL/UpgradeOCL=SUPERWEAPON_IraqReconnaissance
+  - ModuleTag_Adnan* (Iraq leftover naming)
+
+COMPARISON:
+  USA AmericaCommandCenter: US_Command / us_commandcenter / US_E3G_AWACS / USA SUPERWEAPONs
+  Iraq Iraq_CommandCenter:  Irq_Command / irq_comndcntr / Iraq_Adnan1 / Iraqi SUPERWEAPONs
+  Broken Egypt_MilitaryHQ:  MATCHES IRAQ donor art/OCL/gunship pattern (same class of crash as Egypt_CommandCenter)
+  Note: stock America_MilitaryHQ in MilitaryHQ_StockFactions.ini is ALSO an Iraq clone — NOT a safe art donor.
+        Safe donor art/behaviors = USA CommandCenter systems (US_Command / US_E3G_AWACS / USA OCLs).
+
+MINIMAL FIX APPLIED:
+  Keep Object Egypt_MilitaryHQ / Side=Egypt / Egypt_MilitaryHQCommandSet / Egypt specials / cost-time
+  Replace irq_comndcntr -> us_commandcenter
+  Replace Irq_Command -> US_Command
+  Replace Iraq_Adnan1 -> US_E3G_AWACS
+  Replace SUPERWEAPON_Iraqi* -> USA-safe OCLs (Paradrop1 / AmericaTomahawkStrike1 / SpySatellite)
+  Remove non-ASCII comments
+  Rename ModuleTag_Adnan* -> EgyptAWACS*
+
+VALIDATION: PASS
+Missing references = 0

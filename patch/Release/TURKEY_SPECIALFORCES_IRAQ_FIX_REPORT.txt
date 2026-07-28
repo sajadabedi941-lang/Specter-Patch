@@ -1,0 +1,49 @@
+TURKEY SPECIALFORCES.INI COMPLETE IRAQ/BROKEN-ASSET REPAIR REPORT
+========================================================================
+
+Scope: patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/SpecialForces.ini
+Related: CommandButton_Turkey.ini Command_ConstructTurkey_SpecialForces
+
+Units preserved:
+  - Turkey_SpecialForces_Akms
+  - Turkey_SpecialForces_AKMGP
+  - Turkey_SpecialForces_Rpk
+  - Turkey_SpecialForces_Mks
+
+A) Fixes applied in SpecialForces.ini
+------------------------------------------------------------------------
+  Line 45: [Turkey_SpecialForces_Akms] SelectPortrait: rus_spetsnaz -> us_seal_exp
+  Line 46: [Turkey_SpecialForces_Akms] ButtonImage: rus_spetsnaz -> us_seal_exp
+  Line 600: [Turkey_SpecialForces_AKMGP] SelectPortrait: rus_spetsnaz -> us_seal_at
+  Line 601: [Turkey_SpecialForces_AKMGP] ButtonImage: rus_spetsnaz -> us_seal_at
+  Line 1068: [Turkey_SpecialForces_Rpk] SelectPortrait: rus_spetsnaz -> us_seal_mg
+  Line 1069: [Turkey_SpecialForces_Rpk] ButtonImage: rus_spetsnaz -> us_seal_mg
+  Line 1558: [Turkey_SpecialForces_Mks] SelectPortrait: rus_spetsnaz -> us_seal_mks
+  Line 1559: [Turkey_SpecialForces_Mks] ButtonImage: rus_spetsnaz -> us_seal_mks
+
+B) Construct button fixes
+------------------------------------------------------------------------
+  Line 538: ButtonImage: irq_specialforce -> us_seal_exp
+
+C) Full Iraq leftover map (pre-repair baseline -> healthy)
+------------------------------------------------------------------------
+  Broken L43: [Turkey_SpecialForces_Akms] SelectPortrait: irq_specialforce -> us_seal_exp
+  Broken L44: [Turkey_SpecialForces_Akms] ButtonImage: irq_specialforce -> us_seal_exp
+  Broken L57: [Turkey_SpecialForces_Akms] Model: Irq_SF_Akms -> RUS_SpetsNaz_AK
+  Broken L598: [Turkey_SpecialForces_AKMGP] SelectPortrait: irq_spfs -> us_seal_at
+  Broken L599: [Turkey_SpecialForces_AKMGP] ButtonImage: irq_spfs -> us_seal_at
+  Broken L612: [Turkey_SpecialForces_AKMGP] Model: Irq_SF_AKMGP -> RUS_SpetsNaz_AK
+  Broken L725: [Turkey_SpecialForces_AKMGP] Model: Irq_SF_AT -> Spec_SF_Ind_T
+  Broken L735: [Turkey_SpecialForces_AKMGP] Model: Irq_SF_AT -> Spec_SF_Ind_T
+  Broken L1066: [Turkey_SpecialForces_Rpk] SelectPortrait: irq_spfmg -> us_seal_mg
+  Broken L1067: [Turkey_SpecialForces_Rpk] ButtonImage: irq_spfmg -> us_seal_mg
+  Broken L1080: [Turkey_SpecialForces_Rpk] Model: Irq_SF_RPK -> RUS_SpetsNaz_MG
+  Broken L1556: [Turkey_SpecialForces_Mks] SelectPortrait: irq_spfmks -> us_seal_mks
+  Broken L1557: [Turkey_SpecialForces_Mks] ButtonImage: irq_spfmks -> us_seal_mks
+  Broken L1570: [Turkey_SpecialForces_Mks] Model: Irq_SF_Tabuk -> RUS_SpetsNaz_MK
+
+D) Notes
+  - No Tur_* SpecialForces W3D exists in ART; Turkey equivalents use Specter RUS_SpetsNaz_*/Spec_SF_Ind_*
+  - Side=Turkey + OkToChangeModelColor=Yes preserved (Turkey colors)
+  - Weapons, locomotors, CommandSets, balance fields unchanged
+  - Rejected: irq_* portraits; rus_spetsnaz (MappedImage missing)

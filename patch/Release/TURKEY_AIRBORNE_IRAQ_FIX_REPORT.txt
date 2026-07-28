@@ -1,0 +1,54 @@
+TURKEY AIRBORNE.INI COMPLETE IRAQ/BROKEN-ASSET REPAIR REPORT
+========================================================================
+
+Scope: patch/Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Airborne.ini
+Units preserved (not removed):
+  - TurkeyInfantrySpecOps_Akms
+  - TurkeyInfantrySpecOps_AKMGP
+  - TurkeyInfantrySpecOps_Rpk
+  - TurkeyInfantrySpecOps_Mks
+  - TurkeyInfantryAirborneHeavySniper
+
+A) Fixes applied in this pass (broken MappedImage rus_spetsnaz -> healthy donors)
+------------------------------------------------------------------------
+  Line 46: [TurkeyInfantrySpecOps_Akms] SelectPortrait: rus_spetsnaz -> us_seal_exp
+  Line 47: [TurkeyInfantrySpecOps_Akms] ButtonImage: rus_spetsnaz -> us_seal_exp
+  Line 599: [TurkeyInfantrySpecOps_AKMGP] SelectPortrait: rus_spetsnaz -> us_seal_at
+  Line 600: [TurkeyInfantrySpecOps_AKMGP] ButtonImage: rus_spetsnaz -> us_seal_at
+  Line 1067: [TurkeyInfantrySpecOps_Rpk] SelectPortrait: rus_spetsnaz -> us_seal_mg
+  Line 1068: [TurkeyInfantrySpecOps_Rpk] ButtonImage: rus_spetsnaz -> us_seal_mg
+  Line 1557: [TurkeyInfantrySpecOps_Mks] SelectPortrait: rus_spetsnaz -> us_seal_mks
+  Line 1558: [TurkeyInfantrySpecOps_Mks] ButtonImage: rus_spetsnaz -> us_seal_mks
+  Line 2069: [TurkeyInfantryAirborneHeavySniper] SelectPortrait: rus_spetsnaz -> rus_heavysniper
+  Line 2070: [TurkeyInfantryAirborneHeavySniper] ButtonImage: rus_spetsnaz -> rus_heavysniper
+
+B) Full Iraq leftover replacement map (pre-repair baseline -> healthy)
+   Baseline: SPECTER_PATCH_HASH_FIXED_FINAL Airborne.ini (irq_/Irq_*)
+------------------------------------------------------------------------
+  Broken L43: [TurkeyInfantrySpecOps_Akms] SelectPortrait: irq_specialforce -> us_seal_exp
+  Broken L44: [TurkeyInfantrySpecOps_Akms] ButtonImage: irq_specialforce -> us_seal_exp
+  Broken L57: [TurkeyInfantrySpecOps_Akms] Model: Irq_SF_Akms -> RUS_SpetsNaz_AK
+  Broken L596: [TurkeyInfantrySpecOps_AKMGP] SelectPortrait: irq_spfs -> us_seal_at
+  Broken L597: [TurkeyInfantrySpecOps_AKMGP] ButtonImage: irq_spfs -> us_seal_at
+  Broken L610: [TurkeyInfantrySpecOps_AKMGP] Model: Irq_SF_AKMGP -> RUS_SpetsNaz_AK
+  Broken L723: [TurkeyInfantrySpecOps_AKMGP] Model: Irq_SF_AT -> Spec_SF_Ind_T
+  Broken L733: [TurkeyInfantrySpecOps_AKMGP] Model: Irq_SF_AT -> Spec_SF_Ind_T
+  Broken L1064: [TurkeyInfantrySpecOps_Rpk] SelectPortrait: irq_spfmg -> us_seal_mg
+  Broken L1065: [TurkeyInfantrySpecOps_Rpk] ButtonImage: irq_spfmg -> us_seal_mg
+  Broken L1078: [TurkeyInfantrySpecOps_Rpk] Model: Irq_SF_RPK -> RUS_SpetsNaz_MG
+  Broken L1554: [TurkeyInfantrySpecOps_Mks] SelectPortrait: irq_spfmks -> us_seal_mks
+  Broken L1555: [TurkeyInfantrySpecOps_Mks] ButtonImage: irq_spfmks -> us_seal_mks
+  Broken L1568: [TurkeyInfantrySpecOps_Mks] Model: Irq_SF_Tabuk -> RUS_SpetsNaz_MK
+  Broken L2066: [TurkeyInfantryAirborneHeavySniper] SelectPortrait: irq_sniper -> rus_heavysniper
+  Broken L2067: [TurkeyInfantryAirborneHeavySniper] ButtonImage: irq_sniper -> rus_heavysniper
+  Broken L2080: [TurkeyInfantryAirborneHeavySniper] Model: Irq_Sniper -> Spec_infInd_SN
+
+C) Validation notes
+  - Side=Turkey preserved; OkToChangeModelColor=Yes (Turkey colors)
+  - CommandSets kept (AmericaInfantryNavySeal_* / Pathfinder) for MP-safe behavior
+  - Locomotor TurkishSpecialForces_Locomotor preserved
+  - Weapons / Prerequisites (Turkey_MIC) unchanged
+  - Models: RUS_SpetsNaz_* + Spec_SF_Ind_* + Spec_infInd_SN verified in ART BIG
+  - Portraits: us_seal_* / rus_heavysniper MappedImages + textures verified
+  - Rejected: rus_spetsnaz (TGA exists, MappedImage MISSING)
+  - Rejected: irq_* portraits kept out of Turkey Airborne (Iraq leftover)

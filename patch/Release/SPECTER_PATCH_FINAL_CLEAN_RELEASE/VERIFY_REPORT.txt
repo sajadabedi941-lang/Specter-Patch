@@ -1,0 +1,102 @@
+SPECTER PATCH FINAL CLEAN — VERIFY REPORT
+============================================================
+VERDICT: PASS
+SHA256: c2790f3e62b3e47d59446ea14c7fbb8b1d744df6fd096a1017795503be132673
+Size: 40457492
+Entries: 1486
+Load order: _SPEC_ART_ONE.big → _SPEC_DATA_ONE.big → _SPECTER_PATCH_FINAL_CLEAN.big
+
+PASS: 90  FAIL: 0
+
+PASS: load order
+PASS: ART present
+PASS: Turkey_CommandCenter
+PASS: Turkey_MilitaryHQ
+PASS: Egypt_CommandCenter
+PASS: Egypt_MilitaryHQ
+PASS: India_CommandCenter
+PASS: India_MilitaryHQ
+PASS: Pakistan_CommandCenter
+PASS: Pakistan_MilitaryHQ
+PASS: UAE_CommandCenter
+PASS: UAE_MilitaryHQ
+PASS: SaudiArabia_CommandCenter
+PASS: SaudiArabia_MilitaryHQ
+PASS: Israel_CommandCenter
+PASS: Israel_MilitaryHQ
+PASS: Ukraine_CommandCenter
+PASS: Ukraine_MilitaryHQ
+PASS: Syria_CommandCenter
+PASS: Syria_MilitaryHQ
+PASS: Libya_CommandCenter
+PASS: Libya_MilitaryHQ
+PASS: SouthAfrica_CommandCenter
+PASS: SouthAfrica_MilitaryHQ
+PASS: Britain_CommandCenter
+PASS: Britain_MilitaryHQ
+PASS: France_CommandCenter
+PASS: France_MilitaryHQ
+PASS: Germany_CommandCenter
+PASS: Germany_MilitaryHQ
+PASS: Japan_CommandCenter
+PASS: Japan_MilitaryHQ
+PASS: Italy_CommandCenter
+PASS: Italy_MilitaryHQ
+PASS: Sweden_CommandCenter
+PASS: Sweden_MilitaryHQ
+PASS: SouthKorea_CommandCenter
+PASS: SouthKorea_MilitaryHQ
+PASS: Taiwan_CommandCenter
+PASS: Taiwan_MilitaryHQ
+PASS: Vietnam_CommandCenter
+PASS: Vietnam_MilitaryHQ
+PASS: UN_CommandCenter
+PASS: UN_MilitaryHQ
+PASS: no forbidden tokens
+PASS: AAB files 29
+PASS: Turkey_AdvancedAirBase
+PASS: Egypt_AdvancedAirBase
+PASS: India_AdvancedAirBase
+PASS: Pakistan_AdvancedAirBase
+PASS: UAE_AdvancedAirBase
+PASS: SaudiArabia_AdvancedAirBase
+PASS: Israel_AdvancedAirBase
+PASS: Ukraine_AdvancedAirBase
+PASS: Syria_AdvancedAirBase
+PASS: Libya_AdvancedAirBase
+PASS: SouthAfrica_AdvancedAirBase
+PASS: Britain_AdvancedAirBase
+PASS: France_AdvancedAirBase
+PASS: Germany_AdvancedAirBase
+PASS: Japan_AdvancedAirBase
+PASS: Italy_AdvancedAirBase
+PASS: Sweden_AdvancedAirBase
+PASS: SouthKorea_AdvancedAirBase
+PASS: Taiwan_AdvancedAirBase
+PASS: Vietnam_AdvancedAirBase
+PASS: UN_AdvancedAirBase
+PASS: Egypt CLEAN wins
+PASS: Turkey_CommandCenter replacement
+PASS: Egypt_CommandCenter replacement
+PASS: India_CommandCenter replacement
+PASS: Pakistan_CommandCenter replacement
+PASS: UAE_CommandCenter replacement
+PASS: SaudiArabia_CommandCenter replacement
+PASS: Israel_CommandCenter replacement
+PASS: Ukraine_CommandCenter replacement
+PASS: Syria_CommandCenter replacement
+PASS: Libya_CommandCenter replacement
+PASS: SouthAfrica_CommandCenter replacement
+PASS: Britain_CommandCenter replacement
+PASS: France_CommandCenter replacement
+PASS: Germany_CommandCenter replacement
+PASS: Japan_CommandCenter replacement
+PASS: Italy_CommandCenter replacement
+PASS: Sweden_CommandCenter replacement
+PASS: SouthKorea_CommandCenter replacement
+PASS: Taiwan_CommandCenter replacement
+PASS: Vietnam_CommandCenter replacement
+PASS: UN_CommandCenter replacement
+PASS: 0 dups
+
+FINAL: PASS

@@ -1,0 +1,220 @@
+{
+  "afe_fixes": [
+    {
+      "line": 348,
+      "object": "Patch_America_StealthHawk",
+      "field": "SelectPortrait",
+      "old": "us_f22",
+      "new": "us_f22a",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 349,
+      "object": "Patch_America_StealthHawk",
+      "field": "ButtonImage",
+      "old": "us_f22",
+      "new": "us_f22a",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 808,
+      "object": "Patch_America_AC130Spectre",
+      "field": "ButtonImage",
+      "old": "us_airfield",
+      "new": "us_ac130",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 809,
+      "object": "Patch_America_AC130Spectre",
+      "field": "SelectPortrait",
+      "old": "us_airfield",
+      "new": "us_ac130",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1013,
+      "object": "Patch_America_E2C",
+      "field": "SelectPortrait",
+      "old": "us_e3",
+      "new": "us_e3g",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1014,
+      "object": "Patch_America_E2C",
+      "field": "ButtonImage",
+      "old": "us_e3",
+      "new": "us_e3g",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1226,
+      "object": "Patch_America_B3",
+      "field": "SelectPortrait",
+      "old": "us_b1",
+      "new": "us_b1r",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1227,
+      "object": "Patch_America_B3",
+      "field": "ButtonImage",
+      "old": "us_b1",
+      "new": "us_b1r",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1834,
+      "object": "Patch_Ukraine_Sokil",
+      "field": "SelectPortrait",
+      "old": "us_f22",
+      "new": "us_f22a",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 1835,
+      "object": "Patch_Ukraine_Sokil",
+      "field": "ButtonImage",
+      "old": "us_f22",
+      "new": "us_f22a",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2219,
+      "object": "Patch_Ukraine_AN71",
+      "field": "SelectPortrait",
+      "old": "us_e3",
+      "new": "us_e3g",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2220,
+      "object": "Patch_Ukraine_AN71",
+      "field": "ButtonImage",
+      "old": "us_e3",
+      "new": "us_e3g",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2622,
+      "object": "Patch_Germany_JetBomber",
+      "field": "SelectPortrait",
+      "old": "us_b1",
+      "new": "us_b1r",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2623,
+      "object": "Patch_Germany_JetBomber",
+      "field": "ButtonImage",
+      "old": "us_b1",
+      "new": "us_b1r",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2914,
+      "object": "Patch_France_Cayova",
+      "field": "SelectPortrait",
+      "old": "rus_mi8mtv5",
+      "new": "rus_mi17",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 2915,
+      "object": "Patch_France_Cayova",
+      "field": "ButtonImage",
+      "old": "rus_mi8mtv5",
+      "new": "rus_mi17",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 3135,
+      "object": "Patch_China_J10Strike",
+      "field": "SelectPortrait",
+      "old": "chi_j10c",
+      "new": "pla_j10c",
+      "file": "Aircraft_AirForceExpansion.ini"
+    },
+    {
+      "line": 3136,
+      "object": "Patch_China_J10Strike",
+      "field": "ButtonImage",
+      "old": "chi_j10c",
+      "new": "pla_j10c",
+      "file": "Aircraft_AirForceExpansion.ini"
+    }
+  ],
+  "btn_fixes": [
+    {
+      "line": 97,
+      "object": "Command_ConstructPatch_France_Cayova",
+      "field": "ButtonImage",
+      "old": "irq_mi8t",
+      "new": "rus_mi17",
+      "file": "CommandButton_AirForceExpansion.ini"
+    },
+    {
+      "line": 25,
+      "object": "Command_ConstructPatch_America_AC130Spectre",
+      "field": "ButtonImage",
+      "old": "us_airfield",
+      "new": "us_ac130",
+      "file": "CommandButton_AirForceExpansion.ini"
+    },
+    {
+      "line": 52,
+      "object": "Command_ConstructPatch_Russia_Su57Strike",
+      "field": "ButtonImage",
+      "old": "us_f22a",
+      "new": "rus_su57",
+      "file": "CommandButton_AirForceExpansion.ini"
+    },
+    {
+      "line": 79,
+      "object": "Command_ConstructPatch_Ukraine_Dronecopter",
+      "field": "ButtonImage",
+      "old": "us_f16cb50",
+      "new": "Nat_mq9",
+      "file": "CommandButton_AirForceExpansion.ini"
+    },
+    {
+      "line": 106,
+      "object": "Command_ConstructPatch_China_J10Strike",
+      "field": "ButtonImage",
+      "old": "us_f16cb50",
+      "new": "pla_j10c",
+      "file": "CommandButton_AirForceExpansion.ini"
+    }
+  ],
+  "iraq_baseline": [
+    {
+      "broken_line": 1061,
+      "object": "Patch_France_Cayova",
+      "field": "SelectPortrait",
+      "old": "irq_mi8t",
+      "new": "rus_mi17"
+    },
+    {
+      "broken_line": 1062,
+      "object": "Patch_France_Cayova",
+      "field": "ButtonImage",
+      "old": "irq_mi8t",
+      "new": "rus_mi17"
+    },
+    {
+      "broken_line": 1065,
+      "object": "Patch_France_Cayova",
+      "field": "Model",
+      "old": "Irq_Mi8T",
+      "new": "RUS_MI8MTV5"
+    },
+    {
+      "broken_line": 1069,
+      "object": "Patch_France_Cayova",
+      "field": "Model",
+      "old": "Irq_Mi8T",
+      "new": "RUS_MI8MTV5"
+    }
+  ]
+}

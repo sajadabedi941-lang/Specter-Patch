@@ -1,0 +1,7 @@
+- Deleted every Egypt_CommandCenter.ini from rebuild tree; wrote ONE USA-donor Egypt_CommandCenter.ini
+- IranCommandCenter CommandSet: IranExpandedHQCommandSet -> IranHQCommandSet
+- Removed duplicate CommandButton Command_ConstructPatch_Iraq_AWACS from CommandButton_AirForceFinal.ini
+- Removed duplicate Russia CommandButtons from CommandButton.ini (kept first defs)
+- Removed duplicate America/China/Russia Airfield CommandSets from CommandSet.ini (kept AABOnly file)
+- Final package is a new standalone Data BIG (not overlay / not SPEC rename)
+- Load-order: install replaces _SPEC_DATA_ONE.big and removes other Specter Data BIGs

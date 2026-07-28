@@ -1,0 +1,18 @@
+SPECTER ULTIMATE REAL LAUNCHER - FINAL
+======================================
+
+ZIP: SPECTER_ULTIMATE_REAL_LAUNCHER.zip
+ZIP SHA256: a937c58f95f2977314ad114cbbaf070a5d990dab43a3fd99a3c33c43a4e65ba2
+
+Final Launch_Specter.bat (tested before publish):
+  - PATCH_DIR=%~dp0 (own directory)
+  - Verifies _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+  - Verifies generals.exe in same or parent folder
+  - Skips copy when already flat-extracted into GameRoot
+  - Copies both BIGs when launched from a subfolder
+  - Starts generals.exe from GameRoot
+  - ERROR messages + pause on every failure
+
+BIG contents unchanged from Ultimate Expansion playable:
+  DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+  ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73

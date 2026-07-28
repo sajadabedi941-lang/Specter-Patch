@@ -1,0 +1,6 @@
+ZIP SHA256=e0333507d7a6366d6b21443c58be53bdbb5622e5205dcc4e4fc7bb43c5136c87
+DATA SHA256=32c09279aa5312c6943fe8cbe2658fbf30f57dc5da5c713ddfcd3cc5d64e7f95
+ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+USA base: B2=14000/95s B52=13000/90s Max1
+Major x2: Russia/China/Britain/France/Germany/Nato
+Other x3.5: Japan/Turkey/Saudi/India/+all remaining AAB factions

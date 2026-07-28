@@ -1,0 +1,32 @@
+Staged overlay entries: 1486
+Excluded: ['Data/INI/Object/Specter/Israel Defense Forces/Buildings/Industry Planet.ini']
+PASS: staged Egypt_CommandCenter is repaired
+Staged Egypt_CommandCenter paths: ['Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Buildings\\Egypt_CommandCenter.ini']
+SPEC DATA entries: 2887
+SPEC Egypt_CommandCenter repaired? False issues=['broken irq_comndcntr portrait', 'broken Iraq_Adnan1 gunship', 'missing US_E3G_AWACS gunship', 'missing us_commandcenter ART', 'BuildCost != 2000', 'MaxHealth != 5000'] sha=1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Case-insensitive BIG order: ['_SPEC_ART_ONE.big', '_SPEC_DATA_ONE.big', '_SPECTER_PATCH_FINAL_CLEAN.big']
+Final stack entries=2898 overlay_overrides=1475 overlay_unique=11
+Egypt_CommandCenter.ini paths in final load: ['Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Buildings\\Egypt_CommandCenter.ini']
+PASS: Egypt_CommandCenter repaired sha256=d66e7a3d5a687e23a87d1d9c6a37d736e9ae9fe74b77f857765171cdb6ee20e9
+Data\INI Object defs: 4915; cross-path dups: 0
+Overlay Object defs: 2436; dups: 0
+PASS: FactionEgypt StartingBuilding Egypt_MilitaryHQ
+PASS: FactionEgypt StartingBuilding Egypt_MilitaryHQ
+PASS: FactionTurkey StartingBuilding Turkey_MilitaryHQ
+PASS: FactionIsrael StartingBuilding Israel_MilitaryHQ
+PASS: Egypt CC CommandSet Egypt_CommandCenterCommandSet defined
+PASS: no P00/h00.0 corruption in overlay INIs
+STARTUP_VALIDATION=PASS
+
+=== REVALIDATE EXACT CANDIDATE BIG (game-folder bytes) ===
+Egypt_CommandCenter.ini paths in final load: ['Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Buildings\\Egypt_CommandCenter.ini']
+PASS: Egypt_CommandCenter repaired sha256=d66e7a3d5a687e23a87d1d9c6a37d736e9ae9fe74b77f857765171cdb6ee20e9
+Data\INI Object defs: 4915; cross-path dups: 0
+Overlay Object defs: 2436; dups: 0
+PASS: FactionEgypt StartingBuilding Egypt_MilitaryHQ
+PASS: FactionEgypt StartingBuilding Egypt_MilitaryHQ
+PASS: FactionTurkey StartingBuilding Turkey_MilitaryHQ
+PASS: FactionIsrael StartingBuilding Israel_MilitaryHQ
+PASS: Egypt CC CommandSet Egypt_CommandCenterCommandSet defined
+PASS: no P00/h00.0 corruption in overlay INIs
+STARTUP_VALIDATION=PASS

@@ -1,0 +1,35 @@
+TURKEY KARRAR-2.INI IRAQ/BROKEN-ASSET REPAIR REPORT
+========================================================================
+Unit preserved: Turkey_Karrar2 (Side=Turkey)
+Kept: weapons, Krasukha-4_CommandSet, SCIENCE_TurkeyReconnaissance, balance 1688/24.3
+
+A) Fixes this pass
+------------------------------------------------------------------------
+  Karrar-2.ini object art already healthy (irn_karrar / Iran_Karrar)
+  CollideWeapon: Turkey_DeployedRadarDecalWeapon -> DeployedRadarDecalWeapon
+  Line 160: [CommandButton_Turkey.ini] ButtonImage: irq_karrar -> irn_karrar
+
+B) Iraq baseline map
+------------------------------------------------------------------------
+  Broken L38: SelectPortrait: irq_karrar -> irn_karrar
+  Broken L39: ButtonImage: irq_karrar -> irn_karrar
+  Broken L44: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L48: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L52: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L57: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L58: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L63: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L64: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L70: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L71: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L75: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L76: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L81: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L85: Model: Irq_Karrar_A -> Iran_Karrar
+  Broken L86: Animation: Irq_Karrar_A.Irq_Karrar_A -> Iran_Karrar.Iran_Karrar
+  Broken L91: Model: Irq_Karrar_D -> Iran_KarrarD
+  Broken L92: Animation: Irq_Karrar_D.Irq_Karrar_D -> Iran_KarrarD.Iran_KarrarD
+  Broken L97: Model: Irq_Karrar_D -> Iran_KarrarD
+  Broken L98: Animation: Irq_Karrar_D.Irq_Karrar_D -> Iran_KarrarD.Iran_KarrarD
+
+C) Validation: PASS ZERO_ERRORS

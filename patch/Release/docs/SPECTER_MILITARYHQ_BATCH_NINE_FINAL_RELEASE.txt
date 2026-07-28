@@ -1,0 +1,21 @@
+Release: specter-militaryhq-batch-nine-final
+URL: https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/specter-militaryhq-batch-nine-final
+
+_SPEC_DATA_ONE.big
+SHA256: d7199cb3bcac617f04dc258b5e3d516152f30d0d9d127558b2a926d9d1e986df
+SIZE: 384610880
+
+_SPEC_DATA_ONE_MILITARYHQ_BATCH_NINE_FINAL.zip
+SHA256: ae6263f7fedc9c03de2a3734c47b12973386f7392bfad98a33ddba485182bf06
+SIZE: 326556542
+CONTENTS: _SPEC_DATA_ONE.big only
+
+Validation:
+- All 9 MilitaryHQ objects inside BIG: PASS
+- Extract-from-BIG byte match: PASS x9
+- Unrelated BIG entries changed: 0
+- GitHub release asset digests match local hashes: PASS
+
+Installation:
+Replace Data\_SPEC_DATA_ONE.big
+Keep _SPEC_ART_ONE.big unchanged

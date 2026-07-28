@@ -1,0 +1,8 @@
+RUSSIA WEAPONOBJECTS CRASH FIX
+==============================
+clientupdate_ends_removed=12
+model_remaps=['Iraq_Alhusain_W2->Iraq_Alhusain_Wx3']
+bv_remaps=['GenericDefeatedTankShell->Generic120mmAPFSDSDeflectedRoundx5', '40N6Missile_ABM_Object1->40N6Missile_ABM_Objectx2']
+side_forced=3
+none_model_stats={'bv_parents': 7, 'lonely_projectiles': 18}
+objects=135

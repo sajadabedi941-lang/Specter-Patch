@@ -14,3 +14,8 @@ KEY AIRCRAFT:
 CRASH-LEVEL ISSUES: 0
 
 RESULT: PASS — no missing Weapon/ProjectileObject/Prereq/OCL refs for Turkey reset scope.
+
+SKIRMISH TEST STATUS:
+  Automated Windows Zero Hour Skirmish cannot run in this Linux cloud environment.
+  Overlay BIG packed and INI crash-level validation: PASS.
+  Manual Skirmish checklist is in README_INSTALL.txt.

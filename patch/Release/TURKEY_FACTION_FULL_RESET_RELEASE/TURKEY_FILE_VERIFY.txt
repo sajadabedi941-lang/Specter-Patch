@@ -1,0 +1,20 @@
+TURKEY FACTION FILE VERIFICATION
+BIG entries: 172
+BIG size: 1452559
+SHA256: 8365346d97e20778b51a9299a82826e687e3bac4c382fcb9aa8a4013ea71beeb
+
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Turkey_WeaponObjects.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_F16Block70.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_F16V.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_TB2.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_Akinci.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_Tu-22M3.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Airforce\Turkey_Tu-22M3_AI.ini
+  PASS Data\INI\Object\Specter\Turkey Armed Forces\Drones\Turkey_Kizilelma.ini
+  PASS Data\INI\Weapon_Turkey.ini
+  PASS Data\INI\CommandSet_Turkey.ini
+  PASS Data\INI\CommandButton_Turkey.ini
+
+Turkey Armed Forces entries in BIG: 161
+Required checks missing: 0
+RESULT: PASS

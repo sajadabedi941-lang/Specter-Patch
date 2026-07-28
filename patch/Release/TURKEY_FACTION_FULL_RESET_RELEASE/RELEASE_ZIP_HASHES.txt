@@ -1,0 +1,2 @@
+specter-turkey-faction-full-reset-20260728.zip SHA256=bc91df971457ca893791b902a001d064c5f0c39a177d92eb644f25fabb9708b8
+size=138949

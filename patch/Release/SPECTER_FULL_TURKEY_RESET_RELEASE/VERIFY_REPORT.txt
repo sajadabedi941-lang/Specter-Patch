@@ -1,0 +1,14 @@
+FULL RELEASE VERIFICATION
+entries=2892 size=384251235
+Turkey Armed Forces files=161
+
+  PASS Turkey_WeaponObjects (objs=0)
+  PASS Turkey_F16Block70 (present)
+  PASS Turkey_TB2 (present)
+  PASS Turkey_Akinci (present)
+  PASS Turkey_Kizilelma (present)
+  PASS Turkey_Tu-22M3 (present)
+  PASS Weapon_Turkey (present)
+  PASS Russia_WeaponObjects (present)
+
+RESULT: PASS

@@ -1,0 +1,4 @@
+_SPEC_DATA_ONE.big SHA256=063a0a5af74001a3da9e1d2b2a58f0936faac6299dd7c7c031d411f160085627
+entries=2892
+size=384251235
+tag=specter-full-turkey-faction-reset-final

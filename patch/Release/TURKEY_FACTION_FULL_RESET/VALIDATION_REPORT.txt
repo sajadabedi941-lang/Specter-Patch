@@ -1,0 +1,21 @@
+TURKEY FACTION FULL RESET — VALIDATION REPORT
+Turkey Objects defined: 185
+Turkey_WeaponObjects Objects remaining: 0 (want 0)
+Projectiles Objects remaining: 0 (want 0)
+
+KEY AIRCRAFT:
+  PASS Turkey_F16Block70: objects=['Turkey_F16Block70'] side=['Turkey'] weapons=['AIM120D_BVR_MRAAM_F22A', 'AGM-154C_JSOW_F16C', 'AN/AAQ33_SniperXR_ATP_F16C']
+  PASS Turkey_F16V: objects=['Turkey_F16V', 'Turkey_F16V_Mixed', 'Turkey_F16V_AGM', 'Turkey_F16V_GBU24'] side=['Turkey', 'Turkey', 'Turkey', 'Turkey'] weapons=['America_Weapon_AIM120C_F16V', 'AGM-154C_JSOW_F16C', 'AN/AAQ33_SniperXR_ATP_F16C', 'America_Weapon_AIM120C_F16V', 'AGM-154C_JSOW_F16C', 'AGM-154C_JSOW_F16C', 'AGM-154C_JSOW_F16C', 'GBU_31V1_JDAM_F16C', 'AGM-154C_JSOW_F16C']
+  PASS Turkey_TB2: objects=['Turkey_TB2'] side=['Turkey'] weapons=['4x_AGM114N_Mq9', '2x_GBU12II_Mq9']
+  PASS Turkey_Akinci: objects=['Turkey_Akinci'] side=['Turkey'] weapons=['4x_AGM114N_Mq9', '2x_GBU12II_Mq9']
+  PASS Turkey_Kizilelma: objects=['Turkey_Kizilelma'] side=['Turkey'] weapons=['4x_AGM114N_Mq9', '2x_GBU12II_Mq9']
+  PASS Turkey_Tu-22M3: objects=['Turkey_Tu-22M3'] side=['Turkey'] weapons=['Russia_Weapon_Kh32_Tu22M3']
+
+CRASH-LEVEL ISSUES: 0
+
+RESULT: PASS — no missing Weapon/ProjectileObject/Prereq/OCL refs for Turkey reset scope.
+
+SKIRMISH TEST STATUS:
+  Automated Windows Zero Hour Skirmish cannot run in this Linux cloud environment.
+  Overlay BIG packed and INI crash-level validation: PASS.
+  Manual Skirmish checklist is in README_INSTALL.txt.

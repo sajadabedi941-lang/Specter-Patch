@@ -1,0 +1,65 @@
+TURKEY FACTION FULL RESET
+Turkey root: /workspace/patch/Data/INI/Object/Specter/Turkey Armed Forces
+Rebuilt Turkey_F16Block70 from Britain_F16DBlk52 + USA F-16 weapons
+Rebuilt Turkey_F16V family from Britain_F16DBlk52 + USA F-16 weapons
+Rebuilt Turkey_TB2 from Japan_MQ9 (CHI_CH5 + USA MQ-9 weapons)
+Rebuilt Turkey_Akinci from Japan_MQ9 (CHI_CH5 + USA MQ-9 weapons)
+Rebuilt Turkey_Kizilelma from Japan_MQ9 (CHI_CH5 + USA MQ-9 weapons)
+Rebuilt Turkey_Tu-22M3 from Patch_Russia_Tu22M3 + Russia_Weapon_Kh32_Tu22M3
+Rebuilt Turkey_Tu-22M3_AI from Patch_Russia_Tu22M3 + Russia_Weapon_Kh32_Tu22M3
+Retargeted 1 weapon refs in AirDefense/Turkey_AD_AntiDrone.ini
+Retargeted 1 weapon refs in AirDefense/Turkey_AD_SAM.ini
+Retargeted 1 weapon refs in AirDefense/Turkey_AD_SHORAD.ini
+Retargeted 1 weapon refs in Airforce/Turkey_KAAN.ini
+Retargeted 1 weapon refs in Airforce/Turkey_Mig-23BN.ini
+Retargeted 5 weapon refs in Airforce/Turkey_Su-25K.ini
+Retargeted 1 weapon refs in Buildings/Turkey_Abbas.ini
+Retargeted 1 weapon refs in Buildings/Turkey_Abbas_AI.ini
+Retargeted 1 weapon refs in Buildings/Turkey_D30.ini
+Retargeted 1 weapon refs in Drones/Turkey_HeavyUAV.ini
+Retargeted 1 weapon refs in Drones/Turkey_StealthUAV.ini
+Retargeted 2 weapon refs in Tracked/Turkey_Altay.ini
+Retargeted 2 weapon refs in Wheeled/AbbasLauncher.ini
+Retargeted 2 weapon refs in Wheeled/AbbasLauncher_AI.ini
+Retargeted 2 weapon refs in Wheeled/Turkey_Bora.ini
+Retargeted 2 weapon refs in Wheeled/Turkey_TRG230.ini
+Retargeted 1 weapon refs in Wheeled/Turkey_TayfunTEL.ini
+Retargeted 16 ProjectileObject refs in Weapon_Turkey.ini
+Retargeted 2 ProjectileObject refs in Weapon_Turkey_Phase4.ini
+Retargeted 8 ProjectileObject refs in Weapon_PhaseI_TurkeyFixes.ini
+Retargeted 1 ProjectileObject refs in Weapon_VerificationFixes.ini
+Retargeted ObjectCreationList_Turkey.ini custom shell refs
+TOTAL unit weapon retargets: 26
+TOTAL projectile retargets: 27
+Rewrote Weapon_Turkey.ini as 29 safe aliases
+Stubbed Weapon_PhaseI_TurkeyFixes.ini (no duplicate weapons)
+Stubbed Weapon_Turkey_Phase4.ini (no duplicate weapons)
+Retargeted 4x_Turkey_Fab-100_CenterRack_Mig23BN projectile
+Cleared Turkey_WeaponObjects.ini (removed all custom Objects)
+Cleared projectile file Turkey_Goktug_Projectile.ini
+Cleared projectile file Turkey_Projectile_ADSAM.ini
+Cleared projectile file Turkey_Projectile_AIM120C_F16V.ini
+Cleared projectile file Turkey_Projectile_ATGM.ini
+Cleared projectile file Turkey_Projectile_Altay_ATGM.ini
+Cleared projectile file Turkey_Projectile_AntiDrone.ini
+Cleared projectile file Turkey_Projectile_Cruise.ini
+Cleared projectile file Turkey_Projectile_F16Blk70_AIM120.ini
+Cleared projectile file Turkey_Projectile_Goktug_KAAN.ini
+Cleared projectile file Turkey_Projectile_MD.ini
+Cleared projectile file Turkey_Projectile_MLRSShort.ini
+Cleared projectile file Turkey_Projectile_SAM.ini
+Cleared projectile file Turkey_Projectile_SHORAD.ini
+Cleared projectile file Turkey_Projectile_Tank.ini
+Cleared projectile file Turkey_SOM_Cruise_Projectile.ini
+Cleared projectile file Turkey_SOM_Projectile.ini
+Cleared projectile file Turkey_TRG122_Projectile.ini
+Cleared projectile file Turkey_Tayfun_Projectile.ini
+Cleared Turkey_Shells.ini
+Turkey_Systems.ini kept 7 objects, removed 30
+
+AIRCRAFT DONOR MAP:
+  Turkey_F16Block70 / Turkey_F16V*  <- Britain_JetF16DBlk52 (US_F16D_B52) + AIM120D/America_Weapon_AIM120C_F16V + AGM-154C + SniperXR
+  Turkey_TB2 / Turkey_Akinci / Turkey_Kizilelma <- Japan_MQ9 (CHI_CH5) + 4x_AGM114N_Mq9 + 2x_GBU12II_Mq9
+  Turkey_Tu-22M3 / Turkey_Tu-22M3_AI <- Patch_Russia_Tu22M3 (RUS_TU22M3M) + Russia_Weapon_Kh32_Tu22M3
+
+NO NEW WEAPON OBJECTS CREATED.

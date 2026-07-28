@@ -1,0 +1,71 @@
+TURKEY FACTION FULL RESET
+========================
+backup_inis=157
+deleted_custom_weapon_files=20
+air_clones=34
+weapon_projectile_retargets=31
+AIR Turkey_F16Block70 <= AmericaJetF-16C_AG
+AIR Turkey_Hurjet <= AmericaJetF-15E_AA
+AIR Turkey_KAAN <= AmericaJetF-22A_AA
+AIR Turkey_Anka3 <= AmericaJetF35C
+AIR Turkey_B2 <= Patch_America_B2
+AIR Turkey_B52 <= AmericaJetB52
+AIR Turkey_AWACS <= US_E3G_AWACS
+AIR Turkey_Akinci <= AmericaDronesMq9
+AIR Turkey_TB2 <= AmericaDronesMq9
+AIR Turkey_Tanker <= Patch_Turkey_KC135R
+AIR Turkey_Transport <= Patch_Turkey_A400M
+AIR Turkey_Tu-22M3 <= RussiaJetTu22M3M
+AIR Turkey_Tu-22M3_AI <= RussiaJetTu22M3M
+AIR Turkey_Mig-29A <= RussiaJetMig35
+AIR Turkey_Mig-25BM <= RussiaJetMig31K
+AIR Turkey_Su-22M3 <= RussiaJetSu34
+AIR Turkey_Su-24MK <= RussiaJetSu35AG
+AIR Turkey_Su-25K <= RussiaJetSu57
+AIR Turkey_Su-24MR <= Patch_China_J16
+AIR Turkey_Mig-23ML <= Patch_China_J10
+AIR Turkey_MirageF1_Bq <= Patch_China_J20
+AIR Turkey_Mi-28NE <= AmericaVehicleComanche
+AIR Turkey_Mi-35M3 <= AmericaHelicopterAH64E
+AIR Turkey_Mi-8T <= AmericaHelicopterAH64E-BK
+AIR Turkey_T129 <= AmericaHelicopterAH64E
+AIR Turkey_Kizilelma <= AmericaJetStealthFighter
+AIR Turkey_HeavyUAV <= AmericaDronesMq9
+AIR Turkey_StealthUAV <= AmericaJetStealthFighter
+AIR Turkey_Ababil200 <= AmericaDronesMq9
+AIR TurkeyDronesAbabil200Recon <= AmericaDronesMq9
+AIR Turkey_Quds5 <= AmericaDronesMq9
+AIR TurkeyDroneQuds5_AI <= AmericaDronesMq9
+AIR Turkey_Sarab3 <= AmericaDronesMq9
+AIR Turkey_F16V set <= USA F16CM_BLK50_DB52
+WEAPON weapon.ini retargets=1
+WEAPON weapon_phasei_turkeyfixes.ini retargets=8
+WEAPON weapon_turkey.ini retargets=19
+WEAPON weapon_turkey_phase4.ini retargets=2
+WEAPON weapon_verificationfixes.ini retargets=1
+MODEL turkey_warfactory.ini: UBArmDeal_DNS->US_WarFactoryx1
+MODEL turkey_100mmcannon_s.ini: Turkey_100Cannon->Iraq_100Cannonx3
+MODEL turkey_d30.ini: Turkey_D30->Iraq_D30x3
+MODEL turkey_powerplant.ini: Turkey_Powerplant->US_PowerPlantx3
+MODEL turkey_supplycenter.ini: Turkey_Supply->US_Supplyx3
+MODEL turkey_warfactory.ini: UBArmDeal_DNS->US_WarFactoryx1
+MODEL turkey_warfactory_ai.ini: UBArmDeal_DNS->US_WarFactoryx1
+MODEL bm21hulk.ini: Turkey_Bm21R->Iraq_BM21Rx1
+MODEL bmp1p.ini: Turkey_BMP1M3->Irq_BMP1Px2
+MODEL turkey_bmp-2.ini: Turkey_BMP-2M2->Iraq_BMP-2M2x2
+MODEL antitank.ini: Turkey_Irg-Rpg->AIRNGR_AT2x1,Turkey_Irg-Rpg29->AIRNGR_ATMx1
+MODEL enginer.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Ak->AIRNGR_RN2x1
+MODEL kornetteam.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Ak->AIRNGR_RN2x1,Turkey_Irg-AT->AIRNGR_ATMx1
+MODEL machineguner.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Pk->AIRNGR_RN2x1
+MODEL mechanized.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Ak->AIRNGR_RN2x1
+MODEL mortarteam.ini: Turkey_Irg-mrt->US_Mortarx1
+MODEL motorized.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Ak->AIRNGR_RN2x1
+MODEL rifleman.ini: AIRngr_F_SKN->AIRNGR_IDGx4,Turkey_Irg-Ak->AIRNGR_RN2x1
+MODEL turkey_worker.ini: UIWRKR_SKN->AIRNGR_IDGx1
+MODEL adnan1.ini: Turkey_Adnan1->Iraq_Adnan1x3
+MODEL il-76.ini: Turkey_IL-76->RUS_IL76MD90Ax3
+MODEL mig25rb.ini: MIG-25bm_IRQ->RUS_MIG31Kx1,Turkey_Mig-25bm->RUS_MIG31Kx5
+MODEL tu22.ini: Turkey_Tu22m3->RUS_TU22M3Mx3
+MODEL 2s1.ini: Turkey_2S1->Irq_T72M1x2
+MODEL turkey_systems.ini: NULL->AIM-120x2
+MODEL turkey_bm-21.ini: Turkey_Bm21->Iraq_BM21x1,Turkey_Bm21D->Iraq_BM21Dx2

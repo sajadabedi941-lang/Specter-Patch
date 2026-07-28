@@ -1,0 +1,14 @@
+SPECTER TURKEY FACTION FULL RESET - VERIFY REPORT
+================================================
+VERDICT: PASS
+Goal: Turkey faction loads without crash
+Actions:
+- Backed up all Turkey INIs
+- Deleted Turkey Projectiles/WeaponObjects/Shells (no new weapon objects)
+- Rebuilt F-16/Kizilelma/TB2/AKINCI/Tu-22M3 (+ roster) from USA/China/Russia donors
+- Retargeted Turkey weapons to existing USA/Russia stock projectiles
+- Remapped missing W3D models; ASCII-sanitized Turkey INIs
+BIG SHA256: cc43619b3e9c5c014d5966f31fec7a8cdb32763e90db8cadcd8894a7dbea6bc5
+BIG SIZE: 384102609
+Soft warns: 0
+FINAL: PASS

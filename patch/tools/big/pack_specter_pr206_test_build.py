@@ -23,19 +23,37 @@ SRC = (
 )
 ART = ROOT / "Release" / "SPECTER_BIG_MERGE" / "_SPEC_ART_ONE.big"
 TUR_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "Turkey Armed Forces"
+# One-off crash-fix overlays outside Turkey tree (still one-file source fixes).
+EXTRA_OVERLAYS = {
+    "United Arab Emirates/Buildings/UAE_MilitaryHQ.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "Buildings"
+        / "UAE_MilitaryHQ.ini"
+    ),
+}
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
 
 def turkey_tree_bytes(big_name: str) -> bytes | None:
     parts = Path(big_name.replace("\\", "/")).parts
-    if "Turkey Armed Forces" not in parts:
+    if "Turkey Armed Forces" in parts:
+        idx = parts.index("Turkey Armed Forces")
+        rel = Path(*parts[idx:])
+        path = ROOT / "Data" / "INI" / "Object" / "Specter" / rel
+        if path.is_file():
+            return path.read_bytes()
         return None
-    idx = parts.index("Turkey Armed Forces")
-    rel = Path(*parts[idx:])
-    path = ROOT / "Data" / "INI" / "Object" / "Specter" / rel
-    if not path.is_file():
-        return None
-    return path.read_bytes()
+    # Extra overlays (normalized path suffix match)
+    norm = big_name.replace("\\", "/")
+    for suffix, path in EXTRA_OVERLAYS.items():
+        if norm.endswith(suffix) and path.is_file():
+            return path.read_bytes()
+    return None
 
 
 def validate_packed(entries, art_entries) -> list[str]:

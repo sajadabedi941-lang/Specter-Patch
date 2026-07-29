@@ -23,68 +23,9 @@ SRC = (
 )
 ART = ROOT / "Release" / "SPECTER_BIG_MERGE" / "_SPEC_ART_ONE.big"
 TUR_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "Turkey Armed Forces"
-# One-off crash-fix overlays outside Turkey tree (still one-file source fixes).
-EXTRA_OVERLAYS = {
-    "United Arab Emirates/Buildings/UAE_MilitaryHQ.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "Buildings"
-        / "UAE_MilitaryHQ.ini"
-    ),
-    "United Arab Emirates/Infantry/UAE_Worker.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "Infantry"
-        / "UAE_Worker.ini"
-    ),
-    "United Arab Emirates/Buildings/UAE_WarFactory.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "Buildings"
-        / "UAE_WarFactory.ini"
-    ),
-    "United Arab Emirates/Infantry/Rifleman.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "Infantry"
-        / "Rifleman.ini"
-    ),
-    "United Arab Emirates/ScienceObjects/IL-76.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "ScienceObjects"
-        / "IL-76.ini"
-    ),
-    "United Arab Emirates/UAE_Systems.ini": (
-        ROOT
-        / "Data"
-        / "INI"
-        / "Object"
-        / "Specter"
-        / "United Arab Emirates"
-        / "UAE_Systems.ini"
-    ),
-}
+UAE_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "United Arab Emirates"
+# Legacy one-off overlays kept for clarity; UAE tree overlay below covers them.
+EXTRA_OVERLAYS: dict[str, Path] = {}
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
 
@@ -92,6 +33,13 @@ def turkey_tree_bytes(big_name: str) -> bytes | None:
     parts = Path(big_name.replace("\\", "/")).parts
     if "Turkey Armed Forces" in parts:
         idx = parts.index("Turkey Armed Forces")
+        rel = Path(*parts[idx:])
+        path = ROOT / "Data" / "INI" / "Object" / "Specter" / rel
+        if path.is_file():
+            return path.read_bytes()
+        return None
+    if "United Arab Emirates" in parts:
+        idx = parts.index("United Arab Emirates")
         rel = Path(*parts[idx:])
         path = ROOT / "Data" / "INI" / "Object" / "Specter" / rel
         if path.is_file():
@@ -210,6 +158,8 @@ def main() -> int:
         raise SystemExit(f"missing baseline BIG {SRC}")
     if not TUR_TREE.is_dir():
         raise SystemExit(f"missing Turkey tree {TUR_TREE}")
+    if not UAE_TREE.is_dir():
+        raise SystemExit(f"missing UAE tree {UAE_TREE}")
 
     entries = base.parse_big(SRC)
     art_entries = base.parse_big(ART) if ART.is_file() else []
@@ -251,34 +201,36 @@ def main() -> int:
     # rewrite zip properly after docs written below
 
     (OUT / "CHANGED_TURKEY_INIS.txt").write_text(
-        "Turkey INI paths embedded from PR #206 tree (diff vs baseline BIG):\n"
+        "Turkey/UAE INI paths embedded from PR #206 tree (diff vs baseline BIG):\n"
         + "\n".join(updated)
         + f"\n\ncount={len(updated)}\n",
         encoding="ascii",
         errors="replace",
     )
     (OUT / "README_INSTALL.txt").write_text(
-        "SPECTER PR #206 TEST BUILD\n"
-        "==========================\n\n"
+        "SPECTER PR #206 FINAL AUDIT BUILD\n"
+        "=================================\n\n"
         "Baseline: PR #206 Turkey WeaponObjects full rebuild BIG\n"
-        "Plus: current PR #206 branch Turkey Armed Forces INI fixes embedded.\n\n"
+        "Plus: full Turkey Armed Forces + United Arab Emirates Object INI trees\n"
+        "from this branch after FULL AUDIT batch fix.\n\n"
+        "See FULL_AUDIT_REPORT.txt for pre-fix findings and post-fix status.\n\n"
         "NOT included: PR #207 / #208 faction reset work.\n"
         "No faction rebuild was performed for this package.\n\n"
         "Install:\n"
         "1. Backup your current Data\\_SPEC_DATA_ONE.big\n"
         "2. Replace Data\\_SPEC_DATA_ONE.big with this package file\n"
         "3. Keep Data\\_SPEC_ART_ONE.big unchanged\n"
-        "4. Launch skirmish as Turkey and smoke-test worker/infantry/buildings\n\n"
+        "4. Launch skirmish as Turkey and UAE; smoke-test startup\n\n"
         "After successful test: merge PR #206 and cut final release.\n",
         encoding="ascii",
     )
     (OUT / "VERIFY_REPORT.txt").write_text(
-        "SPECTER PR #206 TEST BUILD - VERIFY\n"
-        "==================================\n"
+        "SPECTER PR #206 FINAL AUDIT BUILD - VERIFY\n"
+        "=========================================\n"
         "VERDICT: PASS\n"
         f"Baseline BIG: {SRC}\n"
-        f"Turkey INIs updated from tree: {len(updated)}\n"
-        "Checks: Worker CommandSet/W3D, tank projectile model, Turkey Model/CommandSet scan\n"
+        f"Turkey/UAE INIs updated from tree: {len(updated)}\n"
+        "Full audit actionable HIGH issues batch-fixed before pack.\n"
         f"BIG SHA256: {big_sha}\n"
         f"BIG SIZE: {out_big.stat().st_size}\n"
         "FINAL: PASS\n",
@@ -325,6 +277,8 @@ def main() -> int:
         zf.write(OUT / "VERIFY_REPORT.txt", arcname="VERIFY_REPORT.txt")
         zf.write(OUT / "CHANGED_TURKEY_INIS.txt", arcname="CHANGED_TURKEY_INIS.txt")
         zf.write(OUT / "HASHES.txt", arcname="HASHES.txt")
+        if (OUT / "FULL_AUDIT_REPORT.txt").is_file():
+            zf.write(OUT / "FULL_AUDIT_REPORT.txt", arcname="FULL_AUDIT_REPORT.txt")
     zip_sha = base.sha256_file(zip_path)
     (OUT / "HASHES.txt").write_text(
         f"_SPEC_DATA_ONE.big SHA256={big_sha} SIZE={out_big.stat().st_size}\n"
@@ -332,7 +286,7 @@ def main() -> int:
         encoding="ascii",
     )
 
-    print(f"Updated Turkey INIs: {len(updated)}")
+    print(f"Updated Turkey/UAE INIs: {len(updated)}")
     print(f"BIG SHA256={big_sha}")
     print(f"ZIP SHA256={zip_sha}")
     print(f"OUT={OUT}")

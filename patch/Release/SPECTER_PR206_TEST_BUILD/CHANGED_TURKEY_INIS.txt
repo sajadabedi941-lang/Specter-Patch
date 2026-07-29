@@ -1,4 +1,4 @@
-Turkey INI paths embedded from PR #206 tree (diff vs baseline BIG):
+Turkey/UAE INI paths embedded from PR #206 tree (diff vs baseline BIG):
 Data\INI\Object\Specter\Turkey Armed Forces\_ID_MAP.txt
 Data\INI\Object\Specter\Turkey Armed Forces\AI\Turkey_Airfield_T.ini
 Data\INI\Object\Specter\Turkey Armed Forces\AI\Turkey_Airfield_T2.ini
@@ -92,12 +92,49 @@ Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_TRG230.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_TRLG230.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply_AI.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense Sites\SamSite.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\Roland3K.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_AntiDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_MD.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_SAM.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_SHORAD.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\ZSU23.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_F16Blk60.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Mi-8.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Mig-29A.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_MirageF1-Bq.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_MQ9.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Su-25K.ini
+Data\INI\Object\Specter\United Arab Emirates\APC\BTR90.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Abbas.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_AdvancedAirBase.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Airfield_T.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Barracks.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_CommandCenter.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_MIC.ini
 Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_MilitaryHQ.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_PowerPlant.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_RadarStation.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_SupplyCenter.ini
 Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_WarFactory.ini
+Data\INI\Object\Specter\United Arab Emirates\Drones\UAE_LoiteringDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\Drones\UAE_ReconDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\IFV\Bmp1P.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\AntiAir.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\Antitank.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\HeavySniper.ini
 Data\INI\Object\Specter\United Arab Emirates\Infantry\Rifleman.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\UAE_ElitePresidential.ini
 Data\INI\Object\Specter\United Arab Emirates\Infantry\UAE_Worker.ini
 Data\INI\Object\Specter\United Arab Emirates\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\T72M1.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\UAE_Leclerc.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\VT72B.ini
 Data\INI\Object\Specter\United Arab Emirates\UAE_Systems.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\UAE_BM-21.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\UAE_Ural375_Supply.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Turkey_WeaponObjects.ini
 
-count=100
+count=137

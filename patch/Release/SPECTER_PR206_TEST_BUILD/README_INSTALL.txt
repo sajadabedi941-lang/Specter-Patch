@@ -1,19 +1,19 @@
-SPECTER PR #206 TEST BUILD
-==========================
+SPECTER PR #206 FINAL AUDIT BUILD
+=================================
 
-Full init validation pass: remaining Turkey/UAE hard missing refs remapped.
+Baseline: PR #206 Turkey WeaponObjects full rebuild BIG
+Plus: full Turkey Armed Forces + United Arab Emirates Object INI trees
+from this branch after FULL AUDIT batch fix.
 
-Latest UAE fixes in this package:
-- UAE_RepublicanGuard_AKMS: AIRngr_F_SKN -> AIRNGR_IDG
-- UAE_IL-76: model -> RUS_IL76MD90A (Turkey donor)
-- UAE_R11_CH_Explosion: DeathWeapon -> R11_CH_Explosion
+See FULL_AUDIT_REPORT.txt for pre-fix findings and post-fix status.
 
-Also includes: UAE_MilitaryHQ v2, UAE_Worker, Turkey_MIC, UAE_WarFactory_T,
-Turkey_Systems DeathWeapon/FX remaps.
+NOT included: PR #207 / #208 faction reset work.
+No faction rebuild was performed for this package.
 
 Install:
-1. Backup Data\_SPEC_DATA_ONE.big
-2. Replace with this package BIG
+1. Backup your current Data\_SPEC_DATA_ONE.big
+2. Replace Data\_SPEC_DATA_ONE.big with this package file
 3. Keep Data\_SPEC_ART_ONE.big unchanged
+4. Launch skirmish as Turkey and UAE; smoke-test startup
 
-Do not merge until confirmed.
+After successful test: merge PR #206 and cut final release.

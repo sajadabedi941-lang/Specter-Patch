@@ -1,9 +1,7 @@
 SPECTER PR #206 TEST BUILD - VERIFY
 ==================================
 VERDICT: PASS
-Fix: UAE_Worker GLAWorkerCommandSet + UIWRKR_SKN remap
-Checks: ASCII, CommandSet UAE_WorkerCommandSet, Model AIRNGR_IDG, no GLAWorkerCommandSet
-Object name: UAE_Worker unchanged
-BIG SHA256: 116f78ae60d776d1830eb259515af0fcf04c27f314e5bfb41e1532b2f2b2844d
-BIG SIZE: 384322618
+Fix: Turkey_MIC stock OCL_Abbas/HussienResearchObject remap
+BIG SHA256: 11a4826d30018512fa796e37119a0dd17fe786ae2ad96f9a01fb1c691e9dd3da
+BIG SIZE: 384322685
 FINAL: PASS

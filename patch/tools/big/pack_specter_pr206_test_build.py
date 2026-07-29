@@ -45,6 +45,16 @@ EXTRA_OVERLAYS = {
         / "Infantry"
         / "UAE_Worker.ini"
     ),
+    "United Arab Emirates/Buildings/UAE_WarFactory.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "Buildings"
+        / "UAE_WarFactory.ini"
+    ),
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
@@ -119,6 +129,22 @@ def validate_packed(entries, art_entries) -> list[str]:
         fails.append("UAE_Worker still uses missing UIWRKR_SKN")
     if any(ord(c) > 127 for c in uae_worker):
         fails.append("UAE_Worker has non-ASCII bytes")
+
+    uae_wf = next(
+        (
+            b.decode("utf-8", "replace")
+            for n, b in entries
+            if n.replace("\\", "/").endswith("UAE_WarFactory.ini")
+        ),
+        "",
+    )
+    uae_wf_body = "\n".join(l.split(";", 1)[0] for l in uae_wf.splitlines())
+    if "UBArmDeal_DNS" in uae_wf_body:
+        fails.append("UAE_WarFactory still uses missing UBArmDeal_DNS model")
+    if "Object UAE_WarFactory_T" not in uae_wf:
+        fails.append("missing Object UAE_WarFactory_T in UAE_WarFactory.ini")
+    if any(ord(c) > 127 for c in uae_wf):
+        fails.append("UAE_WarFactory has non-ASCII bytes")
 
     tank = next(
         (

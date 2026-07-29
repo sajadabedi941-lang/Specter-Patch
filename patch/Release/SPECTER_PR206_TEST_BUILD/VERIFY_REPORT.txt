@@ -1,7 +1,7 @@
 SPECTER PR #206 TEST BUILD - VERIFY
 ==================================
 VERDICT: PASS
-Fix: Turkey_MIC stock OCL_Abbas/HussienResearchObject remap
-BIG SHA256: 11a4826d30018512fa796e37119a0dd17fe786ae2ad96f9a01fb1c691e9dd3da
-BIG SIZE: 384322685
+Fix: UAE_WarFactory_T Irq_WarFactory model remap
+BIG SHA256: 841de470cd83bcb32406249fae3c2e1baf4e9ddb2be15bf5fafd7890942e35d7
+BIG SIZE: 384322665
 FINAL: PASS

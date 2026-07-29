@@ -1,9 +1,9 @@
 SPECTER PR #206 TEST BUILD - VERIFY
 ==================================
 VERDICT: PASS
-Fix: UAE_MilitaryHQ AmericaCommandCenter donor remap v2
-Checks: ASCII, CommandSet/SpecialPower/Science/Upgrade/OCL/W3D/CommandButton deps
-Object name: UAE_MilitaryHQ unchanged
-BIG SHA256: bac5a9ccdbabc194cb6edddb45be725ff49269d7d18fdf63221eb6309f7e53c4
-BIG SIZE: 384322357
+Fix: UAE_Worker GLAWorkerCommandSet + UIWRKR_SKN remap
+Checks: ASCII, CommandSet UAE_WorkerCommandSet, Model AIRNGR_IDG, no GLAWorkerCommandSet
+Object name: UAE_Worker unchanged
+BIG SHA256: 116f78ae60d776d1830eb259515af0fcf04c27f314e5bfb41e1532b2f2b2844d
+BIG SIZE: 384322618
 FINAL: PASS

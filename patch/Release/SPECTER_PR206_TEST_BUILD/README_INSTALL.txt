@@ -1,13 +1,14 @@
 SPECTER PR #206 TEST BUILD
 ==========================
 
-Includes: Turkey WeaponObjects rebuild + UAE_MilitaryHQ v2 + UAE_Worker +
-Turkey_MIC OCL + UAE_WarFactory_T model fix.
+Includes prior PR #206 crash fixes plus Turkey_Systems DeathWeapon/FX remap.
 
-UAE_WarFactory_T:
-- Object name unchanged
-- Missing UBArmDeal_DNS -> Irq_WarFactory (Turkey_WarFactory donor)
-- ASCII-only INI
+Turkey_Systems:
+- Turkey_HussieanExplosionWeapon -> HussieanExplosionWeapon
+- WPTurkey_Nasr2500DamageWeapon -> WPNasr2500DamageWeapon
+- WPTurkey_Nasr2500Impact -> WPNasr2500Impact
+- Turkey_R11_CH_Explosion (weapon) -> R11_CH_Explosion
+Object names unchanged.
 
 Install:
 1. Backup Data\_SPEC_DATA_ONE.big

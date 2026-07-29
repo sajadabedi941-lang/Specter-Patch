@@ -1,9 +1,7 @@
-SPECTER PR #206 FINAL AUDIT BUILD - VERIFY
-=========================================
+SPECTER PR #206 FINAL AUDIT FIX - VERIFY
+=======================================
 VERDICT: PASS
-Baseline BIG: /workspace/patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/_SPEC_DATA_ONE.big
-Turkey/UAE INIs updated from tree: 137
-Full audit actionable HIGH issues batch-fixed before pack.
+Gate: CRIT/HIGH=0 Missing Weapon/FX/OCL/Model=0 ASCII=0
 BIG SHA256: f84548488c26c27ed170c2e813a43074844148dcc666ded70ba44e48334f3720
 BIG SIZE: 384319730
 FINAL: PASS

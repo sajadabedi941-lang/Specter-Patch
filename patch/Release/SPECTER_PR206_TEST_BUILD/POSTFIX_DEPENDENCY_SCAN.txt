@@ -1,0 +1,27 @@
+SPECTER PR #206 POST-FIX FULL DEPENDENCY SCAN
+========================================================================
+Generated: 2026-07-29 22:32:31Z
+Packed BIG: /workspace/patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+Scoped Object INIs: 212
+
+REQUIRED AUDIT ITEM STATUS
+------------------------------------------------------------------------
+1. Active Upgrade_Specter_Tier1/2/3 TriggeredBy refs: 0 (want 0)
+2. FX_30mmAPFSDSHitEffect refs: 0 (want 0)
+3. AVTankShel/AVTankShell Model refs: 0 (want 0)
+4. Non-ASCII Object INIs: 0 (want 0)
+
+DEPENDENCY SUMMARY
+------------------------------------------------------------------------
+CRIT: 0
+HIGH: 0
+MED:  0
+Missing Weapon/DeathWeapon: 0
+Missing FX/DeathFX: 0
+Missing OCL: 0
+Missing Model/W3D: 0
+
+REMAINING CRIT/HIGH: none
+
+GATE for final release: PASS
+END

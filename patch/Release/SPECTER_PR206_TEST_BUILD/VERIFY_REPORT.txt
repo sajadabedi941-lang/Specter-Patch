@@ -1,0 +1,9 @@
+SPECTER PR #206 TEST BUILD - VERIFY
+==================================
+VERDICT: PASS
+Baseline BIG: /workspace/patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/_SPEC_DATA_ONE.big
+Turkey INIs updated from tree: 94
+Checks: Worker CommandSet/W3D, tank projectile model, Turkey Model/CommandSet scan
+BIG SHA256: f995e1e9643464b3673b52cb034dd3d5e26268362a105895febac95269d27b28
+BIG SIZE: 384318686
+FINAL: PASS

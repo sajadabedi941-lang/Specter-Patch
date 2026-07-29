@@ -1,14 +1,15 @@
 SPECTER PR #206 TEST BUILD
 ==========================
 
-Includes prior PR #206 crash fixes plus Turkey_Systems DeathWeapon/FX remap.
+Full init validation pass: remaining Turkey/UAE hard missing refs remapped.
 
-Turkey_Systems:
-- Turkey_HussieanExplosionWeapon -> HussieanExplosionWeapon
-- WPTurkey_Nasr2500DamageWeapon -> WPNasr2500DamageWeapon
-- WPTurkey_Nasr2500Impact -> WPNasr2500Impact
-- Turkey_R11_CH_Explosion (weapon) -> R11_CH_Explosion
-Object names unchanged.
+Latest UAE fixes in this package:
+- UAE_RepublicanGuard_AKMS: AIRngr_F_SKN -> AIRNGR_IDG
+- UAE_IL-76: model -> RUS_IL76MD90A (Turkey donor)
+- UAE_R11_CH_Explosion: DeathWeapon -> R11_CH_Explosion
+
+Also includes: UAE_MilitaryHQ v2, UAE_Worker, Turkey_MIC, UAE_WarFactory_T,
+Turkey_Systems DeathWeapon/FX remaps.
 
 Install:
 1. Backup Data\_SPEC_DATA_ONE.big

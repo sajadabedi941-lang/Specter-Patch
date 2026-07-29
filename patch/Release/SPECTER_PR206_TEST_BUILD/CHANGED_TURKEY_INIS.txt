@@ -94,7 +94,10 @@ Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply_AI.ini
 Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_MilitaryHQ.ini
 Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_WarFactory.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\Rifleman.ini
 Data\INI\Object\Specter\United Arab Emirates\Infantry\UAE_Worker.ini
+Data\INI\Object\Specter\United Arab Emirates\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\United Arab Emirates\UAE_Systems.ini
 Data\INI\Object\Specter\Turkey Armed Forces\Turkey_WeaponObjects.ini
 
-count=97
+count=100

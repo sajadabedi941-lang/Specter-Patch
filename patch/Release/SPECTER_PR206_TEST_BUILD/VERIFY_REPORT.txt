@@ -1,7 +1,7 @@
 SPECTER PR #206 TEST BUILD - VERIFY
 ==================================
 VERDICT: PASS
-Fix: Turkey_Systems stock DeathWeapon/DeathFX remap
-BIG SHA256: f5dbe7a0c2c65bd1b0f02d5bb0a59a32aa2039b8c36ddc7c3f5f745b0033c22f
-BIG SIZE: 384322892
+Fix: UAE Rifleman/IL-76/Systems hard missing Model/DeathWeapon remap
+BIG SHA256: 0aa186a2a80c916512e7e2bc89d2e07a1e08454776ecac8348aa29e73abeba9f
+BIG SIZE: 384322913
 FINAL: PASS

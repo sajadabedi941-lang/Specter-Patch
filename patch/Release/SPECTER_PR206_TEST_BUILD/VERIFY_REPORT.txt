@@ -1,9 +1,9 @@
 SPECTER PR #206 TEST BUILD - VERIFY
 ==================================
 VERDICT: PASS
-Baseline BIG: /workspace/patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/_SPEC_DATA_ONE.big
-Turkey INIs updated from tree: 94
-Checks: Worker CommandSet/W3D, tank projectile model, Turkey Model/CommandSet scan
-BIG SHA256: f995e1e9643464b3673b52cb034dd3d5e26268362a105895febac95269d27b28
-BIG SIZE: 384318686
+Fix: UAE_MilitaryHQ AmericaCommandCenter donor remap v2
+Checks: ASCII, CommandSet/SpecialPower/Science/Upgrade/OCL/W3D/CommandButton deps
+Object name: UAE_MilitaryHQ unchanged
+BIG SHA256: bac5a9ccdbabc194cb6edddb45be725ff49269d7d18fdf63221eb6309f7e53c4
+BIG SIZE: 384322357
 FINAL: PASS

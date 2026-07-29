@@ -55,6 +55,35 @@ EXTRA_OVERLAYS = {
         / "Buildings"
         / "UAE_WarFactory.ini"
     ),
+    "United Arab Emirates/Infantry/Rifleman.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "Infantry"
+        / "Rifleman.ini"
+    ),
+    "United Arab Emirates/ScienceObjects/IL-76.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "ScienceObjects"
+        / "IL-76.ini"
+    ),
+    "United Arab Emirates/UAE_Systems.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "UAE_Systems.ini"
+    ),
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 

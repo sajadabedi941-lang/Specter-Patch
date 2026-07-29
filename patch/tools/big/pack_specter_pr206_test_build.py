@@ -35,6 +35,16 @@ EXTRA_OVERLAYS = {
         / "Buildings"
         / "UAE_MilitaryHQ.ini"
     ),
+    "United Arab Emirates/Infantry/UAE_Worker.ini": (
+        ROOT
+        / "Data"
+        / "INI"
+        / "Object"
+        / "Specter"
+        / "United Arab Emirates"
+        / "Infantry"
+        / "UAE_Worker.ini"
+    ),
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
@@ -87,6 +97,28 @@ def validate_packed(entries, art_entries) -> list[str]:
         fails.append("Turkey_Worker missing Turkey_WorkerCommandSet upgrade target")
     if "Model         = UIWRKR_SKN" in worker or "Model = UIWRKR_SKN" in worker:
         fails.append("Turkey_Worker still uses missing UIWRKR_SKN")
+
+    if "UAE_Worker" not in cats["Object"]:
+        fails.append("missing Object UAE_Worker")
+    if "UAE_WorkerCommandSet" not in cats["CommandSet"]:
+        fails.append("missing CommandSet UAE_WorkerCommandSet")
+    uae_worker = next(
+        (
+            b.decode("utf-8", "replace")
+            for n, b in entries
+            if n.replace("\\", "/").endswith("UAE_Worker.ini")
+        ),
+        "",
+    )
+    uae_norm = uae_worker.replace("\r\n", "\n")
+    if re.search(r"(?m)^\s*CommandSet\s*=\s*GLAWorkerCommandSet\s*$", uae_norm):
+        fails.append("UAE_Worker still references missing GLAWorkerCommandSet")
+    if "CommandSet = UAE_WorkerCommandSet" not in uae_norm:
+        fails.append("UAE_Worker missing UAE_WorkerCommandSet")
+    if re.search(r"(?m)^\s*Model\s*=\s*UIWRKR_SKN\b", uae_norm):
+        fails.append("UAE_Worker still uses missing UIWRKR_SKN")
+    if any(ord(c) > 127 for c in uae_worker):
+        fails.append("UAE_Worker has non-ASCII bytes")
 
     tank = next(
         (

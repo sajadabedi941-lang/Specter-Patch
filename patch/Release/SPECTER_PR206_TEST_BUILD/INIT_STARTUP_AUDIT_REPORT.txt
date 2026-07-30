@@ -1,0 +1,62 @@
+PR #206 startup initialization audit (no release)
+================================================
+Packed BIG: patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+Scope: newly modified PR206 files (GLOBAL_AUDIT_FIXED_MANIFEST + Turkey/UAE overlays
++ CommandButton.ini) plus full-BIG override/load-order follow-through.
+
+Verdict
+-------
+UAE_CommandCenter is cleared as the current crash source.
+Its special-power / Draw / Body / BuildCost / BuildTime / KindOf stack matches
+AmericaCommandCenter and UAE_MilitaryHQ (donor-identical SP section).
+
+FIRST remaining runtime initialization crash source
+---------------------------------------------------
+File: North Korea/Buildings/Iraq_PowerPlant.ini
+Line: 60
+Object: NorthKorea_PowerPlant
+Fault: CommandSet = ;Iraq_DroneCenterCommandSet
+       (comment-only / empty CommandSet value on PRELOAD STRUCTURE)
+
+Why this is first after the UAE_CommandCenter fix
+-------------------------------------------------
+1. BIG entry order places UAE_CommandCenter at rank #2366.
+2. The only remaining comment-only CommandSet in the entire packed BIG is this
+   North Korea PowerPlant at rank #2820 (after UAE_CC).
+3. PR206 global audit fixed NorthKorea_PowerPlant inside
+   Data/INI/Object/Specter/North Korea/NorthKorea_Systems.ini
+   (Object ~line 7205, CommandSet = ChinaPowerPlantCommandSet ~line 7253),
+   but the later BIG path North Korea/Buildings/Iraq_PowerPlant.ini still
+   redefines the same Object with the old commented CommandSet and overrides it.
+4. Same crash class the audit already called out for Iraq_PowerPlant /
+   Sam2 / Systems: "CommandSet = ;Something" => no valid CommandSet => init
+   exception (often with no Last error once the named Object path is gone).
+
+Second pending init hazard (same override class; later in BIG)
+--------------------------------------------------------------
+File: North Korea/Infantry/Iraq_Worker.ini
+Line: 374
+Object: Iraq_Worker (CommandSetUpgrade ModuleTag_15)
+Fault: CommandSet = GLAWorkerCommandSet
+Note: GLAWorkerCommandSet is missing (BIG only has typo GLAWorkerCommandSetg).
+      Documented in UAE_Worker as EXCEPTION_ACCESS_VIOLATION @ NULL.
+      Overrides the PR206-fixed Specter Iraq_Worker.ini which already uses
+      Iraq_WorkerCommandSet.
+
+UAE_CommandCenter checks (PASS)
+-------------------------------
+- Object inheritance: none (standalone donor clone)
+- CommandSet: UAE_CommandCenterCommandSet (defined; buttons resolve)
+- CommandButton Object targets for CS buttons: present
+- SpecialPowerTemplate / OCL / GunshipTemplateName: all resolve
+- Upgrade GrantUpgradeCreate / ObjectCreationUpgrade: resolve
+- Model/Draw: US_Command / US_COM_Strb present
+- BuildCost=2000 BuildTime=45.0 present
+- Duplicate ModuleTags: none
+- SP stack vs AmericaCommandCenter / UAE_MilitaryHQ: identical
+
+Newly modified PR206 Object files (manifest + Turkey/UAE): no remaining
+in-file CommandSet=none / comment-only / missing-CS faults. The crash is the
+post-fix late BIG override of NorthKorea_PowerPlant.
+
+Not released.

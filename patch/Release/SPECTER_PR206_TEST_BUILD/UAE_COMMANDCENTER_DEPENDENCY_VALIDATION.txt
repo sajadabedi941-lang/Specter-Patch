@@ -1,0 +1,12 @@
+UAE_CommandCenter dependency validation (post-pack)
+===================================================
+Packed BIG: patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+BIG SHA256: f13224431c6c246a6a038c2b43fafdb82f6ea96a69f2cda0a58c54c97a20b6eb
+Side=UAE preserved: Yes
+CommandSet=UAE_CommandCenterCommandSet preserved: Yes
+Donor special-power stack: AmericaCommandCenter
+Removed crashy UAE-only FOAB/Tu22/AWACS/Insertion modules: Yes
+ASCII-only: Yes
+Issues: 0
+none
+VERDICT: PASS

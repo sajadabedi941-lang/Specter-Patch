@@ -1,19 +1,16 @@
-SPECTER PR #206 GLOBAL FINAL AUDIT BUILD
-=======================================
+SPECTER PR #206 UAE_CommandCenter AmericaCommandCenter donor fix
+================================================================
 
-Baseline: PR #206 Turkey WeaponObjects full rebuild BIG
-Plus: Turkey Armed Forces + United Arab Emirates Object INI trees
-Plus: global audit batch fixes across ALL listed factions
+Fixes startup crash on UAE_CommandCenter.ini by aligning special-power
+modules to the working AmericaCommandCenter donor (same method as UAE_MilitaryHQ).
 
-See GLOBAL_FINAL_AUDIT_REPORT.txt for full faction gate status.
-
-ALL FACTIONS PASS: True
-No faction rebuild was performed.
+Preserved:
+- Object UAE_CommandCenter
+- Side=UAE
+- CommandSet=UAE_CommandCenterCommandSet
+- BuildCost/BuildTime/HP/geometry
 
 Install:
-1. Backup your current Data\_SPEC_DATA_ONE.big
-2. Replace Data\_SPEC_DATA_ONE.big with this package file
-3. Keep Data\_SPEC_ART_ONE.big unchanged
-4. Launch skirmish across fixed factions; smoke-test startup
-
-After successful test: merge PR #206.
+1. Backup Data\_SPEC_DATA_ONE.big
+2. Replace with this package BIG
+3. Keep _SPEC_ART_ONE.big unchanged

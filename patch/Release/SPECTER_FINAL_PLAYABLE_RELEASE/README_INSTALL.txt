@@ -1,12 +1,10 @@
 SPECTER FINAL PLAYABLE RELEASE
 ==============================
-DATA BIG SHA256: 4025ef45ce77a52f8779052ac11c275f395ef67665c340d8c7fbc4480d532740
+DATA BIG SHA256: e5220ce8c9bba4969fe93b3093aad9884657049b8e9fb853747284dfc07a4d78
 Install: copy _SPEC_DATA_ONE.big over your Specter Data\_SPEC_DATA_ONE.big
 Keep your existing _SPEC_ART_ONE.big (this package is DATA-only).
 
-This build: complete ZH init parser audit of Object/Science/Weapon.
-Primary fix: Russian Federation 9K317 Latin/Cyrillic M weapon+locomotor ASCII aliases.
-Also: NK CommandSet boot fixes, Shahed flash weapons, tool INIs excluded.
+Fix: packed Russia_WeaponObjects.ini Object 9M317_MissileObject
+(restored original Specter block; removed invalid PRELOAD donor stub).
 
-See FULL_PARSER_CRASH_AUDIT.txt and VALIDATION_REPORT.txt.
-
+See RUSSIA_9M317_MISSILEOBJECT_CRASH_FIX.txt and ZH_INIT_VALIDATION_REPORT.txt.

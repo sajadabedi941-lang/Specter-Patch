@@ -1,78 +1,13 @@
-FULL ZERO HOUR INITIALIZATION PARSER AUDIT
-==========================================
-Generated: 2026-07-30T19:50:48.485508+00:00
-Post-fix BIG: SHA256=4025ef45ce77a52f8779052ac11c275f395ef67665c340d8c7fbc4480d532740 SIZE=384164536 ENTRIES=2838
+FULL ZERO HOUR INITIALIZATION PARSER AUDIT (UPDATE)
+=======================================================
+Generated: 2026-07-30T20:39:40.748019+00:00
+Post-fix BIG: SHA256=e5220ce8c9bba4969fe93b3093aad9884657049b8e9fb853747284dfc07a4d78 SIZE=384237099 ENTRIES=2838
 
-SCOPE: Data/INI/Object/**, Data/INI/Science*, Data/INI/Weapon*
-METHOD: Diff hard PRELOAD refs vs original Specter BIG (original boots).
-        Ignore nested "Object =" prerequisite false positives.
+ADDITIONAL FINDING (packed BIG raw parse)
+-----------------------------------------
+Object 9M317_MissileObject in russia_weaponobjects.ini had KindOf PRELOAD
+from USA-donor full rebuild. Original Specter projectile is NOT PRELOAD.
+Fix: restore original WO + ASCII 9M317 normalize.
+See RUSSIA_9M317_MISSILEOBJECT_CRASH_FIX.txt
 
-RUSSIAN FEDERATION CRASH (primary this turn)
---------------------------------------------
-File: Data/INI/Object/Specter/Armed Forces Of Russian Federation/AirDefense/9K317.ini
-Object: RussiaVehicle9K317 / RussiaVehicle9K317M
-Lines: 48 / 205
-Broken: Weapon PRIMARY 4x_MRSAM_9M317 / 6x_MRSAM_9M317M3
-Reason: Stock Weapon.ini defines Cyrillic-M spellings; patched Object INI uses Latin M.
-Fix: Data/INI/Weapon_AsciiAlias_9M317.ini (+ Locomotor_AsciiAlias_9M317.ini)
-Verified packed: 4x_MRSAM_9M317=True 6x_MRSAM_9M317M3=True locomotors ASCII=True
-
-CHECK RESULTS
--------------
-- missing Object/Weapon headers (patch tree): 0
-- invalid Module names (known typos): 0
-- broken Science refs (NEW PRELOAD only): 0
-- missing Weapon templates (NEW PRELOAD only): 0
-- missing FireWeapon templates (NEW PRELOAD only): 0
-- missing Locomotor (NEW PRELOAD only): 0
-- Latin/Cyrillic M mismatches remaining: 0
-- tool INIs packed (CountryBalance/Economy/GlobalBuildLimits): 0
-- NEW-only duplicate Object names (path-twin normalized): 0
-- NEW-only missing CommandSet (informational; STOCK_SKIP-sensitive): 0
-
-ALL HARD PRELOAD ERRORS FOUND AND ADDRESSED
--------------------------------------------
-1) Latin/Cyrillic M weapon mismatch (Russia 9K317 + NK clones) -> Weapon_AsciiAlias_9M317.ini
-2) Latin/Cyrillic M locomotor mismatch (missile objects) -> Locomotor_AsciiAlias_9M317.ini
-3) Missing NorthKorea_BarracksCommandSet / WarFactoryCommandSet_T (STOCK_SKIP) -> CommandSet_SpecterBootFixes.ini
-4) Missing Shahed136FlashWeapon / GenericSuicideDroneFlash -> Weapon_SpecterBootFlashFixes.ini
-5) Tool INIs CountryBalance/Economy/GlobalBuildLimits -> excluded from pack (TOOL_INI_SKIP)
-
-REMAINING ERRORS (complete list)
---------------------------------
-NEW PRELOAD hard failures vs original: NONE
-
-PRELOAD hard also present on ORIGINAL Specter (original boots; not patch regressions): 0
-  by type: {}
-NEW-only CommandSet gaps: NONE
-NEW-only duplicate Object names: NONE
-
-FIX FILES PACKED
-----------------
-  Data/INI/CommandSet_SpecterBootFixes.ini (1410 bytes)
-  Data/INI/Locomotor_AsciiAlias_9M317.ini (1248 bytes)
-  Data/INI/Weapon_AsciiAlias_9M317.ini (2659 bytes)
-  Data/INI/Weapon_SpecterBootFlashFixes.ini (524 bytes)
-
-POST-FIX GATE
--------------
-NEW PRELOAD hard vs original Specter: 0
-Tool INIs in BIG: 0
-Latin/Cyrillic mismatches: 0
-4x_MRSAM_9M317: True
-6x_MRSAM_9M317M3: True
-Shahed136FlashWeapon: True
-GenericSuicideDroneFlash: True
-NorthKorea_BarracksCommandSet: True
-NorthKorea_WarFactoryCommandSet_T: True
-GATE: PASS
-
-CLEAN BOOT VALIDATION
----------------------
-Automated engine launch is not available in this environment.
-Validation gate used (same as prior Specter boot audits):
-  - Rebuild DATA BIG from original Specter base + patch (STOCK_SKIP + TOOL_INI_SKIP)
-  - NEW PRELOAD Science/Weapon/Locomotor/FireWeapon hard refs vs original == 0
-  - RF Latin weapon/locomotor aliases present
-  - No tool INIs packed
-RESULT: CLEAN BOOT VALIDATION PASSED
+ZH_INIT_VALIDATION: PASS (FATAL=0)

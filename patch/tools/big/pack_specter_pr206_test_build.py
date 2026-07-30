@@ -24,8 +24,10 @@ SRC = (
 ART = ROOT / "Release" / "SPECTER_BIG_MERGE" / "_SPEC_ART_ONE.big"
 TUR_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "Turkey Armed Forces"
 UAE_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "United Arab Emirates"
-# Legacy one-off overlays kept for clarity; UAE tree overlay below covers them.
-EXTRA_OVERLAYS: dict[str, Path] = {}
+# Global audit + prior one-off overlays. Keys are BIG path suffixes.
+EXTRA_OVERLAYS: dict[str, Path] = {
+    "Data/INI/CommandButton.ini": ROOT / "Data" / "INI" / "CommandButton.ini",
+}
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
 
@@ -48,9 +50,31 @@ def turkey_tree_bytes(big_name: str) -> bytes | None:
     # Extra overlays (normalized path suffix match)
     norm = big_name.replace("\\", "/")
     for suffix, path in EXTRA_OVERLAYS.items():
-        if norm.endswith(suffix) and path.is_file():
+        if norm.endswith(suffix.replace("\\", "/")) and path.is_file():
             return path.read_bytes()
     return None
+
+
+def register_global_audit_overlays() -> int:
+    """Register only INIs listed in GLOBAL_AUDIT_FIXED_MANIFEST.txt."""
+    manifest = OUT / "GLOBAL_AUDIT_FIXED_MANIFEST.txt"
+    if not manifest.is_file():
+        return 0
+    n = 0
+    for line in manifest.read_text(encoding="ascii", errors="replace").splitlines():
+        rel = line.strip().replace("\\", "/")
+        if not rel or rel.startswith("count=") or rel.startswith("changed=") or not rel.endswith(".ini"):
+            continue
+        if not rel.startswith("Data/"):
+            continue
+        # ROOT is patch/; manifest paths are Data/INI/...
+        path = ROOT / rel
+        if path.is_file():
+            EXTRA_OVERLAYS[rel] = path
+            n += 1
+        else:
+            print(f"WARN missing overlay source: {path}")
+    return n
 
 
 def validate_packed(entries, art_entries) -> list[str]:
@@ -160,6 +184,9 @@ def main() -> int:
         raise SystemExit(f"missing Turkey tree {TUR_TREE}")
     if not UAE_TREE.is_dir():
         raise SystemExit(f"missing UAE tree {UAE_TREE}")
+
+    n_overlay = register_global_audit_overlays()
+    print(f"Global audit overlays registered: {n_overlay} (+ CommandButton if present)")
 
     entries = base.parse_big(SRC)
     art_entries = base.parse_big(ART) if ART.is_file() else []

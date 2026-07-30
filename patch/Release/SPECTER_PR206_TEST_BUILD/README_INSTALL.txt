@@ -1,24 +1,19 @@
-SPECTER PR #206 FINAL AUDIT FIX RELEASE
+SPECTER PR #206 GLOBAL FINAL AUDIT BUILD
 =======================================
 
-All FULL AUDIT remaining issues applied and re-verified:
+Baseline: PR #206 Turkey WeaponObjects full rebuild BIG
+Plus: Turkey Armed Forces + United Arab Emirates Object INI trees
+Plus: global audit batch fixes across ALL listed factions
 
-1. Upgrade_Specter_Tier1/2/3 TriggeredBy modules disabled
-2. FX_30mmAPFSDSHitEffect -> WeaponFX_GenericTankShellDetonation
-3. AVTankShel -> Irq_255mm_Round (UAE_Projectile_Tank)
-4. 69 Turkey/UAE Object INIs ASCII-sanitized
+See GLOBAL_FINAL_AUDIT_REPORT.txt for full faction gate status.
 
-Post-fix dependency scan gate: PASS
-CRIT/HIGH = 0
-Missing Weapon/FX/OCL/Model = 0
-Non-ASCII Object INIs = 0
-
-See POSTFIX_DEPENDENCY_SCAN.txt and FULL_AUDIT_REPORT.txt.
+ALL FACTIONS PASS: True
+No faction rebuild was performed.
 
 Install:
-1. Backup Data\_SPEC_DATA_ONE.big
-2. Replace with this package BIG
+1. Backup your current Data\_SPEC_DATA_ONE.big
+2. Replace Data\_SPEC_DATA_ONE.big with this package file
 3. Keep Data\_SPEC_ART_ONE.big unchanged
-4. Skirmish smoke-test Turkey + UAE startup
+4. Launch skirmish across fixed factions; smoke-test startup
 
-Do not merge until confirmed.
+After successful test: merge PR #206.

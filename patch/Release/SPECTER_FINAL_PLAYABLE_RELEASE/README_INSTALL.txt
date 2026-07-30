@@ -1,16 +1,24 @@
-SPECTER FINAL PLAYABLE RELEASE — BOOT CRASH FIX
-==============================================
+SPECTER FINAL PLAYABLE — CLEAN BASE REBUILD (tool INIs excluded)
+================================================================
 
-BIG SHA256: 036f88eb3ce0e1f222f986dd66d9500f5174d0a327d70e9b29047dbf25d5ff57
-BIG SIZE:   384321596
+BIG SHA256: f69c8dd4fc804c9537f4961be5dd36647e2567a718a611f91fab5b3abf6e7d4b
+BIG SIZE:   384158503
+
+This _SPEC_DATA_ONE.big was rebuilt from the original working Specter DATA BIG
+plus patch/Data with non-game tool INIs excluded:
+  - Data/INI/CountryBalance.ini
+  - Data/INI/Economy/*.ini
+  - Data/INI/GlobalBuildLimits_SpecterPatch.ini
+
+Those configs live only at:
+  patch/tools/economy/config/
 
 Install:
-  1. Replace Data\_SPEC_DATA_ONE.big with the file in this package
+  1. Replace Data\_SPEC_DATA_ONE.big with this file
   2. Keep Data\_SPEC_ART_ONE.big
-  3. Delete leftover _SPECTER_PATCH_FINAL*.big if present
-  4. Delete stale loose Data\INI\Object\Specter\British Armed Forces\ if present
-  5. Delete flat Data\INI\Britain_CombatDrone.ini if present
+  3. Do NOT copy CountryBalance.ini / Economy/*.ini / GlobalBuildLimits_*.ini
+     into GameRoot Data\INI
+  4. Delete leftover _SPECTER_PATCH_FINAL*.big if present
 
-Boot crash fixed in this build:
-  PRELOAD Object Shahed136Flash referenced missing Weapon Shahed136FlashWeapon.
-  See FINAL_BOOT_CRASH_REPORT.txt.
+Goal: reach main menu (no tool-schema init crash).
+No new gameplay content in this rebuild step.

@@ -36,6 +36,9 @@ EXTRA_OVERLAYS: dict[str, Path] = {
     "North Korea/Buildings/Iraq_Barracks.ini": NK_TREE
     / "Buildings"
     / "Iraq_Barracks.ini",
+    "North Korea/Buildings/Iraq_WarFactory.ini": NK_TREE
+    / "Buildings"
+    / "Iraq_WarFactory.ini",
     "North Korea/Infantry/Iraq_Worker.ini": NK_TREE / "Infantry" / "Iraq_Worker.ini",
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"

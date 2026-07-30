@@ -28,10 +28,14 @@ NK_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "North Korea"
 # Global audit + prior one-off overlays. Keys are BIG path suffixes.
 EXTRA_OVERLAYS: dict[str, Path] = {
     "Data/INI/CommandButton.ini": ROOT / "Data" / "INI" / "CommandButton.ini",
+    "Data/INI/CommandSet.ini": ROOT / "Data" / "INI" / "CommandSet.ini",
     # Late BIG short-path overrides (rank after Specter NK Systems) — init crash sources.
     "North Korea/Buildings/Iraq_PowerPlant.ini": NK_TREE
     / "Buildings"
     / "Iraq_PowerPlant.ini",
+    "North Korea/Buildings/Iraq_Barracks.ini": NK_TREE
+    / "Buildings"
+    / "Iraq_Barracks.ini",
     "North Korea/Infantry/Iraq_Worker.ini": NK_TREE / "Infantry" / "Iraq_Worker.ini",
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"

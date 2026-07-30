@@ -1,24 +1,12 @@
-SPECTER FINAL PLAYABLE — CLEAN BASE REBUILD (tool INIs excluded)
-================================================================
+SPECTER FINAL PLAYABLE RELEASE
+==============================
+DATA BIG SHA256: 4025ef45ce77a52f8779052ac11c275f395ef67665c340d8c7fbc4480d532740
+Install: copy _SPEC_DATA_ONE.big over your Specter Data\_SPEC_DATA_ONE.big
+Keep your existing _SPEC_ART_ONE.big (this package is DATA-only).
 
-BIG SHA256: f69c8dd4fc804c9537f4961be5dd36647e2567a718a611f91fab5b3abf6e7d4b
-BIG SIZE:   384158503
+This build: complete ZH init parser audit of Object/Science/Weapon.
+Primary fix: Russian Federation 9K317 Latin/Cyrillic M weapon+locomotor ASCII aliases.
+Also: NK CommandSet boot fixes, Shahed flash weapons, tool INIs excluded.
 
-This _SPEC_DATA_ONE.big was rebuilt from the original working Specter DATA BIG
-plus patch/Data with non-game tool INIs excluded:
-  - Data/INI/CountryBalance.ini
-  - Data/INI/Economy/*.ini
-  - Data/INI/GlobalBuildLimits_SpecterPatch.ini
+See FULL_PARSER_CRASH_AUDIT.txt and VALIDATION_REPORT.txt.
 
-Those configs live only at:
-  patch/tools/economy/config/
-
-Install:
-  1. Replace Data\_SPEC_DATA_ONE.big with this file
-  2. Keep Data\_SPEC_ART_ONE.big
-  3. Do NOT copy CountryBalance.ini / Economy/*.ini / GlobalBuildLimits_*.ini
-     into GameRoot Data\INI
-  4. Delete leftover _SPECTER_PATCH_FINAL*.big if present
-
-Goal: reach main menu (no tool-schema init crash).
-No new gameplay content in this rebuild step.

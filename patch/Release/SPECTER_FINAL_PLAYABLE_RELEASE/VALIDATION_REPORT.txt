@@ -1,9 +1,10 @@
-VALIDATION PASS
-BIG SHA256=f69c8dd4fc804c9537f4961be5dd36647e2567a718a611f91fab5b3abf6e7d4b
-BIG SIZE=384158503
-Rebuilt from clean Specter base: YES
-Tool INIs in BIG: 0
-Forbidden non-engine blocks (CountryBalanceSystem/PricingDefault/BuildLimit): 0
-patch/Data/INI tool files: ABSENT
-Canonical tool config path: patch/tools/economy/config/
-GATE: PASS (main-menu / tool-INI clean)
+SPECTER FINAL PLAYABLE — VALIDATION REPORT
+==========================================
+Generated: 2026-07-30T19:50:48.486630+00:00
+_SPEC_DATA_ONE.big SHA256: 4025ef45ce77a52f8779052ac11c275f395ef67665c340d8c7fbc4480d532740
+_SPEC_DATA_ONE.big SIZE: 384164536
+ENTRIES: 2838
+GATE: PASS
+NEW PRELOAD hard regressions: 0
+RF 9K317 ASCII weapon aliases: True
+Install: replace Data\_SPEC_DATA_ONE.big only; keep player _SPEC_ART_ONE.big

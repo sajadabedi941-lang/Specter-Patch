@@ -32,6 +32,8 @@ Data/INI/Object/Specter/Israel Defense Forces/Wheeled/PULS PH_AI.ini
 Data/INI/Object/Specter/Libyan Armed Forces/Infantry/Libya_Worker.ini
 Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
 Data/INI/Object/Specter/Libyan Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/North Korea/Buildings/Iraq_PowerPlant.ini
+Data/INI/Object/Specter/North Korea/Infantry/Iraq_Worker.ini
 Data/INI/Object/Specter/North Korea/NorthKorea_Systems.ini
 Data/INI/Object/Specter/PLA/Chines_WeaponObjects.ini
 Data/INI/Object/Specter/PLA/Tracked/Dozer.ini
@@ -66,5 +68,5 @@ Data/INI/Object/Specter/Vietnam People's Army/ScienceObjects/IL-76.ini
 Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
 Data/INI/CommandButton.ini
 
-count=67
-changed=61
+count=69
+changed=69

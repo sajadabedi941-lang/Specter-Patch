@@ -24,9 +24,15 @@ SRC = (
 ART = ROOT / "Release" / "SPECTER_BIG_MERGE" / "_SPEC_ART_ONE.big"
 TUR_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "Turkey Armed Forces"
 UAE_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "United Arab Emirates"
+NK_TREE = ROOT / "Data" / "INI" / "Object" / "Specter" / "North Korea"
 # Global audit + prior one-off overlays. Keys are BIG path suffixes.
 EXTRA_OVERLAYS: dict[str, Path] = {
     "Data/INI/CommandButton.ini": ROOT / "Data" / "INI" / "CommandButton.ini",
+    # Late BIG short-path overrides (rank after Specter NK Systems) — init crash sources.
+    "North Korea/Buildings/Iraq_PowerPlant.ini": NK_TREE
+    / "Buildings"
+    / "Iraq_PowerPlant.ini",
+    "North Korea/Infantry/Iraq_Worker.ini": NK_TREE / "Infantry" / "Iraq_Worker.ini",
 }
 OUT = ROOT / "Release" / "SPECTER_PR206_TEST_BUILD"
 
@@ -47,6 +53,13 @@ def turkey_tree_bytes(big_name: str) -> bytes | None:
         if path.is_file():
             return path.read_bytes()
         return None
+    if "North Korea" in parts:
+        idx = parts.index("North Korea")
+        rel = Path(*parts[idx:])
+        path = ROOT / "Data" / "INI" / "Object" / "Specter" / rel
+        if path.is_file():
+            return path.read_bytes()
+        # Fall through to EXTRA_OVERLAYS for short-path keys when Specter file absent.
     # Extra overlays (normalized path suffix match)
     norm = big_name.replace("\\", "/")
     for suffix, path in EXTRA_OVERLAYS.items():
@@ -130,6 +143,45 @@ def validate_packed(entries, art_entries) -> list[str]:
         fails.append("UAE_Worker still uses missing UIWRKR_SKN")
     if any(ord(c) > 127 for c in uae_worker):
         fails.append("UAE_Worker has non-ASCII bytes")
+
+    # Late BIG North Korea overrides (startup init crash sources after UAE_CC fix)
+    nk_pp = next(
+        (
+            b.decode("utf-8", "replace")
+            for n, b in entries
+            if n.replace("\\", "/").endswith("North Korea/Buildings/Iraq_PowerPlant.ini")
+            or n.replace("\\", "/") == "North Korea/Buildings/Iraq_PowerPlant.ini"
+        ),
+        "",
+    )
+    nk_pp_norm = nk_pp.replace("\r\n", "\n")
+    if nk_pp:
+        if re.search(r"(?m)^\s*CommandSet\s*=\s*;", nk_pp_norm):
+            fails.append("North Korea/Buildings/Iraq_PowerPlant.ini has comment-only CommandSet")
+        if "ChinaPowerPlantCommandSet" not in nk_pp_norm:
+            fails.append("North Korea PowerPlant missing ChinaPowerPlantCommandSet")
+        if "Object NorthKorea_PowerPlant" not in nk_pp_norm:
+            fails.append("North Korea PowerPlant missing Object NorthKorea_PowerPlant")
+        if any(ord(c) > 127 for c in nk_pp):
+            fails.append("North Korea PowerPlant has non-ASCII bytes")
+
+    nk_worker = next(
+        (
+            b.decode("utf-8", "replace")
+            for n, b in entries
+            if n.replace("\\", "/").endswith("North Korea/Infantry/Iraq_Worker.ini")
+            or n.replace("\\", "/") == "North Korea/Infantry/Iraq_Worker.ini"
+        ),
+        "",
+    )
+    nk_w_norm = nk_worker.replace("\r\n", "\n")
+    if nk_worker:
+        if re.search(r"(?m)^\s*CommandSet\s*=\s*GLAWorkerCommandSet\s*$", nk_w_norm):
+            fails.append("North Korea/Infantry/Iraq_Worker.ini still references missing GLAWorkerCommandSet")
+        if "CommandSet = Iraq_WorkerCommandSet" not in nk_w_norm:
+            fails.append("North Korea Iraq_Worker missing Iraq_WorkerCommandSet upgrade target")
+        if any(ord(c) > 127 for c in nk_worker):
+            fails.append("North Korea Iraq_Worker has non-ASCII bytes")
 
     uae_wf = next(
         (

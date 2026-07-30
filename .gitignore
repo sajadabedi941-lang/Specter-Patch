@@ -3,3 +3,8 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Final playable release binaries are published via GitHub Releases, not git
+patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.big
+patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.zip
+patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/

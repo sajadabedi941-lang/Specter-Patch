@@ -1,0 +1,72 @@
+Data/INI/Object/Specter/AI_IraqiArmy/CommandCenter.ini
+Data/INI/Object/Specter/AI_IraqiArmy/MIC.ini
+Data/INI/Object/Specter/AI_IraqiArmy/Sam2.ini
+Data/INI/Object/Specter/AI_IraqiArmy/Vehicles.ini
+Data/INI/Object/Specter/AI_IraqiArmy/Warfactory.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/AI/Airfield.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/AI/Warfactory.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/AI/WeaponIndustryPlant.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/Buildings/Airfield_T.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/Buildings/Kashtan.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/Buildings/Warfactory_T.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/SamSite/S400_BDS_ABM_Site.ini
+Data/INI/Object/Specter/Armed Forces Of Russian Federation/SamSite/S400_BDS_Site.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Buildings/Camp.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_Systems.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Egypt_WeaponObjects.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/Infantry/Egypt_Worker.ini
+Data/INI/Object/Specter/Egyptian Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Indian Armed Forces/India_Systems.ini
+Data/INI/Object/Specter/Indian Armed Forces/Infantry/India_Worker.ini
+Data/INI/Object/Specter/Indian Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Iranian Army/Airforce/Iran_Su22.ini
+Data/INI/Object/Specter/Iranian Army/Iran_WeaponObjects.ini
+Data/INI/Object/Specter/Iraq Army/Airforce/Iraq_Mig-25BM.ini
+Data/INI/Object/Specter/Iraq Army/Airforce/Iraq_Su-22M3.ini
+Data/INI/Object/Specter/Iraq Army/Buildings/Iraq_PowerPlant.ini
+Data/INI/Object/Specter/Iraq Army/Infantry/Iraq_Worker.ini
+Data/INI/Object/Specter/Iraq Army/Iraq_Shells.ini
+Data/INI/Object/Specter/Iraq Army/Iraq_WeaponObjects.ini
+Data/INI/Object/Specter/Iraq Army/ScienceObjects/Mig25RB.ini
+Data/INI/Object/Specter/Israel Defense Forces/Wheeled/PULS PH_AI.ini
+Data/INI/Object/Specter/Libyan Armed Forces/Infantry/Libya_Worker.ini
+Data/INI/Object/Specter/Libyan Armed Forces/Libya_Systems.ini
+Data/INI/Object/Specter/Libyan Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/North Korea/Buildings/Iraq_PowerPlant.ini
+Data/INI/Object/Specter/North Korea/Infantry/Iraq_Worker.ini
+Data/INI/Object/Specter/North Korea/NorthKorea_Systems.ini
+Data/INI/Object/Specter/PLA/Chines_WeaponObjects.ini
+Data/INI/Object/Specter/PLA/Tracked/Dozer.ini
+Data/INI/Object/Specter/PLA/Wheeled/DF41.ini
+Data/INI/Object/Specter/PLA/Wheeled/DF41_AI.ini
+Data/INI/Object/Specter/PLA/Wheeled/GJ11_Launcher.ini
+Data/INI/Object/Specter/Pakistan Armed Forces/Infantry/Pakistan_Worker.ini
+Data/INI/Object/Specter/Pakistan Armed Forces/Pakistan_Systems.ini
+Data/INI/Object/Specter/Pakistan Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/Infantry/SaudiArabia_Worker.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/SaudiArabia_Systems.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/South African National Defence Force/Infantry/SouthAfrica_Worker.ini
+Data/INI/Object/Specter/South African National Defence Force/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/South African National Defence Force/SouthAfrica_Systems.ini
+Data/INI/Object/Specter/Syrian Arab Army/Infantry/Syria_Worker.ini
+Data/INI/Object/Specter/Syrian Arab Army/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Syrian Arab Army/Syria_Systems.ini
+Data/INI/Object/Specter/Ukrainian Armed Forces/Infantry/Ukraine_Worker.ini
+Data/INI/Object/Specter/Ukrainian Armed Forces/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Ukrainian Armed Forces/Ukraine_Systems.ini
+Data/INI/Object/Specter/United States Of America/Airforce/F16CM_BLK50_AA.ini
+Data/INI/Object/Specter/United States Of America/Airforce/F35C_AA.ini
+Data/INI/Object/Specter/United States Of America/Buildings/C-RAM.ini
+Data/INI/Object/Specter/United States Of America/Buildings/ShipYard.ini
+Data/INI/Object/Specter/United States Of America/Infantry/NavySeals.ini
+Data/INI/Object/Specter/United States Of America/Infantry/Rifleman_M4.ini
+Data/INI/Object/Specter/United States Of America/USA_System.ini
+Data/INI/Object/Specter/United States Of America/USA_WeaponObjects.ini
+Data/INI/Object/Specter/Vietnam People's Army/Infantry/Vietnam_Worker.ini
+Data/INI/Object/Specter/Vietnam People's Army/ScienceObjects/IL-76.ini
+Data/INI/Object/Specter/Vietnam People's Army/Vietnam_Systems.ini
+Data/INI/CommandButton.ini
+
+count=69
+changed=69

@@ -1,0 +1,236 @@
+{
+  "generated": "2026-07-30T00:00:45.600108+00:00",
+  "all_pass": true,
+  "summary": {
+    "CRIT": 0,
+    "HIGH": 0,
+    "MED": 0,
+    "actionable": 0,
+    "missing_weapon": 0,
+    "missing_fx": 0,
+    "missing_ocl": 0,
+    "missing_model": 0,
+    "scoped_files": 1785,
+    "cleared_by_stock_art": 169,
+    "cleared_by_fixes": 143
+  },
+  "faction_status": {
+    "USA": {
+      "files": 108,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Russia": {
+      "files": 109,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "China": {
+      "files": 59,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Iran": {
+      "files": 76,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Iraq": {
+      "files": 116,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "North Korea": {
+      "files": 23,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "India": {
+      "files": 73,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Pakistan": {
+      "files": 67,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Japan": {
+      "files": 61,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Turkey": {
+      "files": 157,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Ukraine": {
+      "files": 60,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Saudi Arabia": {
+      "files": 56,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "UAE": {
+      "files": 55,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "UK": {
+      "files": 59,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "France": {
+      "files": 59,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Germany": {
+      "files": 56,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Israel": {
+      "files": 65,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Egypt": {
+      "files": 85,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Italy": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Libya": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "South Africa": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "South Korea": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Sweden": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Syria": {
+      "files": 50,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Taiwan": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "Vietnam": {
+      "files": 49,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    },
+    "UN": {
+      "files": 48,
+      "CRIT": 0,
+      "HIGH": 0,
+      "MED": 0,
+      "pass": true,
+      "folders": null
+    }
+  },
+  "actionable_issues": []
+}

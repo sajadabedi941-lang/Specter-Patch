@@ -1,0 +1,201 @@
+Turkey/UAE INI paths embedded from PR #206 tree (diff vs baseline BIG):
+Data\INI\CommandButton.ini
+Data\INI\Object\Specter\AI_IraqiArmy\CommandCenter.ini
+Data\INI\Object\Specter\AI_IraqiArmy\MIC.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Sam2.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Warfactory.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Kashtan.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\SamSite\S400_BDS_ABM_Site.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\SamSite\S400_BDS_Site.ini
+Data\INI\Object\Specter\Egyptian Armed Forces\Egypt_Systems.ini
+Data\INI\Object\Specter\Egyptian Armed Forces\Egypt_WeaponObjects.ini
+Data\INI\Object\Specter\Egyptian Armed Forces\Infantry\Egypt_Worker.ini
+Data\INI\Object\Specter\Egyptian Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Indian Armed Forces\India_Systems.ini
+Data\INI\Object\Specter\Indian Armed Forces\Infantry\India_Worker.ini
+Data\INI\Object\Specter\Indian Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Su22.ini
+Data\INI\Object\Specter\Iranian Army\Iran_WeaponObjects.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Mig-25BM.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_PowerPlant.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Iraq_Worker.ini
+Data\INI\Object\Specter\Iraq Army\Iraq_Shells.ini
+Data\INI\Object\Specter\Iraq Army\Iraq_WeaponObjects.ini
+Data\INI\Object\Specter\Iraq Army\ScienceObjects\Mig25RB.ini
+Data\INI\Object\Specter\Israel Defense Forces\Wheeled\PULS PH_AI.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Libya_Worker.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Libya_Systems.ini
+Data\INI\Object\Specter\Libyan Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+Data\INI\Object\Specter\Pakistan Armed Forces\Infantry\Pakistan_Worker.ini
+Data\INI\Object\Specter\Pakistan Armed Forces\Pakistan_Systems.ini
+Data\INI\Object\Specter\Pakistan Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\PLA\Chines_WeaponObjects.ini
+Data\INI\Object\Specter\PLA\Tracked\Dozer.ini
+Data\INI\Object\Specter\PLA\Wheeled\DF41.ini
+Data\INI\Object\Specter\PLA\Wheeled\DF41_AI.ini
+Data\INI\Object\Specter\PLA\Wheeled\GJ11_Launcher.ini
+Data\INI\Object\Specter\Saudi Arabian Armed Forces\Infantry\SaudiArabia_Worker.ini
+Data\INI\Object\Specter\Saudi Arabian Armed Forces\SaudiArabia_Systems.ini
+Data\INI\Object\Specter\Saudi Arabian Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\South African National Defence Force\Infantry\SouthAfrica_Worker.ini
+Data\INI\Object\Specter\South African National Defence Force\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\South African National Defence Force\SouthAfrica_Systems.ini
+Data\INI\Object\Specter\Syrian Arab Army\Infantry\Syria_Worker.ini
+Data\INI\Object\Specter\Syrian Arab Army\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Syrian Arab Army\Syria_Systems.ini
+Data\INI\Object\Specter\Turkey Armed Forces\_ID_MAP.txt
+Data\INI\Object\Specter\Turkey Armed Forces\AI\Turkey_Airfield_T.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AI\Turkey_Airfield_T2.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AI\Turkey_WarFactory.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\92N6E_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\DefenseSite.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\DefenseSite_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\Fahad250_ABM_Launcher.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\Fahad3_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\Fahad3_AI_Launcher_AAM.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\Fahad3_AI_Launcher_ABM.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\SamSite.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense Sites\SNR75.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\2K12.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\9K33.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\B340.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Fahad3.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\P30.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Roland3K.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\S125_Launcher.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\S75D_Launcher.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Turkey_AD_MD.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Turkey_AD_SAM.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Turkey_HISAR_O.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Turkey_SIPER.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\Turkey_Sungur.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\ZPU4.ini
+Data\INI\Object\Specter\Turkey Armed Forces\AirDefense\ZSU23.ini
+Data\INI\Object\Specter\Turkey Armed Forces\APC\BTR90.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\CombatTrench.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_100mmCannon_S.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_Abbas.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_Abbas_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_Airfield_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_Airfield_T.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_Barracks.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_D30.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_MIC.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_PowerPlant.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_RadarStation.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_SupplyCenter.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_WarFactory.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_WarFactory_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Expermental\Expermental_Objects.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\2K12Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\9P117Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\AssadBabel2Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\BM21Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\BMP1PHulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\BTR90Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\Sarab7Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\T72M1Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Hulk\ZSU23Hulk.ini
+Data\INI\Object\Specter\Turkey Armed Forces\IFV\Bmp1P.ini
+Data\INI\Object\Specter\Turkey Armed Forces\IFV\Bmp2K.ini
+Data\INI\Object\Specter\Turkey Armed Forces\IFV\Turkey_BMP-2.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\AntiAir.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Antitank.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Enginer.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\KornetTeam.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Machineguner.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Mechanized.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\MortarTeam.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Motorized.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Rifleman.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Infantry\Turkey_Worker.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\Adnan1.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\Mi-8T.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\Mig25RB.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\Tu16K.ini
+Data\INI\Object\Specter\Turkey Armed Forces\ScienceObjects\Tu22.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Tracked\2S1.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Tracked\AssadBabel2_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Tracked\T72M1.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Tracked\VT72B.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Turkey_Shells.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Turkey_Systems.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\9P117.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\AbbasLauncher_AI.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Karrar-2.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Lamiaa.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_BM-21.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Bora.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_TayfunTEL.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_TRG230.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_TRLG230.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Wheeled\Turkey_Ural375_Supply_AI.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Ukraine_Worker.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\Ukraine_Systems.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense Sites\SamSite.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\Roland3K.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_AntiDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_MD.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_SAM.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\UAE_AD_SHORAD.ini
+Data\INI\Object\Specter\United Arab Emirates\AirDefense\ZSU23.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_F16Blk60.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Mi-8.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Mig-29A.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_MirageF1-Bq.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_MQ9.ini
+Data\INI\Object\Specter\United Arab Emirates\Airforce\UAE_Su-25K.ini
+Data\INI\Object\Specter\United Arab Emirates\APC\BTR90.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Abbas.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_AdvancedAirBase.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Airfield_T.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_Barracks.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_CommandCenter.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_MIC.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_MilitaryHQ.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_PowerPlant.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_RadarStation.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_SupplyCenter.ini
+Data\INI\Object\Specter\United Arab Emirates\Buildings\UAE_WarFactory.ini
+Data\INI\Object\Specter\United Arab Emirates\Drones\UAE_LoiteringDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\Drones\UAE_ReconDrone.ini
+Data\INI\Object\Specter\United Arab Emirates\IFV\Bmp1P.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\AntiAir.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\Antitank.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\Rifleman.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\UAE_ElitePresidential.ini
+Data\INI\Object\Specter\United Arab Emirates\Infantry\UAE_Worker.ini
+Data\INI\Object\Specter\United Arab Emirates\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\T72M1.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\UAE_Leclerc.ini
+Data\INI\Object\Specter\United Arab Emirates\Tracked\VT72B.ini
+Data\INI\Object\Specter\United Arab Emirates\UAE_Systems.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\UAE_BM-21.ini
+Data\INI\Object\Specter\United Arab Emirates\Wheeled\UAE_Ural375_Supply.ini
+Data\INI\Object\Specter\United States Of America\Airforce\F16CM_BLK50_AA.ini
+Data\INI\Object\Specter\United States Of America\Airforce\F35C_AA.ini
+Data\INI\Object\Specter\United States Of America\Buildings\C-RAM.ini
+Data\INI\Object\Specter\United States Of America\Buildings\ShipYard.ini
+Data\INI\Object\Specter\United States Of America\Infantry\NavySeals.ini
+Data\INI\Object\Specter\United States Of America\Infantry\Rifleman_M4.ini
+Data\INI\Object\Specter\United States Of America\USA_System.ini
+Data\INI\Object\Specter\United States Of America\USA_WeaponObjects.ini
+Data\INI\Object\Specter\Vietnam People's Army\Infantry\Vietnam_Worker.ini
+Data\INI\Object\Specter\Vietnam People's Army\ScienceObjects\IL-76.ini
+Data\INI\Object\Specter\Vietnam People's Army\Vietnam_Systems.ini
+Data\INI\Object\Specter\Turkey Armed Forces\Turkey_WeaponObjects.ini
+
+count=198

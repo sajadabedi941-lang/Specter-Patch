@@ -1,0 +1,16 @@
+SPECTER TURKEY WEAPONOBJECTS FULL REBUILD - VERIFY REPORT
+========================================================
+VERDICT: PASS
+Crash: EXCEPTION_ACCESS_VIOLATION @ 00000000
+Fix: FULL recreate of Turkey_WeaponObjects from USA/stock donors
+Objects preserved: 81
+ClientUpdate: NONE
+Turkey WO entries in BIG: 1
+Old broken hash reused: NO
+Weapon/Projectile/FX/Locomotor/Armor validation: PASS
+Turkey unit weapon->projectile W3D scan: PASS
+Extract byte-match: PASS
+BIG SHA256: db5875e5638108d90a498b96df4cd9cddf9efb4c51e92f589622821b5de92bec
+WO SHA256: e261b0ab952ebef42357e2b92055ecd45157d83022619febd74e8d5a0bc50d27
+BIG SIZE: 384323829
+FINAL: PASS

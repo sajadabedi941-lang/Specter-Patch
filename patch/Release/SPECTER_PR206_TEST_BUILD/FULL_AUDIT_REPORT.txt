@@ -1,0 +1,188 @@
+SPECTER PR #206 FULL AUDIT REPORT
+========================================================================
+Generated: 2026-07-29 22:19:15Z
+Branch: cursor/turkey-weaponobjects-full-rebuild-f792
+Packed DATA BIG: /workspace/patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+ART BIG: /workspace/patch/Release/SPECTER_BIG_MERGE/_SPEC_ART_ONE.big
+
+PURPOSE
+-------
+Pre-fix full dependency audit of PR #206 shipped content.
+Do not fix one crash at a time ? enumerate ALL remaining issues first.
+
+SCOPE
+-----
+- Object INIs scanned: 228
+- Turkey Armed Forces (entire tree in packed BIG)
+- United Arab Emirates (entire tree in packed BIG)
+- PR diff Specter Object INIs present in BIG (main...HEAD): 124 suffixes
+
+METHOD
+------
+- Catalog definitions from packed DATA BIG (all INI, including Phase files)
+- W3D models from ART BIG
+- Slot-aware Weapon/Locomotor/OCL parsing
+- Deep CommandSet -> CommandButton -> Object/SpecialPower/Science
+- Comment-stripped Science parsing (avoids false positives)
+- Non-ASCII byte scan (Generals parse risk)
+- Parse End-stack checks intentionally OMITTED (high false-positive rate on
+  AliasConditionState / multi-object Specter INIs)
+
+SUMMARY
+-------
+CRIT (init/crash-likely missing templates): 0
+HIGH (broken CS/CB/Upgrade chains):         21
+MED  (non-ASCII / soft):                    69
+TOTAL: 90
+GLAWorkerCommandSet typo still in BIG CommandSet.ini: True
+
+REMAINING ACTIONABLE ISSUES (CRIT + HIGH)
+------------------------------------------------------------------------
+[HIGH] Upgrade: Upgrade_Specter_Tier1
+  count=7 objects=Turkey_Airfield, Turkey_Airfield_AI, Turkey_Airfield_T, Turkey_MIC, Turkey_WarFactory, Turkey_WarFactory_T, UAE_WarFactory_T
+  files=Turkey_Airfield_T.ini, Turkey_Airfield_T2.ini, Turkey_MIC.ini, Turkey_WarFactory.ini, UAE_WarFactory.ini
+  SUGGESTED FIX: remove TriggeredBy Upgrade_Specter_Tier* modules OR define upgrades
+                 in Upgrade.ini (prefer remove/disable ? upgrades never shipped)
+
+[HIGH] Upgrade: Upgrade_Specter_Tier2
+  count=7 objects=Turkey_Airfield, Turkey_Airfield_AI, Turkey_Airfield_T, Turkey_MIC, Turkey_WarFactory, Turkey_WarFactory_T, UAE_WarFactory_T
+  files=Turkey_Airfield_T.ini, Turkey_Airfield_T2.ini, Turkey_MIC.ini, Turkey_WarFactory.ini, UAE_WarFactory.ini
+  SUGGESTED FIX: remove TriggeredBy Upgrade_Specter_Tier* modules OR define upgrades
+                 in Upgrade.ini (prefer remove/disable ? upgrades never shipped)
+
+[HIGH] Upgrade: Upgrade_Specter_Tier3
+  count=6 objects=Turkey_Airfield, Turkey_Airfield_AI, Turkey_Airfield_T, Turkey_WarFactory, Turkey_WarFactory_T, UAE_WarFactory_T
+  files=Turkey_Airfield_T.ini, Turkey_Airfield_T2.ini, Turkey_WarFactory.ini, UAE_WarFactory.ini
+  SUGGESTED FIX: remove TriggeredBy Upgrade_Specter_Tier* modules OR define upgrades
+                 in Upgrade.ini (prefer remove/disable ? upgrades never shipped)
+
+[HIGH] FXList: FX_30mmAPFSDSHitEffect
+  count=1 objects=Turkey_Generic_30mmAPFSDS
+  files=Turkey_Shells.ini
+  SUGGESTED FIX: remap to existing FXList donor; candidates=['WeaponFX_30mm_API-T_Tracer', 'WeaponFX_30mm_API-T_Tracer22']
+
+OBJECTS TOUCHED BY ACTIONABLE ISSUES
+------------------------------------------------------------------------
+  Turkey_Airfield: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+  Turkey_Airfield_AI: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+  Turkey_Airfield_T: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+  Turkey_Generic_30mmAPFSDS: FXList=FX_30mmAPFSDSHitEffect
+  Turkey_MIC: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2
+  Turkey_WarFactory: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+  Turkey_WarFactory_T: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+  UAE_WarFactory_T: Upgrade=Upgrade_Specter_Tier1; Upgrade=Upgrade_Specter_Tier2; Upgrade=Upgrade_Specter_Tier3
+
+MED: NON-ASCII FILES (parse risk; not always fatal)
+------------------------------------------------------------------------
+count=69
+  Fahad3_AI.ini: non-ASCII bytes=4 (INI parse risk)
+  AssadBabel2_AI.ini: non-ASCII bytes=4 (INI parse risk)
+  B340.ini: non-ASCII bytes=4 (INI parse risk)
+  Fahad3.ini: non-ASCII bytes=4 (INI parse risk)
+  Roland3K.ini: non-ASCII bytes=4 (INI parse risk)
+  DefenseSite_AI.ini: non-ASCII bytes=4 (INI parse risk)
+  2S1.ini: non-ASCII bytes=4 (INI parse risk)
+  Turkey_Airfield_T.ini: non-ASCII bytes=7 (INI parse risk)
+  AbbasLauncher.ini: non-ASCII bytes=8 (INI parse risk)
+  AbbasLauncher_AI.ini: non-ASCII bytes=8 (INI parse risk)
+  AssadBabel2.ini: non-ASCII bytes=4 (INI parse risk)
+  Bmp1P.ini: non-ASCII bytes=4 (INI parse risk)
+  BTR90.ini: non-ASCII bytes=4 (INI parse risk)
+  DefenseSite.ini: non-ASCII bytes=4 (INI parse risk)
+  Karrar-2.ini: non-ASCII bytes=8 (INI parse risk)
+  Lamiaa.ini: non-ASCII bytes=8 (INI parse risk)
+  9P117.ini: non-ASCII bytes=4 (INI parse risk)
+  AntiAir.ini: non-ASCII bytes=4 (INI parse risk)
+  KornetTeam.ini: non-ASCII bytes=4 (INI parse risk)
+  MortarTeam.ini: non-ASCII bytes=4 (INI parse risk)
+  Rifleman.ini: non-ASCII bytes=4 (INI parse risk)
+  Enginer.ini: non-ASCII bytes=4 (INI parse risk)
+  Machineguner.ini: non-ASCII bytes=4 (INI parse risk)
+  Antitank.ini: non-ASCII bytes=4 (INI parse risk)
+  HeavySniper.ini: non-ASCII bytes=4 (INI parse risk)
+  Mechanized.ini: non-ASCII bytes=4 (INI parse risk)
+  Motorized.ini: non-ASCII bytes=4 (INI parse risk)
+  2K12.ini: non-ASCII bytes=4 (INI parse risk)
+  SamSite.ini: non-ASCII bytes=4 (INI parse risk)
+  9K33.ini: non-ASCII bytes=4 (INI parse risk)
+  AlNida.ini: non-ASCII bytes=4 (INI parse risk)
+  T72M1.ini: non-ASCII bytes=4 (INI parse risk)
+  VT72B.ini: non-ASCII bytes=4 (INI parse risk)
+  ZSU23.ini: non-ASCII bytes=4 (INI parse risk)
+  UAE_AD_AntiDrone.ini: non-ASCII bytes=4 (INI parse risk)
+  UAE_AD_MD.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_AD_SAM.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_AD_SHORAD.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Abbas.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_AdvancedAirBase.ini: non-ASCII bytes=10 (INI parse risk)
+  UAE_Airfield_T.ini: non-ASCII bytes=7 (INI parse risk)
+  AbbasLauncher.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_BM-21.ini: non-ASCII bytes=7 (INI parse risk)
+  Bmp1P.ini: non-ASCII bytes=7 (INI parse risk)
+  BTR90.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Barracks.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_ElitePresidential.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_F16Blk60.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Leclerc.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_LoiteringDrone.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_MIC.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Mi-8.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Mig-29A.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_MirageF1-Bq.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_PowerPlant.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_RadarStation.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_ReconDrone.ini: non-ASCII bytes=7 (INI parse risk)
+  AntiAir.ini: non-ASCII bytes=7 (INI parse risk)
+  Antitank.ini: non-ASCII bytes=7 (INI parse risk)
+  HeavySniper.ini: non-ASCII bytes=7 (INI parse risk)
+  SamSite.ini: non-ASCII bytes=7 (INI parse risk)
+  SpecialForces.ini: non-ASCII bytes=19 (INI parse risk)
+  UAE_Su-25K.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_SupplyCenter.ini: non-ASCII bytes=7 (INI parse risk)
+  T72M1.ini: non-ASCII bytes=7 (INI parse risk)
+  UAE_Ural375_Supply.ini: non-ASCII bytes=7 (INI parse risk)
+  VT72B.ini: non-ASCII bytes=7 (INI parse risk)
+  Roland3K.ini: non-ASCII bytes=7 (INI parse risk)
+  ZSU23.ini: non-ASCII bytes=7 (INI parse risk)
+
+PRIOR FIXES ALREADY IN THIS PACKED BIG (context)
+------------------------------------------------------------------------
+- Turkey_WeaponObjects / KH-22 / Sarab-5 / Abbas / Karrar2 / Lamiaa / Bora
+- UAE_MilitaryHQ AmericaCommandCenter donor
+- UAE_Worker GLAWorkerCommandSet + AIRNGR_IDG
+- Turkey_MIC OCL_Abbas/HussienResearchObject
+- UAE_WarFactory_T Irq_WarFactory
+- Turkey_Systems Hussiean/Nasr/R11 DeathWeapon+FX
+- UAE Rifleman AIRNGR_IDG / UAE_IL-76 RUS_IL76MD90A / UAE R11_CH DeathWeapon
+
+VERDICT
+-------
+FAIL ? 21 actionable CRIT/HIGH issues remain across 8 objects.
+Next step: batch-fix all actionable issues, then one final ZIP+BIG release.
+
+
+
+POST-FIX STATUS (2026-07-29 22:23:45Z)
+------------------------------------------------------------------------
+Batch fixes applied after this audit (single final release):
+
+1) Disabled CommandSetUpgrade ModuleTag_Tier* blocks TriggeredBy
+   Upgrade_Specter_Tier1/2/3 (missing from Upgrade.ini) on:
+   - Turkey Airfield T/T2/AI, Turkey WarFactory (+AI), Turkey_MIC
+   - UAE_WarFactory_T, UAE_MIC, UAE_Airfield_T
+2) Turkey_Generic_30mmAPFSDS FX_30mmAPFSDSHitEffect
+   -> WeaponFX_GenericTankShellDetonation
+3) UAE_Projectile_Tank Model AVTankShel -> Irq_255mm_Round
+4) ASCII-sanitized 69 Turkey/UAE Object INIs (em-dash/multiply/etc.)
+
+Re-audit expectation after pack: 0 CRIT / 0 HIGH actionable dependency issues
+for Turkey + UAE Object trees.
+
+
+POST-PACK CONFIRMATION
+Packed BIG SHA256 check completed 2026-07-29 22:25:24Z
+Scoped object INIs: 212
+Remaining CRIT/HIGH actionable: 0
+Remaining non-ASCII Object INIs: 0
+VERDICT: PASS - no CRIT/HIGH dependency issues remain.
+END OF REPORT

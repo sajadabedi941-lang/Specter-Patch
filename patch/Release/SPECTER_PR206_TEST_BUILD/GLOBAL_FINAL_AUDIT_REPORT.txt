@@ -1,0 +1,58 @@
+SPECTER PR #206 GLOBAL FINAL AUDIT REPORT
+========================================================================
+Generated: 2026-07-30 00:00:45Z
+Branch: cursor/turkey-weaponobjects-full-rebuild-f792
+Packed DATA BIG: /workspace/patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+ART catalogs: SPECTER + stock W3DZH/W3DEnglishZH (case-insensitive)
+Method: verify original actionable set after global batch fixes
+
+FACTIONS SCANNED
+------------------------------------------------------------------------
+  [PASS] USA              files= 108  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Russia           files= 109  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] China            files=  59  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Iran             files=  76  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Iraq             files= 116  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] North Korea      files=  23  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] India            files=  73  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Pakistan         files=  67  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Japan            files=  61  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Turkey           files= 157  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Ukraine          files=  60  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Saudi Arabia     files=  56  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] UAE              files=  55  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] UK               files=  59  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] France           files=  59  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Germany          files=  56  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Israel           files=  65  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Egypt            files=  85  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Italy            files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Libya            files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] South Africa     files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] South Korea      files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Sweden           files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Syria            files=  50  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Taiwan           files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] Vietnam          files=  49  CRIT=   0  HIGH=   0  MED=   0  folders=None
+  [PASS] UN               files=  48  CRIT=   0  HIGH=   0  MED=   0  folders=None
+
+SUMMARY
+-------
+CRIT: 0
+HIGH: 0
+MED: 0
+actionable: 0
+missing_weapon: 0
+missing_fx: 0
+missing_ocl: 0
+missing_model: 0
+scoped_files: 1785
+cleared_by_stock_art: 169
+cleared_by_fixes: 143
+GLAWorkerCommandSet typo hazard in BIG: True
+ALL FACTIONS PASS: True
+
+REMAINING ACTIONABLE: none
+
+GATE for final release: PASS
+END

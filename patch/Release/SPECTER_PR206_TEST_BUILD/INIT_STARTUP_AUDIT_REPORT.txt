@@ -1,0 +1,44 @@
+PR #206 startup initialization audit — merge-ready
+==================================================
+Packed BIG: patch/Release/SPECTER_PR206_TEST_BUILD/_SPEC_DATA_ONE.big
+Scope: prior GLOBAL_AUDIT_FIXED_MANIFEST + Turkey/UAE overlays + CommandButton.ini
+plus late BIG North Korea override paths that were still crashing after UAE_CC.
+
+Verdict
+-------
+UAE_CommandCenter: CLEARED (AmericaCommandCenter / UAE_MilitaryHQ donor SP stack).
+
+FIRST remaining init crash (NOW FIXED in tree + packer overlays)
+----------------------------------------------------------------
+File: North Korea/Buildings/Iraq_PowerPlant.ini
+Object: NorthKorea_PowerPlant
+Was: CommandSet = ;Iraq_DroneCenterCommandSet  (comment-only / empty)
+Now: CommandSet = ChinaPowerPlantCommandSet
+Source: Data/INI/Object/Specter/North Korea/Buildings/Iraq_PowerPlant.ini
+Packer: overlays Specter North Korea tree + explicit late short-path key.
+
+SECOND pending init hazard (NOW FIXED in tree + packer overlays)
+----------------------------------------------------------------
+File: North Korea/Infantry/Iraq_Worker.ini
+Object: Iraq_Worker (CommandSetUpgrade ModuleTag_15)
+Was: CommandSet = GLAWorkerCommandSet  (missing; only typo GLAWorkerCommandSetg)
+Now: CommandSet = Iraq_WorkerCommandSet
+Source: Data/INI/Object/Specter/North Korea/Infantry/Iraq_Worker.ini
+Packer: same North Korea tree / late short-path overlay.
+
+Why late paths mattered
+-----------------------
+PR206 already fixed Specter NorthKorea_Systems.ini and Specter Iraq_Worker.ini,
+but the packed BIG still carried later short-path entries:
+  North Korea/Buildings/Iraq_PowerPlant.ini
+  North Korea/Infantry/Iraq_Worker.ini
+which redefined the same Objects and reintroduced the crash.
+
+Merge readiness
+---------------
+- Both documented post-UAE_CC init crash sources are fixed in source.
+- Packer validate_packed gates reject comment-only CommandSet and GLAWorkerCommandSet
+  on those late NK paths.
+- No full re-audit performed; this continues only the existing PR #206 init workstream.
+
+Ready for merge after conflict resolution with main.

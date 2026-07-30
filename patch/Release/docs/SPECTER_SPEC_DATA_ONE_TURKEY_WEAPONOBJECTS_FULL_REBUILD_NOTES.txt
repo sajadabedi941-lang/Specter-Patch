@@ -1,0 +1,8 @@
+TURKEY WEAPONOBJECTS FULL REBUILD
+================================
+deleted_shas=['6da34a98c9cd84695709793802d19c9b730e07deb81e246d5bba3b8f58128f24']
+new_sha=e261b0ab952ebef42357e2b92055ecd45157d83022619febd74e8d5a0bc50d27
+stats={'kind_missile': 53, 'rebuilt_missile': 53, 'kind_shell': 17, 'rebuilt_shell': 17, 'kind_stub': 2, 'rebuilt_stub': 2, 'kind_bomb': 6, 'rebuilt_bomb': 6, 'kind_bv_parent': 3, 'rebuilt_bv': 3, 'objects': 81}
+donors=RaptorJetMissile,SpectreHowitzerShell,AuroraBomb
+clientupdate=REMOVED
+side=Turkey

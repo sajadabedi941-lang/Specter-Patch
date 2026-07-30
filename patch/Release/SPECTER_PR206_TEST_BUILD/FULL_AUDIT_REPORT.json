@@ -1,0 +1,901 @@
+{
+  "generated": "2026-07-29T22:19:15.875804+00:00",
+  "summary": {
+    "HIGH": 21,
+    "MED": 69,
+    "CRIT": 0
+  },
+  "actionable": [
+    {
+      "sev": "HIGH",
+      "cat": "FXList",
+      "obj": "Turkey_Generic_30mmAPFSDS",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Turkey_Shells.ini",
+      "detail": "FX missing",
+      "ref": "FX_30mmAPFSDSHitEffect"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_MIC",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_MIC",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    }
+  ],
+  "all_issues": [
+    {
+      "sev": "HIGH",
+      "cat": "FXList",
+      "obj": "Turkey_Generic_30mmAPFSDS",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Turkey_Shells.ini",
+      "detail": "FX missing",
+      "ref": "FX_30mmAPFSDSHitEffect"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T2.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_MIC",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_MIC",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_MIC.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AI/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "Turkey_WarFactory_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier1"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier2"
+    },
+    {
+      "sev": "HIGH",
+      "cat": "Upgrade",
+      "obj": "UAE_WarFactory_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_WarFactory.ini",
+      "detail": "Upgrade missing",
+      "ref": "Upgrade_Specter_Tier3"
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "TurkeyFahad3SamSite",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/Fahad3_AI.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "TurkeyTankAssadBabel2_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2_AI.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "TurkeyVehicleB340",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/B340.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "TurkeyVehicleFahad3",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Fahad3.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "TurkeyVehicleRoland3K",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/Roland3K.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_100mmCannon",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite_AI.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_2S1",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Tracked/2S1.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Airfield_T",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Buildings/Turkey_Airfield_T.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Alhussaien",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher.ini",
+      "detail": "non-ASCII bytes=8 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Alhussaien_AI",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AbbasLauncher_AI.ini",
+      "detail": "non-ASCII bytes=8 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_AssadBabel-2",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Tracked/AssadBabel2.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_BMP-1",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/IFV/Bmp1P.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_BTR-90",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/APC/BTR90.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_DefenseSite",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/DefenseSite.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Karrar2",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Karrar-2.ini",
+      "detail": "non-ASCII bytes=8 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Lamiaa",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/Lamiaa.ini",
+      "detail": "non-ASCII bytes=8 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_R11ScudB",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/9P117.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuardIgla",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/AntiAir.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuardKornet",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/KornetTeam.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuardMortar",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/MortarTeam.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_AKMS",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Rifleman.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_Eng",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Enginer.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_Pkm",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Machineguner.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_RPG7",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Antitank.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_TBK14",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/HeavySniper.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_V1_AK",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Mechanized.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_RepublicanGuard_V_AKMS",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Infantry/Motorized.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_SA-6",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/2K12.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Sam2",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense Sites/SamSite.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Sam8",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/9K33.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_Sarab7",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Wheeled/AlNida.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_T-72",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Tracked/T72M1.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_VT72B",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/Tracked/VT72B.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "Turkey_ZSU-23-4",
+      "path": "Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/ZSU23.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_AD_AntiDrone",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_AntiDrone.ini",
+      "detail": "non-ASCII bytes=4 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_AD_MD",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_MD.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_AD_SAM",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_SAM.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_AD_SHORAD",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAE_AD_SHORAD.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Abbas",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_Abbas.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_AdvancedAirBase",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_AdvancedAirBase.ini",
+      "detail": "non-ASCII bytes=10 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Airfield_T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_Airfield_T.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Alhussaien",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Wheeled/AbbasLauncher.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_BM-21",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Wheeled/UAE_BM-21.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_BMP-1",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/IFV/Bmp1P.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_BTR-90",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/APC/BTR90.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Barracks",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_Barracks.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_ElitePresidential",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Infantry/UAE_ElitePresidential.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_F16Blk60",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_F16Blk60.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Leclerc",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Tracked/UAE_Leclerc.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_LoiteringDrone",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_LoiteringDrone.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_MIC",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_MIC.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Mi-8T",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Mi-8.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Mig-29A",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Mig-29A.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_MirageF1_Bq",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_MirageF1-Bq.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_PowerPlant",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_PowerPlant.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_RadarStation",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_RadarStation.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_ReconDrone",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Drones/UAE_ReconDrone.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_RepublicanGuardIgla",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Infantry/AntiAir.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_RepublicanGuard_RPG7",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Infantry/Antitank.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_RepublicanGuard_TBK14",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Infantry/HeavySniper.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Sam2",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense Sites/SamSite.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_SpecialForces_Akms",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Infantry/SpecialForces.ini",
+      "detail": "non-ASCII bytes=19 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Su-25K",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Airforce/UAE_Su-25K.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_SupplyCenter",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Buildings/UAE_SupplyCenter.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_T-72",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Tracked/T72M1.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_Ural375_Supply",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Wheeled/UAE_Ural375_Supply.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_VT72B",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/Tracked/VT72B.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_VehicleRoland3K",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/Roland3K.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    },
+    {
+      "sev": "MED",
+      "cat": "ASCII",
+      "obj": "UAE_ZSU-23-4",
+      "path": "Data/INI/Object/Specter/United Arab Emirates/AirDefense/ZSU23.ini",
+      "detail": "non-ASCII bytes=7 (INI parse risk)",
+      "ref": ""
+    }
+  ],
+  "scoped_files": 228
+}

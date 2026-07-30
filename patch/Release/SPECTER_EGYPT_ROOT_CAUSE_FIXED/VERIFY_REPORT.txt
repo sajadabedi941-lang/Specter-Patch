@@ -1,0 +1,25 @@
+SPECTER EGYPT ROOT CAUSE FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPEC_DATA_ONE.big
+SHA256: 6152f44c6ed0358e8a3a9eb8c377529300363ccacbaf1f3e8912078190fd3289
+Egypt_CommandCenter.ini SHA256: 81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+Broken vendor CC SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Entries: 2892
+Size: 384758435 bytes
+
+Root cause: vendor SPEC Iraq-donor Egypt_CommandCenter.ini loaded at init.
+Fix: full Data BIG replace; Egypt CC USA-donor only; Egypt faction kept.
+
+PASS: 8  FAIL: 0
+
+PASS: Egypt_CommandCenter copies = 1
+PASS: Egypt_CommandCenter repaired sha=81dd3fcd672bf68d…
+PASS: No Iraq/irq crash tokens in Egypt_CommandCenter
+PASS: INI parser PASS
+PASS: Object duplicates = 0 for Egypt_CommandCenter
+PASS: AmericaCommandCenter + Iraq_CommandCenter preserved (Egypt not replaced)
+PASS: Missing references = 0 (Egypt_CommandCenter)
+PASS: Game initialization PASS (static)
+
+FINAL: PASS

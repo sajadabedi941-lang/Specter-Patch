@@ -1,10 +1,10 @@
 VALIDATION PASS
-BIG SHA256=27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
-BIG SIZE=384320985
-PRELOAD STRUCTURE critical: 0
-PRELOAD missing Science prerequisites: 0
-Britain_CombatDrone SCIENCE_UAEStealthJet in CODE: ABSENT
-Britain_CombatDrone Science=SCIENCE_Rank3: OK
-Britain_CombatDrone CommandSet GenericTacticalBomberCommandSet: OK
-Loose British Armed Forces in patch/Data: ABSENT
+BIG SHA256=036f88eb3ce0e1f222f986dd66d9500f5174d0a327d70e9b29047dbf25d5ff57
+BIG SIZE=384321596
+Missing references (hard init class): 0
+Preload errors: 0
+Initialization errors: 0
+PRELOAD Prerequisite Object misses: 0
+Shahed136FlashWeapon: DEFINED
+GenericSuicideDroneFlash: DEFINED
 GATE: PASS

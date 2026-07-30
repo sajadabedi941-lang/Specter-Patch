@@ -1,29 +1,16 @@
-SPECTER FINAL PLAYABLE RELEASE
-==============================
-Britain_CombatDrone init crash fix (SCIENCE_UAEStealthJet removed).
+SPECTER FINAL PLAYABLE RELEASE — BOOT CRASH FIX
+==============================================
 
-Crash fixed:
-  File   : Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini
-  Object : Britain_CombatDrone
-  Cause  : Prerequisites Science = SCIENCE_UAEStealthJet (Science not defined)
-  Fix    : Keep Britain_AdvancedAirBase + SCIENCE_Rank3 only; packed in BIG
-
-Contents:
-  _SPEC_DATA_ONE.big
-  HASHES.txt
-  README_INSTALL.txt
-  VALIDATION_REPORT.txt
-  CRASH_ROOT_CAUSE_REPORT.txt
+BIG SHA256: 036f88eb3ce0e1f222f986dd66d9500f5174d0a327d70e9b29047dbf25d5ff57
+BIG SIZE:   384321596
 
 Install:
-1. Close Generals Zero Hour / GenLauncher.
-2. Backup Data\_SPEC_DATA_ONE.big.
-3. Replace Data\_SPEC_DATA_ONE.big with this file.
-4. Keep Data\_SPEC_ART_ONE.big unchanged.
-5. DELETE if present:
-     Data\INI\Object\Specter\British Armed Forces\
-     Data\INI\Britain_CombatDrone.ini
-     _SPECTER_PATCH_FINAL*.big
-6. Launch and play.
+  1. Replace Data\_SPEC_DATA_ONE.big with the file in this package
+  2. Keep Data\_SPEC_ART_ONE.big
+  3. Delete leftover _SPECTER_PATCH_FINAL*.big if present
+  4. Delete stale loose Data\INI\Object\Specter\British Armed Forces\ if present
+  5. Delete flat Data\INI\Britain_CombatDrone.ini if present
 
-Do not extract loose INI from this package.
+Boot crash fixed in this build:
+  PRELOAD Object Shahed136Flash referenced missing Weapon Shahed136FlashWeapon.
+  See FINAL_BOOT_CRASH_REPORT.txt.

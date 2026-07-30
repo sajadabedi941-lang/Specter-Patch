@@ -1,6 +1,18 @@
-SPECTER PR #206 UAE_CommandCenter FIX - VERIFY
-=============================================
-VERDICT: PASS
-UAE_CommandCenter dependency validation: PASS
-BIG SHA256: f13224431c6c246a6a038c2b43fafdb82f6ea96a69f2cda0a58c54c97a20b6eb
-FINAL: PASS
+SPECTER PR #206 MERGE-READY - VERIFY
+====================================
+VERDICT: MERGEABLE / CLEAN vs main
+
+Init crash sources after UAE_CommandCenter (documented in INIT_STARTUP_AUDIT):
+- North Korea PowerPlant comment-only CommandSet: FIXED (ChinaPowerPlantCommandSet)
+- North Korea Iraq_Worker GLAWorkerCommandSet: FIXED (Iraq_WorkerCommandSet)
+
+Main merge conflicts resolved (kept PR #206 validated ours):
+- Turkey_WeaponObjects.ini
+- Turkey_CommandCenter.ini
+- Turkey_Airfield_T.ini
+- UAE_CommandCenter.ini
+
+Packer validate_packed gates added for late NK override paths.
+No full re-audit performed.
+
+FINAL: READY FOR MERGE

@@ -1,16 +1,19 @@
 SPECTER FINAL PLAYABLE RELEASE
 ==============================
-Britain_CombatDrone clean rebuild (USA MQ9 donor).
+Britain_CombatDrone init crash fix (SCIENCE_UAEStealthJet removed).
 
-All faction CombatDrone objects rebuilt inside _SPEC_DATA_ONE.big.
-Invalid SCIENCE_UAEStealthJet removed from CombatDrone code paths.
-No loose British Armed Forces folder is shipped or required.
+Crash fixed:
+  File   : Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini
+  Object : Britain_CombatDrone
+  Cause  : Prerequisites Science = SCIENCE_UAEStealthJet (Science not defined)
+  Fix    : Keep Britain_AdvancedAirBase + SCIENCE_Rank3 only; packed in BIG
 
 Contents:
   _SPEC_DATA_ONE.big
   HASHES.txt
   README_INSTALL.txt
   VALIDATION_REPORT.txt
+  CRASH_ROOT_CAUSE_REPORT.txt
 
 Install:
 1. Close Generals Zero Hour / GenLauncher.
@@ -19,8 +22,8 @@ Install:
 4. Keep Data\_SPEC_ART_ONE.big unchanged.
 5. DELETE if present:
      Data\INI\Object\Specter\British Armed Forces\
-     Data\INI\Britain_CombatDrone.ini  (flat dump)
+     Data\INI\Britain_CombatDrone.ini
      _SPECTER_PATCH_FINAL*.big
-6. Launch generals.exe and play.
+6. Launch and play.
 
 Do not extract loose INI from this package.

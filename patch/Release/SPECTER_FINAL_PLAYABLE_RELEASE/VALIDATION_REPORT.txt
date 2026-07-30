@@ -1,9 +1,10 @@
 VALIDATION PASS
 BIG SHA256=27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
 BIG SIZE=384320985
-Britain_CombatDrone: rebuilt from USA AmericaDronesMq9
-All *_CombatDrone.ini in BIG: rebuilt from USA donor
-SCIENCE_UAEStealthJet in INI CODE: 0
-Loose British Armed Forces: ABSENT
 PRELOAD STRUCTURE critical: 0
-empty CommandSet / uppercase END / multi-object Prerequisites (Britain+CombatDrone): 0
+PRELOAD missing Science prerequisites: 0
+Britain_CombatDrone SCIENCE_UAEStealthJet in CODE: ABSENT
+Britain_CombatDrone Science=SCIENCE_Rank3: OK
+Britain_CombatDrone CommandSet GenericTacticalBomberCommandSet: OK
+Loose British Armed Forces in patch/Data: ABSENT
+GATE: PASS

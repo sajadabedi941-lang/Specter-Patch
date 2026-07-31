@@ -27,3 +27,7 @@ patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.zip
 # AAB core playable infra release binaries
 patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.big
 patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.zip
+
+# USA AAB heavy runway release binaries
+patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.big
+patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.zip

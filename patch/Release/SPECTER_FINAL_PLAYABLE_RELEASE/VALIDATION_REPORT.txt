@@ -1,16 +1,8 @@
 SPECTER FINAL PLAYABLE — VALIDATION REPORT
-Generated: 2026-07-31T09:36:15.913138+00:00
-SHA256: 16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed
-SIZE: 384244637
-ENTRIES: 2836
+Generated: 2026-07-31T09:59:33.307568+00:00
+SHA256: da6e62899d33a56fa8cf057ffad8f596821e8fc18368501b485b414db55a0f0d
+SIZE: 384241722
 
-russia_weaponobjects.ini packed == original Specter bytes: YES
-9K317.ini packed == original Specter bytes: YES
-AsciiAlias_9M317 packed: NO
-
-Missing Object (NEW-only): 0
-Missing Weapon (NEW-only): 0
-Missing Science (NEW-only): 0
-PRELOAD errors (NEW-only): 0
-Parser errors: 0
-ZH_INIT_VALIDATION: PASS
+Egypt_CommandCenter: restored Specter-native Iraq_CommandCenter structure (removed USA donor modules)
+Missing Object=0 Missing Weapon=0 Missing Science=0 Parser=0 PRELOAD errors=0
+ZH_INIT: PASS

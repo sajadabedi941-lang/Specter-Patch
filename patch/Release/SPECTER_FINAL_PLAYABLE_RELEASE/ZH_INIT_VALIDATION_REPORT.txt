@@ -1,11 +1,11 @@
 ZERO HOUR INITIALIZATION VALIDATION (PACKED BIG)
 ==================================================
-Generated: 2026-07-31T09:36:15.513579+00:00
+Generated: 2026-07-31T09:59:13.553075+00:00
 BIG: /workspace/patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/_SPEC_DATA_ONE.big
 BASELINE: /tmp/spec_data_one/_SPEC_DATA_ONE.big
 CHECK: BIG entries=2836
-CHECK: SHA256=16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed
-CHECK: SIZE=384244637
+CHECK: SHA256=da6e62899d33a56fa8cf057ffad8f596821e8fc18368501b485b414db55a0f0d
+CHECK: SIZE=384241722
 CHECK: Weapon defs=2180 Locomotor defs=515
 CHECK: raw-parse 9M317_MissileObject from packed russia_weaponobjects.ini: done
 CHECK: PRELOAD objects dependency-checked=3352

@@ -1,6 +1,4 @@
 FULL PARSER AUDIT
-BIG SHA256=16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed
-WO packed == original: YES
-Missing Object/Weapon/Science NEW-only: 0
-PRELOAD errors NEW-only: 0
-Parser errors: 0
+SHA256=da6e62899d33a56fa8cf057ffad8f596821e8fc18368501b485b414db55a0f0d
+Missing Object/Weapon/Science=0 PRELOAD errors=0 Parser=0 ZH_INIT PASS
+Egypt_CommandCenter packed: Specter-native structure

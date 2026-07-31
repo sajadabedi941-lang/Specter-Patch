@@ -1,0 +1,16 @@
+AAB BUILDABLE FIX
+Generated: 2026-07-31T10:55:55.335575+00:00
+SHA256: 4aa96825898a0b4f7449589a9084f5eea35dfd83b7fb307dc544fe9710d9fd2e
+
+Problem: AAB button used Patch_AdvancedAirBase art (not in player ART BIG) and
+airfield-style prerequisites/cost, so construct button did not respond on DATA-only install.
+
+Fix (Object / CommandButton / CommandSet / BuildCost / BuildTime / Prerequisites / PlayerBuild only):
+1. CommandButton ButtonImage/TextLabel = stock Strategy Center UI
+2. Object SelectPortrait/ButtonImage = us_stratcenter
+3. Prerequisites = Strategy Center prereqs (e.g. AmericaWarFactory_T + AmericaRadarStation)
+4. BuildCost=2500 BuildTime=60.0 MaxSimultaneousOfType=1 EnergyProduction=-2
+5. KindOf adds FS_STRATEGY_CENTER FS_ADVANCED_TECH FS_TECHNOLOGY FS_POWER (keeps FS_AIRFIELD)
+6. Dozer CommandSet slot 2 remains Command_Construct*_AdvancedAirBase
+
+No other patch content added. Full playable backup untouched.

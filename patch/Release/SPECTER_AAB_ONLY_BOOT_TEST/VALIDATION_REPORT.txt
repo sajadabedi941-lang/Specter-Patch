@@ -1,11 +1,12 @@
 SPECTER AAB-ONLY BOOT TEST — VALIDATION REPORT
-Generated: 2026-07-31T10:40:28.546701+00:00
-SHA256: 35fb8a33be41fe444789982b07a039a0a8424c41537d733a2453b0aafec5f3cb
-SIZE: 349509731
-Entries: 1437 (original Specter 1430 + AAB overlay)
+Generated: 2026-07-31T10:55:55.335500+00:00
+SHA256: 4aa96825898a0b4f7449589a9084f5eea35dfd83b7fb307dc544fe9710d9fd2e
+SIZE: 349510426
 
-Scope: original Specter factions only; Advanced Air Base replaces Strategy Center
-No added countries; no new Patch_* aircraft/units/weapons/sciences
+Fix: Advanced Air Base now mirrors Strategy Center player-build wiring.
+- CommandButton uses stock us_stratcenter + DOZER_CONSTRUCT (DATA-only install safe)
+- Prerequisites/BuildCost/BuildTime/MaxSimultaneous match Strategy Center
+- KindOf includes FS_STRATEGY_CENTER + FS_AIRFIELD
+- BuildCompletion = PLACED_BY_PLAYER
 
-Missing Object=0 (NEW-only) · Parser FATAL=0 · PRELOAD FATAL=0
 ZH_INIT: PASS

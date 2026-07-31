@@ -1,0 +1,5 @@
+; USA Advanced AWACS strings (ASCII)
+CONTROLBAR:Patch_AWACS_ElectronicAttack = Electronic Attack
+CONTROLBAR:ToolTipPatch_AWACS_ElectronicAttack = Jam enemy sensors and disrupt missile guidance.
+CONTROLBAR:Patch_AWACS_SARScan = SAR Scan
+CONTROLBAR:ToolTipPatch_AWACS_SARScan = Synthetic aperture radar scan - reveal area targets.

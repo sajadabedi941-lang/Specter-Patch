@@ -51,3 +51,7 @@ patch/Release/SPECTER_USA_B2_AAB_RUNWAY/*.zip
 # USA E3 parse-fix release binaries
 patch/Release/SPECTER_USA_E3_PARSE_FIX/*.big
 patch/Release/SPECTER_USA_E3_PARSE_FIX/*.zip
+
+# USA String Manager fix release binaries
+patch/Release/SPECTER_USA_STRING_MANAGER_FIX/*.big
+patch/Release/SPECTER_USA_STRING_MANAGER_FIX/*.zip

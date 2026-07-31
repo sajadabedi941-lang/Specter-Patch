@@ -53,6 +53,29 @@ def should_kill(name: str) -> bool:
     # AllFactions/FutureFactions AAB redefine America_AdvancedAirBase and wipe ABAirF2 3x2 bones.
     if low.endswith("advancedairbase_allfactions.ini") or low.endswith("advancedairbase_futurefactions.ini"):
         return True
+    # Multi-faction CommandButton packs (USA buttons provided by USA_ONLY_CLEAN overlay).
+    if low.endswith("commandbutton_advancedairbase_specterfactions.ini"):
+        return True
+    # Non-USA / UTF-8 faction string overlays crash String Manager init.
+    if "\\english\\" in low and low.endswith(".txt"):
+        base = low.rsplit("\\", 1)[-1]
+        keep = {
+            "advancedairbase_strings.txt",
+            "advancedawacs_strings.txt",
+            "usa_heavyaircraft_strings.txt",
+        }
+        # Always kill known multi-faction / unicode-heavy string dumps.
+        kill = {
+            "strings_to_add.txt",
+            "factionframework_strings.txt",
+            "turkey_factionstrings.txt",
+            "airforcefinal_strings.txt",
+            "airforceexpansion_strings.txt",
+        }
+        if base in kill or base.startswith("factionexpansion_"):
+            return True
+        if base not in keep:
+            return True
     # Keep only America drones under PatchSystems/Drones.
     if "\\patchsystems\\drones\\" in low:
         base = low.rsplit("\\", 1)[-1]

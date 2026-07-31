@@ -1,0 +1,23 @@
+DONOR CONTAMINATION AUDIT — PACKED BIG
+Generated: 2026-07-31T10:12:14.483527+00:00
+BIG SHA256: a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+
+Scanned: Data/INI/Object/Specter/ in packed _SPEC_DATA_ONE.big
+
+Fixed (patch-introduced donor patterns):
+- Removed US_COM_Strb Draw modules from non-USA/non-NATO/non-Israel CommandCenter/MilitaryHQ clones
+- Removed GrantScienceUpgrade SCIENCE_MOAB / Upgrade_AmericaMOAB from non-USA/non-Israel buildings
+- Removed SCIENCE_MOAB UpgradeOCL from non-America MilitaryHQ_StockFactions objects and faction HQ clones
+- UAE_MilitaryHQ CommandSet: AmericaCommandCenterCommandSet -> UAE_MilitaryHQCommandSet
+- Turkey_WeaponObjects: removed FULL REBUILD donor banners; stripped PRELOAD from donor-stamped projectile KindOf
+- Cleaned Donor: comment banners across sanitized Specter INIs
+
+Intentionally retained (Specter/USA-native):
+- United States Of America/Buildings/CommandCenter.ini (original BIG; AmericaCommandCenterCommandSet + MOAB stack)
+- Israel Defense Forces HQ.ini / Israel_CommandCenter / Israel_MilitaryHQ MOAB + strobe where present
+- America_MilitaryHQ SCIENCE_MOAB UpgradeOCL in MilitaryHQ_StockFactions.ini
+- KillMarker / ObjectCreationUpgrade / BaseRegenerateUpdate (widespread original Specter, not stripped)
+
+Final gates:
+Missing Object=0 Missing Weapon=0 Missing Science=0 Parser=0 PRELOAD errors=0
+ZH_INIT PASS

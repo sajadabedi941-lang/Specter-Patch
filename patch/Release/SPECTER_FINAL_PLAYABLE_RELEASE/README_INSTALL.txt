@@ -1,3 +1,6 @@
 SPECTER FINAL PLAYABLE RELEASE
-DATA BIG SHA256: da6e62899d33a56fa8cf057ffad8f596821e8fc18368501b485b414db55a0f0d
-Replace Data\_SPEC_DATA_ONE.big only. Keep _SPEC_ART_ONE.big.
+Replace only: Data/_SPEC_DATA_ONE.big
+Keep your existing player: Data/_SPEC_ART_ONE.big
+
+This build includes the full donor-contamination sanitizer for Specter Object/INI
+(CommandCenter/MilitaryHQ clones + Turkey_WeaponObjects) plus prior Egypt CC and RF 9M317 fixes.

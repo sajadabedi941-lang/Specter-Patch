@@ -1,16 +1,16 @@
 SPECTER FINAL PLAYABLE — VALIDATION REPORT
-==========================================
-Generated: 2026-07-30T20:39:40.747896+00:00
-_SPEC_DATA_ONE.big SHA256: e5220ce8c9bba4969fe93b3093aad9884657049b8e9fb853747284dfc07a4d78
-_SPEC_DATA_ONE.big SIZE: 384237099
-ENTRIES: 2838
+Generated: 2026-07-31T09:36:15.913138+00:00
+SHA256: 16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed
+SIZE: 384244637
+ENTRIES: 2836
 
-Primary fix this turn:
-  Packed russia_weaponobjects.ini Object 9M317_MissileObject
-  restored from original Specter (no PRELOAD) + ASCII 9M317 locomotor.
+russia_weaponobjects.ini packed == original Specter bytes: YES
+9K317.ini packed == original Specter bytes: YES
+AsciiAlias_9M317 packed: NO
 
-ZH init validation (packed BIG): PASS
-  zh_init_validate_packed_big.py FATAL issues: 0
-  Old donor-rebuild BIG still FAILS on 9M317 PRELOAD (negative control)
-
-Install: replace Data\_SPEC_DATA_ONE.big only; keep player _SPEC_ART_ONE.big
+Missing Object (NEW-only): 0
+Missing Weapon (NEW-only): 0
+Missing Science (NEW-only): 0
+PRELOAD errors (NEW-only): 0
+Parser errors: 0
+ZH_INIT_VALIDATION: PASS

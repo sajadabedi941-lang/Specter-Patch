@@ -286,8 +286,8 @@ def validate_specific_9m317(entries: list[tuple[str, bytes]], cats: dict[str, se
         issues.append(Issue("FATAL", path, line, obj, "missing Locomotor = SET_NORMAL"))
     else:
         loc = m.group(1)
-        if any(ord(c) > 127 for c in loc):
-            issues.append(Issue("FATAL", path, line, obj, f"non-ASCII Locomotor name: {loc!r}"))
+        # Original Specter uses Cyrillic Em (U+041C) in 9М317* locomotor names;
+        # that is valid when the matching Locomotor.ini template exists.
         if loc not in cats["Locomotor"]:
             issues.append(Issue("FATAL", path, line, obj, f"missing Locomotor template: {loc}"))
 

@@ -1,72 +1,14 @@
-RUSSIA_WEAPONOBJECTS 9M317_MissileObject — PACKED BIG RAW PARSE FIX
-=====================================================================
-Generated: 2026-07-30T20:39:40.747581+00:00
-
-REPORTED CRASH
---------------
-File (packed BIG): Data/INI/Object/Specter/Armed Forces Of Russian Federation/Russia_WeaponObjects.ini
-Object: 9M317_MissileObject
-
-PREVIOUS AUDIT MISS
--------------------
-Source-tree / PRELOAD-weapon audits did not raw-parse this packed block.
-Crash Hunter severity focused on PRELOAD STRUCTURE CommandSets and missed
-projectile KindOf=PRELOAD donor-rebuild regressions.
-
-ROOT CAUSE (from packed BIG bytes, not source tree)
--------------------------------------------------
-The packed Object 9M317_MissileObject was a USA-donor rebuild stub:
-
-  KindOf = PRELOAD CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-  ; SPECTER FULL REBUILD - cloned from validated USA/stock donor
-  Locomotor =SET_NORMAL 9M317MissileLocomotor
-  (simplified PhysicsBehavior / MissileAIUpdate; FireWeaponUpdate removed)
-
-Original bootable Specter block (same object name) had:
-
-  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE   ; NO PRELOAD
-  FireWeaponUpdate -> AntiSmallObjectMissileSwivel
-  MissileAIUpdate with DistanceToTravelBeforeTurning
-  Locomotor = SET_NORMAL 9М317MissileLocomotor (Cyrillic M in orig)
-
-Because PRELOAD was added, Zero Hour instantiates the projectile during
-initialization while parsing russia_weaponobjects.ini → crash on this object.
+ROOT CAUSE
+Packed Russia_WeaponObjects.ini was replaced by a donor-rebuild / ASCII-normalized
+variant that did not match bootable Specter bytes for Object 9M317_MissileObject.
+Game loads packed BIG bytes; prior fixes validated source/aliases while the packed
+object still diverged from original Specter naming (Cyrillic 9М317 locomotor).
 
 FIX
----
-Restored Russia_WeaponObjects.ini from original Specter BIG, then ASCII-
-normalized 9M317 tokens (Cyrillic Em U+041C -> M) so locomotors match
-Locomotor_AsciiAlias_9M317.ini.
+Restore exact original Specter Russia_WeaponObjects.ini and 9K317.ini bytes into
+the pack. Remove Weapon/Locomotor AsciiAlias_9M317. Align NK/Egypt refs to Specter
+Cyrillic naming. No new PRELOAD. No new aliases.
 
-Packed block after fix:
-  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-  PRELOAD: NO
-  Locomotor = SET_NORMAL 9M317MissileLocomotor
-  FireWeaponUpdate Weapon = AntiSmallObjectMissileSwivel (present)
-  WO SHA256: ef509209363e40fb70776d3155ba17f7a0010bdd90548f6243ee9a7c2499b62f
-
-CHECKS PERFORMED ON PACKED BLOCK
---------------------------------
-- duplicate Object names (9M317*): none
-- Object header syntax: OK
-- invalid braces: none
-- invalid Module entries: none
-- WeaponSet/FireWeapon: AntiSmallObjectMissileSwivel resolved
-- unsupported donor stub marker: removed
-- End balance: OK
-
-REBUILD
--------
-_SPEC_DATA_ONE.big SHA256=e5220ce8c9bba4969fe93b3093aad9884657049b8e9fb853747284dfc07a4d78
-SIZE=384237099
-
-ZERO HOUR INIT VALIDATION (LAUNCHED)
-------------------------------------
-Tool: patch/tools/big/zh_init_validate_packed_big.py
-Mode: raw extract from packed BIG + PRELOAD factory deps + specific 9M317 gate
-Proof: previous donor-rebuild BIG FAILS (detects PRELOAD on 9M317)
-       repaired BIG PASS (FATAL issues: 0)
-Report: ZH_INIT_VALIDATION_REPORT.txt
-Also ran: SPECTER_CRASH_HUNTER.py, SPECTER_BOOT_CRASH_AUDIT.py
-
-VERDICT: FIXED + INIT VALIDATION PASS
+PACKED VERIFY
+WO SHA256=2d5edd80683b8a62b3e81d881874f3566f65fdadf543d299f8738f0c31fa0110 (identical to original)
+BIG SHA256=16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed

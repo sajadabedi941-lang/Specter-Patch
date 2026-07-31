@@ -1,13 +1,6 @@
-FULL ZERO HOUR INITIALIZATION PARSER AUDIT (UPDATE)
-=======================================================
-Generated: 2026-07-30T20:39:40.748019+00:00
-Post-fix BIG: SHA256=e5220ce8c9bba4969fe93b3093aad9884657049b8e9fb853747284dfc07a4d78 SIZE=384237099 ENTRIES=2838
-
-ADDITIONAL FINDING (packed BIG raw parse)
------------------------------------------
-Object 9M317_MissileObject in russia_weaponobjects.ini had KindOf PRELOAD
-from USA-donor full rebuild. Original Specter projectile is NOT PRELOAD.
-Fix: restore original WO + ASCII 9M317 normalize.
-See RUSSIA_9M317_MISSILEOBJECT_CRASH_FIX.txt
-
-ZH_INIT_VALIDATION: PASS (FATAL=0)
+FULL PARSER AUDIT
+BIG SHA256=16de4993fd1ab7ad62c86571f6d864eef9ff4176472ebddb4de9e3c5ac5d98ed
+WO packed == original: YES
+Missing Object/Weapon/Science NEW-only: 0
+PRELOAD errors NEW-only: 0
+Parser errors: 0

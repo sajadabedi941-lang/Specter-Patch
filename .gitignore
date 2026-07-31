@@ -15,3 +15,11 @@ patch/Release/SPECTER_AAB_ONLY_BOOT_TEST/*.zip
 downloaded_files/
 patch/Release/SPECTER_AAB_REVOLUTION_AIRFIELD_FINAL/*.big
 patch/Release/SPECTER_AAB_REVOLUTION_AIRFIELD_FINAL/*.zip
+
+# AAB all-factions infra release binaries (publish via GitHub Releases)
+patch/Release/SPECTER_AAB_ALL_FACTIONS_INFRA/*.big
+patch/Release/SPECTER_AAB_ALL_FACTIONS_INFRA/*.zip
+patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.big
+patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.zip
+patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.big
+patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.zip

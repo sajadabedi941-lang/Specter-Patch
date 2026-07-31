@@ -59,3 +59,7 @@ patch/Release/SPECTER_USA_STRING_MANAGER_FIX/*.zip
 # USA-only complete cleanup release binaries
 patch/Release/SPECTER_USA_ONLY_COMPLETE_CLEANUP/*.big
 patch/Release/SPECTER_USA_ONLY_COMPLETE_CLEANUP/*.zip
+
+# USA aircraft string/button fix release binaries
+patch/Release/SPECTER_USA_AIRCRAFT_STRING_BUTTON_FIX/*.big
+patch/Release/SPECTER_USA_AIRCRAFT_STRING_BUTTON_FIX/*.zip

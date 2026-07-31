@@ -1,13 +1,15 @@
-SPECTER - USA ONLY COMPLETE CLEANUP
-===================================
-Contains ONLY:
-- America_AdvancedAirBase (AAA_USA_HeavyRunway)
-- USA aircraft: B-2, B-1B, B-52, E-3, KC-135, C-17, AC-130, drones
-- USA CommandButtons / CommandSet_USA_AdvancedAirBase
-- ASCII USA English string overlays
+SPECTER - USA AIRCRAFT STRING / BUTTON AUDIT FIX
+================================================
+Keeps ALL USA aircraft INIs (B-2, B-1B, B-52, E-3, C-17, KC-135, AC-130,
+heliborne, AAB fighters, ScienceObjects, Airforce folder).
 
-Removed: Egypt, Britain, France, FactionFramework, STRINGS_TO_ADD,
-all other faction PatchSystems overlays, Phase/AirForce/UN packs.
+Fixes only:
+- ASCII English string overlays (OBJECT: / CONTROLBAR: keys)
+- CommandButton TextLabel / DescriptLabel coverage
+- CommandSet_USA refs to missing Patch_America_* objects
+  (fighters restored via Aircraft_USA_AAB_Fighters.ini without
+   re-importing multi-faction Aircraft_AAB_Global that redefined E-3/B-2)
 
-CommandSet.ini is never modified (stock hash preserved in release packs).
-Art/Draw/Geometry for AdvancedAirBase are not redesigned in this cleanup.
+Stripper removes ONLY broken String Manager text dumps and multi-faction
+AAB overlays that break runway bones / unresolved CommandSet refs.
+Does NOT delete USA aircraft INIs. CommandSet.ini untouched.

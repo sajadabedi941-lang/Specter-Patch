@@ -1,20 +1,21 @@
-AAB-ONLY TEST — STOCK DOZER RESTORED
-====================================
+AAB-ONLY TEST — USA Strategy Center -> AdvancedAirBase
+======================================================
 
-Rolled back AmericaDozerCommandSet_AAB (empty build menu regression).
+Constraints:
+- Stock CommandSet.ini NOT modified
+- Stock Dozer.ini NOT modified
+- All original AmericaDozerCommandSet slots unchanged
+- USA only (no NATO/Israel/other faction button retargets)
+- Countries / units NOT touched
+- AdvancedAirBase object NOT edited
 
-Playable USA AmericaVehicleDozer now uses original Specter:
+Wiring (separate override only):
+  Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+    Command_ConstructAmericaStrategyCenter_T -> Object = America_AdvancedAirBase
+    Command_ConstructAmericaStrategyCenter   -> Object = America_AdvancedAirBase
+
+Playable USA dozer still uses:
   CommandSet = AmericaDozerCommandSet
-  (Power, Barracks, War Factory, Strategy Center, etc.)
+  (Power, Barracks, War Factory, Airfield, Strategy Center slots, ...)
 
-Removed:
-- Dozer.ini overrides (USA/NATO/Israel)
-- CommandSet_AdvancedAirBase.ini (AmericaDozerCommandSet_AAB*)
-
-NOT changed:
-- AdvancedAirBase object INIs
-- Countries / units
-- Stock CommandSet.ini / CommandButton.ini
-
-Next step (only after in-game stock menu confirmed):
-  Wire AAB onto dozer without replacing the whole CommandSet incorrectly.
+Strategy Center slots still appear as stock SC UI; placing them builds America_AdvancedAirBase.

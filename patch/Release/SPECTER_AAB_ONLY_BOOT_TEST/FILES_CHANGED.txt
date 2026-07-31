@@ -1,14 +1,12 @@
-ROLLBACK — FILES CHANGED
-
-REMOVED from AAB_ONLY_TEST overlay:
-- Data/INI/CommandSet_AdvancedAirBase.ini
-- Data/INI/Object/Specter/United States Of America/Wheeled/Dozer.ini
-- Data/INI/Object/Specter/NATO/Wheleed/Dozer.ini
-- Data/INI/Object/Specter/Israel Defense Forces/Wheeled/Dozer.ini
-
-KEPT (unchanged AdvancedAirBase objects + unused construct buttons):
-- Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+AAB_ONLY_TEST overlay (this build):
+- Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini  (USA SC->AAB only)
 - Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
 - Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
 - Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/RUNWAY_SYSTEM.txt
 - README.txt
+
+NOT changed:
+- Data/INI/CommandSet.ini (stock)
+- Data/INI/CommandButton.ini (stock)
+- USA/NATO/Israel Dozer.ini (stock)
+- Countries / units

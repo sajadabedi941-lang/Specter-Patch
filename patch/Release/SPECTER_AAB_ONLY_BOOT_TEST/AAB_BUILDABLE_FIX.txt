@@ -1,16 +1,17 @@
-AAB BUILDABLE FIX
-Generated: 2026-07-31T10:55:55.335575+00:00
-SHA256: 4aa96825898a0b4f7449589a9084f5eea35dfd83b7fb307dc544fe9710d9fd2e
+USA SC->AAB BUILDABLE WIRING
+============================
 
-Problem: AAB button used Patch_AdvancedAirBase art (not in player ART BIG) and
-airfield-style prerequisites/cost, so construct button did not respond on DATA-only install.
+Approach (USA only):
+- Separate override INI: CommandButton_AdvancedAirBase_SpecterFactions.ini
+- Retarget stock Strategy Center construct buttons:
+    Command_ConstructAmericaStrategyCenter_T -> America_AdvancedAirBase
+    Command_ConstructAmericaStrategyCenter   -> America_AdvancedAirBase
+- Stock CommandSet.ini / CommandButton.ini / Dozer.ini untouched
 
-Fix (Object / CommandButton / CommandSet / BuildCost / BuildTime / Prerequisites / PlayerBuild only):
-1. CommandButton ButtonImage/TextLabel = stock Strategy Center UI
-2. Object SelectPortrait/ButtonImage = us_stratcenter
-3. Prerequisites = Strategy Center prereqs (e.g. AmericaWarFactory_T + AmericaRadarStation)
-4. BuildCost=2500 BuildTime=60.0 MaxSimultaneousOfType=1 EnergyProduction=-2
-5. KindOf adds FS_STRATEGY_CENTER FS_ADVANCED_TECH FS_TECHNOLOGY FS_POWER (keeps FS_AIRFIELD)
-6. Dozer CommandSet slot 2 remains Command_Construct*_AdvancedAirBase
+America_AdvancedAirBase already has:
+- Prerequisites = AmericaWarFactory_T + AmericaRadarStation (matches SC_T)
+- BuildCost/BuildTime = 2500 / 60.0 (matches SC)
+- BuildCompletion = PLACED_BY_PLAYER
+- Side = America
 
-No other patch content added. Full playable backup untouched.
+No CommandSet / Dozer chain changes.

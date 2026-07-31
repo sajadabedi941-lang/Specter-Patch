@@ -1,22 +1,13 @@
-RUNTIME COMMAND VISIBILITY AUDIT
-SHA256: c3f61dd42f0a8fcb136a2d1893c2117735b6d0bcb46059cd09993a544b6da032
+USA SC->AAB VISIBILITY AUDIT
+============================
+SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
 
-1. AmericaDozerCommandSet used by playable USA?
-   NO — playable AmericaVehicleDozer now uses AmericaDozerCommandSet_AAB
-   (stock AmericaDozerCommandSet remains in CommandSet.ini unchanged)
+1. Stock AmericaDozerCommandSet used? YES
+2. CommandButton_AdvancedAirBase_SpecterFactions.ini loaded? YES (USA only)
+3. CommandSet.ini modified? NO
+4. Dozer.ini modified? NO
+5. Slot names for SC still Command_ConstructAmericaStrategyCenter(_T)? YES
+6. Override Object target? America_AdvancedAirBase (both USA SC buttons)
+7. Other build buttons (Power/Barracks/WF/Airfield) retargeted? NO
 
-2. CommandButton_AdvancedAirBase_SpecterFactions.ini loaded? YES
-
-3. Slot 2 points to AAB button? YES
-   AmericaDozerCommandSet_AAB slot 2 = Command_ConstructAmerica_AdvancedAirBase
-   Object=America_AdvancedAirBase ButtonImage=us_stratcenter
-
-4. Duplicate CommandSet overriding stock? NO
-   Stock AmericaDozerCommandSet still only in CommandSet.ini
-   New AmericaDozerCommandSet_AAB is a separate name
-
-5. Hidden CommandSet from original Data overriding Patch? NO
-   AAB_ONLY_TEST merge only; stock set not used by playable dozer
-
-DEBUG button retained: Command_AAB_VisibilityTest_Barracks
-DEBUG CommandSet retained: AmericaDozerCommandSet_AAB_DEBUG_BARRACKS
+Expect: full USA dozer panel; SC slots place Advanced Air Base.

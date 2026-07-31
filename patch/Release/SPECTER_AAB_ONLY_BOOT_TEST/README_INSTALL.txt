@@ -1,25 +1,23 @@
-SPECTER AAB-ONLY BOOT TEST
-=========================
-
-THIS IS A CLEAN TEST BUILD — not the full playable patch.
+SPECTER AAB-ONLY BOOT TEST (USA SC->AAB)
+========================================
 
 Install:
   Replace ONLY: Data/_SPEC_DATA_ONE.big
   Keep player:  Data/_SPEC_ART_ONE.big
 
-What this build contains:
-  - Original Specter DATA BIG
-  - Advanced Air Base for original Specter factions
-  - Strategy Center dozer slots redirected to Advanced Air Base
-  - Strategy Center buildings reduced to sell-only
+What changed vs original Specter DATA:
+  - Advanced Air Base objects for Specter factions
+  - USA-ONLY separate CommandButton override:
+      Command_ConstructAmericaStrategyCenter_T -> America_AdvancedAirBase
+      Command_ConstructAmericaStrategyCenter   -> America_AdvancedAirBase
+  - Stock CommandSet.ini / Dozer.ini / CommandButton.ini UNCHANGED
 
-What this build does NOT contain:
-  - Added countries (Turkey, France, Germany, UAE, …)
-  - New Patch_* aircraft / weapons / sciences
-  - MilitaryHQ / drones / AirForceExpansion / AWACS extras
+Expect in-game (USA):
+  - Full dozer build menu (Power, Barracks, War Factory, ...)
+  - Strategy Center slots still show; placing builds Advanced Air Base
 
-Full patch backup left untouched:
-  - patch/Data (full working tree)
-  - patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE
+NOT included:
+  - Added countries / new units
+  - NATO/Israel SC retarget (USA test first)
 
-Source overlay: patch/AAB_ONLY_TEST/
+Full playable backup untouched.

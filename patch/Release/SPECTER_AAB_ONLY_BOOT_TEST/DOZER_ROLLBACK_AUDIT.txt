@@ -1,13 +1,14 @@
-DOZER COMMANDSET ROLLBACK AUDIT
-SHA256: 2c5839d387e66904bc71c343e1e6b0a340240b3cf05f2839985fa107b0915b78
+USA AAB SC RETARGET AUDIT (stock build chain preserved)
+SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
 
-1. AmericaDozerCommandSet_AAB assigned to USA dozer? NO (removed)
-2. Dozer Object CommandSet? AmericaDozerCommandSet (stock Specter)
-3. CommandSet.ini override? NONE — stock AmericaDozerCommandSet only in CommandSet.ini
+1. CommandSet.ini modified? NO (identical to original Specter)
+2. AmericaDozerCommandSet_AAB present? NO
+3. Dozer CommandSet? AmericaDozerCommandSet (stock)
 4. Duplicate AmericaDozerCommandSet defs? NO (exactly 1)
-5. AmericaDozerCommandSet_AAB present in BIG? NO
+5. Separate override? YES — CommandButton_AdvancedAirBase_SpecterFactions.ini
+6. USA SC buttons Object in override? America_AdvancedAirBase (slot names 2 & 15 unchanged)
+7. NATO/Israel retarget? NO (USA only)
 
-Stock menu slots restored:
-1 PowerPlant, 2 StrategyCenter_T, 3 Barracks, 5 Supply, 6 Radar,
-7 Patriot, 8 CC, 11 WarFactory_T, 13 Airfield_T, 15 StrategyCenter,
-17 WarFactory, 18 Airfield, ...
+Stock slots preserved:
+1 PowerPlant, 2 StrategyCenter_T (button name), 3 Barracks, 11 WarFactory_T,
+13 Airfield_T, 15 StrategyCenter (button name), 17 WarFactory, 18 Airfield

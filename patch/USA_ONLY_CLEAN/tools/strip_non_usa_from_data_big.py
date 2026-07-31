@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-"""USA DATA cleaner focused on String Manager + CommandSet crash sources.
+"""USA AAB final-fix DATA cleaner.
 
-Does NOT delete USA aircraft INIs.
-Does NOT edit CommandSet.ini.
+Repairs String Manager / match-enter crashes without deleting USA aircraft.
 
 Kills only:
-- Broken English *.txt overlays (STRINGS_TO_ADD, FactionFramework, FactionExpansion, ...)
-- Multi-faction CommandSet_AdvancedAirBase.ini (hundreds of unresolved button refs)
+- Broken / duplicate English *.txt overlays (keep single USA_HeavyAircraft_Strings.txt)
+- Multi-faction CommandSet_AdvancedAirBase.ini (unresolved button refs)
 - Multi-faction AAB overlays that redefine America heavies / runway bones
-  (Aircraft_AAB_Global, Aircraft_AAB_StrategicBombers, AdvancedAirBase_AllFactions,
-   AdvancedAirBase_FutureFactions, CommandButton_AdvancedAirBase_SpecterFactions)
+- STRINGS_TO_ADD / FactionFramework / FactionExpansion string dumps
 
-USA aircraft objects that lived only in AAB_Global are provided by
-Aircraft_USA_AAB_Fighters.ini in USA_ONLY_CLEAN.
+Does NOT edit CommandSet.ini.
+Does NOT delete USA aircraft INIs (HeavyRunway / Fighters / Airforce / ScienceObjects).
 """
 from __future__ import annotations
 
@@ -21,12 +19,9 @@ import struct
 from pathlib import Path
 
 KEEP_ENGLISH_TXT = {
-    "advancedairbase_strings.txt",
-    "advancedawacs_strings.txt",
     "usa_heavyaircraft_strings.txt",
 }
 
-# Exact relative paths (normalized) that redefine USA heavies / break AAB.
 KILL_EXACT = {
     "data\\ini\\object\\specter\\patchsystems\\advancedairbase\\aircraft_aab_global.ini",
     "data\\ini\\object\\specter\\patchsystems\\advancedairbase\\aircraft_aab_strategicbombers.ini",
@@ -82,32 +77,13 @@ def norm(name: str) -> str:
 
 def should_kill(name: str) -> bool:
     low = norm(name)
-
-    # Never touch stock CommandSet.ini
     if low == "data\\ini\\commandset.ini":
         return False
-
     if low in KILL_EXACT:
         return True
-
-    # English string dumps: whitelist USA ASCII overlays only.
     if "\\english\\" in low and low.endswith(".txt"):
         base = low.rsplit("\\", 1)[-1]
-        if base in KEEP_ENGLISH_TXT:
-            return False
-        # Known String Manager crash sources
-        if (
-            base == "strings_to_add.txt"
-            or base == "factionframework_strings.txt"
-            or base.startswith("factionexpansion_")
-            or base.startswith("airforce")
-            or "faction" in base
-            or "turkey" in base
-        ):
-            return True
-        # Any other English .txt overlay is unsafe for String Manager init.
-        return True
-
+        return base not in KEEP_ENGLISH_TXT
     return False
 
 

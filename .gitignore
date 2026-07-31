@@ -23,3 +23,7 @@ patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.big
 patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.zip
 patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.big
 patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.zip
+
+# AAB core playable infra release binaries
+patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.big
+patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.zip

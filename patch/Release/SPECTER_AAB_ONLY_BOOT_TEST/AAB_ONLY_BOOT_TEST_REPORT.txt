@@ -1,21 +1,17 @@
-AAB-ONLY BOOT TEST REPORT
-Generated: 2026-07-31T10:40:28.546862+00:00
-Branch: cursor/aab-only-boot-test-d3f1
-BIG SHA256: 35fb8a33be41fe444789982b07a039a0a8424c41537d733a2453b0aafec5f3cb
+AAB-ONLY BOOT TEST REPORT — USA SC->AAB
+=======================================
+SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
+ZH_INIT: PASS (baseline-filtered)
 
-Full patch backup NOT modified:
-- patch/Data retained intact on branch
-- patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE untouched
-  (SHA256 a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca)
+Overlay: patch/AAB_ONLY_TEST/
+Merge: original Specter _SPEC_DATA_ONE.big + overlay
+STOCK_SKIP: CommandSet.ini / CommandButton.ini / Weapon.ini / Armor.ini / Locomotor.ini
 
-Test overlay: patch/AAB_ONLY_TEST merged into original Specter _SPEC_DATA_ONE.big
+USA wiring:
+  Separate CommandButton override retargets Strategy Center construct
+  buttons to America_AdvancedAirBase. Stock dozer CommandSet unchanged.
 
-Original Specter factions covered:
-America, Russia, China/PLA, Iran, Iraq, NATO, GLA/Arabic, Israel(AirF), North Korea
-
-Strategy Center -> Advanced Air Base:
-- Dozer CommandSets *_PatchAAB replace SC construct buttons with AAB
-- USA/NATO/Israel StrategyCenter objects use sell-only PatchAAB CommandSets
-- AAB production CommandSet = existing Specter airfield CommandSets
-
-Validation: ZH_INIT PASS; NEW-only Missing Object/Weapon/Science = 0
+Not included:
+  - Added countries / new units
+  - NATO/Israel SC retarget (USA first)
+  - CommandSet.ini / Dozer.ini edits

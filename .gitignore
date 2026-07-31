@@ -8,3 +8,8 @@ __pycache__/
 patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.big
 patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.zip
 patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/
+
+# AAB-only boot test release binaries (publish via Releases; art also as loose Art/)
+patch/Release/SPECTER_AAB_ONLY_BOOT_TEST/*.big
+patch/Release/SPECTER_AAB_ONLY_BOOT_TEST/*.zip
+downloaded_files/

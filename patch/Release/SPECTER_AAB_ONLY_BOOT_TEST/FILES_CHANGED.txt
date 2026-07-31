@@ -1,7 +1,8 @@
-- AdvancedAirBase_AllFactions.ini (USA visual -> Revolution ABAirF2)
+- AdvancedAirBase_AllFactions.ini (USA visual -> Revolution ABAirF2 Draw/Geometry/runway)
+- Art/W3D/ABAirF*.W3D + ABAirF_T2.W3D (real meshes from Revolution 0RW3D4.big)
+- Art/Textures/ABAirF*.dds + supporting Revolution textures
 - MappedImages AdvancedAirBase_Images.INI (SANAirF)
 - Data/English/Art/Textures/SRUserInterface1024_010.dds
-- Art/W3D/REVOLUTION_AIRFIELD_USA_REQUIRED.txt
-- CommandButton unchanged
+- CommandButton_AdvancedAirBase_SpecterFactions.ini (unchanged Object retarget)
 
-CommandSet.ini / factions / build logic: NOT changed
+CommandSet.ini / build cost-time-prereqs / non-USA factions: NOT changed

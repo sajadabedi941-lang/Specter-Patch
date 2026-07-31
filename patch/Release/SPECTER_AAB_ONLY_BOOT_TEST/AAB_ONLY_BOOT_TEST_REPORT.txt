@@ -1,11 +1,24 @@
-AAB-ONLY — Revolution USA Airfield visual
-=========================================
-SHA256: ca5b62f635126b216f4dfbd47a8f81c0be144d884ddf47699e3656f491c4862b
-ZH_INIT: PASS
+AAB-ONLY BOOT TEST — USA AdvancedAirBase visual fix
+====================================================
 
-America_AdvancedAirBase visual = Generals 2 Revolution Project USA Airfield
-  Source: mod.zip Alliance_Airfield.ini (ABAirF2 / SANAirF / runway 3x2)
-  Not StrategyCenter / US_StrtgyCenter
-  Build logic + CommandSet.ini unchanged
+USA America_AdvancedAirBase now uses Generals 2 Revolution Project USA Fraction
+Airfield art (Alliance AmericaAirfield / ABAirF2), not Strategy Center.
 
-Meshes: upload Revolution Airfield USA W3D pack (ABAirF*.W3D) — not in mod.zip.
+Visual (replaced):
+  Draw modules / Geometry 156x83x100 / ParkingPlace 3x2 HasRunways
+  Models: ABAirF2 + damage/night/snow + ABAirF_T2 runway bones + doors
+  Textures: ABAirF*.dds and supporting Revolution textures
+  Source: Revolution 3.0 installer 0RW3D4.big / 0RTexures*.big
+
+Unchanged:
+  CommandSet.ini (stock; not in overlay)
+  Build: SC CommandButton Object = America_AdvancedAirBase
+  BuildCost / BuildTime / Prerequisites / AmericaAirfieldCommandSet
+  USA-only construct retarget (other factions not switched)
+
+Verification:
+  ART BIG contains non-zero ABAirF2.W3D (~1.5MB) and ABAirF_T2.W3D with runway bones
+  Placed building should show real airfield mesh with runway (not invisible / not SC)
+
+Install:
+  Drop _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big (or loose Art/ from AAB_ONLY_TEST) into game

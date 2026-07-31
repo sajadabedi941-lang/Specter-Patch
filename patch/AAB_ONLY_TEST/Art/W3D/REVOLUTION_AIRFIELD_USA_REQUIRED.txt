@@ -1,4 +1,12 @@
-REQUIRED: Generals 2 Revolution Project — Airfield USA mesh pack
-Place ABAirF2.W3D (+ damage/snow/night/door variants) and ABAirF_T2.W3D here.
-Source addon: https://www.moddb.com/mods/cc-generals-revolution/addons/airfield-usa
-INI/UI already imported from workspace mod.zip (Alliance AmericaAirfield).
+INCLUDED: Generals 2 Revolution Project — USA Fraction Airfield (ABAirF2)
+
+Source: RevolutionSetup.exe (Smart Install Maker) → 0RW3D4.big / 0RTexures*.big
+Meshes + textures are shipped under Art/W3D and Art/Textures.
+
+Key models:
+  ABAirF2.W3D (+ D/E/N/S damage/night/snow variants)
+  ABAirF_T2.W3D (runway public bones: Parking1-3, Prep, Start/End, HeliPark01)
+  ABAirF_A3 / A9 / A10 (doors)
+  ABAirF2_A4 / A5 / A6 / AB (FX / scaffold)
+
+NOT used: StrategyCenter / US_StrtgyCenter model.

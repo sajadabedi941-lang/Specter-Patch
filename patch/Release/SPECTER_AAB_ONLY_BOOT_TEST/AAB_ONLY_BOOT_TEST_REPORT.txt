@@ -1,0 +1,21 @@
+AAB-ONLY BOOT TEST REPORT
+Generated: 2026-07-31T10:40:28.546862+00:00
+Branch: cursor/aab-only-boot-test-d3f1
+BIG SHA256: 35fb8a33be41fe444789982b07a039a0a8424c41537d733a2453b0aafec5f3cb
+
+Full patch backup NOT modified:
+- patch/Data retained intact on branch
+- patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE untouched
+  (SHA256 a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca)
+
+Test overlay: patch/AAB_ONLY_TEST merged into original Specter _SPEC_DATA_ONE.big
+
+Original Specter factions covered:
+America, Russia, China/PLA, Iran, Iraq, NATO, GLA/Arabic, Israel(AirF), North Korea
+
+Strategy Center -> Advanced Air Base:
+- Dozer CommandSets *_PatchAAB replace SC construct buttons with AAB
+- USA/NATO/Israel StrategyCenter objects use sell-only PatchAAB CommandSets
+- AAB production CommandSet = existing Specter airfield CommandSets
+
+Validation: ZH_INIT PASS; NEW-only Missing Object/Weapon/Science = 0

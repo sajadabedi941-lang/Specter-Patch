@@ -1,0 +1,11 @@
+SPECTER AAB-ONLY BOOT TEST — VALIDATION REPORT
+Generated: 2026-07-31T10:40:28.546701+00:00
+SHA256: 35fb8a33be41fe444789982b07a039a0a8424c41537d733a2453b0aafec5f3cb
+SIZE: 349509731
+Entries: 1437 (original Specter 1430 + AAB overlay)
+
+Scope: original Specter factions only; Advanced Air Base replaces Strategy Center
+No added countries; no new Patch_* aircraft/units/weapons/sciences
+
+Missing Object=0 (NEW-only) · Parser FATAL=0 · PRELOAD FATAL=0
+ZH_INIT: PASS

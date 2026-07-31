@@ -1,0 +1,13 @@
+DOZER COMMANDSET ROLLBACK AUDIT
+SHA256: 2c5839d387e66904bc71c343e1e6b0a340240b3cf05f2839985fa107b0915b78
+
+1. AmericaDozerCommandSet_AAB assigned to USA dozer? NO (removed)
+2. Dozer Object CommandSet? AmericaDozerCommandSet (stock Specter)
+3. CommandSet.ini override? NONE — stock AmericaDozerCommandSet only in CommandSet.ini
+4. Duplicate AmericaDozerCommandSet defs? NO (exactly 1)
+5. AmericaDozerCommandSet_AAB present in BIG? NO
+
+Stock menu slots restored:
+1 PowerPlant, 2 StrategyCenter_T, 3 Barracks, 5 Supply, 6 Radar,
+7 Patriot, 8 CC, 11 WarFactory_T, 13 Airfield_T, 15 StrategyCenter,
+17 WarFactory, 18 Airfield, ...

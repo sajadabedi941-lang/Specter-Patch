@@ -1,28 +1,14 @@
-FILES CHANGED (command visibility only)
+ROLLBACK — FILES CHANGED
 
-MODIFIED/ADDED:
-1. Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
-   - Unique AAB buttons (does NOT redefine stock SC buttons)
-   - Debug: Command_AAB_VisibilityTest_Barracks
+REMOVED from AAB_ONLY_TEST overlay:
+- Data/INI/CommandSet_AdvancedAirBase.ini
+- Data/INI/Object/Specter/United States Of America/Wheeled/Dozer.ini
+- Data/INI/Object/Specter/NATO/Wheleed/Dozer.ini
+- Data/INI/Object/Specter/Israel Defense Forces/Wheeled/Dozer.ini
 
-2. Data/INI/CommandSet_AdvancedAirBase.ini
-   - AmericaDozerCommandSet_AAB (slot 2/15 = AAB)
-   - AmericaDozerCommandSet_AAB_DEBUG_BARRACKS (slot 2 = Barracks test)
-   - NatoDozerCommandSet_AAB / AirF_AmericaDozerCommandSet_AAB
-
-3. Data/INI/Object/Specter/United States Of America/Wheeled/Dozer.ini
-   - CommandSet = AmericaDozerCommandSet_AAB  (only line that matters)
-
-4. Data/INI/Object/Specter/NATO/Wheleed/Dozer.ini
-   - CommandSet = NatoDozerCommandSet_AAB
-
-5. Data/INI/Object/Specter/Israel Defense Forces/Wheeled/Dozer.ini
-   - CommandSet = AirF_AmericaDozerCommandSet_AAB
-
-6. README.txt
-
-NOT CHANGED:
-- AdvancedAirBase_AllFactions.ini (object untouched)
-- AdvancedAirBase_FutureFactions.ini (object untouched)
-- Countries / new units
-- SPECTER_FINAL_PLAYABLE_RELEASE
+KEPT (unchanged AdvancedAirBase objects + unused construct buttons):
+- Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+- Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+- Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+- Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/RUNWAY_SYSTEM.txt
+- README.txt

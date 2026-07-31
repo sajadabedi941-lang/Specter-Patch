@@ -1,20 +1,19 @@
-AAB COMMAND VISIBILITY FIX
-Generated: 2026-07-31T11:09:10.290019+00:00
-SHA256: c3f61dd42f0a8fcb136a2d1893c2117735b6d0bcb46059cd09993a544b6da032
-SIZE: 349463312
+STOCK DOZER RESTORE (AAB CommandSet rollback)
+Generated: 2026-07-31T11:24:54.184280+00:00
+SHA256: 2c5839d387e66904bc71c343e1e6b0a340240b3cf05f2839985fa107b0915b78
+SIZE: 349459557
 
-ROOT CAUSE: SAGE keeps FIRST CommandButton definition. Retargeting
-Command_ConstructAmericaStrategyCenter_T in a patch INI never applied.
+Problem: AmericaDozerCommandSet_AAB left the entire USA dozer build panel empty.
+Action: Removed all AAB dozer CommandSet overrides.
 
-DEBUG: AmericaDozerCommandSet_AAB_DEBUG_BARRACKS slot2 = Barracks (us_camp) — verified packable.
-RESTORED: AmericaDozerCommandSet_AAB slot2 = Command_ConstructAmerica_AdvancedAirBase (us_stratcenter).
+Verified:
+- AmericaVehicleDozer CommandSet = AmericaDozerCommandSet (stock)
+- USA Dozer.ini byte-identical to original Specter
+- No AmericaDozerCommandSet_AAB in packed BIG
+- Stock slots 1-18 present (Power/Barracks/WF/SC/Airfield/...)
+- No duplicate AmericaDozerCommandSet outside CommandSet.ini
 
-AUDIT:
-1. Playable USA Dozer uses AmericaDozerCommandSet_AAB
-2. CommandButton_AdvancedAirBase_SpecterFactions.ini loaded
-3. Slot 2 = Command_ConstructAmerica_AdvancedAirBase
-4. No duplicate override of stock AmericaDozerCommandSet
-5. Stock CommandSet.ini SC slot unused by playable dozer
+AdvancedAirBase object NOT edited.
+AAB not on dozer menu yet — confirm stock menu in-game first.
 
-AdvancedAirBase object files NOT modified.
 ZH_INIT: PASS

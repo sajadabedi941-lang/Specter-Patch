@@ -43,3 +43,7 @@ patch/Release/SPECTER_USA_E3_CRASH_FIX/*.zip
 # USA General Star B-2 AAB integration release binaries
 patch/Release/SPECTER_USA_GENERAL_STAR_B2_AAB/*.big
 patch/Release/SPECTER_USA_GENERAL_STAR_B2_AAB/*.zip
+
+# USA B-2 AAB heavy runway release binaries
+patch/Release/SPECTER_USA_B2_AAB_RUNWAY/*.big
+patch/Release/SPECTER_USA_B2_AAB_RUNWAY/*.zip

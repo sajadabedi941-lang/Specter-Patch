@@ -50,6 +50,9 @@ def should_kill(name: str) -> bool:
         return True
     if low.endswith("aircraft_aab_strategicbombers.ini"):
         return True
+    # AllFactions/FutureFactions AAB redefine America_AdvancedAirBase and wipe ABAirF2 3x2 bones.
+    if low.endswith("advancedairbase_allfactions.ini") or low.endswith("advancedairbase_futurefactions.ini"):
+        return True
     # Keep only America drones under PatchSystems/Drones.
     if "\\patchsystems\\drones\\" in low:
         base = low.rsplit("\\", 1)[-1]

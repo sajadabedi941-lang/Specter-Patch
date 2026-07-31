@@ -1,17 +1,12 @@
-AAB-ONLY BOOT TEST REPORT — USA SC->AAB
-=======================================
-SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
+AAB-ONLY BOOT TEST — USA AdvancedAirBase model
+==============================================
+SHA256: 91e54e7d422eecdbda3d3e1ae2a35f3fcc5948361473950098fd9bf7269ca5ef
 ZH_INIT: PASS (baseline-filtered)
 
-Overlay: patch/AAB_ONLY_TEST/
-Merge: original Specter _SPEC_DATA_ONE.big + overlay
-STOCK_SKIP: CommandSet.ini / CommandButton.ini / Weapon.ini / Armor.ini / Locomotor.ini
+USA Object America_AdvancedAirBase:
+  Draw = US_AirField @ Scale 1.60 (not US_StrtgyCenter)
+  Geometry 180x118x40 + 16-pad runway system
+  Portrait us_airfield; KindOf airfield (no FS_STRATEGY_CENTER)
 
-USA wiring:
-  Separate CommandButton override retargets Strategy Center construct
-  buttons to America_AdvancedAirBase. Stock dozer CommandSet unchanged.
-
-Not included:
-  - Added countries / new units
-  - NATO/Israel SC retarget (USA first)
-  - CommandSet.ini / Dozer.ini edits
+Unchanged:
+  CommandSet.ini, factions, build CommandButton Object target

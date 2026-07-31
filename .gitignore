@@ -79,3 +79,7 @@ patch/Release/SPECTER_USA_BUILD_FIX_FINAL/*.zip
 # USA AAB aircraft production fix release binaries
 patch/Release/SPECTER_USA_AAB_AIRCRAFT_PRODUCTION_FIX/*.big
 patch/Release/SPECTER_USA_AAB_AIRCRAFT_PRODUCTION_FIX/*.zip
+
+# USA HeavyRunway parse fix release binaries
+patch/Release/SPECTER_USA_HEAVYRUNWAY_PARSE_FIX/*.big
+patch/Release/SPECTER_USA_HEAVYRUNWAY_PARSE_FIX/*.zip

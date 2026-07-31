@@ -31,3 +31,7 @@ patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.zip
 # USA AAB heavy runway release binaries
 patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.big
 patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.zip
+
+# USA-only clean release binaries
+patch/Release/SPECTER_USA_ONLY_CLEAN/*.big
+patch/Release/SPECTER_USA_ONLY_CLEAN/*.zip

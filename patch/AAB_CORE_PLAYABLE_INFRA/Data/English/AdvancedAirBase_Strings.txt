@@ -1,4 +1,0 @@
-; AAB-ONLY TEST — display strings (USA Advanced Air Base)
-OBJECT:Patch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large strategic air base: long runway, hangars, 16 pads.

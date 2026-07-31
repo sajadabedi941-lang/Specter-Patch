@@ -1,0 +1,5 @@
+patch/USA_ONLY_CLEAN/ (USA-only patch layer)
+Removed multi-faction layers: AAB_ALL_FACTIONS_INFRA, AAB_CORE_PLAYABLE_INFRA
+AAB_ONLY_TEST stripped to America_AdvancedAirBase only
+
+Release DATA BIG: non-USA Specter factions stripped (~2000 entries removed)

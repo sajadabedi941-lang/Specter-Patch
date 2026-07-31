@@ -1,0 +1,36 @@
+EXACT FILES IN AAB BUILD WIRING OVERLAY (only these packed)
+
+CHANGED/ADDED under patch/AAB_ONLY_TEST/:
+1. Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+   - Redefines stock Strategy Center construct buttons:
+     Command_ConstructAmericaStrategyCenter_T -> America_AdvancedAirBase
+     Command_ConstructAmericaStrategyCenter   -> America_AdvancedAirBase
+     Command_ConstructNatoStrategyCenter      -> Nato_AdvancedAirBase
+     AirF_Command_ConstructAmericaStrategyCenter -> AirF_AmericaAdvancedAirBase
+   - ButtonImage = us_stratcenter (USA/Nato) / isi_indup (AirF)
+
+2. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+   - America_AdvancedAirBase / Nato_AdvancedAirBase (and other AAB shells)
+   - SC Prerequisites, BuildCost=2500, BuildTime=60, BuildCompletion=PLACED_BY_PLAYER
+
+3. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
+   - AirF_AmericaAdvancedAirBase build fields aligned to stock AirF Strategy Center
+
+4. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/RUNWAY_SYSTEM.txt
+   - Documentation only
+
+5. README.txt
+
+REMOVED from overlay (no longer overwrite original Specter):
+- United States Of America/Wheeled/Dozer.ini
+- United States Of America/Buildings/StrategyCenter.ini
+- United States Of America/Buildings/StrategyCenter_AI.ini
+- NATO Dozer / StrategyCenter overrides
+- RF/PLA/Iran/Israel Dozer overrides
+- CommandSet_AdvancedAirBase.ini
+- MappedImages / Strings / Patch_AdvancedAirBase.tga
+
+NOT MODIFIED:
+- patch/Data (full patch tree)
+- SPECTER_FINAL_PLAYABLE_RELEASE
+- Original Specter Dozer / CommandSet.ini / StrategyCenter in packed BIG

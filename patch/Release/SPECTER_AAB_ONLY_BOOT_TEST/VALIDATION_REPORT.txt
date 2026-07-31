@@ -1,12 +1,14 @@
-SPECTER AAB-ONLY BOOT TEST — VALIDATION REPORT
-Generated: 2026-07-31T10:55:55.335500+00:00
-SHA256: 4aa96825898a0b4f7449589a9084f5eea35dfd83b7fb307dc544fe9710d9fd2e
-SIZE: 349510426
+SPECTER AAB-ONLY — CONSTRUCTION FIX REPORT
+Generated: 2026-07-31T11:03:21.111392+00:00
+SHA256: 048353914e716d548a6bfa663e5632cb96bb93f8120ad0d3339ecd8730a584ca
+SIZE: 349459911
+Entries: 1434 (original 1430 + 4 AAB wiring files)
 
-Fix: Advanced Air Base now mirrors Strategy Center player-build wiring.
-- CommandButton uses stock us_stratcenter + DOZER_CONSTRUCT (DATA-only install safe)
-- Prerequisites/BuildCost/BuildTime/MaxSimultaneous match Strategy Center
-- KindOf includes FS_STRATEGY_CENTER + FS_AIRFIELD
-- BuildCompletion = PLACED_BY_PLAYER
+Approach:
+- Stock AmericaDozerCommandSet unchanged (slot 2/15 = Strategy Center buttons)
+- Original Specter Dozer.ini / StrategyCenter.ini untouched (byte-identical)
+- Stock CommandButtons retargeted: Object = America_AdvancedAirBase
+- ButtonImage = us_stratcenter
+- Prerequisites / BuildCost / BuildTime / BuildCompletion match Strategy Center
 
 ZH_INIT: PASS

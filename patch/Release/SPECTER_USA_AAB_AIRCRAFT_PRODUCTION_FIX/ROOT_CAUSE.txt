@@ -1,0 +1,16 @@
+AdvancedAirBase aircraft list empty
+===================================
+America_AdvancedAirBase used CommandSet America_AdvancedAirBaseCommandSet
+(unique name defined only in CommandSet_USA_AdvancedAirBase.ini).
+
+Same runtime class as the empty dozer PatchAAB menu: unique overlay
+CommandSet names do not bind a control bar.
+
+Fix:
+- Point America_AdvancedAirBase -> stock-named AmericaAirfieldCommandSet
+- Override AmericaAirfieldCommandSet in CommandSet_USA_AdvancedAirBase.ini
+  with full USA AAB production roster (loads after StrategicBombers overlay)
+- Add Command_ConstructPatch_America_B2
+- Allow AssaultHelo at FS_AIRFIELD (remove helipad-only KindOf flag)
+- Soften AC-130 Science Rank3 gate (still requires AdvancedAirBase)
+- No string/CSF changes; CommandSet.ini untouched; no new factions

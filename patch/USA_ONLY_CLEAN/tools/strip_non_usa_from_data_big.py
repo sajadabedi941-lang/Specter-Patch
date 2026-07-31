@@ -45,6 +45,16 @@ def should_kill(name: str) -> bool:
     low = name.replace("/", "\\").lower()
     if "united states of america" in low or "aaa_usa" in low or "commandbutton_usa_" in low or "commandset_usa_" in low:
         return False
+    # Multi-faction aircraft overlays redefine USA heavies (incl. E3) and other countries.
+    if low.endswith("aircraft_aab_global.ini") or low.endswith("aircraft_airforcefinal.ini"):
+        return True
+    if low.endswith("aircraft_aab_strategicbombers.ini"):
+        return True
+    # Keep only America drones under PatchSystems/Drones.
+    if "\\patchsystems\\drones\\" in low:
+        base = low.rsplit("\\", 1)[-1]
+        if not base.startswith("america_"):
+            return True
     if "playertemplate_specterpatch" in low or "commandbutton_factionexpansion" in low:
         return True
     if "object\\specter\\" in low:

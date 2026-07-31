@@ -35,3 +35,7 @@ patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.zip
 # USA-only clean release binaries
 patch/Release/SPECTER_USA_ONLY_CLEAN/*.big
 patch/Release/SPECTER_USA_ONLY_CLEAN/*.zip
+
+# USA E3 crash-fix release binaries
+patch/Release/SPECTER_USA_E3_CRASH_FIX/*.big
+patch/Release/SPECTER_USA_E3_CRASH_FIX/*.zip

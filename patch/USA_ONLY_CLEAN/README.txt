@@ -8,3 +8,7 @@ Contains ONLY:
 
 Removed: Egypt, Britain, France, Germany, India, Pakistan, and all other factions.
 No PlayerTemplates. CommandSet.ini untouched. Art/Draw/Geometry not modified in this cleanup.
+
+E3 crash fix: USA heavies use OCL_AmericaJetCargoDeathStart (not missing
+OCL_AmericaJetSlowDeathInitial). Multi-faction AAB/AirForceFinal aircraft
+overlays are stripped from USA-only DATA packs.

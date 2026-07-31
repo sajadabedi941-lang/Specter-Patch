@@ -1,27 +1,27 @@
-USA SC->AAB CommandButton OVERRIDE (no CommandSet.ini change)
-Generated: 2026-07-31T11:42:32.604330+00:00
-SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
-SIZE: 349459483
+USA AdvancedAirBase object model fix (not StrategyCenter clone)
+Generated: 2026-07-31T11:59:18.603375+00:00
+SHA256: 91e54e7d422eecdbda3d3e1ae2a35f3fcc5948361473950098fd9bf7269ca5ef
+SIZE: 349458642
 
-Method:
-- Separate CommandButton_AdvancedAirBase_SpecterFactions.ini
-- Retarget ONLY USA Strategy Center construct buttons to America_AdvancedAirBase
-- Stock CommandSet.ini / CommandButton.ini / Dozer.ini byte-identical to original Specter
+Changed: ONLY Object America_AdvancedAirBase definition
+Unchanged: CommandSet.ini, factions, build CommandButton Object target
 
-Checks:
-- [PASS] CommandSet.ini identical to stock
-- [PASS] USA Dozer.ini identical to stock
-- [PASS] Dozer uses AmericaDozerCommandSet
-- [PASS] No AmericaDozerCommandSet_AAB
-- [PASS] Stock AmericaDozerCommandSet slots preserved
-- [PASS] Exactly one AmericaDozerCommandSet def
-- [PASS] Override file packed
-- [PASS] USA SC_T / SC Object= America_AdvancedAirBase (2 Object= lines)
-- [PASS] No NATO/Israel retarget buttons
-- [PASS] Stock CommandButton.ini identical
-- [PASS] America_AdvancedAirBase object present
-- [PASS] No CommandSet_AdvancedAirBase.ini
-- [PASS] ZH_INIT baseline-filtered VERDICT PASS
-
-Build chain: AmericaDozerCommandSet slots 1/3/11/13/17/18 unchanged (Power/Barracks/WF/Airfield).
-USA only — no NATO/Israel button retargets.
+- [PASS] CommandSet.ini untouched
+- [PASS] CommandButton.ini untouched
+- [PASS] USA Dozer untouched
+- [PASS] Build command Object=America_AdvancedAirBase
+- [PASS] Build command names unchanged (SC button names)
+- [PASS] Object America_AdvancedAirBase present
+- [PASS] Draw models only US_AirField
+- [PASS] No US_StrtgyCenter
+- [PASS] No us_stratcenter portrait
+- [PASS] No FS_STRATEGY_CENTER
+- [PASS] No OBJECT:StrategyCenter
+- [PASS] SelectPortrait us_airfield
+- [PASS] Scale 1.60
+- [PASS] Geometry 180/118/40
+- [PASS] Runway HasRunways Yes + 2x8
+- [PASS] Runway ExtraPublicBone set present
+- [PASS] BuildCompletion PLACED_BY_PLAYER
+- [PASS] Russia AAB still present (untouched other factions file)
+- [PASS] Strings file packed

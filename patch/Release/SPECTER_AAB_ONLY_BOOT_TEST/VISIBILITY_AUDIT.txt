@@ -1,13 +1,10 @@
-USA SC->AAB VISIBILITY AUDIT
-============================
-SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
+USA AAB MODEL AUDIT
+SHA256: 91e54e7d422eecdbda3d3e1ae2a35f3fcc5948361473950098fd9bf7269ca5ef
 
-1. Stock AmericaDozerCommandSet used? YES
-2. CommandButton_AdvancedAirBase_SpecterFactions.ini loaded? YES (USA only)
-3. CommandSet.ini modified? NO
-4. Dozer.ini modified? NO
-5. Slot names for SC still Command_ConstructAmericaStrategyCenter(_T)? YES
-6. Override Object target? America_AdvancedAirBase (both USA SC buttons)
-7. Other build buttons (Power/Barracks/WF/Airfield) retargeted? NO
-
-Expect: full USA dozer panel; SC slots place Advanced Air Base.
+Object = America_AdvancedAirBase
+Draw Model = US_AirField (all states)
+Portrait = us_airfield (not us_stratcenter)
+KindOf = FS_AIRFIELD factory (no FS_STRATEGY_CENTER)
+Runway = 2x8 HasRunways=Yes ApproachHeight=90 Geom 180/118/40
+Build CommandButton Object = America_AdvancedAirBase (unchanged)
+CommandSet.ini = stock

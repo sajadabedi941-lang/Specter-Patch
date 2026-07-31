@@ -1,21 +1,19 @@
-AAB-ONLY TEST — USA Strategy Center -> AdvancedAirBase
-======================================================
+AAB-ONLY TEST — USA AdvancedAirBase object (not StrategyCenter)
+==============================================================
 
 Constraints:
-- Stock CommandSet.ini NOT modified
-- Stock Dozer.ini NOT modified
-- All original AmericaDozerCommandSet slots unchanged
-- USA only (no NATO/Israel/other faction button retargets)
-- Countries / units NOT touched
-- AdvancedAirBase object NOT edited
+- CommandSet.ini NOT modified
+- Factions / countries NOT modified
+- Build CommandButton unchanged (still Object = America_AdvancedAirBase)
+- Other faction AAB objects NOT edited
 
-Wiring (separate override only):
-  Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
-    Command_ConstructAmericaStrategyCenter_T -> Object = America_AdvancedAirBase
-    Command_ConstructAmericaStrategyCenter   -> Object = America_AdvancedAirBase
-
-Playable USA dozer still uses:
-  CommandSet = AmericaDozerCommandSet
-  (Power, Barracks, War Factory, Airfield, Strategy Center slots, ...)
-
-Strategy Center slots still appear as stock SC UI; placing them builds America_AdvancedAirBase.
+USA Object America_AdvancedAirBase:
+- Draw Model = US_AirField (AdvancedAirBase mesh, all condition states)
+- Scale = 1.60
+- Geometry = 180 x 118 x 40 (runway footprint)
+- ParkingPlaceBehavior: NumRows=2 NumCols=8 HasRunways=Yes
+- Full ExtraPublicBone runway set (Runway1..8 Parking/ParkHan/Prep/Start/End + HeliPark)
+- SelectPortrait/ButtonImage = us_airfield (not us_stratcenter)
+- DisplayName = OBJECT:Patch_AdvancedAirBase
+- KindOf = airfield factory flags (no FS_STRATEGY_CENTER)
+- CommandSet = AmericaAirfieldCommandSet (stock; no new units)

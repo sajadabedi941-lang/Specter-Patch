@@ -1,12 +1,16 @@
-SPECTER AAB-ONLY — USA AdvancedAirBase model
-===========================================
+SPECTER AAB-ONLY — Revolution USA Airfield visual
+=================================================
 
-Install: replace ONLY Data/_SPEC_DATA_ONE.big (keep _SPEC_ART_ONE.big)
+Install:
+  Replace ONLY: Data/_SPEC_DATA_ONE.big
+  Keep player:  Data/_SPEC_ART_ONE.big (full Specter ART)
 
-USA placeable object America_AdvancedAirBase:
-  Model = US_AirField @ Scale 1.60
-  Geometry 180x118x40 + 16-pad runway system
-  NOT Strategy Center mesh / portrait / KindOf
+Then add Revolution Airfield USA meshes into Art/W3D (ABAirF2.W3D and variants).
+Without those W3Ds the object uses Revolution INI but meshes will be missing in-game.
 
-Build command unchanged (SC button names -> America_AdvancedAirBase).
-CommandSet.ini / factions untouched.
+USA America_AdvancedAirBase visual source:
+  Generals 2 Revolution Project USA Fraction Airfield (Alliance AmericaAirfield)
+  Models ABAirF2 / runway ABAirF_T2 / UI SANAirF
+  NOT Strategy Center
+
+Build logic / CommandSet.ini unchanged.

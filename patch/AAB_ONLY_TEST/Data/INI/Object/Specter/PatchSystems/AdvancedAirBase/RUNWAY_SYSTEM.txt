@@ -1,23 +1,8 @@
-SPECTER PATCH — Advanced Air Base / Runway System (overlay)
-==========================================================
-Source reference: Turkey_AdvancedAirBase (US_AirField mesh @ Scale 1.60)
-ParkingPlaceBehavior contract applied to ALL faction AdvancedAirBase objects:
+USA AdvancedAirBase runway — Generals 2 Revolution Project USA Fraction Airfield
+Source INI: mod.zip / Data/INI/Object/America_Alliance/Alliance_Airfield.ini
+  ParkingPlaceBehavior: NumRows=3 NumCols=2 HasRunways=Yes ApproachHeight=50
+  Geometry: 156 x 83 x 100
+  Draw models: ABAirF2 (+ damage/snow/night) + ABAirF_T2 runway bones
+  UI: SANAirF / SANAirF_L (SRUserInterface1024_010)
 
-  Scale                  = 1.60
-  NumRows                = 2
-  NumCols                = 8          ; 16 pads
-  HasRunways             = Yes
-  ApproachHeight         = 90
-  HealAmountPerSecond    = 25
-  GeometryMajorRadius    = 180.0
-  GeometryMinorRadius    = 118.0
-  GeometryHeight         = 40.0
-  ExtraPublicBone        = Runway1..8 Parking1/2 + ParkHan + Prep (full turkey set)
-
-Heavy aircraft landing compatibility (see HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt):
-  Strategic bombers (B-2/B-21/B-52/Tu-160/Tu-22/H-6): Scale 0.72, Geom ~36x12
-  AWACS (E-3/A-50/KJ-2000/Adnan):                   Scale 0.78, Geom ~40x14
-  Transport / Tanker / Il-76:                       Scale 0.76, Geom ~40x14
-  Heavy helicopters (CH-47):                        Scale 0.82, Geom ~22x10
-
-Do not edit Specter archives — this is patch overlay only.
+Mesh W3Ds (ABAirF*.W3D) must be present in Art/W3D (Revolution Airfield USA addon).

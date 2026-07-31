@@ -1,10 +1,9 @@
-USA AAB MODEL AUDIT
-SHA256: 91e54e7d422eecdbda3d3e1ae2a35f3fcc5948361473950098fd9bf7269ca5ef
-
-Object = America_AdvancedAirBase
-Draw Model = US_AirField (all states)
-Portrait = us_airfield (not us_stratcenter)
-KindOf = FS_AIRFIELD factory (no FS_STRATEGY_CENTER)
-Runway = 2x8 HasRunways=Yes ApproachHeight=90 Geom 180/118/40
-Build CommandButton Object = America_AdvancedAirBase (unchanged)
-CommandSet.ini = stock
+SHA256: ca5b62f635126b216f4dfbd47a8f81c0be144d884ddf47699e3656f491c4862b
+Object America_AdvancedAirBase
+Draw Model = ABAirF2 (Revolution)
+Portrait = SANAirF_L
+Geometry = 156x83x100
+Runway = 3x2 HasRunways=Yes
+No US_StrtgyCenter
+Build command unchanged
+Meshes: require Revolution Airfield USA W3D pack in Art/W3D

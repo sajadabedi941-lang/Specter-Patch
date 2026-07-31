@@ -1,12 +1,11 @@
-AAB-ONLY BOOT TEST — USA AdvancedAirBase model
-==============================================
-SHA256: 91e54e7d422eecdbda3d3e1ae2a35f3fcc5948361473950098fd9bf7269ca5ef
-ZH_INIT: PASS (baseline-filtered)
+AAB-ONLY — Revolution USA Airfield visual
+=========================================
+SHA256: ca5b62f635126b216f4dfbd47a8f81c0be144d884ddf47699e3656f491c4862b
+ZH_INIT: PASS
 
-USA Object America_AdvancedAirBase:
-  Draw = US_AirField @ Scale 1.60 (not US_StrtgyCenter)
-  Geometry 180x118x40 + 16-pad runway system
-  Portrait us_airfield; KindOf airfield (no FS_STRATEGY_CENTER)
+America_AdvancedAirBase visual = Generals 2 Revolution Project USA Airfield
+  Source: mod.zip Alliance_Airfield.ini (ABAirF2 / SANAirF / runway 3x2)
+  Not StrategyCenter / US_StrtgyCenter
+  Build logic + CommandSet.ini unchanged
 
-Unchanged:
-  CommandSet.ini, factions, build CommandButton Object target
+Meshes: upload Revolution Airfield USA W3D pack (ABAirF*.W3D) — not in mod.zip.

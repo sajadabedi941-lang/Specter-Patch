@@ -1,0 +1,4 @@
+REQUIRED: Generals 2 Revolution Project — Airfield USA mesh pack
+Place ABAirF2.W3D (+ damage/snow/night/door variants) and ABAirF_T2.W3D here.
+Source addon: https://www.moddb.com/mods/cc-generals-revolution/addons/airfield-usa
+INI/UI already imported from workspace mod.zip (Alliance AmericaAirfield).

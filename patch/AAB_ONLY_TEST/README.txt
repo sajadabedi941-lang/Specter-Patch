@@ -1,19 +1,18 @@
-AAB-ONLY TEST — USA AdvancedAirBase object (not StrategyCenter)
-==============================================================
+AAB-ONLY — USA AdvancedAirBase uses Revolution Project USA Airfield visuals
+==========================================================================
 
-Constraints:
-- CommandSet.ini NOT modified
-- Factions / countries NOT modified
-- Build CommandButton unchanged (still Object = America_AdvancedAirBase)
-- Other faction AAB objects NOT edited
+Visual source (imported):
+  mod.zip -> Data/INI/Object/America_Alliance/Alliance_Airfield.ini
+  Models: ABAirF2 / ABAirF_T2 / door anims (NOT StrategyCenter, NOT US_StrtgyCenter)
+  Geometry + runway: Revolution 3x2 HasRunways
+  UI portraits: SANAirF / SANAirF_L
 
-USA Object America_AdvancedAirBase:
-- Draw Model = US_AirField (AdvancedAirBase mesh, all condition states)
-- Scale = 1.60
-- Geometry = 180 x 118 x 40 (runway footprint)
-- ParkingPlaceBehavior: NumRows=2 NumCols=8 HasRunways=Yes
-- Full ExtraPublicBone runway set (Runway1..8 Parking/ParkHan/Prep/Start/End + HeliPark)
-- SelectPortrait/ButtonImage = us_airfield (not us_stratcenter)
-- DisplayName = OBJECT:Patch_AdvancedAirBase
-- KindOf = airfield factory flags (no FS_STRATEGY_CENTER)
-- CommandSet = AmericaAirfieldCommandSet (stock; no new units)
+Unchanged:
+  CommandSet.ini
+  Build CommandButton Object = America_AdvancedAirBase
+  Prerequisites / BuildCost / BuildTime / AmericaAirfieldCommandSet
+  Factions / other country AAB objects
+
+ART meshes:
+  Place Revolution Airfield USA ABAirF*.W3D into Art/W3D (see Art/W3D/REVOLUTION_AIRFIELD_USA_REQUIRED.txt).
+  UI texture packed under Data/English/Art/Textures/SRUserInterface1024_010.dds

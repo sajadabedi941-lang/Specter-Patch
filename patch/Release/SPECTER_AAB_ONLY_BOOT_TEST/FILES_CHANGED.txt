@@ -1,12 +1,7 @@
-AAB_ONLY_TEST overlay:
-- Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini  (USA object only)
-- Data/English/AdvancedAirBase_Strings.txt
-- Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini  (unchanged build wiring)
-- README.txt
+- AdvancedAirBase_AllFactions.ini (USA visual -> Revolution ABAirF2)
+- MappedImages AdvancedAirBase_Images.INI (SANAirF)
+- Data/English/Art/Textures/SRUserInterface1024_010.dds
+- Art/W3D/REVOLUTION_AIRFIELD_USA_REQUIRED.txt
+- CommandButton unchanged
 
-NOT changed:
-- CommandSet.ini
-- CommandButton.ini (stock)
-- Dozer.ini
-- Other faction AAB objects (Russia/China/...)
-- Countries / units
+CommandSet.ini / factions / build logic: NOT changed

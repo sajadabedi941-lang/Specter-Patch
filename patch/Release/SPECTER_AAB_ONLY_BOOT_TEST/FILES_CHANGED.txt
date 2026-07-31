@@ -1,36 +1,28 @@
-EXACT FILES IN AAB BUILD WIRING OVERLAY (only these packed)
+FILES CHANGED (command visibility only)
 
-CHANGED/ADDED under patch/AAB_ONLY_TEST/:
+MODIFIED/ADDED:
 1. Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
-   - Redefines stock Strategy Center construct buttons:
-     Command_ConstructAmericaStrategyCenter_T -> America_AdvancedAirBase
-     Command_ConstructAmericaStrategyCenter   -> America_AdvancedAirBase
-     Command_ConstructNatoStrategyCenter      -> Nato_AdvancedAirBase
-     AirF_Command_ConstructAmericaStrategyCenter -> AirF_AmericaAdvancedAirBase
-   - ButtonImage = us_stratcenter (USA/Nato) / isi_indup (AirF)
+   - Unique AAB buttons (does NOT redefine stock SC buttons)
+   - Debug: Command_AAB_VisibilityTest_Barracks
 
-2. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
-   - America_AdvancedAirBase / Nato_AdvancedAirBase (and other AAB shells)
-   - SC Prerequisites, BuildCost=2500, BuildTime=60, BuildCompletion=PLACED_BY_PLAYER
+2. Data/INI/CommandSet_AdvancedAirBase.ini
+   - AmericaDozerCommandSet_AAB (slot 2/15 = AAB)
+   - AmericaDozerCommandSet_AAB_DEBUG_BARRACKS (slot 2 = Barracks test)
+   - NatoDozerCommandSet_AAB / AirF_AmericaDozerCommandSet_AAB
 
-3. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_FutureFactions.ini
-   - AirF_AmericaAdvancedAirBase build fields aligned to stock AirF Strategy Center
+3. Data/INI/Object/Specter/United States Of America/Wheeled/Dozer.ini
+   - CommandSet = AmericaDozerCommandSet_AAB  (only line that matters)
 
-4. Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/RUNWAY_SYSTEM.txt
-   - Documentation only
+4. Data/INI/Object/Specter/NATO/Wheleed/Dozer.ini
+   - CommandSet = NatoDozerCommandSet_AAB
 
-5. README.txt
+5. Data/INI/Object/Specter/Israel Defense Forces/Wheeled/Dozer.ini
+   - CommandSet = AirF_AmericaDozerCommandSet_AAB
 
-REMOVED from overlay (no longer overwrite original Specter):
-- United States Of America/Wheeled/Dozer.ini
-- United States Of America/Buildings/StrategyCenter.ini
-- United States Of America/Buildings/StrategyCenter_AI.ini
-- NATO Dozer / StrategyCenter overrides
-- RF/PLA/Iran/Israel Dozer overrides
-- CommandSet_AdvancedAirBase.ini
-- MappedImages / Strings / Patch_AdvancedAirBase.tga
+6. README.txt
 
-NOT MODIFIED:
-- patch/Data (full patch tree)
+NOT CHANGED:
+- AdvancedAirBase_AllFactions.ini (object untouched)
+- AdvancedAirBase_FutureFactions.ini (object untouched)
+- Countries / new units
 - SPECTER_FINAL_PLAYABLE_RELEASE
-- Original Specter Dozer / CommandSet.ini / StrategyCenter in packed BIG

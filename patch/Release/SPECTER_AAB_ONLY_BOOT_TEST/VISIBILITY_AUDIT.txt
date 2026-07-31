@@ -1,0 +1,22 @@
+RUNTIME COMMAND VISIBILITY AUDIT
+SHA256: c3f61dd42f0a8fcb136a2d1893c2117735b6d0bcb46059cd09993a544b6da032
+
+1. AmericaDozerCommandSet used by playable USA?
+   NO — playable AmericaVehicleDozer now uses AmericaDozerCommandSet_AAB
+   (stock AmericaDozerCommandSet remains in CommandSet.ini unchanged)
+
+2. CommandButton_AdvancedAirBase_SpecterFactions.ini loaded? YES
+
+3. Slot 2 points to AAB button? YES
+   AmericaDozerCommandSet_AAB slot 2 = Command_ConstructAmerica_AdvancedAirBase
+   Object=America_AdvancedAirBase ButtonImage=us_stratcenter
+
+4. Duplicate CommandSet overriding stock? NO
+   Stock AmericaDozerCommandSet still only in CommandSet.ini
+   New AmericaDozerCommandSet_AAB is a separate name
+
+5. Hidden CommandSet from original Data overriding Patch? NO
+   AAB_ONLY_TEST merge only; stock set not used by playable dozer
+
+DEBUG button retained: Command_AAB_VisibilityTest_Barracks
+DEBUG CommandSet retained: AmericaDozerCommandSet_AAB_DEBUG_BARRACKS

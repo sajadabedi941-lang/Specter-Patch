@@ -19,7 +19,8 @@ import struct
 from pathlib import Path
 
 KEEP_ENGLISH_TXT = {
-    "usa_heavyaircraft_strings.txt",
+    # Intentionally empty: Generals String Manager loads CSF only.
+    # USA strings must live inside Data/English/generals.csf.
 }
 
 KILL_EXACT = {

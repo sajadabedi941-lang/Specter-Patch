@@ -67,3 +67,7 @@ patch/Release/SPECTER_USA_AIRCRAFT_STRING_BUTTON_FIX/*.zip
 # USA AAB final fix release binaries
 patch/Release/SPECTER_USA_AAB_FINAL_FIX/*.big
 patch/Release/SPECTER_USA_AAB_FINAL_FIX/*.zip
+
+# USA string runtime fix release binaries
+patch/Release/SPECTER_USA_STRING_RUNTIME_FIX/*.big
+patch/Release/SPECTER_USA_STRING_RUNTIME_FIX/*.zip

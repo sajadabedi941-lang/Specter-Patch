@@ -1,1 +1,0 @@
-; superseded by USA_HeavyAircraft_Strings.txt (deduplicated)

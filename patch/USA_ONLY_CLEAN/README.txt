@@ -1,16 +1,15 @@
-SPECTER - USA AAB FINAL FIX
-===========================
-Repairs String Manager + match-enter crashes for the USA Advanced Air Base pack.
+SPECTER - USA STRING RUNTIME FIX
+================================
+ROOT CAUSE of "***FATAL*** String Manager failed to initialize properly":
 
-KEEP all USA content:
-- America AdvancedAirBase
-- B-2, B-1B, B-52, E-3, C-17, KC-135, AC-130, heliborne
-- USA AAB fighters / support aircraft
+Corrupt Data/English/generals.csf in USA packs.
+Turkey string entries used invalid magic "RTSW" instead of "WRTS"/"STR ".
+String Manager aborts while parsing CSF.
 
-FIX only:
-- Single deduplicated ASCII USA string overlay (OBJECT:/CONTROLBAR:)
-- Missing Patch_America_* object refs for CommandSet buttons
-- America-only AirForceExpansion (no Russia/China/France/etc aircraft)
-- Remove broken multi-faction CommandSet_AdvancedAirBase + AAB_Global redefines
+FIX:
+- Replace with known-good generals.csf
+- Append USA OBJECT:/CONTROLBAR: keys into CSF
+- Remove Data/English/*.txt overlays (not CSF; working packs use CSF only)
 
+USA aircraft / AdvancedAirBase / heliborne content is preserved.
 CommandSet.ini untouched. No new factions.

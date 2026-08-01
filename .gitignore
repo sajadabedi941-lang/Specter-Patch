@@ -111,3 +111,7 @@ patch/Release/SPECTER_USA_ADVANCED_AIRBASE_FINAL/*.zip
 # USA AAB button unlock release binaries
 patch/Release/SPECTER_USA_AAB_BUTTON_UNLOCK/*.big
 patch/Release/SPECTER_USA_AAB_BUTTON_UNLOCK/*.zip
+
+# USA AAB runtime AV fix release binaries
+patch/Release/SPECTER_USA_AAB_RUNTIME_AV_FIX/*.big
+patch/Release/SPECTER_USA_AAB_RUNTIME_AV_FIX/*.zip

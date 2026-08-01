@@ -30,6 +30,8 @@ KILL_EXACT = {
     "data\\ini\\object\\specter\\patchsystems\\advancedairbase_futurefactions.ini",
     "data\\ini\\commandbutton_advancedairbase_specterfactions.ini",
     "data\\ini\\commandset_advancedairbase.ini",
+    # Superseded by CommandButton_ZZZZ_USA_AAB_HeavyPurchase_Unlock.ini
+    "data\\ini\\commandbutton_zzz_usa_aab_keeplist_unlock.ini",
 }
 
 

@@ -13,15 +13,21 @@ STOCK_CS_HASH = "6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af3
 
 REQUIRED_AIRCRAFT = [
     "Patch_America_B2",
-    "Patch_America_B1",
     "Patch_America_B52",
     "Patch_America_E3",
     "Patch_America_C17",
     "Patch_America_KC135",
     "Patch_America_AC130Spectre",
-    "Patch_America_F22",
-    "Patch_America_F35",
-    "Patch_America_AssaultHelo",
+]
+
+# Heavies-only CommandSet slots that must be purchasable (fighters excluded).
+REQUIRED_COMMANDSET_OBJECTS = [
+    "Patch_America_B2",
+    "Patch_America_B52",
+    "Patch_America_E3",
+    "Patch_America_C17",
+    "Patch_America_KC135",
+    "Patch_America_AC130Spectre",
 ]
 
 
@@ -125,13 +131,24 @@ def main() -> int:
         if ac not in objects:
             errors.append(f"missing aircraft {ac}")
 
-    # AssaultHelo must not require helipad-only production
-    for k, v in e.items():
-        m = re.search(rb"^Object\s+Patch_America_AssaultHelo\b(.*?)(?=^Object\s|\Z)", v, re.M | re.S)
-        if m:
-            kind = re.search(rb"KindOf\s*=\s*([^\n]+)", m.group(1))
-            if kind and b"PRODUCED_AT_HELIPAD" in kind.group(1):
-                errors.append("Patch_America_AssaultHelo KindOf still has PRODUCED_AT_HELIPAD")
+    # Heavies-only roster: CommandSet must expose these UNIT_BUILD objects.
+    cs_objects = set()
+    for r in refs:
+        o = buttons.get(r)
+        if o:
+            cs_objects.add(o)
+    for ac in REQUIRED_COMMANDSET_OBJECTS:
+        if ac not in cs_objects:
+            errors.append(f"AmericaAirfieldCommandSet missing heavy {ac}")
+
+    # Parking contract: stock 1x6 + free slots required for UNIT_BUILD enable.
+    if aab:
+        if "NumRows                 = 1" not in aab and "NumRows = 1" not in aab:
+            # tolerate spacing variants
+            if not re.search(r"NumRows\s*=\s*1\b", aab):
+                errors.append("AAB ParkingPlaceBehavior NumRows must be 1 (stock US_AirField)")
+        if not re.search(r"NumCols\s*=\s*6\b", aab):
+            errors.append("AAB ParkingPlaceBehavior NumCols must be 6 (stock US_AirField)")
 
     # Dozer still stock
     for k, v in e.items():

@@ -99,3 +99,7 @@ patch/Release/SPECTER_USA_RUNTIME_OBJECT_FIX_FINAL/*.zip
 # USA AWACS parse fix release binaries
 patch/Release/SPECTER_USA_AWACS_PARSE_FIX/*.big
 patch/Release/SPECTER_USA_AWACS_PARSE_FIX/*.zip
+
+# USA AirForceExpansion parse fix release binaries
+patch/Release/SPECTER_USA_AIRFORCE_PARSE_FIX/*.big
+patch/Release/SPECTER_USA_AIRFORCE_PARSE_FIX/*.zip

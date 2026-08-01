@@ -123,3 +123,7 @@ patch/Release/SPECTER_USA_AAB_HEAVY_PURCHASE/*.zip
 # USA AAB heavy aircraft FINAL release binaries
 patch/Release/SPECTER_USA_AAB_HEAVY_AIRCRAFT_FINAL/*.big
 patch/Release/SPECTER_USA_AAB_HEAVY_AIRCRAFT_FINAL/*.zip
+
+# USA AAB building unlock fix release binaries
+patch/Release/SPECTER_USA_AAB_BUILD_UNLOCK_FIX/*.big
+patch/Release/SPECTER_USA_AAB_BUILD_UNLOCK_FIX/*.zip

@@ -129,6 +129,23 @@ def main() -> int:
         if ac not in objects:
             errors.append(f"missing required aircraft/AAB object {ac}")
 
+    # AAB building must not be locked by Object Prerequisites / Science.
+    aab_body = None
+    for k, v in e.items():
+        m = re.search(rb"^Object\s+America_AdvancedAirBase\b(.*?)(?=^Object\s|\Z)", v, re.M | re.S)
+        if m:
+            aab_body = m.group(1).decode("latin-1", "replace")
+    if aab_body is None:
+        errors.append("America_AdvancedAirBase Object missing")
+    else:
+        pr = re.search(r"Prerequisites\s*\n(.*?)\n\s*End", aab_body, re.S)
+        if pr:
+            inner = pr.group(1)
+            if re.search(r"Object\s*=", inner) or re.search(r"Science\s*=", inner):
+                errors.append("AAB Object must have empty Prerequisites (no Object/Science locks)")
+        if re.search(r"^\s*RequiredScience\s*=", aab_body, re.M):
+            errors.append("AAB Object has RequiredScience lock")
+
     # no English txt
     eng_txt = [k for k in e if "\\english\\" in k.lower() and k.lower().endswith(".txt")]
     if eng_txt:

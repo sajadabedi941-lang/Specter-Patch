@@ -1,0 +1,20 @@
+SPECTER_USA_AAB_BUILD_UNLOCK_FIX
+================================
+Problem: America_AdvancedAirBase itself was grey/locked and could not be built.
+
+Cause:
+Object America_AdvancedAirBase Prerequisites required AmericaWarFactory_T AND
+AmericaRadarStation. Dozer builds AAB via Command_ConstructAmericaStrategyCenter(_T)
+-> America_AdvancedAirBase; Object prereqs left the DOZER_CONSTRUCT button disabled
+even with funds (not a Science/Rank button lock). AmericaWarFactory_T often never
+exists if the player only builds AmericaWarFactory.
+
+Fix:
+- Clear America_AdvancedAirBase Prerequisites (empty block)
+- Add CommandButton_ZZZZ_USA_AAB_Building_Unlock.ini restoring clean
+  StrategyCenter/AdvancedAirBase DOZER_CONSTRUCT buttons (no Science/Rank/Upgrade)
+
+Unchanged:
+- Heavy aircraft roster (B-2, B-52, B-1B, E-3, C-17, KC-135, AC-130)
+- Aircraft UNIT_BUILD unlock / parking / JetAI logic
+- Stock CommandSet.ini

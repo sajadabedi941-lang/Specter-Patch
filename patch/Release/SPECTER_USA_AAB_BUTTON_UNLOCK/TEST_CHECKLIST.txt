@@ -1,7 +1,0 @@
-[x] Keep-list CommandButtons last-def have no Science/RequiredScience
-[x] CommandSet slots 1-8 unchanged
-[x] Aircraft Objects not rewritten
-[x] AAB parking NumRows=1 NumCols=6
-[x] validate_usa_build_menu.py PASS
-[x] validate_usa_aab_aircraft_production.py PASS
-[ ] Manual: USA skirmish -> build AAB -> purchase all 8 from start

@@ -1,7 +1,0 @@
-[x] Structural INI check PASS on Aircraft_USA_Heavy_Runway.ini
-[x] AC130 WeaponSet restored (no orphan Weapon/End)
-[x] Keep-list aircraft + AdvancedAirBase present
-[x] USA dozer build menu validator PASS
-[x] USA AAB aircraft production validator PASS
-[ ] Local: game startup
-[ ] Local: USA match AC-130 / heavy aircraft

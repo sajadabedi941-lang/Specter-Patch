@@ -14,6 +14,7 @@ STOCK_CS_HASH = "6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af3
 REQUIRED_AIRCRAFT = [
     "Patch_America_B2",
     "Patch_America_B52",
+    "Patch_America_B1",
     "Patch_America_E3",
     "Patch_America_C17",
     "Patch_America_KC135",
@@ -24,6 +25,7 @@ REQUIRED_AIRCRAFT = [
 REQUIRED_COMMANDSET_OBJECTS = [
     "Patch_America_B2",
     "Patch_America_B52",
+    "Patch_America_B1",
     "Patch_America_E3",
     "Patch_America_C17",
     "Patch_America_KC135",

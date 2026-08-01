@@ -1,9 +1,0 @@
-SPECTER_USA_RUNTIME_CRASH_FIX_FINAL validation
-- Base: SPECTER_USA_HEAVYRUNWAY_PARSE_FIX
-- Exact object: Patch_America_AC130Spectre (dual AI + SpectreGunshipUpdate)
-- DATA SHA256=6125f511d3eb50be3f6734c81ab23a420db649347a1a25579916c7de9170d5b9
-- ART  SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
-- ZIP  SHA256=50c9036a9afd1ee13b1d0d7fb69b92bb17ed2a727b554ee03d05938430c0992b
-- check_ini_object_structure.py: PASS
-- validate_usa_build_menu.py: PASS
-- validate_usa_aab_aircraft_production.py: PASS

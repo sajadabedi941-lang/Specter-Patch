@@ -1,9 +1,0 @@
-SPECTER_USA_HEAVYRUNWAY_PARSE_FIX validation
-- Base: SPECTER_USA_AAB_AIRCRAFT_PRODUCTION_FIX
-- Fix: restore WeaponSet on Patch_America_AC130Spectre
-- check_ini_object_structure.py: PASS
-- validate_usa_build_menu.py: PASS
-- validate_usa_aab_aircraft_production.py: PASS
-- DATA SHA256=3dc4430e27c18d4d6a92987099dc5340cbc3e3824c13ebfb90ffcb74c4da7bf6
-- ART  SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
-- ZIP  SHA256=da0efc7540ebfb6cf579b445ec52bae118601bee23f61cbb9c8e695faa2bbb8a

@@ -103,3 +103,7 @@ patch/Release/SPECTER_USA_AWACS_PARSE_FIX/*.zip
 # USA AirForceExpansion parse fix release binaries
 patch/Release/SPECTER_USA_AIRFORCE_PARSE_FIX/*.big
 patch/Release/SPECTER_USA_AIRFORCE_PARSE_FIX/*.zip
+
+# USA AdvancedAirBase final release binaries
+patch/Release/SPECTER_USA_ADVANCED_AIRBASE_FINAL/*.big
+patch/Release/SPECTER_USA_ADVANCED_AIRBASE_FINAL/*.zip

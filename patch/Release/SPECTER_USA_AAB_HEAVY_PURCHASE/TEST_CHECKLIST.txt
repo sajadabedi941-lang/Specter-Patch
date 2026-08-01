@@ -1,0 +1,7 @@
+1. Install _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big
+2. USA: build America_AdvancedAirBase
+3. Confirm build bar shows only heavies (no fighters)
+4. Confirm B-2 button is enabled (not grey) with funds
+5. Purchase B-2; confirm spawn/taxi on enlarged runway
+6. Repeat for B-52, E-3, C-17, KC-135, AC-130
+7. Confirm aircraft models/Scale unchanged (US_B1R/US_B52H/etc)

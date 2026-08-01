@@ -1,0 +1,12 @@
+SPECTER_USA_HEAVY_AIRCRAFT_UNLOCK_FINAL validation
+=================================================
+Base: SPECTER_USA_AAB_BUILD_UNLOCK_FIX
+CommandSet.ini SHA256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+ART SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+DATA SHA256=4f94e2f041304a9e70ed869f77fd37a6f48af392609f75123f5d48f7a63d73b9
+validate_usa_build_menu.py: PASS
+validate_usa_aab_aircraft_production.py: PASS
+AAB parking untouched: Scale=1.50 NumRows=1 NumCols=6 ApproachHeight=140
+Last AmericaAirfieldCommandSet: CommandSet_ZZZZ_USA_AdvancedAirBase.ini (heavies-only)
+Last heavy UNIT_BUILD buttons: CommandButton_ZZZZZ_USA_HeavyAircraft_Unlock_Final.ini
+Stock JetB2Spirit/B52H/E3AWACS Prerequisites cleared

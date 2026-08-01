@@ -110,9 +110,9 @@ def main() -> int:
             errors.append(f"missing building Object {b}")
 
     # AAB aircraft commandset
-    aab_cs_file = e.get("Data\\INI\\CommandSet_USA_AdvancedAirBase.ini", b"").decode("latin-1", "replace")
+    aab_cs_file = e.get("Data\\INI\\CommandSet_ZZZZ_USA_AdvancedAirBase.ini", b"").decode("latin-1", "replace")
     if "America_AdvancedAirBaseCommandSet" not in aab_cs_file:
-        errors.append("America_AdvancedAirBaseCommandSet missing from CommandSet_USA_AdvancedAirBase.ini")
+        errors.append("America_AdvancedAirBaseCommandSet missing from CommandSet_ZZZZ_USA_AdvancedAirBase.ini")
     if "AmericaDozerCommandSet_PatchAAB" in aab_cs_file:
         errors.append("stale PatchAAB dozer set still present")
 

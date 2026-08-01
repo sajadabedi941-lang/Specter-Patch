@@ -1,0 +1,20 @@
+SPECTER_USA_HEAVY_AIRCRAFT_UNLOCK_FINAL
+=======================================
+Problem: AAB parking/runway works, but heavy aircraft UNIT_BUILD stays locked.
+
+Remaining locks found:
+1) Stock AmericaAirfieldCommandSet / StrategicBombers overlay could race;
+   forced heavies CommandSet via CommandSet_ZZZZ_USA_AdvancedAirBase.ini
+2) Stock Jet buttons (JetB2Spirit/B52H/B1R/E3AWACS) pointed at Objects with
+   Science = SCIENCE_Rank3/4 + StrategyCenter Object prereqs
+3) Need late CommandButton unlock after Default\CommandButton.ini
+
+Fix (AAB parking/scale/bones/geometry NOT changed):
+- CommandSet_ZZZZ_USA_AdvancedAirBase.ini — heavies-only roster last
+- CommandButton_ZZZZZ_USA_HeavyAircraft_Unlock_Final.ini — clean UNIT_BUILD
+  for Patch_* + remap stock Jet* buttons to Patch_* (no Science)
+- Clear Prerequisites on AmericaJetB2Spirit / B52H / E3AWACS
+- Explicit empty Prerequisites on Patch_* heavies
+- Strip StrategicBombers_AABOnly + superseded unlock CommandSets/Buttons
+
+Roster: B-2, B-52, B-1B, E-3, C-17, KC-135, AC-130 (no fighters/EA-18G)

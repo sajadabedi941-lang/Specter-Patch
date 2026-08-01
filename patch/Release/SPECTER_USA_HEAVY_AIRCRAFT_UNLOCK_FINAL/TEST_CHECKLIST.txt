@@ -1,0 +1,6 @@
+1. Install BIGs over prior AAB BUILD_UNLOCK_FIX
+2. Build America_AdvancedAirBase (already unlocked)
+3. Confirm parking unchanged
+4. Confirm bar: B-2 B-52 B-1B E-3 C-17 KC-135 AC-130 only
+5. Purchase each with funds — buttons not grey
+6. No fighters / EA-18G on bar

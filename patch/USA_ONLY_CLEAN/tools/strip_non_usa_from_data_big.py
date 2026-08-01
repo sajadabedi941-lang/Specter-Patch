@@ -33,6 +33,9 @@ KILL_EXACT = {
     # Superseded unlock overlays (keep only ZZZZ_USA_AAB_HeavyAircraft_Final)
     "data\\ini\\commandbutton_zzz_usa_aab_keeplist_unlock.ini",
     "data\\ini\\commandbutton_zzzz_usa_aab_heavypurchase_unlock.ini",
+    "data\\ini\\commandset_strategicbombers_aabonly.ini",
+    "data\\ini\\commandset_usa_advancedairbase.ini",
+    "data\\ini\\commandbutton_zzzz_usa_aab_heavyaircraft_final.ini",
 }
 
 

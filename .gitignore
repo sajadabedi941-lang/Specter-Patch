@@ -107,3 +107,7 @@ patch/Release/SPECTER_USA_AIRFORCE_PARSE_FIX/*.zip
 # USA AdvancedAirBase final release binaries
 patch/Release/SPECTER_USA_ADVANCED_AIRBASE_FINAL/*.big
 patch/Release/SPECTER_USA_ADVANCED_AIRBASE_FINAL/*.zip
+
+# USA AAB button unlock release binaries
+patch/Release/SPECTER_USA_AAB_BUTTON_UNLOCK/*.big
+patch/Release/SPECTER_USA_AAB_BUTTON_UNLOCK/*.zip

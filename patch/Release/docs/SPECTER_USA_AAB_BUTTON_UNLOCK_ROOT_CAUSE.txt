@@ -1,0 +1,16 @@
+AAB keep-list aircraft buttons visible but locked/inactive
+=========================================================
+Cause:
+1) UNIT_BUILD enablement needs free airfield parking slots.
+   AdvancedAirBase used NumRows=3 NumCols=2 which did not enable
+   slots reliably vs stock USA airfield (1x6).
+2) Keep-list CommandButtons needed an explicit late unlock overlay
+   with Prerequisite/Science = NONE (no rank/science/upgrade locks),
+   winning over any earlier CommandButton redefinitions.
+
+Fix:
+- CommandButton_ZZZ_USA_AAB_KeepList_Unlock.ini (loads last)
+  B-2 / B-1B / B-52 / EA-18G / E-3 / C-17 / KC-135 / AC-130
+  UNIT_BUILD only; no Science / RequiredScience / Upgrade
+- AdvancedAirBase ParkingPlaceBehavior -> NumRows=1 NumCols=6
+- CommandSet structure unchanged; aircraft Objects unchanged

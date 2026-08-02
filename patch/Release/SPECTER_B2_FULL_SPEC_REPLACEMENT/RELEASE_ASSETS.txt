@@ -1,0 +1,8 @@
+GitHub Release tag: SPECTER_B2_FULL_SPEC_REPLACEMENT
+
+Assets (install these — not small ZZZZZZ addons):
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  SPECTER_B2_FULL_SPEC_REPLACEMENT.zip  (contains both BIGs + install instructions)
+
+SHA256 values are in HASHES.txt.

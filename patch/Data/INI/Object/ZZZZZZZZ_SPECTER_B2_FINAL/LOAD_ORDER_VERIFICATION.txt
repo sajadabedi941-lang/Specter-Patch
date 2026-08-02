@@ -1,0 +1,26 @@
+SPECTER B-2 COMPLETE UNIT — Load Order Verification
+====================================================
+Source gameplay : AmericaJetB2Spirit (full Object — weapon/audio/FX/behaviors)
+Source art/FX   : Peace Mission USABomberB2 Draw (AVB3bmbr / _d / _d1)
+Spawn adapt only: NeedsRunway=Yes, ParkingOffset=10, Prerequisites cleared for AAB
+AAB CommandButton/CommandSet/building design: UNCHANGED
+
+PATH-SORTED DEFINITIONS
+1) patch/Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+   Scale=0.72 Models=US_B1R Weapon=PRIMARY GBU38_JDAM_F16C (legacy stub)
+2) patch/Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+   Scale=0.85
+   Models=AVB3bmbr / AVB3bmbr_d / AVB3bmbr_d1
+   Weapon=PRIMARY USA_B2_Spirit_BunkerBuster
+   VoiceSelect=AuroraBomberVoiceSelect
+   NeedsRunway=Yes
+   ParkingOffset=10
+   Full behaviors: JetSlowDeath, EjectPilot, PDL AN/ALQ-135, Countermeasures, WeaponSetUpgrade, TransitionDamageFX, RadarWaveEmitter
+
+FINAL RUNTIME WINNER
+  File: Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+  Draw: W3DModelDraw ModuleTag_01
+  Default Model: AVB3bmbr
+  Damaged Model: AVB3bmbr_d
+  Rubble Model: AVB3bmbr_d1
+  Weapon: USA_B2_Spirit_BunkerBuster (ProjectileObject MK-84)

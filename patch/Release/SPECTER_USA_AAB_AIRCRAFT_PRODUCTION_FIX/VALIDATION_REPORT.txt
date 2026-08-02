@@ -1,0 +1,10 @@
+SPECTER_USA_AAB_AIRCRAFT_PRODUCTION_FIX validation
+- Base: SPECTER_USA_BUILD_FIX_FINAL
+- AAB CommandSet: AmericaAirfieldCommandSet (stock name override)
+- Roster includes B-2/B-1/B-52/E-3/C-17/KC-135/AC-130/fighters/helos
+- CommandSet.ini untouched
+- DATA SHA256=3fcbd8eebfe60168a3a7476f37e2bd0c3f83182e8b1a8b17d52eb955fdd624f7
+- ART  SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+- ZIP  SHA256=de861281f6b01bd455d9ab26ba5425a09edf42032b7cc45ff0c0398f207ab7dd
+- validate_usa_build_menu.py: PASS
+- validate_usa_aab_aircraft_production.py: PASS

@@ -1,0 +1,7 @@
+Manual test checklist
+=====================
+[ ] Game startup without String Manager errors
+[ ] Enter a USA match successfully
+[ ] Build America AdvancedAirBase
+[ ] Confirm USA aircraft buttons appear and work (B-52, E-3, C-17, KC-135, AC-130, B-1, heliborne, fighters)
+[ ] Confirm no other factions were added

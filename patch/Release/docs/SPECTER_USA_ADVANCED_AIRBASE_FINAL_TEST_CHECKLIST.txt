@@ -1,0 +1,15 @@
+SPECTER_USA_ADVANCED_AIRBASE_FINAL - Checklist
+==============================================
+[x] Keep-list in AmericaAirfieldCommandSet slots 1-8
+[x] EA-18G CommandButton + Object resolve
+[x] C-17 / KC-135 no OutOfAmmoDamagePerSecond
+[x] No SCIENCE_Rank locks on AAB AirForceExpansion aircraft
+[x] No SpectreGunshipUpdate on keep-list aircraft
+[x] StealthHawk RiderChangeContain removed
+[x] validate_usa_build_menu.py PASS
+[x] validate_usa_aab_aircraft_production.py PASS (30 slots)
+[x] CommandSet.ini stock hash untouched
+[ ] Manual: USA start / enter match
+[ ] Manual: Dozer builds + AdvancedAirBase
+[ ] Manual: Purchase B2/B1/B52/EA18G/E3/C17/KC135/AC130
+[ ] Manual: Aircraft spawn/move; extended play no AV

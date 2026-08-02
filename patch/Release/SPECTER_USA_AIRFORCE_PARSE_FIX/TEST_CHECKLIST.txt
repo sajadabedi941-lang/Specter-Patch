@@ -1,0 +1,11 @@
+SPECTER_USA_AIRFORCE_PARSE_FIX - Checklist
+==========================================
+[x] Patch_America_E2C End nesting balanced
+[x] Leftover AWACS overlay removed from E2C (SAR/RadarPower/COMSPOT)
+[x] Single JetAIUpdate preserved
+[x] USA AirForceExpansion objects kept (Aurora/StealthHawk/E2C/B3)
+[x] Object INI audit PASS: Aircraft + Projectiles AirForceExpansion
+[x] validate_usa_build_menu.py PASS
+[x] validate_usa_aab_aircraft_production.py PASS (includes E2C slot)
+[x] CommandSet.ini stock hash untouched
+[ ] Manual: USA startup without Patch_America_E2C parse error

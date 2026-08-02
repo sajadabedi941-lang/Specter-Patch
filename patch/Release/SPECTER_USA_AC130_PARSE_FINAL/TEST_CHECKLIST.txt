@@ -1,0 +1,7 @@
+[x] Aircraft_USA_Heavy_Runway.ini ASCII-only
+[x] Patch_America_AC130Spectre structure PASS (single JetAIUpdate)
+[x] No SpectreGunshipUpdate / HelixContain / AIUpdateInterface behaviors
+[x] Dozer + AAB production validators PASS
+[x] Keep-list aircraft + AdvancedAirBase present
+[ ] Local: game startup
+[ ] Local: USA match AC-130 / AAB

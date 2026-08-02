@@ -135,3 +135,7 @@ patch/Release/SPECTER_USA_HEAVY_AIRCRAFT_UNLOCK_FINAL/*.zip
 # USA B-2 art fix FINAL release binaries
 patch/Release/SPECTER_B2_ART_FIX_FINAL/*.big
 patch/Release/SPECTER_B2_ART_FIX_FINAL/*.zip
+
+# USA B-2 final load-order fix release binaries
+patch/Release/SPECTER_B2_FINAL_FIX_RELEASE/*.big
+patch/Release/SPECTER_B2_FINAL_FIX_RELEASE/*.zip

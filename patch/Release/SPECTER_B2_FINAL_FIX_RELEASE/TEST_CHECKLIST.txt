@@ -1,0 +1,5 @@
+[ ] Copy all three BIGs into game Data
+[ ] Leave any legacy _SPECTER_PATCH_FINAL*.big installed for conflict test
+[ ] Build B-2 from Advanced Air Base
+[ ] Confirm spawned object is Patch_America_B2 and visual is B-2 flying wing
+[ ] Confirm B-1B/B-52/E-3 and heavy unlock roster remain unchanged

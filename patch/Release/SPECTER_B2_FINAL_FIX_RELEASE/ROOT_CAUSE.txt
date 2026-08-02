@@ -1,0 +1,8 @@
+Legacy _SPECTER_PATCH_FINAL*.big archives contain:
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini
+That file redefines Patch_America_B2 with Model=US_B1R after the earlier
+AAA_USA_HeavyRunway definition.
+
+Fix: ZZZZZZ_SPECTER_B2_FINAL_FIX.big loads later and supplies the final Object from:
+  Data\INI\Object\ZZZZZZZZ_SPECTER_B2_FINAL\ZZZZZZZZ_Patch_America_B2_Final.ini
+with Model=AVB3bmbr.

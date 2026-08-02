@@ -1,0 +1,18 @@
+INI parse error at Object Patch_America_E2C
+==========================================
+File: Aircraft_AirForceExpansion.ini
+
+Cause:
+Patch_America_E2C retained leftover E3/AWACS overlay modules after the
+SpectreGunshipUpdate runtime swap (COMSPOT/AWACS_BaseMonaitoring,
+OCLSpecialPower SAR, FireWeaponUpdate RadarPower, RadarWaveEmitter,
+messy comments/module tags). ZH reported parse failure at
+Object Patch_America_E2C.
+
+Fix (USA-only; object kept):
+- ASCII-clean rewrite of Patch_America_E2C
+- Balanced WeaponSet / ArmorSet / Behavior / Draw Ends
+- Single JetAIUpdate + ProductionUpdate
+- Remove broken leftover AWACS overlay behaviors only
+- Keep USA AirForceExpansion roster, E-2C, AdvancedAirBase prereq
+- No faction adds; no Russia/China/Iran/NATO edits

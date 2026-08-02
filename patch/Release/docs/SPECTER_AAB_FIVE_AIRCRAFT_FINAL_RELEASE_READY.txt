@@ -1,0 +1,20 @@
+RELEASE READY: YES
+Verified against final _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+
+1. Advanced Air Base appears correctly
+   - Object America_AdvancedAirBase (Scale 1.60, 16 pads, US_AirField)
+   - CommandSet America_AdvancedAirBaseCommandSet
+   - Dozer: Command_ConstructAmerica_AdvancedAirBase -> America_AdvancedAirBase
+
+2. B-2    slot 1 -> Command_ConstructPatch_America_B2    -> Patch_America_B2
+3. B-21   slot 2 -> Command_ConstructPatch_America_B21   -> Patch_America_B21
+4. B-52   slot 3 -> Command_ConstructPatch_America_B52   -> Patch_America_B52
+5. AWACS  slot 4 -> Command_ConstructPatch_America_E3    -> Patch_America_E3
+6. AN-225 slot 5 -> Command_ConstructPatch_America_AN225 -> Patch_America_AN225
+7. No B-1 / stock AmericaJet* on AAB CommandSet
+
+DATA SHA256=3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5
+ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP  SHA256=c01431ab7801081b87c284b420083a6e8c7a91a4e5680b67d3c724a7ae9c9c53
+
+Package: /opt/cursor/artifacts/SPECTER_AAB_FIVE_AIRCRAFT_FINAL.zip

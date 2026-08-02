@@ -1,0 +1,11 @@
+ROOT CAUSE
+Packed Egypt_CommandCenter was a USA AmericaCommandCenter donor rebuild with extra
+modules (GrantScienceUpgrade/MOAB, strobe Draw, BaseRegenerate, FireWeaponWhenDead,
+ObjectCreationUpgrade) not present on Specter-native CommandCenters (Iraq pattern).
+
+FIX
+Rewrite Egypt_CommandCenter to Specter Iraq_CommandCenter structure + Egypt identity/specials.
+Restore Egypt Camp.ini and Iraq_CommandCenter.ini to exact original Specter bytes.
+Fix NK CommandCenter invalid SUPERWEAPON_A10ThunderboltMissileStrike OCL refs.
+
+BIG SHA256=da6e62899d33a56fa8cf057ffad8f596821e8fc18368501b485b414db55a0f0d

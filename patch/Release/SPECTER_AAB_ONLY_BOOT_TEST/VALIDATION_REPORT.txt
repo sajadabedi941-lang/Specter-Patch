@@ -1,0 +1,21 @@
+USA AAB visual = Revolution Project USA Airfield (INI/UI)
+Generated: 2026-07-31T12:20:16.577505+00:00
+SHA256: ca5b62f635126b216f4dfbd47a8f81c0be144d884ddf47699e3656f491c4862b
+
+Imported from mod.zip:
+  Data/INI/Object/America_Alliance/Alliance_Airfield.ini
+  -> America_AdvancedAirBase Draw/Geometry/Runway/Portraits
+
+Verified:
+- Model ABAirF2 (not US_StrtgyCenter / StrategyCenter)
+- SelectPortrait SANAirF_L
+- Geometry 156 x 83 x 100
+- Runway NumRows=3 NumCols=2 HasRunways=Yes
+- CommandSet.ini untouched
+- Build CommandButton Object=America_AdvancedAirBase unchanged
+- UI texture SRUserInterface1024_010.dds packed in DATA
+
+ART meshes:
+  ABAirF*.W3D NOT in environment (mod.zip is Data-only; local ART big truncated).
+  Install Revolution "Airfield USA" addon W3Ds into game Art/W3D, OR upload the RAR to this agent.
+  Keep player full _SPEC_ART_ONE.big (do not replace with truncated ART).

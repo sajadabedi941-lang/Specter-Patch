@@ -1,0 +1,5 @@
+Data/English/USA_HeavyAircraft_Strings.txt (new ASCII)
+Data/English/AdvancedAirBase_Strings.txt (ASCII)
+Data/English/AdvancedAWACS_Strings.txt (ASCII)
+Data/INI/CommandButton_AdvancedAirBase_Aircraft.ini (America-only)
+tools/strip_non_usa_from_data_big.py (strip bad English overlays)

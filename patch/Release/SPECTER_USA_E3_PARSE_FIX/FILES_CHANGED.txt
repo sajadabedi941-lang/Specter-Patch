@@ -1,0 +1,3 @@
+patch/USA_ONLY_CLEAN/.../Aircraft_USA_Heavy_Runway.ini
+  - Object Patch_America_E3: removed invalid ArmorSetFlag
+  - ASCII comment cleanup on E3 block only

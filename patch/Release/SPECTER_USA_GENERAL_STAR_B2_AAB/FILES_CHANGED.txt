@@ -1,0 +1,3 @@
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/United States Of America/ZZZ_AmericaJetB2Spirit_AAB.ini (new)
+patch/USA_ONLY_CLEAN/Data/INI/CommandSet_USA_AdvancedAirBase.ini (removed AAB B-2 slot)
+patch/USA_ONLY_CLEAN/.../Aircraft_USA_Heavy_Runway.ini (removed ineffective early B-2 override)

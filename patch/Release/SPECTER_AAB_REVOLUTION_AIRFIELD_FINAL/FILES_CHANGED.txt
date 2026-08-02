@@ -1,0 +1,11 @@
+Included from AAB_ONLY_TEST (USA-only, Revolution Airfield):
+- Data/INI/Object/.../AdvancedAirBase_AllFactions.ini (USA Draw=ABAirF2)
+- Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini (SC -> AAB)
+- MappedImages + UI atlas for SANAirF
+- Art/W3D/ABAirF*.W3D + ABAirF_T2.W3D
+- Art/Textures/ABAirF*.dds (+ supporting Revolution textures)
+- Merged into _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+
+NOT changed:
+- CommandSet.ini
+- No new countries or units

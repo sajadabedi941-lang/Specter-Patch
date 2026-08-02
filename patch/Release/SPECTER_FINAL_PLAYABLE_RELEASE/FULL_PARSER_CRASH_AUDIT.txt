@@ -1,0 +1,4 @@
+FULL DONOR CONTAMINATION + PARSER AUDIT
+SHA256=a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+Missing Object/Weapon/Science=0 PRELOAD errors=0 Parser=0 ZH_INIT PASS
+Packed Specter scan: no GrantScience/MOAB/US_COM_Strb on non-keep faction CCs; Turkey WO PRELOAD projectile stamps cleared

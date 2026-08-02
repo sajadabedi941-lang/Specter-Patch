@@ -1,0 +1,19 @@
+B-2 Specter spawn/build path (unchanged AAB wiring)
+====================================================
+CommandButton Command_ConstructPatch_America_B2
+  Object = Patch_America_B2
+  (file: Data/INI/CommandButton_AdvancedAirBase_Aircraft.ini)
+
+CommandSet America_AdvancedAirBaseCommandSet
+  6 = Command_ConstructPatch_America_B2
+  (file: Data/INI/CommandSet_AdvancedAirBase.ini)
+
+Building: America_AdvancedAirBase
+  ParkingPlaceBehavior NumRows=2 NumCols=8
+  Runway parking bones unchanged
+
+Full unit Object winner:
+  Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+  Draw Model default/damaged/rubble = AVB3bmbr / AVB3bmbr_d / AVB3bmbr_d1
+  Weapon = PRIMARY USA_B2_Spirit_BunkerBuster
+  Audio = AuroraBomberVoice* + RaptorAmbientLoop

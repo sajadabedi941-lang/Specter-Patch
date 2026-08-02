@@ -1,15 +1,16 @@
 SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
-Exact downloadable artifact path:
-  /opt/cursor/artifacts/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
+DOWNLOADABLE ARTIFACT (attached to this Cloud Agent run / PR #245):
+  File name: SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
+  Size:      514691111 bytes (490.8 MB)
+  SHA256:    df9bd06395c76648fa2ab55fb3aaf7a7fe7a662cdf3bab429055939c69567a4f
 
-Cloud agent run:
-  https://cursor.com/agents/bc-6537a753-4211-4825-9bc3-4a1cb2c666a9
+Open the agent Artifacts panel and download:
+  SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
-Size:   514691111 bytes (490.8 MB)
-SHA256: df9bd06395c76648fa2ab55fb3aaf7a7fe7a662cdf3bab429055939c69567a4f
+Also linked from PR #245 description as an artifact attachment.
 
-Contents (6 files, flat, single ZIP — no .z01/.z25 splits):
+Contents (6 files, single ZIP, no splits):
   _SPEC_DATA_ONE.big
   _SPEC_ART_ONE.big
   Install_SpecterPatch.bat
@@ -21,4 +22,4 @@ BIG hashes:
   3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5  _SPEC_DATA_ONE.big
   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73  _SPEC_ART_ONE.big
 
-Integrity: unzip -t PASS (No errors detected)
+Integrity: unzip -t PASS

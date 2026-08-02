@@ -27,6 +27,24 @@ STOCK_SKIP = {
     "data\\ini\\locomotor.ini",
 }
 
+# Patch-development configs — NOT Generals INI. Never pack into game Data/INI.
+# Keep only under patch/tools/economy/config/.
+TOOL_INI_SKIP_EXACT = {
+    "data\\ini\\countrybalance.ini",
+    "data\\ini\\globalbuildlimits_specterpatch.ini",
+}
+
+
+def is_tool_ini(key: str) -> bool:
+    """Return True for non-game tool schemas that crash ZH init."""
+    k = key.replace("/", "\\").lower()
+    if k in TOOL_INI_SKIP_EXACT:
+        return True
+    # Data/INI/Economy/*.ini (and any nested) — tool pricing schemas
+    if k.startswith("data\\ini\\economy\\") and k.endswith(".ini"):
+        return True
+    return False
+
 
 def norm_key(name: str) -> str:
     return name.replace("/", "\\").lower()
@@ -108,13 +126,16 @@ def main() -> int:
             art_keys.append(key)
         art_map[key] = (name.replace("/", "\\"), art_raw[off : off + size])
 
-    added = updated = skipped_stock = 0
+    added = updated = skipped_stock = skipped_tool = 0
 
     def merge_data(big_path: str, content: bytes) -> None:
-        nonlocal added, updated, skipped_stock
+        nonlocal added, updated, skipped_stock, skipped_tool
         key = norm_key(big_path)
         if key in STOCK_SKIP:
             skipped_stock += 1
+            return
+        if is_tool_ini(key):
+            skipped_tool += 1
             return
         display = big_path.replace("/", "\\")
         if key in data_map:
@@ -126,6 +147,12 @@ def main() -> int:
         else:
             data_map[key] = (display, content)
             added += 1
+
+    # Strip tool INIs from base before merge (defense in depth)
+    for key in list(data_map.keys()):
+        if is_tool_ini(key):
+            del data_map[key]
+            skipped_tool += 1
 
     for path in sorted((patch_data).rglob("*")):
         if not path.is_file():
@@ -155,6 +182,8 @@ def main() -> int:
         final = {}
         seen = set()
         for key in order_keys:
+            if key not in amap:
+                continue
             name, content = amap[key]
             final[name] = content
             seen.add(key)
@@ -173,7 +202,10 @@ def main() -> int:
     out_data.write_bytes(data_bytes)
     out_art.write_bytes(art_bytes)
 
-    print(f"DATA: preserved={len(data_entries)} added={added} updated={updated} skipped_stock={skipped_stock} final={len(final_data)}")
+    print(
+        f"DATA: preserved={len(data_entries)} added={added} updated={updated} "
+        f"skipped_stock={skipped_stock} skipped_tool_ini={skipped_tool} final={len(final_data)}"
+    )
     print(f"ART:  preserved={len(art_entries)} added={art_added} updated={art_updated} final={len(final_art)}")
     print(f"Wrote {out_data} ({len(data_bytes)} bytes) SHA256={hashlib.sha256(data_bytes).hexdigest()}")
     print(f"Wrote {out_art} ({len(art_bytes)} bytes) SHA256={hashlib.sha256(art_bytes).hexdigest()}")

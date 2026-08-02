@@ -1,0 +1,7 @@
+patch/USA_ONLY_CLEAN/Data/English/USA_HeavyAircraft_Strings.txt  (deduplicated single ASCII overlay)
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/AAA_USA_HeavyRunway/Aircraft_USA_AAB_Fighters.ini
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Aircraft_AirForceExpansion.ini  (America-only)
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/AirForceExpansion/Projectiles/Projectiles_AirForceExpansion.ini
+patch/USA_ONLY_CLEAN/tools/strip_non_usa_from_data_big.py
+patch/USA_ONLY_CLEAN/tools/build_usa_aab_final_fix_assets.py
+patch/Release/SPECTER_USA_AAB_FINAL_FIX/*

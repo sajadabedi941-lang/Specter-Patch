@@ -1,0 +1,6 @@
+[x] Patch_America_AC130Spectre: single JetAIUpdate only (no SpectreGunshipUpdate/HelixContain/AIUpdateInterface)
+[x] AssaultHelo / AmericaJetE3AWACS dual-AI cleaned
+[x] Fighter death OCL retargeted to existing OCL
+[x] INI structure PASS; dozer + AAB production validators PASS
+[x] Keep-list aircraft + AdvancedAirBase present
+[ ] Local: multi-minute USA match without ACCESS_VIOLATION

@@ -1,0 +1,10 @@
+SPECTER_USA_BUILD_FIX_FINAL validation
+- Base: SPECTER_USA_STRING_RUNTIME_FIX (String Manager fix preserved)
+- Dozer: AmericaVehicleDozer -> AmericaDozerCommandSet
+- AAB aircraft set: America_AdvancedAirBaseCommandSet (CommandSet_USA_AdvancedAirBase.ini)
+- StrategyCenter construct Object -> America_AdvancedAirBase
+- CommandSet.ini untouched (6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31)
+- DATA SHA256=ac5d758723fe10089f7ea3bac4049f8618fb6da6ff73eb8c23937ee85b33b500
+- ART  SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+- ZIP  SHA256=bbe0f819802b0d745cead878a5a113fc7cdf583f1a753d0132c9b3e43ac911bb
+- validate_usa_build_menu.py: PASS

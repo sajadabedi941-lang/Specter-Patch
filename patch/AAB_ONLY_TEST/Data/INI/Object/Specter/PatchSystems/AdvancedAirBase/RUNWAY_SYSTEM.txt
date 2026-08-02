@@ -1,0 +1,8 @@
+USA AdvancedAirBase runway — Generals 2 Revolution Project USA Fraction Airfield
+Source INI: mod.zip / Data/INI/Object/America_Alliance/Alliance_Airfield.ini
+  ParkingPlaceBehavior: NumRows=3 NumCols=2 HasRunways=Yes ApproachHeight=50
+  Geometry: 156 x 83 x 100
+  Draw models: ABAirF2 (+ damage/snow/night) + ABAirF_T2 runway bones
+  UI: SANAirF / SANAirF_L (SRUserInterface1024_010)
+
+Mesh W3Ds (ABAirF*.W3D) must be present in Art/W3D (Revolution Airfield USA addon).

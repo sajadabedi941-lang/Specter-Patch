@@ -1,0 +1,14 @@
+USA AAB SC RETARGET AUDIT (stock build chain preserved)
+SHA256: 40a72a0bdaf113dd35a80b2d5a75a9e0034eaa664d709665e0ae20e009b2ea38
+
+1. CommandSet.ini modified? NO (identical to original Specter)
+2. AmericaDozerCommandSet_AAB present? NO
+3. Dozer CommandSet? AmericaDozerCommandSet (stock)
+4. Duplicate AmericaDozerCommandSet defs? NO (exactly 1)
+5. Separate override? YES — CommandButton_AdvancedAirBase_SpecterFactions.ini
+6. USA SC buttons Object in override? America_AdvancedAirBase (slot names 2 & 15 unchanged)
+7. NATO/Israel retarget? NO (USA only)
+
+Stock slots preserved:
+1 PowerPlant, 2 StrategyCenter_T (button name), 3 Barracks, 11 WarFactory_T,
+13 Airfield_T, 15 StrategyCenter (button name), 17 WarFactory, 18 Airfield

@@ -1,0 +1,16 @@
+SPECTER AAB FINAL RELEASE — Revolution USA Airfield
+====================================================
+
+Status: Final packaged build of the tested USA AAB + Revolution ABAirF2 integration.
+
+Visual:
+  Model ABAirF2 (1,585,732 bytes) + ABAirF_T2 runway bones
+  Geometry 156 x 83 x 100
+  ParkingPlace NumRows=3 NumCols=2 HasRunways=Yes
+  Textures ABAirF.dds / ABAirF_Base.dds present
+
+Constraints honored:
+  CommandSet.ini not modified
+  No new countries/units
+  USA-only construct retarget (SC button -> America_AdvancedAirBase)
+  Not Strategy Center art

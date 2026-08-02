@@ -1,0 +1,34 @@
+SPECTER_B2_FINAL_FIX_RELEASE runtime load-order validation
+
+PASS: final BIG filename is later than _SPEC_* and _SPECTER_PATCH_FINAL*:
+  ZZZZZZ_SPECTER_B2_FINAL_FIX.big
+PASS: final Object INI path is later than AAA_USA_HeavyRunway and AdvancedAirBase:
+  Data\INI\Object\ZZZZZZZZ_SPECTER_B2_FINAL\ZZZZZZZZ_Patch_America_B2_Final.ini
+PASS: final Draw = W3DModelDraw ModuleTag_01
+PASS: final default Model = AVB3bmbr
+PASS: all final condition Models are AVB3bmbr variants; no US_B1R Model line
+PASS: AVB3bmbr W3D/damage models and AVB2A textures are packed in ART and final overlay
+PASS: CommandButton / Object link / CommandSet files are byte-identical to B2_ART_FIX base
+PASS: packed stock CommandSet.ini SHA256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+PASS: legacy US_B1R conflict definitions were detected and superseded: 7
+
+Loaded Patch_America_B2 definitions (path order):
+  _SPEC_DATA_ONE.big :: Data\INI\Object\Specter\PatchSystems\AAA_USA_HeavyRunway\Aircraft_USA_Heavy_Runway.ini :: AVB3bmbr
+  SPECTER_EGYPT_CC_USA_CLONE/_SPECTER_PATCH_FINAL.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_FULL_INI_REPAIR_PASS/_SPECTER_PATCH_FINAL.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_FULL_PR_AUDIT/_SPECTER_PATCH_FINAL.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_PATCH_FINAL/_SPECTER_PATCH_FINAL.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_PATCH_FINAL_CLEAN/_SPECTER_PATCH_FINAL_CLEAN.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_PATCH_FINAL_CLEAN_RELEASE/_SPECTER_PATCH_FINAL_CLEAN.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  SPECTER_PATCH_FINAL_V2/_SPECTER_PATCH_FINAL_V2.big :: Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\Aircraft_AAB_Global.ini :: US_B1R
+  _SPEC_DATA_ONE.big :: Data\INI\Object\ZZZZZZZZ_SPECTER_B2_FINAL\ZZZZZZZZ_Patch_America_B2_Final.ini :: AVB3bmbr
+  ZZZZZZ_SPECTER_B2_FINAL_FIX.big :: Data\INI\Object\ZZZZZZZZ_SPECTER_B2_FINAL\ZZZZZZZZ_Patch_America_B2_Final.ini :: AVB3bmbr
+
+Final winner:
+  ZZZZZZ_SPECTER_B2_FINAL_FIX.big :: Data\INI\Object\ZZZZZZZZ_SPECTER_B2_FINAL\ZZZZZZZZ_Patch_America_B2_Final.ini
+  Draw = W3DModelDraw ModuleTag_01
+  Model = AVB3bmbr
+
+AmericaJetB2Spirit definitions remain separate objects:
+  Data\INI\Object\Specter\United States Of America\USA_System.ini :: US_B1R
+  Data\INI\Object\Specter\United States Of America\ZZZ_AmericaJetB2Spirit_AAB.ini :: US_B1R

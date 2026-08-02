@@ -1,0 +1,5 @@
+SPECTER_B2_ART_FIX_FINAL
+Patch_America_B2 Object= was correct, but Model=US_B1R made it look like B-1B.
+AmericaJetB2Spirit also used US_B1R; no US_B2 W3D existed in Specter art.
+Fix: pack AVB3bmbr + AVB2A textures; set Patch_America_B2 Draw Model to AVB3bmbr.
+Portraits/buttons left separate (CommandButton untouched).

@@ -1,0 +1,9 @@
+Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+Art/W3D/AVB3bmbr.W3D
+Art/W3D/AVB3bmbr_d.W3D
+Art/W3D/AVB3bmbr_d1.W3D
+Art/Textures/AVB2A.tga
+Art/Textures/AVB2A_d.tga
+Art/Textures/AVB2A_e.tga
+
+Runtime overlay: ZZZZZZ_SPECTER_B2_FINAL_FIX.big

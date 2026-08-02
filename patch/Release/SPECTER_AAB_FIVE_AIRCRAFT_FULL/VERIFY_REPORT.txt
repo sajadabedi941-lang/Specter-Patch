@@ -1,0 +1,31 @@
+SPECTER AAB FIVE-AIRCRAFT FULL RELEASE — VERIFY REPORT
+Generated: 2026-08-02 20:40:49 UTC
+
+ARCHIVES
+--------
+_SPEC_DATA_ONE.big  size=384617687  entries=2891
+  SHA256=9acc6e4d86988da918b2dd3db2b284654b470003119a62582b6a01993c5d4740
+_SPEC_ART_ONE.big   size=446216323  entries=2689
+  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+ADVANCED AIR BASE ROSTER (ONLY)
+--------------------------------
+1. B-2   = Patch_America_B2     (US_B1R)
+2. B-21  = Patch_America_B21    (US_B1R proxy)
+3. B-52  = Patch_America_B52    (US_B52H)
+4. AWACS = Patch_America_E3     (US_E3G)
+5. AN-225= Patch_America_AN225  (RUS_IL76MD90A proxy)
+
+LOAD-ORDER VERIFY
+-----------------
+- America_AdvancedAirBase -> CommandSet America_AdvancedAirBaseCommandSet
+- All 31 *AdvancedAirBaseCommandSet last-wins definitions contain ONLY the five
+  construct commands above (+ Sell / Rally / USA Countermeasures on America sets).
+- No competing AdvancedAirBaseCommandSet overrides with extra aircraft.
+- Required INI paths present inside _SPEC_DATA_ONE.big
+- Required W3D meshes present inside _SPEC_ART_ONE.big
+
+INSTALL
+-------
+Replace GameRoot _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big with these files.
+Do NOT use loose patch/Data overlay for this release.

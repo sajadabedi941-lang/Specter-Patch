@@ -779,3 +779,8 @@ CONTROLBAR:ToolTipConstructPatch_America_B1 = Produce B-1B Lancer from Advanced 
 OBJECT:Patch_Russia_Tu95 = Tu-95
 CONTROLBAR:ConstructPatch_Russia_Tu95 = Tu-95
 CONTROLBAR:ToolTipConstructPatch_Russia_Tu95 = Produce Tu-95 from Advanced Air Base (Russia).
+
+; ---- AAB five-aircraft release ----
+OBJECT:Patch_America_AN225 = AN-225 Mriya
+CONTROLBAR:ConstructPatch_America_AN225 = AN-225 Mriya
+CONTROLBAR:ToolTipConstructPatch_America_AN225 = Produce AN-225 Mriya from Advanced Air Base. Strategic heavy transport. Max 1.

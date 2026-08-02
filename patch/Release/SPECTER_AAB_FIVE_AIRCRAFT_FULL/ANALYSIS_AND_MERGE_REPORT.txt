@@ -1,0 +1,21 @@
+SPECTER AAB FIVE-AIRCRAFT — FULL BIG MERGE REPORT
+=================================================
+Base archives: original Specter _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+               (reassembled from repo split zips)
+Patch source:  patch/Data/** and patch/Art/**
+
+Merge tool: patch/tools/big/merge_patch_into_spec_big.py
+Stock cores NOT overwritten:
+  Weapon.ini, CommandButton.ini, CommandSet.ini, Armor.ini, Locomotor.ini
+
+DATA merge: preserved original entries; patch files added/updated
+ART merge:  preserved original entries; patch Art textures added
+
+AAB change summary:
+  - Added Object Patch_America_AN225 (RUS_IL76MD90A art proxy)
+  - Restricted ALL AdvancedAirBaseCommandSet definitions to:
+      B-2, B-21, B-52, E-3 AWACS, AN-225
+  - CommandButton + English strings for AN-225
+  - America AAB building still uses America_AdvancedAirBaseCommandSet
+
+Release type: FULL replacement BIGs (not a small overlay .big)

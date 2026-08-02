@@ -1,0 +1,36 @@
+B-2 AAB BUILD CONNECTION DEBUG REPORT
+=====================================
+
+ROOT CAUSES FOUND
+1) America_AdvancedAirBase (SPEC HeavyRunway winner) used CommandSet = AmericaAirfieldCommandSet
+   NOT America_AdvancedAirBaseCommandSet.
+2) CommandSet_ZZZZ_USA_AdvancedAirBase.ini last-wins and set slot 6 = KC135.
+   B-2 was moved to slot 1 on that override (so "slot 6 = B-2" check failed).
+3) Patch_America_B2 prerequisites were already empty; debug also lowers BuildCost/Time.
+
+FIX FILES (loose Data last-wins, no BIG rebuild)
+- Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_DEBUG.ini
+  * CommandButton Command_ConstructPatch_America_B2 -> Patch_America_B2
+  * America_AdvancedAirBaseCommandSet slot 6 = B-2 (full roster kept)
+  * AmericaAirfieldCommandSet slot 1 and 6 = B-2
+- Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
+  * America_AdvancedAirBase.CommandSet = America_AdvancedAirBaseCommandSet
+- Data/INI/CommandSet_ZZZZ_USA_AdvancedAirBase.ini
+  * Corrects SPEC ZZZZ override so slot 6 = B-2
+- Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+  * Prerequisites empty, BuildCost=1000, BuildTime=5, MaxSimultaneousOfType=5
+  * NeedsRunway=Yes kept, Side=America
+
+LOAD ORDER (last wins)
+CommandSet_AdvancedAirBase.ini
+ -> CommandSet_ZZZZ_USA_AdvancedAirBase.ini
+ -> ZZZZZZZZ_SPECTER_B2_AAB_BUILD_DEBUG.ini  (wins)
+Object HeavyRunway America_AdvancedAirBase
+ -> AdvancedAirBase_AllFactions America_AdvancedAirBase
+ -> ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini  (wins CommandSet attach)
+Object Patch_America_B2 earlier defs
+ -> ZZZZZZZZ_Patch_America_B2_Final.ini  (wins)
+
+INSTALL FOR DEBUG
+Copy these INI files into your Specter Data folder (same layout under Data/INI/...)
+so they load after _SPEC_DATA_ONE.big. Do not rebuild BIG for this debug.

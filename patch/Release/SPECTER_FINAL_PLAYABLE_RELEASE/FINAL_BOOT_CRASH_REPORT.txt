@@ -1,0 +1,86 @@
+FINAL_BOOT_CRASH_REPORT
+=======================
+Generated: 2026-07-30T18:21:20.379285Z
+Audited BIG (pre-fix): SHA256=27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
+Rebuilt BIG (post-fix): SHA256=036f88eb3ce0e1f222f986dd66d9500f5174d0a327d70e9b29047dbf25d5ff57 SIZE=384321596
+
+CRASH ROOT:
+File: Data/INI/Object/Specter/Iranian Army/Iran_System.ini
+Object: Shahed136Flash
+Line: 183
+Broken reference: Weapon = Shahed136FlashWeapon
+Why the engine crashes:
+  Shahed136Flash is KindOf PRELOAD. During Zero Hour initialization the engine
+  instantiates PRELOAD objects and resolves FireWeaponUpdate Weapon templates.
+  Weapon "Shahed136FlashWeapon" was not defined anywhere in _SPEC_DATA_ONE.big,
+  so INI resolution fails with an uncaught exception during initialization.
+  Secondary defect on the same object: empty ChinookAIUpdate / FXListDie modules
+  (invalid for this flash effect object).
+Exact fix:
+  1) Define Weapon Shahed136FlashWeapon in Data/INI/Weapon.ini as a zero-damage
+     flash template using existing FXList FX_SpecterLargeNukeFlash.
+  2) Replace empty FXListDie+ChinookAIUpdate with DestroyDie+DeletionUpdate.
+  3) Remove HelicopterSlowDeathBehavior from Shahed136Flash.
+
+INIT-ORDER SIMULATION
+---------------------
+Objects scanned in BIG pack order. First PRELOAD hard miss:
+  rank~1431 File=.../Iran_System.ini Object=Shahed136Flash Line=183
+  Kind=Weapon Missing=Shahed136FlashWeapon
+
+DEPENDENCY GRAPH / CATALOG (post-fix BIG)
+------------------------------------------
+  Armor: 152
+  CommandSet: 1289
+  Locomotor: 517
+  MappedImage: 782
+  OCL: 814
+  Object: 4805
+  Science: 553
+  SpecialPower: 328
+  Upgrade: 365
+  Weapon: 2190
+  Entries: 2887
+
+FULL SCAN FINDINGS (pre-fix -> fixed)
+-------------------------------------
+PRELOAD hard:
+  - Iran_System.ini Shahed136Flash Weapon Shahed136FlashWeapon  [FIXED]
+Non-PRELOAD hardish:
+  - System.ini GenericSuicideDroneFlashObject Weapon GenericSuicideDroneFlash  [FIXED]
+PRELOAD Prerequisite Object misses (10) [FIXED]:
+  - GLAVehicleScudLauncherHiDef Chem_GLAArmsDealer / Chem_GLAPalace
+  - RussiaVehicleS500PackMode / KA52C / KA52U RussiaPropagandaCenter / RussiaWeaponIndustryPlant_T
+  - NorthKorea_RadarStation NorthKoreaMilitaryAirfield / NorthKorea_Airfield_T
+
+ALL FIXES APPLIED
+-----------------
+ - Added Weapon Shahed136FlashWeapon + Weapon GenericSuicideDroneFlash to Data/INI/Weapon.ini (FireFX=FX_SpecterLargeNukeFlash)
+ - Shahed136Flash: replaced empty FXListDie+ChinookAIUpdate with DestroyDie+DeletionUpdate; removed HelicopterSlowDeathBehavior
+ - RussiaVehicleS500PackMode / RussiaHelicopterKA52C / RussiaHelicopterKA52U: Prerequisites -> RussiaIndustrialComplex
+ - GLAVehicleScudLauncherHiDef: Chem_GLAArmsDealer/Chem_GLAPalace -> GLAArmsDealer/GLAPalace
+ - NorthKorea_RadarStation late override: NorthKoreaMilitaryAirfield/NorthKorea_Airfield_T -> NorthKorea_Airfield
+
+POST-FIX VALIDATION GATES
+-------------------------
+Missing references (PRELOAD hard + FireWeaponUpdate/CS/Science/SP hardish): 0
+Preload errors: 0
+Initialization errors: 0
+PRELOAD Prerequisite Object misses: 0
+GATE: PASS
+
+INSTALL
+-------
+1) Replace game Data\_SPEC_DATA_ONE.big with this build
+2) Keep _SPEC_ART_ONE.big
+3) Delete leftover _SPECTER_PATCH_FINAL*.big and stale loose Data\INI overlays
+
+CRASH HUNTER NOTE
+-----------------
+SPECTER_CRASH_HUNTER may still list stock Upgrade TriggeredBy names
+(e.g. Upgrade_BecomeRealGLABlackMarket, Upgrade_ChinaBlackNapalm) as missing
+because those Upgrade blocks live in base Zero Hour / Generals INI packs, not
+inside _SPEC_DATA_ONE.big. They are not Specter init crash roots for this audit.
+The boot-crash gate used here is Specter-BIG-complete resolution for:
+  PRELOAD FireWeaponUpdate/WeaponSet weapons, CommandSet, Science, SpecialPower,
+  Object inheritance, and PRELOAD Prerequisite Object tokens.

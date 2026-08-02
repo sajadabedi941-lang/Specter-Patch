@@ -1,0 +1,14 @@
+VISIBILITY AUDIT — America_AdvancedAirBase
+==========================================
+
+Expect: placed USA Advanced Air Base shows Revolution ABAirF2 airfield mesh with runway.
+
+Checks performed (asset-level):
+  ABAirF2.W3D size = 1585732 (non-zero, from Revolution 0RW3D4.big)
+  ABAirF_T2.W3D contains Runway1Parking1-3, Runway2Parking1-3, RunwayStart/End, HeliPark01
+  ABAirF.dds / ABAirF_Base.dds present (2.7MB each)
+  Object INI Model=ABAirF2, Geometry 156x83x100, ParkingPlace 3x2 HasRunways=Yes
+  No StrategyCenter / US_StrtgyCenter model reference on America_AdvancedAirBase
+  CommandSet.ini not modified
+
+In-game: build USA SC button (retargeted to AAB) and confirm airfield + runway visible.

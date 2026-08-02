@@ -1,0 +1,11 @@
+Patch: patch/AAB_CORE_PLAYABLE_INFRA/
+
+AdvancedAirBase objects (core only):
+- America, Nato, AirF_America, Russia, China, Iran, Iraq, Israel, NorthKorea, UAE, SaudiArabia
+- GLA block preserved unchanged in AllFactions.ini (not upgraded; avoids deleting existing def)
+
+NOT included: Britain/France/Germany/etc. No PlayerTemplate changes.
+
+CommandSet.ini: untouched
+CommandSet_AdvancedAirBase.ini: untouched (new CorePlayable file added instead)
+Aircraft INI: untouched

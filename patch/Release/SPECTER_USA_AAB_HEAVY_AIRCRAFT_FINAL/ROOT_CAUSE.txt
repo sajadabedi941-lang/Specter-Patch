@@ -1,0 +1,19 @@
+SPECTER_USA_AAB_HEAVY_AIRCRAFT_FINAL
+====================================
+Problem: AdvancedAirBase heavy UNIT_BUILD buttons appear but stay grey.
+Cause: parking slot mismatch (Revolution ABAirF2 2x3 bones vs stock 1x6
+US_AirField ParkingPlaceBehavior), not Science/Rank.
+
+Final fix:
+- America_AdvancedAirBase uses US_AirField parking bones (Runway1-6Parking1)
+- ParkingPlaceBehavior NumRows=1 NumCols=6, ApproachHeight=140
+- AAB Scale=1.50 (runway/parking only; aircraft models/Scale unchanged)
+- Heavies-only roster: B-2, B-52, B-1B, E-3, C-17, KC-135, AC-130
+- Fighters and EA-18G removed from AdvancedAirBase CommandSet
+- Clean ZZZZ CommandButtons (no Science/Rank/Upgrade/Prerequisite)
+- Aircraft: Physics + JetAIUpdate + JetSlowDeath + ProductionUpdate only
+- No WeaponSetUpgrade / SpecialPower / PLAYER_UPGRADE stacks
+
+Supersedes / removed conflicting intermediate releases:
+AAB_BUTTON_UNLOCK, HEAVYRUNWAY*, AC130_PARSE, AWACS_PARSE,
+RUNTIME_AV_FIX / RUNTIME_*_FIX, AAB_HEAVY_PURCHASE

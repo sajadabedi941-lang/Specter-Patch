@@ -1,0 +1,5 @@
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/AAA_USA_HeavyRunway/Aircraft_USA_Heavy_Runway.ini
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/Drones/America_MQ9Reaper.ini
+patch/USA_ONLY_CLEAN/Data/INI/Object/Specter/PatchSystems/Drones/America_RQ180.ini
+patch/USA_ONLY_CLEAN/tools/strip_non_usa_from_data_big.py
+patch/USA_AAB_HEAVY_RUNWAY/.../Aircraft_USA_Heavy_Runway.ini (same OCL remap)

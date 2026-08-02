@@ -1,0 +1,13 @@
+patch/USA_AAB_HEAVY_RUNWAY/
+
+America_AdvancedAirBase:
+- Scale 1.12, geometry 175x95, ApproachHeight 90, Heal 25
+- Revolution ABAirF2 + runway bones 3x2
+
+USA aircraft runway compatibility (AAA_ first-load overrides):
+- Patch_America_B2 / B1 / B52 / E3 / KC135 / C17 / AC130 / HeavyBomber / AssaultHelo
+- AmericaJetB2Spirit / B52H / E3AWACS
+- Models NOT shrunk (Scale 0.85-0.90)
+- Larger parking geometry + NeedsRunway / JetAIUpdate parking
+
+Untouched: CommandSet.ini, PlayerTemplates, other factions' AllFactions.ini

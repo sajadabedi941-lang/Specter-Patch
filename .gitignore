@@ -3,3 +3,51 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Final playable release binaries are published via GitHub Releases, not git
+patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.big
+patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/*.zip
+patch/Release/SPECTER_SPEC_DATA_ONE_TURKEY_WEAPONOBJECTS_FULL_REBUILD/
+
+# AAB-only boot test release binaries (publish via Releases; art also as loose Art/)
+patch/Release/SPECTER_AAB_ONLY_BOOT_TEST/*.big
+patch/Release/SPECTER_AAB_ONLY_BOOT_TEST/*.zip
+downloaded_files/
+patch/Release/SPECTER_AAB_REVOLUTION_AIRFIELD_FINAL/*.big
+patch/Release/SPECTER_AAB_REVOLUTION_AIRFIELD_FINAL/*.zip
+
+# AAB all-factions infra release binaries (publish via GitHub Releases)
+patch/Release/SPECTER_AAB_ALL_FACTIONS_INFRA/*.big
+patch/Release/SPECTER_AAB_ALL_FACTIONS_INFRA/*.zip
+patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.big
+patch/Release/SPECTER_AAB_USA_SC_OBJECT_FIX/*.zip
+patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.big
+patch/Release/SPECTER_AAB_USA_DOZER_AAB_TEST/*.zip
+
+# AAB core playable infra release binaries
+patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.big
+patch/Release/SPECTER_AAB_CORE_PLAYABLE_INFRA/*.zip
+
+# USA AAB heavy runway release binaries
+patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.big
+patch/Release/SPECTER_USA_AAB_HEAVY_RUNWAY/*.zip
+
+# USA-only clean release binaries
+patch/Release/SPECTER_USA_ONLY_CLEAN/*.big
+patch/Release/SPECTER_USA_ONLY_CLEAN/*.zip
+
+# USA E3 crash-fix release binaries
+patch/Release/SPECTER_USA_E3_CRASH_FIX/*.big
+patch/Release/SPECTER_USA_E3_CRASH_FIX/*.zip
+
+# USA General Star B-2 AAB integration release binaries
+patch/Release/SPECTER_USA_GENERAL_STAR_B2_AAB/*.big
+patch/Release/SPECTER_USA_GENERAL_STAR_B2_AAB/*.zip
+
+# USA B-2 AAB heavy runway release binaries
+patch/Release/SPECTER_USA_B2_AAB_RUNWAY/*.big
+patch/Release/SPECTER_USA_B2_AAB_RUNWAY/*.zip
+
+# USA E3 parse-fix release binaries
+patch/Release/SPECTER_USA_E3_PARSE_FIX/*.big
+patch/Release/SPECTER_USA_E3_PARSE_FIX/*.zip

@@ -1,0 +1,17 @@
+Patch layer: patch/AAB_ALL_FACTIONS_INFRA/
+
+Objects (30 AdvancedAirBase):
+- PatchSystems/AdvancedAirBase_AllFactions.ini (America/Russia/China/Iran/Iraq/Nato/GLA)
+- PatchSystems/AdvancedAirBase_FutureFactions.ini (AirF/NK/Israel)
+- PatchSystems/AdvancedAirBase_Britain.ini (Britain — new)
+- Per-faction Buildings/*_AdvancedAirBase.ini (expansion armies)
+
+Command:
+- CommandButton_AdvancedAirBase_SpecterFactions.ini (construct buttons)
+- CommandSet_AdvancedAirBase.ini (PatchAAB dozers + infra production stubs; no heavies)
+
+Dozer/Worker full INI CommandSet -> *_PatchAAB (26 factions)
+Art: Revolution USA ABAirF2 (+ textures) for America AAB
+USA SC Object= surgical patch applied inside packed CommandButton.ini
+CommandSet.ini: UNTOUCHED
+Aircraft INI: UNTOUCHED

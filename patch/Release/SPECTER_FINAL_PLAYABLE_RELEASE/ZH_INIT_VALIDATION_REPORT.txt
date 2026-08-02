@@ -1,0 +1,17 @@
+ZERO HOUR INITIALIZATION VALIDATION (PACKED BIG)
+==================================================
+Generated: 2026-07-31T10:11:04.615214+00:00
+BIG: /tmp/donor_audit_rebuild/_SPEC_DATA_ONE.big
+BASELINE: /tmp/spec_data_one/_SPEC_DATA_ONE.big
+CHECK: BIG entries=2836
+CHECK: SHA256=a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+CHECK: SIZE=384197258
+CHECK: Weapon defs=2180 Locomotor defs=515
+CHECK: raw-parse 9M317_MissileObject from packed russia_weaponobjects.ini: done
+CHECK: PRELOAD objects dependency-checked=3302
+CHECK: baseline-filtered original-also PRELOAD misses=3
+
+FATAL issues: 0
+No FATAL PRELOAD/init parser failures detected.
+
+VERDICT: PASS

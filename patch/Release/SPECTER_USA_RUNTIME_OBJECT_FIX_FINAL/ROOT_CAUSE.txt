@@ -1,0 +1,24 @@
+Random GameEngine::update ACCESS_VIOLATION (post-AC130 parse fix)
+=================================================================
+Exact remaining crash objects (USA AAB aircraft audit):
+
+1) Patch_America_E2C
+   File: Aircraft_AirForceExpansion.ini
+   Had AIUpdateInterface + SpecialAbility + SpectreGunshipUpdate
+   while produced from AmericaAirfieldCommandSet (AAB).
+
+2) AmericaJetE3AWACS
+   File: Aircraft_USA_Heavy_Runway.ini
+   Same SpectreGunshipUpdate / AIUpdateInterface / SpecialAbility stack
+   (legacy E-3 override path).
+
+Cause:
+SpectreGunshipUpdate ticking in GameEngine::update causes
+EXCEPTION_ACCESS_VIOLATION (same class as Patch_America_AC130Spectre).
+
+Fix (behavior only; objects kept):
+- Remove AIUpdateInterface / SpecialAbility / SpectreGunshipUpdate
+- Keep single JetAIUpdate + ProductionUpdate (normal airfield jet)
+- AssaultHelo keeps AIUpdateInterface only (no JetAIUpdate dual-AI)
+- AC-130 already single JetAIUpdate (unchanged)
+- No string/CSF/faction/AdvancedAirBase system changes

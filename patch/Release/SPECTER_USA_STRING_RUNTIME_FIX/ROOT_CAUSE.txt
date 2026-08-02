@@ -1,0 +1,10 @@
+Runtime String Manager audit
+============================
+Working CSF (spec_data_one): parses 8345/8345 labels, remain=0
+Broken CSF (USA_AAB_FINAL_FIX): parse fails at INI:FactionTurkey
+  magic bytes = "RTSW" (invalid)
+  expected    = "WRTS" (STRW) or " RTS" (STR)
+  corrupt marker count in broken CSF markers path: 100x RTSW as label value magic
+
+English/*.txt overlays were also removed: working packs have CSF only under English/.
+USA display strings are now inside generals.csf.

@@ -1,0 +1,151 @@
+================================
+FIRST CRASH SOURCE
+================================
+
+File: North Korea/Buildings/Iraq_Barracks.ini
+Line: 71
+
+Object: NorthKorea_Barracks
+
+Reference: CommandSet = NorthKorea_BarracksCommandSet
+
+Missing dependency: CommandSet NorthKorea_BarracksCommandSet
+
+Reason game crashes:
+Missing CommandSet - PRELOAD/Object init resolves CommandSet to NULL
+
+
+================================
+NEXT 20 POSSIBLE FAILURES
+================================
+
+1.
+File: North Korea/Buildings/Iraq_Barracks.ini
+Line: 71
+Object: NorthKorea_Barracks
+Issue: prior def @ rank 1575 Data/INI/Object/Specter/North Korea/Buildings/Iraq_Barracks.ini:12 ? Late BIG override replaced earlier Object definition with broken CommandSet
+
+2.
+File: North Korea/Buildings/Iraq_PowerPlant.ini
+Line: 60
+Object: NorthKorea_PowerPlant
+Issue: CommandSet value empty ? Comment-only CommandSet on Object yields NULL CommandSet at init
+
+3.
+File: North Korea/Buildings/Iraq_WarFactory.ini
+Line: 214
+Object: NorthKorea_WarFactory
+Issue: CommandSet NorthKorea_WarFactoryCommandSet_T ? Missing CommandSet - PRELOAD/Object init resolves CommandSet to NULL
+
+4.
+File: North Korea/Buildings/Iraq_WarFactory.ini
+Line: 214
+Object: NorthKorea_WarFactory
+Issue: prior def @ rank 1577 Data/INI/Object/Specter/North Korea/Buildings/Iraq_WarFactory.ini:12 ? Late BIG override replaced earlier Object definition with broken CommandSet
+
+5.
+File: Data/INI/Object/FactionBuilding.ini
+Line: 3445
+Object: FakeGLABlackMarket
+Issue: Upgrade Upgrade_BecomeRealGLABlackMarket ? Missing Upgrade dependency
+
+6.
+File: Data/INI/Object/Specter/Arabic Alliance/Wheeled/Dozer.ini
+Line: 112
+Object: GLAInfantryWorker
+Issue: CommandSet GLAWorkerCommandSet ? Missing CommandSet - PRELOAD/Object init resolves CommandSet to NULL
+
+7.
+File: Data/INI/Object/Specter/Indian Armed Forces/Buildings/India_Airfield_T.ini
+Line: 132
+Object: India_Airfield_T
+Issue: CommandButton Command_ConstructIndia_EliteStrike ? Missing CommandButton referenced by Object CommandSet
+
+8.
+File: Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+Line: 1371
+Object: Iraq_AdvancedAirBase
+Issue: CommandButton Command_ConstructPatch_US_E3G_AWACS ? Missing CommandButton referenced by Object CommandSet
+
+9.
+File: Data/INI/Object/StealthGeneral.ini
+Line: 1604
+Object: Slth_FakeGLABlackMarket
+Issue: Upgrade Upgrade_BecomeRealGLABlackMarket ? Missing Upgrade dependency
+
+10.
+File: Data/INI/Object/AirforceGeneral.ini
+Line: 1964
+Object: AirF_AmericaInfantryPilot
+Issue: Upgrade Upgrade_Veterancy_HEROIC ? Missing Upgrade dependency
+
+11.
+File: Data/INI/Object/ChinaVehicle.ini
+Line: 486
+Object: ChinaTankDragon
+Issue: Upgrade Upgrade_ChinaBlackNapalm ? Missing Upgrade dependency
+
+12.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 160
+Object: Infa_ChinaJetMIG
+Issue: Upgrade Upgrade_ChinaBlackNapalm ? Missing Upgrade dependency
+
+13.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 1784
+Object: Infa_ChinaTankDragon
+Issue: Upgrade Upgrade_ChinaBlackNapalm ? Missing Upgrade dependency
+
+14.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 2035
+Object: Infa_ChinaVehicleInfernoCannon
+Issue: Upgrade Upgrade_ChinaBlackNapalm ? Missing Upgrade dependency
+
+15.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 4088
+Object: Infa_ChinaCommandCenter
+Issue: Science Infa_SCIENCE_InfantryParadrop1 Infa_SCIENCE_InfantryParadrop2 Infa_SCIENCE_InfantryParadrop3 ? Science button dependency missing
+
+16.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 4088
+Object: Infa_ChinaCommandCenter
+Issue: Science SCIENCE_ArtilleryBarrage1 SCIENCE_ArtilleryBarrage2 SCIENCE_ArtilleryBarrage3 ? Science button dependency missing
+
+17.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 4088
+Object: Infa_ChinaCommandCenter
+Issue: Science SCIENCE_EmergencyRepair1 SCIENCE_EmergencyRepair2 SCIENCE_EmergencyRepair3 ? Science button dependency missing
+
+18.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 4088
+Object: Infa_ChinaCommandCenter
+Issue: Science Early_SCIENCE_Frenzy1 Early_SCIENCE_Frenzy2 Early_SCIENCE_Frenzy3 ? Science button dependency missing
+
+19.
+File: Data/INI/Object/InfantryGeneral.ini
+Line: 15908
+Object: Infa_ChinaVehicleHelix
+Issue: Upgrade Upgrade_ChinaBlackNapalm ? Missing Upgrade dependency
+
+20.
+File: Data/INI/Object/Specter/AI_IraqiArmy/CommandCenter.ini
+Line: 55
+Object: Slth_GLACommandCenter
+Issue: Science SCIENCE_RebelAmbush1 SCIENCE_RebelAmbush2 SCIENCE_RebelAmbush3 ? Science button dependency missing
+
+================================================
+
+META
+BIG: /workspace/patch/Release/SPECTER_FINAL_PLAYABLE_RELEASE/_SPEC_DATA_ONE.big
+Entries: 2834
+Objects: 4766
+CommandSets: 1287
+CommandButtons: 3702
+Failures total: 232
+ART stems: 0

@@ -1,0 +1,17 @@
+SPECTER AAB REVOLUTION AIRFIELD FINAL — VALIDATION
+==================================================
+
+ZIP: SPECTER_AAB_REVOLUTION_AIRFIELD_FINAL.zip
+SHA256: e020b83067ed7d1856e7bba0a0d26e2c554f4e3d95a63d6fbdba2b6cf339177a
+SIZE: 541124223 bytes
+
+Payload checks:
+- ABAirF2.W3D = 1585732 bytes (Revolution mesh)
+- ABAirF_T2.W3D runway bones present
+- ABAirF.dds / ABAirF_Base.dds present
+- CommandSet.ini in DATA identical to stock base (unchanged)
+- No CommandSet.ini in overlay source
+- No new countries/units
+- USA SC CommandButton -> America_AdvancedAirBase
+
+ZH_INIT: package is BIGF merge of known-good Specter DATA + Revolution AAB art.

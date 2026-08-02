@@ -103,3 +103,13 @@ CONSTRAINTS FOR INTEGRATION
 - Do not touch B-2 final fix
 - Do not change existing spawn logic / stock CommandSet hash
 - Add new Patch_TEOD_* objects + cloned CommandButton/CommandSet/Weapon only as needed
+
+
+INTEGRATION STATUS (Patch_TEOD_)
+================================================================================
+Created unique Patch_TEOD_* Object INIs under PatchSystems/TEOD_Aircraft/
+Created overlay CommandButton/CommandSet/Weapon under Data/INI/ (stock files untouched)
+Extracted matching W3D/textures into patch/Art/
+AdvancedAirBase CommandSet NOT modified (spawn logic unchanged)
+B-2 final fix NOT touched
+Existing Patch_America_* units NOT overwritten

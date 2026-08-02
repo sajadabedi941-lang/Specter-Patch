@@ -3,3 +3,4 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+patch/Release/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip

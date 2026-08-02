@@ -1,0 +1,14 @@
+BUTTON→OBJECT VERIFY (final BIG)
+PASS=True
+DATA SHA256=3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5
+ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+DATA size=384617845 entries=2891
+ART  size=446216323 entries=2689
+
+America_AdvancedAirBaseCommandSet:
+  1 -> Patch_America_B2
+  2 -> Patch_America_B21
+  3 -> Patch_America_B52
+  4 -> Patch_America_E3
+  5 -> Patch_America_AN225
+No B-1 / stock AmericaJet* construct commands on AAB CommandSet.

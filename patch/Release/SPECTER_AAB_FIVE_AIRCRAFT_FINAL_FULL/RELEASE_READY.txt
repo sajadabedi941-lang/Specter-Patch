@@ -1,2 +1,2 @@
 RELEASE READY: YES
-Single ZIP full-replacement package verified.
+9M317_MissileObject PRELOAD removed; Locomotor spacing fixed.

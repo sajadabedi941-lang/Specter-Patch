@@ -1,5 +1,6 @@
 SPECTER — AAB FIVE-AIRCRAFT FINAL FULL RELEASE
 ==============================================
+(+ Russia 9M317_MissileObject parse crash fix)
 
 ONE ZIP with full replacement Specter BIG archives (NOT a small overlay).
 
@@ -25,6 +26,12 @@ ADVANCED AIR BASE
     4. AWACS   -> Patch_America_E3
     5. AN-225  -> Patch_America_AN225
 
+RUSSIA FIX (this rebuild)
+-------------------------
+  Object 9M317_MissileObject:
+    - Removed KindOf PRELOAD (was crashing ZH during russia_weaponobjects.ini parse)
+    - Locomotor = SET_NORMAL 9M317MissileLocomotor
+
 INSTALL
 -------
 1. Close Specter / Generals completely.
@@ -38,5 +45,5 @@ Multiplayer clients must all use the same BIG pair.
 
 CHECKSUMS
 ---------
-  DATA SHA256=3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5
+  DATA SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
   ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73

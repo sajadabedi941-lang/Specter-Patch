@@ -1,0 +1,22 @@
+SPECTER 9M317 FIX — INI / RUSSIA WO VALIDATION
+DATA BIG SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
+DATA BIG SIZE=384617838
+PASS=15 WARN=0 FAIL=0
+
+PASS: source: single 9M317_MissileObject
+PASS: source KindOf OK: KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
+PASS: source Locomotor OK: Locomotor = SET_NORMAL 9M317MissileLocomotor
+PASS: source parse: 135 object headers, 135 unique names
+PASS: source: no duplicate object names
+PASS: 9M317M3 left unchanged (still PRELOAD) as requested
+PASS: dependency: Locomotor 9M317MissileLocomotor exists
+PASS: BIGF header OK entries=2891 size=384617838
+PASS: packed WO path: Data\INI\Object\Specter\Armed Forces Of Russian Federation\Russia_WeaponObjects.ini (264817 bytes)
+PASS: packed path matches crash file family
+PASS: packed KindOf OK: KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
+PASS: packed Locomotor OK: Locomotor = SET_NORMAL 9M317MissileLocomotor
+PASS: Russia WO parse gate: 9M317_MissileObject SAFE (no PRELOAD projectile factory)
+PASS: Russia WO parse: 9M317_MissileObject block extracted cleanly
+PASS: scope: exactly 2 lines changed inside 9M317_MissileObject
+
+

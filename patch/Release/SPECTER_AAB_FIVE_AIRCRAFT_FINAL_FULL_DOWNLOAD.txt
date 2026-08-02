@@ -1,11 +1,17 @@
 SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
 CLICKABLE DOWNLOAD:
-  https://filebin.net/nITRry6GYPhGvZOK/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
+  https://filebin.net/DChWg8amI_4Bb2-T/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
-Size:   514691111 bytes (490.8 MB)
-SHA256: df9bd06395c76648fa2ab55fb3aaf7a7fe7a662cdf3bab429055939c69567a4f
-Expires: 2026-08-09 (filebin temporary host)
+Size:   514748240 bytes (490.9 MB)
+SHA256: 28b9584ff50feed14b50adcba03f9197c1301f40512e508b142e936c501b4b12
+
+DATA SHA256: 27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Russia fix:
+  9M317_MissileObject KindOf PRELOAD removed
+  Locomotor = SET_NORMAL 9M317MissileLocomotor
 
 Contents (6 files, single ZIP, no splits):
   _SPEC_DATA_ONE.big
@@ -15,8 +21,5 @@ Contents (6 files, single ZIP, no splits):
   VERIFY_REPORT.txt
   HASHES.txt
 
-BIG hashes:
-  3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5  _SPEC_DATA_ONE.big
-  bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73  _SPEC_ART_ONE.big
-
 Integrity: unzip -t PASS
+INI validation: PASS 15/15

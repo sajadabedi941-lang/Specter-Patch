@@ -1,0 +1,6 @@
+1. Install _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big over Specter ZH data.
+2. USA only: build Advanced Air Base, unlock keep-list buttons.
+3. Produce each slot 1-8 one at a time (isolate):
+   B-2, B-1B, B-52, EA-18G, E-3, C-17, KC-135, AC-130
+4. Confirm no GameEngine::update ACCESS_VIOLATION after spawn/taxi/RTB.
+5. Confirm stock CommandSet.ini hash unchanged.

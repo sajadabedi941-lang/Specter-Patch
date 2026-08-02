@@ -1,0 +1,15 @@
+SPECTER_USA_RUNTIME_OBJECT_FIX_FINAL - Test Checklist
+=====================================================
+[x] Packed DATA has 0 SpectreGunshipUpdate behaviors on AAB aircraft INIs
+    (comment-only mentions remain in HeavyRunway)
+[x] Patch_America_E2C: single JetAIUpdate (no Spectre/SpecialAbility AI)
+[x] AmericaJetE3AWACS: single JetAIUpdate (Spectre stack removed)
+[x] Patch_America_AC130Spectre: single JetAIUpdate preserved
+[x] Patch_America_AssaultHelo: AIUpdateInterface only (no dual JetAI)
+[x] CommandSet.ini stock hash untouched
+[x] validate_usa_build_menu.py PASS
+[x] validate_usa_aab_aircraft_production.py PASS (30 AAB slots resolve)
+[ ] Manual: USA startup / enter match
+[ ] Manual: ~30 minute gameplay without GameEngine::update AV
+[ ] Manual: Build America AdvancedAirBase
+[ ] Manual: Produce AAB aircraft roster (fighters/heavies/AC-130/helos/E2C)

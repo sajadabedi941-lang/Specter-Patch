@@ -1,0 +1,14 @@
+AAB heavy UNIT_BUILD buttons visible but grey (not purchasable)
+==============================================================
+Root cause:
+America_AdvancedAirBase used Revolution ABAirF2 ExtraPublicBones in a 2x3
+layout (Runway1Parking1-3 / Runway2Parking1-3) while ParkingPlaceBehavior was
+NumRows=1 NumCols=6 (stock US_AirField expects Runway1Parking1..Runway6Parking1).
+Parking slots never resolved -> UNIT_BUILD stays disabled/grey.
+
+Fix:
+1) AAB DefaultConditionState -> US_AirField with stock 1x6 ExtraPublicBones
+2) Enlarge AAB Scale=1.50, geometry, ApproachHeight=140 (aircraft Scale/models unchanged)
+3) Heavies-only CommandSet (fighters excluded)
+4) Simplify B-2/B-52/E-3/C-17/KC-135/AC-130 behaviors
+5) ZZZZ CommandButton unlock (no Science/Rank/Upgrade/Prerequisite)

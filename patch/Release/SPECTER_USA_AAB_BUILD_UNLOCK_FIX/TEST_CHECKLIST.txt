@@ -1,0 +1,5 @@
+1. Install _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big
+2. USA dozer: Strategy Center / AdvancedAirBase button enabled (not grey) with funds
+3. Build America_AdvancedAirBase without WarFactory_T / RadarStation
+4. Confirm AAB production bar still: B-2 B-52 B-1B E-3 C-17 KC-135 AC-130
+5. Purchase B-2 (aircraft unlock unchanged)

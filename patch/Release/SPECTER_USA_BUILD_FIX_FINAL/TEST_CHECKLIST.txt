@@ -1,0 +1,9 @@
+[x] Static: Dozer CommandSet = AmericaDozerCommandSet
+[x] Static: AmericaDozerCommandSet 18 construct slots resolve (buttons+objects)
+[x] Static: CommandSet.ini hash untouched
+[x] Static: America_AdvancedAirBase + heavy aircraft objects present
+[x] Static: No English *.txt overlays; CSF unchanged path
+[x] Static: No AmericaDozerCommandSet_PatchAAB
+[ ] Local: Launch game / USA match
+[ ] Local: Dozer build menu icons visible
+[ ] Local: Place Command Center / Power / Barracks / WF / Supply / Airfield / AAB

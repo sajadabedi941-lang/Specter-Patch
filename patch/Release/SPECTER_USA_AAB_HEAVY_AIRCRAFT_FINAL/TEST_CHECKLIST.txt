@@ -1,0 +1,7 @@
+1. Install _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big
+2. Build America_AdvancedAirBase
+3. Confirm bar: B-2, B-52, B-1B, E-3, C-17, KC-135, AC-130 only (no fighters)
+4. Purchase B-2 (button enabled, not grey)
+5. Purchase B-52, B-1B, E-3, C-17, KC-135, AC-130
+6. Confirm no GameEngine::update ACCESS_VIOLATION
+7. Confirm aircraft models/Scale unchanged

@@ -1,0 +1,23 @@
+USA AdvancedAirBase final playability gaps
+=========================================
+1) Keep-list aircraft buried / incomplete on production bar
+   - EA-18G object existed but had no UNIT_BUILD CommandButton / CommandSet slot
+   - C-17 / KC-135 / AC-130 were present but not prioritized in slots 1-8
+
+2) C-17 / KC-135 unusable after purchase
+   - Unarmed transports had JetAIUpdate OutOfAmmoDamagePerSecond
+   - Constant ammo damage made them appear broken / missing in play
+
+3) Science / star locks on AAB AirForceExpansion aircraft
+   - Aurora / StealthHawk / E2C / B3 required SCIENCE_Rank3
+
+4) Runtime risk on StealthHawk
+   - RiderChangeContain + AG/AA OCLSpecialPower referenced missing GenericAircraft* objects
+
+Fix (USA only; no factions added; aircraft kept):
+- AmericaAirfieldCommandSet slots 1-8 = B2, B1, B52, EA18G, E3, C17, KC135, AC130
+- Add Command_ConstructPatch_America_EA18G
+- Remove OutOfAmmoDamagePerSecond from C-17 / KC-135
+- Remove SCIENCE_Rank prerequisites from AAB expansion aircraft
+- Remove StealthHawk RiderChangeContain AG/AA overlay; add ProductionUpdate
+- Dozer / CommandSet.ini stock untouched

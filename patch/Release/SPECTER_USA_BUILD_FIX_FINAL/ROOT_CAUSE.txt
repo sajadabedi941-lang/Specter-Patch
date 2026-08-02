@@ -1,0 +1,14 @@
+USA build menu empty
+====================
+AmericaVehicleDozer used CommandSet AmericaDozerCommandSet_PatchAAB
+(unique name in CommandSet_USA_AdvancedAirBase.ini).
+
+That unique dozer CommandSet did not bind a usable build menu at runtime
+(dozers present, construction slots empty).
+
+Fix:
+- Restore Dozer CommandSet = AmericaDozerCommandSet (stock CommandSet.ini)
+- Keep America_AdvancedAirBaseCommandSet for AAB aircraft production
+- Stop redefining stock DOZER_CONSTRUCT CommandButtons in overlay
+- Stock StrategyCenter construct buttons already Object=America_AdvancedAirBase
+- Do not touch strings/CSF, CommandSet.ini, or non-USA factions

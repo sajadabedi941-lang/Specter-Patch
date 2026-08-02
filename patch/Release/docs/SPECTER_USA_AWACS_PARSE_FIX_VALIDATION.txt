@@ -1,0 +1,13 @@
+SPECTER_USA_AWACS_PARSE_FIX validation
+======================================
+Base: SPECTER_USA_RUNTIME_OBJECT_FIX_FINAL
+Patch root: patch/USA_ONLY_CLEAN
+Merge: updated=2 (Aircraft_USA_Heavy_Runway.ini, America_AdvancedAirBase.ini ascii)
+Strip: killed=0 kept=821
+CommandSet.ini SHA256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+ART SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+DATA SHA256=21b5b5f09ca5d94adaafdc29e9c0a4928c5c17ccc2712740add7b3bcaf53c47b
+
+aaa_usa_heavyrunway packed INI audit: PASS (3/3)
+validate_usa_build_menu.py: PASS
+validate_usa_aab_aircraft_production.py: PASS

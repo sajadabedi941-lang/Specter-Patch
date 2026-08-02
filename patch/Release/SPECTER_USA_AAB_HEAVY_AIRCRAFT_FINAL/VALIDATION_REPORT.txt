@@ -1,0 +1,11 @@
+SPECTER_USA_AAB_HEAVY_AIRCRAFT_FINAL validation
+==============================================
+CommandSet.ini SHA256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31 (untouched)
+ART SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+DATA SHA256=12de976c5576d091ec59f3d352283f5a442001043cae4655003b27ec3c7b545d
+validate_usa_build_menu.py: PASS
+validate_usa_aab_aircraft_production.py: PASS
+check_ini_object_structure.py: PASS
+AAB: US_AirField bones, Scale=1.50, NumRows=1 NumCols=6, ApproachHeight=140
+CommandSet heavies-only (9 slots incl Rally/Sell); no fighters/EA-18G
+Aircraft behaviors: Physics+JetAI+JetSlowDeath+ProductionUpdate for all 7

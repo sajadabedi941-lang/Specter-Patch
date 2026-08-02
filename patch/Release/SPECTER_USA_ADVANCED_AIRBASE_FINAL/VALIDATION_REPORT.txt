@@ -1,0 +1,14 @@
+SPECTER_USA_ADVANCED_AIRBASE_FINAL validation
+=============================================
+Base: SPECTER_USA_AIRFORCE_PARSE_FIX
+Patch root: patch/USA_ONLY_CLEAN
+Merge: updated=4 (CommandSet_USA_AdvancedAirBase, CommandButton_AdvancedAirBase_Aircraft,
+       Aircraft_USA_Heavy_Runway, Aircraft_AirForceExpansion)
+Strip: killed=0 kept=821
+CommandSet.ini SHA256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+ART SHA256=bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+DATA SHA256=a8eab3c08798fb908a17f97c6316fe19d86aac43c948061ee4b4a7998f47a519
+
+Keep-list slots 1-8: B2 B1 B52 EA18G E3 C17 KC135 AC130
+validate_usa_build_menu.py: PASS
+validate_usa_aab_aircraft_production.py: PASS

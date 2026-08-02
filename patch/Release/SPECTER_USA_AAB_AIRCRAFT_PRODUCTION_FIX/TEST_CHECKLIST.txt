@@ -1,0 +1,10 @@
+[x] Static: AAB CommandSet = AmericaAirfieldCommandSet
+[x] Static: AmericaAirfieldCommandSet last override = CommandSet_USA_AdvancedAirBase.ini
+[x] Static: 30 production slots resolve (buttons+objects)
+[x] Static: Keep-list aircraft objects present
+[x] Static: ProductionUpdate + ParkingPlaceBehavior present
+[x] Static: Dozer build menu still PASS
+[x] Static: CommandSet.ini hash untouched
+[ ] Local: USA match — AAB shows aircraft icons
+[ ] Local: Queue / purchase aircraft
+[ ] Local: Aircraft spawn from runway

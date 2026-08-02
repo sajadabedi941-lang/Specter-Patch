@@ -1,0 +1,24 @@
+CLEAN SPECTER BASE REBUILD REPORT
+=================================
+Generated: 2026-07-30T19:25:20.027372+00:00
+
+Base: original Specter _SPEC_DATA_ONE.big
+  SHA256=846a6a363af8c5c7c953ba2e4292f1aa72d807e22b5ce5b49365e59770fbebb7
+  SIZE=349348307 ENTRIES=1430
+
+Output: f69c8dd4fc804c9537f4961be5dd36647e2567a718a611f91fab5b3abf6e7d4b
+  SIZE=384158503 ENTRIES=2834
+
+Excluded from pack (non-game tool INIs):
+  Data/INI/CountryBalance.ini
+  Data/INI/Economy/*.ini
+  Data/INI/GlobalBuildLimits_SpecterPatch.ini
+
+Kept outside game tree at:
+  patch/tools/economy/config/
+
+Merge tool: patch/tools/big/merge_patch_into_spec_big.py
+  (STOCK_SKIP cores + TOOL_INI_SKIP)
+
+Boot validation: tool INIs absent, no forbidden non-engine top-level blocks.
+No new gameplay changes in this step.

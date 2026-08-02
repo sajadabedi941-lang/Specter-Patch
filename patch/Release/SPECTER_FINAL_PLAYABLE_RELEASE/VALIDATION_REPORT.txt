@@ -1,0 +1,9 @@
+SPECTER FINAL PLAYABLE — VALIDATION REPORT
+Generated: 2026-07-31T10:12:14.483418+00:00
+SHA256: a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+SIZE: 384197258
+
+Donor contamination audit: sanitized Specter Object/INI CommandCenter/MilitaryHQ/Turkey_WeaponObjects
+Kept intentional USA/Israel MOAB + Israel US_COM_Strb; UAE_MilitaryHQ -> UAE_MilitaryHQCommandSet
+Missing Object=0 Missing Weapon=0 Missing Science=0 Parser=0 PRELOAD errors=0
+ZH_INIT: PASS

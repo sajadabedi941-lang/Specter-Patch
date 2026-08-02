@@ -1,0 +1,127 @@
+CRASH ROOT CAUSE REPORT
+=======================
+Generated for Specter Zero Hour init crash diagnosis.
+NO RELEASE published in this step (diagnosis only).
+
+VERDICT
+-------
+Exact initialization crash cause IDENTIFIED.
+
+The crash path:
+  Data\INI\Object\Specter\British Armed Forces\Drones\Britain_CombatDrone.ini
+is loaded from _SPEC_DATA_ONE.big (not from loose Data\INI). Deleting the loose
+British Armed Forces folder does not remove this Object from the BIG.
+
+ROOT CAUSE (exact)
+------------------
+File   : Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+Object : Britain_CombatDrone
+Line   : 73
+Code   : Science = SCIENCE_UAEStealthJet
+KindOf : includes PRELOAD (resolved during initialization)
+
+Missing dependency:
+  Science SCIENCE_UAEStealthJet
+  Catalog search in packed BIG: NOT DEFINED
+  (no Science SCIENCE_UAEStealthJet / SCIENCE_UAE_StealthJet block exists)
+
+Why this crashes:
+  Britain_CombatDrone is PRELOAD. During initialization, ZH resolves Prerequisites
+  Science tokens. SCIENCE_UAEStealthJet is an invalid leftover from a UAE donor clone.
+  Resolution fails => "Error parsing INI file" / "Uncaught Exception during initialization".
+
+Evidence (previous PRELOAD-clean release BIG still had this defect)
+-------------------------------------------------------------------
+BIG compared : specter-final-playable-release-pr206-preload-clean
+SHA256       : 3682bfe69ee6c33e1c900caf61ea7be7359040bad1b8bc2868ed05e062f99884
+Note         : PRELOAD STRUCTURE CommandSet scan was CLEAN, but Science prerequisite
+               misses are outside that gate. This Science miss remained.
+
+Snippet (preload_clean Britain_CombatDrone.ini):
+  L71:   Prerequisites
+  L72:     Object = Britain_AdvancedAirBase ; INI-REPAIR was UAEAirfield
+  L73:     Science = SCIENCE_UAEStealthJet    <-- INVALID (not in Science catalog)
+  L74:     Science = SCIENCE_Rank3
+  L75:   End
+
+Exact bad line text:
+  Science = SCIENCE_UAEStealthJet
+
+PRELOAD objects with missing Science in that BIG: 1
+First hit: rank=851 Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini:73 Object=Britain_CombatDrone Science=SCIENCE_UAEStealthJet
+
+FIX APPLIED (in later BIGs)
+---------------------------
+1) Remove invalid prerequisite:
+     Science = SCIENCE_UAEStealthJet
+2) Keep valid:
+     Object = Britain_AdvancedAirBase
+     Science = SCIENCE_Rank3
+3) Pack corrected Object into _SPEC_DATA_ONE.big only (no loose British Armed Forces folder).
+
+britain-fix BIG (tree overlay of corrected Britain_CombatDrone):
+  SHA256: a283b87a6fcff8e2813a0e45e379f509760e20ef84092a570be05f6d4fee9ec2
+  Britain_CombatDrone Science prereq: SCIENCE_Rank3 only (valid)
+  PRELOAD missing-Science count: 0
+
+current clean-rebuild BIG (CombatDrones rebuilt from USA MQ9 donor):
+  SHA256: 27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
+  Path  : Data/INI/Object/Specter/British Armed Forces/Drones/Britain_CombatDrone.ini
+  Science line: L71: Science = SCIENCE_Rank3 (exists=True)
+  CommandSet  : GenericTacticalBomberCommandSet (exists=True)
+  Weapons     : ['Britain_Weapon_ATGM', '2x_GBU12II_Mq9']
+  PRELOAD missing-Science count: 0
+
+CURRENT Britain_CombatDrone Prerequisites:
+  L69:   Prerequisites
+  L70:     Object = Britain_AdvancedAirBase
+  L71:     Science = SCIENCE_Rank3
+  L72:   End
+
+DEPENDENCY SCAN SUMMARY (CURRENT BIG)
+-------------------------------------
+Compared against:
+  preload_clean : 3682bfe69ee6c33e1c900caf61ea7be7359040bad1b8bc2868ed05e062f99884
+  britain_fix  : a283b87a6fcff8e2813a0e45e379f509760e20ef84092a570be05f6d4fee9ec2
+  current       : 27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
+
+Changed files current vs preload_clean: 20
+  (includes all rebuilt *_CombatDrone.ini + Aircraft_AirForceFinal.ini + some Britain INIs)
+
+Britain_CombatDrone checks (CURRENT):
+  - Object Britain_CombatDrone present: YES
+  - CommandSet GenericTacticalBomberCommandSet: OK
+  - Weapon Britain_Weapon_ATGM: OK
+  - Weapon 2x_GBU12II_Mq9: OK
+  - Prerequisite Object Britain_AdvancedAirBase: OK
+  - Prerequisite Science SCIENCE_Rank3: OK
+  - SCIENCE_UAEStealthJet present in CODE: NO
+  - PRELOAD missing Science references (all PRELOAD objects): 0
+
+IMPORTANT - Crash Hunter gate gap
+---------------------------------
+SPECTER_CRASH_HUNTER "PRELOAD STRUCTURE critical" only treats missing
+CommandSet / SpecialPower / Object-inheritance as critical.
+Missing Prerequisites Science is NOT in that critical gate.
+That is why a BIG could be marked PRELOAD STRUCTURE CLEAN while still crashing on
+Britain_CombatDrone line 73 (SCIENCE_UAEStealthJet).
+
+IF GAME STILL CRASHES ON CURRENT BIG
+------------------------------------
+Confirm installed Data\_SPEC_DATA_ONE.big SHA256 is:
+  27fa7d40c280fbfbcea032d69dd9f4c88c278c8278cb9e03444ec1a065b866e2
+If the installed BIG is still
+  3682bfe69ee6c33e1c900caf61ea7be7359040bad1b8bc2868ed05e062f99884
+or any earlier build, it still contains L73 SCIENCE_UAEStealthJet and will crash.
+
+Also ensure these are deleted on the game folder:
+  Data\INI\Object\Specter\British Armed Forces\
+  Data\INI\Britain_CombatDrone.ini
+
+STATUS
+------
+Crash cause: IDENTIFIED
+Exact file/object/line: documented above
+Fix applied in current BIG: YES (invalid Science removed)
+Release publish: NOT DONE (per request - diagnose first)
+

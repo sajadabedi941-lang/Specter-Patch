@@ -1,0 +1,105 @@
+TEOD (PCC Studios US AirForce) — Aircraft Inventory
+Source INI: patch/Data/INI/Object/Specter/United States Of America/Airforce/ (same as /tmp/sd)
+Source W3D/Textures: already packed in _SPEC_ART_ONE.big under Art\W3D\ and Art\Textures\
+
+PLAYABLE AIRCRAFT OBJECTS (AIRCRAFT KindOf)
+================================================================================
+INI                    Object                         Primary W3D              Portrait     CommandSet
+--------------------------------------------------------------------------------
+A10C.ini               AmericaJetA10C                 US_A10C                  us_a10c      GenericTacticalBomberCommandSet
+AH64D.ini              AmericaVehicleComanche         US_AH64E / US_AH64E_D    us_ah64d     GenericAttackHelicopterHoverCommandSet
+AH64E - Bk.ini         AmericaHelicopterAH64E-BK      US_AH64E / US_AH64E_D    us_ah64d     AH64D_LongbowCommandSet
+AH64E.ini              AmericaHelicopterAH64E         US_AH64E / US_AH64E_D    us_ah64d     AmericaAH64ECommandSet_Normal
+AH64E.ini              AmericaHelicopterAH64E_Loiter  US_AH64E / US_AH64E_D    us_ah64d     AmericaAH64ECommandSet_Loiter
+AH64E.ini              AmericaHelicopterAH64E_Longbow US_AH64E / US_AH64E_D    us_ah64d     AmericaAH64ECommandSet_Longbow
+B1R.ini                AmericaJetB1R                  US_B1R                   us_b1r       GenericTacticalBomberCommandSet
+CH47F.ini              AmericaVehicleChinook          US_CH47F (+AVChinook*)   SAChinook_L  AmericaVehicleChinookCommandSet
+CH47F_AI.ini           AmericaHelicopterCh47F_AI      US_CH47F (+AVChinook*)   SAChinook_L  AmericaVehicleChinookCommandSet
+EA18G.ini              AmericaJetEA18G                US_EA18G                 us_ea18g     EA18G_CommandSet
+EA18G_AI.ini           AmericaJetEA18G_AI             US_EA18G                 us_ea18g     F22A_AA_CommandSet
+F15C.ini               AmericaJetF-15E_AA             US_F15C                  us_f15e      GenericAirSuperiorityFighterCommandSet
+F15E_229.ini           AmericaJetAurora               US_F15E / US_F15EX        us_f15e      GenericMultiRoleFighter_AG_CommandSet
+F15E_229.ini           AmericaJetF15E_GBU72           US_F15E / US_F15EX        us_f15e      GenericMultiRoleFighter_AG_CommandSet
+F16CJ_BLK52.ini        AmericaJetRaptor               US_F16CJ_blk52           us_f16c      GenericTacticalBomberCommandSet
+F16CM_BLK50_AA.ini     AmericaJetF-16C_AA             US_F16CJ_blk52           us_f16c      GenericFighterCommandSet
+F16CM_BLK50_DB52.ini   AmericaJetF-16C_AG             US_F16CMB50 / US_F16D_B52 us_f16cb50   F16C_AG_CommandSet
+F16CM_BLK50_DB52.ini   AmericaJetF16CMB50_Mixed       US_F16CMB50 / US_F16D_B52 us_f16cb50   F16C_AG_CommandSet
+F16CM_BLK50_DB52.ini   AmericaJetF16CMB50_AGM         US_F16CMB50 / US_F16D_B52 us_f16cb50   F16C_AG_CommandSet
+F16CM_BLK50_DB52.ini   AmericaJetF16CMB50_GBU24       US_F16CMB50              us_f16cb50   F16C_AG_CommandSet
+F22A_AA.ini            AmericaJetF-22A_AA             US_F22A                  us_f22a      F22A_AA_CommandSet
+F22A_AG.ini            AmericaJetStealthFighter       US_F22A                  us_f22a      GenericMultiRoleFighter_AG_CommandSet
+F35C.ini               AmericaJetF35C                 US_F35A                  Nat_f35a     GenericMultiRoleFighter_AG_CommandSet
+F35C_AA.ini            AmericaJetF35C_AA              US_F35A                  Nat_f35a     GenericMultiRoleFighter_AG_CommandSet
+FA18E.ini              AmericaJetFA18E                US_FA18E                 us_ea18g     GenericTacticalBomberCommandSet
+FA18F.ini              AmericaJetFA18F                US_FA18F                 us_ea18g     GenericTacticalBomberCommandSet
+UH60.ini               AmericaHelicopterUH60          US_UH60                  us_uh60      AmericaVehicleChinookCommandSet
+
+HELPER / NON-PLAYABLE OBJECTS
+================================================================================
+AmericaTurretM230E1 (US_M230E1) — AH64E chin turret
+AmericaAh64ECPGSight — AH64E sensor helper
+AmericaSystemAIM120DargetLock — F-22 missile lock helper
+EWFakeDroneObject — EA-18G EW helper
+
+W3D MODELS PRESENT IN _SPEC_ART_ONE.big
+================================================================================
+US_A10C.W3D
+US_AH64D.W3D
+US_AH64E.W3D
+US_AH64E_D.W3D
+US_B1R.W3D
+US_CH47F.W3D
+US_EA18G.W3D
+US_F15C.W3D
+US_F15E.W3D
+US_F15E_D.W3D
+US_F15E_R.W3D
+US_F15EX.W3D
+US_F15EX_D.W3D
+US_F16CJ_blk52.W3D
+US_F16CMB50.W3D
+US_F16D_B52.W3D
+US_F22A.W3D
+US_F35A.W3D
+US_FA18E.W3D
+US_FA18F.W3D
+US_M230E1.W3D
+US_UH60.W3D
+
+MATCHING TEXTURES PRESENT
+================================================================================
+US_A10C.dds, US_AH64E.dds, US_AH64E_BB.dds, US_AH64E_D.dds, US_AH64E_FB.dds,
+US_B1R.dds, US_CH47F.dds, US_CH47F_Rot.dds, US_EA18G.dds,
+US_F15C.dds, US_F15E.dds, US_F15E_D.dds, US_F15E_R.dds,
+US_F16CMB50-1.dds, US_F16D_B52.dds, US_F22A.dds, US_F35A.dds,
+US_FA18E.dds, US_FA18F.dds, US_UH60.dds
+
+W3D GAPS
+================================================================================
+AVChinook_d / AVChinook_A / AVChinook_A1MSH — referenced by CH47F*.ini damage/alt draws; not in _SPEC_ART_ONE.big
+(Primary US_CH47F.W3D is present)
+
+PROPOSED UNIQUE Patch_ NAMES (no overwrite)
+================================================================================
+Patch_TEOD_A10C
+Patch_TEOD_Comanche (AH64D)
+Patch_TEOD_AH64E / Patch_TEOD_AH64E_BK / Patch_TEOD_AH64E_Loiter / Patch_TEOD_AH64E_Longbow
+Patch_TEOD_B1R
+Patch_TEOD_Chinook / Patch_TEOD_Ch47F_AI
+Patch_TEOD_EA18G / Patch_TEOD_EA18G_AI
+Patch_TEOD_F15C_AA (from AmericaJetF-15E_AA / US_F15C)
+Patch_TEOD_F15E / Patch_TEOD_F15E_GBU72
+Patch_TEOD_F16CJ (from AmericaJetRaptor / US_F16CJ_blk52)
+Patch_TEOD_F16C_AA / Patch_TEOD_F16C_AG / Patch_TEOD_F16CMB50_Mixed / _AGM / _GBU24
+Patch_TEOD_F22A_AA / Patch_TEOD_F22A_AG
+Patch_TEOD_F35C / Patch_TEOD_F35C_AA
+Patch_TEOD_FA18E / Patch_TEOD_FA18F
+Patch_TEOD_UH60
+
+CONSTRAINTS FOR INTEGRATION
+================================================================================
+- Do not overwrite existing Patch_America_* / AAB units
+- Keep AdvancedAirBase unchanged
+- Do not touch B-2 final fix
+- Do not change existing spawn logic / stock CommandSet hash
+- Add new Patch_TEOD_* objects + cloned CommandButton/CommandSet/Weapon only as needed

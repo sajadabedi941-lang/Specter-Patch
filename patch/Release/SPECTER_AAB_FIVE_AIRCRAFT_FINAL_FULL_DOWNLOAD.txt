@@ -1,14 +1,11 @@
 SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
-DOWNLOADABLE ARTIFACT (attached to this Cloud Agent run / PR #245):
-  File name: SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
-  Size:      514691111 bytes (490.8 MB)
-  SHA256:    df9bd06395c76648fa2ab55fb3aaf7a7fe7a662cdf3bab429055939c69567a4f
+CLICKABLE DOWNLOAD:
+  https://filebin.net/nITRry6GYPhGvZOK/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
 
-Open the agent Artifacts panel and download:
-  SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
-
-Also linked from PR #245 description as an artifact attachment.
+Size:   514691111 bytes (490.8 MB)
+SHA256: df9bd06395c76648fa2ab55fb3aaf7a7fe7a662cdf3bab429055939c69567a4f
+Expires: 2026-08-09 (filebin temporary host)
 
 Contents (6 files, single ZIP, no splits):
   _SPEC_DATA_ONE.big

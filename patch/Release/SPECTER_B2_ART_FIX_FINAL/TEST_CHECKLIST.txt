@@ -1,0 +1,5 @@
+[ ] AAB B-2 button builds Patch_America_B2
+[ ] Spawned unit looks like B-2 flying wing (not B-1B)
+[ ] B-1B button still looks like B-1R
+[ ] B-52 / E-3 unchanged
+[ ] Heavy unlock roster still purchasable

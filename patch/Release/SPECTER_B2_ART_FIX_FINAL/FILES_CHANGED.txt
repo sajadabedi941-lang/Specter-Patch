@@ -1,0 +1,7 @@
+Data/INI/Object/Specter/PatchSystems/AAA_USA_HeavyRunway/Aircraft_USA_Heavy_Runway.ini
+Art/W3D/AVB3bmbr.W3D
+Art/W3D/AVB3bmbr_d.W3D
+Art/W3D/AVB3bmbr_d1.W3D
+Art/Textures/AVB2A.tga
+Art/Textures/AVB2A_d.tga
+Art/Textures/AVB2A_e.tga

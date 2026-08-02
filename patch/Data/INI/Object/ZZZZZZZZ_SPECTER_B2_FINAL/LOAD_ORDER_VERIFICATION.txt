@@ -1,0 +1,44 @@
+SPECTER B-2 ONLY — Runtime Load Order Verification
+====================================================
+
+SCOPE
+- Object name: Patch_America_B2 (unchanged)
+- CommandButton: Command_ConstructPatch_America_B2 (unchanged)
+- CommandSet: America_AdvancedAirBaseCommandSet slot 6 (unchanged)
+- Advanced Air Base design / parking: unchanged (NumRows=2 NumCols=8)
+
+ART ASSETS
+- Default Draw Model: AVB3bmbr.W3D
+- Damaged Draw Model: AVB3bmbr_d.W3D
+- Rubble Draw Model: AVB3bmbr_d1.W3D
+- Textures: AVB2A.tga, AVB2A_d.tga, AVB2A_e.tga
+
+OBJECT DEFINITIONS (path-sorted, last wins)
+1) Data/INI/Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+   Scale=0.72  Models=US_B1R (legacy placeholder mesh)
+2) Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+   Scale=0.85  Models=AVB3bmbr / AVB3bmbr_d / AVB3bmbr_d1
+
+FINAL LOADED WINNER (alphabetical INI path within patch pack)
+  File: Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+  Draw: W3DModelDraw ModuleTag_01
+  Default Model: AVB3bmbr
+  Damaged Model: AVB3bmbr_d
+  Rubble Model: AVB3bmbr_d1
+  Scale: 0.85
+  Weapon: PRIMARY GBU38_JDAM_F16C
+  JetAIUpdate: NeedsRunway=Yes, ParkingOffset=10
+  CommandSet: GenericTacticalBomberCommandSet
+  Death: JetSlowDeathBehavior preserved
+
+AAB SPAWN PATH (unchanged)
+  America_AdvancedAirBase
+    -> America_AdvancedAirBaseCommandSet
+      -> 6 = Command_ConstructPatch_America_B2
+        -> Object = Patch_America_B2
+          -> JetAIUpdate NeedsRunway=Yes (uses AAB parking/runway bones)
+
+NOTE
+If a legacy BIG still ships Aircraft_AAB_Global.ini after the main pack,
+keep ZZZZZZZZ_Patch_America_B2_Final.ini in a later overlay so AVB3bmbr remains
+the runtime Draw winner.

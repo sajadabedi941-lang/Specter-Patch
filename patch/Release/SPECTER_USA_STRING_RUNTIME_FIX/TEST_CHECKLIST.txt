@@ -1,0 +1,6 @@
+[x] Binary CSF full parse gate (8444 labels, remain=0)
+[x] No Data/English/*.txt in pack
+[x] USA aircraft INIs still present
+[ ] Launch game / main menu (requires local Specter install)
+[ ] Start USA match
+[ ] Build AdvancedAirBase / aircraft buttons

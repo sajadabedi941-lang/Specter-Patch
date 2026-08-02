@@ -1,0 +1,29 @@
+SPECTER AAB FIVE-AIRCRAFT FINAL FULL — VERIFY REPORT
+Generated: 2026-08-02 21:07:30 UTC
+Result: PASS (31/31 checks)
+
+ARCHIVES
+--------
+_SPEC_DATA_ONE.big  size=384617845 entries=2891
+  SHA256=3ce331bcb7762e7bcc6dbb036f075dc5887a88c9905ed7351b8d1802456f08d5
+_SPEC_ART_ONE.big   size=446216323 entries=2689
+  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+ADVANCED AIR BASE
+-----------------
+Object America_AdvancedAirBase
+  Scale = 1.60
+  Pads  = 16 (NumRows=2 NumCols=8 HasRunways=Yes)
+  CommandSet = America_AdvancedAirBaseCommandSet
+
+AAB BUTTON -> OBJECT
+--------------------
+  1 Command_ConstructPatch_America_B2    -> Patch_America_B2
+  2 Command_ConstructPatch_America_B21   -> Patch_America_B21
+  3 Command_ConstructPatch_America_B52   -> Patch_America_B52
+  4 Command_ConstructPatch_America_E3    -> Patch_America_E3
+  5 Command_ConstructPatch_America_AN225 -> Patch_America_AN225
+
+No Patch_America_B1 / stock AmericaJet* on AAB CommandSet.
+Required DATA INI/Object/CommandSet paths present.
+Required ART W3D/TGA meshes present.

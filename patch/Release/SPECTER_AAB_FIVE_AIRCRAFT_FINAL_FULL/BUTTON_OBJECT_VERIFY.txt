@@ -1,0 +1,8 @@
+PASS
+America_AdvancedAirBaseCommandSet:
+  1 -> Patch_America_B2
+  2 -> Patch_America_B21
+  3 -> Patch_America_B52
+  4 -> Patch_America_E3
+  5 -> Patch_America_AN225
+No B-1 / AmericaJet* constructs.

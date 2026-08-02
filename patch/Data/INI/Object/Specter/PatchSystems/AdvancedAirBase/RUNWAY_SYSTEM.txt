@@ -21,3 +21,7 @@ Heavy aircraft landing compatibility (see HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt
   Heavy helicopters (CH-47):                        Scale 0.82, Geom ~22x10
 
 Do not edit Specter archives — this is patch overlay only.
+
+AAB production roster (five-aircraft full release):
+  B-2, B-21, B-52, E-3 AWACS, AN-225 only.
+  All other aircraft removed from AdvancedAirBaseCommandSets.

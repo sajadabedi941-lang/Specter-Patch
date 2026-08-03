@@ -1,0 +1,16 @@
+SPECTER_B2_WORKING_TEST - chain audit
+=====================================
+CommandButton Command_ConstructTEODAmericaJetB2
+  -> Object = AmericaJetB2
+CommandSet AmericaAirfieldCommandSet
+  -> slot 5 = Command_ConstructTEODAmericaJetB2
+Object AmericaJetB2
+  -> Draw W3DModelDraw Model = AVB3bmbr / AVB3bmbr_D / AVB3bmbr_D1
+  -> Scale = 0.55
+  -> Weapon PRIMARY USA_B2_Spirit_BunkerBuster (AutoReloadsClip = RETURN_TO_BASE)
+  -> JetAIUpdate (takeoff / ReturnToBaseIdleTime) [Specter B-52 aircraft AI]
+  -> Locomotor D30-F6_JetLocomotor + BasicJetTaxiLocomotor
+  -> Prerequisites empty (no Science / Upgrade / Strategy Center)
+  -> Not B-1R mesh, no TEOD modules, no Advanced Air Base
+ART
+  -> Art\W3D\AVB3bmbr.W3D (+ _D / _D1) and textures present

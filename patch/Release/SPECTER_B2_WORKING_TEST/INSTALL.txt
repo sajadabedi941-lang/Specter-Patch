@@ -1,0 +1,14 @@
+INSTALL - SPECTER_B2_WORKING_TEST
+================================
+1) Extract ZIP
+2) Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into Specter game root
+   (replace existing SPEC ONE bigs)
+3) Launch Specter
+4) Build USA Airfield
+5) Slot 5 = B-2 Spirit (AmericaJetB2)
+6) Expected: takeoff, bomb run, return to base, no crash
+
+Notes:
+- Behavior cloned from AmericaJetB52H (Specter)
+- Visual model AVB3bmbr only
+- No Advanced Air Base, no TEOD behavior modules

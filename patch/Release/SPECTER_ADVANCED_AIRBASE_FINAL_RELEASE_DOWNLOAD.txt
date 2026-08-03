@@ -1,20 +1,20 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — USA Dozer CommandSet fix
-=================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — scale + aircraft unlock
+================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-dozer-fix-202608031233/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-scale-unlock-202608031255/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-fe93d994337ad9348f10f127cf6928420b3cb2bdf5f41e390f3ab1685889a3b3
+571207e24f3313b00f11d96bc719732bb3e63edd87ffb77029f67e7ea1b2dbf2
 
 Contained BIG SHA256:
-27033732f5aa1ffbc11b32ab133a46fa8d632e6973faf89d767e011f22ead812  _SPEC_DATA_ONE.big
+ca67dda26299c8fc471e7d5e7492bfd3f2303d5bb26aa7cb74db2da321edb9c3  _SPEC_DATA_ONE.big
 b631dc941d3683317a2c2357ff4b8e07ad8ebb72aba04d80b28953ac13056029  _SPEC_ART_ONE.big
 
-Dozer fix
-- Empty USA build palette caused by AmericaDozerCommandSet_PatchAAB
-- Restored AmericaDozerCommandSet (original Specter USA buildings)
-- Strategy Center slots 2 and 15 only -> Advanced Air Base
-- No Russia / 9M317 / aircraft mapping / BIG architecture changes
+Fixes
+- America_AdvancedAirBase Scale = 0.33 (was oversized 2.00)
+- AAB CommandSet aircraft unlocked: B-52, B-2, B-21, F-117, E-3
+- Removed F-117 SCIENCE_StealthFighter lock for AAB production
+- Dozer CommandSet / Russia / 9M317 / BIG architecture untouched
 
 Install: see SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE_INSTALL.txt

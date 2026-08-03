@@ -1,6 +1,2 @@
-SPECTER ADVANCED AIRBASE FINAL (loose Data — USA Dozer CommandSet fix)
-======================================================================
+SPECTER ADVANCED AIRBASE FINAL (loose) — scale 0.33 + AAB aircraft unlock
 Prefer the SPEC BIG release ZIP.
-
-USA Dozer uses AmericaDozerCommandSet again (full Specter palette).
-Only Strategy Center slots -> Advanced Air Base.

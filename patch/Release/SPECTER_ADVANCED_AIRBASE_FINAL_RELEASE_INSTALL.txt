@@ -1,5 +1,5 @@
-SPECTER ADVANCED AIRBASE FINAL RELEASE (USA Dozer CommandSet fix)
-=================================================================
+SPECTER ADVANCED AIRBASE FINAL RELEASE (scale + aircraft unlock)
+================================================================
 
 Contents (replace in game/Specter folder):
   _SPEC_DATA_ONE.big
@@ -7,23 +7,16 @@ Contents (replace in game/Specter folder):
 
 Install
 1. Close the game.
-2. Go to your Specter / Generals game folder.
-3. Backup/delete old _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big.
-4. Copy BOTH new BIG files from this zip into that folder.
-5. Do not unpack the .big files.
-6. Remove temporary ZZZZZZ_* addon BIGs if present.
-7. Start the game.
+2. Backup/delete old _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big.
+3. Copy BOTH new BIG files from this zip into that folder.
+4. Do not unpack the .big files.
+5. Start the game.
 
-USA Dozer
-- CommandSet = AmericaDozerCommandSet (stock Specter palette restored)
-- Slots 2 and 15 only: Advanced Air Base (was Strategy Center)
-- Power Plant, Barracks, Supply Center, War Factory, Command Center, Airfield, etc. restored
+Fixes
+- Advanced Air Base Scale = 0.33
+- Aircraft buildable from AAB: B-52, B-2, B-21, F-117, E-3
 
-Still included
-- America_AdvancedAirBase Scale = 2.00
-- Aircraft: B-52, B-2, B-21, F-117, E-3
-
-NOT touched
+Not touched
+- USA Dozer CommandSet
 - Russia / 9M317
-- Aircraft mapping source
 - BIG architecture

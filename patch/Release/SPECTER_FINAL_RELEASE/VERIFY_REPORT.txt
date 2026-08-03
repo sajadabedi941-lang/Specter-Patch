@@ -1,14 +1,20 @@
-SPECTER FINAL RELEASE — VERIFY REPORT
+SPECTER FINAL RELEASE - COMMANDSET DOZER SYNTAX FIX VERIFY REPORT
 Result: PASS
 
-_SPEC_DATA_ONE.big  size=384617838
-  SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
-_SPEC_ART_ONE.big   size=446216323
-  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+_SPEC_DATA_ONE.big SHA256=2fcc582e767001ac3e44e319a4f95f781dd112ebd7f612e6d216f1ea2be87f5c
+_SPEC_ART_ONE.big  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP SHA256=ab75510c1346b9865014f223f3498487c7cdcad972926b0c6fd4028cbbe29d00
 
-Object 9M317_MissileObject
-  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-  PRELOAD = NO
-  Locomotor = SET_NORMAL 9M317MissileLocomotor
+CommandSet.ini:
+  Entry=Data\INI\CommandSet.ini
+  SHA256=80634329b63f25ac8180c4bd49f55d8b3a6899d9dc3c3cdeecf8a308e08a0bc0
+  AmericaDozerCommandSet definitions=1
+  CommandSet blocks checked=738
+  CR bytes=0
 
-main merge: cursor/russia-9m317-preload-fix-66a9 -> main (d752e5fd)
+PASS: AmericaDozerCommandSet patched in-place, LF-only, no duplicate.
+PASS: AmericaVehicleDozer uses AmericaDozerCommandSet.
+PASS: America Command Center CommandSet untouched.
+PASS: AAB six-aircraft, early unlock, approx 2x size.
+PASS: 9M317_MissileObject stock/no PRELOAD.
+PASS: unzip -t /opt/cursor/artifacts/SPECTER_FINAL_RELEASE.zip.

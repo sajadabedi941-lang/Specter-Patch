@@ -1,0 +1,28 @@
+{
+  "data_sha256": "2fcc582e767001ac3e44e319a4f95f781dd112ebd7f612e6d216f1ea2be87f5c",
+  "art_sha256": "bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73",
+  "commandset_entry": "Data\\INI\\CommandSet.ini",
+  "commandset_sha256": "80634329b63f25ac8180c4bd49f55d8b3a6899d9dc3c3cdeecf8a308e08a0bc0",
+  "america_dozer_definitions": 1,
+  "commandset_blocks_checked": 738,
+  "commandset_cr_bytes": 0,
+  "america_aab_aircraft_slots": [
+    "Command_ConstructPatch_America_B2",
+    "Command_ConstructPatch_America_B21",
+    "Command_ConstructPatch_America_B52",
+    "Command_ConstructPatch_America_E3",
+    "Command_ConstructPatch_America_AN225",
+    "Command_ConstructPatch_America_B1"
+  ],
+  "checks": [
+    "AmericaDozerCommandSet definitions = 1",
+    "CommandSet.ini LF-only (CR bytes = 0)",
+    "AmericaDozerCommandSet slot 15 = Command_ConstructAmerica_AdvancedAirBase",
+    "America Command Center CommandSet unchanged and has no AAB entry",
+    "AmericaVehicleDozer CommandSet = AmericaDozerCommandSet",
+    "America_AdvancedAirBaseCommandSet has six aircraft slots including B-1",
+    "America_AdvancedAirBase early unlock uses AmericaSupplyCenter only",
+    "America_AdvancedAirBase retains Scale 1.60 and 180.0/118.0 geometry",
+    "9M317_MissileObject has no PRELOAD and stock 9M317 locomotor"
+  ]
+}

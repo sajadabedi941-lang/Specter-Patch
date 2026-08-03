@@ -1,37 +1,22 @@
-SPECTER FINAL RELEASE
-=====================
-AAB Five-Aircraft + Russia 9M317_MissileObject fix
-Merged to main: d752e5fd
+SPECTER FINAL RELEASE - CommandSet Dozer Syntax Fix
+====================================================
 
-CONTENTS
---------
-  _SPEC_DATA_ONE.big
-  _SPEC_ART_ONE.big
-  Install_SpecterPatch.bat
-  README_INSTALL.txt
-  VERIFY_REPORT.txt
-  HASHES.txt
+This release fixes the Specter GameRoot BIG crash at:
+  Data\INI\CommandSet.ini parsing error / CommandSet AmericaDozerCommandSet
 
-ADVANCED AIR BASE
------------------
-  ONLY: B-2, B-21, B-52, E-3 AWACS, AN-225
+Install by running Install_SpecterPatch.bat or copying _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into GameRoot.
 
-RUSSIA FIX
-----------
-  Object 9M317_MissileObject
-    KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-    (NO PRELOAD)
-    Locomotor = SET_NORMAL 9M317MissileLocomotor
+WARNING: Do not leave a loose Data\INI\CommandSet.ini override in GameRoot or a higher-priority patch folder.
+Loose overrides can reintroduce stale commandsets or mixed line endings.
 
-INSTALL
--------
-1. Close Specter / Generals completely.
-2. Unzip SPECTER_FINAL_RELEASE.zip
-3. Run Install_SpecterPatch.bat and enter GameRoot
-   OR copy both .big files into GameRoot (replace existing).
-4. Launch Specter.
+Fixes verified:
+- Existing stock AmericaDozerCommandSet patched in-place; no duplicate created.
+- CommandSet.ini is LF-only.
+- AmericaVehicleDozer uses AmericaDozerCommandSet.
+- America Command Center is untouched.
+- AAB six-aircraft, early unlock, approx 2x size retained.
+- Russia 9M317_MissileObject remains no PRELOAD.
 
-CHECKSUMS
----------
-  DATA SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
-  ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+DATA SHA256=2fcc582e767001ac3e44e319a4f95f781dd112ebd7f612e6d216f1ea2be87f5c
+ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP  SHA256=ab75510c1346b9865014f223f3498487c7cdcad972926b0c6fd4028cbbe29d00

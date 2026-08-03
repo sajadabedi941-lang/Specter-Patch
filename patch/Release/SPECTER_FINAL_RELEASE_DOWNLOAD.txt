@@ -1,20 +1,25 @@
 SPECTER_FINAL_RELEASE.zip
 
 CLICKABLE DOWNLOAD:
-  https://filebin.net/V77d6rNDY_zpiDpo/SPECTER_FINAL_RELEASE.zip
+  https://filebin.net/specter-commandset-dozer-syntax-fix-66a9/SPECTER_FINAL_RELEASE.zip
 
 Also:
   /opt/cursor/artifacts/SPECTER_FINAL_RELEASE.zip
 
-Size:   514747833 bytes (490.9 MB)
-SHA256: 82f9797323d3a36b0a2bc9f34e3aabcc077255b98be8fdc5adc2782e7c23b824
+Size:   514693004 bytes (490.8 MB)
+SHA256: ab75510c1346b9865014f223f3498487c7cdcad972926b0c6fd4028cbbe29d00
 
-DATA SHA256: 27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
+DATA SHA256: 2fcc582e767001ac3e44e319a4f95f781dd112ebd7f612e6d216f1ea2be87f5c
 ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
 
-9M317_MissileObject:
-  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-  (NO PRELOAD)
+CommandSet fix:
+  AmericaDozerCommandSet definitions = 1
+  Data\INI\CommandSet.ini CR bytes = 0 (LF-only)
+  AmericaVehicleDozer uses AmericaDozerCommandSet
+  Command Center untouched
 
-main: merged cursor/russia-9m317-preload-fix-66a9 @ d752e5fd
+AAB/Russia retained:
+  AAB six-aircraft roster, early unlock, approx 2x size
+  9M317_MissileObject KindOf has no PRELOAD
+
 Integrity: unzip -t PASS

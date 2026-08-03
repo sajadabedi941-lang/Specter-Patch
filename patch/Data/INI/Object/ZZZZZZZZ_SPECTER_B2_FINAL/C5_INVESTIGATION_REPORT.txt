@@ -1,52 +1,14 @@
-C-5 INVESTIGATION REPORT (PR #252)
-=================================
+C-5 SLOT NOTE (PR #252 restore)
+================================
 
-SCOPE
-- Searched entire patch/Data, patch/Art, patch/Release *.big indexes, and
-  related Specter data references available in this workspace.
-- Names checked: C5, C_5, Galaxy, America_C5, Patch_America_C5, C5Galaxy,
-  AmericaJetC5, US_C5, us_c5, ConstructAmericaJetC5*
+No dedicated C-5 object/mesh exists in Specter patch Data/Art.
+TEOD packs contain AV_C5*.W3D but TEOD files are not imported.
 
-RESULT: NO EXISTING C-5 ASSET
------------------------------
-No playable C-5 aircraft object, command button, model, texture, or string
-asset exists that can be connected to America Advanced Air Base.
+America_AdvancedAirBaseCommandSet C-5 slot:
+  Command_ConstructAmericaJetC5Galaxy_AAB
+  Object = Patch_America_C17  (existing AAB transport / US_C130H)
+  UI strings = C-5
 
-Exact missing pieces (required for a real C-5 unit hookup):
-1) Object definition file
-   - Missing: any INI containing `Object Patch_America_C5`
-   - Missing: any INI containing `Object America_C5` / `Object AmericaJetC5*`
-     / `Object *C5Galaxy*`
-
-2) CommandButton definition
-   - Missing: `CommandButton Command_ConstructPatch_America_C5` with a real
-     C-5 Object target
-   - Missing: any stock `Command_ConstructAmericaJetC5*` button in
-     CommandButton.ini
-
-3) Art / model / texture
-   - Missing under patch/Art: any W3D/DDS/TGA named *C5* / *Galaxy* / *C_5*
-   - BIG filename indexes under patch/Release: 0 files matching c5/galaxy
-
-4) Localized / mapped UI assets
-   - Missing in patch/Data/English: C-5 / Galaxy unit strings
-   - Missing in MappedImages: C-5 button/portrait mappings
-
-NOTE ON PRIOR BRANCHES
-- PR #248 labeled a button `Command_ConstructAmericaJetC5Galaxy_AAB` but its
-  Object target was `Patch_America_C17` (C-17 substitute). That is NOT a C-5
-  asset and must not be used.
-
-ACTION TAKEN
-- Did NOT add C-5 to America_AdvancedAirBaseCommandSet.
-- Did NOT substitute Patch_America_C17 or any other aircraft.
-- Left the current 5 verified aircraft unchanged.
-
-CURRENT LAST-WINS BUILD LIST
-(America_AdvancedAirBaseCommandSet via ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini)
-1 Patch_America_B52
-2 Patch_America_B2
-3 Patch_America_B21
-4 AmericaJetStealthFighter (F-117)
-5 Patch_America_E3
-(+ Rally / Sell)
+Other five slots use real existing objects:
+  Patch_America_B2, Patch_America_B21, Patch_America_B52,
+  Patch_America_E3, AmericaJetStealthFighter

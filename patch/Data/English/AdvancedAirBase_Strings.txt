@@ -4,7 +4,7 @@
 
 OBJECT:Patch_AdvancedAirBase = Advanced Air Base
 CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large strategic air base: long runway, hangars, 16 pads, heavy aircraft support.
+CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Advanced Air Base. Builds B-2, B-21, B-52, AWACS, C-5, F-117 only.
 
 OBJECT:Patch_America_F22 = F-22
 CONTROLBAR:ConstructPatch_America_F22 = F-22
@@ -42,9 +42,11 @@ OBJECT:Patch_America_KC135 = KC-135
 CONTROLBAR:ConstructPatch_America_KC135 = KC-135
 CONTROLBAR:ToolTipConstructPatch_America_KC135 = Produce KC-135 from Advanced Air Base (America).
 
-OBJECT:Patch_America_C17 = C-17
-CONTROLBAR:ConstructPatch_America_C17 = C-17
-CONTROLBAR:ToolTipConstructPatch_America_C17 = Produce C-17 from Advanced Air Base (America).
+OBJECT:Patch_America_C17 = C-5
+CONTROLBAR:ConstructPatch_America_C17 = C-5
+CONTROLBAR:ToolTipConstructPatch_America_C17 = Produce C-5 from Advanced Air Base (America).
+CONTROLBAR:ConstructAmericaJetC5Galaxy = C-5
+CONTROLBAR:ToolTipConstructAmericaJetC5Galaxy = Produce C-5 from Advanced Air Base (America).
 
 OBJECT:Patch_Russia_Su57 = Su-57
 CONTROLBAR:ConstructPatch_Russia_Su57 = Su-57

@@ -1,20 +1,28 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — TEOD airfield model
-===========================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — restored pre-TEOD AAB
+============================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-teod-airfield-202608031337/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-restore-202608031359/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-e3b43ceb4a89b834fa875c98651bcf91e46bfb3d26e2f5be7473371aaf2982bc
+8d2f7424f5c3e49ae62bc0cbebee3ddbf977a4237790d0d4b0da0103e7f00a9f
 
 Contained BIG SHA256:
-eed279e76b1495871ac75523bebcba644ae3a591faf628f782b5a96ce49ec93d  _SPEC_DATA_ONE.big
-f738d02bd0cdfebcc9ddc5f6fd05a87f958898db534dfc92c50ee24df57f5c99  _SPEC_ART_ONE.big
+3c921192695be0698dff7f89b379d761b0d54197f511ac8f616e0dc62def0ef1  _SPEC_DATA_ONE.big
+041a2a2837d94df1d69d82b74e69c44e433a9f9e228043598faad58c6e05d102  _SPEC_ART_ONE.big
 
-Airbase model/art only (from TEOD BIGs)
-- INI scale/geometry: TEOD USA Airfield.ini (Scale 1.1, 140x85x25)
-- W3D: GLA-Airfield* (TEOD airfield mesh; USA INI ABArFrcCmd assets missing)
-- Textures: UVAirfield* from TEOD_Textures
-- Not Specter AdvancedAirBase / not Revolution ABAirF2
+Restored airbase
+- Model: US_AirField @ Scale 1.60 (commit c06a3395 / Specter patch AAB)
+- Portrait: Patch_AdvancedAirBase
+- Removed: TEOD GLA-Airfield / UVAirfield art
+- Not Revolution ABAirF2
 
-Not changed: Dozer, aircraft unlocks, Russia, BIG architecture
+Aircraft CommandSet ONLY
+1 B-2
+2 B-21
+3 B-52
+4 AWACS (E-3)
+5 C-5 (Patch_America_C17 spawn; C-5 UI)
+6 F-117
+
+Placement / dozer build logic unchanged. No Russia overlay.

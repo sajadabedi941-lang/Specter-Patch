@@ -1,28 +1,27 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — USA AAB CommandSet binding fix
-=======================================================================
+SPECTER USA AIRFIELD RESTORE — AdvancedAirBase rollback
+=======================================================
 
-Primary download (full ZIP: DATA + ART):
-https://litter.catbox.moe/hmibmi.zip
+Primary download (full ZIP):
+https://litter.catbox.moe/egjr4s.zip
 
-DATA-only ZIP (ART unchanged; preferred if you already have scale130 ART):
-https://litter.catbox.moe/6suw5n.zip
+DATA-only ZIP:
+https://litter.catbox.moe/o2fahw.zip
 
 ZIP SHA256 (full):
-f0e671a2bd6045a0d58f3f224ce20d209462e03e9be1412b3799d9268a68643a
+9ada033f7af1595281ef5ba7f89fd5313b64819313fa029342e4b53a0b82b744
+
+DATA-only ZIP SHA256:
+5da7c7755ac1558f7e9a94fb6f2d8028b4ab94863bb6de77565fcad890c8252b
 
 Contained BIG SHA256:
-a51aa43b9893f0fb6aa7d7524666b91ccbbe1ed6850998b3de9128cac23aef48  _SPEC_DATA_ONE.big
+e06ce9b3ccd8fafe5190f255b70099b01fa4d00134b52820f1f41936dec4b9b6  _SPEC_DATA_ONE.big
 bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Fix
-- Built Object: America_AdvancedAirBase
-- Object.CommandSet now America_AdvancedAirBaseCommandSet ONLY
-- No longer binds stock AmericaAirfieldCommandSet (Specter/StrategicBombers old menu)
-- Model unchanged: US_AirField Scale 1.30
+Rollback
+- Removed USA AdvancedAirBase replacement
+- Restored Strategy Center dozer/construct targets
+- Restored stock Specter AmericaAirfieldCommandSet
+- Removed AAB CommandSet / ZZZZZ AAB leftovers
+- Aircraft objects untouched; Russia/9M317 untouched
 
-Production menu (only):
-B-2, B-21, B-52, AWACS, C-5, F-117
-
-INI override priority: GATE PASS
-  Object winner: ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
-  CommandSet winner: ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
+Audit: GATE PASS

@@ -1,12 +1,8 @@
 1. Backup SPEC BIGs
-2. Full ZIP: https://litter.catbox.moe/hmibmi.zip
-   OR DATA-only: https://litter.catbox.moe/6suw5n.zip (keep prior ART)
-3. Build USA AdvancedAirBase — production must show ONLY:
-   B-2, B-21, B-52, AWACS, C-5, F-117
-4. Model unchanged (US_AirField Scale 1.30)
+2. Full: https://litter.catbox.moe/egjr4s.zip
+   OR DATA-only: https://litter.catbox.moe/o2fahw.zip
+3. Confirm Strategy Center on dozer (not AdvancedAirBase)
+4. Confirm normal USA Airfield aircraft production
 
-Object.CommandSet = America_AdvancedAirBaseCommandSet
-(not AmericaAirfieldCommandSet)
-
-DATA SHA256: a51aa43b9893f0fb6aa7d7524666b91ccbbe1ed6850998b3de9128cac23aef48
+DATA SHA256: e06ce9b3ccd8fafe5190f255b70099b01fa4d00134b52820f1f41936dec4b9b6
 ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

@@ -1,6 +1,5 @@
 Install
 =======
-1. Backup your current Data\_SPEC_DATA_ONE.big and Data\_SPEC_ART_ONE.big
-2. Extract SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
-3. Copy both .big files into your Specter Game Data folder (overwrite)
-4. Launch and build Advanced Air Base from USA dozer (former Strategy Center slots)
+1. Backup Data\_SPEC_DATA_ONE.big and Data\_SPEC_ART_ONE.big
+2. Extract ZIP and overwrite both BIG files
+3. Build Advanced Air Base from USA dozer; production bar is the six-aircraft list only

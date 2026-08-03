@@ -1,28 +1,19 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — restored pre-TEOD AAB
-============================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — AFE parse-fixed base, AAB CommandSet trim
+================================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-restore-202608031359/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-cmdset-202608031418/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-8d2f7424f5c3e49ae62bc0cbebee3ddbf977a4237790d0d4b0da0103e7f00a9f
+c59984ff9d5480278ada75c69059608ba645ec88e761790f55f5dda87b54ac6a
 
 Contained BIG SHA256:
-3c921192695be0698dff7f89b379d761b0d54197f511ac8f616e0dc62def0ef1  _SPEC_DATA_ONE.big
-041a2a2837d94df1d69d82b74e69c44e433a9f9e228043598faad58c6e05d102  _SPEC_ART_ONE.big
+d3a07fa3d01f60f5587a6ef2a20d4b1d406b3bf73a3bde73d221d3d9e4c9f1f0  _SPEC_DATA_ONE.big
+bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Restored airbase
-- Model: US_AirField @ Scale 1.60 (commit c06a3395 / Specter patch AAB)
-- Portrait: Patch_AdvancedAirBase
-- Removed: TEOD GLA-Airfield / UVAirfield art
-- Not Revolution ABAirF2
-
-Aircraft CommandSet ONLY
-1 B-2
-2 B-21
-3 B-52
-4 AWACS (E-3)
-5 C-5 (Patch_America_C17 spawn; C-5 UI)
-6 F-117
-
-Placement / dozer build logic unchanged. No Russia overlay.
+Base: SPECTER_USA_AIRFORCE_PARSE_FIX
+AAB model: NOT replaced (US_AirField Scale 1.60)
+USA AdvancedAirBaseCommandSet ONLY: B-2, B-21, B-52, AWACS, C-5, F-117
+Removed: E-2C, EA-18G, fighter leftovers
+Dozer / other factions / W3D / textures: untouched
+INI parse audit: PASS

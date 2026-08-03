@@ -1,6 +1,4 @@
-Current USA release: SPECTER_USA_B2_AIRFIELD_TEST (B-2 on stock Airfield)
-=========================================================================
-Full: https://litter.catbox.moe/8fdokw.zip
-DATA-only: https://litter.catbox.moe/f79kp3.zip
-
-Prior airfield restore (no B-2 unlock): see git history / prior litterbox links.
+Current: SPECTER_USA_B2_AIRFIELD_TEST (real B-2 on stock Airfield)
+https://litter.catbox.moe/zb4xmb.zip
+DATA 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
+ART 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d

@@ -1,10 +1,8 @@
-SPECTER_USA_B2_AIRFIELD_TEST
-=============================
 1. Backup SPEC BIGs
-2. Full: https://litter.catbox.moe/8fdokw.zip
-   OR DATA-only: https://litter.catbox.moe/f79kp3.zip (keep current ART if SHA matches)
-3. Build normal USA Airfield — B-2 Spirit appears immediately (slot 5)
-4. No Strategy Center / Science / Upgrade required
+2. Replace BOTH _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from:
+   https://litter.catbox.moe/zb4xmb.zip
+3. Build normal USA Airfield — slot 5 B-2 Spirit active immediately
+4. Produce B-2 (AVB3 flying-wing mesh, Scale 0.55)
 
-DATA SHA256: f661dcc3349cde049460bbcb9c5f920fbc1b2f1521ef16bfef52cb8826d37764
-ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+DATA SHA256: 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
+ART SHA256: 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d

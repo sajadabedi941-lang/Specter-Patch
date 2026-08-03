@@ -1,13 +1,17 @@
-SPECTER_USA_B2_AIRFIELD_TEST
-============================
+SPECTER_USA_B2_AIRFIELD_TEST — real B-2 Spirit (AVB3bmbr) on stock USA Airfield
+================================================================================
 
-Full ZIP:
-https://litter.catbox.moe/8fdokw.zip
+Download (DATA + ART required — includes AVB3bmbr W3D):
+https://litter.catbox.moe/zb4xmb.zip
 
-DATA-only ZIP:
-https://litter.catbox.moe/f79kp3.zip
+ZIP SHA256: c70ecda634d03cbf6bd753860fe12f90a0366db20b001ac5f9e5aedfdb49b455
+DATA SHA256: 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
+ART SHA256: 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d
 
-ZIP SHA256 (full): 51b3824385ff23aa064c54c60cfb2176b9b9984c02176df2fe5a71194dc4698b
-DATA-only ZIP SHA256: a8184e2434ce4af995f40f04cc90eb769fcbb7008db8d0cd80a2572ac58eca8f
-DATA SHA256: f661dcc3349cde049460bbcb9c5f920fbc1b2f1521ef16bfef52cb8826d37764
-ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15
+Chain:
+Command_ConstructAmericaAirfieldB2Spirit
+  -> Patch_America_B2
+  -> AVB3bmbr (Scale 0.55)
+  -> AmericaAirfieldCommandSet slot 5
+
+Not B-1/B-1R. Not AmericaJetB2Spirit (US_B1R).

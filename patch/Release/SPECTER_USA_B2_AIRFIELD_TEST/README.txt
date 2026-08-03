@@ -1,8 +1,6 @@
-SPECTER_USA_B2_AIRFIELD_TEST
+SPECTER_USA_B2_AIRFIELD_TEST — real B-2 Spirit on stock USA Airfield
 
-Adds unlocked B-2 Spirit to stock USA Airfield production only.
-- Uses existing AmericaJetB2Spirit object (no duplicate)
-- Clears Prerequisites (no Strategy Center / SCIENCE_Rank4)
-- Does not create AdvancedAirBase
-- Does not replace AmericaAirfieldCommandSet
-- Does not change Airfield model or dozer logic
+Dedicated button Command_ConstructAmericaAirfieldB2Spirit
+Object Patch_America_B2 with AVB3bmbr W3D (NOT US_B1R / B-1)
+Scale 0.55 for normal airfield. Prerequisites cleared.
+No AdvancedAirBase. Other airfield aircraft unchanged.

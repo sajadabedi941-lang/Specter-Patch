@@ -1,20 +1,22 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — scale + aircraft unlock
-================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — patch airbase model restored
+====================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-scale-unlock-202608031255/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-patch-model-202608031318/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-571207e24f3313b00f11d96bc719732bb3e63edd87ffb77029f67e7ea1b2dbf2
+25c442222df60ca5d8b9689f36a1ed2edec2ae619d542f5ceb29021c3a5c8d5d
 
 Contained BIG SHA256:
-ca67dda26299c8fc471e7d5e7492bfd3f2303d5bb26aa7cb74db2da321edb9c3  _SPEC_DATA_ONE.big
+230bfbee1631dead5a7a46ee5f49ba21b3dd997f120ee2e8db320ae09a3f65b5  _SPEC_DATA_ONE.big
 b631dc941d3683317a2c2357ff4b8e07ad8ebb72aba04d80b28953ac13056029  _SPEC_ART_ONE.big
 
-Fixes
-- America_AdvancedAirBase Scale = 0.33 (was oversized 2.00)
-- AAB CommandSet aircraft unlocked: B-52, B-2, B-21, F-117, E-3
-- Removed F-117 SCIENCE_StealthFighter lock for AAB production
-- Dozer CommandSet / Russia / 9M317 / BIG architecture untouched
+Airbase only
+- Replaced oversized Revolution ABAirF2 with Specter patch Advanced Air Base
+- Object: America_AdvancedAirBase from AdvancedAirBase_AllFactions (patch)
+- Model: US_AirField
+- Scale: 1.60 (patch real size)
+- Texture/MappedImage: Patch_AdvancedAirBase
+- W3D: US_AirField (already in SPEC ART)
 
-Install: see SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE_INSTALL.txt
+Not changed: Dozer, aircraft unlocks, Russia, BIG architecture

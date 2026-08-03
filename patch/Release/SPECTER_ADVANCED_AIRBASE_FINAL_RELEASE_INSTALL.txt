@@ -1,22 +1,9 @@
-SPECTER ADVANCED AIRBASE FINAL RELEASE (scale + aircraft unlock)
-================================================================
+SPECTER ADVANCED AIRBASE FINAL RELEASE (patch airbase model)
+============================================================
 
-Contents (replace in game/Specter folder):
+Replace in game folder:
   _SPEC_DATA_ONE.big
   _SPEC_ART_ONE.big
 
-Install
-1. Close the game.
-2. Backup/delete old _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big.
-3. Copy BOTH new BIG files from this zip into that folder.
-4. Do not unpack the .big files.
-5. Start the game.
-
-Fixes
-- Advanced Air Base Scale = 0.33
-- Aircraft buildable from AAB: B-52, B-2, B-21, F-117, E-3
-
-Not touched
-- USA Dozer CommandSet
-- Russia / 9M317
-- BIG architecture
+Airbase restored from Specter patch:
+  US_AirField @ Scale 1.60 + Patch_AdvancedAirBase art

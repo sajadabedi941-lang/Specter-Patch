@@ -1,21 +1,20 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — download package (USA-only, no Russia/9M317)
-====================================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — USA Dozer CommandSet fix
+=================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-usa-only-202608031220/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-dozer-fix-202608031233/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-8abe8714e69d6b37de4c3819d7e2c4aae3d2c020cc776530d76bfc260da78621
+fe93d994337ad9348f10f127cf6928420b3cb2bdf5f41e390f3ab1685889a3b3
 
 Contained BIG SHA256:
-e860b749eaa0735dadda0b1d68cc639ce793728abc78614e1297c8faa551d3ec  _SPEC_DATA_ONE.big
+27033732f5aa1ffbc11b32ab133a46fa8d632e6973faf89d767e011f22ead812  _SPEC_DATA_ONE.big
 b631dc941d3683317a2c2357ff4b8e07ad8ebb72aba04d80b28953ac13056029  _SPEC_ART_ONE.big
 
-Fix vs previous packages
-- Removed Russia_WeaponObjects.ini / 9M317_MissileObject overlay (load crash)
-- Removed multi-faction Russia AAB / Russia aircraft overlays from SPEC merge
-- Removed accidental Turkey art leftovers from ART merge
-- Original Specter Russia 9M317 left to base SPEC / game data (not overwritten)
-- Advanced Air Base + USA aircraft overlay only (allow-list merge into existing base BIGs; no full BIG rebuild)
+Dozer fix
+- Empty USA build palette caused by AmericaDozerCommandSet_PatchAAB
+- Restored AmericaDozerCommandSet (original Specter USA buildings)
+- Strategy Center slots 2 and 15 only -> Advanced Air Base
+- No Russia / 9M317 / aircraft mapping / BIG architecture changes
 
 Install: see SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE_INSTALL.txt

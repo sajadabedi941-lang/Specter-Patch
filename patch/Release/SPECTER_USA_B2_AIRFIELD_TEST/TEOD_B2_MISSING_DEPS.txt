@@ -1,39 +1,38 @@
-TEOD B-2 Spirit port - dependency status
-========================================
+TEOD B-2 Spirit port - dependency status (complete)
+=====================================================
 
-PORTED from TEOD (present in this package):
-- Object AmericaJetB2 (TEOD B2.ini) — model AVB3bmbr
-- Object B2SlowBDObject, B2DeadHull
-- Object RaptorStealthRadar (StealthBombersRadarWeapon OCL target)
-- Object B2SmallBomb, B2Bomb (projectiles)
-- Weapon B2SmallBombWeapon, B2NukeBombWeapon, StealthBombersRadarWeapon, FallingJetWeapon
-- Armor USAB2Armor, USAB2AdvancedArmor
-- FXList FX_B2BombDrop, FX_B2DeathInitial
-- Locomotor B2Locomotor, B2UPLocomotor
-- OCL_B2DeathFinalBlowUp, OCL_B2SlowBD, OCL_RaptorStealthDrone
-- MappedImage B2-ic_L (atlas US-Icons01.dds)
-- W3D: AVB3bmbr, AVB3bmbr_D, AVB3bmbr_D1, AVB3bmbr_D2, JetPickBox, b2bomb
-- Textures: avb3bmbr.dds, avb3bmbr_D.dds, avb3bmbr_E.dds, US-Icons01.dds
+PORTED / DEFINED for AmericaJetB2 chain:
+- Object AmericaJetB2 (AVB3bmbr), B2SlowBDObject, B2DeadHull, RaptorStealthRadar
+- Object B2SmallBomb, B2BombCluster, B2Bomb
+- Object B2DeathWatercheckG, B2DeathWatercheckW
+- Object GenericBigAirplaneDeathWatercheckW (TEOD OCL name; undefined in TEOD_INI — aliased)
+- Weapons: B2SmallBombWeapon, B2ClusterWeapon, B2ClusterForce, StealthBombersRadarWeapon,
+  FallingJetWeapon, BIGPLANEFINALDEATHWATERFX, B2NukeBombWeapon
+- Armor: USAB2Armor, USAB2AdvancedArmor, ProjectileWatercheckArmor
+- FX: FX_B2BombDrop, FX_B2DeathInitial, FX_B2ClusterRelease, FX_BigPlaneHitGround,
+  FX_JetWaterExplosionBigBig, FX_BigMissileCarrierDeath
+- OCL: OCL_B2DeathFinalBlowUp, OCL_B2SlowBD, OCL_B2DeathWatercheck, OCL_B2BombClusters,
+  OCL_B2ClusterForce, OCL_RaptorStealthDrone
+- Locomotor B2Locomotor / B2UPLocomotor
+- W3D/Textures AVB3bmbr* + b2bomb + JetPickBox + US-Icons01
 
-SPECTER SUBSTITUTIONS (required for fly/attack/return on stock Specter):
-- CommandSet AmericaJetAurora2CommandSet -> GenericTacticalBomberCommandSet
-- Voice AudioEvents B2Select/Move/Attack/Create/Guard/LowFuel
-  TEOD defines AudioEvent names but NO sound files in !TEOD_Sounds.big / !TEOD_Voices.big.
-  Remapped to AuroraBomberVoice*.
-- DamageFX AAHitscanDamageFX -> None (not in Specter)
-- JetSlowDeathBehavior: TEOD used nonstandard "FX/OCL = INITIAL" syntax;
-  adapted to Specter ZH fields; hull OCL remains OCL_B2DeathFinalBlowUp (TEOD)
-- FXOnGroundDeath FX_BigMissileCarrierDeath -> FX_JetOnGroundDeath (Specter)
-- B2Falling sound omitted from FX_B2DeathInitial (asset absent)
+SPECTER SOUND/FX MAPPINGS (TEOD asset absent):
+- B2Select/Move/Attack/Create/Guard/LowFuel -> AuroraBomberVoice*
+- B2Falling -> CargoJetFlambe
+- FX_B2ClusterRelease particles -> Aurora bomb detonate Specter set
+- FX_JetWaterExplosionBigBig -> JetBigExplosion + CargoJetFlambe (no Specter water FX)
 
-NOT PORTED (optional TEOD systems; unit works without them):
-- Upgrade_AmericaNukeMissile (would unlock B2NukeBombWeapon)
-- Upgrade_StealthFlightStabilityControlers (would unlock B2UPLocomotor)
-- SpecialAbilityVehicleRepair + OCL_RaptorLPDDrone (repair drone special)
-- OCL_B2DeathWatercheck + Object GenericBigAirplaneDeathWatercheckW
-  + Object B2DeathWatercheckG (TEOD water-death chain)
+NOT REQUIRED FOR FLY/ATTACK/RETURN (intentionally omitted):
+- Upgrade_AmericaNukeMissile / Upgrade_StealthFlightStabilityControlers
+- SpecialAbilityVehicleRepair + OCL_RaptorLPDDrone + RaptorLPDDrone
+- OCL_B2SmallBombClusterWatercheckObject + SmallExplosionWatercheckW + S8WatercheckG
+  (cluster damage uses FireWeaponWhenDead B2ClusterWeapon)
+
+PREREQUISITES:
+- AmericaJetB2 Prerequisites empty (no Science / Upgrade / Strategy Center)
+- Command_ConstructTEODAmericaJetB2 has no Options/Science
 
 NOT TOUCHED:
 - USA Airfield Object / model / dozer
+- CommandSet slot numbers (slot 5 remains B-2)
 - AdvancedAirBase
-- Other aircraft

@@ -1,19 +1,13 @@
-SPECTER USA Stock Airfield + real TEOD B-2 Spirit
-=================================================
+SPECTER USA Stock Airfield + complete TEOD B-2 Spirit
+=====================================================
 
-https://litter.catbox.moe/ih21wi.zip
+https://litter.catbox.moe/2j0nlq.zip
 
-Contents:
-- _SPEC_DATA_ONE.big
-- _SPEC_ART_ONE.big
-- INSTALL.txt
-- HASHES.txt
-- TEOD_B2_MISSING_DEPS.txt
-
-Production chain:
-AmericaAirfieldCommandSet slot 5
+Chain (unchanged slot 5):
+AmericaAirfieldCommandSet[5]
   -> Command_ConstructTEODAmericaJetB2
-  -> AmericaJetB2 (TEOD)
+  -> AmericaJetB2
   -> AVB3bmbr
 
-Not a fake B-1 / US_B1R reskin. Airfield Object untouched. No AdvancedAirBase.
+Prerequisites: none (no Science / Upgrade / Strategy Center)
+Airfield Object untouched. Not B-1R / US_B1R.

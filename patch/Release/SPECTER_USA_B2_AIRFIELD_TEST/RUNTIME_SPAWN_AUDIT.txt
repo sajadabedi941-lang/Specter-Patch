@@ -1,21 +1,16 @@
-TEOD B-2 SPIRIT PORT AUDIT
+TEOD B-2 COMPLETE PORT AUDIT
 ======================================================================
-PASS  CommandSet winner TEOD production  Data\INI\ZZZZ_USA_Airfield_TEOD_B2_Production.ini
-PASS  Slot5 TEOD B-2 button  Command_ConstructTEODAmericaJetB2
-PASS  Button -> AmericaJetB2
-PASS  Object AmericaJetB2 TEOD port (AVB3bmbr)
+PASS  Slot5 Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 -> AVB3bmbr
+PASS  Prerequisites empty; no Science on object
+PASS  Button no Options/Science keys
+PASS  JetAIUpdate NeedsRunway + B2Locomotor + RETURN_TO_BASE weapon
+PASS  B2BombCluster + B2ClusterWeapon damage chain
+PASS  DeathWaterCheck: OCL_B2DeathWatercheck + B2DeathWatercheckG/W + Generic alias
+PASS  FX_B2BombDrop / FX_B2DeathInitial / FX_B2ClusterRelease defined
+PASS  ART AVB3bmbr W3D/textures + b2bomb
 PASS  No US_B1R model assignment
-PASS  Prerequisites empty
-PASS  KindOf AIRCRAFT
-PASS  JetAIUpdate + NeedsRunway
-PASS  Locomotor B2Locomotor
-PASS  Weapon B2SmallBombWeapon
-PASS  Armor USAB2Armor / USAB2AdvancedArmor defs
-PASS  FX_B2BombDrop / FX_B2DeathInitial defs
-PASS  W3D AVB3bmbr/_D/_D1/_D2 + textures
-PASS  No AdvancedAirBase Object
 
 GATE PASS
-DATA f06d77dcde7d0c54b253be903e1ac2f37dc757c47e2b618bcd4886ce6fc8116c
+DATA c06c48928d551f174c6938ce13b8e1254396f9bd6ca8db3cc004f35c96d95168
 ART 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
-CHAIN: AirfieldCS[Data\INI\ZZZZ_USA_Airfield_TEOD_B2_Production.ini].5=Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 -> AVB3bmbr
+URL https://litter.catbox.moe/2j0nlq.zip

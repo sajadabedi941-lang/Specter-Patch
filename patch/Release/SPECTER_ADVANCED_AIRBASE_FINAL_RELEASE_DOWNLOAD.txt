@@ -1,0 +1,18 @@
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — download package
+========================================================
+
+Download ZIP (contains _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big):
+https://filebin.net/specter-aab-final-202608031155/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+
+ZIP SHA256:
+3eb90a66f059db4f1befc383cabd76d0494be1d7615e9bc9862e9526e066fc99
+
+Contained BIG SHA256:
+b0ef0214c3a6829655e2ef08cca0bb052480675892e447f050c9086c8cc1ab48  _SPEC_DATA_ONE.big
+cd7f9c6912839a6f0bb0ea3c8dedaf55cf8ddb7bbe09795044a6dc34759e2fa6  _SPEC_ART_ONE.big
+
+Local artifact copy on agent:
+/opt/cursor/artifacts/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+
+Install: extract the two .big files into the Specter game folder and replace the old SPEC BIGs.
+See SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE_INSTALL.txt

@@ -1,0 +1,24 @@
+SPECTER ADVANCED AIRBASE FINAL RELEASE
+======================================
+
+Contents (replace in game/Specter folder):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Install
+1. Close the game.
+2. Go to your Specter / Generals game folder (where the existing SPEC BIGs are).
+3. Backup or delete the old:
+     _SPEC_DATA_ONE.big
+     _SPEC_ART_ONE.big
+4. Copy BOTH new BIG files from this zip into that folder.
+5. Do not unpack the .big files.
+6. Remove temporary ZZZZZZ_* B-2 addon BIGs if present (content is inside these SPECs).
+7. Start the game.
+
+Included gameplay (PR #252)
+- USA dozer Strategy Center slots -> Advanced Air Base
+- America_AdvancedAirBase Scale = 2.00
+- Advanced Air Base aircraft: B-52, B-2, B-21, F-117, E-3 AWACS
+- No C-5
+- Command Center / Russia untouched

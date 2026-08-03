@@ -1,5 +1,5 @@
-SPECTER ADVANCED AIRBASE FINAL RELEASE (USA-only — no Russia/9M317 overlay)
-===========================================================================
+SPECTER ADVANCED AIRBASE FINAL RELEASE (USA Dozer CommandSet fix)
+=================================================================
 
 Contents (replace in game/Specter folder):
   _SPEC_DATA_ONE.big
@@ -14,13 +14,16 @@ Install
 6. Remove temporary ZZZZZZ_* addon BIGs if present.
 7. Start the game.
 
-Included
-- USA Strategy Center dozer slots -> Advanced Air Base
+USA Dozer
+- CommandSet = AmericaDozerCommandSet (stock Specter palette restored)
+- Slots 2 and 15 only: Advanced Air Base (was Strategy Center)
+- Power Plant, Barracks, Supply Center, War Factory, Command Center, Airfield, etc. restored
+
+Still included
 - America_AdvancedAirBase Scale = 2.00
 - Aircraft: B-52, B-2, B-21, F-117, E-3
-- No C-5
 
-NOT included (original Specter Russia restored / untouched)
-- Russia_WeaponObjects.ini / 9M317_MissileObject overlay
-- Russia Advanced Air Base / Russia aircraft Object overlays
-- Other non-USA faction AAB overlays from patch/
+NOT touched
+- Russia / 9M317
+- Aircraft mapping source
+- BIG architecture

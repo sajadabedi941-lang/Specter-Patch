@@ -1,8 +1,4 @@
-USA-only Advanced Air Base overlay (Russia/9M317 excluded from this release package)
-- Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
-- Data/INI/CommandSet_ZZZZ_USA_AdvancedAirBase.ini
-- Data/INI/CommandButton_ConstructPatch_America_B2.ini
-- Data/INI/Object/.../Dozer.ini
-- Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/*
-- Data/English/AdvancedAirBase_Strings.txt
-- MappedImages AdvancedAirBase_Images.INI
+USA Dozer CommandSet fix
+- Data/INI/ZZZZZZZZ_AmericaDozerCommandSet_AAB.ini (AmericaDozerCommandSet; SC->AAB only)
+- Data/INI/Object/.../Dozer.ini (CommandSet = AmericaDozerCommandSet)
+Plus prior USA AAB overlay files (no Russia).

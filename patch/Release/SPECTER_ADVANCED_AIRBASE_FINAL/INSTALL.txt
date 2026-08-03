@@ -1,8 +1,6 @@
-SPECTER ADVANCED AIRBASE FINAL (loose Data overlay — USA-only)
-==============================================================
-Prefer the SPEC BIG release ZIP when possible.
+SPECTER ADVANCED AIRBASE FINAL (loose Data — USA Dozer CommandSet fix)
+======================================================================
+Prefer the SPEC BIG release ZIP.
 
-This folder is a USA-only Advanced Air Base overlay.
-Russia / 9M317 files are intentionally excluded so original Specter Russia data is used.
-
-Aircraft: B-52, B-2, B-21, F-117, E-3. Scale 2.00. No C-5.
+USA Dozer uses AmericaDozerCommandSet again (full Specter palette).
+Only Strategy Center slots -> Advanced Air Base.

@@ -1,13 +1,7 @@
-SPECTER USA Stock Airfield + complete TEOD B-2 Spirit
-=====================================================
+SPECTER USA Stock Airfield + TEOD B-2 Spirit (INI parse fix)
+============================================================
 
-https://litter.catbox.moe/2j0nlq.zip
+https://litter.catbox.moe/blnbim.zip
 
-Chain (unchanged slot 5):
-AmericaAirfieldCommandSet[5]
-  -> Command_ConstructTEODAmericaJetB2
-  -> AmericaJetB2
-  -> AVB3bmbr
-
-Prerequisites: none (no Science / Upgrade / Strategy Center)
-Airfield Object untouched. Not B-1R / US_B1R.
+Parse fix only for Object AmericaJetB2 in TEOD_AmericaJetB2.ini.
+Chain unchanged: slot5 -> Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 -> AVB3bmbr

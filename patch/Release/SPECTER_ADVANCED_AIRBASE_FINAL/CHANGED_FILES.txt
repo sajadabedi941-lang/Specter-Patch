@@ -1,0 +1,12 @@
+Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
+Data/INI/CommandSet_ZZZZ_USA_AdvancedAirBase.ini
+Data/INI/CommandSet_AdvancedAirBase.ini
+Data/INI/CommandButton_ConstructPatch_America_B2.ini
+Data/INI/CommandButton_AdvancedAirBase_SpecterFactions.ini
+Data/INI/Weapon_B2_Spirit.ini
+Data/INI/Object/Specter/PatchSystems/AdvancedAirBase_AllFactions.ini
+Data/INI/Object/Specter/United States Of America/Wheeled/Dozer.ini
+Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
+Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
+Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/Object_MK-84_B2Payload.ini
+Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/*.txt

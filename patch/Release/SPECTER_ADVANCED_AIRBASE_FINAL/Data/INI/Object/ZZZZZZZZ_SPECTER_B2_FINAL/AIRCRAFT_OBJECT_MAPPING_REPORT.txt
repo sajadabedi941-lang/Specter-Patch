@@ -1,0 +1,46 @@
+ADVANCED AIRFIELD AIRCRAFT OBJECT MAPPING — VERIFICATION
+========================================================
+
+Controlling CommandSet: America_AdvancedAirBaseCommandSet
+Last-wins file: Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
+
+VERIFIED SPAWN MAPPINGS (button -> Object)
+-----------------------------------------
+OK  Command_ConstructPatch_America_B52
+      Object = Patch_America_B52
+      Object def: Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+
+OK  Command_ConstructPatch_America_B2
+      Object = Patch_America_B2
+      Object def: Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini (last-wins)
+
+OK  Command_ConstructPatch_America_B21
+      Object = Patch_America_B21
+      Object def: Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+
+OK  Command_ConstructAmericaJetStealthFighter  (F-117)
+      Object = AmericaJetStealthFighter
+      Button: Data/INI/CommandButton.ini
+      Note: loose Object AmericaJetStealthFighter is not present under patch/Data/INI;
+            Specter stock / packed SPEC data is expected to supply this object.
+
+OK  Command_ConstructPatch_America_E3
+      Object = Patch_America_E3
+      Object def: Object/Specter/PatchSystems/AdvancedAirBase/Aircraft_AAB_Global.ini
+
+C-5 — NOT AVAILABLE
+-------------------
+FAIL  No C-5 object exists anywhere in this patch.
+      Searched: Patch_America_C5, AmericaJetC5*, *Galaxy* Object defs — none found.
+      Closest transport object is Patch_America_C17 (NOT used; substitution forbidden).
+      Command_ConstructPatch_America_C5 (C17 substitute) REMOVED from last-wins FINAL.ini.
+      C-5 is omitted from America_AdvancedAirBaseCommandSet until a real C-5 object exists.
+
+CURRENT BUILD LIST (last-wins FINAL)
+------------------------------------
+1 Patch_America_B52
+2 Patch_America_B2
+3 Patch_America_B21
+4 AmericaJetStealthFighter (F-117)
+5 Patch_America_E3
+(+ Rally / Sell)

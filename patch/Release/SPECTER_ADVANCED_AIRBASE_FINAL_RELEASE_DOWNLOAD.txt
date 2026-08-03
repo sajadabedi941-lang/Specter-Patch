@@ -1,30 +1,28 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — USA AAB six-aircraft production
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — USA AAB CommandSet binding fix
 =======================================================================
 
 Primary download (full ZIP: DATA + ART):
-https://litter.catbox.moe/itxbhn.zip
+https://litter.catbox.moe/hmibmi.zip
 
-DATA-only ZIP (ART unchanged from scale130; smaller):
-https://litter.catbox.moe/btsh97.zip
-Mirror: https://gofile.io/d/irzbUp
-
-Prior scale130 ART (reuse if DATA-only install):
-https://filebin.net/specter-aab-scale130-202608031508/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+DATA-only ZIP (ART unchanged; preferred if you already have scale130 ART):
+https://litter.catbox.moe/6suw5n.zip
 
 ZIP SHA256 (full):
-6743fb3b3f1241b7e0f28098f67a0fa783e5b4898463c6bc441a4a5a5fe6e5c4
+f0e671a2bd6045a0d58f3f224ce20d209462e03e9be1412b3799d9268a68643a
 
 Contained BIG SHA256:
-008c192209fa60922d5dcf42e5f2ee418cedd610bda3b2708c5af81bf5acf01c  _SPEC_DATA_ONE.big
+a51aa43b9893f0fb6aa7d7524666b91ccbbe1ed6850998b3de9128cac23aef48  _SPEC_DATA_ONE.big
 bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Changes
-- Restore USA AdvancedAirBase production menu to six aircraft:
-  B-2, B-21, B-52, AWACS (E-3), C-5 (Patch_America_C17), F-117
-- UNIT_BUILD CommandButtons with Object / BuildCost / BuildTime
-- F-117 Prerequisites cleared (AAB unlock overlay)
-- AAB model unchanged: US_AirField Scale 1.30
-- No ProductionUnlock stub Objects (crash-safe)
-- No other factions
+Fix
+- Built Object: America_AdvancedAirBase
+- Object.CommandSet now America_AdvancedAirBaseCommandSet ONLY
+- No longer binds stock AmericaAirfieldCommandSet (Specter/StrategicBombers old menu)
+- Model unchanged: US_AirField Scale 1.30
 
-INI/runtime audit: GATE PASS
+Production menu (only):
+B-2, B-21, B-52, AWACS, C-5, F-117
+
+INI override priority: GATE PASS
+  Object winner: ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
+  CommandSet winner: ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini

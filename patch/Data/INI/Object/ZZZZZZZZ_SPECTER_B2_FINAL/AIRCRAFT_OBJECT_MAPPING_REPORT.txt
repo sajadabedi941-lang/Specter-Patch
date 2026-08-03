@@ -1,15 +1,12 @@
-AIRCRAFT OBJECT MAPPING REPORT (TEMP crash bisect)
-==================================================
+AIRCRAFT / AAB REPORT
+=====================
+America_AdvancedAirBase:
+  Model US_AirField only
+  Scale 1.30 (~18% smaller than prior 1.60)
+  Geometry 146 x 96 x 32.5
+  CommandSet AmericaAirfieldCommandSet (preserved)
+  ABAirF2 HeavyRunway Object neutralized
 
-CommandSet: AmericaAirfieldCommandSet / AdvancedAirBase_USA
-Keep ONLY:
-  1 Patch_America_B52  (B-52)   Model US_B52H
-  2 Patch_America_E3   (AWACS)  Model US_E3G
-
-Temporarily removed: B-2, B-21, C-5, F-117
-
-Crash root cause removed:
-  ZZZZZZZZ_America_AAB_Aircraft_ProductionUnlock.ini incomplete Object
-  stubs (wiped Draw/Geometry/Locomotor) — DELETED
-
-AAB model unchanged (US_AirField Scale 1.60)
+Production (current):
+  1 B-52
+  2 AWACS

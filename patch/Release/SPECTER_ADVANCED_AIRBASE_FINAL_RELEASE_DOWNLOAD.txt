@@ -1,19 +1,21 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — crash bisect B-52+AWACS
-==============================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — AAB Scale 1.30 (US_AirField only)
+=======================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-b52-awacs-202608031503/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-scale130-202608031508/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-f7d9cb4dbe4142c9cbf8f20f67639c3bc01e6f89aa7bc01342e74a6611c7e621
+c0313b5f93ec8d3c240e4eaf7ecdabbb43d0e1f66dd65f1c86b67dc88ae73042
 
 Contained BIG SHA256:
-ff96e9279d6db5b1521cc95ec3016e6192f3a342631b187eee06a7bf23161438  _SPEC_DATA_ONE.big
+cbcdf944f48e9a07b6ab52b0da232b011959fd5dcb19197a59f3bcc6725c8a21  _SPEC_DATA_ONE.big
 bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Crash fix
-- Removed incomplete Object ProductionUnlock stubs (ACCESS_VIOLATION root cause)
-- CommandSet TEMP: B-52 + AWACS only
-- Model unchanged
+Changes
+- Scale 1.60 -> 1.30 (~18% smaller); geometry matched
+- Model unchanged: US_AirField only
+- Neutralized leftover Revolution ABAirF2 America_AdvancedAirBase.ini
+- CommandSet / dozer preserved
+- No TEOD import
 
-Runtime safety audit: PASS
+INI/runtime audit: FAIL(1)

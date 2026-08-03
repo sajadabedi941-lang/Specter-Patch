@@ -1,28 +1,20 @@
-RUNTIME SAFETY AUDIT — USA AAB crash bisect (B-52 + AWACS only)
-==============================================================
-Crash: EXCEPTION_ACCESS_VIOLATION ~5 minutes
-Root cause found: ZZZZZZZZ_America_AAB_Aircraft_ProductionUnlock.ini
-  Incomplete Object last-wins stubs wiped Draw/Geometry/Locomotor for
-  Patch_America_B52 / Patch_America_E3 / others → AV when spawned.
-Fix: delete stub overlays; keep full Heavy_Runway Object defs.
-CommandSet TEMP: B-52 + AWACS only (B-2/B-21/C-5/F-117 removed).
-AAB model: unchanged (US_AirField Scale 1.60).
+INI PARSE / RUNTIME AUDIT — AAB scale-down (US_AirField only)
+=============================================================
+Scale: 1.60 -> 1.30 (~18% smaller)
+Geometry: 180/118/40 -> 146/96/32.5
+Model: US_AirField only
+HeavyRunway ABAirF2 America_AdvancedAirBase.ini: neutralized (no Object)
+CommandSet: preserved (B-52 + AWACS)
+Dozer: preserved
+TEOD/Revolution: not imported / not mixed
 
-PASS  AAB model preserved (US_AirField 1.60); CommandSet=AmericaAirfieldCommandSet
-PASS  Removed unsafe incomplete Object ProductionUnlock overlays (crash root cause)
-PASS  CommandSet_AdvancedAirBase_USA.ini AmericaAirfieldCommandSet = B-52+AWACS only
-PASS  CommandSet_AdvancedAirBase_USA.ini AdvancedAirBase_USA = B-52+AWACS only
-PASS  CommandSet_AdvancedAirBase_USA.ini America_AdvancedAirBaseCommandSet = B-52+AWACS only
-PASS  ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini AmericaAirfieldCommandSet = B-52+AWACS only
-PASS  ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini AdvancedAirBase_USA = B-52+AWACS only
-PASS  ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini America_AdvancedAirBaseCommandSet = B-52+AWACS only
-PASS  CommandSet_ZZZZ_USA_AdvancedAirBase.ini AmericaAirfieldCommandSet = B-52+AWACS only
-PASS  CommandSet_ZZZZ_USA_AdvancedAirBase.ini AdvancedAirBase_USA = B-52+AWACS only
-PASS  Stripped ProductionUnlock stub from output BIG
-PASS  Output BIG has no ProductionUnlock stub
-PASS  Patch_America_B52 Object/Draw/W3D(US_B52H)/Geometry/Locomotor/CommandButton OK (Data\INI\Object\Specter\PatchSystems\AAA_USA_HeavyRunway\Aircraft_USA_Heavy_Runway.ini)
-PASS  Patch_America_E3 Object/Draw/W3D(US_E3G)/Geometry/Locomotor/CommandButton OK (Data\INI\Object\Specter\PatchSystems\AAA_USA_HeavyRunway\Aircraft_USA_Heavy_Runway.ini)
-PASS  AmericaAirfieldCommandSet last-wins B-52+AWACS (Data\INI\ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini)
+PASS  Scale=1.30
+PASS  Geometry scaled
+PASS  Models US_AirField only
+PASS  CommandSet preserved
+PASS  HeavyRunway neutralized
+PASS  B-52 / E-3 runtime refs OK
 GATE PASS
-DATA SHA256: ff96e9279d6db5b1521cc95ec3016e6192f3a342631b187eee06a7bf23161438
+
+DATA SHA256: cbcdf944f48e9a07b6ab52b0da232b011959fd5dcb19197a59f3bcc6725c8a21
 ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

@@ -1,3 +1,3 @@
-1. Backup SPEC BIG files
-2. Overwrite with ZIP contents
-3. Build AAB — six aircraft buttons visible
+1. Backup SPEC BIGs
+2. Overwrite with ZIP
+3. Test AAB with B-52 + AWACS only

@@ -1,18 +1,15 @@
-AIRCRAFT OBJECT MAPPING REPORT (America Advanced Air Base)
-==========================================================
+AIRCRAFT OBJECT MAPPING REPORT (TEMP crash bisect)
+==================================================
 
-Object America_AdvancedAirBase.CommandSet = AmericaAirfieldCommandSet
-Source: CommandSet_AdvancedAirBase_USA.ini (+ ZZZZ last-wins FINAL)
+CommandSet: AmericaAirfieldCommandSet / AdvancedAirBase_USA
+Keep ONLY:
+  1 Patch_America_B52  (B-52)   Model US_B52H
+  2 Patch_America_E3   (AWACS)  Model US_E3G
 
-Slot  Button                                      Object                     Label
-----  ------------------------------------------  ------------------------  ------
-1     Command_ConstructPatch_America_B2           Patch_America_B2           B-2
-2     Command_ConstructPatch_America_B21          Patch_America_B21          B-21
-3     Command_ConstructPatch_America_B52          Patch_America_B52          B-52
-4     Command_ConstructPatch_America_E3           Patch_America_E3           AWACS
-5     Command_ConstructAmericaJetC5Galaxy_AAB     Patch_America_C17          C-5
-6     Command_ConstructAmericaJetStealthFighter   AmericaJetStealthFighter   F-117
+Temporarily removed: B-2, B-21, C-5, F-117
 
-Verified: UNIT_BUILD buttons, BuildCost, BuildTime, KindOf AIRCRAFT
-Science/Upgrade locks: none
-Model: unchanged (US_AirField Scale 1.60)
+Crash root cause removed:
+  ZZZZZZZZ_America_AAB_Aircraft_ProductionUnlock.ini incomplete Object
+  stubs (wiped Draw/Geometry/Locomotor) — DELETED
+
+AAB model unchanged (US_AirField Scale 1.60)

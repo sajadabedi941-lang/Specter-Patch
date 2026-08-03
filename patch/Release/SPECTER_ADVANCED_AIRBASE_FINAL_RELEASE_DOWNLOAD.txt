@@ -1,16 +1,19 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — AAB production buttons fix
-=================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — crash bisect B-52+AWACS
+==============================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-buttons-202608031444/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-b52-awacs-202608031503/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-1b7d1a40ec7bd93199aa3f9853d68ba19aba56f700a349605aa33ee375384089
+f7d9cb4dbe4142c9cbf8f20f67639c3bc01e6f89aa7bc01342e74a6611c7e621
 
 Contained BIG SHA256:
-9022e1bd33d08032ced8a7a7e6dbedb557b9fa3af41555f83229e93355ff00be  _SPEC_DATA_ONE.big
+ff96e9279d6db5b1521cc95ec3016e6192f3a342631b187eee06a7bf23161438  _SPEC_DATA_ONE.big
 bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Object CommandSet -> AmericaAirfieldCommandSet (production bar)
-CommandSet_AdvancedAirBase_USA.ini: B-2, B-21, B-52, AWACS, C-5, F-117
-Model unchanged. INI parse audit PASS.
+Crash fix
+- Removed incomplete Object ProductionUnlock stubs (ACCESS_VIOLATION root cause)
+- CommandSet TEMP: B-52 + AWACS only
+- Model unchanged
+
+Runtime safety audit: PASS

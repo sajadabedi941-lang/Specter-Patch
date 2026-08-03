@@ -2,9 +2,9 @@
 // Advanced Air Base — aircraft + building strings
 //--------------------------------------------------------------------------------
 
-OBJECT:Patch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Air Base
-CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Large strategic air base: long runway, hangars, 16 pads, heavy aircraft support.
+OBJECT:Patch_AdvancedAirBase = Advanced Airfield
+CONTROLBAR:ConstructPatch_AdvancedAirBase = Advanced Airfield
+CONTROLBAR:ToolTipPatchBuildAdvancedAirBase = Advanced Airfield (replaces Strategy Center). ~2x airfield size. Builds B-2, B-21, B-52, C-5, F-117, E-3 only.
 
 OBJECT:Patch_America_F22 = F-22
 CONTROLBAR:ConstructPatch_America_F22 = F-22
@@ -42,9 +42,9 @@ OBJECT:Patch_America_KC135 = KC-135
 CONTROLBAR:ConstructPatch_America_KC135 = KC-135
 CONTROLBAR:ToolTipConstructPatch_America_KC135 = Produce KC-135 from Advanced Air Base (America).
 
-OBJECT:Patch_America_C17 = C-17
-CONTROLBAR:ConstructPatch_America_C17 = C-17
-CONTROLBAR:ToolTipConstructPatch_America_C17 = Produce C-17 from Advanced Air Base (America).
+OBJECT:Patch_America_C17 = C-5 Galaxy
+CONTROLBAR:ConstructPatch_America_C17 = C-5 Galaxy
+CONTROLBAR:ToolTipConstructPatch_America_C17 = Produce C-5 Galaxy from Advanced Airfield (America).
 
 OBJECT:Patch_Russia_Su57 = Su-57
 CONTROLBAR:ConstructPatch_Russia_Su57 = Su-57
@@ -784,3 +784,12 @@ CONTROLBAR:ToolTipConstructPatch_Russia_Tu95 = Produce Tu-95 from Advanced Air B
 OBJECT:Patch_America_AN225 = AN-225 Mriya
 CONTROLBAR:ConstructPatch_America_AN225 = AN-225 Mriya
 CONTROLBAR:ToolTipConstructPatch_America_AN225 = Produce AN-225 Mriya from Advanced Air Base. Strategic heavy transport. Max 1.
+
+OBJECT:AmericaJetF117Nighthawk = F-117 Nighthawk
+CONTROLBAR:ConstructAmericaJetC5Galaxy = C-5 Galaxy
+CONTROLBAR:ToolTipConstructAmericaJetC5Galaxy = Produce C-5 Galaxy from Advanced Airfield (America).
+CONTROLBAR:ConstructAmericaJetF117 = F-117 Nighthawk
+CONTROLBAR:ToolTipConstructAmericaJetF117 = Produce F-117 Nighthawk from Advanced Airfield (America).
+OBJECT:Patch_America_B21 = B-21 Raider
+CONTROLBAR:ConstructPatch_America_B21 = B-21 Raider
+CONTROLBAR:ToolTipConstructPatch_America_B21 = Produce B-21 Raider from Advanced Airfield (America).

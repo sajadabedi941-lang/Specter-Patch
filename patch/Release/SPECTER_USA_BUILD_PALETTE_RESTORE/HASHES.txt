@@ -1,0 +1,3 @@
+DATA_SHA256=31e0e9154635ea1a03b56c6da203f13b7ebd28cbca4334ff6ba45e94e2e534d1
+ZIP_SHA256=32f322809332c0940185fc65dda63472fa532158d55e6e79cc007a795fc0d68f
+NOTE=Dozer restored to stock; AmericaDozerCommandSet in CommandSet.ini has SC->AAB

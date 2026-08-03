@@ -1,3 +1,11 @@
-1. Backup SPEC BIGs
-2. Overwrite with ZIP
-3. Build AAB — same model, slightly smaller
+1. Backup SPEC BIGs (_SPEC_DATA_ONE.big / _SPEC_ART_ONE.big)
+2. Full ZIP: overwrite both BIGs from https://litter.catbox.moe/itxbhn.zip
+   OR DATA-only: overwrite _SPEC_DATA_ONE.big from https://litter.catbox.moe/btsh97.zip
+   and keep scale130 ART (SHA bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15)
+3. Build USA AdvancedAirBase — production menu should show 6 aircraft:
+   B-2, B-21, B-52, AWACS, C-5, F-117
+4. AAB model unchanged (US_AirField Scale 1.30)
+
+ZIP SHA256 (full): 6743fb3b3f1241b7e0f28098f67a0fa783e5b4898463c6bc441a4a5a5fe6e5c4
+DATA SHA256: 008c192209fa60922d5dcf42e5f2ee418cedd610bda3b2708c5af81bf5acf01c
+ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

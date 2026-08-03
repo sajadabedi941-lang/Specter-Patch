@@ -1,17 +1,19 @@
-SPECTER_USA_B2_AIRFIELD_TEST — real B-2 Spirit (AVB3bmbr) on stock USA Airfield
-================================================================================
+SPECTER USA Stock Airfield + real TEOD B-2 Spirit
+=================================================
 
-Download (DATA + ART required — includes AVB3bmbr W3D):
-https://litter.catbox.moe/zb4xmb.zip
+https://litter.catbox.moe/ih21wi.zip
 
-ZIP SHA256: c70ecda634d03cbf6bd753860fe12f90a0366db20b001ac5f9e5aedfdb49b455
-DATA SHA256: 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
-ART SHA256: 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+- INSTALL.txt
+- HASHES.txt
+- TEOD_B2_MISSING_DEPS.txt
 
-Chain:
-Command_ConstructAmericaAirfieldB2Spirit
-  -> Patch_America_B2
-  -> AVB3bmbr (Scale 0.55)
-  -> AmericaAirfieldCommandSet slot 5
+Production chain:
+AmericaAirfieldCommandSet slot 5
+  -> Command_ConstructTEODAmericaJetB2
+  -> AmericaJetB2 (TEOD)
+  -> AVB3bmbr
 
-Not B-1/B-1R. Not AmericaJetB2Spirit (US_B1R).
+Not a fake B-1 / US_B1R reskin. Airfield Object untouched. No AdvancedAirBase.

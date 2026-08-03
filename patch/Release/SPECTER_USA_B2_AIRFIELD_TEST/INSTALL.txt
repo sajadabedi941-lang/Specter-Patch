@@ -1,8 +1,11 @@
-1. Backup SPEC BIGs
-2. Replace BOTH _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from:
-   https://litter.catbox.moe/zb4xmb.zip
-3. Build normal USA Airfield — slot 5 B-2 Spirit active immediately
-4. Produce B-2 (AVB3 flying-wing mesh, Scale 0.55)
+INSTALL
+=======
+1) Extract ZIP
+2) Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into your Specter Generals game root
+   (same folder as generals.exe / Zero Hour)
+3) Launch Specter
+4) USA Airfield -> B-2 Spirit button (slot 5)
+5) Build AmericaJetB2, attack, return to base (AutoReloadsClip = RETURN_TO_BASE)
 
-DATA SHA256: 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
-ART SHA256: 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d
+Do NOT modify USA Airfield Object/W3D.
+Do NOT use AdvancedAirBase.

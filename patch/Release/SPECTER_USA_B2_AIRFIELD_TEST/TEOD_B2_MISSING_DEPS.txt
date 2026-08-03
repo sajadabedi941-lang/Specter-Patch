@@ -1,0 +1,39 @@
+TEOD B-2 Spirit port - dependency status
+========================================
+
+PORTED from TEOD (present in this package):
+- Object AmericaJetB2 (TEOD B2.ini) — model AVB3bmbr
+- Object B2SlowBDObject, B2DeadHull
+- Object RaptorStealthRadar (StealthBombersRadarWeapon OCL target)
+- Object B2SmallBomb, B2Bomb (projectiles)
+- Weapon B2SmallBombWeapon, B2NukeBombWeapon, StealthBombersRadarWeapon, FallingJetWeapon
+- Armor USAB2Armor, USAB2AdvancedArmor
+- FXList FX_B2BombDrop, FX_B2DeathInitial
+- Locomotor B2Locomotor, B2UPLocomotor
+- OCL_B2DeathFinalBlowUp, OCL_B2SlowBD, OCL_RaptorStealthDrone
+- MappedImage B2-ic_L (atlas US-Icons01.dds)
+- W3D: AVB3bmbr, AVB3bmbr_D, AVB3bmbr_D1, AVB3bmbr_D2, JetPickBox, b2bomb
+- Textures: avb3bmbr.dds, avb3bmbr_D.dds, avb3bmbr_E.dds, US-Icons01.dds
+
+SPECTER SUBSTITUTIONS (required for fly/attack/return on stock Specter):
+- CommandSet AmericaJetAurora2CommandSet -> GenericTacticalBomberCommandSet
+- Voice AudioEvents B2Select/Move/Attack/Create/Guard/LowFuel
+  TEOD defines AudioEvent names but NO sound files in !TEOD_Sounds.big / !TEOD_Voices.big.
+  Remapped to AuroraBomberVoice*.
+- DamageFX AAHitscanDamageFX -> None (not in Specter)
+- JetSlowDeathBehavior: TEOD used nonstandard "FX/OCL = INITIAL" syntax;
+  adapted to Specter ZH fields; hull OCL remains OCL_B2DeathFinalBlowUp (TEOD)
+- FXOnGroundDeath FX_BigMissileCarrierDeath -> FX_JetOnGroundDeath (Specter)
+- B2Falling sound omitted from FX_B2DeathInitial (asset absent)
+
+NOT PORTED (optional TEOD systems; unit works without them):
+- Upgrade_AmericaNukeMissile (would unlock B2NukeBombWeapon)
+- Upgrade_StealthFlightStabilityControlers (would unlock B2UPLocomotor)
+- SpecialAbilityVehicleRepair + OCL_RaptorLPDDrone (repair drone special)
+- OCL_B2DeathWatercheck + Object GenericBigAirplaneDeathWatercheckW
+  + Object B2DeathWatercheckG (TEOD water-death chain)
+
+NOT TOUCHED:
+- USA Airfield Object / model / dozer
+- AdvancedAirBase
+- Other aircraft

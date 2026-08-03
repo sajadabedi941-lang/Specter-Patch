@@ -1,39 +1,21 @@
-INI PARSE / RUNTIME SPAWN AUDIT — SPECTER_USA_B2_AIRFIELD_TEST (real B-2)
+TEOD B-2 SPIRIT PORT AUDIT
 ======================================================================
-PASS  AmericaAirfieldCommandSet last-wins production file  Data\INI\ZZZZ_USA_Airfield_B2_Production.ini
-PASS  Slot5 dedicated B-2 button  Command_ConstructAmericaAirfieldB2Spirit
-PASS  Slot5 NOT old B2Spirit/B1R button
-PASS  Stock Raptor preserved
-PASS  Stock B1R slot preserved (separate)
-PASS  Dozer/airfield build untouched (no AAB)
-PASS  Button Object=Patch_America_B2  Patch_America_B2
-PASS  Button no Options
-PASS  Button no Science
-PASS  Object last-wins Airfield B-2  Data\INI\Object\Specter\United States Of America\ZZZZ_Patch_America_B2_Airfield.ini
-PASS  Model AVB3bmbr (not US_B1R)  ['AVB3bmbr', 'AVB3bmbr_d', 'AVB3bmbr_d', 'AVB3bmbr_d1']
-PASS  No US_B1R on Patch_America_B2
-PASS  Scale reduced for stock airfield (<=0.60)  Scale = 0.55
+PASS  CommandSet winner TEOD production  Data\INI\ZZZZ_USA_Airfield_TEOD_B2_Production.ini
+PASS  Slot5 TEOD B-2 button  Command_ConstructTEODAmericaJetB2
+PASS  Button -> AmericaJetB2
+PASS  Object AmericaJetB2 TEOD port (AVB3bmbr)
+PASS  No US_B1R model assignment
 PASS  Prerequisites empty
 PASS  KindOf AIRCRAFT
-PASS  Draw W3DModelDraw
-PASS  Geometry
-PASS  Locomotor
-PASS  JetAIUpdate
-PASS  NeedsRunway Yes
-PASS  ParkingOffset stock-like
-PASS  BuildCost/Time
-PASS  DisplayName Patch_America_B2 (B-2)
-PASS  W3D present art\w3d\avb3bmbr.w3d
-PASS  W3D present art\w3d\avb3bmbr_d.w3d
-PASS  W3D present art\w3d\avb3bmbr_d1.w3d
-PASS  No America_AdvancedAirBase Object
+PASS  JetAIUpdate + NeedsRunway
+PASS  Locomotor B2Locomotor
+PASS  Weapon B2SmallBombWeapon
+PASS  Armor USAB2Armor / USAB2AdvancedArmor defs
+PASS  FX_B2BombDrop / FX_B2DeathInitial defs
+PASS  W3D AVB3bmbr/_D/_D1/_D2 + textures
+PASS  No AdvancedAirBase Object
 
-CHAIN
-  CommandSet winner: Data\INI\ZZZZ_USA_Airfield_B2_Production.ini
-  Slot5: Command_ConstructAmericaAirfieldB2Spirit
-  Button: Data\INI\ZZZZ_USA_Airfield_B2_Production.ini -> Patch_America_B2
-  Object winner: Data\INI\Object\Specter\United States Of America\ZZZZ_Patch_America_B2_Airfield.ini
-  Model: AVB3bmbr Scale=0.55
 GATE PASS
-DATA SHA256: 985434c26f1ea61e8e85c78885cde2e8f209c4d410a0324158f613296da7793b
-ART SHA256: 23418341eb4ef321d95ca9b58a9ec85d5af145bc5b5c58a286cdc8ea795d402d
+DATA f06d77dcde7d0c54b253be903e1ac2f37dc757c47e2b618bcd4886ce6fc8116c
+ART 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+CHAIN: AirfieldCS[Data\INI\ZZZZ_USA_Airfield_TEOD_B2_Production.ini].5=Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 -> AVB3bmbr

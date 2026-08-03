@@ -1,0 +1,7 @@
+INSTALL - SPECTER_NO_ADVANCED_AIRBASE
+====================================
+1) Extract ZIP
+2) Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into Specter game root
+3) Launch Specter as USA
+4) Dozer builds normal Airfield + Strategy Center (no AdvancedAirBase)
+5) Airfield slot 5 = B-2 Spirit (AmericaJetB2)

@@ -1,41 +1,27 @@
-B-2 AAB BUILD CONNECTION — FINAL
-=================================
+B-2 AAB BUILD CONNECTION + ADVANCED AIRFIELD SIX
+================================================
 
-ROOT CAUSES FIXED
-1) America_AdvancedAirBase (SPEC HeavyRunway winner) used CommandSet = AmericaAirfieldCommandSet
-   NOT America_AdvancedAirBaseCommandSet.
-2) CommandSet_ZZZZ_USA_AdvancedAirBase.ini last-wins and set slot 6 = KC135.
-   B-2 was moved to slot 1 on that override (so "slot 6 = B-2" check failed).
-3) Prerequisites cleared for AAB path; production costs restored from AmericaJetB2Spirit.
+CONTROLLING COMMANDSET
+America_AdvancedAirBaseCommandSet
+  Last-wins file: Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
+  Attached by: Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
+  Building: America_AdvancedAirBase (existing Advanced Airfield / US_AirField)
 
-FINAL FILES (loose Data last-wins, no BIG rebuild)
-- Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
-  * CommandButton Command_ConstructPatch_America_B2 -> Object = Patch_America_B2
-  * America_AdvancedAirBaseCommandSet slot 6 = B-2 (full roster kept)
-  * AmericaAirfieldCommandSet slot 1 and 6 = B-2 (HeavyRunway fallback)
-- Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
-  * America_AdvancedAirBase.CommandSet = America_AdvancedAirBaseCommandSet
-- Data/INI/CommandSet_ZZZZ_USA_AdvancedAirBase.ini
-  * Corrects SPEC ZZZZ override so slot 6 = B-2
-- Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
-  * Prerequisites empty (AAB path)
-  * BuildCost=10000, BuildTime=130.0, MaxSimultaneousOfType=3 (AmericaJetB2Spirit)
-  * Draw Model = AVB3bmbr (not US_B1R); NeedsRunway=Yes; Side=America
-- Data/INI/CommandButton_ConstructPatch_America_B2.ini
-  * Object = Patch_America_B2 (UNIT_BUILD spawn target)
-- Data/INI/Weapon_B2_Spirit.ini + Object_MK-84_B2Payload.ini
-  * USA_B2_Spirit_BunkerBuster / MK-84 payload
+SIX AIRCRAFT ONLY
+1 Patch_America_B52
+2 Patch_America_C5 button -> Object Patch_America_C17 (no Patch_America_C5 object in patch)
+3 Patch_America_B2
+4 Patch_America_B21
+5 AmericaJetStealthFighter (Command_ConstructAmericaJetStealthFighter)
+6 Patch_America_E3
 
-LOAD ORDER (last wins)
-CommandSet_AdvancedAirBase.ini
- -> CommandSet_ZZZZ_USA_AdvancedAirBase.ini
- -> ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini  (wins)
-Object HeavyRunway America_AdvancedAirBase
- -> AdvancedAirBase_AllFactions America_AdvancedAirBase
- -> ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini  (wins CommandSet attach)
-Object Patch_America_B2 earlier defs (Aircraft_AAB_Global US_B1R stub)
- -> ZZZZZZZZ_Patch_America_B2_Final.ini  (wins AVB3bmbr + Spirit weapon)
+DOZER
+AmericaDozerCommandSet_PatchAAB slot 2 = Command_ConstructAmerica_AdvancedAirBase
+Strategy Center construct buttons not present on PatchAAB dozer.
 
-INSTALL
-Copy these INI files into your Specter Data folder (same layout under Data/INI/...)
-so they load after _SPEC_DATA_ONE.big. No BIG rebuild required for this finalize.
+NORMAL AIRFIELD
+AmericaAirfieldCommandSet left to CommandSet_StrategicBombers_AABOnly.ini (not overridden).
+
+B-2 SPAWN CHAIN KEPT
+Command_ConstructPatch_America_B2 Object = Patch_America_B2
+ZZZZZZZZ_Patch_America_B2_Final.ini unchanged production unit.

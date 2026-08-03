@@ -1,0 +1,10 @@
+SPECTER_USA_B2_AIRFIELD_TEST
+=============================
+1. Backup SPEC BIGs
+2. Full: https://litter.catbox.moe/8fdokw.zip
+   OR DATA-only: https://litter.catbox.moe/f79kp3.zip (keep current ART if SHA matches)
+3. Build normal USA Airfield — B-2 Spirit appears immediately (slot 5)
+4. No Strategy Center / Science / Upgrade required
+
+DATA SHA256: f661dcc3349cde049460bbcb9c5f920fbc1b2f1521ef16bfef52cb8826d37764
+ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

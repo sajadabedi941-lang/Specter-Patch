@@ -1,0 +1,39 @@
+INI PARSE / RUNTIME SPAWN AUDIT — SPECTER_USA_B2_AIRFIELD_TEST
+======================================================================
+Goal: B-2 Spirit unlocked on stock USA Airfield only
+No AdvancedAirBase. No AmericaAirfieldCommandSet replacement.
+
+PASS  AmericaAirfieldCommandSet still from CommandSet.ini  Data\INI\CommandSet.ini
+PASS  Slot 5 is Command_ConstructAmericaJetB2Spirit  Command_ConstructAmericaJetB2Spirit
+PASS  Stock roster preserved (Raptor slot1)
+PASS  No AAB-only six-aircraft replacement
+PASS  UNIT_BUILD button Object=AmericaJetB2Spirit  Data\INI\CommandButton.ini -> AmericaJetB2Spirit
+PASS  Button has no Options lock  None
+PASS  Button has no Science lock  None
+PASS  Object last-wins AirfieldUnlock  Data\INI\Object\Specter\United States Of America\ZZZZ_AmericaJetB2Spirit_AirfieldUnlock.ini
+PASS  Prerequisites empty (no Strategy Center / Science)  'Prerequisites\n  End'
+PASS  No SCIENCE_Rank4
+PASS  No AmericaStrategyCenter prereq
+PASS  KindOf AIRCRAFT
+PASS  Draw W3DModelDraw
+PASS  Geometry
+PASS  Locomotor
+PASS  JetAIUpdate (takeoff/fly)
+PASS  BuildCost
+PASS  BuildTime
+PASS  Model US_B1R
+PASS  W3D US_B1R present
+PASS  NeedsRunway for airfield parking
+PASS  BuildCost/BuildTime present  cost=10000 time=130.0
+PASS  No AdvancedAirBase Object  []
+PASS  Dozer unchanged (Strategy Center slot15)  Command_ConstructAmericaStrategyCenter
+PASS  Dozer has Airfield
+
+WINNERS
+  AmericaAirfieldCommandSet: Data\INI\CommandSet.ini
+  AmericaJetB2Spirit Object: Data\INI\Object\Specter\United States Of America\ZZZZ_AmericaJetB2Spirit_AirfieldUnlock.ini
+  CommandButton: Data\INI\CommandButton.ini
+  Menu slot 5: Command_ConstructAmericaJetB2Spirit
+GATE PASS
+DATA SHA256: f661dcc3349cde049460bbcb9c5f920fbc1b2f1521ef16bfef52cb8826d37764
+ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

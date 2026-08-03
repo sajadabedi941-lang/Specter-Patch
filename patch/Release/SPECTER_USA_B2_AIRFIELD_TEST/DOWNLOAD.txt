@@ -1,0 +1,13 @@
+SPECTER_USA_B2_AIRFIELD_TEST
+============================
+
+Full ZIP:
+https://litter.catbox.moe/8fdokw.zip
+
+DATA-only ZIP:
+https://litter.catbox.moe/f79kp3.zip
+
+ZIP SHA256 (full): 51b3824385ff23aa064c54c60cfb2176b9b9984c02176df2fe5a71194dc4698b
+DATA-only ZIP SHA256: a8184e2434ce4af995f40f04cc90eb769fcbb7008db8d0cd80a2572ac58eca8f
+DATA SHA256: f661dcc3349cde049460bbcb9c5f920fbc1b2f1521ef16bfef52cb8826d37764
+ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

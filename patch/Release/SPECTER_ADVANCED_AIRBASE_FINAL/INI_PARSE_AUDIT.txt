@@ -1,13 +1,14 @@
-INI PARSE AUDIT — USA AAB CommandSet trim
-==========================================
-Base: SPECTER_USA_AIRFORCE_PARSE_FIX (_SPEC_DATA_ONE.big)
-AAB model: preserved US_AirField Scale 1.60 (not replaced)
-CommandSet America_AdvancedAirBaseCommandSet ONLY:
-  B-2, B-21, B-52, AWACS(E-3), C-5, F-117
-Removed from USA AAB CommandSet: E-2C, EA-18G, fighters, other leftovers
-AmericaAirfieldCommandSet: not redefined by CommandSet_USA_AdvancedAirBase.ini
-AirForceExpansion E2C: JetAIUpdate=1, no active AWACS overlay leftovers
+INI PARSE AUDIT — USA AAB production buttons fix
+================================================
 GATE: PASS
 
-DATA SHA256: d3a07fa3d01f60f5587a6ef2a20d4b1d406b3bf73a3bde73d221d3d9e4c9f1f0
+Object CommandSet: AmericaAirfieldCommandSet (model unchanged)
+CommandSet_AdvancedAirBase_USA.ini: buttons + AmericaAirfieldCommandSet + AdvancedAirBase_USA
+Aircraft: B-2, B-21, B-52, AWACS, C-5, F-117
+Science/Upgrade locks: none on UNIT_BUILD buttons
+BuildCost/BuildTime: verified
+KindOf AIRCRAFT (category): verified
+ObjectCategory engine field: not used in Specter ZH
+
+DATA SHA256: 9022e1bd33d08032ced8a7a7e6dbedb557b9fa3af41555f83229e93355ff00be
 ART SHA256: bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15

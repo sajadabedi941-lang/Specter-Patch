@@ -1,19 +1,16 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — AFE parse-fixed base, AAB CommandSet trim
-================================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — AAB production buttons fix
+=================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-cmdset-202608031418/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-buttons-202608031444/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-c59984ff9d5480278ada75c69059608ba645ec88e761790f55f5dda87b54ac6a
+1b7d1a40ec7bd93199aa3f9853d68ba19aba56f700a349605aa33ee375384089
 
 Contained BIG SHA256:
-d3a07fa3d01f60f5587a6ef2a20d4b1d406b3bf73a3bde73d221d3d9e4c9f1f0  _SPEC_DATA_ONE.big
+9022e1bd33d08032ced8a7a7e6dbedb557b9fa3af41555f83229e93355ff00be  _SPEC_DATA_ONE.big
 bc4c45207dd5304710ad8e1cd165334c218f12b209e55364945cd1a134adcd15  _SPEC_ART_ONE.big
 
-Base: SPECTER_USA_AIRFORCE_PARSE_FIX
-AAB model: NOT replaced (US_AirField Scale 1.60)
-USA AdvancedAirBaseCommandSet ONLY: B-2, B-21, B-52, AWACS, C-5, F-117
-Removed: E-2C, EA-18G, fighter leftovers
-Dozer / other factions / W3D / textures: untouched
-INI parse audit: PASS
+Object CommandSet -> AmericaAirfieldCommandSet (production bar)
+CommandSet_AdvancedAirBase_USA.ini: B-2, B-21, B-52, AWACS, C-5, F-117
+Model unchanged. INI parse audit PASS.

@@ -1,8 +1,8 @@
 AIRCRAFT OBJECT MAPPING REPORT (America Advanced Air Base)
 ==========================================================
 
-CommandSet: America_AdvancedAirBaseCommandSet
-Sources: CommandSet_USA_AdvancedAirBase.ini + ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
+Object America_AdvancedAirBase.CommandSet = AmericaAirfieldCommandSet
+Source: CommandSet_AdvancedAirBase_USA.ini (+ ZZZZ last-wins FINAL)
 
 Slot  Button                                      Object                     Label
 ----  ------------------------------------------  ------------------------  ------
@@ -13,6 +13,6 @@ Slot  Button                                      Object                     Lab
 5     Command_ConstructAmericaJetC5Galaxy_AAB     Patch_America_C17          C-5
 6     Command_ConstructAmericaJetStealthFighter   AmericaJetStealthFighter   F-117
 
-Removed from this CommandSet: E-2C, EA-18G, F-22/F-35/F-16/F-15/A-10 and other leftovers.
-AmericaAirfieldCommandSet is not redefined here.
-AAB object model/W3D/textures unchanged.
+Verified: UNIT_BUILD buttons, BuildCost, BuildTime, KindOf AIRCRAFT
+Science/Upgrade locks: none
+Model: unchanged (US_AirField Scale 1.60)

@@ -1,5 +1,3 @@
-Install
-=======
-1. Backup Data\_SPEC_DATA_ONE.big and Data\_SPEC_ART_ONE.big
-2. Extract ZIP and overwrite both BIG files
-3. Build Advanced Air Base from USA dozer; production bar is the six-aircraft list only
+1. Backup SPEC BIG files
+2. Overwrite with ZIP contents
+3. Build AAB — six aircraft buttons visible

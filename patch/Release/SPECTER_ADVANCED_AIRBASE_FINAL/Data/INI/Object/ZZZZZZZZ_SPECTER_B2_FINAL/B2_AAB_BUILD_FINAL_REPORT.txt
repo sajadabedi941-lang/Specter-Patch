@@ -1,24 +1,22 @@
 B-2 AAB BUILD FINAL REPORT
 ==========================
 
-MODEL / PLACEMENT (restored pre-TEOD)
-- America_AdvancedAirBase Attach from commit c06a3395
-- Mesh: US_AirField @ Scale 1.60
-- Art portrait: Patch_AdvancedAirBase
-- NOT TEOD GLA-Airfield, NOT Revolution ABAirF2
-- Dozer SC slots → Advanced Air Base unchanged
+BASE
+- SPECTER_USA_AIRFORCE_PARSE_FIX (AirForceExpansion parse-fixed)
 
-AIRCRAFT COMMAND SET (exactly 6)
-America_AdvancedAirBaseCommandSet
-  1 Patch_America_B2              (B-2)
-  2 Patch_America_B21             (B-21)
-  3 Patch_America_B52             (B-52)
-  4 Patch_America_E3              (AWACS)
-  5 Patch_America_C17             (C-5 UI label; existing transport object)
-  6 AmericaJetStealthFighter      (F-117)
-  (+ Rally / Sell)
+MODEL
+- NOT replaced this pass
+- America_AdvancedAirBase Attach remains US_AirField @ Scale 1.60
 
-C-5 NOTE
-- No dedicated Patch_America_C5 / AV_C5 in Specter patch.
-- TEOD aircraft AV_C5* not imported (user: no TEOD files).
-- Slot uses existing Patch_America_C17 spawn target with C-5 control-bar strings.
+USA AdvancedAirBaseCommandSet (only)
+  1 Patch_America_B2
+  2 Patch_America_B21
+  3 Patch_America_B52
+  4 Patch_America_E3 (AWACS)
+  5 Patch_America_C17 (C-5 UI)
+  6 AmericaJetStealthFighter (F-117)
+
+REMOVED from USA AAB CommandSet
+- E-2C, EA-18G, fighters, and all other leftovers
+
+INI PARSE AUDIT: PASS

@@ -1,4 +1,4 @@
-DATA SHA256: 3d98b7eb3e23edb4a58dd24116bf6c2a3b04f9096adefdddf69a538d59f39091
+DATA SHA256: 9cca9b1e8cc5c8720ad82a223cced3d2634fdcc2adfd6ad688f14d7457904ea3
 ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
-ZIP  SHA256: 11d6fe24bba1b34f88dc9b203db466a08d55809f86542e74b07e227f16e5b5c4
-URL: https://litter.catbox.moe/q6gn2m.zip
+ZIP  SHA256: d083cc3e896435d93aedf49c74b8ae0007a144db21ddebf2da9828d69a9d68ef
+URL: https://litter.catbox.moe/pd77df.zip

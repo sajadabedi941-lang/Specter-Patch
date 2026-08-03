@@ -1,13 +1,10 @@
-TEOD B-2 INI PARSE FIX v2
+MINIMAL AmericaJetB2 PARSE FIX
 ======================================================================
-PASS  AmericaJetB2 rewritten to Specter bomber module layout
-PASS  TEOD-only Draw anim/PickBox/Stealth/EMP removed
-PASS  Stock Specter JetSlowDeath FX/OCL
-PASS  AirplaneArmor + B2SmallBombWeapon + B2Locomotor
-PASS  Support objects split to TEOD_B2_SupportObjects.ini
-PASS  ASCII-only
-PASS  AVB3bmbr / AmericaJetB2 / slot5 unchanged
+PASS  Object AmericaJetB2 only (B2Spirit/B-52 module set)
+PASS  Model AVB3bmbr / Weapon B2SmallBombWeapon / Locomotor B2Locomotor
+PASS  No upgrades / science / Strategy Center / TEOD modules
+PASS  Airfield / CommandSet untouched
 
 GATE PASS
-DATA 3d98b7eb3e23edb4a58dd24116bf6c2a3b04f9096adefdddf69a538d59f39091
+DATA 9cca9b1e8cc5c8720ad82a223cced3d2634fdcc2adfd6ad688f14d7457904ea3
 ART 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838

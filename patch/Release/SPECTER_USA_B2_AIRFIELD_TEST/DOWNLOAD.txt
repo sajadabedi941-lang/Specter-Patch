@@ -1,7 +1,6 @@
-SPECTER USA Stock Airfield + TEOD B-2 (parse-safe AmericaJetB2)
-===============================================================
+SPECTER USA B-2 minimal AmericaJetB2 parse fix
+==============================================
 
-https://litter.catbox.moe/q6gn2m.zip
+https://litter.catbox.moe/pd77df.zip
 
-AmericaJetB2 rewritten to Specter bomber INI layout so Object parses.
-Model AVB3bmbr. Slot5 unchanged. Airfield/CommandSet untouched.
+Object AmericaJetB2 only - Specter B2Spirit module layout, AVB3bmbr model.

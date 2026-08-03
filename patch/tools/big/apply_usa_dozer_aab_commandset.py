@@ -17,6 +17,7 @@ from pathlib import Path
 COMMANDSET_KEY = r"Data\INI\CommandSet.ini"
 TARGET_SET = "AmericaDozerCommandSet"
 OLD_COMMAND = "Command_ConstructAmericaStrategyCenter"
+OLD_T_COMMAND = "Command_ConstructAmericaStrategyCenter_T"
 NEW_COMMAND = "Command_ConstructAmerica_AdvancedAirBase"
 
 
@@ -119,26 +120,31 @@ def patch_commandset(raw: bytes) -> bytes:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
 
     before_start, before_end, before_block = commandset_block(text, TARGET_SET)
-    old_line = re.compile(rf"(?m)^(\s*\d+\s*=\s*){re.escape(OLD_COMMAND)}(\s*(?:;.*)?)$")
+    old_line = re.compile(
+        rf"(?m)^(\s*\d+\s*=\s*)(?:{re.escape(OLD_T_COMMAND)}|{re.escape(OLD_COMMAND)})(\s*(?:;.*)?)$"
+    )
+    old_exact_line = re.compile(
+        rf"(?m)^\s*\d+\s*=\s*(?:{re.escape(OLD_T_COMMAND)}|{re.escape(OLD_COMMAND)})(?:\s*(?:;.*)?)$"
+    )
     if not old_line.search(before_block):
-        raise ValueError(f"{OLD_COMMAND} not found inside {TARGET_SET}")
+        raise ValueError(f"{OLD_COMMAND}/{OLD_T_COMMAND} not found inside {TARGET_SET}")
     if re.search(rf"(?m)^\s*\d+\s*=\s*{re.escape(NEW_COMMAND)}(?:\s|$)", before_block):
         raise ValueError(f"{NEW_COMMAND} already present inside {TARGET_SET}")
 
-    after_block, replacements = old_line.subn(rf"\1{NEW_COMMAND}\2", before_block, count=1)
-    if replacements != 1:
-        raise ValueError(f"Expected one replacement in {TARGET_SET}, got {replacements}")
-    if old_line.search(after_block):
-        raise ValueError(f"{OLD_COMMAND} still present inside patched {TARGET_SET}")
+    after_block, replacements = old_line.subn(rf"\1{NEW_COMMAND}\2", before_block)
+    if replacements != 2:
+        raise ValueError(f"Expected two Strategy Center replacements in {TARGET_SET}, got {replacements}")
+    if old_exact_line.search(after_block):
+        raise ValueError(f"Strategy Center command still present inside patched {TARGET_SET}")
     patched = text[:before_start] + after_block + text[before_end:]
 
     # Re-check invariants on the final text.
     validate_commandset_blocks(patched)
     _, _, final_block = commandset_block(patched, TARGET_SET)
-    if len(re.findall(rf"(?m)^\s*\d+\s*=\s*{re.escape(NEW_COMMAND)}(?:\s|$)", final_block)) != 1:
-        raise ValueError(f"Expected one {NEW_COMMAND} in {TARGET_SET}")
-    if old_line.search(final_block):
-        raise ValueError(f"{OLD_COMMAND} remained in {TARGET_SET}")
+    if len(re.findall(rf"(?m)^\s*\d+\s*=\s*{re.escape(NEW_COMMAND)}(?:\s|$)", final_block)) != 2:
+        raise ValueError(f"Expected two {NEW_COMMAND} entries in {TARGET_SET}")
+    if old_exact_line.search(final_block):
+        raise ValueError(f"Strategy Center command remained in {TARGET_SET}")
     if re.search(r"(?ms)^CommandSet\s+AmericaCommandCenterCommandSet\s*$.*AdvancedAirBase", patched):
         raise ValueError("America Command Center CommandSet was touched")
 

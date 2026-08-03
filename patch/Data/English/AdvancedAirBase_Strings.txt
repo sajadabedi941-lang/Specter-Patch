@@ -784,3 +784,9 @@ CONTROLBAR:ToolTipConstructPatch_Russia_Tu95 = Produce Tu-95 from Advanced Air B
 OBJECT:Patch_America_AN225 = AN-225 Mriya
 CONTROLBAR:ConstructPatch_America_AN225 = AN-225 Mriya
 CONTROLBAR:ToolTipConstructPatch_America_AN225 = Produce AN-225 Mriya from Advanced Air Base. Strategic heavy transport. Max 1.
+
+OBJECT:AmericaJetF117Nighthawk = F-117 Nighthawk
+CONTROLBAR:ConstructAmericaJetC5Galaxy = C-5 Galaxy
+CONTROLBAR:ToolTipConstructAmericaJetC5Galaxy = Produce C-5 Galaxy from Advanced Airfield (America).
+CONTROLBAR:ConstructAmericaJetF117 = F-117 Nighthawk
+CONTROLBAR:ToolTipConstructAmericaJetF117 = Produce F-117 Nighthawk from Advanced Airfield (America).

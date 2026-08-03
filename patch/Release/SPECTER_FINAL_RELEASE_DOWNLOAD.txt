@@ -1,25 +1,40 @@
 SPECTER_FINAL_RELEASE.zip
 
 CLICKABLE DOWNLOAD:
-  https://filebin.net/specter-commandset-dozer-syntax-fix-66a9/SPECTER_FINAL_RELEASE.zip
+  https://filebin.net/specter-commandset-aab-corrected-66a9/SPECTER_FINAL_RELEASE.zip
 
 Also:
   /opt/cursor/artifacts/SPECTER_FINAL_RELEASE.zip
 
-Size:   514693004 bytes (490.8 MB)
-SHA256: ab75510c1346b9865014f223f3498487c7cdcad972926b0c6fd4028cbbe29d00
+Size:   514694745 bytes (490.9 MB)
+SHA256: 9bcf8ba305c265e8218292728f17208b3659840d2ec9744ab3e648378b8ae9a8
 
-DATA SHA256: 2fcc582e767001ac3e44e319a4f95f781dd112ebd7f612e6d216f1ea2be87f5c
+DATA SHA256: bbb247809bfb6bde10aca03a9bf9bad802f50b2ce6a5c25aa6f538487a148f08
 ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+America_AdvancedAirBaseCommandSet:
+  1. Command_ConstructPatch_America_B2 -> Patch_America_B2
+  2. Command_ConstructPatch_America_B21 -> Patch_America_B21
+  3. Command_ConstructPatch_America_B52 -> Patch_America_B52
+  4. Command_ConstructAmericaJetC5Galaxy_AAB -> Patch_America_C17
+  5. Command_ConstructAmericaJetF117_AAB -> AmericaJetStealthFighter
+  6. Command_ConstructPatch_America_E3 -> Patch_America_E3
+
+America_AdvancedAirBase:
+  Prerequisites=empty
+  Scale=2.00
+  Geometry=224.0 x 148.0 x 50.0
+  Model/art=US_AirField
 
 CommandSet fix:
   AmericaDozerCommandSet definitions = 1
   Data\INI\CommandSet.ini CR bytes = 0 (LF-only)
+  USA dozer Strategy Center commands removed
   AmericaVehicleDozer uses AmericaDozerCommandSet
   Command Center untouched
 
 AAB/Russia retained:
-  AAB six-aircraft roster, early unlock, approx 2x size
+  F-117 science gate cleared
   9M317_MissileObject KindOf has no PRELOAD
 
 Integrity: unzip -t PASS

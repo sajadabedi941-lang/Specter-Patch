@@ -1,0 +1,53 @@
+{
+  "data_sha256": "bbb247809bfb6bde10aca03a9bf9bad802f50b2ce6a5c25aa6f538487a148f08",
+  "art_sha256": "bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73",
+  "commandset_sha256": "b50dfb1b1445d18b1c6ff1f979494fc453010f3de7fddd20304cf066497a914b",
+  "america_aab_commandset": [
+    {
+      "slot": 1,
+      "command": "Command_ConstructPatch_America_B2",
+      "object": "Patch_America_B2"
+    },
+    {
+      "slot": 2,
+      "command": "Command_ConstructPatch_America_B21",
+      "object": "Patch_America_B21"
+    },
+    {
+      "slot": 3,
+      "command": "Command_ConstructPatch_America_B52",
+      "object": "Patch_America_B52"
+    },
+    {
+      "slot": 4,
+      "command": "Command_ConstructAmericaJetC5Galaxy_AAB",
+      "object": "Patch_America_C17"
+    },
+    {
+      "slot": 5,
+      "command": "Command_ConstructAmericaJetF117_AAB",
+      "object": "AmericaJetStealthFighter"
+    },
+    {
+      "slot": 6,
+      "command": "Command_ConstructPatch_America_E3",
+      "object": "Patch_America_E3"
+    }
+  ],
+  "america_aab_scale": "2.00",
+  "america_aab_prerequisites": "empty",
+  "america_aab_geometry": {
+    "major": "224.0",
+    "minor": "148.0",
+    "height": "50.0"
+  },
+  "america_aab_model": "US_AirField",
+  "f117_science_gate": "cleared",
+  "america_dozer_strategy_center_present": false,
+  "america_dozer_aab_entries": 2,
+  "commandset_cr_bytes": 0,
+  "america_dozer_definitions": 1,
+  "command_center_untouched_no_aab": true,
+  "america_vehicle_dozer_commandset": "AmericaDozerCommandSet",
+  "russia_9m317_preload": false
+}

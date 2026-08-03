@@ -1,14 +1,33 @@
-SPECTER FINAL RELEASE — VERIFY REPORT
+SPECTER FINAL RELEASE - COMMANDSET DOZER + ADVANCED AIRFIELD VERIFY REPORT
 Result: PASS
 
-_SPEC_DATA_ONE.big  size=384617838
-  SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
-_SPEC_ART_ONE.big   size=446216323
-  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+_SPEC_DATA_ONE.big SHA256=bbb247809bfb6bde10aca03a9bf9bad802f50b2ce6a5c25aa6f538487a148f08
+_SPEC_ART_ONE.big  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP SHA256=9bcf8ba305c265e8218292728f17208b3659840d2ec9744ab3e648378b8ae9a8
 
-Object 9M317_MissileObject
-  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-  PRELOAD = NO
-  Locomotor = SET_NORMAL 9M317MissileLocomotor
+America_AdvancedAirBaseCommandSet:
+  1. Command_ConstructPatch_America_B2 -> Patch_America_B2
+  2. Command_ConstructPatch_America_B21 -> Patch_America_B21
+  3. Command_ConstructPatch_America_B52 -> Patch_America_B52
+  4. Command_ConstructAmericaJetC5Galaxy_AAB -> Patch_America_C17
+  5. Command_ConstructAmericaJetF117_AAB -> AmericaJetStealthFighter
+  6. Command_ConstructPatch_America_E3 -> Patch_America_E3
 
-main merge: cursor/russia-9m317-preload-fix-66a9 -> main (d752e5fd)
+America_AdvancedAirBase:
+  Prerequisites=empty
+  Scale=2.00
+  Geometry=224.0 x 148.0 x 50.0
+  Model/art=US_AirField
+
+CommandSet.ini:
+  SHA256=b50dfb1b1445d18b1c6ff1f979494fc453010f3de7fddd20304cf066497a914b
+  AmericaDozerCommandSet definitions=1
+  CR bytes=0
+  Dozer AAB entries=2
+  Strategy Center present on dozer=False
+
+PASS: AmericaVehicleDozer uses AmericaDozerCommandSet.
+PASS: America Command Center CommandSet untouched/no AAB.
+PASS: F-117 AmericaJetStealthFighter science gate cleared.
+PASS: Russia 9M317_MissileObject stock/no PRELOAD.
+PASS: unzip -t /opt/cursor/artifacts/SPECTER_FINAL_RELEASE.zip.

@@ -1,37 +1,34 @@
-SPECTER FINAL RELEASE
-=====================
-AAB Five-Aircraft + Russia 9M317_MissileObject fix
-Merged to main: d752e5fd
+SPECTER FINAL RELEASE - CommandSet Dozer Syntax + Advanced Airfield Fix
+======================================================================
 
-CONTENTS
---------
-  _SPEC_DATA_ONE.big
-  _SPEC_ART_ONE.big
-  Install_SpecterPatch.bat
-  README_INSTALL.txt
-  VERIFY_REPORT.txt
-  HASHES.txt
+Install by running Install_SpecterPatch.bat or copying _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into GameRoot.
 
-ADVANCED AIR BASE
------------------
-  ONLY: B-2, B-21, B-52, E-3 AWACS, AN-225
+WARNING: Do not leave a loose Data\INI\CommandSet.ini override in GameRoot or a higher-priority patch folder.
+Loose overrides can reintroduce stale commandsets or mixed line endings.
 
-RUSSIA FIX
-----------
-  Object 9M317_MissileObject
-    KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE
-    (NO PRELOAD)
-    Locomotor = SET_NORMAL 9M317MissileLocomotor
+America Advanced Airfield roster:
+  1. Command_ConstructPatch_America_B2 -> Patch_America_B2
+  2. Command_ConstructPatch_America_B21 -> Patch_America_B21
+  3. Command_ConstructPatch_America_B52 -> Patch_America_B52
+  4. Command_ConstructAmericaJetC5Galaxy_AAB -> Patch_America_C17
+  5. Command_ConstructAmericaJetF117_AAB -> AmericaJetStealthFighter
+  6. Command_ConstructPatch_America_E3 -> Patch_America_E3
 
-INSTALL
--------
-1. Close Specter / Generals completely.
-2. Unzip SPECTER_FINAL_RELEASE.zip
-3. Run Install_SpecterPatch.bat and enter GameRoot
-   OR copy both .big files into GameRoot (replace existing).
-4. Launch Specter.
+America_AdvancedAirBase:
+  Prerequisites=empty
+  Scale=2.00
+  Geometry=224.0 x 148.0 x 50.0
+  Model/art=US_AirField
 
-CHECKSUMS
----------
-  DATA SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
-  ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+Fixes verified:
+- Existing stock AmericaDozerCommandSet patched in-place; no duplicate created.
+- CommandSet.ini is LF-only.
+- USA dozer Strategy Center commands removed; Advanced Airfield button inserted.
+- AmericaVehicleDozer uses AmericaDozerCommandSet.
+- America Command Center is untouched.
+- F-117 science gate cleared.
+- Russia 9M317_MissileObject remains no PRELOAD.
+
+DATA SHA256=bbb247809bfb6bde10aca03a9bf9bad802f50b2ce6a5c25aa6f538487a148f08
+ART  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+ZIP  SHA256=9bcf8ba305c265e8218292728f17208b3659840d2ec9744ab3e648378b8ae9a8

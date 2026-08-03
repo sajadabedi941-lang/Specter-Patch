@@ -1,19 +1,21 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — download package (clean, no Russia/9M317 overlay)
-======================================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — download package (USA-only, no Russia/9M317)
+====================================================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-final-no-russia-202608031215/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-usa-only-202608031220/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-73a41b096a63099329502a7ffb7b58047bace4761f0ad9eab27f30a8551a567a
+8abe8714e69d6b37de4c3819d7e2c4aae3d2c020cc776530d76bfc260da78621
 
 Contained BIG SHA256:
-01c4840177727fdff0b033bf0c3194bee2e040d43fd7cd6faf40782680023cd8  _SPEC_DATA_ONE.big
-cd7f9c6912839a6f0bb0ea3c8dedaf55cf8ddb7bbe09795044a6dc34759e2fa6  _SPEC_ART_ONE.big
+e860b749eaa0735dadda0b1d68cc639ce793728abc78614e1297c8faa551d3ec  _SPEC_DATA_ONE.big
+b631dc941d3683317a2c2357ff4b8e07ad8ebb72aba04d80b28953ac13056029  _SPEC_ART_ONE.big
 
-Fix vs previous package:
-- Removed patch Russia_WeaponObjects.ini / 9M317_MissileObject overlay that caused load crash
+Fix vs previous packages
+- Removed Russia_WeaponObjects.ini / 9M317_MissileObject overlay (load crash)
+- Removed multi-faction Russia AAB / Russia aircraft overlays from SPEC merge
+- Removed accidental Turkey art leftovers from ART merge
 - Original Specter Russia 9M317 left to base SPEC / game data (not overwritten)
-- Advanced Air Base + USA aircraft overlay kept
+- Advanced Air Base + USA aircraft overlay only (allow-list merge into existing base BIGs; no full BIG rebuild)
 
 Install: see SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE_INSTALL.txt

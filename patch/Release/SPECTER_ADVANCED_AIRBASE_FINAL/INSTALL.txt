@@ -1,32 +1,8 @@
-SPECTER — Advanced Air Base Final Release (PR #252)
-===================================================
+SPECTER ADVANCED AIRBASE FINAL (loose Data overlay — USA-only)
+==============================================================
+Prefer the SPEC BIG release ZIP when possible.
 
-WHAT THIS PACKAGE DOES
-- USA dozer Strategy Center slots (2 and 15) build Advanced Air Base
-- America_AdvancedAirBase visual Scale = 2.00 (~2x stock airfield)
-- Advanced Air Base build list (exactly 5):
-    1) B-52   -> Patch_America_B52
-    2) B-2    -> Patch_America_B2
-    3) B-21   -> Patch_America_B21
-    4) F-117  -> AmericaJetStealthFighter
-    5) E-3    -> Patch_America_E3
-- Normal Airfield unchanged
-- Command Center unchanged
-- Russia untouched
-- No .big rebuild
+This folder is a USA-only Advanced Air Base overlay.
+Russia / 9M317 files are intentionally excluded so original Specter Russia data is used.
 
-INSTALLATION
-1. Install Specter / your existing SPEC DATA + ART as usual.
-2. Copy this package's Data/ folder into the Specter game Data/ folder
-   (merge and overwrite matching paths).
-3. Confirm these last-wins files are present after install:
-     Data/INI/ZZZZZZZZ_SPECTER_B2_AAB_BUILD_FINAL.ini
-     Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_America_AdvancedAirBase_B2Attach.ini
-     Data/INI/Object/ZZZZZZZZ_SPECTER_B2_FINAL/ZZZZZZZZ_Patch_America_B2_Final.ini
-4. Launch the game. Build Advanced Air Base from the former Strategy Center
-   dozer slots. Select the base to see the five aircraft.
-
-NOTES
-- C-5 is not included (no C-5 object/asset exists in the patch).
-- Loose INI overlay only; do not replace _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
-  for this package.
+Aircraft: B-52, B-2, B-21, F-117, E-3. Scale 2.00. No C-5.

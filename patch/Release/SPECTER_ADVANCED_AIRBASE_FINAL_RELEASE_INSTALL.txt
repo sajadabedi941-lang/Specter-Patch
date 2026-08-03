@@ -1,5 +1,5 @@
-SPECTER ADVANCED AIRBASE FINAL RELEASE (clean — no Russia/9M317 overlay)
-=======================================================================
+SPECTER ADVANCED AIRBASE FINAL RELEASE (USA-only — no Russia/9M317 overlay)
+===========================================================================
 
 Contents (replace in game/Specter folder):
   _SPEC_DATA_ONE.big
@@ -20,7 +20,7 @@ Included
 - Aircraft: B-52, B-2, B-21, F-117, E-3
 - No C-5
 
-NOT included (restored to original Specter / base SPEC)
+NOT included (original Specter Russia restored / untouched)
 - Russia_WeaponObjects.ini / 9M317_MissileObject overlay
-- Other Russia faction Object overlays from patch/
-
+- Russia Advanced Air Base / Russia aircraft Object overlays
+- Other non-USA faction AAB overlays from patch/

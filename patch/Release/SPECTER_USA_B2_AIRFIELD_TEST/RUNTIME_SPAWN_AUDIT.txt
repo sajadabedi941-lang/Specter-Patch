@@ -1,13 +1,13 @@
-TEOD B-2 INI PARSE FIX
+TEOD B-2 INI PARSE FIX v2
 ======================================================================
-PASS  Removed FireWeaponUpdate (invalid with JetAIUpdate in Specter)
-PASS  Removed VeterancyGainCreate (invalid with JetAIUpdate in Specter)
-PASS  Renamed DeathTag_* to ModuleTag_*
-PASS  ASCII-only INI (no UTF-8 emdash in comments)
-PASS  KindOf Specter aircraft-compatible
-PASS  AmericaJetB2 -> AVB3bmbr chain unchanged
-PASS  Slot5 / Airfield / CommandSet untouched
+PASS  AmericaJetB2 rewritten to Specter bomber module layout
+PASS  TEOD-only Draw anim/PickBox/Stealth/EMP removed
+PASS  Stock Specter JetSlowDeath FX/OCL
+PASS  AirplaneArmor + B2SmallBombWeapon + B2Locomotor
+PASS  Support objects split to TEOD_B2_SupportObjects.ini
+PASS  ASCII-only
+PASS  AVB3bmbr / AmericaJetB2 / slot5 unchanged
 
 GATE PASS
-DATA 964e9accc47e2b3391d656a6bcca37a4c1b9f295d208622cb926be7b707c8083
+DATA 3d98b7eb3e23edb4a58dd24116bf6c2a3b04f9096adefdddf69a538d59f39091
 ART 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838

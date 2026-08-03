@@ -1,7 +1,7 @@
-SPECTER USA Stock Airfield + TEOD B-2 Spirit (INI parse fix)
-============================================================
+SPECTER USA Stock Airfield + TEOD B-2 (parse-safe AmericaJetB2)
+===============================================================
 
-https://litter.catbox.moe/blnbim.zip
+https://litter.catbox.moe/q6gn2m.zip
 
-Parse fix only for Object AmericaJetB2 in TEOD_AmericaJetB2.ini.
-Chain unchanged: slot5 -> Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 -> AVB3bmbr
+AmericaJetB2 rewritten to Specter bomber INI layout so Object parses.
+Model AVB3bmbr. Slot5 unchanged. Airfield/CommandSet untouched.

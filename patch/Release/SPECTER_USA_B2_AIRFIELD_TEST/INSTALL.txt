@@ -2,9 +2,5 @@ INSTALL
 =======
 1) Extract ZIP
 2) Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into Specter game root
-3) Launch Specter
-4) USA Airfield menu slot 5 -> B-2 Spirit (available from start)
-5) Build immediately, take off, attack (B2SmallBomb -> B2BombCluster), return to base
-
-Do not modify USA Airfield Object/W3D.
-Do not use AdvancedAirBase.
+3) Launch Specter - INI must load with no AmericaJetB2 parse error
+4) USA Airfield slot 5 -> B-2 Spirit

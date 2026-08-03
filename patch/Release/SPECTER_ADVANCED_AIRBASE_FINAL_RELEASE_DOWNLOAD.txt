@@ -1,22 +1,20 @@
-SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — patch airbase model restored
-====================================================================
+SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE — TEOD airfield model
+===========================================================
 
 Download ZIP:
-https://filebin.net/specter-aab-patch-model-202608031318/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
+https://filebin.net/specter-aab-teod-airfield-202608031337/SPECTER_ADVANCED_AIRBASE_FINAL_RELEASE.zip
 
 ZIP SHA256:
-25c442222df60ca5d8b9689f36a1ed2edec2ae619d542f5ceb29021c3a5c8d5d
+e3b43ceb4a89b834fa875c98651bcf91e46bfb3d26e2f5be7473371aaf2982bc
 
 Contained BIG SHA256:
-230bfbee1631dead5a7a46ee5f49ba21b3dd997f120ee2e8db320ae09a3f65b5  _SPEC_DATA_ONE.big
-b631dc941d3683317a2c2357ff4b8e07ad8ebb72aba04d80b28953ac13056029  _SPEC_ART_ONE.big
+eed279e76b1495871ac75523bebcba644ae3a591faf628f782b5a96ce49ec93d  _SPEC_DATA_ONE.big
+f738d02bd0cdfebcc9ddc5f6fd05a87f958898db534dfc92c50ee24df57f5c99  _SPEC_ART_ONE.big
 
-Airbase only
-- Replaced oversized Revolution ABAirF2 with Specter patch Advanced Air Base
-- Object: America_AdvancedAirBase from AdvancedAirBase_AllFactions (patch)
-- Model: US_AirField
-- Scale: 1.60 (patch real size)
-- Texture/MappedImage: Patch_AdvancedAirBase
-- W3D: US_AirField (already in SPEC ART)
+Airbase model/art only (from TEOD BIGs)
+- INI scale/geometry: TEOD USA Airfield.ini (Scale 1.1, 140x85x25)
+- W3D: GLA-Airfield* (TEOD airfield mesh; USA INI ABArFrcCmd assets missing)
+- Textures: UVAirfield* from TEOD_Textures
+- Not Specter AdvancedAirBase / not Revolution ABAirF2
 
 Not changed: Dozer, aircraft unlocks, Russia, BIG architecture

@@ -1,9 +1,10 @@
-SPECTER ADVANCED AIRBASE FINAL RELEASE (patch airbase model)
+SPECTER ADVANCED AIRBASE FINAL RELEASE (TEOD airfield model)
 ============================================================
 
 Replace in game folder:
   _SPEC_DATA_ONE.big
   _SPEC_ART_ONE.big
 
-Airbase restored from Specter patch:
-  US_AirField @ Scale 1.60 + Patch_AdvancedAirBase art
+TEOD airfield art:
+  GLA-Airfield mesh + UVAirfield textures
+  Scale 1.1 / Geometry 140 x 85 x 25

@@ -1,0 +1,17 @@
+SPECTER_B2_FINAL_NO_AAB_CRASH
+
+https://gofile.io/d/TR4yXg
+
+DATA SHA256: 163895efcf1f9efe1678c8f659cdfdfe8aaff4f86288d415389fbb1971992db5
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 72696d27b18f9df976e79606926f45534dd725bb03b685292d4892ae4fcbea32
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  README.txt
+  INSTALL.txt
+  CHAIN_AUDIT.txt
+  HASHES.txt
+
+Includes newest AAB crash fix + working AmericaJetB2 slot 5 path.

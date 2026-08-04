@@ -1,0 +1,5 @@
+1) Backup existing _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+2) Replace with files from this zip
+3) Launch Specter
+4) Build USA Airfield — slot 5 B-2 Spirit should be visible and clickable immediately
+5) Build -> fly -> bomb -> return to base

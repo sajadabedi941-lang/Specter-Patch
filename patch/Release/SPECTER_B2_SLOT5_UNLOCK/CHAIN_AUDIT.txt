@@ -1,0 +1,15 @@
+ACTIVE PATH (ONE)
+AmericaAirfieldCommandSet slot 5 = Command_ConstructTEODAmericaJetB2
+ProductionObject = AmericaJetB2
+RequiredScience = none
+Options = none
+
+DRAW
+AmericaJetB2 Model = AVB3bmbr (final ZZZZ_AmericaJetB2_AVB3_Draw.ini)
+Prerequisites = empty
+
+NEUTRALIZED
+ZZZZ_USA_Airfield_B2_Production.ini (stub)
+CommandSet_ZZZZ_USA_AdvancedAirBase.ini (stub)
+CommandButton_ConstructPatch_America_B2.ini (stub)
+HeavyAircraft B-2 buttons -> AmericaJetB2

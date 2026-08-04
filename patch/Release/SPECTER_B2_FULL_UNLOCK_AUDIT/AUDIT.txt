@@ -1,0 +1,27 @@
+SPECTER B-2 FULL UNLOCK AUDIT
+================================
+
+CLEARED AT SOURCE
+- USA_System.ini AmericaJetB2Spirit Prerequisites
+  (removed Object=AmericaStrategyCenter + Science=SCIENCE_Rank4)
+
+FORCE LAST-WINS
+- Data/INI/ZZZZ_ZZZ_USA_B2_FORCE_UNLOCK.ini
+  Object AmericaJetB2: Buildable=Yes, Prerequisites empty, BuildCost=2500
+  Object AmericaJetB2Spirit: same
+  Command_ConstructTEODAmericaJetB2 -> AmericaJetB2 (no RequiredScience/Options)
+  All CommandSets slot 5 = Command_ConstructTEODAmericaJetB2:
+    AmericaAirfieldCommandSet
+    AmericaAirfieldCommandSet_T
+    AmericaAirfieldCommandSet_T1
+    AmericaAirfieldCommandSet_T2
+    AmericaAirfieldCommandSet_T3
+
+UNCHANGED
+- AVB3bmbr Draw/model
+- weapon / AI / locomotor
+- Airfield Object
+
+NOTE
+- BuildCost lowered to 2500 in unlock override so button is not money-greyed
+  at typical early-game cash (was 8500).

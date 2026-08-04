@@ -1,0 +1,27 @@
+SPECTER USA Airfield B-2 — final merged production path audit
+==============================================================
+
+Active path (ONE):
+  AmericaAirfieldCommandSet slot 5
+    = Command_ConstructTEODAmericaJetB2
+      Object / ProductionObject = AmericaJetB2
+      RequiredScience = (none)
+      Options = (none)
+
+Last-wins owner:
+  Data/INI/ZZZZ_USA_Airfield_TEOD_B2_Production.ini
+
+Neutralized (no live CommandSet / competing Airfield B-2 UNIT_BUILD):
+  Data/INI/ZZZZ_USA_Airfield_B2_Production.ini          (stub)
+  Data/INI/CommandSet_ZZZZ_USA_AdvancedAirBase.ini     (stub)
+  Data/INI/CommandButton_ConstructPatch_America_B2.ini (stub)
+
+Alias only (not on AmericaAirfieldCommandSet slot 5):
+  Command_ConstructAmericaJetB2Spirit -> AmericaJetB2
+  (prevents stock BIG CommandSet.ini / HeavyAircraft from forking a second object)
+
+Not changed:
+  AmericaJetB2 Draw / AVB3bmbr / weapon / AI / locomotor
+
+Goal:
+  B-2 button visible and clickable from game start.

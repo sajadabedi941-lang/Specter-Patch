@@ -1,0 +1,14 @@
+ACTIVE B-2 PATH (ONE)
+AmericaAirfieldCommandSet slot 5 = Command_ConstructTEODAmericaJetB2
+ProductionObject = AmericaJetB2
+Draw = AVB3bmbr
+Prerequisites empty / no RequiredScience
+
+AAB CRASH FIX
+Aircraft_AAB_Global.ini = REMOVED stub (0 Object defs)
+Aircraft_AAB_StrategicBombers.ini = REMOVED stub
+Aircraft_USA_AAB_Fighters.ini = REMOVED stub
+Aircraft_USA_Heavy_Runway.ini = REMOVED stub
+Object Patch_America_B3 = removed
+Command_ConstructPatch_America_B3 = removed
+Command_ConstructAmerica_AdvancedAirBase = removed

@@ -1,0 +1,5 @@
+1) Backup existing _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+2) Replace with files from this zip
+3) Launch Specter (must load with no AAB / Patch_America_B3 parse error)
+4) Build USA Airfield — slot 5 B-2 Spirit visible and clickable from game start
+5) Build -> fly -> bomb -> return to base

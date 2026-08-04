@@ -1,0 +1,4 @@
+1. Download SPECTER_B2_COMMANDSET_FIX.zip
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace same-named BIG files (overwrite RUNTIME_FORCE)
+4. Launch USA skirmish — CommandSet.ini should parse; B-2 remains slot 5

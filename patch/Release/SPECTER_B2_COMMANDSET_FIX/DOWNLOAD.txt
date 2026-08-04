@@ -1,0 +1,13 @@
+SPECTER_B2_COMMANDSET_FIX
+
+https://gofile.io/d/G0abyj
+
+DATA SHA256: f4bfe529a7e0f3af0d8be64989484ad76a7bfdadf7db0be92b958992deda93c6
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 18f953cf21862689a780516e5781b170a9e36f257b20af7ebab2f94a08e69f95
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Fixes CommandSet.ini parse crash on AmericaAirfieldCommandSet_T.

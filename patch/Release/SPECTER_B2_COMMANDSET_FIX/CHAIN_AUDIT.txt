@@ -1,0 +1,13 @@
+Validated CommandSet.ini USA Airfield blocks:
+  AmericaAirfieldCommandSet
+  AmericaAirfieldCommandSet_T
+  AmericaAirfieldCommandSet_T1
+  AmericaAirfieldCommandSet_T2
+  AmericaAirfieldCommandSet_T3
+
+Each:
+  - exactly one definition
+  - proper End
+  - only "N = Command_*" slot lines
+  - no Object / nested CommandSet / comment garbage
+  - slot 5 = Command_ConstructTEODAmericaJetB2

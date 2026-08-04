@@ -1,0 +1,8 @@
+FINAL GATES
+AmericaJetB2 Buildable = Ignore_Prerequisites
+AmericaJetB2 Prerequisites = empty
+Command_ConstructTEODAmericaJetB2 Object = AmericaJetB2
+RequiredScience/Options = none
+All airfield CommandSet variants slot 5 = Command_ConstructTEODAmericaJetB2
+Last-wins file: ZZZZ_ZZZ_USA_B2_FORCE_UNLOCK.ini
+Draw = AVB3bmbr unchanged

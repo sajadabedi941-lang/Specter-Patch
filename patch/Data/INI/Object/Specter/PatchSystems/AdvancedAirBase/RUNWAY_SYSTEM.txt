@@ -1,1 +1,2 @@
-REMOVED - AdvancedAirBase runway system disabled. USA uses stock AmericaAirfield.
+; REMOVED - AdvancedAirBase runway system disabled.
+; USA B-2 remains AmericaJetB2 on stock AmericaAirfield slot 5 (untouched).

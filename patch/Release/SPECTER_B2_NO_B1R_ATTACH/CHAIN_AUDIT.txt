@@ -1,0 +1,5 @@
+AmericaJetB2 Draw: AVB3bmbr only (unchanged)
+AmericaJetB2Spirit: AVB3bmbr + HideSubObject BurnerFX; no US_B1R Model; no ShowSubObject BurnerFX
+USA_System AmericaJetB2Spirit: AVB3bmbr (was US_B1R)
+Command_ConstructTEODAmericaJetB2 ButtonImage: B2-ic_L (was us_b1r)
+Slot5 -> AmericaJetB2 unchanged

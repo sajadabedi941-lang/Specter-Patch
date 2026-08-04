@@ -1,0 +1,13 @@
+SPECTER_B2_SCALE_110
+
+https://gofile.io/d/MZAUf2
+
+DATA SHA256: 1f1dca77f24e36fc8dc0388c7d78fe752259663a5511d5a0cd4d6b1f062b3ab7
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 831cda31f497028257e7d6c27c6115eea271d57f88c6b755ff2ae37a45792fcb
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+AmericaJetB2 visual Scale only: 0.55 -> 1.10

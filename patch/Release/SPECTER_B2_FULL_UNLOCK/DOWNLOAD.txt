@@ -1,0 +1,13 @@
+SPECTER_B2_FULL_UNLOCK
+
+https://gofile.io/d/LtZWhZ
+
+DATA SHA256: f91b917f93b672edd662642164f656fc2556d896e98b1944bc096bd6ff248df1
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 7125a84fa324db744f362d32950589fa0489a15ebccb19037b370f426fd3b5f8
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+B-2 available immediately after Airfield construction (no Science / Strategy Center / Upgrade / General Star).

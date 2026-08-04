@@ -19,5 +19,3 @@ Final last-wins file (sorts after all Data/INI including StrategyCenter restore)
     AmericaAirfieldCommandSet_T3
 
 NOT touched: AVB3bmbr Draw / weapon / AI / locomotor / Airfield Object
-
-Release: https://gofile.io/d/LtZWhZ

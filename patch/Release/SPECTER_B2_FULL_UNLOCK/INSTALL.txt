@@ -1,0 +1,4 @@
+1. Download SPECTER_B2_FULL_UNLOCK.zip
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace the same-named BIG files in your Specter install
+4. Start a new skirmish as USA, build Airfield, B-2 is slot 5

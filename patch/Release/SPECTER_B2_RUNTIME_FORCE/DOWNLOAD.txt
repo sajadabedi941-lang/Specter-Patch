@@ -1,0 +1,13 @@
+SPECTER_B2_RUNTIME_FORCE
+
+https://gofile.io/d/QPH0AN
+
+DATA SHA256: b5594cf6e32d7aeeeba3465478c7b325688e8164b4c02c16cd541c37c1b844eb
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 60ea4f83c83057b58ae67bb981ac7ba7c3ad982346b7a981fc12cc73166e742d
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Runtime-traced USA Airfield CommandSet force — B-2 on slot 5 immediately after Airfield.

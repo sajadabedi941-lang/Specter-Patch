@@ -1,0 +1,4 @@
+1. Download SPECTER_B2_RUNTIME_FORCE.zip
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace same-named BIG files in your Specter install (overwrite older FULL_UNLOCK)
+4. Start new USA skirmish, build Airfield — B-2 is slot 5, unlocked

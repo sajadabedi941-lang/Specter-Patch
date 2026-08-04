@@ -1,0 +1,16 @@
+RUNTIME TRACE
+
+Dozer builds: AmericaAirfield_T (Command_ConstructAmericaAirfield_T)
+Initial CommandSet: AmericaAirfieldCommandSet_T
+Tier upgrades: AmericaAirfieldCommandSet_T1 / _T2 / _T3
+Non-tier Airfield: AmericaAirfieldCommandSet
+
+FORCE REPLACE (absolute last: ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini):
+  Object AmericaAirfield.CommandSet = AmericaAirfieldCommandSet
+  Object AmericaAirfield_T.CommandSet = AmericaAirfieldCommandSet_T
+  All five CommandSets slot 5 = Command_ConstructTEODAmericaJetB2
+  No Spirit / B1R / Patch_America_B2 on slot 5
+  Command_ConstructTEODAmericaJetB2 Object = AmericaJetB2
+  AmericaJetB2 Buildable = Ignore_Prerequisites, Prerequisites empty
+
+Also stubbed: CommandButton_ZZZZ_USA_AAB_Building_Unlock.ini (no AAB redirect)

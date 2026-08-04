@@ -1,0 +1,3 @@
+AmericaJetB2 FINAL Draw: ZZZZ_AmericaJetB2_AVB3_Draw.ini -> AVB3bmbr / WeaponA01 / Scale 0.55
+AmericaJetB2Spirit overlays: no US_B1R Model
+Production slot5 unchanged -> AmericaJetB2

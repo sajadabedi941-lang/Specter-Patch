@@ -1,0 +1,13 @@
+SPECTER_B2_SCALE_085
+
+https://gofile.io/d/jGZtsX
+
+DATA SHA256: 943d89cf0a23efdc3bc68c2ed9a15b4bce58ef6b940a9d27aa0f8dd7644d983e
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: 2442b21175de20aafd219ddd7f3a0074c15d66a24ffde6d3d460e539a66c661c
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+AmericaJetB2 visual Scale only: 1.10 -> 0.85

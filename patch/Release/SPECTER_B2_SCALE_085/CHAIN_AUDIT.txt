@@ -1,0 +1,6 @@
+AmericaJetB2 Scale = 0.85
+Model = AVB3bmbr / _D / _D1 (unchanged)
+Last-wins: ZZZZZZZZ_ZZZZ_USA_B2_VISUAL_DRAW_ONLY.ini
+
+Untouched: Draw model refs, SubObjects, CommandSet, Production,
+Airfield, Weapon, AI, locomotor

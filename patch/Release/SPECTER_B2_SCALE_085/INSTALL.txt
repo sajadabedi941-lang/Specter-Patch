@@ -1,0 +1,4 @@
+1. Download SPECTER_B2_SCALE_085.zip
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace same-named BIG files
+4. Spawn AmericaJetB2 — Scale 0.85 visual only

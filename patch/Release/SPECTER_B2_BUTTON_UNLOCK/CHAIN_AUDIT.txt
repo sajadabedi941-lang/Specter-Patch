@@ -1,0 +1,5 @@
+All AmericaAirfieldCommandSet variants slot 5 = Command_ConstructTEODAmericaJetB2
+Object = AmericaJetB2
+RequiredScience/Options = none
+AmericaJetB2 Buildable=Yes Prerequisites empty (ZZZZ_USA_Airfield_TEOD_B2_Production.ini last-wins)
+Draw = AVB3bmbr unchanged

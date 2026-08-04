@@ -1,0 +1,4 @@
+1. Download SPECTER_B2_VISUAL_DRAW_FIX.zip
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace same-named BIG files (overwrite COMMANDSET_FIX)
+4. Spawn AmericaJetB2 — AVB3bmbr only, no B-1R overlay

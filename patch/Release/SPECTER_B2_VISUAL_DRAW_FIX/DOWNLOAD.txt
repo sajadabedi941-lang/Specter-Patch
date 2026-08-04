@@ -1,0 +1,13 @@
+SPECTER_B2_VISUAL_DRAW_FIX
+
+https://gofile.io/d/5XdWqV
+
+DATA SHA256: 8a1e7c579483f96cb58edaf0b48ffb8d0499202de5d8d0214b9d478b3b25948a
+ART  SHA256: 958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  SHA256: d5bf3bdf7facc8c77eb1df4c5ab54ab87b4c16939fdc93e6f4486ee27bebc911
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Visual-only: strip leftover B-1R/BurnerFX subobject pull from AmericaJetB2.

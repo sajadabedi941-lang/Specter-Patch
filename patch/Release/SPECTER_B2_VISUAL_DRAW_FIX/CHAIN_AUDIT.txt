@@ -1,0 +1,11 @@
+AmericaJetB2 Draw ModuleTag_01 only:
+  Model = AVB3bmbr / AVB3bmbr_D / AVB3bmbr_D1
+  Scale = 0.55
+  HideSubObject BurnerFX01-04 on every ConditionState
+  ShowSubObject = None
+  No US_B1R / W3DDependency / child mesh draws
+
+Last-wins: ZZZZZZZZ_ZZZZ_USA_B2_VISUAL_DRAW_ONLY.ini
+Also locked: TEOD_AmericaJetB2.ini + ZZZZ_AmericaJetB2_AVB3_Draw.ini Draw blocks
+
+Untouched: CommandSet.ini, Airfield, Production unlocks, Weapon, AI, locomotor

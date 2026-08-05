@@ -1,0 +1,20 @@
+SPECTER_B2_STABLE_MERGE
+=======================
+Stable merge point backup of the working B-2 version.
+
+Download (gofile):
+https://gofile.io/d/1nHCdq
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+
+This package is a named stable release of the finalized B-2 state:
+- AmericaJetB2 works
+- Visual model AVB3bmbr
+- B-1R separated
+- Scale finalized at 0.85
+- Airfield production works
+
+Byte-identical to SPECTER_B2_SCALE_085 BIGs (finalized working state).
+No gameplay / weapons / stealth / cost / AI / balance changes in this merge backup step.

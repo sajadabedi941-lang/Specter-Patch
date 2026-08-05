@@ -1,0 +1,26 @@
+SPECTER_B2_STABLE_MERGE — chain audit
+=====================================
+
+Merge source: cursor/usa-b2-aab-finalize-0533 / cursor/b2-stable-merge-0533
+Merge target: main (local fast-forward completed; push to origin/main)
+
+Stable content identity
+-----------------------
+Identical BIG payload to SPECTER_B2_SCALE_085 (finalized working B-2).
+
+Critical last-wins visual / unlock files preserved:
+- patch/Data/INI/ZZZZZZZZ_ZZZZ_USA_B2_VISUAL_DRAW_ONLY.ini  (Scale 0.85, AVB3bmbr, HideSubObject BurnerFX)
+- patch/Data/INI/ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini  (Airfield CS force + Ignore_Prerequisites)
+- patch/Data/INI/ZZZZZZZZ_ZZZ_USA_B2_FORCE_UNLOCK.ini
+- TEOD_AmericaJetB2.ini / ZZZZ_AmericaJetB2_AVB3_Draw.ini / ZZZZZZZZ_ZZZZZ_AmericaJetB2_DRAW_ONLY.ini
+
+Conflict resolution policy used during merge
+--------------------------------------------
+Kept working B-2 side (--ours) for AAB-related conflicts so stubbed/crash-safe
+AAB overlays remain and the working B-2 Airfield path is preserved.
+
+Do not regress
+--------------
+- Do not reintroduce AAB aircraft overlays from main conflict side
+- Do not change AmericaJetB2 weapon / AI / cost / stealth
+- Do not change finalized Scale 0.85 or AVB3bmbr model identity

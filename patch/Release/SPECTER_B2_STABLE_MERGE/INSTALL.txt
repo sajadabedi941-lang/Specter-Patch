@@ -1,0 +1,16 @@
+Install SPECTER_B2_STABLE_MERGE
+==============================
+
+1. Download ZIP from DOWNLOAD.txt (gofile link).
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Place both BIG files into your Specter / Generals patch Data folder
+   (same location used by previous SPECTER_* ONE.big releases).
+4. Ensure these replace earlier _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+5. Launch the game and verify:
+   - USA Airfield shows B-2 button
+   - B-2 builds and uses AVB3bmbr model at scale 0.85
+   - No B-1R visual stuck on B-2
+
+Rollback
+--------
+Keep a copy of your previous BIG pair before replacing.

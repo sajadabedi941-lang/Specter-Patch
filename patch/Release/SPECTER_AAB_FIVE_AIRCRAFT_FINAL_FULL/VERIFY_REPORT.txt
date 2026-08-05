@@ -1,0 +1,27 @@
+SPECTER AAB FIVE-AIRCRAFT FINAL FULL — VERIFY REPORT
+(+ Russia 9M317_MissileObject fix)
+Generated: 2026-08-02
+Result: PASS
+
+ARCHIVES
+--------
+_SPEC_DATA_ONE.big  size=384617838 entries=2891
+  SHA256=27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
+_SPEC_ART_ONE.big   size=446216323 entries=2689
+  SHA256=bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+RUSSIA 9M317 FIX
+----------------
+Object 9M317_MissileObject
+  KindOf = CAN_CAST_REFLECTIONS PROJECTILE SMALL_MISSILE  (NO PRELOAD)
+  Locomotor = SET_NORMAL 9M317MissileLocomotor
+  Duplicates = 0
+  INI validation PASS (15/15)
+  Other Russian units unchanged
+
+ADVANCED AIR BASE
+-----------------
+Object America_AdvancedAirBase
+  Scale = 1.60
+  Pads  = 16
+  ONLY: B-2, B-21, B-52, E-3, AN-225

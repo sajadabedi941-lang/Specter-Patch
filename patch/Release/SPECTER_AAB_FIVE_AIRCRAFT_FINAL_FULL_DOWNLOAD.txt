@@ -1,0 +1,25 @@
+SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
+
+CLICKABLE DOWNLOAD:
+  https://filebin.net/DChWg8amI_4Bb2-T/SPECTER_AAB_FIVE_AIRCRAFT_FINAL_FULL.zip
+
+Size:   514748240 bytes (490.9 MB)
+SHA256: 28b9584ff50feed14b50adcba03f9197c1301f40512e508b142e936c501b4b12
+
+DATA SHA256: 27f73129627ef868e580a1ce12ef9196d48e75008a4d27d09c22a1e790a88059
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Russia fix:
+  9M317_MissileObject KindOf PRELOAD removed
+  Locomotor = SET_NORMAL 9M317MissileLocomotor
+
+Contents (6 files, single ZIP, no splits):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  Install_SpecterPatch.bat
+  README_INSTALL.txt
+  VERIFY_REPORT.txt
+  HASHES.txt
+
+Integrity: unzip -t PASS
+INI validation: PASS 15/15

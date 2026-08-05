@@ -1,0 +1,10 @@
+SPECTER_B52_VISUAL_DRAW
+=======================
+AmericaJetB52 visual-only Draw lock to real B-52 model US_B52H.
+
+Download (gofile):
+https://gofile.io/d/0AaNAl
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

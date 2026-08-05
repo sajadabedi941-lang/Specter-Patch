@@ -1,0 +1,12 @@
+SPECTER_B2_CLIPSIZE_10
+======================
+AmericaJetB2 bunker-buster ammo capacity: 6 -> 10.
+
+Download (gofile):
+https://gofile.io/d/XdbTAU
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+
+Keeps ClipReloadTime = 300000 and AutoReloadsClip = Yes.

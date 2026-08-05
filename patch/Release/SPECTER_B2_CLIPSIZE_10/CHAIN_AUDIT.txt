@@ -1,0 +1,13 @@
+SPECTER_B2_CLIPSIZE_10 — chain audit
+===================================
+
+Base: SPECTER_B2_STRIKE_COOLDOWN
+
+Ammo-only upsert:
+- Data\INI\ZZZZZZZZ_ZZZZ_USA_B2_STRIKE_COOLDOWN.ini  ClipSize 10
+- Data\INI\Weapon_B2_Spirit.ini                      ClipSize 10
+- Data\INI\Weapon_B2_Complete.ini                    ClipSize 10
+
+Still:
+- ClipReloadTime = 300000
+- AutoReloadsClip = Yes

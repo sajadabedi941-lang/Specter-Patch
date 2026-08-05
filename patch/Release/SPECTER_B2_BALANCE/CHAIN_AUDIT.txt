@@ -1,0 +1,15 @@
+SPECTER_B2_BALANCE — chain audit
+================================
+
+Base: SPECTER_B2_CLIPSIZE_10
+
+Updated AmericaJetB2 last-wins / sources:
+- ZZZZZZZZ_ZZZZ_USA_B2_STRIKE_COOLDOWN.ini  cost/limit/stealth + reload kept
+- ZZZZZZZZ_ZZZ_USA_B2_FORCE_UNLOCK.ini      cost/limit/stealth
+- ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini cost/limit
+- ZZZZ_USA_Airfield_TEOD_B2_Production.ini  cost/limit
+- TEOD_AmericaJetB2.ini / ZZZZ_AmericaJetB2_AVB3_Draw.ini
+- Data/English/TEOD_B2_Strings.txt tooltip
+
+Kept weapon:
+- ClipSize 10 / ClipReloadTime 300000 / AutoReloadsClip Yes

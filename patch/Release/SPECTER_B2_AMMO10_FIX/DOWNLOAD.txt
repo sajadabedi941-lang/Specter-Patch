@@ -1,0 +1,10 @@
+SPECTER_B2_AMMO10_FIX
+=====================
+Fix AmericaJetB2 bunker-buster ammo count to 10 bombs.
+
+Download (gofile):
+https://gofile.io/d/sA0Lgt
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

@@ -1,0 +1,8 @@
+1. Download ZIP from DOWNLOAD.txt
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace prior Specter ONE.big pair
+4. Verify:
+   - B-2 costs 10000 and hard-caps at 3
+   - Ammo 10, 5-min auto recharge
+   - Stealth while flying / striking (unless detected)
+   - Still returns to base when idle

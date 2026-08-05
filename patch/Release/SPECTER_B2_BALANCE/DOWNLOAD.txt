@@ -1,0 +1,10 @@
+SPECTER_B2_BALANCE
+==================
+AmericaJetB2 remaining gameplay balance.
+
+Download (gofile):
+https://gofile.io/d/aOQhtV
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

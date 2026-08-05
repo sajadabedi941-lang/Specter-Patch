@@ -1,0 +1,7 @@
+SPECTER_B2_BALANCE hashes (sha256)
+
+DATA 633dabc38f1a04a7f863f29fe628607650cfe30b2e6860ab80de460e81d19ce5
+ART  958489cd7aef892a7c78bef83bb8a9ddf63be4147fd6a9b0d858ceef008e0838
+ZIP  efaeca99fda174bba23a68543211af2ba03de03803c2a680a9780bc7c1de7541
+
+Download: https://gofile.io/d/aOQhtV

@@ -1,0 +1,19 @@
+SPECTER_B2_STRIKE_COOLDOWN — chain audit
+=======================================
+
+Base payload: SPECTER_B2_SCALE_085 / SPECTER_B2_STABLE_MERGE (ART unchanged)
+
+Upserted into DATA BIG only:
+- Data\INI\ZZZZZZZZ_ZZZZ_USA_B2_STRIKE_COOLDOWN.ini  (NEW last-wins)
+- Data\INI\Weapon_B2_Spirit.ini                      (ClipReloadTime/AutoReloadsClip)
+- Data\INI\Weapon_B2_Complete.ini                    (same weapon fields; BIG-resident)
+
+Key last-wins values:
+- USA_B2_Spirit_BunkerBuster ClipReloadTime = 300000
+- USA_B2_Spirit_BunkerBuster AutoReloadsClip = Yes
+- AmericaJetB2 JetAIUpdate OutOfAmmoDamagePerSecond = 0%
+
+Not modified:
+- ZZZZZZZZ_ZZZZ_USA_B2_VISUAL_DRAW_ONLY.ini
+- ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini
+- AVB3bmbr Draw / Scale

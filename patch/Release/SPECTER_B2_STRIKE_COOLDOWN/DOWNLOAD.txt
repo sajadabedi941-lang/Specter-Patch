@@ -1,0 +1,12 @@
+SPECTER_B2_STRIKE_COOLDOWN
+==========================
+AmericaJetB2 bunker-buster strike: 5-minute automatic recharge.
+
+Download (gofile):
+https://gofile.io/d/A7wDsi
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+
+Gameplay-only change on top of SPECTER_B2_STABLE_MERGE / SCALE_085.

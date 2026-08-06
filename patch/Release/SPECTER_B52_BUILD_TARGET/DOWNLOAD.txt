@@ -1,10 +1,1 @@
-SPECTER_B52_BUILD_TARGET
-========================
-Absolute last-wins: TEOD B-52 button -> AmericaJetB52H + unlock gates.
-
-Download (gofile):
-https://gofile.io/d/eANezC
-
-Contents:
-- _SPEC_DATA_ONE.big
-- _SPEC_ART_ONE.big
+Superseded by SPECTER_B52_NORMAL_BTN: https://gofile.io/d/AaQ4uj

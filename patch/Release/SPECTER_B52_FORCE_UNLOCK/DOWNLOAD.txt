@@ -1,10 +1,12 @@
 SPECTER_B52_FORCE_UNLOCK
 ========================
-AmericaJetB52 build unlock — same method as AmericaJetB2.
+AmericaJetB52 TEOD force unlock (same method as AmericaJetB2).
 
 Download (gofile):
-https://gofile.io/d/Gsu4V4
+https://gofile.io/d/BNhMK5
 
 Contents:
 - _SPEC_DATA_ONE.big
 - _SPEC_ART_ONE.big
+
+See also: SPECTER_B52_TEOD_UNLOCK

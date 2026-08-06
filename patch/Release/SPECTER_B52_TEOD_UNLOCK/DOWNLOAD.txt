@@ -1,0 +1,10 @@
+SPECTER_B52_TEOD_UNLOCK
+=======================
+AmericaJetB52 force unlock — exact same method as AmericaJetB2.
+
+Download (gofile):
+https://gofile.io/d/BNhMK5
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

@@ -1,12 +1,4 @@
-SPECTER_B52_FORCE_UNLOCK
-========================
-AmericaJetB52 TEOD force unlock (same method as AmericaJetB2).
+SPECTER_B52_FORCE_UNLOCK -> superseded by SPECTER_B52_TARGET_H
 
 Download (gofile):
-https://gofile.io/d/BNhMK5
-
-Contents:
-- _SPEC_DATA_ONE.big
-- _SPEC_ART_ONE.big
-
-See also: SPECTER_B52_TEOD_UNLOCK
+https://gofile.io/d/9Q3MGE

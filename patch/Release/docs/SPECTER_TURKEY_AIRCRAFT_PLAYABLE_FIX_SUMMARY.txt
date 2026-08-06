@@ -1,0 +1,4 @@
+SPECTER TURKEY AIRCRAFT PLAYABLE BIG BUILD
+- Rebuilt _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big from main (PR #75 included)
+- Turkey F16 Block70, Kizilelma, TB2, Akinci, Tu-22M3 verified inside DATA BIG
+- Install_SpecterPatch.bat backs up old BIGs, installs new BIGs, prints success

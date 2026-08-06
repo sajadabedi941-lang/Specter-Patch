@@ -1,18 +1,24 @@
-SPECTER_B52_BUTTON_UNLOCK_RELEASE — public FULL BIG backup
+SPECTER_B52_BUTTON_UNLOCK_RELEASE — PUBLIC DOWNLOAD
+====================================================
 
-Download (no login):
+Public download (no login; verified anonymous browser-like GET):
 https://litter.catbox.moe/liuhfw.zip
 
-Contents (direct GameRoot replace):
-  _SPEC_ART_ONE.big
+Branch: cursor/b52-button-unlock-fix-b985
+
+Contents (only):
   _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
 
-Fix:
-  AmericaJetB52H Airfield button unlock.
-  Sticky AmericaStrategyCenter removed from packed Heavy_Runway AmericaJetB52H Prerequisites.
-  All AmericaAirfieldCommandSet / _T / _T1 / _T2 / _T3 B-52 slots force Command_ConstructAmericaJetB52H.
-  BuildCost=8500, MaxSimultaneousOfType=3 kept.
-  Draw / Model / Weapon / AI / Locomotor / B-2 untouched.
+SHA256 ZIP:  32dd5a9dd353d9a715aa8055c24144b4004c2685c6ee8ddec952d94d8dbe4bd2
+SHA256 DATA: 751bc345f9a2fff5e65b1f04c53abba3b226bb19be6c5e4d79729a9c3fd7e77d
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
 
-SHA256 ZIP:
-32dd5a9dd353d9a715aa8055c24144b4004c2685c6ee8ddec952d94d8dbe4bd2
+AmericaJetB52H Airfield button unlock:
+  Sticky AmericaStrategyCenter cleared from packed Heavy_Runway Prerequisites
+  All AmericaAirfieldCommandSet / _T / _T1 / _T2 / _T3 B-52 slots =
+    Command_ConstructAmericaJetB52H
+  BuildCost 8500, MaxSimultaneousOfType 3 kept
+  Draw / Model / Weapon / AI / Locomotor / B-2 untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

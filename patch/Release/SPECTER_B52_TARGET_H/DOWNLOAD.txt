@@ -1,10 +1,1 @@
-SPECTER_B52_TARGET_H
-====================
-TEOD B-52 button builds real AmericaJetB52H (not ScienceObject payload).
-
-Download (gofile):
-https://gofile.io/d/9Q3MGE
-
-Contents:
-- _SPEC_DATA_ONE.big
-- _SPEC_ART_ONE.big
+Superseded by SPECTER_B52_BUILD_TARGET: https://gofile.io/d/eANezC

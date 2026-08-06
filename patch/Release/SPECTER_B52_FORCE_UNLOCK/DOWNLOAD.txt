@@ -1,4 +1,1 @@
-SPECTER_B52_FORCE_UNLOCK -> superseded by SPECTER_B52_TARGET_H
-
-Download (gofile):
-https://gofile.io/d/9Q3MGE
+Superseded by SPECTER_B52_BUILD_TARGET: https://gofile.io/d/eANezC

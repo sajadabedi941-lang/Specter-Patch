@@ -1,0 +1,14 @@
+Final winners (case-insensitive Data\INI order):
+
+Command_ConstructTEODAmericaJetB52
+  <- Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_ZZZZ_BUILD_TARGET.ini
+  Object = AmericaJetB52H
+
+AmericaJetB52H.Buildable / Prerequisites / KindOf
+  <- Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_ZZZZ_BUILD_TARGET.ini
+
+AmericaJetB52H.BuildCost=8500 BuildTime=115 MaxSim=3
+  <- USA_System.ini (unchanged)
+
+No CommandButton Object=AmericaJetB52 (ScienceObject) remains.
+CommandSet B-52 slots still use Command_ConstructTEODAmericaJetB52.

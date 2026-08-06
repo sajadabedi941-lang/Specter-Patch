@@ -1,0 +1,15 @@
+SPECTER_B52_FORCE_UNLOCK — chain audit
+======================================
+
+Files:
+- Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_BUTTON_UNLOCK.ini
+- Data\INI\ZZZZZZZZ_ZZZ_USA_B52_ZZ_FORCE_UNLOCK.ini  (absolute last-wins)
+
+Button:
+  Command_ConstructAmericaJetB52H -> AmericaJetB52
+  Command_ConstructPatch_America_B52 -> AmericaJetB52
+
+Object AmericaJetB52:
+  Buildable = Ignore_Prerequisites
+  Prerequisites End
+  KindOf without IGNORED_IN_GUI (SELECTABLE)

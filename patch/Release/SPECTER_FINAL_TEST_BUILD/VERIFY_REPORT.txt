@@ -1,0 +1,113 @@
+SPECTER FINAL TEST BUILD — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPECTER_FINAL_TEST_BUILD.big
+SHA256: 6213035cc4b39324ed9b8cb8a20871503838357ffb72be62ee76165bcc80b63f
+Size: 383407329 bytes
+Entries: 2787
+
+Type: STANDALONE full merge (SPEC DATA + current main patch/Data)
+Not an overlay. Copy into Zero Hour folder for testing.
+Recommended: replace _SPEC_DATA_ONE.big with this file (keep _SPEC_ART_ONE.big).
+Do NOT also load CLEAN/V2 overlay BIGs (duplicate Objects).
+
+Included:
+- Data/INI/Object/Specter/
+- CommandCenter fixes (all accepted countries)
+- MilitaryHQ fixes
+- Advanced Air Base changes
+- all accepted country updates
+- all latest repaired INI files
+- latest Egypt_CommandCenter USA-donor fix (all old broken Egypt CC copies removed)
+
+Egypt internal path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+Egypt content SHA256: e8a77d8d40f955654b3ed988bd04855c9d7c6de73255b7ebe2433ed12bc9bcff
+
+PASS: 88  FAIL: 0
+
+PASS: Install as replacement for _SPEC_DATA_ONE.big; keep ART
+PASS: Egypt path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+PASS: Object Egypt_CommandCenter
+PASS: Side=Egypt
+PASS: Egypt_CommandCenterCommandSet
+PASS: BuildCost=2000
+PASS: BuildTime=45
+PASS: MaxHealth=5000
+PASS: us_commandcenter
+PASS: US_Command
+PASS: US_COM_Strb
+PASS: US_E3G_AWACS
+PASS: NO irq_comndcntr
+PASS: NO Iraq_Adnan1
+PASS: NO SUPERWEAPON_Iraq
+PASS: NOT broken SPEC sha (1b559b9e…)
+PASS: NO irq_ / Irq_ / Iraq / Iraqi / SUPERWEAPON_Iraq in Egypt_CommandCenter
+PASS: Egypt_CommandCenter unique Object (1 path only)
+PASS: 0 CommandCenter/MilitaryHQ/AAB Object path dups
+PASS: INI parse soft warnings=2 hard=0
+PASS: standalone full merge entries=2787
+PASS: Turkey_CommandCenter
+PASS: Turkey_MilitaryHQ
+PASS: Turkey_AdvancedAirBase
+PASS: Egypt_CommandCenter
+PASS: Egypt_MilitaryHQ
+PASS: Egypt_AdvancedAirBase
+PASS: India_CommandCenter
+PASS: India_MilitaryHQ
+PASS: India_AdvancedAirBase
+PASS: Pakistan_CommandCenter
+PASS: Pakistan_MilitaryHQ
+PASS: Pakistan_AdvancedAirBase
+PASS: UAE_CommandCenter
+PASS: UAE_MilitaryHQ
+PASS: UAE_AdvancedAirBase
+PASS: SaudiArabia_CommandCenter
+PASS: SaudiArabia_MilitaryHQ
+PASS: SaudiArabia_AdvancedAirBase
+PASS: Israel_CommandCenter
+PASS: Israel_MilitaryHQ
+PASS: Israel_AdvancedAirBase
+PASS: Ukraine_CommandCenter
+PASS: Ukraine_MilitaryHQ
+PASS: Ukraine_AdvancedAirBase
+PASS: Syria_CommandCenter
+PASS: Syria_MilitaryHQ
+PASS: Syria_AdvancedAirBase
+PASS: Libya_CommandCenter
+PASS: Libya_MilitaryHQ
+PASS: Libya_AdvancedAirBase
+PASS: SouthAfrica_CommandCenter
+PASS: SouthAfrica_MilitaryHQ
+PASS: SouthAfrica_AdvancedAirBase
+PASS: Britain_CommandCenter
+PASS: Britain_MilitaryHQ
+PASS: Britain_AdvancedAirBase
+PASS: France_CommandCenter
+PASS: France_MilitaryHQ
+PASS: France_AdvancedAirBase
+PASS: Germany_CommandCenter
+PASS: Germany_MilitaryHQ
+PASS: Germany_AdvancedAirBase
+PASS: Japan_CommandCenter
+PASS: Japan_MilitaryHQ
+PASS: Japan_AdvancedAirBase
+PASS: Italy_CommandCenter
+PASS: Italy_MilitaryHQ
+PASS: Italy_AdvancedAirBase
+PASS: Sweden_CommandCenter
+PASS: Sweden_MilitaryHQ
+PASS: Sweden_AdvancedAirBase
+PASS: SouthKorea_CommandCenter
+PASS: SouthKorea_MilitaryHQ
+PASS: SouthKorea_AdvancedAirBase
+PASS: Taiwan_CommandCenter
+PASS: Taiwan_MilitaryHQ
+PASS: Taiwan_AdvancedAirBase
+PASS: Vietnam_CommandCenter
+PASS: Vietnam_MilitaryHQ
+PASS: Vietnam_AdvancedAirBase
+PASS: UN_CommandCenter
+PASS: UN_MilitaryHQ
+PASS: UN_AdvancedAirBase
+
+FINAL: PASS

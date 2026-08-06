@@ -1,0 +1,4 @@
+1. Download ZIP from DOWNLOAD.txt
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace prior Specter ONE.big pair
+4. Verify AmericaJetB52 / AmericaJetB52H render as US_B52H (real B-52)

@@ -1,0 +1,11 @@
+SPECTER_B52_NORMAL_BTN
+======================
+Normal Airfield production: Command_ConstructAmericaJetB52H -> AmericaJetB52H
+(No TEOD / ScienceObject)
+
+Download (gofile):
+https://gofile.io/d/AaQ4uj
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

@@ -1,0 +1,21 @@
+SPECTER_PR253_STABLE_RELEASE — PUBLIC DOWNLOAD
+=============================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/dm0yf4.zip
+
+Backup mirror:
+https://filebin.net/specter-pr253-stable-1786046108/SPECTER_PR253_STABLE_RELEASE.zip
+
+Commit: 6efa9b9a274908c3bff4c37ad0f30d3500e6b4fd
+Backup branch: backup/pre-pr253-rollback-dc1693c2
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  f8156250ff2f1c44450216b099e392bdaab5b032859dad6a13ff414443e598a3
+SHA256 DATA: b79f1bfd6ca65abc215e6c6e469af306104f0982e17552e720d300ee6398fa3a
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

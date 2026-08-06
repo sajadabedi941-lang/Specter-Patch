@@ -1,0 +1,137 @@
+FORENSIC REPORT — EGYPT_COMMANDCENTER
+======================================================================
+
+SECTION 1: BIG LOAD ORDER / ALL COPIES
+----------------------------------------------------------------------
+Total Egypt_CommandCenter.ini copies found: 93
+Unique content SHAs: 12
+
+Alphabetical BIG basenames (Windows-like case-insensitive; later usually wins):
+    1. _SPEC_ART_ONE.big
+    2. _SPEC_DATA_ONE.big  <<< SPEC DATA (contains Egypt CC historically)
+    3. _SPEC_DATA_ONE.REPLACE_WITH_THIS.big
+    4. _SPEC_DATA_ONE_FIXED.big
+    5. _SPECTER_EGYPT_COMMANDCENTER_FIXED.big  <<< Specter overlay candidate
+    6. _SPECTER_EGYPT_FINAL_FIXED.big  <<< Specter overlay candidate
+    7. _SPECTER_FINAL_COMPLETE.big  <<< Specter overlay candidate
+    8. _SPECTER_FINAL_COMPLETE_V2.big  <<< Specter overlay candidate
+    9. _SPECTER_FINAL_REPAIRED.big  <<< Specter overlay candidate
+   10. _SPECTER_FINAL_TEST_BUILD.big  <<< Specter overlay candidate
+   11. _SPECTER_PATCH_FINAL.big  <<< Specter overlay candidate
+   12. _SPECTER_PATCH_FINAL_CLEAN.big  <<< Specter overlay candidate
+   13. _SPECTER_PATCH_FINAL_CLEAN_FIXED.big  <<< Specter overlay candidate
+   14. _SPECTER_PATCH_FINAL_V2.big  <<< Specter overlay candidate
+   15. _SPECTER_ROOT_FIXED_FINAL.big  <<< Specter overlay candidate
+   16. Specter_Ultimate_Patch.big
+
+Load-order pairwise winners (case-insensitive sort, later wins):
+  _SPECTER_EGYPT_COMMANDCENTER_FIXED.big vs _SPEC_DATA_ONE.big → LOADED LAST / WINS: _SPECTER_EGYPT_COMMANDCENTER_FIXED.big
+  _SPECTER_FULL_MERGED_FIXED.big vs _SPEC_DATA_ONE.big → LOADED LAST / WINS: _SPECTER_FULL_MERGED_FIXED.big
+  _SPECTER_EGYPT_FINAL_FIXED.big vs _SPEC_DATA_ONE.big → LOADED LAST / WINS: _SPECTER_EGYPT_FINAL_FIXED.big
+  _SPEC_DATA_ONE_FIXED.big vs _SPEC_DATA_ONE.big → LOADED LAST / WINS: _SPEC_DATA_ONE_FIXED.big
+
+IMPORTANT:
+  If original vendor _SPEC_DATA_ONE.big remains installed with sha Egypt CC
+  1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61 (irq_comndcntr / Iraq_Adnan1), that is the crash source.
+  Overlay _SPECTER_* files may or may not override depending on FS order.
+  Reliable fix: REPLACE _SPEC_DATA_ONE.big entirely.
+
+UNIQUE CONTENT VARIANTS:
+  sha256=f0ae84bdf6632b8419087ddc0b7f7f64d6f78224b1c6c4824d25dc3a70c0f002
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=55
+      - patch/Release/SPECTER_AAB_AIRCRAFT_IDENTITY_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_AAB_GLOBAL_STRATEGIC_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_AIRFORCE_EXPANSION_IRAQ_FIX_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_B2_B52_BOMBER_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_EGYPT_COMMANDCENTER_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_EGYPT_MHQ_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_FRANCE_COMBATDRONE_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_GERMANY_COMBATDRONE_PLAYABLE/_SPEC_DATA_ONE.big
+      … +47 more
+
+  sha256=836eb28fda2e63cc3810dada0a296d1af4953eaa7ae623b991bfd16a24e76b33
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=13
+      - patch/Release/SPECTER_AIRFORCE_EXPANSION_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_BRITAIN_COMBATDRONE_FIX/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_COMMANDCENTER_USA_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_EGYPT_MILITARYHQ_FIX/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_FINAL_PLAYABLE_BUILD/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_MAIN_PLAYABLE_REBUILD/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_MULTI_UNIT_INI_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_TURKEY_AIRCRAFT_PLAYABLE/_SPEC_DATA_ONE.big
+      … +5 more
+
+  sha256=1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+    status=BROKEN  portrait=irq_comndcntr gunship=Iraq_Adnan1 cost=1615 hp=2000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=6
+      - patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_BIG_MERGE_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_BRITAIN_F35B_SAUDI_DRONE_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_MILITARYHQ_USA_PLAYABLE/_SPEC_DATA_ONE.big
+      - patch/Release/SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE/_SPEC_DATA_ONE.big
+
+  sha256=81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=4
+      - patch/Release/SPEC_DATA_ONE_FIXED/_SPEC_DATA_ONE_FIXED.big
+      - patch/Release/SPECTER_EGYPT_FINAL_FIXED/_SPEC_DATA_ONE.REPLACE_WITH_THIS.big
+      - patch/Release/SPECTER_EGYPT_FINAL_FIXED/_SPECTER_EGYPT_FINAL_FIXED.big
+      - patch/Release/SPECTER_FULL_MERGED_FIXED/_SPEC_DATA_ONE.big
+
+  sha256=d66e7a3d5a687e23a87d1d9c6a37d736e9ae9fe74b77f857765171cdb6ee20e9
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=4
+      - patch/Release/SPECTER_FULL_PR_AUDIT/_SPECTER_PATCH_FINAL.big
+      - patch/Release/SPECTER_PATCH_FINAL/_SPECTER_PATCH_FINAL.big
+      - patch/Release/SPECTER_PATCH_FINAL_CLEAN/_SPECTER_PATCH_FINAL_CLEAN.big
+      - patch/Release/SPECTER_PATCH_FINAL_CLEAN_RELEASE/_SPECTER_PATCH_FINAL_CLEAN.big
+
+  sha256=e8a77d8d40f955654b3ed988bd04855c9d7c6de73255b7ebe2433ed12bc9bcff
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=4
+      - patch/Release/SPECTER_FINAL_COMPLETE/_SPECTER_FINAL_COMPLETE.big
+      - patch/Release/SPECTER_FINAL_COMPLETE_V2/_SPECTER_FINAL_COMPLETE_V2.big
+      - patch/Release/SPECTER_FINAL_TEST_BUILD/_SPECTER_FINAL_TEST_BUILD.big
+      - patch/Release/SPECTER_PATCH_FINAL_CLEAN_FIXED/_SPECTER_PATCH_FINAL_CLEAN_FIXED.big
+
+  sha256=3c7bdf9c000673cfece5424a17b7df0f5bbeec864f4c1fc351d74821382482e9
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=Patch_Egypt_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=2
+      - patch/Release/_SPECTER_PATCH_FINAL.big
+      - patch/Release/SPECTER_EGYPT_COMMANDCENTER_FIX/_SPEC_DATA_ONE.big
+
+  sha256=04b7c4ebd3318bf00c4feeb81d0ab2682e9115eda85eec88aef80d5b9b0d4571
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=1
+      - patch/Release/SPECTER_EGYPT_COMMANDCENTER_FIXED/_SPECTER_EGYPT_COMMANDCENTER_FIXED.big
+
+  sha256=21c8223a35002839b6a97a936a2adcfdee294627768a1c292677816005b15423
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=1
+      - patch/Release/SPECTER_FINAL_REPAIRED/_SPECTER_FINAL_REPAIRED.big
+
+  sha256=3002a5d08ae62cdae93cad75edc7739e224716bd911e64dcd418e2ce0cd46d48
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=Patch_Egypt_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=1
+      - patch/Release/SPECTER_EGYPT_CC_USA_CLONE/_SPECTER_PATCH_FINAL.big
+
+  sha256=bf48e3f93da1c0564017517a39670e8827f0099cd3c18425c5c492eb61d79607
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=US_E3G_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=1
+      - patch/Release/SPECTER_ROOT_FIXED_FINAL/_SPECTER_ROOT_FIXED_FINAL.big
+
+  sha256=ce685f8d7ef8fc00ac94795e1977af5d564b8401c7dc4299f91a747c2322fb3d
+    status=FIXED/SAFE  portrait=us_commandcenter gunship=Patch_Egypt_AWACS cost=2000 hp=5000.0 side=Egypt CS=Egypt_CommandCenterCommandSet
+    count=1
+      - patch/Release/SPECTER_FULL_INI_REPAIR_PASS/_SPECTER_PATCH_FINAL.big
+
+BROKEN copies count: 6
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_BIG_MERGE_PLAYABLE/_SPEC_DATA_ONE.big
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_BIG_MERGE_PLAYABLE_REPAIRED/_SPEC_DATA_ONE.big
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_BRITAIN_F35B_SAUDI_DRONE_PLAYABLE/_SPEC_DATA_ONE.big
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_MILITARYHQ_USA_PLAYABLE/_SPEC_DATA_ONE.big
+  BROKEN 1b559b9e0d4eb140…  patch/Release/SPECTER_SEVEN_COUNTRY_DRONES_PLAYABLE/_SPEC_DATA_ONE.big

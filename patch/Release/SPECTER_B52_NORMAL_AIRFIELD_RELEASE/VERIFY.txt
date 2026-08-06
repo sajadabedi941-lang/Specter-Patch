@@ -1,0 +1,7 @@
+VERIFY — AmericaJetB52H normal Airfield production
+Object: Buildable=Ignore_Prerequisites, empty Prerequisites, Cost 8500, Limit 3
+Button: Command_ConstructAmericaJetB52H -> AmericaJetB52H (UNIT_BUILD)
+Airfield slots: Command_ConstructAmericaJetB52H (no TEOD B52)
+B-2 slot 5: Command_ConstructTEODAmericaJetB2 kept
+Weapon/Draw/Model: unchanged
+ZIP: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only

@@ -1,0 +1,18 @@
+SPECTER_B52_BUTTON_UNLOCK_RELEASE — public FULL BIG backup
+
+Download (no login):
+https://litter.catbox.moe/liuhfw.zip
+
+Contents (direct GameRoot replace):
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+
+Fix:
+  AmericaJetB52H Airfield button unlock.
+  Sticky AmericaStrategyCenter removed from packed Heavy_Runway AmericaJetB52H Prerequisites.
+  All AmericaAirfieldCommandSet / _T / _T1 / _T2 / _T3 B-52 slots force Command_ConstructAmericaJetB52H.
+  BuildCost=8500, MaxSimultaneousOfType=3 kept.
+  Draw / Model / Weapon / AI / Locomotor / B-2 untouched.
+
+SHA256 ZIP:
+32dd5a9dd353d9a715aa8055c24144b4004c2685c6ee8ddec952d94d8dbe4bd2

@@ -1,0 +1,9 @@
+USA Dozer -> Command_ConstructAmericaStrategyCenter(_T) -> AmericaStrategyCenter
+
+Button NOT disabled by Science/Rank/Upgrade.
+Button NOT linked to America_AdvancedAirBase.
+AmericaStrategyCenter Prerequisites = original Specter (commented Object lines).
+Placement creates AmericaStrategyCenter.
+
+DATA sha256: 2b6b1b234959a1b2f58051aa2a5c543ccdb3127241a17178d992346cf888d01f
+ART  sha256: 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

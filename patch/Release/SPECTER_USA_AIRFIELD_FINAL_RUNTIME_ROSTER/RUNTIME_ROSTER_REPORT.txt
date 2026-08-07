@@ -1,0 +1,36 @@
+SPECTER USA AIRFIELD FINAL RUNTIME ROSTER
+=========================================
+
+CommandButton resolution (all FOUND in packed BIG):
+  1  Raptor     = Command_ConstructAmericaJetRaptor
+  2  AH64E      = Command_ConstructAmericaHelicopterAH64E
+  3  Aurora     = Command_ConstructAmericaJetAurora
+  4  A10C       = Command_ConstructAmericaJetA10C
+  5  B-2 Spirit = Command_ConstructAmericaJetB2Spirit
+  6  F-16C_AG   = Command_ConstructAmericaJetF-16C_AG
+  7  B-52H      = Command_ConstructAmericaJetB52H
+  8  F-22A_AA   = Command_ConstructAmericaJetF-22A_AA
+  9  F-35C      = Command_ConstructAmericaJetF35C
+  10 B-21       = Command_ConstructAmericaJetB21
+  11 E-3 AWACS  = Command_ConstructAmericaJetE3AWACS
+  12 B-1R       = Command_ConstructAmericaJetB1R
+  13 EA-18      = Command_ConstructAmericaJetEA18
+  14 F-15E_AA   = Command_ConstructAmericaJetF-15E_AA
+  Sell          = Command_Sell
+  Slot clears   = Command_FAKECOMMAND_PurchaseScienceMOAB (real SCRIPT_ONLY)
+
+New file:
+  Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_USA_AIRFIELD_FINAL_RUNTIME.ini
+  sha256=672359659051ffe40a917b01ad213785e98f2707cbc908259b29cacda889b317
+
+Runtime chain:
+  AmericaAirfield_T
+  -> AmericaAirfieldCommandSet_T
+  -> FINAL_RUNTIME last-wins INI (absolute last)
+  -> 14 aircraft + Sell
+
+CommandSet.ini NOT modified (sha256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31)
+No later INI redefines AmericaAirfieldCommandSet_T after FINAL_RUNTIME.
+
+_SPEC_DATA_ONE.big sha256=f00092aa6c94613ac8d08ed251bb1c52da3c6be13eb2643f596d8fb2263c7f8a
+_SPEC_ART_ONE.big sha256=227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

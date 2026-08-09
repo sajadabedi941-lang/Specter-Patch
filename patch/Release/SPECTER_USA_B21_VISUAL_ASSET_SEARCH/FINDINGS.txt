@@ -1,59 +1,265 @@
-B-21 VISUAL ASSET SEARCH — NO RELEASE
+SPECTER USA B-21 VISUAL ASSET SEARCH — FORENSICS REPORT
+========================================================
+Date: 2026-08-09
+Status: SEARCH / FORENSICS ONLY — NO GAME CODE CHANGED
+Branch: cursor/usa-b21-avb21-forensics-b985
 
-Current wrong B-1 model = US_B1R
-Previous wrong B-2 model = AVB3bmbr
+REAL DISTINCT B-21 FOUND = YES
 
-REAL B-21 W3D found in original patch = NOT FOUND
-REAL B-21 texture(s) = NOT FOUND
-Original source/object that uses it = N/A
 
-REAL B-21 W3D != US_B1R = FAIL (no candidate found)
-REAL B-21 W3D != AVB3bmbr = FAIL (no candidate found)
+--------------------------------------------------------
+8. FINAL REPORT SUMMARY
+--------------------------------------------------------
 
-PROOF
-------
-Original ART source inspected:
+Total BIG files searched (workspace+/tmp instances) = 140
+Unique BIG fingerprints (prior inventory)         = 58
+Total archives searched (.zip/.rar/.7z instances) = 100
+Multivolume .zNN parts at /workspace               = 177
+Total W3D files searched (key donor/main BIGs)     = 11740
+  + loose W3D on disk                              = 2524
+Total INI files searched (loose)                   = 12188
+  + INI inside TEOD/SF/PM BIGs                     = yes
+
+_SPEC_ART_ONE.big searched                         = YES
+Other BIG files searched                           = see §1
+Imported/donor archives searched                   = see §5
+Git history searched                               = YES
+
+B-21 candidate W3Ds (VALID third distinct) =
+  AVB21.W3D
+  AVB21_A.W3D          ← primary Draw model
+  AVB21_A_D.W3D        ← REALLYDAMAGED
+  AVB21_D.W3D          ← damaged + afterburner state
+  AVB21_E.W3D          ← dead hull
+  AVB21_E1.W3D         ← death debris
+
+REJECTED (not B-21 / wrong silhouette):
+  US_B1R.W3D           → in-game B-1 look
+  AVB3bmbr*.W3D        → in-game B-2 look
+
+
+--------------------------------------------------------
+1. BIG / ARCHIVE INVENTORY (HIGHLIGHTS)
+--------------------------------------------------------
+
+MAIN SPECTER ART (current patch releases):
   /tmp/specter_full_base/_SPEC_ART_ONE.big
-  sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
-  Total W3D entries = 1247
+  size=513,837,876  entries=2786  w3d=1247
+  bomber W3Ds: US_B1R, AVB3bmbr(+d/d1), US_B52H, NAT_CENTB2(+D), US_F16D_B52
+  AVB21 / B-21.dds: ABSENT
 
-Also compared:
-  /tmp/SPECTER_PR253_STABLE_RELEASE/_SPEC_ART_ONE.big (same ART sha)
-  /tmp/SPECTER_B2_B52_B21_STABLE_FULL_BIG/_SPEC_ART_ONE.big
-    (only +6 Turkey UI textures; no new W3D)
+VENDOR SPLIT ART:
+  /workspace/_SPEC_ART_ONE.z01–z09 + .zip
+  → extracted /tmp/b21_forensics/donors/vendor_art/_SPEC_ART_ONE.big
+  size=445,953,809  entries=2683  w3d=1207
+  subset of main ART; AVB21 ABSENT; also lacks AVB3bmbr
 
-USA bomber W3Ds present in original ART:
-  US_B1R.W3D          -> B-1 look (rejected in-game)
-  AVB3bmbr.W3D/_d/_d1 -> B-2 look (rejected in-game)
-  US_B52H.W3D         -> B-52
+TEOD DONOR (New folder multivolume) — SOURCE OF B-21:
+  /workspace/New folder.z01–z31 + New folder.zip  (32 volumes)
+  nested:
+    !TEOD_W3D.big       97,619,884   w3d=1879   ← CONTAINS AVB21*
+    !TEOD_Textures.big 297,597,754   w3d=0      ← CONTAINS B-21*.dds
+    !TEOD_INI.big       21,435,839   w3d=0      ← CONTAINS B21_Rider.ini
+    !TEOD_Sounds.big / !TEOD_Voices.big (not required for visual)
 
-W3D basenames matching B21/Raider/USB21/USAB21/B21R:
-  (none)
+SPECTER FINAL (GeneralsMode.com) multivolume:
+  /workspace/SPECTER FINAL (GeneralsMode.com).z01–z28 + .zip  (29 volumes)
+  nested W3DZH.big (189MB, 4429 W3D): AVB3bmbr*, avbomber*, NVCBomber* — NO AVB21
+  TexturesZH / INIZH: NO B-21 / AVB21 / AmericaJetB21
 
-ASCII ".W3D" strings inside entire ART BIG matching B21/Raider:
-  (none)
+PEACE MISSION BETA multivolume:
+  /workspace/Peace Mission Beta Ver 1.0.z01–z32 + .zip  (33 volumes)
+  00PMBeta994/995/997/998/999.big fully extracted and scanned
+  PM999 (1.2GB, 2421 W3D): NO AVB21 / B-21.dds
+  (Historical AVB3bmbr / B-2 donor path — not B-21)
 
-INI TRACE (original/current packed DATA)
-  AmericaJetB21 (Airforce/B21.ini) Draw Model = US_B1R
-  Patch_America_B21 Draw Model = US_B1R
-  AmericaJetB1R Draw Model = US_B1R
-  AmericaJetB2 / Patch_America_B2 Draw Model = AVB3bmbr
-  Later ZZZZ B21 "visual" overlays forced AmericaJetB21 -> AVB3bmbr
-    with comments admitting: "No dedicated B-21 / Raider W3D in ART BIG"
+OTHER:
+  /workspace/mod.z01–z28 + mod.zip — no B21/AVB21 art paths
+  /workspace/Data.z* + Data.zip — no B21 W3D
+  /workspace/Specter_Data.z* — INI only (has B1R.ini); no AVB21 W3D
+  /workspace/payload.rar — small patch bins; no W3D art
+  52 unique Specter release ART BIG copies: none contain AVB21
 
-Git origin of AmericaJetB21:
-  commit 4001fa7f / c6f6f48a
-  "Add AmericaJetB21 Raider via B1R clone Airfield pipeline"
-  Added INI/strings only — NO new W3D/texture art files.
 
-CONCLUSION
-----------
-Within every original/imported ART package available in this environment,
-there is no third distinct B-21 Raider mesh separate from US_B1R and AVB3bmbr.
+--------------------------------------------------------
+2. W3D SEARCH RESULTS
+--------------------------------------------------------
 
-Per release condition: DO NOT RELEASE.
+Filename / embedded-string keywords scanned across all discovered
+archives and loose Art/W3D trees:
+  B21, B-21, B_21, B21R, B21Raider, Raider, B3, B3Bomber,
+  StealthBomber, NextGenBomber, NGADBomber, US_B21, USA_B21,
+  AVB21, USAB21
 
-BLOCKER
--------
-Need the user to provide the exact B-21 W3D + textures they saw, or the
-exact archive path outside this ART BIG that contains them.
+ONLY HIT for a distinct B-21 mesh family:
+  Archive: /workspace/New folder.zip (multivolume) → !TEOD_W3D.big
+  Paths:
+    Art\W3D\AVB21.W3D
+    Art\W3D\AVB21_A.W3D
+    Art\W3D\AVB21_A_D.W3D
+    Art\W3D\AVB21_D.W3D
+    Art\W3D\AVB21_E.W3D
+    Art\W3D\AVB21_E1.W3D
+
+Embedded texture refs inside AVB21_A.W3D:
+  B-21.dds
+  housecolor2.dds
+
+Flying-wing / bomber W3D census (complete candidate pool):
+  TEOD: AVB21*, AVB3bmbr*, AVBomber*, AVB52_CM*
+  MAIN ART: US_B1R, AVB3bmbr*, US_B52H, NAT_CENTB2*
+  SF W3DZH: AVB3bmbr*, avbomber*, NVCBomber*
+  PM999: no AVB21; other bomber assets only
+
+False-positive note: earlier byte scans for "B21" inside unrelated
+W3Ds (Irq_Abbas_*, RUS_*) are binary float noise — not assets.
+
+
+--------------------------------------------------------
+3. INI REFERENCES (TEOD DONOR)
+--------------------------------------------------------
+
+Object = AmericaJetB21
+File   = Data\INI\Object\USA\Aircrafts\B21_Rider.ini
+         inside !TEOD_INI.big
+Draw type = W3DModelDraw
+Model (Default / exhaust / afterburner) = AVB21_A
+Damaged / ReallyDamaged                 = AVB21_A_D
+ReallyDamaged + afterburner             = AVB21_D
+Dead hull (B21DeadHull)                 = AVB21_E
+Death debris                            = AVB21_E1
+Scale                                   = (none set in object; engine default)
+SelectPortrait / ButtonImage            = B21_L
+  MappedImage B21_L → Texture = US-Icons03.tga (coords 366,392–488,489)
+
+Texture references (from W3Ds + TEOD_Textures):
+  B-21.dds
+  B-21_D.dds
+  B-21_E.dds
+  housecolor2.dds (shared housecolor; not B-21-specific)
+
+Also referenced in TEOD:
+  CommandButton Command_ConstructAmericaJetB21 → Object AmericaJetB21
+  CommandSet slots / Strategy Center B21 research
+  Voice.ini Raider* audio events
+  ObjectCreationList OCL_B21*
+
+Trace to physical archive:
+  Models   → New folder.zip → !TEOD_W3D.big
+  Textures → New folder.zip → !TEOD_Textures.big
+  INI      → New folder.zip → !TEOD_INI.big
+
+Specter workspace INI (AmericaJetB21 / AmericaJetB21Clean) historically
+pointed at US_B1R or AVB3bmbr overlays — those were WRONG stand-ins.
+No Specter packed ART ever received AVB21.
+
+
+--------------------------------------------------------
+4. GIT HISTORY
+--------------------------------------------------------
+
+Git history searched = YES
+
+Results:
+  - AmericaJetB21 was introduced as a B1R gameplay/INI clone
+    (commits c6f6f48a / 4001fa7f) — INI + strings only
+  - Later visual overlays forced AVB3bmbr with comments admitting
+    no dedicated Raider W3D in ART BIG
+  - NO commit ever added AVB21.W3D, B-21.dds, or B21_Rider.ini art
+  - Historically tracked W3Ds are AdvancedAirBase (ABAirF*) meshes only
+  - Path search for *AVB21* / *B-21.dds* / *B21_Rider* across all
+    commits: empty
+
+Nothing restored from git (nothing to restore).
+
+
+--------------------------------------------------------
+5. DONOR / IMPORTED MOD CONTENT
+--------------------------------------------------------
+
+Searched independently (full multivolume join via 7z):
+
+  [1] New folder.zip (TEOD)     ← DISTINCT B-21 FOUND HERE
+  [2] SPECTER FINAL (...).zip   — stock Specter ZH art; no AVB21
+  [3] Peace Mission Beta Ver 1.0.zip — B-2/AVB3 lineage; no AVB21
+  [4] mod.zip / Data.zip / Specter_Data.zip / _SPEC_DATA_ONE.zip
+  [5] vendor _SPEC_ART_ONE.zip (445MB older ART)
+  [6] payload.rar
+  [7] All Specter release _SPEC_ART_ONE.big copies under
+      patch/Release and /tmp
+
+Conclusion: the distinct B-21 was imported/available from the TEOD
+donor pack but was NEVER copied into Specter _SPEC_ART_ONE.big.
+That is why prior searches limited to _SPEC_ART_ONE.big failed.
+
+
+--------------------------------------------------------
+6. VISUAL REQUIREMENT CHECK
+--------------------------------------------------------
+
+US_B1R     REJECT — B-1 silhouette (user confirmed in-game)
+AVB3bmbr   REJECT — B-2 silhouette (user confirmed in-game)
+AVB21*     ACCEPT — third distinct mesh family
+             - different filenames, sizes, sha256 from AVB3bmbr/US_B1R
+             - textures literally named B-21.dds / B-21_D.dds / B-21_E.dds
+             - TEOD object AmericaJetB21 Draw = AVB21_A
+             - mesh node names AVB21_A.CHASSIS etc.
+
+sha256:
+  AVB21_A.W3D   7147348c37cded618c706656cea499166849512017d8e7087e1f718df970f7f8
+  AVB21_A_D.W3D 71e16bfe4abe3b28b0a2c24cc1696709b111e1491d43dff7b5fe57dff8b18854
+  AVB21.W3D     6d2700329330d6f0965130135d3e0b43bdb7afa4e0b114fc13b28eaf0d08b36b
+  AVB21_D.W3D   88e814ddda37dcb0b6d7b2e0892a7c0cc5ab94e7772427efefadcc9777f2ee9e
+  AVB21_E.W3D   cb1c1d76e0f83ee5ea53834317a3d61eaa2e6d765b964308348557c499ae2565
+  AVB21_E1.W3D  f63b5834f0df408435ee16cba19e8400aba838c82c756794727323219a01defe
+  B-21.dds      700c4ba88061ca72e3ff66b480b826770efe6eb8394a611579197ced6c65b483
+  B-21_D.dds    4ef7b89762e7d23420b25387b66161ff28ce18c4e068fc00146eb2bdda256114
+  B-21_E.dds    272ff659adb5670a23f3f4b87ea467de87edeaddfe3e4efac9f11d216e2e1391
+
+TEOD AVB3bmbr.W3D sha256 prefix fd167f7b704a1c60 — different file.
+
+
+--------------------------------------------------------
+7. DO-NOT-MODIFY CONFIRMATION
+--------------------------------------------------------
+
+NOT modified in this task:
+  AmericaJetB21Clean.ini
+  CommandSet.ini
+  CommandButton.ini
+  Airfield / War Factory unlocks
+  B-2 / B-52H / THAAD / M1075I
+  No release zip built
+
+
+--------------------------------------------------------
+YES — EXACT ASSETS TO USE (NEXT VISUAL-ONLY STEP)
+--------------------------------------------------------
+
+Source archive:
+  /workspace/New folder.zip  (+ .z01–.z31)
+  members:
+    !TEOD_W3D.big
+    !TEOD_Textures.big
+    !TEOD_INI.big  (reference only)
+
+Evidence copy in this repo:
+  patch/Release/SPECTER_USA_B21_VISUAL_ASSET_SEARCH/EVIDENCE_AVB21/
+
+Recommended Draw mapping for AmericaJetB21Clean (NOT APPLIED YET):
+  Model            = AVB21_A
+  ReallyDamaged    = AVB21_A_D
+  (death hull)     = AVB21_E / AVB21_E1
+  Textures to pack into ART BIG:
+    Art\Textures\B-21.dds
+    Art\Textures\B-21_D.dds
+    Art\Textures\B-21_E.dds
+  W3Ds to pack into ART BIG:
+    Art\W3D\AVB21.W3D
+    Art\W3D\AVB21_A.W3D
+    Art\W3D\AVB21_A_D.W3D
+    Art\W3D\AVB21_D.W3D
+    Art\W3D\AVB21_E.W3D
+    Art\W3D\AVB21_E1.W3D
+
+DO NOT use US_B1R or AVB3bmbr for B-21.

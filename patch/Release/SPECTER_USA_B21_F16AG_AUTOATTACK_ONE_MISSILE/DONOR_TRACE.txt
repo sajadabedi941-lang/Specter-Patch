@@ -1,0 +1,24 @@
+AUTO_ATTACK_DONOR_OBJECT = AmericaJetF-16C_AG
+AUTO_ATTACK_DONOR_COMMANDSET = F16C_AG_CommandSet
+AUTO_ATTACK_DONOR_JETAIUPDATE = JetAIUpdate ModuleTag_09
+AUTO_ATTACK_DONOR_PRIMARY_WEAPON = GBU38_JDAM_F16C
+AUTO_ATTACK_DONOR_WEAPONSET = Conditions = None ; PRIMARY GBU38_JDAM_F16C
+AUTO_ATTACK_DONOR_Locomotor = F100_PW_229 (+ BasicJetTaxiLocomotor SET_TAXIING)
+AUTO_ATTACK_DONOR_KINDOF = PRELOAD CAN_CAST_REFLECTIONS CAN_ATTACK SELECTABLE VEHICLE SCORE AIRCRAFT
+AUTO_ATTACK_DONOR_LAUNCH_BONE = PRIMARY WeaponA
+
+AVB21_REAL_WEAPON_BONES = WEAPONA01, WEAPONA02, WEAPONB01
+FINAL_PRIMARY_LAUNCH_BONE = WeaponA01
+
+ENGINE (GeneralsGameCode JetAIUpdate / AIStates / Weapon):
+1) JetAIUpdate::aiDoCommand — parked jets (!ALLOW_AIR_LOCO) queue takeoff before ATTACK;
+   if out of RETURN_TO_BASE ammo while parked, offensive cmds are deferred.
+2) JetAIUpdate::isOutOfSpecialReloadAmmo — all RETURN_TO_BASE weapons OUT_OF_AMMO => return to base.
+3) AIAttackState::onEnter — mood allows attack; not UNDER_CONSTRUCTION; not isOutOfAmmo (non-projectile);
+   chooseBestWeaponForTarget must succeed.
+4) WeaponSet::chooseBestWeaponForTarget — weapon anti-mask must match victim; not OUT_OF_AMMO unless
+   AutoReloadsClip; isWithinTargetPitch; damage > 0 (unless UNRESISTABLE). Ground attack with null
+   victim forces PRIMARY.
+5) AIAttackFireWeaponState::update — current weapon required; status must be READY_TO_FIRE
+   (PRE_ATTACK => continue; other => failure); then Object::fireCurrentWeapon.
+6) Weapon range gates — isWithinAttackRange / isTooClose(MinimumAttackRange) during aim/fire approach.

@@ -1,0 +1,72 @@
+SPECTER_USA_B21_B2WEAPON_BGM109 — VERIFY / DIAGNOSTIC
+============================================================
+Continue from PR #303. FIRE grey fix: B-2 aircraft weapon architecture.
+
+1) WORKING B-2 PRIMARY (packed authority)
+WORKING_B2_PRIMARY_WEAPON = USA_B2_Spirit_BunkerBuster
+  Source Object = TEOD_AmericaJetB2.ini (first complete AmericaJetB2: JetAI+CommandSet+WeaponSet)
+  Later Object override exists: America_Weapon_B2_BunkerBuster in dedicated Z files
+  (partial Object; complete aircraft object authority = USA_B2_Spirit_BunkerBuster)
+WORKING_B2_PROJECTILE = MK-84
+WORKING_B2_CLIPSIZE = 10
+WORKING_B2_AUTORELOAD = RETURN_TO_BASE
+WORKING_B2_ATTACK_RANGE = 520.0
+WORKING_B2_MIN_ATTACK_RANGE = 400.0
+WORKING_B2_DAMAGE = 9000.0
+WORKING_B2_RADIUS = 170.0
+WORKING_B2_ANTI_GROUND = ABSENT (not set on B-2 weapon)
+WORKING_B2_WEAPON_SPEED = 9999.0
+WORKING_B2_FIRE_FX = FX_AuroraBombLaunch
+WORKING_B2_PROJECTILE_COLLISION = STRUCTURES
+WORKING_B2_WEAPON_LAUNCH_BONE = PRIMARY WeaponA01
+WORKING_B2_FIREWEAPONUPDATE = ABSENT (no FireWeaponUpdate on TEOD_AmericaJetB2)
+
+2) EFFECTIVE B-21 PRIMARY
+AmericaJetB21_SingleBGM109
+(exact USA_B2_Spirit_BunkerBuster clone; NOT 8x_BGM109_CruiseMissile)
+
+3) SPAWN AMMO
+ClipSize = 1 => PRIMARY ammo loads 1 at spawn (ShowsAmmoPips Yes)
+AutoReloadsClip = RETURN_TO_BASE (exact B-2 value)
+ClipReloadTime = 600000 (exact B-2 value)
+No create-time ammo clear module on AmericaJetB21Clean
+
+4) ALL B-21 WeaponSet definitions (load order)
+  [0] Data\INI\Object\Specter\United States Of America\AmericaJetB21Clean.ini: 'WeaponSet\n    Conditions = None\n    Weapon = PRIMARY AmericaJetB21_SingleBGM109\n  End'
+Effective winner = sole WeaponSet Conditions=None PRIMARY AmericaJetB21_SingleBGM109
+
+5) Modules disabling/clearing PRIMARY
+FireWeaponUpdate on B-21 = NO (matches packed B-2 complete object)
+No WeaponSet Conditions other than None
+No SECONDARY/TERTIARY
+
+6) DIFF vs working B-2 weapon (only these)
+  ProjectileObject: B2=MK-84  B21=AmericaJetB21_BGM109_Missile
+  ShotsPerBarrel: B2=ABSENT  B21=1
+  ClipSize: B2=10  B21=1
+
+B-21 projectile = AmericaJetB21_BGM109_Missile
+  Architecture = MK-84 aircraft projectile (KindOf PROJECTILE, AuroraBombLocomotor)
+  Visual = US_BGM109 + Spec_GenericMissileFlare/Trail
+  No GP VLS / OCL / ship summon
+
+B-21 FireWeaponUpdate = NO (matches working packed B-2 complete object)
+B-21 StealthUpdate = YES (kept; working B-2 stealth override path)
+B-21 JetAI/Locomotor/KindOf = match TEOD_AmericaJetB2
+B-21 WeaponLaunchBone = PRIMARY WeaponA01 (AVB21_A verified)
+B-21 CommandSet = GenericTacticalBomberCommandSet (unchanged)
+B-21 BuildCost = 12000
+B-21 Model = AVB21_A / no Scale
+
+Runtime chain:
+AmericaJetB21Clean -> GenericTacticalBomberCommandSet -> Command_FireMainWeapon
+-> PRIMARY AmericaJetB21_SingleBGM109 -> AmericaJetB21_BGM109_Missile (US_BGM109)
+-> ClipSize 1 -> RETURN_TO_BASE
+
+REGRESSION: B-2 / CommandSet / SpecialPower / 8x_BGM109 / ART unchanged = PASS
+
+DATA sha256 = cfb572316e4206ddc25be01c84f8c6f3acdb31365edf33c35f4df9bf3faac19d
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = 1d8e1f408b7a587d58535eb0ccf2522e3d5c815101137b3b57ff839d0e402568
+
+Download = https://litter.catbox.moe/zljqhb.zip

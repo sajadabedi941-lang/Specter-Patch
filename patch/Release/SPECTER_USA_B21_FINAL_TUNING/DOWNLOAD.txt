@@ -1,0 +1,14 @@
+SPECTER_USA_B21_FINAL_TUNING
+
+Public download:
+https://litter.catbox.moe/n3nk1k.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+AmericaJetB21Clean:
+  Model AVB21_A, Scale 0.60, BuildCost 12000
+  Single heavy bunker-buster (ClipSize 1)
+  Stealth from TEOD B-2
+  CONTROLBAR strings fixed in generals.csf

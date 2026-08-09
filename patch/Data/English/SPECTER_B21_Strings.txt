@@ -1,0 +1,5 @@
+; SPECTER AmericaJetB21Clean (B-21 Raider) strings
+; Also patched into Data/English/generals.csf for in-game load.
+OBJECT:AmericaJetB21 = B-21 Raider
+CONTROLBAR:ConstructAmericaJetB21 = B-21 Raider
+CONTROLBAR:ToolTipAmericaJetB21 = Stealth strategic bomber armed with one 10-ton heavy bomb.

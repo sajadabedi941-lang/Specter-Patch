@@ -1,0 +1,29 @@
+SPECTER_USA_B21_7MISSILE_SALVO — VERIFY
+============================================================
+Change only B-21 weapon firing pattern.
+
+B-21 weapon = AmericaJetB21_HeavyGuidedMissileWeapon
+ClipSize = 1
+ShotsPerBarrel = 7
+Projectiles per attack = 7
+Attack passes required to empty payload = 1
+Total payload per fully loaded B-21 = 7 (NOT 49; ClipSize is 1 not 7)
+Guided = YES (TryToFollowTarget = Yes)
+All missiles use same attack target = YES
+Return to base immediately after salvo = YES (AutoReloadsClip RETURN_TO_BASE)
+Airborne reload = NO
+Manual FIRE button required = NO (normal ATTACK uses PRIMARY)
+Normal ATTACK command works = YES (PRIMARY weapon; CommandSet.ini unchanged)
+BuildCost = 12000
+Stealth = UNCHANGED
+Visual = AVB21_A
+Projectile = AmericaJetB21_HeavyGuidedMissile (US_BGM109)
+
+CommandSet.ini unchanged = PASS
+B-2 unchanged = PASS
+
+DATA sha256 = 3ab0b21f5f82a8ecdc59fe6ea369891e4848648ff7e56ffa3e361d4683dcfefe
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = 68997df93f627ac41fa2d13a26d8c0d5fd1a6fec911f372ac1504a992415c75f
+
+Download = https://litter.catbox.moe/kjpi5f.zip

@@ -1,0 +1,11 @@
+SPECTER_USA_B21_BGM109_PRIMARY
+
+Public download:
+https://litter.catbox.moe/lafdnc.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+B-21 PRIMARY fires one BGM-109 cloned from General Power missile.
+Original BGM-109 Call untouched.

@@ -69,13 +69,15 @@ CSF_KEY = r"Data\English\generals.csf"
 BUTTON_KEY = r"Data\INI\CommandButton.ini"
 COMMANDSET_KEY = r"Data\INI\CommandSet.ini"
 
-SLOT_BUTTON = "Command_ConstructRussian_Su35"  # legacy T4 routing (kept)
 TU160_BUTTON = "Command_ConstructRussiaJetTU160"
 RUNTIME_AIRFIELD_OBJECT = "RussiaAirfield"
 RUNTIME_COMMANDSET = "RussiaAirfieldCommandSet"
-TU160_COMMANDSET_SLOT = 15
+# Runtime SU-35S Air-to-Air slot on RussiaAirfieldCommandSet (NOT T4)
+OLD_SU35_A2A_SLOT = 2
+OLD_SU35_A2A_BUTTON = "Command_ConstructRussiaJetSu35S"
+OLD_SU35_A2A_OBJECT = "RussiaJetSu35S"
+TU160_COMMANDSET_SLOT = OLD_SU35_A2A_SLOT  # replace A2A slot; remove temp slot 15
 NEW_OBJECT = "RussiaJetTU160Clean"
-OLD_OBJECT = "RussiaJetSu35S"
 TEOD_PROJECTILE = "KH55MS"
 
 TU160_BUTTON_BLOCK = """CommandButton Command_ConstructRussiaJetTU160
@@ -239,7 +241,7 @@ def ensure_tu160_command_button(blob: bytes) -> bytes:
 
 
 def patch_russia_airfield_commandset(blob: bytes) -> bytes:
-    """Add TU-160 on free slot 15 of runtime RussiaAirfieldCommandSet only."""
+    """Replace SU-35S A2A (slot 2) with TU-160; remove any temp slot-15 TU-160."""
     text = blob.decode("latin1", errors="replace")
     pattern = re.compile(
         rf"(^CommandSet\s+{re.escape(RUNTIME_COMMANDSET)}\b)(.*?)(^End\s*$)",
@@ -249,34 +251,55 @@ def patch_russia_airfield_commandset(blob: bytes) -> bytes:
     if not m:
         raise RuntimeError(f"Missing {RUNTIME_COMMANDSET}")
     body = m.group(2)
-    # Preserve Su35S / Su75 / Su47
+    # Preserve Su75 / Su47 / other Su-35 (AG)
     for must in [
-        "Command_ConstructRussiaJetSu35S",
         "Command_ConstructRussiaJetSu75Checkmate",
         "Command_ConstructRussiaJetSu47Recon",
+        "Command_ConstructRussiaJetSu35AG",
     ]:
         if must not in body:
             raise RuntimeError(f"{RUNTIME_COMMANDSET} missing required button {must}")
-    # Already present?
-    slot_hit = re.search(
-        rf"^\s*(\d+)\s*=\s*{re.escape(TU160_BUTTON)}\b", body, re.M
-    )
-    if slot_hit:
-        if int(slot_hit.group(1)) != TU160_COMMANDSET_SLOT:
-            raise RuntimeError(
-                f"{TU160_BUTTON} already on unexpected slot {slot_hit.group(1)}"
-            )
-        return blob
-    occupied = {int(x) for x in re.findall(r"^\s*(\d+)\s*=", body, re.M)}
-    if TU160_COMMANDSET_SLOT in occupied:
+    # Slot 2 must be Su35S A2A (or already TU160 from a prior rebuild of this fix)
+    slot2 = re.search(r"^\s*2\s*=\s*(\S+)", body, re.M)
+    if not slot2:
+        raise RuntimeError(f"{RUNTIME_COMMANDSET} missing slot 2")
+    if slot2.group(1) not in (OLD_SU35_A2A_BUTTON, TU160_BUTTON):
         raise RuntimeError(
-            f"Slot {TU160_COMMANDSET_SLOT} already occupied in {RUNTIME_COMMANDSET}; "
-            f"occupied={sorted(occupied)}"
+            f"Slot 2 unexpected button {slot2.group(1)} "
+            f"(want {OLD_SU35_A2A_BUTTON} or {TU160_BUTTON})"
         )
-    # Insert before End
-    new_body = body.rstrip() + f"\n {TU160_COMMANDSET_SLOT} = {TU160_BUTTON}\n"
+    body = re.sub(
+        r"(^\s*2\s*=\s*)\S+",
+        rf"\g<1>{TU160_BUTTON}",
+        body,
+        count=1,
+        flags=re.M,
+    )
+    # Remove any TU-160 on slot 15 (temporary add)
+    body = re.sub(
+        rf"^\s*15\s*=\s*{re.escape(TU160_BUTTON)}\s*\n?",
+        "",
+        body,
+        flags=re.M,
+    )
+    # Also remove any other accidental TU160 slots except slot 2
+    def _keep_slot2_only(mo: re.Match[str]) -> str:
+        return mo.group(0) if mo.group(1) == "2" else ""
+
+    body = re.sub(
+        rf"^\s*(\d+)\s*=\s*{re.escape(TU160_BUTTON)}\s*\n?",
+        _keep_slot2_only,
+        body,
+        flags=re.M,
+    )
+    # Ensure slot 2 is TU160 after cleanup
+    if not re.search(rf"^\s*2\s*=\s*{re.escape(TU160_BUTTON)}\b", body, re.M):
+        raise RuntimeError("Failed to place TU160 on slot 2")
+    tu_count = len(re.findall(rf"=\s*{re.escape(TU160_BUTTON)}\b", body))
+    if tu_count != 1:
+        raise RuntimeError(f"TU160 button count in CS body = {tu_count}, want 1")
     return (
-        text[: m.start(2)] + new_body + text[m.end(2) :]
+        text[: m.start(2)] + body + text[m.end(2) :]
     ).encode("latin1", errors="replace")
 
 
@@ -411,9 +434,21 @@ def validate(
     )
     # Preserve checks on runtime CS
     btns = {b for _, b in slots}
+    slot_map = dict(slots)
+    lines.append(f"OLD_SU35_A2A_SLOT = {OLD_SU35_A2A_SLOT}")
+    lines.append(f"OLD_SU35_A2A_BUTTON = {OLD_SU35_A2A_BUTTON}")
+    lines.append(f"OLD_SU35_A2A_OBJECT = {OLD_SU35_A2A_OBJECT}")
+    lines.append(f"NEW_TU160_SLOT = {tu_slots[0] if tu_slots else 'MISSING'}")
+    lines.append(f"NEW_TU160_BUTTON = {TU160_BUTTON}")
+    lines.append(f"NEW_TU160_OBJECT = {obj}")
     lines.append(
-        "SU35S_PRESERVED_ON_RUNTIME_CS = "
-        + ("YES" if "Command_ConstructRussiaJetSu35S" in btns else "NO")
+        "TU160_SLOT15_REMOVED = "
+        + ("YES" if slot_map.get(15) != TU160_BUTTON else "NO")
+    )
+    lines.append(f"TU160_BUTTON_COUNT = {len(tu_slots)}")
+    lines.append(
+        "OTHER_SU35_VARIANTS_PRESERVED = "
+        + ("YES" if "Command_ConstructRussiaJetSu35AG" in btns else "NO")
     )
     lines.append(
         "SU75_PRESERVED_ON_RUNTIME_CS = "
@@ -423,6 +458,16 @@ def validate(
         "SU47_PRESERVED_ON_RUNTIME_CS = "
         + ("YES" if "Command_ConstructRussiaJetSu47Recon" in btns else "NO")
     )
+    lines.append(
+        "SU35S_A2A_REMOVED_FROM_SLOT = "
+        + (
+            "YES"
+            if slot_map.get(OLD_SU35_A2A_SLOT) == TU160_BUTTON
+            and OLD_SU35_A2A_BUTTON not in btns
+            else "NO"
+        )
+    )
+    lines.append("KH55_CHAIN_MODIFIED = NO")
 
     obj_blob = data.get(OBJ_KEY, b"")
     obj_text = obj_blob.decode("latin1", errors="replace")
@@ -693,7 +738,7 @@ def validate(
         "DONOR_SOURCE = !TEOD_*.big (RU-TU160 art) + !TEOD_INI.big Object KH55MS"
     )
     lines.append(
-        "CLAIM = TU-160 ADDED TO RUNTIME RussiaAirfieldCommandSet SLOT 15 — "
+        "CLAIM = TU-160 REPLACED SU-35S A2A ON RussiaAirfieldCommandSet SLOT 2 — "
         "RUNTIME MENU TEST REQUIRED"
     )
     lines.append(f"EFFECTIVE_TU160_BUTTON_FILE = {BUTTON_KEY}")
@@ -719,10 +764,20 @@ def validate(
         raise RuntimeError(f"TEOD Object KH55MS count={len(teod_kh55)}")
     if obj != NEW_OBJECT:
         raise RuntimeError(f"TU160 button Object={obj}")
-    if not tu_slots or tu_slots[0] != TU160_COMMANDSET_SLOT:
-        raise RuntimeError(f"TU160 not on slot {TU160_COMMANDSET_SLOT}: {tu_slots}")
-    if "Command_ConstructRussiaJetSu35S" not in btns:
-        raise RuntimeError("SU-35S removed from runtime CommandSet")
+    if not tu_slots or tu_slots[0] != TU160_COMMANDSET_SLOT or len(tu_slots) != 1:
+        raise RuntimeError(
+            f"TU160 sloting wrong: slots={tu_slots}, want exactly [{TU160_COMMANDSET_SLOT}]"
+        )
+    if slot_map.get(15) == TU160_BUTTON:
+        raise RuntimeError("Temp slot 15 TU160 still present")
+    if OLD_SU35_A2A_BUTTON in btns:
+        raise RuntimeError("SU-35S A2A button still on runtime CommandSet")
+    if "Command_ConstructRussiaJetSu35AG" not in btns:
+        raise RuntimeError("Other Su-35 variant (AG) missing")
+    if "Command_ConstructRussiaJetSu75Checkmate" not in btns:
+        raise RuntimeError("SU-75 missing from runtime CommandSet")
+    if "Command_ConstructRussiaJetSu47Recon" not in btns:
+        raise RuntimeError("SU-47 missing from runtime CommandSet")
     if other_cs_with_tu:
         raise RuntimeError(f"TU160 leaked into other CommandSets: {other_cs_with_tu}")
     return lines
@@ -765,17 +820,20 @@ def main() -> None:
         art = read_big(stage_art)
         data = read_big(stage_data)
 
-        # Baseline runtime CS must have Su35S and no TU160 yet
+        # Baseline runtime CS must have Su35S A2A on slot 2
         base_slots = commandset_slots(data[COMMANDSET_KEY], RUNTIME_COMMANDSET)
-        base_btns = {b for _, b in base_slots}
-        if "Command_ConstructRussiaJetSu35S" not in base_btns:
-            raise RuntimeError("Baseline RussiaAirfieldCommandSet missing Su35S")
-        if TU160_BUTTON in base_btns:
-            raise RuntimeError("Baseline already has TU160 button unexpectedly")
-        if any(n == TU160_COMMANDSET_SLOT for n, _ in base_slots):
+        base_map = dict(base_slots)
+        if base_map.get(OLD_SU35_A2A_SLOT) != OLD_SU35_A2A_BUTTON:
             raise RuntimeError(
-                f"Baseline slot {TU160_COMMANDSET_SLOT} already occupied: {base_slots}"
+                f"Baseline slot {OLD_SU35_A2A_SLOT} = {base_map.get(OLD_SU35_A2A_SLOT)}, "
+                f"want {OLD_SU35_A2A_BUTTON}"
             )
+        if "Command_ConstructRussiaJetSu35AG" not in base_map.values():
+            raise RuntimeError("Baseline missing Su35AG (other Su-35 variant)")
+        if "Command_ConstructRussiaJetSu75Checkmate" not in base_map.values():
+            raise RuntimeError("Baseline missing SU-75")
+        if "Command_ConstructRussiaJetSu47Recon" not in base_map.values():
+            raise RuntimeError("Baseline missing SU-47")
 
         # Snapshot all CommandSets except the one we intentionally patch
         def cs_map(blob: bytes) -> dict[str, str]:

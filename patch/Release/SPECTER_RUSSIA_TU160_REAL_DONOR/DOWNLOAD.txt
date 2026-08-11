@@ -1,8 +1,9 @@
 SPECTER_RUSSIA_TU160_REAL_DONOR
 
-Download: https://gofile.io/d/b1oCUo
+Download: https://gofile.io/d/K0wc33
 
-TU-160 added to RussiaAirfieldCommandSet slot 15.
-KH55MS TEOD reuse preserved. SU-35S/SU-75/SU-47 preserved.
+TU-160 replaces SU-35S Air-to-Air on RussiaAirfieldCommandSet slot 2.
+Slot 15 temporary TU-160 removed. TU160_BUTTON_COUNT=1.
+Su35AG / SU-75 / SU-47 preserved. KH55MS TEOD reuse unchanged.
 
-CLAIM: TU-160 ADDED TO RUNTIME MENU COMMANDSET — RUNTIME MENU TEST REQUIRED
+CLAIM: TU-160 REPLACED SU-35S A2A SLOT — RUNTIME MENU TEST REQUIRED

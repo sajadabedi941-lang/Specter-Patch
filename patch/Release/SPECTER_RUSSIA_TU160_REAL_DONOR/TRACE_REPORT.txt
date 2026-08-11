@@ -1,28 +1,16 @@
-RUSSIAN AIRFIELD MENU TRACE + TU-160 ADD
-========================================
-
-RUSSIAN_AIRBASE_OBJECT = RussiaAirfield
-  Source: Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Airfield.ini
-  Dozer: RussiaDozerCommandSet -> Command_ConstructRussiaAirfield -> RussiaAirfield
-
 RUNTIME_COMMANDSET = RussiaAirfieldCommandSet
-  (NOT RussiaAirfieldCommandSet_T4 — that belongs to RussiaAirfield_T)
-
-Occupied slots before patch: 1-14
-Free slot used: 15
-
-TU160_COMMAND_BUTTON = Command_ConstructRussiaJetTU160
-TU160_COMMANDSET_SLOT = 15
-TU160_BUTTON_OBJECT = RussiaJetTU160Clean
-TU160_BUTTON_IMAGE = TU-160ic
-TU160_COST = 8500 (Object BuildCost)
-
-Preserved on runtime CommandSet:
-  slot 2 Command_ConstructRussiaJetSu35S
-  slot 1 Command_ConstructRussiaJetSu75Checkmate
-  slot 8 Command_ConstructRussiaJetSu47Recon
-
-Weapon chain unchanged:
-  RussiaJetTU160Clean -> Russia_Weapon_TU160_KH55 -> KH55MS (!TEOD_INI.big)
-
-CLAIM = TU-160 ADDED TO RUNTIME RussiaAirfieldCommandSet SLOT 15 — RUNTIME MENU TEST REQUIRED
+OLD_SU35_A2A_SLOT = 2
+OLD_SU35_A2A_BUTTON = Command_ConstructRussiaJetSu35S
+OLD_SU35_A2A_OBJECT = RussiaJetSu35S
+NEW_TU160_SLOT = 2
+NEW_TU160_BUTTON = Command_ConstructRussiaJetTU160
+NEW_TU160_OBJECT = RussiaJetTU160Clean
+TU160_SLOT15_REMOVED = YES
+TU160_BUTTON_COUNT = 1
+OTHER_SU35_VARIANTS_PRESERVED = YES
+KH55_CHAIN_MODIFIED = NO
+RUSSIA_COMMANDSET_MASS_MERGE = NO
+SU75_PRESERVED = YES
+SU47_PRESERVED = YES
+OTHER_FACTIONS_MODIFIED = 0
+CLAIM = TU-160 REPLACED SU-35S A2A ON RussiaAirfieldCommandSet SLOT 2 — RUNTIME MENU TEST REQUIRED

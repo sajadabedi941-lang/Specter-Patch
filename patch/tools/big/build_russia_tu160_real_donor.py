@@ -69,11 +69,24 @@ CSF_KEY = r"Data\English\generals.csf"
 BUTTON_KEY = r"Data\INI\CommandButton.ini"
 COMMANDSET_KEY = r"Data\INI\CommandSet.ini"
 
-SLOT_BUTTON = "Command_ConstructRussian_Su35"
+SLOT_BUTTON = "Command_ConstructRussian_Su35"  # legacy T4 routing (kept)
+TU160_BUTTON = "Command_ConstructRussiaJetTU160"
+RUNTIME_AIRFIELD_OBJECT = "RussiaAirfield"
+RUNTIME_COMMANDSET = "RussiaAirfieldCommandSet"
+TU160_COMMANDSET_SLOT = 15
 NEW_OBJECT = "RussiaJetTU160Clean"
 OLD_OBJECT = "RussiaJetSu35S"
-EXPECTED_SLOT = 2
 TEOD_PROJECTILE = "KH55MS"
+
+TU160_BUTTON_BLOCK = """CommandButton Command_ConstructRussiaJetTU160
+  Command       = UNIT_BUILD
+  Object        = RussiaJetTU160Clean
+  TextLabel     = CONTROLBAR:ConstructRussiaJetTU160
+  ButtonImage   = TU-160ic
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipRussiaJetTU160
+End
+"""
 
 CSF_LABELS = [
     ("OBJECT:RussiaJetTU160", "TU-160 Blackjack"),
@@ -167,56 +180,110 @@ def patch_csf(blob: bytes, labels: list[tuple[str, str]]) -> bytes:
     return bytes(data)
 
 
-def patch_command_button(blob: bytes) -> bytes:
+def ensure_tu160_command_button(blob: bytes) -> bytes:
+    """Ensure dedicated Command_ConstructRussiaJetTU160 exists (FIRST-WINS)."""
+    text = blob.decode("latin1", errors="replace")
+    if re.search(rf"^CommandButton\s+{re.escape(TU160_BUTTON)}\b", text, re.M):
+        # Force Object/Image/Labels correct if present
+        pattern = re.compile(
+            rf"(^CommandButton\s+{re.escape(TU160_BUTTON)}\b.*?)(?=^CommandButton\s|\Z)",
+            re.M | re.S,
+        )
+        m = pattern.search(text)
+        assert m
+        block = m.group(1)
+        block = re.sub(r"^\s*NeededScience\s*=\s*.*\n", "", block, flags=re.M)
+        block = re.sub(
+            r"(^\s*Object\s*=\s*)\S+",
+            rf"\g<1>{NEW_OBJECT}",
+            block,
+            count=1,
+            flags=re.M,
+        )
+        block = re.sub(
+            r"(^\s*TextLabel\s*=\s*)\S+",
+            r"\g<1>CONTROLBAR:ConstructRussiaJetTU160",
+            block,
+            count=1,
+            flags=re.M,
+        )
+        block = re.sub(
+            r"(^\s*ButtonImage\s*=\s*)\S+",
+            r"\g<1>TU-160ic",
+            block,
+            count=1,
+            flags=re.M,
+        )
+        block = re.sub(
+            r"(^\s*DescriptLabel\s*=\s*)\S+",
+            r"\g<1>CONTROLBAR:ToolTipRussiaJetTU160",
+            block,
+            count=1,
+            flags=re.M,
+        )
+        return (text[: m.start(1)] + block + text[m.end(1) :]).encode(
+            "latin1", errors="replace"
+        )
+    # Insert after Su47 button if present, else append
+    anchor = re.search(
+        r"(^CommandButton\s+Command_ConstructRussiaJetSu47Recon\b.*?^End\s*\n)",
+        text,
+        re.M | re.S,
+    )
+    insert = TU160_BUTTON_BLOCK + "\n"
+    if anchor:
+        text = text[: anchor.end(1)] + "\n" + insert + text[anchor.end(1) :]
+    else:
+        text = text.rstrip() + "\n\n" + insert
+    return text.encode("latin1", errors="replace")
+
+
+def patch_russia_airfield_commandset(blob: bytes) -> bytes:
+    """Add TU-160 on free slot 15 of runtime RussiaAirfieldCommandSet only."""
     text = blob.decode("latin1", errors="replace")
     pattern = re.compile(
-        rf"(^CommandButton\s+{re.escape(SLOT_BUTTON)}\b.*?)(?=^CommandButton\s|\Z)",
+        rf"(^CommandSet\s+{re.escape(RUNTIME_COMMANDSET)}\b)(.*?)(^End\s*$)",
         re.M | re.S,
     )
     m = pattern.search(text)
     if not m:
-        raise RuntimeError(f"Missing {SLOT_BUTTON}")
-    block = m.group(1)
-    block = re.sub(r"^\s*NeededScience\s*=\s*.*\n", "", block, flags=re.M)
-    block = re.sub(
-        r"(^\s*Object\s*=\s*)\S+",
-        rf"\g<1>{NEW_OBJECT}",
-        block,
-        count=1,
-        flags=re.M,
+        raise RuntimeError(f"Missing {RUNTIME_COMMANDSET}")
+    body = m.group(2)
+    # Preserve Su35S / Su75 / Su47
+    for must in [
+        "Command_ConstructRussiaJetSu35S",
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "Command_ConstructRussiaJetSu47Recon",
+    ]:
+        if must not in body:
+            raise RuntimeError(f"{RUNTIME_COMMANDSET} missing required button {must}")
+    # Already present?
+    slot_hit = re.search(
+        rf"^\s*(\d+)\s*=\s*{re.escape(TU160_BUTTON)}\b", body, re.M
     )
-    block = re.sub(
-        r"(^\s*TextLabel\s*=\s*)\S+",
-        r"\g<1>CONTROLBAR:ConstructRussiaJetTU160",
-        block,
-        count=1,
-        flags=re.M,
-    )
-    block = re.sub(
-        r"(^\s*ButtonImage\s*=\s*)\S+",
-        r"\g<1>TU-160ic",
-        block,
-        count=1,
-        flags=re.M,
-    )
-    block = re.sub(
-        r"(^\s*DescriptLabel\s*=\s*)\S+",
-        r"\g<1>CONTROLBAR:ToolTipRussiaJetTU160",
-        block,
-        count=1,
-        flags=re.M,
-    )
-    if NEW_OBJECT not in block:
-        raise RuntimeError("Failed to route Object to RussiaJetTU160Clean")
-    return (text[: m.start(1)] + block + text[m.end(1) :]).encode(
-        "latin1", errors="replace"
-    )
+    if slot_hit:
+        if int(slot_hit.group(1)) != TU160_COMMANDSET_SLOT:
+            raise RuntimeError(
+                f"{TU160_BUTTON} already on unexpected slot {slot_hit.group(1)}"
+            )
+        return blob
+    occupied = {int(x) for x in re.findall(r"^\s*(\d+)\s*=", body, re.M)}
+    if TU160_COMMANDSET_SLOT in occupied:
+        raise RuntimeError(
+            f"Slot {TU160_COMMANDSET_SLOT} already occupied in {RUNTIME_COMMANDSET}; "
+            f"occupied={sorted(occupied)}"
+        )
+    # Insert before End
+    new_body = body.rstrip() + f"\n {TU160_COMMANDSET_SLOT} = {TU160_BUTTON}\n"
+    return (
+        text[: m.start(2)] + new_body + text[m.end(2) :]
+    ).encode("latin1", errors="replace")
 
 
-def first_button_fields(blob: bytes) -> tuple[str, str, str]:
+def tu160_button_fields(blob: bytes) -> tuple[str, str, str]:
     text = blob.decode("latin1", errors="replace")
     m = re.search(
-        rf"^CommandButton\s+{re.escape(SLOT_BUTTON)}\b(.*?)(?=^CommandButton\s|\Z)",
+        rf"^CommandButton\s+{re.escape(TU160_BUTTON)}\b(.*?)(?=^CommandButton\s|\Z)",
         text,
         re.M | re.S,
     )
@@ -233,22 +300,19 @@ def first_button_fields(blob: bytes) -> tuple[str, str, str]:
     )
 
 
-def airfield_slot(blob: bytes) -> dict[str, int]:
+def commandset_slots(blob: bytes, cs_name: str) -> list[tuple[int, str]]:
     text = blob.decode("latin1", errors="replace")
-    out: dict[str, int] = {}
-    for cs in ["RussiaAirfieldCommandSet_T4", "RussiaAirfieldCommandSet"]:
-        m = re.search(
-            rf"^CommandSet\s+{re.escape(cs)}\b(.*?)(?=^CommandSet\s|\Z)",
-            text,
-            re.M | re.S,
-        )
-        if not m:
-            continue
-        for sm in re.finditer(
-            rf"^\s*(\d+)\s*=\s*{re.escape(SLOT_BUTTON)}\b", m.group(1), re.M
-        ):
-            out[cs] = int(sm.group(1))
-    return out
+    m = re.search(
+        rf"^CommandSet\s+{re.escape(cs_name)}\b(.*?)(?=^CommandSet\s|\Z)",
+        text,
+        re.M | re.S,
+    )
+    if not m:
+        return []
+    return [
+        (int(sm.group(1)), sm.group(2))
+        for sm in re.finditer(r"^\s*(\d+)\s*=\s*(\S+)", m.group(1), re.M)
+    ]
 
 
 def find_defs(entries: dict[str, bytes], header_re: str) -> list[tuple[str, int]]:
@@ -329,17 +393,35 @@ def validate(
     teod: dict[str, bytes],
 ) -> list[str]:
     lines: list[str] = []
-    obj, img, txt = first_button_fields(data[BUTTON_KEY])
-    lines.append(f"OLD_SU35_A2A_SLOT_NOW_SPAWNS = {obj}")
+    obj, img, txt = tu160_button_fields(data[BUTTON_KEY])
+    lines.append(f"RUSSIAN_AIRBASE_OBJECT = {RUNTIME_AIRFIELD_OBJECT}")
+    lines.append(f"RUNTIME_COMMANDSET = {RUNTIME_COMMANDSET}")
+    lines.append(f"TU160_COMMAND_BUTTON = {TU160_BUTTON}")
+    lines.append(f"TU160_BUTTON_OBJECT = {obj}")
     lines.append(f"TU160_BUTTON_IMAGE = {img}")
     lines.append(f"TU160_TEXTLABEL = {txt}")
 
-    slots = airfield_slot(data[COMMANDSET_KEY])
-    t4 = slots.get("RussiaAirfieldCommandSet_T4")
-    lines.append(f"REPLACED_SLOT = {t4 if t4 is not None else 'MISSING'}")
+    slots = commandset_slots(data[COMMANDSET_KEY], RUNTIME_COMMANDSET)
+    lines.append(f"{RUNTIME_COMMANDSET} slots:")
+    for n, btn in slots:
+        lines.append(f"  {n} = {btn}")
+    tu_slots = [n for n, b in slots if b == TU160_BUTTON]
     lines.append(
-        "OLD_SU35_A2A_SLOT_STILL_EXISTS = "
-        + ("YES" if t4 == EXPECTED_SLOT else "NO")
+        f"TU160_COMMANDSET_SLOT = {tu_slots[0] if tu_slots else 'MISSING'}"
+    )
+    # Preserve checks on runtime CS
+    btns = {b for _, b in slots}
+    lines.append(
+        "SU35S_PRESERVED_ON_RUNTIME_CS = "
+        + ("YES" if "Command_ConstructRussiaJetSu35S" in btns else "NO")
+    )
+    lines.append(
+        "SU75_PRESERVED_ON_RUNTIME_CS = "
+        + ("YES" if "Command_ConstructRussiaJetSu75Checkmate" in btns else "NO")
+    )
+    lines.append(
+        "SU47_PRESERVED_ON_RUNTIME_CS = "
+        + ("YES" if "Command_ConstructRussiaJetSu47Recon" in btns else "NO")
     )
 
     obj_blob = data.get(OBJ_KEY, b"")
@@ -530,40 +612,40 @@ def validate(
     )
 
     missing_obj = 0 if obj == NEW_OBJECT and NEW_OBJECT.encode() in obj_blob else 1
-    missing_btn = 0 if SLOT_BUTTON.encode() in data[BUTTON_KEY] else 1
+    missing_btn = 0 if (
+        TU160_BUTTON.encode() in data[BUTTON_KEY] and obj == NEW_OBJECT
+    ) else 1
     lines.append(f"TU160_MISSING_OBJECT_REFS = {missing_obj}")
     lines.append(f"TU160_MISSING_BUTTON_REFS = {missing_btn}")
-
-    cb = data[BUTTON_KEY].decode("latin1", errors="replace")
-    m = re.search(
-        r"^CommandButton\s+Command_ConstructRussian_Su35ts\b(.*?)(?=^CommandButton\s|\Z)",
-        cb,
-        re.M | re.S,
-    )
-    su35ts_obj = ""
-    if m:
-        om = re.search(r"^\s*Object\s*=\s*(\S+)", m.group(1), re.M)
-        su35ts_obj = om.group(1) if om else ""
-    lines.append(f"OTHER_SU35TS_BUTTON_OBJECT = {su35ts_obj}")
     lines.append(
-        "OTHER_SU35_VARIANTS_PRESERVED = "
-        + ("YES" if su35ts_obj == "RussiaJetSu35S" else "NO")
+        "PACKED_TU160_BUTTON_PRESENT = "
+        + (
+            "YES"
+            if re.search(
+                rf"^CommandButton\s+{re.escape(TU160_BUTTON)}\b",
+                data[BUTTON_KEY].decode("latin1", errors="replace"),
+                re.M,
+            )
+            else "NO"
+        )
+    )
+    lines.append(
+        "PACKED_RUNTIME_COMMANDSET_HAS_TU160 = "
+        + ("YES" if tu_slots else "NO")
     )
 
+    # Only RussiaAirfieldCommandSet may gain the TU-160 slot (no mass merge)
     cs = data[COMMANDSET_KEY].decode("latin1", errors="replace")
-    m = re.search(
-        r"^CommandSet\s+RussiaAirfieldCommandSet_T4\b(.*?)(?=^CommandSet\s|\Z)",
-        cs,
-        re.M | re.S,
-    )
-    max_slot = 0
-    if m:
-        for sm in re.finditer(r"^\s*(\d+)\s*=", m.group(1), re.M):
-            max_slot = max(max_slot, int(sm.group(1)))
-    lines.append(f"RUSSIA_AIRFIELD_T4_MAX_SLOT = {max_slot}")
+    other_cs_with_tu = []
+    for m in re.finditer(r"^CommandSet\s+(\S+)\b(.*?)(?=^CommandSet\s|\Z)", cs, re.M | re.S):
+        if TU160_BUTTON in m.group(2) and m.group(1) != RUNTIME_COMMANDSET:
+            other_cs_with_tu.append(m.group(1))
     lines.append(
-        "RUSSIA_COMMANDSET_MASS_MERGE = " + ("NO" if max_slot <= 18 else "YES")
+        "RUSSIA_COMMANDSET_MASS_MERGE = "
+        + ("YES" if other_cs_with_tu else "NO")
     )
+    if other_cs_with_tu:
+        lines.append(f"UNEXPECTED_CS_WITH_TU160 = {other_cs_with_tu}")
 
     lines.append(
         "SU75_PRESERVED = "
@@ -598,36 +680,27 @@ def validate(
     lines.append(f"USA_AIRCRAFT_PRESERVED = {'YES' if usa_ok else 'NO'}")
     lines.append("OTHER_RUSSIA_AIRCRAFT_MODIFIED = 0")
     lines.append("OTHER_FACTIONS_MODIFIED = 0")
-    lines.append(f"OLD_OBJECT = {OLD_OBJECT}")
     lines.append(f"NEW_OBJECT = {NEW_OBJECT}")
-    lines.append("OLD_W3D = RUS_SU35S")
     lines.append("NEW_REAL_TU160_W3D = RU-TU160")
-    lines.append("REPLACED_BUTTON = Command_ConstructRussian_Su35")
     lines.append("TU160_PRIMARY_WEAPON = Russia_Weapon_TU160_KH55")
     lines.append("TU160_SECONDARY_WEAPON = none")
     lines.append(f"TU160_PROJECTILE = {TEOD_PROJECTILE} (TEOD runtime)")
     lines.append("TU160_CLIPSIZE = 6")
-    lines.append("TU160_SHOTS_PER_ATTACK = 6 (DelayBetweenShots=500)")
     lines.append("TU160_ATTACK_RANGE = 1000")
     lines.append("TU160_AUTO_RELOAD = RETURN_TO_BASE")
     lines.append("TU160_COST = 8500")
-    lines.append("REAL_TU160_DONOR_FOUND = YES")
     lines.append(
         "DONOR_SOURCE = !TEOD_*.big (RU-TU160 art) + !TEOD_INI.big Object KH55MS"
     )
     lines.append(
-        "ROOT_CAUSE = patch projectile clones removed; ProjectileObject=KH55MS "
-        "references original TEOD runtime Object KH55MS"
+        "CLAIM = TU-160 ADDED TO RUNTIME RussiaAirfieldCommandSet SLOT 15 — "
+        "RUNTIME MENU TEST REQUIRED"
     )
-    lines.append(
-        "CLAIM = PATCHED FOR TEOD KH55MS REUSE — RUNTIME TEST REQUIRED "
-        "(do not claim crash fixed without game test)"
-    )
-    lines.append(f"EFFECTIVE_REPLACED_SLOT_BUTTON_FILE = {BUTTON_KEY}")
+    lines.append(f"EFFECTIVE_TU160_BUTTON_FILE = {BUTTON_KEY}")
     lines.append(f"EFFECTIVE_TU160_OBJECT_FILE = {OBJ_KEY}")
     lines.append(f"EFFECTIVE_RUSSIA_AIRFIELD_COMMANDSET_FILE = {COMMANDSET_KEY}")
 
-    # Hard asserts for this fix
+    # Hard asserts
     if len(pack_kh55) != 0:
         raise RuntimeError(f"Packed BIG still defines Object KH55MS: {pack_kh55}")
     if len(pack_clone) != 0:
@@ -644,6 +717,14 @@ def validate(
         raise RuntimeError(f"Weapon ProjectileObject is {final_proj}, want KH55MS")
     if len(teod_kh55) != 1:
         raise RuntimeError(f"TEOD Object KH55MS count={len(teod_kh55)}")
+    if obj != NEW_OBJECT:
+        raise RuntimeError(f"TU160 button Object={obj}")
+    if not tu_slots or tu_slots[0] != TU160_COMMANDSET_SLOT:
+        raise RuntimeError(f"TU160 not on slot {TU160_COMMANDSET_SLOT}: {tu_slots}")
+    if "Command_ConstructRussiaJetSu35S" not in btns:
+        raise RuntimeError("SU-35S removed from runtime CommandSet")
+    if other_cs_with_tu:
+        raise RuntimeError(f"TU160 leaked into other CommandSets: {other_cs_with_tu}")
     return lines
 
 
@@ -684,10 +765,29 @@ def main() -> None:
         art = read_big(stage_art)
         data = read_big(stage_data)
 
-        base_slots = airfield_slot(data[COMMANDSET_KEY])
-        if base_slots.get("RussiaAirfieldCommandSet_T4") != EXPECTED_SLOT:
-            raise RuntimeError(f"Unexpected baseline Su35 A2A slot: {base_slots}")
-        cs_before = data[COMMANDSET_KEY]
+        # Baseline runtime CS must have Su35S and no TU160 yet
+        base_slots = commandset_slots(data[COMMANDSET_KEY], RUNTIME_COMMANDSET)
+        base_btns = {b for _, b in base_slots}
+        if "Command_ConstructRussiaJetSu35S" not in base_btns:
+            raise RuntimeError("Baseline RussiaAirfieldCommandSet missing Su35S")
+        if TU160_BUTTON in base_btns:
+            raise RuntimeError("Baseline already has TU160 button unexpectedly")
+        if any(n == TU160_COMMANDSET_SLOT for n, _ in base_slots):
+            raise RuntimeError(
+                f"Baseline slot {TU160_COMMANDSET_SLOT} already occupied: {base_slots}"
+            )
+
+        # Snapshot all CommandSets except the one we intentionally patch
+        def cs_map(blob: bytes) -> dict[str, str]:
+            text = blob.decode("latin1", errors="replace")
+            out = {}
+            for m in re.finditer(
+                r"^CommandSet\s+(\S+)\b(.*?)(?=^CommandSet\s|\Z)", text, re.M | re.S
+            ):
+                out[m.group(1)] = m.group(2)
+            return out
+
+        cs_before = cs_map(data[COMMANDSET_KEY])
 
         for key, path in ART_ASSETS.items():
             if not path.exists():
@@ -700,13 +800,20 @@ def main() -> None:
         data[WEAPON_KEY] = WEAPON_INI.read_bytes()
         data[MAPPED_KEY] = MAPPED_INI.read_bytes()
         data[STRINGS_KEY] = STRINGS_TXT.read_bytes()
-        data[BUTTON_KEY] = patch_command_button(data[BUTTON_KEY])
+        data[BUTTON_KEY] = ensure_tu160_command_button(data[BUTTON_KEY])
+        data[COMMANDSET_KEY] = patch_russia_airfield_commandset(data[COMMANDSET_KEY])
         data[CSF_KEY] = patch_csf(data[CSF_KEY], CSF_LABELS)
 
         strip_forbidden(data)  # again after writes
 
-        if data[COMMANDSET_KEY] != cs_before:
-            raise RuntimeError("CommandSet was modified — abort")
+        cs_after = cs_map(data[COMMANDSET_KEY])
+        for name, body in cs_before.items():
+            if name == RUNTIME_COMMANDSET:
+                continue
+            if cs_after.get(name) != body:
+                raise RuntimeError(f"Unintended CommandSet change: {name}")
+        if RUNTIME_COMMANDSET not in cs_after:
+            raise RuntimeError(f"{RUNTIME_COMMANDSET} missing after patch")
 
         # Write to fresh OUT (wipe old bigs first)
         if OUT.exists():
@@ -724,8 +831,12 @@ def main() -> None:
         # Re-extract FINAL packed BIG and validate
         art2 = read_big(art_out)
         data2 = read_big(data_out)
-        if data2[COMMANDSET_KEY] != cs_before:
-            raise RuntimeError("Packed CommandSet drift")
+        cs_packed = cs_map(data2[COMMANDSET_KEY])
+        for name, body in cs_before.items():
+            if name == RUNTIME_COMMANDSET:
+                continue
+            if cs_packed.get(name) != body:
+                raise RuntimeError(f"Packed unintended CommandSet change: {name}")
         strip_check = [
             k
             for k in data2

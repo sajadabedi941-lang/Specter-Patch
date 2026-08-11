@@ -1,8 +1,8 @@
 SPECTER_RUSSIA_TU160_REAL_DONOR
 
-Download: https://gofile.io/d/Pt838q
+Download: https://gofile.io/d/b1oCUo
 
-Uses original TEOD Object KH55MS (no patch projectile clone).
-Requires !TEOD_INI.big loaded at runtime.
+TU-160 added to RussiaAirfieldCommandSet slot 15.
+KH55MS TEOD reuse preserved. SU-35S/SU-75/SU-47 preserved.
 
-CLAIM: PATCHED FOR TEOD KH55MS REUSE - RUNTIME TEST REQUIRED
+CLAIM: TU-160 ADDED TO RUNTIME MENU COMMANDSET — RUNTIME MENU TEST REQUIRED

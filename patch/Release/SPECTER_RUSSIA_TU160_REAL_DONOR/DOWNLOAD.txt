@@ -1,0 +1,13 @@
+SPECTER_RUSSIA_TU160_REAL_DONOR test package
+
+Download: https://gofile.io/d/30c0sh
+
+Contents:
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  VERIFY.txt
+  README_INSTALL.txt
+  TRACE_REPORT.txt
+
+Built on SPECTER_RUSSIA_SU47_REAL_DONOR baseline (preserves SU-75 + SU-47).
+Replaces ONLY former SU-35S Air-to-Air slot (T4 slot 2) with RussiaJetTU160Clean.

@@ -1,0 +1,9 @@
+SPECTER_RUSSIA_SUT50_PAKFA
+
+Download: https://gofile.io/d/I9z3UO
+
+SU-T50 / PAK FA (RussiaJetT50PAKFAClean) replaces KA-52M on RussiaAirfieldCommandSet slot 11.
+Fixed-wing JetAI + NeedsRunway. Donor stealth. ProjectileObject=R27 via !TEOD_INI.big.
+SU-75 / SU-47 / TU-160 preserved. No CommandSet mass merge.
+
+CLAIM: SU-T50 REPLACED KA-52M SLOT — RUNTIME FLIGHT/COMBAT TEST REQUIRED

@@ -1,26 +1,13 @@
-==================================================
-KH55MS PARSER CRASH — TRACE
-==================================================
-KH55MS_DEFINITION_COUNT = 2 historically (TEOD + removed patch)
-KH55MS_DEFINITION_1 = !TEOD_INI.big Data\INI\Object\WeaponObjects.ini
-KH55MS_DEFINITION_2 = REMOVED patch Russia_Object_KH55MS.ini
-KH55MS_DEFINITION_3 = none
+TU-160 TEOD KH55MS REUSE TRACE
+===============================
+Object KH55MS = 1
+  @ !TEOD_INI.big :: Data\INI\Object\WeaponObjects.ini :6527
+Object Russia_TU160_KH55MS_Projectile = 0
+Locomotor KH55MissileLocomotor = 1
+  @ !TEOD_INI.big :: Data\INI\Locomotor.ini :16014
+Weapon TU160MissileWeaponDetonation = 1
+  @ !TEOD_INI.big :: Data\INI\Weapon.ini :22741
 
-KH55MS_CRASH_FILE_ROOT_CAUSE = patch redefined Object KH55MS (TEOD name / duplicate conflict)
-
-FINAL_TU160_PROJECTILE = Russia_TU160_KH55MS_Projectile
-FINAL_PROJECTILE_SOURCE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_TU160_KH55MS_Projectile.ini
-
+FINAL_TU160_PROJECTILE = KH55MS
 PATCH_CRASH_FILE_PRESENT = NO
-PATCH_KH55MS_OBJECT_DEFINITION_COUNT = 0
-DUPLICATE_KH55MS_RUNTIME_DEFINITIONS = 0
-ORIGINAL_RUNTIME_KH55MS_EXISTS = NO (Specter/_SPEC packs)
-
-TU160_OBJECT = RussiaJetTU160Clean
-TU160_SLOT = 2
-TU160_COST = 8500
-SU75_PRESERVED = YES
-SU47_PRESERVED = YES
-RUSSIA_COMMANDSET_MASS_MERGE = NO
-
-CLAIM = KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED
+CLAIM = PATCHED FOR TEOD KH55MS REUSE — RUNTIME TEST REQUIRED

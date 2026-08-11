@@ -1,8 +1,8 @@
-SPECTER_RUSSIA_TU160_REAL_DONOR (KH55MS PARSER CRASH FIXED)
+SPECTER_RUSSIA_TU160_REAL_DONOR
 
-Download: https://gofile.io/d/el2McD
+Download: https://gofile.io/d/Pt838q
 
-Removed Object KH55MS patch redefinition.
-Weapon now uses unique Russia_TU160_KH55MS_Projectile (complete TEOD KH55MS block).
+Uses original TEOD Object KH55MS (no patch projectile clone).
+Requires !TEOD_INI.big loaded at runtime.
 
-Claim: KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED
+CLAIM: PATCHED FOR TEOD KH55MS REUSE - RUNTIME TEST REQUIRED

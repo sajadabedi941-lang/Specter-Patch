@@ -1,19 +1,9 @@
-SPECTER Russia Tu-160 Blackjack — REAL TEOD donor
+SPECTER Russia Tu-160 Blackjack — TEOD KH55MS reuse
 
 Install: replace game _SPEC_ART_ONE.big and _SPEC_DATA_ONE.big
-with the files in this ZIP (SU-47 pack baseline + Tu-160 slot replace).
+Requires !TEOD_INI.big loaded (provides Object KH55MS).
 
-Replaces ONLY the former SU-35S Air-to-Air button
-(Command_ConstructRussian_Su35 / T4 slot 2).
+Replaces ONLY former SU-35S Air-to-Air button (T4 slot 2).
+ProjectileObject = KH55MS (TEOD original — not redefined in patch).
 
-User test checklist (do not claim PASS until these pass):
-1. Russia enters match without crash
-2. Russian Airfield builds
-3. Former SU-35S Air-to-Air slot now says TU-160 Blackjack
-4. Real TU-160 visual appears
-5. TU-160 takes off correctly
-6. TU-160 attacks correctly
-7. TU-160 returns to base
-8. TU-160 rearms
-9. SU-75 and SU-47 remain intact
-10. Other Russian aircraft remain unchanged
+CLAIM: PATCHED FOR TEOD KH55MS REUSE — RUNTIME TEST REQUIRED

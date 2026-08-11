@@ -1,81 +1,100 @@
-==================================================
-KH55MS PARSER CRASH FIX
-==================================================
+KH55MS / CLONE PARSER CRASH — TEOD REUSE FIX
+============================================
 
-CRASH_FILE =
-  Data\INI\Object\specter\armed forces of russian federation\airforce\russia_object_kh55ms.ini
-CRASH_LINE = Object KH55MS
+Deleted from source AND packed BIG:
+  Russia_TU160_KH55MS_Projectile.ini
+  Russia_Object_KH55MS.ini
+  Projectile_Russia_TU160_KH55.ini
+  Locomotor_Russia_TU160_Clean.ini
+  ParticleSystem_TU160_KH55.ini
 
-==================================================
-STEP 1 — EVERY KH55MS DEFINITION
-==================================================
-KH55MS_DEFINITION_COUNT = 2 (donor + prior crashing patch; Specter runtime = 0)
+Weapon_Russia_TU160_Clean.ini:
+  ProjectileObject = KH55MS
 
-KH55MS_DEFINITION_1 =
-  !TEOD_INI.big / Data\INI\Object\WeaponObjects.ini (line ~6527)
-  FIRST/ONLY donor definition. NOT present inside Specter_Data or
-  SU47/SU75/_SPEC_DATA_ONE runtime packs.
+TEOD provides:
+  Object KH55MS
+  Locomotor KH55MissileLocomotor
+  Weapon TU160MissileWeaponDetonation
 
-KH55MS_DEFINITION_2 =
-  (REMOVED) patch Data\INI\Object\...\Airforce\Russia_Object_KH55MS.ini
-  This was the crashing redefinition.
+CLAIM = PATCHED FOR TEOD KH55MS REUSE — RUNTIME TEST REQUIRED
 
-KH55MS_DEFINITION_3 = none
-
-Specter_Data Object KH55MS files = []
-SU47_BASELINE Object KH55MS = 0
-Packed Specter WeaponObjects.ini Object KH55MS = NO
-
-Load-order note:
-  If player also loads !TEOD_INI.big, TEOD defines Object KH55MS first;
-  patch redefinition fails at Object KH55MS header (classic SAGE duplicate).
-
-==================================================
-STEP 2 — CRASH FILE ROOT CAUSE
-==================================================
-KH55MS_CRASH_FILE_ROOT_CAUSE =
-  Patch file redefined Object KH55MS (TEOD donor object name).
-  File End-balance was OK / no BOM / single Object — failure is at the
-  Object header due to KH55MS name conflict with TEOD runtime load
-  (and is an unsafe re-use of the donor identity in the patch BIG).
-
-==================================================
-STEP 3/4 — FIX APPLIED
-==================================================
-ORIGINAL_RUNTIME_KH55MS_EXISTS = NO  (inside Specter/_SPEC_DATA packs)
-→ Step 4 unique clone used (preferred Step 3 delete-only would leave
-  ProjectileObject dangling when TEOD_INI is not loaded).
-
-DELETED:
-  Russia_Object_KH55MS.ini  (Object KH55MS)
-
-CREATED:
-  Object Russia_TU160_KH55MS_Projectile
-  = complete TEOD KH55MS block, Object name changed ONLY
-
-WEAPON:
-  Russia_Weapon_TU160_KH55
-  ProjectileObject = Russia_TU160_KH55MS_Projectile
-
-PATCH_KH55MS_OBJECT_DEFINITION_COUNT = 0
-DUPLICATE_KH55MS_RUNTIME_DEFINITIONS = 0
+PACK = SPECTER_RUSSIA_TU160_REAL_DONOR
+BASELINE = SPECTER_RUSSIA_SU47_REAL_DONOR
+BUILD_MODE = CLEAN_STAGING
+OLD_SU35_A2A_SLOT_NOW_SPAWNS = RussiaJetTU160Clean
+TU160_BUTTON_IMAGE = TU-160ic
+TU160_TEXTLABEL = CONTROLBAR:ConstructRussiaJetTU160
+REPLACED_SLOT = 2
+OLD_SU35_A2A_SLOT_STILL_EXISTS = YES
+TU160_OBJECT_PACKED = YES
+NEW_REAL_TU160_W3D = RU-TU160
+REAL_TU160_W3D_DIFFERENT_FROM_CURRENT_SU35 = YES
+TU160_RANK_LOCK = 0
+TU160_SCIENCE_LOCK = 0
+TU160_UNLOCK_UPGRADE_LOCK = 0
+TU160_AVAILABLE_FROM_START = YES
+TU160_MISSING_ASSET_REFS = 0
+REAL_TU160_W3D_PACKED = YES
+REAL_TU160_TEXTURES_PACKED = YES
+TU160_BUTTON_IMAGE_PACKED = YES
+TU160_WEAPON_PACKED = YES
+FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55
+FINAL_TU160_PROJECTILE = KH55MS
+FINAL_PROJECTILE_SOURCE = !TEOD_INI.big / Data\INI\Object\WeaponObjects.ini
+Object KH55MS = 1
+  Object KH55MS @ !TEOD_INI.big :: Data\INI\Object\WeaponObjects.ini :6527
+Object Russia_TU160_KH55MS_Projectile = 0
+Locomotor KH55MissileLocomotor = 1
+  Locomotor KH55MissileLocomotor @ !TEOD_INI.big :: Data\INI\Locomotor.ini :16014
+Weapon TU160MissileWeaponDetonation = 1
+  Weapon TU160MissileWeaponDetonation @ !TEOD_INI.big :: Data\INI\Weapon.ini :22741
 PATCH_CRASH_FILE_PRESENT = NO
-
-==================================================
-VALIDATION
-==================================================
+PATCH_KH55MS_OBJECT_DEFINITION_COUNT = 0
+PATCH_CLONE_PROJECTILE_DEFINITION_COUNT = 0
+DUPLICATE_KH55MS_RUNTIME_DEFINITIONS = 0
 TU160_OBJECT_PARSE_VALID = YES
 TU160_WEAPON_PARSE_VALID = YES
-KH55_PROJECTILE_PARSE_VALID = YES
-DUPLICATE_KH55MS_OBJECTS = 0
-MALFORMED_END_BLOCKS = 0
+KH55_PROJECTILE_PARSE_VALID = YES  ; uses TEOD Object KH55MS (not packed)
 MISSING_REFERENCES = 0
-INI_PARSER_STATIC_CHECK = PASS
-
+PATCH_DEFINES_TU160MissileWeaponDetonation = NO
+PATCH_DEFINES_KH55MissileLocomotor = NO
+TU160_CSF_PACKED = YES
+TU160_MISSING_OBJECT_REFS = 0
+TU160_MISSING_BUTTON_REFS = 0
+OTHER_SU35TS_BUTTON_OBJECT = RussiaJetSu35S
+OTHER_SU35_VARIANTS_PRESERVED = YES
+RUSSIA_AIRFIELD_T4_MAX_SLOT = 16
+RUSSIA_COMMANDSET_MASS_MERGE = NO
 SU75_PRESERVED = YES
 SU47_PRESERVED = YES
+USA_B2_PRESERVED = YES
+USA_B21_PRESERVED = YES
+USA_B52H_PRESERVED = YES
+USA_F117_PRESERVED = YES
 USA_AIRCRAFT_PRESERVED = YES
+OTHER_RUSSIA_AIRCRAFT_MODIFIED = 0
 OTHER_FACTIONS_MODIFIED = 0
-RUSSIA_COMMANDSET_MASS_MERGE = NO
-
-CLAIM = KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED
+OLD_OBJECT = RussiaJetSu35S
+NEW_OBJECT = RussiaJetTU160Clean
+OLD_W3D = RUS_SU35S
+NEW_REAL_TU160_W3D = RU-TU160
+REPLACED_BUTTON = Command_ConstructRussian_Su35
+TU160_PRIMARY_WEAPON = Russia_Weapon_TU160_KH55
+TU160_SECONDARY_WEAPON = none
+TU160_PROJECTILE = KH55MS (TEOD runtime)
+TU160_CLIPSIZE = 6
+TU160_SHOTS_PER_ATTACK = 6 (DelayBetweenShots=500)
+TU160_ATTACK_RANGE = 1000
+TU160_AUTO_RELOAD = RETURN_TO_BASE
+TU160_COST = 8500
+REAL_TU160_DONOR_FOUND = YES
+DONOR_SOURCE = !TEOD_*.big (RU-TU160 art) + !TEOD_INI.big Object KH55MS
+ROOT_CAUSE = patch projectile clones removed; ProjectileObject=KH55MS references original TEOD runtime Object KH55MS
+CLAIM = PATCHED FOR TEOD KH55MS REUSE — RUNTIME TEST REQUIRED (do not claim crash fixed without game test)
+EFFECTIVE_REPLACED_SLOT_BUTTON_FILE = Data\INI\CommandButton.ini
+EFFECTIVE_TU160_OBJECT_FILE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTU160Clean.ini
+EFFECTIVE_RUSSIA_AIRFIELD_COMMANDSET_FILE = Data\INI\CommandSet.ini
+ART_ENTRIES = 2835
+DATA_ENTRIES = 1572
+ART_SHA256 = cd55cb4971118cbe6e6b179937a5519329494c1b31dc7a55796ba63e88bb4c1c
+DATA_SHA256 = 065e1571725bcf7fc407e3fcbbfa638e2c82984399b295837a6c892cae598ad8

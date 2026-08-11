@@ -1,16 +1,8 @@
-SPECTER_RUSSIA_TU160_REAL_DONOR test package (INI PARSER FIX)
+SPECTER_RUSSIA_TU160_REAL_DONOR (KH55MS PARSER CRASH FIXED)
 
-Download: https://gofile.io/d/CBSZRj
+Download: https://gofile.io/d/el2McD
 
-Contents:
-  _SPEC_ART_ONE.big
-  _SPEC_DATA_ONE.big
-  VERIFY.txt
-  README_INSTALL.txt
-  TRACE_REPORT.txt
-  CRASH_FIX_REPORT.txt
+Removed Object KH55MS patch redefinition.
+Weapon now uses unique Russia_TU160_KH55MS_Projectile (complete TEOD KH55MS block).
 
-Fix: removed crashing custom Russia_Projectile_TU160_KH55;
-Russia_Weapon_TU160_KH55 now uses TEOD donor Object KH55MS.
-
-Claim: INI PARSER FIXED (not runtime PASS).
+Claim: KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED

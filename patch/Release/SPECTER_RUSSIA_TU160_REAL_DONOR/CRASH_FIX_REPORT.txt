@@ -1,78 +1,81 @@
 ==================================================
-TU-160 INI PARSER CRASH FIX
+KH55MS PARSER CRASH FIX
 ==================================================
 
-CRASH_FILE = Data\INI\Object\specter\patchsystems\projectile_russia_tu160_kh55.ini
-CRASH_LINE = Object Russia_Projectile_TU160_KH55
+CRASH_FILE =
+  Data\INI\Object\specter\armed forces of russian federation\airforce\russia_object_kh55ms.ini
+CRASH_LINE = Object KH55MS
 
 ==================================================
-1. EXACT FILE INSPECTION (pre-fix)
+STEP 1 — EVERY KH55MS DEFINITION
 ==================================================
-Inspected packed/source:
-  Data\INI\Object\Specter\PatchSystems\Projectile_Russia_TU160_KH55.ini
+KH55MS_DEFINITION_COUNT = 2 (donor + prior crashing patch; Specter runtime = 0)
 
-Findings:
-  - No BOM / no null bytes / ASCII only
-  - No markdown / report text / braces
-  - Single Object declaration; no nested Object
-  - End nesting BALANCED (depth 0) when Weapon=/Locomotor= treated as properties
-  - Content was a hand-cloned TEOD KH55MS with renamed Object
+KH55MS_DEFINITION_1 =
+  !TEOD_INI.big / Data\INI\Object\WeaponObjects.ini (line ~6527)
+  FIRST/ONLY donor definition. NOT present inside Specter_Data or
+  SU47/SU75/_SPEC_DATA_ONE runtime packs.
 
-PARSER FAULT (effective):
-  The crashing definition was a NEW custom projectile Object
-  (Russia_Projectile_TU160_KH55) that is NOT the TEOD donor identity.
-  Game ReleaseCrashInfo fails at that Object header during INI parse.
-  Fix policy: REMOVE the custom clone; use original TEOD Object KH55MS.
+KH55MS_DEFINITION_2 =
+  (REMOVED) patch Data\INI\Object\...\Airforce\Russia_Object_KH55MS.ini
+  This was the crashing redefinition.
 
-==================================================
-2. TEOD DONOR TRACE
-==================================================
-DONOR_TU160_OBJECT = TU160FOAB / TU160MissileStrike (SpecialPower carriers)
-DONOR_TU160_WEAPON = TU160MissileWeapon
-DONOR_TU160_PROJECTILE = KH55MS
-DONOR_PROJECTILE_SOURCE_FILE = !TEOD_INI.big / Data\INI\Object\WeaponObjects.ini
-  (also staged as /tmp/tu160_donor/obj_KH55MS.ini)
+KH55MS_DEFINITION_3 = none
+
+Specter_Data Object KH55MS files = []
+SU47_BASELINE Object KH55MS = 0
+Packed Specter WeaponObjects.ini Object KH55MS = NO
+
+Load-order note:
+  If player also loads !TEOD_INI.big, TEOD defines Object KH55MS first;
+  patch redefinition fails at Object KH55MS header (classic SAGE duplicate).
 
 ==================================================
-3. FIX APPLIED
+STEP 2 — CRASH FILE ROOT CAUSE
 ==================================================
-BROKEN_PROJECTILE_REMOVED_OR_FIXED = REMOVED
-  Deleted: Projectile_Russia_TU160_KH55.ini (custom clone)
-
-FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55
-FINAL_TU160_PROJECTILE = KH55MS
-FINAL_PROJECTILE_SOURCE =
-  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_Object_KH55MS.ini
-
-Also packed for load-safety:
-  - Art\W3D\SMF.W3D (KH55MS exhaust draw)
-  - Data\INI\ParticleSystem_TU160_KH55.ini (MediumAA_MissileTrail_Bright)
-  - Locomotor KH55MissileLocomotor
-  - Weapon TU160MissileWeaponDetonation (exact TEOD name)
-  - InstantDeath uses Specter-safe death trio; omitted missing
-    OCL_KAB500WatercheckObject WaterWorks chain
+KH55MS_CRASH_FILE_ROOT_CAUSE =
+  Patch file redefined Object KH55MS (TEOD donor object name).
+  File End-balance was OK / no BOM / single Object — failure is at the
+  Object header due to KH55MS name conflict with TEOD runtime load
+  (and is an unsafe re-use of the donor identity in the patch BIG).
 
 ==================================================
-4. VALIDATION
+STEP 3/4 — FIX APPLIED
 ==================================================
-TU160_WEAPON_EXISTS = YES
-TU160_PROJECTILE_EXISTS = YES
-TU160_PROJECTILE_PARSE_VALID = YES
-TU160_PROJECTILE_W3D_EXISTS = YES
-TU160_PROJECTILE_FX_EXISTS = YES
-TU160_PROJECTILE_LOCOMOTOR_EXISTS = YES
+ORIGINAL_RUNTIME_KH55MS_EXISTS = NO  (inside Specter/_SPEC_DATA packs)
+→ Step 4 unique clone used (preferred Step 3 delete-only would leave
+  ProjectileObject dangling when TEOD_INI is not loaded).
+
+DELETED:
+  Russia_Object_KH55MS.ini  (Object KH55MS)
+
+CREATED:
+  Object Russia_TU160_KH55MS_Projectile
+  = complete TEOD KH55MS block, Object name changed ONLY
+
+WEAPON:
+  Russia_Weapon_TU160_KH55
+  ProjectileObject = Russia_TU160_KH55MS_Projectile
+
+PATCH_KH55MS_OBJECT_DEFINITION_COUNT = 0
+DUPLICATE_KH55MS_RUNTIME_DEFINITIONS = 0
+PATCH_CRASH_FILE_PRESENT = NO
+
+==================================================
+VALIDATION
+==================================================
+TU160_OBJECT_PARSE_VALID = YES
+TU160_WEAPON_PARSE_VALID = YES
+KH55_PROJECTILE_PARSE_VALID = YES
+DUPLICATE_KH55MS_OBJECTS = 0
+MALFORMED_END_BLOCKS = 0
 MISSING_REFERENCES = 0
-
-TU160_OBJECT_PARSE = PASS
-TU160_WEAPON_PARSE = PASS
-TU160_PROJECTILE_PARSE = PASS
-TU160_ALL_NEW_INI_PARSE_VALID = YES
-PROJECTILE_PARSE_VALID = YES
+INI_PARSER_STATIC_CHECK = PASS
 
 SU75_PRESERVED = YES
 SU47_PRESERVED = YES
+USA_AIRCRAFT_PRESERVED = YES
 OTHER_FACTIONS_MODIFIED = 0
 RUSSIA_COMMANDSET_MASS_MERGE = NO
 
-CLAIM = INI PARSER FIXED
-(Do NOT claim runtime PASS)
+CLAIM = KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED

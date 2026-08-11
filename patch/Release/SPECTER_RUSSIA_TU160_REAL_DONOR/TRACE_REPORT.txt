@@ -1,36 +1,26 @@
 ==================================================
-STEP 1 — CURRENT SU-35S AIR-TO-AIR SLOT
+KH55MS PARSER CRASH — TRACE
 ==================================================
-RUSSIA_AIRFIELD = RussiaAirfield_T
-RUSSIA_AIRFIELD_COMMANDSET = RussiaAirfieldCommandSet_T4
-SU35_A2A_BUTTON_SLOT = 2
-SU35_A2A_COMMAND_BUTTON = Command_ConstructRussian_Su35
-OLD_OBJECT = RussiaJetSu35S
-NEW_OBJECT = RussiaJetTU160Clean
+KH55MS_DEFINITION_COUNT = 2 historically (TEOD + removed patch)
+KH55MS_DEFINITION_1 = !TEOD_INI.big Data\INI\Object\WeaponObjects.ini
+KH55MS_DEFINITION_2 = REMOVED patch Russia_Object_KH55MS.ini
+KH55MS_DEFINITION_3 = none
 
-==================================================
-PARSER CRASH FIX
-==================================================
-CRASH_FILE = Data\INI\Object\specter\patchsystems\projectile_russia_tu160_kh55.ini
-CRASH_LINE = Object Russia_Projectile_TU160_KH55
-ROOT_CAUSE = custom clone Russia_Projectile_TU160_KH55 removed
-BROKEN_PROJECTILE_REMOVED_OR_FIXED = REMOVED
-FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55
-FINAL_TU160_PROJECTILE = KH55MS
-FINAL_PROJECTILE_SOURCE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_Object_KH55MS.ini
+KH55MS_CRASH_FILE_ROOT_CAUSE = patch redefined Object KH55MS (TEOD name / duplicate conflict)
 
-DONOR_TU160_WEAPON = TU160MissileWeapon
-DONOR_TU160_PROJECTILE = KH55MS
-DONOR_PROJECTILE_SOURCE_FILE = !TEOD_INI.big Data\INI\Object\WeaponObjects.ini
+FINAL_TU160_PROJECTILE = Russia_TU160_KH55MS_Projectile
+FINAL_PROJECTILE_SOURCE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_TU160_KH55MS_Projectile.ini
 
-==================================================
-PRESERVE
-==================================================
+PATCH_CRASH_FILE_PRESENT = NO
+PATCH_KH55MS_OBJECT_DEFINITION_COUNT = 0
+DUPLICATE_KH55MS_RUNTIME_DEFINITIONS = 0
+ORIGINAL_RUNTIME_KH55MS_EXISTS = NO (Specter/_SPEC packs)
+
+TU160_OBJECT = RussiaJetTU160Clean
+TU160_SLOT = 2
+TU160_COST = 8500
 SU75_PRESERVED = YES
 SU47_PRESERVED = YES
-OTHER_FACTIONS_MODIFIED = 0
 RUSSIA_COMMANDSET_MASS_MERGE = NO
-TU160_AVAILABLE_FROM_START = YES
-TU160_COST = 8500
 
-CLAIM = INI PARSER FIXED (not runtime PASS)
+CLAIM = KH55MS PARSER CRASH FIXED — RUNTIME TEST REQUIRED

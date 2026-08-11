@@ -26,17 +26,27 @@ OBJ_INI = (
     PATCH
     / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/RussiaJetTU160Clean.ini"
 )
-PROJ_INI = PATCH / "Data/INI/Object/Specter/PatchSystems/Projectile_Russia_TU160_KH55.ini"
+PROJ_INI = (
+    PATCH
+    / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/Russia_Object_KH55MS.ini"
+)
 WEAPON_INI = PATCH / "Data/INI/Weapon_Russia_TU160_Clean.ini"
 LOCO_INI = PATCH / "Data/INI/Locomotor_Russia_TU160_Clean.ini"
+PARTICLE_INI = PATCH / "Data/INI/ParticleSystem_TU160_KH55.ini"
 MAPPED_INI = PATCH / "Data/INI/MappedImages/HandCreated/TEOD_TU160_Images.INI"
 STRINGS_TXT = PATCH / "Data/English/SPECTER_TU160_Strings.txt"
+
+# Broken custom clone from first TU-160 pack — must never be re-packed.
+BROKEN_PROJ_KEY = (
+    r"Data\INI\Object\Specter\PatchSystems\Projectile_Russia_TU160_KH55.ini"
+)
 
 ART_ASSETS = {
     r"Art\W3D\RU-TU160.W3D": PATCH / "Art/W3D/RU-TU160.W3D",
     r"Art\W3D\RU-TU160_D.W3D": PATCH / "Art/W3D/RU-TU160_D.W3D",
     r"Art\W3D\RU-TU160_E.W3D": PATCH / "Art/W3D/RU-TU160_E.W3D",
     r"Art\W3D\KH-55MS.W3D": PATCH / "Art/W3D/KH-55MS.W3D",
+    r"Art\W3D\SMF.W3D": PATCH / "Art/W3D/SMF.W3D",
     r"Art\Textures\TU-160.dds": PATCH / "Art/Textures/TU-160.dds",
     r"Art\Textures\TU-160_D.dds": PATCH / "Art/Textures/TU-160_D.dds",
     r"Art\Textures\TU-160_E.dds": PATCH / "Art/Textures/TU-160_E.dds",
@@ -47,9 +57,13 @@ OBJ_KEY = (
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation"
     r"\Airforce\RussiaJetTU160Clean.ini"
 )
-PROJ_KEY = r"Data\INI\Object\Specter\PatchSystems\Projectile_Russia_TU160_KH55.ini"
+PROJ_KEY = (
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation"
+    r"\Airforce\Russia_Object_KH55MS.ini"
+)
 WEAPON_KEY = r"Data\INI\Weapon_Russia_TU160_Clean.ini"
 LOCO_KEY = r"Data\INI\Locomotor_Russia_TU160_Clean.ini"
+PARTICLE_KEY = r"Data\INI\ParticleSystem_TU160_KH55.ini"
 MAPPED_KEY = r"Data\INI\MappedImages\HandCreated\TEOD_TU160_Images.INI"
 STRINGS_KEY = r"Data\English\SPECTER_TU160_Strings.txt"
 CSF_KEY = r"Data\English\generals.csf"
@@ -238,6 +252,58 @@ def airfield_slot(blob: bytes) -> dict[str, int]:
     return out
 
 
+def ini_block_parse_ok(text: str, header_re: str) -> tuple[bool, str]:
+    """Structural Object/Weapon/Locomotor/ParticleSystem End-balance check."""
+    m = re.search(header_re, text, re.M | re.S)
+    if not m:
+        return False, "MISSING_HEADER"
+    block = m.group(0)
+    # Reject nested Object inside an Object block
+    if header_re.startswith(r"^Object"):
+        objs = re.findall(r"^Object\s+\S+", block, re.M)
+        if len(objs) != 1:
+            return False, f"NESTED_OR_MULTI_OBJECT({len(objs)})"
+    depth = 0
+    for i, line in enumerate(block.splitlines(), 1):
+        s = line.strip()
+        if not s or s.startswith(";") or s.startswith("//"):
+            continue
+        code = s.split(";", 1)[0].strip()
+        if "{" in code or "}" in code:
+            return False, f"INVALID_BRACE:L{i}"
+        if code == "END":
+            return False, f"UPPERCASE_END:L{i}"
+        if re.match(r"(?i)^End[ \t]*;", s):
+            return False, f"END_TRAILING_COMMENT:L{i}"
+        if code == "End":
+            depth -= 1
+            if depth < 0:
+                return False, f"ORPHAN_END:L{i}"
+            continue
+        # Top-level declaration headers (NO '='): Object X / Weapon X / etc.
+        # Do NOT treat property lines like "Weapon = Foo" as headers.
+        if re.match(
+            r"^(Object|Weapon|Locomotor|ParticleSystem)\s+(?![=])\S+", code
+        ):
+            depth += 1
+            continue
+        if re.match(
+            r"^(DefaultConditionState|ConditionState|ArmorSet|WeaponSet|"
+            r"Prerequisites|UnitSpecificSounds|TransitionState)\b",
+            code,
+        ):
+            depth += 1
+            continue
+        # Module openers: Draw/Body/Behavior/ClientUpdate/AI = Type
+        if re.match(r"^(Draw|Body|Behavior|ClientUpdate|AI)\s*=", code):
+            depth += 1
+            continue
+        # Properties like "Weapon = Foo" / "Locomotor = SET_NORMAL X" are NOT blocks.
+    if depth != 0:
+        return False, f"UNBALANCED_END(depth={depth})"
+    return True, "OK"
+
+
 def validate(art: dict[str, bytes], data: dict[str, bytes]) -> list[str]:
     lines: list[str] = []
     obj, img, txt = first_button_fields(data[BUTTON_KEY])
@@ -309,19 +375,22 @@ def validate(art: dict[str, bytes], data: dict[str, bytes]) -> list[str]:
         "TU160_BUTTON_IMAGE_PACKED = "
         + ("YES" if b"MappedImage TU-160ic" in data.get(MAPPED_KEY, b"") else "NO")
     )
+    weapon_blob = data.get(WEAPON_KEY, b"")
+    proj_blob = data.get(PROJ_KEY, b"")
     lines.append(
         "TU160_WEAPON_PACKED = "
-        + (
-            "YES"
-            if b"Weapon Russia_Weapon_TU160_KH55" in data.get(WEAPON_KEY, b"")
-            else "NO"
-        )
+        + ("YES" if b"Weapon Russia_Weapon_TU160_KH55" in weapon_blob else "NO")
     )
     lines.append(
         "TU160_PROJECTILE_PACKED = "
+        + ("YES" if b"Object KH55MS" in proj_blob else "NO")
+    )
+    lines.append(
+        "BROKEN_CUSTOM_PROJECTILE_REMOVED = "
         + (
             "YES"
-            if b"Object Russia_Projectile_TU160_KH55" in data.get(PROJ_KEY, b"")
+            if BROKEN_PROJ_KEY not in data
+            and b"Object Russia_Projectile_TU160_KH55" not in b"".join(data.values())
             else "NO"
         )
     )
@@ -330,6 +399,81 @@ def validate(art: dict[str, bytes], data: dict[str, bytes]) -> list[str]:
         + (
             "YES"
             if b"CONTROLBAR:ConstructRussiaJetTU160" in data.get(CSF_KEY, b"")
+            else "NO"
+        )
+    )
+
+    # Reference chain
+    wtxt = weapon_blob.decode("latin1", errors="replace")
+    ptxt = proj_blob.decode("latin1", errors="replace")
+    proj_ref = re.search(
+        r"^Weapon\s+Russia_Weapon_TU160_KH55\b.*?ProjectileObject\s*=\s*(\S+)",
+        wtxt,
+        re.M | re.S,
+    )
+    final_proj = proj_ref.group(1) if proj_ref else "MISSING"
+    lines.append(f"FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55")
+    lines.append(f"FINAL_TU160_PROJECTILE = {final_proj}")
+    lines.append(f"FINAL_PROJECTILE_SOURCE = {PROJ_KEY}")
+
+    ok_obj, why_obj = ini_block_parse_ok(
+        obj_text, r"^Object\s+RussiaJetTU160Clean\b.*?(?=^Object\s|\Z)"
+    )
+    ok_wep, why_wep = ini_block_parse_ok(
+        wtxt, r"^Weapon\s+Russia_Weapon_TU160_KH55\b.*?(?=^Weapon\s|\Z)"
+    )
+    ok_prj, why_prj = ini_block_parse_ok(
+        ptxt, r"^Object\s+KH55MS\b.*?(?=^Object\s|\Z)"
+    )
+    lines.append(f"TU160_OBJECT_PARSE = {'PASS' if ok_obj else 'FAIL:' + why_obj}")
+    lines.append(f"TU160_WEAPON_PARSE = {'PASS' if ok_wep else 'FAIL:' + why_wep}")
+    lines.append(
+        f"TU160_PROJECTILE_PARSE = {'PASS' if ok_prj else 'FAIL:' + why_prj}"
+    )
+    lines.append(
+        "TU160_ALL_NEW_INI_PARSE_VALID = "
+        + ("YES" if ok_obj and ok_wep and ok_prj else "NO")
+    )
+    lines.append(
+        "PROJECTILE_PARSE_VALID = " + ("YES" if ok_prj else "NO")
+    )
+
+    missing_refs = 0
+    if final_proj != "KH55MS":
+        missing_refs += 1
+    if b"Object KH55MS" not in proj_blob:
+        missing_refs += 1
+    if r"Art\W3D\KH-55MS.W3D" not in art:
+        missing_refs += 1
+    if b"Locomotor KH55MissileLocomotor" not in data.get(LOCO_KEY, b""):
+        missing_refs += 1
+    if b"Weapon TU160MissileWeaponDetonation" not in weapon_blob:
+        missing_refs += 1
+    if b"ParticleSystem MediumAA_MissileTrail_Bright" not in data.get(
+        PARTICLE_KEY, b""
+    ):
+        missing_refs += 1
+    if r"Art\W3D\SMF.W3D" not in art:
+        missing_refs += 1
+    lines.append(f"MISSING_REFERENCES = {missing_refs}")
+    lines.append(
+        "TU160_PROJECTILE_W3D_EXISTS = "
+        + ("YES" if r"Art\W3D\KH-55MS.W3D" in art else "NO")
+    )
+    lines.append(
+        "TU160_PROJECTILE_FX_EXISTS = "
+        + (
+            "YES"
+            if b"ParticleSystem MediumAA_MissileTrail_Bright"
+            in data.get(PARTICLE_KEY, b"")
+            else "NO"
+        )
+    )
+    lines.append(
+        "TU160_PROJECTILE_LOCOMOTOR_EXISTS = "
+        + (
+            "YES"
+            if b"Locomotor KH55MissileLocomotor" in data.get(LOCO_KEY, b"")
             else "NO"
         )
     )
@@ -409,7 +553,7 @@ def validate(art: dict[str, bytes], data: dict[str, bytes]) -> list[str]:
     lines.append("REPLACED_BUTTON = Command_ConstructRussian_Su35")
     lines.append("TU160_PRIMARY_WEAPON = Russia_Weapon_TU160_KH55")
     lines.append("TU160_SECONDARY_WEAPON = none")
-    lines.append("TU160_PROJECTILE = Russia_Projectile_TU160_KH55 (KH-55MS)")
+    lines.append("TU160_PROJECTILE = KH55MS (KH-55MS.W3D)")
     lines.append("TU160_CLIPSIZE = 6")
     lines.append("TU160_SHOTS_PER_ATTACK = 6 (DelayBetweenShots=500)")
     lines.append("TU160_ATTACK_RANGE = 1000")
@@ -418,8 +562,16 @@ def validate(art: dict[str, bytes], data: dict[str, bytes]) -> list[str]:
     lines.append("REAL_TU160_DONOR_FOUND = YES")
     lines.append(
         "DONOR_SOURCE = /tmp/f117_big_scan/!TEOD_*.big "
-        "(TU160.ini / RU-TU160 / TU160MissileWeapon)"
+        "(TU160.ini / RU-TU160 / TU160MissileWeapon / Object KH55MS)"
     )
+    lines.append("CRASH_FILE = Data\\INI\\Object\\specter\\patchsystems\\projectile_russia_tu160_kh55.ini")
+    lines.append("CRASH_LINE = Object Russia_Projectile_TU160_KH55")
+    lines.append(
+        "ROOT_CAUSE = custom clone Russia_Projectile_TU160_KH55 removed; "
+        "weapon now references TEOD donor Object KH55MS"
+    )
+    lines.append("BROKEN_PROJECTILE_REMOVED_OR_FIXED = REMOVED")
+    lines.append("INI_PARSER_FIXED = YES")
     lines.append(f"EFFECTIVE_REPLACED_SLOT_BUTTON_FILE = {BUTTON_KEY}")
     lines.append(f"EFFECTIVE_TU160_OBJECT_FILE = {OBJ_KEY}")
     lines.append(f"EFFECTIVE_RUSSIA_AIRFIELD_COMMANDSET_FILE = {COMMANDSET_KEY}")
@@ -432,7 +584,15 @@ def main() -> None:
     data_base = base / "_SPEC_DATA_ONE.big"
     assert art_base.exists(), art_base
     assert data_base.exists(), data_base
-    for p in [OBJ_INI, PROJ_INI, WEAPON_INI, LOCO_INI, MAPPED_INI, STRINGS_TXT]:
+    for p in [
+        OBJ_INI,
+        PROJ_INI,
+        WEAPON_INI,
+        LOCO_INI,
+        PARTICLE_INI,
+        MAPPED_INI,
+        STRINGS_TXT,
+    ]:
         assert p.exists(), p
 
     art = read_big(art_base)
@@ -449,10 +609,17 @@ def main() -> None:
             raise FileNotFoundError(path)
         art[key] = path.read_bytes()
 
+    # Never ship the crashing custom clone (also strip if present in a dirty baseline).
+    data.pop(BROKEN_PROJ_KEY, None)
+    for k in list(data):
+        if k.lower().endswith("projectile_russia_tu160_kh55.ini"):
+            data.pop(k, None)
+
     data[OBJ_KEY] = OBJ_INI.read_bytes()
     data[PROJ_KEY] = PROJ_INI.read_bytes()
     data[WEAPON_KEY] = WEAPON_INI.read_bytes()
     data[LOCO_KEY] = LOCO_INI.read_bytes()
+    data[PARTICLE_KEY] = PARTICLE_INI.read_bytes()
     data[MAPPED_KEY] = MAPPED_INI.read_bytes()
     data[STRINGS_KEY] = STRINGS_TXT.read_bytes()
     data[BUTTON_KEY] = patch_command_button(data[BUTTON_KEY])

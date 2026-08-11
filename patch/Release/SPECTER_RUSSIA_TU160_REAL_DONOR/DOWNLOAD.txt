@@ -1,6 +1,6 @@
-SPECTER_RUSSIA_TU160_REAL_DONOR test package
+SPECTER_RUSSIA_TU160_REAL_DONOR test package (INI PARSER FIX)
 
-Download: https://gofile.io/d/30c0sh
+Download: https://gofile.io/d/CBSZRj
 
 Contents:
   _SPEC_ART_ONE.big
@@ -8,6 +8,9 @@ Contents:
   VERIFY.txt
   README_INSTALL.txt
   TRACE_REPORT.txt
+  CRASH_FIX_REPORT.txt
 
-Built on SPECTER_RUSSIA_SU47_REAL_DONOR baseline (preserves SU-75 + SU-47).
-Replaces ONLY former SU-35S Air-to-Air slot (T4 slot 2) with RussiaJetTU160Clean.
+Fix: removed crashing custom Russia_Projectile_TU160_KH55;
+Russia_Weapon_TU160_KH55 now uses TEOD donor Object KH55MS.
+
+Claim: INI PARSER FIXED (not runtime PASS).

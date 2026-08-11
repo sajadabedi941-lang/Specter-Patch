@@ -1,0 +1,78 @@
+==================================================
+TU-160 INI PARSER CRASH FIX
+==================================================
+
+CRASH_FILE = Data\INI\Object\specter\patchsystems\projectile_russia_tu160_kh55.ini
+CRASH_LINE = Object Russia_Projectile_TU160_KH55
+
+==================================================
+1. EXACT FILE INSPECTION (pre-fix)
+==================================================
+Inspected packed/source:
+  Data\INI\Object\Specter\PatchSystems\Projectile_Russia_TU160_KH55.ini
+
+Findings:
+  - No BOM / no null bytes / ASCII only
+  - No markdown / report text / braces
+  - Single Object declaration; no nested Object
+  - End nesting BALANCED (depth 0) when Weapon=/Locomotor= treated as properties
+  - Content was a hand-cloned TEOD KH55MS with renamed Object
+
+PARSER FAULT (effective):
+  The crashing definition was a NEW custom projectile Object
+  (Russia_Projectile_TU160_KH55) that is NOT the TEOD donor identity.
+  Game ReleaseCrashInfo fails at that Object header during INI parse.
+  Fix policy: REMOVE the custom clone; use original TEOD Object KH55MS.
+
+==================================================
+2. TEOD DONOR TRACE
+==================================================
+DONOR_TU160_OBJECT = TU160FOAB / TU160MissileStrike (SpecialPower carriers)
+DONOR_TU160_WEAPON = TU160MissileWeapon
+DONOR_TU160_PROJECTILE = KH55MS
+DONOR_PROJECTILE_SOURCE_FILE = !TEOD_INI.big / Data\INI\Object\WeaponObjects.ini
+  (also staged as /tmp/tu160_donor/obj_KH55MS.ini)
+
+==================================================
+3. FIX APPLIED
+==================================================
+BROKEN_PROJECTILE_REMOVED_OR_FIXED = REMOVED
+  Deleted: Projectile_Russia_TU160_KH55.ini (custom clone)
+
+FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55
+FINAL_TU160_PROJECTILE = KH55MS
+FINAL_PROJECTILE_SOURCE =
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_Object_KH55MS.ini
+
+Also packed for load-safety:
+  - Art\W3D\SMF.W3D (KH55MS exhaust draw)
+  - Data\INI\ParticleSystem_TU160_KH55.ini (MediumAA_MissileTrail_Bright)
+  - Locomotor KH55MissileLocomotor
+  - Weapon TU160MissileWeaponDetonation (exact TEOD name)
+  - InstantDeath uses Specter-safe death trio; omitted missing
+    OCL_KAB500WatercheckObject WaterWorks chain
+
+==================================================
+4. VALIDATION
+==================================================
+TU160_WEAPON_EXISTS = YES
+TU160_PROJECTILE_EXISTS = YES
+TU160_PROJECTILE_PARSE_VALID = YES
+TU160_PROJECTILE_W3D_EXISTS = YES
+TU160_PROJECTILE_FX_EXISTS = YES
+TU160_PROJECTILE_LOCOMOTOR_EXISTS = YES
+MISSING_REFERENCES = 0
+
+TU160_OBJECT_PARSE = PASS
+TU160_WEAPON_PARSE = PASS
+TU160_PROJECTILE_PARSE = PASS
+TU160_ALL_NEW_INI_PARSE_VALID = YES
+PROJECTILE_PARSE_VALID = YES
+
+SU75_PRESERVED = YES
+SU47_PRESERVED = YES
+OTHER_FACTIONS_MODIFIED = 0
+RUSSIA_COMMANDSET_MASS_MERGE = NO
+
+CLAIM = INI PARSER FIXED
+(Do NOT claim runtime PASS)

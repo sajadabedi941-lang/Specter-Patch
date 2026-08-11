@@ -5,98 +5,32 @@ RUSSIA_AIRFIELD = RussiaAirfield_T
 RUSSIA_AIRFIELD_COMMANDSET = RussiaAirfieldCommandSet_T4
 SU35_A2A_BUTTON_SLOT = 2
 SU35_A2A_COMMAND_BUTTON = Command_ConstructRussian_Su35
-SU35_A2A_CURRENT_OBJECT = RussiaJetSu35S
-SU35_A2A_CURRENT_MODEL = RUS_SU35S
-SU35_A2A_CURRENT_COST = 3200
-SU35_A2A_CURRENT_WEAPON = 6x_R77_MRBVR_SU35S
-Gates (removed for TU-160 only): WarFactory + IndustrialComplex + SCIENCE_Rank2
-Do NOT touch slot 6 Command_ConstructRussian_Su35ts (still RussiaJetSu35S)
-
-==================================================
-STEP 2 — DONOR TU-160
-==================================================
-DONOR_TU160_FOUND = YES
-DONOR_OBJECT = TU160FOAB / TU160MissileStrike (TEOD SpecialPower — not used as spawn)
-DONOR_INI = !TEOD_INI.big / Data\INI\Object\Russia\Special power objects\TU160.ini
-DONOR_MAIN_W3D = RU-TU160.W3D
-DONOR_DAMAGED_W3D = RU-TU160_D.W3D
-DONOR_REALLYDAMAGED_W3D = RU-TU160_D.W3D
-DONOR_DEAD_W3D = RU-TU160_E.W3D
-DONOR_DEBRIS_W3D = (none packed; use _E)
-DONOR_TEXTURES = TU-160.dds / TU-160_D.dds / TU-160_E.dds
-DONOR_BUTTON_IMAGE = TU-160ic (Science_L_icons5.tga)
-DONOR_PRIMARY_WEAPON = TU160MissileWeapon → clean Russia_Weapon_TU160_KH55
-DONOR_SECONDARY_WEAPON = none
-DONOR_PROJECTILE = KH55MS → Russia_Projectile_TU160_KH55 (KH-55MS.W3D)
-DONOR_JETAI = TEOD SpecialPower JetAI (not used) → AmericaJetB52H HeavyRunway JetAI
-DONOR_LOCOMOTOR = TU160locomotor (not packed-stable) → D30-F6_JetLocomotor + NeedsRunway
-DONOR_ARMORSET = AirplaneArmor_P
-DONOR_SOURCE = /tmp/f117_big_scan/!TEOD_*.big
-
-==================================================
-STEP 3 — REAL MODEL
-==================================================
-REAL_TU160_W3D_FOUND = YES
-REAL_TU160_W3D_DIFFERENT_FROM_CURRENT_SU35 = YES
-OLD_W3D = RUS_SU35S
-NEW_REAL_TU160_W3D = RU-TU160
-
-==================================================
-STEP 4–8 — CLEAN OBJECT + BUTTON
-==================================================
+OLD_OBJECT = RussiaJetSu35S
 NEW_OBJECT = RussiaJetTU160Clean
-REPLACED_BUTTON = Command_ConstructRussian_Su35
-REPLACED_SLOT = 2
-Object = RussiaJetTU160Clean
-TextLabel = CONTROLBAR:ConstructRussiaJetTU160 → "TU-160 Blackjack"
-DescriptLabel = CONTROLBAR:ToolTipRussiaJetTU160 → strategic heavy bomber
-ButtonImage = TU-160ic
-TU160_AVAILABLE_FROM_START = YES
-TU160_RANK_LOCK = 0
-TU160_SCIENCE_LOCK = 0
-TU160_UNLOCK_UPGRADE_LOCK = 0
-TU160_COST = 8500
-TU160_PRIMARY_WEAPON = Russia_Weapon_TU160_KH55
-TU160_SECONDARY_WEAPON = none
-TU160_PROJECTILE = Russia_Projectile_TU160_KH55 (KH-55MS)
-TU160_CLIPSIZE = 6
-TU160_SHOTS_PER_ATTACK = 6
-TU160_ATTACK_RANGE = 1000
-TU160_AUTO_RELOAD = RETURN_TO_BASE
-Geometry (gameplay only): MajorRadius=45 MinorRadius=15 Height=18 ParkingOffset=12
-NO W3D Scale
 
 ==================================================
-STEP 9–10 — PRESERVE
+PARSER CRASH FIX
 ==================================================
-SU75_PRESERVED = YES (RussiaJetSU75Clean / RUSU75)
-SU47_PRESERVED = YES (RussiaJetSU47Clean / RUSU-47)
-OTHER_SU35TS_BUTTON_OBJECT = RussiaJetSu35S
-OTHER_RUSSIA_AIRCRAFT_MODIFIED = 0
+CRASH_FILE = Data\INI\Object\specter\patchsystems\projectile_russia_tu160_kh55.ini
+CRASH_LINE = Object Russia_Projectile_TU160_KH55
+ROOT_CAUSE = custom clone Russia_Projectile_TU160_KH55 removed
+BROKEN_PROJECTILE_REMOVED_OR_FIXED = REMOVED
+FINAL_TU160_WEAPON = Russia_Weapon_TU160_KH55
+FINAL_TU160_PROJECTILE = KH55MS
+FINAL_PROJECTILE_SOURCE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_Object_KH55MS.ini
+
+DONOR_TU160_WEAPON = TU160MissileWeapon
+DONOR_TU160_PROJECTILE = KH55MS
+DONOR_PROJECTILE_SOURCE_FILE = !TEOD_INI.big Data\INI\Object\WeaponObjects.ini
+
+==================================================
+PRESERVE
+==================================================
+SU75_PRESERVED = YES
+SU47_PRESERVED = YES
 OTHER_FACTIONS_MODIFIED = 0
-USA_B2_PRESERVED = YES
-USA_B21_PRESERVED = YES
-USA_B52H_PRESERVED = YES
-USA_F117_PRESERVED = YES
 RUSSIA_COMMANDSET_MASS_MERGE = NO
+TU160_AVAILABLE_FROM_START = YES
+TU160_COST = 8500
 
-==================================================
-STEP 11 — FIRST-WINS EFFECTIVE FILES
-==================================================
-EFFECTIVE_RUSSIA_AIRFIELD_COMMANDSET_FILE = Data\INI\CommandSet.ini
-EFFECTIVE_REPLACED_SLOT_BUTTON_FILE = Data\INI\CommandButton.ini
-EFFECTIVE_TU160_OBJECT_FILE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTU160Clean.ini
-
-==================================================
-STEP 12 — PACK VERIFY
-==================================================
-OLD_SU35_A2A_SLOT_STILL_EXISTS = YES
-OLD_SU35_A2A_SLOT_NOW_SPAWNS = RussiaJetTU160Clean
-REAL_TU160_W3D_PACKED = YES
-REAL_TU160_TEXTURES_PACKED = YES
-TU160_BUTTON_IMAGE_PACKED = YES
-TU160_MISSING_ASSET_REFS = 0
-TU160_MISSING_BUTTON_REFS = 0
-TU160_MISSING_OBJECT_REFS = 0
-
-RUNTIME: not claimed PASS — awaiting user checklist confirmation.
+CLAIM = INI PARSER FIXED (not runtime PASS)

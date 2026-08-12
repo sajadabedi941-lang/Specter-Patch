@@ -472,6 +472,12 @@ def validate(art: dict[str, bytes], data: dict[str, bytes], teod: dict[str, byte
 
 
 def main() -> int:
+    raise SystemExit(
+        "DEPRECATED/BANNED: Russia_TU160_KH55MS_Projectile crashes SAGE INI parse.\n"
+        "Use patch/tools/big/build_russia_tu160_kh55_crashfix.py instead "
+        "(ProjectileObject = KH55MS from !TEOD_INI.big; no custom KH55 clone).\n"
+        "Do NOT recreate SU-47 changes from this script either — SU-47 is preserved."
+    )
     for p in [SU47_OBJ, SU47_WEP, TU160_OBJ, TU160_WEP, TU160_PROJ, TU160_LOCO]:
         if not p.exists():
             raise SystemExit(f"Missing {p}")

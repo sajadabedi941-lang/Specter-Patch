@@ -529,6 +529,11 @@ def validate(art: dict[str, bytes], data: dict[str, bytes], teod: dict[str, byte
 
 
 def main() -> int:
+    raise SystemExit(
+        "DEPRECATED/BANNED: Russia_T50_R27_Projectile crashes SAGE INI parse.\n"
+        "Use patch/tools/big/build_russia_sut50_r27_crashfix.py instead "
+        "(ProjectileObject = R27 from !TEOD_INI.big; no custom R27 clone)."
+    )
     if not BASE.exists():
         raise SystemExit(f"Missing baseline {BASE}")
     art_base = BASE / "_SPEC_ART_ONE.big"

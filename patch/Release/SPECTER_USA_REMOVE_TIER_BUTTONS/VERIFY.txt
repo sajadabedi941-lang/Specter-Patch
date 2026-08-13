@@ -1,0 +1,4 @@
+No Command_US_Tier1/2/3 in merged America* CommandSets
+AmericaAirfield_T -> AmericaAirfieldCommandSet_T3
+AmericaWarFactory_T -> AmericaWarFactoryCommandSet_T3
+Strategy Center Object unchanged

@@ -1,0 +1,26 @@
+SPECTER USA REMOVE TIER PURCHASE BUTTONS
+========================================
+Continues PR #285 full-unlock build.
+
+REMAINING LOCK BEFORE THIS CLEANUP
+----------------------------------
+AmericaStrategyCenterCommandSet_T  slot 12 = Command_US_Tier1
+AmericaStrategyCenterCommandSet_T1 slot 12 = Command_US_Tier2
+AmericaStrategyCenterCommandSet_T2 slot 12 = Command_US_Tier3
+(ZH merge leftover from STAR_SC_RESTORE)
+
+FIX
+---
+ZZ_USA_REMOVE_TIER_BUTTONS.ini:
+  slot 12 = Command_FAKECOMMAND_PurchaseScienceMOAB
+on those three CommandSets only.
+
+KEPT
+----
+AmericaAirfield_T / AmericaAirfield / AmericaWarFactory_T -> *_T3
+Airfield T3 roster unchanged
+Strategy Center Object/model/Draw/prereqs unchanged
+
+HASHES
+_SPEC_DATA_ONE.big 2ae8a57f6b8e1f8da9edb9b276f2730677e7ea6456ed0d68ceec7af02285e1d0
+_SPEC_ART_ONE.big  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

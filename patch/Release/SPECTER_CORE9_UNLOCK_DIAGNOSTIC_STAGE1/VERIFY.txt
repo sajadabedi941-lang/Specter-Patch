@@ -1,0 +1,1 @@
+Stage1=USA Barracks gate-strip only. No CommandSet merge. RUNTIME_TEST_REQUIRED=YES

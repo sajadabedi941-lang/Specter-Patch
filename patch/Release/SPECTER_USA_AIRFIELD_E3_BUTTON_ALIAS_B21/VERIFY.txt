@@ -1,0 +1,21 @@
+STEP1 SOURCE FILES / LOAD ORDER
+Command_ConstructAmericaJetE3AWACS:
+  [6]  Data/INI/CommandButton.ini
+       Object=AmericaJetE3AWACS
+  [23] Data/INI/CommandButton_ZZZZZ_USA_HeavyAircraft_Unlock_Final.ini  (last before CommandSet)
+       Object=Patch_America_E3
+Command_ConstructAmericaJetB21:
+  [346+] late ZZZZ_* only (AFTER CommandSet.ini) - NOT boot-safe for CommandSet references
+CommandSet.ini load index = 26
+
+STEP2/3 CHANGE
+New early override (sorts after HeavyAircraft, before CommandSet):
+  Data/INI/CommandButton_ZZZZZ_USA_Z_E3_AS_B21.ini
+  Command_ConstructAmericaJetE3AWACS -> Object=AmericaJetB21
+  TextLabel/ButtonImage/DescriptLabel from existing B21 button
+
+VALIDATIONS
+CommandSet.ini sha256 == PR295 (2cb5a68301bf0db91751ffabecf0d5f52671d8ff81200b824aaab5b1c600ff8e) PASS
+Airfield slot 12 token still Command_ConstructAmericaJetE3AWACS PASS
+Effective E3 button Object=AmericaJetB21 PASS
+WF / THAAD / M1075I preserved PASS

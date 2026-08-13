@@ -1,0 +1,45 @@
+SPECTER USA AIRFIELD — REAL RUNTIME CHAIN DIAGNOSIS
+====================================================
+
+1) Exact Object constructed by USA Airfield build button
+   Dozer: AmericaDozerCommandSet slot 13
+     = Command_ConstructAmericaAirfield_T
+       Object = AmericaAirfield_T
+
+   (slot 18 = Command_ConstructAmericaAirfield -> AmericaAirfield)
+
+2) Exact CommandSet at game start (before this fix)
+   AmericaAirfield_T.CommandSet = AmericaAirfieldCommandSet_T
+   Forced by: Data/INI/ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini
+   Base def:  Data/INI/Object/.../Buildings/Airfield_T.ini
+
+3) Exact file that defined the bad roster
+   ZZZZZZZZ_ZZZZ_USA_AIRFIELD_B2_RUNTIME.ini
+   (also mirrored in CommandSet.ini)
+   Included Command_UpgradeAmericaCountermeasures at slot 9
+   and Command_Upgrade_NuclearTipWarhead2 at slot 14.
+   Missing B21; used TEOD B2 button name on slot 5.
+
+4) Exact FINAL last-wins owner after this fix
+   Data/INI/ZZZZZZZZ_ZZZZZZ_ZZZZZZZZ_ZZ_ZZ_AIRFIELD_RUNTIME_ROSTER.ini
+   Sorts after B2_RUNTIME and STATIC_FINAL_ROSTER twins.
+
+5) Why Countermeasures was still visible
+   ZH CommandSet slot overrides MERGE. Later "final roster" files that
+   omitted slot 9 did NOT clear Command_UpgradeAmericaCountermeasures.
+   B2_RUNTIME / B21 / B52 overlays kept re-injecting slot 9.
+   Fix: assign slot 9/14/18 to Command_FAKECOMMAND_PurchaseScienceMOAB
+   (SCRIPT_ONLY) so the upgrade buttons are removed.
+
+6) Why B-2 / B-52H / B-21 / F22 / F35 roster was not used
+   Runtime Object was bound to AmericaAirfieldCommandSet_T (not the
+   assumed T3 static packs). Prior patches that only rewrote T3 or
+   omitted merge-clear of Countermeasures never owned this exact set.
+   F-16C_AG DisplayName = OBJECT:F16CMB50 (explains "F16CM B50" label).
+
+FIX
+---
+- AmericaAirfield_T -> AmericaAirfieldCommandSet_T at start (unchanged name)
+- AmericaAirfieldCommandSet / _T / _T1 / _T2 / _T3 all identical final roster
+- No Countermeasures / NuclearTip / UH60 / F35C_AA upgrade-style buttons
+- Tier CommandSetUpgrades gated by never-granted Upgrade_USA_AirfieldRosterLocked

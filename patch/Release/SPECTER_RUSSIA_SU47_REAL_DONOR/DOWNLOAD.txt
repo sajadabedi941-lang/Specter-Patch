@@ -1,0 +1,11 @@
+SPECTER_RUSSIA_SU47_REAL_DONOR test package
+
+Download: https://gofile.io/d/aOHXzY
+
+Contents:
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  VERIFY.txt
+  README_INSTALL.txt
+
+Built on SPECTER_RUSSIA_SU75_REAL_DONOR baseline (preserves SU-75).

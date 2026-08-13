@@ -1,0 +1,5376 @@
+[
+  {
+    "COMMANDSET": "AirF_AmericaAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructIsraelJetF15IRaamDeepStrike",
+        "IsraelJetF15IRaamDeepStrike"
+      ],
+      [
+        "Command_ConstructIsraelJetF35IAdirPenetrator",
+        "IsraelJetF35IAdirPenetrator"
+      ],
+      [
+        "Command_ConstructIsraelJetF16ISufaPrecision",
+        "IsraelJetF16ISufaPrecision"
+      ],
+      [
+        "Command_ConstructIsraelJetF15BazHeavyBomber",
+        "IsraelJetF15BazHeavyBomber"
+      ],
+      [
+        "Command_ConstructIsraelJetG550Eitam",
+        "IsraelJetG550Eitam"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "AirF_Command_ConstructAmericaJetRaptor",
+        "AirF_AmericaJetRaptor",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleComanche",
+        "AirF_AmericaVehicleComanche",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaJetAurora",
+        "AirF_AmericaJetAurora",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaJetStealthFighter",
+        "AirF_AmericaJetStealthFighter",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsraelJetF35I_AA",
+        "IsraelJetF35I_AA",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsrael_F16I_AG",
+        "Israel_F16I_AG",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsrael_F15I_AA",
+        "Israel_F15I_AA",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "AirF_AmericaBarracksCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "AirF_Command_ConstructAmericaInfantryRanger",
+        "AirF_AmericaInfantryRanger",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaInfantryMissileDefender",
+        "AirF_AmericaInfantryMissileDefender",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaInfantryColonelBurton",
+        "AirF_AmericaInfantryColonelBurton",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaInfantryPathfinder",
+        "AirF_AmericaInfantryPathfinder",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_IsraelInfantryStinger",
+        "IsraelInfantryStingerSoldier",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_IsraelInfantrySpikeTeam",
+        "IsraelInfantrySpikeTeam",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_IsraelInfantryMortarTeam",
+        "IsraelInfantryMortarTeam",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_IsraelInfantryEngineer",
+        "IsraelInfantryEngineer",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_IsraelInfantryMachinegunner",
+        "IsraelInfantryMachinegunner",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "AirF_AmericaCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 12,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "AirF_Command_ConstructAmericaDozer",
+        "AirF_AmericaVehicleDozer",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructIsraelDroneHarop",
+        "IsraelDroneHarop",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 12
+  },
+  {
+    "COMMANDSET": "AirF_AmericaDozerCommandSet",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 17,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAirF_AmericaAdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "AirF_Command_ConstructAmericaPowerPlant",
+        "AirF_AmericaPowerPlant",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaStrategyCenter",
+        "AirF_AmericaStrategyCenter",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaBarracks",
+        "AirF_AmericaBarracks",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsraelIronDomeBattery",
+        "AirF_AmericaPatriotBattery",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaSupplyCenter",
+        "AirF_AmericaSupplyCenter",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaParticleCannonUplink",
+        "AirF_AmericaParticleCannonUplink",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaPatriotBattery",
+        "AirF_AmericaPatriotBattery",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaCommandCenter",
+        "AirF_AmericaCommandCenter",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaFireBase",
+        "AirF_AmericaFireBase",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsraelBuildingC-RAM",
+        "IsraelBuildingC-RAM",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaWarFactory",
+        "AirF_AmericaWarFactory",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsraelBuildingRadarStation",
+        "IsraelBuildingRadarStation",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaAirfield",
+        "AirF_AmericaAirfield",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaSupplyDropZone",
+        "AirF_AmericaSupplyDropZone",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 17
+  },
+  {
+    "COMMANDSET": "AirF_AmericaPowerPlantCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "AirF_AmericaStrategyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "AirF_AmericaStrategyCenterCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "AirF_AmericaSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "AirF_Command_ConstructAFGChinook",
+        "AFG_AmericaVehicleChinook",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "AirF_AmericaWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructIsrael_MerkavaMk4",
+        "Israel_MerkavaMk4",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleTomahawk",
+        "AirF_AmericaVehicleTomahawk",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleHumvee",
+        "AirF_AmericaVehicleHumvee",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleMedic",
+        "AirF_AmericaVehicleMedic",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsrael_M109A6",
+        "Israel_M109A6",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleSentryDrone",
+        "AirF_AmericaVehicleSentryDrone",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleAvenger",
+        "AirF_AmericaTankAvenger",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "AirF_Command_ConstructAmericaVehicleMicrowave",
+        "AirF_AmericaTankMicrowave",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsrael_Arrow",
+        "Israel_Arrow",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsrael_AN_TPY2",
+        "Israel_AN_TPY2",
+        "ISRAEL",
+        "USA"
+      ],
+      [
+        "Command_ConstructIsraelVehicleEitanAFV",
+        "IsraelVehicleEitanAFV",
+        "ISRAEL",
+        "USA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "AmericaAH64ECommandSet_Normal",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "AmericaAircraftCarrierCommandSet",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "AmericaBarracksCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "AmericaCVN78_AnchorUpCommandSet",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "AmericaCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "AmericaDozerCommandSet",
+    "OLD_BUTTON_COUNT": 18,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "AmericaDozerCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 16,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "AmericaFireBaseCommandSet",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "AmericaLgm30CommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "AmericaParticleUplinkCannonCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "AmericaPatriotBatteryCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "AmericaPowerPlantCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "AmericaRadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "AmericaStrategyCenterCommandSet_T2_PatchAAB",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "AmericaSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 17,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAmericaJetB21"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAmericaJetB21"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T1",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAmericaJetB21"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T2",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAmericaJetB21"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T3",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructAmericaJetB21"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "BattleShipCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "ChinaAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 17,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussian_Su35",
+        "RussiaJetSu35S",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_Su34",
+        "RussiaJetSu34",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_Su35ts",
+        "RussiaJetSu35S",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-25T",
+        "RussiaJetSU25T",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-24MP",
+        "RussiaJetSU24MP",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-24M2",
+        "RussiaJetSU24M2",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Mig-31K",
+        "RussiaJetMig31K",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Tu-22M3M",
+        "RussiaJetTu22M3M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_SU24MP_AI",
+        "Russia_SU24MP_AI",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaDroneLancet3",
+        "RussiaDroneLancet3",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "ChinaAirfieldCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussian_Su35",
+        "RussiaJetSu35S",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_Su34",
+        "RussiaJetSu34",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_Su35ts",
+        "RussiaJetSu35S",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-25T",
+        "RussiaJetSU25T",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-24MP",
+        "RussiaJetSU24MP",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Su-24M2",
+        "RussiaJetSU24M2",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Mig-31K",
+        "RussiaJetMig31K",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_Tu-22M3M",
+        "RussiaJetTu22M3M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_SU24MP_AI",
+        "Russia_SU24MP_AI",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaDroneLancet3",
+        "RussiaDroneLancet3",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "ChinaBarracksCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussiaInfantryIgla",
+        "RussiaInfantryIgla",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_MortarTeam",
+        "Russia_MortarTeam",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "ChinaBarracksCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussiaInfantryIgla",
+        "RussiaInfantryIgla",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_MortarTeam",
+        "Russia_MortarTeam",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "ChinaCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "ChinaCommandCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "ChinaDF5CommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "ChinaGattlingCannonCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "ChinaGattlingCannonCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "ChinaGenericStructureCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "ChinaInternetCenterCommandSetOne",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "ChinaInternetCenterCommandSetOneUpgrade",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "ChinaPowerPlantCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "ChinaPowerPlantCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "ChinaPropagandaCenterCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussia_RS24_Yars_AI",
+        "Russia_RS24_Yars_AI",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "ChinaPropagandaCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussia_RS24_Yars_AI",
+        "Russia_RS24_Yars_AI",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "ChinaRadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructChinaDroneJXDS",
+        "ChinaDroneJXDS"
+      ],
+      [
+        "Command_ConstructChinaDroneFH97",
+        "ChinaDroneFH97"
+      ],
+      [
+        "Command_ConstructChinaDroneCH7",
+        "ChinaDroneCH7"
+      ],
+      [
+        "Command_ConstructChinaDroneWZ8",
+        "ChinaDroneWZ8"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussiaDroneOrlan10",
+        "RussiaDroneOrlan10",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "ChinaSpeakerTowerCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "ChinaSpeakerTowerCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "ChinaSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "ChinaSupplyCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "ChinaSupplyTruckCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "ChinaVehicleGattlingTankCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "ChinaWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 18,
+    "NEW_BUTTON_COUNT": 25,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussiaTankT72B3",
+        "RussiaTankT72B3M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_T15",
+        "RussianTankT15",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_TOR_M2U",
+        "RussiaVehiclePantsirS1M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_PantsirS1M",
+        "RussiaVehiclePantsirS1M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_RS24_Yars",
+        "Russia_RS24_Yars",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_bm30",
+        "RussiaVehicleBm30",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaTankT90A",
+        "RussiaTankT90A",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_tos1a",
+        "RussiaTankTos1A",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_S400",
+        "RussiaS400Deployed",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaArtillery2S7M",
+        "RussiaArtillery2S7M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_S400_AI",
+        "RussiaS400Deployed",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaVehicle9K720K",
+        "RussiaVehicle9K720K",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_92N6E",
+        "RussiaVehicle92N6R",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_92N6E_AI",
+        "RussiaRadar92N6RAI",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 25
+  },
+  {
+    "COMMANDSET": "ChinaWarFactoryCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 18,
+    "NEW_BUTTON_COUNT": 25,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussiaTankT72B3",
+        "RussiaTankT72B3M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_T15",
+        "RussianTankT15",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_TOR_M2U",
+        "RussiaVehiclePantsirS1M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_PantsirS1M",
+        "RussiaVehiclePantsirS1M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussia_RS24_Yars",
+        "Russia_RS24_Yars",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_bm30",
+        "RussiaVehicleBm30",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaTankT90A",
+        "RussiaTankT90A",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_tos1a",
+        "RussiaTankTos1A",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_S400",
+        "RussiaS400Deployed",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaArtillery2S7M",
+        "RussiaArtillery2S7M",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_S400_AI",
+        "RussiaS400Deployed",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussiaVehicle9K720K",
+        "RussiaVehicle9K720K",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_92N6E",
+        "RussiaVehicle92N6R",
+        "RUSSIA",
+        "CHINA"
+      ],
+      [
+        "Command_ConstructRussian_92N6E_AI",
+        "RussiaRadar92N6RAI",
+        "RUSSIA",
+        "CHINA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 25
+  },
+  {
+    "COMMANDSET": "GenericATInfantryCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "GenericIFVcommandset",
+    "OLD_BUTTON_COUNT": 10,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "GenericPlacedExplosiveCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "Infa_ChinaAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "Infa_ChinaAirfieldCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "Infa_ChinaBarracksCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 10,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 10
+  },
+  {
+    "COMMANDSET": "Infa_ChinaBarracksCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 10,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 10
+  },
+  {
+    "COMMANDSET": "Infa_ChinaBunkerCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "Infa_ChinaBunkerCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "Infa_ChinaCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Infa_ChinaCommandCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Infa_ChinaDozerCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "Infa_ChinaInternetCenterCommandSetOne",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "Infa_ChinaInternetCenterCommandSetOneUpgrade",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "Infa_ChinaNuclearMissileCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaNuclearMissileCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaPowerPlantCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "Infa_ChinaPropagandaCenterCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaPropagandaCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaSupplyCenterCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Infa_ChinaWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 12,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 12
+  },
+  {
+    "COMMANDSET": "Infa_ChinaWarFactoryCommandSetUpgrade",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 12,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 12
+  },
+  {
+    "COMMANDSET": "IranAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "IranCampCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "IranDozerCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructIran_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "IranHQCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "IranIndustrialComplexCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "IranPowerplantCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "IranRadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "IranSejjilCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "IranSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "Iraq_AirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Iraq_AirfieldCommandSet_T",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Iraq_AirfieldCommandSet_T1",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Iraq_AirfieldCommandSet_T2",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Iraq_AirfieldCommandSet_T3",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "Iraq_AlAbbasCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "Iraq_BarracksCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "Iraq_CommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructIraqDronesAbabil200Recon",
+        "IraqDronesAbabil200Recon",
+        "RUSSIA",
+        "IRAQ"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "Iraq_MICCommandSet",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "Iraq_MICCommandSet2",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "Iraq_MICCommandSet3",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "Iraq_RadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "Iraq_SupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "Iraq_WarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "Iraq_WarFactoryCommandSet_T",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "Iraq_WarFactoryCommandSet_T1",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "Iraq_WarFactoryCommandSet_T2",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "Iraq_WarFactoryCommandSet_T3",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "Iraq_WorkerCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "IsraelJerichoCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "IsraelRadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructIsraelDroneZikHermes450",
+        "IsraelDroneZikHermes450"
+      ],
+      [
+        "Command_ConstructIsraelDroneKochavHermes900",
+        "IsraelDroneKochavHermes900"
+      ],
+      [
+        "Command_ConstructIsraelDroneShovalHeron",
+        "IsraelDroneShovalHeron"
+      ],
+      [
+        "Command_ConstructIsraelDroneEitanHeronTP",
+        "IsraelDroneEitanHeronTP"
+      ],
+      [
+        "Command_ConstructIsraelDroneHaropExpanded",
+        "IsraelDroneHaropExpanded"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "Israel_CommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructIsrael_AdvancedAirBase",
+        "Israel_AdvancedAirBase"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "Israel_MilitaryHQCommandSet",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructIsrael_AD_IronDome",
+        "Israel_AD_IronDome"
+      ],
+      [
+        "Command_ConstructIsrael_AD_Barak8",
+        "Israel_AD_Barak8"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "Krasukha-4_CommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "Krasukha2E_CommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "NatoCampCommandSet",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "NatoCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "NatoDozerCommandSet",
+    "OLD_BUTTON_COUNT": 18,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructNato_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructNatoSAMPTNG",
+        "NatoSAMPTNG"
+      ],
+      [
+        "Command_ConstructNatoNASAMSIII",
+        "NatoNASAMSIII"
+      ],
+      [
+        "Command_ConstructNatoSkySabre",
+        "NatoSkySabre"
+      ],
+      [
+        "Command_ConstructNatoSkyranger30",
+        "NatoSkyranger30"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructAmericaLgm30",
+        "AmericaLgm30",
+        "USA",
+        "NATO"
+      ],
+      [
+        "Command_ConstructAmericaVehicleTHAAD_AI",
+        "US_THAAD_Site_AI",
+        "USA",
+        "NATO"
+      ],
+      [
+        "Command_ConstructAmericaSupplyDropZone",
+        "AmericaSupplyDropZone",
+        "USA",
+        "NATO"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "NatoDozerCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 20,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [
+      19,
+      20
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructNato_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructNatoSAMPTNG",
+        "NatoSAMPTNG"
+      ],
+      [
+        "Command_ConstructNatoNASAMSIII",
+        "NatoNASAMSIII"
+      ],
+      [
+        "Command_ConstructNatoSkySabre",
+        "NatoSkySabre"
+      ],
+      [
+        "Command_ConstructNatoSkyranger30",
+        "NatoSkyranger30"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructAmericaLgm30",
+        "AmericaLgm30",
+        "USA",
+        "NATO"
+      ],
+      [
+        "Command_ConstructAmericaVehicleTHAAD_AI",
+        "US_THAAD_Site_AI",
+        "USA",
+        "NATO"
+      ],
+      [
+        "Command_ConstructAmericaSupplyDropZone",
+        "AmericaSupplyDropZone",
+        "USA",
+        "NATO"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 20
+  },
+  {
+    "COMMANDSET": "NatoGM406CommandSet",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructNatoDroneMQ9BGuardian",
+        "NatoDroneMQ9BGuardian"
+      ],
+      [
+        "Command_ConstructNatoDroneEurodrone",
+        "NatoDroneEurodrone"
+      ],
+      [
+        "Command_ConstructNatoDroneAkinci",
+        "NatoDroneAkinci"
+      ],
+      [
+        "Command_ConstructNatoDroneNEURON",
+        "NatoDroneNEURON"
+      ],
+      [
+        "Command_ConstructNatoDroneMantisWingman",
+        "NatoDroneMantisWingman"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "NatoStrategyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "NatoStrategyCenterCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "NatoSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "NatoWarfactoryCommandSet",
+    "OLD_BUTTON_COUNT": 11,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "NorthKorea_BarracksCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructIraq_RepublicanGuard_AKMS",
+        "Iraq_RepublicanGuard_AKMS",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuard_RPG7",
+        "Iraq_RepublicanGuard_RPG7",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuardMortar",
+        "Iraq_RepublicanGuardMortar",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuardKornet",
+        "Iraq_RepublicanGuardKornet",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuard_Pkm",
+        "Iraq_RepublicanGuard_Pkm",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuard_TBK14",
+        "Iraq_RepublicanGuard_TBK14",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuard_Eng",
+        "Iraq_RepublicanGuard_Eng",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_SpecialForces",
+        "Iraq_SpecialForces_Akms",
+        "IRAQ",
+        "NORTH_KOREA"
+      ],
+      [
+        "Command_ConstructIraq_RepublicanGuardIgla",
+        "Iraq_RepublicanGuardIgla",
+        "IRAQ",
+        "NORTH_KOREA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "NorthKorea_MICCommandSet",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "NorthKorea_MICCommandSet2",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "NorthKorea_MICCommandSet3",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 11,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 11
+  },
+  {
+    "COMMANDSET": "NorthKorea_RadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructNorthKoreaDrone_Light",
+        "NorthKoreaDroneSaetbyol1"
+      ],
+      [
+        "Command_ConstructNorthKoreaDrone_Heavy",
+        "NorthKoreaDroneSaetbyol9"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "NorthKorea_SupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructNorthKorea_SupplyTruck",
+        "NorthKorea_Ural375_Supply"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "PLAAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 13,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructChinaJetJ50",
+        "ChinaJetJ50"
+      ],
+      [
+        "Command_ConstructChinaAircraftKJ500",
+        "ChinaAircraftKJ500"
+      ],
+      [
+        "Command_ConstructChinaJetJ16BBunker",
+        "ChinaJetJ16B_Bunker"
+      ],
+      [
+        "Command_ConstructChinaJetJH7BHeavy",
+        "ChinaJetJH7B_HeavyBunker"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 13
+  },
+  {
+    "COMMANDSET": "PLADozerCommandSet",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 18,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructChina_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 18
+  },
+  {
+    "COMMANDSET": "PLADozerCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 18,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructChina_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 18
+  },
+  {
+    "COMMANDSET": "PLAIndustrialWeaponComplexCommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 4,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 4
+  },
+  {
+    "COMMANDSET": "PLAWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 17,
+    "NEW_BUTTON_COUNT": 16,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 16
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T1",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T2",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T3",
+    "OLD_BUTTON_COUNT": 16,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T4",
+    "OLD_BUTTON_COUNT": 16,
+    "NEW_BUTTON_COUNT": 35,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [
+      [
+        "Command_ConstructRussiaJetSu75Checkmate",
+        "RussiaJetSu75Checkmate"
+      ],
+      [
+        "Command_ConstructRussiaJetSu47Recon",
+        "RussiaJetSu47Recon"
+      ],
+      [
+        "Command_ConstructRussia_Mi-28NE",
+        "Turkey_Mi-28NE"
+      ],
+      [
+        "Command_ConstructRussian_Su57",
+        "Patch_Russia_Su57"
+      ],
+      [
+        "Command_ConstructRussian_Su57AA",
+        "Patch_Russia_Su57"
+      ]
+    ],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaJetMIG",
+        "Infa_ChinaJetMIG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHelix",
+        "Infa_ChinaVehicleHelix",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AG",
+        "ChinaJetJ20B_AG",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterWZ10ME",
+        "ChinaHelicopterWZ10ME",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ20B_AA",
+        "ChinaJetJ20B_AA",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJH7A2",
+        "ChinaJetJH7A2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaHelicopterZ18A",
+        "ChinaHelicopterZ18A",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ10C",
+        "ChinaJetJ10C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaJetJ16D",
+        "ChinaJetJ16D",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 35
+  },
+  {
+    "COMMANDSET": "RussiaCommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "RussiaDozerCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructRussia_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "RussiaDozerCommandSet_PatchAAB",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 14,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructRussia_AdvancedAirBase"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 14
+  },
+  {
+    "COMMANDSET": "RussiaIndsturialComplexCommandSet",
+    "OLD_BUTTON_COUNT": 10,
+    "NEW_BUTTON_COUNT": 10,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 10
+  },
+  {
+    "COMMANDSET": "RussiaRS28CommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "RussiaRadarStationCommandSet",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 5,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 5
+  },
+  {
+    "COMMANDSET": "RussiaSupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaVehicleSupplyTruck",
+        "ChinaVehicleSupplyTruck",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_LBD",
+    "OLD_BUTTON_COUNT": 13,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T1",
+    "OLD_BUTTON_COUNT": 5,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T2",
+    "OLD_BUTTON_COUNT": 10,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T3",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T4",
+    "OLD_BUTTON_COUNT": 15,
+    "NEW_BUTTON_COUNT": 42,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "SLOTS_ABOVE_18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaTankBattleMaster",
+        "ChinaTankBattleMaster",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankAFT10",
+        "ChinaTankAFT10",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF17",
+        "ChinaVehicleDF17",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructRussia_Krasukha-4",
+        "ChinaVehicleKrasukha4",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankTorM2",
+        "ChinaTankTorM2",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankPGZ04",
+        "ChinaTankPGZ04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41",
+        "ChinaVehicleDF41",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePHL03",
+        "ChinaVehiclePHL03",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehiclePLZ05",
+        "ChinaVehiclePLZ05",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF21C",
+        "ChinaVehicleDF21C",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankZBD04",
+        "ChinaTankZBD04",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHT233",
+        "ChinaVehicleHT233",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF12",
+        "ChinaVehicleDF12",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleHQ9",
+        "ChinaVehicleHQ9",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleDF41_AI",
+        "ChinaVehicleDF41_AI",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleInfernoCannon",
+        "Infa_ChinaVehicleInfernoCannon",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaVehicleNukeLauncher",
+        "Infa_ChinaVehicleNukeLauncher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaTankECM",
+        "Infa_ChinaTankECM",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 42
+  },
+  {
+    "COMMANDSET": "RussiaWeaponIndustryPlantCommandSet_T1",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaVehicleGJ11Launcher",
+        "ChinaVehicleGJ11Launcher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaDroneCH5",
+        "ChinaDroneCH5",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "RussiaWeaponIndustryPlantCommandSet_T2",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [
+      [
+        "Command_ConstructChinaVehicleGJ11Launcher",
+        "ChinaVehicleGJ11Launcher",
+        "CHINA",
+        "RUSSIA"
+      ],
+      [
+        "Command_ConstructChinaDroneCH5",
+        "ChinaDroneCH5",
+        "CHINA",
+        "RUSSIA"
+      ]
+    ],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "S400ECommandSet",
+    "OLD_BUTTON_COUNT": 4,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "S400ECommandSet_AA",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "S400ECommandSet_ABM",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "S400ECommandSet_Deployed",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 7,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 7
+  },
+  {
+    "COMMANDSET": "Tank_ChinaVehicleGattlingTankCommandSet",
+    "OLD_BUTTON_COUNT": 3,
+    "NEW_BUTTON_COUNT": 3,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 3
+  },
+  {
+    "COMMANDSET": "UAE_AbbasCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Mig-29A",
+      "Command_ConstructUAE_MirageF1_Bq",
+      "Command_ConstructUAE_Su-25K",
+      "Command_ConstructUAE_Mi-8T",
+      "Command_ConstructUAE_IL-76",
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet1",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Mig-29A",
+      "Command_ConstructUAE_MirageF1_Bq",
+      "Command_ConstructUAE_Su-25K",
+      "Command_ConstructUAE_Mi-8T",
+      "Command_ConstructUAE_IL-76",
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet2",
+    "OLD_BUTTON_COUNT": 7,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Mig-29A",
+      "Command_ConstructUAE_MirageF1_Bq",
+      "Command_ConstructUAE_Su-25K",
+      "Command_ConstructUAE_Mi-8T",
+      "Command_ConstructUAE_IL-76",
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet3",
+    "OLD_BUTTON_COUNT": 9,
+    "NEW_BUTTON_COUNT": 9,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Mig-29A",
+      "Command_ConstructUAE_MirageF1_Bq",
+      "Command_ConstructUAE_Su-25K",
+      "Command_ConstructUAE_Mi-8T",
+      "Command_ConstructUAE_IL-76",
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 9
+  },
+  {
+    "COMMANDSET": "UAE_BarracksCommandSet",
+    "OLD_BUTTON_COUNT": 8,
+    "NEW_BUTTON_COUNT": 8,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_RepublicanGuard_AKMS",
+      "Command_ConstructUAE_RepublicanGuard_RPG7",
+      "Command_ConstructUAE_RepublicanGuardIgla",
+      "Command_ConstructUAE_SpecialForces_Akms",
+      "Command_ConstructUAE_RepublicanGuard_TBK14",
+      "Command_ConstructUAE_Worker"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 8
+  },
+  {
+    "COMMANDSET": "UAE_CommandCenterCommandSet",
+    "OLD_BUTTON_COUNT": 6,
+    "NEW_BUTTON_COUNT": 6,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Worker",
+      "Command_ConstructUAE_VT72B",
+      "Command_ConstructUAE_IL-76",
+      "Command_ConstructUAE_Alhussaien"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 6
+  },
+  {
+    "COMMANDSET": "UAE_MICCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_MICCommandSet2",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_MICCommandSet3",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_PowerPlantCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_RadarCommandSet",
+    "OLD_BUTTON_COUNT": 1,
+    "NEW_BUTTON_COUNT": 1,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 1
+  },
+  {
+    "COMMANDSET": "UAE_SupplyCenterCommandSet",
+    "OLD_BUTTON_COUNT": 2,
+    "NEW_BUTTON_COUNT": 2,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_Ural375_Supply"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 2
+  },
+  {
+    "COMMANDSET": "UAE_VT72BCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 12,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_PowerPlant",
+      "Command_ConstructUAE_CommandCenter",
+      "Command_ConstructUAE_SupplyCenter",
+      "Command_ConstructUAE_WarFactory_T",
+      "Command_ConstructUAE_Airfield_T",
+      "Command_ConstructUAE_MIC",
+      "Command_ConstructUAE_RadarStation",
+      "Command_ConstructUAE_Sam2",
+      "Command_ConstructUAE_Barracks",
+      "Command_ConstructUAE_Abbas"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 12
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_T-72",
+      "Command_ConstructUAE_BMP-1",
+      "Command_ConstructUAE_BTR-90",
+      "Command_ConstructUAE_VehicleRoland3K",
+      "Command_ConstructUAE_ZSU-23-4",
+      "Command_ConstructUAE_BM-21",
+      "Command_ConstructUAE_Ural375_Supply",
+      "Command_ConstructUAE_VT72B",
+      "Command_ConstructUAE_Alhussaien"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet1",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_T-72",
+      "Command_ConstructUAE_BMP-1",
+      "Command_ConstructUAE_BTR-90",
+      "Command_ConstructUAE_VehicleRoland3K",
+      "Command_ConstructUAE_ZSU-23-4",
+      "Command_ConstructUAE_BM-21",
+      "Command_ConstructUAE_Ural375_Supply",
+      "Command_ConstructUAE_VT72B",
+      "Command_ConstructUAE_Alhussaien"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet2",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_T-72",
+      "Command_ConstructUAE_BMP-1",
+      "Command_ConstructUAE_BTR-90",
+      "Command_ConstructUAE_VehicleRoland3K",
+      "Command_ConstructUAE_ZSU-23-4",
+      "Command_ConstructUAE_BM-21",
+      "Command_ConstructUAE_Ural375_Supply",
+      "Command_ConstructUAE_VT72B",
+      "Command_ConstructUAE_Alhussaien"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet3",
+    "OLD_BUTTON_COUNT": 14,
+    "NEW_BUTTON_COUNT": 15,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_T-72",
+      "Command_ConstructUAE_BMP-1",
+      "Command_ConstructUAE_BTR-90",
+      "Command_ConstructUAE_VehicleRoland3K",
+      "Command_ConstructUAE_ZSU-23-4",
+      "Command_ConstructUAE_BM-21",
+      "Command_ConstructUAE_Ural375_Supply",
+      "Command_ConstructUAE_VT72B",
+      "Command_ConstructUAE_Alhussaien"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 15
+  },
+  {
+    "COMMANDSET": "UAE_WorkerCommandSet",
+    "OLD_BUTTON_COUNT": 12,
+    "NEW_BUTTON_COUNT": 12,
+    "LEGAL_SLOT_RANGE": "1-18 (soft) / 1-27 (hard observed)",
+    "DUPLICATE_SLOT_NUMBERS": [],
+    "OUT_OF_RANGE_SLOTS": [],
+    "SLOTS_ABOVE_18": [],
+    "NULL_COMMAND_BUTTON_REFERENCES": [],
+    "MISSING_COMMAND_BUTTON_REFERENCES": [
+      "Command_ConstructUAE_PowerPlant",
+      "Command_ConstructUAE_SupplyCenter",
+      "Command_ConstructUAE_WarFactory_T",
+      "Command_ConstructUAE_MIC",
+      "Command_ConstructUAE_RadarStation",
+      "Command_ConstructUAE_Sam2",
+      "Command_ConstructUAE_Barracks",
+      "Command_ConstructUAE_Abbas",
+      "Command_ConstructUAE_Airfield_T"
+    ],
+    "BUTTONS_POINTING_TO_MISSING_OBJECTS": [],
+    "FACTION_MISMATCHED_BUTTONS": [],
+    "EFFECTIVE_SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "MAX_SLOT": 12
+  }
+]

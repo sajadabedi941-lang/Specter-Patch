@@ -1,0 +1,16 @@
+FACTION = USA
+BUILDING = AmericaBarracks
+ACTIVE_COMMANDSET = AmericaBarracksCommandSet
+ORIGINAL_BUTTONS = ['Command_ConstructAmericaInfantryRanger', 'Command_ConstructAmericaInfantryMissileDefender', 'Command_ConstructAmericaInfantryMarinesStinger', 'Command_ConstructAmericaInfantryPathfinder', 'Command_ConstructAmericaInfantryMarines_Mg', 'Command_ConstructAmericaInfantryBiohazardTech', 'Command_ConstructAmericaInfantryNavySeals', 'Command_ConstructAmericaInfantryJTAC', 'Command_ConstructAmericaInfantryMarines_Eng', 'Command_ConstructAmericaInfantryMarines_jav', 'Command_ConstructAmericaInfantryMortarTeam', 'Command_Sell', 'Command_ConstrucAmericaDroneSwitchblade600']
+SAFE_UNLOCKED_BUTTONS = []
+OBJECTS_PREREQS_CLEARED = ['AmericaInfantryBiohazardTech', 'AmericaInfantryJTACOperator', 'AmericaInfantryMarinesStinger', 'AmericaInfantryMarines_Eng', 'AmericaInfantryMarines_MG', 'AmericaInfantryMissileDefender', 'AmericaInfantryNavySeals', 'AmericaInfantryPathfinder', 'AmericaInfantryRanger']
+NEW_BUTTONS_ADDED = []
+FINAL_BUTTON_COUNT = 13
+MAX_SLOT = 16
+ALL_REFERENCES_VALID = YES
+MISSING_COMMANDBUTTON_REFERENCES = 0
+MISSING_OBJECT_REFERENCES = 0
+INVALID_COMMANDSET_SLOTS = 0
+DUPLICATE_COMMANDSET_SLOTS = 0
+COMMANDSET_MERGE_PERFORMED = NO
+METHOD = clear Prerequisites on objects already referenced by active CommandSet only; strip Science on those buttons only

@@ -1,0 +1,5 @@
+; SPECTER RussiaJetTU160Clean (Tu-160 Blackjack) strings
+; Also patched into Data/English/generals.csf for in-game load.
+OBJECT:RussiaJetTU160 = TU-160 Blackjack
+CONTROLBAR:ConstructRussiaJetTU160 = TU-160 Blackjack
+CONTROLBAR:ToolTipRussiaJetTU160 = TU-160 Blackjack strategic heavy bomber.

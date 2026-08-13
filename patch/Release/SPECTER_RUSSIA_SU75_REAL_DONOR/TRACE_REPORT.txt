@@ -1,0 +1,44 @@
+==================================================
+STEP 1 — CURRENT RUSSIAN SLOT (rollback baseline)
+==================================================
+RUSSIA_AIRFIELD = RussiaAirfield_T
+RUSSIA_AIRFIELD_COMMANDSET = RussiaAirfieldCommandSet_T4
+SU75_BUTTON_SLOT = 3
+SU75_COMMAND_BUTTON = Command_ConstructRussiaJetSu75Checkmate
+CURRENT_SU75_OBJECT = RussiaJetSu75Checkmate
+CURRENT_SU75_MODEL = RUS_SU57 (placeholder; object MISSING from Core-9 rollback packed DATA)
+CURRENT_SU75_WEAPON = 6x_MRAAM_K77M_SU57 (from older Russia_System.ini donor-scan copy)
+CURRENT_SU75_COST = 3500 (from older Russia_System.ini donor-scan copy)
+ButtonImage (old) = rus_su57
+
+==================================================
+STEP 2 — REAL DONOR SU-T75
+==================================================
+DONOR_SU75_FOUND = YES
+DONOR_OBJECT = Russia_VehicleCheckmate
+DONOR_INI = !TEOD_INI.big / Data\INI\Object\Russia\Aircrafts\SU75.ini
+DONOR_MAIN_W3D = RUSU75.W3D
+DONOR_DAMAGED_W3D = RUSU75_D.W3D
+DONOR_REALLYDAMAGED_W3D = RUSU75_D.W3D
+DONOR_DEAD_W3D = RUSU75_E.W3D (+ RUSU75_E1/E2 debris)
+DONOR_TEXTURES = SU-75.dds / SU-75_D.dds / SU-75_E.dds
+DONOR_BUTTON_IMAGE = Checkmate_L (RU-Icons04.tga)
+DONOR_WEAPON = SU75missileweapon / SU75missileweapon2 (not used; TEOD deps unreliable)
+DONOR_PROJECTILE = R27
+DONOR_JETAI = JetAIUpdate (donor)
+DONOR_LOCOMOTOR = SU75UPLocomotor (not used; cloned Saturn_AL-41F instead)
+DONOR_ARMORSET = AntiAircraftJetArmor (not used; cloned AirplaneArmor_P)
+
+==================================================
+STEP 3 — VERIFY REAL DONOR
+==================================================
+REAL_SU75_W3D_DIFFERENT_FROM_CURRENT = YES
+  OLD placeholder = RUS_SU57
+  NEW real donor  = RUSU75
+
+==================================================
+STEP 9 — RUNTIME EFFECTIVE FILES
+==================================================
+EFFECTIVE_SU75_BUTTON_FILE = Data\INI\CommandButton.ini (FIRST-WINS)
+EFFECTIVE_RUSSIA_AIRFIELD_COMMANDSET_FILE = Data\INI\CommandSet.ini
+EFFECTIVE_SU75_OBJECT_FILE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetSU75Clean.ini

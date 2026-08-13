@@ -1,0 +1,23 @@
+SPECTER_USA_AIRCRAFT_TEST_VISIBILITY_RELEASE — PUBLIC DOWNLOAD
+==============================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/m69el2.zip
+
+Branch: cursor/usa-aircraft-test-visibility-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  4da2e4247e6f5fd45f3b3d4b07374d6847fe73bf800d1697d16d8c82e7d7560b
+SHA256 DATA: 1b1b9bd2bd0b95035e369f791e079f571868457286aeb131f769cbba45b289b4
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+TEMPORARY TEST — full USA aircraft availability:
+  Cleared Science / Rank (star) / RequiredObject / StrategyCenter gates
+  Ignore_Prerequisites on USA jets / helos / drones / Patch aircraft
+  Weapon / Draw / Model / Cost / Limit / AI / Locomotor untouched
+  Airfield CommandSets unchanged (B-2 / B-52 / B-21 production intact)
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

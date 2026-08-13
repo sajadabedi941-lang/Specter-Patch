@@ -1,0 +1,47 @@
+SPECTER USA STRATEGY CENTER BUILD FIX
+=====================================
+
+ROOT CAUSE
+----------
+USA Dozer slot 2 uses Command_ConstructAmericaStrategyCenter_T which targeted
+AmericaStrategyCenter_T. That object Prerequisites lock the button:
+
+  patch/.../Buildings/StrategyCenter.ini
+    line 44: Object = AmericaWarFactory_T
+    line 45: Object = AmericaRadarStation   <--- exact line that greys the button
+
+AmericaRadarStation also requires Airfield (Buildings/AN_FPS117.ini line 28),
+so the Strategy Center button stayed disabled/grey until Airfield+Radar+WarFactory.
+
+Not caused by RequiredScience / Rank / RequiredUpgrade on the CommandButton.
+Not linked to America_AdvancedAirBase after SC building restore.
+
+FIX
+---
+Added last-wins overlay:
+  Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_SC_BUILD_FIX.ini
+
+- Command_ConstructAmericaStrategyCenter   -> AmericaStrategyCenter
+- Command_ConstructAmericaStrategyCenter_T -> AmericaStrategyCenter
+- AmericaStrategyCenter Prerequisites restored to original Specter (commented)
+- CommandSet = AmericaStrategyCenterCommandSet
+- No RequiredScience / RequiredUpgrade / Rank / AdvancedAirBase
+
+NOT MODIFIED
+------------
+- USA Airfield / AmericaAirfield_T
+- USA_FINAL14_AIRFIELD_COMMANDSET
+- aircraft roster / B-2 / B-52H / B-21
+- CommandSet.ini
+- ART (unchanged from FINAL14 pack)
+
+VERIFY (packed)
+---------------
+LAST Command_ConstructAmericaStrategyCenter   -> ('Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_SC_BUILD_FIX.ini', 'AmericaStrategyCenter', False, False, False)
+LAST Command_ConstructAmericaStrategyCenter_T -> ('Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_SC_BUILD_FIX.ini', 'AmericaStrategyCenter', False, False, False)
+LAST AmericaStrategyCenter                    -> ('Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_SC_BUILD_FIX.ini', ';Object = AmericaWarFactory AmericaAirfield\n    ;Object = AmericaRadarStation', 'AmericaStrategyCenterCommandSet')
+
+HASHES
+------
+_SPEC_DATA_ONE.big sha256 = 2b6b1b234959a1b2f58051aa2a5c543ccdb3127241a17178d992346cf888d01f
+_SPEC_ART_ONE.big  sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

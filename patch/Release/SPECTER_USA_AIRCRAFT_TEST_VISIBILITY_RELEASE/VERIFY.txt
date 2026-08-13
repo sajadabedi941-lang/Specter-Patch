@@ -1,0 +1,4 @@
+Airfield CommandSets unchanged vs base (B-2/B-52/B-21 slots intact).
+B21 visual AVB3bmbr intact. Cost/Limit for B2/B52/B21 unchanged.
+Remaining Science/Rank/StrategyCenter aircraft locks cleared + Ignore_Prerequisites.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

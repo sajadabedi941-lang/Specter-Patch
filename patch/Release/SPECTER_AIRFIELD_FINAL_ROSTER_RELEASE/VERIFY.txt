@@ -1,0 +1,5 @@
+Final CS winner: ZZZZZZZZ_ZZZZZZ_ZZZZ_USA_AIRFIELD_FINAL_ROSTER.ini
+No TEOD buttons on any AmericaAirfieldCommandSet*.
+Slot 5 B2Spirit->AmericaJetB2; slot 11 B21; B52H present; EA18 restored.
+F35C_AA removed as duplicate entry. Object stats/visual unchanged.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

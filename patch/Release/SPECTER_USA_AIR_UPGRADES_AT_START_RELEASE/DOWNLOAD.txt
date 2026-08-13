@@ -1,0 +1,29 @@
+SPECTER_USA_AIR_UPGRADES_AT_START_RELEASE — PUBLIC DOWNLOAD
+============================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/pxi4mv.zip
+
+Branch: cursor/usa-aircraft-upgrades-unlock-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  f2a400d3d3ccee14cbb99d51e2f035b7655a696660169a3d2b10a42c47352d86
+SHA256 DATA: 83365593290605fba4ec02d09ca4c224560727d3a5ac291355dfca40d22ad245
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA aircraft upgrades from game start (upgrade-only):
+  Last-wins: ZZZZ_USA_ZZZZ_ZZZZ_AIR_UPGRADES_AT_START.ini
+  Twin:      ZZZZZZZZ_ZZZZZZ_ZZZZZ_USA_AIR_UPGRADES_AT_START.ini
+  AmericaCommandCenter GrantUpgradeCreate for:
+    Countermeasures, NuclearTipWarhead2, MTS, AdvancedTraining,
+    BunkerBusters, LaserMissiles, ComancheRocketPods, AIM-9X, AIM-120D,
+    F15EX, ChaffUpgrade, AGM154C, AADS_AA_Mode, AADS_ABM_Mode
+  AGM154C / AADS_* Type OBJECT -> PLAYER (grantable globally)
+  Airfield CommandSets / Slots / CommandButtons / Object names /
+  Weapon / Draw / Cost / Limit / AI / Locomotor untouched
+  Base BIG: SPECTER_AIRFIELD_FINAL_ROSTER_RELEASE
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

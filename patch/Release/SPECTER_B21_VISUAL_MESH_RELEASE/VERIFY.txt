@@ -1,0 +1,4 @@
+Last-wins Draw Model=AVB3bmbr for AmericaJetB21.
+Command_ConstructAmericaJetB21 / Airfield slot 11 / Weapon / Cost / Limit unchanged.
+ART unchanged (AVB3bmbr.W3D already present).
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

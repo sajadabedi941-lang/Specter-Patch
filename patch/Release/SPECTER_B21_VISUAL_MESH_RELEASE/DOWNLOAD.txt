@@ -1,0 +1,22 @@
+SPECTER_B21_VISUAL_MESH_RELEASE — PUBLIC DOWNLOAD
+=================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/d8340y.zip
+
+Branch: cursor/b21-visual-model-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  ea1e3c83443e4bf389f35270af1d9a33981ed4a5778d49e611a5b1fb56058d54
+SHA256 DATA: 78cbe198ff420670d60670f065b215ef678ecec8adb06f8ac75528e58e2abb93
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+AmericaJetB21 visual only:
+  Model US_B1R -> AVB3bmbr (stealth flying-wing; no dedicated B-21 ART in BIG)
+  Scale 0.85, portrait B2-ic_L
+  Production / CommandButton / Airfield / Weapon / AI / Locomotor / Cost / Limit untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

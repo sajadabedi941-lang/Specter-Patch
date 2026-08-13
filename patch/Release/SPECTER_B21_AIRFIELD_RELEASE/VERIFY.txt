@@ -1,0 +1,6 @@
+AmericaJetB21 present; Command_ConstructAmericaJetB21 -> AmericaJetB21 UNIT_BUILD.
+All AmericaAirfieldCommandSet* slot 11 = Command_ConstructAmericaJetB21.
+Slots other than 11 unchanged vs base (B-2 slot 5 / B-52 slots kept).
+Prerequisites empty; Buildable=Ignore_Prerequisites.
+Weapon America_Weapon_B21_JASSM + projectile resolved.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

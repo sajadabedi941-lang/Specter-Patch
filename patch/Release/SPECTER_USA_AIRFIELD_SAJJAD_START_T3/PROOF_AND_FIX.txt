@@ -1,0 +1,30 @@
+SPECTER USA AIRFIELD SAJJAD - START ORIGINAL T3
+================================================
+
+PROOF (from PR #285 _SPEC_DATA_ONE.big)
+1. Display string: OBJECT:Airfield = "Air Field"
+   UI shows "AirField <PlayerName>" (Sajjad = player name; not an object name).
+2. Exact Object: AmericaAirfield_T
+3. Dozer CommandSet: AmericaDozerCommandSet
+4. Build button: Command_ConstructAmericaAirfield_T
+5. Object= target: AmericaAirfield_T
+6. Current runtime CommandSet (6-button menu): AmericaAirfieldCommandSet_T
+   DEFINED IN: Data/INI/CommandSet.ini
+7. Matched 6-button CommandSet: AmericaAirfieldCommandSet_T
+   AH64E Guardian
+   B-2 Spirit (slot 5; not AC-130 - no AH64E+AC130 CommandSet exists)
+   F-16CM Block50/52 (Command_ConstructAmericaJetF-16C_AG / us_f16cb50)
+   B-52H Stratofortress (ButtonImage us_b52gbu43)
+   Countermeasures
+   E-3 AWACS
+8. Progression: CommandSetUpgrade ModuleTag_Tier1/2/3
+   TriggeredBy Upgrade_US_Tier1/2/3 -> _T1/_T2/_T3
+9. Original final CommandSet: AmericaAirfieldCommandSet_T3 (CommandSet.ini)
+
+MINIMAL FIX
+- Airfield_T.ini: CommandSet = AmericaAirfieldCommandSet_T3; all Tier CSU -> T3
+- Last-wins overlay restores original T3 slots and re-binds AmericaAirfield_T
+- No new CommandSet name, no CommandSet.ini edit, no B-2/B-52/B-21/SC changes
+
+INSTALL
+Replace GameRoot _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big with these two files.

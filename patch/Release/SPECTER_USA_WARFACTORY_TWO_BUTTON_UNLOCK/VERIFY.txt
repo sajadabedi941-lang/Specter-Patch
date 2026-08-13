@@ -1,0 +1,15 @@
+LOCKED UNIT 1 = US_THAAD (THAAD)
+CommandButton = Command_ConstructAmericaVehicleTHAAD
+Object = US_THAAD
+Exact original lock = Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+Exact change = Cleared Prerequisites block (empty) on Object US_THAAD only
+
+LOCKED UNIT 2 = US_M1075I_Trident (M1075I)
+CommandButton = Command_ConstructAmericaVehicleM1075I
+Object = US_M1075I_Trident
+Exact original lock = Prerequisites Object = AmericaStrategyCenter_T + Science = SCIENCE_M1075I
+Exact change = Cleared Prerequisites block (empty) on Object US_M1075I_Trident only
+
+CommandSet.ini unchanged byte-for-byte vs PR #294
+WF T==T1==T2==T3 PASS
+Airfield T==T1==T2==T3 PASS

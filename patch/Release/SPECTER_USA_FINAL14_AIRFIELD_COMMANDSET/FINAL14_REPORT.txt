@@ -1,0 +1,26 @@
+SPECTER USA FINAL14 AIRFIELD COMMANDSET
+=======================================
+
+FINAL RUNTIME CHAIN:
+  AmericaAirfield_T
+  -> USA_FINAL14_AIRFIELD_COMMANDSET
+
+NOT AmericaAirfieldCommandSet_T / _T1 / _T2 / _T3.
+
+New file (absolute last-wins):
+  Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_USA_FINAL14_AIRFIELD_COMMANDSET.ini
+  sha256=4182ec632b905a6a5923443764b6246bab2110ef7ad755fdb62e32c3a650f584
+
+Verification:
+  1. Final AmericaAirfield_T CommandSet = USA_FINAL14_AIRFIELD_COMMANDSET  YES (Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_USA_FINAL14_AIRFIELD_COMMANDSET.ini)
+  2. USA_FINAL14 defined exactly once                 YES
+  3. No later Object override                         YES
+  4. CommandSetUpgrade Tier1/2/3 -> USA_FINAL14_AIRFIELD_COMMANDSET
+     TriggeredBy Upgrade_USA_AirfieldRosterLocked     YES (never granted)
+  5. Countermeasures absent                           YES
+  6. All 14 aircraft buttons present                  YES
+
+CommandSet.ini NOT modified (sha256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31)
+
+_SPEC_DATA_ONE.big sha256=d06e59bc32bb8e31ae8879ac7b239092762c52a9d46cead6b449e86ddd4e66a4
+_SPEC_ART_ONE.big sha256=227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

@@ -1,0 +1,44 @@
+SPECTER_USA_B21_FIRE_SIZE_FIX — VERIFY
+============================================================
+Strict continue from PR #302. ONLY two fixes.
+
+FIX 1 — visual size
+Object = AmericaJetB21Clean
+Model = AVB21_A
+Explicit Scale = NONE (removed Scale = 0.60)
+Effective visual scale = native W3D / 1.0
+Geometry unchanged = YES (Box 14/7/5)
+
+FIX 2 — FIRE grey
+Root cause = wrong WeaponLaunchBone names (WeaponA/WeaponB) + missing bones on JETEXHAUST states.
+AVB21_A bones = WeaponA01 / WeaponA02 / WeaponB01 (same as working B-2).
+Fix = WeaponLaunchBone = PRIMARY WeaponA01 on all flyable ConditionStates (B-2 pattern).
+Removed WEAPONSET_PLAYER_UPGRADE draw states (B-2 has none; B-21 WeaponSet Conditions=None only).
+
+B-2 attack chain (unchanged, reused):
+A) CommandSet = GenericTacticalBomberCommandSet
+B) WeaponSet Conditions=None PRIMARY AmericaJetB21_SingleHeavyBunkerBuster
+C) PRIMARY weapon slot
+D) CommandButton = Command_FireMainWeapon
+E) WeaponSlot = PRIMARY
+F) Command = FIRE_WEAPON
+G) Options = OK_FOR_MULTI_SELECT NEED_TARGET_POS
+H) Valid targets via NEED_TARGET_POS (ground)
+I) KindOf includes CAN_ATTACK
+J) ClipSize=1 ShotsPerBarrel=1 AutoReloadsClip=RETURN_TO_BASE
+K) JetAIUpdate present
+L) RETURN_TO_BASE rearm
+M) RequiredScience/Upgrade/SpecialPower on FIRE button = NONE
+
+BuildCost = 12000
+Projectile = AmericaJetB21_MOP_Bomb
+Damage = 9000 DamageRadius = 170
+Bombs per sortie = 1
+CommandSet.ini unchanged = PASS
+ART unchanged from PR#302 = PASS
+
+DATA sha256 = 6e4b0ddd7804c2afc02db85f25b9ffc3aaae86d9658743e8c8cee9b94838b5cf
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = d000ba9fb325de0bf5f10dddc74d4911c4bca3ee6446be413f02ae2ddd92054e
+
+Download = https://litter.catbox.moe/8098f8.zip

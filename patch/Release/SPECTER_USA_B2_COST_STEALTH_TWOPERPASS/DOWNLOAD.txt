@@ -1,0 +1,6 @@
+SPECTER_USA_B2_COST_STEALTH_TWOPERPASS
+
+Download: https://gofile.io/d/bSxdK4
+
+B-2 Spirit: BuildCost 10000, stealth, 10x MK-84, 2 bombs per ATTACK pass, RTB rearm.
+B-21 / B-52H / Airfield CommandSet.ini unchanged.

@@ -1,0 +1,4 @@
+SPECTER_USA_B21_ATTACKMOVE_BGM109
+AmericaJetB21Clean ATTACK/ATTACK MOVE PRIMARY = 7x air-launched BGM-109 (US_BGM109).
+No SpecialPower. Manual FIRE ignored. RTB rearm at Airfield.
+Download: https://litter.catbox.moe/a9f4pa.zip

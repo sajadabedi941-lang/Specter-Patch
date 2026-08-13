@@ -1,0 +1,10 @@
+SPECTER_USA_B21_7MISSILE_SALVO
+
+Public download:
+https://litter.catbox.moe/kjpi5f.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+B-21: ClipSize=1 ShotsPerBarrel=7 => one ATTACK salvo of 7 guided missiles, then RTB.

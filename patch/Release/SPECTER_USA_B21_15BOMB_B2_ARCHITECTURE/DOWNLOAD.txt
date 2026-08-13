@@ -1,0 +1,5 @@
+SPECTER_USA_B21_15BOMB_B2_ARCHITECTURE
+AmericaJetB21Clean PRIMARY = AmericaJetB21_15BombWeapon
+Donor = America_Weapon_B2_BunkerBuster, Projectile = MK-84
+Ammo math: ClipSize=3 x ShotsPerBarrel=5 = 15 bombs (5/pass, 3 passes), NOT 75.
+Download: https://litter.catbox.moe/xbijuv.zip

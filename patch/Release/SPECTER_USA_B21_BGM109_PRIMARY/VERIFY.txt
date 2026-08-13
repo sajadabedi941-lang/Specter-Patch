@@ -1,0 +1,53 @@
+SPECTER_USA_B21_BGM109_PRIMARY — VERIFY
+============================================================
+Continue from PR #303 working B-21 build.
+
+TRACED General Power "BGM-109 Call":
+BGM109 CommandButton = Command_BGM109Strike / Command_BGM109StrikeFromShortcut
+BGM109 Science = SCIENCE_BGM109Strike1
+BGM109 SpecialPower = SuperweaponBGM109Strike
+BGM109 module = OCLSpecialPower ModuleTag_bgm (AmericaCommandCenter)
+BGM109 OCL summon path = SUPERWEAPON_AmericaTomahawkStrike1
+  -> AmericaSystemTomahawkLaunchCommand
+  -> AmericaAmericaTomahawkVLS
+BGM109 weapon = 8x_BGM109_CruiseMissile
+BGM109 projectile/missile Object = BGM109ECruiseMissileObject
+BGM109 W3D model = US_BGM109
+BGM109 damage = 4000.0 / radius 50.0 (secondary 220/60)
+BGM109 FX = FX_HE_CruiseMissileExplosion
+
+Ship/platform summon (NOT on B-21) = SUPERWEAPON_AmericaTomahawkStrike1 path above
+Actual missile cloned for B-21 = 8x_BGM109_CruiseMissile + BGM109ECruiseMissileObject
+
+AVB21_A bones verified = WEAPONA01 WEAPONA02 WEAPONB01
+B-21 WeaponLaunchBone = PRIMARY WeaponA01
+
+Original BGM-109 General Power weapon = 8x_BGM109_CruiseMissile
+Original BGM-109 missile Object = BGM109ECruiseMissileObject
+Original missile W3D = US_BGM109
+New B-21 Weapon = AmericaJetB21_SingleBGM109
+New B-21 Projectile = AmericaJetB21_BGM109_Missile
+B-21 PRIMARY = AmericaJetB21_SingleBGM109
+ClipSize = 1
+ShotsPerBarrel = 1
+SpecialPower dependency = NONE
+Science dependency = NONE
+Rank dependency = NONE
+Ship summon = NONE
+Missiles per attack = 1
+Return to base after attack = YES
+B-21 stealth = UNCHANGED
+B-21 BuildCost = 12000
+B-21 visual = AVB21_A
+
+Runtime:
+AmericaJetB21Clean -> GenericTacticalBomberCommandSet -> Command_FireMainWeapon
+-> PRIMARY -> AmericaJetB21_SingleBGM109 -> AmericaJetB21_BGM109_Missile
+
+REGRESSION originals untouched = PASS
+
+DATA sha256 = 2e15c9d37bdf27dae3c08dfd20452f1a42c0e246e6717ce3b2771eb8dc608967
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = e66a38019d90279949d1a94cff025477b07bd4543bedd6c48bd55e2e40def166
+
+Download = https://litter.catbox.moe/lafdnc.zip

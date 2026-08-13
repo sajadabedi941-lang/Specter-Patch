@@ -1,0 +1,31 @@
+SPECTER_USA_B21_15BOMB_B2_ARCHITECTURE
+
+B21 Object = AmericaJetB21Clean
+B21 Visual = AVB21_A
+B21 Primary Weapon = AmericaJetB21_15BombWeapon
+Donor Weapon = America_Weapon_B2_BunkerBuster
+Projectile = MK-84
+
+Ammo math (SAGE): each fire consumes 1 ClipSize and spawns ShotsPerBarrel projectiles.
+  ClipSize = 3
+  ShotsPerBarrel = 5
+  TOTAL physical bombs per full load = 3 x 5 = 15
+  Bombs per attack pass = 5
+  Attack passes before empty = 3
+  Remaining bombs after pass 1/2/3 = 10 / 5 / 0
+  (Clip ammo pips show 3/2/1/0; each pip = 5 MK-84)
+
+Return to base after pass 3 = YES (AutoReloadsClip=RETURN_TO_BASE)
+Reload only at Airfield = YES (ClipReloadTime=0)
+Normal ATTACK / GenericTacticalBomberCommandSet = YES
+Manual FIRE required = NO (same B-2 command path; Attack works)
+
+BuildCost = 12000
+Stealth = UNCHANGED
+B-2 modified = NO
+B-52H modified = NO
+Airfield modified = NO
+CommandSet.ini = UNCHANGED
+
+NOT ClipSize=15 + ShotsPerBarrel=5 (would be 75).
+Custom guided missile PRIMARY unused.

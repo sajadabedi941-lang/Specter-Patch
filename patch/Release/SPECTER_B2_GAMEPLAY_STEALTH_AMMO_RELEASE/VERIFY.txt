@@ -1,0 +1,6 @@
+VERIFY — AmericaJetB2 gameplay stealth + ammo
+Stealth: InnateStealth=Yes, RadarPriority=LOCAL_UNIT_ONLY, no FIRING uncloak
+Payload: USA_B2_Spirit_BunkerBuster ClipSize=10, AutoReloadsClip=RETURN_TO_BASE
+Damage unchanged (PrimaryDamage 9000)
+Draw/Model/Scale/Airfield/CommandSet/Production/AI/Locomotor: untouched
+ZIP: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only

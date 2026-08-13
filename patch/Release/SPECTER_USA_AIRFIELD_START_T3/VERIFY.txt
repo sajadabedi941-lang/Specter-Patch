@@ -1,0 +1,4 @@
+AmericaAirfield_T -> AmericaAirfieldCommandSet_T3
+CommandSetUpgrade Tier1/2/3 all stay on _T3
+No roster-lock upgrade on Airfield
+No Tier grant required

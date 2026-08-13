@@ -1,0 +1,58 @@
+SPECTER USA FULL UNLOCK - NO PROGRESSION (PR #285 baseline)
+===========================================================
+
+USA UPGRADE LOCKS FOUND
+-----------------------
+1) AmericaAirfield_T CommandSetUpgrade chain
+   Files: Airfield_T.ini; RUNTIME_ROSTER / STATIC / FINAL_CS overlays
+   Locks: Upgrade_US_Tier1/2/3 (RUNTIME also used never-granted roster-lock)
+   Final: AmericaAirfieldCommandSet_T3
+
+2) AmericaWarFactory_T CommandSetUpgrade chain
+   Files: Warfactory.ini; Z_USA_AIRFIELD_FINAL_CS
+   Locks: Upgrade_US_Tier1/2/3
+   Final: AmericaWarFactoryCommandSet_T3
+
+3) RequiredUpgrade on ConstructAmerica* buttons: NONE
+
+4) Command_US_Tier* purchase buttons: Strategy Center CommandSets only
+   Effective SC uses PatchAAB sets without Tier purchase buttons.
+   Strategy Center Object/model NOT modified.
+
+FINAL COMMANDSETS NOW USED DIRECTLY
+-----------------------------------
+AmericaAirfield_T   -> AmericaAirfieldCommandSet_T3
+AmericaAirfield     -> AmericaAirfieldCommandSet_T3
+AmericaWarFactory_T -> AmericaWarFactoryCommandSet_T3
+
+UPGRADE PURCHASE BUTTONS
+------------------------
+Airfield/WarFactory final sets have no Command_US_Tier / Countermeasures
+unlock purchase buttons. No Strategy Center Object edits.
+
+Effective Airfield T3 (PR#285 FINAL_RUNTIME, unchanged):
+CommandSet AmericaAirfieldCommandSet_T3
+  1  = Command_ConstructAmericaJetRaptor
+  2  = Command_ConstructAmericaHelicopterAH64E
+  3  = Command_ConstructAmericaJetAurora
+  4  = Command_ConstructAmericaJetA10C
+  5  = Command_ConstructAmericaJetB2Spirit
+  6  = Command_ConstructAmericaJetF-16C_AG
+  7  = Command_ConstructAmericaJetB52H
+  8  = Command_ConstructAmericaJetF-22A_AA
+  9  = Command_ConstructAmericaJetF35C
+  10 = Command_ConstructAmericaJetB21
+  11 = Command_ConstructAmericaJetE3AWACS
+  12 = Command_ConstructAmericaJetB1R
+  13 = Command_ConstructAmericaJetEA18
+  14 = Command_ConstructAmericaJetF-15E_AA
+  15 = Command_Sell
+  16 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  17 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  18 = Command_FAKECOMMAND_PurchaseScienceMOAB
+End
+
+
+HASHES
+_SPEC_DATA_ONE.big 494b9e9888bb4eef812062eaa13a089c5e4bc35d83c1a6d3c166c9d41b3e3943
+_SPEC_ART_ONE.big  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

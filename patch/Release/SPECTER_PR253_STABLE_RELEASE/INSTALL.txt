@@ -1,0 +1,5 @@
+1. Replace both BIGs in GameRoot:
+   _SPEC_DATA_ONE.big
+   _SPEC_ART_ONE.big
+2. Delete Generals.dat / Maps.dat
+3. Do not unpack the BIG files

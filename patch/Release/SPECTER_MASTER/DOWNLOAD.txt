@@ -1,8 +1,8 @@
-Latest DATA-only fix (Egypt CommandCenter pure Iraq clone):
+Latest DATA-only fix (Egypt restore + BukM2):
 
-https://gofile.io/d/2WKt350B
+https://gofile.io/d/Mw3v1ZX7
 
-File: SPECTER_MASTER_DATA_EGYPT_CC_PURE_IRAQ_CLONE.zip
+File: SPECTER_MASTER_DATA_EGYPT_RESTORE_BUKM2_FIX.zip
 Contents: _SPEC_DATA_ONE.big only
 
 Keep your existing _SPEC_ART_ONE.big

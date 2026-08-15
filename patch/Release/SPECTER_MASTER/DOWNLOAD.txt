@@ -1,8 +1,8 @@
-Latest DATA-only fix (Egypt Command Center):
+Latest DATA-only fix (Egypt CommandCenter Iraq rebuild):
 
-https://gofile.io/d/7qJ5qlcc
+https://gofile.io/d/S9pqJwiU
 
-File: SPECTER_MASTER_DATA_EGYPT_CC_FIX.zip
+File: SPECTER_MASTER_DATA_EGYPT_CC_IRAQ_REBUILD.zip
 Contents: _SPEC_DATA_ONE.big only
 
 Keep your existing _SPEC_ART_ONE.big

@@ -1,8 +1,8 @@
-Latest DATA-only fix (Egypt restore + BukM2):
+Latest DATA-only (Egypt air existing-content audit):
 
-https://gofile.io/d/Mw3v1ZX7
+https://gofile.io/d/qYVZXR0P
 
-File: SPECTER_MASTER_DATA_EGYPT_RESTORE_BUKM2_FIX.zip
+File: SPECTER_MASTER_DATA_EGYPT_AIR_EXISTING_AUDIT.zip
 Contents: _SPEC_DATA_ONE.big only
 
-Keep your existing _SPEC_ART_ONE.big
+Keep existing _SPEC_ART_ONE.big

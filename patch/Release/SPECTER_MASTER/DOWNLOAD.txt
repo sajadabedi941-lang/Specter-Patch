@@ -1,11 +1,8 @@
-Latest DATA-only fix (Russia weapon objects forensic):
+Latest DATA-only fix (Egypt Command Center):
 
-https://gofile.io/d/niINTyBB
+https://gofile.io/d/7qJ5qlcc
 
-File: SPECTER_MASTER_DATA_RUSSIA_WO_FORENSIC_FIX.zip
+File: SPECTER_MASTER_DATA_EGYPT_CC_FIX.zip
 Contents: _SPEC_DATA_ONE.big only
 
-Keep your existing _SPEC_ART_ONE.big from the Egypt master package.
-
-Full Egypt master package (ART+DATA, older DATA before this forensic fix):
-https://gofile.io/d/QvObBh7y
+Keep your existing _SPEC_ART_ONE.big

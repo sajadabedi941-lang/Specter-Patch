@@ -1,11 +1,11 @@
-SPECTER_MASTER current DATA (Russia WO forensic restore):
-159b6d41bb354f12264680d996f5ccc96b329077e9a5b68bd3ed639a1129c52a  _SPEC_DATA_ONE.big
+SPECTER_MASTER current DATA (Egypt CC Unicode fix):
+f9d91223b9b32630922862663f459061152326433c1768850692c7f1b4cf1b26  _SPEC_DATA_ONE.big
 
 ART (unchanged from Egypt master package):
 bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73  _SPEC_ART_ONE.big
 
-DATA-only forensic ZIP:
-62c7142a08e1db7db83127586b12bba9932d775a4dd97295344f9413db2a1c1e  SPECTER_MASTER_DATA_RUSSIA_WO_FORENSIC_FIX.zip
+DATA-only Egypt CC ZIP:
+b3091188849268d73695c3fc230229c2097a9fdcf32799e3da1b3c11c139a767  SPECTER_MASTER_DATA_EGYPT_CC_FIX.zip
 
-WO internal (before pack == after re-extract):
-2d5edd80683b8a62b3e81d881874f3566f65fdadf543d299f8738f0c31fa0110  Russia_WeaponObjects.ini
+egypt_commandcenter.ini (before pack == after re-extract):
+3193c7a2191b0302c56d640b32c46ea32c45a35deffef0c1c01c2fd53534c139

@@ -1,0 +1,21 @@
+SPECTER_MASTER_PATCH_EGYPT.zip
+
+Download: https://gofile.io/d/QvObBh7y
+
+ZIP root (exact):
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+
+ZIP size: 829548418 bytes
+ZIP SHA256: 64fcebdaa7b27f44c49a66bc01b4067d14bfaad0a2161cc12ed0c93b014b7f55
+DATA SHA256: 5520db44566db25eb06f15addff67e17b7047ae47f2a8edce9976f5f733a53fb
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Install:
+1. Download ZIP
+2. Extract
+3. Copy both .big files into Specter/ZH game folder
+4. Replace existing _SPEC_ART_ONE.big and _SPEC_DATA_ONE.big
+5. Launch
+
+Master base factions: Iran, Israel, Iraq, Russia, China, USA, North Korea, Egypt

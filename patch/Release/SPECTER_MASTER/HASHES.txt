@@ -1,0 +1,3 @@
+64fcebdaa7b27f44c49a66bc01b4067d14bfaad0a2161cc12ed0c93b014b7f55  /workspace/patch/Release/SPECTER_MASTER_PATCH_EGYPT.zip
+5520db44566db25eb06f15addff67e17b7047ae47f2a8edce9976f5f733a53fb  /workspace/patch/Release/SPECTER_MASTER/_SPEC_DATA_ONE.big
+bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73  /workspace/patch/Release/SPECTER_MASTER/_SPEC_ART_ONE.big

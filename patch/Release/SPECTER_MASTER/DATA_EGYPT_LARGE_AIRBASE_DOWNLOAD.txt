@@ -1,0 +1,29 @@
+SPECTER DATA — Egypt LARGE fighter airbase (replaces small Airfield)
+
+DONOR:
+  Object: AmericaAirfield
+  INI:    Data\INI\Object\Specter\United States Of America\Buildings\Airfield.ini
+  Model:  US_AirField (already in _SPEC_ART_ONE.big)
+  Texture: US_Runway.dds (already in ART)
+  Real capacity: NumRows=1 x NumCols=6 = 6 aircraft (mesh bones Runway1-6Parking1)
+  NOT fake Scale enlarge / NOT invented 16 slots / NO heavy bomber runway
+
+FINAL EGYPT:
+  Object:      Egypt_LargeAirBase
+  INI:         Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_LargeAirBase.ini
+  Construct:   Command_ConstructEgypt_Airfield_T → Egypt_LargeAirBase
+  CommandSet:  Egypt_AirfieldCommandSet (same aircraft roster as before)
+  Aircraft:    Mig-29A, MirageF1_Bq, Su-25K, Mi-8T, IL-76, Rafale, F16C, Mig29M2
+  Side:        Egypt
+
+Also registered in ACTIVE runtime files (ControlBar loads these only):
+  CommandSet.ini: Egypt_WorkerCommandSet, Egypt_AirfieldCommandSet
+  CommandButton.ini: construct + 8 aircraft UNIT_BUILD buttons
+Stripped undefined Upgrade_Specter_Tier* from unused Egypt_Airfield_T
+
+SCOPE: Egypt only. Pakistan/Iran/Israel/Iraq/NK/USA/Russia/China untouched.
+ART unchanged (US_AirField already present). DATA-only ZIP.
+
+Download: https://gofile.io/d/ob6tMFHf
+ZIP root: _SPEC_DATA_ONE.big only
+sha256: 37cd23faa20742091cbd8bfb48cfe298ff46c20bc478093092dd5d5612fefdb5

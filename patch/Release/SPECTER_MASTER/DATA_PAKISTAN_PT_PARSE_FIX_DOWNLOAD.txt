@@ -1,0 +1,20 @@
+SPECTER DATA — Fix PlayerTemplate.ini parse crash at FactionPakistan
+
+ROOT CAUSE (from EA ZH PlayerTemplate/INI/Science source):
+  IntrinsicSciences uses INI::parseScienceVector → friend_lookupScience().
+  SCIENCE_Pakistan was only defined in Science_Pakistan.ini, which ScienceStore
+  does NOT load (loads only Data\INI\Science.ini + Data\INI\Science\).
+  Unknown science throws INI_INVALID_DATA; outer catch reports the block line
+  "PlayerTemplate FactionPakistan".
+
+FIX:
+  Rebuilt Data\INI\PlayerTemplate.ini from last known-good base
+  (PAKISTAN_OLDFACTION_FIX, pre-MAIN_PT, reached Skirmish).
+  Appended Iran-cloned FactionPakistan with IntrinsicSciences = SCIENCE_GLA
+  (Science.ini-resident; same pattern as Russia→SCIENCE_CHINA).
+  Clean End boundary before/after. Exactly one FactionPakistan.
+  ControlBar Pakistan8x6 Side Pakistan kept. Egypt untouched.
+
+Download: https://gofile.io/d/MhQ7qX39
+ZIP root: _SPEC_DATA_ONE.big only
+sha256: 5265ab07702c94ef6ea4f240b7206e655957aa9f52a8537baa836cf782c04b38

@@ -1,7 +1,5 @@
-Latest: DATA Egypt scope restore
-See DATA_EGYPT_SCOPE_RESTORE_HASHES.txt
+Latest: North Korea SIDE:NorthKorea string fix only
+Egypt was not modified.
 
-_SPEC_DATA_ONE.big sha256:
-b082b62e7d6a950f9568b9b514fdee6be65bc09c27eafa1dc46f60c14a493cfc
-
-Download: https://gofile.io/d/8fp6QChR
+See DATA_NK_SIDE_STRING_FIX_HASHES.txt
+Download: https://gofile.io/d/HbkuYr5Y

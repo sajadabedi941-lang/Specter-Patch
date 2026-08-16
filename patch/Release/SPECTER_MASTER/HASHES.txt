@@ -1,5 +1,5 @@
-Latest: North Korea SIDE:NorthKorea string fix only
-Egypt was not modified.
+Latest: Pakistan playable (#9)
+Egypt untouched. ART unchanged.
 
-See DATA_NK_SIDE_STRING_FIX_HASHES.txt
-Download: https://gofile.io/d/HbkuYr5Y
+See DATA_PAKISTAN_PLAYABLE_HASHES.txt
+Download: https://gofile.io/d/CZpAByRt

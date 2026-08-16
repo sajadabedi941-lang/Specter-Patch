@@ -1,8 +1,7 @@
-SPECTER_MASTER DATA (Egypt air existing-content audit):
-a6cfac547bd4ff46c39584cda6e639bda6a270542626a3ecd5490ef91625b1fa  _SPEC_DATA_ONE.big
+Latest: DATA Egypt scope restore
+See DATA_EGYPT_SCOPE_RESTORE_HASHES.txt
 
-ART unchanged:
-bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73  _SPEC_ART_ONE.big
+_SPEC_DATA_ONE.big sha256:
+b082b62e7d6a950f9568b9b514fdee6be65bc09c27eafa1dc46f60c14a493cfc
 
-ZIP:
-ead60f470a916a36978d287c7374062d63c79c7adcda24f624bcaaebf676c714  SPECTER_MASTER_DATA_EGYPT_AIR_EXISTING_AUDIT.zip
+Download: https://gofile.io/d/8fp6QChR

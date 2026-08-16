@@ -1,0 +1,49 @@
+NATO AIRBASE CONVERSION = PASS
+
+Exact NATO Side identifier = Nato
+Exact NATO naming prefix = Nato
+
+OLD NATO AIRFIELD:
+Object = NatoAirfield
+Construct Button = Command_ConstructNatoAirfield
+Builder Slot = 13 (NatoDozerCommandSet)
+
+NEW NATO LARGE AIRBASE:
+Object = Nato_LargeAirBase
+Construct Button = Command_ConstructNatoAirfield (Object retargeted to Nato_LargeAirBase)
+CommandSet = Nato_LargeAirBaseCommandSet
+W3D = TheAirPort.W3D
+Capacity = 16 (NumRows=4 x NumCols=4)
+Aircraft roster = ['Command_ConstructNatoJetRafaleF3', 'Command_ConstructNatoJetF35C', 'Command_ConstructNatoJetEF2000T4', 'Command_ConstructNatoJetEA18G', 'Command_ConstructNatoJetF16DBlk52', 'Command_ConstructNatoJetF35C_AA', 'Command_ConstructNatoJetEF2000T4_AA', 'Command_ConstructNatoJetEF2000T4_CAS', 'Command_ConstructNatoHelicopterAH64E', 'Command_ConstructNatoJetTornadoECR', 'Command_ConstructNatoHelicopterUH60']
+
+OLD DEFENSE SLOT:
+NatoSAMPTNG Object = NatoSAMPTNG (runtime id; user PTMG typo)
+Construct Button = Command_ConstructNatoSAMPTNG
+Builder Slot = 4 (NatoDozerCommandSet)
+
+NEW NATO HEAVY AIRBASE:
+Object = Nato_HeavyAirBase
+Construct Button = Command_ConstructNato_HeavyAirBase
+CommandSet = Nato_HeavyAirBaseCommandSet
+W3D = HXUSABigAirPort.W3D
+Capacity = 6 (NumRows=2 x NumCols=3)
+Heavy aircraft roster = ['Command_ConstructNatoJetE3AAWACS', 'Command_ConstructNatoHelicopterCH47F']
+Prerequisite = Object NatoSupplyCenter (NO Science / NO General Promotion)
+
+NatoSAMPTNG removed from builder palette = YES
+NatoSAMPTNG globally deleted = NO
+
+Pakistan LargeAirBase changed = NO
+Pakistan HeavyAirBase changed = NO
+Other factions changed = NO
+ART changed = NO
+
+Files changed:
+  Data\INI\Object\Specter\NATO\Buildings\Nato_LargeAirBase.ini (NEW)
+  Data\INI\Object\Specter\NATO\Buildings\Nato_HeavyAirBase.ini (NEW)
+  Data\INI\CommandSet.ini
+  Data\INI\CommandButton.ini
+
+before_sha=f68348c514e5ffb9af5f5372818d0029deba26b30c858691973fc2c8ab2f1b34
+after_sha=9dcdeea2d11de81025f95dc529c39d02b83a6555319187bc8d82ab6723b8ea58
+zip_sha=6a30578978e3b8f4ebacb894ea74e8c75d988720ad3a3e6527b41cbd453844ad

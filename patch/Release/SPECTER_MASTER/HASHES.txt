@@ -1,5 +1,3 @@
-Latest: Pakistan playable (#9)
+Latest: Pakistan JF-17 removed (no real model)
 Egypt untouched. ART unchanged.
-
-See DATA_PAKISTAN_PLAYABLE_HASHES.txt
-Download: https://gofile.io/d/CZpAByRt
+Download: https://gofile.io/d/1SCZBYE3

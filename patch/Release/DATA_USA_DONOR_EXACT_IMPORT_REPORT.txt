@@ -1,0 +1,128 @@
+DONOR HEAVY AIRCRAFT IMPORT = PARTIAL
+
+SOURCE AUDIT
+============
+DONOR_ART (/tmp/donor_art_extract): W3D/textures for AVOsprey, KVE737, IUAC17HXNew,
+E2avionHE.tga icons, LSFUSV22, LSFUSAC130, etc.
+
+DONOR DATA searched:
+- !TEOD_INI.big (full content scan)
+- current _SPEC_DATA_ONE.big
+- Specter patch INI tree / git history for Model= AVOsprey|KVE737|IUAC17|E2avion|LSFUSV22
+
+Result: NO donor Object/Weapon/Locomotor/CommandButton definitions exist for
+E2avionHe, E-737 (KVE737), Osprey (AVOsprey), or C-17 (IUAC17HXNew).
+Per task rule: DO NOT fake simplified clones when donor DATA is missing.
+
+--------------------------------------------------------------------
+Aircraft = AC-130
+Exact donor Object = AmericaJetSpectreGunship (Specter ScienceObjects/AC130W.ini;
+  TEOD also has AmericaJetSpectreGunship with AVSGunship mesh)
+Exact primary W3D (Specter donor) = US_AC130W
+Exact donor CommandButton = Command_SpectreGunship (SPECIAL_POWER, not UNIT_BUILD)
+Donor role/function = SpectreGunshipUpdate orbit gunship + HelixContain guns + M102
+Dependencies imported = already present (US_AC130W ART, M102, Spectre armor/loco)
+America Object used on HeavyAirBase = AmericaJetAC130 (UNCHANGED this pass)
+HeavyAirBase slot = 7
+Functionality preserved from donor = PARTIAL
+  - Shares US_AC130W + M102_105mm_Howitzer with Specter donor AC-130
+  - Full SpectreGunshipUpdate/HelixContain remains on AmericaJetSpectreGunship
+    special-power path (airfield dual-AI of that module historically crashes)
+AC-130 changed this pass = NO
+
+--------------------------------------------------------------------
+Aircraft = E-3
+Exact donor Object (active Specter) = AmericaJetE3AWACS
+Exact primary W3D = US_E3G
+Exact donor CommandButton = Command_ConstructAmericaJetE3AWACS
+Donor role/function = AWACS: SpectreGunshipUpdate + StealthDetectorUpdate +
+  SpecialAbility + AN_APY2_SAR_SCANMODE (already in USA_System.ini)
+Dependencies imported = already present
+America Object used = AmericaJetE3AWACS
+HeavyAirBase slot = 5
+Functionality preserved from donor = YES (left unchanged)
+TEOD alternate mesh AVAWACS exists but is NOT in current ART; active US_E3G
+AWACS behavior already matches donor AWACS role — not replaced.
+
+--------------------------------------------------------------------
+Aircraft = E2avionHe
+Exact donor Object = NOT FOUND
+Exact primary W3D = NOT FOUND
+Evidence found = Art textures only:
+  E2avionHE.tga / E2avionHETB.tga / AmericaE2avion.tga / E2avionEgy.tga
+Exact donor CommandButton = NOT FOUND
+Donor role/function = UNKNOWN (no Object)
+Dependencies imported = NONE
+America Object used = NONE
+HeavyAirBase slot = NONE
+Functionality preserved from donor = NO
+Classification = PARTIAL / MISSING DEPENDENCY (DATA Object + W3D)
+Note: historical Patch_America_E2C used US_E3G (E-3 duplicate) — deliberately NOT imported.
+
+--------------------------------------------------------------------
+Aircraft = E-737
+Exact donor Object = NOT FOUND
+Exact primary W3D (ART only) = KVE737.W3D (+ KVE737.dds, avionE737.tga icons)
+Exact donor CommandButton = NOT FOUND
+Donor role/function = UNKNOWN (no Object — cannot prove AEW behavior)
+Dependencies imported = NONE
+America Object used = NONE
+HeavyAirBase slot = NONE
+Functionality preserved from donor = NO
+Classification = ART COMPLETE / DATA MISSING
+
+--------------------------------------------------------------------
+Aircraft = Osprey
+Exact donor Object = NOT FOUND
+Exact primary W3D (ART only) = AVOsprey.W3D (+ _A1-A4/_D/_DA* + AVOsprey*.dds)
+  Also present: LSFUSV22*.W3D family
+Exact donor CommandButton = NOT FOUND
+Donor role/function = UNKNOWN (no Object — cannot prove VTOL/transport)
+Dependencies imported = NONE
+America Object used = NONE
+HeavyAirBase slot = NONE
+Functionality preserved from donor = NO
+Classification = ART COMPLETE / DATA MISSING
+
+--------------------------------------------------------------------
+Aircraft = C-17 Globemaster / Global Master
+Exact donor Object = NOT FOUND
+Exact primary W3D (ART only) = IUAC17HXNew.W3D (+ IUCC17THXNew.dds, C17GlobalMaster.tga)
+Exact donor CommandButton = NOT FOUND
+Donor role/function = UNKNOWN (no Object — cannot prove cargo/transport modules)
+Dependencies imported = NONE (invented AmericaJetC17Globemaster REMOVED this pass)
+America Object used = NONE
+HeavyAirBase slot = NONE (removed from CommandSet)
+Functionality preserved from donor = NO
+C-17 donor cargo behavior preserved = NO (no donor cargo Object exists to preserve)
+C-17/GlobalMaster duplicate avoided = YES (single ART family; not added)
+
+--------------------------------------------------------------------
+Aircraft = AWACS (generic)
+Resolved to = AmericaJetE3AWACS (existing)
+Duplicate avoided = YES
+No separate donor AWACS Object distinct from E-3 / E-737 / E2avionHe found
+  (TEOD AmericaJetAWACS_L* uses AVAWACS mesh — special-power science path, not
+   a unique HeavyAirBase production unit separate from E-3)
+
+--------------------------------------------------------------------
+FINAL America_HeavyAirBaseCommandSet (re-extracted):
+  1 = B-2
+  2 = B-21
+  3 = B-52
+  4 = B-1R
+  5 = E-3 AWACS
+  6 = Nuclear Tip Warhead
+  7 = AC-130 (AmericaJetAC130, unchanged)
+  13 = Rally
+  14 = Sell
+
+B-2/B-21/B-52/B-1R preserved = YES
+America_LargeAirBase changed = NO
+Other factions changed = NO
+CSF unchanged = YES
+
+MISSING TO REACH FULL PASS:
+Provide DONOR DATA (Object INI + Weapon/Locomotor/AI/Transport modules) for:
+  E2avionHe, KVE737/E-737, AVOsprey/Osprey, IUAC17 C-17 Globemaster
+Then authentic import can proceed without inventing behavior.

@@ -1,0 +1,46 @@
+STRING MANAGER HOTFIX = PASS
+
+Root cause:
+  USA Heavy Bomber Restore appended new labels to Data\English\generals.csf via
+  append_csf_label(). That left header nlabels=8157 while nstrings stayed 8144,
+  which breaks Generals String Manager initialization.
+
+Localization files changed by bomber restore:
+  Data\English\generals.csf ONLY
+
+generals.csf changed unexpectedly = YES
+
+Last working generals.csf SHA-256 =
+  e5be6c4e3bc96eb0792592c2bd6a3edc0e8a094d531024dfb50b0626fc1484b3
+  (from SPECTER_MASTER_DATA_FIVE_FACTION_DUAL_AIRBASE.zip / _SPEC_DATA_ONE.big
+   sha256 894ce1a3238d200cf5e02c838e691198a31d75b2b88407c9604ae6c95d54f8ba)
+
+Broken generals.csf SHA-256 =
+  6c514df7399a919bbb2be7aa2f564b3809e9b70c3c80cbcb53844c500f0a90b7
+  size before=1154378  size after=1155398  binary identical=NO
+
+Final generals.csf SHA-256 =
+  e5be6c4e3bc96eb0792592c2bd6a3edc0e8a094d531024dfb50b0626fc1484b3
+
+Final CSF equals last working version = YES
+(re-extracted from rebuilt DATA BIG and compared byte-for-byte)
+
+Duplicate CSF copies found = 1
+  Data\English\generals.csf
+Duplicate conflict removed = NO (none introduced; only the one canonical path)
+
+USA HeavyAirBase preserved = YES
+B-2 preserved = YES (AmericaJetB2Spirit slot 1)
+B-21 preserved = YES (AmericaJetB21Clean slot 2)
+B-52 preserved = YES (AmericaJetB52H slot 3)
+B-1R preserved = YES (slot 4)
+E-3 preserved = YES (slot 5)
+
+ART rolled back = NO
+Other factions changed = NO
+
+Final DATA BIG sha256=
+  6e68b930ee0f3df2d8537c26b9dfad0473ef0b069d8e44a6b41bbb588f8910b0
+
+Package (DATA only):
+  https://litter.catbox.moe/wsetsx.zip

@@ -1,0 +1,49 @@
+USA HEAVY AIRCRAFT DONOR EXPANSION = PASS
+
+REQUESTED:
+
+AC-130 = FOUND / READY
+Object = AmericaJetAC130 (from prior Patch_America_AC130Spectre JetAI production object)
+W3D = US_AC130W
+Added = YES (slot 7)
+Weapon = M102_105mm_Howitzer (existing Spectre howitzer weapon; Patch_Weapon_SpectreHowitzer absent from active DATA)
+
+E-3 = Existing AmericaJetE3AWACS reused = YES
+Duplicate added = NO
+
+E2avionHe =
+Actual identified aircraft = UI/texture family only (E2avionHE.tga / AmericaE2avion.tga / E2avionEgy.tga)
+Primary W3D = NOT FOUND in DONOR_ART
+Matching DATA Object = NOT FOUND (historical Patch_America_E2C used US_E3G = E-3 duplicate; NOT used)
+Added = NO
+Classification = PARTIAL (icon textures only) / NOT READY
+
+E-737 =
+ART = KVE737.W3D + KVE737.dds + avionE737.tga FOUND
+Object = NOT FOUND
+Added = NO
+Classification = ART COMPLETE / DATA MISSING
+
+Osprey =
+Actual variant ART = AVOsprey (+ LSFUSV22 family also present)
+Object = NOT FOUND
+Added = NO
+Classification = ART COMPLETE / DATA MISSING
+
+Global Master / C17 Global Master =
+Same family = YES (C17GlobalMaster.tga + IUAC17HXNew.W3D + IUCC17THXNew.dds)
+Actual aircraft = C-17 Globemaster
+Object = AmericaJetC17Globemaster (restored from prior Patch_America_C17 production object; mesh retargeted to real donor IUAC17HXNew)
+W3D = IUAC17HXNew
+Added once = YES (slot 8)
+
+AWACS =
+Resolved to AmericaJetE3AWACS (existing HeavyAirBase E-3)
+Duplicate avoided = YES
+
+TOTAL UNIQUE NEW AIRCRAFT ADDED = 2 (AC-130, C-17)
+
+B-2/B-21/B-52/B-1R/E-3 preserved = YES
+America_LargeAirBase changed = NO
+Other factions changed = NO
+CSF unchanged (String Manager safe)

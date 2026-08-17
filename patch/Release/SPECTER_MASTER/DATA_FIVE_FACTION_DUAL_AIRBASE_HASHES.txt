@@ -1,0 +1,33 @@
+FIVE-FACTION DUAL AIRBASE CLEANUP = PASS
+
+CAUSE OF 508 FILES:
+Branch cursor/five-faction-dual-airbase-4b13 was created from egypt/usa history.
+git diff vs main included ALL prior faction work. The five-faction commit itself
+was only 3 files. Not CRLF/encoding mass rewrite of gameplay INIs in that commit.
+
+CLEANUP:
+- Restored Data\English\generals.csf to pre-task bytes (USA-airfield baseline)
+- Retargeted Iraq/Russia/China/Israel Heavy TextLabel/DescriptLabel to existing
+  CONTROLBAR:ConstructAmerica_HeavyAirBase / ToolTipConstructAmerica_HeavyAirBase
+- No CSF rewrite; append-only entries removed by full CSF restore
+- Gameplay airbase mappings UNCHANGED
+
+ISRAEL SIDE VERIFICATION:
+FactionAmericaAirForceGeneral Side = AmericaAirForceGeneral
+Existing Israel Dozer Side = AmericaAirForceGeneral
+Existing AirF_AmericaAirfield Side = AmericaAirForceGeneral
+Israel_LargeAirBase / Israel_HeavyAirBase Side = AmericaAirForceGeneral
+(Preserved — matches active working Israel builder path)
+
+CHINA SLOT 2:
+BEFORE = ;2  = Command_ConstructChinaInternetCenter  (commented = empty/inactive)
+AFTER  = 2  = Command_ConstructChina_HeavyAirBase
+Did not overwrite an active China construction command.
+
+DATA sha256 = 894ce1a3238d200cf5e02c838e691198a31d75b2b88407c9604ae6c95d54f8ba
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 1776709003212dbf93d809d12c7c19bd7bb5debf4a80614871a4ac85d7ecfe03
+ZIP path    = patch/Release/SPECTER_MASTER_DATA_FIVE_FACTION_DUAL_AIRBASE.zip
+ZIP size    = 306446265
+
+DOWNLOAD = https://litter.catbox.moe/5yvjv3.zip

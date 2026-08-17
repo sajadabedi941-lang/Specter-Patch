@@ -1,0 +1,58 @@
+USA DONOR E-3 REPLACEMENT = PASS
+
+OLD BROKEN E-3:
+Object = AmericaJetE3AWACS (legacy USA_System block)
+W3D = US_E3G
+problem = SpectreGunshipUpdate/AN_APY2 hybrid AWACS line; not donor USAE3
+
+DONOR E-3:
+Object = USAE3
+INI path = DONOR_INI.rar → INI/object/America.ini (Object USAE3)
+Primary W3D = E3 (+ chj10_r landing gear draw)
+CommandButton = Command_ConstructAmericaE3 (ButtonImage E3USA)
+AWACS behaviors = VisionRange 1000 + ShroudClearingRange 1610 + ECM WeaponSet (EA_18AntiRadarECMDevice / BuildingECM); JetAIUpdate; no StealthDetector in donor
+Vision = 1000 / Shroud 1610
+Stealth detection = NO (not present in donor USAE3)
+Weapons = EA_18AntiRadarECMDevice + EA_18AntiRadarBuildingECMDevice (SUBDUAL ECM; no guns/missiles/bombs)
+
+FINAL USA E-3:
+Object = AmericaJetE3AWACS
+Primary W3D = E3
+CommandButton = Command_ConstructAmericaJetE3AWACS (ButtonImage E3USA)
+HeavyAirBase slot = 5
+Donor DATA used = YES
+Donor ART used = YES
+Functionally matches donor = YES (USA Side + Ignore_Prerequisites + America countermeasures rename only)
+Buildable = YES
+AWACS works = YES (donor vision/ECM/JetAI)
+
+Old broken implementation still active = NO
+Duplicate E-3 = NO
+AC-130 changed = NO
+C-17 changed = NO
+E-737 changed = NO
+E2avionHE changed = NO
+V-22 changed = NO
+B-2/B-21/B-52/B-1R changed = NO
+Other factions changed = NO
+
+Method = Replace Object AmericaJetE3AWACS block inside USA_System.ini with donor USAE3 implementation (keep Object name for Slot 5 compatibility).
+
+CommandSet America_HeavyAirBaseCommandSet
+  1  = Command_ConstructAmericaJetB2Spirit
+  2  = Command_ConstructAmericaJetB21
+  3  = Command_ConstructAmericaJetB52H
+  4  = Command_ConstructAmericaJetB1R
+  5  = Command_ConstructAmericaJetE3AWACS
+  6  = Command_Upgrade_NuclearTipWarhead2
+  7  = Command_ConstructAmericaJetAC130
+  8  = Command_ConstructAmericaJetC17Globemaster
+  9  = Command_ConstructAmericaJetE737AEW
+  10 = Command_ConstructAmericaE2avionHE
+  11 = Command_ConstructAmericaV22
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+ART added/replaced: ['Art\\W3D\\E3.W3D', 'Art\\W3D\\chj10_r.W3D', 'Art\\Textures\\avE3.tga', 'Art\\Textures\\avE3ACC.tga', 'Art\\Textures\\E3USA.tga', 'Art\\Textures\\E3USATB.tga', 'Art\\Textures\\ChinaGear.dds', 'Art\\Textures\\housecolor.dds', 'Art\\Textures\\LSFJetAftburn.dds', 'Art\\Textures\\exlnzflar10.dds']
+AC130 sha256 = 6933bbca1f6e036324e159170c369b2be523017a678b4b39dd88535a3a75343a

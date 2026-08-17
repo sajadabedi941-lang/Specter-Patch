@@ -1,0 +1,45 @@
+E-737 COMPATIBILITY REBUILD = PASS
+
+Original donor Object directly compatible = NO
+Minimal Specter-compatible Object created = YES
+Final Object = AmericaJetE737AEW
+Primary W3D = KVE737
+Skeleton source = working AmericaJetE3AWACS (donor USAE3 runtime)
+
+Original donor modules tested =
+  Draw W3DModelDraw / KVE737 ART = SUPPORTED (kept)
+  AliasConditionState with '=' = SUPPORTED (E-3 skeleton uses this form)
+  VisionRange 1000 / ShroudClearingRange 1610 = SUPPORTED Group A (kept)
+  AirplaneArmor / CountermeasuresAirplaneArmor = SUPPORTED (kept)
+  JetAIUpdate + AmericaF16ALocomotor + BasicJetTaxiLocomotor = SUPPORTED via E-3 bridge
+  JetSlowDeathBehavior / PhysicsBehavior / FlammableUpdate / TransitionDamageFX = SUPPORTED
+  EjectPilotDie / ExperienceScalarUpgrade = SUPPORTED (omitted from minimal first boot Object)
+  WeaponSet EA_18AntiRadar* ECM = SUPPORTED in DATA but OMITTED (no offensive / no ECM attack)
+  CountermeasuresBehavior = SUPPORTED; donor LSF upgrade names avoided; AmericaCountermeasures used
+  StealthDetectorUpdate = NOT in donor (none added)
+Unsupported / rejected for active load =
+  Full unchanged Object avionE737 = NOT COMPATIBLE (crashes Specter even as exact donor)
+  Donor Draw using bare 'AliasConditionState REALLYDAMAGED' (no '=') = AVOIDED; E-3 uses '=' form
+  Donor Upgrade_LSFCountermeasures / LSFusCountermeasureFlare = AVOIDED (only on E2/donor; America path used)
+  Donor WeaponSet ECM devices = OMITTED by design (AEW only, no weapons)
+Exact incompatible module/property =
+  Object avionE737 as a whole (runtime reject when loaded directly)
+  bare AliasConditionState without '=' inside donor Draw (not used in rebuilt Object)
+  Upgrade_LSFCountermeasures / LSFusCountermeasureFlare (not used; AmericaCountermeasures bridge)
+  WeaponSet PRIMARY/SECONDARY EA_18AntiRadarECMDevice (intentionally omitted)
+
+AEW functionality source = DONOR vision/shroud values + WORKING E-3 COMPATIBILITY BRIDGE (Draw structure/AI/physics/lifecycle/countermeasures); no StealthDetector (donor had none); no ECM weapons
+Offensive weapons = NONE
+
+HeavyAirBase Slot 9 preserved = YES
+E-3 changed = NO
+AC-130 changed = NO
+C-17 changed = NO
+E2avionHE changed = NO
+V-22 changed = NO
+Bombers changed = NO
+
+Object avionE737 final count = 0
+Object AmericaJetE737AEW final count = 1
+source SHA256 = 35a1c4d16a6ca4858ea389acf0282e64b27d418897a5cab2a56ebfe2a3d66b8a
+packed SHA256 = 35a1c4d16a6ca4858ea389acf0282e64b27d418897a5cab2a56ebfe2a3d66b8a

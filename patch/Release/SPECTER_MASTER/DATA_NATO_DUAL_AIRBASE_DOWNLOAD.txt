@@ -1,0 +1,11 @@
+SPECTER_MASTER_DATA_NATO_DUAL_AIRBASE.zip
+
+Contains ONLY: _SPEC_DATA_ONE.big
+
+NATO dual airbase conversion (Nato_LargeAirBase + Nato_HeavyAirBase).
+Pakistan unchanged. ART unchanged.
+
+DATA sha256 = 9dcdeea2d11de81025f95dc529c39d02b83a6555319187bc8d82ab6723b8ea58
+ZIP sha256  = 6a30578978e3b8f4ebacb894ea74e8c75d988720ad3a3e6527b41cbd453844ad
+
+Download: https://litter.catbox.moe/lfghmm.zip

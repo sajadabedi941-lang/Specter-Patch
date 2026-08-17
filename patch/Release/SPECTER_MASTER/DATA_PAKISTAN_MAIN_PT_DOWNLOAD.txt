@@ -1,0 +1,11 @@
+SPECTER DATA — Pakistan registered in main PlayerTemplate.ini
+
+Egypt untouched. No Pakistan gameplay changes.
+
+Moved FactionPakistan from PlayerTemplate_SpecterPatch.ini into
+Data\INI\PlayerTemplate.ini (same file as Iran/USA/Russia).
+Duplicate SpecterPatch block removed. Exactly one FactionPakistan.
+
+Download: https://gofile.io/d/BFW6Z6g7
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged

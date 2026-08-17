@@ -1,0 +1,67 @@
+EGYPT AIRCRAFT AUDIT — CURRENT MASTER _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big
+================================================================================
+Rule: only aircraft that already exist as Object + W3D/texture + Weapon in current archives.
+No invented names. No new ART imported.
+
+PLAYABLE AIRFIELD ROSTER (Egypt_AirfieldCommandSet) — ALL VERIFIED IN CURRENT ARCHIVES
+--------------------------------------------------------------------------------
+1) Egypt_Mig-29A
+   INI: Egyptian Armed Forces/Airforce/Egypt_Mig-29A.ini
+   Based on: Iraq_Mig-29A family
+   Model/W3D: Irq_Mig29A (Art/W3D/Irq_Mig29A.W3D) — EXISTS
+   Weapons: OK | Side: Egypt
+
+2) Egypt_MirageF1_Bq
+   INI: .../Egypt_MirageF1-Bq.ini
+   Based on: Iraq_MirageF1_Bq
+   Model/W3D: Irq_MirageF1_Bq — EXISTS | Weapons: OK | Side: Egypt
+
+3) Egypt_Su-25K
+   INI: .../Egypt_Su-25K.ini
+   Based on: Iraq_Su-25K / IranJetSU25K family
+   Model/W3D: Irq_Su25k — EXISTS | Weapons: OK | Side: Egypt
+
+4) Egypt_Mi-8T
+   INI: .../Egypt_Mi-8.ini
+   Based on: Iraq_Mi-8T_S / Irq_Mi8T multi-faction
+   Model/W3D: Irq_Mi8T — EXISTS | Weapons: OK | Side: Egypt
+
+5) Egypt_IL-76
+   INI: .../ScienceObjects/IL-76.ini
+   Based on: Iraq IL-76
+   Model/W3D: Iraq_IL-76 — EXISTS | Side: Egypt
+
+6) Egypt_Rafale
+   INI: .../Egypt_Rafale.ini
+   Based on: France_Rafale / ArabicArmy_Rafale_DM art family
+   Model/W3D: Egy_RafaleM, Egy_RafaleMD — EXISTS in ART | Weapons: OK | Side: Egypt
+
+7) Egypt_F16C
+   INI: .../Egypt_F16C.ini
+   Model/W3D: Egy_F16C, Egy_F16C_D — EXISTS in ART | Weapons: OK | Side: Egypt
+   Duplicate Object EgyptJetF16C (F16C.ini) uses same art — kept; Side corrected to Egypt
+
+8) Egypt_Mig29M2
+   INI: .../Egypt_Mig29M2.ini
+   Model/W3D: Egy_Mig29M2, Egy_Mig29M2D — EXISTS | Weapons: OK | Side: Egypt
+   Duplicate EgyptJetMig29M2 — kept; Side corrected to Egypt
+
+ADDITIONAL VERIFIED EGYPT AIR OBJECTS (in archives, not all on airfield CS)
+--------------------------------------------------------------------------------
+- EgyptVehicleAH64: Egy_AH64D / Egy_AH64D_D — EXISTS; Side GLA->Egypt
+- EgyptVehicleCh47: US_CH47F — EXISTS in SPEC ART
+  DATA FIX: removed AVChinook_* model refs (NOT present in _SPEC_ART_ONE.big).
+  Portrait Nat_ch47 -> us_airfield; Side America->Egypt
+- EgyptVehicleKA52 / V2: Arb_Ka52 — EXISTS; Side GLA->Egypt; portrait->arb_ka52
+- EgyptVehicleMi17: Egy_MI17 — EXISTS; Side China->Egypt
+- EgyptJetRafaleDM / _AA: Egy_RafaleM — EXISTS; Side GLA->Egypt
+- EgyptJetSU35BM: Egy_SU35 — EXISTS (ArabicArmy_Su35 family); Side GLA->Egypt
+
+NOT CURRENTLY AVAILABLE IN GAME
+--------------------------------------------------------------------------------
+No new real-world Egyptian airframes were invented or added.
+Any desired type without a proven Object+W3D already in these BIG archives
+must wait for a dedicated import step.
+
+ART BIG: unchanged
+DATA BIG: Side corrections + CH47 SPEC-ART compliance only

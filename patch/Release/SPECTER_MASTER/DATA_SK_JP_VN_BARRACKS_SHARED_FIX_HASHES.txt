@@ -1,0 +1,75 @@
+DATA sha256=e9a9930eee1bd3f427407c92d417f8897d92fb8d39f5735362e3ab84fab3fb9b
+ART sha256=74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 unchanged=True
+NK barracks unchanged=True
+OVERALL=PASS
+Changed:
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\CommandSet.ini
+
+SouthKorea:
+  Final file = Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Object count in FINAL BIG = 1
+  Side = SouthKorea
+  CommandSet = SouthKorea_BarracksCommandSet (count=1)
+  Construct button = Command_ConstructSouthKorea_Barracks_SAFE -> SouthKorea_Barracks
+  Rebuilt from North Korea = YES
+  Iraq content removed = YES
+  Encoding = latin-1/CRLF
+  BOM = False
+  Null bytes = False
+  Balanced Object/End = YES
+  Nested Object = NO
+  Duplicate Object = NO
+  Iraq identity leak = NO
+  Correct Side = YES
+  CommandSet resolves = YES
+  Missing buttons = none
+  Missing units = none
+  Parse audit = PASS []
+  Fallback used = NO
+
+Japan:
+  Final file = Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Object count in FINAL BIG = 1
+  Side = Japan
+  CommandSet = Japan_BarracksCommandSet (count=1)
+  Construct button = Command_ConstructJapan_Barracks_SAFE -> Japan_Barracks
+  Rebuilt from North Korea = YES
+  Iraq content removed = YES
+  Encoding = latin-1/CRLF
+  BOM = False
+  Null bytes = False
+  Balanced Object/End = YES
+  Nested Object = NO
+  Duplicate Object = NO
+  Iraq identity leak = NO
+  Correct Side = YES
+  CommandSet resolves = YES
+  Missing buttons = none
+  Missing units = none
+  Parse audit = PASS []
+  Fallback used = NO
+
+Vietnam:
+  Final file = Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Object count in FINAL BIG = 1
+  Side = Vietnam
+  CommandSet = Vietnam_BarracksCommandSet (count=1)
+  Construct button = Command_ConstructVietnam_Barracks_SAFE -> Vietnam_Barracks
+  Rebuilt from North Korea = YES
+  Iraq content removed = YES
+  Encoding = latin-1/CRLF
+  BOM = False
+  Null bytes = False
+  Balanced Object/End = YES
+  Nested Object = NO
+  Duplicate Object = NO
+  Iraq identity leak = NO
+  Correct Side = YES
+  CommandSet resolves = YES
+  Missing buttons = none
+  Missing units = none
+  Parse audit = PASS []
+  Fallback used = NO

@@ -1,0 +1,87 @@
+GERMANY:
+PlayerTemplate = FactionGermany
+Side = Germany
+DisplayName = INI:FactionGermany
+ControlBar = Germany8x6
+CommandCenter = GermanyCommandCenter
+Dozer = GermanyVehicleDozer
+Dozer CommandSet = GermanyDozerCommandSet
+WarFactory = GermanyWarFactory
+Barracks = GermanyBootCamp
+LargeAirBase = Germany_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Germany_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Germany
+PLAYABLE = YES
+GERMANY CLONE = PASS
+
+FRANCE:
+PlayerTemplate = FactionFrance
+Side = France
+DisplayName = INI:FactionFrance
+ControlBar = France8x6
+CommandCenter = FranceCommandCenter
+Dozer = FranceVehicleDozer
+Dozer CommandSet = FranceDozerCommandSet
+WarFactory = FranceWarFactory
+Barracks = FranceBootCamp
+LargeAirBase = France_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = France_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:France
+PLAYABLE = YES
+FRANCE CLONE = PASS
+
+BRITAIN:
+PlayerTemplate = FactionBritain
+Side = Britain
+DisplayName = INI:FactionBritain
+ControlBar = Britain8x6
+CommandCenter = BritainCommandCenter
+Dozer = BritainVehicleDozer
+Dozer CommandSet = BritainDozerCommandSet
+WarFactory = BritainWarFactory
+Barracks = BritainBootCamp
+LargeAirBase = Britain_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Britain_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Britain
+PLAYABLE = YES
+BRITAIN CLONE = PASS
+
+ITALY:
+PlayerTemplate = FactionItaly
+Side = Italy
+DisplayName = INI:FactionItaly
+ControlBar = Italy8x6
+CommandCenter = ItalyCommandCenter
+Dozer = ItalyVehicleDozer
+Dozer CommandSet = ItalyDozerCommandSet
+WarFactory = ItalyWarFactory
+Barracks = ItalyBootCamp
+LargeAirBase = Italy_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Italy_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Italy
+PLAYABLE = YES
+ITALY CLONE = PASS
+
+NATO CHANGED FUNCTIONALLY = NO
+PAKISTAN CHANGED = NO
+SAUDI ARABIA CHANGED = NO
+UAE CHANGED = NO
+INDIA CHANGED = NO
+SYRIA CHANGED = NO
+EGYPT CHANGED = NO
+
+MISSING SIDE STRINGS = 0
+UNRESOLVED PURCHASESCIENCE BUTTONS = 0
+UNRESOLVED SCIENCES = 0
+
+DATA sha256 = 72901a9e9deff2934a3a3842e8da53e8ecd19f0d580709e4d8c28f4d3e02cdaf
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = a3721edd01e4f9323d71c5e94e543c280b6798cf6e15577f27dbfb55bf850686

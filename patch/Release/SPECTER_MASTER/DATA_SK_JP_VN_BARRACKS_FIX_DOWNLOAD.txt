@@ -6,5 +6,6 @@ Repair: rebuilt Barracks from current NorthKorea_Barracks; added country Barrack
 DATA sha256 = ac15ae44783f8ec3c117f82d3a3de0d7a80624bfec02e51bd72567cb5bffabde
 ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
 ZIP  sha256 = c241ee6e2b737202b0bbf605b333e0469a552f1137bfa5ba3430464ab5d8b4ba
-DOWNLOAD = https://gofile.io/d/aB0eKzVm
-LOCAL = /workspace/patch/Release/SPECTER_MASTER_DATA_SK_JP_VN_BARRACKS_FIX.zip
+DOWNLOAD = https://litter.catbox.moe/i2ulfl.zip
+MIRROR  = https://gofile.io/d/aB0eKzVm
+LOCAL   = /workspace/patch/Release/SPECTER_MASTER_DATA_SK_JP_VN_BARRACKS_FIX.zip

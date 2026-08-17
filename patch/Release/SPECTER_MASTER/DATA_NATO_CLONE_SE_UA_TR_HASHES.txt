@@ -1,0 +1,250 @@
+REPORT SWEDEN:
+PlayerTemplate = FactionSweden
+Side = Sweden
+DisplayName = INI:FactionSweden
+ControlBar = Sweden8x6
+CommandCenter = SwedenCommandCenter
+Dozer = SwedenVehicleDozer
+Dozer CommandSet = SwedenDozerCommandSet
+WarFactory = SwedenWarFactory
+Barracks = SwedenBootCamp
+LargeAirBase = Sweden_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Sweden_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Sweden => Swedish Armed Forces
+PLAYABLE = YES
+SWEDEN CLONE = PASS
+
+REPORT UKRAINE:
+PlayerTemplate = FactionUkraine
+Side = Ukraine
+DisplayName = INI:FactionUkraine
+ControlBar = Ukraine8x6
+CommandCenter = UkraineCommandCenter
+Dozer = UkraineVehicleDozer
+Dozer CommandSet = UkraineDozerCommandSet
+WarFactory = UkraineWarFactory
+Barracks = UkraineBootCamp
+LargeAirBase = Ukraine_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Ukraine_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Ukraine => Ukrainian Armed Forces
+PLAYABLE = YES
+UKRAINE CLONE = PASS
+
+REPORT TURKEY:
+PlayerTemplate = FactionTurkey
+Side = Turkey
+DisplayName = INI:FactionTurkey
+ControlBar = Turkey8x6
+CommandCenter = TurkeyCommandCenter
+Dozer = TurkeyVehicleDozer
+Dozer CommandSet = TurkeyDozerCommandSet
+WarFactory = TurkeyWarFactory
+Barracks = TurkeyBootCamp
+LargeAirBase = Turkey_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Turkey_HeavyAirBase
+PurchaseScience validation = REUSES SCIENCE_NATO_CommandSetRank* (no invented country sciences)
+SIDE string = SIDE:Turkey => Turkish Armed Forces
+PLAYABLE = YES
+TURKEY CLONE = PASS
+
+MISSING SIDE STRINGS = 0
+UNRESOLVED PURCHASESCIENCE BUTTONS = 0
+UNRESOLVED SCIENCES = 0
+UNRESOLVED COMMAND BUTTONS = 0
+UNRESOLVED COMMANDSETS = 0
+
+NATO FUNCTIONALLY CHANGED = NO
+GERMANY CHANGED = NO
+FRANCE CHANGED = NO
+BRITAIN CHANGED = NO
+ITALY CHANGED = NO
+PAKISTAN CHANGED = NO
+SAUDI ARABIA CHANGED = NO
+UAE CHANGED = NO
+INDIA CHANGED = NO
+SYRIA CHANGED = NO
+EGYPT CHANGED = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\PlayerTemplate.ini
+- Data\INI\ControlBarScheme.ini
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\English\generals.csf
+- Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\CortaleMK3.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\IRIST_SLX.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\TRML4D.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Airfield.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Camp.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\GM406.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\M777.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Mantis.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Nato_HeavyAirBase.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Nato_LargeAirBase.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\PowerStation.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\StrategyCenter.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\SupplyCenter.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\EA18G.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\EF2000_T4.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\EF2000_T4_AA.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\EF2000_T4_CAS.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\F16DBlk52.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\F35A.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\F35A_AA.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\FixedWings\Rafale_B_F3.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\AntiAirOperator.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\AntiTankOperator.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\ATGM_Team.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\HeavySniper.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Machinegunner.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Mechanized.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\MortarTeam.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Nato_Systems.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Rotary\AH64E.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Rotary\CH47F.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Rotary\UH60.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\SamSite\GM406R.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\SamSite\IRIST_Site.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\SamSite\IRIST_SLM_Launcher.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\SamSite\IRIST_SLM_Launcher_ABM.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\SamSite\TRML4D_AI.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\ScienceObjects\E3A.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Tracked\Leopard2A7.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Tracked\Puma.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Tracked\Puma_Mech.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\UAV\Heron.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\UAV\Mq9.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\UAV\Mq9_AI.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\UAV\RQ4_AI.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\UAV\Switchblade600.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\Caesar.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\Centauro B2.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\Dozer.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\M142.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\M142_ATACMS.ini
+- Data\INI\Object\Specter\Swedish Armed Forces\Wheleed\VBCI.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\CortaleMK3.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\IRIST_SLX.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\TRML4D.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Airfield.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Camp.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\GM406.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\M777.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Mantis.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Nato_HeavyAirBase.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Nato_LargeAirBase.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\PowerStation.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\StrategyCenter.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\SupplyCenter.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\EA18G.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\EF2000_T4.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\EF2000_T4_AA.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\EF2000_T4_CAS.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\F16DBlk52.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\F35A.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\F35A_AA.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\FixedWings\Rafale_B_F3.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\AntiAirOperator.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\AntiTankOperator.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\ATGM_Team.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\HeavySniper.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Machinegunner.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Mechanized.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\MortarTeam.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Nato_Systems.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\AH64E.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\CH47F.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\UH60.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\GM406R.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\IRIST_Site.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\IRIST_SLM_Launcher.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\IRIST_SLM_Launcher_ABM.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\TRML4D_AI.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\ScienceObjects\E3A.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Tracked\Leopard2A7.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Tracked\Puma.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Tracked\Puma_Mech.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\Heron.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\Mq9.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\Mq9_AI.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\RQ4_AI.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\Switchblade600.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\Caesar.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\Centauro B2.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\Dozer.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\M142.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\M142_ATACMS.ini
+- Data\INI\Object\Specter\Ukrainian Armed Forces\Wheleed\VBCI.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\CortaleMK3.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\IRIST_SLX.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\TRML4D.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Airfield.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Camp.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\GM406.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\M777.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Mantis.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Nato_HeavyAirBase.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Nato_LargeAirBase.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\PowerStation.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\StrategyCenter.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\SupplyCenter.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\EA18G.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\EF2000_T4.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\EF2000_T4_AA.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\EF2000_T4_CAS.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\F16DBlk52.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\F35A.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\F35A_AA.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\FixedWings\Rafale_B_F3.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\AntiAirOperator.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\AntiTankOperator.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\ATGM_Team.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\HeavySniper.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Machinegunner.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Mechanized.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\MortarTeam.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Nato_Systems.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Rotary\AH64E.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Rotary\CH47F.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Rotary\UH60.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\SamSite\GM406R.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\SamSite\IRIST_Site.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\SamSite\IRIST_SLM_Launcher.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\SamSite\IRIST_SLM_Launcher_ABM.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\SamSite\TRML4D_AI.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\ScienceObjects\E3A.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Tracked\Leopard2A7.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Tracked\Puma.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Tracked\Puma_Mech.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\UAV\Heron.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\UAV\Mq9.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\UAV\Mq9_AI.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\UAV\RQ4_AI.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\UAV\Switchblade600.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\Caesar.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\Centauro B2.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\Dozer.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\M142.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\M142_ATACMS.ini
+- Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\VBCI.ini
+
+DATA sha256 = 41ae7a1745c4864243a38f3fbb6fe5826033d63c95e96b67c8a5144229b3accf
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 0614ad6c55dad5fce459e5a7e37a47a7a19416a365e449816b98079217fcbcaa
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_NATO_CLONE_SE_UA_TR.zip
+ZIP size    = 306076036
+DOWNLOAD = https://litter.catbox.moe/zojxiw.zip

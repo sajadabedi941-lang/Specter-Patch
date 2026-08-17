@@ -1,0 +1,44 @@
+FIVE-FACTION DUAL AIRBASE CLEANUP = PASS
+
+CAUSE OF 508-FILE PR:
+Branch was previously cut from egypt/usa history, so PR vs main included
+~500 unrelated prior commits. Not CRLF/encoding mass-churn in this task.
+Five-faction commit itself was always 3 files.
+
+GIT CLEANUP:
+Branch rewritten from origin/main. PR now contains ONLY:
+1. patch/tools/five_faction_dual_airbase_from_pakistan.py
+2. patch/Release/SPECTER_MASTER/DATA_FIVE_FACTION_DUAL_AIRBASE_HASHES.txt
+3. patch/Release/SPECTER_MASTER/DATA_FIVE_FACTION_DUAL_AIRBASE_DOWNLOAD.txt
+
+TOTAL FILES CHANGED (git vs main) = 3
+
+GENERALS.CSF:
+Was append-only (+1008 bytes) for 4 new HeavyAirBase labels.
+REVERTED to pre-task CSF bytes.
+Heavy buttons now reuse existing:
+  CONTROLBAR:ConstructAmerica_HeavyAirBase
+  CONTROLBAR:ToolTipConstructAmerica_HeavyAirBase
+generals.csf UNCHANGED in final BIG vs USA-airfield baseline.
+
+ISRAEL SIDE:
+FactionAmericaAirForceGeneral Side = AmericaAirForceGeneral
+Dozer Side = AmericaAirForceGeneral
+Existing AirF buildings Side = AmericaAirForceGeneral
+Israel_LargeAirBase / Israel_HeavyAirBase Side = AmericaAirForceGeneral
+PRESERVED (matches active working Israel builder path).
+
+CHINA SLOT 2:
+BEFORE = ;2 = Command_ConstructChinaInternetCenter (commented/inactive)
+AFTER  = 2 = Command_ConstructChina_HeavyAirBase
+Did not overwrite an active China construction command.
+
+GAMEPLAY MAPPINGS PRESERVED = YES
+PAKISTAN CHANGED = NO
+USA CHANGED = NO
+ART CHANGED = NO
+
+DATA sha256 = 894ce1a3238d200cf5e02c838e691198a31d75b2b88407c9604ae6c95d54f8ba
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 1776709003212dbf93d809d12c7c19bd7bb5debf4a80614871a4ac85d7ecfe03
+DOWNLOAD = https://litter.catbox.moe/5yvjv3.zip

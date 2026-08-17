@@ -1,0 +1,10 @@
+North Korea → South Korea / Japan / Vietnam full independent playable clones
+(DATA-only; ART unchanged)
+
+Template: CURRENT North Korea (incl. Large/Heavy airbases, HQ-9 Site, C-RAM)
+Science: REUSES SCIENCE_NorthKorea_CommandSetRank* + SpecialPowerShortcutNorthKorea
+
+DATA sha256 = fe4506323af36d0b7678a9b435e1ae684da7ba9830932c2561123ab866f724b9
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = b4acb8d619c9c28e15fb8ecf34f2a45b9465b37752a1dedfb864d6430c503dcc
+DOWNLOAD = https://litter.catbox.moe/5c33xf.zip

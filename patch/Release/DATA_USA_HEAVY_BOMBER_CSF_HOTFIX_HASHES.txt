@@ -1,0 +1,4 @@
+_SPEC_DATA_ONE.big sha256=6e68b930ee0f3df2d8537c26b9dfad0473ef0b069d8e44a6b41bbb588f8910b0
+generals.csf (final=last working) sha256=e5be6c4e3bc96eb0792592c2bd6a3edc0e8a094d531024dfb50b0626fc1484b3
+generals.csf (broken bomber restore) sha256=6c514df7399a919bbb2be7aa2f564b3809e9b70c3c80cbcb53844c500f0a90b7
+ZIP=SPECTER_MASTER_DATA_USA_HEAVY_BOMBER_CSF_HOTFIX.zip

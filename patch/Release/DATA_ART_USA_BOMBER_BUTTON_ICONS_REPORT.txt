@@ -1,0 +1,50 @@
+BUTTON ICON RESTORE = PASS
+
+Gameplay Objects changed = NO
+Weapons changed = NO
+Flight behavior changed = NO
+Aircraft W3Ds changed = NO
+HeavyAirBase CommandSet changed = NO
+HeavyAirBase parking changed = NO
+Other aircraft changed = NO
+Other factions changed = NO
+
+B-2:
+CommandButton = Command_ConstructAmericaJetB2Spirit
+Old ButtonImage = B2-ic_L
+Donor ButtonImage = B2DropBombTB
+Final ButtonImage = B2DropBombTB
+Donor icon physically present in ART = YES
+
+B-52:
+CommandButton = Command_ConstructAmericaJetB52H
+Old ButtonImage = us_b52h
+Donor ButtonImage = B52
+Final ButtonImage = B52
+Donor icon physically present in ART = YES
+
+B-1/B-1R:
+CommandButton = Command_ConstructAmericaJetB1R
+Old ButtonImage = us_b1r
+Donor ButtonImage = B1
+Final ButtonImage = B1
+Donor icon physically present in ART = YES
+
+AC-130:
+CommandButton = Command_ConstructAmericaJetAC130
+Old ButtonImage = us_ac130
+Donor ButtonImage = Cargo130
+Final ButtonImage = Cargo130
+Donor icon physically present in ART = YES
+
+B-2 icon visually depicts B-2 = YES (donor B2DropBombTB; donor USAB2 ButtonImage UH60 rejected)
+B-52 icon visually depicts B-52 = YES (donor B52 / B52TB)
+B-1 icon visually depicts B-1 = YES (donor B1 / B1TB)
+AC-130 icon visually depicts AC-130 = YES (donor Cargo130 / Cargo130TB)
+Pink/missing icons = 0
+Generic placeholder icons = 0
+
+DATA sha256 = cfe3e71cd83b18bc6e37a5da41ae2e1f8ea4c375c6e278293f7f6ae950c7ba77
+ART sha256 = 1d25108af80c329d817502f3167f3d238701e830409f6d4784b11c44bf3e5c3d
+ZIP = SPECTER_MASTER_DATA_ART_USA_BOMBER_BUTTON_ICONS.zip
+URL = https://gofile.io/d/sYKZQQ8c

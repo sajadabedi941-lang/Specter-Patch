@@ -1,0 +1,44 @@
+IRAN DUAL AIRBASE CONVERSION = PASS
+
+Iran builder/dozer Object = IranVehicleDozer
+Iran builder CommandSet = IranDozerCommandSet
+
+OLD AIRFIELD:
+Old construct button = Command_ConstructIranAirfield
+Old Object = IranAirfield
+Old slot = 13
+
+NEW FIGHTER AIRBASE:
+Object = Iran_LargeAirBase
+W3D = TheAirPort
+NumRows = 4
+NumCols = 4
+Capacity = 16
+Iran aircraft CommandSet preserved = YES (IranExpandedAirfieldCommandSet)
+
+CLEAR MINES:
+Old button = Command_DisarmMinesAtPosition
+Old slot = 14
+Removed from Iran builder = YES
+
+NEW HEAVY AIRBASE:
+Object = Iran_HeavyAirBase
+W3D = HXUSABigAirPort
+NumRows = 3
+NumCols = 2
+Capacity = 6
+3 left + 3 right = YES
+Construct button = Command_ConstructIran_HeavyAirBase
+Builder slot = 14
+Heavy CommandSet = Iran_HeavyAirBaseCommandSet (Rally/Sell only; no foreign aircraft)
+
+Old Iran iran_airfield used by new fighter base = NO
+Old HXNewBigAir used by new HeavyAirBase = NO
+IranAirfield Object retained in DATA (not builder-produced) = YES
+RadarStation Prerequisite retargeted IranAirfield -> Iran_LargeAirBase = YES
+
+Other factions changed = NO
+Aircraft changed = NO
+ART changed = NO
+DATA sha256 = 8a7c0f028ed62e33eff636f6931bb42ed6d2b24e0277fe357406c966fe10ec0d
+

@@ -1,0 +1,42 @@
+V22 RUNWAY FLIGHT CONVERSION = PASS (structural readiness)
+
+Object = AmericaJetV22Visual
+Visual W3D family = AVOsprey*
+Old AIUpdate = JetAIUpdate (NeedsRunway=No, MinHeight=10)
+New AIUpdate = JetAIUpdate (NeedsRunway=Yes, MinHeight=1, KeepsParkingSpaceWhenAirborne=Yes, TakeoffPause=1000, TakeoffDistForMaxLift=0%, ParkingOffset=5 — E-737-identical)
+Old Locomotor = T700_GE_701D_B2 + BasicHelicopterTaxiLocomotor
+New Locomotor = F100_PW_229 + BasicJetTaxiLocomotor
+Flight reference = AmericaJetE737Visual
+Helicopter movement modules remaining = 0
+Fixed-wing/runway movement adopted = YES
+KindOf: removed PRODUCED_AT_HELIPAD; CommandSet GenericAttackHelicopterHoverCommandSet -> GenericTacticalBomberCommandSet
+Geometry 30.0/12.0/10.0 -> 40.0/10.0/10.0 (E-737 runway-proven collision; visual unchanged)
+Visual model changed = NO
+Scale changed = NO (no Scale line; unchanged)
+Rotors preserved = YES (AVOsprey_A*/_DA*)
+Nacelles preserved = YES (engine Draw ModuleTag_Engines01)
+HeavyAirBase Slot 11 preserved = YES
+
+Expected behavior:
+Park on airbase = READY
+Runway takeoff = READY
+Fixed-wing flight = READY
+Runway landing = READY
+Return to parking = READY
+
+Vertical takeoff = DISABLED
+Vertical landing = DISABLED
+
+Weapons = NONE
+Transport capability = NOT YET
+
+E-737 changed = NO
+C-17 changed = NO
+AC-130 changed = NO
+E-2 changed = NO
+E-3 changed = NO
+HeavyAirBase changed = NO
+Other factions changed = NO
+ART changed = NO
+DATA sha256 = 807d54f49b5849cee9e5b541db78575de452ccadfc50210f301c6dd5c2dbae2b
+NOTE = In-game takeoff/landing not launched here; structural readiness only.

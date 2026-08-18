@@ -1,0 +1,18 @@
+E-2 SCALE CORRECTION = PASS
+
+Object = AmericaJetE2Visual
+W3D = AVHawk
+
+Old Scale = 3.932
+New Scale = 1.5
+
+E-737 Scale = 0.8 preserved = YES
+
+E-737 changed = NO
+C-17 changed = NO
+E-3 changed = NO
+V-22 changed = NO
+AC-130 changed = NO
+HeavyAirBase changed = NO
+ART changed = NO
+DATA sha256 = c85ad330dc3489893f22d4e64e8cadca241f4f34ca7afb22e7fcd90c29b6e1df

@@ -1,0 +1,222 @@
+ALL-FACTION HXUSABigAirPort 3+3 PARKING AUDIT = PASS
+
+IRAN:
+Object = NONE (no active Iran Object uses Model = HXUSABigAirPort)
+W3D = HXUSABigAirPort = NOT PRESENT on any Iran Object
+Closest Iran air Object = IranAirfield Model=['iran_airfield', 'iran_airfield', 'iran_airfield'] NumRows=3 NumCols=2
+Before = N/A (Iran has no HXUSABigAirPort HeavyAirBase to patch)
+After = NumRows 3 / NumCols 2 = N/A (no HXUSA object)
+3 left + 3 right = N/A for HXUSA; IranAirfield already NumRows=3 NumCols=2 on iran_airfield W3D
+Note = Iran was fully searched across all Iranian Army Object INIs; donor IranAirfieldBig uses HXNewBigAir (different W3D) and is not in active runtime. Building W3D was not changed per task rules.
+Iran included = YES
+
+EVERY HXUSABigAirPort OBJECT:
+
+Faction = Armed Forces Of Russian Federation
+HeavyAirBase Object = Russia_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = British Armed Forces
+HeavyAirBase Object = Britain_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = French Armed Forces
+HeavyAirBase Object = France_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = German Armed Forces
+HeavyAirBase Object = Germany_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Indian Armed Forces
+HeavyAirBase Object = India_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Iraq Army
+HeavyAirBase Object = Iraq_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Israel Defense Forces
+HeavyAirBase Object = Israel_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Italian Armed Forces
+HeavyAirBase Object = Italy_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Japan Self-Defense Forces
+HeavyAirBase Object = Japan_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Libyan Armed Forces
+HeavyAirBase Object = Libya_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = NATO
+HeavyAirBase Object = Nato_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = North Korea
+HeavyAirBase Object = NorthKorea_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = PLA
+HeavyAirBase Object = China_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Pakistan Armed Forces
+HeavyAirBase Object = Pakistan_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Saudi Arabia Armed Forces
+HeavyAirBase Object = SaudiArabia_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = South African National Defence Force
+HeavyAirBase Object = SouthAfrica_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = South Korean Armed Forces
+HeavyAirBase Object = SouthKorea_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Swedish Armed Forces
+HeavyAirBase Object = Sweden_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Syrian Armed Forces
+HeavyAirBase Object = Syria_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Turkish Armed Forces
+HeavyAirBase Object = Turkey_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Ukrainian Armed Forces
+HeavyAirBase Object = Ukraine_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = United Arab Emirates Armed Forces
+HeavyAirBase Object = UAE_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = United States Of America
+HeavyAirBase Object = America_HeavyAirBase
+Before NumRows = 3
+Before NumCols = 2
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Faction = Vietnam People's Armed Forces
+HeavyAirBase Object = Vietnam_HeavyAirBase
+Before NumRows = 2
+Before NumCols = 3
+After NumRows = 3
+After NumCols = 2
+3+3 layout = YES
+
+Final totals:
+Total HXUSABigAirPort Objects found = 24
+Total already correct = 1
+Total fixed = 23
+
+Iran included = YES
+
+Any HXUSABigAirPort still 2x3 = 0
+Any faction skipped = 0
+
+TheAirPort 16-slot fighter airbases changed = NO (count before=25 after=25)
+Aircraft changed = NO
+ART changed = NO
+CommandSet/CommandButton changed = NO
+DATA sha256 = d49583f17b1875530124491b0e53e333ba744f5d714f250515a31030524e98bc
+

@@ -1,0 +1,55 @@
+E2 + V22 VISUAL FIX = PASS
+
+E-2:
+Object = AmericaJetE2Visual
+W3D = AVHawk
+E-737 scale = 0.8
+E-2 old scale = (none / default 1.0)
+E-2 new scale = 0.8
+Matches E-737 scale method = YES
+
+V-22:
+Object = AmericaJetV22Visual
+Old primary visual = AVOsprey (single Draw; A1 animation wrongly on body)
+Correct donor primary visual = AVOsprey body Draw + AVOsprey_A*/_DA* engines/rotors Draw
+Complete AVOsprey family found = YES
+
+Required W3Ds =
+  Art\W3D\AVOsprey.W3D
+  Art\W3D\AVOsprey_D.W3D
+  Art\W3D\AVOsprey_A1.W3D
+  Art\W3D\AVOsprey_A2.W3D
+  Art\W3D\AVOsprey_A3.W3D
+  Art\W3D\AVOsprey_A4.W3D
+  Art\W3D\AVOsprey_DA1.W3D
+  Art\W3D\AVOsprey_DA2.W3D
+  Art\W3D\AVOsprey_DA3.W3D
+  Art\W3D\AVOsprey_DA4.W3D
+Required textures =
+  Art\Textures\AVOsprey.dds
+  Art\Textures\AVOsprey_D.dds
+  Art\Textures\AVOsprey_H.dds
+  Art\Textures\AVOsprey_P.dds
+Required animations =
+  AVOsprey_A1.W3D / AVOsprey_A1.AVOsprey_A1
+  AVOsprey_A2.W3D / AVOsprey_A2.AVOsprey_A2
+  AVOsprey_A3.W3D / AVOsprey_A3.AVOsprey_A3
+  AVOsprey_A4.W3D / AVOsprey_A4.AVOsprey_A4
+  AVOsprey_DA1.W3D / AVOsprey_DA1.AVOsprey_DA1
+  AVOsprey_DA2.W3D / AVOsprey_DA2.AVOsprey_DA2
+  AVOsprey_DA3.W3D / AVOsprey_DA3.AVOsprey_DA3
+  AVOsprey_DA4.W3D / AVOsprey_DA4.AVOsprey_DA4
+
+Both rotors included = YES (ModuleTag_Engines01 AVOsprey_A* family)
+Both nacelles included = YES (same engines Draw)
+Complete fuselage = YES (ModuleTag_01 AVOsprey)
+Donor DATA imported = NO
+
+C-17 changed = NO
+E-737 changed = NO
+E-3 changed = NO
+AC-130 changed = NO
+Bombers changed = NO
+Other factions changed = NO
+ART rebuilt = NO
+DATA sha256 = a1b908efa63d51bb7490f0c0bd51e87566366f4a30ed7640229fc1d137574e2d

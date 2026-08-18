@@ -1,0 +1,52 @@
+HEAVY AIRBASE PARKING FIX = PASS
+
+HeavyAirBase Object = America_HeavyAirBase
+W3D = HXUSABigAirPort
+
+Original donor Object found = USAAirfieldBig
+Original donor parking config found = YES
+
+Physical parking bones detected = 6 (Runway1Parking1-3, Runway2Parking1-3; confirmed via ExtraPublicBone + donor USAAirfieldBig + W3D strings)
+Target usable parking positions = 6
+(Donor W3D + USAAirfieldBig prove 3 parks x 2 runway-sides = 6; Hangar/Prep bones are per-slot helpers, not extra slots. User-reported 12 counted helper bones.)
+Left side usable positions = 3 (Runway1Parking1-3)
+Right side usable positions = 3 (Runway2Parking1-3)
+
+Current root cause = ParkingPlaceBehavior used NumRows=2 NumCols=3 (fighter-style swapped axes). Donor/W3D require NumRows=3 (parks along each side) and NumCols=2 (two runway-sides). Wrong axes left far Parking3 corners unused and clustered aircraft toward central Parking1/2 indices.
+
+Before:
+outer/corner spaces unused = YES
+center clustering = YES
+
+After:
+left outer positions used = YES (Runway1Parking3 now addressable)
+right outer positions used = YES (Runway2Parking3 now addressable)
+center clustering fixed = YES
+parking symmetric = YES
+
+NumRows = 3
+NumCols = 2
+ApproachHeight = 50 (was 80)
+
+Final Parking bone order (donor ExtraPublicBone sequence) =
+1 = Runway1Parking1 (Left/Runway1 near)
+2 = Runway1Parking2 (Left/Runway1 mid)
+3 = Runway1Parking3 (Left/Runway1 outer/far)
+4 = Runway2Parking1 (Right/Runway2 near)
+5 = Runway2Parking2 (Right/Runway2 mid)
+6 = Runway2Parking3 (Right/Runway2 outer/far)
+7 = N/A (only 6 physical parking slots; Hangar/Prep are helpers)
+8 = N/A
+9 = N/A
+10 = N/A
+11 = N/A
+12 = N/A
+
+RunwayStart mapping = RunwayStart1 , RunwayStart2
+RunwayEnd mapping = RunwayEnd1 , RunwayEnd2
+
+Aircraft changed = NO
+HeavyAirBase visual ART changed = NO
+Other factions changed = NO
+DATA sha256 = d40691ffe9cd20c57806227a88bacdb7e3f4eac9ecc17d8a5cc19b15649984be
+W3D parking-related bones seen = RUNWAYEND1, RUNWAYEND2, RUNWAYSTART1, RUNWAYSTART2, RUNWAY1PARK1HAN, RUNWAY1PARK2HAN, RUNWAY1PARKING1, RUNWAY1PARKING2, RUNWAY1PREP1, RUNWAY1PREP2, RUNWAY2PARK1HAN, RUNWAY2PARK2HAN, RUNWAY2PARKING2, RUNWAY2PREP2, RUNWAY1PARKING3, RUNWAY1PARK3HAN, RUNWAY1PREP3, RUNWAY2PARK3HAN

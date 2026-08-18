@@ -1,0 +1,48 @@
+E-3 ART-ONLY RESET = PASS
+
+Crash-causing E-3 Object removed = YES
+usa_system.ini contains AmericaJetE3AWACS = NO
+Expected = NO
+
+HeavyAirBase Slot 5 = EMPTY
+
+E-3 donor ART:
+Primary W3D = E3
+Textures preserved = YES (2 matched; icons/gear-related)
+Animations preserved = YES (chj10_r gear W3D retained in ART)
+Icon preserved = YES (E3USA.tga, E3USATB.tga)
+Gear W3D preserved = YES (chj10_r present)
+
+E-3 gameplay DATA active = NO
+C-17 gameplay DATA active = NO
+E-737 gameplay DATA active = NO
+E2avionHE gameplay DATA active = NO
+V-22 gameplay DATA active = NO
+
+AC-130 changed = NO
+B-2 changed = NO
+B-21 changed = NO
+B-52 changed = NO
+B-1R changed = NO
+ART rebuilt = NO
+ART sha256 = 6320515bf3b02d4a7b4bb33cecb32baa9de3fb21379b8161d4767abad8976eb7
+
+Final HeavyAirBase slots:
+1 = B-2 (Command_ConstructAmericaJetB2Spirit)
+2 = B-21 (Command_ConstructAmericaJetB21)
+3 = B-52 (Command_ConstructAmericaJetB52H)
+4 = B-1R (Command_ConstructAmericaJetB1R)
+5 = EMPTY (EMPTY)
+6 = Nuclear Tip Warhead (Command_Upgrade_NuclearTipWarhead2)
+7 = AC-130 (Command_ConstructAmericaJetAC130)
+8 = EMPTY (EMPTY)
+9 = EMPTY (EMPTY)
+10 = EMPTY (EMPTY)
+11 = EMPTY (EMPTY)
+13 = Rally Point (Command_SetRallyPoint)
+14 = Sell (Command_Sell)
+
+DATA sha256 = 4cf510cc985dc4bbbd1276daec125509a87ac97eaa2c856c577f4b3d333d5b55
+Removed Object block bytes = 12015 (saved as reference-only txt, not packed as gameplay INI)
+Removed CommandButton = Command_ConstructAmericaJetE3AWACS
+Placeholder/test Objects created = NO

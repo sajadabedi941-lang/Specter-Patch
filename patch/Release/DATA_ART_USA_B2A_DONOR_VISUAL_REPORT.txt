@@ -1,0 +1,21 @@
+USA B2A DONOR VISUAL ADD = PASS
+
+Object = AmericaJetB2A (separate from AmericaJetB2Spirit)
+Primary W3D = AVB3bmbr (donor USAB2 model)
+Damaged W3D = AVB3bmbr_D
+Button = Command_ConstructAmericaJetB2A
+ButtonImage = B2A
+HeavyAirBase Slot = 12
+
+Donor Object USAE3/USAB2 gameplay DATA imported = NO
+Specter-safe flight DATA = YES
+Weapons = NONE
+
+Existing B-2 Spirit changed = NO
+Other bombers / E-3 / E-737 / support aircraft changed = NO
+CommandSet slots 1-11 / 13-14 preserved = YES
+
+DATA sha256 = b65612f655905dbbc0a146c150774d10452c1f346973ed48c02df18e12d1e2ef
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef
+ZIP = SPECTER_MASTER_DATA_ART_USA_B2A_DONOR_VISUAL.zip
+URL = https://gofile.io/d/rJz3DNAO

@@ -1,0 +1,60 @@
+AC130 + V22 COMBAT UPDATE = STRUCTURAL PASS
+
+AC-130:
+Object = AmericaJetAC130
+Old BuildCost = 2713
+New BuildCost = 20000
+
+Primary weapon = M102_105mm_Howitzer
+Range = 5555.0
+Damage = 500
+DelayBetweenShots = 777
+ClipSize = 0 (infinite continuous howitzer, same as before)
+ProjectileObject = SpectreHowitzerShell
+FireFX = WeaponFX_GenericTankGunNoTracer
+ProjectileDetonationFX = FX_FreeFallBombsDetonation
+
+Secondary weapon = NONE (active airfield AC-130 has PRIMARY only)
+Tertiary weapon = NONE
+
+SpectreGunshipUpdate on AC-130 = NO (already JetAIUpdate runway jet)
+Weapons changed = NO
+Weapon range unchanged = YES
+
+--------------------------------
+
+V-22:
+Object = AmericaJetV22Visual
+Old BuildCost = 5000
+New BuildCost = 15000
+
+Primary weapon = AmericaV22GunWeaponPrimary
+AC-130 source weapon = M102_105mm_Howitzer
+AC-130 range = 5555.0
+V-22 final range = 3333  (60% → 3333)
+
+Secondary weapon = NONE
+Tertiary weapon = NONE
+
+All V-22 ranges approximately 60% of AC-130 = YES
+Damage copied = YES (500)
+Fire rate copied = YES (DelayBetweenShots 777 + ContinuousFire bonuses)
+AC-130 weapon definitions directly modified = NO
+Dedicated V-22 weapon clones = YES
+
+V-22 flight system changed = NO
+V-22 remains runway-based = YES (JetAIUpdate + F100_PW_229 + BasicJetTaxiLocomotor)
+
+SpectreGunshipUpdate copied = NO
+Reason = Active AmericaJetAC130 does not use SpectreGunshipUpdate; V-22 uses normal WeaponSet + JetAIUpdate attack firing (same fire-control family as the airfield AC-130).
+
+HeavyAirBase changed = NO
+ART changed = NO
+Other aircraft changed = NO
+
+In-game combat = USER TEST REQUIRED
+
+DATA sha256 = d3e24818f78e39d407b8d75e510ee46cc83bad9af2c75bf6841abd916496f6cf
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef
+ZIP = SPECTER_MASTER_DATA_USA_AC130_V22_FIREPOWER.zip
+URL = https://gofile.io/d/okgW5Tgr

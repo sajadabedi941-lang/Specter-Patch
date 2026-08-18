@@ -6,7 +6,7 @@ W3D = HXUSABigAirPort
 Original donor Object found = USAAirfieldBig
 Original donor parking config found = YES
 
-Physical parking bones detected = 4 (RUNWAY1PARKING1, RUNWAY1PARKING2, RUNWAY1PARKING3, RUNWAY2PARKING2)
+Physical parking bones detected = 6 (Runway1Parking1-3, Runway2Parking1-3; confirmed via ExtraPublicBone + donor USAAirfieldBig + W3D strings)
 Target usable parking positions = 6
 (Donor W3D + USAAirfieldBig prove 3 parks x 2 runway-sides = 6; Hangar/Prep bones are per-slot helpers, not extra slots. User-reported 12 counted helper bones.)
 Left side usable positions = 3 (Runway1Parking1-3)

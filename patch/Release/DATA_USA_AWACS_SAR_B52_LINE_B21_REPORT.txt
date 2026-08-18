@@ -1,0 +1,110 @@
+AWACS SCANNER + B52 LINE + B21 PENETRATOR = PASS
+
+==============================
+ORIGINAL USA AWACS
+==============================
+Object = US_E3G_AWACS
+SAR Button = Command_ANAPY2_SARSCANMODE
+ButtonImage = sys_sarscan
+SpecialPower = Superweapon_ANAPY2_SARSCANMODE
+Behavior = OCLSpecialPower + StealthDetectorUpdate + Vision/Shroud + FireWeaponUpdate(AN_APY2_Radar_Power)
+Base Scan Radius R = 450 (RadiusCursorRadius)
+Base Shroud/Reveal Radius = ViewObjectRange 250 / aircraft Vision 350
+Stealth Detection = YES (DetectionRange 1000)
+
+==============================
+E-2
+==============================
+Object = AmericaJetE2Visual
+SAR Button = Command_E2SARScan
+Button visible = YES
+Scan Radius = 405
+Expected = 0.90R = 405
+Stealth DetectionRange = 900
+SpecialPower RadiusCursorRadius = 405
+BuildCost = 9000
+Weapons = NONE
+Validated = True
+
+==============================
+E-737
+==============================
+Object = AmericaJetE737Visual
+SAR Button = Command_E737SARScan
+Button visible = YES
+Scan Radius = 540
+Expected = 1.20R = 540
+Stealth DetectionRange = 1200
+SpecialPower RadiusCursorRadius = 540
+BuildCost = 13000
+Weapons = NONE
+Validated = True
+
+==============================
+E-3
+==============================
+Object = AmericaJetE3Visual
+SAR Button = Command_E3SARScan
+Button visible = YES
+Scan Radius = 698
+Expected = 1.55R = 698
+Stealth DetectionRange = 1550
+SpecialPower RadiusCursorRadius = 698
+BuildCost = 18000
+Weapons = NONE
+Validated = True
+
+Scanner order: E3 > E737 > E2 = YES
+Price order: E3 > E737 > E2 = YES
+Scan follows aircraft = YES (aircraft Vision/Stealth + USE_OWNER_OBJECT SAR bubble)
+
+==============================
+B-52
+==============================
+Object = AmericaJetB52H
+Weapon = AmericaB52_10BombLinearWeapon
+Bomb source = Mk-82/84 family via AmericaB52LineBomb (MK-84 model) + AmericaB52LineBombDetonation
+OCL / multi-spawn method = FireOCL → OCL_AmericaB52_10BombLine (10× CreateObject LIKE_EXISTING)
+Bomb count = 10
+All generated from one trigger = YES
+Release essentially simultaneous = YES (DelayBetweenShots=0, single FireOCL)
+Line offsets (local Y forward, X=0):
+1: X:0 Y:-90 Z:-5
+2: X:0 Y:-70 Z:-5
+3: X:0 Y:-50 Z:-5
+4: X:0 Y:-30 Z:-5
+5: X:0 Y:-10 Z:-5
+6: X:0 Y:10 Z:-5
+7: X:0 Y:30 Z:-5
+8: X:0 Y:50 Z:-5
+9: X:0 Y:70 Z:-5
+10: X:0 Y:90 Z:-5
+Equal spacing = YES (20 units)
+Random scatter = NO
+5+5 = NO
+long sequential release = NO
+Validated = True
+
+==============================
+B-21
+==============================
+Object = AmericaJetB21Clean
+Weapon = AmericaB21_DualGBU72Weapon
+Source = ACTIVE GBU-72 (3x_GBU72_5000lb_F15E)
+Projectile = GBU72_GuidedBombObject
+Payload = 2
+Release: both together = YES (ClipSize 2, DelayBetweenShots 50ms)
+Original GBU-72 Damage = 850
+B-21 Damage = 1063 (×1.25)
+Original SecondaryDamage = NONE
+B-21 SecondaryDamage = NONE
+DamageRadius = 30
+Nuclear = NO
+Bunker-buster = YES
+Validated = True
+
+Flight systems changed = NO
+HeavyAirBase changed = NO
+Other aircraft changed = NO (B-2/B-2A/B-1 untouched)
+Other factions changed = NO
+DATA SHA256 = 6c8eb2231abb5c56a8c6ed5b88e45d7521e48411e3813a06acac38e771e77f3c

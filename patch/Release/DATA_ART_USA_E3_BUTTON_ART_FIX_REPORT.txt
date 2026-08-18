@@ -1,0 +1,48 @@
+USA E-3 REAL DONOR VISUAL + BUTTON FIX = PASS
+
+Current pink button identified as E-3 = YES
+
+Slot 5 button = Command_ConstructAmericaJetE3Visual
+Object = AmericaJetE3Visual
+
+DONOR:
+Original E-3 Object = USAE3
+Original E-3 Primary W3D = E3
+Original E-3 ButtonImage = E3USA
+
+FINAL:
+Primary W3D = E3
+Real donor E-3 model = YES
+
+ButtonImage = E3USA
+Real donor E-3 button = YES
+Pink/missing placeholder removed = YES
+  Cause: E3USATB.tga was 1243x800 (odd width) vs MappedImage 150x106
+  Fix: replaced E3USATB.tga + E3USA.tga with proper 150x106 24-bit TGA
+       (center-cropped/scaled from donor cameo photo; V22/E2 UI style)
+
+Required W3Ds = E3.W3D (body+radar rotodome meshes), chj10_r.W3D (gear art present)
+Required textures = avE3.tga, avE3ACC.tga
+Required UI textures = E3USATB.tga, E3USA.tga (now 150x106)
+MappedImage definition required = YES (E3USA -> E3USATB.tga 150x106; already in DATA)
+
+Donor gameplay DATA imported = NO
+Specter-safe flight DATA retained = YES
+
+HeavyAirBase Slot 5 resolves = YES
+AmericaJetE3Visual count = 1
+E-3 CommandButton count = 1
+
+E-737 changed = NO
+E-2 changed = NO
+C-17 changed = NO
+V-22 changed = NO
+AC-130 changed = NO
+Other factions changed = NO
+DATA changed = NO
+ART changed = YES
+
+DATA sha256 = cce16a282571fe59e2a0c69b019605a45a808a0d8e1f80da642bba49b7e3bdb7
+ART sha256 = 363ba181d3d6435cd8ec878610e55ee2939668d75974a850b60d9a6d7540fdb3
+ZIP = SPECTER_MASTER_DATA_ART_USA_E3_BUTTON_ART_FIX.zip
+URL = https://gofile.io/d/FStwmXeH

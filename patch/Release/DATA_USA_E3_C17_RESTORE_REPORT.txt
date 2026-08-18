@@ -1,0 +1,49 @@
+USA E3 + C17 RESTORE = PASS (structural readiness)
+
+PRE-AUDIT (packed runtime before restore rewrite):
+AmericaJetE3Visual Object count = 1
+AmericaJetC17Visual Object count = 1
+E-3 build button count = 1
+C-17 build button count = 1
+America_HeavyAirBaseCommandSet Slot 5 = Command_ConstructAmericaJetE3Visual
+America_HeavyAirBaseCommandSet Slot 8 = Command_ConstructAmericaJetC17Visual
+Stale AmericaJetE3AWACS = 0
+Stale USAE3 = 0
+
+E-3:
+Object = AmericaJetE3Visual
+W3D = E3
+BuildButton = Command_ConstructAmericaJetE3Visual
+HeavyAirBase Slot = 5
+Donor ART = YES
+Donor DATA = NO
+Build chain resolves = YES
+Flight template = AmericaJetE737Visual
+Weapons = NONE
+
+C-17:
+Object = AmericaJetC17Visual
+W3D = IUAC17HXNew
+BuildButton = Command_ConstructAmericaJetC17Visual
+HeavyAirBase Slot = 8
+Donor ART = YES
+Donor DATA = NO
+E-737 flight structure used = YES
+Build chain resolves = YES
+Weapons = NONE
+Cargo = NOT YET
+
+POST-VERIFY:
+AmericaJetE3Visual = 1
+AmericaJetC17Visual = 1
+Command_ConstructAmericaJetE3Visual = 1
+Command_ConstructAmericaJetC17Visual = 1
+
+E-737 Scale = 0.8 preserved = YES
+E-2 Scale = 3.932 preserved = YES
+HeavyAirBase 3+3 changed = NO
+Other aircraft changed = NO
+Other factions changed = NO
+ART changed = NO
+DATA sha256 = f091e656a50923cbda83071cf80e350db8c4535cb742f623ff87f59b8cf2e3bf
+NOTE = In-game button/aircraft not launched here; structural readiness only.

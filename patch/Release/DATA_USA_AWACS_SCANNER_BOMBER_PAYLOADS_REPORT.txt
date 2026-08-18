@@ -1,0 +1,95 @@
+AWACS + BOMBER REWORK = PASS
+
+--------------------------------
+AWACS REFERENCE
+--------------------------------
+Original USA AWACS Object = US_E3G_AWACS
+Scanner module = VisionRange + ShroudClearingRange + StealthDetectorUpdate + FireWeaponUpdate(AN_APY2_Radar_Power) + PointDefenseLaserUpdate(AWACS_BaseMonaitoring)
+Base radius R = 1000 (US_E3G StealthDetector DetectionRange)
+Stealth detection = YES
+SAR/Radar command = Command_ANAPY2_SARSCANMODEFromShortcut / Superweapon_ANAPY2_SARSCANMODE
+
+E-3:
+Final scanner radius (VisionRange) = 1350.0
+ShroudClearingRange = 1157.1
+Stealth radius = 1200.0
+BaseMonitor ScanRange = 6750
+Weapons = NONE
+Scanner follows aircraft = YES (object-centered Vision/Stealth/RadarPower/BaseMonitor)
+CommandSet = AmericaHeavyAWACSCommandSet
+Modules OK = True
+
+E-737:
+Final scanner radius (VisionRange) = 1100.0
+ShroudClearingRange = 942.9
+Stealth radius = 1000.0
+BaseMonitor ScanRange = 5500
+Weapons = NONE
+Scanner follows aircraft = YES (object-centered Vision/Stealth/RadarPower/BaseMonitor)
+CommandSet = AmericaHeavyAWACSCommandSet
+Modules OK = True
+
+E-2:
+Final scanner radius (VisionRange) = 800.0
+ShroudClearingRange = 685.7
+Stealth radius = 750.0
+BaseMonitor ScanRange = 4000
+Weapons = NONE
+Scanner follows aircraft = YES (object-centered Vision/Stealth/RadarPower/BaseMonitor)
+CommandSet = AmericaHeavyAWACSCommandSet
+Modules OK = True
+
+All three scanner radii different = YES
+
+--------------------------------
+B-2
+--------------------------------
+Object = AmericaJetB2Spirit
+Weapon = AmericaB2_GBU31_SalvoA + AmericaB2_GBU31_SalvoB
+Source bomb = GBU-31 JDAM
+Projectile = GBU-31V2
+Total payload = 6
+Group 1 = 3 (DelayBetweenShots=150)
+Group 2 = 3 (DelayBetweenShots=150)
+Inter-group delay = PreAttackDelay 850 ms on SalvoB
+BuildCost = 10000
+Validated = True
+
+--------------------------------
+B-52
+--------------------------------
+Object = AmericaJetB52H
+Weapon = AmericaB52_10BombCarpetWeapon
+Source bomb = Mk-82/Mk-84 family (MK-84 projectile)
+Projectile = MK-84
+Total payload = 10
+Release pattern = LINEAR
+DelayBetweenBombs = 280 ms
+10 bombs in one attack pass = YES
+Validated = True
+
+--------------------------------
+B-21
+--------------------------------
+Object = AmericaJetB21Clean
+Weapon = AmericaB21_2xGBU72Weapon
+Source bomb = GBU-72 bunker-buster
+Projectile = GBU72_GuidedBombObject
+Total payload = 2
+Release pattern = TOGETHER
+DelayBetweenBombs = 150 ms
+Damage = 935
+Reference GBU-72 damage = 850
+Damage multiplier = 1.10
+DamageRadius = 30
+Two bombs in one attack = YES
+Validated = True
+
+B-2A changed = NO (weapon still AmericaB2A10TonBombWeapon = True)
+B-1 changed = NO (weapon still AmericaB1ThreeGuidedBombWeapon = True)
+AWACS visuals changed = NO
+Bomber visuals changed = NO
+HeavyAirBase changed = NO
+ART changed = NO
+Other factions changed = NO
+DATA SHA256 = d24c9ab6656003b89ee543e8a5d377011211d4f986a9b29f8690af20daa89c4f

@@ -1,0 +1,3 @@
+A=https://litter.catbox.moe/98pqi8.zip
+B=https://litter.catbox.moe/84jbyf.zip
+C=https://litter.catbox.moe/9opizq.zip

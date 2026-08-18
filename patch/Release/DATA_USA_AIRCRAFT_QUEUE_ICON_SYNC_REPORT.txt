@@ -1,0 +1,60 @@
+USA AIRCRAFT QUEUE ICON SYNC = PASS
+Production queue uses Object field = ButtonImage
+Production portrait uses Object field = SelectPortrait
+(Verified: known-good fighters use CB ButtonImage == Object ButtonImage == SelectPortrait)
+
+B-2:
+Object = AmericaJetB2Spirit
+CommandButton ButtonImage = B2DropBombTB
+Old Object ButtonImage = B2-ic_L
+New Object ButtonImage = B2DropBombTB
+Old SelectPortrait = B2-ic_L
+New SelectPortrait = B2DropBombTB
+Matched = YES
+
+B-52:
+Object = AmericaJetB52H
+CommandButton ButtonImage = B52
+Old Object ButtonImage = us_b52h
+New Object ButtonImage = B52
+Old SelectPortrait = us_b52h
+New SelectPortrait = B52
+Matched = YES
+
+B-1:
+Object = AmericaJetB1R
+CommandButton ButtonImage = B1
+Old Object ButtonImage = us_b1r
+New Object ButtonImage = B1
+Old SelectPortrait = us_b1r
+New SelectPortrait = B1
+Matched = YES
+
+AC-130:
+Object = AmericaJetAC130
+CommandButton ButtonImage = Avionac130
+Old Object ButtonImage = us_ac130
+New Object ButtonImage = Avionac130
+Old SelectPortrait = us_ac130
+New SelectPortrait = Avionac130
+Matched = YES
+
+B-2A:
+Object = AmericaJetB2A
+CommandButton ButtonImage = B2A
+Old Object ButtonImage = B2A (already matched)
+New Object ButtonImage = B2A
+Matched = YES
+
+Other mismatches found = NONE among E-3/E-737/E-2/C-17/V-22
+Other mismatches fixed = NONE (already matched)
+
+Gameplay changed = NO
+ART changed = NO
+DATA SHA256 = 1204a018dcc4743e1024146ee23ec8e831388f76494a06bf1e5269347046a995
+
+Files touched:
+  Data\INI\Object\Specter\United States Of America\USA_System.ini
+  Data\INI\Object\Specter\United States Of America\USA_System.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\B1R.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetAC130.ini

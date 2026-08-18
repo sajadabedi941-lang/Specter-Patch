@@ -1,0 +1,56 @@
+DONOR AIRCRAFT ART-ONLY RESET = PASS
+
+E-737:
+Gameplay DATA removed = YES
+HeavyAirBase button removed = YES
+Real donor W3D preserved = YES (1 files)
+Textures preserved = YES (3 files)
+Icon preserved = YES
+
+C-17:
+Gameplay DATA removed = YES
+HeavyAirBase button removed = YES
+Real donor W3D preserved = YES (1 files)
+Textures preserved = YES (3 files)
+Icon preserved = YES
+
+E2avionHE:
+Gameplay DATA removed = YES
+HeavyAirBase button removed = YES
+Real donor W3D preserved = YES (4 files: AVHawk family)
+Textures preserved = YES (6 files)
+Icon preserved = YES
+
+V-22:
+Gameplay DATA removed = YES
+HeavyAirBase button removed = YES
+Real donor W3D preserved = YES (10 files: AVOsprey*)
+Textures preserved = YES (6 files)
+Animations preserved = YES
+Icon preserved = YES
+
+AC-130 changed = NO
+E-3 changed = NO
+B-2/B-21/B-52/B-1R changed = NO
+ART rebuilt = NO
+ART sha256 = 6320515bf3b02d4a7b4bb33cecb32baa9de3fb21379b8161d4767abad8976eb7
+
+Final HeavyAirBase slots:
+1 = B-2 (Command_ConstructAmericaJetB2Spirit)
+2 = B-21 (Command_ConstructAmericaJetB21)
+3 = B-52 (Command_ConstructAmericaJetB52H)
+4 = B-1R (Command_ConstructAmericaJetB1R)
+5 = E-3 AWACS (Command_ConstructAmericaJetE3AWACS)
+6 = Nuclear Tip Warhead (Command_Upgrade_NuclearTipWarhead2)
+7 = AC-130 (Command_ConstructAmericaJetAC130)
+8 = EMPTY (EMPTY)
+9 = EMPTY (EMPTY)
+10 = EMPTY (EMPTY)
+11 = EMPTY (EMPTY)
+13 = Rally Point (Command_SetRallyPoint)
+14 = Sell (Command_Sell)
+
+DATA sha256 = aa41df92ba641408f3ea410d0780901d9120f2f4fac2f5d8fcc7cc14e6d4e4d1
+Removed Object files = AmericaJetC17Globemaster.ini, AmericaJetE737AEW.ini, avionE737.ini, E2avionHE.ini, USAHelixV22.ini
+Removed CommandButtons = Command_ConstructAmericaJetC17Globemaster, Command_ConstructAmericaJetE737AEW, Command_ConstructAmericaE2avionHE, Command_ConstructAmericaV22
+Placeholder/test Objects created = NO

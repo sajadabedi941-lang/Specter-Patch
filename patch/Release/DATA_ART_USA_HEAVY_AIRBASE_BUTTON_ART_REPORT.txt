@@ -1,0 +1,162 @@
+USA HEAVY AIRBASE BUTTON ART RESTORE = STRUCTURAL PASS
+
+ROOT CAUSE:
+Generals shows SOLID MAGENTA when MappedImage TextureWidth/Height does not match
+the actual TGA pixel size, or when Texture path (.tga) is missing from ART.
+
+FIXES APPLIED:
+- Rebuilt correctly sized button TGAs from donor full-res sources
+- C-17 / E-737 oversized TGAs resized to MappedImage size (primary pink causes)
+- AC-130 ButtonImage → Avionac130 (real Spectre/AC-130 donor icon)
+- B-2A texture ← verified donor B-2 Spirit button (B2DropBombTB)
+- Atlas SelectPortrait refs us_b52h/us_b1r/us_ac130 → existing .dds atlases
+- Rebuilt BOTH _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from clean staging
+
+------------------------------
+Aircraft = AmericaJetB2Spirit
+Slot = 1
+CommandButton = Command_ConstructAmericaJetB2Spirit
+Old ButtonImage = B2DropBombTB
+Final ButtonImage = B2DropBombTB
+MappedImage = B2DropBombTB
+Texture = B2DropBombTB.tga (150x112)
+Texture present in final ART BIG = YES (Art\Textures\B2DropBombTB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetB21Clean
+Slot = 2
+CommandButton = Command_ConstructAmericaJetB21
+Old ButtonImage = B21_L
+Final ButtonImage = B21_L
+MappedImage = B21_L
+Texture = US-Icons03.tga (512x512)
+Texture present in final ART BIG = YES (Art\Textures\US-Icons03.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetB52H
+Slot = 3
+CommandButton = Command_ConstructAmericaJetB52H
+Old ButtonImage = B52
+Final ButtonImage = B52
+MappedImage = B52
+Texture = B52TB.tga (150x111)
+Texture present in final ART BIG = YES (Art\Textures\B52TB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetB1R
+Slot = 4
+CommandButton = Command_ConstructAmericaJetB1R
+Old ButtonImage = B1
+Final ButtonImage = B1
+MappedImage = B1
+Texture = B1TB.tga (150x111)
+Texture present in final ART BIG = YES (Art\Textures\B1TB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetE3Visual
+Slot = 5
+CommandButton = Command_ConstructAmericaJetE3Visual
+Old ButtonImage = E3USA
+Final ButtonImage = E3USA
+MappedImage = E3USA
+Texture = E3USATB.tga (150x106)
+Texture present in final ART BIG = YES (Art\Textures\E3USATB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetAC130
+Slot = 7
+CommandButton = Command_ConstructAmericaJetAC130
+Old ButtonImage = Cargo130
+Final ButtonImage = Avionac130
+MappedImage = Avionac130
+Texture = Avionac130TB.tga (150x111)
+Texture present in final ART BIG = YES (Art\Textures\Avionac130TB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetC17Visual
+Slot = 8
+CommandButton = Command_ConstructAmericaJetC17Visual
+Old ButtonImage = C17GlobalMaster
+Final ButtonImage = C17GlobalMaster
+MappedImage = C17GlobalMaster
+Texture = C17GlobalMasterTB.tga (150x113)
+Texture present in final ART BIG = YES (Art\Textures\C17GlobalMasterTB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetE737Visual
+Slot = 9
+CommandButton = Command_ConstructAmericaJetE737Visual
+Old ButtonImage = avionE737
+Final ButtonImage = avionE737
+MappedImage = avionE737
+Texture = avionE737.tga (140x111)
+Texture present in final ART BIG = YES (Art\Textures\avionE737.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetE2Visual
+Slot = 10
+CommandButton = Command_ConstructAmericaJetE2Visual
+Old ButtonImage = E2avionHE
+Final ButtonImage = E2avionHE
+MappedImage = E2avionHE
+Texture = AvionE2.tga (150x114)
+Texture present in final ART BIG = YES (Art\Textures\AvionE2.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetV22Visual
+Slot = 11
+CommandButton = Command_ConstructAmericaJetV22Visual
+Old ButtonImage = V22
+Final ButtonImage = V22
+MappedImage = V22
+Texture = LSFV22TB.tga (150x116)
+Texture present in final ART BIG = YES (Art\Textures\LSFV22TB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+Aircraft = AmericaJetB2A
+Slot = 12
+CommandButton = Command_ConstructAmericaJetB2A
+Old ButtonImage = B2A
+Final ButtonImage = B2A
+MappedImage = B2A
+Texture = B2ATB.tga (150x112)
+Texture present in final ART BIG = YES (Art\Textures\B2ATB.tga)
+MappedImage present in final DATA BIG = YES
+Pink icon fixed = YES
+---
+
+
+B-2 = PASS (B2DropBombTB)
+B-52 = PASS (B52)
+B-1/B-1R = PASS (B1)
+AC-130 = PASS (Avionac130)
+B-2A = PASS (B2A)
+
+Additional pink buttons found = C-17, E-737 (oversized TGA vs MappedImage)
+Additional pink buttons fixed = C-17, E-737 (+ atlas portrait path fixes)
+
+Gameplay Objects changed = NO
+Weapons changed = NO
+Prices changed = NO
+Flight changed = NO
+Aircraft W3Ds changed = NO
+HeavyAirBase slots changed = NO
+Parking changed = NO
+Other factions changed = NO
+
+In-game visual = USER TEST REQUIRED (no pink claim beyond chain resolution)
+
+DATA sha256 = ce6323fb8cc6512ad602c3251f008704fa118a787801cf00b903951df4d22e10
+ART sha256 = 672d01ce224a4c52b021a0e205b9d40fc95879c9ccc9a5a036831573df10024c
+ZIP = SPECTER_MASTER_DATA_ART_USA_HEAVY_AIRBASE_BUTTON_ART.zip
+URL = https://gofile.io/d/tydmJo1c

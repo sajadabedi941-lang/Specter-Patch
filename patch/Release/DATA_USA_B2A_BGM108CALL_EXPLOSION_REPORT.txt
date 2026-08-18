@@ -1,0 +1,41 @@
+B-2A HEAVY BOMB EXPLOSION = PASS
+BGM-108CALL reference found = NO
+
+Reference (closest proven heavy conventional):
+Object = Russia_Fab9000
+Weapon = 9000kg_TsarBomb
+Projectile = Russia_Fab9000 (falling FOAB/Tsar delivery)
+Damage = 6500.0
+DamageRadius = 380.0
+SecondaryDamage = 505.0
+SecondaryRadius = 175.0
+DetonationFX / FireFX = Tsar_Explosion
+OCL = OCL_BombScorchmarkBig (Fab9000 SlowDeath; not required for B-2A projectile path)
+Additional explosion FX = Tsar particle suite (smoke/blast/fire/flash/wave/dust/electric/MOAB sparks)
+
+B-2A FINAL:
+Object = AmericaJetB2A
+Weapon = AmericaB2A10TonBombWeapon
+Projectile = AmericaB2A10TonBombProjectile
+ClipSize = 1
+Payload = 1
+Old Damage = 12000.0
+New Damage = 12000.0
+Old DamageRadius = 480.0
+New DamageRadius = 620.0
+Old DetonationFX = WeaponFX_BigBombExplosion
+New DetonationFX = Tsar_Explosion
+BGM-108CALL explosion FX adopted = YES (via Tsar_Explosion reference substitute)
+Large real area damage = YES
+Conventional = YES
+Nuclear = NO
+Radiation = NO
+BuildCost = 15000
+Normal B-2 changed = NO
+B-52 changed = NO
+B-1 changed = NO
+B-21 changed = NO
+B-2A flight changed = NO
+
+Validation checks: clip=YES, payload_weapon=YES, cost=YES, projectile=YES, detonation_fx=YES, fxlist=YES, radius_increased=YES, dup_weapon=YES, no_nuke=YES
+DATA SHA256 = a85ee706b0f89c120d014a46f5aa2964cc10b0b5bf717e060f46186a5b4501f4

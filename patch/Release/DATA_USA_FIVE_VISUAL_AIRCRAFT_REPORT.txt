@@ -1,0 +1,62 @@
+FIVE DONOR-VISUAL AIRCRAFT BASE BUILD = PASS
+
+METHOD:
+Donor DATA used = NO
+Donor ART used = YES
+Specter-compatible Object structure used = YES
+B-21 integration method followed = YES
+Skeleton = Specter JetAI/F100 (jets) + heli JetAI/T700 (V-22)
+BASE AIRCRAFT BUILDS/SPAWNS STRUCTURALLY READY
+GAME BOOT / ROLE FUNCTION CLAIMED = NO
+
+E-3:
+Final Object = AmericaJetE3Visual
+Visual W3D = E3
+Donor ART = YES
+Donor DATA = NO
+HeavyAirBase slot = 5
+AWACS functionality = NOT YET
+Weapons = NONE
+
+C-17:
+Final Object = AmericaJetC17Visual
+Visual W3D = IUAC17HXNew
+Donor ART = YES
+Donor DATA = NO
+HeavyAirBase slot = 8
+Transport functionality = NOT YET
+Weapons = NONE
+
+E-737:
+Final Object = AmericaJetE737Visual
+Visual W3D = KVE737
+Donor ART = YES
+Donor DATA = NO
+HeavyAirBase slot = 9
+AEW functionality = NOT YET
+Weapons = NONE
+
+E2:
+Final Object = AmericaJetE2Visual
+Visual W3D = AVHawk
+Donor ART = YES
+Donor DATA = NO
+HeavyAirBase slot = 10
+Radar functionality = NOT YET
+Weapons = NONE
+
+V-22:
+Final Object = AmericaJetV22Visual
+Visual W3D = AVOsprey
+Donor ART = YES
+Donor DATA = NO
+HeavyAirBase slot = 11
+Transport functionality = NOT YET
+Weapons = NONE
+
+AC-130 changed = NO
+B-2/B-21/B-52/B-1R changed = NO
+Other factions changed = NO
+ART rebuilt = NO
+ART sha256 = 6320515bf3b02d4a7b4bb33cecb32baa9de3fb21379b8161d4767abad8976eb7
+DATA sha256 = 609beb3763a545eb83b1c2bd3af9ab7d4cf43f289aca27995e9196b9df062eb9

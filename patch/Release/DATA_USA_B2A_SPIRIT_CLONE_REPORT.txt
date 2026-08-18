@@ -1,0 +1,38 @@
+B-2A SECOND BOMBER INTEGRATION = PASS
+
+EXISTING B-2:
+Object = AmericaJetB2Spirit
+Changed = NO
+HeavyAirBase Slot = 1
+
+NEW B-2A:
+Object = AmericaJetB2A
+DisplayName = B-2A
+
+Gameplay structure source = AmericaJetB2Spirit (full clone)
+
+Donor primary W3D = AVB3bmbr
+Donor textures = avb3bmbr.dds / avb3bmbr_D.dds / avb3bmbr_E.dds (+ AVB2A*.tga family present)
+Donor animations = (embedded in AVB3bmbr W3D family)
+Donor ButtonImage = B2A (MappedImage -> B2ATB.tga; distinct from Spirit B2DropBombTB)
+
+Donor ART used = YES
+Donor gameplay DATA used = NO
+
+CommandButton = Command_ConstructAmericaJetB2A
+Command = UNIT_BUILD
+Object target = AmericaJetB2A
+HeavyAirBase Slot = 12
+
+Takeoff structure = JetAIUpdate + D30-F6_JetLocomotor (from Spirit)
+Landing structure = BasicJetTaxiLocomotor + JetAIUpdate (from Spirit)
+Parking structure = KeepsParking via JetAIUpdate / HeavyAirBase HXUSABigAirPort 3x2 unchanged
+
+Existing B-2 preserved = YES
+AmericaJetB2Spirit count = 1
+AmericaJetB2A count = 1
+
+DATA sha256 = ebf88fdbf3807acda67a162589cb4bafde9daa343e6527bd77f145069895108b
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef (unchanged)
+ZIP = SPECTER_MASTER_DATA_USA_B2A_SPIRIT_CLONE.zip
+URL = https://gofile.io/d/LQHmBCBo

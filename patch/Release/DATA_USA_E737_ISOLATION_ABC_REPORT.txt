@@ -1,0 +1,29 @@
+E-737 THREE-BUILD ISOLATION
+GAME BOOT CLAIMED = NO (user must boot-test)
+
+BUILD A:
+E-737 removed completely = YES
+STATIC PACKAGE VALIDATION = PASS
+SHA256 = 0d6f75047fab221a7a227dc9354d613928160ce235b1c942cf7c7fff91db9eca
+Download = https://litter.catbox.moe/98pqi8.zip
+
+BUILD B:
+Pure working E-3 clone as AmericaJetE737AEW = YES
+KVE737 used = NO
+STATIC PACKAGE VALIDATION = PASS
+SHA256 = ee79d870ad43c251854600a8f5d4569941ea2c7b35b6af7daec287ed62848278
+Download = https://litter.catbox.moe/84jbyf.zip
+
+BUILD C:
+Same Build B Object + KVE737 visual only = YES
+Donor avionE737 behaviors used = NO
+STATIC PACKAGE VALIDATION = PASS
+SHA256 = 556375b2c2ea8165db95bbad4aa71246189da90daf0d0918372072b12ee00876
+Download = https://litter.catbox.moe/9opizq.zip
+
+NO OTHER AIRCRAFT CHANGED = YES
+NO OTHER FACTIONS CHANGED = YES
+ART CHANGED = NO
+E3 source block SHA256 = a5458c4470a4db3c5b3e88cdc9698fb1042f8a3c7049d4f8439bdb26ff4a5d03
+Build B object SHA256 = 885d91673885b1b2ae3b4dbd8af6bd06a97cf3ed8046cfaa00850b2d1285d37a
+Build C object SHA256 = b7cceef8f5cd9aea8342036934497bccc714b67c8b64cec26d291386fa294878

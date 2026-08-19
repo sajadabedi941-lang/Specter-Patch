@@ -1,0 +1,72 @@
+AWACS + B52 + F117 UPDATE = PASS
+
+==============================
+AWACS
+==============================
+Original USA AWACS:
+Object = US_E3G_AWACS
+VisionRange V = 350
+ShroudClearingRange S = 300
+
+E-2:
+VisionRange = 437.5
+ShroudClearingRange = 375
+Stealth DetectionRange = 1250
+BuildCost = 9000
+
+E-737:
+VisionRange = 560
+ShroudClearingRange = 480
+Stealth DetectionRange = 1600
+BuildCost = 13000
+
+E-3:
+VisionRange = 700
+ShroudClearingRange = 600
+Stealth DetectionRange = 2000
+BuildCost = 18000
+
+Order: E3 > E737 > E2 = YES
+Passive reveal follows aircraft = YES
+SpecialPower.ini changed = NO
+SpecialPower.ini SHA256 = b80fa681d68f2ad28af0215723d7a56dd599454a3cdcbc986cda8649a69fdf5b
+
+==============================
+B-52
+==============================
+Object = AmericaJetB52H
+Old Weapon = AmericaB52_10BombLinearWeapon
+New Weapon = AmericaB52TenBombCarpetWeapon
+Bomb type = MK-84 conventional free-fall
+Projectile = MK-84
+Old actual payload = 1 (ClipSize; FireOCL attempted multi-spawn)
+Final payload = 10
+ClipSize = 10
+DelayBetweenShots = 200
+One attack pass releases all 10 = YES
+Linear bombing = YES (forward motion + rapid interval; ScatterRadius=0)
+Random scatter = NO
+5+5 = NO
+Root cause of old one-bomb behavior = ClipSize=1 on AmericaB52_10BombLinearWeapon (single activation) + FireOCL multi-CreateObject path not delivering a usable 10-bomb pass
+
+==============================
+F-117
+==============================
+USA fighter airbase Object = America_LargeAirBase
+CommandSet = America_LargeAirBaseCommandSet
+Old Rally Point slot = 13 = Command_SetRallyPoint
+New content in that slot = Command_ConstructAmericaJetF117 (F-117)
+F-117 Object = AmericaJetF117Clean
+F-117 W3D = AVStealth / AVStealth_D
+F-117 CommandButton = Command_ConstructAmericaJetF117
+F-117 ButtonImage = SAStealth
+Existing F-117 reused = YES (from prior AmericaJetF117Clean / TEOD AVStealth)
+Fighter runway: TheAirPort = YES
+4x4 / 16 parking = preserved
+HeavyAirBase Rally Point changed = NO
+Other fighter slots changed = NO
+
+DATA SHA256 = ae44556023131579c80e0ff5c3dd3242fc58cff4f58880b6c5d212fd4226b7d0
+ART SHA256 = ffafde1d0e8258a0d191d7f6dc6db833c172ecf5ec6208b10713bc2edbef56e9
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_ART_USA_AWACS_PASSIVE_B52_F117.zip
+IMPORTANT: DO NOT CLAIM IN-GAME PASS.

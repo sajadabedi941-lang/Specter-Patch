@@ -1,0 +1,55 @@
+B52 FINAL 15-BOMB WIDE TARGET-CENTERED LINE = PASS
+
+B-52 Object = AmericaJetB52H
+
+Current line system = AmericaB52TenBombLineWeapon → FireOCL OCL_AmericaB52TenBombLine (aircraft-anchored LIKE_EXISTING)
+Current target anchor = AIRCRAFT / firer (FireOCL at B-52)
+Current bomb count = 10
+Current spacing = 20
+
+FINAL:
+Target anchor = PLAYER-SELECTED TARGET
+  via ProjectileObject AmericaB52LineTargetAnchor + ProjectileDetonationOCL OCL_AmericaB52FifteenBombLine
+  (proven B-2/NukeCannon ProjectileDetonationOCL pattern)
+
+Bomb count = 15
+New spacing = Current spacing × 3 = 60
+
+Final offsets:
+Bomb 1 = X:0 Y:-420 Z:100
+Bomb 2 = X:0 Y:-360 Z:100
+Bomb 3 = X:0 Y:-300 Z:100
+Bomb 4 = X:0 Y:-240 Z:100
+Bomb 5 = X:0 Y:-180 Z:100
+Bomb 6 = X:0 Y:-120 Z:100
+Bomb 7 = X:0 Y:-60 Z:100
+Bomb 8 = X:0 Y:0 Z:100  ← EXACT PLAYER TARGET
+Bomb 9 = X:0 Y:60 Z:100
+Bomb 10 = X:0 Y:120 Z:100
+Bomb 11 = X:0 Y:180 Z:100
+Bomb 12 = X:0 Y:240 Z:100
+Bomb 13 = X:0 Y:300 Z:100
+Bomb 14 = X:0 Y:360 Z:100
+Bomb 15 = X:0 Y:420 Z:100
+
+Bomb 8 exactly on selected target = YES (Offset Y:0 at detonation point)
+Equal spacing = YES
+Symmetric line = YES
+Line follows B-52 heading = YES (LIKE_EXISTING at projectile impact facing)
+
+One trigger = YES
+15 bomb objects per trigger = YES
+
+Sequential ClipSize-only method = NO
+Random scatter = NO
+All bombs on one point = NO
+
+Bomb damage changed = NO
+Bomb FX changed = NO
+B-52 flight changed = NO
+Other aircraft changed = NO
+ART changed = NO
+
+DATA SHA256 = d1a56e09adb59ed52a830dd673b0ee9c0a12bb1a17781d99b7c2091676fa22b7
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_USA_B52_15BOMB_TARGET_CENTERED.zip
+IMPORTANT: DO NOT CLAIM IN-GAME VISUAL PASS.

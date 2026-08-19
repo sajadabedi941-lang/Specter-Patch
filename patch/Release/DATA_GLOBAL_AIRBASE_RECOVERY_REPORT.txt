@@ -1,0 +1,64 @@
+GLOBAL AIRBASE RECOVERY = PASS
+
+ROOT CAUSE =
+  Converted fighter/heavy airbases globally reference Model = TheAirPort /
+  HXUSABigAirPort, but those W3Ds (and texture CJJCWUJUN.dds) were NEVER
+  packed into _SPEC_ART_ONE.big (only existed in DONOR_Art). Result: red
+  placement ghosts / missing runways across multiple factions.
+  DATA airbase Objects themselves matched PR344 (not deleted).
+
+Was clean staging incomplete = NO
+  (DATA file count vs PR344 complete; recovery starts from full PR344 tree)
+Was a global INI replaced by partial Russia data = NO
+  (CommandSet/CommandButton kept as full master files from expansion, T50 stripped)
+Were airbase Objects deleted = NO
+Were construction buttons broken = NO
+Were prerequisites changed = NO
+Was ART missing = YES
+  (TheAirPort.W3D / HXUSABigAirPort.W3D / CJJCWUJUN.dds absent from SPEC ART)
+
+Last known-good baseline =
+  PR344 parking DATA sha256 d49583f17b1875530124491b0e53e333ba744f5d714f250515a31030524e98bc
+  (+ donor ART meshes for TheAirPort / HXUSABigAirPort)
+
+------------------------------
+
+USA Fighter Airbase = RESOLVES
+Russia Fighter Airbase = RESOLVES
+China Fighter Airbase = RESOLVES
+Iran Fighter Airbase = RESOLVES
+Pakistan Fighter Airbase = RESOLVES
+Israel Fighter Airbase = RESOLVES
+UAE Fighter Airbase = RESOLVES
+Iraq Fighter Airbase = RESOLVES
+NATO Fighter Airbase = RESOLVES
+
+TheAirPort.W3D present in ART = YES
+HXUSABigAirPort.W3D present in ART = YES
+CJJCWUJUN.dds present in ART = YES
+
+Fighter parking 4x4 preserved = YES
+Heavy parking 3x2 preserved = YES
+
+T-50 disabled = YES
+  (no russiajett50pakfaclean.ini; no T50 CommandSet refs)
+
+Russia aircraft retained (non-T50) = YES
+  Su-47 / SuT75 / Tu-160 / Tu-95 / An-124 / An-225 / avionIL76 / A-50 / cargoIL76
+
+Other faction gameplay intentionally changed = NO
+
+PR344 DATA file count = 2533
+Recovery DATA file count = 2550
+Missing unrelated runtime files vs PR344 = 0
+
+DATA sha256 = a3eace60486397c772d9020fef7cd382363e33c86ecb08ab2de0629bd1cbf749
+ART sha256 = 248172a4a1ddfc66743b16016a29b7a2fd70a3389107599b899c041f98f1c592
+ZIP = /workspace/patch/Release/SPECTER_MASTER_GLOBAL_AIRBASE_RECOVERY.zip
+
+IMPORTANT: static recovery PASS only. User must test dozer placement (green ghost)
+and construction across factions. Do NOT claim in-game PASS.
+
+Download ZIP:
+https://litter.catbox.moe/vwt6az.zip
+

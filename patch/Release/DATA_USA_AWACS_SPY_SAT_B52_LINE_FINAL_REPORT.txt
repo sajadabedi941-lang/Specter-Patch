@@ -1,0 +1,118 @@
+FINAL AWACS + B52 REWORK = PASS
+
+==============================
+SCAN REFERENCE
+==============================
+Original USA AWACS:
+Object = US_E3G_AWACS
+SAR Button = Command_ANAPY2_SARSCANMODE
+Scan architecture = OCLSpecialPower + SPECIAL_ARTILLERY_BARRAGE (science-gated; NOT used for our fix)
+SpecialPower used = YES (ANAPY2) but ineffective for HeavyAirBase aircraft without science
+Weapon used = NO (for SpySat path)
+OCL = SUPERWEAPON_ANAPY2_SARSCAN
+Reveal Object = (artillery payload path)
+Radius = RadiusCursorRadius 450
+Lifetime = ViewObjectDuration 40000
+Cooldown = ReloadTime 10000
+
+Spy Satellite reference (USED for targeted SAR):
+Button = Command_SpySatelliteScan
+SpecialPower = SpecialPowerSpySatellite Enum=SPECIAL_SPY_SATELLITE
+Behavior = OCLSpecialPower CREATE_AT_LOCATION
+OCL = SUPERWEAPON_SpySatellite
+Reveal Object = SpySatellitePing
+Radius = VisionRange 300 / RadiusCursorRadius 300
+Lifetime = DeletionUpdate 13000 ms
+Cooldown = ReloadTime 60000 ms
+
+==============================
+E-2
+==============================
+Object = AmericaJetE2Visual
+BuildCost = 10000
+SAR button = Command_E2SARScan
+Targeted scan works by = SpySatellite clone (SPECIAL_SPY_SATELLITE + CREATE_AT_LOCATION + reveal ping)
+Scan radius = 345 (R=300 × 1.15)
+Reveal duration = 60 sec
+Cooldown = 45 sec
+Passive VisionRange = 810
+Passive ShroudClearingRange = 810
+Weapons = NONE
+
+==============================
+E-737
+==============================
+Object = AmericaJetE737Visual
+BuildCost = 14000
+SAR button = Command_E737SARScan
+Targeted scan works by = SpySatellite clone (SPECIAL_SPY_SATELLITE + CREATE_AT_LOCATION + reveal ping)
+Scan radius = 420 (R=300 × 1.4)
+Reveal duration = 90 sec
+Cooldown = 50 sec
+Passive VisionRange = 810
+Passive ShroudClearingRange = 810
+Weapons = NONE
+
+==============================
+E-3
+==============================
+Object = AmericaJetE3Visual
+BuildCost = 18000
+SAR button = Command_E3SARScan
+Targeted scan works by = SpySatellite clone (SPECIAL_SPY_SATELLITE + CREATE_AT_LOCATION + reveal ping)
+Scan radius = 525 (R=300 × 1.75)
+Reveal duration = 120 sec
+Cooldown = 60 sec
+Passive VisionRange = 1200
+Passive ShroudClearingRange = 1200
+Weapons = NONE
+
+==============================
+PASSIVE VISIBILITY
+==============================
+Original AWACS S = 300
+E2 multiplier = ~2.7
+E737 multiplier = ~2.7
+E3 multiplier = ~4.0
+E3 reveal > E737/E2 = YES
+Reveal follows aircraft = YES
+Passive persistence after leaving area supported by engine = NO (Vision/Shroud are live with unit only)
+
+==============================
+B-52
+==============================
+Object = AmericaJetB52H
+Bomb source = MK-84 model / CarpetBomb physics / AmericaB52LineBombDetonation
+Final Weapon = AmericaB52TenBombLineWeapon
+OCL / multi-spawn mechanism = FireOCL → OCL_AmericaB52TenBombLine (10× CreateObject Offset local Y)
+Trigger count = 1
+Bomb count = 10
+Offsets:
+1 = X:0 Y:-90 Z:-8
+2 = X:0 Y:-70 Z:-8
+3 = X:0 Y:-50 Z:-8
+4 = X:0 Y:-30 Z:-8
+5 = X:0 Y:-10 Z:-8
+6 = X:0 Y:10 Z:-8
+7 = X:0 Y:30 Z:-8
+8 = X:0 Y:50 Z:-8
+9 = X:0 Y:70 Z:-8
+10 = X:0 Y:90 Z:-8
+Equal spacing = YES (20)
+Local-aircraft axis = YES (Y forward)
+Same-trigger release = YES
+Sequential Clip method removed = YES (ClipSize=1 FireOCL; AmericaB52TenBombCarpetWeapon no longer primary)
+10 falling bomb Objects = YES
+One strike consumes all 10 = YES
+Return/rearm after strike = YES (AutoReloadsClip=RETURN_TO_BASE)
+
+SpecialPower.ini parser-safe = YES
+No unsupported new fields = YES
+No unresolved SpecialPower = YES
+No unresolved Weapon = YES
+No unresolved OCL = YES
+Other aircraft changed = NO
+ART changed = NO
+DATA SHA256 = 09bc671695de114808e7db8ca63c45e49bbb421544be6a05da7c6dfdec08ae19
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_USA_AWACS_SPY_SAT_B52_LINE_FINAL.zip
+IMPORTANT: DO NOT CLAIM IN-GAME PASS.

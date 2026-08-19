@@ -1,0 +1,3 @@
+_SPEC_DATA_ONE.big sha256: ed2b2eb4c4571c0b1aad3404c9597a30b32af9b9e503a9ea50d168f11e4a2c02
+_SPEC_ART_ONE.big  sha256: addeca8ba2944be12053dd167e70965924c608bc000abc56c74e826d442b1c7d
+ZIP: https://litter.catbox.moe/0h5vt9.zip

@@ -1,0 +1,52 @@
+T50 CRASH ISOLATION BUILD = PASS
+
+Crash file from ReleaseCrashInfo =
+Data\INI\Object\specter\armed forces of russian federation\airforce\russiajett50pakfaclean.ini
+
+SOURCE STAGING:
+Crash file removed = YES
+T50 Object count = 0
+T50 CommandSet references = 0
+
+FINAL EXTRACTED _SPEC_DATA_ONE.big:
+russiajett50pakfaclean.ini present = NO
+
+RussiaJetT50 definitions = 0
+SuT50 definitions = 0
+PAKFA gameplay Objects = 0
+
+Russia Fighter Airbase T50 button removed = YES
+(slot 11 emptied; no replacement aircraft)
+
+Su-47 retained = YES
+SuT75 retained = YES
+Tu-160 retained = YES
+
+Tu-95 retained = YES
+An-124 retained = YES
+An-225 retained = YES
+avionIL76 retained = YES
+A-50 retained = YES
+cargoIL76 retained = YES
+
+Other factions changed = NO
+ART changed = NO
+
+Removed keys:
+  - Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetT50PAKFAClean.ini
+  - Data\English\SPECTER_T50_PAKFA_Strings.txt
+
+Before T50 Object hits: [('Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Airforce\\RussiaJetT50PAKFAClean.ini', 'RussiaJetT50PAKFAClean')]
+After T50 Object hits: []
+
+Non-Object leftover path keys (UI MappedImages only expected):
+  - Data\INI\MappedImages\HandCreated\TEOD_T50_PAKFA_Images.INI
+
+DATA sha256 = 1d723b9f1397c490076ca438c1b46b037087fccd3998890f9b8f6a5efb2c26b7
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_RUSSIA_T50_ISOLATION.zip
+
+IMPORTANT: Do NOT claim game launch. User tests this recovery build.
+
+Download ZIP (DATA only):
+https://litter.catbox.moe/j3zmg7.zip
+

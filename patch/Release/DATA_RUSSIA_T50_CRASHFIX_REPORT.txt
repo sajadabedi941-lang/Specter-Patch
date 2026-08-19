@@ -1,0 +1,60 @@
+T50 PAKFA STARTUP CRASH FIX = PASS
+
+Crash file =
+  Data\INI\Object\specter\armed forces of russian federation\airforce\russiajett50pakfaclean.ini
+
+Reported Object =
+  Object RussiaJetT50PAKFAClean
+
+Actual parser root cause =
+  Active RussiaJetT50PAKFAClean carried legacy helper/firefix gameplay DATA
+  (custom Weapon/Locomotor chain + donor StealthUpdate + non-ASCII comment bytes).
+  Generals reported the Object RussiaJetT... header in this file.
+
+Was previous block malformed = NO
+  (single Object file; fault was inside this Object / its dependencies)
+
+Missing End = NO
+Old helper-only DATA activated = YES
+Broken Weapon/Projectile dependency = YES
+  (prior custom R27 clone path; weapon file still targeted TEOD R27 after last fix,
+   but T50 Object itself remained the reported crash file — rewritten entirely)
+Duplicate Object = NO
+
+OLD T50 Object active count before = 1
+OLD T50 Object active count after = 1 (same ID, clean contents)
+
+FINAL T50:
+Object = RussiaJetT50PAKFAClean
+W3D = PAK-FA / PAK-FA_D (ART preserved)
+Data skeleton source = RussiaJetSU47Clean
+Locomotor = Saturn_AL-41F (+ BasicJetTaxiLocomotor)
+AIUpdate = JetAIUpdate
+WeaponSet = NONE (Weapons = NONE)
+Weapons temporarily disabled = YES
+
+Button = Command_ConstructRussiaJetT50PAKFA
+Russia Fighter Airbase slot = 11 (Russia_LargeAirBaseCommandSet)
+
+T50 ART preserved = YES
+T50 real icon preserved = YES (PAKFA-ic_L)
+
+Su47 changed = NO
+SuT75 changed = NO
+Tu160 changed = NO
+New donor heavy aircraft changed = NO
+Other factions changed = NO
+ART changed = NO
+
+Removed unused DATA keys:
+  - Data\INI\Weapon_Russia_T50_PAKFA_Clean.ini
+  - Data\INI\Locomotor_Russia_T50_PAKFA_Clean.ini
+
+DATA sha256 = ea950c0106ab6b816e477ffdbf895a1e238b63d44b863a73bfa4834648469f3e
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_RUSSIA_T50_CRASHFIX.zip
+
+IMPORTANT: static PASS only. User must launch to verify startup.
+
+Download ZIP (DATA only):
+https://litter.catbox.moe/hyo1ow.zip
+

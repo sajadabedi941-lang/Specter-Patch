@@ -1,0 +1,110 @@
+RUSSIA AIRCRAFT REPAIR = PACKED PASS — AWAITING USER IN-GAME TEST
+
+A. BASELINE
+- starting Git HEAD = 5a381c1f (PR #372 recovery) then branch cursor/russia-aircraft-runtime-repair-4b13
+- baseline DATA sha256 = a3eace60486397c772d9020fef7cd382363e33c86ecb08ab2de0629bd1cbf749
+- baseline ART  sha256 = 248172a4a1ddfc66743b16016a29b7a2fd70a3389107599b899c041f98f1c592
+- T50 disabled = YES (no russiajett50pakfaclean.ini)
+- TheAirPort.W3D / HXUSABigAirPort.W3D / CJJCWUJUN.dds = PRESENT
+- Heavy parking NumRows=3 NumCols=2 = YES
+- Fighter/Large parking NumRows=4 NumCols=4 = YES
+- PR #372 recovery invariants preserved = YES
+
+B. SU-24 AIRBASE MOVE
+- Su-34M Object = RussiaJetSu34 / Button = Command_ConstructRussiaJetSu34
+  old = Russia_HeavyAirBaseCommandSet slot 1
+  new = Russia_LargeAirBaseCommandSet slot 11
+- Su-24M2 Object = RussiaJetSU24M2 / Button = Command_ConstructRussiaJetSU24M2
+  old = Russia_HeavyAirBaseCommandSet slot 2
+  new = Russia_LargeAirBaseCommandSet slot 12
+- Su-24MR Object = RussiaJetSU24MP / Button = Command_ConstructRussiaJetSU24MP
+  old = Russia_HeavyAirBaseCommandSet slot 4
+  new = Russia_LargeAirBaseCommandSet slot 15
+- Fighter AirBase Object = Russia_LargeAirBase (Model=TheAirPort)
+
+C. avionIL76
+- healthy Object ID = RussiaJetAvionIL76Visual (Model=Yier76)
+- broken Object ID = NONE (no second CommandSet entry / Object)
+- broken appearance cause = missing Art\Textures\yujing1.tga required by Yier76.W3D
+- broken CommandButton removed = N/A (single button retained; texture restored)
+- cargoIL76 remains = YES (RussiaJetCargoIL76Visual / Command_ConstructRussiaJetCargoIL76Visual Heavy slot 8)
+
+D. Tu-95 MANIFEST
+Imported/reused ART:
+- W3D (already present): CWCruTu95.W3D / CWCruTu95_d.W3D / CWCruTu95_k.W3D
+- textures added: CWCgenPropellor.tga/.dds, CWCgenReflective.tga/.dds, CWCruTU95.tga
+- animation: CWCruTu95.CWCruTu95 LOOP (existing Draw; prop bones PROP01-08)
+- damage models: CWCruTu95_d / CWCruTu95_k (existing)
+- INI gameplay unchanged (Draw already donor-safe)
+
+E. An-225 MANIFEST
+- W3D (already present): A_AN225_100.W3D
+- textures added: A_E-3_100.tga (mesh dependency)
+- texture already present: A_AN225_100.tga
+- active DisplayName key = OBJECT:RussiaJetAn225Visual
+- resulting visible text = An-225 Mriya (CSF append + expansion strings)
+- gameplay DATA unchanged
+
+F. A-50 MANIFEST
+- W3D (already present): CWCruA50.W3D
+- textures added: CWCruA50.tga, CWCruAn124NavL.tga, CWCruAn124NavR.tga, CWCgenReflective.tga/.dds
+- radar rotodome = CWCruA50 subobjects DOME / DISH_H01 / DISH_H02
+- animation = CWCruA50.CWCruA50 LOOP (existing Draw — spins rotodome hierarchy)
+- gameplay DATA unchanged
+
+G. Tu-160 WING FIX
+- donor/current architecture = LSFRussiaTu160 with WING01/WING02 + embedded animation LSFRussiaTu160.LSFRussiaTu160
+- working swing-wing reference = ScienceObjects/TU160M2.ini DOOR_1_OPENING/CLOSING (ONCE / ONCE_BACKWARDS + START_FRAME_*)
+- W3Ds = LSFRussiaTu160.W3D / d / k
+- textures = LSFRussiaTU160.dds / d / k
+- visual state changes = replaced RU-TU160 static Draw with DOOR_1 ConditionStates
+- invented WingSweepUpdate = NO
+
+H. FILES MODIFIED (runtime packed delta)
+DATA:
+- Data\INI\CommandSet.ini
+- Data\English\generals.csf
+- Data\English\SPECTER_RUSSIA_AIRCRAFT_EXPANSION_Strings.txt
+- Data\INI\Object\...\Airforce\RussiaJetTU160Clean.ini
+ART added:
+- yujing1.tga/.dds
+- CWCgenPropellor.tga/.dds
+- CWCgenReflective.tga/.dds
+- CWCruTU95.tga
+- A_E-3_100.tga
+- CWCruA50.tga
+- CWCruAn124NavL.tga / CWCruAn124NavR.tga
+- LSFRussiaTu160.W3D / d / k
+- LSFRussiaTU160.dds / d / k
+
+I. COMMITS
+1. Su-24 move = c2bb1685
+2. avionIL76 cleanup = 6cff2cca
+3. Tu-95 = 4a86d160
+4. An-225 = 38322cde
+5. A-50 = 330f18f1
+6. Tu-160 = 77ec322d
+
+J. FINAL BIG CONTENT VERIFICATION (RE-EXTRACTED)
+- Su-24MR/M2/Su-34M only in Fighter/Large = YES
+- broken second avionIL76 absent = YES
+- healthy avionIL76 present = YES
+- cargoIL76 present = YES
+- An-225 CSF = An-225 Mriya = YES
+- T50 disabled = YES
+- Heavy 3x2 / Fighter 4x4 = YES
+- required ART families present = YES
+
+K. HASHES
+_SPEC_DATA_ONE.big sha256=7515813308fb2fb0bf37c561e7c1ccbb4416f67bd933bc9952310cf5ff48d76c
+_SPEC_ART_ONE.big  sha256=cc686e44d8229648902573b222e827c9f048e117815d5811ccd0698bac158ae3
+final ZIP sha256=(see HASHES file after write)
+
+L. PACKAGING
+ZIP contains EXACTLY:
+_SPEC_DATA_ONE.big
+_SPEC_ART_ONE.big
+Download = https://gofile.io/d/aweVBbWs
+
+M. FINAL STATUS
+RUSSIA AIRCRAFT REPAIR = PACKED PASS — AWAITING USER IN-GAME TEST

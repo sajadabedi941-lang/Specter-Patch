@@ -1,0 +1,91 @@
+AWACS SPECIALPOWER PARSER CRASH FIX = PASS
+
+Crash line reported =
+SpecialPower AmericaE2SARScan
+
+Actual root cause =
+bad custom SpecialPower blocks using unsupported AcademyClassify = ACT_SPECIAL_POWER
+(ACT_SPECIAL_POWER appeared only on AmericaE2/E737/E3SARScan; original AWACS uses ACT_SUPERPOWER)
+
+Previous block before AmericaE2SARScan valid = YES
+
+Original USA AWACS:
+Object = US_E3G_AWACS (ScienceObjects/E3G.ini)
+CommandButton = Command_ANAPY2_SARSCANMODE
+SpecialPower = Superweapon_ANAPY2_SARSCANMODE
+Scanner Behavior = OCLSpecialPower + FireWeaponUpdate(AN_APY2_Radar_Power) + StealthDetectorUpdate
+
+Custom E2 SpecialPower retained = NO
+Custom E737 SpecialPower retained = NO
+Custom E3 SpecialPower retained = NO
+
+If removed:
+All three now reference original safe AWACS SpecialPower = YES
+
+E2 SAR button reference resolves = YES
+E737 SAR button reference resolves = YES
+E3 SAR button reference resolves = YES
+
+AmericaE2SARScan active count = 0
+AmericaE737SARScan active count = 0
+AmericaE3SARScan active count = 0
+Original USA AWACS SpecialPower still exists = YES
+SpecialPower.ini parse-safe by structural audit = YES
+
+B52 changed = NO
+B21 changed = NO
+Other aircraft changed = NO
+ART changed = NO
+
+Files changed this fix:
+  - Data\INI\CommandButton.ini
+  - Data\INI\Object\Specter\United States Of America\AmericaJetE2Visual.ini
+  - Data\INI\Object\Specter\United States Of America\AmericaJetE3Visual.ini
+  - Data\INI\Object\Specter\United States Of America\AmericaJetE737Visual.ini
+  - Data\INI\SpecialPower.ini
+
+REMOVED SpecialPower blocks (diff):
+---
+SpecialPower AmericaE2SARScan
+  Enum                = SPECIAL_ARTILLERY_BARRAGE
+  ReloadTime          = 10000
+  InitiateSound       = SpySatellite
+  PublicTimer         = No
+  SharedSyncedTimer   = No
+  ViewObjectDuration  = 40000
+  ViewObjectRange     = 225
+  RadiusCursorRadius  = 405
+  ShortcutPower       = No
+  AcademyClassify     = ACT_SPECIAL_POWER
+End
+---
+SpecialPower AmericaE737SARScan
+  Enum                = SPECIAL_ARTILLERY_BARRAGE
+  ReloadTime          = 10000
+  InitiateSound       = SpySatellite
+  PublicTimer         = No
+  SharedSyncedTimer   = No
+  ViewObjectDuration  = 40000
+  ViewObjectRange     = 300
+  RadiusCursorRadius  = 540
+  ShortcutPower       = No
+  AcademyClassify     = ACT_SPECIAL_POWER
+End
+---
+SpecialPower AmericaE3SARScan
+  Enum                = SPECIAL_ARTILLERY_BARRAGE
+  ReloadTime          = 10000
+  InitiateSound       = SpySatellite
+  PublicTimer         = No
+  SharedSyncedTimer   = No
+  ViewObjectDuration  = 40000
+  ViewObjectRange     = 388
+  RadiusCursorRadius  = 698
+  ShortcutPower       = No
+  AcademyClassify     = ACT_SPECIAL_POWER
+End
+
+DATA SHA256 = 600af0f2da9864655071c5cc3d8c02f000605098c73662e008351442e031c638
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_USA_AWACS_SPECIALPOWER_CRASH_FIX.zip
+
+IMPORTANT: DO NOT CLAIM IN-GAME PASS. User must launch to confirm startup.

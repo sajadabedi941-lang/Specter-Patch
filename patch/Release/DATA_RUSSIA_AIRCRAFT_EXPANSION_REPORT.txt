@@ -1,0 +1,254 @@
+RUSSIA COMPLETE AIRCRAFT EXPANSION = PASS
+
+==============================
+FIGHTER AIRBASE
+==============================
+
+Object = Russia_LargeAirBase
+CommandSet = Russia_LargeAirBaseCommandSet
+W3D = TheAirPort
+Parking = 4x4 / 16
+
+Su-47:
+Object = RussiaJetSU47Clean
+W3D = RUSU-47
+Button = Command_ConstructRussiaJetSu47Recon
+ButtonImage = SU-47ic_L
+Slot = 10
+Existing aircraft reused = YES
+
+SuT50:
+Object = RussiaJetT50PAKFAClean
+W3D = PAK-FA
+Button = Command_ConstructRussiaJetT50PAKFA
+ButtonImage = PAKFA-ic_L
+Slot = 11
+Existing aircraft reused = YES
+
+SuT75:
+Object = RussiaJetSU75Clean
+W3D = RUSU75
+Button = Command_ConstructRussiaJetSu75Checkmate
+ButtonImage = Checkmate_L
+Slot = 1
+Existing aircraft reused = YES
+
+Tu-160 in Fighter Airbase = NO
+
+BEFORE Large CommandSet:
+CommandSet Russia_LargeAirBaseCommandSet
+  1  = Command_ConstructRussiaJetSu75Checkmate
+  2  = Command_ConstructRussiaJetSu35S
+  3  = Command_ConstructRussiaJetSu30SM2
+  4  = Command_ConstructRussiaJetSU25T
+  5  = Command_ConstructRussiaJetSu35AG
+  6  = Command_ConstructRussiaJetMig31K
+  7  = Command_ConstructRussiaHelicopterMi28N
+  8  = Command_ConstructRussiaHelicopterKA52
+  9  = Command_ConstructRussiaJetSu57AA
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+AFTER Large CommandSet:
+CommandSet Russia_LargeAirBaseCommandSet
+  1  = Command_ConstructRussiaJetSu75Checkmate
+  2  = Command_ConstructRussiaJetSu35S
+  3  = Command_ConstructRussiaJetSu30SM2
+  4  = Command_ConstructRussiaJetSU25T
+  5  = Command_ConstructRussiaJetSu35AG
+  6  = Command_ConstructRussiaJetMig31K
+  7  = Command_ConstructRussiaHelicopterMi28N
+  8  = Command_ConstructRussiaHelicopterKA52
+  9  = Command_ConstructRussiaJetSu57AA
+  10 = Command_ConstructRussiaJetSu47Recon
+  11 = Command_ConstructRussiaJetT50PAKFA
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+
+==============================
+ALL RUSSIAN FIGHTER ICONS
+==============================
+
+Aircraft = Su-75 Checkmate | Slot = 1 | Object = RussiaJetSU75Clean | CommandButton = Command_ConstructRussiaJetSu75Checkmate
+Old ButtonImage = rus_su57 | Donor ButtonImage = Checkmate_L | Final ButtonImage = Checkmate_L
+MappedImage = Checkmate_L | Texture = RU-Icons04.tga
+Real donor aircraft icon found = YES | Correct aircraft visually represented = YES
+Object ButtonImage synchronized = YES | Production queue icon synchronized = YES | SelectPortrait changed = YES
+
+Aircraft = Su-35S | Slot = 2 | Object = RussiaJetSu35S | CommandButton = Command_ConstructRussiaJetSu35S
+Old ButtonImage = rus_su35s | Donor ButtonImage = SU35 | Final ButtonImage = SU35
+MappedImage = SU35 | Texture = SU35TB.tga
+Real donor aircraft icon found = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Su-30SM2 | Slot = 3 | Object = RussiaJetSu30SM2 | CommandButton = Command_ConstructRussiaJetSu30SM2
+Old ButtonImage = rus_su33mk3 | Donor ButtonImage = SU30MK2 | Final ButtonImage = SU30MK2
+MappedImage = SU30MK2 | Texture = SU30MK2TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Su-25T | Slot = 4 | Object = RussiaJetSU25T | CommandButton = Command_ConstructRussiaJetSU25T
+Old ButtonImage = rus_su25t | Donor ButtonImage = SU25 | Final ButtonImage = SU25
+MappedImage = SU25 | Texture = SU25TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Su-35AG | Slot = 5 | Object = RussiaJetSu35AG | CommandButton = Command_ConstructRussiaJetSu35AG
+Old ButtonImage = rus_su35s | Donor ButtonImage = SU35 | Final ButtonImage = SU35
+MappedImage = SU35 | Texture = SU35TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = MiG-31K | Slot = 6 | Object = RussiaJetMig31K | CommandButton = Command_ConstructRussiaJetMig31K
+Old ButtonImage = rus_mig31k | Donor ButtonImage = MIG31 | Final ButtonImage = MIG31
+MappedImage = MIG31 | Texture = MIG31TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Mi-28N | Slot = 7 | Object = RussiaHelicopterMi28N | CommandButton = Command_ConstructRussiaHelicopterMi28N
+Old ButtonImage = rus_mi28n | Donor ButtonImage = MI28 | Final ButtonImage = MI28
+MappedImage = MI28 | Texture = MI28TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Ka-52 | Slot = 8 | Object = RussiaHelicopterKA52 | CommandButton = Command_ConstructRussiaHelicopterKA52
+Old ButtonImage = rus_ka52 | Donor ButtonImage = KA52 | Final ButtonImage = KA52
+MappedImage = KA52 | Texture = KA52TB.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = NO
+
+Aircraft = Su-57AA | Slot = 9 | Object = RussiaJetSu57AA | CommandButton = Command_ConstructRussiaJetSu57AA
+Old ButtonImage = rus_su57 | Donor ButtonImage = NONE (no verified standalone SU57 TB) | Final ButtonImage = rus_su57
+MappedImage = rus_su57 | Texture = rus_Icons01.tga
+Real donor aircraft icon found = NO | current working icon preserved = YES | Object sync = N/A | SelectPortrait changed = NO
+
+Aircraft = Su-47 | Slot = 10 | Object = RussiaJetSU47Clean | CommandButton = Command_ConstructRussiaJetSu47Recon
+Old ButtonImage = (new slot) | Donor ButtonImage = SU-47ic_L | Final ButtonImage = SU-47ic_L
+MappedImage = SU-47ic_L | Texture = RU-Icons02.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = YES
+
+Aircraft = SuT50 | Slot = 11 | Object = RussiaJetT50PAKFAClean | CommandButton = Command_ConstructRussiaJetT50PAKFA
+Old ButtonImage = (new slot) | Donor ButtonImage = PAKFA-ic_L | Final ButtonImage = PAKFA-ic_L
+MappedImage = PAKFA-ic_L | Texture = RU-Icons03.tga
+Real donor = YES | Correct = YES | Object sync = YES | Queue sync = YES | SelectPortrait changed = YES
+
+Total fighter icons audited = 11
+Real donor icons found = 10
+Icons replaced = 10
+Already-correct icons preserved = 0
+No-donor icons preserved = 1 (Su-57AA rus_su57)
+Pink icons remaining = 0
+Wrong-aircraft icons remaining = 0
+
+==============================
+HEAVY AIRBASE
+==============================
+
+Object = Russia_HeavyAirBase
+CommandSet = Russia_HeavyAirBaseCommandSet
+W3D = HXUSABigAirPort
+Parking = 3x2 / 6
+
+BEFORE Heavy CommandSet:
+CommandSet Russia_HeavyAirBaseCommandSet
+  1  = Command_ConstructRussiaJetSu34
+  2  = Command_ConstructRussiaJetSU24M2
+  3  = Command_ConstructRussiaJetSu47Recon
+  4  = Command_ConstructRussiaJetSU24MP
+  5  = Command_ConstructRussiaJetTu22M3M
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+AFTER Heavy CommandSet:
+CommandSet Russia_HeavyAirBaseCommandSet
+  1  = Command_ConstructRussiaJetSu34
+  2  = Command_ConstructRussiaJetSU24M2
+  3  = Command_ConstructRussiaJetTU160
+  4  = Command_ConstructRussiaJetSU24MP
+  5  = Command_ConstructRussiaJetTu22M3M
+  6  = Command_ConstructRussiaJetTu95Visual
+  7  = Command_ConstructRussiaJetAn124Visual
+  8  = Command_ConstructRussiaJetAn225Visual
+  9  = Command_ConstructRussiaJetAvionIL76Visual
+  10 = Command_ConstructRussiaJetA50Visual
+  11 = Command_ConstructRussiaJetCargoIL76Visual
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+
+Tu-160:
+Object = RussiaJetTU160Clean
+W3D = RU-TU160
+Button = Command_ConstructRussiaJetTU160
+ButtonImage = TU-160ic
+Slot = 3
+Existing aircraft reused = YES
+Gameplay changed = NO
+
+Tu-95:
+Object = RussiaJetTu95Visual
+Donor primary W3D = CWCruTu95
+ButtonImage = Tu95
+Slot = 6
+Donor ART = YES
+Donor DATA = NO
+
+An-124:
+Object = RussiaJetAn124Visual
+Donor primary W3D = CWCruAn124
+ButtonImage = AN124
+Slot = 7
+Donor ART = YES
+Donor DATA = NO
+
+An-225:
+Object = RussiaJetAn225Visual
+Donor primary W3D = A_AN225_100
+ButtonImage = RussiaAN225
+Slot = 8
+Donor ART = YES
+Donor DATA = NO
+
+avionIL76:
+Object = RussiaJetAvionIL76Visual
+Donor primary W3D = Yier76
+ButtonImage = yier76
+Slot = 9
+Donor ART = YES
+Donor DATA = NO
+
+A-50:
+Object = RussiaJetA50Visual
+Donor primary W3D = CWCruA50
+ButtonImage = RussiaA50
+Slot = 10
+Donor ART = YES
+Donor DATA = NO
+AWACS functionality = NOT YET
+
+cargoIL76:
+Object = RussiaJetCargoIL76Visual
+Donor primary W3D = LSFRussiaYR76
+ButtonImage = CargoIL76Russia
+Slot = 11
+Donor ART = YES
+Donor DATA = NO
+
+==============================
+FINAL SAFETY
+==============================
+
+Russia Fighter Airbase parking changed = NO
+Russia Heavy AirBase parking changed = NO
+Existing Russian aircraft gameplay changed = NO (clean objects reused as previously built)
+Other factions changed = NO
+Donor gameplay DATA imported = NO
+All new donor visual W3Ds physically present in final ART = YES
+Art presence checks = {'RUSU-47.W3D': True, 'RUSU75.W3D': True, 'PAK-FA.W3D': True, 'RU-TU160.W3D': True, 'CWCruTu95.W3D': True, 'CWCruAn124.W3D': True, 'A_AN225_100.W3D': True, 'Yier76.W3D': True, 'CWCruA50.W3D': True, 'LSFRussiaYR76.W3D': True, 'Tu95TB.tga': True, 'AN124TB.tga': True, 'Checkmate icons': True, 'SU-47 icons': True, 'PAKFA icons': True, 'TU-160 icons': True}
+All new button textures physically present in final ART = YES
+All build-menu icons resolve = YES
+All production-queue icons resolve = YES
+
+DATA sha256 = 73e6de9e09d475789af61bf4bca39f7a80ba998bd9a61e8cf24407f1cd15b603
+ART sha256 = 4ad105b43bec2b87764cd69f2bf3e6de2a3d11f3b484c944bbd37724f54f0105
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_ART_RUSSIA_AIRCRAFT_EXPANSION.zip
+
+Do NOT claim in-game flight PASS — user validates takeoff/landing/parking/icons.

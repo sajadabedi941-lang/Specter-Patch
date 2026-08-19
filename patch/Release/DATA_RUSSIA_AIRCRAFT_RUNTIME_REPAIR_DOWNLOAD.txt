@@ -1,0 +1,5 @@
+DATA+ART Russia aircraft runtime repair (PR372 baseline):
+https://gofile.io/d/aweVBbWs
+
+_SPEC_DATA_ONE.big sha256=7515813308fb2fb0bf37c561e7c1ccbb4416f67bd933bc9952310cf5ff48d76c
+_SPEC_ART_ONE.big  sha256=cc686e44d8229648902573b222e827c9f048e117815d5811ccd0698bac158ae3

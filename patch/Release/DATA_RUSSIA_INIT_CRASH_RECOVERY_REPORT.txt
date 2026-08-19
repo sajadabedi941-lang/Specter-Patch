@@ -1,0 +1,100 @@
+RUSSIA INIT-CRASH RECOVERY = PASS
+
+Crash type =
+Uncaught Exception during initialization
+
+INI parser line available = NO
+
+Last user-tested good commit = 7c90bd56 (Recover global airbases: pack missing TheAirPort ART meshes.)
+Evidence = user reported in-game Tu-160/aircraft visual bugs after airbase recovery package
+  package = https://litter.catbox.moe/vwt6az.zip
+  DATA sha256 = a3eace60486397c772d9020fef7cd382363e33c86ecb08ab2de0629bd1cbf749
+  ART  sha256 = 248172a4a1ddfc66743b16016a29b7a2fd70a3389107599b899c041f98f1c592
+
+Crash cleanup commit = 60880343 (Russia aircraft cleanup: fix visuals, wings, icons, and slots.)
+  package = https://litter.catbox.moe/0h5vt9.zip
+  DATA sha256 = ed2b2eb4c4571c0b1aad3404c9597a30b32af9b9e503a9ea50d168f11e4a2c02
+  ART  sha256 = addeca8ba2944be12053dd167e70965924c608bc000abc56c74e826d442b1c7d
+
+------------------------------
+DIFF: LAST_GOOD vs CRASH CLEANUP
+------------------------------
+Latest cleanup DATA files changed = 12 modified, 0 added, 0 deleted
+  DATA MOD [J. shared CommandSet/CommandButton/CSF/MappedImage] Data\English\SPECTER_RUSSIA_AIRCRAFT_EXPANSION_Strings.txt
+  DATA MOD [J. shared CommandSet/CommandButton/CSF/MappedImage] Data\INI\CommandButton.ini
+  DATA MOD [J. shared CommandSet/CommandButton/CSF/MappedImage] Data\INI\CommandSet.ini
+  DATA MOD [J. shared CommandSet/CommandButton/CSF/MappedImage] Data\INI\MappedImages\HandCreated\Russia_DonorAircraftIcons.INI
+  DATA MOD [C. A-50] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetA50Visual.ini
+  DATA MOD [B. An-225] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetAn225Visual.ini
+  DATA MOD [D. Tu-160] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTU160Clean.ini
+  DATA MOD [A. Tu-95] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTu95Visual.ini
+  DATA MOD [G. Su-24M2] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24M2.ini
+  DATA MOD [F. Su-24MR] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24MP.ini
+  DATA MOD [H. Su-34M] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU34M.ini
+  DATA MOD [I. Tu-22M3M] Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+
+Latest cleanup ART files changed = 0 modified, 16 added, 0 deleted
+  ART ADD [K. unexpected / shared support assets] Art\Textures\A_E-3_100.tga
+  ART ADD [K. unexpected / shared support assets] Art\Textures\CWCgenPropellor.dds
+  ART ADD [K. unexpected / shared support assets] Art\Textures\CWCgenReflective.dds
+  ART ADD [K. unexpected / shared support assets] Art\Textures\CWCgenReflective.tga
+  ART ADD [D. Tu-160] Art\Textures\LSFRussiaTU160.dds
+  ART ADD [D. Tu-160] Art\Textures\LSFRussiaTU160d.dds
+  ART ADD [D. Tu-160] Art\Textures\LSFRussiaTU160k.dds
+  ART ADD [K. unexpected / shared support assets] Art\Textures\SU24TB.tga
+  ART ADD [I. Tu-22M3M] Art\Textures\TU22M3.tga
+  ART ADD [I. Tu-22M3M] Art\Textures\TU22M3TB.tga
+  ART ADD [F. Su-24MR] Art\Textures\autreSU24.tga
+  ART ADD [F. Su-24MR] Art\Textures\autreSU24TB.tga
+  ART ADD [E. avionIL76] Art\Textures\yujing1.dds
+  ART ADD [D. Tu-160] Art\W3D\LSFRussiaTu160.W3D
+  ART ADD [D. Tu-160] Art\W3D\LSFRussiaTu160d.W3D
+  ART ADD [D. Tu-160] Art\W3D\LSFRussiaTu160k.W3D
+
+Unexpected shared/global files changed =
+  Art\Textures\A_E-3_100.tga
+  Art\Textures\CWCgenPropellor.dds
+  Art\Textures\CWCgenReflective.dds
+  Art\Textures\CWCgenReflective.tga
+  Art\Textures\SU24TB.tga
+Shared/global DATA touched by cleanup =
+  Data\English\SPECTER_RUSSIA_AIRCRAFT_EXPANSION_Strings.txt
+  Data\INI\CommandButton.ini
+  Data\INI\CommandSet.ini
+  Data\INI\MappedImages\HandCreated\Russia_DonorAircraftIcons.INI
+
+------------------------------
+RECOVERY BUILD
+------------------------------
+Latest Russia cleanup rolled back = YES
+T50 broken legacy file remains disabled = YES
+  (no russiajett50pakfaclean.ini in DATA)
+Global airbase infrastructure preserved = YES
+  (TheAirPort.W3D / HXUSABigAirPort.W3D / CJJCWUJUN.dds retained from last-good)
+Other factions preserved = YES
+DATA built from complete clean staging = YES
+ART built from complete clean staging = YES
+FINAL extracted DATA matches last-good state for latest-cleanup files = YES
+FINAL extracted ART matches last-good state for latest-cleanup files = YES
+Stale crashing-build W3Ds remaining = 0
+Stale crashing-build animation references remaining = 0
+  (Tu-160 LSFRussiaTu160 Draw/AnimationState rollback with Object INI)
+
+RECOVERY DATA sha256 = a3eace60486397c772d9020fef7cd382363e33c86ecb08ab2de0629bd1cbf749
+RECOVERY ART  sha256 = 248172a4a1ddfc66743b16016a29b7a2fd70a3389107599b899c041f98f1c592
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_ART_RUSSIA_INIT_CRASH_RECOVERY.zip
+Download = https://gofile.io/d/oaPb17Tr
+
+------------------------------
+NEXT ISOLATION PLAN (REPORT ONLY — DO NOT APPLY YET)
+------------------------------
+GROUP 1: button/UI-only changes (Tu-22M3M / Su-24 icons, MappedImage, CSF)
+GROUP 2: Su-24MR / Su-24M2 / Su-34M CommandSet movement
+GROUP 3: avionIL76 duplicate cleanup / yujing1 texture
+GROUP 4: Tu-95 visual family (CWCgenPropellor/Reflective + Draw)
+GROUP 5: An-225 visual family (A_AN225 + A_E-3_100)
+GROUP 6: A-50 visual family
+GROUP 7: Tu-160 variable-wing visual/animation (LAST — highest risk)
+
+IMPORTANT: DO NOT CLAIM GAME-TESTED PASS.
+Wait for user confirmation that the game launches before any reapplication.

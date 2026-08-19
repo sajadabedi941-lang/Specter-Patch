@@ -1,0 +1,144 @@
+RUSSIA AIRCRAFT GAMEPLAY ROLE UPDATE — DATA ONLY
+================================================
+
+A. BASELINE
+- Branch base: origin/cursor/russia-init-crash-recovery-4b13 @ 5a381c1f92e32edeb31fc866428328b217ee0c00
+- Active DATA BIG hash before change (PR #372 recovery):
+  a3eace60486397c772d9020fef7cd382363e33c86ecb08ab2de0629bd1cbf749
+- Package: DATA-only ZIP (no ART). Visual repair PR #373 NOT included.
+
+B. B-52 SOURCE TRACE
+- Active Object ID: AmericaJetB52H (Heavy AirBase Command_ConstructAmericaJetB52H)
+- WeaponSet PRIMARY: USA_B52H_AreaBombardment
+- ProjectileObject: MK-84 (physical free-fall bomb)
+- FireFX: FX_AuroraBombLaunch / ProjectileDetonationFX: FX_FreeFallBombsDetonation
+- ClipSize=6, AutoReloadsClip=RETURN_TO_BASE, OutOfAmmoDamagePerSecond=10%
+- No FireOCL / abandoned ammo-only path on this Object
+- Tu-95 reuses Weapon ID USA_B52H_AreaBombardment (shared; B-52 Object not modified)
+
+C. TU-95
+- Object: RussiaJetTu95Visual
+- Added WeaponSet PRIMARY = USA_B52H_AreaBombardment
+- KindOf += CAN_ATTACK
+- JetAIUpdate OutOfAmmoDamagePerSecond = 10% (match B-52)
+- Kept: Russia ownership, model/visual, armor, locomotor, cost, Heavy AirBase button, GenericTacticalBomberCommandSet
+- Attack chain: Object -> WeaponSet -> USA_B52H_AreaBombardment -> MK-84
+
+D. B-2A SOURCE TRACE
+- AmericaJetB2A: NOT PRESENT in PR #372 runtime
+- Active Heavy AirBase B-2 Object: AmericaJetB2Spirit
+- WeaponSet PRIMARY: USA_B2_Spirit_BunkerBuster
+- ProjectileObject: MK-84 (heavy single-bomb style bunker-buster damage profile)
+- ClipSize=6, AutoReloadsClip=RETURN_TO_BASE
+
+E. TU-160
+- Object: RussiaJetTU160Clean
+- WeaponSet PRIMARY replaced: Russia_Weapon_TU160_KH55 -> USA_B2_Spirit_BunkerBuster
+- PreferredAgainst PRIMARY VEHICLE STRUCTURE retained
+- Remains on Russia_HeavyAirBaseCommandSet; no wing/visual edits
+- B-2 Spirit Object not modified
+
+F. E-737 SOURCE TRACE
+- Playable Object AmericaJetE737Visual on PR #372: NO OCLSpecialPower / scan modules;
+  CommandSet=GenericTacticalBomberCommandSet; Vision/Shroud=300
+- Proven E-737/E-3 family SAR architecture in same runtime: US_E3G_AWACS (ScienceObjects)
+  - CommandSet E3G_CommandSet -> Command_ANAPY2_SARSCANMODEFromShortcut
+  - SpecialPower Superweapon_ANAPY2_SARSCANMODE (ReloadTime=10000, RadiusCursorRadius=450, ViewObjectDuration=40000)
+  - OCLSpecialPower -> SUPERWEAPON_ANAPY2_SARSCAN
+  - RadiusCursorType SPYSATELLITE on CommandButton
+- Russia parallel (same structure, Russia science): Superweapon_A50_SARSCANMODE + SUPERWEAPON_A50_SARSCAN + Command_A50_SARSCANMODE
+
+G. A-50
+- Object: RussiaJetA50Visual
+- CommandSet -> RussiaJetA50VisualCommandSet (slot 5 = Command_A50_SARSCANMODE; Guard/Stop/AttackMove kept; no FireMainWeapon)
+- OCLSpecialPower ModuleTag_RussiaA50SAR: Superweapon_A50_SARSCANMODE / SUPERWEAPON_A50_SARSCAN / CREATE_AT_EDGE_NEAR_SOURCE
+- Non-offensive: no WeaponSet
+- USA E-737 Object not modified
+
+H. E-3 SOURCE TRACE
+- Playable AmericaJetE3Visual on PR #372: stub (Vision/Shroud=300, no StealthDetector, no targeted scan)
+- Proven Science E-3 US_E3G_AWACS:
+  - Targeted: Superweapon_ANAPY2_SARSCANMODE + OCLSpecialPower SUPERWEAPON_ANAPY2_SARSCAN
+  - Passive: VisionRange=350.0, ShroudClearingRange=300.0
+  - StealthDetectorUpdate DetectionRange=1000, DetectionRate=1800, ExtraForbiddenKindOf=UNATTACKABLE
+- An-225 uses Russia A50 SAR SP (ownership-safe parallel of ANAPY2) + US_E3G passive numbers
+
+I. AN-225
+- Object: RussiaJetAn225Visual
+- VisionRange=350.0, ShroudClearingRange=300
+- StealthDetectorUpdate DetectionRange=1000 (US_E3G pattern)
+- OCLSpecialPower Superweapon_A50_SARSCANMODE / SUPERWEAPON_A50_SARSCAN
+- CommandSet RussiaJetAn225VisualCommandSet (non-offensive)
+- Model/locomotor/cost/Heavy role preserved; not a bomber
+
+J. CHINOOK SOURCE TRACE
+- Active Object: AmericaVehicleChinook (CH47F.ini)
+- TransportContain ModuleTag_08
+- Slots = 8
+- AllowInsideKindOf = INFANTRY VEHICLE
+- ForbidInsideKindOf = AIRCRAFT HUGE_VEHICLE
+- DamagePercentToUnits=100%, ExitDelay=100, NumberOfExitPaths=1
+- CommandSet AmericaVehicleChinookCommandSet (TransportExit x8 + ChinookUnload)
+- Chinook Object not modified
+
+K. TRANSPORT RESULT
+- Chinook = 8
+- avionIL76 (RussiaJetAvionIL76Visual) = 4×8 = 32  [requested 4X — implemented]
+- cargoIL76 (RussiaJetCargoIL76Visual) = 6×8 = 48  [requested 6X — implemented]
+- An-124 (RussiaJetAn124Visual) = 8×8 = 64       [requested 8X — implemented]
+- Unload CommandSet: C17GlobalMasterCommandSet (proven Starlifter/Chinook-family unload)
+- KindOf += TRANSPORT; WeaponSet absent (no offensive fire)
+- Engine-safe: same TransportContain field set as Chinook/Starlifter; no invented filters
+
+L. SU-47
+- Object: RussiaJetSU47Clean (build button Command_ConstructRussiaJetSu47Recon -> this Object)
+- Primary AAM: 6x_R77_MRBVR_SU35S (R-77 / RVV-AE family; AntiAirborneVehicle=Yes, AntiGround=No)
+- Secondary AAM: R73_HOBS_SRAAM_SU35 (R-73 family; air-only)
+- Reference aircraft: RussiaJetSu35S WeaponSet
+- Removed: Russia_Weapon_SU47_Berkut_AG (KH-29 ground)
+- CommandSet: GenericFighterCommandSet (same family as Su-35)
+- Price/armor/locomotor/visual/production airbase unchanged
+
+M. FILES MODIFIED
+- patch/tools/russia_aircraft_gameplay_roles.py
+- patch/Data/INI/CommandSet.ini (added RussiaJetA50VisualCommandSet, RussiaJetAn225VisualCommandSet; packed from PR372 runtime)
+- patch/Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/RussiaJetTu95Visual.ini
+- .../RussiaJetTU160Clean.ini
+- .../RussiaJetA50Visual.ini
+- .../RussiaJetAn225Visual.ini
+- .../RussiaJetAn124Visual.ini
+- .../RussiaJetAvionIL76Visual.ini
+- .../RussiaJetCargoIL76Visual.ini
+- .../RussiaJetSU47Clean.ini
+- Runtime BIG keys mirrored above under Data\INI\...
+
+N. COMMITS
+1 Tu-95:    fa4af76827ee7cd8ab69d638d813967c115fe02c
+2 Tu-160:   5b0fe96cf758d0c11d490400e4ae31e82c72edfe
+3 A-50:     99038be81a77be317465dcb7b571c5d3455be176
+4 An-225:   e03ada985d9a24037ada91f0c283d9555da61cbb
+5 An-124:   383580ee9a74829048831210cffc4272783f3bfc
+6 avionIL76:5d6f22487f7c22090349350bfb0960165050750a
+7 cargoIL76:ee069d65e6e8378364751de878865074c42408fa
+8 Su-47:    e6eaf80fe7ab5ef91b48e99d617e6df08cd63134
+
+O. FINAL RE-EXTRACTED VERIFICATION
+- Clean re-extract of packed _SPEC_DATA_ONE.big: ALL CHECKS PASS
+  Tu-95 B-52 weapon + CAN_ATTACK; Tu-160 B-2 Spirit weapon + Heavy CS;
+  A-50 SAR chain non-offensive; An-225 Vision/Shroud/Stealth + SAR;
+  An-124/avion/cargo slots 64/32/48 + Chinook filters; Su-47 R77+R73;
+  T-50 absent; single avion Object; USA B-52/Chinook untouched.
+
+P. HASHES (SHA-256)
+- _SPEC_DATA_ONE.big = 6bcea62d1f0a40f1e5a9a9866eb0f4ec0096b231c4038b3a00503d435d98c38a
+- final ZIP          = dfae974293287b139f4509a97e6c94a8ef9c493bb5509b2fe22a18fe37486e32
+
+Q. PACKAGE CONTENTS
+- ZIP contains EXACTLY: _SPEC_DATA_ONE.big
+- NOTHING ELSE (no ART, no extra files)
+
+R. FINAL STATUS
+RUSSIA AIRCRAFT GAMEPLAY UPDATE = PACKED PASS — AWAITING USER IN-GAME TEST
+
+DOWNLOAD
+https://gofile.io/d/Z5gqXxoq

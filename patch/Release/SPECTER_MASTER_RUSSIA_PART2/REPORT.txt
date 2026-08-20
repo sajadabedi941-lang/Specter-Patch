@@ -1,0 +1,21 @@
+RUSSIA AIRCRAFT EXPANSION PART 2 = READY FOR USER TEST
+
+Built on successful Tu-95 runtime (art_data healthy baseline + Tu-95).
+Tu-95 / B-2A / E-3 / E-737 / Chinook / Weapon / OCL / SpecialPower unchanged.
+
+AIRCRAFT
+- RussiaJetTU160  visual LSFRussiaTu160  gameplay B-2A (AmericaB2A10TonBombWeapon)
+- RussiaJetAn225  visual A_AN225_100     gameplay E-3 SAR (AmericaE3TargetedSARScan)
+- RussiaJetA50    visual CWCruA50        gameplay E-737 SAR (AmericaE737TargetedSARScan)
+- RussiaJetAn124  visual CWCruAn124      Chinook TransportContain Slots=64
+- RussiaJetAvionIL76 visual Yier76       Chinook TransportContain Slots=32
+- RussiaJetCargoIL76 visual LSFRussiaYR76 Chinook TransportContain Slots=48
+- RussiaJetTu95   UNCHANGED
+
+HASHES
+_SPEC_DATA_ONE.big = de8c51bf45f79154019d470f6244b1fa0293ed8ed93e4374dc55c22820dd049d
+_SPEC_ART_ONE.big  = c9ab76a9ad6c32444159453f184666e46c530cc9d39a9d677051fc0ac81b83de
+ZIP = 8de64b986eb832a36ac53f590d3928eb7ec2ce582576b85fb27380012b796c9d
+PATH = /workspace/patch/Release/SPECTER_MASTER_RUSSIA_PART2/Russia_Aircraft_Expansion_Part2.zip
+
+No in-game PASS claimed.

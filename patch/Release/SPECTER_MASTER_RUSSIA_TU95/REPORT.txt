@@ -1,0 +1,56 @@
+TU-95 INTEGRATION = READY FOR USER TEST
+
+1. BASELINE
+- Source: uploaded art_data.part01-22.rar
+- DATA SHA256 (pre-change) = c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05
+- ART  SHA256 (pre-change) = bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7
+
+2. OBJECT
+- Object ID = RussiaJetTu95
+- Side = Russia
+- Heavy AirBase = Yes (Command_ConstructRussiaJetTu95)
+
+3. GAMEPLAY DONOR
+- AmericaJetB52H architecture (JetAI / locomotor / death / vision / build stats)
+- Weapon PRIMARY = AmericaB52FifteenBombLineWeapon (FireOCL -> OCL_AmericaB52FifteenBombLine)
+- Bomb object = AmericaB52TenBombLineBomb (unchanged USA)
+- Detonation = AmericaB52LineBombDetonation (unchanged USA)
+- Fire button = Command_AmericaB52CarpetStrike (FIRE_WEAPON PRIMARY) reused by reference
+
+4. USA UNCHANGED
+- AmericaJetB52H Object unchanged
+- Weapon.ini / ObjectCreationList.ini unchanged
+- Command_AmericaB52CarpetStrike unchanged
+
+5. DONOR ART (visual only)
+- Art\W3D\CWCruTu95.W3D
+- Art\W3D\CWCruTu95_d.W3D
+- Art\W3D\CWCruTu95_k.W3D
+- Art\Textures\CWCruTu95.dds
+- Art\Textures\CWCruTu95_d.dds
+- Art\Textures\CWCruTu95_k.dds
+- Art\Textures\CWCruTU95.dds
+- Art\Textures\CWCruTU95_d.dds
+- Art\Textures\CWCruTU95_k.dds
+- Art\Textures\CWCgenPropellor.dds
+- Art\Textures\CWCgenPropellor.tga
+- Art\Textures\CWCgenReflective.dds
+- Art\Textures\CWCgenReflective.tga
+- Art\Textures\Tu95.tga
+- Art\Textures\Tu95TB.tga
+
+6. MODIFIED DATA KEYS
+- Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTu95.ini (new)
+- Data\INI\CommandSet.ini (RussiaJetTu95CommandSet + Heavy slot)
+- Data\INI\CommandButton.ini (ConstructRussiaJetTu95 only)
+- Data\INI\MappedImages\HandCreated\Russia_Tu95_Images.INI (new)
+- Data\English\SPECTER_RUSSIA_TU95_Strings.txt (new)
+- Data\English\generals.csf (Tu-95 labels appended)
+
+7. HASHES
+_SPEC_DATA_ONE.big SHA256 = 5fa4b2b3e19e6947cb07c1bb685ac43470f2dd524cba9cc25897d3acacd4fd92
+_SPEC_ART_ONE.big  SHA256 = 74b6c949240ebc38c71273edc90a7a7e4512c22ea36a544e953a1e834d7b6834
+Russia_Tu95_Final.zip SHA256 = d9659a68471a54a35be107ccf2f3a65e7112720b3c09765c4002617152fa5071
+ZIP = /workspace/patch/Release/SPECTER_MASTER_RUSSIA_TU95/Russia_Tu95_Final.zip
+
+Only Tu-95 added/changed. No in-game PASS claimed.

@@ -1,0 +1,114 @@
+GLOBAL STARTING RADAR
+Source DATA SHA256: 273acc1b411261669c66ae9b8aea95e21d280a68136f804007c05dd67cea8f92
+Output DATA SHA256: 3fa3f9efabe64585069f0079b1687a26c70bba45820440e5ece60576f7f3aefc
+ZIP: GLOBAL_STARTING_RADAR.zip
+ZIP SHA256: c23c2cb4cc2445c063fda05a81c9ef83758277dfd8c0c0ca1a48d9ca3b33ac12
+
+Mechanism:
+  Behavior = RadarUpgrade ModuleTag_SpecterGlobalStartingRadar
+    StartsActive = Yes
+  End
+  Inserted on each playable faction StartingBuilding (HQ / Command Center).
+  Existing RadarUpgrade TriggeredBy blocks on radar stations were not changed.
+  RadarUpdate (dish animation) was not changed.
+
+Playable PlayerTemplates detected: 29
+FactionIraq	side=Iraq	Iraq_CommandCenter	files=1	Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+FactionNorthKorea	side=NorthKorea	NorthKorea_CommandCenter	files=2	Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CommandCenter.ini;North Korea\Buildings\Iraq_CommandCenter.ini
+FactionAmerica	side=America	AmericaCommandCenter	files=1	Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+FactionRussia	side=Russia	RussiaCommandCenter	files=1	Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\CommandCenter.ini
+FactionChina	side=China	ChinaCommandCenter	files=1	Data\INI\Object\Specter\PLA\Buildings\CommandCenter.ini
+FactionGLA	side=GLA	GLACommandCenter	files=1	Data\INI\Object\Specter\Arabic Alliance\Buildings\CommandCenter.ini
+FactionBossGeneral	side=Boss	Boss_CommandCenter	OBJECT MISSING
+FactionAmericaAirForceGeneral	side=AmericaAirForceGeneral	AirF_AmericaCommandCenter	files=1	Data\INI\Object\Specter\Israel Defense Forces\Buildings\HQ.ini
+FactionNato	side=Nato	NatoCommandCenter	files=1	Data\INI\Object\Specter\NATO\Buildings\CommandCenter.ini
+FactionIran	side=Iran	IranCommandCenter	files=1	Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini
+FactionPakistan	side=Pakistan	Pakistan_CommandCenter	files=1	Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini
+FactionSaudiArabia	side=SaudiArabia	SaudiArabia_CommandCenter	files=1	Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini
+FactionUAE	side=UAE	UAE_CommandCenter	files=1	Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini
+FactionIndia	side=India	India_CommandCenter	files=1	Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+FactionSyria	side=Syria	Syria_CommandCenter	files=1	Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini
+FactionGermany	side=Germany	GermanyCommandCenter	files=1	Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini
+FactionFrance	side=France	FranceCommandCenter	files=1	Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini
+FactionBritain	side=Britain	BritainCommandCenter	files=1	Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini
+FactionItaly	side=Italy	ItalyCommandCenter	files=1	Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini
+FactionSweden	side=Sweden	SwedenCommandCenter	files=1	Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini
+FactionUkraine	side=Ukraine	UkraineCommandCenter	files=1	Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini
+FactionTurkey	side=Turkey	TurkeyCommandCenter	files=1	Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini
+FactionLibya	side=Libya	Libya_CommandCenter	files=1	Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+FactionSouthAfrica	side=SouthAfrica	SouthAfrica_CommandCenter	files=1	Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+FactionSouthKorea	side=SouthKorea	SouthKorea_CommandCenter	files=2	Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_CommandCenter.ini;Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini
+FactionJapan	side=Japan	Japan_CommandCenter	files=2	Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_CommandCenter.ini;Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini
+FactionVietnam	side=Vietnam	Vietnam_CommandCenter	files=2	Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_CommandCenter.ini;Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+FactionEgypt	side=Egypt	Egypt_CommandCenter	files=1	Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+FactionIsrael	side=Israel	Israel_MilitaryHQ	files=1	Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_MilitaryHQ.ini
+
+Modified files (32):
+  Data\INI\Object\Specter\Arabic Alliance\Buildings\CommandCenter.ini :: GLACommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\CommandCenter.ini :: RussiaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini :: BritainCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini :: Egypt_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini :: FranceCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini :: GermanyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini :: India_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini :: IranCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini :: Iraq_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Israel Defense Forces\Buildings\HQ.ini :: AirF_AmericaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_MilitaryHQ.ini :: Israel_MilitaryHQ:inserted_after_kindof
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini :: ItalyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_CommandCenter.ini :: Japan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini :: Japan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini :: Libya_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\NATO\Buildings\CommandCenter.ini :: NatoCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CommandCenter.ini :: NorthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\PLA\Buildings\CommandCenter.ini :: ChinaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini :: Pakistan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini :: SaudiArabia_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini :: SouthAfrica_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_CommandCenter.ini :: SouthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini :: SouthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini :: SwedenCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini :: Syria_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini :: TurkeyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini :: UkraineCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini :: UAE_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini :: AmericaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_CommandCenter.ini :: Vietnam_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini :: Vietnam_CommandCenter:inserted_after_kindof
+  North Korea\Buildings\Iraq_CommandCenter.ini :: NorthKorea_CommandCenter:inserted_after_kindof
+
+Missing StartingBuilding objects (not invented):
+  FactionBossGeneral:Boss_CommandCenter
+
+User faction coverage:
+  Iran: FOUND
+  Israel: FOUND
+  South Korea: FOUND
+  USA: FOUND
+  Russia: FOUND
+  China: FOUND
+  Iraq: FOUND
+  North Korea: FOUND
+  Japan: FOUND
+  Vietnam: FOUND
+  India: FOUND
+  Pakistan: FOUND
+  Saudi Arabia: FOUND
+  UAE: FOUND
+  Syria: FOUND
+  Turkey: FOUND
+  Ukraine: FOUND
+  Germany: FOUND
+  France: FOUND
+  Britain: FOUND
+  Egypt: FOUND
+  Italy: FOUND
+  Libya: FOUND
+  South Africa: FOUND
+  Sweden: FOUND
+  NATO: FOUND
+
+Additional playable custom sides patched:
+  FactionAmericaAirForceGeneral
+  FactionBossGeneral
+  FactionGLA

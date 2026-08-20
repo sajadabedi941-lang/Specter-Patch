@@ -1,0 +1,19 @@
+; Russia Part-2 aircraft display / command bar strings
+OBJECT:RussiaJetTU160 = Tu-160 Blackjack
+CONTROLBAR:ConstructRussiaJetTU160 = Tu-160 Blackjack
+CONTROLBAR:ToolTipRussiaJetTU160 = Build Tu-160 (B-2A bomb system)
+OBJECT:RussiaJetAn225 = An-225 Mriya
+CONTROLBAR:ConstructRussiaJetAn225 = An-225 Mriya
+CONTROLBAR:ToolTipRussiaJetAn225 = Build An-225 (E-3 SAR scan)
+OBJECT:RussiaJetA50 = A-50 Mainstay
+CONTROLBAR:ConstructRussiaJetA50 = A-50 Mainstay
+CONTROLBAR:ToolTipRussiaJetA50 = Build A-50 (E-737 SAR scan)
+OBJECT:RussiaJetAn124 = An-124 Ruslan
+CONTROLBAR:ConstructRussiaJetAn124 = An-124 Ruslan
+CONTROLBAR:ToolTipRussiaJetAn124 = Build An-124 transport (8x Chinook capacity)
+OBJECT:RussiaJetAvionIL76 = IL-76
+CONTROLBAR:ConstructRussiaJetAvionIL76 = IL-76
+CONTROLBAR:ToolTipRussiaJetAvionIL76 = Build IL-76 transport (4x Chinook capacity)
+OBJECT:RussiaJetCargoIL76 = IL-76 Cargo
+CONTROLBAR:ConstructRussiaJetCargoIL76 = IL-76 Cargo
+CONTROLBAR:ToolTipRussiaJetCargoIL76 = Build IL-76 cargo transport (6x Chinook capacity)

@@ -1,0 +1,92 @@
+GLOBAL STARTING RADAR FIX
+Crash cause: previous pack patched unused Zero Hour playable templates
+  (FactionGLA / GLACommandCenter, FactionAmericaAirForceGeneral /
+  AirF_AmericaCommandCenter). Boss was scanned but had no HQ object.
+This pack restores pre-radar DATA and applies StartsActive radar only
+to the 26 Specter factions.
+
+Source DATA SHA256: 273acc1b411261669c66ae9b8aea95e21d280a68136f804007c05dd67cea8f92
+Output DATA SHA256: 50e3979b46eac10fab17ae2f93898390e4b2d11fc260e6540417ac8d74c6719c
+ZIP: GLOBAL_STARTING_RADAR_FIX.zip
+ZIP SHA256: d211d8b4c5d1146f21d2e8f629f6823304057ae997d78a16f315d455b60a4e3f
+
+Mechanism (Specter HQs only):
+  Behavior = RadarUpgrade ModuleTag_SpecterGlobalStartingRadar
+    StartsActive = Yes
+  End
+
+Specter factions patched: 26
+FactionIran	side=Iran	IranCommandCenter	files=1
+FactionIsrael	side=Israel	Israel_MilitaryHQ	files=1
+FactionSouthKorea	side=SouthKorea	SouthKorea_CommandCenter	files=2
+FactionAmerica	side=America	AmericaCommandCenter	files=1
+FactionRussia	side=Russia	RussiaCommandCenter	files=1
+FactionChina	side=China	ChinaCommandCenter	files=1
+FactionIraq	side=Iraq	Iraq_CommandCenter	files=1
+FactionNorthKorea	side=NorthKorea	NorthKorea_CommandCenter	files=2
+FactionJapan	side=Japan	Japan_CommandCenter	files=2
+FactionVietnam	side=Vietnam	Vietnam_CommandCenter	files=2
+FactionIndia	side=India	India_CommandCenter	files=1
+FactionPakistan	side=Pakistan	Pakistan_CommandCenter	files=1
+FactionSaudiArabia	side=SaudiArabia	SaudiArabia_CommandCenter	files=1
+FactionUAE	side=UAE	UAE_CommandCenter	files=1
+FactionSyria	side=Syria	Syria_CommandCenter	files=1
+FactionTurkey	side=Turkey	TurkeyCommandCenter	files=1
+FactionUkraine	side=Ukraine	UkraineCommandCenter	files=1
+FactionGermany	side=Germany	GermanyCommandCenter	files=1
+FactionFrance	side=France	FranceCommandCenter	files=1
+FactionBritain	side=Britain	BritainCommandCenter	files=1
+FactionEgypt	side=Egypt	Egypt_CommandCenter	files=1
+FactionItaly	side=Italy	ItalyCommandCenter	files=1
+FactionLibya	side=Libya	Libya_CommandCenter	files=1
+FactionSouthAfrica	side=SouthAfrica	SouthAfrica_CommandCenter	files=1
+FactionSweden	side=Sweden	SwedenCommandCenter	files=1
+FactionNato	side=Nato	NatoCommandCenter	files=1
+
+Modified files (30):
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\CommandCenter.ini :: RussiaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini :: BritainCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini :: Egypt_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini :: FranceCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini :: GermanyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini :: India_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini :: IranCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini :: Iraq_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_MilitaryHQ.ini :: Israel_MilitaryHQ:inserted_after_kindof
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini :: ItalyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_CommandCenter.ini :: Japan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini :: Japan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini :: Libya_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\NATO\Buildings\CommandCenter.ini :: NatoCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CommandCenter.ini :: NorthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\PLA\Buildings\CommandCenter.ini :: ChinaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini :: Pakistan_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini :: SaudiArabia_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini :: SouthAfrica_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_CommandCenter.ini :: SouthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini :: SouthKorea_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini :: SwedenCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini :: Syria_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini :: TurkeyCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini :: UkraineCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini :: UAE_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini :: AmericaCommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_CommandCenter.ini :: Vietnam_CommandCenter:inserted_after_kindof
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini :: Vietnam_CommandCenter:inserted_after_kindof
+  North Korea\Buildings\Iraq_CommandCenter.ini :: NorthKorea_CommandCenter:inserted_after_kindof
+
+Forbidden objects confirmed unchanged or absent:
+  GLACommandCenter unchanged in 1 file(s)
+  FakeGLACommandCenter unchanged in 1 file(s)
+  Slth_GLACommandCenter unchanged in 1 file(s)
+  Slth_FakeGLACommandCenter unchanged in 1 file(s)
+  AirF_AmericaCommandCenter unchanged in 1 file(s)
+  Infa_ChinaCommandCenter unchanged in 1 file(s)
+  Boss_CommandCenter (not present in packed DATA)
+  Taiwan_CommandCenter (not present in packed DATA)
+  Taiwan_MilitaryHQ (not present in packed DATA)
+  UN_CommandCenter (not present in packed DATA)
+  UN_MilitaryHQ (not present in packed DATA)
+
+Not modified: GLA, Taiwan, UN, Boss, Air Force General, vanilla ZH unused,
+PlayerTemplate.ini, weapons, aircraft, ART, CSF, radar stations.

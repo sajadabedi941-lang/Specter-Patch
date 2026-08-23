@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
-"""Finalize Su-47 / T-50 / Su-75 loadouts on the current fighter DATA pack.
+"""Finalize Su-47 / T-50 loadouts on the PR #386 fighter DATA pack.
 
-Surgical DATA only:
-  - replace overlay Su47Berkut.ini / Su57T50.ini
-  - add overlay Su75Checkmate.ini
-  - strip Object RussiaJetSu75Checkmate from packed Russia_System.ini
-    (prevents duplicate Object; other objects in that file stay byte-identical)
-  - refresh extra English strings + CSF tooltips we already own
+Isolation rules (stable launch first):
+  - Do not edit stock/global CommandSet.ini, CommandButton.ini, Weapon.ini,
+    Upgrade.ini, or packed Russia_System.ini.
+  - New aircraft live in isolated overlay object files.
+  - New buttons live in CommandButton_RussiaSu47T50.ini (already in #386).
+  - Do not redefine Russia_LargeAirBaseCommandSet. ZH replaces a CommandSet
+    wholesale, so a partial override would wipe slots 1-10.
+  - Su-75 stays on the packed #386 object. Changing it requires editing
+    Russia_System.ini (multi-object global) or a duplicate Object overlay.
 
-Does not touch CommandSet.ini, CommandButton.ini, costs, other factions, or ART.
+This packer only:
+  - updates overlay Su47Berkut.ini / Su57T50.ini
+  - refreshes extra English strings + CSF tooltips we already own
+  - copies ART bytes unchanged from the #386 fighter pack
 """
 from __future__ import annotations
 
@@ -23,12 +29,6 @@ ART_SRC = Path("/tmp/russia_su47_t50/_SPEC_ART_ONE.big")
 PATCH = Path("/workspace/patch")
 OUT = Path("/tmp/russia_fighter_loadout")
 
-SU75_PACKED = (
-    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Russia_System.ini"
-)
-SU75_OVERLAY = (
-    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su75Checkmate.ini"
-)
 SU47_OVERLAY = (
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su47Berkut.ini"
 )
@@ -36,10 +36,18 @@ SU57_OVERLAY = (
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su57T50.ini"
 )
 STRINGS = r"Data\English\SPECTER_RUSSIA_SU47_T50_Strings.txt"
+RUSSIA_SYSTEM = (
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Russia_System.ini"
+)
 
-SU75_STUB = (
-    "; RussiaJetSu75Checkmate moved to Airforce/Su75Checkmate.ini "
-    "(fighter loadout finalization)\r\n"
+STOCK_GLOBAL = (
+    r"data\ini\commandset.ini",
+    r"data\ini\commandbutton.ini",
+    r"data\ini\weapon.ini",
+    r"data\ini\upgrade.ini",
+    r"data\ini\armor.ini",
+    r"data\ini\locomotor.ini",
+    RUSSIA_SYSTEM.replace("/", "\\").lower(),
 )
 
 LOCK_RE = re.compile(
@@ -48,13 +56,6 @@ LOCK_RE = re.compile(
 USA_WEAPON_RE = re.compile(
     r"\b(AASM250kg|GBU-|GBU_|Mk82|Spice250|AIM-120|AIM120|AGM-65|AGM65|JSOW|JDAM)\b"
 )
-RU_WEAPONS_OK = {
-    "6x_R77_MRBVR_SU35S",
-    "R73_HOBS_SRAAM_SU35",
-    "Kab500_LeaserGuidedBomb",
-    "6x_MRAAM_K77M_SU57",
-    "Kab500_LeaserGuidedBomb_Mig29k",
-}
 
 
 def read_big(path: Path):
@@ -109,27 +110,6 @@ def upsert(entries: list[tuple[str, bytes]], name: str, content: bytes) -> str:
 
 def by_name(entries):
     return {n.replace("/", "\\").lower(): (n, b) for n, b in entries}
-
-
-def strip_su75_from_russia_system(raw: bytes) -> bytes:
-    text = raw.decode("latin1")
-    m = re.search(r"Object RussiaJetSu75Checkmate\r\n.*?^End\r\n", text, re.M | re.S)
-    if not m:
-        raise SystemExit("RussiaJetSu75Checkmate block not found in packed Russia_System.ini")
-    if text.count("Object RussiaJetSu75Checkmate") != 1:
-        raise SystemExit("unexpected extra Su-75 object markers")
-    # keep neighboring objects intact
-    before = text[: m.start()]
-    after = text[m.end() :]
-    if "Object RussiaJetSu47Recon" not in after:
-        raise SystemExit("Su-47 Recon missing after Su-75 strip — abort")
-    if "Object RUSSU75X_RussiaSystemK77MTargetLock" not in after:
-        raise SystemExit("Su-75 K77M lock dummy missing after strip — abort")
-    patched = before + SU75_STUB + after
-    # only the Su-75 object may change
-    if patched.replace(SU75_STUB, m.group(0), 1) != text:
-        raise SystemExit("Russia_System.ini rewrite was not a pure Su-75 swap")
-    return patched.encode("latin1")
 
 
 def csf_decode_u16(buf: bytes) -> str:
@@ -191,12 +171,10 @@ def csf_upsert(blob: bytes, pairs: dict[str, str]) -> bytes:
             else:
                 strs = [(b" RTS", new_val, None)]
         out_labels.append((key, strs))
-    added = 0
     for uk, (key, val) in wanted.items():
         if uk in seen:
             continue
         out_labels.append((key, [(b" RTS", val, None)]))
-        added += 1
 
     out = bytearray()
     out += b" FSC"
@@ -245,17 +223,10 @@ def main() -> int:
         / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/Su47Berkut.ini",
         SU57_OVERLAY: PATCH
         / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/Su57T50.ini",
-        SU75_OVERLAY: PATCH
-        / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce/Su75Checkmate.ini",
         STRINGS: PATCH / "Data/English/SPECTER_RUSSIA_SU47_T50_Strings.txt",
     }
     for name, path in overlays.items():
         data_ops[name] = upsert(data_entries, name, path.read_bytes())
-
-    sys_name, sys_raw = src_by[SU75_PACKED.replace("/", "\\").lower()]
-    sys_new = strip_su75_from_russia_system(sys_raw)
-    upsert(data_entries, sys_name, sys_new)
-    data_ops[SU75_PACKED] = "stripped-su75-object-only"
 
     strings = {
         "OBJECT:RussiaSu47Berkut": "Su-47 Berkut",
@@ -273,7 +244,6 @@ def main() -> int:
     upsert(data_entries, csf_name, csf_upsert(csf_raw, strings))
     data_ops["generals.csf"] = "upsert-owned-tooltips"
 
-    # --- pack ---
     data_bytes = write_big(data_entries)
     art_bytes = ART_SRC.read_bytes()
     out_data = OUT / "_SPEC_DATA_ONE.big"
@@ -281,7 +251,6 @@ def main() -> int:
     out_data.write_bytes(data_bytes)
     out_art.write_bytes(art_bytes)
 
-    # --- validate ---
     packed = read_big(out_data)
     by = by_name(packed)
     src_map = {k: v[1] for k, v in src_by.items()}
@@ -290,31 +259,23 @@ def main() -> int:
     allowed_changed = {
         SU47_OVERLAY.replace("/", "\\").lower(),
         SU57_OVERLAY.replace("/", "\\").lower(),
-        SU75_OVERLAY.replace("/", "\\").lower(),
         STRINGS.replace("/", "\\").lower(),
-        SU75_PACKED.replace("/", "\\").lower(),
         r"data\english\generals.csf",
     }
-    unexpected = []
-    for key, blob in new_map.items():
-        if key in allowed_changed:
-            continue
-        if src_map.get(key) != blob:
-            unexpected.append(key)
+    unexpected = [k for k in new_map if k not in allowed_changed and src_map.get(k) != new_map[k]]
     if unexpected:
         raise SystemExit(f"unexpected DATA changes: {unexpected[:20]}")
+    extra = sorted(set(new_map) - set(src_map))
+    if extra:
+        raise SystemExit(f"unexpected added DATA files: {extra}")
 
-    # CommandSet / CommandButton frozen vs previous fighter pack
-    for frozen in (
-        r"data\ini\commandset.ini",
-        r"data\ini\commandbutton.ini",
-        r"data\ini\commandbutton_russiasu47t50.ini",
-        r"data\ini\weapon.ini",
-        r"data\ini\upgrade.ini",
-    ):
+    for frozen in STOCK_GLOBAL + (r"data\ini\commandbutton_russiasu47t50.ini",):
         if src_map[frozen] != new_map[frozen]:
-            raise SystemExit(f"frozen file changed: {frozen}")
+            raise SystemExit(f"stock/global file changed: {frozen}")
 
+    # #386 airbase menu must remain byte-identical
+    if src_map[r"data\ini\commandset.ini"] != new_map[r"data\ini\commandset.ini"]:
+        raise SystemExit("CommandSet.ini changed; #386 baseline must stay frozen")
     cs = new_map[r"data\ini\commandset.ini"].decode("latin1")
     m = re.search(r"CommandSet Russia_LargeAirBaseCommandSet\n(.*?)(?:\nEnd)", cs, re.S)
     if not m:
@@ -329,7 +290,18 @@ def main() -> int:
         if btn not in block:
             raise SystemExit(f"missing large-airbase button {btn}")
 
-    # loadout objects
+    # packed Su-75 must still live in Russia_System.ini (no extract / no duplicate)
+    sys_txt = new_map[RUSSIA_SYSTEM.replace("/", "\\").lower()].decode("latin1")
+    if sys_txt.count("Object RussiaJetSu75Checkmate") != 1:
+        raise SystemExit("Su-75 object count in Russia_System.ini is not 1")
+    if "Object RussiaJetSu47Recon" not in sys_txt:
+        raise SystemExit("Su-47 Recon missing from Russia_System.ini")
+    su75_overlay = (
+        r"data\ini\object\specter\armed forces of russian federation\airforce\su75checkmate.ini"
+    )
+    if su75_overlay in new_map:
+        raise SystemExit("Su75Checkmate.ini must not be packed (duplicate Object risk)")
+
     checks = {
         SU47_OVERLAY.replace("/", "\\").lower(): {
             "cost": "BuildCost           = 2800",
@@ -349,15 +321,6 @@ def main() -> int:
                 "Kab500_LeaserGuidedBomb",
             },
         },
-        SU75_OVERLAY.replace("/", "\\").lower(): {
-            "cost": "BuildCost           = 3500",
-            "time": "BuildTime           = 55.0",
-            "weapons": {
-                "6x_MRAAM_K77M_SU57",
-                "R73_HOBS_SRAAM_SU35",
-                "Kab500_LeaserGuidedBomb_Mig29k",
-            },
-        },
     }
     for key, expect in checks.items():
         text = new_map[key].decode("latin1")
@@ -373,19 +336,16 @@ def main() -> int:
         if got != expect["weapons"]:
             raise SystemExit(f"weapon mismatch in {key}: {got}")
 
-    # packed Russia_System.ini must no longer define the jet
-    sys_txt = new_map[SU75_PACKED.replace("/", "\\").lower()].decode("latin1")
-    if "Object RussiaJetSu75Checkmate" in sys_txt:
-        raise SystemExit("Su-75 still defined in packed Russia_System.ini")
-    if "Object RussiaJetSu47Recon" not in sys_txt:
-        raise SystemExit("Su-47 Recon missing from Russia_System.ini")
-
-    # other Russian aircraft files unchanged
-    for key, blob in new_map.items():
-        if key in allowed_changed:
-            continue
-        if "armed forces of russian federation" in key and src_map.get(key) != blob:
-            raise SystemExit(f"other Russia file changed: {key}")
+    # packed Su-75 loadout stays on the #386 baseline (K-77M only)
+    su75 = re.search(
+        r"Object RussiaJetSu75Checkmate\r\n.*?^End\r\n", sys_txt, re.M | re.S
+    )
+    if not su75:
+        raise SystemExit("Su-75 block missing")
+    if weapon_names(su75.group(0)) != {"6x_MRAAM_K77M_SU57"}:
+        raise SystemExit(f"Su-75 packed weapons drifted: {weapon_names(su75.group(0))}")
+    if "BuildCost           = 3500" not in su75.group(0):
+        raise SystemExit("Su-75 cost drifted")
 
     data_sha = hashlib.sha256(data_bytes).hexdigest()
     art_sha = hashlib.sha256(art_bytes).hexdigest()
@@ -402,13 +362,13 @@ def main() -> int:
     report = OUT / "PACK_REPORT.txt"
     report.write_text(
         f"DATA SHA256={data_sha} SIZE={len(data_bytes)}\n"
-        f"ART  SHA256={art_sha} SIZE={len(art_bytes)} (unchanged from fighter baseline)\n"
+        f"ART  SHA256={art_sha} SIZE={len(art_bytes)} (unchanged from #386)\n"
         f"ZIP  SHA256={zip_sha} SIZE={zpath.stat().st_size}\n"
         f"DATA ops={data_ops}\n"
-        f"Su-47: R-77 + R-73 + KAB-500\n"
-        f"T-50: K-77M + R-73 + KAB-500 (removed KAB-2500OD)\n"
-        f"Su-75: K-77M + R-73 + light KAB-500; model still RUS_SU57 (no Su-75 W3D)\n"
-        f"CommandSet.ini / CommandButton.ini / costs / other factions frozen\n",
+        f"Su-47 overlay: R-77 + R-73 + KAB-500\n"
+        f"T-50 overlay: K-77M + R-73 + KAB-500\n"
+        f"Su-75 packed #386 baseline unchanged (no Russia_System.ini edit)\n"
+        f"CommandSet.ini / CommandButton.ini / Russia_System.ini frozen\n",
         encoding="utf-8",
     )
     print(report.read_text())

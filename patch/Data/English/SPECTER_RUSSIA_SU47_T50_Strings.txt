@@ -1,7 +1,7 @@
 ; Russia Su-47 Berkut / Su-57 T-50 PAK FA display strings
 OBJECT:RussiaSu47Berkut = Su-47 Berkut
 CONTROLBAR:ConstructRussiaJetSu47Berkut = Su-47 Berkut
-CONTROLBAR:ToolTipRussiaJetSu47Berkut = Build Su-47 Berkut air-superiority fighter (R-77 / R-73)
+CONTROLBAR:ToolTipRussiaJetSu47Berkut = Build Su-47 Berkut air-superiority fighter (R-77 / R-73 / KAB-500)
 OBJECT:RussiaSu57T50 = Su-57 T-50 PAK FA
 CONTROLBAR:ConstructRussiaJetSu57T50 = Su-57 T-50 PAK FA
-CONTROLBAR:ToolTipRussiaJetSu57T50 = Build Su-57 T-50 PAK FA multirole fighter (R-77 / R-73 / KAB-2500)
+CONTROLBAR:ToolTipRussiaJetSu57T50 = Build Su-57 T-50 PAK FA multirole fighter (K-77M / R-73 / KAB-500)

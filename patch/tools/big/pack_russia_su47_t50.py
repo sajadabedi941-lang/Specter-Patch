@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """Pack Russia Su-47 Berkut + Su-57 T-50 into the latest working DATA/ART BIGs.
 
-Preserves original BIG entry order. Edits only:
+FROZEN #386 BASELINE. Do not extend this packer.
+  - Packed CommandSet.ini already has Large Air Base slots 11-12.
+  - Do not patch CommandSet.ini again. ZH replaces a CommandSet wholesale,
+    so a rewrite or reorder can wipe the working airbase menu.
+  - Further aircraft work must use isolated overlay INI files, not stock
+    CommandSet.ini / CommandButton.ini / Russia_System.ini.
+
+Historical pack (do not re-run against a newer baseline):
   - Data\\INI\\CommandSet.ini  (Russia_LargeAirBaseCommandSet slots 11-12)
   - Data\\English\\generals.csf (new display strings)
   - new object / button / string files
   - new ART w3d + textures
-
-Does not rewrite stock CommandButton.ini (extra CommandButton_*.ini is loaded).
-Does not touch Heavy Air Base or other factions.
 """
 from __future__ import annotations
 
@@ -200,7 +204,7 @@ def main() -> int:
     for name, path in new_data.items():
         data_ops[name] = upsert(data_entries, name, path.read_bytes())
 
-    # --- CommandSet surgical ---
+    # --- CommandSet surgical (FROZEN #386 — do not add more edits here) ---
     cs_name = None
     cs_raw = None
     for n, b in data_entries:

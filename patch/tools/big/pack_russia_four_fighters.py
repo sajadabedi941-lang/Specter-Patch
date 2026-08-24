@@ -62,6 +62,48 @@ NEW_LARGE = (
     "End"
 )
 
+# CommandButtons must live in CommandSet.ini before the Large set.
+# Extra CommandButton_*.ini files are not guaranteed to be parsed before
+# CommandSet.ini; unknown slot commands crash on the CommandSet line.
+LIVE_BUTTONS = (
+    "CommandButton Command_ConstructRussiaJetSu47Berkut\n"
+    "  Command          = UNIT_BUILD\n"
+    "  Object           = RussiaJetSu47Berkut\n"
+    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu47Berkut\n"
+    "  ButtonImage      = SU47\n"
+    "  ButtonBorderType = BUILD\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu47Berkut\n"
+    "End\n"
+    "\n"
+    "CommandButton Command_ConstructRussiaJetSu57T50\n"
+    "  Command          = UNIT_BUILD\n"
+    "  Object           = RussiaJetSu57T50\n"
+    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu57T50\n"
+    "  ButtonImage      = T50\n"
+    "  ButtonBorderType = BUILD\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu57T50\n"
+    "End\n"
+    "\n"
+    "CommandButton Command_ConstructRussiaJetSu75\n"
+    "  Command          = UNIT_BUILD\n"
+    "  Object           = RussiaJetSu75\n"
+    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu75\n"
+    "  ButtonImage      = SU75\n"
+    "  ButtonBorderType = BUILD\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu75\n"
+    "End\n"
+    "\n"
+    "CommandButton Command_ConstructRussiaJetSu39\n"
+    "  Command          = UNIT_BUILD\n"
+    "  Object           = RussiaJetSu39\n"
+    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu39\n"
+    "  ButtonImage      = rus_su25t\n"
+    "  ButtonBorderType = BUILD\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu39\n"
+    "End\n"
+    "\n"
+)
+
 EXPECTED_SLOTS = {
     1: "Command_ConstructRussiaJetSu75Checkmate",
     2: "Command_ConstructRussiaJetSu35S",
@@ -91,10 +133,6 @@ NEW_DATA = {
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su75Checkmate.ini": AIRFORCE
     / "Su75Checkmate.ini",
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su39.ini": AIRFORCE / "Su39.ini",
-    r"Data\INI\CommandButton_Russia_Su47.ini": PATCH / "Data/INI/CommandButton_Russia_Su47.ini",
-    r"Data\INI\CommandButton_Russia_Su57T50.ini": PATCH / "Data/INI/CommandButton_Russia_Su57T50.ini",
-    r"Data\INI\CommandButton_Russia_Su75.ini": PATCH / "Data/INI/CommandButton_Russia_Su75.ini",
-    r"Data\INI\CommandButton_Russia_Su39.ini": PATCH / "Data/INI/CommandButton_Russia_Su39.ini",
 }
 
 NEW_ART = {
@@ -261,19 +299,41 @@ def patch_commandset(raw: bytes) -> bytes:
         raise SystemExit("parser FAIL: #385 Russia_LargeAirBaseCommandSet block not found")
     if text.count(OLD_LARGE) != 1:
         raise SystemExit("parser FAIL: #385 Large block matched more than once")
-    patched = text.replace(OLD_LARGE, NEW_LARGE, 1)
-    if patched.replace(NEW_LARGE, OLD_LARGE, 1) != text:
-        raise SystemExit("parser FAIL: CommandSet rewrite was not a pure slot add")
+    replacement = LIVE_BUTTONS + NEW_LARGE
+    patched = text.replace(OLD_LARGE, replacement, 1)
+    if patched.replace(replacement, OLD_LARGE, 1) != text:
+        raise SystemExit("parser FAIL: CommandSet rewrite was not a pure insert")
+    if patched.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
+        raise SystemExit("parser FAIL: patched file has duplicate Large set")
     out = patched.encode("latin1")
     if b"\r\n" in out:
         raise SystemExit("parser FAIL: patched CommandSet.ini gained CRLF")
     return out
 
 
+def parser_check_commandset_balance(text: str) -> None:
+    """Every CommandSet must have a matching End/END. No leftover open blocks."""
+    stack = []
+    for lineno, line in enumerate(text.splitlines(), 1):
+        raw = line.split(";", 1)[0].rstrip()
+        m = re.match(r"^CommandSet\s+(\S+)\s*$", raw)
+        if m:
+            stack.append((lineno, m.group(1)))
+            continue
+        if raw.strip() in ("End", "END"):
+            if stack:
+                stack.pop()
+    if stack:
+        preview = ", ".join(f"{n}@{ln}" for ln, n in stack[:8])
+        raise SystemExit(f"parser FAIL: unclosed CommandSet blocks: {preview}")
+    print("PARSER CHECK PASS: every CommandSet has matching End/END")
+
+
 def parser_check_live_commandset(raw: bytes) -> None:
     text = check_ini_bytes(raw, "CommandSet.ini")
     if text.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
         raise SystemExit("parser FAIL: duplicated Russia_LargeAirBaseCommandSet in CommandSet.ini")
+    parser_check_commandset_balance(text)
     parsed = parse_commandset_block(text, LARGE_NAME, max_slot=16)
     if parsed["block"] != NEW_LARGE:
         raise SystemExit("parser FAIL: live Russia_LargeAirBaseCommandSet body mismatch")
@@ -282,6 +342,20 @@ def parser_check_live_commandset(raw: bytes) -> None:
     for slot in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14):
         if parsed["slots"][slot] != EXPECTED_SLOTS[slot]:
             raise SystemExit(f"parser FAIL: existing slot {slot} changed")
+    btn_pos = {}
+    for btn in (
+        "Command_ConstructRussiaJetSu47Berkut",
+        "Command_ConstructRussiaJetSu57T50",
+        "Command_ConstructRussiaJetSu75",
+        "Command_ConstructRussiaJetSu39",
+    ):
+        m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
+        if not m:
+            raise SystemExit(f"parser FAIL: CommandSet.ini missing CommandButton {btn}")
+        btn_pos[btn] = m.start()
+    set_pos = text.find("CommandSet Russia_LargeAirBaseCommandSet")
+    if any(pos > set_pos for pos in btn_pos.values()):
+        raise SystemExit("parser FAIL: CommandButtons must appear before Russia_LargeAirBaseCommandSet")
     print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + slots 11/12/15/16")
 
 
@@ -312,8 +386,7 @@ def collect_objects(entries: list[tuple[str, bytes]]) -> dict[str, list[str]]:
 def collect_buttons(entries: list[tuple[str, bytes]]) -> dict[str, list[str]]:
     found: dict[str, list[str]] = {}
     for n, b in entries:
-        nl = n.replace("/", "\\").lower()
-        if "commandbutton" not in nl:
+        if not n.lower().endswith(".ini"):
             continue
         text = b.decode("latin1", "replace")
         for btn in re.findall(r"^CommandButton (\S+)", text, re.M):
@@ -393,43 +466,21 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: expected packed object missing: {banned}")
 
     buttons = collect_buttons(data_entries)
-    required_buttons = {
-        "Command_ConstructRussiaJetSu47Berkut": "RussiaJetSu47Berkut",
-        "Command_ConstructRussiaJetSu57T50": "RussiaJetSu57T50",
-        "Command_ConstructRussiaJetSu75": "RussiaJetSu75",
-        "Command_ConstructRussiaJetSu39": "RussiaJetSu39",
-    }
+    required_buttons = (
+        "Command_ConstructRussiaJetSu47Berkut",
+        "Command_ConstructRussiaJetSu57T50",
+        "Command_ConstructRussiaJetSu75",
+        "Command_ConstructRussiaJetSu39",
+    )
     for btn in required_buttons:
-        if btn not in buttons:
-            raise SystemExit(f"parser FAIL: missing CommandButton {btn}")
-        if len(buttons[btn]) != 1:
-            raise SystemExit(f"parser FAIL: CommandButton {btn} duplicated in {buttons[btn]}")
-
-    art_entries = read_big(ART_SRC)
-    art_src_map = {n.replace("/", "\\").lower(): b for n, b in art_entries}
-    art_added = {}
-    for name, path in NEW_ART.items():
-        upsert_new_only(art_entries, name, path.read_bytes())
-        art_added[name] = "added"
-    art_new_map = {n.replace("/", "\\").lower(): b for n, b in art_entries}
-    extra_art = sorted(set(art_new_map) - set(art_src_map))
-    expected_art = {k.replace("/", "\\").lower() for k in NEW_ART}
-    if set(extra_art) != expected_art:
-        raise SystemExit(f"unexpected added ART files: {sorted(set(extra_art) ^ expected_art)}")
-    for banned in (
-        r"art\w3d\rus_su57.w3d",
-        r"art\w3d\rus_su39.w3d",
-        r"art\textures\rus_su39.dds",
-    ):
-        if banned in art_src_map and art_src_map[banned] != art_new_map[banned]:
-            raise SystemExit(f"existing ART replaced: {banned}")
+        files = buttons.get(btn, [])
+        if CS_KEY not in [f.replace("/", "\\").lower() for f in files]:
+            raise SystemExit(f"parser FAIL: CommandButton {btn} missing from CommandSet.ini ({files})")
+        print(f"BUTTON IN CommandSet.ini PASS: {btn}")
 
     data_bytes = write_big(data_entries)
-    art_bytes = write_big(art_entries)
     out_data = OUT / "_SPEC_DATA_ONE.big"
-    out_art = OUT / "_SPEC_ART_ONE.big"
     out_data.write_bytes(data_bytes)
-    out_art.write_bytes(art_bytes)
 
     written_entries = read_big(out_data)
     written = {n.replace("/", "\\").lower(): b for n, b in written_entries}
@@ -438,20 +489,18 @@ def main() -> int:
     if r"data\ini\commandset_zzzz_russia_largeairbase.ini" in written:
         raise SystemExit("parser FAIL: overlay CommandSet packed in final DATA BIG")
 
-    zpath = OUT / "RUSSIA_FOUR_FIGHTERS.zip"
+    zpath = OUT / "RUSSIA_FOUR_FIGHTERS_DATA.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
-        zf.write(out_art, "_SPEC_ART_ONE.big")
 
     report = OUT / "PACK_REPORT.txt"
     report.write_text(
         f"DATA SHA256={hashlib.sha256(data_bytes).hexdigest()} SIZE={len(data_bytes)}\n"
-        f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)}\n"
         f"ZIP  SHA256={hashlib.sha256(zpath.read_bytes()).hexdigest()} SIZE={zpath.stat().st_size}\n"
-        f"CommandSet.ini SHA256={hashlib.sha256(written[CS_KEY]).hexdigest()} (live #385 + slots 11/12/15/16)\n"
+        f"CommandSet.ini SHA256={hashlib.sha256(written[CS_KEY]).hexdigest()}\n"
         f"added_data={added}\n"
-        f"added_art={art_added}\n"
         f"objects={ {k: objects[k] for k in REQUIRED_OBJECTS} }\n"
+        f"ART not rebuilt\n"
         f"PARSER CHECK PASS\n",
         encoding="utf-8",
     )

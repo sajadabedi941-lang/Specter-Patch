@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""PR #385 baseline + isolated four fighters on the live Large Air Base menu.
+"""PR #385 baseline + isolated Russia Large Air Base additions.
 
 Stock CommandButton.ini / Weapon.ini / Russia_System.ini / CSF / existing
 aircraft stay untouched.
 
 CommandSet.ini is the one live file that is surgically updated:
-  Russia_LargeAirBaseCommandSet keeps slots 1-10 and 13-14 from #385
-  and gains slots 11 / 12 / 15 / 16. No overlay CommandSet file.
-  No second Russia_LargeAirBaseCommandSet definition.
+  Russia_LargeAirBaseCommandSet keeps slots 1-9 and 13-14 from #385.
+  Slot 10 is Su-39 (replaces Su47 Recon). Slot 11 is Su-47 Berkut.
+  Slot 12 is Dozor-600 (replaces empty T-50). Slot 15 stays isolated Su-75.
+  No overlay CommandSet file. No second Russia_LargeAirBaseCommandSet.
 """
 from __future__ import annotations
 
@@ -52,13 +53,12 @@ NEW_LARGE = (
     "  7  = Command_ConstructRussiaHelicopterMi28N\n"
     "  8  = Command_ConstructRussiaHelicopterKA52\n"
     "  9  = Command_ConstructRussiaJetSu57AA\n"
-    "  10 = Command_ConstructRussiaJetSu47Recon\n"
+    "  10 = Command_ConstructRussiaJetSu39\n"
     "  11 = Command_ConstructRussiaJetSu47Berkut\n"
-    "  12 = Command_ConstructRussiaJetSu57T50\n"
+    "  12 = Command_ConstructRussiaJetDozor600\n"
     "  13 = Command_SetRallyPoint\n"
     "  14 = Command_Sell\n"
     "  15 = Command_ConstructRussiaJetSu75\n"
-    "  16 = Command_ConstructRussiaJetSu39\n"
     "End"
 )
 
@@ -73,15 +73,6 @@ LIVE_BUTTONS = (
     "  ButtonImage      = SU47\n"
     "  ButtonBorderType = BUILD\n"
     "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu47Berkut\n"
-    "End\n"
-    "\n"
-    "CommandButton Command_ConstructRussiaJetSu57T50\n"
-    "  Command          = UNIT_BUILD\n"
-    "  Object           = RussiaJetSu57T50\n"
-    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu57T50\n"
-    "  ButtonImage      = T50\n"
-    "  ButtonBorderType = BUILD\n"
-    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu57T50\n"
     "End\n"
     "\n"
     "CommandButton Command_ConstructRussiaJetSu75\n"
@@ -102,6 +93,15 @@ LIVE_BUTTONS = (
     "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu39\n"
     "End\n"
     "\n"
+    "CommandButton Command_ConstructRussiaJetDozor600\n"
+    "  Command          = UNIT_BUILD\n"
+    "  Object           = RussiaJetDozor600\n"
+    "  TextLabel        = CONTROLBAR:ConstructRussiaJetDozor600\n"
+    "  ButtonImage      = Dozor600\n"
+    "  ButtonBorderType = BUILD\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetDozor600\n"
+    "End\n"
+    "\n"
 )
 
 EXPECTED_SLOTS = {
@@ -114,14 +114,19 @@ EXPECTED_SLOTS = {
     7: "Command_ConstructRussiaHelicopterMi28N",
     8: "Command_ConstructRussiaHelicopterKA52",
     9: "Command_ConstructRussiaJetSu57AA",
-    10: "Command_ConstructRussiaJetSu47Recon",
+    10: "Command_ConstructRussiaJetSu39",
     11: "Command_ConstructRussiaJetSu47Berkut",
-    12: "Command_ConstructRussiaJetSu57T50",
+    12: "Command_ConstructRussiaJetDozor600",
     13: "Command_SetRallyPoint",
     14: "Command_Sell",
     15: "Command_ConstructRussiaJetSu75",
-    16: "Command_ConstructRussiaJetSu39",
 }
+
+FROZEN_SLOTS = (1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14)
+REMOVED_MENU_BUTTONS = (
+    "Command_ConstructRussiaJetSu47Recon",
+    "Command_ConstructRussiaJetSu57T50",
+)
 
 AIRFORCE = PATCH / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce"
 
@@ -133,6 +138,10 @@ NEW_DATA = {
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su75Checkmate.ini": AIRFORCE
     / "Su75Checkmate.ini",
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su39.ini": AIRFORCE / "Su39.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Dozor600.ini": AIRFORCE
+    / "Dozor600.ini",
+    r"Data\INI\MappedImages\HandCreated\Russia_Dozor600_Images.INI": PATCH
+    / "Data/INI/MappedImages/HandCreated/Russia_Dozor600_Images.INI",
 }
 
 NEW_ART = {
@@ -157,6 +166,15 @@ NEW_ART = {
     r"Art\Textures\SU-75.dds": PATCH / "Art/Textures/SU-75.dds",
     r"Art\Textures\SU-75_D.dds": PATCH / "Art/Textures/SU-75_D.dds",
     r"Art\Textures\SU-75_E.dds": PATCH / "Art/Textures/SU-75_E.dds",
+    r"Art\W3D\AVReaper.W3D": PATCH / "Art/W3D/AVReaper.W3D",
+    r"Art\W3D\AVReaper_D.W3D": PATCH / "Art/W3D/AVReaper_D.W3D",
+    r"Art\W3D\AVReaper_D1.W3D": PATCH / "Art/W3D/AVReaper_D1.W3D",
+    r"Art\W3D\AVReaper_P.W3D": PATCH / "Art/W3D/AVReaper_P.W3D",
+    r"Art\Textures\AVReaper.dds": PATCH / "Art/Textures/AVReaper.dds",
+    r"Art\Textures\AVReaper_D.dds": PATCH / "Art/Textures/AVReaper_D.dds",
+    r"Art\Textures\AVReaper_D1.dds": PATCH / "Art/Textures/AVReaper_D1.dds",
+    r"Art\Textures\Dozor600.tga": PATCH / "Art/Textures/Dozor600.tga",
+    r"Art\Textures\Dozor600TB.tga": PATCH / "Art/Textures/Dozor600TB.tga",
 }
 
 FROZEN = (
@@ -178,6 +196,7 @@ REQUIRED_OBJECTS = {
     "RussiaJetSu57T50": "LSFT50",
     "RussiaJetSu75": "RUSU75",
     "RussiaJetSu39": "RUS_SU39",
+    "RussiaJetDozor600": "AVReaper",
 }
 
 FORBIDDEN_REUSED_OBJECTS = (
@@ -339,24 +358,32 @@ def parser_check_live_commandset(raw: bytes) -> None:
         raise SystemExit("parser FAIL: live Russia_LargeAirBaseCommandSet body mismatch")
     if parsed["slots"] != EXPECTED_SLOTS:
         raise SystemExit(f"parser FAIL: live Large slots {parsed['slots']}")
-    for slot in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14):
+    for slot in FROZEN_SLOTS:
         if parsed["slots"][slot] != EXPECTED_SLOTS[slot]:
             raise SystemExit(f"parser FAIL: existing slot {slot} changed")
+    if parsed["slots"].get(10) == "Command_ConstructRussiaJetSu47Recon":
+        raise SystemExit("parser FAIL: Su47 Recon is still in slot 10")
+    if parsed["slots"].get(12) == "Command_ConstructRussiaJetSu57T50":
+        raise SystemExit("parser FAIL: empty T-50 is still in slot 12")
+    if 16 in parsed["slots"]:
+        raise SystemExit("parser FAIL: slot 16 should be empty after moving Su-39")
     btn_pos = {}
     for btn in (
         "Command_ConstructRussiaJetSu47Berkut",
-        "Command_ConstructRussiaJetSu57T50",
         "Command_ConstructRussiaJetSu75",
         "Command_ConstructRussiaJetSu39",
+        "Command_ConstructRussiaJetDozor600",
     ):
         m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
         if not m:
             raise SystemExit(f"parser FAIL: CommandSet.ini missing CommandButton {btn}")
         btn_pos[btn] = m.start()
+    if re.search(r"^CommandButton Command_ConstructRussiaJetSu57T50\s*$", text, re.M):
+        raise SystemExit("parser FAIL: T-50 CommandButton visibility still in CommandSet.ini")
     set_pos = text.find("CommandSet Russia_LargeAirBaseCommandSet")
     if any(pos > set_pos for pos in btn_pos.values()):
         raise SystemExit("parser FAIL: CommandButtons must appear before Russia_LargeAirBaseCommandSet")
-    print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + slots 11/12/15/16")
+    print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + Su-39/Dozor slots")
 
 
 def assert_no_duplicate_large(entries: list[tuple[str, bytes]]) -> None:
@@ -420,6 +447,7 @@ def main() -> int:
         ("RussiaJetSu57T50", "LSFT50", "Su57T50.ini"),
         ("RussiaJetSu75", "RUSU75", "Su75Checkmate.ini"),
         ("RussiaJetSu39", "RUS_SU39", "Su39.ini"),
+        ("RussiaJetDozor600", "AVReaper", "Dozor600.ini"),
     ):
         verify_new_object_file(AIRFORCE / fname, obj, model)
 
@@ -468,15 +496,24 @@ def main() -> int:
     buttons = collect_buttons(data_entries)
     required_buttons = (
         "Command_ConstructRussiaJetSu47Berkut",
-        "Command_ConstructRussiaJetSu57T50",
         "Command_ConstructRussiaJetSu75",
         "Command_ConstructRussiaJetSu39",
+        "Command_ConstructRussiaJetDozor600",
     )
     for btn in required_buttons:
         files = buttons.get(btn, [])
         if CS_KEY not in [f.replace("/", "\\").lower() for f in files]:
             raise SystemExit(f"parser FAIL: CommandButton {btn} missing from CommandSet.ini ({files})")
         print(f"BUTTON IN CommandSet.ini PASS: {btn}")
+
+    large_text = new_map[CS_KEY].decode("latin1")
+    for removed in REMOVED_MENU_BUTTONS:
+        if re.search(rf"^\s+\d+\s+=\s+{re.escape(removed)}\s*$", large_text, re.M):
+            raise SystemExit(f"parser FAIL: removed menu button still slotted: {removed}")
+
+    mapped = new_map[r"data\ini\mappedimages\handcreated\russia_dozor600_images.ini".lower()].decode("latin1")
+    if "MappedImage Dozor600" not in mapped:
+        raise SystemExit("parser FAIL: Dozor600 MappedImage missing")
 
     data_bytes = write_big(data_entries)
     out_data = OUT / "_SPEC_DATA_ONE.big"
@@ -489,18 +526,43 @@ def main() -> int:
     if r"data\ini\commandset_zzzz_russia_largeairbase.ini" in written:
         raise SystemExit("parser FAIL: overlay CommandSet packed in final DATA BIG")
 
-    zpath = OUT / "RUSSIA_FOUR_FIGHTERS_DATA.zip"
+    art_entries = read_big(ART_SRC)
+    art_added = {}
+    for name, path in NEW_ART.items():
+        if not path.exists():
+            raise SystemExit(f"missing ART {path}")
+        upsert_new_only(art_entries, name, path.read_bytes())
+        art_added[name] = "added"
+    art_bytes = write_big(art_entries)
+    out_art = OUT / "_SPEC_ART_ONE.big"
+    out_art.write_bytes(art_bytes)
+    packed_art = {n.replace("/", "\\").lower(): b for n, b in read_big(out_art)}
+    for name, path in NEW_ART.items():
+        key = name.replace("/", "\\").lower()
+        if key not in packed_art:
+            raise SystemExit(f"ART missing from packed BIG: {name}")
+        if packed_art[key] != path.read_bytes():
+            raise SystemExit(f"ART payload mismatch: {name}")
+    print("ART PACK PASS:", ", ".join(sorted(art_added)))
+
+    zpath = OUT / "RUSSIA_FOUR_FIGHTERS.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(out_data, "_SPEC_DATA_ONE.big")
+        zf.write(out_art, "_SPEC_ART_ONE.big")
+    zdata = OUT / "RUSSIA_FOUR_FIGHTERS_DATA.zip"
+    with zipfile.ZipFile(zdata, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
 
     report = OUT / "PACK_REPORT.txt"
     report.write_text(
         f"DATA SHA256={hashlib.sha256(data_bytes).hexdigest()} SIZE={len(data_bytes)}\n"
+        f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)}\n"
         f"ZIP  SHA256={hashlib.sha256(zpath.read_bytes()).hexdigest()} SIZE={zpath.stat().st_size}\n"
         f"CommandSet.ini SHA256={hashlib.sha256(written[CS_KEY]).hexdigest()}\n"
         f"added_data={added}\n"
+        f"added_art={art_added}\n"
         f"objects={ {k: objects[k] for k in REQUIRED_OBJECTS} }\n"
-        f"ART not rebuilt\n"
+        f"slots={EXPECTED_SLOTS}\n"
         f"PARSER CHECK PASS\n",
         encoding="utf-8",
     )

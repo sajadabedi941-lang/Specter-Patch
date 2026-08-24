@@ -18,12 +18,27 @@ import struct
 import zipfile
 from pathlib import Path
 
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from russia_air_buttons import (
+    CSF_STRINGS,
+    NEW_CONSTRUCT_BUTTONS,
+    add_csf_strings,
+    decode_csf_labels,
+    parse_commandbutton_block,
+    patch_commandbutton_ini,
+    render_live_commandset_buttons,
+)
+
 DATA_SRC = Path("/tmp/russia_su35s_ka52/_SPEC_DATA_ONE.big")
 ART_SRC = Path("/tmp/radar_pkg/_SPEC_ART_ONE.big")
 PATCH = Path("/workspace/patch")
 OUT = Path("/tmp/russia_four_fighters")
 
 CS_KEY = r"data\ini\commandset.ini"
+CB_KEY = r"data\ini\commandbutton.ini"
+CSF_KEY = r"data\english\generals.csf"
 LARGE_NAME = "Russia_LargeAirBaseCommandSet"
 
 OLD_LARGE = (
@@ -62,47 +77,10 @@ NEW_LARGE = (
     "End"
 )
 
-# CommandButtons must live in CommandSet.ini before the Large set.
-# Extra CommandButton_*.ini files are not guaranteed to be parsed before
-# CommandSet.ini; unknown slot commands crash on the CommandSet line.
-LIVE_BUTTONS = (
-    "CommandButton Command_ConstructRussiaJetSu47Berkut\n"
-    "  Command          = UNIT_BUILD\n"
-    "  Object           = RussiaJetSu47Berkut\n"
-    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu47Berkut\n"
-    "  ButtonImage      = SU47\n"
-    "  ButtonBorderType = BUILD\n"
-    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu47Berkut\n"
-    "End\n"
-    "\n"
-    "CommandButton Command_ConstructRussiaJetSu75\n"
-    "  Command          = UNIT_BUILD\n"
-    "  Object           = RussiaJetSu75\n"
-    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu75\n"
-    "  ButtonImage      = SU75\n"
-    "  ButtonBorderType = BUILD\n"
-    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu75\n"
-    "End\n"
-    "\n"
-    "CommandButton Command_ConstructRussiaJetSu39\n"
-    "  Command          = UNIT_BUILD\n"
-    "  Object           = RussiaJetSu39\n"
-    "  TextLabel        = CONTROLBAR:ConstructRussiaJetSu39\n"
-    "  ButtonImage      = rus_su25t\n"
-    "  ButtonBorderType = BUILD\n"
-    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetSu39\n"
-    "End\n"
-    "\n"
-    "CommandButton Command_ConstructRussiaJetDozor600\n"
-    "  Command          = UNIT_BUILD\n"
-    "  Object           = RussiaJetDozor600\n"
-    "  TextLabel        = CONTROLBAR:ConstructRussiaJetDozor600\n"
-    "  ButtonImage      = Dozor600\n"
-    "  ButtonBorderType = BUILD\n"
-    "  DescriptLabel    = CONTROLBAR:ToolTipRussiaJetDozor600\n"
-    "End\n"
-    "\n"
-)
+# CommandButtons must live in CommandSet.ini before the Large set AND in
+# CommandButton.ini so UNIT_BUILD can resolve the object. Extra
+# CommandButton_*.ini files are not packed.
+LIVE_BUTTONS = render_live_commandset_buttons()
 
 EXPECTED_SLOTS = {
     1: "Command_ConstructRussiaJetSu75Checkmate",
@@ -178,10 +156,8 @@ NEW_ART = {
 }
 
 FROZEN = (
-    r"data\ini\commandbutton.ini",
     r"data\ini\weapon.ini",
     r"data\ini\upgrade.ini",
-    r"data\english\generals.csf",
     r"data\ini\object\specter\armed forces of russian federation\russia_system.ini",
     r"data\ini\object\specter\armed forces of russian federation\airforce\su35s.ini",
     r"data\ini\object\specter\armed forces of russian federation\airforce\ka52m.ini",
@@ -368,12 +344,7 @@ def parser_check_live_commandset(raw: bytes) -> None:
     if 16 in parsed["slots"]:
         raise SystemExit("parser FAIL: slot 16 should be empty after moving Su-39")
     btn_pos = {}
-    for btn in (
-        "Command_ConstructRussiaJetSu47Berkut",
-        "Command_ConstructRussiaJetSu75",
-        "Command_ConstructRussiaJetSu39",
-        "Command_ConstructRussiaJetDozor600",
-    ):
+    for btn in NEW_CONSTRUCT_BUTTONS:
         m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
         if not m:
             raise SystemExit(f"parser FAIL: CommandSet.ini missing CommandButton {btn}")
@@ -421,6 +392,53 @@ def collect_buttons(entries: list[tuple[str, bytes]]) -> dict[str, list[str]]:
     return found
 
 
+def verify_dozor_create_path(data_entries: list[tuple[str, bytes]], art_map: dict[str, bytes]) -> None:
+    """Simulate clicking Large Air Base slot 12: CommandSet -> CommandButton -> Object."""
+    data = {n.replace("/", "\\").lower(): b for n, b in data_entries}
+    cs = parse_commandset_block(data[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
+    cmd = cs["slots"].get(12)
+    if cmd != "Command_ConstructRussiaJetDozor600":
+        raise SystemExit(f"CREATE FAIL: slot 12 is {cmd}")
+    cb_text = data[CB_KEY].decode("latin1")
+    btn = parse_commandbutton_block(cb_text, cmd)
+    if not btn:
+        raise SystemExit("CREATE FAIL: CommandButton.ini missing Command_ConstructRussiaJetDozor600")
+    if btn.get("Command") != "UNIT_BUILD":
+        raise SystemExit("CREATE FAIL: Dozor button is not UNIT_BUILD")
+    if btn.get("Object") != "RussiaJetDozor600":
+        raise SystemExit(f"CREATE FAIL: Dozor button Object {btn.get('Object')}")
+    obj_key = r"data\ini\object\specter\armed forces of russian federation\airforce\dozor600.ini"
+    if obj_key not in data:
+        raise SystemExit("CREATE FAIL: Dozor600.ini not packed in DATA")
+    obj = data[obj_key].decode("latin1")
+    if not re.search(r"^Object RussiaJetDozor600\s*$", obj, re.M):
+        raise SystemExit("CREATE FAIL: packed Dozor object name mismatch")
+    if "KindOf" not in obj or "AIRCRAFT" not in obj:
+        raise SystemExit("CREATE FAIL: Dozor is not AIRCRAFT")
+    if not re.search(r"BuildCost\s+=\s+\d+", obj):
+        raise SystemExit("CREATE FAIL: Dozor has no BuildCost")
+    if "AttachToBoneInAnotherModule" in obj:
+        raise SystemExit("CREATE FAIL: Dozor still uses Overlord attach draw")
+    weapons = re.findall(r"^\s+Weapon\s+=\s+\S+\s+(\S+)\s*$", obj, re.M)
+    weapon_ini = data[r"data\ini\weapon.ini"].decode("latin1")
+    for wpn in weapons:
+        if not re.search(rf"^Weapon {re.escape(wpn)}\s*$", weapon_ini, re.M):
+            raise SystemExit(f"CREATE FAIL: packed Weapon.ini missing {wpn}")
+    if r"art\w3d\avreaper.w3d" not in art_map:
+        raise SystemExit("CREATE FAIL: AVReaper.W3D not packed in ART")
+    csf_names = decode_csf_labels(data[CSF_KEY])
+    for key in (
+        "CONTROLBAR:ConstructRussiaJetDozor600",
+        "CONTROLBAR:ToolTipRussiaJetDozor600",
+        "OBJECT:RussiaDozor600",
+    ):
+        if key not in csf_names:
+            raise SystemExit(f"CREATE FAIL: CSF missing {key}")
+    if btn.get("TextLabel") not in csf_names:
+        raise SystemExit(f"CREATE FAIL: TextLabel {btn.get('TextLabel')} not in CSF")
+    print("CREATE PATH PASS: slot 12 UNIT_BUILD -> RussiaJetDozor600 (CSF+object+ART+weapons)")
+
+
 def verify_new_object_file(path: Path, obj: str, model: str) -> None:
     raw = path.read_bytes()
     text = check_ini_bytes(raw, path.name)
@@ -461,9 +479,18 @@ def main() -> int:
     patched_cs = patch_commandset(baseline_cs)
     parser_check_live_commandset(patched_cs)
 
+    patched_cb = patch_commandbutton_ini(src_map[CB_KEY])
+    patched_csf = add_csf_strings(src_map[CSF_KEY])
+
     data_entries = list(src_entries)
     replace_existing(data_entries, r"Data\INI\CommandSet.ini", patched_cs)
-    added = {r"Data\INI\CommandSet.ini": "slots 11/12/15/16 added"}
+    replace_existing(data_entries, r"Data\INI\CommandButton.ini", patched_cb)
+    replace_existing(data_entries, r"Data\English\generals.csf", patched_csf)
+    added = {
+        r"Data\INI\CommandSet.ini": "Large Air Base slots + construct buttons",
+        r"Data\INI\CommandButton.ini": "Russia aircraft construct buttons/icons",
+        r"Data\English\generals.csf": "added missing construct/object labels",
+    }
     for name, path in NEW_DATA.items():
         upsert_new_only(data_entries, name, path.read_bytes())
         added[name] = "added"
@@ -494,17 +521,19 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: expected packed object missing: {banned}")
 
     buttons = collect_buttons(data_entries)
-    required_buttons = (
-        "Command_ConstructRussiaJetSu47Berkut",
-        "Command_ConstructRussiaJetSu75",
-        "Command_ConstructRussiaJetSu39",
-        "Command_ConstructRussiaJetDozor600",
-    )
-    for btn in required_buttons:
-        files = buttons.get(btn, [])
-        if CS_KEY not in [f.replace("/", "\\").lower() for f in files]:
+    cb_text = new_map[CB_KEY].decode("latin1")
+    for btn, spec in NEW_CONSTRUCT_BUTTONS.items():
+        files = [f.replace("/", "\\").lower() for f in buttons.get(btn, [])]
+        if CS_KEY not in files:
             raise SystemExit(f"parser FAIL: CommandButton {btn} missing from CommandSet.ini ({files})")
-        print(f"BUTTON IN CommandSet.ini PASS: {btn}")
+        if CB_KEY not in files:
+            raise SystemExit(f"parser FAIL: CommandButton {btn} missing from CommandButton.ini ({files})")
+        parsed_cb = parse_commandbutton_block(cb_text, btn)
+        if not parsed_cb or parsed_cb.get("Object") != spec["Object"]:
+            raise SystemExit(f"parser FAIL: CommandButton.ini {btn} Object mismatch")
+        if parsed_cb.get("Command") != "UNIT_BUILD":
+            raise SystemExit(f"parser FAIL: {btn} is not UNIT_BUILD")
+        print(f"BUTTON IN CommandButton.ini+CommandSet.ini PASS: {btn} -> {spec['Object']}")
 
     parsed_large = parse_commandset_block(new_map[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
     for removed in REMOVED_MENU_BUTTONS:
@@ -545,13 +574,16 @@ def main() -> int:
             raise SystemExit(f"ART payload mismatch: {name}")
     print("ART PACK PASS:", ", ".join(sorted(art_added)))
 
-    zpath = OUT / "RUSSIA_FOUR_FIGHTERS.zip"
+    verify_dozor_create_path(written_entries, packed_art)
+    for key in CSF_STRINGS:
+        if key not in decode_csf_labels(written[CSF_KEY]):
+            raise SystemExit(f"parser FAIL: packed CSF missing {key}")
+    print("CSF LABEL PASS: all new construct/object strings present")
+
+    zpath = OUT / "RUSSIA_AIRBASE_SU39_DOZOR.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")
-    zdata = OUT / "RUSSIA_FOUR_FIGHTERS_DATA.zip"
-    with zipfile.ZipFile(zdata, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(out_data, "_SPEC_DATA_ONE.big")
 
     report = OUT / "PACK_REPORT.txt"
     report.write_text(

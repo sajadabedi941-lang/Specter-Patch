@@ -239,7 +239,7 @@ def patch_csf(data: bytes) -> bytes:
     for key, value in CSF_LABELS.items():
         if key in have:
             continue
-        labels.append((b" LBL", key, [(b" STR", value, b"")]))
+        labels.append((b" LBL", key, [(b" RTS", value, b"")]))
         added += 1
     print(f"CSF added {added} labels (existing {len(have)})")
     return build_csf(version, unk, lang, labels)

@@ -75,6 +75,8 @@ NEW_LARGE = (
     "  14 = Command_ConstructRussiaJetSuT50PAKFA\n"
     "  15 = Command_ConstructRussiaJetSu35Flanker\n"
     "  16 = Command_ConstructRussiaJetSu24MR\n"
+    "  17 = Command_ConstructRussiaJetSu33\n"
+    "  18 = Command_ConstructRussiaJetSu27Flanker\n"
     "End"
 )
 
@@ -100,6 +102,8 @@ EXPECTED_SLOTS = {
     14: "Command_ConstructRussiaJetSuT50PAKFA",
     15: "Command_ConstructRussiaJetSu35Flanker",
     16: "Command_ConstructRussiaJetSu24MR",
+    17: "Command_ConstructRussiaJetSu33",
+    18: "Command_ConstructRussiaJetSu27Flanker",
 }
 
 FROZEN_SLOTS = (2, 3, 4, 5, 6, 7, 8, 9)
@@ -132,8 +136,13 @@ NEW_DATA = {
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35Flanker.ini": AIRFORCE
     / "Su35Flanker.ini",
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su24MR.ini": AIRFORCE / "Su24MR.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su33.ini": AIRFORCE / "Su33.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su27Flanker.ini": AIRFORCE
+    / "Su27Flanker.ini",
     r"Data\INI\MappedImages\HandCreated\Russia_Dozor600_Images.INI": PATCH
     / "Data/INI/MappedImages/HandCreated/Russia_Dozor600_Images.INI",
+    r"Data\INI\MappedImages\HandCreated\Russia_Su33_Su27_Images.INI": PATCH
+    / "Data/INI/MappedImages/HandCreated/Russia_Su33_Su27_Images.INI",
 }
 
 NEW_ART = {
@@ -184,6 +193,22 @@ NEW_ART = {
     r"Art\Textures\ZHCA_AIRapPilot.tga": PATCH / "Art/Textures/ZHCA_AIRapPilot.tga",
     r"Art\Textures\f35.tga": PATCH / "Art/Textures/f35.tga",
     r"Art\Textures\f35.dds": PATCH / "Art/Textures/f35.dds",
+    r"Art\W3D\RUSU33.W3D": PATCH / "Art/W3D/RUSU33.W3D",
+    r"Art\W3D\RUSU33d.W3D": PATCH / "Art/W3D/RUSU33d.W3D",
+    r"Art\Textures\RUSU33.dds": PATCH / "Art/Textures/RUSU33.dds",
+    r"Art\Textures\RUSU33.tga": PATCH / "Art/Textures/RUSU33.tga",
+    r"Art\Textures\RUSU33d.dds": PATCH / "Art/Textures/RUSU33d.dds",
+    r"Art\Textures\RUSU33d.tga": PATCH / "Art/Textures/RUSU33d.tga",
+    r"Art\Textures\SU33TB.tga": PATCH / "Art/Textures/SU33TB.tga",
+    r"Art\W3D\LSFRUSU27SK.W3D": PATCH / "Art/W3D/LSFRUSU27SK.W3D",
+    r"Art\W3D\LSFRUSU27SKd.W3D": PATCH / "Art/W3D/LSFRUSU27SKd.W3D",
+    r"Art\W3D\LSFRUSU27SKk.W3D": PATCH / "Art/W3D/LSFRUSU27SKk.W3D",
+    r"Art\Textures\RUSU27SK.dds": PATCH / "Art/Textures/RUSU27SK.dds",
+    r"Art\Textures\RUSU27SKd.dds": PATCH / "Art/Textures/RUSU27SKd.dds",
+    r"Art\Textures\RUSU327SKk.dds": PATCH / "Art/Textures/RUSU327SKk.dds",
+    r"Art\Textures\LSFCNMissle.dds": PATCH / "Art/Textures/LSFCNMissle.dds",
+    r"Art\Textures\VietnamSU30.dds": PATCH / "Art/Textures/VietnamSU30.dds",
+    r"Art\Textures\SU27SKTB.tga": PATCH / "Art/Textures/SU27SKTB.tga",
 }
 
 FROZEN = (
@@ -209,6 +234,8 @@ REQUIRED_OBJECTS = {
     "RussiaJetSuT50PAKFA": "AGMZRT501",
     "RussiaJetSu35Flanker": "LSFSU35",
     "RussiaJetSu24MR": "SU24MP",
+    "RussiaJetSu33": "RUSU33",
+    "RussiaJetSu27Flanker": "LSFRUSU27SK",
 }
 
 FORBIDDEN_REUSED_OBJECTS = (
@@ -281,7 +308,7 @@ def replace_existing(entries: list[tuple[str, bytes]], name: str, content: bytes
     raise SystemExit(f"missing existing file to replace: {name}")
 
 
-def parse_commandset_block(text: str, name: str, max_slot: int = 16) -> dict:
+def parse_commandset_block(text: str, name: str, max_slot: int = 18) -> dict:
     matches = list(re.finditer(rf"^CommandSet {re.escape(name)}\s*$", text, re.M))
     if len(matches) != 1:
         raise SystemExit(f"parser FAIL: {name} defined {len(matches)} time(s)")
@@ -367,7 +394,7 @@ def parser_check_live_commandset(raw: bytes) -> None:
     if text.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
         raise SystemExit("parser FAIL: duplicated Russia_LargeAirBaseCommandSet in CommandSet.ini")
     parser_check_commandset_balance(text)
-    parsed = parse_commandset_block(text, LARGE_NAME, max_slot=16)
+    parsed = parse_commandset_block(text, LARGE_NAME, max_slot=18)
     if parsed["block"] != NEW_LARGE:
         raise SystemExit("parser FAIL: live Russia_LargeAirBaseCommandSet body mismatch")
     if parsed["slots"] != EXPECTED_SLOTS:
@@ -441,7 +468,7 @@ def verify_construct_create_path(
     model: str,
 ) -> None:
     data = {n.replace("/", "\\").lower(): b for n, b in data_entries}
-    cs = parse_commandset_block(data[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
+    cs = parse_commandset_block(data[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=18)
     cmd = cs["slots"].get(slot)
     if cmd != btn:
         raise SystemExit(f"CREATE FAIL: slot {slot} is {cmd}, expected {btn}")
@@ -511,6 +538,8 @@ def main() -> int:
         ("RussiaJetSuT50PAKFA", "AGMZRT501", "SuT50PAKFA.ini"),
         ("RussiaJetSu35Flanker", "LSFSU35", "Su35Flanker.ini"),
         ("RussiaJetSu24MR", "SU24MP", "Su24MR.ini"),
+        ("RussiaJetSu33", "RUSU33", "Su33.ini"),
+        ("RussiaJetSu27Flanker", "LSFRUSU27SK", "Su27Flanker.ini"),
     ):
         verify_new_object_file(AIRFORCE / fname, obj, model)
 
@@ -580,7 +609,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: {btn} is not UNIT_BUILD")
         print(f"BUTTON IN CommandButton.ini+CommandSet.ini PASS: {btn} -> {spec['Object']}")
 
-    parsed_large = parse_commandset_block(new_map[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
+    parsed_large = parse_commandset_block(new_map[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=18)
     for removed in REMOVED_MENU_BUTTONS:
         if removed in parsed_large["slots"].values():
             raise SystemExit(f"parser FAIL: removed menu button still slotted: {removed}")
@@ -588,6 +617,9 @@ def main() -> int:
     mapped = new_map[r"data\ini\mappedimages\handcreated\russia_dozor600_images.ini".lower()].decode("latin1")
     if "MappedImage Dozor600" not in mapped:
         raise SystemExit("parser FAIL: Dozor600 MappedImage missing")
+    flanker_map = new_map[r"data\ini\mappedimages\handcreated\russia_su33_su27_images.ini".lower()].decode("latin1")
+    if "MappedImage SU33TB" not in flanker_map or "MappedImage SU27SKTB" not in flanker_map:
+        raise SystemExit("parser FAIL: Su-33/Su-27 MappedImages missing")
 
     data_bytes = write_big(data_entries)
     out_data = OUT / "_SPEC_DATA_ONE.big"
@@ -628,6 +660,8 @@ def main() -> int:
         14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
         15: ("Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
         16: ("Command_ConstructRussiaJetSu24MR", "RussiaJetSu24MR", "SU24MP"),
+        17: ("Command_ConstructRussiaJetSu33", "RussiaJetSu33", "RUSU33"),
+        18: ("Command_ConstructRussiaJetSu27Flanker", "RussiaJetSu27Flanker", "LSFRUSU27SK"),
     }
     for slot, (btn, obj, model) in create_slots.items():
         verify_construct_create_path(written_entries, packed_art, slot, btn, obj, model)
@@ -662,7 +696,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_VISUAL_FIX.zip"
+    zpath = OUT / "RUSSIA_SU35_SU33_SU27_UPDATE.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

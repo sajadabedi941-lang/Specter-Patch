@@ -822,8 +822,58 @@ def main() -> int:
     t50_text = (AIRFORCE / "SuT50PAKFA.ini").read_text(encoding="latin1")
     if "6x_R77_MRBVR_SU35S" not in felon_text or "6x_MRAAM_K77M_SU57" not in felon_text:
         raise SystemExit("parser FAIL: Felon weapons changed")
-    if "6x_R77_MRBVR_SU35S" not in t50_text or "Kab500_LeaserGuidedBomb" not in t50_text:
-        raise SystemExit("parser FAIL: T50 weapons changed")
+    expected_loadouts = {
+        "Su35Flanker.ini": [
+            "Kab1500_LeaserGuidedBomb_Su35S",
+            "Kh59MK2_CruiseMissile_Su35S",
+            "R73_HOBS_SRAAM_SU35",
+        ],
+        "Su33.ini": [
+            "2x_ARM_KH31P_SU30SM2",
+            "Kab500_LeaserGuidedBomb",
+            "R73_HOBS_SRAAM_SU35",
+        ],
+        "Su27Flanker.ini": [
+            "4x_R27_MRBVR_Mig29A",
+            "4x_Fab500_SU34",
+            "4X_S25OF_Rocket_SU30MKA",
+        ],
+        "SuT50PAKFA.ini": [
+            "Kab2500OD_LeaserGuidedBomb_Su57",
+            "Kh59MK2_CruiseMissile_Su35S",
+            "6x_MRAAM_K77M_SU57",
+        ],
+        "Su24MR.ini": [
+            "ALQ_99_RadarJamming",
+            "GenericAircraftRadar2",
+        ],
+    }
+    weapon_ini = written[r"data\ini\weapon.ini"].decode("latin1")
+    for fname, expected in expected_loadouts.items():
+        text = (AIRFORCE / fname).read_text(encoding="latin1")
+        got = re.findall(
+            r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+(\S+)\s*$",
+            text,
+            re.M,
+        )
+        if got != expected:
+            raise SystemExit(f"parser FAIL: {fname} loadout {got} != {expected}")
+        if re.search(r"^\s+CommandSet\s+=", text, re.M) is None:
+            raise SystemExit(f"parser FAIL: {fname} lost CommandSet")
+        for wpn in expected:
+            if not re.search(rf"^Weapon {re.escape(wpn)}\s*$", weapon_ini, re.M):
+                raise SystemExit(f"parser FAIL: packed Weapon.ini missing {wpn}")
+        print(f"LOADOUT PASS: {fname} -> {expected}")
+    su24_text = (AIRFORCE / "Su24MR.ini").read_text(encoding="latin1")
+    if re.search(r"Weapon\s+=\s+SU35S_N035M_Radar_Power", su24_text):
+        raise SystemExit("parser FAIL: Su-24MR still uses fighter N035 radar fire")
+    if not re.search(r"Weapon\s+=\s+GenericAircraftRadar2", su24_text):
+        raise SystemExit("parser FAIL: Su-24MR missing GenericAircraftRadar2 scan")
+    if re.search(r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+\S*(KH31|Kh59|Kab500)", su24_text, re.M):
+        raise SystemExit("parser FAIL: Su-24MR still has strike weapons")
+    print("SU24MR RECON PASS: ALQ-99 + ground scan, no fighter radar fire, no strike loadout")
+    if "6x_R77_MRBVR_SU35S" in t50_text:
+        raise SystemExit("parser FAIL: T50 still uses R-77 as a primary air-to-air loadout")
     if not re.search(r"Model\s+=\s+qsnt50\s*$", felon_text, re.M):
         raise SystemExit("parser FAIL: Felon is not using qsnt50")
     if not re.search(r"Model\s+=\s+AGMZRT501\s*$", t50_text, re.M):
@@ -838,7 +888,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_AIRBASE_SEPARATION.zip"
+    zpath = OUT / "RUSSIA_STRIKE_LOADOUTS.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

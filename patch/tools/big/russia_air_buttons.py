@@ -64,6 +64,18 @@ NEW_CONSTRUCT_BUTTONS = {
         "ButtonImage": "SU24",
         "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu24MR",
     },
+    "Command_ConstructRussiaJetSu33": {
+        "Object": "RussiaJetSu33",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSu33",
+        "ButtonImage": "SU33TB",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu33",
+    },
+    "Command_ConstructRussiaJetSu27Flanker": {
+        "Object": "RussiaJetSu27Flanker",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSu27Flanker",
+        "ButtonImage": "SU27SKTB",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu27Flanker",
+    },
 }
 
 # Current donor/UI icons. Object names stay the packed working aircraft.
@@ -109,6 +121,12 @@ CSF_STRINGS = {
     "CONTROLBAR:ConstructRussiaJetSu24MR": "Su-24MR",
     "CONTROLBAR:ToolTipRussiaJetSu24MR": "Build Su-24MR",
     "OBJECT:RussiaSu24MR": "Su-24MR",
+    "CONTROLBAR:ConstructRussiaJetSu33": "Su-33",
+    "CONTROLBAR:ToolTipRussiaJetSu33": "Build Su-33 Naval Flanker",
+    "OBJECT:RussiaSu33": "Su-33",
+    "CONTROLBAR:ConstructRussiaJetSu27Flanker": "Su-27 Flanker",
+    "CONTROLBAR:ToolTipRussiaJetSu27Flanker": "Build Su-27 Flanker",
+    "OBJECT:RussiaSu27Flanker": "Su-27 Flanker",
 }
 
 

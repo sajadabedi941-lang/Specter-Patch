@@ -506,9 +506,9 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: CommandButton {btn} missing from CommandSet.ini ({files})")
         print(f"BUTTON IN CommandSet.ini PASS: {btn}")
 
-    large_text = new_map[CS_KEY].decode("latin1")
+    parsed_large = parse_commandset_block(new_map[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
     for removed in REMOVED_MENU_BUTTONS:
-        if re.search(rf"^\s+\d+\s+=\s+{re.escape(removed)}\s*$", large_text, re.M):
+        if removed in parsed_large["slots"].values():
             raise SystemExit(f"parser FAIL: removed menu button still slotted: {removed}")
 
     mapped = new_map[r"data\ini\mappedimages\handcreated\russia_dozor600_images.ini".lower()].decode("latin1")

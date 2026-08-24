@@ -59,7 +59,7 @@ OLD_LARGE = (
 )
 NEW_LARGE = (
     "CommandSet Russia_LargeAirBaseCommandSet\n"
-    "  1  = Command_ConstructRussiaJetSu75Checkmate\n"
+    "  1  = Command_ConstructRussiaJetSuT75\n"
     "  2  = Command_ConstructRussiaJetSu35S\n"
     "  3  = Command_ConstructRussiaJetSu30SM2\n"
     "  4  = Command_ConstructRussiaJetSU25T\n"
@@ -71,9 +71,10 @@ NEW_LARGE = (
     "  10 = Command_ConstructRussiaJetSu39\n"
     "  11 = Command_ConstructRussiaJetSu47Berkut\n"
     "  12 = Command_ConstructRussiaJetDozor600\n"
-    "  13 = Command_SetRallyPoint\n"
-    "  14 = Command_Sell\n"
-    "  15 = Command_ConstructRussiaJetSu75\n"
+    "  13 = Command_ConstructRussiaJetSu57Felon\n"
+    "  14 = Command_ConstructRussiaJetSuT50PAKFA\n"
+    "  15 = Command_ConstructRussiaJetSu35Flanker\n"
+    "  16 = Command_ConstructRussiaJetSu24MR\n"
     "End"
 )
 
@@ -83,7 +84,7 @@ NEW_LARGE = (
 LIVE_BUTTONS = render_live_commandset_buttons()
 
 EXPECTED_SLOTS = {
-    1: "Command_ConstructRussiaJetSu75Checkmate",
+    1: "Command_ConstructRussiaJetSuT75",
     2: "Command_ConstructRussiaJetSu35S",
     3: "Command_ConstructRussiaJetSu30SM2",
     4: "Command_ConstructRussiaJetSU25T",
@@ -95,15 +96,20 @@ EXPECTED_SLOTS = {
     10: "Command_ConstructRussiaJetSu39",
     11: "Command_ConstructRussiaJetSu47Berkut",
     12: "Command_ConstructRussiaJetDozor600",
-    13: "Command_SetRallyPoint",
-    14: "Command_Sell",
-    15: "Command_ConstructRussiaJetSu75",
+    13: "Command_ConstructRussiaJetSu57Felon",
+    14: "Command_ConstructRussiaJetSuT50PAKFA",
+    15: "Command_ConstructRussiaJetSu35Flanker",
+    16: "Command_ConstructRussiaJetSu24MR",
 }
 
-FROZEN_SLOTS = (1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14)
+FROZEN_SLOTS = (2, 3, 4, 5, 6, 7, 8, 9)
 REMOVED_MENU_BUTTONS = (
     "Command_ConstructRussiaJetSu47Recon",
     "Command_ConstructRussiaJetSu57T50",
+    "Command_ConstructRussiaJetSu75Checkmate",
+    "Command_ConstructRussiaJetSu75",
+    "Command_SetRallyPoint",
+    "Command_Sell",
 )
 
 AIRFORCE = PATCH / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce"
@@ -118,6 +124,14 @@ NEW_DATA = {
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su39.ini": AIRFORCE / "Su39.ini",
     r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Dozor600.ini": AIRFORCE
     / "Dozor600.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su57Felon.ini": AIRFORCE
+    / "Su57Felon.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SuT75.ini": AIRFORCE / "SuT75.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SuT50PAKFA.ini": AIRFORCE
+    / "SuT50PAKFA.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35Flanker.ini": AIRFORCE
+    / "Su35Flanker.ini",
+    r"Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su24MR.ini": AIRFORCE / "Su24MR.ini",
     r"Data\INI\MappedImages\HandCreated\Russia_Dozor600_Images.INI": PATCH
     / "Data/INI/MappedImages/HandCreated/Russia_Dozor600_Images.INI",
 }
@@ -153,6 +167,15 @@ NEW_ART = {
     r"Art\Textures\AVReaper_D1.dds": PATCH / "Art/Textures/AVReaper_D1.dds",
     r"Art\Textures\Dozor600.tga": PATCH / "Art/Textures/Dozor600.tga",
     r"Art\Textures\Dozor600TB.tga": PATCH / "Art/Textures/Dozor600TB.tga",
+    r"Art\W3D\LSFSU35.W3D": PATCH / "Art/W3D/LSFSU35.W3D",
+    r"Art\W3D\LSFSU35d.W3D": PATCH / "Art/W3D/LSFSU35d.W3D",
+    r"Art\W3D\LSFSU35k.W3D": PATCH / "Art/W3D/LSFSU35k.W3D",
+    r"Art\Textures\RussiaSU35.dds": PATCH / "Art/Textures/RussiaSU35.dds",
+    r"Art\Textures\RussiaSU35d.dds": PATCH / "Art/Textures/RussiaSU35d.dds",
+    r"Art\Textures\RussiaSU35k.dds": PATCH / "Art/Textures/RussiaSU35k.dds",
+    r"Art\W3D\SU24MP.W3D": PATCH / "Art/W3D/SU24MP.W3D",
+    r"Art\W3D\SU24MPA.W3D": PATCH / "Art/W3D/SU24MPA.W3D",
+    r"Art\Textures\SU24MP1.tga": PATCH / "Art/Textures/SU24MP1.tga",
 }
 
 FROZEN = (
@@ -173,6 +196,11 @@ REQUIRED_OBJECTS = {
     "RussiaJetSu75": "RUSU75",
     "RussiaJetSu39": "RUS_SU39",
     "RussiaJetDozor600": "AVReaper",
+    "RussiaJetSu57Felon": "RUS_SU57",
+    "RussiaJetSuT75": "RUSU75",
+    "RussiaJetSuT50PAKFA": "LSFT50",
+    "RussiaJetSu35Flanker": "LSFSU35",
+    "RussiaJetSu24MR": "SU24MP",
 }
 
 FORBIDDEN_REUSED_OBJECTS = (
@@ -300,6 +328,8 @@ def patch_commandset(raw: bytes) -> bytes:
         raise SystemExit("parser FAIL: CommandSet rewrite was not a pure insert")
     if patched.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
         raise SystemExit("parser FAIL: patched file has duplicate Large set")
+    if "Command_ConstructRussiaJetSU24MP" in patched:
+        patched = patched.replace("Command_ConstructRussiaJetSU24MP", "Command_ConstructRussiaJetSu24MR")
     out = patched.encode("latin1")
     if b"\r\n" in out:
         raise SystemExit("parser FAIL: patched CommandSet.ini gained CRLF")
@@ -339,10 +369,12 @@ def parser_check_live_commandset(raw: bytes) -> None:
             raise SystemExit(f"parser FAIL: existing slot {slot} changed")
     if parsed["slots"].get(10) == "Command_ConstructRussiaJetSu47Recon":
         raise SystemExit("parser FAIL: Su47 Recon is still in slot 10")
-    if parsed["slots"].get(12) == "Command_ConstructRussiaJetSu57T50":
-        raise SystemExit("parser FAIL: empty T-50 is still in slot 12")
-    if 16 in parsed["slots"]:
-        raise SystemExit("parser FAIL: slot 16 should be empty after moving Su-39")
+    if parsed["slots"].get(1) == "Command_ConstructRussiaJetSu75Checkmate":
+        raise SystemExit("parser FAIL: packed Checkmate is still in slot 1")
+    if parsed["slots"].get(13) == "Command_SetRallyPoint":
+        raise SystemExit("parser FAIL: Rally is still in slot 13")
+    if parsed["slots"].get(14) == "Command_Sell":
+        raise SystemExit("parser FAIL: Sell is still in slot 14")
     btn_pos = {}
     for btn in NEW_CONSTRUCT_BUTTONS:
         m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
@@ -354,7 +386,7 @@ def parser_check_live_commandset(raw: bytes) -> None:
     set_pos = text.find("CommandSet Russia_LargeAirBaseCommandSet")
     if any(pos > set_pos for pos in btn_pos.values()):
         raise SystemExit("parser FAIL: CommandButtons must appear before Russia_LargeAirBaseCommandSet")
-    print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + Su-39/Dozor slots")
+    print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + Felon/T75/T50/Flanker/Su24MR")
 
 
 def assert_no_duplicate_large(entries: list[tuple[str, bytes]]) -> None:
@@ -392,51 +424,47 @@ def collect_buttons(entries: list[tuple[str, bytes]]) -> dict[str, list[str]]:
     return found
 
 
-def verify_dozor_create_path(data_entries: list[tuple[str, bytes]], art_map: dict[str, bytes]) -> None:
-    """Simulate clicking Large Air Base slot 12: CommandSet -> CommandButton -> Object."""
+def verify_construct_create_path(
+    data_entries: list[tuple[str, bytes]],
+    art_map: dict[str, bytes],
+    slot: int,
+    btn: str,
+    obj: str,
+    model: str,
+) -> None:
     data = {n.replace("/", "\\").lower(): b for n, b in data_entries}
     cs = parse_commandset_block(data[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=16)
-    cmd = cs["slots"].get(12)
-    if cmd != "Command_ConstructRussiaJetDozor600":
-        raise SystemExit(f"CREATE FAIL: slot 12 is {cmd}")
+    cmd = cs["slots"].get(slot)
+    if cmd != btn:
+        raise SystemExit(f"CREATE FAIL: slot {slot} is {cmd}, expected {btn}")
     cb_text = data[CB_KEY].decode("latin1")
-    btn = parse_commandbutton_block(cb_text, cmd)
-    if not btn:
-        raise SystemExit("CREATE FAIL: CommandButton.ini missing Command_ConstructRussiaJetDozor600")
-    if btn.get("Command") != "UNIT_BUILD":
-        raise SystemExit("CREATE FAIL: Dozor button is not UNIT_BUILD")
-    if btn.get("Object") != "RussiaJetDozor600":
-        raise SystemExit(f"CREATE FAIL: Dozor button Object {btn.get('Object')}")
-    obj_key = r"data\ini\object\specter\armed forces of russian federation\airforce\dozor600.ini"
-    if obj_key not in data:
-        raise SystemExit("CREATE FAIL: Dozor600.ini not packed in DATA")
-    obj = data[obj_key].decode("latin1")
-    if not re.search(r"^Object RussiaJetDozor600\s*$", obj, re.M):
-        raise SystemExit("CREATE FAIL: packed Dozor object name mismatch")
-    if "KindOf" not in obj or "AIRCRAFT" not in obj:
-        raise SystemExit("CREATE FAIL: Dozor is not AIRCRAFT")
-    if not re.search(r"BuildCost\s+=\s+\d+", obj):
-        raise SystemExit("CREATE FAIL: Dozor has no BuildCost")
-    if "AttachToBoneInAnotherModule" in obj:
-        raise SystemExit("CREATE FAIL: Dozor still uses Overlord attach draw")
-    weapons = re.findall(r"^\s+Weapon\s+=\s+\S+\s+(\S+)\s*$", obj, re.M)
+    parsed = parse_commandbutton_block(cb_text, btn)
+    if not parsed:
+        raise SystemExit(f"CREATE FAIL: CommandButton.ini missing {btn}")
+    if parsed.get("Command") != "UNIT_BUILD":
+        raise SystemExit(f"CREATE FAIL: {btn} is not UNIT_BUILD")
+    if parsed.get("Object") != obj:
+        raise SystemExit(f"CREATE FAIL: {btn} Object {parsed.get('Object')} != {obj}")
+    objects = collect_objects(data_entries)
+    files = objects.get(obj, [])
+    if len(files) != 1:
+        raise SystemExit(f"CREATE FAIL: Object {obj} files={files}")
+    obj_text = data[files[0].replace("/", "\\").lower()].decode("latin1")
+    if "AIRCRAFT" not in obj_text or not re.search(r"BuildCost\s+=\s+\d+", obj_text):
+        raise SystemExit(f"CREATE FAIL: {obj} is not a buildable aircraft")
+    weapons = re.findall(r"^\s+Weapon\s+=\s+\S+\s+(\S+)\s*$", obj_text, re.M)
     weapon_ini = data[r"data\ini\weapon.ini"].decode("latin1")
     for wpn in weapons:
         if not re.search(rf"^Weapon {re.escape(wpn)}\s*$", weapon_ini, re.M):
             raise SystemExit(f"CREATE FAIL: packed Weapon.ini missing {wpn}")
-    if r"art\w3d\avreaper.w3d" not in art_map:
-        raise SystemExit("CREATE FAIL: AVReaper.W3D not packed in ART")
+    model_key = rf"art\w3d\{model}.w3d".lower()
+    if model_key not in art_map:
+        raise SystemExit(f"CREATE FAIL: {model}.W3D not packed in ART")
     csf_names = decode_csf_labels(data[CSF_KEY])
-    for key in (
-        "CONTROLBAR:ConstructRussiaJetDozor600",
-        "CONTROLBAR:ToolTipRussiaJetDozor600",
-        "OBJECT:RussiaDozor600",
-    ):
-        if key not in csf_names:
-            raise SystemExit(f"CREATE FAIL: CSF missing {key}")
-    if btn.get("TextLabel") not in csf_names:
-        raise SystemExit(f"CREATE FAIL: TextLabel {btn.get('TextLabel')} not in CSF")
-    print("CREATE PATH PASS: slot 12 UNIT_BUILD -> RussiaJetDozor600 (CSF+object+ART+weapons)")
+    label = parsed.get("TextLabel")
+    if label not in csf_names:
+        raise SystemExit(f"CREATE FAIL: CSF missing {label}")
+    print(f"CREATE PATH PASS: slot {slot} {btn} -> {obj} model {model}")
 
 
 def verify_new_object_file(path: Path, obj: str, model: str) -> None:
@@ -466,6 +494,11 @@ def main() -> int:
         ("RussiaJetSu75", "RUSU75", "Su75Checkmate.ini"),
         ("RussiaJetSu39", "RUS_SU39", "Su39.ini"),
         ("RussiaJetDozor600", "AVReaper", "Dozor600.ini"),
+        ("RussiaJetSu57Felon", "RUS_SU57", "Su57Felon.ini"),
+        ("RussiaJetSuT75", "RUSU75", "SuT75.ini"),
+        ("RussiaJetSuT50PAKFA", "LSFT50", "SuT50PAKFA.ini"),
+        ("RussiaJetSu35Flanker", "LSFSU35", "Su35Flanker.ini"),
+        ("RussiaJetSu24MR", "SU24MP", "Su24MR.ini"),
     ):
         verify_new_object_file(AIRFORCE / fname, obj, model)
 
@@ -574,13 +607,26 @@ def main() -> int:
             raise SystemExit(f"ART payload mismatch: {name}")
     print("ART PACK PASS:", ", ".join(sorted(art_added)))
 
-    verify_dozor_create_path(written_entries, packed_art)
+    create_slots = {
+        1: ("Command_ConstructRussiaJetSuT75", "RussiaJetSuT75", "RUSU75"),
+        10: ("Command_ConstructRussiaJetSu39", "RussiaJetSu39", "RUS_SU39"),
+        11: ("Command_ConstructRussiaJetSu47Berkut", "RussiaJetSu47Berkut", "RUSU-47"),
+        12: ("Command_ConstructRussiaJetDozor600", "RussiaJetDozor600", "AVReaper"),
+        13: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "RUS_SU57"),
+        14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "LSFT50"),
+        15: ("Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
+        16: ("Command_ConstructRussiaJetSu24MR", "RussiaJetSu24MR", "SU24MP"),
+    }
+    for slot, (btn, obj, model) in create_slots.items():
+        verify_construct_create_path(written_entries, packed_art, slot, btn, obj, model)
+    if "Command_ConstructRussiaJetSU24MP" in written[CS_KEY].decode("latin1"):
+        raise SystemExit("parser FAIL: old SU24MP construct command still in CommandSet.ini")
     for key in CSF_STRINGS:
         if key not in decode_csf_labels(written[CSF_KEY]):
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_AIRBASE_SU39_DOZOR.zip"
+    zpath = OUT / "RUSSIA_AIRCRAFT_UPDATE.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

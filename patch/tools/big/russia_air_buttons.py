@@ -34,6 +34,36 @@ NEW_CONSTRUCT_BUTTONS = {
         "ButtonImage": "Dozor600",
         "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetDozor600",
     },
+    "Command_ConstructRussiaJetSu57Felon": {
+        "Object": "RussiaJetSu57Felon",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSu57Felon",
+        "ButtonImage": "rus_su57",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu57Felon",
+    },
+    "Command_ConstructRussiaJetSuT75": {
+        "Object": "RussiaJetSuT75",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSuT75",
+        "ButtonImage": "SU75",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSuT75",
+    },
+    "Command_ConstructRussiaJetSuT50PAKFA": {
+        "Object": "RussiaJetSuT50PAKFA",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSuT50PAKFA",
+        "ButtonImage": "T50",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSuT50PAKFA",
+    },
+    "Command_ConstructRussiaJetSu35Flanker": {
+        "Object": "RussiaJetSu35Flanker",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSu35Flanker",
+        "ButtonImage": "SU35",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu35Flanker",
+    },
+    "Command_ConstructRussiaJetSu24MR": {
+        "Object": "RussiaJetSu24MR",
+        "TextLabel": "CONTROLBAR:ConstructRussiaJetSu24MR",
+        "ButtonImage": "SU24",
+        "DescriptLabel": "CONTROLBAR:ToolTipRussiaJetSu24MR",
+    },
 }
 
 # Current donor/UI icons. Object names stay the packed working aircraft.
@@ -64,6 +94,21 @@ CSF_STRINGS = {
     "CONTROLBAR:ConstructRussiaJetSu75Checkmate": "Su-75 Checkmate",
     "CONTROLBAR:ToolTipRussiaJetSu75Checkmate": "Build Su-75 Checkmate",
     "OBJECT:RussiaSu75Checkmate": "Su-75 Checkmate",
+    "CONTROLBAR:ConstructRussiaJetSu57Felon": "Su-57 Felon",
+    "CONTROLBAR:ToolTipRussiaJetSu57Felon": "Build Su-57 Felon",
+    "OBJECT:RussiaSu57Felon": "Su-57 Felon",
+    "CONTROLBAR:ConstructRussiaJetSuT75": "Su-T75",
+    "CONTROLBAR:ToolTipRussiaJetSuT75": "Build Su-T75",
+    "OBJECT:RussiaSuT75": "Su-T75",
+    "CONTROLBAR:ConstructRussiaJetSuT50PAKFA": "Su-T50 PAK FA",
+    "CONTROLBAR:ToolTipRussiaJetSuT50PAKFA": "Build Su-T50 PAK FA",
+    "OBJECT:RussiaSuT50PAKFA": "Su-T50 PAK FA",
+    "CONTROLBAR:ConstructRussiaJetSu35Flanker": "Su-35 Flanker",
+    "CONTROLBAR:ToolTipRussiaJetSu35Flanker": "Build Su-35 Flanker",
+    "OBJECT:RussiaSu35Flanker": "Su-35 Flanker",
+    "CONTROLBAR:ConstructRussiaJetSu24MR": "Su-24MR",
+    "CONTROLBAR:ToolTipRussiaJetSu24MR": "Build Su-24MR",
+    "OBJECT:RussiaSu24MR": "Su-24MR",
 }
 
 

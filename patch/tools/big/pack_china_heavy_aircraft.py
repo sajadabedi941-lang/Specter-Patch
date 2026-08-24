@@ -45,6 +45,137 @@ NEW_COMMANDSET = """CommandSet China_HeavyAirBaseCommandSet
 End
 """
 
+# Specter parses CommandSet.ini as a core file. Overlay CommandButton_*.ini is NOT
+# registered in time, so new UNIT_BUILD buttons must be declared in this same file
+# immediately before China_LargeAirBaseCommandSet (same pattern as Russia Large).
+# ASCII only. No UTF-8 em-dash comments.
+INLINE_BUTTONS = """CommandButton Command_ConstructChinaJetJ11B
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ11B
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ11B
+  ButtonImage      = pla_j11b
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ11B
+End
+
+CommandButton Command_ConstructChinaJetJ15
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ15
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ15
+  ButtonImage      = pla_j15
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ15
+End
+
+CommandButton Command_ConstructChinaJetJ31
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ31
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ31
+  ButtonImage      = pla_j31
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ31
+End
+
+CommandButton Command_ConstructChinaJetJF17Block3
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJF17Block3
+  TextLabel        = CONTROLBAR:ConstructChinaJetJF17Block3
+  ButtonImage      = pla_jf17
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJF17Block3
+End
+
+CommandButton Command_ConstructChinaJetJ8II
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ8II
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ8II
+  ButtonImage      = pla_j8ii
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ8II
+End
+
+CommandButton Command_ConstructChinaJetJ7
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ7
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ7
+  ButtonImage      = pla_j7
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ7
+End
+
+CommandButton Command_ConstructChinaJetJ10A
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ10A
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ10A
+  ButtonImage      = pla_j10a
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ10A
+End
+
+CommandButton Command_ConstructChinaJetJ10B
+  Command          = UNIT_BUILD
+  Object           = ChinaJetJ10B
+  TextLabel        = CONTROLBAR:ConstructChinaJetJ10B
+  ButtonImage      = pla_j10b
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ10B
+End
+
+CommandButton Command_ConstructChinaBomberH6K
+  Command          = UNIT_BUILD
+  Object           = ChinaBomberH6K
+  TextLabel        = CONTROLBAR:ConstructChinaBomberH6K
+  ButtonImage      = pla_h6k
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH6K
+End
+
+CommandButton Command_ConstructChinaJetY20
+  Command          = UNIT_BUILD
+  Object           = ChinaJetY20
+  TextLabel        = CONTROLBAR:ConstructChinaJetY20
+  ButtonImage      = pla_y20
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaJetY20
+End
+
+CommandButton Command_ConstructChinaAircraftY20AEW
+  Command          = UNIT_BUILD
+  Object           = ChinaAircraftY20AEW
+  TextLabel        = CONTROLBAR:ConstructChinaAircraftY20AEW
+  ButtonImage      = pla_y20aew
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaAircraftY20AEW
+End
+"""
+
+DROP_OVERLAY_BUTTON_FILES = {
+    "data\\ini\\commandbutton_chinafighterexpansion.ini",
+    "data\\ini\\commandbutton_chinaheavyexpansion.ini",
+}
+
+NEW_LARGE_COMMANDSET = """CommandSet China_LargeAirBaseCommandSet
+  1  = Command_ConstructChinaJetJ20B_AG
+  2  = Command_ConstructChinaJetJ50
+  3  = Command_ConstructChinaJetJ16D
+  4  = Command_ConstructChinaHelicopterWZ10ME
+  5  = Command_ConstructChinaJetJ16BBunker
+  6  = Command_ConstructChinaJetJ20B_AA
+  7  = Command_ConstructChinaJetJ10C
+  8  = Command_ConstructChinaJetJ20B_AA_AI
+  9  = Command_ConstructChinaJetJ11B
+  10 = Command_ConstructChinaJetJ15
+  11 = Command_ConstructChinaJetJ31
+  12 = Command_ConstructChinaJetJF17Block3
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+  15 = Command_ConstructChinaJetJ8II
+  16 = Command_ConstructChinaJetJ7
+  17 = Command_ConstructChinaJetJ10A
+  18 = Command_ConstructChinaJetJ10B
+End
+"""
+
 ART_MAP = [
     ("Art/w3d/h6k.W3D", "Art\\W3D\\h6k.W3D"),
     ("Art/w3d/HXYun20HXNew.W3D", "Art\\W3D\\HXYun20HXNew.W3D"),
@@ -65,7 +196,6 @@ ART_MAP = [
 OVERLAY_OBJECT_FILES = {"H6K.ini", "Y20.ini", "Y20AEW.ini"}
 OVERLAY_NAMED = {
     "Weapon_ChinaHeavyExpansion.ini",
-    "CommandButton_ChinaHeavyExpansion.ini",
     "China_HeavyExpansion_Images.INI",
 }
 
@@ -194,7 +324,106 @@ def patch_csf(data: bytes) -> bytes:
     return build_csf(version, unk, lang, labels)
 
 
+def grab_block(text: str, name: str) -> str:
+    pattern = re.compile(
+        rf"CommandSet {re.escape(name)}\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    m = pattern.search(text)
+    if not m:
+        raise SystemExit(f"{name} not found in packed CommandSet.ini")
+    return m.group(0)
+
+
+def validate_china_commandsets(text: str) -> None:
+    errors = []
+    if text.count("CommandSet China_LargeAirBaseCommandSet") != 1:
+        errors.append("Large AirBase CommandSet count != 1")
+    if text.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
+        errors.append("Heavy AirBase CommandSet count != 1")
+    large = grab_block(text, "China_LargeAirBaseCommandSet")
+    heavy = grab_block(text, "China_HeavyAirBaseCommandSet")
+    if not large.rstrip().endswith("End"):
+        errors.append("Large missing End")
+    if not heavy.rstrip().endswith("End"):
+        errors.append("Heavy missing End")
+    if "CommandSet " in large.split("\n", 1)[-1]:
+        errors.append("nested CommandSet inside Large")
+    if "CommandSet " in heavy.split("\n", 1)[-1]:
+        errors.append("nested CommandSet inside Heavy")
+    for line in (large + "\n" + heavy).splitlines()[1:]:
+        s = line.strip()
+        if not s or s == "End" or s.startswith(";") or s.startswith("CommandSet "):
+            continue
+        m = re.match(r"^(\d+)\s*=\s*(Command_\S+)$", s)
+        if not m:
+            errors.append(f"invalid Command entry: {line!r}")
+            continue
+        slot = int(m.group(1))
+        if slot < 1 or slot > 18:
+            errors.append(f"slot out of range: {slot}")
+    required_btns = [
+        "Command_ConstructChinaJetJ11B",
+        "Command_ConstructChinaJetJ15",
+        "Command_ConstructChinaJetJ31",
+        "Command_ConstructChinaJetJF17Block3",
+        "Command_ConstructChinaJetJ8II",
+        "Command_ConstructChinaJetJ7",
+        "Command_ConstructChinaJetJ10A",
+        "Command_ConstructChinaJetJ10B",
+        "Command_ConstructChinaBomberH6K",
+        "Command_ConstructChinaJetY20",
+        "Command_ConstructChinaAircraftY20AEW",
+    ]
+    large_idx = text.find("CommandSet China_LargeAirBaseCommandSet")
+    prefix = text[:large_idx]
+    for btn in required_btns:
+        if f"CommandButton {btn}" not in prefix:
+            errors.append(f"button {btn} not defined before China_LargeAirBaseCommandSet")
+        if prefix.count(f"CommandButton {btn}") != 1:
+            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix")
+    if any(ord(ch) > 127 for ch in large + heavy + INLINE_BUTTONS):
+        errors.append("non-ASCII in China CommandSet region")
+    keep = [
+        "Command_ConstructChinaJetJ11B",
+        "Command_ConstructChinaJetJ15",
+        "Command_ConstructChinaJetJ31",
+        "Command_ConstructChinaJetJF17Block3",
+        "Command_ConstructChinaJetJ8II",
+        "Command_ConstructChinaJetJ7",
+        "Command_ConstructChinaJetJ10A",
+        "Command_ConstructChinaJetJ10B",
+        "Command_ConstructChinaBomberH6K",
+        "Command_ConstructChinaJetY20",
+        "Command_ConstructChinaAircraftY20AEW",
+        "Command_ConstructChinaDroneCH5",
+    ]
+    blob = large + heavy
+    for btn in keep:
+        if btn not in blob:
+            errors.append(f"lost aircraft button {btn}")
+    if errors:
+        raise SystemExit("PARSER CHECK FAIL CommandSet.ini\n" + "\n".join(errors))
+    print("PARSER CHECK PASS CommandSet.ini")
+
+
 def patch_commandset(text: str) -> str:
+    if "CommandButton Command_ConstructChinaJetJ11B" not in text:
+        needle = "CommandSet China_LargeAirBaseCommandSet"
+        idx = text.find(needle)
+        if idx < 0:
+            raise SystemExit("China_LargeAirBaseCommandSet not found in packed CommandSet.ini")
+        text = text[:idx] + INLINE_BUTTONS.rstrip() + "\n\n" + text[idx:]
+        print("Inlined China construct CommandButtons before Large AirBase")
+
+    large_pat = re.compile(
+        r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    if not large_pat.search(text):
+        raise SystemExit("China_LargeAirBaseCommandSet block not found")
+    text = large_pat.sub(NEW_LARGE_COMMANDSET.rstrip() + "\n", text, count=1)
+
     pattern = re.compile(
         r"CommandSet China_HeavyAirBaseCommandSet\s*\n.*?^End\s*$",
         re.M | re.S,
@@ -202,11 +431,9 @@ def patch_commandset(text: str) -> str:
     m = pattern.search(text)
     if not m:
         raise SystemExit("China_HeavyAirBaseCommandSet not found in packed CommandSet.ini")
-    old = m.group(0)
-    if "Command_ConstructChinaBomberH6K" in old:
-        print("CommandSet already patched")
-        return text
-    return pattern.sub(NEW_COMMANDSET.rstrip() + "\n", text, count=1)
+    text = pattern.sub(NEW_COMMANDSET.rstrip() + "\n", text, count=1)
+    validate_china_commandsets(text)
+    return text
 
 
 def lf(data: bytes) -> bytes:
@@ -295,35 +522,25 @@ def main() -> int:
 
     parse_check(overlay)
 
+    dropped = []
+    for key in list(data_map):
+        if key in DROP_OVERLAY_BUTTON_FILES:
+            dropped.append(data_map[key][0])
+            del data_map[key]
+    if dropped:
+        print("Dropped overlay CommandButton files (inlined into CommandSet.ini):", dropped)
+    data_keys[:] = [k for k in data_keys if k not in DROP_OVERLAY_BUTTON_FILES]
+
     cs_key = "data\\ini\\commandset.ini"
     cs_name, cs_bytes = data_map[cs_key]
     cs_text = cs_bytes.decode("latin1")
-    large_before = re.search(
-        r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
-        cs_text,
-        re.M | re.S,
-    )
-    if not large_before:
-        raise SystemExit("China_LargeAirBaseCommandSet missing before patch")
-    large_text = large_before.group(0)
     cs_new = patch_commandset(cs_text)
-    if cs_new == cs_text:
-        raise SystemExit("CommandSet patch produced no change")
     if cs_new.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         raise SystemExit("duplicate China_HeavyAirBaseCommandSet after patch")
     if cs_new.count("CommandSet China_LargeAirBaseCommandSet") != 1:
         raise SystemExit("duplicate China_LargeAirBaseCommandSet after patch")
-    large_after = re.search(
-        r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
-        cs_new,
-        re.M | re.S,
-    ).group(0)
-    if large_after != large_text:
-        raise SystemExit("China_LargeAirBaseCommandSet was modified; abort")
-    if "Command_ConstructChinaJetJ11B" not in large_after:
-        raise SystemExit("fighter CommandSet lost J-11B")
     data_map[cs_key] = (cs_name, lf(cs_new.encode("latin1")))
-    print("Patched CommandSet China_HeavyAirBaseCommandSet")
+    print("Patched CommandSet.ini (inline buttons + Large/Heavy blocks)")
 
     csf_key = "data\\english\\generals.csf"
     csf_name, csf_bytes = data_map[csf_key]
@@ -408,25 +625,23 @@ def main() -> int:
     must_hash("pla\\airforce\\j11b.ini", protect["j11b.ini"])
 
     cs = v_map["data\\ini\\commandset.ini"].decode("latin1")
-    if "Command_ConstructChinaBomberH6K" not in cs:
-        raise SystemExit("H-6K button missing from CommandSet")
-    if "Command_ConstructChinaJetY20" not in cs:
-        raise SystemExit("Y-20 button missing from CommandSet")
-    if "Command_ConstructChinaAircraftY20AEW" not in cs:
-        raise SystemExit("Y-20 AEW button missing from CommandSet")
+    validate_china_commandsets(cs)
     if "Command_ConstructChinaDroneCH5" not in cs:
         raise SystemExit("CH-5 button missing from CommandSet")
     if cs.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         raise SystemExit("duplicate heavy CommandSet")
-    if "Command_ConstructChinaJetJ11B" not in cs:
-        raise SystemExit("fighter J-11B missing after heavy pack")
+    if "CommandButton Command_ConstructChinaJetJ11B" not in cs:
+        raise SystemExit("J-11B CommandButton not inlined in CommandSet.ini")
+
+    for banned in DROP_OVERLAY_BUTTON_FILES:
+        if banned in v_map:
+            raise SystemExit(f"overlay CommandButton file still packed: {banned}")
 
     for req in (
         "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\y20.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini",
         "data\\ini\\weapon_chinaheavyexpansion.ini",
-        "data\\ini\\commandbutton_chinaheavyexpansion.ini",
         "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
     ):
         if req not in v_map:
@@ -458,7 +673,8 @@ def main() -> int:
                 NEW_COMMANDSET,
                 "PARSER CHECK PASS",
                 "PROTECTED EXISTING AIRCRAFT HASHES UNCHANGED",
-                "FIGHTER LARGE AIRBASE UNCHANGED",
+                "COMMANDSET PARSE FIX: buttons inlined before China_LargeAirBaseCommandSet",
+                "FIGHTER LARGE AIRBASE SLOTS KEPT",
             ]
         )
         + "\n"

@@ -17,8 +17,8 @@ from pathlib import Path
 
 ROOT = Path("/workspace")
 DONOR = Path("/tmp/donor_china_heavy")
-BASE_DATA = Path("/tmp/china_csf_fix/_SPEC_DATA_ONE.big")
-BASE_ART = Path("/tmp/china_csf_fix/_SPEC_ART_ONE.big")
+BASE_DATA = Path("/tmp/china_airforce_fix/_SPEC_DATA_ONE.big")
+BASE_ART = Path("/tmp/china_airforce_fix/_SPEC_ART_ONE.big")
 
 # All new China expansion string keys. Chunk magic MUST be " RTS" (Generals
 # fourcc). " STR" makes String Manager fail to initialize the property.
@@ -56,6 +56,9 @@ CSF_LABELS = {
     "CONTROLBAR:ConstructChinaAircraftY20AEW": "Y-20 AEW",
     "CONTROLBAR:ToolTipChinaAircraftY20AEW": "PLA Y-20 AEW KJ-3000. Airborne radar scan.",
     "OBJECT:ChinaAircraftY20AEW": "Y-20 AEW\r\nSAR scan",
+    "CONTROLBAR:ConstructChinaBomberH20": "H-20",
+    "CONTROLBAR:ToolTipChinaBomberH20": "PLA H-20 stealth bomber. Stand-off cruise missiles and heavy bombs.",
+    "OBJECT:ChinaBomberH20": "H-20\r\nStealth flying wing\r\n6x cruise\r\n8x bombs",
 }
 
 CSF_STR_MAGIC = b" RTS"  # Generals String Manager fourcc (not " STR")
@@ -70,6 +73,7 @@ NEW_COMMANDSET = """CommandSet China_HeavyAirBaseCommandSet
   6  = Command_ConstructChinaJetY20
   7  = Command_ConstructChinaAircraftY20AEW
   8  = Command_ConstructChinaDroneCH5
+  9  = Command_ConstructChinaBomberH20
   13 = Command_SetRallyPoint
   14 = Command_Sell
 End
@@ -177,6 +181,15 @@ CommandButton Command_ConstructChinaAircraftY20AEW
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaAircraftY20AEW
 End
+
+CommandButton Command_ConstructChinaBomberH20
+  Command          = UNIT_BUILD
+  Object           = ChinaBomberH20
+  TextLabel        = CONTROLBAR:ConstructChinaBomberH20
+  ButtonImage      = pla_h20
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20
+End
 """
 
 DROP_OVERLAY_BUTTON_FILES = {
@@ -221,6 +234,9 @@ ART_MAP = [
     ("Art/Textures/CHNH6KTB.tga", "Art\\Textures\\CHNH6KTB.tga"),
     ("Art/Textures/CHNY20TB.tga", "Art\\Textures\\CHNY20TB.tga"),
     ("Art/Textures/CHNKJ2000TB.tga", "Art\\Textures\\CHNKJ2000TB.tga"),
+    ("Art/w3d/NVH20.W3D", "Art\\W3D\\NVH20.W3D"),
+    ("Art/Textures/H-20.dds", "Art\\Textures\\H-20.dds"),
+    ("Art/Textures/H-20.dds", "Art\\Textures\\H-20.tga"),
 ]
 
 OVERLAY_OBJECT_FILES = {
@@ -231,6 +247,7 @@ OVERLAY_OBJECT_FILES = {
     "J15.ini",
     "J31.ini",
     "JF17.ini",
+    "H20.ini",
 }
 OVERLAY_NAMED = {
     "China_HeavyExpansion_Images.INI",
@@ -253,6 +270,7 @@ ALLOW_OVERWRITE = {
     "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
     "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
 }
 
@@ -306,6 +324,8 @@ FIRE_WEAPONS = [
     "China_Weapon_MK82_JF17",
     "China_Weapon_CJ10_H6K",
     "China_Weapon_FAB_H6K",
+    "China_Weapon_CJ100_H20",
+    "China_Weapon_FAB_H20",
 ]
 
 
@@ -559,6 +579,7 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaBomberH6K",
         "Command_ConstructChinaJetY20",
         "Command_ConstructChinaAircraftY20AEW",
+        "Command_ConstructChinaBomberH20",
     ]
     large_idx = text.find("CommandSet China_LargeAirBaseCommandSet")
     prefix = text[:large_idx]
@@ -582,6 +603,7 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaJetY20",
         "Command_ConstructChinaAircraftY20AEW",
         "Command_ConstructChinaDroneCH5",
+        "Command_ConstructChinaBomberH20",
     ]
     blob = large + heavy
     for btn in keep:
@@ -593,13 +615,26 @@ def validate_china_commandsets(text: str) -> None:
 
 
 def patch_commandset(text: str) -> str:
+    needle = "CommandSet China_LargeAirBaseCommandSet"
+    idx = text.find(needle)
+    if idx < 0:
+        raise SystemExit("China_LargeAirBaseCommandSet not found in packed CommandSet.ini")
     if "CommandButton Command_ConstructChinaJetJ11B" not in text:
-        needle = "CommandSet China_LargeAirBaseCommandSet"
-        idx = text.find(needle)
-        if idx < 0:
-            raise SystemExit("China_LargeAirBaseCommandSet not found in packed CommandSet.ini")
         text = text[:idx] + INLINE_BUTTONS.rstrip() + "\n\n" + text[idx:]
         print("Inlined China construct CommandButtons before Large AirBase")
+    elif "CommandButton Command_ConstructChinaBomberH20" not in text:
+        h20_btn = (
+            "CommandButton Command_ConstructChinaBomberH20\n"
+            "  Command          = UNIT_BUILD\n"
+            "  Object           = ChinaBomberH20\n"
+            "  TextLabel        = CONTROLBAR:ConstructChinaBomberH20\n"
+            "  ButtonImage      = pla_h20\n"
+            "  ButtonBorderType = BUILD\n"
+            "  DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20\n"
+            "End\n\n"
+        )
+        text = text[:idx] + h20_btn + text[idx:]
+        print("Inlined H-20 construct CommandButton before Large AirBase")
 
     large_pat = re.compile(
         r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
@@ -776,11 +811,30 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini": "0.85",
         "data\\ini\\object\\specter\\pla\\airforce\\y20.ini": "1.00",
         "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini": "0.90",
+        "data\\ini\\object\\specter\\pla\\airforce\\h20.ini": "0.85",
     }
     for key, scale in scales.items():
         text = v_map[key].decode("latin1", errors="replace")
         if f"Scale = {scale}" not in text:
             errors.append(f"{key} scale is not {scale}")
+    h20 = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\h20.ini", b"").decode("latin1", errors="replace")
+    if not h20:
+        errors.append("H20.ini missing from DATA")
+    else:
+        if "Model               = NVH20" not in h20 and "Model = NVH20" not in h20:
+            errors.append("H-20 Draw Model is not NVH20")
+        if "AVB21" in h20 or "AVB3bmbr" in h20:
+            errors.append("H-20 INI still references B-2 model")
+        if "StealthUpdate" not in h20 or "InnateStealth = Yes" not in h20:
+            errors.append("H-20 missing innate StealthUpdate")
+        if "GenericTacticalBomberCommandSet" not in h20:
+            errors.append("H-20 not on GenericTacticalBomberCommandSet")
+        if "China_Weapon_CJ100_H20" not in h20:
+            errors.append("H-20 missing PRIMARY cruise weapon")
+        if "WeaponLaunchBone    = PRIMARY   WEAPONA01" not in h20:
+            errors.append("H-20 missing PRIMARY WEAPONA01 launch bone")
+        if "Buildable           = Ignore_Prerequisites" not in h20:
+            errors.append("H-20 still has science/rank lock")
     if errors:
         raise SystemExit("FIRE/SCALE CHECK FAIL\n" + "\n".join(errors))
     print("FIRE/SCALE CHECK PASS")
@@ -821,7 +875,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airforce_fix"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_h20"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -964,7 +1018,7 @@ def main() -> int:
     out_data.write_bytes(data_bytes)
     out_art.write_bytes(art_bytes)
 
-    zpath = out / "CHINA_AIRFORCE_FIX.zip"
+    zpath = out / "CHINA_H20.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")
@@ -998,8 +1052,10 @@ def main() -> int:
         raise SystemExit("CH-5 button missing from CommandSet")
     if cs.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         raise SystemExit("duplicate heavy CommandSet")
-    if "CommandButton Command_ConstructChinaJetJ11B" not in cs:
-        raise SystemExit("J-11B CommandButton not inlined in CommandSet.ini")
+    if "CommandButton Command_ConstructChinaBomberH20" not in cs:
+        raise SystemExit("H-20 CommandButton not inlined in CommandSet.ini")
+    if "Command_ConstructChinaBomberH20" not in grab_block(cs, "China_HeavyAirBaseCommandSet"):
+        raise SystemExit("H-20 missing from China_HeavyAirBaseCommandSet")
 
     csf_blob = v_map["data\\english\\generals.csf"]
     ini_refs = []
@@ -1031,6 +1087,7 @@ def main() -> int:
         "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
         "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
         "data\\ini\\weapon.ini",
     ):
@@ -1050,9 +1107,28 @@ def main() -> int:
         "art\\textures\\chnh6ktb.tga",
         "art\\textures\\chny20tb.tga",
         "art\\textures\\chnkj2000tb.tga",
+        "art\\w3d\\nvh20.w3d",
+        "art\\textures\\h-20.dds",
+        "art\\textures\\h-20.tga",
+        "art\\textures\\avb3bmbr.dds",
     ):
         if req not in a_names:
             raise SystemExit(f"ART missing {req}")
+
+    nvh = None
+    avb3 = None
+    for name, off, size in a_entries:
+        low = name.lower().replace("/", "\\")
+        if low == "art\\w3d\\nvh20.w3d":
+            nvh = a_raw[off : off + size]
+        elif low == "art\\w3d\\avb3bmbr.w3d":
+            avb3 = a_raw[off : off + size]
+    if nvh is None or len(nvh) != 42121:
+        raise SystemExit(f"NVH20.W3D missing or wrong size {0 if nvh is None else len(nvh)}")
+    if avb3 is not None and nvh == avb3:
+        raise SystemExit("NVH20.W3D is a copy of AVB3bmbr.W3D (B-2 fake)")
+    if b"H-20" not in nvh or b"NVH20" not in nvh:
+        raise SystemExit("NVH20.W3D missing H-20/NVH20 texture or hierarchy strings")
 
     report = out / "PACK_REPORT.txt"
     report.write_text(
@@ -1071,7 +1147,8 @@ def main() -> int:
                 "PROTECTED J10C AND H6M HASHES UNCHANGED",
                 "WEAPONS INLINED INTO Weapon.ini",
                 "CHINA AIRCRAFT SCIENCE/RANK PREREQS REMOVED",
-                "H-20 SKIPPED: no real bomber mesh in mod.z or donor ART",
+                "H-20 ADDED: TEOD NVH20.W3D + H-20.dds into ART, ChinaBomberH20 on Heavy Airbase slot 9",
+                "H-20 MODEL IS NOT B-2 (NVH20 != AVB3bmbr / AVB21)",
                 "COMMANDSET PARSE FIX: buttons inlined before China_LargeAirBaseCommandSet",
                 "CSF MAGIC FIX: STR -> RTS for String Manager",
                 "FIGHTER LARGE AIRBASE SLOTS KEPT",

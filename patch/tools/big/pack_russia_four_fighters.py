@@ -4,14 +4,17 @@
 Stock CommandButton.ini / Weapon.ini / Russia_System.ini / CSF / existing
 aircraft objects stay untouched. Menu slot wiring only.
 
-CommandSet.ini is the one live file that is surgically updated:
-  Russia_LargeAirBaseCommandSet stays unique (no overlay, no second set).
-  Slots 1-12 keep the current working fighter-airbase aircraft.
-  Slot 13 (Rally) is Su-33. Slot 14 (Sell) is Su-27 Flanker.
-  Slot 15 (empty extra) is Su-35 Flanker.
-  Russia_HeavyAirBaseCommandSet stays unique. Slot 3 (empty) is Su-35 Flanker;
-  slot 13 (Rally) is Su-33; slot 14 (Sell) is Su-27. That is the remaining
-  live Russia airbase menu that still had Rally/Sell and an empty aircraft slot.
+CommandSet.ini is the one live file that is surgically updated.
+No overlay CommandSet file. Each live set stays unique (not duplicated).
+
+Fighter Air Base (Russia_LargeAirBase -> Russia_LargeAirBaseCommandSet):
+  Slots 1-12 keep the current working fighter-runway aircraft.
+  Slot 13 is Su-57 Felon. Slot 14 is Su-T50 PAK FA.
+  Su-35 Flanker / Su-33 / Su-27 are not on this menu.
+
+Large/Heavy Air Base (Russia_HeavyAirBase -> Russia_HeavyAirBaseCommandSet):
+  Slot 3 (empty) is Su-35 Flanker.
+  Slot 13 (Rally) is Su-33. Slot 14 (Sell) is Su-27.
 """
 from __future__ import annotations
 
@@ -75,12 +78,9 @@ NEW_LARGE = (
     "  10 = Command_ConstructRussiaJetSu39\n"
     "  11 = Command_ConstructRussiaJetSu47Berkut\n"
     "  12 = Command_ConstructRussiaJetDozor600\n"
-    "  13 = Command_ConstructRussiaJetSu33\n"
-    "  14 = Command_ConstructRussiaJetSu27Flanker\n"
-    "  15 = Command_ConstructRussiaJetSu35Flanker\n"
+    "  13 = Command_ConstructRussiaJetSu57Felon\n"
+    "  14 = Command_ConstructRussiaJetSuT50PAKFA\n"
     "  16 = Command_ConstructRussiaJetSu24MR\n"
-    "  17 = Command_ConstructRussiaJetSu57Felon\n"
-    "  18 = Command_ConstructRussiaJetSuT50PAKFA\n"
     "End"
 )
 
@@ -139,12 +139,9 @@ EXPECTED_SLOTS = {
     10: "Command_ConstructRussiaJetSu39",
     11: "Command_ConstructRussiaJetSu47Berkut",
     12: "Command_ConstructRussiaJetDozor600",
-    13: "Command_ConstructRussiaJetSu33",
-    14: "Command_ConstructRussiaJetSu27Flanker",
-    15: "Command_ConstructRussiaJetSu35Flanker",
+    13: "Command_ConstructRussiaJetSu57Felon",
+    14: "Command_ConstructRussiaJetSuT50PAKFA",
     16: "Command_ConstructRussiaJetSu24MR",
-    17: "Command_ConstructRussiaJetSu57Felon",
-    18: "Command_ConstructRussiaJetSuT50PAKFA",
 }
 
 EXPECTED_HEAVY_SLOTS = {
@@ -172,6 +169,11 @@ REMOVED_MENU_BUTTONS = (
     "Command_ConstructRussiaJetSu75",
     "Command_SetRallyPoint",
     "Command_Sell",
+)
+FIGHTER_FORBIDDEN_BUTTONS = (
+    "Command_ConstructRussiaJetSu33",
+    "Command_ConstructRussiaJetSu27Flanker",
+    "Command_ConstructRussiaJetSu35Flanker",
 )
 
 AIRFORCE = PATCH / "Data/INI/Object/Specter/Armed Forces Of Russian Federation/Airforce"
@@ -477,12 +479,13 @@ def parser_check_live_commandset(raw: bytes) -> None:
         raise SystemExit("parser FAIL: Su47 Recon is still in slot 10")
     if parsed["slots"].get(1) == "Command_ConstructRussiaJetSu75Checkmate":
         raise SystemExit("parser FAIL: packed Checkmate is still in slot 1")
-    if parsed["slots"].get(13) != "Command_ConstructRussiaJetSu33":
-        raise SystemExit("parser FAIL: Large slot 13 is not Su-33")
-    if parsed["slots"].get(14) != "Command_ConstructRussiaJetSu27Flanker":
-        raise SystemExit("parser FAIL: Large slot 14 is not Su-27")
-    if parsed["slots"].get(15) != "Command_ConstructRussiaJetSu35Flanker":
-        raise SystemExit("parser FAIL: Large slot 15 is not Su-35 Flanker")
+    if parsed["slots"].get(13) != "Command_ConstructRussiaJetSu57Felon":
+        raise SystemExit("parser FAIL: fighter slot 13 is not Su-57 Felon")
+    if parsed["slots"].get(14) != "Command_ConstructRussiaJetSuT50PAKFA":
+        raise SystemExit("parser FAIL: fighter slot 14 is not Su-T50 PAK FA")
+    for banned in FIGHTER_FORBIDDEN_BUTTONS:
+        if banned in parsed["slots"].values():
+            raise SystemExit(f"parser FAIL: {banned} is on Fighter Air Base")
     if parsed["slots"].get(13) == "Command_SetRallyPoint":
         raise SystemExit("parser FAIL: Rally is still in Large slot 13")
     if parsed["slots"].get(14) == "Command_Sell":
@@ -502,6 +505,10 @@ def parser_check_live_commandset(raw: bytes) -> None:
         raise SystemExit("parser FAIL: Rally is still on Russia_HeavyAirBaseCommandSet")
     if "Command_Sell" in heavy["slots"].values():
         raise SystemExit("parser FAIL: Sell is still on Russia_HeavyAirBaseCommandSet")
+    if "Command_ConstructRussiaJetSu57Felon" in heavy["slots"].values():
+        raise SystemExit("parser FAIL: Su-57 Felon leaked onto Large/Heavy Air Base")
+    if "Command_ConstructRussiaJetSuT50PAKFA" in heavy["slots"].values():
+        raise SystemExit("parser FAIL: Su-T50 PAK FA leaked onto Large/Heavy Air Base")
     btn_pos = {}
     for btn in NEW_CONSTRUCT_BUTTONS:
         m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
@@ -513,7 +520,7 @@ def parser_check_live_commandset(raw: bytes) -> None:
     set_pos = text.find("CommandSet Russia_LargeAirBaseCommandSet")
     if any(pos > set_pos for pos in btn_pos.values()):
         raise SystemExit("parser FAIL: CommandButtons must appear before Russia_LargeAirBaseCommandSet")
-    print("PARSER CHECK PASS: unique Large/Heavy sets, Su-33/Su-27/Flanker in Rally/Sell/empty slots")
+    print("PARSER CHECK PASS: fighter Felon/T50 restored; Su-35/Su-33/Su-27 only on Heavy")
 
 
 def assert_no_duplicate_commandsets(entries: list[tuple[str, bytes]]) -> None:
@@ -710,13 +717,16 @@ def main() -> int:
         print(f"BUTTON IN CommandButton.ini+CommandSet.ini PASS: {btn} -> {spec['Object']}")
 
     parsed_large = parse_commandset_block(new_map[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=18)
-    for removed in REMOVED_MENU_BUTTONS:
+    for removed in REMOVED_MENU_BUTTONS + FIGHTER_FORBIDDEN_BUTTONS:
         if removed in parsed_large["slots"].values():
-            raise SystemExit(f"parser FAIL: removed menu button still slotted: {removed}")
+            raise SystemExit(f"parser FAIL: removed menu button still slotted on fighter: {removed}")
     parsed_heavy = parse_commandset_block(new_map[CS_KEY].decode("latin1"), HEAVY_NAME, max_slot=14)
     for removed in ("Command_SetRallyPoint", "Command_Sell"):
         if removed in parsed_heavy["slots"].values():
             raise SystemExit(f"parser FAIL: {removed} still slotted on Heavy")
+    for banned in FIGHTER_FORBIDDEN_BUTTONS:
+        if banned not in parsed_heavy["slots"].values():
+            raise SystemExit(f"parser FAIL: {banned} missing from Large/Heavy Air Base")
 
     mapped = new_map[r"data\ini\mappedimages\handcreated\russia_dozor600_images.ini".lower()].decode("latin1")
     if "MappedImage Dozor600" not in mapped:
@@ -760,12 +770,9 @@ def main() -> int:
         10: ("Command_ConstructRussiaJetSu39", "RussiaJetSu39", "RUS_SU39"),
         11: ("Command_ConstructRussiaJetSu47Berkut", "RussiaJetSu47Berkut", "RUSU-47"),
         12: ("Command_ConstructRussiaJetDozor600", "RussiaJetDozor600", "AVReaper"),
-        13: ("Command_ConstructRussiaJetSu33", "RussiaJetSu33", "RUSU33"),
-        14: ("Command_ConstructRussiaJetSu27Flanker", "RussiaJetSu27Flanker", "LSFRUSU27SK"),
-        15: ("Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
+        13: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "qsnt50"),
+        14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
         16: ("Command_ConstructRussiaJetSu24MR", "RussiaJetSu24MR", "SU24MP"),
-        17: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "qsnt50"),
-        18: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
     }
     for slot, (btn, obj, model) in create_slots.items():
         verify_construct_create_path(written_entries, packed_art, slot, btn, obj, model)
@@ -784,6 +791,22 @@ def main() -> int:
             set_name=HEAVY_NAME,
             max_slot=14,
         )
+    fighter_slots = parse_commandset_block(written[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=18)["slots"]
+    heavy_slots = parse_commandset_block(written[CS_KEY].decode("latin1"), HEAVY_NAME, max_slot=14)["slots"]
+    if fighter_slots.get(13) != "Command_ConstructRussiaJetSu57Felon":
+        raise SystemExit("MENU FAIL: fighter menu slot 13 is not Su-57 Felon")
+    if fighter_slots.get(14) != "Command_ConstructRussiaJetSuT50PAKFA":
+        raise SystemExit("MENU FAIL: fighter menu slot 14 is not Su-T50 PAK FA")
+    if set(FIGHTER_FORBIDDEN_BUTTONS) & set(fighter_slots.values()):
+        raise SystemExit("MENU FAIL: Su-35/Su-33/Su-27 still on Fighter Air Base")
+    if set(FIGHTER_FORBIDDEN_BUTTONS) - set(heavy_slots.values()):
+        raise SystemExit("MENU FAIL: Su-35/Su-33/Su-27 missing from Large/Heavy Air Base")
+    if "Command_ConstructRussiaJetSu57Felon" in heavy_slots.values():
+        raise SystemExit("MENU FAIL: Su-57 Felon leaked onto Large/Heavy Air Base")
+    if "Command_ConstructRussiaJetSuT50PAKFA" in heavy_slots.values():
+        raise SystemExit("MENU FAIL: Su-T50 PAK FA leaked onto Large/Heavy Air Base")
+    print("FIGHTER MENU PASS: unique Russia_LargeAirBaseCommandSet has Felon/T50, not Su-35/Su-33/Su-27")
+    print("HEAVY MENU PASS: unique Russia_HeavyAirBaseCommandSet has Su-35/Su-33/Su-27 only")
     t75_text = (AIRFORCE / "SuT75.ini").read_text(encoding="latin1")
     if re.search(r"^\s+Weapon\s+=\s+\S*(R77|R73)", t75_text, re.M):
         raise SystemExit("parser FAIL: SuT75 still has air-to-air missiles")
@@ -815,7 +838,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_SU35_SU33_SU27_MENU_FIX.zip"
+    zpath = OUT / "RUSSIA_AIRBASE_SEPARATION.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

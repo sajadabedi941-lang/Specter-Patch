@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""PR #385 baseline + isolated Russia Large Air Base additions.
+"""PR #385 baseline + isolated Russia airbase menu wiring.
 
 Stock CommandButton.ini / Weapon.ini / Russia_System.ini / CSF / existing
-aircraft stay untouched.
+aircraft objects stay untouched. Menu slot wiring only.
 
 CommandSet.ini is the one live file that is surgically updated:
-  Russia_LargeAirBaseCommandSet keeps slots 1-9 and 13-14 from #385.
-  Slot 10 is Su-39 (replaces Su47 Recon). Slot 11 is Su-47 Berkut.
-  Slot 12 is Dozor-600 (replaces empty T-50). Slot 15 stays isolated Su-75.
-  No overlay CommandSet file. No second Russia_LargeAirBaseCommandSet.
+  Russia_LargeAirBaseCommandSet stays unique (no overlay, no second set).
+  Slots 1-12 keep the current working fighter-airbase aircraft.
+  Slot 13 (Rally) is Su-33. Slot 14 (Sell) is Su-27 Flanker.
+  Slot 15 (empty extra) is Su-35 Flanker.
+  Russia_HeavyAirBaseCommandSet stays unique. Slot 3 (empty) is Su-35 Flanker;
+  slot 13 (Rally) is Su-33; slot 14 (Sell) is Su-27. That is the remaining
+  live Russia airbase menu that still had Rally/Sell and an empty aircraft slot.
 """
 from __future__ import annotations
 
@@ -40,6 +43,7 @@ CS_KEY = r"data\ini\commandset.ini"
 CB_KEY = r"data\ini\commandbutton.ini"
 CSF_KEY = r"data\english\generals.csf"
 LARGE_NAME = "Russia_LargeAirBaseCommandSet"
+HEAVY_NAME = "Russia_HeavyAirBaseCommandSet"
 
 OLD_LARGE = (
     "CommandSet Russia_LargeAirBaseCommandSet\n"
@@ -71,12 +75,49 @@ NEW_LARGE = (
     "  10 = Command_ConstructRussiaJetSu39\n"
     "  11 = Command_ConstructRussiaJetSu47Berkut\n"
     "  12 = Command_ConstructRussiaJetDozor600\n"
-    "  13 = Command_ConstructRussiaJetSu57Felon\n"
-    "  14 = Command_ConstructRussiaJetSuT50PAKFA\n"
+    "  13 = Command_ConstructRussiaJetSu33\n"
+    "  14 = Command_ConstructRussiaJetSu27Flanker\n"
     "  15 = Command_ConstructRussiaJetSu35Flanker\n"
     "  16 = Command_ConstructRussiaJetSu24MR\n"
-    "  17 = Command_ConstructRussiaJetSu33\n"
-    "  18 = Command_ConstructRussiaJetSu27Flanker\n"
+    "  17 = Command_ConstructRussiaJetSu57Felon\n"
+    "  18 = Command_ConstructRussiaJetSuT50PAKFA\n"
+    "End"
+)
+
+# Source Heavy block after the global SU24MP -> Su24MR rewrite.
+OLD_HEAVY = (
+    "CommandSet Russia_HeavyAirBaseCommandSet\n"
+    "  1  = Command_ConstructRussiaJetSu34\n"
+    "  2  = Command_ConstructRussiaJetSU24M2\n"
+    "  4  = Command_ConstructRussiaJetSu24MR\n"
+    "  5  = Command_ConstructRussiaJetTu22M3M\n"
+    "  6 = Command_ConstructRussiaJetTu95\n"
+    "  7 = Command_ConstructRussiaJetTU160\n"
+    "  8 = Command_ConstructRussiaJetAn225\n"
+    "  9 = Command_ConstructRussiaJetA50\n"
+    "  10 = Command_ConstructRussiaJetAn124\n"
+    "  11 = Command_ConstructRussiaJetAvionIL76\n"
+    "  12 = Command_ConstructRussiaJetCargoIL76\n"
+    "  13 = Command_SetRallyPoint\n"
+    "  14 = Command_Sell\n"
+    "End"
+)
+NEW_HEAVY = (
+    "CommandSet Russia_HeavyAirBaseCommandSet\n"
+    "  1  = Command_ConstructRussiaJetSu34\n"
+    "  2  = Command_ConstructRussiaJetSU24M2\n"
+    "  3  = Command_ConstructRussiaJetSu35Flanker\n"
+    "  4  = Command_ConstructRussiaJetSu24MR\n"
+    "  5  = Command_ConstructRussiaJetTu22M3M\n"
+    "  6 = Command_ConstructRussiaJetTu95\n"
+    "  7 = Command_ConstructRussiaJetTU160\n"
+    "  8 = Command_ConstructRussiaJetAn225\n"
+    "  9 = Command_ConstructRussiaJetA50\n"
+    "  10 = Command_ConstructRussiaJetAn124\n"
+    "  11 = Command_ConstructRussiaJetAvionIL76\n"
+    "  12 = Command_ConstructRussiaJetCargoIL76\n"
+    "  13 = Command_ConstructRussiaJetSu33\n"
+    "  14 = Command_ConstructRussiaJetSu27Flanker\n"
     "End"
 )
 
@@ -98,12 +139,29 @@ EXPECTED_SLOTS = {
     10: "Command_ConstructRussiaJetSu39",
     11: "Command_ConstructRussiaJetSu47Berkut",
     12: "Command_ConstructRussiaJetDozor600",
-    13: "Command_ConstructRussiaJetSu57Felon",
-    14: "Command_ConstructRussiaJetSuT50PAKFA",
+    13: "Command_ConstructRussiaJetSu33",
+    14: "Command_ConstructRussiaJetSu27Flanker",
     15: "Command_ConstructRussiaJetSu35Flanker",
     16: "Command_ConstructRussiaJetSu24MR",
-    17: "Command_ConstructRussiaJetSu33",
-    18: "Command_ConstructRussiaJetSu27Flanker",
+    17: "Command_ConstructRussiaJetSu57Felon",
+    18: "Command_ConstructRussiaJetSuT50PAKFA",
+}
+
+EXPECTED_HEAVY_SLOTS = {
+    1: "Command_ConstructRussiaJetSu34",
+    2: "Command_ConstructRussiaJetSU24M2",
+    3: "Command_ConstructRussiaJetSu35Flanker",
+    4: "Command_ConstructRussiaJetSu24MR",
+    5: "Command_ConstructRussiaJetTu22M3M",
+    6: "Command_ConstructRussiaJetTu95",
+    7: "Command_ConstructRussiaJetTU160",
+    8: "Command_ConstructRussiaJetAn225",
+    9: "Command_ConstructRussiaJetA50",
+    10: "Command_ConstructRussiaJetAn124",
+    11: "Command_ConstructRussiaJetAvionIL76",
+    12: "Command_ConstructRussiaJetCargoIL76",
+    13: "Command_ConstructRussiaJetSu33",
+    14: "Command_ConstructRussiaJetSu27Flanker",
 }
 
 FROZEN_SLOTS = (2, 3, 4, 5, 6, 7, 8, 9)
@@ -365,6 +423,17 @@ def patch_commandset(raw: bytes) -> bytes:
         raise SystemExit("parser FAIL: patched file has duplicate Large set")
     if "Command_ConstructRussiaJetSU24MP" in patched:
         patched = patched.replace("Command_ConstructRussiaJetSU24MP", "Command_ConstructRussiaJetSu24MR")
+    if patched.count("CommandSet Russia_HeavyAirBaseCommandSet") != 1:
+        raise SystemExit("parser FAIL: patched file Heavy set is not unique")
+    if OLD_HEAVY not in patched:
+        raise SystemExit("parser FAIL: rewritten Russia_HeavyAirBaseCommandSet block not found")
+    if patched.count(OLD_HEAVY) != 1:
+        raise SystemExit("parser FAIL: Heavy block matched more than once")
+    patched = patched.replace(OLD_HEAVY, NEW_HEAVY, 1)
+    if patched.count("CommandSet Russia_HeavyAirBaseCommandSet") != 1:
+        raise SystemExit("parser FAIL: Heavy replace created a duplicate set")
+    if patched.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
+        raise SystemExit("parser FAIL: Heavy replace disturbed unique Large set")
     out = patched.encode("latin1")
     if b"\r\n" in out:
         raise SystemExit("parser FAIL: patched CommandSet.ini gained CRLF")
@@ -393,6 +462,8 @@ def parser_check_live_commandset(raw: bytes) -> None:
     text = check_ini_bytes(raw, "CommandSet.ini")
     if text.count("CommandSet Russia_LargeAirBaseCommandSet") != 1:
         raise SystemExit("parser FAIL: duplicated Russia_LargeAirBaseCommandSet in CommandSet.ini")
+    if text.count("CommandSet Russia_HeavyAirBaseCommandSet") != 1:
+        raise SystemExit("parser FAIL: duplicated Russia_HeavyAirBaseCommandSet in CommandSet.ini")
     parser_check_commandset_balance(text)
     parsed = parse_commandset_block(text, LARGE_NAME, max_slot=18)
     if parsed["block"] != NEW_LARGE:
@@ -406,10 +477,31 @@ def parser_check_live_commandset(raw: bytes) -> None:
         raise SystemExit("parser FAIL: Su47 Recon is still in slot 10")
     if parsed["slots"].get(1) == "Command_ConstructRussiaJetSu75Checkmate":
         raise SystemExit("parser FAIL: packed Checkmate is still in slot 1")
+    if parsed["slots"].get(13) != "Command_ConstructRussiaJetSu33":
+        raise SystemExit("parser FAIL: Large slot 13 is not Su-33")
+    if parsed["slots"].get(14) != "Command_ConstructRussiaJetSu27Flanker":
+        raise SystemExit("parser FAIL: Large slot 14 is not Su-27")
+    if parsed["slots"].get(15) != "Command_ConstructRussiaJetSu35Flanker":
+        raise SystemExit("parser FAIL: Large slot 15 is not Su-35 Flanker")
     if parsed["slots"].get(13) == "Command_SetRallyPoint":
-        raise SystemExit("parser FAIL: Rally is still in slot 13")
+        raise SystemExit("parser FAIL: Rally is still in Large slot 13")
     if parsed["slots"].get(14) == "Command_Sell":
-        raise SystemExit("parser FAIL: Sell is still in slot 14")
+        raise SystemExit("parser FAIL: Sell is still in Large slot 14")
+    heavy = parse_commandset_block(text, HEAVY_NAME, max_slot=14)
+    if heavy["block"] != NEW_HEAVY:
+        raise SystemExit("parser FAIL: live Russia_HeavyAirBaseCommandSet body mismatch")
+    if heavy["slots"] != EXPECTED_HEAVY_SLOTS:
+        raise SystemExit(f"parser FAIL: live Heavy slots {heavy['slots']}")
+    if heavy["slots"].get(3) != "Command_ConstructRussiaJetSu35Flanker":
+        raise SystemExit("parser FAIL: Heavy empty slot 3 is not Su-35 Flanker")
+    if heavy["slots"].get(13) != "Command_ConstructRussiaJetSu33":
+        raise SystemExit("parser FAIL: Heavy Rally slot 13 is not Su-33")
+    if heavy["slots"].get(14) != "Command_ConstructRussiaJetSu27Flanker":
+        raise SystemExit("parser FAIL: Heavy Sell slot 14 is not Su-27")
+    if "Command_SetRallyPoint" in heavy["slots"].values():
+        raise SystemExit("parser FAIL: Rally is still on Russia_HeavyAirBaseCommandSet")
+    if "Command_Sell" in heavy["slots"].values():
+        raise SystemExit("parser FAIL: Sell is still on Russia_HeavyAirBaseCommandSet")
     btn_pos = {}
     for btn in NEW_CONSTRUCT_BUTTONS:
         m = re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M)
@@ -421,20 +513,26 @@ def parser_check_live_commandset(raw: bytes) -> None:
     set_pos = text.find("CommandSet Russia_LargeAirBaseCommandSet")
     if any(pos > set_pos for pos in btn_pos.values()):
         raise SystemExit("parser FAIL: CommandButtons must appear before Russia_LargeAirBaseCommandSet")
-    print("PARSER CHECK PASS: live CommandSet.ini has unique Large set + Felon/T75/T50/Flanker/Su24MR")
+    print("PARSER CHECK PASS: unique Large/Heavy sets, Su-33/Su-27/Flanker in Rally/Sell/empty slots")
 
 
-def assert_no_duplicate_large(entries: list[tuple[str, bytes]]) -> None:
-    hits = []
+def assert_no_duplicate_commandsets(entries: list[tuple[str, bytes]]) -> None:
+    large_hits = []
+    heavy_hits = []
     for n, b in entries:
         if b"CommandSet Russia_LargeAirBaseCommandSet" in b:
-            hits.append(n)
+            large_hits.append(n)
+        if b"CommandSet Russia_HeavyAirBaseCommandSet" in b:
+            heavy_hits.append(n)
         key = n.replace("/", "\\").lower()
         if "commandset_zzzz" in key or key.endswith(r"commandset_zzzz_russia_largeairbase.ini"):
             raise SystemExit(f"parser FAIL: overlay CommandSet file still packed: {n}")
-    if hits != [next(n for n, _ in entries if n.replace("/", "\\").lower() == CS_KEY)]:
-        raise SystemExit(f"parser FAIL: Russia_LargeAirBaseCommandSet files={hits}")
-    print("PARSER CHECK PASS: no duplicate Russia_LargeAirBaseCommandSet, no overlay file")
+    cs_name = next(n for n, _ in entries if n.replace("/", "\\").lower() == CS_KEY)
+    if large_hits != [cs_name]:
+        raise SystemExit(f"parser FAIL: Russia_LargeAirBaseCommandSet files={large_hits}")
+    if heavy_hits != [cs_name]:
+        raise SystemExit(f"parser FAIL: Russia_HeavyAirBaseCommandSet files={heavy_hits}")
+    print("PARSER CHECK PASS: no duplicate Large/Heavy CommandSet, no overlay file")
 
 
 def collect_objects(entries: list[tuple[str, bytes]]) -> dict[str, list[str]]:
@@ -466,9 +564,11 @@ def verify_construct_create_path(
     btn: str,
     obj: str,
     model: str,
+    set_name: str = LARGE_NAME,
+    max_slot: int = 18,
 ) -> None:
     data = {n.replace("/", "\\").lower(): b for n, b in data_entries}
-    cs = parse_commandset_block(data[CS_KEY].decode("latin1"), LARGE_NAME, max_slot=18)
+    cs = parse_commandset_block(data[CS_KEY].decode("latin1"), set_name, max_slot=max_slot)
     cmd = cs["slots"].get(slot)
     if cmd != btn:
         raise SystemExit(f"CREATE FAIL: slot {slot} is {cmd}, expected {btn}")
@@ -503,7 +603,7 @@ def verify_construct_create_path(
     label = parsed.get("TextLabel")
     if label not in csf_names:
         raise SystemExit(f"CREATE FAIL: CSF missing {label}")
-    print(f"CREATE PATH PASS: slot {slot} {btn} -> {obj} model {model}")
+    print(f"CREATE PATH PASS: {set_name} slot {slot} {btn} -> {obj} model {model}")
 
 
 def verify_new_object_file(path: Path, obj: str, model: str) -> None:
@@ -581,7 +681,7 @@ def main() -> int:
     if set(extra) != expected_extra:
         raise SystemExit(f"unexpected added DATA files: {sorted(set(extra) ^ expected_extra)}")
 
-    assert_no_duplicate_large(data_entries)
+    assert_no_duplicate_commandsets(data_entries)
     parser_check_live_commandset(new_map[CS_KEY])
 
     objects = collect_objects(data_entries)
@@ -613,6 +713,10 @@ def main() -> int:
     for removed in REMOVED_MENU_BUTTONS:
         if removed in parsed_large["slots"].values():
             raise SystemExit(f"parser FAIL: removed menu button still slotted: {removed}")
+    parsed_heavy = parse_commandset_block(new_map[CS_KEY].decode("latin1"), HEAVY_NAME, max_slot=14)
+    for removed in ("Command_SetRallyPoint", "Command_Sell"):
+        if removed in parsed_heavy["slots"].values():
+            raise SystemExit(f"parser FAIL: {removed} still slotted on Heavy")
 
     mapped = new_map[r"data\ini\mappedimages\handcreated\russia_dozor600_images.ini".lower()].decode("latin1")
     if "MappedImage Dozor600" not in mapped:
@@ -628,7 +732,7 @@ def main() -> int:
     written_entries = read_big(out_data)
     written = {n.replace("/", "\\").lower(): b for n, b in written_entries}
     parser_check_live_commandset(written[CS_KEY])
-    assert_no_duplicate_large(written_entries)
+    assert_no_duplicate_commandsets(written_entries)
     if r"data\ini\commandset_zzzz_russia_largeairbase.ini" in written:
         raise SystemExit("parser FAIL: overlay CommandSet packed in final DATA BIG")
 
@@ -656,15 +760,30 @@ def main() -> int:
         10: ("Command_ConstructRussiaJetSu39", "RussiaJetSu39", "RUS_SU39"),
         11: ("Command_ConstructRussiaJetSu47Berkut", "RussiaJetSu47Berkut", "RUSU-47"),
         12: ("Command_ConstructRussiaJetDozor600", "RussiaJetDozor600", "AVReaper"),
-        13: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "qsnt50"),
-        14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
+        13: ("Command_ConstructRussiaJetSu33", "RussiaJetSu33", "RUSU33"),
+        14: ("Command_ConstructRussiaJetSu27Flanker", "RussiaJetSu27Flanker", "LSFRUSU27SK"),
         15: ("Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
         16: ("Command_ConstructRussiaJetSu24MR", "RussiaJetSu24MR", "SU24MP"),
-        17: ("Command_ConstructRussiaJetSu33", "RussiaJetSu33", "RUSU33"),
-        18: ("Command_ConstructRussiaJetSu27Flanker", "RussiaJetSu27Flanker", "LSFRUSU27SK"),
+        17: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "qsnt50"),
+        18: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
     }
     for slot, (btn, obj, model) in create_slots.items():
         verify_construct_create_path(written_entries, packed_art, slot, btn, obj, model)
+    for slot, btn, obj, model in (
+        (3, "Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
+        (13, "Command_ConstructRussiaJetSu33", "RussiaJetSu33", "RUSU33"),
+        (14, "Command_ConstructRussiaJetSu27Flanker", "RussiaJetSu27Flanker", "LSFRUSU27SK"),
+    ):
+        verify_construct_create_path(
+            written_entries,
+            packed_art,
+            slot,
+            btn,
+            obj,
+            model,
+            set_name=HEAVY_NAME,
+            max_slot=14,
+        )
     t75_text = (AIRFORCE / "SuT75.ini").read_text(encoding="latin1")
     if re.search(r"^\s+Weapon\s+=\s+\S*(R77|R73)", t75_text, re.M):
         raise SystemExit("parser FAIL: SuT75 still has air-to-air missiles")
@@ -696,7 +815,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_SU35_SU33_SU27_UPDATE.zip"
+    zpath = OUT / "RUSSIA_SU35_SU33_SU27_MENU_FIX.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")
@@ -710,7 +829,10 @@ def main() -> int:
         f"added_data={added}\n"
         f"added_art={art_added}\n"
         f"objects={ {k: objects[k] for k in REQUIRED_OBJECTS} }\n"
-        f"slots={EXPECTED_SLOTS}\n"
+        f"large_slots={EXPECTED_SLOTS}\n"
+        f"heavy_slots={EXPECTED_HEAVY_SLOTS}\n"
+        f"{NEW_LARGE}\n"
+        f"{NEW_HEAVY}\n"
         f"PARSER CHECK PASS\n",
         encoding="utf-8",
     )

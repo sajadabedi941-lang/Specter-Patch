@@ -253,6 +253,7 @@ ALLOW_OVERWRITE = {
     "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+    "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
 }
 
 CHINA_AIRCRAFT_UNLOCK_OBJECTS = {
@@ -636,7 +637,7 @@ def strip_object_science(text: str, names: set[str]) -> str:
         if not re.search(r"(?m)^[ \t]*Buildable\s*=", part):
             if re.search(r"(?m)^[ \t]*Prerequisites\s*$", part):
                 part = re.sub(
-                    r"(?ms)^([ \t]*Prerequisites[ \t]*\n)(.*?)(^[ \t]*End[ \t]*$)",
+                    r"(?ms)^([ \t]*Prerequisites[ \t]*\r?\n)(.*?)(^[ \t]*End[ \t]*\r?$)",
                     r"\1\2\3\n  Buildable = Ignore_Prerequisites",
                     part,
                     count=1,
@@ -680,6 +681,8 @@ def inline_weapons(weapon_ini: str) -> str:
             raise SystemExit(f"missing weapon overlay {path}")
         blobs.append(lf(path.read_bytes()).decode("utf-8"))
     combined = "\n".join(blobs)
+    if any(ord(ch) > 127 for ch in combined):
+        raise SystemExit("non-ASCII in China weapon overlay (Weapon.ini is latin1)")
     missing = [w for w in FIRE_WEAPONS if f"Weapon {w}" not in combined]
     if missing:
         raise SystemExit("overlay weapons missing: " + ", ".join(missing))
@@ -720,6 +723,8 @@ def validate_unlocks(v_map: dict[str, bytes]) -> None:
                 continue
             if re.search(r"(?m)^[ \t]*Science\s*=\s*SCIENCE_(?:Rank\d+|ChinaStealthTech|ChinaDrones)", part):
                 errors.append(f"{m.group(1)} still has science/rank prereq")
+            if "Ignore_Prerequisites" not in part:
+                errors.append(f"{m.group(1)} missing Buildable Ignore_Prerequisites")
     cb = v_map["data\\ini\\commandbutton.ini"].decode("latin1", errors="replace")
     for btn in UNLOCK_BUTTONS:
         m = re.search(
@@ -895,7 +900,7 @@ def main() -> int:
         if key not in data_map:
             raise SystemExit(f"missing packed unlock target {key}")
         name, blob = data_map[key]
-        text = blob.decode("latin1")
+        text = lf(blob).decode("latin1")
         data_map[key] = (name, lf(strip_object_science(text, CHINA_AIRCRAFT_UNLOCK_OBJECTS).encode("latin1")))
     print("Removed science/rank prereqs from China aircraft objects")
 

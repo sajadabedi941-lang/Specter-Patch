@@ -880,7 +880,7 @@ def main() -> int:
         raise SystemExit("parser FAIL: T50 is not using AGMZRT501")
     if re.search(r"Model\s+=\s+LSFT50", t50_text, re.M):
         raise SystemExit("parser FAIL: T50 still references F-22 LSFT50 mesh")
-    print("FELON/T50 ART SWAP PASS: qsnt50 / AGMZRT501, weapons unchanged")
+    print("FELON/T50 MODEL PASS: qsnt50 / AGMZRT501 unchanged")
     if "Command_ConstructRussiaJetSU24MP" in written[CS_KEY].decode("latin1"):
         raise SystemExit("parser FAIL: old SU24MP construct command still in CommandSet.ini")
     for key in CSF_STRINGS:

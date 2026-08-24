@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Pack China heavy aircraft expansion into _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big.
+"""Pack China air force expansion into _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big.
 
-Adds overlay INI + donor ART. Patches packed China_HeavyAirBaseCommandSet in place
-(does not create a second CommandSet). Does not overwrite existing aircraft INI.
-Does not patch China_LargeAirBaseCommandSet (fighters stay on the fighter airbase).
+Adds overlay INI + donor ART. Patches packed CommandSets in place.
+Inlines expansion weapons into core Weapon.ini.
+Removes China aircraft science/rank prereqs.
+Does not overwrite packed ChinaJetJ10C or ChinaBomberH6M.
 """
 from __future__ import annotations
 
@@ -16,15 +17,15 @@ from pathlib import Path
 
 ROOT = Path("/workspace")
 DONOR = Path("/tmp/donor_china_heavy")
-BASE_DATA = Path("/tmp/china_fighter_expansion/_SPEC_DATA_ONE.big")
-BASE_ART = Path("/tmp/china_fighter_expansion/_SPEC_ART_ONE.big")
+BASE_DATA = Path("/tmp/china_csf_fix/_SPEC_DATA_ONE.big")
+BASE_ART = Path("/tmp/china_csf_fix/_SPEC_ART_ONE.big")
 
 # All new China expansion string keys. Chunk magic MUST be " RTS" (Generals
 # fourcc). " STR" makes String Manager fail to initialize the property.
 CSF_LABELS = {
     "CONTROLBAR:ConstructChinaJetJ11B": "J-11B",
-    "CONTROLBAR:ToolTipChinaJetJ11B": "PLA J-11B strike Flanker. KD-88, bombs, PL-12.",
-    "OBJECT:ChinaJetJ11B": "J-11B\r\n2x KD-88\r\n4x bombs\r\n4x PL-12",
+    "CONTROLBAR:ToolTipChinaJetJ11B": "PLA J-11B strike Flanker. KD-88 and bombs.",
+    "OBJECT:ChinaJetJ11B": "J-11B\r\n2x KD-88\r\n6x bombs",
     "CONTROLBAR:ConstructChinaJetJ15": "J-15 Flying Shark",
     "CONTROLBAR:ToolTipChinaJetJ15": "PLA J-15 naval strike fighter. YJ anti-ship missiles and guided bombs.",
     "OBJECT:ChinaJetJ15": "J-15 Flying Shark\r\nYJ anti-ship\r\nLT-3 PGM",
@@ -222,11 +223,91 @@ ART_MAP = [
     ("Art/Textures/CHNKJ2000TB.tga", "Art\\Textures\\CHNKJ2000TB.tga"),
 ]
 
-OVERLAY_OBJECT_FILES = {"H6K.ini", "Y20.ini", "Y20AEW.ini"}
+OVERLAY_OBJECT_FILES = {
+    "H6K.ini",
+    "Y20.ini",
+    "Y20AEW.ini",
+    "J11B.ini",
+    "J15.ini",
+    "J31.ini",
+    "JF17.ini",
+}
 OVERLAY_NAMED = {
-    "Weapon_ChinaHeavyExpansion.ini",
     "China_HeavyExpansion_Images.INI",
 }
+# Weapons are inlined into packed Weapon.ini (core parse). Do not pack overlay
+# Weapon_*.ini or they can duplicate if both load.
+WEAPON_OVERLAY_FILES = [
+    "Weapon_ChinaFighterExpansion.ini",
+    "Weapon_ChinaHeavyExpansion.ini",
+]
+DROP_OVERLAY_WEAPON_FILES = {
+    "data\\ini\\weapon_chinafighterexpansion.ini",
+    "data\\ini\\weapon_chinaheavyexpansion.ini",
+}
+ALLOW_OVERWRITE = {
+    "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\y20.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j11b.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+    "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
+}
+
+CHINA_AIRCRAFT_UNLOCK_OBJECTS = {
+    "ChinaJetJ16D",
+    "ChinaJetJ20B_AG",
+    "ChinaJetJ20B_AA",
+    "ChinaJetJH7A2",
+    "ChinaDroneCH5",
+    "ChinaDroneAsn301",
+    "ChinaDroneCH7",
+    "ChinaDroneJXDS",
+    "ChinaDroneWZ8",
+    "ChinaDroneFH97",
+    "ChinaJetJ50",
+    "ChinaAircraftKJ500",
+    "ChinaJetJ16B_Bunker",
+    "ChinaJetJH7B_HeavyBunker",
+}
+UNLOCK_OBJECT_KEYS = [
+    "data\\ini\\object\\specter\\pla\\airforce\\j16d.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j20b.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j20b_aa.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\jh7a2.ini",
+    "data\\ini\\object\\specter\\pla\\drones\\ch5.ini",
+    "data\\ini\\object\\specter\\pla\\drones\\asn301.ini",
+    "data\\ini\\object\\specter\\pla\\china_system.ini",
+]
+UNLOCK_BUTTONS = [
+    "Command_ConstructChinaDroneCH7",
+    "Command_ConstructChinaDroneJXDS",
+    "Command_ConstructChinaDroneWZ8",
+    "Command_ConstructChinaDroneFH97",
+    "Command_ConstructChinaJetJ50",
+    "Command_ConstructChinaAircraftKJ500",
+    "Command_ConstructChinaJetJ16BBunker",
+    "Command_ConstructChinaJetJH7BHeavy",
+]
+FIRE_WEAPONS = [
+    "China_Weapon_KD88_J11B",
+    "China_Weapon_FAB_J11B",
+    "China_Weapon_FAB2_J11B",
+    "China_Weapon_YJ83_J15",
+    "China_Weapon_LT3_J15",
+    "China_Weapon_YJ12_J15",
+    "China_Weapon_LS6_J31",
+    "China_Weapon_FT7_J31",
+    "China_Weapon_LS6B_J31",
+    "China_Weapon_LT2_JF17",
+    "China_Weapon_CM802_JF17",
+    "China_Weapon_MK82_JF17",
+    "China_Weapon_CJ10_H6K",
+    "China_Weapon_FAB_H6K",
+]
+
 
 
 def norm_key(name: str) -> str:
@@ -357,15 +438,21 @@ def patch_csf(data: bytes) -> bytes:
         have.add(name)
     labels = normalized
     added = 0
+    updated = 0
+    have_idx = {name: i for i, (_, name, _) in enumerate(labels)}
     for key, value in CSF_LABELS.items():
         if any(ord(c) > 127 for c in key) or any(ord(c) > 127 for c in value.replace("\r", "").replace("\n", "")):
             raise SystemExit(f"non-ASCII CSF key or value: {key}")
-        if key in have:
+        if key in have_idx:
+            i = have_idx[key]
+            mag, name, strings = labels[i]
+            labels[i] = (mag, name, [(CSF_STR_MAGIC, value, b"")])
+            updated += 1
             continue
         labels.append((CSF_LBL_MAGIC, key, [(CSF_STR_MAGIC, value, b"")]))
         added += 1
         have.add(key)
-    print(f"CSF added {added} labels, fixed {fixed_magic} STR->RTS magics (existing {len(have) - added})")
+    print(f"CSF added {added} labels, updated {updated}, fixed {fixed_magic} STR->RTS magics")
     return build_csf(version, unk, lang, labels)
 
 
@@ -534,6 +621,171 @@ def patch_commandset(text: str) -> str:
     return text
 
 
+def strip_object_science(text: str, names: set[str]) -> str:
+    parts = re.split(r"(?=^Object )", text, flags=re.M)
+    out = []
+    for part in parts:
+        m = re.match(r"Object (\S+)", part)
+        if not (m and m.group(1) in names):
+            out.append(part)
+            continue
+        part = re.sub(
+            r"(?m)^[ \t]*Science\s*=\s*SCIENCE_(?:Rank\d+|ChinaStealthTech|ChinaDrones)[ \t]*\r?\n",
+            "",
+            part,
+        )
+        if not re.search(r"(?m)^[ \t]*Buildable\s*=", part):
+            if re.search(r"(?m)^[ \t]*Prerequisites\s*$", part):
+                part = re.sub(
+                    r"(?ms)^([ \t]*Prerequisites[ \t]*\r?\n)(.*?)(^[ \t]*End[ \t]*\r?$)",
+                    r"\1\2\3\n  Buildable = Ignore_Prerequisites",
+                    part,
+                    count=1,
+                )
+            else:
+                part = re.sub(
+                    r"(?m)^([ \t]*BuildCost)",
+                    "  Prerequisites\n  End\n  Buildable = Ignore_Prerequisites\n\\1",
+                    part,
+                    count=1,
+                )
+        out.append(part)
+    return "".join(out)
+
+
+def unlock_commandbuttons(text: str) -> str:
+    for btn in UNLOCK_BUTTONS:
+        pat = re.compile(
+            rf"(CommandButton {re.escape(btn)}\s*\n.*?^End\s*$)",
+            re.M | re.S,
+        )
+        m = pat.search(text)
+        if not m:
+            print(f"WARNING: unlock button {btn} not found")
+            continue
+        block = re.sub(
+            r"(?m)^[ \t]*Science\s*=\s*SCIENCE_(?:Rank\d+|ChinaStealthTech|ChinaDrones)[ \t]*\r?\n",
+            "",
+            m.group(1),
+        )
+        text = text[: m.start(1)] + block + text[m.end(1) :]
+    return text
+
+
+def inline_weapons(weapon_ini: str) -> str:
+    blobs = []
+    patch_ini = ROOT / "patch/Data/INI"
+    for name in WEAPON_OVERLAY_FILES:
+        path = patch_ini / name
+        if not path.is_file():
+            raise SystemExit(f"missing weapon overlay {path}")
+        blobs.append(lf(path.read_bytes()).decode("utf-8"))
+    combined = "\n".join(blobs)
+    if any(ord(ch) > 127 for ch in combined):
+        raise SystemExit("non-ASCII in China weapon overlay (Weapon.ini is latin1)")
+    missing = [w for w in FIRE_WEAPONS if f"Weapon {w}" not in combined]
+    if missing:
+        raise SystemExit("overlay weapons missing: " + ", ".join(missing))
+    # Replace previously inlined block if re-packing.
+    marker_start = "; ===== SPECTER CHINA AIR EXPANSION WEAPONS BEGIN ====="
+    marker_end = "; ===== SPECTER CHINA AIR EXPANSION WEAPONS END ====="
+    block = marker_start + "\n" + combined.strip() + "\n" + marker_end + "\n"
+    if marker_start in weapon_ini:
+        weapon_ini = re.sub(
+            re.escape(marker_start) + r".*?" + re.escape(marker_end) + r"\n?",
+            block,
+            weapon_ini,
+            count=1,
+            flags=re.S,
+        )
+    else:
+        if not weapon_ini.endswith("\n"):
+            weapon_ini += "\n"
+        weapon_ini += "\n" + block
+    for w in FIRE_WEAPONS:
+        if weapon_ini.count(f"Weapon {w}") != 1:
+            raise SystemExit(f"Weapon.ini count for {w} is {weapon_ini.count('Weapon ' + w)}")
+    print("Inlined China expansion weapons into Weapon.ini")
+    return weapon_ini
+
+
+def validate_unlocks(v_map: dict[str, bytes]) -> None:
+    errors = []
+    for key in UNLOCK_OBJECT_KEYS:
+        if key not in v_map:
+            errors.append(f"missing unlock file {key}")
+            continue
+        text = v_map[key].decode("latin1", errors="replace")
+        parts = re.split(r"(?=^Object )", text, flags=re.M)
+        for part in parts:
+            m = re.match(r"Object (\S+)", part)
+            if not (m and m.group(1) in CHINA_AIRCRAFT_UNLOCK_OBJECTS):
+                continue
+            if re.search(r"(?m)^[ \t]*Science\s*=\s*SCIENCE_(?:Rank\d+|ChinaStealthTech|ChinaDrones)", part):
+                errors.append(f"{m.group(1)} still has science/rank prereq")
+            if "Ignore_Prerequisites" not in part:
+                errors.append(f"{m.group(1)} missing Buildable Ignore_Prerequisites")
+    cb = v_map["data\\ini\\commandbutton.ini"].decode("latin1", errors="replace")
+    for btn in UNLOCK_BUTTONS:
+        m = re.search(
+            rf"CommandButton {re.escape(btn)}\s*\n.*?^End\s*$",
+            cb,
+            re.M | re.S,
+        )
+        if not m:
+            errors.append(f"button {btn} missing")
+            continue
+        if re.search(r"(?m)^[ \t]*Science\s*=", m.group(0)):
+            errors.append(f"button {btn} still has Science")
+    if errors:
+        raise SystemExit("UNLOCK CHECK FAIL\n" + "\n".join(errors))
+    print("UNLOCK CHECK PASS")
+
+
+def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
+    errors = []
+    weapon = v_map["data\\ini\\weapon.ini"].decode("latin1", errors="replace")
+    for w in FIRE_WEAPONS:
+        if f"Weapon {w}" not in weapon:
+            errors.append(f"Weapon.ini missing {w}")
+    banned_a2a = ["China_Weapon_PL12_J11B"]
+    for w in banned_a2a:
+        if f"Weapon {w}" in weapon:
+            errors.append(f"A2A weapon still present: {w}")
+    fighters = {
+        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "China_Weapon_LS6_J31",
+        "data\\ini\\object\\specter\\pla\\airforce\\j11b.ini": "China_Weapon_KD88_J11B",
+        "data\\ini\\object\\specter\\pla\\airforce\\j15.ini": "China_Weapon_YJ83_J15",
+        "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini": "China_Weapon_LT2_JF17",
+    }
+    for key, primary in fighters.items():
+        text = v_map[key].decode("latin1", errors="replace")
+        if "GenericTacticalBomberCommandSet" not in text:
+            errors.append(f"{key} not on GenericTacticalBomberCommandSet")
+        if "GenericMultiRoleFighter_AG_CommandSet" in text:
+            errors.append(f"{key} still on GMRF AG commandset")
+        if f"PRIMARY    {primary}" not in text and f"PRIMARY {primary}" not in text:
+            errors.append(f"{key} missing PRIMARY {primary}")
+        if "WeaponLaunchBone    = PRIMARY   WeaponA" not in text:
+            errors.append(f"{key} missing PRIMARY WeaponA launch bone")
+        if "AntiGround" in text:
+            pass
+        if "China_Weapon_PL12" in text:
+            errors.append(f"{key} still uses PL-12 A2A")
+    scales = {
+        "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini": "0.85",
+        "data\\ini\\object\\specter\\pla\\airforce\\y20.ini": "1.00",
+        "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini": "0.90",
+    }
+    for key, scale in scales.items():
+        text = v_map[key].decode("latin1", errors="replace")
+        if f"Scale = {scale}" not in text:
+            errors.append(f"{key} scale is not {scale}")
+    if errors:
+        raise SystemExit("FIRE/SCALE CHECK FAIL\n" + "\n".join(errors))
+    print("FIRE/SCALE CHECK PASS")
+
+
 def lf(data: bytes) -> bytes:
     if data.startswith(b"\xef\xbb\xbf"):
         data = data[3:]
@@ -569,7 +821,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_heavy_aircraft"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airforce_fix"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -597,9 +849,6 @@ def main() -> int:
     protect = {
         "j10c.ini": hashlib.sha256(blob_from_map(data_map, "pla\\airforce\\j10c.ini")).hexdigest(),
         "h6m.ini": hashlib.sha256(blob_from_map(data_map, "science objects\\h6m.ini")).hexdigest(),
-        "ch5.ini": hashlib.sha256(blob_from_map(data_map, "pla\\drones\\ch5.ini")).hexdigest(),
-        "china_system.ini": hashlib.sha256(blob_from_map(data_map, "pla\\china_system.ini")).hexdigest(),
-        "j11b.ini": hashlib.sha256(blob_from_map(data_map, "pla\\airforce\\j11b.ini")).hexdigest(),
     }
 
     overlay: dict[str, bytes] = {}
@@ -621,13 +870,14 @@ def main() -> int:
     parse_check(overlay)
 
     dropped = []
+    drop_keys = DROP_OVERLAY_BUTTON_FILES | DROP_OVERLAY_WEAPON_FILES
     for key in list(data_map):
-        if key in DROP_OVERLAY_BUTTON_FILES:
+        if key in drop_keys:
             dropped.append(data_map[key][0])
             del data_map[key]
     if dropped:
-        print("Dropped overlay CommandButton files (inlined into CommandSet.ini):", dropped)
-    data_keys[:] = [k for k in data_keys if k not in DROP_OVERLAY_BUTTON_FILES]
+        print("Dropped overlay CommandButton/Weapon files (inlined):", dropped)
+    data_keys[:] = [k for k in data_keys if k not in drop_keys]
 
     cs_key = "data\\ini\\commandset.ini"
     cs_name, cs_bytes = data_map[cs_key]
@@ -640,6 +890,25 @@ def main() -> int:
     data_map[cs_key] = (cs_name, lf(cs_new.encode("latin1")))
     print("Patched CommandSet.ini (inline buttons + Large/Heavy blocks)")
 
+    cb_key = "data\\ini\\commandbutton.ini"
+    cb_name, cb_bytes = data_map[cb_key]
+    cb_text = unlock_commandbuttons(cb_bytes.decode("latin1"))
+    data_map[cb_key] = (cb_name, lf(cb_text.encode("latin1")))
+    print("Unlocked China aircraft/drone construct CommandButtons")
+
+    for key in UNLOCK_OBJECT_KEYS:
+        if key not in data_map:
+            raise SystemExit(f"missing packed unlock target {key}")
+        name, blob = data_map[key]
+        text = lf(blob).decode("latin1")
+        data_map[key] = (name, lf(strip_object_science(text, CHINA_AIRCRAFT_UNLOCK_OBJECTS).encode("latin1")))
+    print("Removed science/rank prereqs from China aircraft objects")
+
+    w_key = "data\\ini\\weapon.ini"
+    w_name, w_bytes = data_map[w_key]
+    w_text = inline_weapons(w_bytes.decode("latin1"))
+    data_map[w_key] = (w_name, lf(w_text.encode("latin1")))
+
     csf_key = "data\\english\\generals.csf"
     csf_name, csf_bytes = data_map[csf_key]
     data_map[csf_key] = (csf_name, patch_csf(csf_bytes))
@@ -648,9 +917,13 @@ def main() -> int:
     for big_name, content in overlay.items():
         key = norm_key(big_name)
         if key in data_map:
-            raise SystemExit(f"Refusing to overwrite existing DATA entry: {big_name}")
-        data_map[key] = (big_name, content)
-        added_data.append(big_name)
+            if key not in ALLOW_OVERWRITE:
+                raise SystemExit(f"Refusing to overwrite existing DATA entry: {big_name}")
+            data_map[key] = (data_map[key][0], content)
+            added_data.append(big_name + " (updated)")
+        else:
+            data_map[key] = (big_name, content)
+            added_data.append(big_name)
 
     added_art = []
     for src_rel, dest in ART_MAP:
@@ -691,7 +964,7 @@ def main() -> int:
     out_data.write_bytes(data_bytes)
     out_art.write_bytes(art_bytes)
 
-    zpath = out / "CHINA_HEAVY_AIRCRAFT.zip"
+    zpath = out / "CHINA_AIRFORCE_FIX.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")
@@ -718,9 +991,6 @@ def main() -> int:
 
     must_hash("pla\\airforce\\j10c.ini", protect["j10c.ini"])
     must_hash("science objects\\h6m.ini", protect["h6m.ini"])
-    must_hash("pla\\drones\\ch5.ini", protect["ch5.ini"])
-    must_hash("pla\\china_system.ini", protect["china_system.ini"])
-    must_hash("pla\\airforce\\j11b.ini", protect["j11b.ini"])
 
     cs = v_map["data\\ini\\commandset.ini"].decode("latin1")
     validate_china_commandsets(cs)
@@ -740,11 +1010,8 @@ def main() -> int:
             continue
         text = blob.decode("latin1", errors="replace")
         ini_refs.extend(re.findall(r"(?:OBJECT|CONTROLBAR):[A-Za-z0-9_]+", text))
-    required_csf = sorted(set(list(CSF_LABELS.keys()) + ini_refs))
-    # Only require keys that belong to new China expansion objects/buttons.
     required_new = sorted(CSF_LABELS.keys())
     validate_csf(csf_blob, required_new)
-    have_names = set()
     version, unk, lang, labels = parse_csf(csf_blob)
     have_names = {name for _, name, _ in labels}
     missing_ini = sorted({r for r in ini_refs if r.startswith(("OBJECT:ChinaJet", "OBJECT:ChinaBomber", "OBJECT:ChinaAircraft", "CONTROLBAR:ConstructChinaJet", "CONTROLBAR:ToolTipChinaJet", "CONTROLBAR:ConstructChinaBomber", "CONTROLBAR:ToolTipChinaBomber", "CONTROLBAR:ConstructChinaAircraft", "CONTROLBAR:ToolTipChinaAircraft")) and r not in have_names})
@@ -752,19 +1019,26 @@ def main() -> int:
         raise SystemExit("CSF missing INI refs: " + ", ".join(missing_ini))
     print("CSF INI-REF CHECK PASS")
 
-    for banned in DROP_OVERLAY_BUTTON_FILES:
+    for banned in DROP_OVERLAY_BUTTON_FILES | DROP_OVERLAY_WEAPON_FILES:
         if banned in v_map:
-            raise SystemExit(f"overlay CommandButton file still packed: {banned}")
+            raise SystemExit(f"overlay file still packed: {banned}")
 
     for req in (
         "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\y20.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini",
-        "data\\ini\\weapon_chinaheavyexpansion.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\j11b.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
         "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
+        "data\\ini\\weapon.ini",
     ):
         if req not in v_map:
             raise SystemExit(f"overlay missing from DATA BIG: {req}")
+
+    validate_unlocks(v_map)
+    validate_fire_and_scale(v_map)
 
     for req in (
         "art\\w3d\\h6k.w3d",
@@ -792,7 +1066,12 @@ def main() -> int:
                 NEW_COMMANDSET,
                 "PARSER CHECK PASS",
                 "CSF CHECK PASS",
-                "PROTECTED EXISTING AIRCRAFT HASHES UNCHANGED",
+                "UNLOCK CHECK PASS",
+                "FIRE/SCALE CHECK PASS",
+                "PROTECTED J10C AND H6M HASHES UNCHANGED",
+                "WEAPONS INLINED INTO Weapon.ini",
+                "CHINA AIRCRAFT SCIENCE/RANK PREREQS REMOVED",
+                "H-20 SKIPPED: no real bomber mesh in mod.z or donor ART",
                 "COMMANDSET PARSE FIX: buttons inlined before China_LargeAirBaseCommandSet",
                 "CSF MAGIC FIX: STR -> RTS for String Manager",
                 "FIGHTER LARGE AIRBASE SLOTS KEPT",

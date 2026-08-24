@@ -19,7 +19,33 @@ DONOR = Path("/tmp/donor_china_heavy")
 BASE_DATA = Path("/tmp/china_fighter_expansion/_SPEC_DATA_ONE.big")
 BASE_ART = Path("/tmp/china_fighter_expansion/_SPEC_ART_ONE.big")
 
+# All new China expansion string keys. Chunk magic MUST be " RTS" (Generals
+# fourcc). " STR" makes String Manager fail to initialize the property.
 CSF_LABELS = {
+    "CONTROLBAR:ConstructChinaJetJ11B": "J-11B",
+    "CONTROLBAR:ToolTipChinaJetJ11B": "PLA J-11B strike Flanker. KD-88, bombs, PL-12.",
+    "OBJECT:ChinaJetJ11B": "J-11B\r\n2x KD-88\r\n4x bombs\r\n4x PL-12",
+    "CONTROLBAR:ConstructChinaJetJ15": "J-15 Flying Shark",
+    "CONTROLBAR:ToolTipChinaJetJ15": "PLA J-15 naval strike fighter. YJ anti-ship missiles and guided bombs.",
+    "OBJECT:ChinaJetJ15": "J-15 Flying Shark\r\nYJ anti-ship\r\nLT-3 PGM",
+    "CONTROLBAR:ConstructChinaJetJ31": "J-31",
+    "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth strike fighter. Internal precision bombs.",
+    "OBJECT:ChinaJetJ31": "J-31\r\nInternal PGM strike",
+    "CONTROLBAR:ConstructChinaJetJF17Block3": "JF-17 Block 3",
+    "CONTROLBAR:ToolTipChinaJetJF17Block3": "JF-17 Block 3 / FC-1. Guided bombs and air-to-ground missiles.",
+    "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\nPGM plus AGM",
+    "CONTROLBAR:ConstructChinaJetJ8II": "J-8II",
+    "CONTROLBAR:ToolTipChinaJetJ8II": "PLA J-8II interceptor-strike. Bombs and rockets.",
+    "OBJECT:ChinaJetJ8II": "J-8II\r\nBombs + rockets",
+    "CONTROLBAR:ConstructChinaJetJ7": "J-7",
+    "CONTROLBAR:ToolTipChinaJetJ7": "PLA J-7 light strike fighter. Bombs and rockets.",
+    "OBJECT:ChinaJetJ7": "J-7\r\nLight bombs + rockets",
+    "CONTROLBAR:ConstructChinaJetJ10A": "J-10A",
+    "CONTROLBAR:ToolTipChinaJetJ10A": "PLA J-10A. Precision bombs and air-to-ground missiles.",
+    "OBJECT:ChinaJetJ10A": "J-10A\r\nPGM + KD-88",
+    "CONTROLBAR:ConstructChinaJetJ10B": "J-10B",
+    "CONTROLBAR:ToolTipChinaJetJ10B": "PLA J-10B. Precision bombs and air-to-ground missiles.",
+    "OBJECT:ChinaJetJ10B": "J-10B\r\nLT-3 PGM + KD-88",
     "CONTROLBAR:ConstructChinaBomberH6K": "H-6K",
     "CONTROLBAR:ToolTipChinaBomberH6K": "PLA H-6K bomber. CJ-10 cruise missiles and heavy bombs.",
     "OBJECT:ChinaBomberH6K": "H-6K\r\n6x CJ-10 cruise\r\n8x bombs\r\nCarpet bombs",
@@ -27,9 +53,12 @@ CSF_LABELS = {
     "CONTROLBAR:ToolTipChinaJetY20": "PLA Y-20 Kunpeng transport. Infantry and vehicle airlift.",
     "OBJECT:ChinaJetY20": "Y-20 Kunpeng\r\nTransport",
     "CONTROLBAR:ConstructChinaAircraftY20AEW": "Y-20 AEW",
-    "CONTROLBAR:ToolTipChinaAircraftY20AEW": "PLA Y-20 AEW / KJ-3000. Airborne radar scan.",
+    "CONTROLBAR:ToolTipChinaAircraftY20AEW": "PLA Y-20 AEW KJ-3000. Airborne radar scan.",
     "OBJECT:ChinaAircraftY20AEW": "Y-20 AEW\r\nSAR scan",
 }
+
+CSF_STR_MAGIC = b" RTS"  # Generals String Manager fourcc (not " STR")
+CSF_LBL_MAGIC = b" LBL"
 
 NEW_COMMANDSET = """CommandSet China_HeavyAirBaseCommandSet
   1  = Command_ConstructChinaAircraftKJ500
@@ -313,15 +342,84 @@ def build_csf(version, unk, lang, labels) -> bytes:
 
 def patch_csf(data: bytes) -> bytes:
     version, unk, lang, labels = parse_csf(data)
-    have = {name for _, name, _ in labels}
+    fixed_magic = 0
+    normalized = []
+    have = set()
+    for mag, name, strings in labels:
+        new_strings = []
+        for smag, text, extra in strings:
+            if smag == b" STR":
+                smag = CSF_STR_MAGIC
+                extra = b""
+                fixed_magic += 1
+            new_strings.append((smag, text, extra))
+        normalized.append((mag, name, new_strings))
+        have.add(name)
+    labels = normalized
     added = 0
     for key, value in CSF_LABELS.items():
+        if any(ord(c) > 127 for c in key) or any(ord(c) > 127 for c in value.replace("\r", "").replace("\n", "")):
+            raise SystemExit(f"non-ASCII CSF key or value: {key}")
         if key in have:
             continue
-        labels.append((b" LBL", key, [(b" STR", value, b"")]))
+        labels.append((CSF_LBL_MAGIC, key, [(CSF_STR_MAGIC, value, b"")]))
         added += 1
-    print(f"CSF added {added} labels (existing {len(have)})")
+        have.add(key)
+    print(f"CSF added {added} labels, fixed {fixed_magic} STR->RTS magics (existing {len(have) - added})")
     return build_csf(version, unk, lang, labels)
+
+
+def validate_csf(data: bytes, required: list[str]) -> None:
+    if data[:4] != b" FSC":
+        raise SystemExit(f"CSF magic {data[:4]!r} is not Generals FSC")
+    _version, nlab_hdr, nstr_hdr, _unk, _lang = struct.unpack_from("<IIIII", data, 4)
+    pos = 24
+    names = []
+    str_count = 0
+    bad_magic = []
+    for _ in range(nlab_hdr):
+        _mag = data[pos : pos + 4]
+        pos += 4
+        ns, namelen = struct.unpack_from("<II", data, pos)
+        pos += 8
+        name = data[pos : pos + namelen].decode("latin1", errors="replace")
+        pos += namelen
+        names.append(name)
+        for _j in range(ns):
+            smag = data[pos : pos + 4]
+            pos += 4
+            slen = struct.unpack_from("<I", data, pos)[0]
+            pos += 4
+            pos += 2 * slen
+            str_count += 1
+            if smag == b" STR":
+                bad_magic.append(name)
+            if smag in (b"WRTS", b"STR "):
+                elen = struct.unpack_from("<I", data, pos)[0]
+                pos += 4
+                pos += elen
+            elif smag not in (b" RTS",):
+                bad_magic.append(f"{name} smag={smag!r}")
+    leftover = len(data) - pos
+    errors = []
+    if leftover != 0:
+        errors.append(f"CSF leftover bytes {leftover}")
+    if str_count != nstr_hdr:
+        errors.append(f"CSF string count hdr={nstr_hdr} got={str_count}")
+    if len(names) != nlab_hdr:
+        errors.append("CSF label count mismatch")
+    if bad_magic:
+        errors.append("bad CSF string magic (STR not RTS): " + ", ".join(bad_magic[:8]))
+    have = set(names)
+    missing = [k for k in required if k not in have]
+    if missing:
+        errors.append("missing CSF keys: " + ", ".join(missing))
+    dups = sorted({n for n in names if names.count(n) > 1})
+    if dups:
+        errors.append("duplicate CSF labels: " + ", ".join(dups[:8]))
+    if errors:
+        raise SystemExit("CSF CHECK FAIL\n" + "\n".join(errors))
+    print("CSF CHECK PASS")
 
 
 def grab_block(text: str, name: str) -> str:
@@ -633,6 +731,27 @@ def main() -> int:
     if "CommandButton Command_ConstructChinaJetJ11B" not in cs:
         raise SystemExit("J-11B CommandButton not inlined in CommandSet.ini")
 
+    csf_blob = v_map["data\\english\\generals.csf"]
+    ini_refs = []
+    for k, blob in v_map.items():
+        if not k.endswith(".ini"):
+            continue
+        if "pla\\airforce\\" not in k and k != "data\\ini\\commandset.ini":
+            continue
+        text = blob.decode("latin1", errors="replace")
+        ini_refs.extend(re.findall(r"(?:OBJECT|CONTROLBAR):[A-Za-z0-9_]+", text))
+    required_csf = sorted(set(list(CSF_LABELS.keys()) + ini_refs))
+    # Only require keys that belong to new China expansion objects/buttons.
+    required_new = sorted(CSF_LABELS.keys())
+    validate_csf(csf_blob, required_new)
+    have_names = set()
+    version, unk, lang, labels = parse_csf(csf_blob)
+    have_names = {name for _, name, _ in labels}
+    missing_ini = sorted({r for r in ini_refs if r.startswith(("OBJECT:ChinaJet", "OBJECT:ChinaBomber", "OBJECT:ChinaAircraft", "CONTROLBAR:ConstructChinaJet", "CONTROLBAR:ToolTipChinaJet", "CONTROLBAR:ConstructChinaBomber", "CONTROLBAR:ToolTipChinaBomber", "CONTROLBAR:ConstructChinaAircraft", "CONTROLBAR:ToolTipChinaAircraft")) and r not in have_names})
+    if missing_ini:
+        raise SystemExit("CSF missing INI refs: " + ", ".join(missing_ini))
+    print("CSF INI-REF CHECK PASS")
+
     for banned in DROP_OVERLAY_BUTTON_FILES:
         if banned in v_map:
             raise SystemExit(f"overlay CommandButton file still packed: {banned}")
@@ -672,8 +791,10 @@ def main() -> int:
                 "added_art=" + repr(added_art),
                 NEW_COMMANDSET,
                 "PARSER CHECK PASS",
+                "CSF CHECK PASS",
                 "PROTECTED EXISTING AIRCRAFT HASHES UNCHANGED",
                 "COMMANDSET PARSE FIX: buttons inlined before China_LargeAirBaseCommandSet",
+                "CSF MAGIC FIX: STR -> RTS for String Manager",
                 "FIGHTER LARGE AIRBASE SLOTS KEPT",
             ]
         )

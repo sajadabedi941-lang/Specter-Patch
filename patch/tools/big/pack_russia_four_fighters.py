@@ -176,6 +176,14 @@ NEW_ART = {
     r"Art\W3D\SU24MP.W3D": PATCH / "Art/W3D/SU24MP.W3D",
     r"Art\W3D\SU24MPA.W3D": PATCH / "Art/W3D/SU24MPA.W3D",
     r"Art\Textures\SU24MP1.tga": PATCH / "Art/Textures/SU24MP1.tga",
+    r"Art\W3D\AGMZRT501.W3D": PATCH / "Art/W3D/AGMZRT501.W3D",
+    r"Art\W3D\qsnt50.W3D": PATCH / "Art/W3D/qsnt50.W3D",
+    r"Art\Textures\AGMZT50NEW.tga": PATCH / "Art/Textures/AGMZT50NEW.tga",
+    r"Art\Textures\t50t.tga": PATCH / "Art/Textures/t50t.tga",
+    r"Art\Textures\mig29_minipit.tga": PATCH / "Art/Textures/mig29_minipit.tga",
+    r"Art\Textures\ZHCA_AIRapPilot.tga": PATCH / "Art/Textures/ZHCA_AIRapPilot.tga",
+    r"Art\Textures\f35.tga": PATCH / "Art/Textures/f35.tga",
+    r"Art\Textures\f35.dds": PATCH / "Art/Textures/f35.dds",
 }
 
 FROZEN = (
@@ -196,9 +204,9 @@ REQUIRED_OBJECTS = {
     "RussiaJetSu75": "RUSU75",
     "RussiaJetSu39": "RUS_SU39",
     "RussiaJetDozor600": "AVReaper",
-    "RussiaJetSu57Felon": "RUS_SU57",
+    "RussiaJetSu57Felon": "qsnt50",
     "RussiaJetSuT75": "RUSU75",
-    "RussiaJetSuT50PAKFA": "LSFT50",
+    "RussiaJetSuT50PAKFA": "AGMZRT501",
     "RussiaJetSu35Flanker": "LSFSU35",
     "RussiaJetSu24MR": "SU24MP",
 }
@@ -498,9 +506,9 @@ def main() -> int:
         ("RussiaJetSu75", "RUSU75", "Su75Checkmate.ini"),
         ("RussiaJetSu39", "RUS_SU39", "Su39.ini"),
         ("RussiaJetDozor600", "AVReaper", "Dozor600.ini"),
-        ("RussiaJetSu57Felon", "RUS_SU57", "Su57Felon.ini"),
+        ("RussiaJetSu57Felon", "qsnt50", "Su57Felon.ini"),
         ("RussiaJetSuT75", "RUSU75", "SuT75.ini"),
-        ("RussiaJetSuT50PAKFA", "LSFT50", "SuT50PAKFA.ini"),
+        ("RussiaJetSuT50PAKFA", "AGMZRT501", "SuT50PAKFA.ini"),
         ("RussiaJetSu35Flanker", "LSFSU35", "Su35Flanker.ini"),
         ("RussiaJetSu24MR", "SU24MP", "Su24MR.ini"),
     ):
@@ -616,13 +624,37 @@ def main() -> int:
         10: ("Command_ConstructRussiaJetSu39", "RussiaJetSu39", "RUS_SU39"),
         11: ("Command_ConstructRussiaJetSu47Berkut", "RussiaJetSu47Berkut", "RUSU-47"),
         12: ("Command_ConstructRussiaJetDozor600", "RussiaJetDozor600", "AVReaper"),
-        13: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "RUS_SU57"),
-        14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "LSFT50"),
+        13: ("Command_ConstructRussiaJetSu57Felon", "RussiaJetSu57Felon", "qsnt50"),
+        14: ("Command_ConstructRussiaJetSuT50PAKFA", "RussiaJetSuT50PAKFA", "AGMZRT501"),
         15: ("Command_ConstructRussiaJetSu35Flanker", "RussiaJetSu35Flanker", "LSFSU35"),
         16: ("Command_ConstructRussiaJetSu24MR", "RussiaJetSu24MR", "SU24MP"),
     }
     for slot, (btn, obj, model) in create_slots.items():
         verify_construct_create_path(written_entries, packed_art, slot, btn, obj, model)
+    t75_text = (AIRFORCE / "SuT75.ini").read_text(encoding="latin1")
+    if re.search(r"^\s+Weapon\s+=\s+\S*(R77|R73)", t75_text, re.M):
+        raise SystemExit("parser FAIL: SuT75 still has air-to-air missiles")
+    t75_bombs = re.findall(
+        r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+(\S+)\s*$",
+        t75_text,
+        re.M,
+    )
+    if t75_bombs != ["3x_1000LB_LT3_PGM_J10C", "3x_1000LB_LT3_PGM_J10C"]:
+        raise SystemExit(f"parser FAIL: SuT75 bombs {t75_bombs}")
+    print("T75 STRIKE LOADOUT PASS: 6 J-10 guided bombs, no R-77/R-73")
+    felon_text = (AIRFORCE / "Su57Felon.ini").read_text(encoding="latin1")
+    t50_text = (AIRFORCE / "SuT50PAKFA.ini").read_text(encoding="latin1")
+    if "6x_R77_MRBVR_SU35S" not in felon_text or "6x_MRAAM_K77M_SU57" not in felon_text:
+        raise SystemExit("parser FAIL: Felon weapons changed")
+    if "6x_R77_MRBVR_SU35S" not in t50_text or "Kab500_LeaserGuidedBomb" not in t50_text:
+        raise SystemExit("parser FAIL: T50 weapons changed")
+    if not re.search(r"Model\s+=\s+qsnt50\s*$", felon_text, re.M):
+        raise SystemExit("parser FAIL: Felon is not using qsnt50")
+    if not re.search(r"Model\s+=\s+AGMZRT501\s*$", t50_text, re.M):
+        raise SystemExit("parser FAIL: T50 is not using AGMZRT501")
+    if re.search(r"Model\s+=\s+LSFT50", t50_text, re.M):
+        raise SystemExit("parser FAIL: T50 still references F-22 LSFT50 mesh")
+    print("FELON/T50 ART SWAP PASS: qsnt50 / AGMZRT501, weapons unchanged")
     if "Command_ConstructRussiaJetSU24MP" in written[CS_KEY].decode("latin1"):
         raise SystemExit("parser FAIL: old SU24MP construct command still in CommandSet.ini")
     for key in CSF_STRINGS:
@@ -630,7 +662,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_AIRCRAFT_UPDATE.zip"
+    zpath = OUT / "RUSSIA_VISUAL_FIX.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

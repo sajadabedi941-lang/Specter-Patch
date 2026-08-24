@@ -826,26 +826,25 @@ def main() -> int:
         "Su35Flanker.ini": [
             "Kab1500_LeaserGuidedBomb_Su35S",
             "Kh59MK2_CruiseMissile_Su35S",
-            "R73_HOBS_SRAAM_SU35",
+            "4X_S25OF_Rocket_SU30MKA",
         ],
         "Su33.ini": [
             "2x_ARM_KH31P_SU30SM2",
             "Kab500_LeaserGuidedBomb",
-            "R73_HOBS_SRAAM_SU35",
+            "2x_KH29T_SU30MKA_UER",
         ],
         "Su27Flanker.ini": [
-            "4x_R27_MRBVR_Mig29A",
+            "KH29T_AGM_SU30MKA",
             "4x_Fab500_SU34",
             "4X_S25OF_Rocket_SU30MKA",
         ],
         "SuT50PAKFA.ini": [
             "Kab2500OD_LeaserGuidedBomb_Su57",
             "Kh59MK2_CruiseMissile_Su35S",
-            "6x_MRAAM_K77M_SU57",
+            "2x_GPS_Kab1500SE_Su24M2",
         ],
         "Su24MR.ini": [
             "ALQ_99_RadarJamming",
-            "GenericAircraftRadar2",
         ],
     }
     weapon_ini = written[r"data\ini\weapon.ini"].decode("latin1")
@@ -867,13 +866,33 @@ def main() -> int:
     su24_text = (AIRFORCE / "Su24MR.ini").read_text(encoding="latin1")
     if re.search(r"Weapon\s+=\s+SU35S_N035M_Radar_Power", su24_text):
         raise SystemExit("parser FAIL: Su-24MR still uses fighter N035 radar fire")
-    if not re.search(r"Weapon\s+=\s+GenericAircraftRadar2", su24_text):
-        raise SystemExit("parser FAIL: Su-24MR missing GenericAircraftRadar2 scan")
-    if re.search(r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+\S*(KH31|Kh59|Kab500)", su24_text, re.M):
-        raise SystemExit("parser FAIL: Su-24MR still has strike weapons")
-    print("SU24MR RECON PASS: ALQ-99 + ground scan, no fighter radar fire, no strike loadout")
+    if re.search(r"GenericAircraftRadar2", su24_text):
+        raise SystemExit("parser FAIL: Su-24MR still uses GenericAircraftRadar2 instead of Radar Jam")
+    if not re.search(r"Behavior = FireWeaponUpdate ModuleTag_Radar45\n    Weapon = ALQ_99_RadarJamming\n  End", su24_text):
+        raise SystemExit("parser FAIL: Su-24MR FireWeaponUpdate is not ALQ_99_RadarJamming")
+    if not re.search(r"^\s+CommandSet\s+=\s+GenericTacticalBomberCommandSet\s*$", su24_text, re.M):
+        raise SystemExit("parser FAIL: Su-24MR CommandSet was changed")
+    if re.search(r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+\S*(KH31|Kh59|Kab500|R73|R27|R77|K77)", su24_text, re.M):
+        raise SystemExit("parser FAIL: Su-24MR still has strike or air-to-air weapons")
+    print("SU24MR RADAR JAM PASS: ALQ_99_RadarJamming fire restored, no strike loadout")
+    a2g_files = (
+        "Su35Flanker.ini",
+        "Su33.ini",
+        "Su27Flanker.ini",
+        "SuT50PAKFA.ini",
+    )
+    a2a_pat = re.compile(r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+\S*(R73|R27|R77|K77M)", re.M)
+    for fname in a2g_files:
+        text = (AIRFORCE / fname).read_text(encoding="latin1")
+        if a2a_pat.search(text):
+            raise SystemExit(f"parser FAIL: {fname} still has air-to-air weapons")
+        if not re.search(r"^\s+CommandSet\s+=", text, re.M):
+            raise SystemExit(f"parser FAIL: {fname} lost CommandSet")
+    print("A2G ROLE PASS: Su-35/Su-33/Su-27/T50 have no R-73/R-27/R-77/K-77M slots")
     if "6x_R77_MRBVR_SU35S" in t50_text:
         raise SystemExit("parser FAIL: T50 still uses R-77 as a primary air-to-air loadout")
+    if "6x_MRAAM_K77M_SU57" in t50_text:
+        raise SystemExit("parser FAIL: T50 still uses K-77M interceptor loadout")
     if not re.search(r"Model\s+=\s+qsnt50\s*$", felon_text, re.M):
         raise SystemExit("parser FAIL: Felon is not using qsnt50")
     if not re.search(r"Model\s+=\s+AGMZRT501\s*$", t50_text, re.M):
@@ -888,7 +907,7 @@ def main() -> int:
             raise SystemExit(f"parser FAIL: packed CSF missing {key}")
     print("CSF LABEL PASS: all new construct/object strings present")
 
-    zpath = OUT / "RUSSIA_STRIKE_LOADOUTS.zip"
+    zpath = OUT / "RUSSIA_A2G_WEAPON_ROLES.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
         zf.write(out_art, "_SPEC_ART_ONE.big")

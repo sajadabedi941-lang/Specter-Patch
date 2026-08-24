@@ -1,0 +1,16 @@
+UAE PlayerTemplate parse fix (DATA-only)
+
+Root cause: unsupported ControlBarScheme field + SCIENCE_UAE_* CommandSets
+inside FactionUAE (same class of bug as Saudi).
+
+Fix: rewrite FactionUAE as field-for-field clone of working FactionPakistan
+with only identity fields changed; reuse Pakistan science/shortcut names;
+remove ControlBarScheme.
+
+ZIP: SPECTER_MASTER_DATA_UAE_PT_FIX.zip
+Contents: _SPEC_DATA_ONE.big only
+
+_SPEC_DATA_ONE.big sha256=0c30d69a6a3b3584335abccdc39c2598ae28de18ff198494b45d1e60bc6ba5e8
+_SPEC_ART_ONE.big sha256=74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+
+Download: https://litter.catbox.moe/1nsrwd.zip

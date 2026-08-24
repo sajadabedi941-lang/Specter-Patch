@@ -1,0 +1,12 @@
+SPECTER DATA — Egypt scope restore (DATA only)
+
+Playable faction scope restored to Iran, Israel, Iraq, North Korea, USA, Russia, China, Egypt only.
+
+Download: https://gofile.io/d/8fp6QChR
+
+ZIP root contains only: _SPEC_DATA_ONE.big
+ART not included (unchanged).
+
+India_CommandCenter: did not exist pre-Egypt; removed (was accidental Egypt-merge addition).
+Unrelated country/framework files removed: 1421
+Egypt + Russia WO fixes preserved.

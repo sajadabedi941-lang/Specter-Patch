@@ -1,0 +1,27 @@
+SPECTER_MASTER_DATA_EGYPT_CC_PURE_IRAQ_CLONE.zip
+
+Download: https://gofile.io/d/2WKt350B
+
+STRATEGY (not another encoding pass):
+1) Egypt_CommandCenter is a PURE byte-clone of the CURRENT WORKING
+   Iraq_CommandCenter from this DATA BIG (all modules kept identical).
+2) Only identity/art changes:
+   - Object Egypt_CommandCenter
+   - Side Egypt
+   - CommandSet Egypt_CommandCenterCommandSet
+   - DisplayName OBJECT:Egypt_CommandCenter
+   - Model/Anim Irq_Command -> US_Command (avoid historical irq_comndcntr / Iraq art crash refs)
+3) Binary-search isolation: neutralized (comment stubs) all 31 Egyptian Armed
+   Forces INIs that load BEFORE Egypt_CommandCenter alphabetically, so a prior
+   file cannot poison the parser and get reported on Object Egypt_CommandCenter.
+4) PlayerTemplate StartingBuilding -> Egypt_CommandCenter (Worker still StartingUnit0).
+
+Defs before/after: 1 Object Egypt_CommandCenter
+Iraq specials retained structurally (proven parse on Iraq).
+Russia WO untouched.
+
+CC SHA before-pack == after-reextract: b3271859bfe4602f94337add2723e532f5668b0d0002c47fc6c3efafa2decafc
+DATA SHA256: 46b1245d94d2634a4bbd1851b2f52c1002ced71f142c6c0868dc943b64396f5f
+ZIP  SHA256: 326f7a523cb7555d5c4640180976db8b67503a840647670a7475fd357d117a20
+
+Install: replace only _SPEC_DATA_ONE.big; keep ART.

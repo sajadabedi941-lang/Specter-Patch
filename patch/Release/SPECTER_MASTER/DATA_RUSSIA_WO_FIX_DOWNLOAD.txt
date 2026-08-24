@@ -1,0 +1,24 @@
+SPECTER_MASTER_DATA_RUSSIA_WO_FIX.zip
+
+Download: https://gofile.io/d/fFGs1X0n
+
+ZIP root (exact):
+  _SPEC_DATA_ONE.big
+
+Fix: Restored pre-Egypt vendor Russia_WeaponObjects.ini (Russia was not supposed
+to change for Egypt), then ASCII-normalized Cyrillic 9М317 tokens to 9M317 so
+Locomotor/Weapon templates resolve. Object 9M317_MissileObject kept intact.
+
+_ART_ONE.big: unchanged — keep your current master ART file.
+
+DATA SHA256: 8a11b85dea851257d16da76d1a421164ca2cc5db072687ae59904deb3d7d1f37
+ZIP  SHA256: 990b57d0a5fa722e493a65562ebe4dff0ef06f61753dfdc67efa0dc7733e4258
+WO   SHA256: 949860f47a5341c1a089c309767b445c0fa121c9fc4b3f610a6ae14dd15695af
+
+Install:
+1. Download ZIP → extract _SPEC_DATA_ONE.big
+2. Replace only _SPEC_DATA_ONE.big
+3. Keep existing _SPEC_ART_ONE.big
+4. Launch
+
+Factions preserved: Iran, Israel, Iraq, Russia, China, USA, North Korea, Egypt

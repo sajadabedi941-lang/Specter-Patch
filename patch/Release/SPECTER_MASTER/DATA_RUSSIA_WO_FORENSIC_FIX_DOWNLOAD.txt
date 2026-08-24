@@ -1,0 +1,40 @@
+SPECTER_MASTER_DATA_RUSSIA_WO_FORENSIC_FIX.zip
+
+Download: https://gofile.io/d/niINTyBB
+
+ZIP root (exact):
+  _SPEC_DATA_ONE.big
+
+ROOT CAUSE (forensic, from the shipped broken BIG — not workspace guesswork):
+The previous “fix” ASCII-normalized Cyrillic М→M inside Russia_WeaponObjects.ini
+(Locomotor = SET_NORMAL 9M317MissileLocomotor / DisplayName OBJECT:9M317), but
+Locomotor.ini (stock, unchanged) still defines only:
+  Locomotor 9М317MissileLocomotor
+  Locomotor 9М317M3MissileLocomotor
+(with Cyrillic М). The Object therefore failed while resolving its LocomotorSet,
+reported at Object 9M317_MissileObject.
+
+FIX:
+Restored Russia_WeaponObjects.ini BYTE-FOR-BYTE from the actual pre-Egypt
+_SPEC_DATA_ONE.big (vendor archive before Egypt merge).
+Also restored AirDefense/9K317.ini from the same pre-Egypt BIG so weapon
+template names again match Cyrillic Weapon.ini entries (4x_MRSAM_9М317).
+
+Verified by re-extracting the NEWLY rebuilt BIG:
+  WO SHA256 before pack == after re-extract
+  = 2d5edd80683b8a62b3e81d881874f3566f65fdadf543d299f8738f0c31fa0110
+  Exactly ONE Russia_WeaponObjects.ini entry at the canonical path.
+  Egypt + Iran/Israel/Iraq/Russia/China/USA/North Korea still present.
+
+_ART_ONE.big: unchanged — keep your current master ART file.
+
+DATA SHA256: 159b6d41bb354f12264680d996f5ccc96b329077e9a5b68bd3ed639a1129c52a
+ZIP  SHA256: 62c7142a08e1db7db83127586b12bba9932d775a4dd97295344f9413db2a1c1e
+
+Install:
+1. Download ZIP → extract _SPEC_DATA_ONE.big
+2. Replace only _SPEC_DATA_ONE.big
+3. Keep existing _SPEC_ART_ONE.big
+4. Launch
+
+Factions preserved: Iran, Israel, Iraq, Russia, China, USA, North Korea, Egypt

@@ -1,0 +1,32 @@
+SPECTER DATA — Pakistan production-system audit + War Factory chain fix
+
+WAR FACTORY ROOT CAUSE (same class as Airfield):
+  Pakistan_WarFactoryCommandSet + vehicle UNIT_BUILD CommandButtons lived only in
+  unloaded helper files CommandSet_Pakistan.ini / CommandButton_Pakistan.ini.
+  ControlBar loads Data\INI\CommandSet.ini then Data\INI\CommandButton.ini only.
+  Prior fix already registered WarFactory in MAIN; this pass verifies that chain
+  and promotes ALL remaining Pakistan production CommandSets/Buttons the same way.
+
+THIS PASS:
+  - Verified Pakistan_WarFactory_T / Pakistan_WarFactoryCommandSet / Irq_WarFactory
+  - Promoted HELPER-ONLY CommandSets into active CommandSet.ini:
+      Barracks, SupplyCenter, MilitaryHQ, MIC(+2/3), PowerPlant, Radar, Abbas
+  - Promoted HELPER-ONLY production CommandButtons into active CommandButton.ini:
+      Barracks infantry + Worker + EliteSSG + Alhussaien
+  - Removed undefined Upgrade_Specter_Tier1/2 CommandSetUpgrade from Pakistan_MIC
+  - Left Airfield / Dozer / CC / WarFactory MAIN registrations intact
+  - JF-17 remains disabled
+  - Egypt byte-unchanged (92 Egypt/Egyptian entries hash-checked)
+  - No Iran/Israel/Iraq/NK/USA/Russia/China object changes
+
+War Factory identity:
+  Construct button: Command_ConstructPakistan_WarFactory_T
+  Object:           Pakistan_WarFactory_T
+  INI:              Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+  CommandSet:       Pakistan_WarFactoryCommandSet (CommandSet.ini)
+  Model:            Irq_WarFactory
+
+Download: https://gofile.io/d/nFEcUIrw
+ZIP root: _SPEC_DATA_ONE.big only
+sha256: 364c41293d5dde0bc07f7718588e2cdeb5e9c4205f7c8f1a9df1b068d1492a0f
+ART unchanged; Egypt untouched

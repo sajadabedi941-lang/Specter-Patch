@@ -1,0 +1,40 @@
+STRING MANAGER FIX = PASS
+
+Root cause = Clone append_csf_label() wrote CSF RTS length as BYTE count (len(xored)) instead of UTF-16 CHARACTER count, corrupting Data\English\generals.csf after the first appended label. Header claimed 8092 labels; parser failed after 8081 with 1550 trailing garbage bytes → FATAL String Manager Failed to initialize properly.
+
+Active string file = Data\English\generals.csf
+Active BIG = _SPEC_DATA_ONE.big
+
+Encoding BEFORE = CSF binary magic " FSC" (LE header, UTF-16LE XOR-0xFF payloads); CORRUPT (nlabels=8092 parsed=8081 trailing=1550)
+Encoding AFTER = CSF binary magic " FSC" (LE header, UTF-16LE XOR-0xFF payloads); CLEAN (nlabels=8092 parsed=8092 trailing=0)
+Expected working encoding = CSF binary magic " FSC" (LE header, UTF-16LE XOR-0xFF payloads)
+
+Malformed blocks found = YES before / NO after
+Duplicate keys found = 0
+Unterminated quotes found = 0 (binary CSF) / parse errors after = 0
+Merge markers found = 0
+Unexpected BOM found = 0
+
+FactionSaudiArabia string resolves = YES
+FactionUAE string resolves = YES
+FactionIndia string resolves = YES
+FactionSyria string resolves = YES
+
+Pakistan strings preserved = YES
+Existing Specter strings preserved = YES
+
+Gameplay INIs changed = NO
+PlayerTemplate changed = NO
+CommandSet changed = NO
+CommandButton changed = NO
+ART changed = NO
+
+Files changed:
+  Data\English\generals.csf   (inside _SPEC_DATA_ONE.big only)
+
+before_sha=ee925c57ed69ae2fd7b71799d312341e0f07e8f79f2a01ee239e1664a6c51e8c
+after_sha=abd7a7731a8c9351a5a7275b15c67f31693bec1dc6597f8eb790c143a8f6b209
+csf_before_sha=975000b224dcc95c645cbe87208f1ba61a7bff73e960dd3c2ce3e65f6667fa27
+csf_after_sha=c1a28f44b8d46898489657ef29f626c9f9a0ede23bbd20a5be29f1bd308ea60e
+csf_baseline_preclone_sha=f6c1c4aafeeb0822acc4259b78af8c14f0f2807448a702c857cd885ac986c564
+zip_sha=b8158f4ab6f1f7aab5f62f0d1e0c13d54e1f88685a38ff4a572431abd7e722b9

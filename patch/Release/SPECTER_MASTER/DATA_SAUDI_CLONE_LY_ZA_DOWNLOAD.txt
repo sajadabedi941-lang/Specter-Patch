@@ -1,0 +1,11 @@
+Saudi Arabia → Libya / South Africa full independent playable clones
+(DATA-only; ART unchanged)
+
+Template: CURRENT Saudi Arabia (FactionSaudiArabia)
+Science: REUSES SCIENCE_Pakistan_CommandSetRank* + SpecialPowerShortcutPakistanSystem
+(no invented country Sciences / PurchaseScience buttons)
+
+DATA sha256 = 0413e349f1cabe322f8da425f2665c74940c0178dd87010c32b20a424b53e99e
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = a757eb784f6162110dcf09456563561291e17249c1c2990ac4c3b40b5e0d72a3
+DOWNLOAD = https://litter.catbox.moe/m6nd1g.zip

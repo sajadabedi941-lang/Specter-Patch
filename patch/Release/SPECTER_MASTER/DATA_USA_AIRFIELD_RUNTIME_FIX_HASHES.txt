@@ -1,0 +1,47 @@
+USA 16-SLOT AIRFIELD RUNTIME FIX = PASS
+
+Active USA Dozer = AmericaVehicleDozer
+Active Dozer CommandSet = AmericaDozerCommandSet
+
+Airfield slot = 13 AND 18
+Active Airfield ConstructButton = Command_ConstructAmericaAirfield_T (slot 13), Command_ConstructAmericaAirfield (slot 18)
+
+BEFORE target Object =
+  Command_ConstructAmericaAirfield   -> AmericaAirfield
+  Command_ConstructAmericaAirfield_T -> AmericaAirfield_T   << ACTIVE OLD PATH (slot 13)
+
+AFTER target Object =
+  Command_ConstructAmericaAirfield   -> America_LargeAirBase
+  Command_ConstructAmericaAirfield_T -> America_LargeAirBase
+
+Expected AFTER:
+America_LargeAirBase
+
+America_LargeAirBase exists = YES
+Primary W3D = TheAirPort.W3D
+Capacity = 16
+NumRows = 4
+NumCols = 4
+
+Old USA Airfield still constructed by Dozer = NO
+Expected = NO
+
+USA fighter roster preserved = YES
+USA HeavyAirBase preserved = YES
+Patriot-slot HeavyAirBase preserved = YES
+
+Pakistan changed = NO
+Other factions changed = NO
+ART changed = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\CommandButton.ini
+- Data\INI\CommandSet.ini
+
+DATA sha256 = 575d9010b7ab138db8592ac1ba85faad3ec0f107497cbd8acb86cfc2890f452f
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = b0224addb85374c6fcbdb37b9cd8f6b15ca1e1c689f1f91fe6e44a2b63b7ac9e
+ZIP path    = patch/Release/SPECTER_MASTER_DATA_USA_AIRFIELD_RUNTIME_FIX.zip
+ZIP size    = 306438908
+
+DOWNLOAD = https://litter.catbox.moe/aean1a.zip

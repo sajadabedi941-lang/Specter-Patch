@@ -1,0 +1,26 @@
+SPECTER DATA SCOPE RESTORE (Egypt-only addition)
+===============================================
+
+Playable faction scope restored to Iran, Israel, Iraq, North Korea, USA, Russia, China, Egypt only.
+
+_SPEC_DATA_ONE.big
+  size:   349962486
+  sha256: b082b62e7d6a950f9568b9b514fdee6be65bc09c27eafa1dc46f60c14a493cfc
+  entries: 1506
+
+ZIP: SPECTER_MASTER_DATA_EGYPT_SCOPE_RESTORE.zip
+  size:   304837320
+  sha256: cb5e2345ce2f5e2496905f452b96c63d0d69b4dc344baae4d56c0b31db70952a
+  contents: _SPEC_DATA_ONE.big only (root)
+
+India_CommandCenter:
+  - Did NOT exist in pre-Egypt BIG
+  - Was introduced during Egypt merge (72 India files)
+  - REMOVED (not restored)
+
+Unrelated files removed from current-vs-pre merge: 1421
+  (includes India/Pakistan/Saudi/Turkey/Ukraine/Japan/Britain/France/Germany/UAE/Syria/Italy/Libya/Taiwan/SK/SA/Sweden/Vietnam/UN/PatchSystems + expansion junk)
+
+Egypt preserved: CC, Worker, WeaponObjects (BukM2 Cyrillic loco), CommandSets, Sciences, aircraft fixes
+Russia_WeaponObjects restored/kept byte-for-byte pre-Egypt: 2d5edd80683b8a62b3e81d881874f3566f65fdadf543d299f8738f0c31fa0110
+ART: unchanged (not rebuilt)

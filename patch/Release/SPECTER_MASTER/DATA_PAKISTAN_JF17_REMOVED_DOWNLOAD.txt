@@ -1,0 +1,11 @@
+SPECTER DATA — Pakistan JF-17 disabled (no real JF-17 W3D)
+
+Egypt untouched. No other country added.
+
+- Removed Pakistan_JF17 / JF17BlockIII (were incorrectly using US_F16D_B52.W3D)
+- Pakistan_F16Blk52 kept as F-16 (US_F16CJ_blk52.W3D) — OK
+- Pakistan_IL-76 kept; exact model: Iraq_IL-76.W3D (present in _SPEC_ART_ONE.big)
+
+Download: https://gofile.io/d/1SCZBYE3
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged

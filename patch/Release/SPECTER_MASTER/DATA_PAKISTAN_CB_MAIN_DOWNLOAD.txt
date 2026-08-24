@@ -1,0 +1,11 @@
+SPECTER DATA — Pakistan registration parity with Iran/Russia
+
+FactionPakistan remains in Data\INI\PlayerTemplate.ini (same file as Iran/USA/Russia).
+Duplicate removed from PlayerTemplate_SpecterPatch.ini.
+ControlBarScheme Pakistan8x6 moved into Data\INI\ControlBarScheme.ini (same file as Iran/Russia).
+Side Pakistan preserved. Egypt untouched. DATA-only.
+
+Download: https://gofile.io/d/PoNuplJt
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged
+sha256: 9b0e7a4dc3ff1db82e6ddb87f8bcc610e6a8a4b6cecb82a9cbf8a5cb413be5c8

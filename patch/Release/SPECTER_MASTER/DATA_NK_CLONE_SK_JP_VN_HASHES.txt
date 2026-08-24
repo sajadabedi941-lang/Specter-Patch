@@ -1,0 +1,87 @@
+REPORT SOUTHKOREA:
+PlayerTemplate = FactionSouthKorea
+Side = SouthKorea
+DisplayName = INI:FactionSouthKorea
+ControlBar = SouthKorea8x6
+CommandCenter = SouthKorea_CommandCenter
+Dozer = SouthKorea_VT72B
+Dozer CommandSet = SouthKorea_VT72BCommandSet
+WarFactory = SouthKorea_WarFactory
+Barracks = Iraq_Barracks (shared; same as current North Korea Barracks_SAFE)
+LargeAirBase = SouthKorea_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = SouthKorea_HeavyAirBase
+Chinese-derived Air Defense = SouthKorea_Hq9_Site
+C-RAM = SouthKorea_CRAM
+PurchaseScience validation = REUSES SCIENCE_NorthKorea_CommandSetRank* + SpecialPowerShortcutNorthKorea
+SIDE string = SIDE:SouthKorea => Republic of Korea Armed Forces
+PLAYABLE = YES
+SOUTHKOREA CLONE = PASS
+
+REPORT JAPAN:
+PlayerTemplate = FactionJapan
+Side = Japan
+DisplayName = INI:FactionJapan
+ControlBar = Japan8x6
+CommandCenter = Japan_CommandCenter
+Dozer = Japan_VT72B
+Dozer CommandSet = Japan_VT72BCommandSet
+WarFactory = Japan_WarFactory
+Barracks = Iraq_Barracks (shared; same as current North Korea Barracks_SAFE)
+LargeAirBase = Japan_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Japan_HeavyAirBase
+Chinese-derived Air Defense = Japan_Hq9_Site
+C-RAM = Japan_CRAM
+PurchaseScience validation = REUSES SCIENCE_NorthKorea_CommandSetRank* + SpecialPowerShortcutNorthKorea
+SIDE string = SIDE:Japan => Japan Self-Defense Forces
+PLAYABLE = YES
+JAPAN CLONE = PASS
+
+REPORT VIETNAM:
+PlayerTemplate = FactionVietnam
+Side = Vietnam
+DisplayName = INI:FactionVietnam
+ControlBar = Vietnam8x6
+CommandCenter = Vietnam_CommandCenter
+Dozer = Vietnam_VT72B
+Dozer CommandSet = Vietnam_VT72BCommandSet
+WarFactory = Vietnam_WarFactory
+Barracks = Iraq_Barracks (shared; same as current North Korea Barracks_SAFE)
+LargeAirBase = Vietnam_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Vietnam_HeavyAirBase
+Chinese-derived Air Defense = Vietnam_Hq9_Site
+C-RAM = Vietnam_CRAM
+PurchaseScience validation = REUSES SCIENCE_NorthKorea_CommandSetRank* + SpecialPowerShortcutNorthKorea
+SIDE string = SIDE:Vietnam => Vietnam People's Armed Forces
+PLAYABLE = YES
+VIETNAM CLONE = PASS
+
+MISSING SIDE STRINGS = 0
+UNRESOLVED PURCHASESCIENCE BUTTONS = 0
+UNRESOLVED SCIENCES = 0
+UNRESOLVED COMMAND BUTTONS = 0
+UNRESOLVED COMMANDSETS = 0
+
+NORTH KOREA FUNCTIONALLY CHANGED = NO
+PAKISTAN CHANGED = NO
+NATO CHANGED = NO
+OTHER FACTIONS CHANGED = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\PlayerTemplate.ini
+- Data\INI\ControlBarScheme.ini
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\English\generals.csf
+- Data\INI\Object\Specter\South Korean Armed Forces\* (cloned)
+- Data\INI\Object\Specter\Japan Self-Defense Forces\* (cloned)
+- Data\INI\Object\Specter\Vietnam People's Armed Forces\* (cloned)
+
+DATA sha256 = fe4506323af36d0b7678a9b435e1ae684da7ba9830932c2561123ab866f724b9
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = b4acb8d619c9c28e15fb8ecf34f2a45b9465b37752a1dedfb864d6430c503dcc
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_NK_CLONE_SK_JP_VN.zip
+ZIP size    = 306436541
+DOWNLOAD = https://litter.catbox.moe/5c33xf.zip

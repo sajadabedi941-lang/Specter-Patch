@@ -1,0 +1,11 @@
+SPECTER DATA — North Korea SIDE string fix only
+
+Egypt was not modified. Only the North Korea display string was fixed.
+
+Download: https://gofile.io/d/HbkuYr5Y
+
+ZIP root contains only: _SPEC_DATA_ONE.big
+ART unchanged / not included.
+
+SIDE:NorthKorea = North Korean Armed Forces
+(from pre-Egypt working CSF)

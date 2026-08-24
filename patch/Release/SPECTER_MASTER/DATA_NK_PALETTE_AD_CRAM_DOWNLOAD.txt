@@ -1,0 +1,11 @@
+North Korea builder palette: Clear Mines → HQ-9 Site, Stop → C-RAM
+(DATA-only; ART unchanged)
+
+Slot 13 Stop -> NorthKorea_CRAM (US_CRAM; donor Pakistan_CRAM)
+Slot 14 Clear Mines -> NorthKorea_Hq9_Site (donor China_Hq9_Site)
+Stop preserved on slot 15. Large/Heavy airbases unchanged.
+
+DATA sha256 = b1a21d339fe97721f34597bf83c2d2d55fae760a8019b0189a308baffdaf75e8
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = 4e0e32f4458a1d819b936ec7210243040c4a9feeb103e8de220b04b2fae24d22
+DOWNLOAD = https://litter.catbox.moe/tvl4fk.zip

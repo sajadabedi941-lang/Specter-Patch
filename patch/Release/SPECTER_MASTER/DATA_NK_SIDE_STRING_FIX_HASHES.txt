@@ -1,0 +1,16 @@
+Egypt was not modified. Only the North Korea display string was fixed.
+
+_SPEC_DATA_ONE.big
+  sha256: 607c641ce37468b794bf5844890d1e464fe2555dcfb1c17fa847d925173f44ae
+  size:   349962571
+  entries: 1506
+
+Changed file inside BIG (only):
+  Data\English\generals.csf
+  - surgically appended SIDE:NorthKorea = "North Korean Armed Forces"
+  - all prior CSF label bodies byte-preserved
+  - all Egypt BIG entries byte-identical
+
+ZIP: SPECTER_MASTER_DATA_NK_SIDE_STRING_FIX.zip
+  sha256: ef0201b9cc1a1f406504cc6b21f64ef7b5d90930036536f005545751f6d664fe
+  Download: https://gofile.io/d/HbkuYr5Y

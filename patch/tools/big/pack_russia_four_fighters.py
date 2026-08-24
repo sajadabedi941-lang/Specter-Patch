@@ -452,7 +452,11 @@ def verify_construct_create_path(
     obj_text = data[files[0].replace("/", "\\").lower()].decode("latin1")
     if "AIRCRAFT" not in obj_text or not re.search(r"BuildCost\s+=\s+\d+", obj_text):
         raise SystemExit(f"CREATE FAIL: {obj} is not a buildable aircraft")
-    weapons = re.findall(r"^\s+Weapon\s+=\s+\S+\s+(\S+)\s*$", obj_text, re.M)
+    weapons = re.findall(
+        r"^\s+Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+(\S+)\s*$",
+        obj_text,
+        re.M,
+    )
     weapon_ini = data[r"data\ini\weapon.ini"].decode("latin1")
     for wpn in weapons:
         if not re.search(rf"^Weapon {re.escape(wpn)}\s*$", weapon_ini, re.M):

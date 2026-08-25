@@ -91,7 +91,9 @@ End
 
 # Specter parses CommandSet.ini as a core file. Overlay CommandButton_*.ini is NOT
 # registered in time, so new UNIT_BUILD buttons must be declared in this same file
-# immediately before China_LargeAirBaseCommandSet (same pattern as Russia Large).
+# immediately before PLAAirfieldCommandSet (the first CommandSet that uses them).
+# Inlining only before China_LargeAirBaseCommandSet is too late: PLAAirfield is
+# earlier in CommandSet.ini and the engine dies on unknown CommandButton refs.
 # ASCII only. No UTF-8 em-dash comments.
 INLINE_BUTTONS = """CommandButton Command_ConstructChinaJetJ11B
   Command          = UNIT_BUILD
@@ -645,12 +647,28 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaBomberH20",
         "Command_ConstructChinaBomberH20A",
     ]
-    large_idx = text.find("CommandSet China_LargeAirBaseCommandSet")
-    prefix = text[:large_idx]
+    pla_idx = text.find("CommandSet PLAAirfieldCommandSet")
+    if pla_idx < 0:
+        errors.append("PLAAirfieldCommandSet not found for button-prefix check")
+        prefix = ""
+    else:
+        prefix = text[:pla_idx]
     for btn in required_btns:
         n = len(re.findall(rf"^CommandButton {re.escape(btn)}\s*$", prefix, re.M))
         if n != 1:
-            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix (count={n})")
+            errors.append(
+                f"button {btn} duplicate or missing before PLAAirfieldCommandSet (count={n})"
+            )
+    for line in pla.splitlines()[1:]:
+        m = re.match(r"^(\d+)\s*=\s*(Command_\S+)$", line.strip())
+        if not m:
+            continue
+        btn = m.group(2)
+        if btn in ("Command_SetRallyPoint", "Command_Sell"):
+            continue
+        in_prefix = bool(re.search(rf"^CommandButton {re.escape(btn)}\s*$", prefix, re.M))
+        if btn in required_btns and not in_prefix:
+            errors.append(f"PLAAirfield refs {btn} before its CommandButton is declared")
     if any(ord(ch) > 127 for ch in large + heavy + pla + INLINE_BUTTONS):
         errors.append("non-ASCII in China CommandSet region")
     keep = [
@@ -688,23 +706,68 @@ def validate_china_commandsets(text: str) -> None:
     print("PARSER CHECK PASS CommandSet.ini")
 
 
+def validate_commandset_button_refs(cs_text: str, cb_text: str) -> None:
+    """Every CommandSet slot must resolve to a CommandButton already declared."""
+    core = set(re.findall(r"^CommandButton (\S+)\s*$", cb_text, re.M))
+    errors = []
+    for name in (
+        "PLAAirfieldCommandSet",
+        "China_LargeAirBaseCommandSet",
+        "China_HeavyAirBaseCommandSet",
+        "PLADozerCommandSet",
+    ):
+        idx = cs_text.find(f"CommandSet {name}")
+        if idx < 0:
+            errors.append(f"{name} missing")
+            continue
+        declared = core | set(re.findall(r"^CommandButton (\S+)\s*$", cs_text[:idx], re.M))
+        block = grab_block(cs_text, name)
+        for line in block.splitlines():
+            m = re.match(r"^\s*\d+\s*=\s*(Command_\S+)\s*$", line)
+            if not m:
+                continue
+            btn = m.group(1)
+            if btn not in declared:
+                errors.append(f"{name} refs unknown CommandButton {btn}")
+    for name in ("Command_ConstructChinaAirfield", "Command_ConstructChina_HeavyAirBase"):
+        if name not in core:
+            errors.append(f"airbase construct button missing from CommandButton.ini: {name}")
+    if errors:
+        raise SystemExit("PARSER CHECK FAIL CommandButton refs\n" + "\n".join(errors))
+    print("PARSER CHECK PASS CommandButton refs")
+
+
 def ensure_inline_buttons(text: str) -> str:
-    needle = "CommandSet China_LargeAirBaseCommandSet"
+    """Declare overlay UNIT_BUILD buttons before the first CommandSet that uses them.
+
+    PLAAirfieldCommandSet is earlier in CommandSet.ini than China_LargeAirBaseCommandSet.
+    Buttons left next to Large are unknown when the engine parses PLAAirfield.
+    """
+    needle = "CommandSet PLAAirfieldCommandSet"
     idx = text.find(needle)
     if idx < 0:
-        raise SystemExit("China_LargeAirBaseCommandSet not found in packed CommandSet.ini")
-    missing = []
+        raise SystemExit("PLAAirfieldCommandSet not found in packed CommandSet.ini")
     for m in re.finditer(
         r"CommandButton (\S+)\s*\n.*?^End\s*$",
         INLINE_BUTTONS,
         re.M | re.S,
     ):
         btn = m.group(1)
-        if not re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M):
-            missing.append(m.group(0).rstrip() + "\n\n")
-    if missing:
-        text = text[:idx] + "".join(missing) + text[idx:]
-        print(f"Inlined {len(missing)} China construct CommandButtons before Large AirBase")
+        text, n = re.subn(
+            rf"CommandButton {re.escape(btn)}\s*\n.*?^End\s*\n?",
+            "",
+            text,
+            count=1,
+            flags=re.M | re.S,
+        )
+        if n:
+            print(f"Relocated CommandButton {btn} before PLAAirfieldCommandSet")
+    idx = text.find(needle)
+    if idx < 0:
+        raise SystemExit("PLAAirfieldCommandSet lost while relocating CommandButtons")
+    block = INLINE_BUTTONS.rstrip() + "\n\n"
+    text = text[:idx] + block + text[idx:]
+    print("Inlined China construct CommandButtons before PLAAirfieldCommandSet")
     return text
 
 
@@ -1098,7 +1161,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airforce_cleanup"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_pla_commandset_fix"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -1390,6 +1453,7 @@ def main() -> int:
     if "ObjectCreationList OCL_ChinaY20AEWTargetedSARScan" not in ocl:
         raise SystemExit("Y-20 AEW SAR OCL missing from ObjectCreationList.ini")
     print("CLEANUP CHECK PASS")
+    validate_commandset_button_refs(cs, cb)
 
     for req in (
         "art\\w3d\\h6k.w3d",
@@ -1435,6 +1499,7 @@ def main() -> int:
                 "added_data=" + repr(added_data),
                 "added_art=" + repr(added_art),
                 NEW_LARGE_COMMANDSET,
+                NEW_PLA_AIRFIELD_COMMANDSET,
                 NEW_COMMANDSET,
                 "PARSER CHECK PASS",
                 "CSF CHECK PASS",
@@ -1450,6 +1515,7 @@ def main() -> int:
                 "J-31 SCALE 1.15 visual only",
                 "FIGHTER/HEAVY AIRBASE construct buttons: pla_airfield + China CSF",
                 "RUSSIA BASELINE UNTOUCHED (ChinaAirfieldCommandSet kept)",
+                "COMMANDSET PARSE FIX: overlay UNIT_BUILD buttons inlined before PLAAirfieldCommandSet",
             ]
         )
         + "\n"

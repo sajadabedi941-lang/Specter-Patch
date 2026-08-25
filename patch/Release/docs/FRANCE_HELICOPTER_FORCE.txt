@@ -1,0 +1,43 @@
+SPECTER - France Helicopter Force
+=================================
+
+Install: copy these files into the Specter Data folder (replace existing):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Keep EnglishZH.big and AudioZH.big unchanged.
+
+Fighter Airbase (France_LargeAirBase / FranceAirfield):
+  1 Rafale C F4
+  2 Rafale B
+  3 Rafale M
+  4 Mirage 2000
+  5 Mirage 2000D
+  6 Mirage F1CT
+  7 Mirage IIIE
+  8 Mirage 5
+
+Heavy Airbase (France_HeavyAirBase):
+  1 C-130 Hercules
+  2 E-3 AWACS
+
+Helicopter Base (France_HelicopterBase):
+  1 Tiger HAD     LSFFRTiger.W3D     cannon + ATGM + rockets
+  2 NH90 Caiman   LSFFRNH90.W3D      transport / support
+  3 Caracal EC725 LSFRUMi171.W3D     troop transport (donor mesh)
+
+Skipped:
+  Naval/utility extra (Lynx/Dauphin/Panther/EC725 mesh not in DONOR_ART).
+  No stealth bomber in this pass (no French stealth-bomber mesh named).
+
+Dozer: slot 12 is Helicopter Base (replaces leftover America LGM-30).
+
+Each helicopter CommandButton uses a unique SPEC_France* portrait.
+Caracal gameplay name is Caracal EC725. Appearance donor is Mi-171.
+
+Parser: overlay INI LF/End check pass. CommandButton refs pass. CSF pass.
+
+Hashes:
+  DATA sha256 572841c8f2c4ede9dca5f7b6bf8dbe092974ef8ff67dd281f8250ab508919eb7
+  ART  sha256 82bb663fc45449962b6c5fd7d636601566278bb5c06e66e17aab55a2f51d6bce
+  ZIP  sha256 ca5a70c799fcc06b74a3b1158748c8f2e2e7030206e9d5ef7315c0fd059f403d

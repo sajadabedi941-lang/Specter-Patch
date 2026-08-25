@@ -841,6 +841,113 @@ End
     )
 
     w(
+        ROT / "FranceHelicopterCaracal.ini",
+        """; SPECTER - France Caracal EC725. Appearance donor LSFRUMi171.W3D (no EC725 mesh).
+; Gameplay name is Caracal EC725. Heavy troop transport / special operations.
+Object FranceHelicopterCaracal
+Scale = 0.95
+
+  SelectPortrait         = SPEC_FranceCaracal
+  ButtonImage            = SPEC_FranceCaracal
+
+  Draw = W3DModelDraw ModuleTag_Caracal_01
+    ExtraPublicBone = RopeStart
+    ExtraPublicBone = RopeEnd
+    DefaultConditionState
+      Model = LSFRUMi171
+      Animation = LSFRUMI171.LSFRUMI171
+      AnimationMode = LOOP
+    End
+    ConditionState = REALLYDAMAGED
+      Model = LSFRUMi171d
+      Animation = LSFRUMI171D.LSFRUMI171D
+      AnimationMode = LOOP
+    End
+    ConditionState = RUBBLE
+      Model = LSFRUMi171k
+    End
+    OkToChangeModelColor = Yes
+  End
+
+  DisplayName = OBJECT:FranceHelicopterCaracal
+  EditorSorting = VEHICLE
+  Side = France
+  TransportSlotCount = 0
+  VisionRange = 320.0
+  ShroudClearingRange = 200.0
+  BuildCost = 2000
+  BuildTime = 15.0
+  ExperienceValue = 50 50 50 50
+  IsTrainable = No
+  CommandSet = AmericaVehicleChinookCommandSet
+  ArmorSet
+    Conditions = None
+    Armor = ChinookArmor
+    DamageFX = None
+  End
+
+  VoiceSelect = ChinookVoiceSelect
+  VoiceMove = ChinookVoiceMove
+  VoiceAttack = ChinookVoiceAttack
+  SoundAmbient = Ch47AmbientLoop
+  SoundAmbientRubble = NoSound
+  SoundEnter = HumveeEnter
+  SoundExit = HumveeExit
+  UnitSpecificSounds
+    VoiceCreate = ChinookVoiceCreate
+    VoiceUnload = ChinookVoiceUnload
+    VoiceCombatDrop = ChinookVoiceCombatDrop
+    VoiceGarrison = ChinookVoiceMove
+  End
+
+  RadarPriority = UNIT
+  KindOf = PRELOAD CAN_CAST_REFLECTIONS SELECTABLE VEHICLE TRANSPORT AIRCRAFT SCORE PRODUCED_AT_HELIPAD
+  Body = ActiveBody ModuleTag_Caracal_03
+    MaxHealth = 420.0
+    InitialHealth = 420.0
+  End
+  Behavior = FXListDie ModuleTag_Caracal_05
+    DeathFX = FX_HelicopterStartDeath
+  End
+  Behavior = TransitionDamageFX ModuleTag_Caracal_06
+    ReallyDamagedParticleSystem1 = Bone:Smoke RandomBone:Yes PSys:SmokeSmallContinuousDown
+    ReallyDamagedFXList1 = Loc: X:0 Y:0 Z:0 FXList:FX_ComancheDamageTransition
+  End
+  Behavior = ChinookAIUpdate ModuleTag_Caracal_07
+    NumRopes = 2
+    PerRopeDelayMin = 900
+    PerRopeDelayMax = 1500
+    RopeWidth = 0.5
+    RopeColor = R:0 G:0 B:0
+    RopeWobbleLen = 10
+    RopeWobbleAmplitude = 0.25
+    RopeWobbleRate = 180
+    RopeFinalHeight = 10
+    RappelSpeed = 30
+    MinDropHeight = 40
+  End
+  Locomotor = SET_NORMAL ChinookLocomotor
+  Locomotor = SET_TAXIING BasicHelicopterTaxiLocomotor
+  Behavior = TransportContain ModuleTag_Caracal_08
+    Slots = 12
+    DamagePercentToUnits = 100%
+    AllowInsideKindOf = INFANTRY VEHICLE
+    ForbidInsideKindOf = AIRCRAFT HUGE_VEHICLE
+    ExitDelay = 100
+    NumberOfExitPaths = 1
+  End
+  Geometry = Box
+  GeometryIsSmall = No
+  GeometryMajorRadius = 22.0
+  GeometryMinorRadius = 9.0
+  GeometryHeight = 10.0
+  Shadow = SHADOW_VOLUME
+  ShadowSizeX = 89
+End
+""",
+    )
+
+    w(
         ROT / "FranceHelicopterTiger.ini",
         """; SPECTER - France Tiger HAD. Donor LSFFRTiger.W3D.
 Object FranceHelicopterTiger
@@ -855,12 +962,23 @@ Scale = 0.88
       Model = LSFFRTiger
       Animation = LSFFRTIGER.LSFFRTIGER
       AnimationMode = LOOP
+      WeaponFireFXBone = PRIMARY Weapon01
       WeaponLaunchBone = PRIMARY Weapon01
+      WeaponFireFXBone = SECONDARY Weapon01
+      WeaponLaunchBone = SECONDARY Weapon01
+      WeaponFireFXBone = TERTIARY Weapon01
+      WeaponLaunchBone = TERTIARY Weapon01
     End
     ConditionState = REALLYDAMAGED
       Model = LSFFRTigerd
       Animation = LSFFRTIGERD.LSFFRTIGERD
       AnimationMode = LOOP
+      WeaponFireFXBone = PRIMARY Weapon01
+      WeaponLaunchBone = PRIMARY Weapon01
+      WeaponFireFXBone = SECONDARY Weapon01
+      WeaponLaunchBone = SECONDARY Weapon01
+      WeaponFireFXBone = TERTIARY Weapon01
+      WeaponLaunchBone = TERTIARY Weapon01
     End
     ConditionState = RUBBLE
       Model = LSFFRTigerk
@@ -879,11 +997,18 @@ Scale = 0.88
   ExperienceValue = 50 50 100 150
   ExperienceRequired = 0 100 200 400
   IsTrainable = Yes
-  CommandSet = AmericaVehicleComancheCommandSet
+  CommandSet = GenericAttackHelicopterHoverCommandSet
   WeaponSet
     Conditions = None
-    Weapon = PRIMARY France_Weapon_ATGM_Tiger
-    Weapon = SECONDARY France_Weapon_Gun_Tiger
+    Weapon = PRIMARY France_Weapon_Cannon_Tiger
+    PreferredAgainst = PRIMARY INFANTRY VEHICLE
+    AutoChooseSources = PRIMARY FROM_PLAYER FROM_SCRIPT FROM_AI
+    Weapon = SECONDARY France_Weapon_ATGM_Tiger
+    PreferredAgainst = SECONDARY VEHICLE STRUCTURE
+    AutoChooseSources = SECONDARY FROM_PLAYER FROM_SCRIPT FROM_AI
+    Weapon = TERTIARY France_Weapon_Rocket_Tiger
+    PreferredAgainst = TERTIARY INFANTRY STRUCTURE VEHICLE
+    AutoChooseSources = TERTIARY FROM_PLAYER FROM_SCRIPT FROM_AI
   End
   ArmorSet
     Conditions = None
@@ -903,7 +1028,7 @@ Scale = 0.88
   End
 
   RadarPriority = UNIT
-  KindOf = PRELOAD CAN_CAST_REFLECTIONS CAN_ATTACK SELECTABLE VEHICLE SCORE AIRCRAFT
+  KindOf = PRELOAD CAN_CAST_REFLECTIONS CAN_ATTACK SELECTABLE VEHICLE SCORE AIRCRAFT PRODUCED_AT_HELIPAD
   Body = ActiveBody ModuleTag_Tiger_02
     MaxHealth = 280.0
     InitialHealth = 280.0
@@ -915,7 +1040,15 @@ Scale = 0.88
     ReallyDamagedParticleSystem1 = Bone:Smoke RandomBone:Yes PSys:SmokeSmallContinuousDown
     ReallyDamagedFXList1 = Loc: X:0 Y:0 Z:0 FXList:FX_ComancheDamageTransition
   End
-  Behavior = HelicopterAIUpdate ModuleTag_Tiger_07
+  Behavior = JetAIUpdate ModuleTag_Tiger_07
+    OutOfAmmoDamagePerSecond = 0%
+    TakeoffDistForMaxLift = 0%
+    TakeoffPause = 500
+    MinHeight = 5
+    ParkingOffset = 3
+    NeedsRunway = No
+    KeepsParkingSpaceWhenAirborne = No
+    ReturnToBaseIdleTime = 10000
     AutoAcquireEnemiesWhenIdle = Yes
   End
   Locomotor = SET_NORMAL ComancheLocomotor

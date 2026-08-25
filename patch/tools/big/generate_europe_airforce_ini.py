@@ -12,22 +12,34 @@ ROOT = Path("/workspace/patch/Data")
 INI = ROOT / "INI"
 
 
-def aa(primary: str, secondary: str) -> str:
+def aa(primary: str, secondary: str, cannon: str) -> str:
     return wpn_set(
         [
             f"Weapon              = PRIMARY    {primary}",
-            f"Weapon              = SECONDARY  {secondary}",
             "PreferredAgainst    = PRIMARY    AIRCRAFT",
+            "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
+            f"Weapon              = SECONDARY  {secondary}",
             "PreferredAgainst    = SECONDARY  AIRCRAFT",
+            "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+            f"Weapon              = TERTIARY   {cannon}",
+            "PreferredAgainst    = TERTIARY   AIRCRAFT VEHICLE",
+            "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
         ]
     )
 
 
-def strike(primary: str, secondary: str) -> str:
+def strike(primary: str, secondary: str, cannon: str) -> str:
     return wpn_set(
         [
             f"Weapon              = PRIMARY    {primary}",
+            "PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE",
+            "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
             f"Weapon              = SECONDARY  {secondary}",
+            "PreferredAgainst    = SECONDARY  AIRCRAFT VEHICLE STRUCTURE",
+            "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+            f"Weapon              = TERTIARY   {cannon}",
+            "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+            "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
         ]
     )
 
@@ -227,7 +239,7 @@ Scale = 0.90
   BuildTime = 36.0
   ExperienceValue = 50 50 100 150
   IsTrainable = No
-  CommandSet = GenericTacticalBomberCommandSet
+  CommandSet = C17GlobalMasterCommandSet
   VoiceSelect = RaptorVoiceSelect
   VoiceMove = RaptorVoiceMove
   VoiceGuard = RaptorVoiceAirPatrol
@@ -332,8 +344,12 @@ Scale = 0.70
   CommandSet = GenericTacticalBomberCommandSet
   WeaponSet
     Conditions = None
-    Weapon = PRIMARY {wpn}
-    Weapon = SECONDARY {wpn}
+    Weapon              = PRIMARY    {wpn}
+    PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE
+    AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI
+    Weapon              = SECONDARY  {wpn}
+    PreferredAgainst    = SECONDARY  VEHICLE STRUCTURE
+    AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI
   End
   ArmorSet
     Conditions = None
@@ -672,7 +688,7 @@ def irist(name: str) -> str:
   DamageType = PENALTY
   DeathType = EXPLODED
   WeaponSpeed = 8000
-  ProjectileObject = France_MICA_Projectile
+  ProjectileObject = MeteorMissile_Object
   FireSound = RaptorJetMissileWeapon
   ProjectileDetonationFX = FX_LightAAMImpact
   RadiusDamageAffects = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
@@ -737,7 +753,7 @@ def cruise(name: str) -> str:
   WeaponSpeed = 450
   MinWeaponSpeed = 337
   FireFX = FX_MediumMissileIgnition
-  ProjectileObject = France_SCALP_Projectile
+  ProjectileObject = Kh59MK2_Object
   ProjectileDetonationFX = FX_HE_UnguidedMissileDetonation
   RadiusDamageAffects = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
   FireSound = Grad_launch
@@ -856,6 +872,7 @@ def heli_cannon(name: str) -> str:
   DelayBetweenShots = 120
   ClipSize = 20
   ClipReloadTime = 1500
+  AutoReloadsClip = Yes
   AntiAirborneVehicle = No
   AntiAirborneInfantry = Yes
   AntiGround = Yes
@@ -884,6 +901,7 @@ def heli_atgm(name: str) -> str:
   DelayBetweenShots = 1620
   ClipSize = 8
   ClipReloadTime = 6000
+  AutoReloadsClip = Yes
   ProjectileCollidesWith = STRUCTURES WALLS
   AntiAirborneVehicle = No
   AntiGround = Yes
@@ -956,16 +974,16 @@ def cs_line(slots: list[str]) -> str:
 def main() -> None:
     # --- Germany fighters ---
     g_f = [
-        ("GermanyJetTyphoonT4.ini", "GermanyJetTyphoonT4", "SPEC_GermanyTyphoonT4", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Germany_Weapon_Meteor", "Germany_Weapon_IRIST"), "F22A_AA_CommandSet", 2800, 16.0, 540, 0.95, 700.0, "Eurofighter Typhoon Tranche 4"),
-        ("GermanyJetTyphoonECR.ini", "GermanyJetTyphoonECR", "SPEC_GermanyTyphoonECR", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", strike("Germany_Weapon_Taurus", "Germany_Weapon_IRIST"), "GenericTacticalBomberCommandSet", 2900, 17.0, 530, 0.95, 640.0, "Eurofighter Typhoon ECR"),
-        ("GermanyJetTornadoIDS.ini", "GermanyJetTornadoIDS", "SPEC_GermanyTornadoIDS", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Germany_Weapon_Bomb", "Germany_Weapon_Paveway"), "GenericTacticalBomberCommandSet", 2200, 15.0, 480, 0.92, 560.0, "Tornado IDS"),
-        ("GermanyJetTornadoECR.ini", "GermanyJetTornadoECR", "SPEC_GermanyTornadoECR", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Germany_Weapon_Taurus", "Germany_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 2300, 15.5, 470, 0.92, 580.0, "Tornado ECR"),
-        ("GermanyJetF35A.ini", "GermanyJetF35A", "SPEC_GermanyF35A", "US_F35A", "US_F35A", "US_F35A", strike("Germany_Weapon_JDAM", "Germany_Weapon_AMRAAM"), "GenericTacticalBomberCommandSet", 3200, 18.0, 560, 0.92, 680.0, "F-35A"),
-        ("GermanyJetMiG29G.ini", "GermanyJetMiG29G", "SPEC_GermanyMiG29G", "LSFruMiG29", "LSFruMiG29d", "LSFruMiG29k", aa("Germany_Weapon_AMRAAM", "Germany_Weapon_AIM9"), "F22A_AA_CommandSet", 1600, 13.0, 430, 0.90, 540.0, "MiG-29G"),
-        ("GermanyJetAlphaJet.ini", "GermanyJetAlphaJet", "SPEC_GermanyAlphaJet", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Germany_Weapon_Bomb", "Germany_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 1100, 10.0, 320, 0.80, 420.0, "Alpha Jet"),
-        ("GermanyJetF4F.ini", "GermanyJetF4F", "SPEC_GermanyF4F", "JPF4", "JPF4D", "JPF4K", aa("Germany_Weapon_AMRAAM", "Germany_Weapon_AIM9"), "F22A_AA_CommandSet", 1400, 12.0, 420, 0.90, 520.0, "F-4F Phantom"),
-        ("GermanyJetTornadoADV.ini", "GermanyJetTornadoADV", "SPEC_GermanyTornadoADV", "LSFTornado", "LSFTornadod", "LSFTornadok", aa("Germany_Weapon_Meteor", "Germany_Weapon_AIM9"), "F22A_AA_CommandSet", 2100, 14.5, 460, 0.92, 600.0, "Tornado ADV"),
-        ("GermanyJetMako.ini", "GermanyJetMako", "SPEC_GermanyMako", "LSFF16", "LSFF16d", "LSFF16k", strike("Germany_Weapon_JDAM", "Germany_Weapon_IRIST"), "GenericTacticalBomberCommandSet", 1700, 13.0, 400, 0.88, 500.0, "Mako"),
+        ("GermanyJetTyphoonT4.ini", "GermanyJetTyphoonT4", "SPEC_GermanyTyphoonT4", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Germany_Weapon_Meteor", "Germany_Weapon_IRIST", "Germany_Weapon_JetCannon"), "F22A_AA_CommandSet", 2800, 16.0, 540, 0.95, 700.0, "Eurofighter Typhoon Tranche 4"),
+        ("GermanyJetTyphoonECR.ini", "GermanyJetTyphoonECR", "SPEC_GermanyTyphoonECR", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", strike("Germany_Weapon_Taurus", "Germany_Weapon_IRIST", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2900, 17.0, 530, 0.95, 640.0, "Eurofighter Typhoon ECR"),
+        ("GermanyJetTornadoIDS.ini", "GermanyJetTornadoIDS", "SPEC_GermanyTornadoIDS", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Germany_Weapon_Bomb", "Germany_Weapon_Paveway", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2200, 15.0, 480, 0.92, 560.0, "Tornado IDS"),
+        ("GermanyJetTornadoECR.ini", "GermanyJetTornadoECR", "SPEC_GermanyTornadoECR", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Germany_Weapon_Taurus", "Germany_Weapon_AIM9", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2300, 15.5, 470, 0.92, 580.0, "Tornado ECR"),
+        ("GermanyJetF35A.ini", "GermanyJetF35A", "SPEC_GermanyF35A", "US_F35A", "US_F35A", "US_F35A", strike("Germany_Weapon_JDAM", "Germany_Weapon_AMRAAM", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 3200, 18.0, 560, 0.92, 680.0, "F-35A"),
+        ("GermanyJetMiG29G.ini", "GermanyJetMiG29G", "SPEC_GermanyMiG29G", "LSFruMiG29", "LSFruMiG29d", "LSFruMiG29k", aa("Germany_Weapon_AMRAAM", "Germany_Weapon_AIM9", "Germany_Weapon_JetCannon"), "F22A_AA_CommandSet", 1600, 13.0, 430, 0.90, 540.0, "MiG-29G"),
+        ("GermanyJetAlphaJet.ini", "GermanyJetAlphaJet", "SPEC_GermanyAlphaJet", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Germany_Weapon_Bomb", "Germany_Weapon_AIM9", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1100, 10.0, 320, 0.80, 420.0, "Alpha Jet"),
+        ("GermanyJetF4F.ini", "GermanyJetF4F", "SPEC_GermanyF4F", "JPF4", "JPF4D", "JPF4K", aa("Germany_Weapon_AMRAAM", "Germany_Weapon_AIM9", "Germany_Weapon_JetCannon"), "F22A_AA_CommandSet", 1400, 12.0, 420, 0.90, 520.0, "F-4F Phantom"),
+        ("GermanyJetTornadoADV.ini", "GermanyJetTornadoADV", "SPEC_GermanyTornadoADV", "LSFTornado", "LSFTornadod", "LSFTornadok", aa("Germany_Weapon_Meteor", "Germany_Weapon_AIM9", "Germany_Weapon_JetCannon"), "F22A_AA_CommandSet", 2100, 14.5, 460, 0.92, 600.0, "Tornado ADV"),
+        ("GermanyJetMako.ini", "GermanyJetMako", "SPEC_GermanyMako", "LSFF16", "LSFF16d", "LSFF16k", strike("Germany_Weapon_JDAM", "Germany_Weapon_IRIST", "Germany_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1700, 13.0, 400, 0.88, 500.0, "Mako"),
     ]
     g_btns = []
     for spec in g_f:
@@ -998,16 +1016,16 @@ def main() -> None:
 
     # --- Italy ---
     i_f = [
-        ("ItalyJetTyphoon.ini", "ItalyJetTyphoon", "SPEC_ItalyTyphoon", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Italy_Weapon_Meteor", "Italy_Weapon_IRIST"), "F22A_AA_CommandSet", 2800, 16.0, 540, 0.95, 700.0, "Eurofighter Typhoon"),
-        ("ItalyJetF35A.ini", "ItalyJetF35A", "SPEC_ItalyF35A", "US_F35A", "US_F35A", "US_F35A", strike("Italy_Weapon_JDAM", "Italy_Weapon_AMRAAM"), "GenericTacticalBomberCommandSet", 3200, 18.0, 560, 0.92, 680.0, "F-35A"),
-        ("ItalyJetF35B.ini", "ItalyJetF35B", "SPEC_ItalyF35B", "US_F35A", "US_F35A", "US_F35A", strike("Italy_Weapon_JDAM", "Italy_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 3300, 18.5, 550, 0.92, 660.0, "F-35B"),
-        ("ItalyJetAMX.ini", "ItalyJetAMX", "SPEC_ItalyAMX", "LSFMirage5", "LSFMirage5d", "LSFMirage5k", strike("Italy_Weapon_Bomb", "Italy_Weapon_Paveway"), "GenericTacticalBomberCommandSet", 1400, 12.0, 380, 0.85, 480.0, "AMX"),
-        ("ItalyJetTornadoIDS.ini", "ItalyJetTornadoIDS", "SPEC_ItalyTornadoIDS", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Italy_Weapon_StormShadow", "Italy_Weapon_Bomb"), "GenericTacticalBomberCommandSet", 2200, 15.0, 480, 0.92, 560.0, "Tornado IDS"),
-        ("ItalyJetTornadoECR.ini", "ItalyJetTornadoECR", "SPEC_ItalyTornadoECR", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Italy_Weapon_StormShadow", "Italy_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 2300, 15.5, 470, 0.92, 580.0, "Tornado ECR"),
-        ("ItalyJetHarrierII.ini", "ItalyJetHarrierII", "SPEC_ItalyHarrierII", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", strike("Italy_Weapon_Paveway", "Italy_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 1800, 14.0, 400, 0.88, 500.0, "Harrier II"),
-        ("ItalyJetF16.ini", "ItalyJetF16", "SPEC_ItalyF16", "LSFF16", "LSFF16d", "LSFF16k", aa("Italy_Weapon_AMRAAM", "Italy_Weapon_AIM9"), "F22A_AA_CommandSet", 1900, 14.0, 440, 0.88, 560.0, "F-16"),
-        ("ItalyJetM346FA.ini", "ItalyJetM346FA", "SPEC_ItalyM346FA", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Italy_Weapon_JDAM", "Italy_Weapon_IRIST"), "GenericTacticalBomberCommandSet", 1500, 12.0, 360, 0.82, 480.0, "M-346FA"),
-        ("ItalyJetMB339.ini", "ItalyJetMB339", "SPEC_ItalyMB339", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Italy_Weapon_Bomb", "Italy_Weapon_AIM9"), "GenericTacticalBomberCommandSet", 1000, 9.5, 300, 0.78, 400.0, "MB-339"),
+        ("ItalyJetTyphoon.ini", "ItalyJetTyphoon", "SPEC_ItalyTyphoon", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Italy_Weapon_Meteor", "Italy_Weapon_IRIST", "Italy_Weapon_JetCannon"), "F22A_AA_CommandSet", 2800, 16.0, 540, 0.95, 700.0, "Eurofighter Typhoon"),
+        ("ItalyJetF35A.ini", "ItalyJetF35A", "SPEC_ItalyF35A", "US_F35A", "US_F35A", "US_F35A", strike("Italy_Weapon_JDAM", "Italy_Weapon_AMRAAM", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 3200, 18.0, 560, 0.92, 680.0, "F-35A"),
+        ("ItalyJetF35B.ini", "ItalyJetF35B", "SPEC_ItalyF35B", "US_F35A", "US_F35A", "US_F35A", strike("Italy_Weapon_JDAM", "Italy_Weapon_AIM9", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 3300, 18.5, 550, 0.92, 660.0, "F-35B"),
+        ("ItalyJetAMX.ini", "ItalyJetAMX", "SPEC_ItalyAMX", "LSFMirage5", "LSFMirage5d", "LSFMirage5k", strike("Italy_Weapon_Bomb", "Italy_Weapon_Paveway", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1400, 12.0, 380, 0.85, 480.0, "AMX"),
+        ("ItalyJetTornadoIDS.ini", "ItalyJetTornadoIDS", "SPEC_ItalyTornadoIDS", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Italy_Weapon_StormShadow", "Italy_Weapon_Bomb", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2200, 15.0, 480, 0.92, 560.0, "Tornado IDS"),
+        ("ItalyJetTornadoECR.ini", "ItalyJetTornadoECR", "SPEC_ItalyTornadoECR", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Italy_Weapon_StormShadow", "Italy_Weapon_AIM9", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2300, 15.5, 470, 0.92, 580.0, "Tornado ECR"),
+        ("ItalyJetHarrierII.ini", "ItalyJetHarrierII", "SPEC_ItalyHarrierII", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", strike("Italy_Weapon_Paveway", "Italy_Weapon_AIM9", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1800, 14.0, 400, 0.88, 500.0, "Harrier II"),
+        ("ItalyJetF16.ini", "ItalyJetF16", "SPEC_ItalyF16", "LSFF16", "LSFF16d", "LSFF16k", aa("Italy_Weapon_AMRAAM", "Italy_Weapon_AIM9", "Italy_Weapon_JetCannon"), "F22A_AA_CommandSet", 1900, 14.0, 440, 0.88, 560.0, "F-16"),
+        ("ItalyJetM346FA.ini", "ItalyJetM346FA", "SPEC_ItalyM346FA", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Italy_Weapon_JDAM", "Italy_Weapon_IRIST", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1500, 12.0, 360, 0.82, 480.0, "M-346FA"),
+        ("ItalyJetMB339.ini", "ItalyJetMB339", "SPEC_ItalyMB339", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Italy_Weapon_Bomb", "Italy_Weapon_AIM9", "Italy_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1000, 9.5, 300, 0.78, 400.0, "MB-339"),
     ]
     i_btns = []
     for spec in i_f:
@@ -1041,16 +1059,16 @@ def main() -> None:
 
     # --- UK ---
     b_f = [
-        ("BritainJetF35B.ini", "BritainJetF35B", "SPEC_BritainF35B", "US_F35A", "US_F35A", "US_F35A", strike("Britain_Weapon_Paveway", "Britain_Weapon_AMRAAM"), "GenericTacticalBomberCommandSet", 3300, 18.5, 560, 0.92, 680.0, "F-35B"),
-        ("BritainJetTyphoonFGR4.ini", "BritainJetTyphoonFGR4", "SPEC_BritainTyphoonFGR4", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", strike("Britain_Weapon_Meteor", "Britain_Weapon_Brimstone"), "GenericTacticalBomberCommandSet", 2900, 17.0, 550, 0.95, 700.0, "Eurofighter Typhoon FGR4"),
-        ("BritainJetTyphoonT3.ini", "BritainJetTyphoonT3", "SPEC_BritainTyphoonT3", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Britain_Weapon_Meteor", "Britain_Weapon_ASRAAM"), "F22A_AA_CommandSet", 2700, 16.0, 530, 0.95, 680.0, "Typhoon Tranche 3"),
-        ("BritainJetHarrierGR9.ini", "BritainJetHarrierGR9", "SPEC_BritainHarrierGR9", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", strike("Britain_Weapon_Paveway", "Britain_Weapon_Brimstone"), "GenericTacticalBomberCommandSet", 1900, 14.0, 410, 0.88, 520.0, "Harrier GR9"),
-        ("BritainJetTornadoGR4.ini", "BritainJetTornadoGR4", "SPEC_BritainTornadoGR4", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Britain_Weapon_StormShadow", "Britain_Weapon_Paveway"), "GenericTacticalBomberCommandSet", 2300, 15.5, 490, 0.92, 580.0, "Tornado GR4"),
-        ("BritainJetJaguarGR3.ini", "BritainJetJaguarGR3", "SPEC_BritainJaguarGR3", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Britain_Weapon_Bomb", "Britain_Weapon_Paveway"), "GenericTacticalBomberCommandSet", 1500, 12.5, 380, 0.86, 480.0, "Jaguar GR3"),
-        ("BritainJetSeaHarrierFA2.ini", "BritainJetSeaHarrierFA2", "SPEC_BritainSeaHarrierFA2", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM"), "F22A_AA_CommandSet", 1700, 13.5, 390, 0.88, 540.0, "Sea Harrier FA2"),
-        ("BritainJetPhantomFG1.ini", "BritainJetPhantomFG1", "SPEC_BritainPhantomFG1", "JPF4", "JPF4D", "JPF4K", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM"), "F22A_AA_CommandSet", 1500, 12.5, 430, 0.90, 530.0, "Phantom FG1"),
-        ("BritainJetLightningF6.ini", "BritainJetLightningF6", "SPEC_BritainLightningF6", "LSFMirage3", "LSFMirage3d", "LSFMirage3k", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM"), "F22A_AA_CommandSet", 1300, 11.0, 360, 0.85, 500.0, "Lightning F6"),
-        ("BritainJetHawk200.ini", "BritainJetHawk200", "SPEC_BritainHawk200", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Britain_Weapon_Bomb", "Britain_Weapon_ASRAAM"), "GenericTacticalBomberCommandSet", 1100, 10.0, 310, 0.80, 420.0, "Hawk 200"),
+        ("BritainJetF35B.ini", "BritainJetF35B", "SPEC_BritainF35B", "US_F35A", "US_F35A", "US_F35A", strike("Britain_Weapon_Paveway", "Britain_Weapon_AMRAAM", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 3300, 18.5, 560, 0.92, 680.0, "F-35B"),
+        ("BritainJetTyphoonFGR4.ini", "BritainJetTyphoonFGR4", "SPEC_BritainTyphoonFGR4", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", strike("Britain_Weapon_Meteor", "Britain_Weapon_Brimstone", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2900, 17.0, 550, 0.95, 700.0, "Eurofighter Typhoon FGR4"),
+        ("BritainJetTyphoonT3.ini", "BritainJetTyphoonT3", "SPEC_BritainTyphoonT3", "LSFEUEF2000", "LSFEUEF2000d", "LSFEUEF2000k", aa("Britain_Weapon_Meteor", "Britain_Weapon_ASRAAM", "Britain_Weapon_JetCannon"), "F22A_AA_CommandSet", 2700, 16.0, 530, 0.95, 680.0, "Typhoon Tranche 3"),
+        ("BritainJetHarrierGR9.ini", "BritainJetHarrierGR9", "SPEC_BritainHarrierGR9", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", strike("Britain_Weapon_Paveway", "Britain_Weapon_Brimstone", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1900, 14.0, 410, 0.88, 520.0, "Harrier GR9"),
+        ("BritainJetTornadoGR4.ini", "BritainJetTornadoGR4", "SPEC_BritainTornadoGR4", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Britain_Weapon_StormShadow", "Britain_Weapon_Paveway", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 2300, 15.5, 490, 0.92, 580.0, "Tornado GR4"),
+        ("BritainJetJaguarGR3.ini", "BritainJetJaguarGR3", "SPEC_BritainJaguarGR3", "LSFTornado", "LSFTornadod", "LSFTornadok", strike("Britain_Weapon_Bomb", "Britain_Weapon_Paveway", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1500, 12.5, 380, 0.86, 480.0, "Jaguar GR3"),
+        ("BritainJetSeaHarrierFA2.ini", "BritainJetSeaHarrierFA2", "SPEC_BritainSeaHarrierFA2", "LSFAV8B", "LSFAV8Bd", "LSFAV8Bk", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM", "Britain_Weapon_JetCannon"), "F22A_AA_CommandSet", 1700, 13.5, 390, 0.88, 540.0, "Sea Harrier FA2"),
+        ("BritainJetPhantomFG1.ini", "BritainJetPhantomFG1", "SPEC_BritainPhantomFG1", "JPF4", "JPF4D", "JPF4K", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM", "Britain_Weapon_JetCannon"), "F22A_AA_CommandSet", 1500, 12.5, 430, 0.90, 530.0, "Phantom FG1"),
+        ("BritainJetLightningF6.ini", "BritainJetLightningF6", "SPEC_BritainLightningF6", "LSFMirage3", "LSFMirage3d", "LSFMirage3k", aa("Britain_Weapon_AMRAAM", "Britain_Weapon_ASRAAM", "Britain_Weapon_JetCannon"), "F22A_AA_CommandSet", 1300, 11.0, 360, 0.85, 500.0, "Lightning F6"),
+        ("BritainJetHawk200.ini", "BritainJetHawk200", "SPEC_BritainHawk200", "AVHawk", "AVHawk_D", "AVHawk_D", strike("Britain_Weapon_Bomb", "Britain_Weapon_ASRAAM", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 1100, 10.0, 310, 0.80, 420.0, "Hawk 200"),
     ]
     b_btns = []
     for spec in b_f:
@@ -1062,7 +1080,7 @@ def main() -> None:
     transport("Britain", "British Armed Forces", "BritainJetC17.ini", "BritainJetC17", "SPEC_BritainC17", "IUAC17HXNew", "IUAC17HXNew", "IUAC17HXNew", "C-17", 3000, 32.0, 900, 1.10)
     awacs("Britain", "British Armed Forces", "BritainAircraftE7.ini", "BritainAircraftE7", "SPEC_BritainE7", "KVE737", "KVE737.KVE737", "E-7 Wedgetail", 4300, 1150.0)
     drone("Britain", "British Armed Forces", "BritainDroneMQ9.ini", "BritainDroneMQ9", "SPEC_BritainMQ9", "Britain_Weapon_Brimstone", "MQ-9 Reaper")
-    jet("Britain", "British Armed Forces", "BritainBomberVulcan.ini", "BritainBomberVulcan", "SPEC_BritainVulcan", "LSFUSAB52", "LSFUSAB52d", "LSFUSAB52k", strike("Britain_Weapon_CarpetBomb", "Britain_Weapon_StormShadow"), "GenericTacticalBomberCommandSet", 3800, 28.0, 900, 1.15, 500.0, "Vulcan")
+    jet("Britain", "British Armed Forces", "BritainBomberVulcan.ini", "BritainBomberVulcan", "SPEC_BritainVulcan", "LSFUSAB52", "LSFUSAB52d", "LSFUSAB52k", strike("Britain_Weapon_CarpetBomb", "Britain_Weapon_StormShadow", "Britain_Weapon_JetCannon"), "GenericTacticalBomberCommandSet", 3800, 28.0, 900, 1.15, 500.0, "Vulcan")
     b_heavy = [
         ("Command_ConstructBritainJetA400M", "BritainJetA400M", "SPEC_BritainA400M"),
         ("Command_ConstructBritainJetC17", "BritainJetC17", "SPEC_BritainC17"),

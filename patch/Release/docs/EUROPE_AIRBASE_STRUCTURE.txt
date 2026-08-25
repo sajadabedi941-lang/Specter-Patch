@@ -1,0 +1,44 @@
+SPECTER - Europe Airbase Structure Fix
+======================================
+
+Install: copy these files into the Specter Data folder (replace existing):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Keep EnglishZH.big and AudioZH.big unchanged.
+
+Nuclear/Atomic building (America LGM-30) is restored on dozer slot 12 for
+France, Germany, Italy, and the United Kingdom.
+
+No extra helicopter building. Helicopters are built from existing airbases.
+
+Fighter Airbase:
+  fighters + attack helicopters
+
+Heavy Airbase:
+  transports, AWACS, drones, bombers, remaining helicopters
+
+France Fighter: 8 jets + Tiger HAD
+France Heavy: C-130, E-3, NH90, Caracal
+
+Germany Fighter: 10 jets + Tiger UHT
+Germany Heavy: A400M, C-130J, E-3, Heron TP, NH90, CH-53, H145M
+
+Italy Fighter: 10 jets + AW249 + A129 Mangusta
+Italy Heavy: C-130J, C-27J, G550 CAEW, MQ-9, NH90, AW101, AW139
+
+UK Fighter: 10 jets + Apache AH-64E
+UK Heavy: A400M, C-17, E-7, MQ-9 Reaper, Vulcan, Chinook, Merlin, Wildcat, Puma
+
+Aircraft objects, ART, and weapons are unchanged from the Europe air-force pack.
+Russia, China, and other countries are not modified.
+
+Packer: patch/tools/big/pack_europe_airbase_structure.py
+
+Parser: overlay INI LF/End pass. CommandButton refs pass.
+China/Russia CommandSets unchanged. ZIP extract verify pass.
+
+Hashes:
+  DATA sha256 f02b790ef8db8a3592b500c7052403d79e0557a876f01dfb9dcc7f5032699177
+  ART  sha256 270bd024f1bf6f1b1a5c5d6718f56b893eac511fa1a48c0534e60cccf9cb5567
+  ZIP  sha256 1d5e73a0a2f4f50e895c4847d9c68303d8497572ec4ce47c54c28b07382894fa

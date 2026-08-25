@@ -101,3 +101,12 @@ Germany, Italy, and the United Kingdom.
 
 Packer: patch/tools/big/pack_europe_airforce.py
 Generator: patch/tools/big/generate_europe_airforce_ini.py
+
+Parser: overlay INI LF/End check pass. CommandButton refs pass. CSF pass.
+ART model W3D refs pass. France/China/Russia CommandSets unchanged.
+ZIP extract verify pass.
+
+Hashes:
+  DATA sha256 b78673b9bf241f3bcdf58b7f9c96c85338c5869a5cef2153131dc90bfaf95b4c
+  ART  sha256 270bd024f1bf6f1b1a5c5d6718f56b893eac511fa1a48c0534e60cccf9cb5567
+  ZIP  sha256 1180103b3e29ef41b28b5fd35fa813db6c68e8d6c001d28691b55b87bcdb3355

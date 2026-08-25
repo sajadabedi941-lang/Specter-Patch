@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 import sys
 import zipfile
 from pathlib import Path
@@ -276,6 +277,49 @@ OBJECT_GLOBS = [
     PATCH / "INI/Object/Specter/British Armed Forces/Airforce",
     PATCH / "INI/Object/Specter/British Armed Forces/Rotary",
 ]
+
+
+def tga_uncompressed(data: bytes) -> bytes:
+    """Convert TGA type 10 (RLE truecolor) to type 2 so make_portrait can read it."""
+    img_type = data[2]
+    if img_type == 2:
+        return data
+    if img_type != 10:
+        raise SystemExit(f"unsupported TGA type={img_type}")
+    idlen = data[0]
+    width, height = struct.unpack_from("<HH", data, 12)
+    bpp = data[16]
+    if bpp not in (24, 32):
+        raise SystemExit(f"unsupported TGA bpp={bpp}")
+    depth = bpp // 8
+    payload = data[18 + idlen :]
+    out = bytearray()
+    i = 0
+    need = width * height
+    while len(out) // depth < need:
+        packet = payload[i]
+        i += 1
+        count = (packet & 0x7F) + 1
+        if packet & 0x80:
+            pix = payload[i : i + depth]
+            i += depth
+            out.extend(pix * count)
+        else:
+            n = count * depth
+            out.extend(payload[i : i + n])
+            i += n
+    header = bytearray(data[: 18 + idlen])
+    header[2] = 2
+    return bytes(header) + bytes(out)
+
+
+def make_portrait_any(src: Path) -> bytes:
+    if src.suffix.lower() == ".tga":
+        raw = tga_uncompressed(src.read_bytes())
+        tmp = Path("/tmp") / f"portrait_{src.name}"
+        tmp.write_bytes(raw)
+        return fr.make_portrait(tmp)
+    return fr.make_portrait(src)
 
 
 def find_src(rel: str) -> Path:
@@ -743,14 +787,14 @@ def main() -> int:
     for dest_name, src_rel in PORTRAIT_SRC.items():
         try:
             src = find_src(src_rel)
-            tga = fr.make_portrait(src)
+            tga = make_portrait_any(src)
         except FileNotFoundError:
             leaf = Path(src_rel).name.lower()
             if leaf not in packed_tex:
                 raise SystemExit(f"missing portrait source {src_rel}")
             tmp = Path("/tmp") / leaf
             tmp.write_bytes(packed_tex[leaf])
-            tga = fr.make_portrait(tmp)
+            tga = make_portrait_any(tmp)
         dest = f"Art\\Textures\\{dest_name}"
         key = ch.norm_key(dest)
         if key not in art_map:

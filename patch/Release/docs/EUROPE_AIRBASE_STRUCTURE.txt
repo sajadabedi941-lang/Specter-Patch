@@ -34,3 +34,11 @@ Aircraft objects, ART, and weapons are unchanged from the Europe air-force pack.
 Russia, China, and other countries are not modified.
 
 Packer: patch/tools/big/pack_europe_airbase_structure.py
+
+Parser: overlay INI LF/End pass. CommandButton refs pass.
+China/Russia CommandSets unchanged. ZIP extract verify pass.
+
+Hashes:
+  DATA sha256 f02b790ef8db8a3592b500c7052403d79e0557a876f01dfb9dcc7f5032699177
+  ART  sha256 270bd024f1bf6f1b1a5c5d6718f56b893eac511fa1a48c0534e60cccf9cb5567
+  ZIP  sha256 1d5e73a0a2f4f50e895c4847d9c68303d8497572ec4ce47c54c28b07382894fa

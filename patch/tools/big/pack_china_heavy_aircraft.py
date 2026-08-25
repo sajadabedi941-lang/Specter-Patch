@@ -17,8 +17,10 @@ from pathlib import Path
 
 ROOT = Path("/workspace")
 DONOR = Path("/tmp/donor_china_heavy")
-BASE_DATA = Path("/tmp/china_airforce_fix/_SPEC_DATA_ONE.big")
-BASE_ART = Path("/tmp/china_airforce_fix/_SPEC_ART_ONE.big")
+BASE_DATA = Path("/tmp/china_h20/_SPEC_DATA_ONE.big")
+BASE_ART = Path("/tmp/china_h20/_SPEC_ART_ONE.big")
+# This cleanup pass is DATA-only. ART (NVH20 / H-20.dds) stays from china_h20.
+REBUILD_ART = False
 
 # All new China expansion string keys. Chunk magic MUST be " RTS" (Generals
 # fourcc). " STR" makes String Manager fail to initialize the property.
@@ -48,32 +50,40 @@ CSF_LABELS = {
     "CONTROLBAR:ToolTipChinaJetJ10B": "PLA J-10B. Precision bombs and air-to-ground missiles.",
     "OBJECT:ChinaJetJ10B": "J-10B\r\nLT-3 PGM + KD-88",
     "CONTROLBAR:ConstructChinaBomberH6K": "H-6K",
-    "CONTROLBAR:ToolTipChinaBomberH6K": "PLA H-6K bomber. CJ-10 cruise missiles and heavy bombs.",
-    "OBJECT:ChinaBomberH6K": "H-6K\r\n6x CJ-10 cruise\r\n8x bombs\r\nCarpet bombs",
+    "CONTROLBAR:ToolTipChinaBomberH6K": "PLA H-6K strategic bomber. Drops a large carpet-bomb payload in one run.",
+    "OBJECT:ChinaBomberH6K": "H-6K\r\nStrategic bomber\r\nCarpet bomb run",
     "CONTROLBAR:ConstructChinaJetY20": "Y-20",
     "CONTROLBAR:ToolTipChinaJetY20": "PLA Y-20 Kunpeng transport. Infantry and vehicle airlift.",
     "OBJECT:ChinaJetY20": "Y-20 Kunpeng\r\nTransport",
     "CONTROLBAR:ConstructChinaAircraftY20AEW": "Y-20 AEW",
-    "CONTROLBAR:ToolTipChinaAircraftY20AEW": "PLA Y-20 AEW KJ-3000. Airborne radar scan.",
-    "OBJECT:ChinaAircraftY20AEW": "Y-20 AEW\r\nSAR scan",
+    "CONTROLBAR:ToolTipChinaAircraftY20AEW": "PLA Y-20 AEW KJ-3000. Long-range airborne radar and larger SAR scan.",
+    "OBJECT:ChinaAircraftY20AEW": "Y-20 AEW\r\nLong-range radar",
     "CONTROLBAR:ConstructChinaBomberH20": "H-20",
     "CONTROLBAR:ToolTipChinaBomberH20": "PLA H-20 stealth bomber. Stand-off cruise missiles and heavy bombs.",
     "OBJECT:ChinaBomberH20": "H-20\r\nStealth flying wing\r\n6x cruise\r\n8x bombs",
+    "CONTROLBAR:ConstructChinaBomberH20A": "H-20A",
+    "CONTROLBAR:ToolTipChinaBomberH20A": "PLA H-20A stealth bomber. Single heavy 10-ton bomb.",
+    "OBJECT:ChinaBomberH20A": "H-20A\r\nStealth flying wing\r\n1x 10-ton bomb",
+    "CONTROLBAR:ConstructChinaAirfield": "Fighter Airbase",
+    "CONTROLBAR:ToolTipChinaBuildAirField": "Builds the PLA fighter airbase. Produces fighters after the airbase exists.",
+    "CONTROLBAR:ConstructChina_HeavyAirBase": "Heavy Airbase",
+    "CONTROLBAR:ToolTipChina_HeavyAirBase": "Builds the PLA heavy airbase. Produces bombers and transports.",
+    "OBJECT:China_LargeAirBase": "Fighter Airbase",
+    "OBJECT:China_HeavyAirBase": "Heavy Airbase",
 }
 
 CSF_STR_MAGIC = b" RTS"  # Generals String Manager fourcc (not " STR")
 CSF_LBL_MAGIC = b" LBL"
 
 NEW_COMMANDSET = """CommandSet China_HeavyAirBaseCommandSet
-  1  = Command_ConstructChinaAircraftKJ500
-  2  = Command_ConstructChinaJetJH7BHeavy
-  3  = Command_ConstructChinaJetJH7A2
-  4  = Command_ConstructChinaHelicopterZ18A
-  5  = Command_ConstructChinaBomberH6K
-  6  = Command_ConstructChinaJetY20
-  7  = Command_ConstructChinaAircraftY20AEW
-  8  = Command_ConstructChinaDroneCH5
-  9  = Command_ConstructChinaBomberH20
+  1  = Command_ConstructChinaJetJH7A2
+  2  = Command_ConstructChinaHelicopterZ18A
+  3  = Command_ConstructChinaBomberH6K
+  4  = Command_ConstructChinaJetY20
+  5  = Command_ConstructChinaAircraftY20AEW
+  6  = Command_ConstructChinaDroneCH5
+  7  = Command_ConstructChinaBomberH20
+  8  = Command_ConstructChinaBomberH20A
   13 = Command_SetRallyPoint
   14 = Command_Sell
 End
@@ -190,6 +200,15 @@ CommandButton Command_ConstructChinaBomberH20
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20
 End
+
+CommandButton Command_ConstructChinaBomberH20A
+  Command          = UNIT_BUILD
+  Object           = ChinaBomberH20A
+  TextLabel        = CONTROLBAR:ConstructChinaBomberH20A
+  ButtonImage      = pla_h20
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20A
+End
 """
 
 DROP_OVERLAY_BUTTON_FILES = {
@@ -199,23 +218,60 @@ DROP_OVERLAY_BUTTON_FILES = {
 
 NEW_LARGE_COMMANDSET = """CommandSet China_LargeAirBaseCommandSet
   1  = Command_ConstructChinaJetJ20B_AG
-  2  = Command_ConstructChinaJetJ50
-  3  = Command_ConstructChinaJetJ16D
-  4  = Command_ConstructChinaHelicopterWZ10ME
-  5  = Command_ConstructChinaJetJ16BBunker
-  6  = Command_ConstructChinaJetJ20B_AA
-  7  = Command_ConstructChinaJetJ10C
-  8  = Command_ConstructChinaJetJ20B_AA_AI
-  9  = Command_ConstructChinaJetJ11B
-  10 = Command_ConstructChinaJetJ15
-  11 = Command_ConstructChinaJetJ31
-  12 = Command_ConstructChinaJetJF17Block3
+  2  = Command_ConstructChinaJetJ16D
+  3  = Command_ConstructChinaHelicopterWZ10ME
+  4  = Command_ConstructChinaJetJ20B_AA
+  5  = Command_ConstructChinaJetJ10C
+  6  = Command_ConstructChinaJetJ11B
+  7  = Command_ConstructChinaJetJ15
+  8  = Command_ConstructChinaJetJ31
+  9  = Command_ConstructChinaJetJF17Block3
+  10 = Command_ConstructChinaJetJ8II
+  11 = Command_ConstructChinaJetJ7
+  12 = Command_ConstructChinaJetJ10A
   13 = Command_SetRallyPoint
   14 = Command_Sell
-  15 = Command_ConstructChinaJetJ8II
-  16 = Command_ConstructChinaJetJ7
-  17 = Command_ConstructChinaJetJ10A
-  18 = Command_ConstructChinaJetJ10B
+  15 = Command_ConstructChinaJetJ10B
+End
+"""
+
+NEW_PLA_AIRFIELD_COMMANDSET = """CommandSet PLAAirfieldCommandSet
+  1  = Command_ConstructChinaJetJ20B_AG
+  2  = Command_ConstructChinaJetJ16D
+  3  = Command_ConstructChinaHelicopterWZ10ME
+  4  = Command_ConstructChinaJetJ20B_AA
+  5  = Command_ConstructChinaJetJ10C
+  6  = Command_ConstructChinaJetJ11B
+  7  = Command_ConstructChinaJetJ15
+  8  = Command_ConstructChinaJetJ31
+  9  = Command_ConstructChinaJetJF17Block3
+  10 = Command_ConstructChinaJetJ8II
+  11 = Command_ConstructChinaJetJ7
+  12 = Command_ConstructChinaJetJ10A
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+  15 = Command_ConstructChinaJetJ10B
+End
+"""
+
+REMOVED_CONSTRUCT_BUTTONS = [
+    "Command_ConstructChinaAircraftKJ500",
+    "Command_ConstructChinaJetJH7BHeavy",
+    "Command_ConstructChinaJetJ50",
+    "Command_ConstructChinaJetJ16BBunker",
+    "Command_ConstructChinaJetJ20B_AA_AI",
+]
+REMOVE_CHINA_OBJECTS = {
+    "ChinaAircraftKJ500",
+    "ChinaJetJH7B_HeavyBunker",
+    "ChinaJetJ50",
+    "ChinaJetJ16B_Bunker",
+}
+NEW_Y20AEW_OCL = """ObjectCreationList OCL_ChinaY20AEWTargetedSARScan
+  CreateObject
+    ObjectNames = ChinaY20AEWSARRevealPing
+    Count = 1
+  End
 End
 """
 
@@ -248,9 +304,14 @@ OVERLAY_OBJECT_FILES = {
     "J31.ini",
     "JF17.ini",
     "H20.ini",
+    "H20A.ini",
 }
 OVERLAY_NAMED = {
     "China_HeavyExpansion_Images.INI",
+}
+OVERLAY_BUILDING_FILES = {
+    "China_LargeAirBase.ini",
+    "China_HeavyAirBase.ini",
 }
 # Weapons are inlined into packed Weapon.ini (core parse). Do not pack overlay
 # Weapon_*.ini or they can duplicate if both load.
@@ -271,6 +332,9 @@ ALLOW_OVERWRITE = {
     "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini",
+    "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",
+    "data\\ini\\object\\specter\\pla\\buildings\\china_heavyairbase.ini",
     "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
 }
 
@@ -285,10 +349,6 @@ CHINA_AIRCRAFT_UNLOCK_OBJECTS = {
     "ChinaDroneJXDS",
     "ChinaDroneWZ8",
     "ChinaDroneFH97",
-    "ChinaJetJ50",
-    "ChinaAircraftKJ500",
-    "ChinaJetJ16B_Bunker",
-    "ChinaJetJH7B_HeavyBunker",
 }
 UNLOCK_OBJECT_KEYS = [
     "data\\ini\\object\\specter\\pla\\airforce\\j16d.ini",
@@ -304,10 +364,6 @@ UNLOCK_BUTTONS = [
     "Command_ConstructChinaDroneJXDS",
     "Command_ConstructChinaDroneWZ8",
     "Command_ConstructChinaDroneFH97",
-    "Command_ConstructChinaJetJ50",
-    "Command_ConstructChinaAircraftKJ500",
-    "Command_ConstructChinaJetJ16BBunker",
-    "Command_ConstructChinaJetJH7BHeavy",
 ]
 FIRE_WEAPONS = [
     "China_Weapon_KD88_J11B",
@@ -326,6 +382,8 @@ FIRE_WEAPONS = [
     "China_Weapon_FAB_H6K",
     "China_Weapon_CJ100_H20",
     "China_Weapon_FAB_H20",
+    "China_Weapon_Carpet_H6K",
+    "China_Weapon_10Ton_H20A",
 ]
 
 
@@ -546,17 +604,22 @@ def validate_china_commandsets(text: str) -> None:
         errors.append("Large AirBase CommandSet count != 1")
     if text.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         errors.append("Heavy AirBase CommandSet count != 1")
+    if text.count("CommandSet PLAAirfieldCommandSet") != 1:
+        errors.append("PLAAirfield CommandSet count != 1")
     large = grab_block(text, "China_LargeAirBaseCommandSet")
     heavy = grab_block(text, "China_HeavyAirBaseCommandSet")
+    pla = grab_block(text, "PLAAirfieldCommandSet")
     if not large.rstrip().endswith("End"):
         errors.append("Large missing End")
     if not heavy.rstrip().endswith("End"):
         errors.append("Heavy missing End")
+    if not pla.rstrip().endswith("End"):
+        errors.append("PLAAirfield missing End")
     if "CommandSet " in large.split("\n", 1)[-1]:
         errors.append("nested CommandSet inside Large")
     if "CommandSet " in heavy.split("\n", 1)[-1]:
         errors.append("nested CommandSet inside Heavy")
-    for line in (large + "\n" + heavy).splitlines()[1:]:
+    for line in (large + "\n" + heavy + "\n" + pla).splitlines()[1:]:
         s = line.strip()
         if not s or s == "End" or s.startswith(";") or s.startswith("CommandSet "):
             continue
@@ -580,15 +643,15 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaJetY20",
         "Command_ConstructChinaAircraftY20AEW",
         "Command_ConstructChinaBomberH20",
+        "Command_ConstructChinaBomberH20A",
     ]
     large_idx = text.find("CommandSet China_LargeAirBaseCommandSet")
     prefix = text[:large_idx]
     for btn in required_btns:
-        if f"CommandButton {btn}" not in prefix:
-            errors.append(f"button {btn} not defined before China_LargeAirBaseCommandSet")
-        if prefix.count(f"CommandButton {btn}") != 1:
-            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix")
-    if any(ord(ch) > 127 for ch in large + heavy + INLINE_BUTTONS):
+        n = len(re.findall(rf"^CommandButton {re.escape(btn)}\s*$", prefix, re.M))
+        if n != 1:
+            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix (count={n})")
+    if any(ord(ch) > 127 for ch in large + heavy + pla + INLINE_BUTTONS):
         errors.append("non-ASCII in China CommandSet region")
     keep = [
         "Command_ConstructChinaJetJ11B",
@@ -604,37 +667,49 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaAircraftY20AEW",
         "Command_ConstructChinaDroneCH5",
         "Command_ConstructChinaBomberH20",
+        "Command_ConstructChinaBomberH20A",
+        "Command_ConstructChinaJetJ20B_AA",
+        "Command_ConstructChinaJetJ20B_AG",
+        "Command_ConstructChinaJetJ10C",
     ]
-    blob = large + heavy
+    blob = large + "\n" + heavy
     for btn in keep:
-        if btn not in blob:
+        if not re.search(rf"^\s*\d+\s*=\s*{re.escape(btn)}\s*$", blob, re.M):
             errors.append(f"lost aircraft button {btn}")
+    china_air = large + "\n" + heavy + "\n" + pla
+    for btn in REMOVED_CONSTRUCT_BUTTONS:
+        if re.search(rf"^\s*\d+\s*=\s*{re.escape(btn)}\s*$", china_air, re.M):
+            errors.append(f"removed unit still on China airbase menu: {btn}")
+    russia = grab_block(text, "ChinaAirfieldCommandSet")
+    if "Command_ConstructRussian_Su35" not in russia:
+        errors.append("ChinaAirfieldCommandSet Russia baseline was modified")
     if errors:
         raise SystemExit("PARSER CHECK FAIL CommandSet.ini\n" + "\n".join(errors))
     print("PARSER CHECK PASS CommandSet.ini")
 
 
-def patch_commandset(text: str) -> str:
+def ensure_inline_buttons(text: str) -> str:
     needle = "CommandSet China_LargeAirBaseCommandSet"
     idx = text.find(needle)
     if idx < 0:
         raise SystemExit("China_LargeAirBaseCommandSet not found in packed CommandSet.ini")
-    if "CommandButton Command_ConstructChinaJetJ11B" not in text:
-        text = text[:idx] + INLINE_BUTTONS.rstrip() + "\n\n" + text[idx:]
-        print("Inlined China construct CommandButtons before Large AirBase")
-    elif "CommandButton Command_ConstructChinaBomberH20" not in text:
-        h20_btn = (
-            "CommandButton Command_ConstructChinaBomberH20\n"
-            "  Command          = UNIT_BUILD\n"
-            "  Object           = ChinaBomberH20\n"
-            "  TextLabel        = CONTROLBAR:ConstructChinaBomberH20\n"
-            "  ButtonImage      = pla_h20\n"
-            "  ButtonBorderType = BUILD\n"
-            "  DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20\n"
-            "End\n\n"
-        )
-        text = text[:idx] + h20_btn + text[idx:]
-        print("Inlined H-20 construct CommandButton before Large AirBase")
+    missing = []
+    for m in re.finditer(
+        r"CommandButton (\S+)\s*\n.*?^End\s*$",
+        INLINE_BUTTONS,
+        re.M | re.S,
+    ):
+        btn = m.group(1)
+        if not re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M):
+            missing.append(m.group(0).rstrip() + "\n\n")
+    if missing:
+        text = text[:idx] + "".join(missing) + text[idx:]
+        print(f"Inlined {len(missing)} China construct CommandButtons before Large AirBase")
+    return text
+
+
+def patch_commandset(text: str) -> str:
+    text = ensure_inline_buttons(text)
 
     large_pat = re.compile(
         r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
@@ -652,7 +727,101 @@ def patch_commandset(text: str) -> str:
     if not m:
         raise SystemExit("China_HeavyAirBaseCommandSet not found in packed CommandSet.ini")
     text = pattern.sub(NEW_COMMANDSET.rstrip() + "\n", text, count=1)
+
+    pla_pat = re.compile(
+        r"CommandSet PLAAirfieldCommandSet\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    if not pla_pat.search(text):
+        raise SystemExit("PLAAirfieldCommandSet not found in packed CommandSet.ini")
+    text = pla_pat.sub(NEW_PLA_AIRFIELD_COMMANDSET.rstrip() + "\n", text, count=1)
     validate_china_commandsets(text)
+    return text
+
+
+def strip_named_objects(text: str, names: set[str]) -> str:
+    parts = re.split(r"(?=^Object )", text, flags=re.M)
+    out = []
+    removed = []
+    for part in parts:
+        m = re.match(r"Object (\S+)", part)
+        if m and m.group(1) in names:
+            removed.append(m.group(1))
+            continue
+        out.append(part)
+    print("Removed Object blocks:", removed)
+    return "".join(out)
+
+
+def strip_named_commandbuttons(text: str, names: list[str]) -> str:
+    for btn in names:
+        pat = re.compile(
+            rf"CommandButton {re.escape(btn)}\s*\n.*?^End\s*\n?",
+            re.M | re.S,
+        )
+        text, n = pat.subn("", text, count=1)
+        if n:
+            print(f"Removed CommandButton {btn}")
+        else:
+            print(f"WARNING: CommandButton {btn} not found to remove")
+    return text
+
+
+def patch_airbase_construct_buttons(text: str) -> str:
+    heavy_pat = re.compile(
+        r"CommandButton Command_ConstructChina_HeavyAirBase\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    m = heavy_pat.search(text)
+    if not m:
+        raise SystemExit("Command_ConstructChina_HeavyAirBase not found")
+    block = m.group(0)
+    block = re.sub(
+        r"(?m)^([ \t]*TextLabel[ \t]*=[ \t]*).*$",
+        r"\1CONTROLBAR:ConstructChina_HeavyAirBase",
+        block,
+        count=1,
+    )
+    block = re.sub(
+        r"(?m)^([ \t]*ButtonImage[ \t]*=[ \t]*).*$",
+        r"\1pla_airfield",
+        block,
+        count=1,
+    )
+    block = re.sub(
+        r"(?m)^([ \t]*DescriptLabel[ \t]*=[ \t]*).*$",
+        r"\1CONTROLBAR:ToolTipChina_HeavyAirBase",
+        block,
+        count=1,
+    )
+    if "Object        = China_HeavyAirBase" not in block and "Object = China_HeavyAirBase" not in block:
+        raise SystemExit("Heavy AirBase construct button Object is not China_HeavyAirBase")
+    text = heavy_pat.sub(block, text, count=1)
+
+    fighter_pat = re.compile(
+        r"CommandButton Command_ConstructChinaAirfield\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    fm = fighter_pat.search(text)
+    if not fm:
+        raise SystemExit("Command_ConstructChinaAirfield not found")
+    fblock = fm.group(0)
+    if "Object        = China_LargeAirBase" not in fblock and "Object = China_LargeAirBase" not in fblock:
+        raise SystemExit("Fighter Airbase construct button Object is not China_LargeAirBase")
+    if "pla_airfield" not in fblock:
+        raise SystemExit("Fighter Airbase construct button missing pla_airfield")
+    print("Patched China Fighter/Heavy Airbase construct CommandButtons")
+    return text
+
+
+def patch_y20aew_ocl(text: str) -> str:
+    marker = "ObjectCreationList OCL_ChinaY20AEWTargetedSARScan"
+    if marker in text:
+        return text
+    if not text.endswith("\n"):
+        text += "\n"
+    text += "\n" + NEW_Y20AEW_OCL
+    print("Added OCL_ChinaY20AEWTargetedSARScan")
     return text
 
 
@@ -811,7 +980,9 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini": "0.85",
         "data\\ini\\object\\specter\\pla\\airforce\\y20.ini": "1.00",
         "data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini": "0.90",
-        "data\\ini\\object\\specter\\pla\\airforce\\h20.ini": "0.85",
+        "data\\ini\\object\\specter\\pla\\airforce\\h20.ini": "1.15",
+        "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini": "1.15",
+        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "1.15",
     }
     for key, scale in scales.items():
         text = v_map[key].decode("latin1", errors="replace")
@@ -823,8 +994,8 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
     else:
         if "Model               = NVH20" not in h20 and "Model = NVH20" not in h20:
             errors.append("H-20 Draw Model is not NVH20")
-        if "AVB21" in h20 or "AVB3bmbr" in h20:
-            errors.append("H-20 INI still references B-2 model")
+        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20):
+            errors.append("H-20 Draw Model is B-2")
         if "StealthUpdate" not in h20 or "InnateStealth = Yes" not in h20:
             errors.append("H-20 missing innate StealthUpdate")
         if "GenericTacticalBomberCommandSet" not in h20:
@@ -835,6 +1006,58 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
             errors.append("H-20 missing PRIMARY WEAPONA01 launch bone")
         if "Buildable           = Ignore_Prerequisites" not in h20:
             errors.append("H-20 still has science/rank lock")
+    h20a = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\h20a.ini", b"").decode("latin1", errors="replace")
+    if not h20a:
+        errors.append("H20A.ini missing from DATA")
+    else:
+        if "Object ChinaBomberH20A" not in h20a:
+            errors.append("H-20A object name missing")
+        if "Model               = NVH20" not in h20a and "Model = NVH20" not in h20a:
+            errors.append("H-20A Draw Model is not NVH20")
+        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20a):
+            errors.append("H-20A Draw Model is B-2")
+        if "China_Weapon_10Ton_H20A" not in h20a:
+            errors.append("H-20A missing B-2A style 10-ton PRIMARY")
+        if "China_Weapon_CJ100_H20" in h20a:
+            errors.append("H-20A must not reuse H-20 cruise PRIMARY")
+        if "GenericTacticalBomberCommandSet" not in h20a:
+            errors.append("H-20A not on GenericTacticalBomberCommandSet")
+        if "WeaponLaunchBone    = PRIMARY   WEAPONA01" not in h20a:
+            errors.append("H-20A missing PRIMARY WEAPONA01 launch bone")
+    h6k = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\h6k.ini", b"").decode("latin1", errors="replace")
+    if "PRIMARY    China_Weapon_Carpet_H6K" not in h6k and "PRIMARY China_Weapon_Carpet_H6K" not in h6k:
+        errors.append("H-6K PRIMARY is not carpet bomb weapon")
+    if "Model               = h6k" not in h6k and "Model = h6k" not in h6k:
+        errors.append("H-6K model changed")
+    if "FireOCL = OCL_AmericaB52FifteenBombLine" not in weapon:
+        errors.append("H-6K carpet weapon missing B-52 bomb-line FireOCL")
+    if "ProjectileObject        = AmericaB2A10TonBombProjectile" not in weapon:
+        errors.append("H-20A 10-ton weapon missing B-2A projectile")
+    y20 = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\y20aew.ini", b"").decode("latin1", errors="replace")
+    if "VisionRange = 1100" not in y20:
+        errors.append("Y-20 AEW VisionRange not increased")
+    if "ShroudClearingRange = 1200" not in y20:
+        errors.append("Y-20 AEW ShroudClearingRange not increased")
+    if "DetectionRange = 3600" not in y20:
+        errors.append("Y-20 AEW DetectionRange not increased")
+    if "OCL_ChinaY20AEWTargetedSARScan" not in y20:
+        errors.append("Y-20 AEW missing unique larger SAR OCL")
+    if "HXYun20YJ" not in y20:
+        errors.append("Y-20 AEW model changed")
+    large_ab = v_map.get("data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini", b"").decode("latin1", errors="replace")
+    heavy_ab = v_map.get("data\\ini\\object\\specter\\pla\\buildings\\china_heavyairbase.ini", b"").decode("latin1", errors="replace")
+    if "SelectPortrait         = pla_airfield" not in large_ab:
+        errors.append("Fighter Airbase portrait is not pla_airfield")
+    if "DisplayName      = OBJECT:China_LargeAirBase" not in large_ab:
+        errors.append("Fighter Airbase DisplayName not unique")
+    if "CommandSet          = China_LargeAirBaseCommandSet" not in large_ab:
+        errors.append("Fighter Airbase CommandSet wrong")
+    if "SelectPortrait         = pla_airfield" not in heavy_ab:
+        errors.append("Heavy Airbase portrait is not pla_airfield")
+    if "DisplayName      = OBJECT:China_HeavyAirBase" not in heavy_ab:
+        errors.append("Heavy Airbase DisplayName not unique")
+    if "CommandSet          = China_HeavyAirBaseCommandSet" not in heavy_ab:
+        errors.append("Heavy Airbase CommandSet wrong")
     if errors:
         raise SystemExit("FIRE/SCALE CHECK FAIL\n" + "\n".join(errors))
     print("FIRE/SCALE CHECK PASS")
@@ -875,7 +1098,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_h20"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airforce_cleanup"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -914,6 +1137,8 @@ def main() -> int:
         keep = False
         if rel.startswith("INI/Object/Specter/PLA/Airforce/") and path.name in OVERLAY_OBJECT_FILES:
             keep = True
+        if rel.startswith("INI/Object/Specter/PLA/Buildings/") and path.name in OVERLAY_BUILDING_FILES:
+            keep = True
         if path.name in OVERLAY_NAMED:
             keep = True
         if not keep:
@@ -947,8 +1172,10 @@ def main() -> int:
     cb_key = "data\\ini\\commandbutton.ini"
     cb_name, cb_bytes = data_map[cb_key]
     cb_text = unlock_commandbuttons(cb_bytes.decode("latin1"))
+    cb_text = strip_named_commandbuttons(cb_text, REMOVED_CONSTRUCT_BUTTONS)
+    cb_text = patch_airbase_construct_buttons(cb_text)
     data_map[cb_key] = (cb_name, lf(cb_text.encode("latin1")))
-    print("Unlocked China aircraft/drone construct CommandButtons")
+    print("Unlocked remaining China aircraft/drone construct CommandButtons")
 
     for key in UNLOCK_OBJECT_KEYS:
         if key not in data_map:
@@ -958,10 +1185,21 @@ def main() -> int:
         data_map[key] = (name, lf(strip_object_science(text, CHINA_AIRCRAFT_UNLOCK_OBJECTS).encode("latin1")))
     print("Removed science/rank prereqs from China aircraft objects")
 
+    sys_key = "data\\ini\\object\\specter\\pla\\china_system.ini"
+    sys_name, sys_blob = data_map[sys_key]
+    sys_text = lf(sys_blob).decode("latin1")
+    sys_text = strip_named_objects(sys_text, REMOVE_CHINA_OBJECTS)
+    data_map[sys_key] = (sys_name, lf(sys_text.encode("latin1")))
+
     w_key = "data\\ini\\weapon.ini"
     w_name, w_bytes = data_map[w_key]
     w_text = inline_weapons(w_bytes.decode("latin1"))
     data_map[w_key] = (w_name, lf(w_text.encode("latin1")))
+
+    ocl_key = "data\\ini\\objectcreationlist.ini"
+    ocl_name, ocl_bytes = data_map[ocl_key]
+    ocl_text = patch_y20aew_ocl(ocl_bytes.decode("latin1"))
+    data_map[ocl_key] = (ocl_name, lf(ocl_text.encode("latin1")))
 
     csf_key = "data\\english\\generals.csf"
     csf_name, csf_bytes = data_map[csf_key]
@@ -980,22 +1218,25 @@ def main() -> int:
             added_data.append(big_name)
 
     added_art = []
-    for src_rel, dest in ART_MAP:
-        src = DONOR / src_rel
-        if not src.is_file() or src.stat().st_size == 0:
-            raise SystemExit(f"Missing donor ART {src}")
-        key = norm_key(dest)
-        content = src.read_bytes()
-        if key in art_map:
-            old_name, old = art_map[key]
-            if old != content:
-                art_map[key] = (old_name, content)
-                added_art.append(dest + " (updated)")
+    if REBUILD_ART:
+        for src_rel, dest in ART_MAP:
+            src = DONOR / src_rel
+            if not src.is_file() or src.stat().st_size == 0:
+                raise SystemExit(f"Missing donor ART {src}")
+            key = norm_key(dest)
+            content = src.read_bytes()
+            if key in art_map:
+                old_name, old = art_map[key]
+                if old != content:
+                    art_map[key] = (old_name, content)
+                    added_art.append(dest + " (updated)")
+                else:
+                    added_art.append(dest + " (unchanged)")
             else:
-                added_art.append(dest + " (unchanged)")
-        else:
-            art_map[key] = (dest, content)
-            added_art.append(dest)
+                art_map[key] = (dest, content)
+                added_art.append(dest)
+    else:
+        added_art.append("ART unchanged (DATA-only cleanup; reuse china_h20 ART)")
 
     def finalize(order_keys, amap):
         final = {}
@@ -1010,26 +1251,22 @@ def main() -> int:
         return final
 
     final_data = finalize(data_keys, data_map)
-    final_art = finalize(art_keys, art_map)
     data_bytes = build_big(final_data)
-    art_bytes = build_big(final_art)
     out_data = out / "_SPEC_DATA_ONE.big"
-    out_art = out / "_SPEC_ART_ONE.big"
     out_data.write_bytes(data_bytes)
-    out_art.write_bytes(art_bytes)
 
-    zpath = out / "CHINA_H20.zip"
+    zpath = out / "CHINA_AIRFORCE_CLEANUP.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
-        zf.write(out_art, "_SPEC_ART_ONE.big")
 
-    # Post-pack verify from written BIG.
+    # Post-pack verify from written DATA + reused china_h20 ART.
     v_entries, v_raw = read_big(out_data)
     v_map = {}
     for name, off, size in v_entries:
         v_map[norm_key(name)] = v_raw[off : off + size]
-    a_entries, a_raw = read_big(out_art)
+    a_entries, a_raw = read_big(BASE_ART)
     a_names = {norm_key(n) for n, _o, _s in a_entries}
+    art_bytes = BASE_ART.read_bytes()
 
     def must_hash(key_substr, expected):
         blob = None
@@ -1052,17 +1289,29 @@ def main() -> int:
         raise SystemExit("CH-5 button missing from CommandSet")
     if cs.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         raise SystemExit("duplicate heavy CommandSet")
-    if "CommandButton Command_ConstructChinaBomberH20" not in cs:
-        raise SystemExit("H-20 CommandButton not inlined in CommandSet.ini")
-    if "Command_ConstructChinaBomberH20" not in grab_block(cs, "China_HeavyAirBaseCommandSet"):
+    if not re.search(r"^CommandButton Command_ConstructChinaBomberH20A\s*$", cs, re.M):
+        raise SystemExit("H-20A CommandButton not inlined in CommandSet.ini")
+    heavy_block = grab_block(cs, "China_HeavyAirBaseCommandSet")
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaBomberH20\s*$", heavy_block, re.M):
         raise SystemExit("H-20 missing from China_HeavyAirBaseCommandSet")
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaBomberH20A\s*$", heavy_block, re.M):
+        raise SystemExit("H-20A missing from China_HeavyAirBaseCommandSet")
+    large_block = grab_block(cs, "China_LargeAirBaseCommandSet")
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaJetJ20B_AA\s*$", large_block, re.M):
+        raise SystemExit("J-20B AA missing from Fighter Airbase")
+    if re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaJetJ20B_AA_AI\s*$", large_block, re.M):
+        raise SystemExit("duplicate J-20B AA_AI still on Fighter Airbase")
 
     csf_blob = v_map["data\\english\\generals.csf"]
     ini_refs = []
     for k, blob in v_map.items():
         if not k.endswith(".ini"):
             continue
-        if "pla\\airforce\\" not in k and k != "data\\ini\\commandset.ini":
+        if (
+            "pla\\airforce\\" not in k
+            and "pla\\buildings\\china_" not in k
+            and k not in ("data\\ini\\commandset.ini", "data\\ini\\commandbutton.ini")
+        ):
             continue
         text = blob.decode("latin1", errors="replace")
         ini_refs.extend(re.findall(r"(?:OBJECT|CONTROLBAR):[A-Za-z0-9_]+", text))
@@ -1070,7 +1319,24 @@ def main() -> int:
     validate_csf(csf_blob, required_new)
     version, unk, lang, labels = parse_csf(csf_blob)
     have_names = {name for _, name, _ in labels}
-    missing_ini = sorted({r for r in ini_refs if r.startswith(("OBJECT:ChinaJet", "OBJECT:ChinaBomber", "OBJECT:ChinaAircraft", "CONTROLBAR:ConstructChinaJet", "CONTROLBAR:ToolTipChinaJet", "CONTROLBAR:ConstructChinaBomber", "CONTROLBAR:ToolTipChinaBomber", "CONTROLBAR:ConstructChinaAircraft", "CONTROLBAR:ToolTipChinaAircraft")) and r not in have_names})
+    prefixes = (
+        "OBJECT:ChinaJet",
+        "OBJECT:ChinaBomber",
+        "OBJECT:ChinaAircraft",
+        "OBJECT:China_LargeAirBase",
+        "OBJECT:China_HeavyAirBase",
+        "CONTROLBAR:ConstructChinaJet",
+        "CONTROLBAR:ToolTipChinaJet",
+        "CONTROLBAR:ConstructChinaBomber",
+        "CONTROLBAR:ToolTipChinaBomber",
+        "CONTROLBAR:ConstructChinaAircraft",
+        "CONTROLBAR:ToolTipChinaAircraft",
+        "CONTROLBAR:ConstructChinaAirfield",
+        "CONTROLBAR:ToolTipChinaBuildAirField",
+        "CONTROLBAR:ConstructChina_HeavyAirBase",
+        "CONTROLBAR:ToolTipChina_HeavyAirBase",
+    )
+    missing_ini = sorted({r for r in ini_refs if r.startswith(prefixes) and r not in have_names})
     if missing_ini:
         raise SystemExit("CSF missing INI refs: " + ", ".join(missing_ini))
     print("CSF INI-REF CHECK PASS")
@@ -1088,14 +1354,42 @@ def main() -> int:
         "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini",
+        "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",
+        "data\\ini\\object\\specter\\pla\\buildings\\china_heavyairbase.ini",
         "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
         "data\\ini\\weapon.ini",
+        "data\\ini\\objectcreationlist.ini",
     ):
         if req not in v_map:
             raise SystemExit(f"overlay missing from DATA BIG: {req}")
 
     validate_unlocks(v_map)
     validate_fire_and_scale(v_map)
+
+    cb = v_map["data\\ini\\commandbutton.ini"].decode("latin1")
+    for btn in REMOVED_CONSTRUCT_BUTTONS:
+        if re.search(rf"^CommandButton {re.escape(btn)}\s*$", cb, re.M):
+            raise SystemExit(f"removed CommandButton still packed: {btn}")
+    if "CONTROLBAR:ConstructChina_HeavyAirBase" not in cb:
+        raise SystemExit("Heavy Airbase construct button missing China CSF key")
+    if "ButtonImage   = pla_airfield" not in cb and "ButtonImage = pla_airfield" not in cb:
+        raise SystemExit("no pla_airfield construct ButtonImage in CommandButton.ini")
+    heavy_btn = re.search(
+        r"CommandButton Command_ConstructChina_HeavyAirBase\s*\n.*?^End\s*$",
+        cb,
+        re.M | re.S,
+    )
+    if not heavy_btn or "pla_airfield" not in heavy_btn.group(0):
+        raise SystemExit("Heavy Airbase construct button icon is not pla_airfield")
+    sys_txt = v_map["data\\ini\\object\\specter\\pla\\china_system.ini"].decode("latin1")
+    for obj in REMOVE_CHINA_OBJECTS:
+        if re.search(rf"^Object {re.escape(obj)}\b", sys_txt, re.M):
+            raise SystemExit(f"removed object still in china_system.ini: {obj}")
+    ocl = v_map["data\\ini\\objectcreationlist.ini"].decode("latin1")
+    if "ObjectCreationList OCL_ChinaY20AEWTargetedSARScan" not in ocl:
+        raise SystemExit("Y-20 AEW SAR OCL missing from ObjectCreationList.ini")
+    print("CLEANUP CHECK PASS")
 
     for req in (
         "art\\w3d\\h6k.w3d",
@@ -1135,29 +1429,33 @@ def main() -> int:
         "\n".join(
             [
                 f"DATA SHA256={hashlib.sha256(data_bytes).hexdigest()} SIZE={len(data_bytes)}",
-                f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)}",
+                f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)} (unchanged china_h20 ART, not in ZIP)",
                 f"ZIP  SHA256={hashlib.sha256(zpath.read_bytes()).hexdigest()} SIZE={zpath.stat().st_size}",
+                "PACKAGING=DATA_ONLY _SPEC_DATA_ONE.big",
                 "added_data=" + repr(added_data),
                 "added_art=" + repr(added_art),
+                NEW_LARGE_COMMANDSET,
                 NEW_COMMANDSET,
                 "PARSER CHECK PASS",
                 "CSF CHECK PASS",
                 "UNLOCK CHECK PASS",
                 "FIRE/SCALE CHECK PASS",
+                "CLEANUP CHECK PASS",
                 "PROTECTED J10C AND H6M HASHES UNCHANGED",
-                "WEAPONS INLINED INTO Weapon.ini",
-                "CHINA AIRCRAFT SCIENCE/RANK PREREQS REMOVED",
-                "H-20 ADDED: TEOD NVH20.W3D + H-20.dds into ART, ChinaBomberH20 on Heavy Airbase slot 9",
-                "H-20 MODEL IS NOT B-2 (NVH20 != AVB3bmbr / AVB21)",
-                "COMMANDSET PARSE FIX: buttons inlined before China_LargeAirBaseCommandSet",
-                "CSF MAGIC FIX: STR -> RTS for String Manager",
-                "FIGHTER LARGE AIRBASE SLOTS KEPT",
+                "REMOVED KJ500 JH7BHeavy J50 J16BBunker from China airbases",
+                "REMOVED duplicate J-20B AA_AI loadout button; kept ChinaJetJ20B_AA",
+                "H-20 SCALE 1.15; H-20A ADDED (NVH20 + B-2A 10-ton bomb)",
+                "H-6K PRIMARY carpet FireOCL OCL_AmericaB52FifteenBombLine",
+                "Y-20 AEW radar/scan increased; unique SAR ping Vision 520",
+                "J-31 SCALE 1.15 visual only",
+                "FIGHTER/HEAVY AIRBASE construct buttons: pla_airfield + China CSF",
+                "RUSSIA BASELINE UNTOUCHED (ChinaAirfieldCommandSet kept)",
             ]
         )
         + "\n"
     )
     print(report.read_text())
-    print(f"Wrote {out_data} {out_art} {zpath}")
+    print(f"Wrote {out_data} {zpath}")
     return 0
 
 

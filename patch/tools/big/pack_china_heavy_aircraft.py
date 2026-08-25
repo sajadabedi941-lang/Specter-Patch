@@ -312,6 +312,8 @@ OVERLAY_OBJECT_FILES = {
 }
 OVERLAY_NAMED = {
     "China_HeavyExpansion_Images.INI",
+    "China_FighterExpansion_Images.INI",
+    "zChina_AirbasePortrait_Images.INI",
 }
 OVERLAY_BUILDING_FILES = {
     "China_LargeAirBase.ini",
@@ -342,6 +344,8 @@ ALLOW_OVERWRITE = {
     "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",
     "data\\ini\\object\\specter\\pla\\buildings\\china_heavyairbase.ini",
     "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
+    "data\\ini\\mappedimages\\handcreated\\china_fighterexpansion_images.ini",
+    "data\\ini\\mappedimages\\handcreated\\zchina_airbaseportrait_images.ini",
 }
 
 CHINA_AIRCRAFT_UNLOCK_OBJECTS = {
@@ -1309,6 +1313,132 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
     print("FIRE/SCALE CHECK PASS")
 
 
+# Airbase construct portraits live on Pla_Icons01/02 in patch ART as .dds.
+# Packed HandCreatedMappedImages still names them .tga, which can bind an older
+# placeholder atlas from another BIG. Force the patch DDS (and H-20 TB).
+ATLAS_ICON_TEXTURES = {
+    "pla_j10c": "Pla_Icons01.dds",
+    "pla_j16d": "Pla_Icons01.dds",
+    "pla_j20b": "Pla_Icons01.dds",
+    "pla_jh7a2": "Pla_Icons01.dds",
+    "pla_ch5": "Pla_Icons01.dds",
+    "pla_wz10me": "Pla_Icons02.dds",
+    "pla_z18a": "Pla_Icons02.dds",
+}
+
+AIRBASE_BUTTON_IMAGES = {
+    "Command_ConstructChinaJetJ20B_AG": "pla_j20b",
+    "Command_ConstructChinaJetJ20B_AA": "pla_j20b",
+    "Command_ConstructChinaJetJ16D": "pla_j16d",
+    "Command_ConstructChinaJetJ10C": "pla_j10c",
+    "Command_ConstructChinaJetJ31": "pla_j31",
+    "Command_ConstructChinaJetJH7A2": "pla_jh7a2",
+    "Command_ConstructChinaBomberH20": "pla_h20",
+    "Command_ConstructChinaBomberH20A": "pla_h20",
+    "Command_ConstructChinaBomberH6K": "pla_h6k",
+    "Command_ConstructChinaJetY20": "pla_y20",
+    "Command_ConstructChinaAircraftY20AEW": "pla_y20aew",
+    "Command_ConstructChinaDroneCH5": "pla_ch5",
+    "Command_ConstructChinaHelicopterZ18A": "pla_z18a",
+    "Command_ConstructChinaHelicopterWZ10ME": "pla_wz10me",
+}
+
+DEDICATED_ICON_TEXTURES = {
+    "pla_j20b": "Pla_Icons01.dds",
+    "pla_j16d": "Pla_Icons01.dds",
+    "pla_j10c": "Pla_Icons01.dds",
+    "pla_jh7a2": "Pla_Icons01.dds",
+    "pla_ch5": "Pla_Icons01.dds",
+    "pla_wz10me": "Pla_Icons02.dds",
+    "pla_z18a": "Pla_Icons02.dds",
+    "pla_j31": "J31TB.tga",
+    "pla_h20": "B2ATB.tga",
+    "pla_h6k": "CHNH6KTB.tga",
+    "pla_y20": "CHNY20TB.tga",
+    "pla_y20aew": "CHNKJ2000TB.tga",
+}
+
+
+def patch_atlas_mappedimage_textures(text: str) -> str:
+    for name, tex in ATLAS_ICON_TEXTURES.items():
+        pat = re.compile(
+            rf"(MappedImage {re.escape(name)}\s*\n)(.*?)(^End\s*$)",
+            re.M | re.S,
+        )
+        m = pat.search(text)
+        if not m:
+            raise SystemExit(f"MappedImage {name} missing from HandCreatedMappedImages.INI")
+        new_body, n = re.subn(
+            r"(?m)^([ \t]*Texture[ \t]*=[ \t]*).*$",
+            rf"\1{tex}",
+            m.group(2),
+            count=1,
+        )
+        if n != 1:
+            raise SystemExit(f"MappedImage {name} Texture line missing")
+        if "Pla_Icons01.tga" in new_body or "Pla_Icons02.tga" in new_body:
+            raise SystemExit(f"MappedImage {name} still references Pla_Icons*.tga")
+        text = text[: m.start()] + m.group(1) + new_body + m.group(3) + text[m.end() :]
+    return text
+
+
+def mappedimage_textures(text: str) -> dict[str, str]:
+    found = {}
+    for m in re.finditer(
+        r"MappedImage (\S+)\s*\n(.*?)(^End\s*$)",
+        text,
+        re.M | re.S,
+    ):
+        tex = re.search(r"(?m)^[ \t]*Texture[ \t]*=[ \t]*(\S+)", m.group(2))
+        if tex:
+            found[m.group(1)] = tex.group(1)
+    return found
+
+
+def commandbutton_image(text: str, btn: str) -> str | None:
+    m = re.search(
+        rf"CommandButton {re.escape(btn)}\s*\n(.*?)End",
+        text,
+        re.S,
+    )
+    if not m:
+        return None
+    img = re.search(r"(?m)^[ \t]*ButtonImage[ \t]*=[ \t]*(\S+)", m.group(1))
+    return img.group(1) if img else None
+
+
+def validate_airbase_button_icons(cs_text: str, cb_text: str, mi_by_file: dict[str, str]) -> None:
+    # Last file in this list wins if the engine loads HandCreated alphabetically.
+    merged = {}
+    for key in (
+        "handcreatedmappedimages.ini",
+        "china_fighterexpansion_images.ini",
+        "china_heavyexpansion_images.ini",
+        "zchina_airbaseportrait_images.ini",
+    ):
+        blob = None
+        for k, text in mi_by_file.items():
+            if k.endswith(key):
+                blob = text
+                break
+        if blob is None:
+            raise SystemExit(f"MappedImages file missing for icon check: {key}")
+        merged.update(mappedimage_textures(blob))
+
+    sources = cs_text + "\n" + cb_text
+    for btn, image in AIRBASE_BUTTON_IMAGES.items():
+        got = commandbutton_image(sources, btn)
+        if got != image:
+            raise SystemExit(f"{btn} ButtonImage={got!r} expected {image}")
+        tex = merged.get(image)
+        expected = DEDICATED_ICON_TEXTURES[image]
+        if tex != expected:
+            raise SystemExit(f"{image} Texture={tex!r} expected {expected}")
+        if tex.lower() in ("pla_icons01.tga", "pla_icons02.tga"):
+            raise SystemExit(f"{image} still uses generic atlas TGA {tex}")
+    print("AIRBASE ICON CHECK PASS")
+
+
 def lf(data: bytes) -> bytes:
     if data.startswith(b"\xef\xbb\xbf"):
         data = data[3:]
@@ -1344,7 +1474,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airbase_buttons"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_aircraft_button_icons"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -1428,6 +1558,14 @@ def main() -> int:
     data_map[cb_key] = (cb_name, lf(cb_text.encode("latin1")))
     print("Unlocked remaining China aircraft/drone construct CommandButtons")
     validate_airbase_construct_once(cs_new, cb_text)
+
+    mi_key = "data\\ini\\mappedimages\\handcreated\\handcreatedmappedimages.ini"
+    if mi_key not in data_map:
+        raise SystemExit("packed HandCreatedMappedImages.INI missing")
+    mi_name, mi_bytes = data_map[mi_key]
+    mi_text = patch_atlas_mappedimage_textures(mi_bytes.decode("latin1"))
+    data_map[mi_key] = (mi_name, lf(mi_text.encode("latin1")))
+    print("Retargeted China airbase MappedImages from Pla_Icons*.tga to Pla_Icons*.dds")
 
     for key in UNLOCK_OBJECT_KEYS:
         if key not in data_map:
@@ -1612,6 +1750,8 @@ def main() -> int:
         "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",
         "data\\ini\\object\\specter\\pla\\buildings\\china_heavyairbase.ini",
         "data\\ini\\mappedimages\\handcreated\\china_heavyexpansion_images.ini",
+        "data\\ini\\mappedimages\\handcreated\\china_fighterexpansion_images.ini",
+        "data\\ini\\mappedimages\\handcreated\\zchina_airbaseportrait_images.ini",
         "data\\ini\\weapon.ini",
         "data\\ini\\objectcreationlist.ini",
     ):
@@ -1647,6 +1787,12 @@ def main() -> int:
     validate_commandset_button_refs(cs, cb)
     validate_airbase_construct_once(cs, cb)
 
+    mi_by_file = {}
+    for k, blob in v_map.items():
+        if "mappedimages\\handcreated\\" in k and k.endswith(".ini"):
+            mi_by_file[k] = blob.decode("latin1", errors="replace")
+    validate_airbase_button_icons(cs, cb, mi_by_file)
+
     for req in (
         "art\\w3d\\h6k.w3d",
         "art\\w3d\\hxyun20hxnew.w3d",
@@ -1657,6 +1803,10 @@ def main() -> int:
         "art\\textures\\chnh6ktb.tga",
         "art\\textures\\chny20tb.tga",
         "art\\textures\\chnkj2000tb.tga",
+        "art\\textures\\j31tb.tga",
+        "art\\textures\\b2atb.tga",
+        "art\\textures\\pla_icons01.dds",
+        "art\\textures\\pla_icons02.dds",
         "art\\w3d\\nvh20.w3d",
         "art\\textures\\h-20.dds",
         "art\\textures\\h-20.tga",
@@ -1710,6 +1860,7 @@ def main() -> int:
                 "RUSSIA BASELINE UNTOUCHED (ChinaAirfieldCommandSet kept)",
                 "COMMANDSET PARSE FIX: overlay UNIT_BUILD buttons inlined before PLAAirfieldCommandSet",
                 "CHINA AIRBASE BUTTONS: restored PLADozer fighter+heavy slots; fighter Object=China_LargeAirBase",
+                "CHINA AIRBASE ICONS: pla_j20b/j16d/j10c/jh7a2/ch5 -> Pla_Icons01.dds; wz10me/z18a -> Pla_Icons02.dds; h20 -> B2ATB.tga",
             ]
         )
         + "\n"

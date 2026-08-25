@@ -648,10 +648,9 @@ def validate_china_commandsets(text: str) -> None:
     large_idx = text.find("CommandSet China_LargeAirBaseCommandSet")
     prefix = text[:large_idx]
     for btn in required_btns:
-        if f"CommandButton {btn}" not in prefix:
-            errors.append(f"button {btn} not defined before China_LargeAirBaseCommandSet")
-        if prefix.count(f"CommandButton {btn}") != 1:
-            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix")
+        n = len(re.findall(rf"^CommandButton {re.escape(btn)}\s*$", prefix, re.M))
+        if n != 1:
+            errors.append(f"button {btn} duplicate or missing in CommandSet.ini prefix (count={n})")
     if any(ord(ch) > 127 for ch in large + heavy + pla + INLINE_BUTTONS):
         errors.append("non-ASCII in China CommandSet region")
     keep = [
@@ -673,13 +672,13 @@ def validate_china_commandsets(text: str) -> None:
         "Command_ConstructChinaJetJ20B_AG",
         "Command_ConstructChinaJetJ10C",
     ]
-    blob = large + heavy
+    blob = large + "\n" + heavy
     for btn in keep:
-        if btn not in blob:
+        if not re.search(rf"^\s*\d+\s*=\s*{re.escape(btn)}\s*$", blob, re.M):
             errors.append(f"lost aircraft button {btn}")
-    china_air = large + heavy + pla
+    china_air = large + "\n" + heavy + "\n" + pla
     for btn in REMOVED_CONSTRUCT_BUTTONS:
-        if btn in china_air:
+        if re.search(rf"^\s*\d+\s*=\s*{re.escape(btn)}\s*$", china_air, re.M):
             errors.append(f"removed unit still on China airbase menu: {btn}")
     russia = grab_block(text, "ChinaAirfieldCommandSet")
     if "Command_ConstructRussian_Su35" not in russia:
@@ -701,7 +700,7 @@ def ensure_inline_buttons(text: str) -> str:
         re.M | re.S,
     ):
         btn = m.group(1)
-        if f"CommandButton {btn}" not in text:
+        if not re.search(rf"^CommandButton {re.escape(btn)}\s*$", text, re.M):
             missing.append(m.group(0).rstrip() + "\n\n")
     if missing:
         text = text[:idx] + "".join(missing) + text[idx:]
@@ -1290,17 +1289,17 @@ def main() -> int:
         raise SystemExit("CH-5 button missing from CommandSet")
     if cs.count("CommandSet China_HeavyAirBaseCommandSet") != 1:
         raise SystemExit("duplicate heavy CommandSet")
-    if "CommandButton Command_ConstructChinaBomberH20A" not in cs:
+    if not re.search(r"^CommandButton Command_ConstructChinaBomberH20A\s*$", cs, re.M):
         raise SystemExit("H-20A CommandButton not inlined in CommandSet.ini")
     heavy_block = grab_block(cs, "China_HeavyAirBaseCommandSet")
-    if "Command_ConstructChinaBomberH20" not in heavy_block:
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaBomberH20\s*$", heavy_block, re.M):
         raise SystemExit("H-20 missing from China_HeavyAirBaseCommandSet")
-    if "Command_ConstructChinaBomberH20A" not in heavy_block:
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaBomberH20A\s*$", heavy_block, re.M):
         raise SystemExit("H-20A missing from China_HeavyAirBaseCommandSet")
     large_block = grab_block(cs, "China_LargeAirBaseCommandSet")
-    if "Command_ConstructChinaJetJ20B_AA" not in large_block:
+    if not re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaJetJ20B_AA\s*$", large_block, re.M):
         raise SystemExit("J-20B AA missing from Fighter Airbase")
-    if "Command_ConstructChinaJetJ20B_AA_AI" in large_block:
+    if re.search(r"^\s*\d+\s*=\s*Command_ConstructChinaJetJ20B_AA_AI\s*$", large_block, re.M):
         raise SystemExit("duplicate J-20B AA_AI still on Fighter Airbase")
 
     csf_blob = v_map["data\\english\\generals.csf"]

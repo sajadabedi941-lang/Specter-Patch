@@ -1,0 +1,103 @@
+SPECTER - Europe Air Force Expansion (Germany / Italy / United Kingdom)
+=======================================================================
+
+Install: copy these files into the Specter Data folder (replace existing):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Keep EnglishZH.big and AudioZH.big unchanged.
+
+Does not change Russia, China, or France air forces.
+
+Aircraft with no unique mesh keep the closest donor model. Gameplay names
+are the real aircraft only. Donor mesh names never appear on buttons or CSF.
+
+GERMANY
+-------
+Fighter Airbase (GermanyAirfield / Germany_LargeAirBase):
+  1 Eurofighter Typhoon Tranche 4   LSFEUEF2000    Meteor / IRIS-T
+  2 Eurofighter Typhoon ECR         LSFEUEF2000    Taurus / IRIS-T
+  3 Tornado IDS                     LSFTornado     bombs / Paveway
+  4 Tornado ECR                     LSFTornado     Taurus / AIM-9
+  5 F-35A                           US_F35A        JDAM / AMRAAM
+  6 MiG-29G                         LSFruMiG29     AMRAAM / AIM-9
+  7 Alpha Jet                       AVHawk         bombs / AIM-9
+  8 F-4F Phantom                    JPF4           AMRAAM / AIM-9
+  9 Tornado ADV                     LSFTornado     Meteor / AIM-9
+ 10 Mako                            LSFF16         JDAM / IRIS-T
+
+Heavy Airbase (Germany_HeavyAirBase):
+  1 A400M Atlas                     IUAC17HXNew
+  2 C-130J                          LSFUSAC130
+  3 E-3 AWACS                       E3
+  4 Heron TP                        AVReaper       Brimstone
+
+Helicopter Base (Germany_HelicopterBase):
+  1 Tiger UHT                       LSFGETiger     cannon + ATGM + rockets
+  2 NH90                            LSFGENH90
+  3 CH-53                           LSFRUMi171
+  4 H145M                           LSFFenneck
+
+ITALY
+-----
+Fighter Airbase:
+  1 Eurofighter Typhoon             LSFEUEF2000    Meteor / IRIS-T
+  2 F-35A                           US_F35A        JDAM / AMRAAM
+  3 F-35B                           US_F35A        JDAM / AIM-9
+  4 AMX                             LSFMirage5     bombs / Paveway
+  5 Tornado IDS                     LSFTornado     Storm Shadow
+  6 Tornado ECR                     LSFTornado     Storm Shadow / AIM-9
+  7 Harrier II                      LSFAV8B        Paveway / AIM-9
+  8 F-16                            LSFF16         AMRAAM / AIM-9
+  9 M-346FA                         AVHawk         JDAM / IRIS-T
+ 10 MB-339                          AVHawk         bombs / AIM-9
+
+Heavy Airbase:
+  1 C-130J                          LSFUSAC130
+  2 C-27J Spartan                   LSFUSAC130 (scaled)
+  3 G550 CAEW                       KVE737
+  4 MQ-9                            AVReaper
+
+Helicopter Base:
+  1 AW249                           LSFAH64D       cannon + ATGM + rockets
+  2 A129 Mangusta                   LSFGETiger     cannon + ATGM + rockets
+  3 NH90                            LSFGENH90
+  4 AW101                           LSFGENH90
+  5 AW139                           LSFRUMi171
+
+UNITED KINGDOM
+--------------
+Fighter Airbase:
+  1 F-35B                           US_F35A        Paveway / AMRAAM
+  2 Eurofighter Typhoon FGR4        LSFEUEF2000    Meteor / Brimstone
+  3 Typhoon Tranche 3               LSFEUEF2000    Meteor / ASRAAM
+  4 Harrier GR9                     LSFAV8B        Paveway / Brimstone
+  5 Tornado GR4                     LSFTornado     Storm Shadow / Paveway
+  6 Jaguar GR3                      LSFTornado     bombs / Paveway
+  7 Sea Harrier FA2                 LSFAV8B        AMRAAM / ASRAAM
+  8 Phantom FG1                     JPF4           AMRAAM / ASRAAM
+  9 Lightning F6                    LSFMirage3     AMRAAM / ASRAAM
+ 10 Hawk 200                        AVHawk         bombs / ASRAAM
+
+Heavy Airbase:
+  1 A400M                           IUAC17HXNew
+  2 C-17                            IUAC17HXNew
+  3 E-7 Wedgetail                   KVE737
+  4 MQ-9 Reaper                     AVReaper
+  5 Vulcan                          LSFUSAB52      carpet bomb / Storm Shadow
+
+Helicopter Base:
+  1 Apache AH-64E                   LSFAH64D       cannon + Hellfire + rockets
+  2 Chinook                         US_CH47F
+  3 Merlin                          LSFGENH90
+  4 Wildcat                         LSFLynxAHMK
+  5 Puma                            LSFRUMi171
+
+Unlock: aircraft are built from the airbase / helicopter base with no extra
+science or upgrade gates.
+
+Dozer slot 12: Helicopter Base (replaces leftover America LGM-30) for
+Germany, Italy, and the United Kingdom.
+
+Packer: patch/tools/big/pack_europe_airforce.py
+Generator: patch/tools/big/generate_europe_airforce_ini.py

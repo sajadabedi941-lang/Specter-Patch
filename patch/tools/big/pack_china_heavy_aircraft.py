@@ -32,8 +32,8 @@ CSF_LABELS = {
     "CONTROLBAR:ToolTipChinaJetJ15": "PLA J-15 naval strike fighter. YJ anti-ship missiles and guided bombs.",
     "OBJECT:ChinaJetJ15": "J-15 Flying Shark\r\nYJ anti-ship\r\nLT-3 PGM",
     "CONTROLBAR:ConstructChinaJetJ31": "J-31",
-    "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth multirole. PL-15 air-to-air plus guided and heavy bombs.",
-    "OBJECT:ChinaJetJ31": "J-31\r\n8x PL-15 A2A\r\n8x LS-6 PGM\r\n4x heavy bombs",
+    "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth air-superiority fighter. PL-15 BVR and PL-10 heat-seekers.",
+    "OBJECT:ChinaJetJ31": "J-31\r\n6x PL-15 BVR\r\n4x PL-10 A2A",
     "CONTROLBAR:ConstructChinaJetJF17Block3": "JF-17 Block 3",
     "CONTROLBAR:ToolTipChinaJetJF17Block3": "PLA JF-17 Block 3 multirole. Larger PGM, AGM, and bomb load.",
     "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\n6x PGM\r\n6x AGM\r\n12x bombs",
@@ -117,7 +117,7 @@ CommandButton Command_ConstructChinaJetJ31
   Command          = UNIT_BUILD
   Object           = ChinaJetJ31
   TextLabel        = CONTROLBAR:ConstructChinaJetJ31
-  ButtonImage      = pla_j31
+  ButtonImage      = SPEC_ChinaJ31
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaJetJ31
 End
@@ -171,7 +171,7 @@ CommandButton Command_ConstructChinaBomberH6K
   Command          = UNIT_BUILD
   Object           = ChinaBomberH6K
   TextLabel        = CONTROLBAR:ConstructChinaBomberH6K
-  ButtonImage      = pla_h6k
+  ButtonImage      = SPEC_ChinaH6K
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH6K
 End
@@ -180,7 +180,7 @@ CommandButton Command_ConstructChinaJetY20
   Command          = UNIT_BUILD
   Object           = ChinaJetY20
   TextLabel        = CONTROLBAR:ConstructChinaJetY20
-  ButtonImage      = pla_y20
+  ButtonImage      = SPEC_ChinaY20
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaJetY20
 End
@@ -189,7 +189,7 @@ CommandButton Command_ConstructChinaAircraftY20AEW
   Command          = UNIT_BUILD
   Object           = ChinaAircraftY20AEW
   TextLabel        = CONTROLBAR:ConstructChinaAircraftY20AEW
-  ButtonImage      = pla_y20aew
+  ButtonImage      = SPEC_ChinaY20AEW
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaAircraftY20AEW
 End
@@ -198,7 +198,7 @@ CommandButton Command_ConstructChinaBomberH20
   Command          = UNIT_BUILD
   Object           = ChinaBomberH20
   TextLabel        = CONTROLBAR:ConstructChinaBomberH20
-  ButtonImage      = pla_h20
+  ButtonImage      = SPEC_ChinaH20
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20
 End
@@ -207,7 +207,7 @@ CommandButton Command_ConstructChinaBomberH20A
   Command          = UNIT_BUILD
   Object           = ChinaBomberH20A
   TextLabel        = CONTROLBAR:ConstructChinaBomberH20A
-  ButtonImage      = pla_h20
+  ButtonImage      = SPEC_ChinaH20
   ButtonBorderType = BUILD
   DescriptLabel    = CONTROLBAR:ToolTipChinaBomberH20A
 End
@@ -384,6 +384,7 @@ FIRE_WEAPONS = [
     "China_Weapon_YJ12_J15",
     "China_Weapon_LS6_J31",
     "China_Weapon_PL15_J31",
+    "China_Weapon_PL10_J31",
     "China_Weapon_HeavyBomb_J31",
     "China_Weapon_FT7_J31",
     "China_Weapon_LS6B_J31",
@@ -1152,7 +1153,6 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         if f"Weapon {w}" in weapon:
             errors.append(f"A2A weapon still present: {w}")
     fighters = {
-        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "China_Weapon_PL15_J31",
         "data\\ini\\object\\specter\\pla\\airforce\\j11b.ini": "China_Weapon_KD88_J11B",
         "data\\ini\\object\\specter\\pla\\airforce\\j15.ini": "China_Weapon_YJ83_J15",
         "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini": "China_Weapon_LT2_JF17",
@@ -1172,14 +1172,32 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         if "China_Weapon_PL12" in text:
             errors.append(f"{key} still uses PL-12 A2A")
     j31 = v_map["data\\ini\\object\\specter\\pla\\airforce\\j31.ini"].decode("latin1", errors="replace")
-    if "China_Weapon_LS6_J31" not in j31:
-        errors.append("J-31 missing LS-6 precision guided bomb")
-    if "China_Weapon_HeavyBomb_J31" not in j31:
-        errors.append("J-31 missing heavy A2G bomb")
+    if "China_Weapon_PL15_J31" not in j31:
+        errors.append("J-31 missing PL-15 BVR PRIMARY")
+    if "China_Weapon_PL10_J31" not in j31:
+        errors.append("J-31 missing PL-10 SRAAM SECONDARY")
+    if "China_Weapon_LS6_J31" in j31 or "China_Weapon_HeavyBomb_J31" in j31:
+        errors.append("J-31 still has A2G bomb loadout")
+    if "F22A_AA_CommandSet" not in j31:
+        errors.append("J-31 not using F-22 AA CommandSet")
+    if "US_F22A" in j31 or "AmericaJetF-22A" in j31:
+        errors.append("J-31 model replaced with F-22")
     if "StealthUpdate" not in j31 or "InnateStealth                         = Yes" not in j31:
         errors.append("J-31 lost stealth identity")
     if "Model               = LSFJ31" not in j31 and "Model = LSFJ31" not in j31:
         errors.append("J-31 Draw Model changed")
+    if "SPEC_ChinaJ31" not in j31:
+        errors.append("J-31 portrait is not SPEC_ChinaJ31")
+    pl15 = re.search(r"Weapon China_Weapon_PL15_J31\s*\n.*?^End\s*$", weapon, re.M | re.S)
+    if not pl15 or "OCL_F22A_AIM120D_TargetLock" not in pl15.group(0):
+        errors.append("J-31 PL-15 missing F-22 AIM120 FireOCL")
+    have_ocl = False
+    for _k, b in v_map.items():
+        if b"OCL_F22A_AIM120D_TargetLock" in b:
+            have_ocl = True
+            break
+    if not have_ocl:
+        errors.append("OCL_F22A_AIM120D_TargetLock missing from packed DATA")
     jf17 = v_map["data\\ini\\object\\specter\\pla\\airforce\\jf17.ini"].decode("latin1", errors="replace")
     if "China_Weapon_CM802_JF17" not in jf17 or "China_Weapon_MK82_JF17" not in jf17:
         errors.append("JF-17 missing AGM or bomb slot")
@@ -1189,9 +1207,8 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         ("China_Weapon_LT2_JF17", "ClipSize                    = 6"),
         ("China_Weapon_CM802_JF17", "ClipSize                    = 6"),
         ("China_Weapon_MK82_JF17", "ClipSize                = 12"),
-        ("China_Weapon_PL15_J31", "ClipSize                    = 8"),
-        ("China_Weapon_LS6_J31", "ClipSize                    = 8"),
-        ("China_Weapon_HeavyBomb_J31", "ClipSize                = 4"),
+        ("China_Weapon_PL15_J31", "ClipSize                    = 6"),
+        ("China_Weapon_PL10_J31", "ClipSize                    = 4"),
     ):
         wm = re.search(rf"Weapon {re.escape(wname)}\s*\n.*?^End\s*$", weapon, re.M | re.S)
         if not wm:
@@ -1203,9 +1220,8 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         if _k.endswith(".ini"):
             object_names.update(re.findall(r"^Object (\S+)", b.decode("latin1", errors="replace"), re.M))
     for wname, proj in (
-        ("China_Weapon_PL15_J31", "AIM-120D_Object"),
-        ("China_Weapon_LS6_J31", "Sattar_LGAGM_Object"),
-        ("China_Weapon_HeavyBomb_J31", "GBU24_GuidedBombObject"),
+        ("China_Weapon_PL15_J31", "R77_Object"),
+        ("China_Weapon_PL10_J31", "AIM-9X_Object"),
         ("China_Weapon_LT2_JF17", "Sattar_LGAGM_Object"),
         ("China_Weapon_CM802_JF17", "KH31P_MissileObject"),
         ("China_Weapon_MK82_JF17", "Fab-250"),
@@ -1313,73 +1329,186 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
     print("FIRE/SCALE CHECK PASS")
 
 
-# Airbase construct portraits live on Pla_Icons01/02 in patch ART as .dds.
-# Packed HandCreatedMappedImages still names them .tga, which can bind an older
-# placeholder atlas from another BIG. Force the patch DDS (and H-20 TB).
-ATLAS_ICON_TEXTURES = {
-    "pla_j10c": "Pla_Icons01.dds",
-    "pla_j16d": "Pla_Icons01.dds",
-    "pla_j20b": "Pla_Icons01.dds",
-    "pla_jh7a2": "Pla_Icons01.dds",
-    "pla_ch5": "Pla_Icons01.dds",
-    "pla_wz10me": "Pla_Icons02.dds",
-    "pla_z18a": "Pla_Icons02.dds",
-}
-
+# Unique CommandButton portraits. Stock pla_* names bind leftover PLA atlas
+# placeholders from other BIGs. SPEC_* names exist only in this pack.
 AIRBASE_BUTTON_IMAGES = {
-    "Command_ConstructChinaJetJ20B_AG": "pla_j20b",
-    "Command_ConstructChinaJetJ20B_AA": "pla_j20b",
-    "Command_ConstructChinaJetJ16D": "pla_j16d",
-    "Command_ConstructChinaJetJ10C": "pla_j10c",
-    "Command_ConstructChinaJetJ31": "pla_j31",
-    "Command_ConstructChinaJetJH7A2": "pla_jh7a2",
-    "Command_ConstructChinaBomberH20": "pla_h20",
-    "Command_ConstructChinaBomberH20A": "pla_h20",
-    "Command_ConstructChinaBomberH6K": "pla_h6k",
-    "Command_ConstructChinaJetY20": "pla_y20",
-    "Command_ConstructChinaAircraftY20AEW": "pla_y20aew",
-    "Command_ConstructChinaDroneCH5": "pla_ch5",
-    "Command_ConstructChinaHelicopterZ18A": "pla_z18a",
-    "Command_ConstructChinaHelicopterWZ10ME": "pla_wz10me",
+    "Command_ConstructChinaJetJ20B_AG": "SPEC_ChinaJ20B",
+    "Command_ConstructChinaJetJ20B_AA": "SPEC_ChinaJ20B",
+    "Command_ConstructChinaJetJ16D": "SPEC_ChinaJ16D",
+    "Command_ConstructChinaJetJ10C": "SPEC_ChinaJ10C",
+    "Command_ConstructChinaJetJ31": "SPEC_ChinaJ31",
+    "Command_ConstructChinaJetJH7A2": "SPEC_ChinaJH7A2",
+    "Command_ConstructChinaBomberH20": "SPEC_ChinaH20",
+    "Command_ConstructChinaBomberH20A": "SPEC_ChinaH20",
+    "Command_ConstructChinaBomberH6K": "SPEC_ChinaH6K",
+    "Command_ConstructChinaJetY20": "SPEC_ChinaY20",
+    "Command_ConstructChinaAircraftY20AEW": "SPEC_ChinaY20AEW",
+    "Command_ConstructChinaDroneCH5": "SPEC_ChinaCH5",
+    "Command_ConstructChinaHelicopterZ18A": "SPEC_ChinaZ18A",
+    "Command_ConstructChinaHelicopterWZ10ME": "SPEC_ChinaWZ10ME",
 }
 
 DEDICATED_ICON_TEXTURES = {
-    "pla_j20b": "Pla_Icons01.dds",
-    "pla_j16d": "Pla_Icons01.dds",
-    "pla_j10c": "Pla_Icons01.dds",
-    "pla_jh7a2": "Pla_Icons01.dds",
-    "pla_ch5": "Pla_Icons01.dds",
-    "pla_wz10me": "Pla_Icons02.dds",
-    "pla_z18a": "Pla_Icons02.dds",
-    "pla_j31": "J31TB.tga",
-    "pla_h20": "B2ATB.tga",
-    "pla_h6k": "CHNH6KTB.tga",
-    "pla_y20": "CHNY20TB.tga",
-    "pla_y20aew": "CHNKJ2000TB.tga",
+    "SPEC_ChinaJ20B": "SPEC_ChinaJ20B.tga",
+    "SPEC_ChinaJ16D": "SPEC_ChinaJ16D.tga",
+    "SPEC_ChinaJ10C": "SPEC_ChinaJ10C.tga",
+    "SPEC_ChinaJH7A2": "SPEC_ChinaJH7A2.tga",
+    "SPEC_ChinaCH5": "SPEC_ChinaCH5.tga",
+    "SPEC_ChinaWZ10ME": "SPEC_ChinaWZ10ME.tga",
+    "SPEC_ChinaZ18A": "SPEC_ChinaZ18A.tga",
+    "SPEC_ChinaJ31": "J31TB.tga",
+    "SPEC_ChinaH20": "B2ATB.tga",
+    "SPEC_ChinaH6K": "CHNH6KTB.tga",
+    "SPEC_ChinaY20": "CHNY20TB.tga",
+    "SPEC_ChinaY20AEW": "CHNKJ2000TB.tga",
+}
+
+ATLAS_PORTRAIT_CROPS = {
+    "SPEC_ChinaJ10C.tga": ("art\\textures\\pla_icons01.dds", (2, 420, 126, 509)),
+    "SPEC_ChinaJ16D.tga": ("art\\textures\\pla_icons01.dds", (127, 420, 252, 510)),
+    "SPEC_ChinaJ20B.tga": ("art\\textures\\pla_icons01.dds", (255, 420, 378, 510)),
+    "SPEC_ChinaJH7A2.tga": ("art\\textures\\pla_icons01.dds", (383, 420, 504, 509)),
+    "SPEC_ChinaCH5.tga": ("art\\textures\\pla_icons01.dds", (378, 1, 502, 105)),
+    "SPEC_ChinaWZ10ME.tga": ("art\\textures\\pla_icons02.dds", (381, 108, 502, 208)),
+    "SPEC_ChinaZ18A.tga": ("art\\textures\\pla_icons02.dds", (2, 210, 126, 310)),
 }
 
 
-def patch_atlas_mappedimage_textures(text: str) -> str:
-    for name, tex in ATLAS_ICON_TEXTURES.items():
+def rgb565(c: int) -> tuple[int, int, int]:
+    r = ((c >> 11) & 31) * 255 // 31
+    g = ((c >> 5) & 63) * 255 // 63
+    b = (c & 31) * 255 // 31
+    return r, g, b
+
+
+def decode_dxt1_block(block: bytes) -> list[tuple[int, int, int, int]]:
+    c0, c1 = struct.unpack_from("<HH", block, 0)
+    bits = struct.unpack_from("<I", block, 4)[0]
+    p0 = rgb565(c0)
+    p1 = rgb565(c1)
+    colors = [p0, p1]
+    if c0 > c1:
+        colors.append(tuple((2 * a + b) // 3 for a, b in zip(p0, p1)))
+        colors.append(tuple((a + 2 * b) // 3 for a, b in zip(p0, p1)))
+        alphas = [255, 255, 255, 255]
+    else:
+        colors.append(tuple((a + b) // 2 for a, b in zip(p0, p1)))
+        colors.append((0, 0, 0))
+        alphas = [255, 255, 255, 0]
+    out = []
+    for i in range(16):
+        idx = (bits >> (2 * i)) & 3
+        r, g, b = colors[idx]
+        out.append((r, g, b, alphas[idx]))
+    return out
+
+
+def decode_dxt3_block(block: bytes) -> list[tuple[int, int, int, int]]:
+    alpha_bits = struct.unpack_from("<Q", block, 0)[0]
+    colors = decode_dxt1_block(block[8:])
+    out = []
+    for i in range(16):
+        a = ((alpha_bits >> (4 * i)) & 0xF) * 17
+        r, g, b, _ = colors[i]
+        out.append((r, g, b, a))
+    return out
+
+
+def decode_dds_rgba(data: bytes) -> tuple[int, int, list[list[tuple[int, int, int, int]]]]:
+    if data[:4] != b"DDS ":
+        raise SystemExit("portrait source is not DDS")
+    h = struct.unpack_from("<I", data, 12)[0]
+    w = struct.unpack_from("<I", data, 16)[0]
+    fourcc = data[84:88]
+    payload = data[128:]
+    pixels = [[(0, 0, 0, 0) for _ in range(w)] for _ in range(h)]
+    blocks_x = (w + 3) // 4
+    blocks_y = (h + 3) // 4
+    bs = 16 if fourcc == b"DXT3" else 8
+    off = 0
+    for by in range(blocks_y):
+        for bx in range(blocks_x):
+            block = payload[off : off + bs]
+            off += bs
+            pix = decode_dxt3_block(block) if fourcc == b"DXT3" else decode_dxt1_block(block)
+            for i, rgba in enumerate(pix):
+                x = bx * 4 + (i % 4)
+                y = by * 4 + (i // 4)
+                if x < w and y < h:
+                    pixels[y][x] = rgba
+    return w, h, pixels
+
+
+def write_tga32(pixels: list[list[tuple[int, int, int, int]]]) -> bytes:
+    h = len(pixels)
+    w = len(pixels[0])
+    header = bytearray(18)
+    header[2] = 2
+    struct.pack_into("<HH", header, 12, w, h)
+    header[16] = 32
+    header[17] = 0x28  # 8-bit alpha, origin top-left
+    body = bytearray()
+    for row in pixels:
+        for r, g, b, a in row:
+            body.extend((b, g, r, a))
+    return bytes(header) + bytes(body)
+
+
+def crop_pixels(pixels, box):
+    left, top, right, bottom = box
+    return [row[left:right] for row in pixels[top:bottom]]
+
+
+def extract_atlas_portraits(art_map: dict[str, tuple[str, bytes]]) -> dict[str, bytes]:
+    decoded = {}
+    out = {}
+    for dest_name, (src_key, box) in ATLAS_PORTRAIT_CROPS.items():
+        if src_key not in decoded:
+            if src_key not in art_map:
+                raise SystemExit(f"missing atlas texture {src_key}")
+            decoded[src_key] = decode_dds_rgba(art_map[src_key][1])
+        _w, _h, pixels = decoded[src_key]
+        crop = crop_pixels(pixels, box)
+        if not crop or not crop[0]:
+            raise SystemExit(f"empty crop for {dest_name}")
+        out[dest_name] = write_tga32(crop)
+    return out
+
+
+def patch_construct_button_images(text: str) -> str:
+    for btn, image in AIRBASE_BUTTON_IMAGES.items():
         pat = re.compile(
-            rf"(MappedImage {re.escape(name)}\s*\n)(.*?)(^End\s*$)",
+            rf"(CommandButton {re.escape(btn)}\s*\n)(.*?)(^End\s*$)",
             re.M | re.S,
         )
         m = pat.search(text)
         if not m:
-            raise SystemExit(f"MappedImage {name} missing from HandCreatedMappedImages.INI")
+            continue
         new_body, n = re.subn(
-            r"(?m)^([ \t]*Texture[ \t]*=[ \t]*).*$",
-            rf"\1{tex}",
+            r"(?m)^([ \t]*ButtonImage[ \t]*=[ \t]*).*$",
+            rf"\1{image}",
             m.group(2),
             count=1,
         )
         if n != 1:
-            raise SystemExit(f"MappedImage {name} Texture line missing")
-        if "Pla_Icons01.tga" in new_body or "Pla_Icons02.tga" in new_body:
-            raise SystemExit(f"MappedImage {name} still references Pla_Icons*.tga")
+            raise SystemExit(f"{btn} ButtonImage line missing")
         text = text[: m.start()] + m.group(1) + new_body + m.group(3) + text[m.end() :]
     return text
+
+
+def inject_unique_portraits(handcreated: str, overlay_text: str) -> str:
+    for name in DEDICATED_ICON_TEXTURES:
+        handcreated = re.sub(
+            rf"^MappedImage {re.escape(name)}\s*\n.*?^End\s*$\n?",
+            "",
+            handcreated,
+            count=1,
+            flags=re.M | re.S,
+        )
+    block = overlay_text.strip() + "\n"
+    if not handcreated.endswith("\n"):
+        handcreated += "\n"
+    return handcreated + "\n" + block
 
 
 def mappedimage_textures(text: str) -> dict[str, str]:
@@ -1408,7 +1537,6 @@ def commandbutton_image(text: str, btn: str) -> str | None:
 
 
 def validate_airbase_button_icons(cs_text: str, cb_text: str, mi_by_file: dict[str, str]) -> None:
-    # Last file in this list wins if the engine loads HandCreated alphabetically.
     merged = {}
     for key in (
         "handcreatedmappedimages.ini",
@@ -1434,8 +1562,20 @@ def validate_airbase_button_icons(cs_text: str, cb_text: str, mi_by_file: dict[s
         expected = DEDICATED_ICON_TEXTURES[image]
         if tex != expected:
             raise SystemExit(f"{image} Texture={tex!r} expected {expected}")
-        if tex.lower() in ("pla_icons01.tga", "pla_icons02.tga"):
-            raise SystemExit(f"{image} still uses generic atlas TGA {tex}")
+        low = (tex or "").lower()
+        if low in ("pla_icons01.tga", "pla_icons02.tga", "pla_icons01.dds", "pla_icons02.dds"):
+            raise SystemExit(f"{image} still uses generic PLA atlas {tex}")
+    hc = None
+    for k, text in mi_by_file.items():
+        if k.endswith("handcreatedmappedimages.ini"):
+            hc = text
+            break
+    if hc is None:
+        raise SystemExit("HandCreatedMappedImages.INI missing from icon check")
+    for image, tex in DEDICATED_ICON_TEXTURES.items():
+        got = mappedimage_textures(hc).get(image)
+        if got != tex:
+            raise SystemExit(f"HandCreated {image} Texture={got!r} expected {tex}")
     print("AIRBASE ICON CHECK PASS")
 
 
@@ -1474,7 +1614,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_aircraft_button_icons"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_aircraft_final_fix"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -1547,6 +1687,7 @@ def main() -> int:
         raise SystemExit("duplicate China_HeavyAirBaseCommandSet after patch")
     if cs_new.count("CommandSet China_LargeAirBaseCommandSet") != 1:
         raise SystemExit("duplicate China_LargeAirBaseCommandSet after patch")
+    cs_new = patch_construct_button_images(cs_new)
     data_map[cs_key] = (cs_name, lf(cs_new.encode("latin1")))
     print("Patched CommandSet.ini (inline buttons + Large/Heavy blocks)")
 
@@ -1555,6 +1696,7 @@ def main() -> int:
     cb_text = unlock_commandbuttons(cb_bytes.decode("latin1"))
     cb_text = strip_named_commandbuttons(cb_text, REMOVED_CONSTRUCT_BUTTONS)
     cb_text = patch_airbase_construct_buttons(cb_text)
+    cb_text = patch_construct_button_images(cb_text)
     data_map[cb_key] = (cb_name, lf(cb_text.encode("latin1")))
     print("Unlocked remaining China aircraft/drone construct CommandButtons")
     validate_airbase_construct_once(cs_new, cb_text)
@@ -1563,9 +1705,12 @@ def main() -> int:
     if mi_key not in data_map:
         raise SystemExit("packed HandCreatedMappedImages.INI missing")
     mi_name, mi_bytes = data_map[mi_key]
-    mi_text = patch_atlas_mappedimage_textures(mi_bytes.decode("latin1"))
+    overlay_portraits = lf(
+        (ROOT / "patch/Data/INI/MappedImages/HandCreated/zChina_AirbasePortrait_Images.INI").read_bytes()
+    ).decode("utf-8")
+    mi_text = inject_unique_portraits(mi_bytes.decode("latin1"), overlay_portraits)
     data_map[mi_key] = (mi_name, lf(mi_text.encode("latin1")))
-    print("Retargeted China airbase MappedImages from Pla_Icons*.tga to Pla_Icons*.dds")
+    print("Injected unique SPEC_China* portraits into HandCreatedMappedImages.INI")
 
     for key in UNLOCK_OBJECT_KEYS:
         if key not in data_map:
@@ -1625,8 +1770,12 @@ def main() -> int:
             else:
                 art_map[key] = (dest, content)
                 added_art.append(dest)
-    else:
-        added_art.append("ART unchanged (DATA-only cleanup; reuse china_h20 ART)")
+    portraits = extract_atlas_portraits(art_map)
+    for dest_name, blob in portraits.items():
+        dest = "Art\\Textures\\" + dest_name
+        key = norm_key(dest)
+        art_map[key] = (dest, blob)
+        added_art.append(dest)
 
     def finalize(order_keys, amap):
         final = {}
@@ -1645,18 +1794,23 @@ def main() -> int:
     out_data = out / "_SPEC_DATA_ONE.big"
     out_data.write_bytes(data_bytes)
 
+    final_art = finalize(art_keys, art_map)
+    art_bytes = build_big(final_art)
+    out_art = out / "_SPEC_ART_ONE.big"
+    out_art.write_bytes(art_bytes)
+
     zpath = out / "CHINA_AIRFORCE_CLEANUP.zip"
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(out_data, "_SPEC_DATA_ONE.big")
+        zf.write(out_art, "_SPEC_ART_ONE.big")
 
-    # Post-pack verify from written DATA + reused china_h20 ART.
+    # Post-pack verify from written DATA + ART.
     v_entries, v_raw = read_big(out_data)
     v_map = {}
     for name, off, size in v_entries:
         v_map[norm_key(name)] = v_raw[off : off + size]
-    a_entries, a_raw = read_big(BASE_ART)
+    a_entries, a_raw = read_big(out_art)
     a_names = {norm_key(n) for n, _o, _s in a_entries}
-    art_bytes = BASE_ART.read_bytes()
 
     def must_hash(key_substr, expected):
         blob = None
@@ -1807,6 +1961,13 @@ def main() -> int:
         "art\\textures\\b2atb.tga",
         "art\\textures\\pla_icons01.dds",
         "art\\textures\\pla_icons02.dds",
+        "art\\textures\\spec_chinaj20b.tga",
+        "art\\textures\\spec_chinaj16d.tga",
+        "art\\textures\\spec_chinaj10c.tga",
+        "art\\textures\\spec_chinajh7a2.tga",
+        "art\\textures\\spec_chinach5.tga",
+        "art\\textures\\spec_chinawz10me.tga",
+        "art\\textures\\spec_chinaz18a.tga",
         "art\\w3d\\nvh20.w3d",
         "art\\textures\\h-20.dds",
         "art\\textures\\h-20.tga",
@@ -1835,9 +1996,9 @@ def main() -> int:
         "\n".join(
             [
                 f"DATA SHA256={hashlib.sha256(data_bytes).hexdigest()} SIZE={len(data_bytes)}",
-                f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)} (unchanged china_h20 ART, not in ZIP)",
+                f"ART  SHA256={hashlib.sha256(art_bytes).hexdigest()} SIZE={len(art_bytes)} (unique SPEC_China* portraits added)",
                 f"ZIP  SHA256={hashlib.sha256(zpath.read_bytes()).hexdigest()} SIZE={zpath.stat().st_size}",
-                "PACKAGING=DATA_ONLY _SPEC_DATA_ONE.big",
+                "PACKAGING=DATA+ART _SPEC_DATA_ONE.big _SPEC_ART_ONE.big",
                 "added_data=" + repr(added_data),
                 "added_art=" + repr(added_art),
                 NEW_LARGE_COMMANDSET,
@@ -1860,7 +2021,8 @@ def main() -> int:
                 "RUSSIA BASELINE UNTOUCHED (ChinaAirfieldCommandSet kept)",
                 "COMMANDSET PARSE FIX: overlay UNIT_BUILD buttons inlined before PLAAirfieldCommandSet",
                 "CHINA AIRBASE BUTTONS: restored PLADozer fighter+heavy slots; fighter Object=China_LargeAirBase",
-                "CHINA AIRBASE ICONS: pla_j20b/j16d/j10c/jh7a2/ch5 -> Pla_Icons01.dds; wz10me/z18a -> Pla_Icons02.dds; h20 -> B2ATB.tga",
+                "CHINA AIRBASE ICONS: unique SPEC_China* MappedImages + TGA portraits; no Pla_Icons*.tga",
+                "J-31 A2A: F-22 AIM120D/AIM9X weapon logic, LSFJ31 model kept",
             ]
         )
         + "\n"

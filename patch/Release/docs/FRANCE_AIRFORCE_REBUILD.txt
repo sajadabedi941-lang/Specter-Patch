@@ -1,0 +1,38 @@
+SPECTER - France Air Force rebuild
+=================================
+
+Install: copy these files into the Specter Data folder (replace existing):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Keep EnglishZH.big and AudioZH.big unchanged.
+
+Fighter Airbase (France_LargeAirBase / FranceAirfield):
+  1 Rafale C F4
+  2 Rafale B
+  3 Rafale M
+  4 Mirage 2000
+  5 Mirage 2000D
+  6 Mirage F1CT
+  7 Mirage IIIE
+  8 Mirage 5
+
+Heavy Airbase (France_HeavyAirBase):
+  1 C-130 Hercules
+  2 E-3 AWACS
+  3 NH90 Caiman
+  4 Tiger HAD
+
+Removed NATO placeholders from France airbases:
+  Rafale-M placeholder, EF-2000T4, F-16D Blk52, F-35A, EA-18G,
+  AH-64, UH-60, E-3G AWACS placeholder, CH-47.
+
+ART: DONOR_ART meshes (LSFRafale, LSFMirage*, LSFFRF1, LSFUSAC130, E3, LSFFRNH90, LSFFRTiger).
+Each CommandButton uses a unique SPEC_France* portrait.
+
+Parser: overlay INI LF/End check pass. CommandButton refs pass. CSF pass.
+
+Hashes:
+  DATA sha256 b9594e0c435735151a46650db854b7d192cd7e950f0d12ba2984021101ec0762
+  ART  sha256 e7534b5969ff3be5106eeffb0dae6f7e1b21e427e2b611ea9e8d8d5addb027f1
+  ZIP  sha256 721a0302d428a0f2c04cc7ef62621e87639f158254881abc1ea532dc6d6af257

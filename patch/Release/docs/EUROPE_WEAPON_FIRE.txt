@@ -1,0 +1,50 @@
+SPECTER - Europe Aircraft Weapon Fire Fix
+=========================================
+
+Install: copy these files into the Specter Data folder (replace existing):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  INSTALL.txt is in the ZIP for reference.
+
+Keep EnglishZH.big and AudioZH.big unchanged.
+
+ONLY France, Germany, Italy, and the United Kingdom air units are patched.
+Russia, China, USA, and other countries are not modified.
+Airbase menus and ART are unchanged from europe-airbase-structure-v1.
+
+What was broken:
+  Overlay weapons pointed at missing projectile objects
+  (France_MICA_Projectile, France_SCALP_Projectile, France_Meteor_Projectile,
+  France_Projectile_Meteor_Rafale). Those weapons could not fire.
+
+Fixes:
+  All FR/DE/IT/UK air weapons retargeted to packed projectiles:
+    Meteor / MICA / IRIS-T / ASRAAM / AMRAAM -> MeteorMissile_Object
+    SCALP / Taurus / Storm Shadow / Exocet   -> Kh59MK2_Object
+    AASM / Paveway / JDAM / bombs            -> Fab-250
+    Hellfire / Brimstone / ATGM              -> AGM114L_MissileObject
+    Rockets                                  -> GenericUnguidedRockets
+    Cannon                                   -> 30mm_API-T_Projectile
+  ClipSize + ClipReloadTime present on every air weapon.
+  Missiles AutoReloadsClip = RETURN_TO_BASE.
+  Cannons and rockets AutoReloadsClip = Yes.
+  Combat jets: cannon TERTIARY, AutoChooseSources, AutoAcquireEnemiesWhenIdle,
+  OutOfAmmoDamagePerSecond = 0%.
+  Attack helis keep cannon + ATGM + rockets (Tiger HAD / UHT, AW249, A129, Apache).
+  Transports (A400M, C-130, C-17, NH90, Caracal, CH-53, Chinook, Merlin, Wildcat)
+  have no weapons.
+  AWACS (E-3, G550 CAEW, E-7) radar only: REVEALS_ENEMY_PATHS, no CAN_ATTACK,
+  C17GlobalMasterCommandSet (no FireMainWeapon).
+
+Packer: patch/tools/big/pack_europe_weapon_fire.py
+Base BIG: /tmp/europe_airbase_structure
+
+Parser: overlay INI LF/End pass.
+Weapon fire validate: every combat WeaponSet slot exists in Weapon.ini and
+every ProjectileObject exists as a packed Object.
+China/Russia CommandSets unchanged. ART hash unchanged. ZIP extract verify pass.
+
+Hashes:
+  DATA sha256 5637e651796ecbe99807b66f55bcfce67cbfeaa1dab90fb1a75df3dba9e14da7
+  ART  sha256 270bd024f1bf6f1b1a5c5d6718f56b893eac511fa1a48c0534e60cccf9cb5567
+  ZIP  sha256 302909ebea01e4cddf0b48141068345e9887e000bf015f42b35227df8929e11a

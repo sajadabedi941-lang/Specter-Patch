@@ -27,6 +27,7 @@ FIGHTER_DRAW = """  Draw = W3DModelDraw ModuleTag_01
       Model               = {model}
       WeaponLaunchBone    = PRIMARY   Weapon01
       WeaponLaunchBone    = SECONDARY Weapon02
+      WeaponLaunchBone    = TERTIARY  Weapon01
     End
 
     ConditionState        = JETEXHAUST
@@ -141,12 +142,13 @@ FIGHTER_TAIL = """  RadarPriority          = UNIT
     ReallyDamagedFXList1         = Loc: X:0 Y:0 Z:0 FXList:FX_MIGDamageTransition
   End
   Behavior = JetAIUpdate ModuleTag_09ai
-    OutOfAmmoDamagePerSecond  = 10%
+    OutOfAmmoDamagePerSecond  = 0%
     TakeoffDistForMaxLift     = 0%
     TakeoffPause              = 500
     MinHeight                 = 5
     ParkingOffset             = 3
     ReturnToBaseIdleTime      = 10000
+    AutoAcquireEnemiesWhenIdle = Yes
   End
   Locomotor = SET_NORMAL {loco}
   Locomotor = SET_TAXIING BasicJetTaxiLocomotor
@@ -273,9 +275,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_Meteor_RafaleC",
-                    "Weapon              = SECONDARY  France_Weapon_MICA_RafaleC",
                     "PreferredAgainst    = PRIMARY    AIRCRAFT",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = SECONDARY  France_Weapon_MICA_RafaleC",
                     "PreferredAgainst    = SECONDARY  AIRCRAFT",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   AIRCRAFT VEHICLE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="F22A_AA_CommandSet",
@@ -297,7 +304,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_SCALP_RafaleB",
+                    "PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
                     "Weapon              = SECONDARY  France_Weapon_MICA_RafaleB",
+                    "PreferredAgainst    = SECONDARY  AIRCRAFT",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -319,7 +333,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_Exocet_RafaleM",
+                    "PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
                     "Weapon              = SECONDARY  France_Weapon_MICA_RafaleM",
+                    "PreferredAgainst    = SECONDARY  AIRCRAFT",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -341,9 +362,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_AAM_Mirage2000",
-                    "Weapon              = SECONDARY  France_Weapon_MICA_Mirage2000",
                     "PreferredAgainst    = PRIMARY    AIRCRAFT",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = SECONDARY  France_Weapon_MICA_Mirage2000",
                     "PreferredAgainst    = SECONDARY  AIRCRAFT",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   AIRCRAFT VEHICLE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="F22A_AA_CommandSet",
@@ -365,7 +391,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_SCALP_Mirage2000D",
-                    "Weapon              = SECONDARY  France_Weapon_Bomb_Mirage2000D",
+                    "PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = SECONDARY  France_Weapon_AASM_Mirage2000D",
+                    "PreferredAgainst    = SECONDARY  VEHICLE STRUCTURE",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -387,7 +420,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_AAM_MirageF1CT",
+                    "PreferredAgainst    = PRIMARY    AIRCRAFT",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
                     "Weapon              = SECONDARY  France_Weapon_Bomb_MirageF1CT",
+                    "PreferredAgainst    = SECONDARY  VEHICLE STRUCTURE",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -409,7 +449,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_AAM_MirageIIIE",
+                    "PreferredAgainst    = PRIMARY    AIRCRAFT",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
                     "Weapon              = SECONDARY  France_Weapon_Bomb_MirageIIIE",
+                    "PreferredAgainst    = SECONDARY  VEHICLE STRUCTURE",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -431,7 +478,14 @@ def main() -> None:
             weapons=wpn_set(
                 [
                     "Weapon              = PRIMARY    France_Weapon_Bomb_Mirage5",
+                    "PreferredAgainst    = PRIMARY    VEHICLE STRUCTURE",
+                    "AutoChooseSources   = PRIMARY    FROM_PLAYER FROM_SCRIPT FROM_AI",
                     "Weapon              = SECONDARY  France_Weapon_AAM_Mirage5",
+                    "PreferredAgainst    = SECONDARY  AIRCRAFT",
+                    "AutoChooseSources   = SECONDARY  FROM_PLAYER FROM_SCRIPT FROM_AI",
+                    "Weapon              = TERTIARY   France_Weapon_Cannon_Jet",
+                    "PreferredAgainst    = TERTIARY   INFANTRY VEHICLE STRUCTURE",
+                    "AutoChooseSources   = TERTIARY   FROM_PLAYER FROM_SCRIPT FROM_AI",
                 ]
             ),
             cmd="GenericTacticalBomberCommandSet",
@@ -638,7 +692,7 @@ Scale = 0.90
   BuildTime = 36.0
   ExperienceValue = 50 50 100 150
   IsTrainable = No
-  CommandSet = GenericTacticalBomberCommandSet
+  CommandSet = C17GlobalMasterCommandSet
 
   VoiceSelect = RaptorVoiceSelect
   VoiceMove = RaptorVoiceMove

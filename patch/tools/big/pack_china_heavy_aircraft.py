@@ -994,8 +994,10 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
     else:
         if "Model               = NVH20" not in h20 and "Model = NVH20" not in h20:
             errors.append("H-20 Draw Model is not NVH20")
-        if "AVB21" in h20 or "AVB3bmbr" in h20:
-            errors.append("H-20 INI still references B-2 model")
+        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20):
+            errors.append("H-20 Draw Model is not NVH20")
+        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20a):
+            errors.append("H-20A Draw Model is not NVH20")
         if "StealthUpdate" not in h20 or "InnateStealth = Yes" not in h20:
             errors.append("H-20 missing innate StealthUpdate")
         if "GenericTacticalBomberCommandSet" not in h20:
@@ -1369,7 +1371,7 @@ def main() -> int:
 
     cb = v_map["data\\ini\\commandbutton.ini"].decode("latin1")
     for btn in REMOVED_CONSTRUCT_BUTTONS:
-        if f"CommandButton {btn}" in cb:
+        if re.search(rf"^CommandButton {re.escape(btn)}\s*$", cb, re.M):
             raise SystemExit(f"removed CommandButton still packed: {btn}")
     if "CONTROLBAR:ConstructChina_HeavyAirBase" not in cb:
         raise SystemExit("Heavy Airbase construct button missing China CSF key")

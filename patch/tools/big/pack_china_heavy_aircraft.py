@@ -995,9 +995,7 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         if "Model               = NVH20" not in h20 and "Model = NVH20" not in h20:
             errors.append("H-20 Draw Model is not NVH20")
         if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20):
-            errors.append("H-20 Draw Model is not NVH20")
-        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20a):
-            errors.append("H-20A Draw Model is not NVH20")
+            errors.append("H-20 Draw Model is B-2")
         if "StealthUpdate" not in h20 or "InnateStealth = Yes" not in h20:
             errors.append("H-20 missing innate StealthUpdate")
         if "GenericTacticalBomberCommandSet" not in h20:
@@ -1016,8 +1014,8 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
             errors.append("H-20A object name missing")
         if "Model               = NVH20" not in h20a and "Model = NVH20" not in h20a:
             errors.append("H-20A Draw Model is not NVH20")
-        if "AVB21" in h20a or "AVB3bmbr" in h20a:
-            errors.append("H-20A INI still references B-2 model")
+        if re.search(r"(?m)^\s*Model\s*=\s*(AVB21|AVB3bmbr)", h20a):
+            errors.append("H-20A Draw Model is B-2")
         if "China_Weapon_10Ton_H20A" not in h20a:
             errors.append("H-20A missing B-2A style 10-ton PRIMARY")
         if "China_Weapon_CJ100_H20" in h20a:

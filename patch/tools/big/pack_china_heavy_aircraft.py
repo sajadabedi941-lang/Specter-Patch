@@ -771,8 +771,113 @@ def ensure_inline_buttons(text: str) -> str:
     return text
 
 
+WORKING_PLA_DOZER_COMMANDSET = """CommandSet PLADozerCommandSet
+  1  = Command_ConstructChinaPowerPlant
+  2  = Command_ConstructChina_HeavyAirBase
+  3  = Command_ConstructChinaBarracks
+  4  = Command_ConstructChinaAirfield
+  5  = Command_ConstructChinaSupplyCenter
+  6  = Command_ConstructChinaIndustrialWeaponComplex
+  7  = Command_ConstructChinaBunker
+  8  = Command_ConstructChinaRadarYj26
+  9  = Command_ConstructChinaGattlingCannon
+ 10  = Command_ConstructChinaDF5NuclearMissileSilo 
+ 11  = Command_ConstructChinaWarFactory
+ 12  = Command_ConstructChinaCommandCenter
+ 13  = Command_ConstructChina_Hq9_Site
+ 14  = Command_DisarmMinesAtPosition
+End
+"""
+
+HEAVY_CONSTRUCT_BUTTON = """CommandButton Command_ConstructChina_HeavyAirBase
+  Command       = DOZER_CONSTRUCT
+  Object        = China_HeavyAirBase
+  TextLabel     = CONTROLBAR:ConstructChina_HeavyAirBase
+  ButtonImage   = pla_airfield
+  ButtonBorderType        = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipChina_HeavyAirBase
+End
+"""
+
+
+def restore_pla_dozer_commandset(text: str) -> str:
+    """Keep one Heavy Airbase button and one Fighter Airbase button on the PLA dozer."""
+    pat = re.compile(
+        r"CommandSet PLADozerCommandSet\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    if not pat.search(text):
+        raise SystemExit("PLADozerCommandSet not found in packed CommandSet.ini")
+    text = pat.sub(WORKING_PLA_DOZER_COMMANDSET.rstrip() + "\n", text, count=1)
+    # Overlay dozer uses PLADozerCommandSet_PatchAAB when that CommandSet exists.
+    aab_pat = re.compile(
+        r"CommandSet PLADozerCommandSet_PatchAAB\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    m = aab_pat.search(text)
+    if m:
+        block = m.group(0)
+        block = re.sub(
+            r"(?m)^([ \t]*2[ \t]*=[ \t]*).*$",
+            r"\1Command_ConstructChina_HeavyAirBase",
+            block,
+            count=1,
+        )
+        if block.count("Command_ConstructChinaAirfield") != 1:
+            raise SystemExit("PLADozerCommandSet_PatchAAB must have exactly one fighter airbase button")
+        if block.count("Command_ConstructChina_HeavyAirBase") != 1:
+            raise SystemExit("PLADozerCommandSet_PatchAAB must have exactly one heavy airbase button")
+        text = aab_pat.sub(block, text, count=1)
+    print("Restored PLADozerCommandSet fighter+heavy airbase slots")
+    return text
+
+
+def validate_airbase_construct_once(cs_text: str, cb_text: str) -> None:
+    """China fighter and heavy airbase construct buttons exist once on the PLA dozer."""
+    errors = []
+    dozer = grab_block(cs_text, "PLADozerCommandSet")
+    if dozer.count("Command_ConstructChinaAirfield") != 1:
+        errors.append(
+            "PLADozerCommandSet fighter airbase button count != 1 "
+            f"({dozer.count('Command_ConstructChinaAirfield')})"
+        )
+    if dozer.count("Command_ConstructChina_HeavyAirBase") != 1:
+        errors.append(
+            "PLADozerCommandSet heavy airbase button count != 1 "
+            f"({dozer.count('Command_ConstructChina_HeavyAirBase')})"
+        )
+    fighter_n = len(re.findall(r"^CommandButton Command_ConstructChinaAirfield\s*$", cb_text, re.M))
+    heavy_n = len(re.findall(r"^CommandButton Command_ConstructChina_HeavyAirBase\s*$", cb_text, re.M))
+    if fighter_n != 1:
+        errors.append(f"Command_ConstructChinaAirfield count != 1 ({fighter_n})")
+    if heavy_n != 1:
+        errors.append(f"Command_ConstructChina_HeavyAirBase count != 1 ({heavy_n})")
+    fighter_pat = re.compile(
+        r"CommandButton Command_ConstructChinaAirfield\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    heavy_pat = re.compile(
+        r"CommandButton Command_ConstructChina_HeavyAirBase\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    fm = fighter_pat.search(cb_text)
+    hm = heavy_pat.search(cb_text)
+    if not fm:
+        errors.append("Command_ConstructChinaAirfield block missing")
+    elif not re.search(r"(?m)^[ \t]*Object[ \t]*=[ \t]*China_LargeAirBase[ \t]*$", fm.group(0)):
+        errors.append("Fighter airbase construct Object is not China_LargeAirBase")
+    if not hm:
+        errors.append("Command_ConstructChina_HeavyAirBase block missing")
+    elif not re.search(r"(?m)^[ \t]*Object[ \t]*=[ \t]*China_HeavyAirBase[ \t]*$", hm.group(0)):
+        errors.append("Heavy airbase construct Object is not China_HeavyAirBase")
+    if errors:
+        raise SystemExit("PARSER CHECK FAIL airbase construct buttons\n" + "\n".join(errors))
+    print("PARSER CHECK PASS airbase construct buttons (fighter x1, heavy x1)")
+
+
 def patch_commandset(text: str) -> str:
     text = ensure_inline_buttons(text)
+    text = restore_pla_dozer_commandset(text)
 
     large_pat = re.compile(
         r"CommandSet China_LargeAirBaseCommandSet\s*\n.*?^End\s*$",
@@ -831,14 +936,44 @@ def strip_named_commandbuttons(text: str, names: list[str]) -> str:
 
 
 def patch_airbase_construct_buttons(text: str) -> str:
+    fighter_pat = re.compile(
+        r"CommandButton Command_ConstructChinaAirfield\s*\n.*?^End\s*$",
+        re.M | re.S,
+    )
+    fm = fighter_pat.search(text)
+    if not fm:
+        raise SystemExit("Command_ConstructChinaAirfield not found")
+    fblock = fm.group(0)
+    fblock = re.sub(
+        r"(?m)^([ \t]*Object[ \t]*=[ \t]*).*$",
+        r"\1China_LargeAirBase",
+        fblock,
+        count=1,
+    )
+    if not re.search(r"(?m)^[ \t]*Object[ \t]*=[ \t]*China_LargeAirBase[ \t]*$", fblock):
+        raise SystemExit("Fighter Airbase construct button Object is not China_LargeAirBase")
+    if "pla_airfield" not in fblock:
+        raise SystemExit("Fighter Airbase construct button missing pla_airfield")
+    text = fighter_pat.sub(fblock, text, count=1)
+
     heavy_pat = re.compile(
         r"CommandButton Command_ConstructChina_HeavyAirBase\s*\n.*?^End\s*$",
         re.M | re.S,
     )
     m = heavy_pat.search(text)
     if not m:
+        text = fighter_pat.sub(fblock + "\n\n" + HEAVY_CONSTRUCT_BUTTON.rstrip() + "\n", text, count=1)
+        print("Inserted Command_ConstructChina_HeavyAirBase after fighter construct button")
+        m = heavy_pat.search(text)
+    if not m:
         raise SystemExit("Command_ConstructChina_HeavyAirBase not found")
     block = m.group(0)
+    block = re.sub(
+        r"(?m)^([ \t]*Object[ \t]*=[ \t]*).*$",
+        r"\1China_HeavyAirBase",
+        block,
+        count=1,
+    )
     block = re.sub(
         r"(?m)^([ \t]*TextLabel[ \t]*=[ \t]*).*$",
         r"\1CONTROLBAR:ConstructChina_HeavyAirBase",
@@ -857,22 +992,9 @@ def patch_airbase_construct_buttons(text: str) -> str:
         block,
         count=1,
     )
-    if "Object        = China_HeavyAirBase" not in block and "Object = China_HeavyAirBase" not in block:
+    if not re.search(r"(?m)^[ \t]*Object[ \t]*=[ \t]*China_HeavyAirBase[ \t]*$", block):
         raise SystemExit("Heavy AirBase construct button Object is not China_HeavyAirBase")
     text = heavy_pat.sub(block, text, count=1)
-
-    fighter_pat = re.compile(
-        r"CommandButton Command_ConstructChinaAirfield\s*\n.*?^End\s*$",
-        re.M | re.S,
-    )
-    fm = fighter_pat.search(text)
-    if not fm:
-        raise SystemExit("Command_ConstructChinaAirfield not found")
-    fblock = fm.group(0)
-    if "Object        = China_LargeAirBase" not in fblock and "Object = China_LargeAirBase" not in fblock:
-        raise SystemExit("Fighter Airbase construct button Object is not China_LargeAirBase")
-    if "pla_airfield" not in fblock:
-        raise SystemExit("Fighter Airbase construct button missing pla_airfield")
     print("Patched China Fighter/Heavy Airbase construct CommandButtons")
     return text
 
@@ -1161,7 +1283,7 @@ def blob_from_map(amap, key_substr: str) -> bytes:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_pla_commandset_fix"))
+    ap.add_argument("--out-dir", type=Path, default=Path("/tmp/china_airbase_buttons"))
     args = ap.parse_args()
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
@@ -1211,6 +1333,11 @@ def main() -> int:
 
     parse_check(overlay)
 
+    overlay_cs = lf((ROOT / "patch/Data/INI/CommandSet.ini").read_bytes()).decode("utf-8")
+    overlay_cb = lf((ROOT / "patch/Data/INI/CommandButton.ini").read_bytes()).decode("utf-8")
+    validate_airbase_construct_once(overlay_cs, overlay_cb)
+    print("PARSER CHECK PASS overlay CommandSet.ini / CommandButton.ini airbase buttons")
+
     dropped = []
     drop_keys = DROP_OVERLAY_BUTTON_FILES | DROP_OVERLAY_WEAPON_FILES
     for key in list(data_map):
@@ -1239,6 +1366,7 @@ def main() -> int:
     cb_text = patch_airbase_construct_buttons(cb_text)
     data_map[cb_key] = (cb_name, lf(cb_text.encode("latin1")))
     print("Unlocked remaining China aircraft/drone construct CommandButtons")
+    validate_airbase_construct_once(cs_new, cb_text)
 
     for key in UNLOCK_OBJECT_KEYS:
         if key not in data_map:
@@ -1454,6 +1582,7 @@ def main() -> int:
         raise SystemExit("Y-20 AEW SAR OCL missing from ObjectCreationList.ini")
     print("CLEANUP CHECK PASS")
     validate_commandset_button_refs(cs, cb)
+    validate_airbase_construct_once(cs, cb)
 
     for req in (
         "art\\w3d\\h6k.w3d",
@@ -1514,8 +1643,10 @@ def main() -> int:
                 "Y-20 AEW radar/scan increased; unique SAR ping Vision 520",
                 "J-31 SCALE 1.15 visual only",
                 "FIGHTER/HEAVY AIRBASE construct buttons: pla_airfield + China CSF",
+                "PLA DOZER: Command_ConstructChinaAirfield x1 (China_LargeAirBase) + Command_ConstructChina_HeavyAirBase x1",
                 "RUSSIA BASELINE UNTOUCHED (ChinaAirfieldCommandSet kept)",
                 "COMMANDSET PARSE FIX: overlay UNIT_BUILD buttons inlined before PLAAirfieldCommandSet",
+                "CHINA AIRBASE BUTTONS: restored PLADozer fighter+heavy slots; fighter Object=China_LargeAirBase",
             ]
         )
         + "\n"

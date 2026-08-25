@@ -33,10 +33,10 @@ CSF_LABELS = {
     "OBJECT:ChinaJetJ15": "J-15 Flying Shark\r\nYJ anti-ship\r\nLT-3 PGM",
     "CONTROLBAR:ConstructChinaJetJ31": "J-31",
     "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth multirole. PL-15 air-to-air plus guided and heavy bombs.",
-    "OBJECT:ChinaJetJ31": "J-31\r\nPL-15 A2A\r\nLS-6 PGM\r\nHeavy A2G bomb",
+    "OBJECT:ChinaJetJ31": "J-31\r\n8x PL-15 A2A\r\n8x LS-6 PGM\r\n4x heavy bombs",
     "CONTROLBAR:ConstructChinaJetJF17Block3": "JF-17 Block 3",
     "CONTROLBAR:ToolTipChinaJetJF17Block3": "PLA JF-17 Block 3 multirole. Larger PGM, AGM, and bomb load.",
-    "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\n4x PGM\r\n4x AGM\r\n8x bombs",
+    "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\n6x PGM\r\n6x AGM\r\n12x bombs",
     "CONTROLBAR:ConstructChinaJetJ8II": "J-8II",
     "CONTROLBAR:ToolTipChinaJetJ8II": "PLA J-8II interceptor-strike. Bombs and rockets.",
     "OBJECT:ChinaJetJ8II": "J-8II\r\nBombs + rockets",
@@ -1182,9 +1182,12 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
     if "Model               = LSFPKJF17" not in jf17 and "Model = LSFPKJF17" not in jf17:
         errors.append("JF-17 Draw Model changed")
     for wname, clip in (
-        ("China_Weapon_LT2_JF17", "ClipSize                    = 4"),
-        ("China_Weapon_CM802_JF17", "ClipSize                    = 4"),
-        ("China_Weapon_MK82_JF17", "ClipSize                = 8"),
+        ("China_Weapon_LT2_JF17", "ClipSize                    = 6"),
+        ("China_Weapon_CM802_JF17", "ClipSize                    = 6"),
+        ("China_Weapon_MK82_JF17", "ClipSize                = 12"),
+        ("China_Weapon_PL15_J31", "ClipSize                    = 8"),
+        ("China_Weapon_LS6_J31", "ClipSize                    = 8"),
+        ("China_Weapon_HeavyBomb_J31", "ClipSize                = 4"),
     ):
         wm = re.search(rf"Weapon {re.escape(wname)}\s*\n.*?^End\s*$", weapon, re.M | re.S)
         if not wm:
@@ -1218,8 +1221,8 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         "data\\ini\\object\\specter\\pla\\airforce\\h20.ini": "1.15",
         "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini": "1.15",
         "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "1.15",
-        "data\\ini\\object\\specter\\pla\\airforce\\j7.ini": "1.10",
-        "data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini": "0.90",
+        "data\\ini\\object\\specter\\pla\\airforce\\j7.ini": "1.22",
+        "data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini": "1.05",
     }
     for key, scale in scales.items():
         text = v_map[key].decode("latin1", errors="replace")

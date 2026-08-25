@@ -32,11 +32,11 @@ CSF_LABELS = {
     "CONTROLBAR:ToolTipChinaJetJ15": "PLA J-15 naval strike fighter. YJ anti-ship missiles and guided bombs.",
     "OBJECT:ChinaJetJ15": "J-15 Flying Shark\r\nYJ anti-ship\r\nLT-3 PGM",
     "CONTROLBAR:ConstructChinaJetJ31": "J-31",
-    "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth strike fighter. Internal precision bombs.",
-    "OBJECT:ChinaJetJ31": "J-31\r\nInternal PGM strike",
+    "CONTROLBAR:ToolTipChinaJetJ31": "PLA J-31 stealth multirole. PL-15 air-to-air plus guided and heavy bombs.",
+    "OBJECT:ChinaJetJ31": "J-31\r\nPL-15 A2A\r\nLS-6 PGM\r\nHeavy A2G bomb",
     "CONTROLBAR:ConstructChinaJetJF17Block3": "JF-17 Block 3",
-    "CONTROLBAR:ToolTipChinaJetJF17Block3": "JF-17 Block 3 / FC-1. Guided bombs and air-to-ground missiles.",
-    "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\nPGM plus AGM",
+    "CONTROLBAR:ToolTipChinaJetJF17Block3": "PLA JF-17 Block 3 multirole. Larger PGM, AGM, and bomb load.",
+    "OBJECT:ChinaJetJF17Block3": "JF-17 Block 3\r\n4x PGM\r\n4x AGM\r\n8x bombs",
     "CONTROLBAR:ConstructChinaJetJ8II": "J-8II",
     "CONTROLBAR:ToolTipChinaJetJ8II": "PLA J-8II interceptor-strike. Bombs and rockets.",
     "OBJECT:ChinaJetJ8II": "J-8II\r\nBombs + rockets",
@@ -305,6 +305,8 @@ OVERLAY_OBJECT_FILES = {
     "J15.ini",
     "J31.ini",
     "JF17.ini",
+    "J7.ini",
+    "J8II.ini",
     "H20.ini",
     "H20A.ini",
 }
@@ -333,6 +335,8 @@ ALLOW_OVERWRITE = {
     "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j7.ini",
+    "data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
     "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini",
     "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",
@@ -375,6 +379,8 @@ FIRE_WEAPONS = [
     "China_Weapon_LT3_J15",
     "China_Weapon_YJ12_J15",
     "China_Weapon_LS6_J31",
+    "China_Weapon_PL15_J31",
+    "China_Weapon_HeavyBomb_J31",
     "China_Weapon_FT7_J31",
     "China_Weapon_LS6B_J31",
     "China_Weapon_LT2_JF17",
@@ -1142,7 +1148,7 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         if f"Weapon {w}" in weapon:
             errors.append(f"A2A weapon still present: {w}")
     fighters = {
-        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "China_Weapon_LS6_J31",
+        "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "China_Weapon_PL15_J31",
         "data\\ini\\object\\specter\\pla\\airforce\\j11b.ini": "China_Weapon_KD88_J11B",
         "data\\ini\\object\\specter\\pla\\airforce\\j15.ini": "China_Weapon_YJ83_J15",
         "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini": "China_Weapon_LT2_JF17",
@@ -1161,6 +1167,50 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
             pass
         if "China_Weapon_PL12" in text:
             errors.append(f"{key} still uses PL-12 A2A")
+    j31 = v_map["data\\ini\\object\\specter\\pla\\airforce\\j31.ini"].decode("latin1", errors="replace")
+    if "China_Weapon_LS6_J31" not in j31:
+        errors.append("J-31 missing LS-6 precision guided bomb")
+    if "China_Weapon_HeavyBomb_J31" not in j31:
+        errors.append("J-31 missing heavy A2G bomb")
+    if "StealthUpdate" not in j31 or "InnateStealth                         = Yes" not in j31:
+        errors.append("J-31 lost stealth identity")
+    if "Model               = LSFJ31" not in j31 and "Model = LSFJ31" not in j31:
+        errors.append("J-31 Draw Model changed")
+    jf17 = v_map["data\\ini\\object\\specter\\pla\\airforce\\jf17.ini"].decode("latin1", errors="replace")
+    if "China_Weapon_CM802_JF17" not in jf17 or "China_Weapon_MK82_JF17" not in jf17:
+        errors.append("JF-17 missing AGM or bomb slot")
+    if "Model               = LSFPKJF17" not in jf17 and "Model = LSFPKJF17" not in jf17:
+        errors.append("JF-17 Draw Model changed")
+    for wname, clip in (
+        ("China_Weapon_LT2_JF17", "ClipSize                    = 4"),
+        ("China_Weapon_CM802_JF17", "ClipSize                    = 4"),
+        ("China_Weapon_MK82_JF17", "ClipSize                = 8"),
+    ):
+        wm = re.search(rf"Weapon {re.escape(wname)}\s*\n.*?^End\s*$", weapon, re.M | re.S)
+        if not wm:
+            errors.append(f"Weapon.ini missing {wname} block")
+        elif clip not in wm.group(0):
+            errors.append(f"{wname} clip size not increased")
+    object_names = set()
+    for _k, b in v_map.items():
+        if _k.endswith(".ini"):
+            object_names.update(re.findall(r"^Object (\S+)", b.decode("latin1", errors="replace"), re.M))
+    for wname, proj in (
+        ("China_Weapon_PL15_J31", "AIM-120D_Object"),
+        ("China_Weapon_LS6_J31", "Sattar_LGAGM_Object"),
+        ("China_Weapon_HeavyBomb_J31", "GBU24_GuidedBombObject"),
+        ("China_Weapon_LT2_JF17", "Sattar_LGAGM_Object"),
+        ("China_Weapon_CM802_JF17", "KH31P_MissileObject"),
+        ("China_Weapon_MK82_JF17", "Fab-250"),
+    ):
+        wm = re.search(rf"Weapon {re.escape(wname)}\s*\n.*?^End\s*$", weapon, re.M | re.S)
+        if not wm:
+            errors.append(f"Weapon.ini missing {wname}")
+            continue
+        if f"ProjectileObject            = {proj}" not in wm.group(0) and f"ProjectileObject        = {proj}" not in wm.group(0):
+            errors.append(f"{wname} ProjectileObject is not {proj}")
+        if proj not in object_names:
+            errors.append(f"projectile object missing: {proj}")
     scales = {
         "data\\ini\\object\\specter\\pla\\airforce\\h6k.ini": "0.85",
         "data\\ini\\object\\specter\\pla\\airforce\\y20.ini": "1.00",
@@ -1168,11 +1218,19 @@ def validate_fire_and_scale(v_map: dict[str, bytes]) -> None:
         "data\\ini\\object\\specter\\pla\\airforce\\h20.ini": "1.15",
         "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini": "1.15",
         "data\\ini\\object\\specter\\pla\\airforce\\j31.ini": "1.15",
+        "data\\ini\\object\\specter\\pla\\airforce\\j7.ini": "1.10",
+        "data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini": "0.90",
     }
     for key, scale in scales.items():
         text = v_map[key].decode("latin1", errors="replace")
         if f"Scale = {scale}" not in text:
             errors.append(f"{key} scale is not {scale}")
+    j7 = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\j7.ini", b"").decode("latin1", errors="replace")
+    if "Model               = LSFJ7" not in j7 and "Model = LSFJ7" not in j7:
+        errors.append("J-7 Draw Model changed")
+    j8 = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini", b"").decode("latin1", errors="replace")
+    if "Model               = LSFChinaJ8B" not in j8 and "Model = LSFChinaJ8B" not in j8:
+        errors.append("J-8 Draw Model changed")
     h20 = v_map.get("data\\ini\\object\\specter\\pla\\airforce\\h20.ini", b"").decode("latin1", errors="replace")
     if not h20:
         errors.append("H20.ini missing from DATA")
@@ -1544,6 +1602,8 @@ def main() -> int:
         "data\\ini\\object\\specter\\pla\\airforce\\j15.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\j31.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\jf17.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\j7.ini",
+        "data\\ini\\object\\specter\\pla\\airforce\\j8ii.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\h20.ini",
         "data\\ini\\object\\specter\\pla\\airforce\\h20a.ini",
         "data\\ini\\object\\specter\\pla\\buildings\\china_largeairbase.ini",

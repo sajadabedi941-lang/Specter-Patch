@@ -1,0 +1,38 @@
+DATA sha256 1aa26d63746857b2a88a74b332ef401679d1d7329c8b9bb425dcc011b1623886
+ART  sha256 4ebb90cceeab19b1b407ea99ef5b2505cdbf506c853e784fce9df9d313b1dc20
+ZIP  sha256 f0d3e60f8a9ce3ea3edd9e15c86ed9c331c683e7a0e390f3ba46bd7285c230cb
+DATA bytes 362564025
+ART  bytes 654747409
+PARSER CHECK PASS
+WEAPON reference PASS
+CommandButton PASS
+CommandSet uniqueness PASS
+ART/W3D PASS
+MappedImage PASS
+CSF PASS
+PROTECT CHECK PASS France/Germany/Italy/China/Russia
+RE-EXTRACT VERIFY PASS
+ZIP extract verify PASS
+UK ONLY
+Fighter slot 12 = Tornado F3
+Heavy slot 10 = Phantom FGR.2
+Dozer slot 12 = Command_ConstructAmericaLgm30
+
+UK AIRCRAFT | ORIGINAL/EXACT MODEL | SELECTED W3D | SOURCE
+Typhoon FGR4 | exact Typhoon | LSFEUEF2000 | packed ART
+Typhoon T3 | closest distinct Typhoon | NAT_EF2000T4 | packed ART
+F-35B | exact F-35 | US_F35A | packed ART
+Tornado GR4 | exact Tornado | LSFTornado | packed ART
+Tornado F3 | exact Tornado interceptor | LSFTornado | packed ART
+Jaguar GR3 | closest swept strike | LSFFRF1 | packed ART
+Harrier GR9 | exact Harrier | LSFAV8B | packed ART
+Sea Harrier FA2 | closest naval fighter | US_FA18E | packed ART
+Lightning F6 | closest classic delta | LSFMirage3 | packed ART
+Phantom FG1 | exact Phantom | JPF4 | packed ART
+Phantom FGR.2 | exact Phantom | JPF4 | packed ART
+Hawk 200 | closest compact light fighter | LSFF16 | packed ART
+Vulcan | B-52 class bomber (scale only) | LSFUSAB52 | packed ART
+E-7 Wedgetail | exact E-737 | KVE737 | packed ART
+Merlin | keep NH90 visual | LSFGENH90 | packed ART
+Puma | keep Mi-17 visual | LSFRUMi171 | packed ART
+Wildcat | keep Lynx visual | LSFLynxAHMK | packed ART

@@ -1,0 +1,177 @@
+e8d29c663eddf8d6453b1e2259801f8b5b8523cf4f4d1c5bddce31a7e48a7e02  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AI\Airfield.ini  6937
+3f241117d6223786ea7081d000f3bc4b78b13aca0308663c51980d0b0354cd20  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Dozor600.ini  7129
+c90ef2583c072a0e28b764a9c1a805a9f7f6f4d13fd3969460bbff336e278fa3  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\KA52M.ini  35936
+852513c53a80830df5b56ef1aa7c0088bc69edbf241d65faa844c2957a9a211c  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\MI28N.ini  28419
+e65683fe1f3884c3fe954fcee04c1e03c3154ce9fa98dbfe9b4a2d9670021ad5  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Mi8AMTSh.ini  9196
+e6f1f59b068df8ea47391282520c788ba2818cfe2c3b9358741110a289219918  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\MIG31K.ini  12610
+31f5ae705e7be6586c4a3919d39bcc0773a1086aa60d2bb7063ceac4d186caaa  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Mig35.ini  24715
+c3bc6f87336cb14f08ba8547b3be299429dda929f0a8c73ea81b01205aed00a2  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetA50.ini  5324
+4d93468cdded1148cafe0caa7747196752cc400e6b550c890276538b1454e1fe  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetAn124.ini  4981
+0c7bbbb25bd553560e520a5f4cf0462e1d0f6c47ff45944bb330df5e4e9f924e  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetAn225.ini  5363
+a57d5fc686df59618802e7b2c1b344f04122ad8549a0fdcc433ab6a5fd879cf2  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetAvionIL76.ini  4698
+859c076d704cee93aa660c5f545c15a165a79dff4ced66ab1d56a7fce3033ea8  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetCargoIL76.ini  4773
+53d29c164db65d525b528206b1c5d0e690bdbd379ded268c4b83bf87a8a30f1f  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTU160.ini  5625
+eb5dc19b7cdebae1c495aa7e64151793d7f7548b4af78c36643ad0aa3b90e74f  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTu95.ini  5425
+06f2f807b1c744d021881b09074fe8425e5e879de6431562bb04fc5386d98318  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24M2.ini  25982
+0465fe3a43ef0c5da862d7173885bb3baaad7f9c71b87c56c2045d7bbe1e37a2  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24MP.ini  15663
+eba0d2a23489dbfb4021d7629668d23ba916eb56c6d8e62b8f2907dcff7406ca  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24MP_AI.ini  12771
+351d6d6423dc06383e6d32631ea24ab684924321d7faff62f7b786d578deaee5  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su24MR.ini  9258
+3b08a9a7748029c4ed49f612398edc2d9df812e0982c76dbb3d8d0b5cde310d5  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU25T_SU39.ini  28093
+b0d82cdbd04ee765703926e34c9a55d80057e83e655b60909a4f766ebf2e6107  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su27Flanker.ini  9338
+22813ef5432254c99ab800964b30b27b4a8bd728192ffa4da4fe5aa1f054dd21  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su30SM2.ini  12206
+6c6d8cc5b68ad490dbaacd2a1d3c59b9241293de42f570758ad454327a799922  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su33.ini  9168
+f8fcf0c1edc67ff7e780ab890ce326fbbf858ab5a2a4ef09d438e78244c5b537  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU34M.ini  30796
+d1bf0d6f28813a6dd81f7f0c63e2d33cea2ad19c000bd8cb4be2359f579367ac  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35Flanker.ini  9376
+b6222b9b9a035a0cd57c74754e4947ac9dd1204cd26d773c08efdc4a4ad08fdf  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35S.ini  15227
+4d2b21032cc60da44510538b5a02db6e37d9ca05496a01748655c8e64771440c  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35S_TS.ini  12612
+5ef6bafae3e6e305256451d50ff9bdce9d2d52db28155ea4a11eb35d75d31154  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su39.ini  7625
+d4535f8602f0e319f19aa1c1b973071126e666673865de5db4292b5b8c8f33a4  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su47Berkut.ini  9433
+371be9bfa302bd62199088614513b1e7dc2bcd36b830647ea5f457a347cb4943  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU57.ini  13513
+7ceb7f6c5d03df6609bf17afac31d096e6eed8664541432ed7677292d234816e  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU57_AA.ini  15433
+4e33d8d143a2819a35144929e1d3f964748ec84af41b6d087b6e5f08fe83a0c5  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su57Felon.ini  9366
+92e4563399eee9a030ae0cbda3faafd8575fab399a0fc335c5710ca039cff30e  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su57T50.ini  9775
+858284b992ad4c2ce93bdba70114c2e05c09fc560bac9d6e3539ed3b68f07233  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su75Checkmate.ini  9230
+187cc7466c5b23bdc2bc146e6bf6d617114bd3751dbe3df8855e349509c14573  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SuT50PAKFA.ini  9411
+79b94dc27e2f671c83e4e37ac27b5abb74e84a6ee80194715e82ff72288d6b4a  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SuT75.ini  9274
+598088b965ce487771f13089d239aebc29e3231a84abd4d9e5d71dcb7e3fa154  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini  12982
+7e75dd310d8b699fc26b4847f10dbff0db561882215a2f8eea2801d6dda89789  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Airfield.ini  7522
+4ec2a9ef8cb22ee7aa74c22906d769f49d9fa6796236e45016c711db669214c7  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Airfield_T.ini  8424
+ab25abc8b16c852f93d57b1695e3759829643f13537964c8f10a824038528e2a  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainAircraftE7.ini  4350
+7b376664f4bee6df1c3b6062e07dbe5897f68928be4147fd09b3037829198a12  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainBomberVulcan.ini  7805
+36903fa2ad3fe263b40bdc58c49c75c1166228e3a54bcc31d8b5559223d0ed8c  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainDroneMQ9.ini  3020
+5d64d56e7bcc16ef1dbe6b0c2c55729f5b83df1e8e2c423645c31a9912c17d55  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetA400M.ini  2912
+6c65be27b88c1c2cbf34c6fd661b3a748284d71db92ae3e56ee7c12c0c0167ad  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetC17.ini  2903
+5b82e768edd2c8d22b2416c5d4db87e3b4197e903a1aeffc6ba9d0da3f9c2a92  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetF35B.ini  7840
+8996a8c1b96cbb986b5c8558cc39dbc4b1d2824b0edd79d93602f934bb6ed694  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetHarrierGR9.ini  7780
+8dce9e0d5ae4849e03463dd1343a5245a355b4118a4d37ccc08faeffc5854721  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetHawk200.ini  7768
+588516e989f32002d128ec0d4647a403cc630180a075477f47a9ed913faed3b9  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetJaguarGR3.ini  7792
+1d5ee75e7c72290748f4dc3464e0a092a8667f27e59cc7abe0b668fc637f00b0  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetLightningF6.ini  7769
+3307f8b99c065c05cb7ae2c85c825245180620d1c2fe4d8d085755d8ac101d03  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetPhantomFG1.ini  7735
+f6726dc77a8f66bcb64f57f86dca769913e1dbbae34707c7daa04a2ba30f253b  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetPhantomFGR2.ini  7741
+97a0ecb49f9b8fe6b9b1a7a44daaf48ee01bbe952d8f9672ccd1fc9fe4668d49  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetSeaHarrierFA2.ini  7774
+5fc027bb1c2083e2f9a5c28a2cd095f67dcb83cca2cf25f2c387f519b65ab66e  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetTempest.ini  9322
+72f9f8687946a3a5914c68ac93fda6c33b158c04030db32975d2d34e74a70339  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetTornadoF3.ini  7774
+65663e11be337fe32ee1cac2b539a733db3858d89d4054c12631dcce2a2c79e9  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetTornadoGR4.ini  7831
+a973e0ba7230c4183d4f6935ccc431228c0e8d5e0cbdb4cfb5f28459ec2304bd  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetTyphoonFGR4.ini  7815
+1be160696e5978c306c65ac879c5a6d8c218769282a77c7a901bf7210325b2cf  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetTyphoonT3.ini  7788
+e9830532595bf1c84ee223489114786b968cafe342aa200532eddcc9769e55cf  Data\INI\Object\Specter\British Armed Forces\Buildings\Airfield.ini  7584
+70da7c4eb4bc97dbfaecfb7c791749ac9c7803d622acfa21d315f0593e95a61f  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceAircraftE3.ini  3998
+ec640c28a95fc383d015533a59caf2823fd4650296b10d3a83cc80bc0eff505d  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetC130.ini  4137
+d8afd03a486bfcf9a9629d1290a1a9f4ec028a007153245ebbfd7bef7eabfc51  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirage2000.ini  7807
+dcfe6cdecce4802f944a5748cd15d050385a038b20e5d027f4bb66f7b5ccd530  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirage20005F.ini  7809
+43049c3b1768eb91ffc04de509ea35491d7e0f641bf5631e34f27f9a61bf421e  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirage2000D.ini  7850
+d766f6cbebec2990eb8fa3a289ef3222c5079c0752068a8242669436901dccac  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirage5.ini  7815
+25fff2c9422769dabb0644a97ede8af2173ce0079d36bbed58f18e94a4c9d771  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirageF1CT.ini  7797
+9a0fd7bbac5e990f0467aedb3ad698710987c14ff8a4d64fe570442a8f2c9788  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetMirageIIIE.ini  7818
+a7e444960a3b044bb4b20ebf706b89977ab2688f24961b92eaf8921a0caffacb  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetRafaleB.ini  7792
+3e5ae4f4c0a7cfd84115c31365ec55e84d29096e520e8387d84ffc184c487e84  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetRafaleC.ini  7764
+53e4325f82b841480e30ff2e74d507442db598391a09fed3548c095e37eb45bb  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetRafaleM.ini  7807
+ca04317e8766b1ea49537cb2c5b9accde53a1b8b3a4cdec27bcf19a9a53ee532  Data\INI\Object\Specter\French Armed Forces\Buildings\Airfield.ini  7580
+7cfcffa2e99285dd31fa52fd88886085dd26274065d4bc572af261dd59ca32e7  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyAircraftE3.ini  2962
+396c4e18c8ebe676599b755c450e5ec051efa255d97e738d938a7c2526e18680  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyDroneHeronTP.ini  3033
+2b6dae3ac5f385e344be16a5a1f266f1910889d0627074e0940f28fafa29b2f4  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetA400M.ini  2918
+1f8cb51967e7ad908f332633232ac00d3cdedaec33ef328d11da74a5b0ada435  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetAlphaJet.ini  7771
+6540d8491b53104506e28bcddb41bde00fe83d9d7d7113b0e7041f4796a178e2  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetC130J.ini  2910
+c3e2c71328ff072832e276f885b6889b08aff107ccdcdbc0fbd7b5be7e4213ca  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetF35A.ini  7776
+ad9ad401987a275b9e7fd0fcde71b6b1c47a358c101fbd5e25dc73f9ebe64e63  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetF4F.ini  7705
+51cbd2ee3e124967dcbfbcc5f31e373564f6ba7f108afbd148750dfc1d058c06  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetMako.ini  7746
+6a9e548a6fbdcd5f294a2269ea1c90a5fe416f6be56ccf0e184a572d72405b82  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetMiG29G.ini  7754
+c4acaeac5d8890c76faa0fb5d19fb247c4dccc7fd6da2286d21dc6b651aa09d9  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoADV.ini  7774
+7b1b4140d6047b51bd23ef3e2d082fe3a238687af5d8fdef18f0263eb775c04c  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoECR.ini  7806
+612bc4ed8b56bce58b1ab603914885a1efd714f108547845b3a5ed90b10cd8db  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoIDS.ini  7816
+dc736185d7a95281b1ac172c74fb73cc8885204987d8dcf943277ae4c5ecd2b7  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTyphoonECR.ini  7826
+f4ea597fd2e01a21e05c1b236453976c0d2e8bff7028f9eeb8fef19a0cdaf5c1  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTyphoonT4.ini  7796
+952941d4d7fe00166aaa0fc94656c6bf5138c6d1fc657de9b2367a0df9cfc98d  Data\INI\Object\Specter\German Armed Forces\Buildings\Airfield.ini  7584
+9b997f80e4655d261579fcd6b0e965db60df7698502518bdf0dd6fabb2518900  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_F14A.ini  10918
+adcbd9d64379748b25007244ba336a433cd5d17b5dcee67f82c9d3a36691a0fc  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Mig29A.ini  10637
+f8c1cddc5b9b304a1bcc63c96d5f8c0a955c6d54b69df03850240d799dee2d60  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Panha2091.ini  10019
+281dfe78bf8440b7b8f26d98107a25bcbff3c9c41962508face0a860d0523919  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Su-24M.ini  11064
+4af0b0886a57663b3e992125adaf3675578102dba66a913727fb7d823fc0611f  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Su-25K.ini  10238
+bda69a9409b11040f5635dbfc9e5deb4f4f282dab5fdad8988682d5c82b09d9e  Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Su22.ini  17100
+87e6cefe8aad92add2317296f545b6af78b991d4d7b04fa9e8e620ff71dd3fae  Data\INI\Object\Specter\Iranian Army\Airforce\IranJetF4E.ini  7720
+666e074eb5d6c0ed9228b7cdfc37e7f436c3e9392af337fa762009c79c41c3bd  Data\INI\Object\Specter\Iranian Army\Airforce\Mil_Mi8.ini  7123
+de46afaddb0b5709efa2f41c5e47c16f1b279a81285650b05943038ef636aa7c  Data\INI\Object\Specter\Iranian Army\Buildings\Airfield.ini  7369
+245e18f7e21f72edfa2f1efc54d2dc9f8a84f5a5032f93ab3be82150aa4068ef  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyAircraftG550CAEW.ini  3018
+909a94b7e5bfbfe8675f1675121540af8020cb560b09b9632019a3504dcc4c41  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyDroneMQ9.ini  2997
+ba741f17d2360dd189e492ec10b43aff3a4d05f6bc580834d4705d0835c78036  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetAMX.ini  7764
+baf30419c63925129266e881b99eb710fc19305330f162b7b78d2cba1d01614e  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetC130J.ini  2898
+e21ff19a0880602c65cd9975ce4ad63bf6de9e9a12ed8a78425487f5b550f333  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetC27J.ini  2901
+b9d30511b871a85397096758fb9328707d672f85e16778628e776f901a517be2  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetF16.ini  7695
+0214dae3ddac69e714af903ad2a0e840e2a6674610c9a3f63e8c2b0515d984a2  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetF35A.ini  7734
+913ee5e38049f40900983f4fa83235efeaf607b5634d5524be51545a47812ac4  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetF35B.ini  7725
+c4b39b86814703e6e2dbb8ada22495846361e879d16b8fd0991a67214dd5ef5a  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetHarrierII.ini  7765
+18c545a02db320129576e3d8d1057df6b71f10b4fb51f1ade4d28e374a5a6f0d  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetM346FA.ini  7746
+0f859cb61c014f36c7fa38a78f1e7dad05f7e0a1dd30ab4757cc0421330d1486  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetMB339.ini  7739
+8e5835473f7a986713d56897f17b01db95537202051d420b286c2758bc077067  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetTornadoECR.ini  7795
+c2e532d90cf80e8724d7a043765605421b913adf0a8c45f94573b227d14f11ce  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetTornadoIDS.ini  7804
+8c3e798f085306691ed7946655050c2afb3d249390f2e291830672468dcf5e4b  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetTyphoon.ini  7762
+c2b799629dc5dd723885c9565276216e2e100d1ed3066ae54c8f7ce2c826014c  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Airfield.ini  7576
+122f2815a2b2a8cec4e48d8e5f65a9bf9a87503d0c673f224f6f26ddac5b20cb  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mi-28NE.ini  26024
+127a658b9f3f7196572d77415a92a9cf5e957bcd5c286c6c064e6bc15a2e99e0  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mi-35M3.ini  28130
+08f32a9fc37433705829ee4f967db9ea29acb3267a7353ffac35b45b5abd7fe5  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mi-8.ini  14552
+3078a77276a362a89205e5d0e3ed6a8ccade91e8360b522370a4d2fa91414c83  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mig-23BN.ini  12616
+01742b8676e1dd83d76e10b4f477a66adbae3bb529cd4196f43c61e5e6ba10ed  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mig-25BM.ini  12986
+ce5dfcc7298fff500781f8be76f97d4d06f4945ab3e48f825b55bfa01836d385  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Mig-29A.ini  11424
+9f21edcf5af7b31f4766eea61a32e3c6b9f752cb015616fec6947fe281cdc17d  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_MirageF1-Bq.ini  9191
+a0abe05140480e04e489f92fec316135c169971b794fc096ac1eb8bcd205fb61  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Su-22M3.ini  28139
+3f03983144aa5a7542b153ee2d05bc28fc2a16149bd54bf41afe62ad1224d7f2  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Su-24MK.ini  10709
+12737de22a0b77c599eae981b314275fd2c77c648bf8c9e1e50ad41ff66907e9  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Su-24MR.ini  35739
+13ec2f90e5c1d6a18a83d4ee132d2de5b5205998fe6780d706c1178ede947c06  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Su-25K.ini  24627
+ecd1f88df60dc344c73ba01b11274b8458e4a36915d0f7157b2a6b2d28814bcc  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\Iraq_Tu-22M3.ini  12649
+d973f343ce1bb6987a7eaebb774d83ddec98e0d7ae7501183f605943ecaa9aae  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF15JKai.ini  7746
+6faf680e1a4ad76ebaf46cc4ee885f04e5141880504db5cca6db1b1b29b7ff32  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF2A.ini  7688
+b13265ed7388abacc5182fcf18b7d1f3862e5d463e6e3fe5fbf9d58b014e0ec4  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF2B.ini  7736
+34787da494a97a0b67e6aafb6672e728d438b9b989ab4d307b62857f30bf72b9  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF2Kai.ini  7728
+f11e384d0ed47fc638f45c02a41f13c1e9a1dbc1b793cf9e813773fed56c57c0  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF4EJKai.ini  7727
+2c250e81fadb4a949d53f1e0643481032cfcd8cd3a05ea75b2292eba9ef4e104  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetX2Shinshin.ini  7750
+74298a3d04dd75f7a139d456354581a780fd847fc19f20d54a3de3ad1a0fe03f  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_Airfield.ini  7733
+7d54859699f564bc7704344beae03ca58845dd2b98fb32f78ad7eca464e46023  Data\INI\Object\Specter\PLA\Airforce\ChinaJetJ20C.ini  7720
+04b021f80169a7f3c3bea58cf3a9ea63f147b7abc5897e67c904230a01de4118  Data\INI\Object\Specter\PLA\Airforce\ChinaJetQ5.ini  7741
+2ed9ac72f8b0a9ef04dbd26eaf6a0b907ca3fa251f560b88068ab16bc5f8d838  Data\INI\Object\Specter\PLA\Airforce\H20.ini  7583
+79cac3f717d3b13f4795ac23959ef40819d33ed435dd4f1fccbdb10c8d4340bd  Data\INI\Object\Specter\PLA\Airforce\H20A.ini  6603
+9f1f846b92cc5aa90e63a3ccf3370b0656d3974d23896b1b0269bc2df36defd0  Data\INI\Object\Specter\PLA\Airforce\H6K.ini  6006
+fdf0df3595b07a133ac0e8ffd8538e7c9ea7ce437001ccedb678391a8146e68e  Data\INI\Object\Specter\PLA\Airforce\J10A.ini  7708
+73b833d580d7e862187abb6d91201a451b5edd72786eb4e7ada518d4cce84ab1  Data\INI\Object\Specter\PLA\Airforce\J10B.ini  7845
+b4d48351f23b7100a54d809e8a505f13fc2a58028079504d592f711c1b74f4fb  Data\INI\Object\Specter\PLA\Airforce\J10C.ini  10702
+162eddaac1e1393b3680f0c9cf11d8af1e9874a0c16960ac1b5f62d5acdee504  Data\INI\Object\Specter\PLA\Airforce\J11B.ini  9188
+52cd9e7c3ee4770fc6006cebe39cedacacbac251263bcb527f815cc6196203c2  Data\INI\Object\Specter\PLA\Airforce\J15.ini  9143
+271ed96d533895d71672c9d1bebd52fe5f6253422df3f0eb6d93d21ca40ead5a  Data\INI\Object\Specter\PLA\Airforce\J16D.ini  11360
+1fb0efc9d186ea4ec885209a90c497cedf4e096b6f89379b18d9bcaec7c26d58  Data\INI\Object\Specter\PLA\Airforce\J20B.ini  12481
+bffed3ceeb9ff66251124c68ddb38cabc3e89c235e364047c161fcc612a97355  Data\INI\Object\Specter\PLA\Airforce\J20B_AA.ini  12724
+531497df2f511f621b9bef4cd0c9a87c5ac7fda7f5b96d2462e66e093078b7cb  Data\INI\Object\Specter\PLA\Airforce\J20B_AA_AI.ini  12909
+7d6597051857bb5f4972e0073596148593bd9e0f075a8553953738aa6d2cedae  Data\INI\Object\Specter\PLA\Airforce\J31.ini  9446
+f0173042eb972523296cf5a398553dc7bed79cbae07876c8e5f0c0ba586c2390  Data\INI\Object\Specter\PLA\Airforce\J7.ini  7690
+96b37bf0cdb1c5590e7141862018290745e5d189948626ba212488dfbe77683c  Data\INI\Object\Specter\PLA\Airforce\J8II.ini  7899
+c4c6cadb64f5dcdd88c2fadc7a65912d2cf142193510efd529958e872fb62b26  Data\INI\Object\Specter\PLA\Airforce\JF17.ini  8938
+f96db8a4d3a6089afdbc4269eb1a1769aa51ec074dd86d48cee75db2e7bdb4da  Data\INI\Object\Specter\PLA\Airforce\JH7A2.ini  11279
+6b959b997cdef107344501cc03dbe6313780ed0c10fe0cf2c42bcc56d2e5779e  Data\INI\Object\Specter\PLA\Airforce\WZ10ME.ini  14524
+7221ed1687fb389629e47b4d72d05fa70f74cb70f1b7f8aed5ebaccf6e27765e  Data\INI\Object\Specter\PLA\Airforce\Y20.ini  4732
+842611b852094dd5f6cd748dcd14201aec3c0e36576b73683e2b4024a6ad63b3  Data\INI\Object\Specter\PLA\Airforce\Y20AEW.ini  6402
+b762d31676c86556cfc23b136410e22566b788c8711c937d2ab6190e50917953  Data\INI\Object\Specter\PLA\Airforce\Z18A.ini  9020
+c0a4d1c6611141eeb05f1580a9c3bb8dd9a361cb92b8c76a454c106ec57a52ef  Data\INI\Object\Specter\PLA\Buildings\Airfield.ini  7676
+a8a8676307e3cbc0e9bdbaefef1ff9045e6ad662bdc8b00576109f28563908b0  Data\INI\Object\Specter\Turkey Armed Forces\Airforce\TurkeyJetF16C.ini  7725
+55a75bba22090f45d6c0d3a803c527b02cbdd61ac15a749e49f9354b75afb69c  Data\INI\Object\Specter\Turkey Armed Forces\Airforce\TurkeyJetF16Ozgur.ini  7754
+781d3accdc370a15eef71682792f27e06eb440889b879f90090c40fbfb822f28  Data\INI\Object\Specter\Turkey Armed Forces\Airforce\TurkeyJetKAAN.ini  7739
+3fbbfc948932d58440331e076bbf4ea28bde1622e31a30855a233332ac4faff1  Data\INI\Object\Specter\United States Of America\Airforce\A10C.ini  11502
+518590e72fd4ad353fa8769c7b46d17a3207a914f22bb6d43d12c28aee459884  Data\INI\Object\Specter\United States Of America\Airforce\AH64D.ini  13646
+c11fb8d894290f8169a7044a9cf4e96515c01d4f990f3fe1599b1c069d7b92bb  Data\INI\Object\Specter\United States Of America\Airforce\AH64E - Bk.ini  20223
+2fa25cacc76e1516298b48f720db5f83789c6e917aafa3ca027bf82ceff037e4  Data\INI\Object\Specter\United States Of America\Airforce\AH64E.ini  46518
+5dc31d4eb7e12ec26a2b8aae9c765dcc97b1b7a909e0c51a6e74efe1e4b614d5  Data\INI\Object\Specter\United States Of America\Airforce\B1R.ini  12596
+c92f58cacdcecd4ca7011fecfab5f76615508d3ca34d91762525c52ff13c9b38  Data\INI\Object\Specter\United States Of America\Airforce\CH47F.ini  10028
+fc3f3f4ffaff1fbc16f02007acbf50ac2938acf421a22a8e00d0e3fe4a780601  Data\INI\Object\Specter\United States Of America\Airforce\CH47F_AI.ini  10547
+53ff956fc4aa920eb13a1f0be7f768ddbcd49d8303ac1042980060581ec73e45  Data\INI\Object\Specter\United States Of America\Airforce\EA18G.ini  15842
+8baf49f2fdc6ed9fdbc49a016e509db59223975600d42839d6f3ba788514fc53  Data\INI\Object\Specter\United States Of America\Airforce\EA18G_AI.ini  12669
+13b799ec289920c7138925a4c153fd019e1df42acdcc350cb0312da5be51d680  Data\INI\Object\Specter\United States Of America\Airforce\F15C.ini  12222
+97f244bb67a61bdeae5e7352ed2b65f61f9fa957588e30893155e96a2fa27659  Data\INI\Object\Specter\United States Of America\Airforce\F15E_229.ini  38524
+e171dd538f3a7dc38ee5730bce10d4361132ebe6d1d1bdefe39991fc34d78f21  Data\INI\Object\Specter\United States Of America\Airforce\F16CJ_BLK52.ini  12434
+db01b9b7e4055e05a20b880f88365bbfcad8ebbb61354e628fa2e481bc62933e  Data\INI\Object\Specter\United States Of America\Airforce\F16CM_BLK50_AA.ini  10720
+815037e2b33052998a2154b0aca4549e7adeb8d9b2c3b73036c67d55e3d23162  Data\INI\Object\Specter\United States Of America\Airforce\F16CM_BLK50_DB52.ini  62016
+2d1bb20b790146659cf447c0b92efa28bd66b6a361d21e8b62237d02722d1162  Data\INI\Object\Specter\United States Of America\Airforce\F22A_AA.ini  15413
+e8eb59f09580b3c9410ad8ec42c89cd193853b80a06ddd6cdedfd5a03a8e6a7c  Data\INI\Object\Specter\United States Of America\Airforce\F22A_AG.ini  17148
+54e4d7461918674dc997727b45a0d3d3d4163a16ad91f6f24e94c03c6f03517f  Data\INI\Object\Specter\United States Of America\Airforce\F35C.ini  15086
+ae9d5d77d6c8388985c12a5e0cee3f3a2831454fd314df423a241f441b1bc548  Data\INI\Object\Specter\United States Of America\Airforce\F35C_AA.ini  15479
+76c3b9eef49e849f5845d19a2aafa4cdaf0da790ab15dc9baa0e83cae3738f2d  Data\INI\Object\Specter\United States Of America\Airforce\FA18E.ini  12749
+f6a8174cb4e42299f721172bc523338ba394c43bd212ff7db37dbc41f609a47c  Data\INI\Object\Specter\United States Of America\Airforce\FA18F.ini  13025
+e190d6a394a64903b2a6ffcbadacc4caec4cf2cf72ccbbcd71f1ca1f9f717ace  Data\INI\Object\Specter\United States Of America\Airforce\UH60.ini  7101
+2bcabfd5e1f9f332b98a3f94db32854a6b3d2dfc17774bc52c10a10176a37eb5  Data\INI\Object\Specter\United States Of America\Buildings\Airfield.ini  7163
+5a6f3e35c3c4425e02d175e03302505b5d19a888bbea64c43b0db4bee838a6c2  Data\INI\Object\Specter\United States Of America\Buildings\Airfield_T.ini  7697

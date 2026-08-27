@@ -1,0 +1,27 @@
+SPECTER FINAL GLOBAL AIRCRAFT COMPLETION
+
+Copy both BIG files into the game folder, replacing previous Specter BIGs:
+
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+ART-only from DONOR_ART plus native Specter gameplay wrappers.
+Does not import donor Object/Weapon/CommandSet INI.
+
+Dotted aliases created as live units:
+- Germany Eurodrone MALE (Heavy)
+- France nEUROn stealth UCAV (Heavy)
+- Germany FCAS NGF Demonstrator (Heavy)
+- France Mirage F1CR and Rafale F4 (Fighter)
+- UK Tornado ECR (Heavy)
+- Japan C-130H transport (Heavy)
+- China J-35A (Heavy)
+
+Appearance-only reuse:
+- Iran MiG-21bis and Su-35 (Heavy)
+- Turkey F-4E Terminator (Heavy)
+- Pakistan J-10CE (Airfield)
+- Italy GCAP demonstrator (Heavy)
+- Japan RQ-4 unarmed HALE UAV (Heavy)
+
+Does not change airbase architecture, Rally, Sell, or USA/Russia fighter menus.

@@ -1,0 +1,15 @@
+SPECTER AIRCRAFT STARTUP FULL REGRESSION FIX V2
+
+Copy both BIG files into the game folder, replacing previous Specter BIGs:
+
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+This is a crash-repair build. It keeps the post-#414 aircraft roster and
+repairs initialization-invalid packed DATA introduced after PR #414.
+
+See POST_414_STARTUP_REGRESSION_AUDIT.md, PRELOAD_OBJECT_AUDIT.md, and
+STARTUP_CRASH_SUSPECTS.md.
+
+LAST KNOWN RUNTIME SAFE: PR/BUILD #414
+STATIC STARTUP VALIDATION: PASS — USER RUNTIME TEST REQUIRED

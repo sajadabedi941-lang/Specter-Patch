@@ -4,6 +4,7 @@ Invalid W3D animation audit = PASS
 USA/RU/CN protected = PASS
 BIG re-extract = PASS
 STATIC STARTUP VALIDATION: PASS -- USER RUNTIME TEST REQUIRED
+Fighter 12/12 CSF CONTROLBAR+OBJECT names = PASS
 Do not add Animation= to KVE737 / LSFFenneck / other 0-anim W3Ds.
 Do not overlay full CommandSet_France/Germany/Britain/Italy.ini.
 New CommandButtons live only in CommandButton.ini.

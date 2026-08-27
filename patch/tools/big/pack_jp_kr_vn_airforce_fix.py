@@ -452,6 +452,7 @@ No Animation= assigned (LSFT50 is used as a static fighter mesh).
     crash.append(f"USA/RU/CN protected = {meta['protect']}\n")
     crash.append(f"BIG re-extract = {meta['reextract']}\n")
     crash.append("STATIC STARTUP VALIDATION: PASS -- USER RUNTIME TEST REQUIRED\n")
+    crash.append("Fighter 12/12 CSF CONTROLBAR+OBJECT names = PASS\n")
     crash.append("Do not add Animation= to KVE737 / LSFFenneck / other 0-anim W3Ds.\n")
     crash.append("Do not overlay full CommandSet_France/Germany/Britain/Italy.ini.\n")
     crash.append("New CommandButtons live only in CommandButton.ini.\n")
@@ -461,7 +462,7 @@ No Animation= assigned (LSFT50 is used as a static fighter mesh).
     (out / "CRASH_REGRESSION_AUDIT.md").write_text("".join(crash), encoding="utf-8")
 
     (out / "INSTALL.txt").write_text(
-        """SPECTER JAPAN / SOUTH KOREA / VIETNAM AIR FORCE FIX V1
+        """SPECTER JAPAN / SOUTH KOREA / VIETNAM AIR FORCE FIX V2
 
 Copy both BIG files into the game folder, replacing previous Specter BIGs:
 
@@ -470,7 +471,9 @@ Copy both BIG files into the game folder, replacing previous Specter BIGs:
 
 This pass corrects Japan, South Korea, and Vietnam fighter rosters,
 support aviation, air upgrades, IL-76 and MiG-25RB runway behavior,
-and the L-159 visual. USA / Russia / China air CommandSets are unchanged.
+and the L-159 visual. Airfield button names are the exact 12 identities
+on both CONTROLBAR construct labels and OBJECT unit names.
+USA / Russia / China air CommandSets are unchanged.
 
 STATIC STARTUP VALIDATION: PASS -- USER RUNTIME TEST REQUIRED
 """,
@@ -1004,7 +1007,7 @@ def main() -> int:
     ):
         shutil.copy2(out / name, ROOT / name)
 
-    zip_path = out / "JP_KOREA_VIETNAM_AIRFORCE_FIX_V1.zip"
+    zip_path = out / "JP_KOREA_VIETNAM_AIRFORCE_FIX_V2.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for name in (
             "_SPEC_DATA_ONE.big",

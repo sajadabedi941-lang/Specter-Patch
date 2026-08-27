@@ -1,0 +1,878 @@
+# CRASH_CURRENT_STATE.md
+
+Captured before crash-repair edits were packed. Inspected from the live git repository and packed BIGs.
+
+## HEAD
+- commit: `3ebc42a1c80afc83d8c27aa055f4eea273e40087`
+- subject: Organize every non-USA/RU/CN air force to exactly 12 fighters.
+- branch: `cursor/aircraft-init-crash-fix-e54a`
+- capture note: crash-fix branch was created from `cursor/final-global-airforce-roster-e54a` at this commit.
+
+## LAST KNOWN RUNTIME-SAFE
+- GitHub PR **#414** `Force unique China aircraft portraits and convert J-31 to A2A`
+- URL: https://github.com/sajadabedi941-lang/Specter-Patch/pull/414
+- head commit: `8002fcccd9a9989f89f628be34ca0b70558987f6` `Force unique China airbase portraits and convert J-31 to A2A.`
+- branch: `cursor/china-aircraft-final-fix-e54a`
+
+## LATEST AIRCRAFT RELEASE (crashing build)
+- tag: `final-global-airforce-roster-v1`
+- URL: https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/final-global-airforce-roster-v1
+- DATA sha256 `9b57540f8672d0372dfcf03a8164548acad2d00404fe3a4eb9d0743b5d7c7716`
+- ART sha256 `2255a132b5e68bc69d941bc7d5fa1dcb617c323db47bd502bef89af96eb4289e`
+- packed copies: `/tmp/final_global_roster/_SPEC_DATA_ONE.big` `/tmp/final_global_roster/_SPEC_ART_ONE.big`
+
+## CURRENT DATA / ART BIG HASH (pre-repair packed roster)
+- `_SPEC_DATA_ONE.big` sha256 `9b57540f8672d0372dfcf03a8164548acad2d00404fe3a4eb9d0743b5d7c7716`
+- `_SPEC_ART_ONE.big` sha256 `2255a132b5e68bc69d941bc7d5fa1dcb617c323db47bd502bef89af96eb4289e`
+
+## FILES CHANGED SINCE #414
+Total path changes: **368** (added 357, modified 11, deleted 0, renamed 0)
+
+### New files since #414
+- `CURRENT_AIRCRAFT_BY_COUNTRY.md`
+- `CURRENT_COMMANDSETS.txt`
+- `CURRENT_OBJECTS.txt`
+- `CURRENT_WEAPONS.txt`
+- `DONOR_AIRCRAFT_MASTER_MANIFEST.md`
+- `DONOR_UNUSED_AIRCRAFT_AUDIT.md`
+- `DONOR_USAGE_FINAL.md`
+- `FINAL_AIRCRAFT_COMPLETION_REPORT.md`
+- `FINAL_COUNTRY_AIRFORCE_AUDIT.md`
+- `FINAL_COUNTRY_AIRFORCE_MATRIX.md`
+- `FINAL_DONOR_REUSE_DATABASE.md`
+- `FINAL_UNUSED_AIRCRAFT_DONORS.md`
+- `FINAL_VISUAL_DONOR_MATRIX.md`
+- `GLOBAL_AIRCRAFT_GAMEPLAY_MATRIX.md`
+- `INSTALL_FINAL_GLOBAL_AIRFORCE_ROSTER.txt`
+- `INSTALL_FINAL_GLOBAL_COMPLETION.txt`
+- `NEW_FOLDER_AIRCRAFT_SOURCE_AUDIT.md`
+- `PROTECTED_FILE_HASHES.txt`
+- `patch/Art/UK_F35_Donor/Textures/AmericaF35BJSFTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/Ef35.dds`
+- `patch/Art/UK_F35_Donor/Textures/F35BTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/SPEC_OLD_F35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35d.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35k.dds`
+- `patch/Art/UK_F35_Donor/W3D/ENF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ad.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ak.W3D`
+- `patch/Art/UK_F35_Donor/W3D/SPEC_OLD_F35.W3D`
+- `patch/Data/INI/CommandButton_DonorUnusedAircraft.ini`
+- `patch/Data/INI/CommandButton_EuropeAirforce.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalCompletion.ini`
+- `patch/Data/INI/CommandButton_FranceAirforce.ini`
+- `patch/Data/INI/CommandButton_GlobalDonorAirforce.ini`
+- `patch/Data/INI/CommandButton_NewFolderSourceFix.ini`
+- `patch/Data/INI/MappedImages/HandCreated/zDonorUnused_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zEurope_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobalCompletion_Portrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobal_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFrance_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zGlobalDonor_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zNewFolderSourceFix_Portrait_Images.INI`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMig29.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMirageF1.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetSu25.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainAircraftE7.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainAircraftTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainBomberVulcan.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainDroneMQ9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetA400M.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetC17.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetF35B.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetHarrierGR9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetHawk200.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetJaguarGR3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetLightningF6.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetPhantomFG1.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetPhantomFGR2.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetSeaHarrierFA2.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTempest.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTornadoF3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTornadoGR4.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTyphoonFGR4.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTyphoonT3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetVampireFB5.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetVampireFB9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterApache.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterChinook.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterMerlin.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterPuma.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterWildcat.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceAircraftE3.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetC130.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetFCASNGF.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage20005F.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage2000D.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage5.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageF1CR.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageF1CT.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageIIIE.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleB.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleC.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleF4.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleM.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceUCAVNeuron.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Buildings/France_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterCaracal.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterTiger.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyAircraftE3.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyDroneHeronTP.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetA400M.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetAlphaJet.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetC130J.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetF4F.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetFCASNGF.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetMako.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetMiG29G.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoADV.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonECR.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonT1.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonT4.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyUAVEuroMALE.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterCH53.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterH145M.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterTigerUHT.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetAMCA.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetJaguarIS.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig21Bison.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig27.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig29K.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMirage2000H.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMirage2000I.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetRafaleDH.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetRafaleEH.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetSu30MKI.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetTejas.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF14AM.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF7N.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetMig21Bis.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetSu35S.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetF16IQ.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetL159.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetSu25UB.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF15CBaz.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF15IRaamII.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF16CBarak.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetKfir.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetNesher.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyAircraftG550CAEW.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyDroneMQ9.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetAMX.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetC130J.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetC27J.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF16.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF35B.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetGCAP.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetHarrierII.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetM346FA.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetMB339.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTyphoon.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterA129.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW101.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW139.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW249.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetC130H.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15DJ.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15J.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15JKai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2A.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2B.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2Kai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF3.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF35B.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF4EJKai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetFX.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetX2Shinshin.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanUAVRQ4.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig21MF.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig25.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMirageF1BD.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu24.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF16C.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18A.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18C.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18E.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18F.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF35B.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetJ7B.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig21PF.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig23BN.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig29UB.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu25UB.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetJ20C.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetJ35A.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetQ5.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetA5C.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF16AMLU.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF16B.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF7P.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF7PG.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJ10CE.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJF17.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJF17Blk3.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirage3.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirage5.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirageROSE.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF15K.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF15KSlam.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF16C.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF16D.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetFA50.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF16.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF21.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF21Blk2.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetT50.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15C.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15EX.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15S.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15SA.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetHawk65.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetLightning.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoADV.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTyphoon.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTyphoonT3.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetBuccaneer.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahC.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahD.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahE.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenC.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenD.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenE.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetHawk120.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetHawk127.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetImpala.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetMirageIIICZ.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetDrakenJ35.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetGripenA.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetGripenE.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetLansenJ32.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetSK60.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetSK60B.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenAJS37.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenJA37.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenSH.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetL39.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig21MF.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig25.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu24.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16Blk30.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16C.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16Ozgur.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF4ETerm.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetHurjet.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetKAAN.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetKAANBlk2.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetNF5.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetRF4E.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetF16AM.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig29.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig29MU1.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu24M.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu24MR.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu25.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu25M1.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu27.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu27UB.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15EA.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15SA.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16ECegy.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16F.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetHawk102.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20005.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20009.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20009E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage2000DAD.ini`
+- `patch/Data/INI/Object/Specter/United States Of America/Airforce/AmericaDroneRQ180.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetL39.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetMig21bis.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu27.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu27UB.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu30.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu30MK2.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetYak130.ini`
+- `patch/Data/INI/SpecialPower_BritainAirforce.ini`
+- `patch/Data/INI/Weapon_DonorUnusedAircraft.ini`
+- `patch/Data/INI/Weapon_EuropeAirforce.ini`
+- `patch/Data/INI/Weapon_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/Weapon_FinalGlobalCompletion.ini`
+- `patch/Data/INI/Weapon_FranceAirforce.ini`
+- `patch/Data/INI/Weapon_GlobalDonorAirforce.ini`
+- `patch/Data/INI/Weapon_NewFolderSourceFix.ini`
+- `patch/Release/FINAL_COUNTRY_AIRFORCE_AUDIT.md`
+- `patch/Release/FINAL_UNUSED_AIRCRAFT_DONORS.md`
+- `patch/Release/INSTALL.txt`
+- `patch/Release/docs/EUROPE_AIRBASE_STRUCTURE.txt`
+- `patch/Release/docs/EUROPE_AIRFORCE_EXPANSION.txt`
+- `patch/Release/docs/EUROPE_WEAPON_FIRE.txt`
+- `patch/Release/docs/FRANCE_AIRFORCE_REBUILD.txt`
+- `patch/Release/docs/FRANCE_HELICOPTER_FORCE.txt`
+- `patch/tools/big/apply_europe_weapon_fire.py`
+- `patch/tools/big/europe_airforce_meta.json`
+- `patch/tools/big/generate_donor_unused_aircraft.py`
+- `patch/tools/big/generate_europe_airforce_ini.py`
+- `patch/tools/big/generate_final_aircraft_complete.py`
+- `patch/tools/big/generate_final_global_airforce_roster.py`
+- `patch/tools/big/generate_final_global_completion.py`
+- `patch/tools/big/generate_france_airforce_ini.py`
+- `patch/tools/big/generate_global_donor_airforce.py`
+- `patch/tools/big/generate_new_folder_source_fix.py`
+- `patch/tools/big/generate_uk_airforce_diversity.py`
+- `patch/tools/big/pack_donor_unused_aircraft.py`
+- `patch/tools/big/pack_europe_airbase_structure.py`
+- `patch/tools/big/pack_europe_airforce.py`
+- `patch/tools/big/pack_europe_weapon_fire.py`
+- `patch/tools/big/pack_final_aircraft_complete.py`
+- `patch/tools/big/pack_final_global_airforce_roster.py`
+- `patch/tools/big/pack_final_global_completion.py`
+- `patch/tools/big/pack_france_airforce.py`
+- `patch/tools/big/pack_france_helicopter_force.py`
+- `patch/tools/big/pack_global_donor_airforce.py`
+- `patch/tools/big/pack_new_folder_source_fix.py`
+- `patch/tools/big/pack_uk_airforce_diversity.py`
+- `patch/tools/big/pack_uk_e7_boot_crash_fix.py`
+- `patch/tools/big/pack_uk_f35_donor_tempest.py`
+- `patch/tools/big/uk_airforce_diversity_PACK_REPORT.txt`
+
+### Deleted files since #414
+- (none)
+
+### Renamed files since #414
+- (none)
+
+### Modified files since #414
+- `patch/Data/English/FactionExpansion_ArmyStrings.txt`
+- `patch/Data/INI/CommandSet_Britain.ini`
+- `patch/Data/INI/CommandSet_France.ini`
+- `patch/Data/INI/CommandSet_Germany.ini`
+- `patch/Data/INI/CommandSet_Italy.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_EF2000_T4.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_EF2000_T4_CAS.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_F16DBlk52.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_F35A.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/France_CH47F.ini`
+
+## AIRCRAFT-RELATED FILES CHANGED SINCE #414
+- `CURRENT_AIRCRAFT_BY_COUNTRY.md`
+- `CURRENT_COMMANDSETS.txt`
+- `DONOR_AIRCRAFT_MASTER_MANIFEST.md`
+- `DONOR_UNUSED_AIRCRAFT_AUDIT.md`
+- `DONOR_USAGE_FINAL.md`
+- `FINAL_AIRCRAFT_COMPLETION_REPORT.md`
+- `FINAL_COUNTRY_AIRFORCE_AUDIT.md`
+- `FINAL_COUNTRY_AIRFORCE_MATRIX.md`
+- `FINAL_DONOR_REUSE_DATABASE.md`
+- `FINAL_UNUSED_AIRCRAFT_DONORS.md`
+- `FINAL_VISUAL_DONOR_MATRIX.md`
+- `GLOBAL_AIRCRAFT_GAMEPLAY_MATRIX.md`
+- `INSTALL_FINAL_GLOBAL_AIRFORCE_ROSTER.txt`
+- `NEW_FOLDER_AIRCRAFT_SOURCE_AUDIT.md`
+- `patch/Art/UK_F35_Donor/Textures/AmericaF35BJSFTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/Ef35.dds`
+- `patch/Art/UK_F35_Donor/Textures/F35BTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/SPEC_OLD_F35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35d.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35k.dds`
+- `patch/Art/UK_F35_Donor/W3D/ENF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ad.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ak.W3D`
+- `patch/Art/UK_F35_Donor/W3D/SPEC_OLD_F35.W3D`
+- `patch/Data/INI/CommandButton_DonorUnusedAircraft.ini`
+- `patch/Data/INI/CommandButton_EuropeAirforce.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalCompletion.ini`
+- `patch/Data/INI/CommandButton_FranceAirforce.ini`
+- `patch/Data/INI/CommandButton_GlobalDonorAirforce.ini`
+- `patch/Data/INI/CommandButton_NewFolderSourceFix.ini`
+- `patch/Data/INI/MappedImages/HandCreated/zDonorUnused_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zEurope_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobalCompletion_Portrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobal_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFrance_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zGlobalDonor_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zNewFolderSourceFix_Portrait_Images.INI`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMig29.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetMirageF1.ini`
+- `patch/Data/INI/Object/Specter/ArabicArmy/Airforce/ArabJetSu25.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainAircraftE7.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainAircraftTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainBomberVulcan.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainDroneMQ9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetA400M.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetC17.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetF35B.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetHarrierGR9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetHawk200.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetJaguarGR3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetLightningF6.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetPhantomFG1.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetPhantomFGR2.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetSeaHarrierFA2.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTempest.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTornadoF3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTornadoGR4.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTyphoonFGR4.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetTyphoonT3.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetVampireFB5.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Airforce/BritainJetVampireFB9.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Buildings/Britain_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterApache.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterChinook.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterMerlin.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterPuma.ini`
+- `patch/Data/INI/Object/Specter/British Armed Forces/Rotary/BritainHelicopterWildcat.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceAircraftE3.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetC130.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetFCASNGF.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage20005F.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage2000D.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirage5.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageF1CR.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageF1CT.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetMirageIIIE.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleB.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleC.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleF4.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceJetRafaleM.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/FranceUCAVNeuron.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Buildings/France_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterCaracal.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/FranceHelicopterTiger.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyAircraftE3.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyDroneHeronTP.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetA400M.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetAlphaJet.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetC130J.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetF4F.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetFCASNGF.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetMako.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetMiG29G.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoADV.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonECR.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonT1.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyJetTyphoonT4.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Airforce/GermanyUAVEuroMALE.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Buildings/Germany_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterCH53.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterH145M.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/German Armed Forces/Rotary/GermanyHelicopterTigerUHT.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetAMCA.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetJaguarIS.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig21Bison.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig27.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMig29K.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMirage2000H.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetMirage2000I.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetRafaleDH.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetRafaleEH.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetSu30MKI.ini`
+- `patch/Data/INI/Object/Specter/Indian Armed Forces/Airforce/IndiaJetTejas.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF14AM.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetF7N.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetMig21Bis.ini`
+- `patch/Data/INI/Object/Specter/Iranian Army/Airforce/IranJetSu35S.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetF16IQ.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetL159.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Iraq Army/Airforce/IraqJetSu25UB.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF15CBaz.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF15IRaamII.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF16CBarak.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetKfir.ini`
+- `patch/Data/INI/Object/Specter/Israel Defense Forces/Airforce/IsraelJetNesher.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyAircraftG550CAEW.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyDroneMQ9.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetAMX.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetC130J.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetC27J.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF16.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetF35B.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetGCAP.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetHarrierII.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetM346FA.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetMB339.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Airforce/ItalyJetTyphoon.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Buildings/Italy_HelicopterBase.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterA129.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW101.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW139.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterAW249.ini`
+- `patch/Data/INI/Object/Specter/Italian Armed Forces/Rotary/ItalyHelicopterNH90.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetC130H.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15DJ.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15J.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF15JKai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2A.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2B.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF2Kai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF3.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF35B.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetF4EJKai.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetFX.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanJetX2Shinshin.ini`
+- `patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Airforce/JapanUAVRQ4.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig21MF.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMig25.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetMirageF1BD.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Libyan Armed Forces/Airforce/LibyaJetSu24.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF16C.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18A.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18C.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18E.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF18F.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetF35B.ini`
+- `patch/Data/INI/Object/Specter/NATO/Airforce/NatoJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetJ7B.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig21PF.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig23BN.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetMig29UB.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/North Korea/Airforce/NorthKoreaJetSu25UB.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetJ20C.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetJ35A.ini`
+- `patch/Data/INI/Object/Specter/PLA/Airforce/ChinaJetQ5.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetA5C.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF16AMLU.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF16B.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF7P.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetF7PG.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJ10CE.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJF17.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetJF17Blk3.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirage3.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirage5.ini`
+- `patch/Data/INI/Object/Specter/Pakistan Armed Forces/Airforce/PakistanJetMirageROSE.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF15K.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF15KSlam.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF16C.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF16D.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetFA50.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF16.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF21.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetKF21Blk2.ini`
+- `patch/Data/INI/Object/Specter/Republic of Korea Armed Forces/Airforce/SouthKoreaJetT50.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15C.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15EX.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15S.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF15SA.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetHawk65.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetLightning.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoADV.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoECR.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTornadoIDS.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTyphoon.ini`
+- `patch/Data/INI/Object/Specter/Saudi Arabia Armed Forces/Airforce/SaudiJetTyphoonT3.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetBuccaneer.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahC.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahD.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetCheetahE.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenC.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenD.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetGripenE.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetHawk120.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetHawk127.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetImpala.ini`
+- `patch/Data/INI/Object/Specter/South African National Defence Force/Airforce/SouthAfricaJetMirageIIICZ.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetDrakenJ35.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetGripenA.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetGripenE.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetLansenJ32.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetSK60.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetSK60B.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenAJS37.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenJA37.ini`
+- `patch/Data/INI/Object/Specter/Swedish Armed Forces/Airforce/SwedenJetViggenSH.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetJ7.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetL39.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig21MF.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig23.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetMig25.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Syrian Arab Army/Airforce/SyriaJetSu24.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16Blk30.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16C.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF16Ozgur.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF35A.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF4E.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetF4ETerm.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetHurjet.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetKAAN.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetKAANBlk2.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetNF5.ini`
+- `patch/Data/INI/Object/Specter/Turkey Armed Forces/Airforce/TurkeyJetRF4E.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetF16AM.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig29.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMig29MU1.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetMirage2000.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu24M.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu24MR.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu25.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu25M1.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu27.ini`
+- `patch/Data/INI/Object/Specter/Ukrainian Armed Forces/Airforce/UkraineJetSu27UB.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15EA.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF15SA.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16ECegy.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetF16F.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetHawk102.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20005.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20009.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage20009E.ini`
+- `patch/Data/INI/Object/Specter/United Arab Emirates/Airforce/UAEJetMirage2000DAD.ini`
+- `patch/Data/INI/Object/Specter/United States Of America/Airforce/AmericaDroneRQ180.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetF5E.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetL39.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetMig21.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetMig21bis.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu22.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu22M4.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu27.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu27UB.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu30.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetSu30MK2.ini`
+- `patch/Data/INI/Object/Specter/Vietnam People's Army/Airforce/VietnamJetYak130.ini`
+- `patch/Data/INI/SpecialPower_BritainAirforce.ini`
+- `patch/Data/INI/Weapon_DonorUnusedAircraft.ini`
+- `patch/Data/INI/Weapon_EuropeAirforce.ini`
+- `patch/Data/INI/Weapon_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/Weapon_FinalGlobalCompletion.ini`
+- `patch/Data/INI/Weapon_FranceAirforce.ini`
+- `patch/Data/INI/Weapon_GlobalDonorAirforce.ini`
+- `patch/Data/INI/Weapon_NewFolderSourceFix.ini`
+- `patch/Release/FINAL_COUNTRY_AIRFORCE_AUDIT.md`
+- `patch/Release/FINAL_UNUSED_AIRCRAFT_DONORS.md`
+- `patch/Release/docs/EUROPE_AIRBASE_STRUCTURE.txt`
+- `patch/Release/docs/EUROPE_AIRFORCE_EXPANSION.txt`
+- `patch/Release/docs/EUROPE_WEAPON_FIRE.txt`
+- `patch/Release/docs/FRANCE_AIRFORCE_REBUILD.txt`
+- `patch/Release/docs/FRANCE_HELICOPTER_FORCE.txt`
+- `patch/tools/big/apply_europe_weapon_fire.py`
+- `patch/tools/big/europe_airforce_meta.json`
+- `patch/tools/big/generate_donor_unused_aircraft.py`
+- `patch/tools/big/generate_europe_airforce_ini.py`
+- `patch/tools/big/generate_final_aircraft_complete.py`
+- `patch/tools/big/generate_final_global_airforce_roster.py`
+- `patch/tools/big/generate_france_airforce_ini.py`
+- `patch/tools/big/generate_global_donor_airforce.py`
+- `patch/tools/big/generate_uk_airforce_diversity.py`
+- `patch/tools/big/pack_donor_unused_aircraft.py`
+- `patch/tools/big/pack_europe_airbase_structure.py`
+- `patch/tools/big/pack_europe_airforce.py`
+- `patch/tools/big/pack_europe_weapon_fire.py`
+- `patch/tools/big/pack_final_aircraft_complete.py`
+- `patch/tools/big/pack_final_global_airforce_roster.py`
+- `patch/tools/big/pack_france_airforce.py`
+- `patch/tools/big/pack_france_helicopter_force.py`
+- `patch/tools/big/pack_global_donor_airforce.py`
+- `patch/tools/big/pack_uk_airforce_diversity.py`
+- `patch/tools/big/pack_uk_f35_donor_tempest.py`
+- `patch/tools/big/uk_airforce_diversity_PACK_REPORT.txt`
+- `patch/Data/INI/CommandSet_Britain.ini`
+- `patch/Data/INI/CommandSet_France.ini`
+- `patch/Data/INI/CommandSet_Germany.ini`
+- `patch/Data/INI/CommandSet_Italy.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_EF2000_T4.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_EF2000_T4_CAS.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_F16DBlk52.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_F35A.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Airforce/France_Rafale.ini`
+- `patch/Data/INI/Object/Specter/French Armed Forces/Rotary/France_CH47F.ini`
+
+## Weapon.ini-related
+- `CURRENT_WEAPONS.txt`
+- `patch/Data/INI/Weapon_DonorUnusedAircraft.ini`
+- `patch/Data/INI/Weapon_EuropeAirforce.ini`
+- `patch/Data/INI/Weapon_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/Weapon_FinalGlobalCompletion.ini`
+- `patch/Data/INI/Weapon_FranceAirforce.ini`
+- `patch/Data/INI/Weapon_GlobalDonorAirforce.ini`
+- `patch/Data/INI/Weapon_NewFolderSourceFix.ini`
+- `patch/Release/docs/EUROPE_WEAPON_FIRE.txt`
+- `patch/tools/big/apply_europe_weapon_fire.py`
+- `patch/tools/big/pack_europe_weapon_fire.py`
+
+## CommandSet.ini-related
+- `CURRENT_COMMANDSETS.txt`
+- `patch/Data/INI/CommandSet_Britain.ini`
+- `patch/Data/INI/CommandSet_France.ini`
+- `patch/Data/INI/CommandSet_Germany.ini`
+- `patch/Data/INI/CommandSet_Italy.ini`
+
+## CommandButton.ini-related
+- `patch/Data/INI/CommandButton_DonorUnusedAircraft.ini`
+- `patch/Data/INI/CommandButton_EuropeAirforce.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalAirforceRoster.ini`
+- `patch/Data/INI/CommandButton_FinalGlobalCompletion.ini`
+- `patch/Data/INI/CommandButton_FranceAirforce.ini`
+- `patch/Data/INI/CommandButton_GlobalDonorAirforce.ini`
+- `patch/Data/INI/CommandButton_NewFolderSourceFix.ini`
+
+## MappedImage
+- `patch/Data/INI/MappedImages/HandCreated/zDonorUnused_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zEurope_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobalCompletion_Portrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFinalGlobal_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zFrance_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zGlobalDonor_AirbasePortrait_Images.INI`
+- `patch/Data/INI/MappedImages/HandCreated/zNewFolderSourceFix_Portrait_Images.INI`
+
+## SpecialPower.ini
+- `patch/Data/INI/SpecialPower_BritainAirforce.ini`
+
+## Science.ini
+- (none)
+
+## Upgrade.ini
+- (none)
+
+## ObjectCreationList
+- (none)
+
+## ParticleSystem
+- (none)
+
+## FXList
+- (none)
+
+## Armor.ini
+- (none)
+
+## Locomotor.ini
+- (none)
+
+## CSF / string
+- `CURRENT_COMMANDSETS.txt`
+- `CURRENT_OBJECTS.txt`
+- `CURRENT_WEAPONS.txt`
+- `INSTALL_FINAL_GLOBAL_AIRFORCE_ROSTER.txt`
+- `INSTALL_FINAL_GLOBAL_COMPLETION.txt`
+- `PROTECTED_FILE_HASHES.txt`
+- `patch/Release/INSTALL.txt`
+- `patch/Release/docs/EUROPE_AIRBASE_STRUCTURE.txt`
+- `patch/Release/docs/EUROPE_AIRFORCE_EXPANSION.txt`
+- `patch/Release/docs/EUROPE_WEAPON_FIRE.txt`
+- `patch/Release/docs/FRANCE_AIRFORCE_REBUILD.txt`
+- `patch/Release/docs/FRANCE_HELICOPTER_FORCE.txt`
+- `patch/tools/big/uk_airforce_diversity_PACK_REPORT.txt`
+- `patch/Data/English/FactionExpansion_ArmyStrings.txt`
+
+## ART / W3D / texture
+- `patch/Art/UK_F35_Donor/Textures/AmericaF35BJSFTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/Ef35.dds`
+- `patch/Art/UK_F35_Donor/Textures/F35BTB.tga`
+- `patch/Art/UK_F35_Donor/Textures/SPEC_OLD_F35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35d.dds`
+- `patch/Art/UK_F35_Donor/Textures/f35k.dds`
+- `patch/Art/UK_F35_Donor/W3D/ENF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35A.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ad.W3D`
+- `patch/Art/UK_F35_Donor/W3D/LSFUSAF35Ak.W3D`
+- `patch/Art/UK_F35_Donor/W3D/SPEC_OLD_F35.W3D`
+
+## Post-414 commits on this lineage
+- `3ebc42a1 Organize every non-USA/RU/CN air force to exactly 12 fighters.`
+- `7bd11c3a Add unused unique DONOR_ART aircraft to non-USA/RU/CN factions.`
+- `07c4a590 Pack final aircraft completion BIGs and publish audit reports.`
+- `1605d505 Apply unused New-folder TEOD meshes to live aircraft visuals.`
+- `7909e5f2 Pack New-folder TEOD art into completion BIGs and add source audit.`
+- `153766bc Swap New-folder TEOD visuals onto completed Specter aircraft.`
+- `f6022699 Add final global donor-reuse UAV and aircraft completion pass.`
+- `0b4df593 Add global donor air-force visuals with native Specter weapon roles.`
+- `274ddcdd Fix UK E-7 Wedgetail boot crash from invalid KindOf and missing animation.`
+- `ea770849 Replace UK F-35B with donor ENF35A and add BAE Tempest.`
+- `20a7ec0a Rebuild UK air force visuals, interceptors, AWACS, and helicopter flight.`
+- `ffa4da73 Fix France/Germany/Italy/UK aircraft weapon fire.`
+- `db1c0ebc Record Europe airbase structure pack hashes.`
+- `dbb4787b Restore European nuclear building and fold helicopters into airbases.`
+- `9bf16322 Handle RLE TGA portraits and record Europe pack hashes.`
+- `25ec5a10 Add Germany, Italy, and UK air forces with donor-mesh names.`
+- `a97f6e26 Add France helicopter force with Tiger, NH90, and Caracal.`
+- `0b7a0fcd Rebuild France air force with confirmed DONOR ART only.`

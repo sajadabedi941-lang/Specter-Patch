@@ -1,0 +1,360 @@
+# WEAPON_REFERENCE_AUDIT.md
+
+Weapons defined: 2617
+Aircraft/object missing weapon: 4522
+Weapon missing projectile: 48
+Weapon field errors: 0
+
+## Missing weapons on objects
+- DefaultThingTemplate (Data\INI\Default\Object.ini) -> `PRIMARY`
+- DefaultThingTemplate (Data\INI\Default\Object.ini) -> `SECONDARY`
+- DefaultThingTemplate (Data\INI\Default\Object.ini) -> `TERTIARY`
+- AirF_AuroraBombGas (Data\INI\Object\AirforceGeneral.ini) -> `MIDPOINT`
+- AirF_AuroraBombGas (Data\INI\Object\AirforceGeneral.ini) -> `FINAL`
+- AirF_AmericaJetSpectreGunship1 (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaJetSpectreGunship2 (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaJetSpectreGunship3 (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_SpectreGunshipHowitzer (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaJetA10Thunderbolt (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaVehicleBattleDrone (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaVehicleHellfireDrone (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaTankAvengerLaserTurret (Data\INI\Object\AirforceGeneral.ini) -> `PRIMARY`
+- AirF_AmericaTankAvengerLaserTurret (Data\INI\Object\AirforceGeneral.ini) -> `SECONDARY`
+- SpectreGunshipGattlingCannon (Data\INI\Object\AmericaAir.ini) -> `PRIMARY`
+- SpectreGunshipHowitzer (Data\INI\Object\AmericaAir.ini) -> `PRIMARY`
+- AmericaJetAircraftCarrierRaptor (Data\INI\Object\AmericaAir.ini) -> `PRIMARY`
+- AmericaJetAircraftCarrierRaptor (Data\INI\Object\AmericaAir.ini) -> `PRIMARY`
+- AmericaJetA10Thunderbolt (Data\INI\Object\AmericaAir.ini) -> `PRIMARY`
+- AmericaInfantryColonelBurton (Data\INI\Object\AmericaInfantry.ini) -> `PRIMARY`
+- AmericaInfantryColonelBurton (Data\INI\Object\AmericaInfantry.ini) -> `SECONDARY`
+- AmericaVehicleGuardianDrone (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaInfantryBiohazardTech (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaInfantryOfficer (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaInfantrySecretService (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShip (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShip (Data\INI\Object\AmericaMiscUnit.ini) -> `SECONDARY`
+- CINE_BShipWeaponDetonationObject (Data\INI\Object\AmericaMiscUnit.ini) -> `FINAL`
+- AmericaVehicleRepairDrone (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShipReal (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShipReal (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShipReal (Data\INI\Object\AmericaMiscUnit.ini) -> `SECONDARY`
+- AmericaVehicleBattleShipDemo (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShipDemo (Data\INI\Object\AmericaMiscUnit.ini) -> `SECONDARY`
+- MISSION_AmericaVehicleSentryDrone (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaInfantryCIAOfficer (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaInfantryCIAOfficer (Data\INI\Object\AmericaMiscUnit.ini) -> `SECONDARY`
+- AmericaVehicleBattleShipUSSBender (Data\INI\Object\AmericaMiscUnit.ini) -> `PRIMARY`
+- AmericaVehicleBattleShipUSSBender (Data\INI\Object\AmericaMiscUnit.ini) -> `SECONDARY`
+- AmericaVehicleMedic (Data\INI\Object\AmericaVehicle.ini) -> `PRIMARY`
+- AmericaVehicleBattleDrone (Data\INI\Object\AmericaVehicle.ini) -> `PRIMARY`
+- AmericaVehicleHellfireDrone (Data\INI\Object\AmericaVehicle.ini) -> `PRIMARY`
+- AmericaTankAvengerLaserTurret (Data\INI\Object\AmericaVehicle.ini) -> `PRIMARY`
+- AmericaTankAvengerLaserTurret (Data\INI\Object\AmericaVehicle.ini) -> `SECONDARY`
+- ChinaHelixGattlingCannon (Data\INI\Object\ChinaAir.ini) -> `PRIMARY`
+- ChinaHelixGattlingCannon (Data\INI\Object\ChinaAir.ini) -> `SECONDARY`
+- ChinaInfantryBlackLotus (Data\INI\Object\ChinaInfantry.ini) -> `PRIMARY`
+- ChinaInfantrySecretPolice (Data\INI\Object\ChinaMiscUnit.ini) -> `PRIMARY`
+- ChinaVehicleTroopCrawlerEmpty (Data\INI\Object\ChinaMiscUnit.ini) -> `PRIMARY`
+- ChinaInfantryOfficer (Data\INI\Object\ChinaMiscUnit.ini) -> `PRIMARY`
+- ChinaInfantryAgent (Data\INI\Object\ChinaMiscUnit.ini) -> `PRIMARY`
+- ChinaTankOverlordGattlingCannon (Data\INI\Object\ChinaVehicle.ini) -> `PRIMARY`
+- ChinaTankOverlordGattlingCannon (Data\INI\Object\ChinaVehicle.ini) -> `SECONDARY`
+- ChinaTankDragon (Data\INI\Object\ChinaVehicle.ini) -> `PRIMARY`
+- ChinaTankDragon (Data\INI\Object\ChinaVehicle.ini) -> `SECONDARY`
+- ChinaTankDragon (Data\INI\Object\ChinaVehicle.ini) -> `PRIMARY`
+- ChinaTankDragon (Data\INI\Object\ChinaVehicle.ini) -> `SECONDARY`
+- ChinaTankGattling (Data\INI\Object\ChinaVehicle.ini) -> `PRIMARY`
+- ChinaTankGattling (Data\INI\Object\ChinaVehicle.ini) -> `SECONDARY`
+- CINE_Sun (Data\INI\Object\CivilianBuilding.ini) -> `PRIMARY`
+- CINE_Moon (Data\INI\Object\CivilianBuilding.ini) -> `PRIMARY`
+- CINE_CPlane03 (Data\INI\Object\CivilianBuilding.ini) -> `PRIMARY`
+- FakeGLACommandCenter (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLACommandCenter (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- FakeGLABlackMarket (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLABlackMarket (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- GLADemoTrap (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- GLADemoTrap (Data\INI\Object\FactionBuilding.ini) -> `SECONDARY`
+- GLADemoTrap (Data\INI\Object\FactionBuilding.ini) -> `TERTIARY`
+- GLADemoTrap (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- GLATunnelNetworkNoSpawn (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLASupplyStash (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLASupplyStash (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- FakeGLABarracks (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLABarracks (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- FakeGLAArmsDealer (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- FakeGLAArmsDealer (Data\INI\Object\FactionBuilding.ini) -> `FINAL`
+- AmericaAircraftCarrier (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- GLASneakAttackTunnelNetwork (Data\INI\Object\FactionBuilding.ini) -> `PRIMARY`
+- 12_7mm_AP_T_Generic2 (Data\INI\Object\GenericShells.ini) -> `GenericBulletAscender`
+- 25mm_APFSDS_HE_AP_T1 (Data\INI\Object\GenericShells.ini) -> `GenericBulletAscender`
+- GLAInfantryStingerSoldier (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryStingerSoldier (Data\INI\Object\GLAInfantry.ini) -> `SECONDARY`
+- GLAInfantryTerrorist (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobNexus (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobNexus (Data\INI\Object\GLAInfantry.ini) -> `SECONDARY`
+- GLAInfantryAngryMobNexus (Data\INI\Object\GLAInfantry.ini) -> `TERTIARY`
+- GLAInfantryAngryMobPistol01 (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobPistol01 (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobPistol01 (Data\INI\Object\GLAInfantry.ini) -> `SECONDARY`
+- GLAInfantryAngryMobRock02 (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobRock02 (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAInfantryAngryMobRock02 (Data\INI\Object\GLAInfantry.ini) -> `SECONDARY`
+- GLAInfantryAngryMobMolotov02 (Data\INI\Object\GLAInfantry.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- GLAVehicleCombatBikeRocket (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- GLAVehicleCombatBikeTerrorist (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleBombTruck (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleTechnicalChassisOne (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleTechnicalChassisOne (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleTechnicalChassisOne (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLALightTank (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleBattleBus (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleBattleBus (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- GLAVehicleBattleBus (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleBattleBus (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `PRIMARY`
+- GLAVehicleScudLauncherHiDef (Data\INI\Object\GLAVehicle.ini) -> `SECONDARY`
+- Infa_ChinaJetMIG (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaJetMIG (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaInfantryBlackLotus (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaInfantryTankHunter (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaTankDragon (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaTankDragon (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaTankDragon (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaTankDragon (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaVehicleInfernoCannon (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleInfernoCannon (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleNukeLauncher (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleNukeLauncher (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaTankGattling (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaTankGattling (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaVehicleDozer (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleDozer (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaTankECM (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaGattlingCannon (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaGattlingCannon (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaInfantryMiniGunner (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaInfantryMiniGunner (Data\INI\Object\InfantryGeneral.ini) -> `SECONDARY`
+- Infa_ChinaVehicleTroopCrawler (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleTroopCrawler (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleListeningOutpost (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleListeningOutpost (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleHelix (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Infa_ChinaVehicleHelix (Data\INI\Object\InfantryGeneral.ini) -> `PRIMARY`
+- Slth_GLAInfantryRebel (Data\INI\Object\Specter\AI_IraqiArmy\Infantry.ini) -> `PRIMARY`
+- Slth_GLAInfantryRebel (Data\INI\Object\Specter\AI_IraqiArmy\Infantry.ini) -> `SECONDARY`
+- Slth_GLAInfantryTunnelDefender (Data\INI\Object\Specter\AI_IraqiArmy\Infantry.ini) -> `PRIMARY`
+- Slth_GLAInfantryTerrorist (Data\INI\Object\Specter\AI_IraqiArmy\Infantry.ini) -> `PRIMARY`
+- Slth_GLAInfantryAngryMobNexus (Data\INI\Object\Specter\AI_IraqiArmy\Infantry.ini) -> `PRIMARY`
+- Slth_GLAStingerSite (Data\INI\Object\Specter\AI_IraqiArmy\Sam2.ini) -> `PRIMARY`
+- Slth_GLAStingerSite (Data\INI\Object\Specter\AI_IraqiArmy\Sam2.ini) -> `SECONDARY`
+- Slth_GLATankScorpion2 (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLATankScorpion2 (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLATankScorpion2 (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLATankScorpion2 (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLATankScorpion2 (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `TERTIARY`
+- Slth_GLAVehicleRocketBuggy (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `TERTIARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLAVehicleCombatBike (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `TERTIARY`
+- Slth_GLAVehicleQuadCannon (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleQuadCannon (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLAVehicleToxinTruck (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleToxinTruck (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLAVehicleBombTruck (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleTechnical (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAVehicleTechnical (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLAVehicleTechnical (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `TERTIARY`
+- Slth_GLATankMarauder (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLATankMarauder (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `SECONDARY`
+- Slth_GLATankMarauder (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `TERTIARY`
+- Slth_GLAVehicleBattleBus (Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini) -> `PRIMARY`
+- Slth_GLAInfantryWorker (Data\INI\Object\Specter\AI_IraqiArmy\VT72B.ini) -> `PRIMARY`
+- Slth_GLAInfantryWorker (Data\INI\Object\Specter\AI_IraqiArmy\VT72B.ini) -> `PRIMARY`
+- ArabRadar30N6E_AI (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\30N6E_AI.ini) -> `PRIMARY`
+- ArabVehicleMIM104ELauncher_AAM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\MIM_104E.ini) -> `PRIMARY`
+- ArabVehicleMIM104ELauncher_AAM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\MIM_104E.ini) -> `SECONDARY`
+- ArabVehicleMIM104ELauncher_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\MIM_104E_ABM.ini) -> `PRIMARY`
+- ArabVehicleS300PMU2Launcher_AAM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Launcher_AAM.ini) -> `PRIMARY`
+- ArabVehicleS300PMU2Launcher_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Launcher_ABM.ini) -> `PRIMARY`
+- ArabVehicleS300PMU2Launcher_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Launcher_ABM.ini) -> `SECONDARY`
+- ArabVehicleS300PMU2Launcher_ACM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Launcher_ACM.ini) -> `PRIMARY`
+- ArabVehicleS300PMU2Launcher_ACM (Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Launcher_ACM.ini) -> `SECONDARY`
+- GLAVehicleQuadCannon (Data\INI\Object\Specter\Arabic Alliance\AirDefense\2K22M1.ini) -> `PRIMARY`
+- GLAVehicleQuadCannon (Data\INI\Object\Specter\Arabic Alliance\AirDefense\2K22M1.ini) -> `SECONDARY`
+- GLAVehicleQuadCannon (Data\INI\Object\Specter\Arabic Alliance\AirDefense\2K22M1.ini) -> `TERTIARY`
+- Arb_30N6E (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini) -> `SECONDARY`
+- Arb_30N6E_CombatMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini) -> `PRIMARY`
+- Arb_30N6E_CombatMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini) -> `SECONDARY`
+- Arb_30N6E_PackMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini) -> `SECONDARY`
+- Arb_Pantsir (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini) -> `PRIMARY`
+- Arb_Pantsir (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini) -> `SECONDARY`
+- Arabic_S300PMU2 (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `SECONDARY`
+- Arabic_S300PMU2 (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `TERTIARY`
+- Arabic_S300PMU2_CombatMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `SECONDARY`
+- Arabic_S300PMU2_PackMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `SECONDARY`
+- Arabic_S300PMU2_PackMode (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `TERTIARY`
+- S300_FireControlSystem (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `PRIMARY`
+- S300_MT_LockControl (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `PRIMARY`
+- S300_FireControlSystem_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `PRIMARY`
+- S300_FireControlSystem_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `SECONDARY`
+- S300_MT_LockControl_ABM (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini) -> `PRIMARY`
+- Arab_Tor1M (Data\INI\Object\Specter\Arabic Alliance\AirDefense\Tor1M.ini) -> `PRIMARY`
+- ArabicArmy_AH64D_K (Data\INI\Object\Specter\Arabic Alliance\Airforce\AH64D.ini) -> `PRIMARY`
+- ArabicArmy_AH64D_K (Data\INI\Object\Specter\Arabic Alliance\Airforce\AH64D.ini) -> `SECONDARY`
+- ArabicArmy_AH64D_K (Data\INI\Object\Specter\Arabic Alliance\Airforce\AH64D.ini) -> `TERTIARY`
+- ArabicArmy_EF2000 (Data\INI\Object\Specter\Arabic Alliance\Airforce\EF2000.ini) -> `PRIMARY`
+- ArabicArmy_EF2000 (Data\INI\Object\Specter\Arabic Alliance\Airforce\EF2000.ini) -> `PRIMARY`
+- ArabicArmy_EF2000 (Data\INI\Object\Specter\Arabic Alliance\Airforce\EF2000.ini) -> `SECONDARY`
+- ArabJetEF2000AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\EF2000_AA.ini) -> `PRIMARY`
+- ArabSystemMeteorTargetLock (Data\INI\Object\Specter\Arabic Alliance\Airforce\EF2000_AA.ini) -> `PRIMARY`
+- ArabicArmy_F15SA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA.ini) -> `PRIMARY`
+- ArabicArmy_F15SA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA.ini) -> `PRIMARY`
+- ArabicArmy_F15SA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA.ini) -> `SECONDARY`
+- ArabicArmy_F15SA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA.ini) -> `TERTIARY`
+- ArabicArmy_F15SA_AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA_AA.ini) -> `PRIMARY`
+- ArabicArmy_F15SA_AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA_AA.ini) -> `SECONDARY`
+- ArabicArmy_F15SA_AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA_AA.ini) -> `PRIMARY`
+- ArabicArmy_F15SA_AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA_AA.ini) -> `SECONDARY`
+- ArabicArmy_F15SA_AA (Data\INI\Object\Specter\Arabic Alliance\Airforce\F15SA_AA.ini) -> `TERTIARY`
+- ArabicArmy_F16C_E (Data\INI\Object\Specter\Arabic Alliance\Airforce\F16C_B60.ini) -> `PRIMARY`
+- ArabicArmy_Rafale_DM (Data\INI\Object\Specter\Arabic Alliance\Airforce\Rafale_DM.ini) -> `PRIMARY`
+- ArabicArmy_Rafale_DM (Data\INI\Object\Specter\Arabic Alliance\Airforce\Rafale_DM.ini) -> `PRIMARY`
+- ArabicArmy_Rafale_DM (Data\INI\Object\Specter\Arabic Alliance\Airforce\Rafale_DM.ini) -> `SECONDARY`
+- ArabicArmy_Rafale_DM (Data\INI\Object\Specter\Arabic Alliance\Airforce\Rafale_DM.ini) -> `TERTIARY`
+- Arab_Su-24MK (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su-24MK.ini) -> `PRIMARY`
+- Arab_Su-24MK (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su-24MK.ini) -> `SECONDARY`
+- Arab_Su-24MK (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su-24MK.ini) -> `TERTIARY`
+- ArabicArmy_Su-24MR (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su24MR.ini) -> `PRIMARY`
+- ArabicArmy_Su30MKA (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su30MKA.ini) -> `PRIMARY`
+- ArabicArmy_Su30MKA (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su30MKA.ini) -> `SECONDARY`
+- ArabicArmy_Su30MKA (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su30MKA.ini) -> `TERTIARY`
+- ArabicArmy_Su35 (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su35.ini) -> `PRIMARY`
+- ArabicArmy_Su35 (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su35.ini) -> `PRIMARY`
+- ArabicArmy_Su35 (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su35.ini) -> `SECONDARY`
+- ArabicArmy_Su35 (Data\INI\Object\Specter\Arabic Alliance\Airforce\Su35.ini) -> `TERTIARY`
+- 9K720MWarheadReentryObject (Data\INI\Object\Specter\Arabic Alliance\Arabic_Systems.ini) -> `SECONDARY`
+- KhalidWarheadReentryObject (Data\INI\Object\Specter\Arabic Alliance\Arabic_Systems.ini) -> `SECONDARY`
+- GLAScudStorm (Data\INI\Object\Specter\Arabic Alliance\Buildings\Aljarrah.ini) -> `PRIMARY`
+- ArabicArmy_Aljarrah (Data\INI\Object\Specter\Arabic Alliance\Buildings\Aljarrah_T.ini) -> `PRIMARY`
+- ArabicArmy_D30 (Data\INI\Object\Specter\Arabic Alliance\Buildings\D30.ini) -> `PRIMARY`
+- GLATunnelNetwork (Data\INI\Object\Specter\Arabic Alliance\Buildings\MIM80.ini) -> `PRIMARY`
+- GLATunnelNetwork (Data\INI\Object\Specter\Arabic Alliance\Buildings\MIM80.ini) -> `SECONDARY`
+- GLATunnelNetwork (Data\INI\Object\Specter\Arabic Alliance\Buildings\MIM80.ini) -> `TERTIARY`
+- GLAVehicleToxinTruck (Data\INI\Object\Specter\Arabic Alliance\IFV\BMP3S.ini) -> `PRIMARY`
+- GLAVehicleToxinTruck (Data\INI\Object\Specter\Arabic Alliance\IFV\BMP3S.ini) -> `SECONDARY`
+- GLAVehicleToxinTruck (Data\INI\Object\Specter\Arabic Alliance\IFV\BMP3S.ini) -> `TERTIARY`
+- ArabVehicleM2A3BuskII (Data\INI\Object\Specter\Arabic Alliance\IFV\M2A3.ini) -> `PRIMARY`
+- ArabVehicleM2A3BuskII (Data\INI\Object\Specter\Arabic Alliance\IFV\M2A3.ini) -> `SECONDARY`
+- GLAInfantryJarmenKell (Data\INI\Object\Specter\Arabic Alliance\Infantry\HeavySniper.ini) -> `PRIMARY`
+- GLAInfantryJarmenKell (Data\INI\Object\Specter\Arabic Alliance\Infantry\HeavySniper.ini) -> `SECONDARY`
+- Arabic_KornetTeam (Data\INI\Object\Specter\Arabic Alliance\Infantry\KornetTeam.ini) -> `PRIMARY`
+- GLAInfantryTunnelDefender (Data\INI\Object\Specter\Arabic Alliance\Infantry\LightAntiTank.ini) -> `PRIMARY`
+- ArabInafntry_V1_AK (Data\INI\Object\Specter\Arabic Alliance\Infantry\Mechanized.ini) -> `PRIMARY`
+- Arabic_MortarTeam (Data\INI\Object\Specter\Arabic Alliance\Infantry\MortarTeam.ini) -> `PRIMARY`
+- ArabInfantryMortarGuard (Data\INI\Object\Specter\Arabic Alliance\Infantry\MortarTeam.ini) -> `PRIMARY`
+- GLAInfantryRebel (Data\INI\Object\Specter\Arabic Alliance\Infantry\Rifleman_M4.ini) -> `PRIMARY`
+- ArabInfantrySpecOps (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `PRIMARY`
+- ArabInfantrySpecOps (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `SECONDARY`
+- ArabInfantrySpecOps (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `TERTIARY`
+- ArabInfantrySpecOps_Mg (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `PRIMARY`
+- ArabInfantrySpecOps_Mg (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `SECONDARY`
+- ArabInfantrySpecOps_Mg (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `TERTIARY`
+- ArabInfantrySpecOps_MKS (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `PRIMARY`
+- ArabInfantrySpecOps_MKS (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `SECONDARY`
+- ArabInfantrySpecOps_MKS (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `TERTIARY`
+- ArabInfantrySpecOps_AT (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `PRIMARY`
+- ArabInfantrySpecOps_AT (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `SECONDARY`
+- ArabInfantrySpecOps_AT (Data\INI\Object\Specter\Arabic Alliance\Infantry\SpecOps.ini) -> `TERTIARY`
+- Arabic_StingerSoldier (Data\INI\Object\Specter\Arabic Alliance\Infantry\StingerSoldier.ini) -> `PRIMARY`
+- GLAVehicleRocketBuggy (Data\INI\Object\Specter\Arabic Alliance\Tracked\M109A6.ini) -> `PRIMARY`
+- GLATankMarauder (Data\INI\Object\Specter\Arabic Alliance\Tracked\M1A2SA.ini) -> `PRIMARY`
+- GLATankMarauder (Data\INI\Object\Specter\Arabic Alliance\Tracked\M1A2SA.ini) -> `SECONDARY`
+- GLATankMarauder (Data\INI\Object\Specter\Arabic Alliance\Tracked\M1A2SA.ini) -> `TERTIARY`
+- GLATankScorpion (Data\INI\Object\Specter\Arabic Alliance\Tracked\T90S.ini) -> `PRIMARY`
+- GLATankScorpion (Data\INI\Object\Specter\Arabic Alliance\Tracked\T90S.ini) -> `SECONDARY`
+- GLATankScorpion (Data\INI\Object\Specter\Arabic Alliance\Tracked\T90S.ini) -> `TERTIARY`
+- ArabTurretsT90Turret (Data\INI\Object\Specter\Arabic Alliance\Tracked\T90S.ini) -> `PRIMARY`
+- ArabTurretsT90Turret (Data\INI\Object\Specter\Arabic Alliance\Tracked\T90S.ini) -> `SECONDARY`
+- ArabDroneCH4B (Data\INI\Object\Specter\Arabic Alliance\UAV\CH4B.ini) -> `PRIMARY`
+- ArabDroneCH4B (Data\INI\Object\Specter\Arabic Alliance\UAV\CH4B.ini) -> `SECONDARY`
+- Arab_Khalid (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid.ini) -> `SECONDARY`
+- Arab_Khalid (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid.ini) -> `TERTIARY`
+- Arab_Khalid (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid.ini) -> `SECONDARY`
+- Arab_Khalid (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid.ini) -> `TERTIARY`
+- Arab_Khalid_AI (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid_AI.ini) -> `PRIMARY`
+- Arb_9K720SV1 (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M.ini) -> `PRIMARY`
+- Arb_9K720SV1 (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M.ini) -> `SECONDARY`
+- Arb_9K720M_AI (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M_AI.ini) -> `PRIMARY`
+- Arb_9K720M_AI (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M_AI.ini) -> `SECONDARY`
+- GLAVehicleScudLauncher (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729MV.ini) -> `PRIMARY`
+- GLAVehicleScudLauncher (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729MV.ini) -> `SECONDARY`
+- ArabicArmy_Bm30 (Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_Bm30.ini) -> `PRIMARY`
+
+## Missing ProjectileObject
+- CINE_SCUDLauncherGunExplosive (Data\INI\Weapon.ini) -> `CINE_SCUDMissile`
+- GC_Chem_StingerMissileWeaponBeta (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_StingerMissileWeaponAirBeta (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_StingerMissileWeaponGamma (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_StingerMissileWeaponAirGamma (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_TunnelDefenderRocketWeaponBeta (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_TunnelDefenderRocketWeaponGamma (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_TunnelDefenderRocketWeaponBetaAir (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_TunnelDefenderRocketWeaponGammaAir (Data\INI\Weapon.ini) -> `GC_Chem_StingerMissile`
+- GC_Chem_GLARebelGunGamma (Data\INI\Weapon.ini) -> `GC_Chem_ToxinStreamProjectile`
+- Chem_TunnelNetworkGunGamma (Data\INI\Weapon.ini) -> `GC_Chem_ToxinStreamProjectile`
+- Chem_ToxinTruckGunGamma (Data\INI\Weapon.ini) -> `GC_Chem_ToxinStreamProjectile`
+- Chem_ToxinTruckGunGammaPlusOne (Data\INI\Weapon.ini) -> `GC_Chem_ToxinStreamProjectile`
+- Chem_ToxinTruckGunGammaPlusTwo (Data\INI\Weapon.ini) -> `GC_Chem_ToxinStreamProjectile`
+- GC_Slth_GLAJarmenKellRifle (Data\INI\Weapon.ini) -> `GC_Slth_JarmenKellBullet`
+- GC_Chem_ScudStormWeapon (Data\INI\Weapon.ini) -> `GC_Chem_ScudStormMissile`
+- Chem_StingerMissileWeaponBeta (Data\INI\Weapon.ini) -> `Chem_StingerMissile`
+- Chem_StingerMissileWeaponAirBeta (Data\INI\Weapon.ini) -> `Chem_StingerMissile`
+- Chem_StingerMissileWeaponGamma (Data\INI\Weapon.ini) -> `Chem_StingerMissile`
+- Chem_StingerMissileWeaponAirGamma (Data\INI\Weapon.ini) -> `Chem_StingerMissile`
+- Demo_ScudStormWeapon (Data\INI\Weapon.ini) -> `Demo_ScudStormMissile`
+- Nuke_BattleMasterTankGun (Data\INI\Weapon.ini) -> `Nuke_BattleMasterTankShell`
+- Nuke_OverlordTankGun (Data\INI\Weapon.ini) -> `Nuke_OverlordTankShell`
+- SupW_NeutronMissileWeapon (Data\INI\Weapon.ini) -> `SupW_NeutronMissile`
+- Chem_ScudStormWeapon (Data\INI\Weapon.ini) -> `Chem_ScudStormMissile`
+- M993_Launcher_Low (Data\INI\Weapon.ini) -> `110mm_M31A1_Missile_Low`
+- Shamran2Deathweapon (Data\INI\Weapon.ini) -> `Shamran2Warhead`
+- India_Weapon_AAM_Medium (Data\INI\Weapon_India.ini) -> `India_SD10_Projectile`
+- India_Weapon_SD10_JF17 (Data\INI\Weapon_India.ini) -> `India_Projectile_SD10_JF17`
+- India_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_India.ini) -> `India_Projectile_PL15E_JF17BlkIII`
+- Libya_Weapon_AAM_Medium (Data\INI\Weapon_Libya.ini) -> `Libya_SD10_Projectile`
+- Libya_Weapon_SD10_JF17 (Data\INI\Weapon_Libya.ini) -> `Libya_Projectile_SD10_JF17`
+- Libya_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_Libya.ini) -> `Libya_Projectile_PL15E_JF17BlkIII`
+- Pakistan_Weapon_AAM_Medium (Data\INI\Weapon_Pakistan.ini) -> `Pakistan_SD10_Projectile`
+- Pakistan_Weapon_SD10_JF17 (Data\INI\Weapon_Pakistan.ini) -> `Pakistan_Projectile_SD10_JF17`
+- Pakistan_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_Pakistan.ini) -> `Pakistan_Projectile_PL15E_JF17BlkIII`
+- SaudiArabia_Weapon_AAM_Medium (Data\INI\Weapon_SaudiArabia.ini) -> `SaudiArabia_SD10_Projectile`
+- SaudiArabia_Weapon_SD10_JF17 (Data\INI\Weapon_SaudiArabia.ini) -> `SaudiArabia_Projectile_SD10_JF17`
+- SaudiArabia_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_SaudiArabia.ini) -> `SaudiArabia_Projectile_PL15E_JF17BlkIII`
+- SouthAfrica_Weapon_AAM_Medium (Data\INI\Weapon_SouthAfrica.ini) -> `SouthAfrica_SD10_Projectile`
+- SouthAfrica_Weapon_SD10_JF17 (Data\INI\Weapon_SouthAfrica.ini) -> `SouthAfrica_Projectile_SD10_JF17`
+- SouthAfrica_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_SouthAfrica.ini) -> `SouthAfrica_Projectile_PL15E_JF17BlkIII`
+- Syria_Weapon_AAM_Medium (Data\INI\Weapon_Syria.ini) -> `Syria_SD10_Projectile`
+- Syria_Weapon_SD10_JF17 (Data\INI\Weapon_Syria.ini) -> `Syria_Projectile_SD10_JF17`
+- Syria_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_Syria.ini) -> `Syria_Projectile_PL15E_JF17BlkIII`
+- UAE_Weapon_AAM_Medium (Data\INI\Weapon_UAE.ini) -> `UAE_SD10_Projectile`
+- UAE_Weapon_SD10_JF17 (Data\INI\Weapon_UAE.ini) -> `UAE_Projectile_SD10_JF17`
+- UAE_Weapon_PL15E_JF17BlockIII (Data\INI\Weapon_UAE.ini) -> `UAE_Projectile_PL15E_JF17BlkIII`
+
+## Field errors

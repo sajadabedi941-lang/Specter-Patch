@@ -1,0 +1,14 @@
+SPECTER JAPAN / SOUTH KOREA / VIETNAM AIR FORCE FIX V2
+
+Copy both BIG files into the game folder, replacing previous Specter BIGs:
+
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+This pass corrects Japan, South Korea, and Vietnam fighter rosters,
+support aviation, air upgrades, IL-76 and MiG-25RB runway behavior,
+and the L-159 visual. Airfield button names are the exact 12 identities
+on both CONTROLBAR construct labels and OBJECT unit names.
+USA / Russia / China air CommandSets are unchanged.
+
+STATIC STARTUP VALIDATION: PASS -- USER RUNTIME TEST REQUIRED

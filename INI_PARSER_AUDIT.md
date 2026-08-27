@@ -1,5 +1,28 @@
 # INI_PARSER_AUDIT.md
 
+## POST-REPAIR (re-extracted crash-fix DATA)
+
+Packed DATA: `/tmp/aircraft_init_crash_fix/_SPEC_DATA_ONE.big`  
+Re-extract: **PASS** (2751 files)
+
+Crash-class parser checks:
+
+| Check | Result |
+|---|---|
+| `ItalyAircraftG550CAEW` End-balance | PASS |
+| `GermanyHelicopterH145M` End-balance | PASS |
+| `Animation =` on KVE737 | PASS (none) |
+| `Animation =` on LSFFenneck | PASS (none) |
+| KindOf RADAR on those objects | PASS (none) |
+| Unknown schemas (`CountryBalanceSystem` / `BuildLimit` / `PricingDefault`) | PASS (none) |
+| Duplicate overlay Weapon/CommandButton/zPortrait INIs stripped | PASS |
+| Orphan `North Korea\...` BIG paths stripped | PASS |
+| USA/RU/CN CommandSet hashes | PASS |
+
+The table below is the **pre-repair** scan of the crashing roster BIG. Many FAIL rows are stock Specter `CRLF` plus a conservative End-depth heuristic that also fires on #414-safe files. They are **not** the initialization exception.
+
+---
+
 Packed DATA: `/tmp/final_global_roster/_SPEC_DATA_ONE.big`
 INI files: 2351
 PASS: 1171

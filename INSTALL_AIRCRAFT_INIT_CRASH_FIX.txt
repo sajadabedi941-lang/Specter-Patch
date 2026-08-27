@@ -1,0 +1,14 @@
+SPECTER AIRCRAFT INITIALIZATION CRASH FIX
+
+Copy both BIG files into the game folder, replacing previous Specter BIGs:
+
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+This build keeps the post-#414 aircraft roster. It repairs the
+initialization crash introduced after PR #414.
+
+See INITIALIZATION_CRASH_FINAL_REPORT.md.
+
+LAST KNOWN RUNTIME SAFE: #414
+This package is a STATIC initialization repair. Please runtime-test in ZH.

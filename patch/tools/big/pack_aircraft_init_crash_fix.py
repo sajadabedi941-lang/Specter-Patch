@@ -84,7 +84,7 @@ def validate_g550(text: str) -> list[str]:
     if text.startswith("\ufeff"):
         errors.append("G550 BOM")
     errors.extend(e7.balanced_end(text, "ItalyAircraftG550CAEW"))
-    if re.search(r"Animation\s*=", text):
+    if any(re.search(r"^\s*Animation\s*=", line) for line in text.splitlines()):
         errors.append("G550 still has Animation=")
     if "Model = KVE737" not in text:
         errors.append("G550 lost KVE737")
@@ -107,7 +107,7 @@ def validate_h145(text: str) -> list[str]:
     if text.startswith("\ufeff"):
         errors.append("H145 BOM")
     errors.extend(e7.balanced_end(text, "GermanyHelicopterH145M"))
-    if re.search(r"Animation\s*=", text):
+    if any(re.search(r"^\s*Animation\s*=", line) for line in text.splitlines()):
         errors.append("H145 still has Animation=")
     if "Model = LSFFenneck" not in text:
         errors.append("H145 lost LSFFenneck")
@@ -287,10 +287,13 @@ def main() -> int:
         if not key.endswith(".ini"):
             continue
         t = blob.decode("latin1")
-        if re.search(r"Animation\s*=\s*KVE737", t, re.I):
-            kve_anim.append(name)
-        if re.search(r"Animation\s*=\s*LSFFENNECK", t, re.I):
-            fen_anim.append(name)
+        for line in t.splitlines():
+            if line.lstrip().startswith(";"):
+                continue
+            if re.search(r"^\s*Animation\s*=\s*KVE737", line, re.I):
+                kve_anim.append(name)
+            if re.search(r"^\s*Animation\s*=\s*LSFFENNECK", line, re.I):
+                fen_anim.append(name)
     if kve_anim:
         raise SystemExit("KVE737 Animation still present: " + ", ".join(kve_anim))
     if fen_anim:

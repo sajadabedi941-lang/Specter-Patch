@@ -715,13 +715,18 @@ def main() -> int:
         if not key.endswith(".ini"):
             continue
         text = blob.decode("latin1")
-        if key in overlay_obj_keys or key in ORION_KEYS:
+        if key in overlay_obj_keys:
             errs = e7.balanced_end(text, name)
             if errs:
                 raise SystemExit("End balance FAIL\n" + "\n".join(errs))
             dups = dup_moduletags(text, name)
             if dups:
                 raise SystemExit("duplicate ModuleTag FAIL\n" + "\n".join(dups))
+        if key in ORION_KEYS:
+            if re.search(r"Animation\s*=", text):
+                raise SystemExit(f"{name} still has Animation")
+            if not re.search(r"Model\s+=\s+RU_Orion\b", text):
+                raise SystemExit(f"{name} missing RU_Orion")
         for obj in NEW_OBJECTS:
             if re.search(rf"^Object {re.escape(obj)}\b", text, re.M):
                 obj_hits[obj].append(name)

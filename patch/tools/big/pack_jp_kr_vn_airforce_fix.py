@@ -250,6 +250,23 @@ def cs_slots(block: str) -> dict[int, str]:
     return out
 
 
+FIGHTER_DISPLAY_EXPECT = {
+    "Japan_AirfieldCommandSet": [ident for obj, ident in gen.FIGHTER_IDENTITY[:12]],
+    "SouthKorea_AirfieldCommandSet": [ident for obj, ident in gen.FIGHTER_IDENTITY[12:24]],
+    "Vietnam_AirfieldCommandSet": [ident for obj, ident in gen.FIGHTER_IDENTITY[24:36]],
+}
+
+
+def button_textlabel(cs_text: str, cb_text: str, btn: str) -> str:
+    for src in (cb_text, cs_text):
+        m = re.search(rf"^CommandButton\s+{re.escape(btn)}\s*$([\s\S]*?)^End\s*$", src, re.M)
+        if m:
+            tl = re.search(r"^\s*TextLabel\s*=\s*(\S+)", m.group(1), re.M)
+            obj = re.search(r"^\s*Object\s*=\s*(\S+)", m.group(1), re.M)
+            return (tl.group(1) if tl else ""), (obj.group(1) if obj else "")
+    raise SystemExit(f"CommandButton {btn} not found")
+
+
 def validate_fighters(cs_text: str) -> None:
     for name, expect in FIGHTER_EXPECT.items():
         block = ch.grab_block(cs_text, name)
@@ -266,6 +283,23 @@ def validate_fighters(cs_text: str) -> None:
             if any(x.lower() in val.lower() for x in ("Rally", "Sell", "Upgrade", "SpecialPower")):
                 raise SystemExit(f"{name} fighter slot {i} is {val}")
     print("fighter 12/12 CommandSets PASS")
+
+
+def validate_fighter_display_names(cs_text: str, cb_text: str, csf_blob: bytes) -> None:
+    _ver, _unk, _lang, labels = ch.parse_csf(csf_blob)
+    csf = {name: strings[0][1] if strings else "" for _mag, name, strings in labels}
+    for name, expect in FIGHTER_DISPLAY_EXPECT.items():
+        block = ch.grab_block(cs_text, name)
+        slots = cs_slots(block)
+        for i, ident in enumerate(expect, 1):
+            tl, obj = button_textlabel(cs_text, cb_text, slots[i])
+            btn_name = csf.get(tl)
+            obj_name = csf.get(f"OBJECT:{obj}")
+            if btn_name != ident:
+                raise SystemExit(f"{name} slot {i} CONTROLBAR {tl} = {btn_name!r} expected {ident!r}")
+            if obj_name != ident:
+                raise SystemExit(f"{name} slot {i} OBJECT:{obj} = {obj_name!r} expected {ident!r}")
+    print("fighter 12/12 CSF display names PASS")
 
 
 def validate_no_clone_helis(cs_text: str) -> None:
@@ -739,7 +773,9 @@ def main() -> int:
         raise SystemExit("CSF missing")
     csf_name, csf_blob = data_map[csf_key]
     csf_new = patch_csf(csf_blob)
-    ch.validate_csf(csf_new, list(gen.CSF_LABELS)[:20])
+    ch.validate_csf(csf_new, list(gen.CSF_LABELS))
+    cb_text = data_map[r"data\ini\commandbutton.ini"][1].decode("latin1")
+    validate_fighter_display_names(cs_text, cb_text, csf_new)
     data_map[csf_key] = (csf_name, csf_new)
 
     data_big = ch.build_big({data_map[k][0]: data_map[k][1] for k in data_map})
@@ -755,8 +791,17 @@ def main() -> int:
     re_map, _ = load_big_map(out / "_SPEC_DATA_ONE.big")
     re_art_map, _ = load_big_map(out / "_SPEC_ART_ONE.big")
     re_cs = re_map["data\\ini\\commandset.ini"][1].decode("latin1")
+    re_cb = re_map["data\\ini\\commandbutton.ini"][1].decode("latin1")
+    re_csf = None
+    for key, (_n, blob) in re_map.items():
+        if key.endswith(".csf"):
+            re_csf = blob
+            break
+    if re_csf is None:
+        raise SystemExit("reextract CSF missing")
     validate_fighters(re_cs)
     validate_no_clone_helis(re_cs)
+    validate_fighter_display_names(re_cs, re_cb, re_csf)
     for n in PROTECT_SETS:
         now = hashlib.sha256(ch.grab_block(re_cs, n).encode("latin1")).hexdigest()
         if now != protect_hash[n]:

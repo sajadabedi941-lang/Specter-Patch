@@ -410,6 +410,21 @@ def load_objects(data_map: dict[str, tuple[str, bytes]]) -> dict[str, tuple[str,
 def write_reports(out: Path, data_map: dict[str, tuple[str, bytes]], art_w3d: set[str], dh: str, ah: str) -> dict:
     cs_text = data_map["data\\ini\\commandset.ini"][1].decode("latin1")
     wpn_text = data_map["data\\ini\\weapon.ini"][1].decode("latin1")
+    cb_all = []
+    for key, (name, blob) in data_map.items():
+        if key.endswith(".ini"):
+            txt = blob.decode("latin1")
+            if "CommandButton " in txt:
+                cb_all.append(txt)
+    btn_map: dict[str, str] = {}
+    for txt in cb_all:
+        for m in re.finditer(r"^CommandButton (Command_Construct\S+)\s*$", txt, re.M):
+            btn = m.group(1)
+            nxt = txt.find("\nEnd", m.end())
+            block = txt[m.end(): nxt if nxt > 0 else m.end() + 400]
+            om = re.search(r"Object\s+=\s+(\S+)", block)
+            if om:
+                btn_map[btn] = om.group(1)
     objs = load_objects(data_map)
     rows = []
     unresolved = []
@@ -441,9 +456,9 @@ def write_reports(out: Path, data_map: dict[str, tuple[str, bytes]], art_w3d: se
                     continue
                 if not btn.startswith("Command_Construct"):
                     continue
-                obj = btn[len("Command_Construct"):]
+                obj = btn_map.get(btn, btn[len("Command_Construct"):])
                 if obj not in objs:
-                    unresolved.append(f"{country} {set_name} slot {slot} {btn} missing Object")
+                    unresolved.append(f"{country} {set_name} slot {slot} {btn} missing Object {obj}")
                     continue
                 _fname, oblock = objs[obj]
                 models = re.findall(r"Model\s+=\s+(\S+)", oblock)

@@ -1,0 +1,13 @@
+SPECTER FINAL GLOBAL AIR FORCE ROSTER
+
+Copy both BIG files into the game folder, replacing previous Specter BIGs:
+
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Every playable country except USA, Russia, and China now has exactly 12
+constructible combat jets on its Fighter / Airfield / Large fighter menu.
+
+USA, Russia, and China live files are unchanged.
+
+See FINAL_COUNTRY_AIRFORCE_AUDIT.md and FINAL_UNUSED_AIRCRAFT_DONORS.md.

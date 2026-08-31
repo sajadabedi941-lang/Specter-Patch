@@ -1,20 +1,20 @@
 ; SPECTER PATCH — Japan / South Korea / Vietnam national aircraft strings
 
-OBJECT:Japan_F15JKai = Japan F-15J Kai
+OBJECT:Japan_F15JKai = Japan F-15J Eagle / F-15J Kai
 CONTROLBAR:ConstructJapan_F15JKai = F-15J Kai
-CONTROLBAR:ToolTipConstructJapan_F15JKai = Produce Japan F-15J Kai.
+CONTROLBAR:ToolTipConstructJapan_F15JKai = Produce Japan F-15J Eagle / F-15J Kai.
 
-OBJECT:Japan_F2A = Japan F-2A
+OBJECT:Japan_F2A = Japan F-2A JASDF
 CONTROLBAR:ConstructJapan_F2A = F-2A
-CONTROLBAR:ToolTipConstructJapan_F2A = Produce Japan F-2A.
+CONTROLBAR:ToolTipConstructJapan_F2A = Produce Japan F-2A JASDF.
 
 OBJECT:Japan_F35A = Japan F-35A
 CONTROLBAR:ConstructJapan_F35A = F-35A
-CONTROLBAR:ToolTipConstructJapan_F35A = Produce Japan F-35A.
+CONTROLBAR:ToolTipConstructJapan_F35A = Produce Japan F-35A. Requires Japan Stealth Jet science.
 
 OBJECT:Japan_F35B = Japan F-35B
 CONTROLBAR:ConstructJapan_F35B = F-35B
-CONTROLBAR:ToolTipConstructJapan_F35B = Produce Japan F-35B.
+CONTROLBAR:ToolTipConstructJapan_F35B = Produce Japan F-35B. Requires Japan Stealth Jet science.
 
 OBJECT:Japan_X2Shinshin = Japan X-2 Shinshin
 CONTROLBAR:ConstructJapan_X2Shinshin = X-2 Shinshin
@@ -23,6 +23,11 @@ CONTROLBAR:ToolTipConstructJapan_X2Shinshin = Produce Japan X-2 Shinshin.
 OBJECT:Japan_F3GCAP = Japan F-3 GCAP
 CONTROLBAR:ConstructJapan_F3GCAP = F-3 GCAP
 CONTROLBAR:ToolTipConstructJapan_F3GCAP = Produce Japan F-3 GCAP.
+
+SCIENCE:Japan_StealthJet = Japan F-35 Stealth Jet
+CONTROLBAR:ToolTipJapan_StealthJet = Unlock Japan F-35A and F-35B.
+
+OBJECT:Japan_Projectile_F2A_ASM = Japan F-2A ASM
 
 OBJECT:SouthKorea_F15K = SouthKorea F-15K Slam Eagle
 CONTROLBAR:ConstructSouthKorea_F15K = F-15K Slam Eagle

@@ -5,12 +5,12 @@ USA / Russia / China files were not modified. Packaging scripts were not modifie
 
 | Country | Object name | Old W3D | New W3D | Donor source | Weapon | CommandButton | CommandSet (unit) | Airfield CommandSet |
 |---|---|---|---|---|---|---|---|---|
-| Japan | `Japan_F15JKai` | `NAT_EF2000T4` | `AVF-15` | New folder / TEOD AVF-15 | `Japan_Weapon_AAM_Medium` | `Command_ConstructJapan_F15JKai` | `GenericMultiRoleFighterCommandSet` | `Japan_AirfieldCommandSet` |
-| Japan | `Japan_F2A` | `US_F16D_B52` | `AVF16` | New folder / TEOD AVF16 (F-2 analog, not US_F16 SPEC mesh) | `Japan_Weapon_ATGM` | `Command_ConstructJapan_F2A` | `GenericTacticalBomberCommandSet` | `Japan_AirfieldCommandSet` |
-| Japan | `Japan_F35A` | `US_F35A` | `AVF-35` | New folder / TEOD AVF-35 | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F35A` | `GenericMultiRoleFighter_AG_CommandSet` | `Japan_AirfieldCommandSet` |
-| Japan | `Japan_F35B` | `NAT_EF2000T4` | `AVF-35_NFZ` | New folder / TEOD AVF-35_NFZ | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F35B` | `GenericMultiRoleFighter_AG_CommandSet` | `Japan_AirfieldCommandSet` |
-| Japan | `Japan_X2Shinshin` | `(none)` | `RUSU-47` | New folder / TEOD RUSU-47 (experimental stand-in for X-2) | `Japan_Weapon_AAM_Medium` | `Command_ConstructJapan_X2Shinshin` | `GenericMultiRoleFighterCommandSet` | `Japan_AirfieldCommandSet` |
-| Japan | `Japan_F3GCAP` | `(none)` | `AVRaptor` | New folder / TEOD AVRaptor | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F3GCAP` | `GenericMultiRoleFighter_AA_CommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_F15JKai` | `NAT_EF2000T4` | `JP_F15J` | SPEC US_F15C copied as Japan F-15J Eagle / F-15J Kai (not Saudi F-15SA) | `Japan_Weapon_AAM_Medium` | `Command_ConstructJapan_F15JKai` | `GenericMultiRoleFighterCommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_F2A` | `US_F16D_B52` | `JP_F2A` | TEOD NVJ-10 copied as unique F-2A JASDF (not US F-16 / AVF16) | `Japan_Weapon_F2A_ASM` | `Command_ConstructJapan_F2A` | `GenericTacticalBomberCommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_F35A` | `US_F35A` | `JP_F35A` | TEOD AVF-35 copied as unique Japan F-35A | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F35A` | `GenericMultiRoleFighter_AG_CommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_F35B` | `NAT_EF2000T4` | `JP_F35B` | TEOD AVF-35_NFZ copied as unique Japan F-35B | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F35B` | `GenericMultiRoleFighter_AG_CommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_X2Shinshin` | `(none)` | `JP_X2Shinshin` | TEOD NVJ-20 copied as unique X-2 Shinshin (not Su-47) | `Japan_Weapon_AAM_Medium` | `Command_ConstructJapan_X2Shinshin` | `GenericMultiRoleFighterCommandSet` | `Japan_AirfieldCommandSet` |
+| Japan | `Japan_F3GCAP` | `(none)` | `JP_F3GCAP` | TEOD AVRaptor copied as unique Japan F-3 GCAP | `Japan_Weapon_AAM4B_F35J` | `Command_ConstructJapan_F3GCAP` | `GenericMultiRoleFighter_AA_CommandSet` | `Japan_AirfieldCommandSet` |
 | SouthKorea | `SouthKorea_F15K` | `Arb_F15SA` | `Arb_F15SA` | _SPEC_ART_ONE Arb_F15SA (kept, unique vs Japan TEOD AVF-15) | `GBU_31V2_JDAM_F15SA` | `Command_ConstructSouthKorea_F15K` | `GenericTacticalBomberCommandSet` | `SouthKorea_AirfieldCommandSet` |
 | SouthKorea | `SouthKorea_F16C` | `NAT_EF2000T4` | `US_F16CMB50` | _SPEC_ART_ONE US_F16CMB50 | `SouthKorea_Weapon_AAM_Medium` | `Command_ConstructSouthKorea_F16C` | `GenericMultiRoleFighterCommandSet` | `SouthKorea_AirfieldCommandSet` |
 | SouthKorea | `SouthKorea_KF16` | `US_F16D_B52` | `US_F16D_B52` | _SPEC_ART_ONE US_F16D_B52 (two-seat KF-16, distinct from F-16C mesh) | `SouthKorea_Weapon_ATGM` | `Command_ConstructSouthKorea_KF16` | `GenericTacticalBomberCommandSet` | `SouthKorea_AirfieldCommandSet` |
@@ -31,8 +31,11 @@ USA / Russia / China files were not modified. Packaging scripts were not modifie
 
 ## Notes
 
-- Japan no longer uses `NAT_EF2000T4` or `US_F16D_B52`.
-- Japan F-35A/B unlock with `SCIENCE_Japan_StealthJet` (national menu), not `SCIENCE_NatoStealthJet`.
+- Japan no longer uses `NAT_EF2000T4`, `US_F16D_B52`, TEOD `AVF16` (F-16 analog), or Su-47 `RUSU-47`.
+- Japan F-15J uses unique overlay `JP_F15J` (SPEC F-15C Eagle family), not Saudi `Arb_F15SA`.
+- Japan F-2A uses unique overlay `JP_F2A` (not US F-16) with dedicated `Japan_Weapon_F2A_ASM`.
+- Japan X-2 Shinshin uses unique overlay `JP_X2Shinshin`.
+- Japan F-35A/B unlock with `SCIENCE_Japan_StealthJet` (national menu + construct buttons), not `SCIENCE_NatoStealthJet`.
 - South Korea F-35A unlocks with `SCIENCE_SouthKorea_StealthJet`.
 - FA-50 uses TEOD Hornet-class `AVF-18`; T-50 uses TEOD trainer `AVGHawk` — neither is an F-16 mesh.
 - KF-21 uses TEOD `AVStealth`, not shared with Japan.

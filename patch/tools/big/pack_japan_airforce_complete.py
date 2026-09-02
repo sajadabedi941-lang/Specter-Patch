@@ -27,22 +27,24 @@ import zipfile
 from pathlib import Path
 
 AIRFIELD = """CommandSet Japan_AirfieldCommandSet
-  1 = Command_ConstructJapanJetF35A
-  2 = Command_ConstructJapanJetF35B
-  3 = Command_ConstructJapanJetF15JKai
-  4 = Command_ConstructJapanJetF15DJ
-  5 = Command_ConstructJapanJetF2A
-  6 = Command_ConstructJapanJetF2B
-  7 = Command_ConstructJapanJetX2Shinshin
-  8 = Command_ConstructJapanJetFX
-  9 = Command_ConstructJapanJetF4EJKai
-  10 = Command_ConstructJapanJetF3
-  11 = Command_ConstructJapanJetF15J
-  12 = Command_ConstructJapanJetF2Kai
+  1 = Command_ConstructJapan_F35A
+  2 = Command_ConstructJapan_F35B
+  3 = Command_ConstructJapan_F15JKai
+  4 = Command_ConstructJapan_F15DJ
+  5 = Command_ConstructJapan_F2A
+  6 = Command_ConstructJapan_F2B
+  7 = Command_ConstructJapan_X2Shinshin
+  8 = Command_ConstructJapan_F3GCAP
+  9 = Command_ConstructJapan_F4EJKai
+  10 = Command_ConstructJapan_F3
+  11 = Command_ConstructJapan_F16AJ
+  12 = Command_ConstructJapan_F2Kai
   13 = Command_SetRallyPoint
   14 = Command_Sell
 End
 """
+
+AIRFIELD_USED = "Japan_JASDF_AirfieldCommandSet"
 
 BUTTON_OBJECT = {
     "Command_ConstructJapanJetF35A": "Japan_F35A",
@@ -75,6 +77,30 @@ CSF_SET = {
     "OBJECT:Japan_F3": "F-3 GCAP",
     "OBJECT:Japan_F16AJ": "F-16AJ",
     "OBJECT:Japan_F2Kai": "F-2 Kai",
+    "CONTROLBAR:ConstructJapan_F35A": "F-35A",
+    "CONTROLBAR:ConstructJapan_F35B": "F-35B",
+    "CONTROLBAR:ConstructJapan_F15JKai": "F-15J Kai",
+    "CONTROLBAR:ConstructJapan_F15DJ": "F-15DJ",
+    "CONTROLBAR:ConstructJapan_F2A": "F-2A",
+    "CONTROLBAR:ConstructJapan_F2B": "F-2B",
+    "CONTROLBAR:ConstructJapan_X2Shinshin": "X-2 Shinshin",
+    "CONTROLBAR:ConstructJapan_F3GCAP": "F-X GCAP",
+    "CONTROLBAR:ConstructJapan_F4EJKai": "F-4EJ Kai",
+    "CONTROLBAR:ConstructJapan_F3": "F-3",
+    "CONTROLBAR:ConstructJapan_F16AJ": "F-16AJ",
+    "CONTROLBAR:ConstructJapan_F2Kai": "F-2 Kai",
+    "CONTROLBAR:ToolTipConstructJapan_F35A": "JASDF F-35A",
+    "CONTROLBAR:ToolTipConstructJapan_F35B": "JASDF F-35B",
+    "CONTROLBAR:ToolTipConstructJapan_F15JKai": "JASDF F-15J Kai",
+    "CONTROLBAR:ToolTipConstructJapan_F15DJ": "JASDF F-15DJ",
+    "CONTROLBAR:ToolTipConstructJapan_F2A": "JASDF F-2A",
+    "CONTROLBAR:ToolTipConstructJapan_F2B": "JASDF F-2B",
+    "CONTROLBAR:ToolTipConstructJapan_X2Shinshin": "JASDF X-2 Shinshin",
+    "CONTROLBAR:ToolTipConstructJapan_F3GCAP": "JASDF GCAP F-X",
+    "CONTROLBAR:ToolTipConstructJapan_F4EJKai": "JASDF F-4EJ Kai",
+    "CONTROLBAR:ToolTipConstructJapan_F3": "JASDF F-3",
+    "CONTROLBAR:ToolTipConstructJapan_F16AJ": "JASDF F-16AJ",
+    "CONTROLBAR:ToolTipConstructJapan_F2Kai": "JASDF F-2 Kai",
 }
 
 JP_AIR = (
@@ -97,6 +123,9 @@ DATA_ADD = [
     "Data/INI/Object/Specter/United States Of America/Airforce/F35C.ini",
     "Data/INI/Object/Specter/United States Of America/Airforce/F35C_AA.ini",
     "Data/INI/Weapon_Japan.ini",
+    "Data/INI/CommandSet_zzz_JapanAirForce.ini",
+    "Data/INI/CommandButton_Japan_AirForce.ini",
+    "Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Airfield.ini",
 ]
 
 
@@ -309,6 +338,18 @@ def main() -> int:
     cs_name, cs_blob = data_map[cs_key]
     data_map[cs_key] = (cs_name, patch_commandset(cs_blob.decode("latin1")).encode("latin1"))
     updated += 1
+
+    lab_key = "data\\ini\\object\\specter\\japan self-defense forces\\buildings\\japan_largeairbase.ini"
+    if lab_key in data_map:
+        lab_name, lab_blob = data_map[lab_key]
+        lab_txt = lab_blob.decode("latin1")
+        lab_txt = re.sub(
+            r"(?m)^(\s*CommandSet\s*=\s*)Japan_AirfieldCommandSet\s*$",
+            rf"\1{AIRFIELD_USED}",
+            lab_txt,
+        )
+        data_map[lab_key] = (lab_name, lab_txt.encode("latin1"))
+        updated += 1
 
     csf_key = "data\\english\\generals.csf"
     csf_name, csf_blob = data_map[csf_key]

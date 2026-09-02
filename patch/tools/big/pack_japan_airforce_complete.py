@@ -7,7 +7,10 @@ Starts from the last-stable full BIGs (v0.4.44) and:
   * adds unique Japan_* fighter objects (no duplicate Object IDs)
   * retargets existing Japan airfield CommandButtons to those objects
   * replaces the F-15J slot with F-16AJ
-  * does NOT pack CommandSet_Japan.ini (would duplicate Japan CommandSets)
+  * packs CommandSet_Japan.ini (the file ZH actually loads for Japan)
+  * strips those Japan CommandSet names from CommandSet.ini so they are
+    defined once (avoids CommandSet already defined)
+  * does NOT pack CommandSet_zzz_JapanAirForce.ini (unused / would collide)
 
 Usage:
   python3 pack_japan_airforce_complete.py \\
@@ -44,7 +47,7 @@ AIRFIELD = """CommandSet Japan_AirfieldCommandSet
 End
 """
 
-AIRFIELD_USED = "Japan_JASDF_AirfieldCommandSet"
+AIRFIELD_USED = "Japan_AirfieldCommandSet"
 
 BUTTON_OBJECT = {
     "Command_ConstructJapanJetF35A": "Japan_F35A",
@@ -121,9 +124,10 @@ DATA_ADD = [
     f"{JP_AIR}/Japan_F16DBlk52.ini",
     f"{JP_AIR}/Japan_X2Shinshin.ini",
     "Data/INI/Weapon_Japan.ini",
-    "Data/INI/CommandSet_zzz_JapanAirForce.ini",
+    "Data/INI/CommandSet_Japan.ini",
     "Data/INI/CommandButton_Japan_AirForce.ini",
     "Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Airfield.ini",
+    "Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_LargeAirBase.ini",
 ]
 
 
@@ -243,7 +247,18 @@ def patch_csf(blob: bytes, updates: dict[str, str]) -> bytes:
     return build_csf(header, labels)
 
 
-def patch_commandset(text: str) -> str:
+def commandset_names(text: str) -> list[str]:
+    return re.findall(r"(?m)^CommandSet\s+(\S+)", text)
+
+
+def strip_commandsets(text: str, names: set[str]) -> str:
+    def drop(m: re.Match) -> str:
+        return "" if m.group(1) in names else m.group(0)
+
+    return re.sub(r"(?ms)^CommandSet (\S+)\n.*?^End\s*\n?", drop, text)
+
+
+def patch_commandset(text: str, japan_cs_names: set[str]) -> str:
     def retarget(m: re.Match) -> str:
         block = m.group(0)
         name = m.group(1)
@@ -261,13 +276,9 @@ def patch_commandset(text: str) -> str:
         retarget,
         text,
     )
-    # Buildings use Japan_JASDF_AirfieldCommandSet in CommandSet_zzz_*.ini.
-    # A second Japan_AirfieldCommandSet here crashes ZH on parse.
-    text = re.sub(
-        r"(?ms)^CommandSet Japan_AirfieldCommandSet\b.*?^End\s*\n?",
-        "",
-        text,
-    )
+    # Japan_* sets live in CommandSet_Japan.ini (the file ZH actually loads).
+    # Defining them again here crashes with CommandSet already defined.
+    text = strip_commandsets(text, set(japan_cs_names) | {"Japan_AirfieldCommandSet"})
     return text
 
 
@@ -334,9 +345,15 @@ def main() -> int:
         else:
             updated += 1
 
+    jp_cs_text = (args.patch_root / "Data/INI/CommandSet_Japan.ini").read_text(encoding="latin1")
+    jp_cs_names = set(commandset_names(jp_cs_text))
+
     cs_key = "data\\ini\\commandset.ini"
     cs_name, cs_blob = data_map[cs_key]
-    data_map[cs_key] = (cs_name, patch_commandset(cs_blob.decode("latin1")).encode("latin1"))
+    data_map[cs_key] = (
+        cs_name,
+        patch_commandset(cs_blob.decode("latin1"), jp_cs_names).encode("latin1"),
+    )
     updated += 1
 
     lab_key = "data\\ini\\object\\specter\\japan self-defense forces\\buildings\\japan_largeairbase.ini"

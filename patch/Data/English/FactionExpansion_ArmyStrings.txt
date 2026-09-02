@@ -2478,7 +2478,14 @@ OBJECT:Japan_JetF35C = Japan F-35A
 CONTROLBAR:ConstructJapan_JetF35C = Japan F-35A
 CONTROLBAR:ToolTipConstructJapan_JetF35C = Produce Japan F-35A.
 
+OBJECT:Japan_F35A = Japan F-35A
+CONTROLBAR:ConstructJapan_F35A = Japan F-35A
+CONTROLBAR:ToolTipConstructJapan_F35A = Produce Japan F-35A.
+
 OBJECT:Japan_JetF16AJ = Japan F-16AJ
+OBJECT:Japan_F16AJ = Japan F-16AJ
+CONTROLBAR:ConstructJapan_F16AJ = Japan F-16AJ
+CONTROLBAR:ToolTipConstructJapan_F16AJ = Produce Japan F-16AJ.
 CONTROLBAR:ConstructJapan_JetF16DBlk52 = Japan F-16AJ
 CONTROLBAR:ToolTipConstructJapan_JetF16DBlk52 = Produce Japan F-16AJ.
 

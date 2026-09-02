@@ -74,7 +74,7 @@ CSF_SET = {
     "OBJECT:Japan_X2Shinshin": "X-2 Shinshin",
     "OBJECT:Japan_F3GCAP": "F-X",
     "OBJECT:Japan_F4EJKai": "F-4EJ Kai",
-    "OBJECT:Japan_F3": "F-3 GCAP",
+    "OBJECT:Japan_F3": "F-3",
     "OBJECT:Japan_F16AJ": "F-16AJ",
     "OBJECT:Japan_F2Kai": "F-2 Kai",
     "CONTROLBAR:ConstructJapan_F35A": "F-35A",
@@ -120,8 +120,6 @@ DATA_ADD = [
     f"{JP_AIR}/Japan_F3.ini",
     f"{JP_AIR}/Japan_F16DBlk52.ini",
     f"{JP_AIR}/Japan_X2Shinshin.ini",
-    "Data/INI/Object/Specter/United States Of America/Airforce/F35C.ini",
-    "Data/INI/Object/Specter/United States Of America/Airforce/F35C_AA.ini",
     "Data/INI/Weapon_Japan.ini",
     "Data/INI/CommandSet_zzz_JapanAirForce.ini",
     "Data/INI/CommandButton_Japan_AirForce.ini",
@@ -379,7 +377,7 @@ def main() -> int:
     out_data.write_bytes(data_bytes)
     out_art.write_bytes(art_bytes)
 
-    zip_path = args.out_dir / "SPECTER_JAPAN_AIRFORCE.zip"
+    zip_path = args.out_dir / "SPECTER_JAPAN_AIRFORCE_FINAL.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
         zf.write(out_data, arcname="_SPEC_DATA_ONE.big")
         zf.write(out_art, arcname="_SPEC_ART_ONE.big")

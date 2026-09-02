@@ -2474,9 +2474,53 @@ OBJECT:Japan_VehicleIRIST = Japan VehicleIRIST
 CONTROLBAR:ConstructJapan_VehicleIRIST = Japan VehicleIRIST
 CONTROLBAR:ToolTipConstructJapan_VehicleIRIST = Produce Japan VehicleIRIST.
 
-OBJECT:Japan_JetF35C = Japan JetF35C
-CONTROLBAR:ConstructJapan_JetF35C = Japan JetF35C
-CONTROLBAR:ToolTipConstructJapan_JetF35C = Produce Japan JetF35C.
+OBJECT:Japan_JetF35C = Japan F-35A
+CONTROLBAR:ConstructJapan_JetF35C = Japan F-35A
+CONTROLBAR:ToolTipConstructJapan_JetF35C = Produce Japan F-35A.
+
+OBJECT:Japan_JetF16AJ = Japan F-16AJ
+CONTROLBAR:ConstructJapan_JetF16DBlk52 = Japan F-16AJ
+CONTROLBAR:ToolTipConstructJapan_JetF16DBlk52 = Produce Japan F-16AJ.
+
+OBJECT:Japan_F35B = Japan F-35B
+CONTROLBAR:ConstructJapan_F35B = Japan F-35B
+CONTROLBAR:ToolTipConstructJapan_F35B = Produce Japan F-35B.
+
+OBJECT:Japan_F15JKai = Japan F-15J Kai
+CONTROLBAR:ConstructJapan_F15JKai = Japan F-15J Kai
+CONTROLBAR:ToolTipConstructJapan_F15JKai = Produce Japan F-15J Kai.
+
+OBJECT:Japan_F15DJ = Japan F-15DJ
+CONTROLBAR:ConstructJapan_F15DJ = Japan F-15DJ
+CONTROLBAR:ToolTipConstructJapan_F15DJ = Produce Japan F-15DJ.
+
+OBJECT:Japan_F2A = Japan F-2A
+CONTROLBAR:ConstructJapan_F2A = Japan F-2A
+CONTROLBAR:ToolTipConstructJapan_F2A = Produce Japan F-2A.
+
+OBJECT:Japan_F2B = Japan F-2B
+CONTROLBAR:ConstructJapan_F2B = Japan F-2B
+CONTROLBAR:ToolTipConstructJapan_F2B = Produce Japan F-2B.
+
+OBJECT:Japan_X2Shinshin = Japan X-2 Shinshin
+CONTROLBAR:ConstructJapan_X2Shinshin = Japan X-2 Shinshin
+CONTROLBAR:ToolTipConstructJapan_X2Shinshin = Produce Japan X-2 Shinshin.
+
+OBJECT:Japan_F3GCAP = Japan GCAP F-X
+CONTROLBAR:ConstructJapan_F3GCAP = Japan GCAP F-X
+CONTROLBAR:ToolTipConstructJapan_F3GCAP = Produce Japan GCAP F-X.
+
+OBJECT:Japan_F4EJKai = Japan F-4EJ Kai
+CONTROLBAR:ConstructJapan_F4EJKai = Japan F-4EJ Kai
+CONTROLBAR:ToolTipConstructJapan_F4EJKai = Produce Japan F-4EJ Kai.
+
+OBJECT:Japan_F3 = Japan F-3
+CONTROLBAR:ConstructJapan_F3 = Japan F-3
+CONTROLBAR:ToolTipConstructJapan_F3 = Produce Japan F-3.
+
+OBJECT:Japan_F2Kai = Japan F-2 Kai
+CONTROLBAR:ConstructJapan_F2Kai = Japan F-2 Kai
+CONTROLBAR:ToolTipConstructJapan_F2Kai = Produce Japan F-2 Kai.
 
 OBJECT:Japan_JetEF2000T4 = Japan JetEF2000T4
 CONTROLBAR:ConstructJapan_JetEF2000T4 = Japan JetEF2000T4
@@ -2494,9 +2538,9 @@ OBJECT:Japan_E3A = Japan E3A
 CONTROLBAR:ConstructJapan_E3A = Japan E3A
 CONTROLBAR:ToolTipConstructJapan_E3A = Produce Japan E3A.
 
-OBJECT:Japan_JetF16DBlk52 = Japan JetF16DBlk52
-CONTROLBAR:ConstructJapan_JetF16DBlk52 = Japan JetF16DBlk52
-CONTROLBAR:ToolTipConstructJapan_JetF16DBlk52 = Produce Japan JetF16DBlk52.
+OBJECT:Japan_JetF16DBlk52 = Japan F-16AJ
+CONTROLBAR:ConstructJapan_JetF16DBlk52 = Japan F-16AJ
+CONTROLBAR:ToolTipConstructJapan_JetF16DBlk52 = Produce Japan F-16AJ.
 
 CONTROLBAR:UpgradeJapan_Armor = Japan Armor Package
 CONTROLBAR:ToolTipUpgradeJapan_Armor = Research Japan Armor Package.

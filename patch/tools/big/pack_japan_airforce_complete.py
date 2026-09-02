@@ -263,9 +263,11 @@ def patch_commandset(text: str) -> str:
         retarget,
         text,
     )
+    # Buildings use Japan_JASDF_AirfieldCommandSet in CommandSet_zzz_*.ini.
+    # A second Japan_AirfieldCommandSet here crashes ZH on parse.
     text = re.sub(
-        r"(?ms)^CommandSet Japan_AirfieldCommandSet\b.*?^End\s*$",
-        AIRFIELD.rstrip(),
+        r"(?ms)^CommandSet Japan_AirfieldCommandSet\b.*?^End\s*\n?",
+        "",
         text,
     )
     return text

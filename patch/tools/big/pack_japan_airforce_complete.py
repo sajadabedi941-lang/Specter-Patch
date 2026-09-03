@@ -7,10 +7,12 @@ Starts from the last-stable full BIGs (v0.4.44) and:
   * adds unique Japan_* fighter objects (no duplicate Object IDs)
   * retargets existing Japan airfield CommandButtons to those objects
   * replaces the F-15J slot with F-16AJ
-  * packs CommandSet_Japan.ini (the file ZH actually loads for Japan)
-  * strips those Japan CommandSet names from CommandSet.ini so they are
+  * packs CommandSet_Japan.ini for Japan CC/worker/etc (INIZH wipes CommandSet.ini)
+  * packs CommandSet_zzz_JapanAirForce.ini with Japan_JASDF_AirfieldCommandSet
+  * does NOT put the airfield roster in CommandSet_Japan.ini (a leftover
+    loose copy of that file used to restore NATO/Iraq jets)
+  * strips Japan airfield CommandSet names from CommandSet.ini so they are
     defined once (avoids CommandSet already defined)
-  * does NOT pack CommandSet_zzz_JapanAirForce.ini (unused / would collide)
 
 Usage:
   python3 pack_japan_airforce_complete.py \\
@@ -29,25 +31,11 @@ import struct
 import zipfile
 from pathlib import Path
 
-AIRFIELD = """CommandSet Japan_AirfieldCommandSet
-  1 = Command_ConstructJapan_F35A
-  2 = Command_ConstructJapan_F35B
-  3 = Command_ConstructJapan_F15JKai
-  4 = Command_ConstructJapan_F15DJ
-  5 = Command_ConstructJapan_F2A
-  6 = Command_ConstructJapan_F2B
-  7 = Command_ConstructJapan_X2Shinshin
-  8 = Command_ConstructJapan_F3GCAP
-  9 = Command_ConstructJapan_F4EJKai
-  10 = Command_ConstructJapan_F3
-  11 = Command_ConstructJapan_F16AJ
-  12 = Command_ConstructJapan_F2Kai
-  13 = Command_SetRallyPoint
-  14 = Command_Sell
-End
-"""
-
-AIRFIELD_USED = "Japan_AirfieldCommandSet"
+AIRFIELD_USED = "Japan_JASDF_AirfieldCommandSet"
+AIRFIELD_FORBIDDEN = {
+    "Japan_AirfieldCommandSet",
+    "Japan_JASDF_AirfieldCommandSet",
+}
 
 BUTTON_OBJECT = {
     "Command_ConstructJapanJetF35A": "Japan_F35A",
@@ -125,6 +113,7 @@ DATA_ADD = [
     f"{JP_AIR}/Japan_X2Shinshin.ini",
     "Data/INI/Weapon_Japan.ini",
     "Data/INI/CommandSet_Japan.ini",
+    "Data/INI/CommandSet_zzz_JapanAirForce.ini",
     "Data/INI/CommandButton_Japan_AirForce.ini",
     "Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_Airfield.ini",
     "Data/INI/Object/Specter/Japan Self-Defense Forces/Buildings/Japan_LargeAirBase.ini",
@@ -276,9 +265,9 @@ def patch_commandset(text: str, japan_cs_names: set[str]) -> str:
         retarget,
         text,
     )
-    # Japan_* sets live in CommandSet_Japan.ini (the file ZH actually loads).
+    # Japan_* sets live in CommandSet_Japan.ini / CommandSet_zzz_JapanAirForce.ini.
     # Defining them again here crashes with CommandSet already defined.
-    text = strip_commandsets(text, set(japan_cs_names) | {"Japan_AirfieldCommandSet"})
+    text = strip_commandsets(text, set(japan_cs_names) | AIRFIELD_FORBIDDEN)
     return text
 
 
@@ -347,6 +336,19 @@ def main() -> int:
 
     jp_cs_text = (args.patch_root / "Data/INI/CommandSet_Japan.ini").read_text(encoding="latin1")
     jp_cs_names = set(commandset_names(jp_cs_text))
+    if AIRFIELD_USED in jp_cs_names or "Japan_AirfieldCommandSet" in jp_cs_names:
+        raise SystemExit(
+            "CommandSet_Japan.ini must not define an airfield CommandSet; "
+            "a leftover loose copy of that file used to restore NATO/Iraq jets."
+        )
+    zzz_text = (args.patch_root / "Data/INI/CommandSet_zzz_JapanAirForce.ini").read_text(
+        encoding="latin1"
+    )
+    zzz_names = set(commandset_names(zzz_text))
+    if zzz_names != {AIRFIELD_USED}:
+        raise SystemExit(
+            f"CommandSet_zzz_JapanAirForce.ini must define only {AIRFIELD_USED}, got {zzz_names}"
+        )
 
     cs_key = "data\\ini\\commandset.ini"
     cs_name, cs_blob = data_map[cs_key]
@@ -361,7 +363,7 @@ def main() -> int:
         lab_name, lab_blob = data_map[lab_key]
         lab_txt = lab_blob.decode("latin1")
         lab_txt = re.sub(
-            r"(?m)^(\s*CommandSet\s*=\s*)Japan_AirfieldCommandSet\s*$",
+            r"(?m)^(\s*CommandSet\s*=\s*)Japan\S*Airfield\S*CommandSet\s*$",
             rf"\1{AIRFIELD_USED}",
             lab_txt,
         )
@@ -387,6 +389,18 @@ def main() -> int:
 
     final_data = finalize(data_keys, data_map)
     final_art = finalize(art_keys, art_map)
+
+    packed_jp = data_map["data\\ini\\commandset_japan.ini"][1].decode("latin1")
+    packed_zzz = data_map["data\\ini\\commandset_zzz_japanairforce.ini"][1].decode("latin1")
+    packed_af = data_map[
+        "data\\ini\\object\\specter\\japan self-defense forces\\buildings\\japan_airfield.ini"
+    ][1].decode("latin1")
+    if "CommandSet Japan_AirfieldCommandSet" in packed_jp:
+        raise SystemExit("packed CommandSet_Japan.ini still defines Japan_AirfieldCommandSet")
+    if AIRFIELD_USED not in commandset_names(packed_zzz):
+        raise SystemExit(f"packed zzz file missing {AIRFIELD_USED}")
+    if not re.search(rf"(?m)^\s*CommandSet\s*=\s*{re.escape(AIRFIELD_USED)}\s*$", packed_af):
+        raise SystemExit(f"packed Japan_Airfield.ini does not use {AIRFIELD_USED}")
     out_data = args.out_dir / "_SPEC_DATA_ONE.big"
     out_art = args.out_dir / "_SPEC_ART_ONE.big"
     data_bytes = build_big(final_data)

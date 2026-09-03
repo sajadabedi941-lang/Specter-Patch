@@ -144,6 +144,22 @@ def first_wins(
     return found, crashes
 
 
+def object_commandset(text: str, object_name: str) -> str:
+    """Read CommandSet from an Object body. Nested Prerequisites/ArmorSet End
+    markers must not stop the scan — that is what hid the airfield set."""
+    obj_re = re.compile(rf"(?m)^[ \t]*Object[ \t]+{re.escape(object_name)}[ \t]*$")
+    m = obj_re.search(text)
+    if not m:
+        return ""
+    rest = text[m.end() :]
+    # Prerequisites uses "Object = Foo"; that is not a new Object block.
+    nxt = re.search(r"(?m)^[ \t]*Object[ \t]+(?!=)\S+", rest)
+    if nxt:
+        rest = rest[: nxt.start()]
+    cs = re.search(r"(?m)^[ \t]*CommandSet[ \t]*=[ \t]*(\S+)", rest)
+    return cs.group(1) if cs else ""
+
+
 def find_object(vfs, object_name: str):
     matches = []
     obj_re = re.compile(rf"(?m)^[ \t]*Object[ \t]+{re.escape(object_name)}[ \t]*$")
@@ -153,11 +169,7 @@ def find_object(vfs, object_name: str):
         text = decode(blob)
         if not obj_re.search(text):
             continue
-        fields = {}
-        for name, body_fields, _raw in parse_named_blocks(text, "Object"):
-            if name == object_name:
-                fields = body_fields
-                break
+        fields = {"CommandSet": object_commandset(text, object_name)}
         matches.append((key, src, display, fields))
     matches.sort(key=lambda item: item[0])
     return matches

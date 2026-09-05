@@ -352,21 +352,21 @@ def patch_specialpower(text: str) -> str:
 
 
 def patch_f22a_ag_buildable(text: str) -> str:
-    # Must match indented `  End` — `^End` only hits the object closer and
-    # leaves a dangling Buildable token after the file-scope End (startup crash).
-    if re.search(
-        r"Prerequisites\s*\r?\n(?:[ \t].*\r?\n)*[ \t]End\r?\n[ \t]+Buildable",
-        text,
-    ):
-        return text
-    new, n = re.subn(
-        r"(Prerequisites\s*\r?\n(?:[ \t].*\r?\n)*[ \t]End)(\r?\n)",
-        r"\1\2  Buildable = No\2",
-        text,
-        count=1,
-    )
-    if n != 1:
+    # Insert after the first Prerequisites closer only. `^End` hits the object
+    # closer and leaves file-scope `Buildable = No` (startup crash, no last
+    # error). Greedy `[ \t]+(?!End)` backtracks one space on `  End` and lands
+    # on a later ArmorSet closer instead of the Prerequisites closer.
+    start = re.search(r"(?m)^[ \t]+Prerequisites[ \t]*\r?\n", text)
+    if not start:
+        raise SystemExit("F22A_AG Prerequisites not found")
+    closer = re.search(r"(?m)^[ \t]+End[ \t]*\r?\n", text[start.end() :])
+    if not closer:
         raise SystemExit("F22A_AG Prerequisites End not found")
+    insert_at = start.end() + closer.end()
+    if re.match(r"[ \t]+Buildable", text[insert_at:]):
+        return text
+    nl = "\r\n" if text[insert_at - 2 : insert_at] == "\r\n" else "\n"
+    new = text[:insert_at] + f"  Buildable = No{nl}" + text[insert_at:]
     if re.search(r"^End\s*\r?\n\s*Buildable", new, re.M):
         raise SystemExit("F22A_AG Buildable landed after object End")
     return new

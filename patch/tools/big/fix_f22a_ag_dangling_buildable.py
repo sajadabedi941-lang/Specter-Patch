@@ -59,10 +59,22 @@ def build_big_ordered(entries):
     return bytes(out)
 
 
+def _prerequisites_end(text: str) -> int:
+    """Byte offset after the first Prerequisites closer.
+
+    Do not use greedy `[ \\t]+(?!End)`: it backtracks one space on `  End`
+    and treats a later ArmorSet End as the Prerequisites closer.
+    """
+    start = re.search(r"(?m)^[ \t]+Prerequisites[ \t]*\r?\n", text)
+    if not start:
+        raise SystemExit("Prerequisites not found")
+    closer = re.search(r"(?m)^[ \t]+End[ \t]*\r?\n", text[start.end() :])
+    if not closer:
+        raise SystemExit("Prerequisites End not found")
+    return start.end() + closer.end()
+
+
 def patch(text: str) -> str:
-    if not text.rstrip().endswith("End"):
-        # current broken form: End\\n  Buildable = No
-        pass
     new, n = re.subn(
         r"(\r?\n)[ \t]+Buildable[ \t]*=[ \t]*No[ \t]*(\r?\n)+\Z",
         r"\1",
@@ -71,20 +83,16 @@ def patch(text: str) -> str:
     )
     if n != 1:
         raise SystemExit(f"dangling Buildable not removed ({n})")
-    new2, n2 = re.subn(
-        r"(Prerequisites\s*\r?\n(?:[ \t].*\r?\n)*[ \t]End)(\r?\n)",
-        r"\1\2  Buildable = No\2",
-        new,
-        count=1,
-    )
-    if n2 != 1:
-        raise SystemExit("failed to insert Buildable inside object")
+    insert_at = _prerequisites_end(new)
+    nl = "\r\n" if new[insert_at - 2 : insert_at] == "\r\n" else "\n"
+    new2 = new[:insert_at] + f"  Buildable = No{nl}" + new[insert_at:]
     if not new2.rstrip().endswith("End"):
         raise SystemExit("file no longer ends at object End")
     if re.search(r"^End\s*\r?\n\s*Buildable", new2, re.M):
         raise SystemExit("Buildable still after object End")
-    if "Buildable = No" not in new2:
-        raise SystemExit("Buildable missing after fix")
+    window = new2[insert_at : insert_at + 24]
+    if "Buildable = No" not in window:
+        raise SystemExit(f"Buildable not immediately after Prerequisites End: {window!r}")
     return new2
 
 

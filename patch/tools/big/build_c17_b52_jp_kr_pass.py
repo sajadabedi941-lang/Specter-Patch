@@ -286,9 +286,9 @@ def patch_b52h_object(text: str) -> str:
 def disable_airforce_objects(entries: list[tuple[str, bytes]]) -> int:
     """Buildable = No on Japan / South Korea aircraft INIs only."""
     air_dirs = (
-        r"data\ini\object\specter\japan self-defense forces\airforce\\",
-        r"data\ini\object\specter\republic of korea armed forces\airforce\\",
-        r"data\ini\object\specter\south korean armed forces\airforce\\",
+        r"data\ini\object\specter\japan self-defense forces\airforce" + "\\",
+        r"data\ini\object\specter\republic of korea armed forces\airforce" + "\\",
+        r"data\ini\object\specter\south korean armed forces\airforce" + "\\",
     )
     changed = 0
     for i, (name, blob) in enumerate(entries):

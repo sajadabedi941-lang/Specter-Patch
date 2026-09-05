@@ -79,10 +79,8 @@ def patch_ocl(text: str) -> str:
     nxt = text.find("ObjectCreationList OCL_AmericaC17TargetParaDrop", start + 1)
     if nxt < 0:
         raise SystemExit("following C17 OCL not found")
-    # If the previous End was glued to this token, skip back over 'End'
-    glued = text[max(0, nxt - 3) : nxt]
-    if glued == "End":
-        nxt = nxt - 3
+    # The broken file is "...EndObjectCreationList...". Keep from the
+    # C17 ObjectCreationList token; CLEAN_B52_OCL already supplies End+newlines.
     new = text[:start] + CLEAN_B52_OCL + text[nxt:]
     if "EndObjectCreationList" in new:
         raise SystemExit("smashed EndObjectCreationList still present")

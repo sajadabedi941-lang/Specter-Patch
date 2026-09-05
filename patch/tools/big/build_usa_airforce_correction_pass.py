@@ -352,23 +352,24 @@ def patch_specialpower(text: str) -> str:
 
 
 def patch_f22a_ag_buildable(text: str) -> str:
-    if re.search(r"^\s*Buildable\s*=", text, re.M):
-        text2, n = re.subn(
-            r"^(\s*Buildable\s*=\s*)\S+",
-            r"\1No",
-            text,
-            count=1,
-            flags=re.M,
-        )
-        if n != 1:
-            raise SystemExit("F22A_AG Buildable replace failed")
-        return text2
-    m = re.search(r"^(\s*Prerequisites\s*.*?^End)", text, re.S | re.M)
-    if not m:
-        raise SystemExit("F22A_AG Prerequisites not found")
-    insert = m.end()
-    newline = nl(text)
-    return text[:insert] + newline + "  Buildable = No" + newline + text[insert:]
+    # Must match indented `  End` — `^End` only hits the object closer and
+    # leaves a dangling Buildable token after the file-scope End (startup crash).
+    if re.search(
+        r"Prerequisites\s*\r?\n(?:[ \t].*\r?\n)*[ \t]End\r?\n[ \t]+Buildable",
+        text,
+    ):
+        return text
+    new, n = re.subn(
+        r"(Prerequisites\s*\r?\n(?:[ \t].*\r?\n)*[ \t]End)(\r?\n)",
+        r"\1\2  Buildable = No\2",
+        text,
+        count=1,
+    )
+    if n != 1:
+        raise SystemExit("F22A_AG Prerequisites End not found")
+    if re.search(r"^End\s*\r?\n\s*Buildable", new, re.M):
+        raise SystemExit("F22A_AG Buildable landed after object End")
+    return new
 
 
 def xor_csf_utf16(s: str) -> bytes:

@@ -265,7 +265,7 @@ def main() -> int:
     after = gameplay_fingerprint(obj)
     if before != after:
         raise SystemExit("F-22 gameplay fingerprint changed")
-    if "AmericaJetAuterF22" in obj.split("Object", 1)[0] if False else False:
+    if not obj.startswith("Object AmericaJetF-22A_AA"):
         raise SystemExit("F-22 object name changed")
     text = text[:a] + obj + text[b:]
     data_entries[i] = (name, text.encode("latin1"))

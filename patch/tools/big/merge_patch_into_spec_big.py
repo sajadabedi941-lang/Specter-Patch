@@ -27,6 +27,14 @@ STOCK_SKIP = {
     "data\\ini\\locomotor.ini",
 }
 
+# Overlay CommandSet splits. If packed as extra files they last-wins-overwrite
+# CommandSet.ini, including JP/SK/VN air bars and faction dozer chains.
+DO_NOT_PACK_OVERLAY = {
+    "data\\ini\\commandset_japan.ini",
+    "data\\ini\\commandset_southkorea.ini",
+    "data\\ini\\commandset_vietnam.ini",
+}
+
 
 def norm_key(name: str) -> str:
     return name.replace("/", "\\").lower()
@@ -113,7 +121,7 @@ def main() -> int:
     def merge_data(big_path: str, content: bytes) -> None:
         nonlocal added, updated, skipped_stock
         key = norm_key(big_path)
-        if key in STOCK_SKIP:
+        if key in STOCK_SKIP or key in DO_NOT_PACK_OVERLAY:
             skipped_stock += 1
             return
         display = big_path.replace("/", "\\")

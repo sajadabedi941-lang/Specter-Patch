@@ -387,7 +387,6 @@ def append_csf_labels(blob: bytes, labels: dict[str, str]) -> bytes:
         extra += b" RTS"
         extra += struct.pack("<I", len(value))
         extra += xor_csf_utf16(value)
-        extra += b"\x00\x00"
         add_labels += 1
         add_strings += 1
     if add_labels == 0:

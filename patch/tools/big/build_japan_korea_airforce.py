@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Restore Japan / South Korea air rosters on current packed DATA.
+"""Restore Japan / South Korea air rosters on current packed DATA + ART.
 
 - Does not edit USA or Russia aircraft INIs.
 - Reuses AmericaJetV22Visual, AmericaJetE2Visual, AmericaUAVGlobalHawk.
 - Uses existing packed JP/SK objects; fixes Buildable=NoScale corruption.
-- New objects use donor ART already in _SPEC_ART_ONE.big.
+- Donor ART (meshes/textures only) is injected into _SPEC_ART_ONE.big.
+- DATA Draw modules point at those donor visuals. Donor DATA is not copied.
 - STOCK cores are surgically patched (CommandSet / CommandButton / CSF).
 """
 
@@ -17,7 +18,78 @@ import sys
 from pathlib import Path
 
 SRC_DATA = Path("/tmp/c17_b52_jp_kr_pass/_SPEC_DATA_ONE.big")
+SRC_ART = Path("/tmp/usa_airforce_final/_SPEC_ART_ONE.big")
+DONOR_ART = Path("/tmp/donor_jp_kr_art")
 OUT_DIR = Path("/tmp/japan_korea_airforce")
+
+# Donor ART to inject (W3D + matching textures). Never copy donor DATA.
+DONOR_INJECT = [
+    "Art/w3d/LSFJapanAH64D.W3D",
+    "Art/w3d/LSFJapanAH64Dd.W3D",
+    "Art/w3d/LSFJPUH60.W3D",
+    "Art/w3d/LSFJPUH60d.W3D",
+    "Art/w3d/LSFJPUH60k.W3D",
+    "Art/w3d/LSFKoreaF4.W3D",
+    "Art/w3d/LSFKoreaF4d.W3D",
+    "Art/w3d/LSFKoreaF4k.W3D",
+    "Art/w3d/LSFKoreaF4r.W3D",
+    "Art/w3d/LSFKoreaF5.W3D",
+    "Art/w3d/LSFKoreaF5d.W3D",
+    "Art/w3d/LSFKoreaF5k.W3D",
+    "Art/w3d/LSFKoreaF5r.W3D",
+    "Art/w3d/LSFKoreaUH60.W3D",
+    "Art/w3d/LSFKoreaUH60d.W3D",
+    "Art/w3d/LSFKoreaUH60k.W3D",
+    "Art/Textures/LSFJPAH64D.dds",
+    "Art/Textures/LSFJPAH64Dd.dds",
+    "Art/Textures/LSFJPUH60.dds",
+    "Art/Textures/LSFJPUH60d.dds",
+    "Art/Textures/LSFJPUH60k.dds",
+    "Art/Textures/LSFSKUH60.dds",
+    "Art/Textures/LSFSKUH60d.dds",
+    "Art/Textures/LSFSKUH60k.dds",
+    "Art/Textures/LSFKF4.dds",
+    "Art/Textures/LSFKF4d.dds",
+    "Art/Textures/LSFKF4k.dds",
+    "Art/Textures/LSFKF5.dds",
+    "Art/Textures/LSFKF5d.dds",
+    "Art/Textures/LSFKF5k.dds",
+    "Art/Textures/LSFF15Kd.dds",
+]
+
+# Existing JP/SK objects whose Draw currently points at a generic/wrong mesh.
+EXISTING_MODEL_MAP = {
+    "JapanJetF15J": {
+        "LSFUSAF15C": "LSFJPF15J",
+        "LSFUSAF15Cd": "LSFJPF15Jd",
+        "LSFUSAF15Ck": "LSFJPF15Jk",
+    },
+    "SouthKoreaJetF15KSlam": {
+        "LSFUSAF15E": "LSFF15K",
+        "LSFUSAF15ED": "LSFF15Kd",
+        "LSFUSAF15EK": "LSFF15Kd",
+    },
+    "SouthKoreaJetF4E": {
+        "JPF4": "LSFKoreaF4",
+        "JPF4D": "LSFKoreaF4d",
+        "JPF4K": "LSFKoreaF4k",
+    },
+    "SouthKoreaJetF5E": {
+        "AVHawk_P": "LSFKoreaF5",
+        "AVHawk_D1": "LSFKoreaF5k",
+        "AVHawk_D": "LSFKoreaF5d",
+    },
+    "SouthKoreaJetT50": {
+        "AVHawk_P": "LSFT50d",
+        "AVHawk_D": "LSFT50k",
+        "AVHawk": "LSFT50",
+    },
+    "SouthKoreaJetUH60P": {
+        "US_UH60": "LSFKoreaUH60",
+    },
+}
+
+BONE_MISSILEA = {"SouthKoreaJetF4E", "SouthKoreaJetF5E"}
 
 JAPAN_FIGHTER_YES = {
     "JapanJetF35A",
@@ -266,6 +338,71 @@ def append_csf_labels(blob: bytes, labels: dict[str, str]) -> bytes:
     struct.pack_into("<I", out, 12, nstrings + add_strings)
     out += extra
     return bytes(out)
+
+
+def packed_art_name(rel: str) -> str:
+    rel = rel.replace("/", "\\")
+    low = rel.lower()
+    if low.startswith("art\\w3d\\"):
+        return "Art\\W3D\\" + rel.split("\\", 2)[2]
+    if low.startswith("art\\textures\\"):
+        return "Art\\Textures\\" + rel.split("\\", 2)[2]
+    return rel
+
+
+def remap_models(text: str, mapping: dict[str, str]) -> str:
+    def repl(m: re.Match[str]) -> str:
+        old = m.group(2)
+        return m.group(1) + mapping.get(old, old)
+
+    text = re.sub(r"(?m)^(\s*Model\s*=\s*)(\S+)", repl, text)
+    # Donor UH-60 meshes have no US_UH60.US_UH60 clip.
+    text = re.sub(r"(?m)^\s*Animation\s*=\s*US_UH60(?:\.\S+)?\s*\r?\n", "", text)
+    text = re.sub(r"(?m)^\s*AnimationMode\s*=\s*LOOP\s*\r?\n", "", text)
+    return text
+
+
+def retarget_f16_draw(text: str, default: str, damaged: str) -> str:
+    lines = text.splitlines(keepends=True)
+    out: list[str] = []
+    cond = "DEFAULT"
+    for line in lines:
+        if re.match(r"^\s*DefaultConditionState\b", line):
+            cond = "DEFAULT"
+        cm = re.match(r"^\s*ConditionState\s*=\s*(.*)$", line)
+        if cm:
+            cond = cm.group(1)
+        mm = re.match(r"^(\s*Model\s*=\s*)(\S+)", line)
+        if mm and re.search(r"US_F16", mm.group(2), re.I):
+            new = damaged if ("REALLYDAMAGED" in cond or "RUBBLE" in cond) else default
+            line = mm.group(1) + new + line[mm.end() :]
+        out.append(line)
+    return "".join(out)
+
+
+def retarget_launch_bones(text: str) -> str:
+    text = re.sub(
+        r"(?m)^(\s*WeaponLaunchBone\s*=\s*PRIMARY\s+)\S+",
+        r"\1MISSILEA01",
+        text,
+    )
+    text = re.sub(
+        r"(?m)^(\s*WeaponLaunchBone\s*=\s*SECONDARY\s+)\S+",
+        r"\1MISSILEA01",
+        text,
+    )
+    text = re.sub(
+        r"(?m)^(\s*WeaponLaunchBone\s*=\s*TERTIARY\s+)\S+",
+        r"\1MISSILEA01",
+        text,
+    )
+    return text
+
+
+def models3(model: str | tuple[str, str, str]) -> tuple[str, str, str]:
+    if isinstance(model, tuple):
+        return model
+    return model, model, model
 
 
 def fix_buildable_scale(text: str, buildable: str) -> str:
@@ -758,7 +895,16 @@ End
 """
 
 
-def heli_attack_ini(obj: str, side: str, portrait: str, model: str, scale: str, primary: str, secondary: str, tertiary: str | None) -> str:
+def heli_attack_ini(
+    obj: str,
+    side: str,
+    portrait: str,
+    model: str | tuple[str, str, str],
+    scale: str,
+    primary: str,
+    secondary: str,
+    tertiary: str | None,
+) -> str:
     wpn = (
         f"    Weapon = PRIMARY {primary}\n"
         f"    PreferredAgainst = PRIMARY INFANTRY VEHICLE\n"
@@ -770,6 +916,7 @@ def heli_attack_ini(obj: str, side: str, portrait: str, model: str, scale: str, 
             f"    Weapon = TERTIARY {tertiary}\n"
             f"    PreferredAgainst = TERTIARY INFANTRY VEHICLE\n"
         )
+    alive, dmg, rub = models3(model)
     return f"""Object {obj}
   Buildable = Yes
   Scale = {scale}
@@ -777,13 +924,13 @@ def heli_attack_ini(obj: str, side: str, portrait: str, model: str, scale: str, 
   ButtonImage = {portrait}
   Draw = W3DModelDraw ModuleTag_01
     DefaultConditionState
-      Model = {model}
+      Model = {alive}
     End
     ConditionState = REALLYDAMAGED
-      Model = {model}
+      Model = {dmg}
     End
     ConditionState = RUBBLE
-      Model = {model}
+      Model = {rub}
     End
     OkToChangeModelColor = Yes
   End
@@ -859,7 +1006,15 @@ End
 """
 
 
-def heli_transport_ini(obj: str, side: str, portrait: str, model: str, scale: str, slots: str) -> str:
+def heli_transport_ini(
+    obj: str,
+    side: str,
+    portrait: str,
+    model: str | tuple[str, str, str],
+    scale: str,
+    slots: str,
+) -> str:
+    alive, dmg, rub = models3(model)
     return f"""Object {obj}
   Buildable = Yes
   Scale = {scale}
@@ -867,13 +1022,13 @@ def heli_transport_ini(obj: str, side: str, portrait: str, model: str, scale: st
   ButtonImage = {portrait}
   Draw = W3DModelDraw ModuleTag_01
     DefaultConditionState
-      Model = {model}
+      Model = {alive}
     End
     ConditionState = REALLYDAMAGED
-      Model = {model}
+      Model = {dmg}
     End
     ConditionState = RUBBLE
-      Model = {model}
+      Model = {rub}
     End
     OkToChangeModelColor = Yes
   End
@@ -976,11 +1131,13 @@ def new_objects() -> dict[str, str]:
             "0.85", "3200", "28.0", ("40.0", "12.0", "10.0"),
         ),
         rf"{jp}\JapanHelicopterAH64D.ini": heli_attack_ini(
-            "JapanHelicopterAH64D", "Japan", "Nat_ah64e", "LSFAH64D", "0.90",
+            "JapanHelicopterAH64D", "Japan", "Nat_ah64e",
+            ("LSFJapanAH64D", "LSFJapanAH64Dd", "LSFJapanAH64Dd"), "0.90",
             "GenericHeliGunnerSight", "8x_MRATGM_AGM114L", "70mm_Hydra_AH64E",
         ),
         rf"{jp}\JapanHelicopterUH60J.ini": heli_transport_ini(
-            "JapanHelicopterUH60J", "Japan", "SSChinookUnload", "US_UH60", "0.86", "8",
+            "JapanHelicopterUH60J", "Japan", "SSChinookUnload",
+            ("LSFJPUH60", "LSFJPUH60d", "LSFJPUH60k"), "0.86", "8",
         ),
         rf"{jp}\JapanHelicopterCH47J.ini": heli_transport_ini(
             "JapanHelicopterCH47J", "Japan", "SSChinookUnload", "US_CH47F", "0.88", "16",
@@ -1006,7 +1163,8 @@ def new_objects() -> dict[str, str]:
             "0.90", "2400", "24.0", ("32.0", "10.0", "9.0"),
         ),
         rf"{sk}\SouthKoreaHelicopterKUH1.ini": heli_transport_ini(
-            "SouthKoreaHelicopterKUH1", "SouthKorea", "SSChinookUnload", "US_UH60", "0.88", "10",
+            "SouthKoreaHelicopterKUH1", "SouthKorea", "SSChinookUnload",
+            ("LSFKoreaUH60", "LSFKoreaUH60d", "LSFKoreaUH60k"), "0.88", "10",
         ),
         rf"{sk}\SouthKoreaHelicopterLAH.ini": heli_attack_ini(
             "SouthKoreaHelicopterLAH", "SouthKorea", "Nat_ah64e", "LSFLynxAHMK", "0.80",
@@ -1092,6 +1250,17 @@ def main() -> int:
             text = set_f2kai_antiship(text)
         if objs and objs[0] == "JapanUAVRQ4":
             text = arm_japan_rq4(text)
+        if objs and objs[0] in EXISTING_MODEL_MAP:
+            text = remap_models(text, EXISTING_MODEL_MAP[objs[0]])
+            if objs[0] in BONE_MISSILEA:
+                text = retarget_launch_bones(text)
+            print("retargeted draw", objs[0])
+        if objs and objs[0] == "SouthKoreaJetF16C":
+            text = retarget_f16_draw(text, "LSFKF16", "LSFKF16d")
+            print("retargeted draw", objs[0])
+        if objs and objs[0] == "SouthKoreaJetF16D":
+            text = retarget_f16_draw(text, "LSFKF16", "LSFKF16d")
+            print("retargeted draw", objs[0])
         entries[i] = (name, text.encode("latin1"))
         print("patched air", name, "Buildable", buildable)
 
@@ -1150,6 +1319,47 @@ def main() -> int:
         len(entries),
         "sha",
         hashlib.sha256(packed).hexdigest(),
+    )
+
+    if not SRC_ART.is_file():
+        print("missing source ART", SRC_ART, file=sys.stderr)
+        return 1
+    art_entries = parse_big(SRC_ART)
+    art_index = {norm(n): i for i, (n, _) in enumerate(art_entries)}
+    art_original_names = [n for n, _ in art_entries]
+    art_original_count = len(art_entries)
+    added_art = 0
+    for rel in DONOR_INJECT:
+        src = DONOR_ART / rel
+        if not src.is_file() or src.stat().st_size == 0:
+            print("missing donor ART", src, file=sys.stderr)
+            return 1
+        packed_name = packed_art_name(rel)
+        key = norm(packed_name)
+        blob = src.read_bytes()
+        if key in art_index:
+            print("art already present", packed_name)
+            continue
+        art_entries.append((packed_name, blob))
+        art_index[key] = len(art_entries) - 1
+        added_art += 1
+        print("added art", packed_name, len(blob))
+    if [n for n, _ in art_entries][:art_original_count] != art_original_names:
+        raise SystemExit("ART original entry order changed")
+    out_art = OUT_DIR / "_SPEC_ART_ONE.big"
+    packed_art = build_big_ordered(art_entries)
+    out_art.write_bytes(packed_art)
+    print(
+        "wrote",
+        out_art,
+        "size",
+        len(packed_art),
+        "files",
+        len(art_entries),
+        "added",
+        added_art,
+        "sha",
+        hashlib.sha256(packed_art).hexdigest(),
     )
     return 0
 

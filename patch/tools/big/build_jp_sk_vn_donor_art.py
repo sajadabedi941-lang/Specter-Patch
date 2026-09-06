@@ -191,7 +191,8 @@ def norm(name: str) -> str:
 
 
 def gameplay_fingerprint(text: str) -> str:
-    text = re.sub(r"(?ms)^\s*Draw\s*=\s*W3DModelDraw.*?^\s*End\s*$", "", text, count=1)
+    text = re.sub(r"(?m)^\s*Model\s*=\s*\S+\s*$", "", text)
+    text = re.sub(r"(?m)^\s*WeaponLaunchBone\s*=\s*.*$", "", text)
     text = re.sub(r"(?m)^\s*SelectPortrait\s*=\s*\S+\s*$", "", text)
     text = re.sub(r"(?m)^\s*ButtonImage\s*=\s*\S+\s*$", "", text)
     return text

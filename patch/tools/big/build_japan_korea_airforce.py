@@ -110,8 +110,8 @@ ART_CLONES = [
 
 # SAAB340 W3Ds embed .tga names; donor ships matching .dds (same basename length).
 SAAB_TEX_FIX = (
-    (b"Saab340.tga", b"Saab340.dds"),
     (b"Saab340_d.tga", b"Saab340_d.dds"),
+    (b"Saab340.tga", b"Saab340.dds"),
     (b"LakeduskMetal.tga", b"LakeduskMetal.dds"),
     (b"coplight.tga", b"coplight.dds"),
 )
@@ -1407,7 +1407,7 @@ def main() -> int:
         packed_name = packed_art_name(rel)
         key = norm(packed_name)
         blob = src.read_bytes()
-        if packed_name.lower().endswith(".w3d") and b"Saab340.tga" in blob:
+        if packed_name.lower().endswith(".w3d") and b"Saab340" in blob:
             blob = fix_saab_texture_refs(blob)
         if key in art_index:
             print("art already present", packed_name)
@@ -1423,7 +1423,7 @@ def main() -> int:
             return 1
         dest_key = norm(dest_name)
         blob = art_entries[art_index[src_key]][1]
-        if dest_name.lower().endswith(".w3d") and b"Saab340.tga" in blob:
+        if dest_name.lower().endswith(".w3d") and b"Saab340" in blob:
             blob = fix_saab_texture_refs(blob)
         if dest_key in art_index:
             print("art clone already present", dest_name)

@@ -5,7 +5,9 @@
 - Reuses AmericaJetV22Visual, AmericaJetE2Visual, AmericaUAVGlobalHawk.
 - Uses existing packed JP/SK objects; fixes Buildable=NoScale corruption.
 - Donor ART (meshes/textures only) is injected into _SPEC_ART_ONE.big.
-- DATA Draw modules point at those donor visuals. Donor DATA is not copied.
+- Missing JP/KR silhouettes get uniquely named ART clones from the closest
+  real mesh. Never Model= E-3G, C-17, Hawkeye, C-130, or Lynx as those units.
+- DATA Draw modules point at those donor / cloned visuals. Donor DATA is not copied.
 - STOCK cores are surgically patched (CommandSet / CommandButton / CSF).
 """
 
@@ -55,7 +57,64 @@ DONOR_INJECT = [
     "Art/Textures/LSFKF5d.dds",
     "Art/Textures/LSFKF5k.dds",
     "Art/Textures/LSFF15Kd.dds",
+    # Twin-engine tactical transport (C-160 class) — no Kawasaki C-2 / CN-235 mesh exists.
+    "Art/w3d/LSFGERC160.W3D",
+    "Art/w3d/LSFGERC160d.W3D",
+    "Art/w3d/LSFGERC160k.W3D",
+    "Art/Textures/LSFGERC160.tga",
+    "Art/Textures/LSFGERC160d.tga",
+    "Art/Textures/LSFGERC160k.tga",
+    # Light attack helicopter (AH-6 / MD 500 class) — no Korean LAH mesh exists.
+    "Art/w3d/LSFAH6.W3D",
+    "Art/w3d/LSFAH6d.W3D",
+    "Art/w3d/LSFAH6k.W3D",
+    "Art/Textures/LSFAH6.dds",
+    "Art/Textures/LSFAH6d.dds",
+    "Art/Textures/LSFAH6k.dds",
+    # Small twin-engine recon airframe — no Hawker 800 / RC-800 mesh exists.
+    "Art/w3d/SAAB340.W3D",
+    "Art/w3d/SAAB340_d.W3D",
+    "Art/Textures/Saab340.dds",
+    "Art/Textures/Saab340_d.dds",
+    "Art/Textures/LakeduskMetal.dds",
+    "Art/Textures/TP84 Blades.tga",
+    "Art/Textures/coplight.dds",
 ]
+
+# Unique JP/SK W3D stems cloned from the closest real mesh. DATA must never
+# Model= US_E3G, IUAC17HXNew, AVHawk, AVCargoPln, or LSFLynxAHMK for these units.
+# Source is a packed ART name after DONOR_INJECT (or already in SRC_ART).
+ART_CLONES = [
+    # E-767: no 767 exists. Closest is Boeing AEW&C with rotodome (E-737), not E-3.
+    ("Art\\W3D\\JP_E767.W3D", "Art\\W3D\\KVE737.W3D"),
+    # C-2: no twin-jet transport exists. Twin-engine high-wing ramp (C-160), not C-17.
+    ("Art\\W3D\\JP_C2.W3D", "Art\\W3D\\LSFGERC160.W3D"),
+    ("Art\\W3D\\JP_C2d.W3D", "Art\\W3D\\LSFGERC160d.W3D"),
+    ("Art\\W3D\\JP_C2k.W3D", "Art\\W3D\\LSFGERC160k.W3D"),
+    # CN-235: twin-turboprop tactical transport. C-160 class, not C-130.
+    ("Art\\W3D\\SK_CN235.W3D", "Art\\W3D\\LSFGERC160.W3D"),
+    ("Art\\W3D\\SK_CN235d.W3D", "Art\\W3D\\LSFGERC160d.W3D"),
+    ("Art\\W3D\\SK_CN235k.W3D", "Art\\W3D\\LSFGERC160k.W3D"),
+    # RC-800: small twin-engine recon, not E-2 Hawkeye.
+    ("Art\\W3D\\SK_RC800.W3D", "Art\\W3D\\SAAB340.W3D"),
+    ("Art\\W3D\\SK_RC800d.W3D", "Art\\W3D\\SAAB340_d.W3D"),
+    # KUH-1 Surion: UH-60-derived, unique stem so it is not the UH-60P object.
+    ("Art\\W3D\\SK_KUH1.W3D", "Art\\W3D\\LSFKoreaUH60.W3D"),
+    ("Art\\W3D\\SK_KUH1d.W3D", "Art\\W3D\\LSFKoreaUH60d.W3D"),
+    ("Art\\W3D\\SK_KUH1k.W3D", "Art\\W3D\\LSFKoreaUH60k.W3D"),
+    # LAH: light attack heli class (AH-6), not Lynx.
+    ("Art\\W3D\\SK_LAH.W3D", "Art\\W3D\\LSFAH6.W3D"),
+    ("Art\\W3D\\SK_LAHd.W3D", "Art\\W3D\\LSFAH6d.W3D"),
+    ("Art\\W3D\\SK_LAHk.W3D", "Art\\W3D\\LSFAH6k.W3D"),
+]
+
+# SAAB340 W3Ds embed .tga names; donor ships matching .dds (same basename length).
+SAAB_TEX_FIX = (
+    (b"Saab340.tga", b"Saab340.dds"),
+    (b"Saab340_d.tga", b"Saab340_d.dds"),
+    (b"LakeduskMetal.tga", b"LakeduskMetal.dds"),
+    (b"coplight.tga", b"coplight.dds"),
+)
 
 # Existing JP/SK objects whose Draw currently points at a generic/wrong mesh.
 EXISTING_MODEL_MAP = {
@@ -813,7 +872,16 @@ End
 """
 
 
-def recon_ini(obj: str, side: str, portrait: str, model: str) -> str:
+def fix_saab_texture_refs(blob: bytes) -> bytes:
+    for old, new in SAAB_TEX_FIX:
+        if len(old) != len(new):
+            raise SystemExit(f"SAAB tex rename length mismatch {old!r} {new!r}")
+        blob = blob.replace(old, new)
+    return blob
+
+
+def recon_ini(obj: str, side: str, portrait: str, model: str | tuple[str, str, str]) -> str:
+    alive, dmg, rub = models3(model)
     return f"""Object {obj}
   Buildable = Yes
   Scale = 1.10
@@ -822,13 +890,13 @@ def recon_ini(obj: str, side: str, portrait: str, model: str) -> str:
   Draw = W3DModelDraw ModuleTag_01
     OkToChangeModelColor = Yes
     DefaultConditionState
-      Model = {model}
+      Model = {alive}
     End
     ConditionState = REALLYDAMAGED
-      Model = {model}
+      Model = {dmg}
     End
     ConditionState = RUBBLE
-      Model = {model}
+      Model = {rub}
     End
   End
   DisplayName = OBJECT:{obj}
@@ -1124,11 +1192,11 @@ def new_objects() -> dict[str, str]:
             "AmericaF35C_AA_AIM120", "GBU_31V2_JDAM_F35C",
             "0.92", "2300", "14.0",
         ),
-        rf"{jp}\JapanJetE767.ini": awacs_ini("JapanJetE767", "Japan", "E2avionHE", "US_E3G", "1.20"),
+        rf"{jp}\JapanJetE767.ini": awacs_ini("JapanJetE767", "Japan", "E2avionHE", "JP_E767", "1.28"),
         rf"{jp}\JapanJetC2.ini": transport_ini(
             "JapanJetC2", "Japan", "SPEC_JapanC130H",
-            ("IUAC17HXNew", "IUAC17HXNew", "IUAC17HXNew"),
-            "0.85", "3200", "28.0", ("40.0", "12.0", "10.0"),
+            ("JP_C2", "JP_C2d", "JP_C2k"),
+            "1.00", "3200", "28.0", ("36.0", "11.0", "10.0"),
         ),
         rf"{jp}\JapanHelicopterAH64D.ini": heli_attack_ini(
             "JapanHelicopterAH64D", "Japan", "Nat_ah64e",
@@ -1155,19 +1223,21 @@ def new_objects() -> dict[str, str]:
             "0.84", "1900", "12.0", ("Weapon01", "Weapon01"),
         ),
         rf"{sk}\SouthKoreaJetRC800.ini": recon_ini(
-            "SouthKoreaJetRC800", "SouthKorea", "E2avionHE", "AVHawk",
+            "SouthKoreaJetRC800", "SouthKorea", "E2avionHE",
+            ("SK_RC800", "SK_RC800d", "SK_RC800d"),
         ),
         rf"{sk}\SouthKoreaJetCN235.ini": transport_ini(
             "SouthKoreaJetCN235", "SouthKorea", "SPEC_JapanC130H",
-            ("AVCargoPln", "AVCargoPln_D", "AVCargoPln_E"),
-            "0.90", "2400", "24.0", ("32.0", "10.0", "9.0"),
+            ("SK_CN235", "SK_CN235d", "SK_CN235k"),
+            "0.82", "2400", "24.0", ("28.0", "9.0", "8.0"),
         ),
         rf"{sk}\SouthKoreaHelicopterKUH1.ini": heli_transport_ini(
             "SouthKoreaHelicopterKUH1", "SouthKorea", "SSChinookUnload",
-            ("LSFKoreaUH60", "LSFKoreaUH60d", "LSFKoreaUH60k"), "0.88", "10",
+            ("SK_KUH1", "SK_KUH1d", "SK_KUH1k"), "0.88", "10",
         ),
         rf"{sk}\SouthKoreaHelicopterLAH.ini": heli_attack_ini(
-            "SouthKoreaHelicopterLAH", "SouthKorea", "Nat_ah64e", "LSFLynxAHMK", "0.80",
+            "SouthKoreaHelicopterLAH", "SouthKorea", "Nat_ah64e",
+            ("SK_LAH", "SK_LAHd", "SK_LAHk"), "0.78",
             "GenericHeliGunnerSight", "70mm_Hydra_AH64E", None,
         ),
     }
@@ -1337,6 +1407,8 @@ def main() -> int:
         packed_name = packed_art_name(rel)
         key = norm(packed_name)
         blob = src.read_bytes()
+        if packed_name.lower().endswith(".w3d") and b"Saab340.tga" in blob:
+            blob = fix_saab_texture_refs(blob)
         if key in art_index:
             print("art already present", packed_name)
             continue
@@ -1344,6 +1416,22 @@ def main() -> int:
         art_index[key] = len(art_entries) - 1
         added_art += 1
         print("added art", packed_name, len(blob))
+    for dest_name, src_name in ART_CLONES:
+        src_key = norm(src_name)
+        if src_key not in art_index:
+            print("missing clone source", src_name, file=sys.stderr)
+            return 1
+        dest_key = norm(dest_name)
+        blob = art_entries[art_index[src_key]][1]
+        if dest_name.lower().endswith(".w3d") and b"Saab340.tga" in blob:
+            blob = fix_saab_texture_refs(blob)
+        if dest_key in art_index:
+            print("art clone already present", dest_name)
+            continue
+        art_entries.append((dest_name, blob))
+        art_index[dest_key] = len(art_entries) - 1
+        added_art += 1
+        print("cloned art", dest_name, "from", src_name, len(blob))
     if [n for n, _ in art_entries][:art_original_count] != art_original_names:
         raise SystemExit("ART original entry order changed")
     out_art = OUT_DIR / "_SPEC_ART_ONE.big"

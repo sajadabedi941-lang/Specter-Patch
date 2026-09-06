@@ -301,25 +301,30 @@ def append_csf_labels(blob: bytes, labels: dict[str, str]) -> bytes:
     return bytes(out)
 
 
-def disable_old_air_object(text: str) -> str:
-    """Force leftover air objects off the build menu. Keep identity so maps parse."""
+def stub_old_air_object(text: str) -> str:
+    """Replace leftover air files with empty disabled stubs. Keep names so maps parse."""
     objs = re.findall(r"(?m)^Object\s+(\S+)", text)
-    if objs and objs[0] in KEEP_BUILDABLE:
+    if any(obj in KEEP_BUILDABLE for obj in objs):
         return text
-    text = re.sub(
-        r"(?m)^(?P<ind>[ \t]*)Buildable[ \t]*=[ \t]*\S+",
-        r"\g<ind>Buildable = No",
-        text,
-        count=1,
-    )
-    if not re.search(r"(?m)^[ \t]*Buildable[ \t]*=", text):
-        text = re.sub(
-            r"(?m)^(Object\s+\S+[ \t]*\r?\n)",
-            r"\1  Buildable = No\n",
-            text,
-            count=1,
+    stubs = []
+    for obj in objs:
+        stubs.append(
+            f"Object {obj}\r\n"
+            f"  Buildable = No\r\n"
+            f"  Side = Neutral\r\n"
+            f"  EditorSorting = SYSTEM\r\n"
+            f"  KindOf = PRELOAD IGNORED_IN_GUI\r\n"
+            f"  Body = ActiveBody ModuleTag_01\r\n"
+            f"    MaxHealth = 1.0\r\n"
+            f"    InitialHealth = 1.0\r\n"
+            f"  End\r\n"
+            f"  Geometry = Box\r\n"
+            f"  GeometryMajorRadius = 1.0\r\n"
+            f"  GeometryMinorRadius = 1.0\r\n"
+            f"  GeometryHeight = 1.0\r\n"
+            f"End\r\n"
         )
-    return text
+    return "".join(stubs) if stubs else "  Buildable = No\r\n"
 
 
 def is_jp_kr_air_ini(name: str) -> bool:
@@ -718,10 +723,10 @@ def main() -> int:
     for i, (name, blob) in enumerate(entries):
         if not is_jp_kr_air_ini(name):
             continue
-        text = disable_old_air_object(blob.decode("latin1"))
+        text = stub_old_air_object(blob.decode("latin1"))
         entries[i] = (name, text.encode("latin1"))
         disabled += 1
-    print("disabled old JP/KR air files", disabled)
+    print("stubbed old JP/KR air files", disabled)
 
     added = new_air_objects()
     for packed_name, content in added.items():
@@ -767,6 +772,8 @@ def main() -> int:
             if f"CommandButton {name}" not in text:
                 extra.append(button_block(name, obj, image))
         text = append_if_missing(text, "Command_AmericaC17SafeUnload", C17_BUTTON)
+        if "CommandButton Command_AmericaC17ParaDrop" in text:
+            text = replace_named_block(text, "CommandButton", "Command_AmericaC17ParaDrop", C17_BUTTON.replace("Command_AmericaC17SafeUnload", "Command_AmericaC17ParaDrop"))
         if extra:
             newline = nl(text)
             text = text.rstrip("\r\n") + newline + newline + "".join(
@@ -779,19 +786,32 @@ def main() -> int:
 
     def patch_ocl(text: str) -> str:
         if "ObjectCreationList OCL_AmericaC17SafeUnload" in text:
-            return replace_named_block(text, "ObjectCreationList", "OCL_AmericaC17SafeUnload", C17_OCL)
-        return append_if_missing(text, "OCL_AmericaC17SafeUnload", C17_OCL)
+            text = replace_named_block(text, "ObjectCreationList", "OCL_AmericaC17SafeUnload", C17_OCL)
+        else:
+            text = append_if_missing(text, "OCL_AmericaC17SafeUnload", C17_OCL)
+        if "ObjectCreationList OCL_AmericaC17TargetParaDrop" in text:
+            text = replace_named_block(text, "ObjectCreationList", "OCL_AmericaC17TargetParaDrop", C17_OCL.replace("OCL_AmericaC17SafeUnload", "OCL_AmericaC17TargetParaDrop"))
+        return text
 
     def patch_pt(text: str) -> str:
         text = retarget_player_template(text, "FactionJapan")
         text = retarget_player_template(text, "FactionSouthKorea")
         return text
 
+    def patch_weapon_objects(text: str) -> str:
+        if "OCL_AmericaC17TargetParaDrop" not in text:
+            return text
+        return text.replace("OCL_AmericaC17TargetParaDrop", "OCL_AmericaC17SafeUnload")
+
     mut(r"Data\INI\CommandSet.ini", patch_commandset)
     mut(r"Data\INI\CommandButton.ini", patch_commandbutton)
     mut(r"Data\INI\SpecialPower.ini", patch_specialpower)
     mut(r"Data\INI\ObjectCreationList.ini", patch_ocl)
     mut(r"Data\INI\PlayerTemplate.ini", patch_pt)
+    mut(
+        r"Data\INI\Object\Specter\United States Of America\USA_AirForce_WeaponObjects.ini",
+        patch_weapon_objects,
+    )
 
     labels = {
         "CONTROLBAR:AmericaC17SafeUnload": "Unload Cargo",

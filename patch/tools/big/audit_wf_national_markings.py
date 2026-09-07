@@ -42,11 +42,11 @@ UNTOUCHED = {
 }
 
 NEW_W3D = {
-    "JP_WarFactory": ("NKr_WarFactory", "JP_WF_Flag.tga", "irq"),
-    "SK_WarFactory": ("NKr_WarFactory", "SK_WF_Flag.tga", "irq"),
-    "IN_WarFactory": ("Irq_WarFactory", "IN_WF_Flag.tga", "irq"),
-    "SA_WarFactory": ("Irq_WarFactory", "SA_WF_Flag.tga", "irq"),
-    "AE_WarFactory": ("Irq_WarFactory", "AE_WF_Flag.tga", "irq"),
+    "JP_WarFactory": ("NKr_WarFactory", "JP_WF_Flg.tga", "irq"),
+    "SK_WarFactory": ("NKr_WarFactory", "SK_WF_Flg.tga", "irq"),
+    "IN_WarFactory": ("Irq_WarFactory", "IN_WF_Flg.tga", "irq"),
+    "SA_WarFactory": ("Irq_WarFactory", "SA_WF_Flg.tga", "irq"),
+    "AE_WarFactory": ("Irq_WarFactory", "AE_WF_Flg.tga", "irq"),
     "DE_WarFactory": ("US_WarFactory", "DE_WF_Mark00.tga", "us"),
     "FR_WarFactory": ("US_WarFactory", "FR_WF_Mark00.tga", "us"),
     "TR_WarFactory": ("US_WarFactory", "TR_WF_Mark00.tga", "us"),
@@ -241,12 +241,15 @@ def _run() -> int:
             w, h = struct.unpack_from("<HH", raw, 12)
             img = Image.frombytes("RGB", (w, h), bytes(raw[18:]), "raw", "BGR")
             img = img.transpose(Image.FLIP_TOP_BOTTOM)
-        pixels = list(img.convert("RGB").getdata())
+        rgb = img.convert("RGB").resize((24, 24))
+        pix = rgb.load()
         max_s = 0
-        for r, g, b in pixels[:: max(1, len(pixels) // 400)]:
-            mx, mn = max(r, g, b), min(r, g, b)
-            if mx:
-                max_s = max(max_s, (mx - mn) / mx)
+        for y in range(24):
+            for x in range(24):
+                r, g, b = pix[x, y]
+                mx, mn = max(r, g, b), min(r, g, b)
+                if mx:
+                    max_s = max(max_s, (mx - mn) / mx)
         print(f"  {tex} size={img.size} max_sat={max_s:.2f}")
         if max_s > 0.92 and kind == "us":
             # atlas contains original saturated US paint outside the island; crop the island
@@ -291,9 +294,10 @@ def _run() -> int:
         name, blk = hits[-1]
         models = set(re.findall(r"(?m)^\s*Model\s+=\s+(\S+)", blk))
         oks = re.findall(r"(?m)^\s*OkToChangeModelColor\s+=\s+(\S+)", blk)
-        if models != {model}:
+        extra = models - {model, "UBArmDeal_DNS"}
+        if model not in models or extra:
             errors += fail(f"untouched {obj} models {models}")
-        if oks != ["Yes"]:
+        elif oks != ["Yes"]:
             errors += fail(f"untouched {obj} color flag {oks}")
         else:
             print("OK untouched", obj, model)

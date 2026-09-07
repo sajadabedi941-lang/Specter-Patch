@@ -44,11 +44,11 @@ US_FLAG_BOX = (54, 408, 188, 484)
 # new W3D stem -> (donor stem, flag tex, kind, style)
 # kind irq = replace IraqiFlag/DPRK_Flag; us = paint F1/F2/F3 atlas island
 NEW_STEMS = {
-    "JP_WarFactory": ("NKr_WarFactory", "JP_WF_Flag.tga", "irq", "japan"),
-    "SK_WarFactory": ("NKr_WarFactory", "SK_WF_Flag.tga", "irq", "korea"),
-    "IN_WarFactory": ("Irq_WarFactory", "IN_WF_Flag.tga", "irq", "india"),
-    "SA_WarFactory": ("Irq_WarFactory", "SA_WF_Flag.tga", "irq", "saudi"),
-    "AE_WarFactory": ("Irq_WarFactory", "AE_WF_Flag.tga", "irq", "uae"),
+    "JP_WarFactory": ("NKr_WarFactory", "JP_WF_Flg.tga", "irq", "japan"),
+    "SK_WarFactory": ("NKr_WarFactory", "SK_WF_Flg.tga", "irq", "korea"),
+    "IN_WarFactory": ("Irq_WarFactory", "IN_WF_Flg.tga", "irq", "india"),
+    "SA_WarFactory": ("Irq_WarFactory", "SA_WF_Flg.tga", "irq", "saudi"),
+    "AE_WarFactory": ("Irq_WarFactory", "AE_WF_Flg.tga", "irq", "uae"),
     "DE_WarFactory": ("US_WarFactory", "DE_WF_Mark00.tga", "us", "germany"),
     "FR_WarFactory": ("US_WarFactory", "FR_WF_Mark00.tga", "us", "france"),
     "TR_WarFactory": ("US_WarFactory", "TR_WF_Mark00.tga", "us", "turkey"),

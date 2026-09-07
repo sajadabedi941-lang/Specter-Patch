@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""National Ground Forces expansion — DATA first, ART only if a donor mesh is used.
+"""National Ground Forces expansion - DATA first, ART only if a donor mesh is used.
 
 Does not modify protected factions, PlayerTemplate, Science, CommandCenter,
 VT72B, or airfields. Does not copy donor DATA logic.
@@ -264,12 +264,18 @@ def clone_object(blk: str, new_obj: str, side: str, display_key: str, model: str
     for om in old_models:
         blk = re.sub(rf"(?m)^(\s*Model\s+=\s+){re.escape(om)}\s*$", rf"\1{model}", blk)
         blk = re.sub(rf"(?m)^(\s*Animation\s+=\s+){re.escape(om)}\.\S+", rf"\1{model}.{model}", blk)
+    nl = "\r\n" if "\r\n" in blk else "\n"
+    new_pre = f"  Prerequisites{nl}    Object = {prereq}{nl}  End"
     prereq_blk = re.search(r"(?ms)^(\s*)Prerequisites\s*\r?\n.*?\n\1End\s*$", blk)
     if prereq_blk:
-        indent = prereq_blk.group(1)
-        nl = "\r\n" if "\r\n" in blk else "\n"
-        new_pre = f"{indent}Prerequisites{nl}{indent}  Object = {prereq}{nl}{indent}End"
         blk = blk[: prereq_blk.start()] + new_pre + blk[prereq_blk.end() :]
+    else:
+        # Insert after Side so every cloned unit is gated to its national War Factory.
+        side_m = re.search(r"(?m)^(\s*Side\s+=\s+\S+\s*)$", blk)
+        if side_m:
+            blk = blk[: side_m.end()] + nl + new_pre + blk[side_m.end() :]
+        else:
+            blk = blk.rstrip() + nl + new_pre + nl
     return blk
 
 
@@ -325,6 +331,16 @@ def main() -> int:
         templates[role] = find_template(data_entries, tobj)
         print("template", role, tobj, "lines", templates[role].count("\n"))
 
+    existing_objects = set()
+    existing_buttons = set()
+    for n, blob in data_entries:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = blob.decode("latin1")
+        if "nationalground" not in n.lower():
+            existing_objects.update(re.findall(r"(?m)^Object\s+(\S+)\s*$", t))
+        existing_buttons.update(re.findall(r"(?m)^CommandButton\s+(\S+)", t))
+
     resolved = {}
     inject_art = []
     seen_inject = set()
@@ -372,28 +388,32 @@ def main() -> int:
         raise SystemExit(f"no model for {stem} / {fallback}")
 
     for country, unit in all_units():
+        if unit.obj in existing_objects:
+            resolved[(country.key, unit.obj)] = "(existing)"
+            continue
         model = ensure_model(unit.model_pref, unit.model_fallback)
         resolved[(country.key, unit.obj)] = model
 
     # build object INI and buttons / CSF
-    object_ini = ["; National Ground Forces — generated, DATA clone of proven Specter templates\r\n"]
+    object_ini = ["; National Ground Forces - generated, DATA clone of proven Specter templates\r\n"]
     buttons = []
     csf = {}
-    existing_buttons = set()
-    cb_idx = data_index[norm(r"Data\INI\CommandButton.ini")]
-    existing_buttons.update(re.findall(r"(?m)^CommandButton\s+(\S+)", data_entries[cb_idx][1].decode("latin1")))
 
     country_buttons = {c.key: [] for c in COUNTRIES}
     for country, unit in all_units():
         role_tmpl, cost, time, default_img = TEMPLATES[unit.role]
         image = unit.image or default_img
-        model = resolved[(country.key, unit.obj)]
         obj_key = f"OBJECT:{unit.obj}"
         text = f"CONTROLBAR:Construct{unit.obj}"
         tip = f"CONTROLBAR:ToolTip{unit.obj}"
         btn = f"Command_Construct{unit.obj}"
-        blk = clone_object(templates[unit.role], unit.obj, country.side, obj_key, model, cost, time, country.wf, image)
-        object_ini.append(blk.rstrip() + "\r\n\r\n")
+        if unit.obj in existing_objects:
+            print("reuse existing object", country.key, unit.role, unit.obj)
+        else:
+            model = resolved[(country.key, unit.obj)]
+            blk = clone_object(templates[unit.role], unit.obj, country.side, obj_key, model, cost, time, country.wf, image)
+            object_ini.append(blk.rstrip() + "\r\n\r\n")
+            print("unit", country.key, unit.role, unit.obj, "model", model)
         if btn not in existing_buttons:
             buttons.append(construct_button(btn, unit.obj, text, tip, image))
             existing_buttons.add(btn)
@@ -401,7 +421,6 @@ def main() -> int:
         csf[obj_key] = unit.display
         csf[text] = unit.display
         csf[tip] = unit.tooltip
-        print("unit", country.key, unit.role, unit.obj, "model", model)
 
     new_obj_path = r"Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini"
     if norm(new_obj_path) in data_index:
@@ -427,18 +446,18 @@ def main() -> int:
     def patch_commandset(text: str) -> str:
         hits = []
         for country in COUNTRIES:
-            if country.cs in PROTECTED_COMMANDSETS:
-                raise SystemExit(f"refusing protected CS {country.cs}")
-            m = last_named(text, "CommandSet", country.cs)
-            if not m:
-                print("WARN missing CS in CommandSet.ini", country.cs)
-                continue
-            hits.append((m.start(), m.end(), country))
+            names = (country.cs, country.cs + "1", country.cs + "2", country.cs + "3")
+            for csname in names:
+                if csname in PROTECTED_COMMANDSETS:
+                    raise SystemExit(f"refusing protected CS {csname}")
+                m = last_named(text, "CommandSet", csname)
+                if m:
+                    hits.append((m.start(), m.end(), country, csname))
         hits.sort(key=lambda x: x[0], reverse=True)
-        for start, end, country in hits:
-            new_blk = commandset_block(country.cs, country_buttons[country.key])
+        for start, end, country, csname in hits:
+            new_blk = commandset_block(csname, country_buttons[country.key])
             text = text[:start] + new_blk + text[end:]
-            print("rewrote", country.cs, "slots", len(country_buttons[country.key]))
+            print("rewrote", csname, "slots", len(country_buttons[country.key]))
         return text
 
     def patch_buttons(text: str) -> str:
@@ -448,7 +467,14 @@ def main() -> int:
             text += "\r\n"
         return text + "\r\n" + "\r\n".join(buttons)
 
-    mut(r"Data\INI\CommandSet.ini", patch_commandset)
+    locked = {norm(p) for p in LOCKED_BIG_PATHS}
+    skip_overlay = {norm(p) for p in DO_NOT_PACK_OVERLAY}
+    for n, _blob in list(data_entries):
+        key = norm(n)
+        if key in locked or key in skip_overlay:
+            continue
+        if n.lower().endswith(".ini") and "commandset" in n.lower():
+            mut(n, patch_commandset)
     mut(r"Data\INI\CommandButton.ini", patch_buttons)
 
     csf_key = None

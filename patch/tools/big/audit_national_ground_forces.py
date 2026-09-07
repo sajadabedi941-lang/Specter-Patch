@@ -48,16 +48,20 @@ def last_named(text, kind, name):
     return hits[-1].group(0) if hits else None
 
 
-def last_object_any(entries, obj):
+def last_named_any(entries, kind, name):
     hits = []
     for i, n, b in entries:
         if not n.lower().endswith(".ini"):
             continue
         t = b.decode("latin1", "replace")
-        if re.search(rf"(?m)^Object\s+{re.escape(obj)}\s*$", t):
-            m = re.search(rf"(?ms)^Object\s+{re.escape(obj)}\s*\r?\n.*?(?=^Object\s|\Z)", t)
-            hits.append((n, m.group(0) if m else t))
+        blk = last_named(t, kind, name)
+        if blk:
+            hits.append((n, blk))
     return hits[-1] if hits else None
+
+
+def last_object_any(entries, obj):
+    return last_named_any(entries, "Object", obj)
 
 
 def walk_csf(blob):
@@ -123,49 +127,60 @@ def _run() -> int:
         elif norm(locked) in smap:
             print("OK locked", locked)
 
-    cs_text = None
-    cb_text = None
     csf_blob = None
     for i, n, b in data:
-        if n.lower().endswith("commandset.ini") and "commandset_" not in n.lower():
-            cs_text = b.decode("latin1")
-        if n.lower().endswith("commandbutton.ini"):
-            cb_text = b.decode("latin1")
         if n.lower().endswith("generals.csf"):
             csf_blob = b
-    if not cs_text or not cb_text or not csf_blob:
-        return fail("missing CommandSet/CommandButton/CSF")
+    if not csf_blob:
+        return fail("missing generals.csf")
     csf = walk_csf(csf_blob)
 
+    defined_weapons = set()
+    defined_armor = set()
+    defined_loco = set()
+    for i, n, b in data:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = b.decode("latin1", "replace")
+        defined_weapons.update(re.findall(r"(?m)^Weapon\s+(\S+)", t))
+        defined_armor.update(re.findall(r"(?m)^Armor\s+(\S+)", t))
+        defined_loco.update(re.findall(r"(?m)^Locomotor\s+(\S+)", t))
+
     for pcs in PROTECTED_COMMANDSETS:
-        src_cs = None
-        for i, n, b in src_data:
-            if n.lower().endswith("commandset.ini") and "commandset_" not in n.lower():
-                src_cs = b.decode("latin1")
-                break
-        if src_cs and last_named(src_cs, "CommandSet", pcs) and last_named(cs_text, "CommandSet", pcs) != last_named(src_cs, "CommandSet", pcs):
+        src_hit = last_named_any(src_data, "CommandSet", pcs)
+        dst_hit = last_named_any(data, "CommandSet", pcs)
+        if src_hit and dst_hit and src_hit[1] != dst_hit[1]:
             errors += fail(f"protected CommandSet changed {pcs}")
 
     unit_count = 0
     for country in COUNTRIES:
-        blk = last_named(cs_text, "CommandSet", country.cs)
-        if not blk:
+        hit = last_named_any(data, "CommandSet", country.cs)
+        if not hit:
             errors += fail(f"missing CS {country.cs}")
             continue
+        _csfile, blk = hit
         slots = {int(a): b for a, b in re.findall(r"(?m)^\s*(\d+)\s+=\s+(\S+)", blk)}
         if len(slots) != 14 or set(slots) != set(range(1, 15)):
-            errors += fail(f"{country.key} slots {sorted(slots)}")
+            errors += fail(f"{country.key} last-wins {_csfile} slots {sorted(slots)}")
             continue
-        print(f"OK {country.key} {country.cs} 14 slots")
+        print(f"OK {country.key} {country.cs} last-wins {_csfile} 14 slots")
+        for extra in (country.cs + "1", country.cs + "2", country.cs + "3"):
+            ehit = last_named_any(data, "CommandSet", extra)
+            if not ehit:
+                continue
+            eslots = {int(a): b for a, b in re.findall(r"(?m)^\s*(\d+)\s+=\s+(\S+)", ehit[1])}
+            if set(eslots.values()) != set(slots.values()):
+                errors += fail(f"{extra} last-wins {ehit[0]} does not match 14-slot roster")
         for idx, unit in enumerate(country.units, 1):
             unit_count += 1
             btn = f"Command_Construct{unit.obj}"
             if slots.get(idx) != btn:
                 errors += fail(f"{country.key} slot {idx} {slots.get(idx)} != {btn}")
-            bblk = last_named(cb_text, "CommandButton", btn)
-            if not bblk:
+            bhit = last_named_any(data, "CommandButton", btn)
+            if not bhit:
                 errors += fail(f"missing button {btn}")
                 continue
+            _bf, bblk = bhit
             obj = re.search(r"(?m)^\s*Object\s+=\s+(\S+)", bblk)
             if not obj or obj.group(1) != unit.obj:
                 errors += fail(f"{btn} Object {obj.group(1) if obj else None}")
@@ -184,10 +199,27 @@ def _run() -> int:
             for key in (f"OBJECT:{unit.obj}", f"CONTROLBAR:Construct{unit.obj}", f"CONTROLBAR:ToolTip{unit.obj}"):
                 if key not in csf:
                     errors += fail(f"missing CSF {key}")
-            weap = re.findall(r"(?m)^\s*Weapon\s+=\s+(\S+)", oblk)
+            weap = re.findall(r"(?m)^\s*Weapon\s+=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+(\S+)", oblk)
+            if not weap:
+                weap = [w for w in re.findall(r"(?m)^\s*Weapon\s+=\s+(\S+)", oblk) if w not in {"PRIMARY", "SECONDARY", "TERTIARY"}]
             if not weap:
                 errors += fail(f"{unit.obj} no Weapon")
-            print(f"  {idx:2d} {unit.obj} model={stem} weap={len(weap)} csf=OK")
+            for w in weap:
+                if w not in defined_weapons:
+                    errors += fail(f"{unit.obj} Weapon {w} missing")
+            armors = re.findall(r"(?m)^\s*Armor\s+=\s+(\S+)", oblk)
+            if not armors:
+                errors += fail(f"{unit.obj} no Armor")
+            for a in armors:
+                if a not in defined_armor:
+                    errors += fail(f"{unit.obj} Armor {a} missing")
+            locos = re.findall(r"(?m)^\s*Locomotor\s+=\s+SET_\S+\s+(\S+)", oblk)
+            if not locos:
+                errors += fail(f"{unit.obj} no Locomotor")
+            for loc in locos:
+                if loc not in defined_loco:
+                    errors += fail(f"{unit.obj} Locomotor {loc} missing")
+            print(f"  {idx:2d} {unit.obj} model={stem} file={Path(_fn.replace(chr(92), '/')).name} weap={len(weap)} csf=OK")
 
     print("UNIT_COUNT", unit_count)
     if unit_count != 17 * 14:

@@ -85,10 +85,10 @@ JAPAN = CountryAir(
         Aircraft(8, "Command_ConstructJapanJetF4EJKai", "JapanJetF4EJKai", "SPEC_JapanF4EJKai", "JPF4", "Sparrow + Paveway"),
         Aircraft(9, "Command_ConstructJapanJetX2Shinshin", "JapanJetX2Shinshin", "SPEC_JapanX2Shinshin", "LSFF22", "stealth prototype LSFF22"),
         Aircraft(10, "Command_ConstructJapanJetF16", "JapanJetF16", "SPEC_SouthKoreaJetF16C", "US_F16CJ_blk52", "AIM-9X + GBU-31"),
-        Aircraft(11, "Command_ConstructJapanJetFA18", "JapanJetFA18", "SPEC_JapanJetFX", "US_FA18E", "Maverick multirole"),
-        Aircraft(12, "Command_ConstructJapanJetFX", "JapanJetFX", "SPEC_JapanJetFX", "CHAJ31HXNew", "SEAD AARGM"),
+        Aircraft(11, "Command_ConstructJapanJetF18G", "JapanJetF18G", "Nat_ea18g", "US_EA18G", "Growler EW"),
+        Aircraft(12, "Command_ConstructJapanJetF14Tomcat", "JapanJetF14Tomcat", "SPEC_IranJetF14AM", "LSFIRF14A", "long-range AA Tomcat"),
         Aircraft(13, "Command_ConstructJapanJetF35Japon", "JapanJetF35Japon", "Nat_f35a", "US_F35A", "stealth multirole US_F35A"),
-        Aircraft(14, "Command_ConstructJapanJetF14Tomcat", "JapanJetF14Tomcat", "SPEC_IranJetF14AM", "LSFIRF14A", "pure AA Tomcat"),
+        Aircraft(14, "Command_ConstructJapanJetEA6B", "JapanJetEA6B", "USAEA6Prowler", "EA6", "EA-6B six guided bombs"),
     ),
     heavy=(
         Aircraft(1, "Command_ConstructJapanJetE2D", "AmericaJetE2Visual", "E2avionHE", "AVHawk", "keep USA E-2D object / AVHawk"),

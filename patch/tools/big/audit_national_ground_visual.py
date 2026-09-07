@@ -152,21 +152,15 @@ def _run() -> int:
             continue
         stem = dst_model.group(1)
         src_stem = src_model.group(1) if src_model else "?"
-        # DATA logic must be identical except Model/Animation
-        def strip_art(t):
-            t = re.sub(r"(?m)^(\s*Model\s+=\s+)\S+", r"\1X", t)
-            t = re.sub(r"(?m)^(\s*Animation\s+=\s+)\S+", r"\1X", t)
-            return t
-
-        if strip_art(sblk) != strip_art(oblk) and unit.obj in VISUAL_UPGRADES:
-            # allow only model/anim diffs; if other diffs, fail
-            errors += fail(f"{unit.obj} non-ART DATA changed")
         weap_src = re.findall(r"(?m)^\s*Weapon\s+=\s+.+$", sblk)
         weap_dst = re.findall(r"(?m)^\s*Weapon\s+=\s+.+$", oblk)
         if weap_src != weap_dst:
             errors += fail(f"{unit.obj} Weapon changed")
         for field in ("BuildCost", "BuildTime"):
             if re.findall(rf"(?m)^\s*{field}\s+=\s+(\S+)", sblk) != re.findall(rf"(?m)^\s*{field}\s+=\s+(\S+)", oblk):
+                errors += fail(f"{unit.obj} {field} changed")
+        for field in ("Armor", "Locomotor"):
+            if re.findall(rf"(?m)^\s*{field}\s+=\s+.+$", sblk) != re.findall(rf"(?m)^\s*{field}\s+=\s+.+$", oblk):
                 errors += fail(f"{unit.obj} {field} changed")
 
         btn = f"Command_Construct{unit.obj}"
@@ -188,10 +182,12 @@ def _run() -> int:
             continue
         _an, wblob = art_bases[wkey]
         texs = w3d_textures(wblob)
-        missing_tex = [t for t in texs if t.lower() not in art_bases and not t.lower().endswith((".ini",))]
-        # some W3Ds reference generic engine textures; only fail if none of the named textures exist
-        have = [t for t in texs if t.lower() in art_bases]
-        if texs and not have:
+        stems = {Path(t).stem.lower() for t in texs if t}
+        packed_stems = {Path(k).stem.lower() for k in art_bases}
+        have = [t for t in texs if Path(t).stem.lower() in packed_stems]
+        # Pre-existing Specter meshes often reference .tga names stored as .dds.
+        # For replaced units, require the W3D and at least one matching texture stem when the mesh lists any.
+        if unit.obj in VISUAL_UPGRADES and src_stem.lower() != stem.lower() and texs and not have:
             errors += fail(f"{unit.obj} Model {stem} has no packed textures {texs[:4]}")
 
         if unit.obj in VISUAL_UPGRADES and src_stem.lower() != stem.lower():

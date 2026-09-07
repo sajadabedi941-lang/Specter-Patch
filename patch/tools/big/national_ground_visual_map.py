@@ -42,13 +42,13 @@ VISUAL_UPGRADES = {
     "TurkeyVehicleAltay": ("LSFBAO2", "No TURALTAY W3D in New Donor; Leopard 2 family LSFBAO2 is the realistic stand-in"),
     # Ukraine
     "UkraineTankT84": ("LSFPKT84", "Donor T-84 hull (LSFPKT84 / T84 textures)"),
-    "UkraineVehicleBTR4": ("LSF8X8T", "BTR-4 is an 8x8 IFV; donor LSF8X8T is the closest 8x8 (no BTR-4 W3D)"),
+    "UkraineVehicleBTR4": ("LSFIDBTR80", "No BTR-4 W3D; Indian/Soviet BTR-80 8x8 is closer than a Chinese ZBL hull"),
     "UkraineVehicleGepard": ("LSFLIEBAO", "Ukrainian Gepard uses the donor Gepard mesh"),
     # Sweden
     "SwedenTankStrv121": ("strv121", "Dedicated donor Strv 121"),
     "SwedenVehicleLvkv90": ("LSFlvkvA2", "Donor Lvkv 90 / lvkvA2 SPAAG"),
     "SwedenVehicleCV90AT": ("LSFCV90120", "Donor CV90 120mm"),
-    "SwedenVehicleRadar": ("ARTHUR", "Donor ARTHUR artillery-hunting radar"),
+    "SwedenVehicleGiraffe": ("ARTHUR", "Donor ARTHUR artillery-hunting radar"),
     # India
     "IndiaTankArjun": ("LSFAQIONG", "Donor Arjun (阿琼 / LSFAQIONG)"),
     "IndiaVehicleAkash": ("LSFHQ9", "Akash is a truck/TEL SAM; donor HQ-9 is the closest SAM TEL (no Akash W3D)"),
@@ -62,14 +62,12 @@ VISUAL_UPGRADES = {
     "PakistanVehicleHQ9P": ("LSFHQ9", "Donor HQ-9 TEL"),
     # Saudi Arabia
     "SaudiArabiaTankM1A2": ("M1A2sudarb", "Donor Saudi M1A2 Abrams (M1A2sudarb)"),
-    "SaudiArabiaVehicleLAV25": ("LSF8X8T", "LAV-25 is an 8x8; donor 8x8 IFV is the closest (no LAV W3D)"),
-    "SaudiArabiaVehicleLAV": ("LSFVBCI", "LAV APC uses donor 8x8 APC"),
     "SaudiArabiaVehiclePatriot": ("pac3_sudarb", "Donor Saudi Patriot PAC-3 TEL"),
     "SaudiArabiaVehiclePatriotBtry": ("pac3_sudarb", "Patriot battery uses the same Saudi PAC-3 donor"),
     "SaudiArabiaVehicleMPQ53": ("radarsude", "Donor Saudi air-defense radar van"),
     # UAE
     "UAETankLeclerc": ("LSFLKLR", "UAE Leclerc tropical uses donor Leclerc hull"),
-    "UAEVehicleRabdan": ("LSF8X8T", "Rabdan is an 8x8 IFV; no Rabdan W3D, donor 8x8 is the closest class"),
+    "UAEVehicleRabdan": ("LSFVBCI", "No Rabdan W3D; donor VBCI is a western 8x8 IFV (closer than a Chinese ZBL)"),
     "UAEVehiclePatria": ("LSFVBCI", "Patria / Rabdan APC uses donor 8x8 APC"),
     # South Africa
     "SouthAfricaTankOlifant": ("LSFhaojiao", "Donor Olifant (LSFhaojiao)"),
@@ -104,6 +102,8 @@ KEEP_AS_IS = {
     "IndiaTankT90S": "Already IndiaT90S Bhishma",
     "UAEVehicleHIMARS": "Packed NAT_M142 is already HIMARS (no LSFUSAHIMARS W3D in archive)",
     "UAEVehiclePantsir": "Packed Arb_PantsirS1 is already Pantsir",
+    "SaudiArabiaVehicleLAV25": "No LAV W3D; US_M1296 is the imported LAV/Stryker class",
+    "SaudiArabiaVehicleLAV": "No LAV W3D; US_M1126 is the imported LAV APC class",
     "TurkeyVehicleBora": "No Bora W3D; LSFIskander remains the realistic ballistic TEL",
     "UkraineVehicleHrim2": "No Neptune / R-360 W3D; Hrim-2 stays Iskander-class ballistic TEL",
 }

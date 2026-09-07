@@ -85,9 +85,9 @@ JAPAN = CountryAir(
         Aircraft(8, "Command_ConstructJapanJetF4EJKai", "JapanJetF4EJKai", "SPEC_JapanF4EJKai", "JPF4", "Sparrow + AGM-65"),
         Aircraft(9, "Command_ConstructJapanJetX2Shinshin", "JapanJetX2Shinshin", "SPEC_JapanX2Shinshin", "JP_X2Shinshin", "stealth prototype + GBU-24"),
         Aircraft(10, "Command_ConstructJapanJetF16", "JapanJetF16", "SPEC_SouthKoreaJetF16C", "US_F16CJ_blk52", "AIM-9X + F-16 GBU-31"),
-        Aircraft(11, "Command_ConstructJapanJetF18G", "JapanJetF18G", "Nat_ea18g", "US_EA18G", "ALQ-99 + AGM-88G"),
-        Aircraft(12, "Command_ConstructJapanJetEA6B", "JapanJetEA6B", "USAEA6Prowler", "EA6", "EA-6B six guided GBU-24"),
-        Aircraft(13, "Command_ConstructJapanJetF35Japon", "JapanJetF35Japon", "Nat_f35a", "US_F35A", "stealth multirole US_F35A + GBU-38"),
+        Aircraft(11, "Command_ConstructJapanJetF18G", "JapanJetF18G", "F18G", "US_EA18G", "Growler EA18GTB + ALQ-99/AGM-88"),
+        Aircraft(12, "Command_ConstructJapanJetEA6B", "JapanJetEA6B", "EA6Prowler", "EA6", "EA-6B six Japan guided GBU-24"),
+        Aircraft(13, "Command_ConstructJapanJetF35Japon", "JapanJetF35Japon", "SPEC_JapanJetF35A", "JPF35A", "Japan F-35A stem JPF35A + GBU-38"),
         Aircraft(14, "Command_ConstructJapanJetF14Tomcat", "JapanJetF14Tomcat", "SPEC_IranJetF14AM", "LSFIRF14A", "AIM-54 + AIM-9M Tomcat"),
     ),
     heavy=(

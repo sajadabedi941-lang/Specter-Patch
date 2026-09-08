@@ -29,6 +29,7 @@ from build_germany_airfield_commandset_fix import (
     index_named,
     repair_commandset_ini,
 )
+from build_global_commandbar_crashfix import repair_entries
 from build_national_ground_names import upsert_csf
 from national_ground_names import NAMES
 from national_ground_roster import (
@@ -308,6 +309,8 @@ def main() -> int:
         data_index.clear()
         data_index.update({norm(n): i for i, (n, _) in enumerate(data_entries)})
         print("removed crashing Object CommandBar INI", dropped)
+
+    repair_entries(data_entries)
 
     for n, b in data_entries:
         if norm(n) in locked and src_map.get(norm(n)) != b:

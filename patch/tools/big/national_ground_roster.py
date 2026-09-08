@@ -41,6 +41,33 @@ PROTECTED_COMMANDSETS = (
     "NatoWarfactoryCommandSet",
 )
 
+# Leftover overlay CommandSets that still list missing NATO-clone buttons.
+# Live War Factories use the no-underscore names (GermanyWarfactoryCommandSet).
+# These aliases must still be complete national 14-slot menus.
+ALIAS_COMMANDSETS = {
+    "Germany_WarFactoryCommandSet": "Germany",
+    "France_WarFactoryCommandSet": "France",
+    "Britain_WarFactoryCommandSet": "Britain",
+    "Italy_WarFactoryCommandSet": "Italy",
+}
+
+ROLES = (
+    "MBT",
+    "Heavy Tank",
+    "Recon",
+    "IFV",
+    "APC",
+    "SHORAD",
+    "Mobile SAM",
+    "Radar",
+    "MLRS",
+    "Ballistic/Cruise TEL",
+    "SPA",
+    "AT Vehicle",
+    "Engineer",
+    "Special",
+)
+
 # role -> (template object, default cost, default time, default cameo)
 TEMPLATES = {
     "mbt": ("AmericaTankCrusader", 1200, 20, "us_m1a2"),

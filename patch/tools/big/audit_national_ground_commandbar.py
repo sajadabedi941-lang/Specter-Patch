@@ -132,6 +132,15 @@ def _run() -> int:
     print("SRC_ART_SHA256", src_art_sha)
     print("DATA_FILES", len(data), "ART_FILES", len(art))
 
+    for _i, n, b in data:
+        nl = n.replace("/", "\\").lower()
+        if "nationalgroundcommandbar.ini" in nl and "\\object\\" in nl:
+            errors += fail(f"crashing Object-folder CommandBar INI still packed: {n}")
+        if nl.endswith(".ini") and "\\object\\" in nl:
+            t = b.decode("latin1", "replace")
+            if re.search(r"(?m)^CommandSet\s+", t) or re.search(r"(?m)^CommandButton\s+", t):
+                errors += fail(f"CommandSet/CommandButton under Object\\ {n}")
+
     if art_sha != src_art_sha:
         errors += fail("ART SHA changed")
     else:

@@ -38,7 +38,9 @@ from national_ground_roster import (
 SRC_DATA = Path("/tmp/national_ground_identity/_SPEC_DATA_ONE.big")
 SRC_ART = Path("/tmp/national_ground_identity/_SPEC_ART_ONE.big")
 OUT_DIR = Path("/tmp/national_ground_commandbar")
-COMMANDBAR_INI = r"Data\INI\Object\Specter\NationalGround\NationalGroundCommandBar.ini"
+# Never write CommandSet/CommandButton under Data\INI\Object\.
+# ZH's object parser AVs on that (NationalGroundCommandBar.ini crash).
+OBJECT_COMMANDBAR_INI = r"Data\INI\Object\Specter\NationalGround\NationalGroundCommandBar.ini"
 IDENTITY_ART_SHA = "e72e6334ab7b9691e3327a0d0a76d4fe771b4cb607e656fa97106e4d69b90c12"
 
 
@@ -52,6 +54,7 @@ def country_by_key():
 
 
 def extra_commandsets(country) -> tuple[str, ...]:
+    # Only rewrite CommandSets that already exist. Do not invent Set1/2/3.
     return (country.cs, country.cs + "1", country.cs + "2", country.cs + "3")
 
 
@@ -78,6 +81,15 @@ def last_button_image(entries, btn: str, fallback: str) -> str:
     return last or fallback
 
 
+def usa_commandset_block(name: str, buttons: list[str]) -> str:
+    """Match AmericaWarFactoryCommandSet slot layout: `  1  =` / `  10 =`."""
+    lines = [f"CommandSet {name}\r\n"]
+    for i, btn in enumerate(buttons, 1):
+        lines.append(f"  {i:<2d} = {btn}\r\n")
+    lines.append("End\r\n")
+    return "".join(lines)
+
+
 def rewrite_named_commandsets(text: str, wanted: dict[str, list[str]]) -> str:
     hits = []
     for csname, buttons in wanted.items():
@@ -88,7 +100,11 @@ def rewrite_named_commandsets(text: str, wanted: dict[str, list[str]]) -> str:
             hits.append((m.start(), m.end(), csname, buttons))
     hits.sort(key=lambda x: x[0], reverse=True)
     for start, end, csname, buttons in hits:
-        text = text[:start] + commandset_block(csname, buttons) + text[end:]
+        if csname == "Japan_WarFactoryCommandSet":
+            new_blk = usa_commandset_block(csname, buttons)
+        else:
+            new_blk = commandset_block(csname, buttons)
+        text = text[:start] + new_blk + text[end:]
         print("rewrote", csname, "slots", len(buttons))
     return text
 
@@ -213,6 +229,31 @@ def main() -> int:
         if n.lower().endswith(".ini") and "commandset" in n.lower():
             mut(n, lambda text, w=wanted_cs: rewrite_named_commandsets(text, w))
 
+    def ensure_japan_buttons(text: str) -> str:
+        japan = country_by_key()["Japan"]
+        missing = []
+        for unit in japan.units:
+            btn = f"Command_Construct{unit.obj}"
+            if not last_named(text, "CommandButton", btn):
+                image = last_button_image(data_entries, btn, unit.image)
+                missing.append(
+                    construct_button(
+                        btn,
+                        unit.obj,
+                        f"CONTROLBAR:Construct{unit.obj}",
+                        f"CONTROLBAR:ToolTip{unit.obj}",
+                        image,
+                    )
+                )
+        if not missing:
+            return text
+        if not text.endswith("\n"):
+            text += "\r\n"
+        print("appended Japan buttons to CommandButton.ini", len(missing))
+        return text + "\r\n" + "\r\n".join(missing)
+
+    mut(r"Data\INI\CommandButton.ini", ensure_japan_buttons)
+
     for _country, unit in all_units():
         patch_object_display(data_entries, unit.obj, f"OBJECT:{unit.obj}")
 
@@ -236,14 +277,22 @@ def main() -> int:
     data_entries[i] = (name, new_csf)
     print("patched CSF", csf_key, "delta", len(new_csf) - len(blob))
 
-    bar_blob = build_commandbar_ini(data_entries).encode("latin1")
-    if norm(COMMANDBAR_INI) in data_index:
-        i = data_index[norm(COMMANDBAR_INI)]
-        data_entries[i] = (data_entries[i][0], bar_blob)
-        print("replaced", COMMANDBAR_INI)
-    else:
-        data_entries.append((COMMANDBAR_INI, bar_blob))
-        print("appended", COMMANDBAR_INI, "bytes", len(bar_blob))
+    # Strip the crashing Object-folder CommandBar INI if a prior pack added it.
+    dropped = []
+    kept = []
+    for n, b in data_entries:
+        key = norm(n)
+        if key == norm(OBJECT_COMMANDBAR_INI) or (
+            "nationalgroundcommandbar.ini" in key and "\\object\\" in key
+        ):
+            dropped.append(n)
+            continue
+        kept.append((n, b))
+    if dropped:
+        data_entries[:] = kept
+        data_index.clear()
+        data_index.update({norm(n): i for i, (n, _) in enumerate(data_entries)})
+        print("removed crashing Object CommandBar INI", dropped)
 
     for n, b in data_entries:
         if norm(n) in locked and src_map.get(norm(n)) != b:

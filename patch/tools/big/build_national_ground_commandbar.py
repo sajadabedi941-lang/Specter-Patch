@@ -24,6 +24,11 @@ from build_national_ground_forces import (
     norm,
     parse_big,
 )
+from build_germany_airfield_commandset_fix import (
+    append_missing_buttons,
+    index_named,
+    repair_commandset_ini,
+)
 from build_national_ground_names import upsert_csf
 from national_ground_names import NAMES
 from national_ground_roster import (
@@ -253,6 +258,16 @@ def main() -> int:
         return text + "\r\n" + "\r\n".join(missing)
 
     mut(r"Data\INI\CommandButton.ini", ensure_japan_buttons)
+    mut(r"Data\INI\CommandSet.ini", repair_commandset_ini)
+
+    def ensure_germany_airfield_buttons(text: str) -> str:
+        return append_missing_buttons(
+            text,
+            index_named(data_entries, "CommandButton"),
+            index_named(data_entries, "Object"),
+        )
+
+    mut(r"Data\INI\CommandButton.ini", ensure_germany_airfield_buttons)
 
     for _country, unit in all_units():
         patch_object_display(data_entries, unit.obj, f"OBJECT:{unit.obj}")

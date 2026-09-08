@@ -163,7 +163,7 @@ def _run() -> int:
             t = b.decode("latin1", "replace")
             m = last_named(t, "CommandButton", btn)
             if m:
-                bdefs.append((n, m.group(0)))
+                bdefs.append((n, m))
         if not bdefs:
             errors += fail(f"missing CommandButton {btn}")
             continue

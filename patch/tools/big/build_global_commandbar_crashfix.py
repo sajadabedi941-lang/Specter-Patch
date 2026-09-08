@@ -53,9 +53,10 @@ def field(blk: str, name: str):
 
 
 def commandset_core(blk: str) -> str:
-    """Header through End, ignoring trailing whitespace after the block."""
+    """Header through End, ignoring newline style and trailing whitespace."""
     m = re.search(r"(?ms)^CommandSet\s+\S+.*?^(?:End|END)[^\S\n\r]*", blk)
-    return m.group(0) if m else blk.strip()
+    core = m.group(0) if m else blk.strip()
+    return core.replace("\r\n", "\n").replace("\r", "\n")
 
 
 def index_kind(entries, kind: str) -> dict[str, str]:

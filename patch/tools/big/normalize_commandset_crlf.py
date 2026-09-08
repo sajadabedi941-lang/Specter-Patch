@@ -182,6 +182,11 @@ def main() -> int:
     objects = index_kind("Object")
     cs_blocks = last_blocks(data, "CommandSet")
     obj_blocks = last_blocks(data, "Object")
+    btn_blocks = last_blocks(data, "CommandButton")
+
+    def field(blk, name):
+        m = re.search(rf"(?m)^\s*{name}\s+=\s+(\S+)", blk)
+        return m.group(1) if m else None
 
     missing_btn = 0
     missing_obj = 0
@@ -194,18 +199,18 @@ def main() -> int:
                 print("MISSING_BTN", csname, slot, btn)
                 missing_btn += 1
                 continue
-            if not btn.startswith("Command_Construct"):
+            bhit = btn_blocks.get(btn)
+            if not bhit:
                 continue
-            obj = btn[len("Command_Construct") :]
-            if obj not in objects:
+            cmd = field(bhit[1], "Command")
+            if cmd != "UNIT_BUILD":
+                continue
+            obj = field(bhit[1], "Object")
+            if obj and obj not in objects:
                 print("MISSING_OBJ", btn, obj)
                 missing_obj += 1
     if missing_btn or missing_obj:
         raise SystemExit(f"missing_btn {missing_btn} missing_obj {missing_obj}")
-
-    def field(blk, name):
-        m = re.search(rf"(?m)^\s*{name}\s+=\s+(\S+)", blk)
-        return m.group(1) if m else None
 
     def live_obj(*names):
         for nm in names:

@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from audit_national_ground_forces import last_named_any, parse_big
+from audit_national_ground_forces import parse_big
 from build_global_commandbar_crashfix import COUNTRY_PREFIXES, commandset_core, is_country_commandset
 from national_ground_roster import COUNTRIES, LOCKED_BIG_PATHS, PROTECTED_COMMANDSETS, ROLES
 

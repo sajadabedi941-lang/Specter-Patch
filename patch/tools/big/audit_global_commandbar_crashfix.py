@@ -29,6 +29,17 @@ def fail(msg: str) -> int:
     return 1
 
 
+def last_blocks(entries, kind: str) -> dict[str, tuple[str, str]]:
+    found = {}
+    for _i, n, b in entries:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = b.decode("latin1", "replace")
+        for m in re.finditer(rf"(?ms)^{kind}\s+(\S+)\s*\r?\n.*?(?=^{kind}\s|\Z)", t):
+            found[m.group(1)] = (n, m.group(0))
+    return found
+
+
 def field(blk: str, name: str):
     m = re.search(rf"(?m)^\s*{name}\s+=\s+(\S+)", blk)
     return m.group(1) if m else None
@@ -82,6 +93,9 @@ def _run() -> int:
 
     buttons = index_kind(data, "CommandButton")
     objects = index_kind(data, "Object")
+    cs_blocks = last_blocks(data, "CommandSet")
+    btn_blocks = last_blocks(data, "CommandButton")
+    obj_blocks = last_blocks(data, "Object")
     file_text = {}
     for _i, n, b in data:
         if n.lower().endswith(".ini"):
@@ -104,7 +118,7 @@ def _run() -> int:
     missing_end = 0
     glue = 0
     for csname in country_cs:
-        hit = last_named_any(data, "CommandSet", csname)
+        hit = cs_blocks.get(csname)
         if not hit:
             errors += fail(f"missing last-wins {csname}")
             continue
@@ -119,8 +133,8 @@ def _run() -> int:
                 errors += fail(f"{csname} slot {slot} missing CommandButton {btn}")
                 missing_btn += 1
                 continue
-            bhit = last_named_any(data, "CommandButton", btn)
-            if field(bhit[1], "Command") != "UNIT_BUILD":
+            bhit = btn_blocks.get(btn)
+            if not bhit or field(bhit[1], "Command") != "UNIT_BUILD":
                 continue
             obj = field(bhit[1], "Object")
             if not obj or obj not in objects:
@@ -143,7 +157,7 @@ def _run() -> int:
     print()
     print("=== Live War Factory 14-slot roster ===")
     for country in COUNTRIES:
-        wf = last_named_any(data, "Object", country.wf)
+        wf = obj_blocks.get(country.wf)
         if not wf:
             errors += fail(f"missing WF {country.wf}")
             continue
@@ -151,7 +165,7 @@ def _run() -> int:
         if wired != country.cs:
             # last-wins object may still be the national WF
             print(f"NOTE {country.key} WF {country.wf} CommandSet={wired} roster={country.cs}")
-        cs = last_named_any(data, "CommandSet", country.cs)
+        cs = cs_blocks.get(country.cs)
         if not cs:
             errors += fail(f"missing roster CS {country.cs}")
             continue
@@ -236,7 +250,7 @@ def _run() -> int:
         "GermanyAirfieldCommandSet",
         "Japan_WarFactoryCommandSet",
     ):
-        hit = last_named_any(data, "CommandSet", csname)
+        hit = cs_blocks.get(csname)
         if not hit:
             print("NOTE missing", csname)
             continue
@@ -252,7 +266,7 @@ def _run() -> int:
 
     print()
     print("=== Live FranceAirfield (current crash site) ===")
-    hit = last_named_any(data, "CommandSet", "FranceAirfieldCommandSet")
+    hit = cs_blocks.get("FranceAirfieldCommandSet")
     if not hit:
         errors += fail("missing FranceAirfieldCommandSet")
     else:

@@ -104,9 +104,11 @@ def unglue_country_commandsets(text: str) -> str:
 
 
 def strip_unbound_slots(blk: str, buttons: set[str], objects: set[str]) -> str:
-    nl = "\r\n" if "\r\n" in blk else "\n"
-    lines = blk.splitlines()
+    # keepends so the unglue blank line after End is not eaten (that re-glues
+    # the next CommandSet header and recreates the FranceAirfield crash).
+    lines = blk.splitlines(keepends=True)
     out = []
+    stripped = False
     for line in lines:
         m = re.match(r"^(\s*)(\d+)\s+=\s+(\S+)", line)
         if not m:
@@ -121,10 +123,10 @@ def strip_unbound_slots(blk: str, buttons: set[str], objects: set[str]) -> str:
             out.append(line)
             continue
         print("  strip unbound slot", m.group(2), btn)
-    body = nl.join(out)
-    if blk.endswith(("\r\n", "\n")) and not body.endswith(("\r\n", "\n")):
-        body += nl
-    return body
+        stripped = True
+    if not stripped:
+        return blk
+    return "".join(out)
 
 
 def verify_live_wf_rosters(data_entries) -> None:
@@ -219,6 +221,19 @@ def repair_entries(data_entries):
         if text != orig:
             data_entries[i] = (n, text.encode("latin1"))
             print("strip patched", n, "delta", len(text) - len(orig))
+
+    # Strip can still sit next to a following header. Re-unglue after edits.
+    for i, (n, blob) in enumerate(list(data_entries)):
+        key = norm(n)
+        if key in locked:
+            continue
+        if not n.lower().endswith(".ini") or "commandset" not in n.lower():
+            continue
+        text = blob.decode("latin1")
+        new = unglue_country_commandsets(text)
+        if new != text:
+            data_entries[i] = (n, new.encode("latin1"))
+            print("re-unglue patched", n, "delta", len(new) - len(text))
 
     cb_key = norm(r"Data\INI\CommandButton.ini")
     i = data_index[cb_key]

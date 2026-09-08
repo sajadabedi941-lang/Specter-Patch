@@ -155,6 +155,72 @@ def _run() -> int:
     print("missing_btn", missing_btn, "missing_obj", missing_obj, "missing_end", missing_end, "glue", glue)
 
     print()
+    print("=== All country CommandSet definitions (including duplicates) ===")
+    occ = 0
+    occ_btn = 0
+    occ_end = 0
+    for n, t in file_text.items():
+        if "commandset" not in n.lower():
+            continue
+        for m in re.finditer(r"(?ms)^CommandSet\s+(\S+)\s*\r?\n.*?(?=^CommandSet\s|\Z)", t):
+            name = m.group(1)
+            if not is_country_commandset(name):
+                continue
+            occ += 1
+            blk = m.group(0)
+            if not re.search(r"(?m)^(End|END)\s*$", blk):
+                errors += fail(f"def {name} missing End in {n}")
+                occ_end += 1
+            for slot, btn in re.findall(r"(?m)^\s*(\d+)\s+=\s+(\S+)", blk):
+                btn = btn.split(";")[0]
+                if btn not in buttons:
+                    errors += fail(f"def {name} in {n} slot {slot} missing {btn}")
+                    occ_btn += 1
+    print("occurrences", occ, "unique", len(country_cs), "missing_btn", occ_btn, "missing_end", occ_end)
+
+    print()
+    print("=== Live production CommandSets ===")
+    def live_obj(*names):
+        for name in names:
+            if name in obj_blocks:
+                return name
+        return None
+
+    for country in COUNTRIES:
+        k = country.key
+        candidates = [
+            ("CC", live_obj(f"{k}CommandCenter", f"{k}_CommandCenter")),
+            ("Dozer", live_obj(f"{k}VehicleDozer", f"{k}_Dozer", f"{k}Dozer", f"{k}_VT72B")),
+            ("WF", country.wf),
+            ("Airfield", live_obj(f"{k}Airfield", f"{k}_Airfield", f"{k}_Airfield_T", f"{k}Airfield_T")),
+            ("HeavyAir", live_obj(f"{k}_HeavyAirBase", f"{k}HeavyAirBase")),
+            ("LargeAir", live_obj(f"{k}_LargeAirBase", f"{k}LargeAirBase")),
+            ("HeliBase", live_obj(f"{k}_HelicopterBase", f"{k}HelicopterBase")),
+            ("Barracks", live_obj(f"{k}Barracks", f"{k}_Barracks", f"{k}BootCamp", f"{k}Camp")),
+        ]
+        for kind, obj_name in candidates:
+            if not obj_name:
+                print(f"NOTE {k:15s} {kind:8s} (no object)")
+                continue
+            wired = field(obj_blocks[obj_name][1], "CommandSet")
+            if not wired or wired.startswith(";"):
+                print(f"NOTE {k:15s} {kind:8s} {obj_name} has no CommandSet")
+                continue
+            hit = cs_blocks.get(wired)
+            if not hit:
+                errors += fail(f"{k} {kind} {obj_name} CS missing {wired}")
+                continue
+            bad = [
+                f"{s}={b}"
+                for s, b in re.findall(r"(?m)^\s*(\d+)\s+=\s+(\S+)", hit[1])
+                if b.split(";")[0] not in buttons
+            ]
+            if bad:
+                errors += fail(f"{k} {kind} {obj_name} unbound {bad[:4]}")
+            else:
+                print(f"OK {k:15s} {kind:8s} {obj_name:32s} {wired}")
+
+    print()
     print("=== Live War Factory 14-slot roster ===")
     for country in COUNTRIES:
         wf = obj_blocks.get(country.wf)
@@ -295,8 +361,13 @@ def main() -> int:
     text = buf.getvalue()
     print(text, end="")
     REPORT.parent.mkdir(parents=True, exist_ok=True)
-    REPORT.write_text(text)
-    print("wrote", REPORT)
+    try:
+        REPORT.write_text(text)
+        print("wrote", REPORT)
+    except OSError as exc:
+        fallback = Path("/tmp/global_commandbar_crashfix_audit.txt")
+        fallback.write_text(text)
+        print("wrote", fallback, f"(artifacts write failed: {exc})")
     return code
 
 

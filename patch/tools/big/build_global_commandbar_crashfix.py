@@ -81,7 +81,10 @@ def unglue_country_commandsets(text: str) -> str:
     def repl(m):
         nxt = m.group(1)
         if is_country_commandset(nxt):
-            return f"End\r\n\r\nCommandSet {nxt}"
+            # Use a LF-only blank line. `End\r\n\r\nCommandSet` leaves a leading
+            # `\r` on the next header so `^CommandSet` fails and last-wins eats
+            # the following bars.
+            return f"End\r\n\nCommandSet {nxt}"
         return m.group(0)
 
     new, n = re.subn(r"End\r\nCommandSet (\S+)", repl, text)

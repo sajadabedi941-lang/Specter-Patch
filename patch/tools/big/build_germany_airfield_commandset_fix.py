@@ -63,7 +63,7 @@ def index_named(entries, kind: str) -> set[str]:
 def repair_commandset_ini(text: str) -> str:
     # Separate the CRLF War Factory End from the LF Airfield header.
     old = "End\r\nCommandSet GermanyAirfieldCommandSet"
-    new = "End\r\n\r\nCommandSet GermanyAirfieldCommandSet"
+    new = "End\r\n\nCommandSet GermanyAirfieldCommandSet"
     if old in text:
         text = text.replace(old, new, 1)
         print("inserted blank line before GermanyAirfieldCommandSet")

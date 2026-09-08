@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from audit_national_ground_forces import last_named_any, parse_big
-from build_global_commandbar_crashfix import COUNTRY_PREFIXES, is_country_commandset
+from build_global_commandbar_crashfix import COUNTRY_PREFIXES, commandset_core, is_country_commandset
 from national_ground_roster import COUNTRIES, LOCKED_BIG_PATHS, PROTECTED_COMMANDSETS, ROLES
 
 DATA = Path("/tmp/national_ground_commandbar/_SPEC_DATA_ONE.big")
@@ -130,10 +130,13 @@ def _run() -> int:
     for n, t in file_text.items():
         if "commandset" not in n.lower():
             continue
-        for m in re.finditer(r"End\r\nCommandSet (\S+)", t):
-            if is_country_commandset(m.group(1)):
-                errors += fail(f"glued CRLF CommandSet {m.group(1)} in {n}")
+        for m in re.finditer(r"(End|END)\r?\nCommandSet (\S+)", t):
+            if is_country_commandset(m.group(2)):
+                errors += fail(f"glued CommandSet {m.group(2)} in {n}")
                 glue += 1
+        if re.search(r"\rCommandSet\s+", t):
+            errors += fail(f"CR-prefixed CommandSet header in {n}")
+            glue += 1
     print("OK country CommandSets scanned", len(country_cs))
     print("missing_btn", missing_btn, "missing_obj", missing_obj, "missing_end", missing_end, "glue", glue)
 
@@ -165,15 +168,87 @@ def _run() -> int:
         print(f"OK {country.key:15s} {country.cs} 14 slots")
 
     print()
-    print("=== Protected CommandSets ===")
+    print("=== Protected / non-country CommandSets ===")
     if src:
+        src_cs = {}
+        dst_cs = {}
+        for _i, n, b in src:
+            if not n.lower().endswith(".ini"):
+                continue
+            t = b.decode("latin1", "replace")
+            for m in re.finditer(r"(?ms)^CommandSet\s+(\S+)\s*\r?\n.*?(?=^CommandSet\s|\Z)", t):
+                src_cs[m.group(1)] = commandset_core(m.group(0))
+        for _i, n, b in data:
+            if not n.lower().endswith(".ini"):
+                continue
+            t = b.decode("latin1", "replace")
+            for m in re.finditer(r"(?ms)^CommandSet\s+(\S+)\s*\r?\n.*?(?=^CommandSet\s|\Z)", t):
+                dst_cs[m.group(1)] = commandset_core(m.group(0))
         for pcs in PROTECTED_COMMANDSETS:
-            a = last_named_any(src, "CommandSet", pcs)
-            b = last_named_any(data, "CommandSet", pcs)
-            if a and b and a[1] != b[1]:
+            if pcs in src_cs and pcs in dst_cs and src_cs[pcs] != dst_cs[pcs]:
                 errors += fail(f"protected CS changed {pcs}")
-            elif a and b:
+            elif pcs in src_cs and pcs in dst_cs:
                 print("OK protected", pcs)
+        non_country = 0
+        for name, blk in src_cs.items():
+            if is_country_commandset(name):
+                continue
+            non_country += 1
+            if name not in dst_cs:
+                errors += fail(f"non-country CS disappeared {name}")
+                continue
+            if dst_cs[name] != blk:
+                errors += fail(f"non-country CS changed {name}")
+        print("OK non-country CommandSet cores compared", non_country)
+
+        src_files = {n.replace("/", "\\").lower(): b for _i, n, b in src}
+        dst_files = {n.replace("/", "\\").lower(): b for _i, n, b in data}
+        for rel in (
+            r"data\ini\commandset_egypt.ini",
+            r"data\ini\commandset_israel.ini",
+            r"data\ini\commandset_israel_integrity.ini",
+            r"data\ini\playertemplate.ini",
+            r"data\ini\science.ini",
+        ):
+            if src_files.get(rel) != dst_files.get(rel):
+                errors += fail(f"protected file bytes changed {rel}")
+            elif rel in src_files:
+                print("OK file byte-identical", rel)
+        for _i, n, b in src:
+            nl = n.replace("/", "\\").lower()
+            if nl.endswith("generals.csf"):
+                dst = dst_files.get(nl)
+                if dst != b:
+                    errors += fail("generals.csf changed")
+                else:
+                    print("OK CSF byte-identical")
+                break
+
+    print()
+    print("=== Live air / production bars ===")
+    for csname in (
+        "FranceAirfieldCommandSet",
+        "France_HeavyAirBaseCommandSet",
+        "France_LargeAirBaseCommandSet",
+        "France_HelicopterBaseCommandSet",
+        "BritainAirfieldCommandSet",
+        "ItalyAirfieldCommandSet",
+        "GermanyAirfieldCommandSet",
+        "Japan_WarFactoryCommandSet",
+    ):
+        hit = last_named_any(data, "CommandSet", csname)
+        if not hit:
+            print("NOTE missing", csname)
+            continue
+        bad = []
+        for slot, btn in re.findall(r"(?m)^\s*(\d+)\s+=\s+(\S+)", hit[1]):
+            btn = btn.split(";")[0]
+            if btn not in buttons:
+                bad.append(f"{slot}={btn}")
+        if bad:
+            errors += fail(f"{csname} unbound {bad}")
+        else:
+            print("OK", csname, "all slot buttons exist in", hit[0])
 
     print()
     print("=== Live FranceAirfield (current crash site) ===")

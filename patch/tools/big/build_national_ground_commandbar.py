@@ -208,92 +208,13 @@ def main() -> int:
     data_index = {norm(n): i for i, (n, _) in enumerate(data_entries)}
     src_map = {norm(n): b for n, b in data_entries}
 
-    buttons_by_country = {c.key: [f"Command_Construct{u.obj}" for u in c.units] for c in COUNTRIES}
-    wanted_cs = {}
-    for csname, country in all_target_commandsets():
-        wanted_cs[csname] = buttons_by_country[country.key]
-
     locked = {norm(p) for p in LOCKED_BIG_PATHS}
-    skip_overlay = {norm(p) for p in DO_NOT_PACK_OVERLAY}
 
-    def mut(path, fn):
-        key = norm(path)
-        if key in locked:
-            raise SystemExit(f"locked {path}")
-        i = data_index[key]
-        name, blob = data_entries[i]
-        old = blob.decode("latin1")
-        new = fn(old)
-        if new != old:
-            data_entries[i] = (name, new.encode("latin1"))
-            print("patched", path, "delta", len(new) - len(old))
+    # Crash-repair only. Identity already has the live 14-slot WF bars,
+    # DisplayName keys, and CSF. Do not rewrite those. Do not rewrite leftover
+    # overlay NATO-clone bars into national rosters; repair_entries strips
+    # unbound slots and adds construct buttons only when the Object exists.
 
-    for n, _blob in list(data_entries):
-        key = norm(n)
-        if key in locked or key in skip_overlay:
-            continue
-        if n.lower().endswith(".ini") and "commandset" in n.lower():
-            mut(n, lambda text, w=wanted_cs: rewrite_named_commandsets(text, w))
-
-    def ensure_japan_buttons(text: str) -> str:
-        japan = country_by_key()["Japan"]
-        missing = []
-        for unit in japan.units:
-            btn = f"Command_Construct{unit.obj}"
-            if not last_named(text, "CommandButton", btn):
-                image = last_button_image(data_entries, btn, unit.image)
-                missing.append(
-                    construct_button(
-                        btn,
-                        unit.obj,
-                        f"CONTROLBAR:Construct{unit.obj}",
-                        f"CONTROLBAR:ToolTip{unit.obj}",
-                        image,
-                    )
-                )
-        if not missing:
-            return text
-        if not text.endswith("\n"):
-            text += "\r\n"
-        print("appended Japan buttons to CommandButton.ini", len(missing))
-        return text + "\r\n" + "\r\n".join(missing)
-
-    mut(r"Data\INI\CommandButton.ini", ensure_japan_buttons)
-    mut(r"Data\INI\CommandSet.ini", repair_commandset_ini)
-
-    def ensure_germany_airfield_buttons(text: str) -> str:
-        return append_missing_buttons(
-            text,
-            index_named(data_entries, "CommandButton"),
-            index_named(data_entries, "Object"),
-        )
-
-    mut(r"Data\INI\CommandButton.ini", ensure_germany_airfield_buttons)
-
-    for _country, unit in all_units():
-        patch_object_display(data_entries, unit.obj, f"OBJECT:{unit.obj}")
-
-    csf_updates = {}
-    for _country, unit in all_units():
-        display, tooltip = NAMES[unit.obj]
-        csf_updates[f"OBJECT:{unit.obj}"] = display
-        csf_updates[f"CONTROLBAR:Construct{unit.obj}"] = display
-        csf_updates[f"CONTROLBAR:ToolTip{unit.obj}"] = tooltip
-
-    csf_key = None
-    for n, _b in data_entries:
-        if n.lower().endswith("generals.csf"):
-            csf_key = n
-            break
-    if not csf_key:
-        raise SystemExit("generals.csf missing")
-    i = data_index[norm(csf_key)]
-    name, blob = data_entries[i]
-    new_csf = upsert_csf(blob, csf_updates)
-    data_entries[i] = (name, new_csf)
-    print("patched CSF", csf_key, "delta", len(new_csf) - len(blob))
-
-    # Strip the crashing Object-folder CommandBar INI if a prior pack added it.
     dropped = []
     kept = []
     for n, b in data_entries:

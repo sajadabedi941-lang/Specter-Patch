@@ -537,34 +537,12 @@ def make_il76(src: str) -> str:
 
 
 def make_saetbyol(src: str) -> str:
-    """France E3 AWACS logic + Dozor/AVReaper visual. No weapons."""
-    n = nl(src)
-    text = clone_object(src, "FranceAircraftE3", "NorthKoreaUAVSaetbyol", "Dozor600", "OBJECT:NorthKoreaUAVSaetbyol")
-    text = re.sub(r"(?im)^(\s*Model\s*=\s*)US_E3G\b", r"\1AVReaper", text)
-    text = re.sub(r"(?im)^(\s*Animation\s*=\s*)US_E3G\S*", r"\1AVReaper.AVReaper", text)
-    text = bump_scale(text, 0.55)  # 0.90 -> 1.45 large strategic UAV
-    # Strip any leftover weapon lines
-    text = re.sub(r"(?im)^\s*Weapon\s*=\s*.+\n", "", text)
-    text = re.sub(r"(?im)^\s*WeaponSet[\s\S]*?^\s*End\s*\n", "", text)
-    text = re.sub(
-        r"(?im)^(\s*KindOf\s*=\s*).+$",
-        r"\1PRELOAD CAN_CAST_REFLECTIONS SELECTABLE VEHICLE SCORE AIRCRAFT REVEALS_ENEMY_PATHS",
-        text,
-        count=1,
-    )
-    if "StealthDetectorUpdate" not in text:
-        text += (
-            f"{n}  Behavior = StealthDetectorUpdate ModuleTag_SaetDetect{n}"
-            f"    DetectionRate = 1500{n}"
-            f"    DetectionRange = 3600{n}"
-            f"    CanDetectWhileGarrisoned = No{n}"
-            f"    CanDetectWhileContained = No{n}"
-            f"  End{n}"
-        )
-    text = re.sub(r"(?im)^(\s*VisionRange\s*=\s*)\S+", r"\11100", text, count=1)
-    text = re.sub(r"(?im)^(\s*ShroudClearingRange\s*=\s*)\S+", r"\11200", text, count=1)
-    text = re.sub(r"(?im)^(\s*CommandSet\s*=\s*)\S+", r"\1E3G_CommandSet", text, count=1)
-    return text
+    """Kept for history; Saetbyol is now a standalone INI (see build_saetbyol_crash_fix.py).
+
+    Do not clone France E3 with \\11100 replacements — that wrote I00/J00 and
+    attached ENGINE01-04 bones to AVReaper, which crashes on produce.
+    """
+    raise RuntimeError("use build_saetbyol_crash_fix.py")
 
 
 def make_iraq_tomcat(src: str) -> str:
@@ -631,12 +609,11 @@ def main() -> int:
         new_name = r"Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetIL76.ini"
         data_map[new_name] = encode(t, il_blob)
         clones.append(new_name)
+    # Saetbyol is a standalone recon UAV. Do not clone FranceAircraftE3 —
+    # that path wrote I00/J00 and invalid AVReaper ENGINE bones.
+    # See patch/tools/big/build_saetbyol_crash_fix.py.
     if e3_blob:
-        src = last_object(decode(e3_blob), "FranceAircraftE3") or decode(e3_blob)
-        t = make_saetbyol(src)
-        new_name = r"Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaUAVSaetbyol.ini"
-        data_map[new_name] = encode(t, e3_blob)
-        clones.append(new_name)
+        print("SKIP FranceAircraftE3 -> Saetbyol clone (build_saetbyol_crash_fix.py)")
 
     print("Patched DATA:", len(patched))
     for n in patched:

@@ -1,0 +1,78 @@
+SPECTER SAETBYOL CRASH FIX — PACKED AUDIT
+INI_PARSE_OK
+PACKED_AUDIT_OK
+DATA SHA256 12533bfc603a2cedf3cc2d72efb933d7efa7bd5636cf2be18e82d4d3ba4233fb
+DATA bytes  365020531
+ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART  bytes  1235909246 (unchanged vs aircraft-global-update pack)
+ZIP         Specter_Saetbyol_Crash_Fix.zip
+
+Static packed-BIG verification only. This environment cannot launch Zero Hour.
+In-game produce / takeoff / recon tests remain with the user.
+
+============================================================
+CHANGED FILE LIST (packed DATA)
+============================================================
+ONLY:
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaUAVSaetbyol.ini
+  old 4257 bytes -> new 4831 bytes
+
+File count 2807 -> 2807 (same names). No other DATA blob differs.
+ART file count and bytes unchanged.
+
+============================================================
+INI PARSER (packed object, line-by-line)
+============================================================
+INI_PARSE_OK
+  braces balanced (Object / Draw / DefaultConditionState / ConditionState /
+                   UnitSpecificSounds / ArmorSet / Body / Behavior)
+  no garbage tokens I00 / J00
+  VisionRange = 1100
+  ShroudClearingRange = 1200
+  Object NorthKoreaUAVSaetbyol
+  Side = NorthKorea
+  no CAN_ATTACK
+  no WeaponSet
+  no Weapon =
+  REVEALS_ENEMY_PATHS present
+  StealthDetectorUpdate present
+  no ENGINE03 / ENGINE04
+  no AVReaper.AVReaper animation
+  CommandSet = AmericaE3AWACSCommandSet
+  Draw = W3DModelDraw with Wingtip01 / Wingtip02 / CHASSIS
+
+============================================================
+NAME MATCH (existing, not edited)
+============================================================
+CommandButton Command_ConstructNorthKoreaUAVSaetbyol
+  Command = UNIT_BUILD
+  Object  = NorthKoreaUAVSaetbyol
+CommandSet NorthKorea_HeavyAirBaseCommandSet
+  6 = Command_ConstructNorthKoreaUAVSaetbyol
+CSF OBJECT:NorthKoreaUAVSaetbyol / CONTROLBAR:ConstructNorthKoreaUAVSaetbyol
+
+============================================================
+WORKING REFERENCES (resolved in packed DATA/ART)
+============================================================
+AmericaE3AWACSCommandSet     CommandSet.ini
+Command_E3SARScan            CommandButton.ini -> AmericaE3TargetedSARScan
+AmericaE3TargetedSARScan     SpecialPower.ini
+OCL_AmericaE3TargetedSARScan ObjectCreationList.ini
+Saturn_AL-41F                Locomotor.ini (also used by Dozor-600)
+BasicJetTaxiLocomotor        Locomotor.ini
+MappedImage Dozor600         Russia_Dozor600_Images.INI -> Dozor600TB.tga
+Art\W3D\AVReaper.W3D
+Art\W3D\AVReaper_D.W3D
+Art\W3D\AVReaper_D1.W3D
+Art\Textures\Dozor600.tga
+Art\Textures\Dozor600TB.tga
+
+Compared with:
+  AmericaJetE3Visual.ini  (AWACS stealth detect + SAR + AmericaE3AWACSCommandSet)
+  Dozor600.ini            (AVReaper draw / Wingtip / CHASSIS / Saturn_AL-41F)
+
+============================================================
+NOT TOUCHED
+============================================================
+PlayerTemplate.ini, Science.ini, ground CommandSets, War Factory,
+all other aircraft objects, CommandButton.ini, CommandSet.ini, ART.

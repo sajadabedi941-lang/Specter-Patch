@@ -14,3 +14,6 @@ ART is unchanged and not included.
 
 DATA SHA256
 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+
+ZIP SHA256
+b1ce21b435b8f0703f80105bae720a8112f099eba1a16b61618afd99e4880a2d

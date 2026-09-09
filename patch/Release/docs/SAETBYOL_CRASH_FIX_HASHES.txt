@@ -2,7 +2,8 @@ DATA SHA256  12533bfc603a2cedf3cc2d72efb933d7efa7bd5636cf2be18e82d4d3ba4233fb
 DATA bytes   365020531
 ART SHA256   2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
 ART bytes    1235909246
-ZIP SHA256   (filled after zip)
+ZIP SHA256   a9325aa8783d978d1dc997687ba8b48f239ba090074ec47d8b9c588704823fd9
+ZIP bytes    816921203
 ZIP          Specter_Saetbyol_Crash_Fix.zip
 Status       INI_PARSE_OK PACKED_AUDIT_OK
 Changed DATA Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaUAVSaetbyol.ini

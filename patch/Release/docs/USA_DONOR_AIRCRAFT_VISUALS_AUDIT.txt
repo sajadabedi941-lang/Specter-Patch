@@ -1,0 +1,43 @@
+USA DONOR AIRCRAFT VISUALS — PACKED BIG AUDIT
+PACKED_AUDIT_OK
+
+This environment cannot launch Zero Hour.
+Status is static packed-BIG verification only. In-game visual test is for the user.
+
+DATA SHA256 06a6cb50732be5062422d37fc5f99b77ab5a87ed79b8329624020a90ceea8a21
+ART  SHA256 b22db8f1635d7dec83db7725551ea22895ce9a2d82c0d5b137e1343f7ec01703
+DATA bytes 364959652
+ART  bytes 1234949357
+
+A) F-35B countries: USA, Britain, Italy, Japan, NATO, South Korea
+B) F-35A countries: Japan, South Korea, Germany, Italy, Turkey;
+   plus live F-35A-mesh clones named *JetF35C (Britain/France/Germany/Italy/NATO/Sweden/Turkey/Ukraine)
+   plus Israel F-35I / AirF stealth fighter. AmericaJetF35C strike jet left on AVF-35.
+C) ALL live F-35B objects use AVLightn / AVLightn_D. Confirmed.
+D) ALL live F-35B objects are air-to-air only (AIM-120 + AIM-9X). Confirmed.
+E) ALL live F-35A objects use LSFUSAF35A / LSFUSAF35Ad. Confirmed.
+F) Growler Variant A: LSFEA18G.W3D / LSFEA18G.dds / EA18GTB.tga. Confirmed.
+   Live objects: AmericaJetEA18G (+_AI), JapanJetF18G, NatoJetEA18G, country EA18G clones.
+G) EA-6B: EA6.W3D / EA6.tga / USAEA6Prowler cameo (MappedImage EA6Prowler).
+   Live objects: JapanJetEA6B, AmericaJetF18Prowler.
+H) Specter_Weapon_EA6B_GuidedBomb ClipSize=6 projectile=GBU24_GuidedBombObject. Confirmed.
+I) Japan extra F-22 Sell-slot replacement: already absent before this pass.
+   Japan_AirfieldCommandSet slot 12 = Command_ConstructJapanJetEA6B.
+   Slot 14 = Command_ConstructJapanJetF14Tomcat. No F-22 on the Japan fighter bar.
+J) Legitimate USA F-22 objects/buttons remain: Command_ConstructAmericaJetRaptor
+   and Command_ConstructAmericaJetAuterF22 (Large Air Base slot 14).
+
+Japan fighter bar:
+  1 F-35A  2 F-35B  3 F-15J  4 F-15DJ  5 F-2A  6 F-2B  7 F-2Kai
+  8 F-4EJKai  9 X-2  10 F-16  11 F-18G Growler  12 EA-6B  13 F-35 Japon  14 F-14
+
+Rejected donor assets (not packed as aircraft bodies):
+  Variant B Growler: USAautreF18G / EA18G.W3D / UsaEA18Map.dds / USAF18G.tga
+  Hornet meshes: AmF18A.W3D / F18SEA.W3D (F18SEA_1.tga imported only as EA6 texture dep)
+  AVF-35.W3D as the F-35B body
+  chj10_r.W3D, usa_helipilot.dds
+
+Locked files unchanged: PlayerTemplate.ini, Science.ini
+CommandSet.ini not rewritten. No CommandSet/CommandButton under Data\INI\Object\.
+
+Errors: none

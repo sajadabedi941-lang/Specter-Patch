@@ -1,0 +1,116 @@
+SPECTER AIRCRAFT GLOBAL + IRAQ/NK/IRAN — DISCOVERY (read-only)
+
+Source packed BIGs: /tmp/aircraft_donor_update/_SPEC_*.big
+Donor pack: /tmp/new_donor_extract/New folder
+This environment cannot launch Zero Hour.
+
+============================================================
+GLOBAL AIRCRAFT (China excluded where specified)
+============================================================
+
+MiG-21bis (named bis/bison only; no China object exists)
+  IranJetMig21Bis          Scale 0.82  UVMig-21  Iran_Weapon_Bomb_Mig21
+    IRAN RULE: do not change this weapon.
+  VietnamJetMig21bis       Scale 0.80  UVMig-21  VietnamJetMig21bis_WpnBomb
+  IndiaJetMig21Bison       Scale 0.90  LSFIDMig21 IndiaJetMig21Bison_WpnBomb
+  REJECTED as not "bis": Iraq/Libya/NK/Syria/Ukraine generic MiG-21
+
+MiG-21PF
+  NorthKoreaJetMig21PF     Scale 0.80  UVMig-21  (only PF in packed DATA)
+  No China PF object.
+
+J-7 / J-7B except China
+  ChinaJetJ7               Scale 1.22  LSFJ7  DO NOT TOUCH
+  No ChinaJetJ7B object exists.
+  NorthKoreaJetJ7          Scale 0.84
+  NorthKoreaJetJ7B         Scale 0.82
+  LibyaJetJ7               Scale 0.84
+  SyriaJetJ7               Scale 0.84
+  IranJetF7N               Scale 0.86  (export J-7; IRAN RULE: no weapon change)
+  PakistanJetF7P           Scale 0.94
+  PakistanJetF7PG          Scale 0.96
+
+MiG-29UB except Russia
+  NorthKoreaJetMig29UB     Scale 0.88  LSFruMiG29  Radar/IR/Gun only
+  No Russia MiG-29UB object exists.
+
+============================================================
+IRAQ LOCKS
+============================================================
+
+Live player airfield is Iraq_Airfield_T (Worker slot 5).
+  Starts as Iraq_AirfieldCommandSet_T (Su-25K + Mi-35 only).
+  T2 unlocks Su-24MK + Mirage. T3 unlocks Tu-22M3 + Su-24MR.
+THAT is the lock.
+
+Iraq_AirfieldCommandSet / Iraq_LargeAirBaseCommandSet already list
+F-16IQ, Mirage, Su-24MK but several Construct buttons are missing:
+  MISSING Command_ConstructIraqJetF16IQ
+  MISSING Command_ConstructIraqJetMig21
+  MISSING Command_ConstructIraqJetSu25UB
+  MISSING Command_ConstructIraqJetL159
+  Command_ConstructIraq_Su-24MK     EXISTS
+  Command_ConstructIraq_mirageF1Bq  EXISTS
+  Command_ConstructIraq_Su-24MR     EXISTS
+
+Iraq_HeavyAirBaseCommandSet
+  1 Command_ConstructIraq_Tu-22M3     (REMOVE Iraq version only)
+  2 Command_ConstructIraq_Tu-22M3_AI  (REMOVE)
+  3 Command_ConstructIraq_Su-24MR
+
+IraqJetF16IQ Scale 0.88  US_F16CJ_blk52  portrait SPEC_IraqJetF16IQ
+
+Iraq Tomcat donor (New Folder, no guess):
+  Object IranJetF14
+  Model LSFIRF14A / LSFIRF14Ad   (packed)
+  Texture LSFF14A.dds            (packed)
+  Cameo F14TB.tga                (donor 00PMBeta999, not packed)
+  Do not copy donor DATA. Clone Specter JapanJetF14Tomcat (already LSFIRF14A).
+
+============================================================
+NORTH KOREA
+============================================================
+
+NorthKorea_AirfieldCommandSet lists Mig21 / PF / J7 / J7B / Mig29UB
+but those Construct buttons are MISSING (same lock class as Iran).
+
+No Il-28 object. Create NorthKoreaBomberIl28 from packed RussiaJetTu22M3M
+visual RUS_TU22M3M. Do not modify RussiaJetTu22M3M.
+Weapon: Specter_Weapon_SU34MF_Bomb6 (user SH34MF = packed SU-34MF chain).
+
+Transport: clone packed RussiaJetCargoIL76 (LSFRussiaYR76, C17GlobalMasterCommandSet).
+Do not modify the Russian object.
+
+Saetbyol strategic UAV: NOT the existing combat Saetbyol1/4/9.
+  Visual source RussiaDozor600 / RussiaJetDozor600 = AVReaper + Dozor600 cameo
+  (packed). AWACS reference: FranceAircraftE3 / AmericaJetE3Visual
+  (REVEALS_ENEMY_PATHS, StealthDetectorUpdate, no combat weapons).
+
+============================================================
+CHINA (already applied in prior donor-update pack)
+============================================================
+
+ChinaDroneCH5: KindOf AIRCRAFT, JetAIUpdate, Snecma_M88_4E + taxi. Keep.
+ChinaHelicopterZ18A: Chinook TransportContain. Keep.
+PLA / Large slots 13/14: J-15 + J11Flanker. Keep.
+Heavy slots 13/14: H6K_B21A + FEIBAO. Keep.
+ChinaJetJ7 / no China J-7B: untouched.
+
+============================================================
+IRAN FIGHTER LOCK
+============================================================
+
+IranAirfield / Iran_LargeAirBase use IranExpandedAirfieldCommandSet.
+Missing Construct buttons (CommandSet references dead names):
+  Command_ConstructIranJetF14AM
+  Command_ConstructIranJetF4E
+  Command_ConstructIranJetMig21Bis
+  Command_ConstructIranJetF7N
+  Command_ConstructIranJetSu35S
+Portraits already exist on the objects (SPEC_Iran*).
+Do not change Iranian weapons.
+
+============================================================
+LOCKED PATHS
+============================================================
+PlayerTemplate.ini, Science.ini, War Factory, ground CommandSets.

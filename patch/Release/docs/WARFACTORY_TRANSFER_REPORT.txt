@@ -1,0 +1,167 @@
+SPECTER WAR FACTORY STRUCTURE TRANSFER — AUDIT REPORT
+WARFACTORY_TRANSFER_AUDIT_OK
+PACK_OK
+LAST_WINS_OK
+
+No new objects. No donor ART/DATA. No PlayerTemplate / Science / Ground / air / naval edits.
+Reference countries were not modified.
+
+DATA SHA256 17f56c7a10d45f20a800f339667bfa521b71116ff14d51b8f04b0353e82aec8f
+DATA bytes  365016002
+ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART  bytes  1235909246 (unchanged)
+ZIP         Specter_WarFactory_Structure_Transfer.zip
+
+Method
+- Read live packed War Factory CommandSets from the EA-6B-fixed DATA BIG.
+- Copy each reference country's slot structure (MBT / IFV / APC / AD / MLRS /
+  artillery / TEL / support + Command_Sell) onto the destination factory bar.
+- Every slot uses an already-existing destination-country CommandButton/Object.
+- Last-wins file: Data\INI\CommandSet_ZZZZ_WarFactoryTransfer.ini
+- Removed broken dest Iraq_WarFactory.ini clones that defined Japan/SK/VN
+  War Factory with missing Japan_WarFactoryCommandSet_T / Iraq tier sets.
+
+FILES MODIFIED (packed DATA)
+  ADD  Data\INI\CommandSet_ZZZZ_WarFactoryTransfer.ini
+  DEL  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_WarFactory.ini
+  DEL  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_WarFactory.ini
+  DEL  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_WarFactory.ini
+CommandButton.ini, PlayerTemplate.ini, Science.ini, ART, reference WF files: unchanged.
+
+================================================================
+COUNTRY / REFERENCE / UNITS TRANSFERRED (live CommandSet + Sell)
+================================================================
+
+Britain  reference=NATO  CommandSet=BritainWarfactoryCommandSet
+  1 BritainTankChallenger2
+  2 BritainVehicleWarrior
+  3 BritainVehicleAjax
+  4 BritainVehicleMastiff
+  5 BritainVehicleGMLRS
+  6 BritainVehicleAS90
+  7 BritainVehicleStriker
+  8 BritainVehicleSkySabre
+  9 BritainVehicleGiraffe
+  10 BritainVehicleStormShadowTEL
+  11 BritainTankChallenger2TES
+  12 BritainVehicleStormer
+  13 BritainVehicleCRARRV
+  14 Command_Sell
+  15 BritainVehicleTrojan
+
+Germany  reference=NATO  CommandSet=GermanyWarfactoryCommandSet
+  1 GermanyTankLeopard2A7  2 GermanyVehiclePuma  3 GermanyVehicleFennek
+  4 GermanyVehicleBoxer  5 GermanyVehicleMARS  6 GermanyVehiclePzH2000
+  7 GermanyVehicleWieselAT  8 GermanyVehicleIRIST  9 GermanyVehicleTRML
+  10 GermanyVehicleTaurusTEL  11 GermanyTankLeopard2A6  12 GermanyVehicleGepard
+  13 GermanyVehicleBuffel  14 Sell  15 GermanyVehicleBoxerAA
+
+France  reference=NATO  CommandSet=FranceWarfactoryCommandSet
+  1 FranceTankLeclerc  2 FranceVehicleVBCI  3 FranceVehicleAMX10RC
+  4 FranceVehicleVAB  5 FranceVehicleLRU  6 FranceVehicleCaesar
+  7 FranceVehicleJaguar  8 FranceVehicleSAMPT  9 FranceVehicleGM200
+  10 FranceVehicleSCALPTEL  11 FranceTankAMX30  12 FranceVehicleMistral
+  13 FranceVehicleDNG  14 Sell  15 FranceVehicleVABHOT
+
+Italy  reference=NATO  CommandSet=ItalyWarfactoryCommandSet
+  1 ItalyTankAriete  2 ItalyVehicleDardo  3 ItalyVehicleCentauro
+  4 ItalyVehicleVBM  5 ItalyVehicleM270  6 ItalyVehiclePzH2000
+  7 ItalyVehicleCentauroAT  8 ItalyVehicleSAMPT  9 ItalyVehicleRAT31
+  10 ItalyVehicleStormShadowTEL  11 ItalyTankArieteC1  12 ItalyVehicleSIDAM
+  13 ItalyVehicleARV  14 Sell  15 ItalyVehicleCentauro2
+
+Ukraine  reference=NATO  CommandSet=UkraineWarfactoryCommandSet
+  1 UkraineTankT84  2 UkraineVehicleBMP2  3 UkraineVehicleBRDM
+  4 UkraineVehicleBTR4  5 UkraineVehicleHIMARS  6 UkraineVehicleBohdana
+  7 UkraineVehicleStugna  8 UkraineVehicleBuk  9 UkraineVehicleP18
+  10 UkraineVehicleHrim2  11 UkraineTankT72AMT  12 UkraineVehicleGepard
+  13 UkraineVehicleBREM  14 Sell  15 UkraineTankT64BV
+
+Turkey  reference=NATO  CommandSet=TurkeyWarfactoryCommandSet
+  1 TurkeyTankLeopard2A4  2 TurkeyVehicleKaplan  3 TurkeyVehicleKirpi
+  4 TurkeyVehicleACV15  5 TurkeyVehicleKasirga  6 TurkeyVehicleFirtina
+  7 TurkeyVehicleACVTOW  8 TurkeyVehicleHisar  9 TurkeyVehicleKalkan
+  10 TurkeyVehicleBora  11 TurkeyTankM60T  12 TurkeyVehicleKorkut
+  13 TurkeyVehicleM88  14 Sell  15 TurkeyVehicleAltay
+
+Sweden  reference=NATO  CommandSet=SwedenWarfactoryCommandSet
+  1 SwedenTankStrv122  2 SwedenVehicleCV90  3 SwedenVehicleCV90R
+  4 SwedenVehiclePatgb203  5 SwedenVehiclePULS  6 SwedenVehicleArcher
+  7 SwedenVehicleCV90AT  8 SwedenVehicleIRIST  9 SwedenVehicleGiraffe
+  10 SwedenVehicleRBS15  11 SwedenTankStrv121  12 SwedenVehicleLvkv90
+  13 SwedenVehicleBgbv120  14 Sell  15 SwedenTankStrv122B
+
+Libya  reference=Iraq  CommandSet=Libya_WarFactoryCommandSet
+  1 LibyaTankT72  2 LibyaVehicleBMP1  3 LibyaTankT62  4 LibyaVehicleM113
+  5 LibyaVehicle2S1  6 LibyaVehicleShilka  7 LibyaVehicleBREM  8 LibyaVehicleSA6
+  9 LibyaVehicleRadar  10 LibyaVehicleScudB  11 LibyaVehicleATGM
+  12 LibyaVehicleBM21  13 LibyaVehicleScudBtry  14 Sell  15 LibyaVehicleBRDM
+
+SouthAfrica  reference=Iraq  CommandSet=SouthAfrica_WarFactoryCommandSet
+  1 SouthAfricaTankOlifant  2 SouthAfricaVehicleRatel  3 SouthAfricaVehicleRooikat
+  4 SouthAfricaVehicleCasspir  5 SouthAfricaVehicleG6  6 SouthAfricaVehicleYstervark
+  7 SouthAfricaTankOlifant1B  8 SouthAfricaVehicleCactus  9 SouthAfricaVehicleThutlwa
+  10 SouthAfricaVehicleBateleur  11 SouthAfricaVehicleZT3  12 SouthAfricaVehicleValkiri
+  13 SouthAfricaVehicleARV  14 Sell  15 SouthAfricaVehicleRooikat76
+
+UAE  reference=Egypt  CommandSet=UAE_WarFactoryCommandSet
+  1 UAETankLeclerc  2 UAEVehicleBMP3  3 UAEVehicleRabdan  4 UAEVehiclePantsir
+  5 UAEVehicleNimr  6 UAEVehicleHIMARS  7 UAEVehicleLeclercARV  8 UAEVehiclePatria
+  9 UAEVehicleBMP3AT  10 UAEVehiclePatriot  11 UAEVehicleRadar  12 UAEVehicleG6
+  13 UAEVehicleThunder  14 Sell  15 UAEVehicleJobaria
+
+SaudiArabia  reference=Egypt  CommandSet=SaudiArabia_WarFactoryCommandSet
+  1 SaudiArabiaTankM1A2  2 SaudiArabiaVehicleM2  3 SaudiArabiaVehicleLAV
+  4 SaudiArabiaVehicleAvenger  5 SaudiArabiaVehicleLAV25  6 SaudiArabiaVehicleASTROS
+  7 SaudiArabiaVehicleM88  8 SaudiArabiaVehicleLAVAT  9 SaudiArabiaTankM1A2S
+  10 SaudiArabiaVehiclePatriot  11 SaudiArabiaVehicleMPQ53  12 SaudiArabiaVehicleM109
+  13 SaudiArabiaVehicleATACMS  14 Sell  15 SaudiArabiaVehiclePatriotBtry
+
+Syria  reference=Egypt  CommandSet=Syria_WarFactoryCommandSet
+  1 SyriaTankT72  2 SyriaVehicleBMP1  3 SyriaVehicleBTR  4 SyriaVehicleKornet
+  5 SyriaVehicleShilka  6 SyriaVehicleBM21  7 SyriaVehicleBREM  8 SyriaVehicleTOS1A
+  9 SyriaTankT62  10 SyriaVehicleBuk  11 SyriaVehicleP18  12 SyriaVehicle2S1
+  13 SyriaVehicleScud  14 Sell  15 SyriaVehicleBRDM
+
+Japan  reference=USA  CommandSet=Japan_WarFactoryCommandSet
+  1 JapanTankType10  2 JapanVehicleType16  3 JapanVehicleType96
+  4 JapanVehicleType16AT  5 JapanVehicleType12  6 JapanVehicleType99
+  7 JapanVehicleType87  8 JapanVehicleChuSAM  9 JapanVehicleRadar
+  10 JapanVehicleType12Btry  11 JapanVehicleM270  12 JapanVehicleType11ARV
+  13 JapanVehicleType89  14 Sell  15 JapanTankType90
+
+Vietnam  reference=USA  CommandSet=Vietnam_WarFactoryCommandSet
+  1 VietnamTankT90S  2 VietnamTankT54M3  3 VietnamVehicleBRDM
+  4 VietnamVehicleKonkurs  5 VietnamVehicleScud  6 VietnamVehicle2S3
+  7 VietnamVehicleShilka  8 VietnamVehicleS300  9 VietnamVehicle36D6
+  10 VietnamVehicleBastion  11 VietnamVehicleBM21  12 VietnamVehicleBREM
+  13 VietnamVehicleBMP1  14 Sell  15 VietnamVehicleBTR80
+
+SouthKorea  reference=USA  CommandSet=SouthKorea_WarFactoryCommandSet
+  1 SouthKoreaTankK1A2  2 SouthKoreaVehicleK21  3 SouthKoreaVehicleK200APC
+  4 SouthKoreaVehicleK21AT  5 SouthKoreaVehicleHyunmoo  6 SouthKoreaVehicleK9
+  7 SouthKoreaVehicleK30  8 SouthKoreaVehicleCheongung  9 SouthKoreaVehicleRadar
+  10 SouthKoreaVehicleHyunmoo2B  11 SouthKoreaVehicleChunmoo  12 SouthKoreaVehicleK288
+  13 SouthKoreaVehicleK200  14 Sell  15 SouthKoreaTankK1A1
+
+India  reference=Russia  CommandSet=India_WarFactoryCommandSet
+  1 IndiaTankT90S  2 IndiaTankT72Ajeya  3 IndiaVehiclePinaka
+  4 IndiaVehicleRajendra  5 IndiaVehicleK9Vajra  6 IndiaVehicleBMP2
+  7 IndiaVehicleTunguska  8 IndiaVehicleAkash  9 IndiaVehicleNAMICA
+  10 IndiaVehiclePrahaar  11 IndiaVehicleNag  12 IndiaVehicleKestrel
+  13 IndiaTankArjun  14 Sell  15 IndiaVehicleVT72B
+
+Pakistan  reference=Russia  CommandSet=Pakistan_WarFactoryCommandSet
+  1 PakistanTankAlKhalid  2 PakistanTankAlZarrar  3 PakistanVehicleA100
+  4 PakistanVehicleRadar  5 PakistanVehicleM109  6 PakistanVehicleTalhaIFV
+  7 PakistanVehicleLY80  8 PakistanVehicleHQ9P  9 PakistanVehicleMohafiz
+  10 PakistanVehicleShaheen  11 PakistanVehicleNasr  12 PakistanVehicleBaktar
+  13 PakistanVehicleTalhaAPC  14 Sell  15 PakistanVehicleARV
+
+CHECKS
+- Every listed CommandButton exists in packed CommandButton.ini
+- Every Object exists (single last-wins definition used for produce)
+- No duplicate buttons/objects inside a destination bar
+- No destination bar points at a reference-country object
+- Reference CommandSets unchanged
+- This environment cannot launch Zero Hour; in-game produce remains with the user

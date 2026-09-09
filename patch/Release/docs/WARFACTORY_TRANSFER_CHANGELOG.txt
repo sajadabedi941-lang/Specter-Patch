@@ -1,0 +1,17 @@
+SPECTER WAR FACTORY STRUCTURE TRANSFER
+
+Destination War Factory bars now follow the live reference slot structure
+(MBT / IFV / APC / AD / MLRS / artillery / TEL / support + Sell) using each
+destination country's already-existing units. No new objects.
+
+NATO → Britain, Germany, France, Italy, Ukraine, Turkey, Sweden
+Iraq → Libya, South Africa
+Egypt → UAE, Saudi Arabia, Syria
+USA → Japan, Vietnam, South Korea
+Russia → India, Pakistan
+
+Also removed dest-only Iraq_WarFactory.ini clones for Japan / South Korea /
+Vietnam that bound the factory to a missing *_T CommandSet.
+
+Reference countries, PlayerTemplate, Science, Ground INIs, air, and naval
+were not edited. ART unchanged.

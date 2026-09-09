@@ -83,26 +83,22 @@ def parse_block(text, start):
     return "".join(buf)
 
 
-def last_block(kind, name, entries):
-    found = None
-    src = None
-    pat = re.compile(rf"(?im)^{kind}\s+{re.escape(name)}\b")
+def index_kind(kind, entries, reskin=False):
+    blocks = {}
+    srcs = {}
+    defs = {}
+    pat = re.compile(rf"(?im)^{kind}\s+(\S+)")
+    if reskin:
+        pat = re.compile(r"(?im)^Object(?:Reskin)?\s+(\S+)")
     for fname, blob in entries:
         text = blob.decode("latin1", errors="ignore")
         for m in pat.finditer(text):
-            found = parse_block(text, m.start())
-            src = fname
-    return src, found
-
-
-def all_defs(kind, name, entries):
-    pat = re.compile(rf"(?im)^{kind}\s+{re.escape(name)}\b")
-    hits = []
-    for fname, blob in entries:
-        text = blob.decode("latin1", errors="ignore")
-        for m in pat.finditer(text):
-            hits.append((fname, parse_block(text, m.start())))
-    return hits
+            name = m.group(1)
+            blk = parse_block(text, m.start())
+            blocks[name] = blk
+            srcs[name] = fname
+            defs.setdefault(name, []).append((fname, blk))
+    return blocks, srcs, defs
 
 
 def field(blk, key):
@@ -124,23 +120,22 @@ def cs_slots(blk):
     return out
 
 
-def btn_obj(entries, btn):
-    _src, blk = last_block("CommandButton", btn, entries)
-    return field(blk, "Object")
-
-
-def worker_wf(entries, worker):
-    _os, oblk = last_block("Object", worker, entries)
+def worker_wf(idx, worker):
+    objs, _osrc, _odefs = idx["Object"]
+    css, _csrc, _cdefs = idx["CommandSet"]
+    btns, _bsrc, _bdefs = idx["CommandButton"]
+    oblk = objs.get(worker)
     dcs = field(oblk, "CommandSet")
-    _cs, cblk = last_block("CommandSet", dcs, entries) if dcs else (None, None)
+    cblk = css.get(dcs) if dcs else None
     hits = []
-    for slot, btn in cs_slots(cblk):
-        obj = btn_obj(entries, btn)
+    for _slot, btn in cs_slots(cblk):
+        bblk = btns.get(btn)
+        obj = field(bblk, "Object")
         if not obj:
             continue
         low = (btn + " " + obj).lower()
         if "warfactory" in low or "war_factory" in low:
-            _ws, wblk = last_block("Object", obj, entries)
+            wblk = objs.get(obj)
             wcs = re.findall(r"(?im)^\s*CommandSet\s*=\s*(\S+)", wblk or "")
             hits.append((btn, obj, wcs[0] if wcs else None, wcs))
     return dcs, hits
@@ -148,13 +143,29 @@ def worker_wf(entries, worker):
 
 def main() -> int:
     errors = []
-    src = parse_big(SRC)
-    packed = parse_big(PACKED)
+    print("indexing baseline")
+    src_entries = parse_big(SRC)
+    print("indexing packed")
+    packed_entries = parse_big(PACKED)
+    src = {
+        "PlayerTemplate": index_kind("PlayerTemplate", src_entries),
+        "CommandSet": index_kind("CommandSet", src_entries),
+        "CommandButton": index_kind("CommandButton", src_entries),
+        "Object": index_kind("Object", src_entries, reskin=True),
+    }
+    packed = {
+        "PlayerTemplate": index_kind("PlayerTemplate", packed_entries),
+        "CommandSet": index_kind("CommandSet", packed_entries),
+        "CommandButton": index_kind("CommandButton", packed_entries),
+        "Object": index_kind("Object", packed_entries, reskin=True),
+    }
+    print("trace")
+
     lines = [
         "SPECTER WAR FACTORY RUNTIME REBUILD",
         "===================================",
         "",
-        "Live path was traced from the packed DATA BIG:",
+        "Live path was traced from the RE-EXTRACTED packed DATA BIG:",
         "PlayerTemplate -> StartingUnit/Dozer/VT72B -> Dozer CommandSet",
         "-> WarFactory CommandButton -> WarFactory Object -> CommandSet",
         "",
@@ -166,7 +177,7 @@ def main() -> int:
     ok_count = 0
     print("=== RUNTIME TRACE (re-extracted packed BIG) ===")
     for country, (ref, faction, ref_cs) in COUNTRIES.items():
-        _ps, pt = last_block("PlayerTemplate", faction, packed)
+        pt = packed["PlayerTemplate"][0].get(faction)
         start0 = field(pt, "StartingUnit0")
         side = field(pt, "Side")
         old_dcs, old_hits = worker_wf(src, start0)
@@ -175,27 +186,21 @@ def main() -> int:
             errors.append(f"{country}: no WarFactory on worker {start0}")
             print(f"{country} FAIL no WF on {start0}")
             continue
-        # player WF is the first non-AI factory
-        btn, obj, live_cs, all_cs = new_hits[0]
+        btn, obj, live_cs, _all_cs = new_hits[0]
         old_btn, old_obj, old_cs, _ = old_hits[0] if old_hits else (None, None, None, [])
-        defs_old = all_defs("CommandSet", old_cs, src) if old_cs else []
-        defs_new = all_defs("CommandSet", live_cs, packed) if live_cs else []
+        defs_old = src["CommandSet"][2].get(old_cs, []) if old_cs else []
+        defs_new = packed["CommandSet"][2].get(live_cs, []) if live_cs else []
         win_old = defs_old[-1] if defs_old else (None, None)
         win_new = defs_new[-1] if defs_new else (None, None)
         old_units = [b for _s, b in cs_slots(win_old[1]) if b != "Command_Sell"]
         new_units = [b for _s, b in cs_slots(win_new[1]) if b != "Command_Sell"]
-        _rs, ref_blk = last_block("CommandSet", ref_cs, packed)
-        ref_units = [b for _s, b in cs_slots(ref_blk) if b != "Command_Sell" and b not in USA_OMIT]
-        if ref == "USA":
-            expect = ref_units
-        else:
-            expect = [b for _s, b in cs_slots(ref_blk) if b != "Command_Sell"]
+        ref_blk = packed["CommandSet"][0].get(ref_cs)
+        expect = [b for _s, b in cs_slots(ref_blk) if b != "Command_Sell" and b not in USA_OMIT]
         status = "TARGET_COUNTRY_WARFACTORY_REPLACED_OK"
         if new_units != expect:
             status = "FAIL dest bar != template"
-            errors.append(f"{country}: {new_units} != {expect}")
+            errors.append(f"{country}: dest bar != {ref_cs}")
         if live_cs != old_cs:
-            # name should stay; content changes
             errors.append(f"{country}: live CommandSet name changed {old_cs} -> {live_cs}")
             status = "FAIL CommandSet name changed"
         if obj != old_obj:
@@ -235,8 +240,8 @@ def main() -> int:
     lines.append("-------------------")
     prot_ok = True
     for cs in PROTECTED_CS:
-        _os, old = last_block("CommandSet", cs, src)
-        _ns, new = last_block("CommandSet", cs, packed)
+        old = src["CommandSet"][0].get(cs)
+        new = packed["CommandSet"][0].get(cs)
         if old != new:
             prot_ok = False
             errors.append(f"protected CommandSet changed {cs}")

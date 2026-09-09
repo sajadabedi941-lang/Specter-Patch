@@ -1,0 +1,1146 @@
+SPECTER WAR FACTORY RUNTIME REBUILD
+===================================
+
+Package: Specter_WarFactory_Runtime_Rebuild.zip
+DATA SHA256: 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+DATA size: 364979021 bytes
+
+Live path was traced from the RE-EXTRACTED packed DATA BIG:
+PlayerTemplate -> StartingUnit/Dozer/VT72B -> Dozer CommandSet
+-> WarFactory CommandButton -> WarFactory Object -> CommandSet
+
+The winning CommandSet.ini (and CommandSet_Pakistan.ini) blocks
+were replaced in-place. No unused override file was appended.
+
+Country: Britain
+PlayerTemplate: FactionBritain Side=Britain StartingUnit0=BritainVehicleDozer
+Dozer/Worker CommandSet: BritainDozerCommandSet
+WarFactory button: Command_ConstructBritainWarFactory
+WarFactory Object: BritainWarFactory
+Old WarFactory CommandSet: BritainWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: BritainWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructBritainTankChallenger2
+  - Command_ConstructBritainTankChallenger2TES
+  - Command_ConstructBritainVehicleAjax
+  - Command_ConstructBritainVehicleWarrior
+  - Command_ConstructBritainVehicleMastiff
+  - Command_ConstructBritainVehicleStormer
+  - Command_ConstructBritainVehicleSkySabre
+  - Command_ConstructBritainVehicleGiraffe
+  - Command_ConstructBritainVehicleGMLRS
+  - Command_ConstructBritainVehicleStormShadowTEL
+  - Command_ConstructBritainVehicleAS90
+  - Command_ConstructBritainVehicleStriker
+  - Command_ConstructBritainVehicleCRARRV
+  - Command_ConstructBritainVehicleTrojan
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructBritainTankChallenger2
+  2 = Command_ConstructBritainTankChallenger2TES
+  3 = Command_ConstructBritainVehicleAjax
+  4 = Command_ConstructBritainVehicleWarrior
+  5 = Command_ConstructBritainVehicleMastiff
+  6 = Command_ConstructBritainVehicleStormer
+  7 = Command_ConstructBritainVehicleSkySabre
+  8 = Command_ConstructBritainVehicleGiraffe
+  9 = Command_ConstructBritainVehicleGMLRS
+  10 = Command_ConstructBritainVehicleStormShadowTEL
+  11 = Command_ConstructBritainVehicleAS90
+  12 = Command_ConstructBritainVehicleStriker
+  13 = Command_ConstructBritainVehicleCRARRV
+  14 = Command_ConstructBritainVehicleTrojan
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Germany
+PlayerTemplate: FactionGermany Side=Germany StartingUnit0=GermanyVehicleDozer
+Dozer/Worker CommandSet: GermanyDozerCommandSet
+WarFactory button: Command_ConstructGermanyWarFactory
+WarFactory Object: GermanyWarFactory
+Old WarFactory CommandSet: GermanyWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: GermanyWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructGermanyTankLeopard2A7
+  - Command_ConstructGermanyTankLeopard2A6
+  - Command_ConstructGermanyVehicleFennek
+  - Command_ConstructGermanyVehiclePuma
+  - Command_ConstructGermanyVehicleBoxer
+  - Command_ConstructGermanyVehicleGepard
+  - Command_ConstructGermanyVehicleIRIST
+  - Command_ConstructGermanyVehicleTRML
+  - Command_ConstructGermanyVehicleMARS
+  - Command_ConstructGermanyVehicleTaurusTEL
+  - Command_ConstructGermanyVehiclePzH2000
+  - Command_ConstructGermanyVehicleWieselAT
+  - Command_ConstructGermanyVehicleBuffel
+  - Command_ConstructGermanyVehicleBoxerAA
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructGermanyTankLeopard2A7
+  2 = Command_ConstructGermanyTankLeopard2A6
+  3 = Command_ConstructGermanyVehicleFennek
+  4 = Command_ConstructGermanyVehiclePuma
+  5 = Command_ConstructGermanyVehicleBoxer
+  6 = Command_ConstructGermanyVehicleGepard
+  7 = Command_ConstructGermanyVehicleIRIST
+  8 = Command_ConstructGermanyVehicleTRML
+  9 = Command_ConstructGermanyVehicleMARS
+  10 = Command_ConstructGermanyVehicleTaurusTEL
+  11 = Command_ConstructGermanyVehiclePzH2000
+  12 = Command_ConstructGermanyVehicleWieselAT
+  13 = Command_ConstructGermanyVehicleBuffel
+  14 = Command_ConstructGermanyVehicleBoxerAA
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: France
+PlayerTemplate: FactionFrance Side=France StartingUnit0=FranceVehicleDozer
+Dozer/Worker CommandSet: FranceDozerCommandSet
+WarFactory button: Command_ConstructFranceWarFactory
+WarFactory Object: FranceWarFactory
+Old WarFactory CommandSet: FranceWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: FranceWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructFranceTankLeclerc
+  - Command_ConstructFranceTankAMX30
+  - Command_ConstructFranceVehicleAMX10RC
+  - Command_ConstructFranceVehicleVBCI
+  - Command_ConstructFranceVehicleVAB
+  - Command_ConstructFranceVehicleMistral
+  - Command_ConstructFranceVehicleSAMPT
+  - Command_ConstructFranceVehicleGM200
+  - Command_ConstructFranceVehicleLRU
+  - Command_ConstructFranceVehicleSCALPTEL
+  - Command_ConstructFranceVehicleCaesar
+  - Command_ConstructFranceVehicleVABHOT
+  - Command_ConstructFranceVehicleDNG
+  - Command_ConstructFranceVehicleJaguar
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructFranceTankLeclerc
+  2 = Command_ConstructFranceTankAMX30
+  3 = Command_ConstructFranceVehicleAMX10RC
+  4 = Command_ConstructFranceVehicleVBCI
+  5 = Command_ConstructFranceVehicleVAB
+  6 = Command_ConstructFranceVehicleMistral
+  7 = Command_ConstructFranceVehicleSAMPT
+  8 = Command_ConstructFranceVehicleGM200
+  9 = Command_ConstructFranceVehicleLRU
+  10 = Command_ConstructFranceVehicleSCALPTEL
+  11 = Command_ConstructFranceVehicleCaesar
+  12 = Command_ConstructFranceVehicleVABHOT
+  13 = Command_ConstructFranceVehicleDNG
+  14 = Command_ConstructFranceVehicleJaguar
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Italy
+PlayerTemplate: FactionItaly Side=Italy StartingUnit0=ItalyVehicleDozer
+Dozer/Worker CommandSet: ItalyDozerCommandSet
+WarFactory button: Command_ConstructItalyWarFactory
+WarFactory Object: ItalyWarFactory
+Old WarFactory CommandSet: ItalyWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: ItalyWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructItalyTankAriete
+  - Command_ConstructItalyTankArieteC1
+  - Command_ConstructItalyVehicleCentauro
+  - Command_ConstructItalyVehicleDardo
+  - Command_ConstructItalyVehicleVBM
+  - Command_ConstructItalyVehicleSIDAM
+  - Command_ConstructItalyVehicleSAMPT
+  - Command_ConstructItalyVehicleRAT31
+  - Command_ConstructItalyVehicleM270
+  - Command_ConstructItalyVehicleStormShadowTEL
+  - Command_ConstructItalyVehiclePzH2000
+  - Command_ConstructItalyVehicleCentauroAT
+  - Command_ConstructItalyVehicleARV
+  - Command_ConstructItalyVehicleCentauro2
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructItalyTankAriete
+  2 = Command_ConstructItalyTankArieteC1
+  3 = Command_ConstructItalyVehicleCentauro
+  4 = Command_ConstructItalyVehicleDardo
+  5 = Command_ConstructItalyVehicleVBM
+  6 = Command_ConstructItalyVehicleSIDAM
+  7 = Command_ConstructItalyVehicleSAMPT
+  8 = Command_ConstructItalyVehicleRAT31
+  9 = Command_ConstructItalyVehicleM270
+  10 = Command_ConstructItalyVehicleStormShadowTEL
+  11 = Command_ConstructItalyVehiclePzH2000
+  12 = Command_ConstructItalyVehicleCentauroAT
+  13 = Command_ConstructItalyVehicleARV
+  14 = Command_ConstructItalyVehicleCentauro2
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Ukraine
+PlayerTemplate: FactionUkraine Side=Ukraine StartingUnit0=UkraineVehicleDozer
+Dozer/Worker CommandSet: UkraineDozerCommandSet
+WarFactory button: Command_ConstructUkraineWarFactory
+WarFactory Object: UkraineWarFactory
+Old WarFactory CommandSet: UkraineWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: UkraineWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructUkraineTankT84
+  - Command_ConstructUkraineTankT72AMT
+  - Command_ConstructUkraineVehicleBRDM
+  - Command_ConstructUkraineVehicleBMP2
+  - Command_ConstructUkraineVehicleBTR4
+  - Command_ConstructUkraineVehicleGepard
+  - Command_ConstructUkraineVehicleBuk
+  - Command_ConstructUkraineVehicleP18
+  - Command_ConstructUkraineVehicleHIMARS
+  - Command_ConstructUkraineVehicleHrim2
+  - Command_ConstructUkraineVehicleBohdana
+  - Command_ConstructUkraineVehicleStugna
+  - Command_ConstructUkraineVehicleBREM
+  - Command_ConstructUkraineTankT64BV
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructUkraineTankT84
+  2 = Command_ConstructUkraineTankT72AMT
+  3 = Command_ConstructUkraineVehicleBRDM
+  4 = Command_ConstructUkraineVehicleBMP2
+  5 = Command_ConstructUkraineVehicleBTR4
+  6 = Command_ConstructUkraineVehicleGepard
+  7 = Command_ConstructUkraineVehicleBuk
+  8 = Command_ConstructUkraineVehicleP18
+  9 = Command_ConstructUkraineVehicleHIMARS
+  10 = Command_ConstructUkraineVehicleHrim2
+  11 = Command_ConstructUkraineVehicleBohdana
+  12 = Command_ConstructUkraineVehicleStugna
+  13 = Command_ConstructUkraineVehicleBREM
+  14 = Command_ConstructUkraineTankT64BV
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Turkey
+PlayerTemplate: FactionTurkey Side=Turkey StartingUnit0=TurkeyVehicleDozer
+Dozer/Worker CommandSet: TurkeyDozerCommandSet
+WarFactory button: Command_ConstructTurkeyWarFactory
+WarFactory Object: TurkeyWarFactory
+Old WarFactory CommandSet: TurkeyWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: TurkeyWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructTurkeyTankLeopard2A4
+  - Command_ConstructTurkeyTankM60T
+  - Command_ConstructTurkeyVehicleKaplan
+  - Command_ConstructTurkeyVehicleACV15
+  - Command_ConstructTurkeyVehicleKirpi
+  - Command_ConstructTurkeyVehicleKorkut
+  - Command_ConstructTurkeyVehicleHisar
+  - Command_ConstructTurkeyVehicleKalkan
+  - Command_ConstructTurkeyVehicleKasirga
+  - Command_ConstructTurkeyVehicleBora
+  - Command_ConstructTurkeyVehicleFirtina
+  - Command_ConstructTurkeyVehicleACVTOW
+  - Command_ConstructTurkeyVehicleM88
+  - Command_ConstructTurkeyVehicleAltay
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructTurkeyTankLeopard2A4
+  2 = Command_ConstructTurkeyTankM60T
+  3 = Command_ConstructTurkeyVehicleKaplan
+  4 = Command_ConstructTurkeyVehicleACV15
+  5 = Command_ConstructTurkeyVehicleKirpi
+  6 = Command_ConstructTurkeyVehicleKorkut
+  7 = Command_ConstructTurkeyVehicleHisar
+  8 = Command_ConstructTurkeyVehicleKalkan
+  9 = Command_ConstructTurkeyVehicleKasirga
+  10 = Command_ConstructTurkeyVehicleBora
+  11 = Command_ConstructTurkeyVehicleFirtina
+  12 = Command_ConstructTurkeyVehicleACVTOW
+  13 = Command_ConstructTurkeyVehicleM88
+  14 = Command_ConstructTurkeyVehicleAltay
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Sweden
+PlayerTemplate: FactionSweden Side=Sweden StartingUnit0=SwedenVehicleDozer
+Dozer/Worker CommandSet: SwedenDozerCommandSet
+WarFactory button: Command_ConstructSwedenWarFactory
+WarFactory Object: SwedenWarFactory
+Old WarFactory CommandSet: SwedenWarfactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: SwedenWarfactoryCommandSet (same name, new content from NATO NatoWarfactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructSwedenTankStrv122
+  - Command_ConstructSwedenTankStrv121
+  - Command_ConstructSwedenVehicleCV90R
+  - Command_ConstructSwedenVehicleCV90
+  - Command_ConstructSwedenVehiclePatgb203
+  - Command_ConstructSwedenVehicleLvkv90
+  - Command_ConstructSwedenVehicleIRIST
+  - Command_ConstructSwedenVehicleGiraffe
+  - Command_ConstructSwedenVehiclePULS
+  - Command_ConstructSwedenVehicleRBS15
+  - Command_ConstructSwedenVehicleArcher
+  - Command_ConstructSwedenVehicleCV90AT
+  - Command_ConstructSwedenVehicleBgbv120
+  - Command_ConstructSwedenTankStrv122B
+New units added: 10
+  + Command_ConstructNatoTankLeopard2A7Plus
+  + Command_ConstructNatoTankPuma
+  + Command_ConstructNatoVehicleCortaleMK3
+  + Command_ConstructNatoVehicleVBCI
+  + Command_ConstructNatoVehicleM142
+  + Command_ConstructNatoVehicleCaesar
+  + Command_ConstructNatoVehicleCentauroB2
+  + Command_ConstructNatoVehicleIRIST
+  + Command_ConstructNatoVehicleTRML4D
+  + Command_ConstructNNatoVehicleM142ATACMS
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructNatoTankLeopard2A7Plus
+  2 = Command_ConstructNatoTankPuma
+  3 = Command_ConstructNatoVehicleCortaleMK3
+  4 = Command_ConstructNatoVehicleVBCI
+  5 = Command_ConstructNatoVehicleM142
+  6 = Command_ConstructNatoVehicleCaesar
+  7 = Command_ConstructNatoVehicleCentauroB2
+  8 = Command_ConstructNatoVehicleIRIST
+  9 = Command_ConstructNatoVehicleTRML4D
+  10 = Command_ConstructNNatoVehicleM142ATACMS
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructSwedenTankStrv122
+  2 = Command_ConstructSwedenTankStrv121
+  3 = Command_ConstructSwedenVehicleCV90R
+  4 = Command_ConstructSwedenVehicleCV90
+  5 = Command_ConstructSwedenVehiclePatgb203
+  6 = Command_ConstructSwedenVehicleLvkv90
+  7 = Command_ConstructSwedenVehicleIRIST
+  8 = Command_ConstructSwedenVehicleGiraffe
+  9 = Command_ConstructSwedenVehiclePULS
+  10 = Command_ConstructSwedenVehicleRBS15
+  11 = Command_ConstructSwedenVehicleArcher
+  12 = Command_ConstructSwedenVehicleCV90AT
+  13 = Command_ConstructSwedenVehicleBgbv120
+  14 = Command_ConstructSwedenTankStrv122B
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Libya
+PlayerTemplate: FactionLibya Side=Libya StartingUnit0=Libya_Dozer
+Dozer/Worker CommandSet: LibyaDozerCommandSet
+WarFactory button: Command_ConstructLibya_WarFactory_T
+WarFactory Object: Libya_WarFactory_T
+Old WarFactory CommandSet: Libya_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: Libya_WarFactoryCommandSet (same name, new content from Iraq Iraq_WarFactoryCommandSet_T3)
+Old units removed: 14
+  - Command_ConstructLibyaTankT72
+  - Command_ConstructLibyaTankT62
+  - Command_ConstructLibyaVehicleBRDM
+  - Command_ConstructLibyaVehicleBMP1
+  - Command_ConstructLibyaVehicleM113
+  - Command_ConstructLibyaVehicleShilka
+  - Command_ConstructLibyaVehicleSA6
+  - Command_ConstructLibyaVehicleRadar
+  - Command_ConstructLibyaVehicleBM21
+  - Command_ConstructLibyaVehicleScudB
+  - Command_ConstructLibyaVehicle2S1
+  - Command_ConstructLibyaVehicleATGM
+  - Command_ConstructLibyaVehicleBREM
+  - Command_ConstructLibyaVehicleScudBtry
+New units added: 13
+  + Command_ConstructIraq_T-72
+  + Command_ConstructIraq_BMP-1
+  + Command_ConstructIraq_BMP-2
+  + Command_ConstructIraq_BTR-90
+  + Command_ConstructIraq_2S1
+  + Command_ConstructIraq_Sam8
+  + Command_ConstructIraq_AssadBabel-2
+  + Command_ConstructIraq_SA-6
+  + Command_ConstructIraq_Sarab7
+  + Command_ConstructIraq_Alhussaien
+  + Command_ConstructIraqVehicleRoland3K
+  + Command_ConstructIraq_BM-21
+  + Command_ConstructIraq_R11ScudB
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructIraq_T-72
+  2 = Command_ConstructIraq_BMP-1
+  3 = Command_ConstructIraq_BMP-2
+  4 = Command_ConstructIraq_BTR-90
+  5 = Command_ConstructIraq_2S1
+  6 = Command_ConstructIraq_Sam8
+  7 = Command_ConstructIraq_AssadBabel-2
+  8 = Command_ConstructIraq_SA-6
+  9 = Command_ConstructIraq_Sarab7
+  10 = Command_ConstructIraq_Alhussaien
+  11 = Command_ConstructIraqVehicleRoland3K
+  12 = Command_ConstructIraq_BM-21
+  13 = Command_ConstructIraq_R11ScudB
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructLibyaTankT72
+  2 = Command_ConstructLibyaTankT62
+  3 = Command_ConstructLibyaVehicleBRDM
+  4 = Command_ConstructLibyaVehicleBMP1
+  5 = Command_ConstructLibyaVehicleM113
+  6 = Command_ConstructLibyaVehicleShilka
+  7 = Command_ConstructLibyaVehicleSA6
+  8 = Command_ConstructLibyaVehicleRadar
+  9 = Command_ConstructLibyaVehicleBM21
+  10 = Command_ConstructLibyaVehicleScudB
+  11 = Command_ConstructLibyaVehicle2S1
+  12 = Command_ConstructLibyaVehicleATGM
+  13 = Command_ConstructLibyaVehicleBREM
+  14 = Command_ConstructLibyaVehicleScudBtry
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: SouthAfrica
+PlayerTemplate: FactionSouthAfrica Side=SouthAfrica StartingUnit0=SouthAfrica_Dozer
+Dozer/Worker CommandSet: SouthAfricaDozerCommandSet
+WarFactory button: Command_ConstructSouthAfrica_WarFactory_T
+WarFactory Object: SouthAfrica_WarFactory_T
+Old WarFactory CommandSet: SouthAfrica_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: SouthAfrica_WarFactoryCommandSet (same name, new content from Iraq Iraq_WarFactoryCommandSet_T3)
+Old units removed: 14
+  - Command_ConstructSouthAfricaTankOlifant
+  - Command_ConstructSouthAfricaTankOlifant1B
+  - Command_ConstructSouthAfricaVehicleRooikat
+  - Command_ConstructSouthAfricaVehicleRatel
+  - Command_ConstructSouthAfricaVehicleCasspir
+  - Command_ConstructSouthAfricaVehicleYstervark
+  - Command_ConstructSouthAfricaVehicleCactus
+  - Command_ConstructSouthAfricaVehicleThutlwa
+  - Command_ConstructSouthAfricaVehicleValkiri
+  - Command_ConstructSouthAfricaVehicleBateleur
+  - Command_ConstructSouthAfricaVehicleG6
+  - Command_ConstructSouthAfricaVehicleZT3
+  - Command_ConstructSouthAfricaVehicleARV
+  - Command_ConstructSouthAfricaVehicleRooikat76
+New units added: 13
+  + Command_ConstructIraq_T-72
+  + Command_ConstructIraq_BMP-1
+  + Command_ConstructIraq_BMP-2
+  + Command_ConstructIraq_BTR-90
+  + Command_ConstructIraq_2S1
+  + Command_ConstructIraq_Sam8
+  + Command_ConstructIraq_AssadBabel-2
+  + Command_ConstructIraq_SA-6
+  + Command_ConstructIraq_Sarab7
+  + Command_ConstructIraq_Alhussaien
+  + Command_ConstructIraqVehicleRoland3K
+  + Command_ConstructIraq_BM-21
+  + Command_ConstructIraq_R11ScudB
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructIraq_T-72
+  2 = Command_ConstructIraq_BMP-1
+  3 = Command_ConstructIraq_BMP-2
+  4 = Command_ConstructIraq_BTR-90
+  5 = Command_ConstructIraq_2S1
+  6 = Command_ConstructIraq_Sam8
+  7 = Command_ConstructIraq_AssadBabel-2
+  8 = Command_ConstructIraq_SA-6
+  9 = Command_ConstructIraq_Sarab7
+  10 = Command_ConstructIraq_Alhussaien
+  11 = Command_ConstructIraqVehicleRoland3K
+  12 = Command_ConstructIraq_BM-21
+  13 = Command_ConstructIraq_R11ScudB
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructSouthAfricaTankOlifant
+  2 = Command_ConstructSouthAfricaTankOlifant1B
+  3 = Command_ConstructSouthAfricaVehicleRooikat
+  4 = Command_ConstructSouthAfricaVehicleRatel
+  5 = Command_ConstructSouthAfricaVehicleCasspir
+  6 = Command_ConstructSouthAfricaVehicleYstervark
+  7 = Command_ConstructSouthAfricaVehicleCactus
+  8 = Command_ConstructSouthAfricaVehicleThutlwa
+  9 = Command_ConstructSouthAfricaVehicleValkiri
+  10 = Command_ConstructSouthAfricaVehicleBateleur
+  11 = Command_ConstructSouthAfricaVehicleG6
+  12 = Command_ConstructSouthAfricaVehicleZT3
+  13 = Command_ConstructSouthAfricaVehicleARV
+  14 = Command_ConstructSouthAfricaVehicleRooikat76
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: UAE
+PlayerTemplate: FactionUAE Side=UAE StartingUnit0=UAE_Dozer
+Dozer/Worker CommandSet: UAEDozerCommandSet
+WarFactory button: Command_ConstructUAE_WarFactory_T
+WarFactory Object: UAE_WarFactory_T
+Old WarFactory CommandSet: UAE_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: UAE_WarFactoryCommandSet (same name, new content from Egypt EgyptWarFactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructUAETankLeclerc
+  - Command_ConstructUAEVehicleBMP3
+  - Command_ConstructUAEVehicleNimr
+  - Command_ConstructUAEVehicleRabdan
+  - Command_ConstructUAEVehiclePatria
+  - Command_ConstructUAEVehiclePantsir
+  - Command_ConstructUAEVehiclePatriot
+  - Command_ConstructUAEVehicleRadar
+  - Command_ConstructUAEVehicleHIMARS
+  - Command_ConstructUAEVehicleThunder
+  - Command_ConstructUAEVehicleG6
+  - Command_ConstructUAEVehicleBMP3AT
+  - Command_ConstructUAEVehicleLeclercARV
+  - Command_ConstructUAEVehicleJobaria
+New units added: 12
+  + Command_ConstructEgyptTankT90MS
+  + Command_ConstructEgyptTankM1A1S
+  + Command_ConstructGLAVehicleRocketBuggy
+  + Command_ConstructEgyptVehicleM270
+  + Command_ConstructArb_Pantsir
+  + Command_ConstructEgyptVehicle9K317
+  + Command_ConstructEgyptVehicle9S19M2
+  + Command_ConstructEgyptVehicleS300VM
+  + Command_ConstructArab_Tor1M
+  + Command_ConstructArb_9K720SV1
+  + Command_ConstructEgyptVehicleYPR765
+  + Command_ConstructEgyptVehicleHwasong7
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructEgyptTankT90MS
+  2 = Command_ConstructEgyptTankM1A1S
+  3 = Command_ConstructGLAVehicleRocketBuggy
+  4 = Command_ConstructEgyptVehicleM270
+  5 = Command_ConstructArb_Pantsir
+  6 = Command_ConstructEgyptVehicle9K317
+  7 = Command_ConstructEgyptVehicle9S19M2
+  8 = Command_ConstructEgyptVehicleS300VM
+  9 = Command_ConstructArab_Tor1M
+  10 = Command_ConstructArb_9K720SV1
+  11 = Command_ConstructEgyptVehicleYPR765
+  12 = Command_ConstructEgyptVehicleHwasong7
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructUAETankLeclerc
+  2 = Command_ConstructUAEVehicleBMP3
+  3 = Command_ConstructUAEVehicleNimr
+  4 = Command_ConstructUAEVehicleRabdan
+  5 = Command_ConstructUAEVehiclePatria
+  6 = Command_ConstructUAEVehiclePantsir
+  7 = Command_ConstructUAEVehiclePatriot
+  8 = Command_ConstructUAEVehicleRadar
+  9 = Command_ConstructUAEVehicleHIMARS
+  10 = Command_ConstructUAEVehicleThunder
+  11 = Command_ConstructUAEVehicleG6
+  12 = Command_ConstructUAEVehicleBMP3AT
+  13 = Command_ConstructUAEVehicleLeclercARV
+  14 = Command_ConstructUAEVehicleJobaria
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: SaudiArabia
+PlayerTemplate: FactionSaudiArabia Side=SaudiArabia StartingUnit0=SaudiArabia_Dozer
+Dozer/Worker CommandSet: SaudiArabiaDozerCommandSet
+WarFactory button: Command_ConstructSaudiArabia_WarFactory_T
+WarFactory Object: SaudiArabia_WarFactory_T
+Old WarFactory CommandSet: SaudiArabia_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: SaudiArabia_WarFactoryCommandSet (same name, new content from Egypt EgyptWarFactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructSaudiArabiaTankM1A2
+  - Command_ConstructSaudiArabiaTankM1A2S
+  - Command_ConstructSaudiArabiaVehicleLAV25
+  - Command_ConstructSaudiArabiaVehicleM2
+  - Command_ConstructSaudiArabiaVehicleLAV
+  - Command_ConstructSaudiArabiaVehicleAvenger
+  - Command_ConstructSaudiArabiaVehiclePatriot
+  - Command_ConstructSaudiArabiaVehicleMPQ53
+  - Command_ConstructSaudiArabiaVehicleASTROS
+  - Command_ConstructSaudiArabiaVehicleATACMS
+  - Command_ConstructSaudiArabiaVehicleM109
+  - Command_ConstructSaudiArabiaVehicleLAVAT
+  - Command_ConstructSaudiArabiaVehicleM88
+  - Command_ConstructSaudiArabiaVehiclePatriotBtry
+New units added: 12
+  + Command_ConstructEgyptTankT90MS
+  + Command_ConstructEgyptTankM1A1S
+  + Command_ConstructGLAVehicleRocketBuggy
+  + Command_ConstructEgyptVehicleM270
+  + Command_ConstructArb_Pantsir
+  + Command_ConstructEgyptVehicle9K317
+  + Command_ConstructEgyptVehicle9S19M2
+  + Command_ConstructEgyptVehicleS300VM
+  + Command_ConstructArab_Tor1M
+  + Command_ConstructArb_9K720SV1
+  + Command_ConstructEgyptVehicleYPR765
+  + Command_ConstructEgyptVehicleHwasong7
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructEgyptTankT90MS
+  2 = Command_ConstructEgyptTankM1A1S
+  3 = Command_ConstructGLAVehicleRocketBuggy
+  4 = Command_ConstructEgyptVehicleM270
+  5 = Command_ConstructArb_Pantsir
+  6 = Command_ConstructEgyptVehicle9K317
+  7 = Command_ConstructEgyptVehicle9S19M2
+  8 = Command_ConstructEgyptVehicleS300VM
+  9 = Command_ConstructArab_Tor1M
+  10 = Command_ConstructArb_9K720SV1
+  11 = Command_ConstructEgyptVehicleYPR765
+  12 = Command_ConstructEgyptVehicleHwasong7
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructSaudiArabiaTankM1A2
+  2 = Command_ConstructSaudiArabiaTankM1A2S
+  3 = Command_ConstructSaudiArabiaVehicleLAV25
+  4 = Command_ConstructSaudiArabiaVehicleM2
+  5 = Command_ConstructSaudiArabiaVehicleLAV
+  6 = Command_ConstructSaudiArabiaVehicleAvenger
+  7 = Command_ConstructSaudiArabiaVehiclePatriot
+  8 = Command_ConstructSaudiArabiaVehicleMPQ53
+  9 = Command_ConstructSaudiArabiaVehicleASTROS
+  10 = Command_ConstructSaudiArabiaVehicleATACMS
+  11 = Command_ConstructSaudiArabiaVehicleM109
+  12 = Command_ConstructSaudiArabiaVehicleLAVAT
+  13 = Command_ConstructSaudiArabiaVehicleM88
+  14 = Command_ConstructSaudiArabiaVehiclePatriotBtry
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Syria
+PlayerTemplate: FactionSyria Side=Syria StartingUnit0=Syria_Dozer
+Dozer/Worker CommandSet: SyriaDozerCommandSet
+WarFactory button: Command_ConstructSyria_WarFactory_T
+WarFactory Object: Syria_WarFactory_T
+Old WarFactory CommandSet: Syria_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: Syria_WarFactoryCommandSet (same name, new content from Egypt EgyptWarFactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructSyriaTankT72
+  - Command_ConstructSyriaTankT62
+  - Command_ConstructSyriaVehicleBRDM
+  - Command_ConstructSyriaVehicleBMP1
+  - Command_ConstructSyriaVehicleBTR
+  - Command_ConstructSyriaVehicleShilka
+  - Command_ConstructSyriaVehicleBuk
+  - Command_ConstructSyriaVehicleP18
+  - Command_ConstructSyriaVehicleBM21
+  - Command_ConstructSyriaVehicleScud
+  - Command_ConstructSyriaVehicle2S1
+  - Command_ConstructSyriaVehicleKornet
+  - Command_ConstructSyriaVehicleBREM
+  - Command_ConstructSyriaVehicleTOS1A
+New units added: 12
+  + Command_ConstructEgyptTankT90MS
+  + Command_ConstructEgyptTankM1A1S
+  + Command_ConstructGLAVehicleRocketBuggy
+  + Command_ConstructEgyptVehicleM270
+  + Command_ConstructArb_Pantsir
+  + Command_ConstructEgyptVehicle9K317
+  + Command_ConstructEgyptVehicle9S19M2
+  + Command_ConstructEgyptVehicleS300VM
+  + Command_ConstructArab_Tor1M
+  + Command_ConstructArb_9K720SV1
+  + Command_ConstructEgyptVehicleYPR765
+  + Command_ConstructEgyptVehicleHwasong7
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructEgyptTankT90MS
+  2 = Command_ConstructEgyptTankM1A1S
+  3 = Command_ConstructGLAVehicleRocketBuggy
+  4 = Command_ConstructEgyptVehicleM270
+  5 = Command_ConstructArb_Pantsir
+  6 = Command_ConstructEgyptVehicle9K317
+  7 = Command_ConstructEgyptVehicle9S19M2
+  8 = Command_ConstructEgyptVehicleS300VM
+  9 = Command_ConstructArab_Tor1M
+  10 = Command_ConstructArb_9K720SV1
+  11 = Command_ConstructEgyptVehicleYPR765
+  12 = Command_ConstructEgyptVehicleHwasong7
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructSyriaTankT72
+  2 = Command_ConstructSyriaTankT62
+  3 = Command_ConstructSyriaVehicleBRDM
+  4 = Command_ConstructSyriaVehicleBMP1
+  5 = Command_ConstructSyriaVehicleBTR
+  6 = Command_ConstructSyriaVehicleShilka
+  7 = Command_ConstructSyriaVehicleBuk
+  8 = Command_ConstructSyriaVehicleP18
+  9 = Command_ConstructSyriaVehicleBM21
+  10 = Command_ConstructSyriaVehicleScud
+  11 = Command_ConstructSyriaVehicle2S1
+  12 = Command_ConstructSyriaVehicleKornet
+  13 = Command_ConstructSyriaVehicleBREM
+  14 = Command_ConstructSyriaVehicleTOS1A
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Japan
+PlayerTemplate: FactionJapan Side=Japan StartingUnit0=Japan_VT72B
+Dozer/Worker CommandSet: Japan_VT72BCommandSet
+WarFactory button: Command_ConstructJapan_WarFactory
+WarFactory Object: Japan_WarFactory
+Old WarFactory CommandSet: Japan_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: Japan_WarFactoryCommandSet (same name, new content from USA AmericaWarFactoryCommandSet_T3)
+Old units removed: 14
+  - Command_ConstructJapanTankType10
+  - Command_ConstructJapanTankType90
+  - Command_ConstructJapanVehicleType16
+  - Command_ConstructJapanVehicleType89
+  - Command_ConstructJapanVehicleType96
+  - Command_ConstructJapanVehicleType87
+  - Command_ConstructJapanVehicleChuSAM
+  - Command_ConstructJapanVehicleRadar
+  - Command_ConstructJapanVehicleM270
+  - Command_ConstructJapanVehicleType12
+  - Command_ConstructJapanVehicleType99
+  - Command_ConstructJapanVehicleType16AT
+  - Command_ConstructJapanVehicleType11ARV
+  - Command_ConstructJapanVehicleType12Btry
+New units added: 13
+  + Command_ConstructAmericaTankCrusader
+  + Command_ConstructAmericaVehicleM1128
+  + Command_ConstructAmericaVehicleM1296
+  + Command_ConstructAmericaVehicleSentryDrone
+  + Command_ConstructAmericaVehicleTomahawk
+  + Command_ConstructAmericaTankM109A7
+  + Command_ConstructAmericaVehicleAvenger
+  + Command_ConstructAmericaVehicleMicrowave
+  + Command_ConstructAmericaVehicleAN_TPY2
+  + Command_ConstructAmericaVehicleTHAAD
+  + Command_ConstructAmericaVehicleM142
+  + Command_ConstructAmericaVehicleM1075I
+  + Command_ConstructAmericaVehicleM1075T
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructAmericaTankCrusader
+  2 = Command_ConstructAmericaVehicleM1128
+  3 = Command_ConstructAmericaVehicleM1296
+  4 = Command_ConstructAmericaVehicleSentryDrone
+  5 = Command_ConstructAmericaVehicleTomahawk
+  6 = Command_ConstructAmericaTankM109A7
+  7 = Command_ConstructAmericaVehicleAvenger
+  8 = Command_ConstructAmericaVehicleMicrowave
+  9 = Command_ConstructAmericaVehicleAN_TPY2
+  10 = Command_ConstructAmericaVehicleTHAAD
+  11 = Command_ConstructAmericaVehicleM142
+  12 = Command_ConstructAmericaVehicleM1075I
+  13 = Command_ConstructAmericaVehicleM1075T
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructJapanTankType10
+  2 = Command_ConstructJapanTankType90
+  3 = Command_ConstructJapanVehicleType16
+  4 = Command_ConstructJapanVehicleType89
+  5 = Command_ConstructJapanVehicleType96
+  6 = Command_ConstructJapanVehicleType87
+  7 = Command_ConstructJapanVehicleChuSAM
+  8 = Command_ConstructJapanVehicleRadar
+  9 = Command_ConstructJapanVehicleM270
+  10 = Command_ConstructJapanVehicleType12
+  11 = Command_ConstructJapanVehicleType99
+  12 = Command_ConstructJapanVehicleType16AT
+  13 = Command_ConstructJapanVehicleType11ARV
+  14 = Command_ConstructJapanVehicleType12Btry
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Vietnam
+PlayerTemplate: FactionVietnam Side=Vietnam StartingUnit0=Vietnam_VT72B
+Dozer/Worker CommandSet: Vietnam_VT72BCommandSet
+WarFactory button: Command_ConstructVietnam_WarFactory
+WarFactory Object: Vietnam_WarFactory
+Old WarFactory CommandSet: Vietnam_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: Vietnam_WarFactoryCommandSet (same name, new content from USA AmericaWarFactoryCommandSet_T3)
+Old units removed: 14
+  - Command_ConstructVietnamTankT90S
+  - Command_ConstructVietnamTankT54M3
+  - Command_ConstructVietnamVehicleBRDM
+  - Command_ConstructVietnamVehicleBMP1
+  - Command_ConstructVietnamVehicleBTR80
+  - Command_ConstructVietnamVehicleShilka
+  - Command_ConstructVietnamVehicleS300
+  - Command_ConstructVietnamVehicle36D6
+  - Command_ConstructVietnamVehicleBM21
+  - Command_ConstructVietnamVehicleScud
+  - Command_ConstructVietnamVehicle2S3
+  - Command_ConstructVietnamVehicleKonkurs
+  - Command_ConstructVietnamVehicleBREM
+  - Command_ConstructVietnamVehicleBastion
+New units added: 13
+  + Command_ConstructAmericaTankCrusader
+  + Command_ConstructAmericaVehicleM1128
+  + Command_ConstructAmericaVehicleM1296
+  + Command_ConstructAmericaVehicleSentryDrone
+  + Command_ConstructAmericaVehicleTomahawk
+  + Command_ConstructAmericaTankM109A7
+  + Command_ConstructAmericaVehicleAvenger
+  + Command_ConstructAmericaVehicleMicrowave
+  + Command_ConstructAmericaVehicleAN_TPY2
+  + Command_ConstructAmericaVehicleTHAAD
+  + Command_ConstructAmericaVehicleM142
+  + Command_ConstructAmericaVehicleM1075I
+  + Command_ConstructAmericaVehicleM1075T
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructAmericaTankCrusader
+  2 = Command_ConstructAmericaVehicleM1128
+  3 = Command_ConstructAmericaVehicleM1296
+  4 = Command_ConstructAmericaVehicleSentryDrone
+  5 = Command_ConstructAmericaVehicleTomahawk
+  6 = Command_ConstructAmericaTankM109A7
+  7 = Command_ConstructAmericaVehicleAvenger
+  8 = Command_ConstructAmericaVehicleMicrowave
+  9 = Command_ConstructAmericaVehicleAN_TPY2
+  10 = Command_ConstructAmericaVehicleTHAAD
+  11 = Command_ConstructAmericaVehicleM142
+  12 = Command_ConstructAmericaVehicleM1075I
+  13 = Command_ConstructAmericaVehicleM1075T
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructVietnamTankT90S
+  2 = Command_ConstructVietnamTankT54M3
+  3 = Command_ConstructVietnamVehicleBRDM
+  4 = Command_ConstructVietnamVehicleBMP1
+  5 = Command_ConstructVietnamVehicleBTR80
+  6 = Command_ConstructVietnamVehicleShilka
+  7 = Command_ConstructVietnamVehicleS300
+  8 = Command_ConstructVietnamVehicle36D6
+  9 = Command_ConstructVietnamVehicleBM21
+  10 = Command_ConstructVietnamVehicleScud
+  11 = Command_ConstructVietnamVehicle2S3
+  12 = Command_ConstructVietnamVehicleKonkurs
+  13 = Command_ConstructVietnamVehicleBREM
+  14 = Command_ConstructVietnamVehicleBastion
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: SouthKorea
+PlayerTemplate: FactionSouthKorea Side=SouthKorea StartingUnit0=SouthKorea_VT72B
+Dozer/Worker CommandSet: SouthKorea_VT72BCommandSet
+WarFactory button: Command_ConstructSouthKorea_WarFactory
+WarFactory Object: SouthKorea_WarFactory
+Old WarFactory CommandSet: SouthKorea_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: SouthKorea_WarFactoryCommandSet (same name, new content from USA AmericaWarFactoryCommandSet_T3)
+Old units removed: 14
+  - Command_ConstructSouthKoreaTankK1A2
+  - Command_ConstructSouthKoreaTankK1A1
+  - Command_ConstructSouthKoreaVehicleK200
+  - Command_ConstructSouthKoreaVehicleK21
+  - Command_ConstructSouthKoreaVehicleK200APC
+  - Command_ConstructSouthKoreaVehicleK30
+  - Command_ConstructSouthKoreaVehicleCheongung
+  - Command_ConstructSouthKoreaVehicleRadar
+  - Command_ConstructSouthKoreaVehicleChunmoo
+  - Command_ConstructSouthKoreaVehicleHyunmoo
+  - Command_ConstructSouthKoreaVehicleK9
+  - Command_ConstructSouthKoreaVehicleK21AT
+  - Command_ConstructSouthKoreaVehicleK288
+  - Command_ConstructSouthKoreaVehicleHyunmoo2B
+New units added: 13
+  + Command_ConstructAmericaTankCrusader
+  + Command_ConstructAmericaVehicleM1128
+  + Command_ConstructAmericaVehicleM1296
+  + Command_ConstructAmericaVehicleSentryDrone
+  + Command_ConstructAmericaVehicleTomahawk
+  + Command_ConstructAmericaTankM109A7
+  + Command_ConstructAmericaVehicleAvenger
+  + Command_ConstructAmericaVehicleMicrowave
+  + Command_ConstructAmericaVehicleAN_TPY2
+  + Command_ConstructAmericaVehicleTHAAD
+  + Command_ConstructAmericaVehicleM142
+  + Command_ConstructAmericaVehicleM1075I
+  + Command_ConstructAmericaVehicleM1075T
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructAmericaTankCrusader
+  2 = Command_ConstructAmericaVehicleM1128
+  3 = Command_ConstructAmericaVehicleM1296
+  4 = Command_ConstructAmericaVehicleSentryDrone
+  5 = Command_ConstructAmericaVehicleTomahawk
+  6 = Command_ConstructAmericaTankM109A7
+  7 = Command_ConstructAmericaVehicleAvenger
+  8 = Command_ConstructAmericaVehicleMicrowave
+  9 = Command_ConstructAmericaVehicleAN_TPY2
+  10 = Command_ConstructAmericaVehicleTHAAD
+  11 = Command_ConstructAmericaVehicleM142
+  12 = Command_ConstructAmericaVehicleM1075I
+  13 = Command_ConstructAmericaVehicleM1075T
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructSouthKoreaTankK1A2
+  2 = Command_ConstructSouthKoreaTankK1A1
+  3 = Command_ConstructSouthKoreaVehicleK200
+  4 = Command_ConstructSouthKoreaVehicleK21
+  5 = Command_ConstructSouthKoreaVehicleK200APC
+  6 = Command_ConstructSouthKoreaVehicleK30
+  7 = Command_ConstructSouthKoreaVehicleCheongung
+  8 = Command_ConstructSouthKoreaVehicleRadar
+  9 = Command_ConstructSouthKoreaVehicleChunmoo
+  10 = Command_ConstructSouthKoreaVehicleHyunmoo
+  11 = Command_ConstructSouthKoreaVehicleK9
+  12 = Command_ConstructSouthKoreaVehicleK21AT
+  13 = Command_ConstructSouthKoreaVehicleK288
+  14 = Command_ConstructSouthKoreaVehicleHyunmoo2B
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: India
+PlayerTemplate: FactionIndia Side=India StartingUnit0=India_Dozer
+Dozer/Worker CommandSet: IndiaDozerCommandSet
+WarFactory button: Command_ConstructIndia_WarFactory_T
+WarFactory Object: India_WarFactory_T
+Old WarFactory CommandSet: India_WarFactoryCommandSet (winner Data\INI\CommandSet.ini)
+New WarFactory CommandSet: India_WarFactoryCommandSet (same name, new content from Russia RussiaWarFactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructIndiaTankT90S
+  - Command_ConstructIndiaTankT72Ajeya
+  - Command_ConstructIndiaVehicleNAMICA
+  - Command_ConstructIndiaVehicleBMP2
+  - Command_ConstructIndiaVehicleKestrel
+  - Command_ConstructIndiaVehicleTunguska
+  - Command_ConstructIndiaVehicleAkash
+  - Command_ConstructIndiaVehicleRajendra
+  - Command_ConstructIndiaVehiclePinaka
+  - Command_ConstructIndiaVehiclePrahaar
+  - Command_ConstructIndiaVehicleK9Vajra
+  - Command_ConstructIndiaVehicleNag
+  - Command_ConstructIndiaVehicleVT72B
+  - Command_ConstructIndiaTankArjun
+New units added: 13
+  + Command_ConstructRussiaTankT90A
+  + Command_ConstructRussiaTankT72B3M
+  + Command_ConstructRussiaVehicleBm30
+  + Command_ConstructRussiaVehicleKrasukha4
+  + Command_ConstructRussiaArtillery2S19M2
+  + Command_ConstructRussiaTankBMP3
+  + Command_ConstructRussiaTankTorM2M
+  + Command_ConstructRussiaVehiclePantsirS1M
+  + Command_ConstructRussiaVehicle92N6R
+  + Command_ConstructRussiaVehicleS400
+  + Command_ConstructRussiaTankTos1A
+  + Command_ConstructRussiaVehicle9K720
+  + Command_ConstructRussiaVehicleRS24
+Final winning definition:
+  file=Data\INI\CommandSet.ini
+  1 = Command_ConstructRussiaTankT90A
+  2 = Command_ConstructRussiaTankT72B3M
+  3 = Command_ConstructRussiaVehicleBm30
+  4 = Command_ConstructRussiaVehicleKrasukha4
+  5 = Command_ConstructRussiaArtillery2S19M2
+  6 = Command_ConstructRussiaTankBMP3
+  7 = Command_ConstructRussiaTankTorM2M
+  8 = Command_ConstructRussiaVehiclePantsirS1M
+  9 = Command_ConstructRussiaVehicle92N6R
+  10 = Command_ConstructRussiaVehicleS400
+  11 = Command_ConstructRussiaTankTos1A
+  12 = Command_ConstructRussiaVehicle9K720
+  13 = Command_ConstructRussiaVehicleRS24
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet.ini):
+  1 = Command_ConstructIndiaTankT90S
+  2 = Command_ConstructIndiaTankT72Ajeya
+  3 = Command_ConstructIndiaVehicleNAMICA
+  4 = Command_ConstructIndiaVehicleBMP2
+  5 = Command_ConstructIndiaVehicleKestrel
+  6 = Command_ConstructIndiaVehicleTunguska
+  7 = Command_ConstructIndiaVehicleAkash
+  8 = Command_ConstructIndiaVehicleRajendra
+  9 = Command_ConstructIndiaVehiclePinaka
+  10 = Command_ConstructIndiaVehiclePrahaar
+  11 = Command_ConstructIndiaVehicleK9Vajra
+  12 = Command_ConstructIndiaVehicleNag
+  13 = Command_ConstructIndiaVehicleVT72B
+  14 = Command_ConstructIndiaTankArjun
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+Country: Pakistan
+PlayerTemplate: FactionPakistan Side=Pakistan StartingUnit0=Pakistan_Dozer
+Dozer/Worker CommandSet: PakistanDozerCommandSet
+WarFactory button: Command_ConstructPakistan_WarFactory_T
+WarFactory Object: Pakistan_WarFactory_T
+Old WarFactory CommandSet: Pakistan_WarFactoryCommandSet (winner Data\INI\CommandSet_Pakistan.ini)
+New WarFactory CommandSet: Pakistan_WarFactoryCommandSet (same name, new content from Russia RussiaWarFactoryCommandSet)
+Old units removed: 14
+  - Command_ConstructPakistanTankAlKhalid
+  - Command_ConstructPakistanTankAlZarrar
+  - Command_ConstructPakistanVehicleMohafiz
+  - Command_ConstructPakistanVehicleTalhaIFV
+  - Command_ConstructPakistanVehicleTalhaAPC
+  - Command_ConstructPakistanVehicleLY80
+  - Command_ConstructPakistanVehicleHQ9P
+  - Command_ConstructPakistanVehicleRadar
+  - Command_ConstructPakistanVehicleA100
+  - Command_ConstructPakistanVehicleShaheen
+  - Command_ConstructPakistanVehicleM109
+  - Command_ConstructPakistanVehicleBaktar
+  - Command_ConstructPakistanVehicleARV
+  - Command_ConstructPakistanVehicleNasr
+New units added: 13
+  + Command_ConstructRussiaTankT90A
+  + Command_ConstructRussiaTankT72B3M
+  + Command_ConstructRussiaVehicleBm30
+  + Command_ConstructRussiaVehicleKrasukha4
+  + Command_ConstructRussiaArtillery2S19M2
+  + Command_ConstructRussiaTankBMP3
+  + Command_ConstructRussiaTankTorM2M
+  + Command_ConstructRussiaVehiclePantsirS1M
+  + Command_ConstructRussiaVehicle92N6R
+  + Command_ConstructRussiaVehicleS400
+  + Command_ConstructRussiaTankTos1A
+  + Command_ConstructRussiaVehicle9K720
+  + Command_ConstructRussiaVehicleRS24
+Final winning definition:
+  file=Data\INI\CommandSet_Pakistan.ini
+  1 = Command_ConstructRussiaTankT90A
+  2 = Command_ConstructRussiaTankT72B3M
+  3 = Command_ConstructRussiaVehicleBm30
+  4 = Command_ConstructRussiaVehicleKrasukha4
+  5 = Command_ConstructRussiaArtillery2S19M2
+  6 = Command_ConstructRussiaTankBMP3
+  7 = Command_ConstructRussiaTankTorM2M
+  8 = Command_ConstructRussiaVehiclePantsirS1M
+  9 = Command_ConstructRussiaVehicle92N6R
+  10 = Command_ConstructRussiaVehicleS400
+  11 = Command_ConstructRussiaTankTos1A
+  12 = Command_ConstructRussiaVehicle9K720
+  13 = Command_ConstructRussiaVehicleRS24
+  14 = Command_Sell
+Old definition (baseline winner Data\INI\CommandSet_Pakistan.ini):
+  1 = Command_ConstructPakistanTankAlKhalid
+  2 = Command_ConstructPakistanTankAlZarrar
+  3 = Command_ConstructPakistanVehicleMohafiz
+  4 = Command_ConstructPakistanVehicleTalhaIFV
+  5 = Command_ConstructPakistanVehicleTalhaAPC
+  6 = Command_ConstructPakistanVehicleLY80
+  7 = Command_ConstructPakistanVehicleHQ9P
+  8 = Command_ConstructPakistanVehicleRadar
+  9 = Command_ConstructPakistanVehicleA100
+  10 = Command_ConstructPakistanVehicleShaheen
+  11 = Command_ConstructPakistanVehicleM109
+  12 = Command_ConstructPakistanVehicleBaktar
+  13 = Command_ConstructPakistanVehicleARV
+  14 = Command_ConstructPakistanVehicleNasr
+Status: TARGET_COUNTRY_WARFACTORY_REPLACED_OK
+
+PROTECTED COUNTRIES
+-------------------
+USA / Russia / China / Iran / Israel / NATO / Egypt / Iraq / North Korea
+UNCHANGED
+
+TARGET_COUNTRY_WARFACTORY_REPLACED_OK count=17/17
+Errors: 0

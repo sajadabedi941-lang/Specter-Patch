@@ -1,0 +1,16 @@
+SPECTER WAR FACTORY RUNTIME REBUILD
+===================================
+
+Previous ZZZZ last-wins files did not change the in-game War Factory
+because they never edited the winning CommandSet.ini definition.
+
+This pass traces each target country from PlayerTemplate through the
+starting dozer/VT72B to the War Factory object, then overwrites that
+live CommandSet inside packed CommandSet.ini (Pakistan also in
+CommandSet_Pakistan.ini).
+
+Protected countries are unchanged.
+ART is unchanged and not included.
+
+DATA SHA256
+9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635

@@ -82,4 +82,6 @@ Classification is from the live packed chain vs working USA/Japan aircraft.
     DATA bytes  365022190
     ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
     ART  bytes  1235909246 (unchanged vs Saetbyol pack)
+    ZIP SHA256  bab87f431a9544403a4e1e134d3de53ee9cf487b31fb1d69ff211bf68aeb1226
+    ZIP bytes   816916381
     ZIP         Specter_EA6B_Crash_Fix.zip

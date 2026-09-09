@@ -1,0 +1,20 @@
+SPECTER WAR FACTORY START-UNLOCK
+================================
+
+Destination countries already had the copied War Factory structure.
+Those bars still used reference-country Objects that require NATO
+strategy centers, Russia ranks, Egypt palace/industry, Iraq radar,
+and USA strategy-center sciences. Dest players do not have those.
+
+This pass unlocks dest factories only:
+
+- Live dest CommandSets in CommandSet.ini / CommandSet_Pakistan.ini
+  now use dest-only unlocked buttons for previously locked units.
+- New dest-only objects WFUnlock_* have empty Prerequisites.
+- Japan / Vietnam / South Korea WarFactory CommandSetUpgrade modules
+  (Upgrade_Irq_Tier1/2/3) were removed.
+- Protected country objects, CommandButtons, and CommandSets were
+  not edited.
+
+DATA SHA256
+0958db47c7df5f369e0bf3163384a24770b68d935811370c944c782f7178e1cf

@@ -82,7 +82,7 @@ def parse_block(text: str, start: int) -> str:
             if depth <= 0:
                 break
         elif re.match(
-            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds)\b",
+            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds|Turret|LocomotorSet|TransitionState|IdleConditionState)\b",
             raw,
         ):
             depth += 1
@@ -277,33 +277,48 @@ def main() -> int:
                 units.append((slot, btn, obj, "MISSING_BLOCK"))
                 continue
             armor = re.search(r"(?im)^\s*Armor\s*=\s*(\S+)", oblk)
-            loco = re.findall(r"(?im)^\s*Locomotor\s*=\s*\S+\s+(\S+)", oblk)
-            weps = re.findall(r"(?im)^\s*Weapon\s*=\s+\S+\s+(\S+)", oblk)
+            loco = re.findall(r"(?im)^\s*Locomotor\s*=\s*(?:SET_\S+\s+)?(\S+)", oblk)
+            weps = re.findall(r"(?im)^\s*Weapon\s*=\s+(?:PRIMARY|SECONDARY|TERTIARY)\s+(\S+)", oblk)
             model = re.search(r"(?im)^\s*Model\s*=\s*(\S+)", oblk)
             kind = re.search(r"(?im)^\s*KindOf\s*=\s*(.+)$", oblk)
+            variations = re.search(r"(?im)^\s*BuildVariations\s*=\s*(.+)$", oblk)
             issues = []
-            if not armor:
-                issues.append("no Armor")
-            elif not named_exists("Armor", armor.group(1), index):
-                issues.append(f"Armor {armor.group(1)} missing")
-            if not loco:
-                issues.append("no Locomotor")
-            else:
-                for loc in loco:
-                    if not named_exists("Locomotor", loc, index):
-                        issues.append(f"Locomotor {loc} missing")
-            if not model:
-                issues.append("no Model")
-            # Weapons optional for unarmed support, but flag empty combat kinds
+            warnings = []
             kind_s = kind.group(1) if kind else ""
-            if "CAN_ATTACK" in kind_s and not weps:
-                issues.append("CAN_ATTACK but no Weapon")
-            for w in weps:
-                if w in ("NONE", "None"):
-                    continue
-                if not named_exists("Weapon", w, index):
-                    issues.append(f"Weapon {w} missing")
+            if variations and "PROJECTILE" in kind_s:
+                missing_var = []
+                for var in variations.group(1).split():
+                    if var not in objects:
+                        missing_var.append(var)
+                if missing_var:
+                    issues.append("BuildVariations missing " + ",".join(missing_var))
+                else:
+                    warnings.append("selector stub BuildVariations=" + variations.group(1).strip())
+            else:
+                if not armor:
+                    issues.append("no Armor")
+                elif not named_exists("Armor", armor.group(1), index):
+                    issues.append(f"Armor {armor.group(1)} missing")
+                if not loco:
+                    issues.append("no Locomotor")
+                else:
+                    for loc in loco:
+                        if loc in ("End", "SET_NORMAL", "SET_NORMAL_UPGRADED", "None", "NONE"):
+                            continue
+                        if not named_exists("Locomotor", loc, index):
+                            issues.append(f"Locomotor {loc} missing")
+                if not model or model.group(1) in ("None", "NONE"):
+                    issues.append("no Model")
+                if "CAN_ATTACK" in kind_s and not weps:
+                    issues.append("CAN_ATTACK but no Weapon")
+                for w in weps:
+                    if w in ("NONE", "None", "End"):
+                        continue
+                    if not named_exists("Weapon", w, index):
+                        issues.append(f"Weapon {w} missing")
             status = "OK" if not issues else "; ".join(issues)
+            if warnings and status == "OK":
+                status = "OK (" + "; ".join(warnings) + ")"
             if issues:
                 errors.append(f"{country}: {obj} {status}")
             units.append((slot, btn, obj, status))
@@ -323,7 +338,8 @@ def main() -> int:
         lines.append("CommandButtons:")
         for slot, btn, obj, status in units:
             lines.append(f"  {slot:>2} {btn} -> {obj} [{status}]")
-        lines.append(f"Validation: {'PASS' if not any(u[3] != 'OK' for u in units) and has_sell and new_slots == ref_slots else 'FAIL'}")
+        unit_ok = all(u[3].startswith("OK") for u in units)
+        lines.append(f"Validation: {'PASS' if unit_ok and has_sell and new_slots == ref_slots else 'FAIL'}")
         lines.append("")
 
     # Rebuild INI must not define objects

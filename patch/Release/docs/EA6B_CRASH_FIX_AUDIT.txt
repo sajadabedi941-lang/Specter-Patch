@@ -1,0 +1,85 @@
+SPECTER EA-6B PROWLER SPAWN CRASH FIX — AUDIT
+INI_PARSE_OK
+DEPENDENCY_WALK_OK
+No CrashInfo / ReleaseCrashInfo / except.txt was present on this VM.
+Classification is from the live packed chain vs working USA/Japan aircraft.
+
+1. ROOT CAUSE
+   A) Object create / command-bar init (primary)
+      AmericaJetF18Prowler.CommandSet = GenericMultiRoleFighter_AG_CommandSet
+      that CommandSet requires SuperweaponRadioWaveDisabler + SpecialAbility_AAMode.
+      Prowler has neither SpecialPower module. F-35C on the same airfield has
+      OCLSpecialPower SuperweaponRadioWaveDisabler and does not crash.
+      Instant CTD when construction finishes matches command-bar bind at spawn.
+   G) Module init (secondary)
+      CountermeasuresBehavior FlareBoneBaseName=Flare — no Flare pivot on EA6.W3D.
+   Not A-missing W3D/texture: EA6.W3D + EA6.tga + F18SEA_1.tga + A6_3.tga all packed.
+   Not D-missing weapon: Specter_Weapon_JH7A2_Bomb6 / Fab-250 already existed.
+   Not duplicate Object: one AmericaJetF18Prowler definition.
+
+2. LIVE USA OBJECT
+   AmericaJetF18Prowler
+   File: Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+   Airfield: America_LargeAirBaseCommandSet slot 9
+   Button: Command_ConstructAmericaJetF18Prowler  Object=AmericaJetF18Prowler
+   Other EA-6B names found but NOT USA-constructed:
+     JapanJetEA6B (Japan_AirfieldCommandSet slot 12) — not edited
+     USAEA6Prowler exists only in donor America.ini, not packed DATA
+
+3. EXACT FILES CHANGED (packed DATA)
+   Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+   Data\INI\Weapon.ini  (append Specter_Weapon_EA6B_JH7A2_Bomb only)
+   ART unchanged. CommandButton.ini / CommandSet.ini / CSF unchanged.
+   File count and BIG entry order preserved (2807 DATA files).
+
+4. W3D
+   Art\W3D\EA6.W3D
+   Pivots include ENGINE01/02, WINGTIP01/02, BOMB01/02, EMP_V, EMP_B. No Flare.
+
+5. TEXTURES
+   Art\Textures\EA6.tga
+   Art\Textures\F18SEA_1.tga   (referenced BY EA6.W3D; not an F-18 substitute)
+   Art\Textures\A6_3.tga       (referenced BY EA6.W3D)
+   Cameo: MappedImage EA6Prowler -> Art\Textures\USAEA6Prowler.tga
+          Art\Textures\USAEA6ProwlerTB.tga
+
+6. COMMANDBUTTON
+   Command_ConstructAmericaJetF18Prowler
+     UNIT_BUILD  Object=AmericaJetF18Prowler  ButtonImage=EA6Prowler
+     TextLabel=CONTROLBAR:ConstructAmericaJetF18Prowler
+     DescriptLabel=CONTROLBAR:ToolTipAmericaJetF18Prowler
+   CSF keys present. Object CommandSet now GenericTacticalBomberCommandSet
+   (FireMainWeapon / AttackMove / Guard / Stop — same as working A-10C).
+
+7. WEAPONSET
+   PRIMARY Specter_Weapon_EA6B_JH7A2_Bomb
+
+8. JH-7A2 BOMB CHAIN REUSED
+   Live JH-7A2 object ChinaJetJH7A2
+     PRIMARY 2x_ODAB_500_PMV_SU24_LR
+     ProjectileObject = Fab-250
+     FireFX = FX_AuroraBombLaunch
+     ProjectileDetonationFX = FX_ThermobaricWarheadExplosion
+     ProjectileDetonationOCL = OCL_ThermobaricFire
+   Dedicated wrapper copies those safe params (not JH-7A2 aircraft logic).
+   Art\W3D\FAB-250.W3D present. Object Fab-250 present.
+
+9. CLIPSIZE
+   ClipSize = 6   AutoReloadsClip = RETURN_TO_BASE
+
+10. MISSING REFS
+    None. Walked CommandSet, CommandButton, Object, Draw/W3D/textures,
+    Weapon, Fab-250, OCL/FX, Armor AirplaneArmor_P, Locomotor
+    General_Electric_F414 + BasicJetTaxiLocomotor, death FX/OCL, CSF.
+
+11. UNRELATED AIRCRAFT
+    Unchanged: F-35A/B/C, EA-18G, F-22, B-52, Starlifter, JapanJetEA6B,
+    Saetbyol, China/Russia/Iraq/Iran/NK, Specter_Weapon_JH7A2_Bomb6,
+    PlayerTemplate, Science, Ground, War Factory, airfield layouts.
+
+12. HASHES
+    DATA SHA256 10df20ba40c0c1b26bbb5cabbc282dd300f8d56692a16794ac7892756ef86549
+    DATA bytes  365022190
+    ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+    ART  bytes  1235909246 (unchanged vs Saetbyol pack)
+    ZIP         Specter_EA6B_Crash_Fix.zip

@@ -109,11 +109,25 @@ Dest WarFactory 17/17 OK.
 Japan factory uses US_WarFactory.
 All requested air/heli buttons resolve to live objects.
 
-This environment cannot launch Zero Hour. In-game produce / fire /
-land was not executed here.
+------------------------------------------------
+IN-GAME PARSE FIXES (Wine ZH launch)
+------------------------------------------------
+Wine generals.exe DID load this DATA and wrote ReleaseCrashInfo.txt
+for three live parse bugs. Those were fixed before this SHA:
+
+1) Object India_Mi-8T last-win was truncated at ClientUpdate (no
+   Object End). Do not last-win India_Mi-8T / Pakistan_Mi-8T.
+2) Command_ConstructIranAir_* buttons were only at the BIG tail,
+   after CommandSet.ini. Buttons are now appended onto packed
+   CommandButton.ini so they exist before CommandSet parse.
+3) SaudiArabia_AirfieldCommandSet with 20 slots crashed. Written
+   dest air bars are capped at 18 slots. Saudi F-5E CAS is slot 17
+   (priority unit kept on the live bar).
+
+After those fixes: no ReleaseCrashInfo.txt. Wine still cannot reach
+a playable skirmish (D3D/OLE/no audio device). Japan factory
+construct, vehicle produce, weapon fire, and landing/takeoff are
+NOT gameplay-verified on this host.
 
 DATA SHA256
-d5ecdb535aef12bb4fe857709bbf959a74c9876a6326d672994ebd9863d9ff27
-
-ZIP SHA256
-2d497f7a901b7114d5f2ba3c9cee935610a21b45830b43134c9103e8ae60b85b
+6ce400a40cb6d250443505c5ec56e529f897595ce82e18fb944c0838e955d198

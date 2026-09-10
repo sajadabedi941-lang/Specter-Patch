@@ -91,7 +91,7 @@ def parse_block(text, start):
             if depth <= 0:
                 break
         elif re.match(
-            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds)\b",
+            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds|ClientUpdate)\b",
             raw,
         ):
             depth += 1
@@ -330,9 +330,20 @@ def main() -> int:
             "Command_ConstructSouthKoreaJetAH64E",
             "Command_ConstructSouthKoreaJetCH47",
             "Command_ConstructSouthKoreaHelicopterLAH",
-            "Command_ConstructSouthKoreaHelicopterKUH1",
+        ],
+        must_not=(
+            "Command_ConstructSouthKoreaJetRC800",
+            "Command_ConstructSouthKoreaJetC130H",
+            "Command_ConstructSouthKoreaJetCN235",
+        ),
+    )
+    audit_air(
+        "SK_HEAVY",
+        "SouthKorea_HeavyAirBaseCommandSet",
+        [
             "Command_ConstructSouthKoreaJetE737",
             "Command_ConstructSouthKoreaAir_USATransport",
+            "Command_ConstructSouthKoreaHelicopterKUH1",
         ],
         must_not=(
             "Command_ConstructSouthKoreaJetRC800",

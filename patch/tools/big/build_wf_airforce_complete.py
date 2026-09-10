@@ -176,7 +176,7 @@ def parse_block(text, start):
             if depth <= 0:
                 break
         elif re.match(
-            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds)\b",
+            r"(?i)^\s*(Draw|Behavior|Body|WeaponSet|ArmorSet|Prerequisites|DefaultConditionState|ConditionState|UnitSpecificSounds|ClientUpdate)\b",
             raw,
         ):
             depth += 1
@@ -334,11 +334,16 @@ def clone(obj_idx, src, new_name, side, model_map=None, weaponset=None, extra=No
 
 def format_cs(name, slots, nl):
     lines = [f"CommandSet {name}"]
+    # Keep stock Specter spacing. ZH crashed on 20-slot bars; cap at 18.
+    kept = []
     for slot, btn in slots:
+        if int(slot) > 18:
+            continue
+        kept.append((slot, btn))
         if len(str(slot)) == 1:
-            lines.append(f"  {slot}  = {btn}")
+            lines.append(f"  {slot} = {btn}")
         else:
-            lines.append(f" {slot}  = {btn}")
+            lines.append(f"  {slot} = {btn}")
     lines.append("End")
     return nl.join(lines) + nl
 
@@ -458,7 +463,13 @@ def main() -> int:
     notes = []
 
     def add_obj(blk, note):
-        parts.append(blk.rstrip() + "\r\n\r\n")
+        text = blk.rstrip() + "\r\n"
+        if not re.search(r"(?im)^End\s*$", text.splitlines()[-1]):
+            text += "End\r\n"
+        # ZH crashes if a last-win object is missing its Object End
+        if not re.search(r"(?ims)^Object(?:Reskin)?\s+\S+.+\nEnd\s*$", text):
+            print("WARN object may be unclosed", note)
+        parts.append(text + "\r\n")
         notes.append(note)
 
     def add_btn(name, obj, image="us_airfield"):
@@ -522,7 +533,6 @@ def main() -> int:
         add_btn(f"Command_Construct{new}", new)
     add_obj(clone(obj_idx, "NatoHelicopterAH64E", "IndiaAir_AH64E", "India"), "IndiaAir_AH64E")
     add_btn("Command_ConstructIndiaAir_AH64E", "IndiaAir_AH64E", "us_ah64e")
-    add_obj(strip_prereq(obj_idx["India_Mi-8T"]), "India_Mi-8T unlocked")
 
     # --- Pakistan bombs + extra heli / fighters ---
     add_obj(replace_weaponset(obj_idx["Pakistan_Mig-29A"], PAK_F16_WS), "Pakistan_Mig-29A bombs")
@@ -533,7 +543,6 @@ def main() -> int:
         add_btn(f"Command_Construct{new}", new)
     add_obj(clone(obj_idx, "NatoHelicopterAH64E", "PakistanAir_AH64E", "Pakistan"), "PakistanAir_AH64E")
     add_btn("Command_ConstructPakistanAir_AH64E", "PakistanAir_AH64E", "us_ah64e")
-    add_obj(strip_prereq(obj_idx["Pakistan_Mi-8T"]), "Pakistan_Mi-8T unlocked")
 
     # extra Pakistan fighters already in DATA
     for src_name, btn in (
@@ -627,13 +636,12 @@ def main() -> int:
         print("CS", name, n, "slots", len(slots))
         return new
 
+    # ZH parse-crashes on 20-slot bars. Keep F-5E CAS (priority unit) inside 1-18.
     saudi_extra = [
         (15, "Command_ConstructSaudiArabia_Mi-8T"),
         (16, "Command_ConstructSaudiAir_AH64E"),
-        (17, "Command_ConstructSaudiJetF15S_CAS"),
-        (18, "Command_ConstructSaudiJetF15C_CAS"),
-        (19, "Command_ConstructSaudiJetTyphoon_CAS"),
-        (20, "Command_ConstructSaudiJetF5E_CAS"),
+        (17, "Command_ConstructSaudiJetF5E_CAS"),
+        (18, "Command_ConstructSaudiJetF15S_CAS"),
     ]
     uae_extra = [
         (15, "Command_ConstructUAE_Mi-8T"),
@@ -741,6 +749,20 @@ def main() -> int:
     for name in IRAN_AIR_CS:
         cs_text = apply_air(cs_text, name, iran_extra)
     cs_text = apply_air(cs_text, "SouthKorea_AirfieldCommandSet", sk_extra)
+    sk_heavy = [
+        (1, "Command_ConstructSouthKoreaJetE737"),
+        (2, "Command_ConstructSouthKoreaAir_USATransport"),
+        (3, "Command_ConstructSouthKoreaJetUH60P"),
+        (4, "Command_ConstructSouthKoreaJetAH64E"),
+        (5, "Command_ConstructSouthKoreaJetCH47"),
+        (6, "Command_ConstructSouthKoreaHelicopterLAH"),
+        (7, "Command_ConstructSouthKoreaHelicopterKUH1"),
+        (13, "Command_SetRallyPoint"),
+        (14, "Command_Sell"),
+    ]
+    new, n = replace_cs(cs_text, "SouthKorea_HeavyAirBaseCommandSet", [(str(s), b) for s, b in sk_heavy])
+    print("CS SouthKorea_HeavyAirBaseCommandSet", n, "full")
+    cs_text = new
     # Vietnam: replace whole bar
     for name in ("Vietnam_AirfieldCommandSet",):
         new, n = replace_cs(cs_text, name, [(str(s), b) for s, b in vn_full])
@@ -767,6 +789,15 @@ def main() -> int:
     new_cs = cs_text.encode("latin1")
     new_pk = pk_text.encode("latin1")
 
+    # CommandSet.ini is parsed before trailing BIG files. New buttons must
+    # exist in CommandButton.ini (index before CommandSet.ini) or ZH crashes.
+    CB_INI = r"Data\INI\CommandButton.ini"
+    WF_BTN = r"Data\INI\CommandButton_WFUnlock.ini"
+    wfunlock_btn = b""
+    for n, b in src:
+        if n.replace("/", "\\") == WF_BTN:
+            wfunlock_btn = b
+            break
     out = []
     for n, b in src:
         key = n.replace("/", "\\")
@@ -775,6 +806,17 @@ def main() -> int:
             out.append((n, new_cs))
         elif key == PK_INI:
             out.append((n, new_pk))
+        elif key == CB_INI:
+            extra = b""
+            if wfunlock_btn:
+                extra += b"\r\n\r\n" + wfunlock_btn.rstrip()
+            extra += b"\r\n\r\n" + btn_blob
+            merged = b.rstrip() + extra
+            if not merged.startswith(b.rstrip()):
+                print("FAIL CommandButton.ini prefix mutated")
+                return 1
+            print("appended dest unlock+air buttons to CommandButton.ini", len(extra))
+            out.append((n, merged))
         elif low in WF_REPLACE:
             country = WF_REPLACE[low]
             blob = {"Japan": jp_wf, "Vietnam": vn_wf, "SouthKorea": sk_wf}[country]
@@ -801,8 +843,8 @@ def main() -> int:
             print(" ", n)
             low = n.lower()
             if any(tok in low for tok in PROTECTED_PATHS):
-                # CommandSet.ini is shared; object-folder protected paths must not change.
-                if not low.endswith(r"data\ini\commandset.ini"):
+                # Shared INI files may gain dest-only tails. Object folders must not change.
+                if not low.endswith((r"data\ini\commandset.ini", r"data\ini\commandbutton.ini")):
                     print("FAIL protected path changed", n)
                     return 1
     print("PACK_OK")

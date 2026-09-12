@@ -1,0 +1,37 @@
+SPECTER1 Iraq controlled unlock (DATA-only)
+
+Built directly from the audited clean SPECTER1.part001-069 complete-game baseline.
+
+INGAME_TESTED = NO
+
+Scope
+- Iraq combat production unlocks only
+- One allowed Russia change: RussiaJetTu22M3M primary bomb now uses the same
+  existing SPECTER1 heavy guided bomb as Iraq_Tu-22M3 (Kab1500_LeaserGuidedBomb)
+- ART unchanged
+
+Iraq aircraft
+- Iraq_MirageF1_Bq: removed Radar production gate (Large AirBase slot 6)
+- Iraq_Su-24MK: removed Radar + MIC production gates (Large AirBase slot 8)
+- Iraq_Su-24MR: removed MIC production gate (Large AirBase slot 15, Heavy slot 2)
+- IraqJetL159: bomb loadout only — IraqJetL159_WpnBomb now ClipSize=3,
+  ProjectileObject=Kab500 (existing SPECTER1 guided bomb), RETURN_TO_BASE kept
+- IraqJetMig21: Scale 0.82 -> 0.91 only
+- Iraq_Tu-22M3: removed SCIENCE_Tu-22 + MIC gates; PRIMARY bomb set to
+  Kab1500_LeaserGuidedBomb; added to Iraq_HeavyAirBaseCommandSet slot 3
+  (previously free; no existing aircraft removed)
+
+Iraq ground / other combat
+- Removed MIC / Radar / unit-unlock Science / research-object production gates
+  from live Iraq combat units (tanks, vehicles, artillery, AA, drones, infantry
+  MIC locks, Abbas launcher research, Abbas building research)
+- Iraq WarFactory now uses the full T3 CommandSet at build time; CommandSetUpgrade
+  tiers that hid vehicles were removed
+- Iraq MIC base CommandSet now includes Karrar2 / B340 / Fahad3; MIC
+  CommandSetUpgrade tiers that hid those units were removed
+- Building construction chains kept (Power -> Supply -> WarFactory / AirBase / MIC)
+
+Not changed
+- Egypt / Israel / all other protected countries' object files
+- ART
+- No ZZZZ overlay, no global CommandSet/CommandButton regenerate

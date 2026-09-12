@@ -1,0 +1,350 @@
+SPECTER WAR FACTORY START-UNLOCK AUDIT
+======================================
+
+Package: Specter_WarFactory_Unlock.zip
+DATA SHA256: 0958db47c7df5f369e0bf3163384a24770b68d935811370c944c782f7178e1cf
+DATA size: 365338551 bytes
+
+Re-extracted packed DATA. Dest War Factory units must be
+visible and buildable at game start (no Science / Object /
+tier / CommandSetUpgrade locks).
+
+Country: Britain
+PlayerTemplate: FactionBritain
+WarFactory Object: BritainWarFactory
+CommandSet: BritainWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Germany
+PlayerTemplate: FactionGermany
+WarFactory Object: GermanyWarFactory
+CommandSet: GermanyWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: France
+PlayerTemplate: FactionFrance
+WarFactory Object: FranceWarFactory
+CommandSet: FranceWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Italy
+PlayerTemplate: FactionItaly
+WarFactory Object: ItalyWarFactory
+CommandSet: ItalyWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Ukraine
+PlayerTemplate: FactionUkraine
+WarFactory Object: UkraineWarFactory
+CommandSet: UkraineWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Turkey
+PlayerTemplate: FactionTurkey
+WarFactory Object: TurkeyWarFactory
+CommandSet: TurkeyWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Sweden
+PlayerTemplate: FactionSweden
+WarFactory Object: SwedenWarFactory
+CommandSet: SwedenWarfactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Leopard2A7.ini
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [UNLOCKED] src=Data\INI\Object\Specter\NATO\Tracked\Puma.ini
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [UNLOCKED] src=Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+   4 Command_ConstructWFUnlock_NatoVehicleVBCI -> WFUnlock_NatoVehicleVBCI [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_NatoVehicleM142 -> WFUnlock_NatoVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_NatoVehicleCaesar -> WFUnlock_NatoVehicleCaesar [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_NatoVehicleCentauroB2 -> WFUnlock_NatoVehicleCentauroB2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_NatoVehicleIRIST -> WFUnlock_NatoVehicleIRIST [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_NatoVehicleTRML4D -> WFUnlock_NatoVehicleTRML4D [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_ItalyVehicleM142ATACMS -> WFUnlock_ItalyVehicleM142ATACMS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Libya
+PlayerTemplate: FactionLibya
+WarFactory Object: Libya_WarFactory_T
+CommandSet: Libya_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructIraq_T-72 -> Iraq_T-72 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\Tracked\T72M1.ini
+   2 Command_ConstructIraq_BMP-1 -> Iraq_BMP-1 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\IFV\Bmp1P.ini
+   3 Command_ConstructIraq_BMP-2 -> Iraq_BMP-2 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\IFV\Iraq_BMP-2.ini
+   4 Command_ConstructWFUnlock_Iraq_BTR_90 -> WFUnlock_Iraq_BTR-90 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_Iraq_2S1 -> WFUnlock_Iraq_2S1 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_Iraq_Sam8 -> WFUnlock_Iraq_Sam8 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_Iraq_AssadBabel_2 -> WFUnlock_Iraq_AssadBabel-2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructIraq_SA-6 -> Iraq_SA-6 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\AirDefense\2K12.ini
+   9 Command_ConstructWFUnlock_Iraq_Sarab7 -> WFUnlock_Iraq_Sarab7 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_Iraq_Alhussaien -> WFUnlock_Iraq_Alhussaien [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructIraqVehicleRoland3K -> IraqVehicleRoland3K [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\AirDefense\Roland3K.ini
+  12 Command_ConstructIraq_BM-21 -> Iraq_BM-21 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_BM-21.ini
+  13 Command_ConstructWFUnlock_Iraq_R11ScudB -> WFUnlock_Iraq_R11ScudB [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: SouthAfrica
+PlayerTemplate: FactionSouthAfrica
+WarFactory Object: SouthAfrica_WarFactory_T
+CommandSet: SouthAfrica_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructIraq_T-72 -> Iraq_T-72 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\Tracked\T72M1.ini
+   2 Command_ConstructIraq_BMP-1 -> Iraq_BMP-1 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\IFV\Bmp1P.ini
+   3 Command_ConstructIraq_BMP-2 -> Iraq_BMP-2 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\IFV\Iraq_BMP-2.ini
+   4 Command_ConstructWFUnlock_Iraq_BTR_90 -> WFUnlock_Iraq_BTR-90 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_Iraq_2S1 -> WFUnlock_Iraq_2S1 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructWFUnlock_Iraq_Sam8 -> WFUnlock_Iraq_Sam8 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_Iraq_AssadBabel_2 -> WFUnlock_Iraq_AssadBabel-2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructIraq_SA-6 -> Iraq_SA-6 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\AirDefense\2K12.ini
+   9 Command_ConstructWFUnlock_Iraq_Sarab7 -> WFUnlock_Iraq_Sarab7 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_Iraq_Alhussaien -> WFUnlock_Iraq_Alhussaien [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructIraqVehicleRoland3K -> IraqVehicleRoland3K [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\AirDefense\Roland3K.ini
+  12 Command_ConstructIraq_BM-21 -> Iraq_BM-21 [UNLOCKED] src=Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_BM-21.ini
+  13 Command_ConstructWFUnlock_Iraq_R11ScudB -> WFUnlock_Iraq_R11ScudB [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: UAE
+PlayerTemplate: FactionUAE
+WarFactory Object: UAE_WarFactory_T
+CommandSet: UAE_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructWFUnlock_EgyptTankT90MS -> WFUnlock_EgyptTankT90MS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [UNLOCKED] src=Data\INI\Object\Specter\Egyptian Armed Forces\Tracked\M1A1S.ini
+   3 Command_ConstructWFUnlock_GLAVehicleRocketBuggy -> WFUnlock_GLAVehicleRocketBuggy [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   4 Command_ConstructWFUnlock_EgyptVehicleM270 -> WFUnlock_EgyptVehicleM270 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [UNLOCKED] src=Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini
+   6 Command_ConstructWFUnlock_EgyptVehicle9K317 -> WFUnlock_EgyptVehicle9K317 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_EgyptVehicle9S19M2 -> WFUnlock_EgyptVehicle9S19M2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_EgyptVehicleS300VM -> WFUnlock_EgyptVehicleS300VM [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_Arab_Tor1M -> WFUnlock_Arab_Tor1M [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_Arb_9K720SV1 -> WFUnlock_Arb_9K720SV1 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructWFUnlock_EgyptVehicleYPR765 -> WFUnlock_EgyptVehicleYPR765 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  12 Command_ConstructWFUnlock_EgyptVehicleHwasong7 -> WFUnlock_EgyptVehicleHwasong7 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: SaudiArabia
+PlayerTemplate: FactionSaudiArabia
+WarFactory Object: SaudiArabia_WarFactory_T
+CommandSet: SaudiArabia_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructWFUnlock_EgyptTankT90MS -> WFUnlock_EgyptTankT90MS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [UNLOCKED] src=Data\INI\Object\Specter\Egyptian Armed Forces\Tracked\M1A1S.ini
+   3 Command_ConstructWFUnlock_GLAVehicleRocketBuggy -> WFUnlock_GLAVehicleRocketBuggy [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   4 Command_ConstructWFUnlock_EgyptVehicleM270 -> WFUnlock_EgyptVehicleM270 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [UNLOCKED] src=Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini
+   6 Command_ConstructWFUnlock_EgyptVehicle9K317 -> WFUnlock_EgyptVehicle9K317 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_EgyptVehicle9S19M2 -> WFUnlock_EgyptVehicle9S19M2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_EgyptVehicleS300VM -> WFUnlock_EgyptVehicleS300VM [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_Arab_Tor1M -> WFUnlock_Arab_Tor1M [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_Arb_9K720SV1 -> WFUnlock_Arb_9K720SV1 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructWFUnlock_EgyptVehicleYPR765 -> WFUnlock_EgyptVehicleYPR765 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  12 Command_ConstructWFUnlock_EgyptVehicleHwasong7 -> WFUnlock_EgyptVehicleHwasong7 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Syria
+PlayerTemplate: FactionSyria
+WarFactory Object: Syria_WarFactory_T
+CommandSet: Syria_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructWFUnlock_EgyptTankT90MS -> WFUnlock_EgyptTankT90MS [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [UNLOCKED] src=Data\INI\Object\Specter\Egyptian Armed Forces\Tracked\M1A1S.ini
+   3 Command_ConstructWFUnlock_GLAVehicleRocketBuggy -> WFUnlock_GLAVehicleRocketBuggy [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   4 Command_ConstructWFUnlock_EgyptVehicleM270 -> WFUnlock_EgyptVehicleM270 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [UNLOCKED] src=Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini
+   6 Command_ConstructWFUnlock_EgyptVehicle9K317 -> WFUnlock_EgyptVehicle9K317 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   7 Command_ConstructWFUnlock_EgyptVehicle9S19M2 -> WFUnlock_EgyptVehicle9S19M2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructWFUnlock_EgyptVehicleS300VM -> WFUnlock_EgyptVehicleS300VM [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   9 Command_ConstructWFUnlock_Arab_Tor1M -> WFUnlock_Arab_Tor1M [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_Arb_9K720SV1 -> WFUnlock_Arb_9K720SV1 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructWFUnlock_EgyptVehicleYPR765 -> WFUnlock_EgyptVehicleYPR765 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  12 Command_ConstructWFUnlock_EgyptVehicleHwasong7 -> WFUnlock_EgyptVehicleHwasong7 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Japan
+PlayerTemplate: FactionJapan
+WarFactory Object: Japan_WarFactory
+CommandSet: Japan_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M1A2.ini
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1128.ini
+   3 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1296.ini
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M-ATV.ini
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M270.ini
+   6 Command_ConstructAmericaTankM109A7 -> AmericaTankM109A7 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M109A7.ini
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\M6.ini
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M2A3.ini
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\US_AN_TPY2.ini
+  10 Command_ConstructWFUnlock_US_THAAD -> WFUnlock_US_THAAD [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M142.ini
+  12 Command_ConstructWFUnlock_US_M1075I_Trident -> WFUnlock_US_M1075I_Trident [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  13 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\US_M1075T.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Vietnam
+PlayerTemplate: FactionVietnam
+WarFactory Object: Vietnam_WarFactory
+CommandSet: Vietnam_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M1A2.ini
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1128.ini
+   3 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1296.ini
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M-ATV.ini
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M270.ini
+   6 Command_ConstructAmericaTankM109A7 -> AmericaTankM109A7 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M109A7.ini
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\M6.ini
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M2A3.ini
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\US_AN_TPY2.ini
+  10 Command_ConstructWFUnlock_US_THAAD -> WFUnlock_US_THAAD [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M142.ini
+  12 Command_ConstructWFUnlock_US_M1075I_Trident -> WFUnlock_US_M1075I_Trident [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  13 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\US_M1075T.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: SouthKorea
+PlayerTemplate: FactionSouthKorea
+WarFactory Object: SouthKorea_WarFactory
+CommandSet: SouthKorea_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M1A2.ini
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1128.ini
+   3 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M1296.ini
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M-ATV.ini
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M270.ini
+   6 Command_ConstructAmericaTankM109A7 -> AmericaTankM109A7 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M109A7.ini
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\M6.ini
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Tracked\M2A3.ini
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\AirDefense\US_AN_TPY2.ini
+  10 Command_ConstructWFUnlock_US_THAAD -> WFUnlock_US_THAAD [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\M142.ini
+  12 Command_ConstructWFUnlock_US_M1075I_Trident -> WFUnlock_US_M1075I_Trident [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  13 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [UNLOCKED] src=Data\INI\Object\Specter\United States Of America\Wheeled\US_M1075T.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: India
+PlayerTemplate: FactionIndia
+WarFactory Object: India_WarFactory_T
+CommandSet: India_WarFactoryCommandSet winner=Data\INI\CommandSet.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructWFUnlock_RussiaTankT90A -> WFUnlock_RussiaTankT90A [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   2 Command_ConstructRussiaTankT72B3M -> RussiaTankT72B3M [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\T72B3_6_16_23.ini
+   3 Command_ConstructWFUnlock_RussiaVehicleBm30 -> WFUnlock_RussiaVehicleBm30 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   4 Command_ConstructWFUnlock_RussiaVehicleKrasukha4 -> WFUnlock_RussiaVehicleKrasukha4 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_RussiaArtillery2S19M2 -> WFUnlock_RussiaArtillery2S19M2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructRussiaTankBMP3 -> RussiaTankBMP3 [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\IFV\BMP3M.ini
+   7 Command_ConstructWFUnlock_RussiaTankTorM2M -> WFUnlock_RussiaTankTorM2M [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructRussiaVehiclePantsirS1M -> RussiaVehiclePantsirS1M [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\Pantsir.ini
+   9 Command_ConstructWFUnlock_RussiaVehicle92N6R -> WFUnlock_RussiaVehicle92N6R [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_RussiaVehicleS400 -> WFUnlock_RussiaVehicleS400 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructWFUnlock_RussiaTankTos1A -> WFUnlock_RussiaTankTos1A [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  12 Command_ConstructWFUnlock_RussiaVehicle9K720 -> WFUnlock_RussiaVehicle9K720 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  13 Command_ConstructWFUnlock_RussiaVehicleRS24 -> WFUnlock_RussiaVehicleRS24 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+Country: Pakistan
+PlayerTemplate: FactionPakistan
+WarFactory Object: Pakistan_WarFactory_T
+CommandSet: Pakistan_WarFactoryCommandSet winner=Data\INI\CommandSet_Pakistan.ini
+CommandSetUpgrade modules: 0
+Unlocked WarFactory units:
+   1 Command_ConstructWFUnlock_RussiaTankT90A -> WFUnlock_RussiaTankT90A [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   2 Command_ConstructRussiaTankT72B3M -> RussiaTankT72B3M [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\T72B3_6_16_23.ini
+   3 Command_ConstructWFUnlock_RussiaVehicleBm30 -> WFUnlock_RussiaVehicleBm30 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   4 Command_ConstructWFUnlock_RussiaVehicleKrasukha4 -> WFUnlock_RussiaVehicleKrasukha4 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   5 Command_ConstructWFUnlock_RussiaArtillery2S19M2 -> WFUnlock_RussiaArtillery2S19M2 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   6 Command_ConstructRussiaTankBMP3 -> RussiaTankBMP3 [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\IFV\BMP3M.ini
+   7 Command_ConstructWFUnlock_RussiaTankTorM2M -> WFUnlock_RussiaTankTorM2M [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+   8 Command_ConstructRussiaVehiclePantsirS1M -> RussiaVehiclePantsirS1M [UNLOCKED] src=Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\Pantsir.ini
+   9 Command_ConstructWFUnlock_RussiaVehicle92N6R -> WFUnlock_RussiaVehicle92N6R [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  10 Command_ConstructWFUnlock_RussiaVehicleS400 -> WFUnlock_RussiaVehicleS400 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  11 Command_ConstructWFUnlock_RussiaTankTos1A -> WFUnlock_RussiaTankTos1A [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  12 Command_ConstructWFUnlock_RussiaVehicle9K720 -> WFUnlock_RussiaVehicle9K720 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+  13 Command_ConstructWFUnlock_RussiaVehicleRS24 -> WFUnlock_RussiaVehicleRS24 [UNLOCKED] src=Data\INI\Object\Specter\DestinationWarFactoryUnlock\WFUnlock_Objects.ini
+Status: UNLOCKED_AT_GAME_START
+
+PROTECTED COUNTRIES
+USA / Russia / China / Iran / Israel / NATO / Egypt / Iraq / North Korea
+UNCHANGED
+
+DEST_WARFACTORY_UNLOCKED_OK count=17/17
+Errors: 0

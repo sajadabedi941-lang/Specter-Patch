@@ -1,0 +1,133 @@
+SPECTER WARFACTORY + AIR FORCE COMPLETE REBUILD
+===============================================
+
+This pack edits the live packed DATA chain. It does not add
+CommandSet_ZZZZ / CommandButton_ZZZZ fake overrides.
+
+Protected countries (WarFactory, ground, tech, objects):
+USA, Russia, China, Iran (except Part 4 air slots), Israel, NATO,
+Egypt, Iraq, North Korea.
+
+Iran air is an explicit Part 4 exception: new dest-named objects
+were added and slotted onto the live Iran airfield CommandSets.
+Iran WarFactory / Iran object files were not edited.
+
+------------------------------------------------
+PART 1 / 2 — War Factory live bars + start unlock
+------------------------------------------------
+Destination factories already use the template CommandSets inside
+packed CommandSet.ini / CommandSet_Pakistan.ini, with WFUnlock_*
+clones so dest players are not locked by NATO/USA/Russia/Egypt/Iraq
+prerequisites.
+
+17/17 dest WarFactory CommandSets still resolve and stay unlocked.
+
+------------------------------------------------
+PART 3 — Japan WarFactory construction
+------------------------------------------------
+Live Japan_WarFactory was an Iraq-style building:
+  Model JP_WarFactory
+  Animation JP_WarFactory.NKr_WarFactory  (broken cross-model anim)
+  no USA construction/production geometry
+
+It is now a USA-template factory last-won in the live file:
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+
+  Side = Japan
+  CommandSet = Japan_WarFactoryCommandSet
+  Model/Anim = US_WarFactory.US_WarFactory
+  ProductionUpdate + DefaultProductionExitUpdate
+  BuildCost 1500 / BuildTime 16
+  Prerequisite Japan_SupplyCenter
+  KindOf includes FS_FACTORY FS_WARFACTORY
+  no CommandSetUpgrade
+
+Vietnam and South Korea WarFactory buildings received the same
+USA-template repair (same Iraq-clone construction break).
+
+Live Japan chain:
+  FactionJapan StartingUnit0 = Japan_VT72B
+  Japan_VT72BCommandSet slot 4 = Command_ConstructJapan_WarFactory
+  Object = Japan_WarFactory
+  CommandSet = Japan_WarFactoryCommandSet
+
+------------------------------------------------
+PART 4 — Aircraft / helicopters
+------------------------------------------------
+IRAN (air exception)
+  Added IranAir_Tu22M3, IranAir_Su24MR, IranAir_IL76
+  (Iraq working donors, Side=Iran, prerequisites stripped)
+  Slots 15-17 on IranAirfieldCommandSet and IranExpandedAirfieldCommandSet
+
+SAUDI ARABIA
+  F-5E visual AVHawk -> LSFKoreaF5
+  AA-only fighters given tertiary bombs
+  Extra _CAS bomb loadouts on the airfield bar
+  Helicopter section: Mi-8T + dest AH-64E
+
+UAE
+  F-16Blk52 (F-16B1K52) no-fire: WeaponSet replaced with the working
+  3-weapon Pakistan F-16 set (AIM-120 / AIM-9 / bomb)
+  Extra bomb CAS variants
+  Helicopter section: Mi-8T + dest AH-64E
+
+INDIA
+  Su-30MKI / Mirage 2000H / MiG-29A bomb loadouts + CAS variants
+  Helicopter section: Mi-8T + dest AH-64E
+
+PAKISTAN
+  MiG-29A / J-10CE bombs + CAS variants
+  Live air bar expanded with JF-17 / F-16 AMLU / Mirage 5
+  Helicopter section: existing Mi-8T + dest AH-64E
+
+SOUTH KOREA
+  RC-800 / C-130H / CN-235 are not on the live airfield bar
+  C-130H replaced by SouthKoreaAir_USATransport (working C-17)
+  UH-60P / AH-64E / CH-47 / LAH / KUH-1 last-won from working
+  NATO UH-60 / AH-64 / CH-47 donors (US_UH60 / US_AH64E / US_CH47F)
+  E-737: America SAR scan + AN/APY-2 FireWeaponUpdate added
+
+SOUTH AFRICA
+  Mirage F1BA prerequisites stripped (unlocked from start)
+  Oryx NAT_Puma -> Irq_Mi8T working helicopter
+  Impala UV_Turbo -> UVVampire working jet visual
+  Helicopter section: Oryx + dest AH-64E
+
+VIETNAM
+  Mi-17 last-won as combat helicopter (RUS_MI8MTV5 + S-8 rockets)
+  Airfield now has 12 fighters + CAS bomb variants
+  Helicopter section: Mi-17 + dest AH-64E
+
+------------------------------------------------
+PART 5 — Packed DATA audit
+------------------------------------------------
+Re-extracted /tmp/wf_airforce_complete/_SPEC_DATA_ONE.big
+No CommandSet_ZZZZ files.
+Protected CommandSets byte-identical to the unlock/ea6b baseline.
+Protected country object folders unchanged.
+Dest WarFactory 17/17 OK.
+Japan factory uses US_WarFactory.
+All requested air/heli buttons resolve to live objects.
+
+------------------------------------------------
+IN-GAME PARSE FIXES (Wine ZH launch)
+------------------------------------------------
+Wine generals.exe DID load this DATA and wrote ReleaseCrashInfo.txt
+for three live parse bugs. Those were fixed before this SHA:
+
+1) Object India_Mi-8T last-win was truncated at ClientUpdate (no
+   Object End). Do not last-win India_Mi-8T / Pakistan_Mi-8T.
+2) Command_ConstructIranAir_* buttons were only at the BIG tail,
+   after CommandSet.ini. Buttons are now appended onto packed
+   CommandButton.ini so they exist before CommandSet parse.
+3) SaudiArabia_AirfieldCommandSet with 20 slots crashed. Written
+   dest air bars are capped at 18 slots. Saudi F-5E CAS is slot 17
+   (priority unit kept on the live bar).
+
+After those fixes: no ReleaseCrashInfo.txt. Wine still cannot reach
+a playable skirmish (D3D/OLE/no audio device). Japan factory
+construct, vehicle produce, weapon fire, and landing/takeoff are
+NOT gameplay-verified on this host.
+
+DATA SHA256
+6ce400a40cb6d250443505c5ec56e529f897595ce82e18fb944c0838e955d198

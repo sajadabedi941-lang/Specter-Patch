@@ -1,0 +1,82 @@
+PACKED /tmp/wf_airforce_complete/_SPEC_DATA_ONE.big 365861492 SHA256 6ce400a40cb6d250443505c5ec56e529f897595ce82e18fb944c0838e955d198
+FILES 2808
+NO_ZZZZ_FILES
+PROTECTED_CS_OK NatoWarfactoryCommandSet
+PROTECTED_CS_OK AmericaWarFactoryCommandSet
+PROTECTED_CS_OK AmericaWarFactoryCommandSet_T3
+PROTECTED_CS_OK RussiaWarFactoryCommandSet
+PROTECTED_CS_OK EgyptWarFactoryCommandSet
+PROTECTED_CS_OK Iraq_WarFactoryCommandSet_T3
+PROTECTED_CS_OK IranWarfactoryCommandSet
+PROTECTED_CS_OK Israel_WarFactoryCommandSet
+PROTECTED_CS_OK NorthKorea_WarFactoryCommandSet
+PROTECTED_CS_OK ChinaWarFactoryCommandSet
+PROTECTED_CS_OK AmericaAirfieldCommandSet
+PROTECTED_CS_OK Iraq_AirfieldCommandSet
+DEST_WARFACTORY_OK Britain slots=11 src=Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Germany slots=11 src=Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK France slots=11 src=Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Italy slots=11 src=Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Ukraine slots=11 src=Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Turkey slots=11 src=Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Sweden slots=11 src=Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+DEST_WARFACTORY_OK Libya slots=14 src=Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+DEST_WARFACTORY_OK SouthAfrica slots=14 src=Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+DEST_WARFACTORY_OK UAE slots=13 src=Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+DEST_WARFACTORY_OK SaudiArabia slots=13 src=Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+DEST_WARFACTORY_OK Syria slots=13 src=Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini
+DEST_WARFACTORY_OK Japan slots=14 src=Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+JAPAN_WARFACTORY_USA_TEMPLATE_OK
+DEST_WARFACTORY_OK Vietnam slots=14 src=Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini
+DEST_WARFACTORY_OK SouthKorea slots=14 src=Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+DEST_WARFACTORY_OK India slots=14 src=Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini
+DEST_WARFACTORY_OK Pakistan slots=14 src=Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+DEST_WARFACTORY_OK_COUNT 17/17
+OK IRAN Command_ConstructIranAir_Tu22M3 -> IranAir_Tu22M3 model=['Iraq_Tu22m3'] weap=5
+OK IRAN Command_ConstructIranAir_Su24MR -> IranAir_Su24MR model=['Irq_Su24MR'] weap=1
+OK IRAN Command_ConstructIranAir_IL76 -> IranAir_IL76 model=['Iraq_IL-76'] weap=0
+AIR_IRAN_SLOTS [('1', 'Command_ConstructIranJetF14A'), ('2', 'Command_ConstructIranJetF14AM'), ('3', 'Command_ConstructIranJetF4E'), ('4', 'Command_ConstructIranJetMig29A'), ('5', 'Command_ConstructIranJetMig21Bis'), ('6', 'Command_ConstructIranJetF7N'), ('7', 'Command_ConstructIranJetSU22'), ('8', 'Command_ConstructIranJetSU24M'), ('9', 'Command_ConstructIranJetSU25K'), ('10', 'Command_ConstructIranJetSu35S'), ('11', 'Command_ConstructIranJetJ10CE'), ('12', 'Command_ConstructIranJetSu57E'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructIranAir_Tu22M3'), ('16', 'Command_ConstructIranAir_Su24MR'), ('17', 'Command_ConstructIranAir_IL76')]
+OK SAUDI Command_ConstructSaudiArabia_Mi-8T -> SaudiArabia_Mi-8T model=['Irq_MI8T'] weap=0
+OK SAUDI Command_ConstructSaudiAir_AH64E -> SaudiAir_AH64E model=['US_AH64E'] weap=3
+OK SAUDI Command_ConstructSaudiJetF5E_CAS -> SaudiJetF5E_CAS model=['LSFKoreaF5'] weap=3
+AIR_SAUDI_SLOTS [('1', 'Command_ConstructSaudiJetF15S'), ('2', 'Command_ConstructSaudiJetF15SA'), ('3', 'Command_ConstructSaudiJetF15C'), ('4', 'Command_ConstructSaudiJetF15EX'), ('5', 'Command_ConstructSaudiJetTyphoon'), ('6', 'Command_ConstructSaudiJetTyphoonT3'), ('7', 'Command_ConstructSaudiJetTornadoIDS'), ('8', 'Command_ConstructSaudiJetTornadoADV'), ('9', 'Command_ConstructSaudiJetTornadoECR'), ('10', 'Command_ConstructSaudiJetHawk65'), ('11', 'Command_ConstructSaudiJetLightning'), ('12', 'Command_ConstructSaudiJetF5E'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructSaudiArabia_Mi-8T'), ('16', 'Command_ConstructSaudiAir_AH64E'), ('17', 'Command_ConstructSaudiJetF5E_CAS'), ('18', 'Command_ConstructSaudiJetF15S_CAS')]
+SAUDI_F5E_MODEL ['LSFKoreaF5', 'LSFKoreaF5d', 'LSFKoreaF5d']
+OK UAE Command_ConstructUAE_F16Blk52 -> UAE_F16Blk52 model=['US_F16CJ_blk52'] weap=3
+OK UAE Command_ConstructUAE_Mi-8T -> UAE_Mi-8T model=['Irq_MI8T'] weap=0
+OK UAE Command_ConstructUAE_F16Blk52_CAS -> UAE_F16Blk52_CAS model=['US_F16CJ_blk52'] weap=3
+AIR_UAE_SLOTS [('1', 'Command_ConstructUAEJetF16E'), ('2', 'Command_ConstructUAEJetF16ECegy'), ('3', 'Command_ConstructUAE_F16Blk52'), ('4', 'Command_ConstructUAEJetF16F'), ('5', 'Command_ConstructUAEJetMirage20009'), ('6', 'Command_ConstructUAEJetMirage20009E'), ('7', 'Command_ConstructUAEJetMirage2000DAD'), ('8', 'Command_ConstructUAEJetF15EA'), ('9', 'Command_ConstructUAEJetF15E'), ('10', 'Command_ConstructUAEJetF15SA'), ('11', 'Command_ConstructUAEJetHawk102'), ('12', 'Command_ConstructUAEJetMirage20005'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructUAE_Mi-8T'), ('16', 'Command_ConstructUAEAir_AH64E'), ('17', 'Command_ConstructUAE_F16Blk52_CAS'), ('18', 'Command_ConstructUAEJetF16E_CAS')]
+UAE_F16_WEAPONS [('PRIMARY', 'Pakistan_Weapon_AIM120_F16AMLU'), ('SECONDARY', 'Pakistan_Weapon_AIM9_F16AMLU'), ('TERTIARY', 'Pakistan_Weapon_Bomb_F16AMLU')]
+OK INDIA Command_ConstructIndia_Mi-8T -> India_Mi-8T model=['Irq_MI8T'] weap=0
+OK INDIA Command_ConstructIndiaAir_AH64E -> IndiaAir_AH64E model=['US_AH64E'] weap=3
+OK INDIA Command_ConstructIndiaJetSu30MKI_CAS -> IndiaJetSu30MKI_CAS model=['RUSU30'] weap=3
+AIR_INDIA_SLOTS [('1', 'Command_ConstructIndiaJetSu30MKI'), ('2', 'Command_ConstructIndia_Mig-29A'), ('3', 'Command_ConstructIndiaJetMig29K'), ('4', 'Command_ConstructIndiaJetRafaleEH'), ('5', 'Command_ConstructIndiaJetRafaleDH'), ('6', 'Command_ConstructIndiaJetMirage2000H'), ('7', 'Command_ConstructIndiaJetMirage2000I'), ('8', 'Command_ConstructIndiaJetMig21Bison'), ('9', 'Command_ConstructIndiaJetJaguarIS'), ('10', 'Command_ConstructIndiaJetMig27'), ('11', 'Command_ConstructIndiaJetTejas'), ('12', 'Command_ConstructIndiaJetAMCA'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructIndia_Mi-8T'), ('16', 'Command_ConstructIndiaAir_AH64E'), ('17', 'Command_ConstructIndiaJetSu30MKI_CAS'), ('18', 'Command_ConstructIndia_Mig_29A_CAS')]
+OK PAKISTAN Command_ConstructPakistan_Mi-8T -> Pakistan_Mi-8T model=['Irq_MI8T'] weap=0
+OK PAKISTAN Command_ConstructPakistanAir_AH64E -> PakistanAir_AH64E model=['US_AH64E'] weap=3
+OK PAKISTAN Command_ConstructPakistan_F16Blk52_CAS -> Pakistan_F16Blk52_CAS model=['US_F16CJ_blk52'] weap=3
+AIR_PAKISTAN_SLOTS [('1', 'Command_ConstructPakistan_Mig-29A'), ('2', 'Command_ConstructPakistan_MirageF1_Bq'), ('3', 'Command_ConstructPakistan_Su-25K'), ('4', 'Command_ConstructPakistan_Mi-8T'), ('5', 'Command_ConstructPakistan_IL-76'), ('6', 'Command_ConstructPakistanAir_AH64E'), ('7', 'Command_ConstructPakistan_F16Blk52'), ('8', 'Command_ConstructPakistan_F16Blk52_CAS'), ('9', 'Command_ConstructPakistanJetJ10CE'), ('10', 'Command_ConstructPakistanJetJ10CE_CAS'), ('11', 'Command_ConstructPakistanJetJF17'), ('12', 'Command_ConstructPakistanJetJF17Blk3'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructPakistan_Mig_29A_CAS'), ('16', 'Command_ConstructPakistanJetF16AMLU'), ('17', 'Command_ConstructPakistanJetMirage5')]
+OK SK Command_ConstructSouthKoreaJetUH60P -> SouthKoreaJetUH60P model=['US_UH60'] weap=0
+OK SK Command_ConstructSouthKoreaJetAH64E -> SouthKoreaJetAH64E model=['US_AH64E'] weap=3
+OK SK Command_ConstructSouthKoreaJetCH47 -> SouthKoreaJetCH47 model=['US_CH47F'] weap=0
+OK SK Command_ConstructSouthKoreaHelicopterLAH -> SouthKoreaHelicopterLAH model=['US_AH64E'] weap=3
+AIR_SK_SLOTS [('1', 'Command_ConstructSouthKoreaJetF35A'), ('2', 'Command_ConstructSouthKoreaJetF35B'), ('3', 'Command_ConstructSouthKoreaJetKF21'), ('4', 'Command_ConstructSouthKoreaJetF15KSlam'), ('5', 'Command_ConstructSouthKoreaJetF16C'), ('6', 'Command_ConstructSouthKoreaJetF16D'), ('7', 'Command_ConstructSouthKoreaJetFA50'), ('8', 'Command_ConstructSouthKoreaJetFA50Blk20'), ('9', 'Command_ConstructSouthKoreaJetT50'), ('10', 'Command_ConstructSouthKoreaJetF4E'), ('11', 'Command_ConstructSouthKoreaJetF5E'), ('12', 'Command_ConstructSouthKoreaJetKF21Blk2'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructSouthKoreaJetUH60P'), ('16', 'Command_ConstructSouthKoreaJetAH64E'), ('17', 'Command_ConstructSouthKoreaJetCH47'), ('18', 'Command_ConstructSouthKoreaHelicopterLAH')]
+OK SK_HEAVY Command_ConstructSouthKoreaJetE737 -> SouthKoreaJetE737 model=['KVE737'] weap=1
+OK SK_HEAVY Command_ConstructSouthKoreaAir_USATransport -> SouthKoreaAir_USATransport model=['IUAC17HXNew'] weap=0
+OK SK_HEAVY Command_ConstructSouthKoreaHelicopterKUH1 -> SouthKoreaHelicopterKUH1 model=['US_UH60'] weap=0
+AIR_SK_HEAVY_SLOTS [('1', 'Command_ConstructSouthKoreaJetE737'), ('2', 'Command_ConstructSouthKoreaAir_USATransport'), ('3', 'Command_ConstructSouthKoreaJetUH60P'), ('4', 'Command_ConstructSouthKoreaJetAH64E'), ('5', 'Command_ConstructSouthKoreaJetCH47'), ('6', 'Command_ConstructSouthKoreaHelicopterLAH'), ('7', 'Command_ConstructSouthKoreaHelicopterKUH1'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell')]
+SK_E737_SCAN_OK
+SK_AH64_WEAPONS [('PRIMARY', 'GenericHeliGunnerSight'), ('SECONDARY', '8x_MRATGM_AGM114L'), ('TERTIARY', '70mm_Hydra_AH64E')]
+OK SA Command_ConstructSouthAfrica_MirageF1_Bq -> SouthAfrica_MirageF1_Bq model=['Irq_MirageF1_Bq'] weap=1
+OK SA Command_ConstructSouthAfricaHelicopterOryx -> SouthAfricaHelicopterOryx model=['Irq_Mi8T'] weap=0
+OK SA Command_ConstructSouthAfricaJetImpala -> SouthAfricaJetImpala model=['UVVampire'] weap=3
+AIR_SA_SLOTS [('1', 'Command_ConstructSouthAfrica_MirageF1_Bq'), ('2', 'Command_ConstructSouthAfricaJetMirageIIICZ'), ('3', 'Command_ConstructSouthAfricaJetCheetahC'), ('4', 'Command_ConstructSouthAfricaJetCheetahD'), ('5', 'Command_ConstructSouthAfricaJetCheetahE'), ('6', 'Command_ConstructSouthAfricaJetGripenC'), ('7', 'Command_ConstructSouthAfricaJetGripenD'), ('8', 'Command_ConstructSouthAfricaJetGripenE'), ('9', 'Command_ConstructSouthAfricaJetHawk120'), ('10', 'Command_ConstructSouthAfricaJetHawk127'), ('11', 'Command_ConstructSouthAfricaJetImpala'), ('12', 'Command_ConstructSouthAfricaJetBuccaneer'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructSouthAfricaHelicopterOryx'), ('16', 'Command_ConstructSouthAfricaAir_AH64E')]
+SA_MIRAGE_UNLOCKED
+SA_ORYX_MODEL ['Irq_Mi8T', 'Irq_Mi8T']
+SA_IMPALA_MODEL ['UVVampire', 'UVVampire']
+OK VIETNAM Command_ConstructVietnamJetMi17 -> VietnamJetMi17 model=['RUS_MI8MTV5'] weap=1
+OK VIETNAM Command_ConstructVietnamJetMig29S -> VietnamJetMig29S model=['LSFruMiG29'] weap=3
+OK VIETNAM Command_ConstructVietnamJetL39 -> VietnamJetL39 model=['AVHawk_D1'] weap=3
+OK VIETNAM Command_ConstructVietnamJetMig29S_CAS -> VietnamJetMig29S_CAS model=['LSFruMiG29'] weap=3
+AIR_VIETNAM_SLOTS [('1', 'Command_ConstructVietnamJetMig29S'), ('2', 'Command_ConstructVietnamJetMig21'), ('3', 'Command_ConstructVietnamJetSu22'), ('4', 'Command_ConstructVietnamJetSu27'), ('5', 'Command_ConstructVietnamJetSu30'), ('6', 'Command_ConstructVietnamJetYak130'), ('7', 'Command_ConstructVietnamJetF5E'), ('8', 'Command_ConstructVietnamJetMig21bis'), ('9', 'Command_ConstructVietnamJetSu22M4'), ('10', 'Command_ConstructVietnamJetSu30MK2'), ('11', 'Command_ConstructVietnamJetSu27UB'), ('12', 'Command_ConstructVietnamJetL39'), ('13', 'Command_SetRallyPoint'), ('14', 'Command_Sell'), ('15', 'Command_ConstructVietnamJetMi17'), ('16', 'Command_ConstructVietnamAir_AH64E'), ('17', 'Command_ConstructVietnamJetMig29S_CAS'), ('18', 'Command_ConstructVietnamJetSu27_CAS')]
+VN_MI17 ['RUS_MI8MTV5'] weap=[('PRIMARY', '16x_80mm_S8_Rockets_Mi17')]
+PROTECTED_OBJECT_FILES_UNCHANGED
+RESULT PASS

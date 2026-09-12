@@ -1,0 +1,627 @@
+SPECTER WAR FACTORY REBUILD FINAL AUDIT
+=======================================
+
+Package: Specter_WarFactory_Rebuild_Final.zip
+DATA SHA256: cfea484bf94c437e523c1efd7140130250c069a040b508ee325b3363a3a8544b
+DATA size: 365015875 bytes
+ART: not included (unchanged from Specter_EA6B_Crash_Fix baseline
+     SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761)
+
+Transfer map
+  NATO  NatoWarfactoryCommandSet          -> Britain Germany France Italy Ukraine Turkey Sweden
+  Iraq  Iraq_WarFactoryCommandSet_T3      -> Libya South Africa
+  Egypt EgyptWarFactoryCommandSet         -> UAE Saudi Arabia Syria
+  USA   AmericaWarFactoryCommandSet-AI    -> Japan Vietnam South Korea
+  Russia RussiaWarFactoryCommandSet       -> India Pakistan
+
+Method: destination War Factory CommandSets were emptied of
+destination-named production and rebuilt as exact copies of the
+assigned reference-country live CommandSet (same CommandButtons,
+same unit Objects, same costs/times/prereqs on those Objects).
+No new tanks, ART, or donor objects were created.
+
+Protected countries were not edited.
+
+Country: Britain
+Old WarFactory entries removed: 14
+  - Command_ConstructBritainTankChallenger2
+  - Command_ConstructBritainTankChallenger2TES
+  - Command_ConstructBritainVehicleAjax
+  - Command_ConstructBritainVehicleWarrior
+  - Command_ConstructBritainVehicleMastiff
+  - Command_ConstructBritainVehicleStormer
+  - Command_ConstructBritainVehicleSkySabre
+  - Command_ConstructBritainVehicleGiraffe
+  - Command_ConstructBritainVehicleGMLRS
+  - Command_ConstructBritainVehicleStormShadowTEL
+  - Command_ConstructBritainVehicleAS90
+  - Command_ConstructBritainVehicleStriker
+  - Command_ConstructBritainVehicleCRARRV
+  - Command_ConstructBritainVehicleTrojan
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: BritainWarfactoryCommandSet
+WarFactory Object: BritainWarFactory (file Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Germany
+Old WarFactory entries removed: 14
+  - Command_ConstructGermanyTankLeopard2A7
+  - Command_ConstructGermanyTankLeopard2A6
+  - Command_ConstructGermanyVehicleFennek
+  - Command_ConstructGermanyVehiclePuma
+  - Command_ConstructGermanyVehicleBoxer
+  - Command_ConstructGermanyVehicleGepard
+  - Command_ConstructGermanyVehicleIRIST
+  - Command_ConstructGermanyVehicleTRML
+  - Command_ConstructGermanyVehicleMARS
+  - Command_ConstructGermanyVehicleTaurusTEL
+  - Command_ConstructGermanyVehiclePzH2000
+  - Command_ConstructGermanyVehicleWieselAT
+  - Command_ConstructGermanyVehicleBuffel
+  - Command_ConstructGermanyVehicleBoxerAA
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: GermanyWarfactoryCommandSet
+WarFactory Object: GermanyWarFactory (file Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: France
+Old WarFactory entries removed: 14
+  - Command_ConstructFranceTankLeclerc
+  - Command_ConstructFranceTankAMX30
+  - Command_ConstructFranceVehicleAMX10RC
+  - Command_ConstructFranceVehicleVBCI
+  - Command_ConstructFranceVehicleVAB
+  - Command_ConstructFranceVehicleMistral
+  - Command_ConstructFranceVehicleSAMPT
+  - Command_ConstructFranceVehicleGM200
+  - Command_ConstructFranceVehicleLRU
+  - Command_ConstructFranceVehicleSCALPTEL
+  - Command_ConstructFranceVehicleCaesar
+  - Command_ConstructFranceVehicleVABHOT
+  - Command_ConstructFranceVehicleDNG
+  - Command_ConstructFranceVehicleJaguar
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: FranceWarfactoryCommandSet
+WarFactory Object: FranceWarFactory (file Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Italy
+Old WarFactory entries removed: 14
+  - Command_ConstructItalyTankAriete
+  - Command_ConstructItalyTankArieteC1
+  - Command_ConstructItalyVehicleCentauro
+  - Command_ConstructItalyVehicleDardo
+  - Command_ConstructItalyVehicleVBM
+  - Command_ConstructItalyVehicleSIDAM
+  - Command_ConstructItalyVehicleSAMPT
+  - Command_ConstructItalyVehicleRAT31
+  - Command_ConstructItalyVehicleM270
+  - Command_ConstructItalyVehicleStormShadowTEL
+  - Command_ConstructItalyVehiclePzH2000
+  - Command_ConstructItalyVehicleCentauroAT
+  - Command_ConstructItalyVehicleARV
+  - Command_ConstructItalyVehicleCentauro2
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: ItalyWarfactoryCommandSet
+WarFactory Object: ItalyWarFactory (file Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Ukraine
+Old WarFactory entries removed: 14
+  - Command_ConstructUkraineTankT84
+  - Command_ConstructUkraineTankT72AMT
+  - Command_ConstructUkraineVehicleBRDM
+  - Command_ConstructUkraineVehicleBMP2
+  - Command_ConstructUkraineVehicleBTR4
+  - Command_ConstructUkraineVehicleGepard
+  - Command_ConstructUkraineVehicleBuk
+  - Command_ConstructUkraineVehicleP18
+  - Command_ConstructUkraineVehicleHIMARS
+  - Command_ConstructUkraineVehicleHrim2
+  - Command_ConstructUkraineVehicleBohdana
+  - Command_ConstructUkraineVehicleStugna
+  - Command_ConstructUkraineVehicleBREM
+  - Command_ConstructUkraineTankT64BV
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: UkraineWarfactoryCommandSet
+WarFactory Object: UkraineWarFactory (file Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Turkey
+Old WarFactory entries removed: 14
+  - Command_ConstructTurkeyTankLeopard2A4
+  - Command_ConstructTurkeyTankM60T
+  - Command_ConstructTurkeyVehicleKaplan
+  - Command_ConstructTurkeyVehicleACV15
+  - Command_ConstructTurkeyVehicleKirpi
+  - Command_ConstructTurkeyVehicleKorkut
+  - Command_ConstructTurkeyVehicleHisar
+  - Command_ConstructTurkeyVehicleKalkan
+  - Command_ConstructTurkeyVehicleKasirga
+  - Command_ConstructTurkeyVehicleBora
+  - Command_ConstructTurkeyVehicleFirtina
+  - Command_ConstructTurkeyVehicleACVTOW
+  - Command_ConstructTurkeyVehicleM88
+  - Command_ConstructTurkeyVehicleAltay
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: TurkeyWarfactoryCommandSet
+WarFactory Object: TurkeyWarFactory (file Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Sweden
+Old WarFactory entries removed: 14
+  - Command_ConstructSwedenTankStrv122
+  - Command_ConstructSwedenTankStrv121
+  - Command_ConstructSwedenVehicleCV90R
+  - Command_ConstructSwedenVehicleCV90
+  - Command_ConstructSwedenVehiclePatgb203
+  - Command_ConstructSwedenVehicleLvkv90
+  - Command_ConstructSwedenVehicleIRIST
+  - Command_ConstructSwedenVehicleGiraffe
+  - Command_ConstructSwedenVehiclePULS
+  - Command_ConstructSwedenVehicleRBS15
+  - Command_ConstructSwedenVehicleArcher
+  - Command_ConstructSwedenVehicleCV90AT
+  - Command_ConstructSwedenVehicleBgbv120
+  - Command_ConstructSwedenTankStrv122B
+New template used: NATO (NatoWarfactoryCommandSet)
+Units transferred: 10
+CommandSet: SwedenWarfactoryCommandSet
+WarFactory Object: SwedenWarFactory (file Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini)
+CommandButtons:
+   1 Command_ConstructNatoTankLeopard2A7Plus -> NatoTankLeopard2A7Plus [OK]
+   2 Command_ConstructNatoTankPuma -> NatoTankPuma [OK]
+   3 Command_ConstructNatoVehicleCortaleMK3 -> NatoVehicleCortaleMK3 [OK]
+   4 Command_ConstructNatoVehicleVBCI -> NatoVehicleVBCI [OK]
+   5 Command_ConstructNatoVehicleM142 -> NatoVehicleM142 [OK]
+   6 Command_ConstructNatoVehicleCaesar -> NatoVehicleCaesar [OK]
+   7 Command_ConstructNatoVehicleCentauroB2 -> NatoVehicleCentauroB2 [OK]
+   8 Command_ConstructNatoVehicleIRIST -> NatoVehicleIRIST [OK]
+   9 Command_ConstructNatoVehicleTRML4D -> NatoVehicleTRML4D [OK]
+  10 Command_ConstructNNatoVehicleM142ATACMS -> ItalyVehicleM142ATACMS [OK]
+Validation: PASS
+
+Country: Libya
+Old WarFactory entries removed: 14
+  - Command_ConstructLibyaTankT72
+  - Command_ConstructLibyaTankT62
+  - Command_ConstructLibyaVehicleBRDM
+  - Command_ConstructLibyaVehicleBMP1
+  - Command_ConstructLibyaVehicleM113
+  - Command_ConstructLibyaVehicleShilka
+  - Command_ConstructLibyaVehicleSA6
+  - Command_ConstructLibyaVehicleRadar
+  - Command_ConstructLibyaVehicleBM21
+  - Command_ConstructLibyaVehicleScudB
+  - Command_ConstructLibyaVehicle2S1
+  - Command_ConstructLibyaVehicleATGM
+  - Command_ConstructLibyaVehicleBREM
+  - Command_ConstructLibyaVehicleScudBtry
+New template used: Iraq (Iraq_WarFactoryCommandSet_T3)
+Units transferred: 13
+CommandSet: Libya_WarFactoryCommandSet
+WarFactory Object: Libya_WarFactory_T (file Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructIraq_T-72 -> Iraq_T-72 [OK]
+   2 Command_ConstructIraq_BMP-1 -> Iraq_BMP-1 [OK]
+   3 Command_ConstructIraq_BMP-2 -> Iraq_BMP-2 [OK]
+   4 Command_ConstructIraq_BTR-90 -> Iraq_BTR-90 [OK]
+   5 Command_ConstructIraq_2S1 -> Iraq_2S1 [OK]
+   6 Command_ConstructIraq_Sam8 -> Iraq_Sam8 [OK]
+   7 Command_ConstructIraq_AssadBabel-2 -> Iraq_AssadBabel-2 [OK]
+   8 Command_ConstructIraq_SA-6 -> Iraq_SA-6 [OK]
+   9 Command_ConstructIraq_Sarab7 -> Iraq_Sarab7 [OK]
+  10 Command_ConstructIraq_Alhussaien -> Iraq_Alhussaien [OK]
+  11 Command_ConstructIraqVehicleRoland3K -> IraqVehicleRoland3K [OK]
+  12 Command_ConstructIraq_BM-21 -> Iraq_BM-21 [OK]
+  13 Command_ConstructIraq_R11ScudB -> Iraq_R11ScudB [OK]
+Validation: PASS
+
+Country: SouthAfrica
+Old WarFactory entries removed: 14
+  - Command_ConstructSouthAfricaTankOlifant
+  - Command_ConstructSouthAfricaTankOlifant1B
+  - Command_ConstructSouthAfricaVehicleRooikat
+  - Command_ConstructSouthAfricaVehicleRatel
+  - Command_ConstructSouthAfricaVehicleCasspir
+  - Command_ConstructSouthAfricaVehicleYstervark
+  - Command_ConstructSouthAfricaVehicleCactus
+  - Command_ConstructSouthAfricaVehicleThutlwa
+  - Command_ConstructSouthAfricaVehicleValkiri
+  - Command_ConstructSouthAfricaVehicleBateleur
+  - Command_ConstructSouthAfricaVehicleG6
+  - Command_ConstructSouthAfricaVehicleZT3
+  - Command_ConstructSouthAfricaVehicleARV
+  - Command_ConstructSouthAfricaVehicleRooikat76
+New template used: Iraq (Iraq_WarFactoryCommandSet_T3)
+Units transferred: 13
+CommandSet: SouthAfrica_WarFactoryCommandSet
+WarFactory Object: SouthAfrica_WarFactory_T (file Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructIraq_T-72 -> Iraq_T-72 [OK]
+   2 Command_ConstructIraq_BMP-1 -> Iraq_BMP-1 [OK]
+   3 Command_ConstructIraq_BMP-2 -> Iraq_BMP-2 [OK]
+   4 Command_ConstructIraq_BTR-90 -> Iraq_BTR-90 [OK]
+   5 Command_ConstructIraq_2S1 -> Iraq_2S1 [OK]
+   6 Command_ConstructIraq_Sam8 -> Iraq_Sam8 [OK]
+   7 Command_ConstructIraq_AssadBabel-2 -> Iraq_AssadBabel-2 [OK]
+   8 Command_ConstructIraq_SA-6 -> Iraq_SA-6 [OK]
+   9 Command_ConstructIraq_Sarab7 -> Iraq_Sarab7 [OK]
+  10 Command_ConstructIraq_Alhussaien -> Iraq_Alhussaien [OK]
+  11 Command_ConstructIraqVehicleRoland3K -> IraqVehicleRoland3K [OK]
+  12 Command_ConstructIraq_BM-21 -> Iraq_BM-21 [OK]
+  13 Command_ConstructIraq_R11ScudB -> Iraq_R11ScudB [OK]
+Validation: PASS
+
+Country: UAE
+Old WarFactory entries removed: 14
+  - Command_ConstructUAETankLeclerc
+  - Command_ConstructUAEVehicleBMP3
+  - Command_ConstructUAEVehicleNimr
+  - Command_ConstructUAEVehicleRabdan
+  - Command_ConstructUAEVehiclePatria
+  - Command_ConstructUAEVehiclePantsir
+  - Command_ConstructUAEVehiclePatriot
+  - Command_ConstructUAEVehicleRadar
+  - Command_ConstructUAEVehicleHIMARS
+  - Command_ConstructUAEVehicleThunder
+  - Command_ConstructUAEVehicleG6
+  - Command_ConstructUAEVehicleBMP3AT
+  - Command_ConstructUAEVehicleLeclercARV
+  - Command_ConstructUAEVehicleJobaria
+New template used: Egypt (EgyptWarFactoryCommandSet)
+Units transferred: 12
+CommandSet: UAE_WarFactoryCommandSet
+WarFactory Object: UAE_WarFactory_T (file Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructEgyptTankT90MS -> EgyptTankT90MS [OK]
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [OK]
+   3 Command_ConstructGLAVehicleRocketBuggy -> GLAVehicleRocketBuggy [OK]
+   4 Command_ConstructEgyptVehicleM270 -> EgyptVehicleM270 [OK]
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [OK]
+   6 Command_ConstructEgyptVehicle9K317 -> EgyptVehicle9K317 [OK]
+   7 Command_ConstructEgyptVehicle9S19M2 -> EgyptVehicle9S19M2 [OK]
+   8 Command_ConstructEgyptVehicleS300VM -> EgyptVehicleS300VM [OK]
+   9 Command_ConstructArab_Tor1M -> Arab_Tor1M [OK]
+  10 Command_ConstructArb_9K720SV1 -> Arb_9K720SV1 [OK]
+  11 Command_ConstructEgyptVehicleYPR765 -> EgyptVehicleYPR765 [OK]
+  12 Command_ConstructEgyptVehicleHwasong7 -> EgyptVehicleHwasong7 [OK]
+Validation: PASS
+
+Country: SaudiArabia
+Old WarFactory entries removed: 14
+  - Command_ConstructSaudiArabiaTankM1A2
+  - Command_ConstructSaudiArabiaTankM1A2S
+  - Command_ConstructSaudiArabiaVehicleLAV25
+  - Command_ConstructSaudiArabiaVehicleM2
+  - Command_ConstructSaudiArabiaVehicleLAV
+  - Command_ConstructSaudiArabiaVehicleAvenger
+  - Command_ConstructSaudiArabiaVehiclePatriot
+  - Command_ConstructSaudiArabiaVehicleMPQ53
+  - Command_ConstructSaudiArabiaVehicleASTROS
+  - Command_ConstructSaudiArabiaVehicleATACMS
+  - Command_ConstructSaudiArabiaVehicleM109
+  - Command_ConstructSaudiArabiaVehicleLAVAT
+  - Command_ConstructSaudiArabiaVehicleM88
+  - Command_ConstructSaudiArabiaVehiclePatriotBtry
+New template used: Egypt (EgyptWarFactoryCommandSet)
+Units transferred: 12
+CommandSet: SaudiArabia_WarFactoryCommandSet
+WarFactory Object: SaudiArabia_WarFactory_T (file Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructEgyptTankT90MS -> EgyptTankT90MS [OK]
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [OK]
+   3 Command_ConstructGLAVehicleRocketBuggy -> GLAVehicleRocketBuggy [OK]
+   4 Command_ConstructEgyptVehicleM270 -> EgyptVehicleM270 [OK]
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [OK]
+   6 Command_ConstructEgyptVehicle9K317 -> EgyptVehicle9K317 [OK]
+   7 Command_ConstructEgyptVehicle9S19M2 -> EgyptVehicle9S19M2 [OK]
+   8 Command_ConstructEgyptVehicleS300VM -> EgyptVehicleS300VM [OK]
+   9 Command_ConstructArab_Tor1M -> Arab_Tor1M [OK]
+  10 Command_ConstructArb_9K720SV1 -> Arb_9K720SV1 [OK]
+  11 Command_ConstructEgyptVehicleYPR765 -> EgyptVehicleYPR765 [OK]
+  12 Command_ConstructEgyptVehicleHwasong7 -> EgyptVehicleHwasong7 [OK]
+Validation: PASS
+
+Country: Syria
+Old WarFactory entries removed: 14
+  - Command_ConstructSyriaTankT72
+  - Command_ConstructSyriaTankT62
+  - Command_ConstructSyriaVehicleBRDM
+  - Command_ConstructSyriaVehicleBMP1
+  - Command_ConstructSyriaVehicleBTR
+  - Command_ConstructSyriaVehicleShilka
+  - Command_ConstructSyriaVehicleBuk
+  - Command_ConstructSyriaVehicleP18
+  - Command_ConstructSyriaVehicleBM21
+  - Command_ConstructSyriaVehicleScud
+  - Command_ConstructSyriaVehicle2S1
+  - Command_ConstructSyriaVehicleKornet
+  - Command_ConstructSyriaVehicleBREM
+  - Command_ConstructSyriaVehicleTOS1A
+New template used: Egypt (EgyptWarFactoryCommandSet)
+Units transferred: 12
+CommandSet: Syria_WarFactoryCommandSet
+WarFactory Object: Syria_WarFactory_T (file Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructEgyptTankT90MS -> EgyptTankT90MS [OK]
+   2 Command_ConstructEgyptTankM1A1S -> EgyptTankM1A1S [OK]
+   3 Command_ConstructGLAVehicleRocketBuggy -> GLAVehicleRocketBuggy [OK]
+   4 Command_ConstructEgyptVehicleM270 -> EgyptVehicleM270 [OK]
+   5 Command_ConstructArb_Pantsir -> Arb_Pantsir [OK]
+   6 Command_ConstructEgyptVehicle9K317 -> EgyptVehicle9K317 [OK]
+   7 Command_ConstructEgyptVehicle9S19M2 -> EgyptVehicle9S19M2 [OK]
+   8 Command_ConstructEgyptVehicleS300VM -> EgyptVehicleS300VM [OK]
+   9 Command_ConstructArab_Tor1M -> Arab_Tor1M [OK]
+  10 Command_ConstructArb_9K720SV1 -> Arb_9K720SV1 [OK]
+  11 Command_ConstructEgyptVehicleYPR765 -> EgyptVehicleYPR765 [OK]
+  12 Command_ConstructEgyptVehicleHwasong7 -> EgyptVehicleHwasong7 [OK]
+Validation: PASS
+
+Country: Japan
+Old WarFactory entries removed: 14
+  - Command_ConstructJapanTankType10
+  - Command_ConstructJapanTankType90
+  - Command_ConstructJapanVehicleType16
+  - Command_ConstructJapanVehicleType89
+  - Command_ConstructJapanVehicleType96
+  - Command_ConstructJapanVehicleType87
+  - Command_ConstructJapanVehicleChuSAM
+  - Command_ConstructJapanVehicleRadar
+  - Command_ConstructJapanVehicleM270
+  - Command_ConstructJapanVehicleType12
+  - Command_ConstructJapanVehicleType99
+  - Command_ConstructJapanVehicleType16AT
+  - Command_ConstructJapanVehicleType11ARV
+  - Command_ConstructJapanVehicleType12Btry
+New template used: USA (AmericaWarFactoryCommandSet)
+Units transferred: 15
+CommandSet: Japan_WarFactoryCommandSet
+WarFactory Object: Japan_WarFactory (file Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [OK]
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [OK]
+   3 Command_ConstructAmericaVehicleHumvee -> AmericaVehicleHumvee [OK]
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [OK]
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [OK]
+   6 Command_ConstructAmericaVehiclePaladin -> AmericaTankPaladin [OK]
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [OK]
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [OK]
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [OK]
+  10 Command_ConstructAmericaVehicleTHAAD -> US_THAAD [OK]
+  11 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [OK]
+  12 Command_ConstructAmericaVehicleM1075I -> US_M1075I_Trident [OK]
+  13 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [OK]
+  16 Command_ConstructAmericaVehicleM1126_M1_Shorad -> AmericaVehicleM1126_M1_Shorad [OK]
+  17 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [OK]
+Validation: PASS
+
+Country: Vietnam
+Old WarFactory entries removed: 14
+  - Command_ConstructVietnamTankT90S
+  - Command_ConstructVietnamTankT54M3
+  - Command_ConstructVietnamVehicleBRDM
+  - Command_ConstructVietnamVehicleBMP1
+  - Command_ConstructVietnamVehicleBTR80
+  - Command_ConstructVietnamVehicleShilka
+  - Command_ConstructVietnamVehicleS300
+  - Command_ConstructVietnamVehicle36D6
+  - Command_ConstructVietnamVehicleBM21
+  - Command_ConstructVietnamVehicleScud
+  - Command_ConstructVietnamVehicle2S3
+  - Command_ConstructVietnamVehicleKonkurs
+  - Command_ConstructVietnamVehicleBREM
+  - Command_ConstructVietnamVehicleBastion
+New template used: USA (AmericaWarFactoryCommandSet)
+Units transferred: 15
+CommandSet: Vietnam_WarFactoryCommandSet
+WarFactory Object: Vietnam_WarFactory (file Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [OK]
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [OK]
+   3 Command_ConstructAmericaVehicleHumvee -> AmericaVehicleHumvee [OK]
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [OK]
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [OK]
+   6 Command_ConstructAmericaVehiclePaladin -> AmericaTankPaladin [OK]
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [OK]
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [OK]
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [OK]
+  10 Command_ConstructAmericaVehicleTHAAD -> US_THAAD [OK]
+  11 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [OK]
+  12 Command_ConstructAmericaVehicleM1075I -> US_M1075I_Trident [OK]
+  13 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [OK]
+  16 Command_ConstructAmericaVehicleM1126_M1_Shorad -> AmericaVehicleM1126_M1_Shorad [OK]
+  17 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [OK]
+Validation: PASS
+
+Country: SouthKorea
+Old WarFactory entries removed: 14
+  - Command_ConstructSouthKoreaTankK1A2
+  - Command_ConstructSouthKoreaTankK1A1
+  - Command_ConstructSouthKoreaVehicleK200
+  - Command_ConstructSouthKoreaVehicleK21
+  - Command_ConstructSouthKoreaVehicleK200APC
+  - Command_ConstructSouthKoreaVehicleK30
+  - Command_ConstructSouthKoreaVehicleCheongung
+  - Command_ConstructSouthKoreaVehicleRadar
+  - Command_ConstructSouthKoreaVehicleChunmoo
+  - Command_ConstructSouthKoreaVehicleHyunmoo
+  - Command_ConstructSouthKoreaVehicleK9
+  - Command_ConstructSouthKoreaVehicleK21AT
+  - Command_ConstructSouthKoreaVehicleK288
+  - Command_ConstructSouthKoreaVehicleHyunmoo2B
+New template used: USA (AmericaWarFactoryCommandSet)
+Units transferred: 15
+CommandSet: SouthKorea_WarFactoryCommandSet
+WarFactory Object: SouthKorea_WarFactory (file Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructAmericaTankCrusader -> AmericaTankCrusader [OK]
+   2 Command_ConstructAmericaVehicleM1128 -> AmericaVehicle_M1128 [OK]
+   3 Command_ConstructAmericaVehicleHumvee -> AmericaVehicleHumvee [OK]
+   4 Command_ConstructAmericaVehicleSentryDrone -> AmericaVehicleSentryDrone [OK]
+   5 Command_ConstructAmericaVehicleTomahawk -> AmericaVehicleTomahawk [OK]
+   6 Command_ConstructAmericaVehiclePaladin -> AmericaTankPaladin [OK]
+   7 Command_ConstructAmericaVehicleAvenger -> AmericaTankAvenger [OK]
+   8 Command_ConstructAmericaVehicleMicrowave -> AmericaTankMicrowave [OK]
+   9 Command_ConstructAmericaVehicleAN_TPY2 -> US_AN_TPY2 [OK]
+  10 Command_ConstructAmericaVehicleTHAAD -> US_THAAD [OK]
+  11 Command_ConstructAmericaVehicleM1075T -> US_M1075T_BGM109 [OK]
+  12 Command_ConstructAmericaVehicleM1075I -> US_M1075I_Trident [OK]
+  13 Command_ConstructAmericaVehicleM1296 -> AmericaVehicleM1296 [OK]
+  16 Command_ConstructAmericaVehicleM1126_M1_Shorad -> AmericaVehicleM1126_M1_Shorad [OK]
+  17 Command_ConstructAmericaVehicleM142 -> AmericaVehicleM142 [OK]
+Validation: PASS
+
+Country: India
+Old WarFactory entries removed: 14
+  - Command_ConstructIndiaTankT90S
+  - Command_ConstructIndiaTankT72Ajeya
+  - Command_ConstructIndiaVehicleNAMICA
+  - Command_ConstructIndiaVehicleBMP2
+  - Command_ConstructIndiaVehicleKestrel
+  - Command_ConstructIndiaVehicleTunguska
+  - Command_ConstructIndiaVehicleAkash
+  - Command_ConstructIndiaVehicleRajendra
+  - Command_ConstructIndiaVehiclePinaka
+  - Command_ConstructIndiaVehiclePrahaar
+  - Command_ConstructIndiaVehicleK9Vajra
+  - Command_ConstructIndiaVehicleNag
+  - Command_ConstructIndiaVehicleVT72B
+  - Command_ConstructIndiaTankArjun
+New template used: Russia (RussiaWarFactoryCommandSet)
+Units transferred: 13
+CommandSet: India_WarFactoryCommandSet
+WarFactory Object: India_WarFactory_T (file Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructRussiaTankT90A -> RussiaTankT90A [OK]
+   2 Command_ConstructRussiaTankT72B3M -> RussiaTankT72B3M [OK (selector stub BuildVariations=RussiaTankT72B36 RussiaTankT72B16 RussiaTankT72B23)]
+   3 Command_ConstructRussiaVehicleBm30 -> RussiaVehicleBm30 [OK]
+   4 Command_ConstructRussiaVehicleKrasukha4 -> RussiaVehicleKrasukha4 [OK]
+   5 Command_ConstructRussiaArtillery2S19M2 -> RussiaArtillery2S19M2 [OK]
+   6 Command_ConstructRussiaTankBMP3 -> RussiaTankBMP3 [OK]
+   7 Command_ConstructRussiaTankTorM2M -> RussiaTankTorM2M [OK]
+   8 Command_ConstructRussiaVehiclePantsirS1M -> RussiaVehiclePantsirS1M [OK]
+   9 Command_ConstructRussiaVehicle92N6R -> RussiaVehicle92N6R [OK]
+  10 Command_ConstructRussiaVehicleS400 -> RussiaVehicleS400 [OK]
+  11 Command_ConstructRussiaTankTos1A -> RussiaTankTos1A [OK]
+  12 Command_ConstructRussiaVehicle9K720 -> RussiaVehicle9K720 [OK]
+  13 Command_ConstructRussiaVehicleRS24 -> RussiaVehicleRS24 [OK]
+Validation: PASS
+
+Country: Pakistan
+Old WarFactory entries removed: 14
+  - Command_ConstructPakistanTankAlKhalid
+  - Command_ConstructPakistanTankAlZarrar
+  - Command_ConstructPakistanVehicleMohafiz
+  - Command_ConstructPakistanVehicleTalhaIFV
+  - Command_ConstructPakistanVehicleTalhaAPC
+  - Command_ConstructPakistanVehicleLY80
+  - Command_ConstructPakistanVehicleHQ9P
+  - Command_ConstructPakistanVehicleRadar
+  - Command_ConstructPakistanVehicleA100
+  - Command_ConstructPakistanVehicleShaheen
+  - Command_ConstructPakistanVehicleM109
+  - Command_ConstructPakistanVehicleBaktar
+  - Command_ConstructPakistanVehicleARV
+  - Command_ConstructPakistanVehicleNasr
+New template used: Russia (RussiaWarFactoryCommandSet)
+Units transferred: 13
+CommandSet: Pakistan_WarFactoryCommandSet
+WarFactory Object: Pakistan_WarFactory_T (file Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini)
+CommandButtons:
+   1 Command_ConstructRussiaTankT90A -> RussiaTankT90A [OK]
+   2 Command_ConstructRussiaTankT72B3M -> RussiaTankT72B3M [OK (selector stub BuildVariations=RussiaTankT72B36 RussiaTankT72B16 RussiaTankT72B23)]
+   3 Command_ConstructRussiaVehicleBm30 -> RussiaVehicleBm30 [OK]
+   4 Command_ConstructRussiaVehicleKrasukha4 -> RussiaVehicleKrasukha4 [OK]
+   5 Command_ConstructRussiaArtillery2S19M2 -> RussiaArtillery2S19M2 [OK]
+   6 Command_ConstructRussiaTankBMP3 -> RussiaTankBMP3 [OK]
+   7 Command_ConstructRussiaTankTorM2M -> RussiaTankTorM2M [OK]
+   8 Command_ConstructRussiaVehiclePantsirS1M -> RussiaVehiclePantsirS1M [OK]
+   9 Command_ConstructRussiaVehicle92N6R -> RussiaVehicle92N6R [OK]
+  10 Command_ConstructRussiaVehicleS400 -> RussiaVehicleS400 [OK]
+  11 Command_ConstructRussiaTankTos1A -> RussiaTankTos1A [OK]
+  12 Command_ConstructRussiaVehicle9K720 -> RussiaVehicle9K720 [OK]
+  13 Command_ConstructRussiaVehicleRS24 -> RussiaVehicleRS24 [OK]
+Validation: PASS
+
+PROTECTED COUNTRIES
+-------------------
+USA / Russia / China / Iran / Israel / NATO / Egypt / Iraq / North Korea
+CommandSets identical to baseline: YES
+CommandSet.ini / CommandButton.ini / PlayerTemplate.ini / Science.ini: not modified
+Protected country Object folders: not modified
+
+Errors: 0
+WARFACTORY_REBUILD_AUDIT_OK

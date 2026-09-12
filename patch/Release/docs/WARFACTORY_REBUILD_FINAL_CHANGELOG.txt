@@ -1,0 +1,23 @@
+SPECTER WAR FACTORY REBUILD FINAL
+=================================
+
+Destination War Factory production was cleaned, then rebuilt from the
+live reference-country CommandSets in the EA-6B crash-fix DATA baseline.
+
+What changed
+- Added last-wins Data\INI\CommandSet_ZZZZ_WarFactoryRebuild.ini
+- Every destination War Factory CommandSet and alias now uses the
+  assigned reference CommandButtons and unit Objects
+- Dropped JP/SK/VN Iraq_WarFactory.ini clones so national factories last-win
+
+What did not change
+- USA, Russia, China, Iran, Israel, NATO, Egypt, Iraq, North Korea
+- CommandSet.ini, CommandButton.ini, PlayerTemplate.ini, Science.ini
+- Airfield, Barracks, Navy, Infantry, Aircraft, CommandCenter
+- ART BIG
+
+DATA SHA256
+cfea484bf94c437e523c1efd7140130250c069a040b508ee325b3363a3a8544b
+
+ZIP SHA256
+72a97df73ac1c2f35418e4b156c8e508b694934d66875c71c388b0bb1938a2a1

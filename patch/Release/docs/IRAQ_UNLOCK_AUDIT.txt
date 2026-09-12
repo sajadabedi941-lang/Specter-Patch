@@ -1,0 +1,127 @@
+SPECTER IRAQ UNLOCK — PACKED LAST-WINS AUDIT
+============================================
+STATIC_PACKED_AUDIT_OK
+
+This environment cannot launch Zero Hour.
+In-game construct / takeoff / fire tests remain with the user.
+
+Baseline PR #473 HEAD c17e1b8e444413ab90f3305ad353d12bcf903b1b
+DATA SHA256 451c71b6499cb4cfefcfd97d1603666f148b2b3d8f8ec9efa58cfff8b3e9f8a0
+ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART status: UNCHANGED vs Specter_Aircraft_Global_Update_Final
+
+Re-extracted packed DATA files: 2808
+CommandSet.ini: CRLF-only (no LF-only, no bare CR)
+No CommandSet_ZZZZ files
+No new duplicate Object / CommandButton names
+
+RESOLVED LIVE NAMES
+-------------------
+Iraq fighter airfield CommandSet = Iraq_AirfieldCommandSet
+  Buildings using it: Iraq_Airfield_T / IraqMilitaryAirfield / Iraq_Airfield
+
+Iraq large aircraft CommandSet  = Iraq_LargeAirBaseCommandSet
+  Building: Iraq_LargeAirBase   model TheAirPort
+
+Iraq heavy aircraft CommandSet  = Iraq_HeavyAirBaseCommandSet
+  Building: Iraq_HeavyAirBase   model HXUSABigAirPort
+
+Mirage F1.EQ
+  Object  Iraq_MirageF1_Bq
+  Button  Command_ConstructIraq_mirageF1Bq
+  Gate    removed (was Object = Iraq_RadarStation)
+
+Su-24MK
+  Object  Iraq_Su-24MK
+  Button  Command_ConstructIraq_Su-24MK
+  Gate    removed (was Iraq_RadarStation + Iraq_MIC)
+
+L-159 / Tucano-class
+  Object     IraqJetL159
+  Button     Command_ConstructIraqJetL159
+  Old weapon IraqJetL159_WpnBomb  ClipSize=6  Fab-250
+  New weapon IraqJetL159_WpnBomb  ClipSize=3  GBU24_GuidedBombObject
+  Projectile / FX already packed (GBU24_GuidedBombObject, FX_AuroraBombLaunch, Mirv_HE_Explosion)
+
+Iraq MiG-21
+  Object IraqJetMig21
+  Old Scale 0.82
+  New Scale 0.90
+  Weapons unchanged
+
+Su-24MR
+  Object  Iraq_Su-24MR
+  Button  Command_ConstructIraq_Su-24MR
+  Gate    removed (was Object = Iraq_MIC)
+  Present on fighter slot 15, large slot 15, heavy slot 2
+
+Russian Tu-22M3
+  Object     RussiaJetTu22M3M
+  Button     Command_ConstructRussiaJetTu22M3M (slots unchanged, 2 refs)
+  Model      RUS_TU22M3M (unchanged)
+  Old bombs  3x_FAB500_TU22M3M_CRF / CRB / 2x_FAB500_TU22M3M_WR
+  New bomb   Kab2500_LeaserGuidedBomb
+  Projectile Kab2500 already packed
+
+Iraq Tu-22M3
+  Object  Iraq_Tu-22M3
+  Button  Command_ConstructIraq_Tu-22M3
+  Image   irq_tu22
+  Model   RUS_TU22M3M
+  Weapon  Kab2500_LeaserGuidedBomb
+  Heavy slot 3, Large slot 16
+  No production Science / Upgrade / Object gate
+
+Iraq WarFactory
+  Object Iraq_WarFactory_T
+  Starts on Iraq_WarFactoryCommandSet_T3
+  CommandSetUpgrade modules removed
+  Roster is the accepted Iraq T3 bar (not a foreign clone)
+
+UNITS WITH PRODUCTION GATING REMOVED
+------------------------------------
+27 Prerequisite blocks emptied across 25 Iraq unit files, plus
+Iraq_Tu-22M3 rewritten unlocked, plus WF/MIC tier CommandSetUpgrade removal.
+
+Objects include:
+Iraq_MirageF1_Bq, Iraq_Su-24MK, Iraq_Su-24MR, Iraq_Su-22M3, Iraq_Mi-8T,
+Iraq_2S1, Iraq_BTR-90, Iraq_Sam8, Iraq_AssadBabel-2, Iraq_Sarab7,
+Iraq_Alhussaien, Iraq_R11ScudB, Iraq_Karrar2, Iraq_Lamiaa,
+IraqVehicleB340, IraqVehicleFahad3, Iraq_RepublicanGuardMortar,
+Iraq_RepublicanGuardKornet, Iraq_RepublicanGuard_TBK14,
+Iraq_RepublicanGuard_Eng, Iraq_SpecialForces_Akms,
+IraqInfantryAirborneHeavySniper, IraqInfantrySpecOps_Akms,
+Iraq_Sarab3, Iraq_Ababil200, IraqDronesAbabil200Recon, Iraq_Tu-22M3
+
+Live production bars after pack: 0 remaining Object/Science production gates.
+
+REGRESSION vs PR #473
+---------------------
+Protected CommandSets byte-identical:
+NatoWarfactoryCommandSet, AmericaWarFactoryCommandSet,
+Japan_WarFactoryCommandSet, Vietnam_WarFactoryCommandSet,
+SouthKorea_WarFactoryCommandSet, IranAirfieldCommandSet,
+SaudiArabia_AirfieldCommandSet, AmericaAirfieldCommandSet,
+America_HeavyAirBaseCommandSet
+
+Changed packed paths are Iraq Army unit/building files, CommandSet.ini
+(Iraq CS slots only), Weapon.ini (IraqJetL159_WpnBomb last-win only),
+and Russia TU22M3M.ini WeaponSet only.
+
+FILES MODIFIED IN THE PACK
+--------------------------
+Data\INI\CommandSet.ini
+Data\INI\Weapon.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Mi-8.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MIC.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200R.ini
+plus Iraq Army APC / AD / infantry / tracked / wheeled / remaining drone unit files listed in the pack log.

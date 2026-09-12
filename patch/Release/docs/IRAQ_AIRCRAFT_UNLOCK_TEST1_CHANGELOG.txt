@@ -1,0 +1,16 @@
+SPECTER1 Iraq aircraft unlock — isolation pass 1
+================================================
+Baseline: SPECTER1 working install (part001-part069)
+DATA-only. ART unchanged. Not derived from PR #475.
+
+Removed only the Object production gates on three Iraq aircraft:
+
+1. Iraq_MirageF1_Bq  — removed Object = Iraq_RadarStation
+2. Iraq_Su-24MK      — removed Object = Iraq_RadarStation and Object = Iraq_MIC
+3. Iraq_Su-24MR      — removed Object = Iraq_MIC
+
+No CommandSet, Weapon, WarFactory, MIC, scale, bomb, or Tu-22 changes.
+No other country files changed.
+
+STATIC_VALIDATION_PASS
+INGAME_VERIFIED = NO

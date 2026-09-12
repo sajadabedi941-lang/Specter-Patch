@@ -1,0 +1,24 @@
+SPECTER1 Iraq Complete Unlock + Air Force
+=========================================
+
+DATA-only package. Keep the SPECTER1 _SPEC_ART_ONE.big.
+
+Requirement
+- Working SPECTER1 install reconstructed from
+  SPECTER1.part001.rar ... SPECTER1.part069.rar
+- Current DATA SHA256 must be
+  9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+
+Install
+1. Close Zero Hour.
+2. Back up the current _SPEC_DATA_ONE.big
+3. Copy _SPEC_DATA_ONE.big from this ZIP into the SPECTER1 game folder
+   (same folder as generals.exe / Launch_Specter.bat)
+4. Do NOT replace _SPEC_ART_ONE.big
+5. Launch Specter as usual
+
+Verify
+- DATA SHA256 must be
+  14288f6daef6df4e33546801cd2ef30ba1e22995bc94af34e81f24211d0a4559
+- ART SHA256 must remain
+  2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761

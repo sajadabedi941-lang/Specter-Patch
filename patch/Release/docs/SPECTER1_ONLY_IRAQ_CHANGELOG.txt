@@ -1,0 +1,23 @@
+SPECTER1-only Iraq update
+=========================
+
+SOURCE_ARCHIVE = SPECTER1.part001.rar -> SPECTER1.part069.rar
+SPECTER1_PART_COUNT = 69
+OLD_SPECTER_PART001_TO_PART054_USED = NO
+OLD_PR_DATA_USED = NO
+OLD_RELEASE_DATA_USED = NO
+SPECTER1_DATA_USED_DIRECTLY = YES
+
+The 54-part SPECTER.part001-054 archive was detected in the repo and ignored.
+It was not extracted, hashed, or used as a donor.
+
+ART unchanged. Keep the original SPECTER1 _SPEC_ART_ONE.big.
+
+Install: replace only _SPEC_DATA_ONE.big in the SPECTER1 game folder.
+
+Iraq: unlock Mirage F1.EQ, Su-24MK, Su-24MR; L-159 = 3 guided Kab500;
+Iraq MiG-21 Scale 0.91; Tu-22M3 on Heavy Air Base using RUS_TU22M3M;
+Russia+Iraq Tu-22 default bomb = Kab1500_LeaserGuidedBomb;
+Iraq WF/MIC combat units unlocked; Power/Supply/factory/airbase kept.
+
+INGAME_TESTED = NO

@@ -1,0 +1,49 @@
+SPECTER1-only Iraq update — static audit
+========================================
+
+SOURCE_ARCHIVE = SPECTER1.part001.rar -> SPECTER1.part069.rar
+SPECTER1_PART_COUNT = 69
+OLD_SPECTER_PART001_TO_PART054_USED = NO
+OLD_PR_DATA_USED = NO
+OLD_RELEASE_DATA_USED = NO
+SPECTER1_DATA_USED_DIRECTLY = YES
+
+Detected but never opened:
+  SPECTER.part001.rar .. SPECTER.part054.rar  (54 files)
+
+Verified:
+  SPECTER1.part001.rar .. SPECTER1.part069.rar  (69/69 consecutive)
+  git blobs match origin/main
+
+Extract: unrar x SPECTER1.part001.rar only
+  -> /tmp/SPECTER1_ONLY_EXTRACT/SPECTER FINAL (GeneralsMode.com)
+  contains generals.exe, game.dat, INIZH.big, EnglishZH.big,
+  _SPEC_DATA_ONE.big, _SPEC_ART_ONE.big, Launch_Specter.bat
+
+BASELINE_DATA_BYTES = 364979021
+BASELINE_DATA_SHA256 = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+BASELINE_DATA_FILE_COUNT = 2804
+
+ART bytes = 1235909246
+ART SHA256 = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART file count = 4411
+
+Untouched DATA repack: BYTE_IDENTICAL = YES
+
+NEW_DATA_BYTES = 364977815
+NEW_DATA_SHA256 = 3a6688c30d0af2740a1266575b6d5197bdd8b78faed02b85a78ba9d7fa24a479
+NEW_DATA_FILE_COUNT = 2804
+
+ORIGINAL_FILE_COUNT = 2804
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 31
+
+Changed paths are Iraq production/unlock files + Weapon.ini (L-159) +
+Russia TU22M3M.ini default bomb only.
+
+Protected-country path hits = 0
+CommandButton/PlayerTemplate/Science/Armor/Locomotor/CSF identical
+ART_CHANGED = NO
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

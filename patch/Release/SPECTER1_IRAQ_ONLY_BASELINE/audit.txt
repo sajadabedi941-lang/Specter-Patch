@@ -1,0 +1,166 @@
+SPECTER1 IRAQ CONTROLLED MOD — DIFF AUDIT
+Built: 2026-09-13
+
+SOURCE_OF_TRUTH = SPECTER1.part001.rar -> SPECTER1.part069.rar
+Fresh extract: /tmp/SPECTER1_FRESH_IRAQMOD_20260913/SPECTER FINAL (GeneralsMode.com)
+OLD_PR_USED = NO
+OLD_RELEASE_USED = NO
+OLD_SPEC_USED = NO
+
+============================================================
+BASELINE vs NEW DATA
+============================================================
+BASELINE_DATA_BYTES       = 364979021
+BASELINE_DATA_SHA256      = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+BASELINE_DATA_FILE_COUNT  = 2804
+
+NEW_DATA_BYTES            = 364974383
+NEW_DATA_SHA256           = 4e585801b9a3c97e3635d2d2400625901754221a4632ef5fa47f97c7aed280f8
+NEW_DATA_FILE_COUNT       = 2806
+
+MISSING_PATH_COUNT        = 0
+ADDED_PATH_COUNT          = 2
+CONTENT_CHANGED_PATH_COUNT= 17
+
+ART was not rebuilt.
+BASELINE_ART_BYTES        = 1235909246
+BASELINE_ART_SHA256       = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART_CHANGED               = NO
+
+Packing: BIGF, uncompressed payloads, big-endian size field, original 2804 path order preserved, 2 new paths appended.
+
+============================================================
+ADDED PACKED PATHS
+============================================================
+1) Data\INI\CommandSet_Iraq.ini
+   Unique last-win file. INIZHZ.big / INIZH.big do not contain this path.
+   Redefines only Iraq_HeavyAirBaseCommandSet.
+   Adds existing Command_ConstructIraq_Tu-22M3 to empty slot 3.
+   Does not change the HeavyAirBase object, Draw, geometry, parking, or construction.
+
+2) Data\INI\Weapon_Iraq.ini
+   Unique last-win file. Does not replace Weapon.ini.
+   Last-wins existing Weapon IraqJetL159_WpnBomb only.
+   ProjectileObject = Kab500 (existing SPECTER1 guided Kab500 projectile).
+   ClipSize = 3.
+   AutoReloadsClip = RETURN_TO_BASE.
+   Does not redefine IraqJetL159_WpnGun or IraqJetL159_WpnRkt.
+
+============================================================
+CHANGED PACKED PATHS (every path explained)
+============================================================
+1) Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+   Removed Prerequisites { Object = Iraq_RadarStation }.
+   Object Iraq_MirageF1_Bq stays on Iraq_LargeAirBaseCommandSet slot 6.
+   Model, weapons, armor, speed, health, cost, ButtonImage unchanged.
+
+2) Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+   Removed Prerequisites { Iraq_RadarStation, Iraq_MIC }.
+   Already on Iraq_LargeAirBaseCommandSet slot 8.
+   Gameplay characteristics unchanged.
+
+3) Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+   Removed Prerequisites { Object = Iraq_MIC }.
+   Already on Iraq_LargeAirBaseCommandSet slot 15 and HeavyAirBase slot 2.
+   Gameplay characteristics unchanged.
+
+4) Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+   Scale 0.82 -> 0.91 only.
+
+5) Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+   Removed Science = SCIENCE_Tu-22 and Object = Iraq_MIC production gates.
+   Default WeaponSet PRIMARY set to existing Kab1500_LeaserGuidedBomb.
+   PLAYER_UPGRADE weapon set unchanged. Object not duplicated.
+
+6) Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+   AUTHORIZED non-Iraq change only.
+   Default WeaponSet PRIMARY set to existing Kab1500_LeaserGuidedBomb.
+   No other Russian definition changed.
+
+7) Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+   Object Iraq_WarFactory_T CommandSet: Iraq_WarFactoryCommandSet_T -> Iraq_WarFactoryCommandSet_T3
+   (existing final player roster).
+   Removed CommandSetUpgrade Tier1/Tier2/Tier3 modules.
+   Building Prerequisites (Supply) unchanged.
+
+8) Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MIC.ini
+   CommandSet: Iraq_MICCommandSet -> Iraq_MICCommandSet2
+   (existing set that already contains Karrar-2, B340, Fahad-3).
+   Removed CommandSetUpgrade Tier1/Tier2 modules.
+   Building Prerequisites (Radar / Airfield / WarFactory) unchanged.
+   Abbas/Hussien ObjectCreationUpgrade modules left in place (no longer required to build Abbas).
+
+9) Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+   Removed Prerequisites { Object = AbbasResearchObject }.
+   Stats unchanged.
+
+10) Data\INI\Object\Specter\Iraq Army\Wheeled\Karrar-2.ini
+    Removed Science = SCIENCE_IraqReconnaissance. Kept Object = Iraq_MIC.
+
+11) Data\INI\Object\Specter\Iraq Army\AirDefense\B340.ini
+    Removed Science = SCIENCE_Rank3.
+
+12) Data\INI\Object\Specter\Iraq Army\AirDefense\Fahad3.ini
+    Removed Science = SCIENCE_Rank3.
+
+13) Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+    Removed Radar/MIC/Supply unit production gates.
+
+14) Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+    Removed Radar unit production gate.
+
+15) Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+    Removed Radar unit production gate (R-11 Scud on final WF roster).
+
+16) Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+    Object Iraq_Sarab7: removed MIC/Radar unit production gates.
+
+17) Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+    Removed HussienResearchObject + SCIENCE_Alhussien (Al-Hussein TEL on final WF roster).
+
+============================================================
+PATHS EXPLICITLY NOT CHANGED
+============================================================
+Iraq_LargeAirBase.ini
+Iraq_HeavyAirBase.ini
+PlayerTemplate.ini
+CommandSet.ini
+CommandButton.ini
+Weapon.ini
+Science.ini
+Upgrade.ini
+Any Egypt / USA / China / Iran / Syria / UAE / Saudi / Libya / Israel /
+Turkey / France / Germany / Italy / Britain / Sweden / Ukraine / NATO /
+Pakistan / India / Japan / South Korea / North Korea / Vietnam / South Africa path.
+Any ART path.
+
+============================================================
+AIRBASE PROTECTION
+============================================================
+IRAQ_LARGEAIRBASE_OBJECT_UNCHANGED = YES  (byte-identical packed payload)
+IRAQ_HEAVYAIRBASE_OBJECT_UNCHANGED = YES  (byte-identical packed payload)
+THEAIRPORT_UNCHANGED = YES   (ART not rebuilt)
+HXUSABIGAIRPORT_UNCHANGED = YES
+AIRBASE_GEOMETRY_CHANGED = NO
+AIRBASE_DRAW_CHANGED = NO
+AIRBASE_PARKING_CHANGED = NO
+AIRBASE_CONSTRUCTION_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+
+============================================================
+LAST-WIN NOTES
+============================================================
+Shared files CommandSet.ini / CommandButton.ini / Weapon.ini / Science.ini /
+PlayerTemplate.ini were NOT wholesale-replaced.
+Iraq CommandSet and L-159 weapon changes use unique last-win paths so INIZH.big
+and INIZHZ.big cannot shadow them.
+Object INIs under Data\INI\Object\Specter\Iraq Army\** and the authorized
+Russia TU22M3M.ini are unique DATA paths and are live.
+
+============================================================
+STATIC VALIDATION
+============================================================
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+(authorized Russia Tu-22M3M bomb path is the only non-Iraq content change)

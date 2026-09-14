@@ -1,0 +1,15 @@
+SPECTER1 single patch (locked part001-069 baseline)
+
+Replace _SPEC_DATA_ONE.big only. Do not replace ART.
+
+Iraq L-159: air-to-air missiles only (existing IraqJetMig21_WpnIR). Ground bomb/rocket/gun payload removed.
+Iraq HeavyAirBase slot 3: existing Russian RussiaJetTu22M3M added. HeavyAirBase object not edited.
+Tu-22M3 / Tu-22M3M FAB500 bombs: slight damage increase for Russia and Iraq (existing weapon names, last-win Weapon_Tu22.ini).
+Drone units: Science/RequiredScience availability gates removed. Building Object prerequisites kept. Drone objects not deleted.
+Iraq BTR-90: Barracks research/unlock gate removed.
+MiG-21PF, MiG-21Bis, J-7, J-7B: visual Scale +15%, bomb/loadout swapped to existing weapons.
+Iraq AlHussien (Iraq_Alhussaien): cost 15000, build time 20 minutes (1200 seconds).
+
+ART_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+INGAME_TESTED = NO

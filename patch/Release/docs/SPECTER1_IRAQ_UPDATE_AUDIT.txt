@@ -1,0 +1,139 @@
+SPECTER1 Iraq Update — static packed audit
+==========================================
+
+BUILD SOURCE
+------------
+ONLY SPECTER1.part001.rar .. SPECTER1.part069.rar from origin/main.
+
+Part verification:
+  count            = 69
+  missing numbers  = none
+  part001 git blob = c43c482214b92159eda3c2b82530804de0bd336c  MATCH
+  part035 git blob = 565cf9cbb3f0b071191d277c89918bbb1bf1b176  MATCH
+  part069 git blob = 30da8e3bbd1f0b437a797e7bb197a946fdc1aeb2  MATCH
+
+Extract:
+  unrar x SPECTER1.part001.rar  ->  /tmp/SPECTER1_REAL_20260912_EXTRACT/
+  (parts 002-069 consumed automatically; no previous extract reused)
+
+Rejected as baseline:
+  PR #473 / #474 / #475 / #476
+  any earlier generated DATA / Test1 / reconstructed pack
+
+BASELINE (from the 69-part extract)
+-----------------------------------
+DATA  364979021  SHA256 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+      magic BIGF  archive_size=filesize  header=198999  files=2804
+ART   1235909246 SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+      magic BIGF  archive_size=filesize  header=152450  files=4411
+
+NEW DATA
+--------
+DATA  364977811  SHA256 8351d3d8b372dbe0e8b3c05c96acc0c87c9de50daa45e4c74c65487ab82f9f53
+      magic BIGF  archive_size=filesize  header=198999  files=2804
+      sequential blobs, 0 gaps, 0 overlaps, 0 tail, header slack 0
+ART   UNCHANGED  (original SPECTER1 ART reused byte-for-byte)
+
+COMPARE vs original SPECTER1 DATA
+---------------------------------
+BASELINE_DATA_FILE_COUNT     = 2804
+NEW_DATA_FILE_COUNT          = 2804
+MISSING_PATH_COUNT           = 0
+ADDED_PATH_COUNT             = 0
+CONTENT_CHANGED_PATH_COUNT   = 32
+PATH_ORDER_IDENTICAL         = YES
+DUPLICATE_PACKED_PATHS       = none (baseline and new)
+DUPLICATE_OBJECT_NAMES       = 19 (identical to baseline; no new dups)
+EXTRACTABLE_PATHS            = 2804 / 2804
+
+CHANGED PACKED DATA PATHS
+-------------------------
+Data\INI\CommandSet.ini
+Data\INI\Weapon.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\9K33.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\B340.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\Fahad3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Mi-8.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+Data\INI\Object\Specter\Iraq Army\APC\BTR90.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MIC.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200R.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Sarab3.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Airborne.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Enginer.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\KornetTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\MortarTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Karrar-2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Lamiaa.ini
+
+IDENTICAL CORE FILES
+--------------------
+Data\INI\CommandButton.ini
+Data\INI\PlayerTemplate.ini
+Data\INI\Science.ini
+Data\INI\Armor.ini
+Data\INI\Locomotor.ini
+Data\English\generals.csf
+
+NON-IRAQ CHANGES
+----------------
+Only:
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+  (default bomb WeaponSet -> Kab1500_LeaserGuidedBomb)
+Weapon.ini change is limited to Weapon IraqJetL159_WpnBomb.
+CommandSet.ini change is limited to Iraq_MICCommandSet, Iraq_MICCommandSet3,
+and Iraq_HeavyAirBaseCommandSet.
+
+LIVE CHAIN (traced from this extract, not from old patches)
+-----------------------------------------------------------
+FactionIraq
+  StartingUnit0 = Iraq_VT72B
+  CommandSet    = Iraq_VT72BCommandSet
+    slot 4  Command_ConstructIraq_WarFactory_T  -> Iraq_WarFactory_T
+    slot 5  Command_ConstructIraq_Airfield_T    -> Iraq_LargeAirBase
+    slot 6  Command_ConstructIraq_MIC           -> Iraq_MIC
+    slot 13 Command_ConstructIraq_HeavyAirBase  -> Iraq_HeavyAirBase
+
+Iraq_LargeAirBase  CommandSet = Iraq_LargeAirBaseCommandSet
+  already contains Mirage / Su-24MK / Su-24MR / L-159 / MiG-21
+
+Iraq_HeavyAirBase  CommandSet = Iraq_HeavyAirBaseCommandSet
+  slot 3 now Command_ConstructIraq_Tu-22M3 -> Iraq_Tu-22M3
+
+REFERENCE CHECKS
+----------------
+Kab1500_LeaserGuidedBomb  weapon exists (Weapon.ini)
+Kab2500                   projectile object exists (Russia_WeaponObjects.ini)
+Kab500                    projectile object exists (Iraq_WeaponObjects.ini)
+IraqJetL159_WpnBomb       still the L-159 tertiary weapon; ClipSize=3; Kab500
+Command_ConstructIraq_Tu-22M3 / Karrar2 / B340 / Fahad3  buttons exist
+RUS_TU22M3M.W3D and RUS_TU22M3M.dds exist in original ART
+KAB-500K.W3D and KAB-2500.W3D exist in original ART
+Missing Iraq CommandButton refs: only pre-existing commented Worker lines
+  Command_ConstructIraq_WarFactory / Command_ConstructIraq_Airfield
+No new missing Object / Weapon / Projectile / W3D references on edited files.
+IraqJetMig21.ini was already LF (no CRLF) in the SPECTER1 archive; only the
+Scale token changed; line endings were not rewritten.
+
+ART_CHANGED = NO
+changed/added ART paths = none
+
+IN-GAME TEST
+------------
+Not performed. This environment cannot launch Zero Hour.
+This report is a static packed-file audit only.

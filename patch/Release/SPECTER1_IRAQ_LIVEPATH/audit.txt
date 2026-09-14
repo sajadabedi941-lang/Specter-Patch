@@ -1,0 +1,243 @@
+SPECTER1 IRAQ LIVE-PATH FIX AUDIT
+SOURCE_OF_TRUTH = SPECTER1.part001.rar -> SPECTER1.part069.rar
+PREVIOUS_PR_USED_AS_BASELINE = NO
+PREVIOUS_RELEASE_USED_AS_BASELINE = NO
+OLD_SPECTER_USED = NO
+PR486_USED_AS_BASELINE = NO
+SIDECAR_COMMANDSET_CREATED = NO
+
+PACKER = BIGF uncompressed payloads, archive-size BIG-ENDIAN, original path order preserved, no new packed paths appended.
+
+BASELINE_DATA_BYTES = 364979021
+BASELINE_DATA_SHA256 = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+BASELINE_DATA_FILE_COUNT = 2804
+
+NEW_DATA_BYTES = 364981130
+NEW_DATA_SHA256 = ba03fd907844aa0c7404feecfaaabe94bc65f2e448a174dc93372a320f4a233c
+NEW_DATA_FILE_COUNT = 2804
+
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 9
+
+ART_BYTES = 1235909246
+ART_SHA256 = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART_CHANGED = NO
+ART_REBUILT = NO
+
+IRAQ_LARGEAIRBASE_OBJECT_CHANGED = NO
+IRAQ_HEAVYAIRBASE_OBJECT_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+
+==================================================
+CHANGED PACKED PATHS (9)
+==================================================
+Data\INI\CommandSet.ini
+  Iraq_HeavyAirBaseCommandSet empty slot 3 = Command_ConstructRussiaJetTu22M3M (existing button, Object=RussiaJetTu22M3M).
+  Iraq_WarFactoryCommandSet_T / T1 / T2: slot 11 Command_ConstructIraq_Alhussaien uncommented so the unit is on the live bar from the starting WarFactory, not only T3.
+  Iraq_LargeAirBaseCommandSet NOT structurally changed (Mirage/Su-24/L-159 already on this set).
+
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+  Removed Prerequisites Object=Iraq_RadarStation.
+
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+  Removed Prerequisites Object=Iraq_RadarStation and Object=Iraq_MIC. Upgrade_MTS WeaponSet switch kept.
+
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+  Removed Prerequisites Object=Iraq_MIC. LargeAirBase slot 15 and HeavyAirBase slot 2 kept.
+
+Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetL159.ini
+  Live WeaponSet Conditions=None is now PRIMARY IraqJetMig21_WpnIR only (existing A2A, AntiGround=No). Gun/rocket/bomb removed. Production button/slot unchanged.
+
+Data\INI\Object\Specter\Iraq Army\APC\BTR90.ini
+  Removed Prerequisites Object=Iraq_Barracks. Weapons/model unchanged. Still produced from Iraq_WarFactory_T slot 4.
+
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+  Object Iraq_Alhussaien: removed Science=SCIENCE_Alhussien, HussienResearchObject, SupplyCenter, RadarStation. BuildCost=15000 BuildTime=1200. Missile weapons AlAbidMissileWeapon / HussieanMissileWeapon unchanged.
+
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+  Requested live bomber RussiaJetTu22M3M default WeaponSet now uses isolated clones:
+    3x_FAB500_TU22M3M_CRF_RUS
+    3x_FAB500_TU22M3M_CRB_RUS
+    2x_FAB500_TU22M3M_WR_RUS
+  PLAYER_UPGRADE cruise set unchanged. NK/Vietnam object files unchanged.
+
+Data\INI\Weapon.ini
+  Added the three *_RUS clones (~15%: PrimaryDamage 780->897, SecondaryDamage 100->115). Original 3x_FAB500_TU22M3M_* / 2x_FAB500_TU22M3M_WR remain at 780 for North Korea and Vietnam.
+
+==================================================
+TU-22M3M LIVE BOMB NAMES
+==================================================
+LIVE_OBJECT = RussiaJetTu22M3M
+LIVE_DEFAULT_WEAPONSET_BEFORE =
+  PRIMARY   3x_FAB500_TU22M3M_CRF   PrimaryDamage=780
+  SECONDARY 3x_FAB500_TU22M3M_CRB   PrimaryDamage=780
+  TERTIARY  2x_FAB500_TU22M3M_WR    PrimaryDamage=780
+SHARED_WITH = NorthKoreaJetTu22M3M, VietnamJetTu22M3M
+CLONE_REASON = shared names would have buffed NK/Vietnam
+LIVE_DEFAULT_WEAPONSET_AFTER =
+  PRIMARY   3x_FAB500_TU22M3M_CRF_RUS  PrimaryDamage=897
+  SECONDARY 3x_FAB500_TU22M3M_CRB_RUS  PrimaryDamage=897
+  TERTIARY  2x_FAB500_TU22M3M_WR_RUS   PrimaryDamage=897
+PROJECTILE = Fab-250 (existing)
+UNRELATED_BOMBER_DAMAGE_CHANGED = NO
+
+==================================================
+LIVE UNIT STATE AFTER EDIT
+==================================================
+
+OBJECT = Iraq_MirageF1_Bq
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+ACTIVE_COMMANDSET = Iraq_LargeAirBaseCommandSet
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraq_mirageF1Bq
+BUILD_SLOT = 6
+PRODUCER = Iraq_LargeAirBase
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+
+OBJECT = Iraq_Su-24MK
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+ACTIVE_COMMANDSET = Iraq_LargeAirBaseCommandSet
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraq_Su-24MK
+BUILD_SLOT = 8
+PRODUCER = Iraq_LargeAirBase
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE (Upgrade_MTS remains weapon-switch only)
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+
+OBJECT = Iraq_Su-24MR
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+ACTIVE_COMMANDSET = Iraq_LargeAirBaseCommandSet + Iraq_HeavyAirBaseCommandSet
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraq_Su-24MR
+BUILD_SLOT = 15 / 2
+PRODUCER = Iraq_LargeAirBase + Iraq_HeavyAirBase
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+
+OBJECT = IraqJetL159
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetL159.ini
+ACTIVE_COMMANDSET = Iraq_LargeAirBaseCommandSet
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraqJetL159
+BUILD_SLOT = 11
+PRODUCER = Iraq_LargeAirBase
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+IRAQ_L159_A2A_WEAPON = IraqJetMig21_WpnIR
+IRAQ_L159_GROUND_BOMB = NONE
+IRAQ_L159_UNGUIDED_ROCKET = NONE
+
+OBJECT = RussiaJetTu22M3M
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+ACTIVE_COMMANDSET = Iraq_HeavyAirBaseCommandSet
+ACTIVE_COMMAND_BUTTON = Command_ConstructRussiaJetTu22M3M
+BUILD_SLOT = 3
+PRODUCER = Iraq_HeavyAirBase
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+
+OBJECT = Iraq_BTR-90
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\APC\BTR90.ini
+ACTIVE_COMMANDSET = Iraq_WarFactoryCommandSet_T (also T1/T2/T3 slot 4)
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraq_BTR-90
+BUILD_SLOT = 4
+PRODUCER = Iraq_WarFactory_T
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+
+OBJECT = Iraq_Alhussaien
+ACTIVE_OBJECT_FILE = Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+ACTIVE_COMMANDSET = Iraq_WarFactoryCommandSet_T (also T1/T2 slot 11; T3 slot 10)
+ACTIVE_COMMAND_BUTTON = Command_ConstructIraq_Alhussaien
+BUILD_SLOT = 11 from start (T3 keeps slot 10)
+PRODUCER = Iraq_WarFactory_T
+SCIENCE_GATE_AFTER = NONE
+UPGRADE_GATE_AFTER = NONE
+OBJECT_PREREQUISITE_AFTER = NONE
+BUILDABLE_AFTER_PRODUCER_EXISTS = YES
+IRAQ_ALHUSSIEN_COST = 15000
+IRAQ_ALHUSSIEN_BUILD_TIME = 1200
+
+==================================================
+LIVE COMMANDSETS AFTER EDIT
+==================================================
+CommandSet Iraq_LargeAirBaseCommandSet
+  1 = Command_ConstructIraqJetF16IQ
+  2 = Command_ConstructIraq_Mig-29A
+  3 = Command_ConstructIraq_Mig-25BM
+  4 = Command_ConstructIraq_Mig-23ML
+  5 = Command_ConstructIraqJetMig21
+  6 = Command_ConstructIraq_mirageF1Bq
+  7 = Command_ConstructIraq_Su-22M3
+  8 = Command_ConstructIraq_Su-24MK
+  9 = Command_ConstructIraq_Su-25K
+  10 = Command_ConstructIraqJetSu25UB
+  11 = Command_ConstructIraqJetL159
+  12 = Command_ConstructIraqJetMig25RB
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+  15 = Command_ConstructIraq_Su-24MR
+End
+
+CommandSet Iraq_HeavyAirBaseCommandSet
+  1 = Command_ConstructIraqJetF14Tomcat
+  2 = Command_ConstructIraq_Su-24MR
+  3 = Command_ConstructRussiaJetTu22M3M
+  4 = Command_ConstructIraq_Mi-35M3
+  5 = Command_ConstructIraq_Mi-28NE
+  6 = Command_ConstructIraq_Mi-8T
+  7 = Command_ConstructIraqJetIL76
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+CommandSet Iraq_WarFactoryCommandSet_T
+  1 = Command_ConstructIraq_T-72
+  2 = Command_ConstructIraq_BMP-1
+  4 = Command_ConstructIraq_BTR-90
+  11 = Command_ConstructIraq_Alhussaien
+  3 = Command_ConstructIraqVehicleRoland3K
+  14 = Command_Sell
+End
+
+==================================================
+FLAGS
+==================================================
+IRAQ_MIRAGE_UNLOCKED_FROM_LARGEAIRBASE = YES
+IRAQ_SU24MK_UNLOCKED_FROM_LARGEAIRBASE = YES
+IRAQ_SU24MR_UNLOCKED = YES
+IRAQ_L159_AIR_TO_AIR_ONLY = YES
+IRAQ_TU22M3M_OBJECT = RussiaJetTu22M3M
+IRAQ_TU22M3M_HEAVY_SLOT = 3
+IRAQ_TU22M3M_BUILDABLE = YES
+RUSSIA_TU22M3M_BOMB_CHANGED = YES
+IRAQ_TU22M3M_BOMB_CHANGED = YES
+UNRELATED_BOMBER_DAMAGE_CHANGED = NO
+IRAQ_BTR90_UNLOCKED_FROM_WARFACTORY = YES
+IRAQ_ALHUSSIEN_BUILDABLE_FROM_START = YES
+IRAQ_ALHUSSIEN_SCIENCE_GATE = NONE
+IRAQ_ALHUSSIEN_RESEARCH_GATE = NONE
+IRAQ_ALHUSSIEN_T3_VISIBILITY_GATE = NONE
+IRAQ_ALHUSSIEN_COST = 15000
+IRAQ_ALHUSSIEN_BUILD_TIME = 1200
+IRAQ_LARGEAIRBASE_OBJECT_CHANGED = NO
+IRAQ_HEAVYAIRBASE_OBJECT_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+ART_CHANGED = NO
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

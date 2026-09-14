@@ -1,0 +1,90 @@
+SOURCE_ARCHIVE = SPECTER1.part001.rar -> SPECTER1.part069.rar
+SOURCE_CONFIRMED = YES
+PR470_USED = NO
+POST_470_PRS_USED = NO
+OLD_SPEC_PARTS_USED = NO
+OLD_UNLOCK_TMP_USED = NO
+
+BASELINE_DATA_BYTES = 364979021
+BASELINE_DATA_SHA256 = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+BASELINE_DATA_FILE_COUNT = 2804
+
+NEW_DATA_BYTES = 364977521
+NEW_DATA_SHA256 = a6f022ff41664a9085c3a7197e71fb75776afd370702d63a0c3ece0b9cb1fd0c
+NEW_DATA_FILE_COUNT = 2804
+
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 28
+ORDER_IDENTICAL = YES
+
+CHANGED PACKED PATHS:
+Data\INI\CommandSet.ini
+Data\INI\Weapon.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Mi-8.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MIC.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200R.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Sarab3.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Airborne.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Enginer.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\KornetTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\MortarTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Karrar-2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Lamiaa.ini
+
+IRAQ_MIRAGE_UNLOCKED = YES
+IRAQ_SU24MK_UNLOCKED = YES
+IRAQ_SU24MR_UNLOCKED = YES
+
+IRAQ_L159_OBJECT = IraqJetL159
+IRAQ_L159_GUIDED_BOMB_WEAPON = IraqJetL159_WpnBomb
+IRAQ_L159_GUIDED_BOMB_PROJECTILE = Kab500
+IRAQ_L159_CLIPSIZE = 3
+IRAQ_L159_RELOAD = RETURN_TO_BASE
+
+IRAQ_MIG21_OBJECT = IraqJetMig21
+IRAQ_MIG21_SCALE = 0.91
+
+IRAQ_TU22_OBJECT = Iraq_Tu-22M3
+IRAQ_TU22_HEAVY_AIRBASE_SLOT = 3
+IRAQ_TU22_BUILDABLE = YES
+
+RUSSIA_TU22_OBJECT = RussiaJetTu22M3M
+IRAQ_TU22_OBJECT = Iraq_Tu-22M3
+TU22_WEAPON = Kab1500_LeaserGuidedBomb
+TU22_PROJECTILE = Kab2500
+TU22_CLIPSIZE = 3
+TU22_DAMAGE = 1150.0
+TU22_DAMAGE_RADIUS = 30.0
+
+RUSSIA_TU22_BOMB = Kab1500_LeaserGuidedBomb
+IRAQ_TU22_BOMB = Kab1500_LeaserGuidedBomb
+
+IRAQ_COMBAT_UNLOCK_GATES_REMAINING = SCIENCE_Rank* kept on some infantry/AA (general rank, not unit-research); building construction prereqs kept (Power/Supply/WarFactory/AirBase/MIC chain)
+ABBAS_RESEARCH_GATE_REMOVED = YES
+
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+PERMITTED_RUSSIA_PATH_COUNT = 1
+EGYPT_COMMANDCENTER_UNCHANGED = YES
+EGYPT_PLAYER_TEMPLATE_UNCHANGED = YES
+EGYPT_WORKER_CHAIN_UNCHANGED = YES
+ART_CHANGED = NO
+
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

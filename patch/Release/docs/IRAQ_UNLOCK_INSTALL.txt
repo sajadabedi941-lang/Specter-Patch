@@ -1,0 +1,24 @@
+SPECTER Iraq Complete Unlock + Air Force Update
+===============================================
+
+DATA-only package. Keep your current _SPEC_ART_ONE.big.
+
+Requirement
+- Working Zero Hour + SPECTER already installed
+- Current DATA must be the PR #473 Final pack
+  (Specter_WarFactory_AirForce_Final / DATA SHA256
+   6ce400a40cb6d250443505c5ec56e529f897595ce82e18fb944c0838e955d198)
+
+Install
+1. Close Zero Hour.
+2. Back up the current _SPEC_DATA_ONE.big
+3. Copy _SPEC_DATA_ONE.big from this ZIP into the game folder
+   (same folder as generals.exe)
+4. Do NOT replace _SPEC_ART_ONE.big
+5. Launch Specter as usual
+
+Verify
+- DATA SHA256 must be
+  451c71b6499cb4cfefcfd97d1603666f148b2b3d8f8ec9efa58cfff8b3e9f8a0
+- ART SHA256 must remain
+  2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761

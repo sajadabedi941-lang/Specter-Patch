@@ -1,0 +1,26 @@
+SPECTER1 Iraq live-path follow-up (continues PR #487)
+
+Does not redo Mirage/Su-24/L-159 unlocks. Does not touch airbase objects or ART.
+
+MiG-21PF / MiG-21Bis / J-7 / J-7B:
+- Every live country object scaled +15%.
+- Live WeaponSet bomb tokens replaced with existing Kab500_LeaserGuidedBomb.
+- MF / Bison / dummy objects skipped.
+
+Iraq drones (live Iraq_RadarStationCommandSet):
+- Ababil200, Sarab3, Lamiaa science/MIC locks removed.
+- Ababil200 now uses Iraq_Ababil200CommandSet with Command_FireMainWeapon.
+
+Iraq WarFactory:
+- Removed extra Radar/MIC gates on 2S1, Sarab7, AssadBabel-2, R11.
+- Kept SupplyCenter on Sam8/AssadBabel. Kept tier CommandSet upgrades.
+- AI-only units not unlocked.
+
+Tu-22M3M:
+- Russia / Iraq (same RussiaJetTu22M3M) / NK / Vietnam use cloned 8x_FAB500_TU22M3M_LIVE (ClipSize=8).
+- NK and Vietnam Heavy bars now have their existing construct buttons on empty slots.
+
+Alhussien:
+- Still no science/research/T3 hide. Cost now 20000. BuildTime 1200.
+
+Replace only _SPEC_DATA_ONE.big.

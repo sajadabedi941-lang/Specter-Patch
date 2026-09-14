@@ -1,0 +1,74 @@
+SOURCE_ARCHIVE = _SPEC.part01.rar -> _SPEC.part15.rar
+SOURCE_DATA_PATH = /tmp/SPEC_NEW_LOCKED/_SPEC_DATA_ONE.big
+SOURCE_DATA_BYTES = 384197258
+SOURCE_DATA_SHA256 = a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+SOURCE_DATA_PACKED_FILE_COUNT = 2836
+SOURCE_DATA_FILE_COUNT = 2836
+UNTOUCHED_REPACK_BYTE_IDENTICAL = YES
+EXPLORER_KB = 375193
+
+NEW_DATA_BYTES = 384196190
+NEW_DATA_SHA256 = d6b4595f34dd021b21590428c9cd3a92ff439cf5dab8dd21085a3dedf3325c8c
+NEW_DATA_FILE_COUNT = 2836
+
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 26
+
+CHANGED PACKED PATHS:
+Data\INI\CommandSet.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\B340.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\Fahad3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Airfield_T.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200R.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Sarab3.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Airborne.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Enginer.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\KornetTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\MortarTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Karrar-2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Lamiaa.ini
+
+IRAQ_MIRAGE_F1_EQ_UNLOCKED = YES
+IRAQ_SU24MK_UNLOCKED = YES
+IRAQ_SU24MR_UNLOCKED = YES
+IRAQ_L159_GUIDED_BOMB_COUNT = FAIL
+IRAQ_MIG21_SCALE = ABSENT
+IRAQ_TU22M3_AVAILABLE = YES
+IRAQ_TU22M3_BOMB = Kab1500_LeaserGuidedBomb
+RUSSIA_TU22M3_BOMB = Kab1500_LeaserGuidedBomb
+IRAQ_COMBAT_UPGRADE_GATES_REMAINING = NONE
+IRAQ_WARFACTORY_FINAL_ROSTER_FROM_START = YES
+IRAQ_MIC_FINAL_ROSTER_FROM_START = YES
+UNRELATED_COUNTRY_PATHS_CHANGED = NONE
+ART_CHANGED = NO
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+
+NOTES
+- Built directly from the newly uploaded _SPEC.part*.rar working DATA baseline.
+- Archive parts were continuous: _SPEC.part01.rar through _SPEC.part15.rar. No missing part.
+- Archive contained only _SPEC_DATA_ONE.big. No ART BIG was present.
+- Untouched ordered BIGF repack of the source DATA was byte-identical before patching.
+- This DATA is not SPECTER1 (364,979,021 bytes) and not any PR #473-#479 pack.
+- Iraq L-159 / Tucano and Iraq MiG-21 objects do not exist in this baseline. They were not invented.
+- Iraq Tu-22M3 already existed as Iraq_Tu-22M3 / Command_ConstructIraq_Tu-22M3. It was unlocked, pointed at RUS_TU22M3M, given Kab1500_LeaserGuidedBomb, and placed on the starting airfield bar via Iraq_AirfieldCommandSet_T3.
+- Kab1500_LeaserGuidedBomb uses existing Weapon/Projectile Kab2500 / FX_AuroraBombLaunch / FX_AuroraBombDetonate / ClipSize=3 / RETURN_TO_BASE.
+- CommandSet.ini was edited only in Iraq_MICCommandSet and Iraq_MICCommandSet3. North Korea and other country sets are unchanged.
+- Building construction chain kept: Power -> Supply -> WarFactory / Airfield / Radar / MIC. Abbas building still requires AbbasResearchObject.
+- Active Science / Radar / MIC / research-object production gates on Iraq combat units: 0.
+- This environment cannot launch Zero Hour. Validation is static packed-path audit only.

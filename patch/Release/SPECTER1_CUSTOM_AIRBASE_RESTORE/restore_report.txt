@@ -1,0 +1,33 @@
+NEW_DATA_BYTES = 365383929
+NEW_DATA_SHA256 = 83ba27deb8ba5c0f8a516982534de85fc61634b7c00d61c698802bead6f7e2dc
+NEW_DATA_FILE_COUNT = 2824
+ADDED_PATH_COUNT = 20
+CONTENT_CHANGED_PATH_COUNT = 6
+ADDED:
+  Data\English\AdvancedAirBase_Strings.txt | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\CommandButton_AdvancedAirBase_SpecterFactions.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase_FutureFactions.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase_AllFactions.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Germany_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Sweden_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Italy_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Republic of China Armed Forces\Buildings\Taiwan_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Buildings\SouthKorea_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Vietnam People's Army\Buildings\Vietnam_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Ukraine_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\French Armed Forces\Buildings\France_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\RUNWAY_SYSTEM.txt | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\Object\Specter\United Nations Forces\Buildings\UN_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\MappedImages\HandCreated\AdvancedAirBase_Images.INI | SOURCE=OLD_SPEC | Restore OLD custom AdvancedAirBase infrastructure
+  Data\INI\CommandSet_ZZZZ_RestoreAdvancedAirBase.ini | SOURCE=PR482+OLD_SPEC | Last-win builder wiring + AAB production from PR482 aircraft
+CHANGED:
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_AdvancedAirBase.ini | SOURCE=OLD_SPEC | Overwrite stub/disabled AdvancedAirBase with OLD object

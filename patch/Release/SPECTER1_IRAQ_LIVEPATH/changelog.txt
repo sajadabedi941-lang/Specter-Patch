@@ -1,21 +1,26 @@
-SPECTER1 Iraq live-path fix (not PR #486)
+SPECTER1 Iraq live-path follow-up (continues PR #487)
 
-Source: SPECTER1.part001.rar through SPECTER1.part069.rar only.
-Previous PRs, Releases, DATA1, sidecars, and rebuilt BIGs were not used.
+Does not redo Mirage/Su-24/L-159 unlocks. Does not touch airbase objects or ART.
 
-This pass edits the original live packed files inside _SPEC_DATA_ONE.big.
-No CommandSet_Iraq.ini sidecar. No ART rebuild. No airbase object/parking changes.
+MiG-21PF / MiG-21Bis / J-7 / J-7B:
+- Every live country object scaled +15%.
+- Live WeaponSet bomb tokens replaced with existing Kab500_LeaserGuidedBomb.
+- MF / Bison / dummy objects skipped.
 
-Unlocks (availability gates removed on the live objects; production buildings unchanged):
-- Iraq Mirage F1.EQ (Iraq_MirageF1_Bq): buildable from Iraq_LargeAirBase slot 6 as soon as that airbase exists.
-- Iraq Su-24MK: buildable from Iraq_LargeAirBase slot 8 as soon as that airbase exists. Upgrade_MTS kept.
-- Iraq Su-24MR: MIC lock removed; still on LargeAirBase slot 15 and HeavyAirBase slot 2.
-- Iraq BTR-90: Barracks lock removed; still WarFactory slot 4 from the start.
-- Iraq Alhussien (Iraq_Alhussaien): science, research object, Supply/Radar, and T3-only bar hide removed. Button is on starting WarFactory CommandSet_T slot 11 (kept on T1/T2/T3). BuildCost=15000, BuildTime=1200 seconds. Missiles/model unchanged.
+Iraq drones (live Iraq_RadarStationCommandSet):
+- Ababil200, Sarab3, Lamiaa science/MIC locks removed.
+- Ababil200 now uses Iraq_Ababil200CommandSet with Command_FireMainWeapon.
 
-Aircraft behavior:
-- Iraq L-159 live WeaponSet is air-to-air only using existing IraqJetMig21_WpnIR. Gun, unguided rocket, and bomb removed. Production slot unchanged.
-- Existing RussiaJetTu22M3M is on Iraq_HeavyAirBaseCommandSet empty slot 3 via the existing Command_ConstructRussiaJetTu22M3M button. HeavyAirBase object/W3D/parking untouched.
-- RussiaJetTu22M3M default FAB500 bombs cloned to *_RUS names and raised ~15% (780->897). North Korea / Vietnam keep the original shared 780 weapons.
+Iraq WarFactory:
+- Removed extra Radar/MIC gates on 2S1, Sarab7, AssadBabel-2, R11.
+- Kept SupplyCenter on Sam8/AssadBabel. Kept tier CommandSet upgrades.
+- AI-only units not unlocked.
 
-Replace only _SPEC_DATA_ONE.big in the SPECTER1 game folder.
+Tu-22M3M:
+- Russia / Iraq (same RussiaJetTu22M3M) / NK / Vietnam use cloned 8x_FAB500_TU22M3M_LIVE (ClipSize=8).
+- NK and Vietnam Heavy bars now have their existing construct buttons on empty slots.
+
+Alhussien:
+- Still no science/research/T3 hide. Cost now 20000. BuildTime 1200.
+
+Replace only _SPEC_DATA_ONE.big.

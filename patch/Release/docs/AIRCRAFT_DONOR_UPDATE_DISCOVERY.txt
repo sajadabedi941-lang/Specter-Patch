@@ -1,0 +1,175 @@
+SPECTER AIRCRAFT DONOR UPDATE — DISCOVERY (no edits in this file)
+
+Source packed BIGs: /tmp/usa_donor_aircraft_visuals/_SPEC_*.big
+Donor pack: /tmp/new_donor_extract/New folder (00PMBeta993-999)
+
+This environment cannot launch Zero Hour. Crash/fire/landing conclusions are static INI/ART evidence only.
+
+============================================================
+USA
+============================================================
+
+1) EA-6B Prowler (USA produce crash)
+CURRENT object: AmericaJetF18Prowler
+  file: Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+  Model: EA6.W3D (keep)
+  Texture: EA6.tga (packed)
+  Weapon: Specter_Weapon_EA6B_GuidedBomb (GBU24, ClipSize 6) — exists
+  Locomotor: General_Electric_F414 — EXISTS in Locomotor.ini
+  CommandButton: Command_ConstructAmericaJetF18Prowler
+  CommandSet live slot: America_LargeAirBaseCommandSet slot 9
+CRASH CAUSE (static):
+  Draw attaches ParticleSysBone Engine01/02 and Wingtip01/02 (JetLenzflare/Contrail).
+  Genuine EA6.W3D bones are BOMB01, BOMB02, EMP_V, EMP_B — no ENGINE/WINGTIP.
+  CountermeasuresBehavior FlareBoneBaseName = Flare (bone not on EA6).
+  JapanJetEA6B uses the same EA6 mesh with a simpler Draw and does not use those bones.
+FIX: simplify USA Draw to Japan-safe bones; keep EA6 identity; switch weapon to JH-7A2 bomb wrapper ClipSize=6.
+JH-7A2 bomb chain (packed, proven): 2x_ODAB_500_PMV_SU24_LR
+  ProjectileObject = Fab-250 (exists)
+  Dedicated wrapper Specter_Weapon_JH7A2_Bomb6 ClipSize=6
+
+2) B-52
+CURRENT live bomber: AmericaJetB52H (NOT the IGNORED_IN_GUI AmericaJetB52 science object)
+  Model: US_B52H — DO NOT CHANGE
+  Weapon: AmericaB52H_HeavyBombDrop (ClipSize=1, Projectile=NONE — special carpet)
+H-6K bomb chain (packed): China_Weapon_FAB_H6K
+  ClipSize=8 ProjectileObject=Fab-250 FireFX=FX_AuroraBombLaunch
+RESULT: keep US_B52H, use China_Weapon_FAB_H6K
+
+3) C-141 Starlifter
+NO object named C-141 / C141 exists in packed DATA.
+The live Starlifter is AmericaJetC17Visual
+  DisplayName = OBJECT:Starlifter
+  CommandSet = AmericaC17StarlifterCommandSet
+  Heavy Air Base slot 8 = Command_ConstructAmericaJetC17Visual
+  Model: IUAC17HXNew — DO NOT REPLACE
+  Already has TransportContain Slots=40 + OCL unload + escorts
+An-124 reference: RussiaJetAn124
+  TransportContain Slots=64 AllowInsideKindOf=INFANTRY VEHICLE ExitDelay=100
+RESULT: keep IUAC17HXNew; copy An-124 carry capacity/cargo allow-set (64, INFANTRY VEHICLE)
+
+4) F-22Aouter
+CURRENT: AmericaJetAuterF22
+  Model: LSFF22 / LSFF22d / LSFF22k
+  Large Air Base slot 14 = Command_ConstructAmericaJetAuterF22
+  Weapons: AIM-120 / APG-77 / AIM-9X
+DONOR Strike Eagle (New Folder America.ini):
+  Object USAJetF15E
+  Model LSFUSAF15E / LSFUSAF15Ed
+  Textures LSFUSAF15E.dds (already packed)
+  Button MappedImage F15E -> F15TB.tga (packed)
+Q-5 bomb chain (packed): China_Weapon_Bomb_Q5 Projectile=Fab-250 ClipSize=8
+RESULT: replace AuterF22 visual with LSFUSAF15E; Q-5 bombs; keep CommandButton name so slot 14 still works
+
+5) F-35C
+CURRENT: AmericaJetF35C
+  Model: AVF-35 (broken stand-in)
+  Weapons: GBU_31V2_JDAM_F35C ClipSize=4
+DONOR F-35 Lightning (New Folder, already used for F-35A):
+  Object USAJetF35
+  Model LSFUSAF35A / LSFUSAF35Ad
+  Texture f35.dds (packed)
+SU-34MF bomb chain: no weapon named SU34MF. Packed SU-34M object RussiaJetSu34 (SU34M.ini)
+  Weapon 4x_GormE2GlideBomb_SU34 Projectile=Gorm_E2_BombObject (exists) ClipSize=4
+  Dedicated wrapper Specter_Weapon_SU34MF_Bomb6 ClipSize=6
+RESULT: LSFUSAF35A visual; 6x SU-34 glide bombs. Do not convert F-35B.
+
+============================================================
+RUSSIA
+============================================================
+
+1) KA-52M
+CURRENT: RussiaHelicopterKA52 (KA52M.ini) model RUS_Ka52M2
+  Weapons: 30mm_2A42_Ka52 + 12x_ATGM_9K121_Vikhr + Vympel_R-73_Ka52
+  Projectiles all exist (30mm_API-T_Projectile, 9K121_MissileObject, AIM-9X_Object)
+FIRE BUG: ChinookAIUpdate ControlledWeaponSlots = PRIMARY ;SECONDARY TERTIARY
+  Secondary/tertiary are commented — only the cannon is AI-controlled.
+WORKING REFERENCE: RussiaHelicopterMi28N uses JetAIUpdate with ControlledWeaponSlots SECONDARY TERTIARY
+FIX: JetAIUpdate + ControlledWeaponSlots = PRIMARY SECONDARY TERTIARY. Keep RUS_Ka52M2.
+
+2) TU-95
+CURRENT: RussiaJetTu95 model CWCruTu95
+  Weapon: AmericaB52FifteenBombLineWeapon
+  Heavy Air Base slot 6
+RESULT: keep model; China_Weapon_FAB_H6K
+
+3) SU-35S
+CURRENT: RussiaJetSu35S model RUS_SU35S (fighter bar slot 2)
+  Weapons: 6x_R77_MRBVR_SU35S
+DONOR Su-35 Flanker (New Folder Russia.ini):
+  Object RussiaJetSu35
+  Model LSFSU35 / LSFSU35d (already packed)
+  Button MappedImage SU35 -> SU35TB.tga
+  RussiaJetSu35Flanker already uses this mesh on Heavy bar slot 3 — do not delete that object
+RESULT: replace Su-35S visual with LSFSU35; JH-7A2 wrapper ClipSize=6; keep object/button name
+
+============================================================
+CHINA
+============================================================
+
+1) CH-5 runway
+CURRENT: ChinaDroneCH5 model CHI_CH5
+  KindOf: PRODUCED_AT_HELIPAD ... DRONE  (NO AIRCRAFT)
+  AI: AIUpdateInterface (not JetAIUpdate)
+  Locomotor: Rotax914_TurboEngine only (no taxi)
+  Heavy Air Base slot 6
+WORKING RUNWAY JET ON SAME BAR: ChinaJetQ5
+  KindOf AIRCRAFT, JetAIUpdate, Snecma_M88_4E + BasicJetTaxiLocomotor
+FIX: AIRCRAFT, JetAIUpdate, Q-5 locomotor pair, remove PRODUCED_AT_HELIPAD and DRONE. Keep CHI_CH5.
+
+2) Z-18A
+CURRENT: ChinaHelicopterZ18A model CHI_Z18A
+  Already has ChinookAIUpdate + TransportContain
+  BUT Slots=10, AllowInsideKindOf=INFANTRY only, Forbid VEHICLE, DamagePercentToUnits=100%
+CHINOOK: Slots=8 AllowInsideKindOf=INFANTRY VEHICLE Forbid=AIRCRAFT HUGE_VEHICLE
+RESULT: keep CHI_Z18A; copy Chinook TransportContain allow-set/capacity behavior
+
+============================================================
+CHINA AIRFIELD SLOTS
+============================================================
+
+Live buildings:
+  ChinaAirfield     -> PLAAirfieldCommandSet
+  China_LargeAirBase -> China_LargeAirBaseCommandSet  (same 15-slot fighter roster)
+  China_HeavyAirBase -> China_HeavyAirBaseCommandSet  (bomber / "aircraft" airfield)
+
+PLA / Large current:
+  13 Command_SetRallyPoint
+  14 Command_Sell
+  (J-11B already slot 6, J-15 already slot 7)
+
+Heavy / aircraft airfield current:
+  13 Command_SetRallyPoint
+  14 Command_Sell
+
+1) Fighter Sell -> J-11 Flanker donor
+  Donor Object ChinaJetJ11 Model LSFJ11B (packed) Button JIAN11TB.tga (import)
+  New Specter object ChinaJetJ11Flanker (clone of working ChinaJetJ11B DATA + donor cameo)
+  Weapon: Specter_Weapon_SU34MF_Bomb6
+  Button: Command_ConstructChinaJetJ11Flanker (canonical CommandButton.ini only)
+
+2) Fighter Rally -> J-15A donor
+  Donor Object ChinaJ15A Model J15JZ (packed, already used by ChinaJetJ15)
+  Texture/button CHNJ15A.tga (packed)
+  Use existing Command_ConstructChinaJetJ15 / ChinaJetJ15 — exact donor mesh, no new fake jet
+
+3) Aircraft-airfield Sell -> Flying Leopard
+  Donor Object ChinaJetJH7 Model CHJH7A.W3D (00PMBeta999) textures chfbc.dds + f35.tga
+  Button FEIBAOtb.tga
+  New object ChinaJetFEIBAO
+  Weapon: Specter_Weapon_JH7A2_Bomb4
+
+4) Aircraft-airfield Rally -> new H-6K clone
+  Base: ChinaBomberH6K model h6k (keep visual)
+  New unique object: ChinaBomberH6K_B21A
+  Weapon: Specter_Weapon_B21A_Bomb7 (clone AmericaB21A_HeavyStandoff, ClipSize=7, GBU72_GuidedBombObject exists)
+
+============================================================
+REJECTED / NOT GUESSED
+============================================================
+- No C-141 object exists; will not invent one or swap a random C-141 mesh.
+- No SU34MF weapon name; using packed SU-34M Gorm-E2 chain.
+- Growler Variant B, Hornet meshes, AVF-35 as F-35B: not used.
+- Ground / War Factory / PlayerTemplate / Science: not touched.
+
+LOCKED: PlayerTemplate.ini, Science.ini, all War Factory CommandSets.

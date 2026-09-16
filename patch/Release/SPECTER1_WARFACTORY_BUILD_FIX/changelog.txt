@@ -1,0 +1,22 @@
+SPECTER1 WarFactory build fix
+
+Continues from SPECTER1_FINAL_ROSTER_UPDATE. Does not revert country roster work.
+Does not modify USA / Iran / Israel / NATO / Iraq / Italy / UK / Vietnam / Egypt /
+Russia / China WarFactory objects or CommandSets. Does not modify ART, aircraft,
+weapons, or upgrades.
+
+Bug: dest WarFactory Draw used hybrid animations (Model=JP_WarFactory with
+Animation=JP_WarFactory.NKr_WarFactory, and the same pattern for India/Germany/
+France/SK/Saudi/Sweden/UAE/Ukraine/Turkey). That is the known construction break.
+
+Fix: WarFactory Draw Model+Animation retargeted onto working donor W3D already
+packed in ART (US_WarFactory, Irq_WarFactory, or NKr_WarFactory).
+
+Libya / Syria / Pakistan / Turkey WF CommandSets produced Iraq/GLA/Russia/Nato
+units (Side mismatch, UNIT_BUILD fails). Retargeted onto existing same-Side
+native vehicles. Buttons already existed.
+
+South Africa and North Korea already had matching Draw + same-Side production
+bars; left unchanged.
+
+INGAME_TESTED = NO

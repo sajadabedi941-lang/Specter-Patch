@@ -1,0 +1,39 @@
+SPECTER1 WARFACTORY BUILD FIX
+BASELINE_DATA_SHA256 = 2a06ca987362da5ffecd2121c85d2e49a6da8bb4ee80ac1a45bb9278d74b5921
+NEW_DATA_SHA256 = 1a4bbd0ff08c3f4c18ea70eb4b4af4d501ef69cdaf7bd77dafef10b1ff31561a
+ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a (unchanged copy)
+ART_CHANGED = NO
+WEAPON_INI_CHANGED = NO
+AIRCRAFT_CHANGED = NO
+WORKING_FACTIONS_UNCHANGED = YES
+WORKING = USA, Iran, Israel, NATO, Iraq, Italy, UK, Vietnam, Egypt, Russia, China
+WARFACTORY_FIXED = YES
+REPAIRED = India, Germany, Japan, France, SouthKorea, SaudiArabia, Sweden, UAE, Ukraine, Turkey, Libya, Syria, Pakistan
+SOUTH_AFRICA = already native Side + matching Irq_WarFactory animation; not modified
+NORTH_KOREA = already native Side + matching NKr_WarFactory animation; not modified
+
+BUG = hybrid Model/Animation on dest WarFactory Draw (e.g. JP_WarFactory.NKr_WarFactory)
+FIX_DRAW = retarget Draw Model+Animation onto working donor W3D already in ART
+BUG2 = Libya/Syria/Pakistan/Turkey WF CommandSets produced wrong-Side units
+FIX_CS = retarget those CommandSets onto existing same-Side NationalGround/native vehicles
+
+DRAW_FIXES =
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini: IN_WarFactory.Irq_WarFactory -> Irq_WarFactory.Irq_WarFactory
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini: DE_WarFactory.US_WarFactory -> US_WarFactory.US_WarFactory
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini: JP_WarFactory.NKr_WarFactory -> NKr_WarFactory.NKr_WarFactory
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini: FR_WarFactory.US_WarFactory -> US_WarFactory.US_WarFactory
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini: SK_WarFactory.NKr_WarFactory -> NKr_WarFactory.NKr_WarFactory
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini: SA_WarFactory.Irq_WarFactory -> Irq_WarFactory.Irq_WarFactory
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini: SE_WarFactory.US_WarFactory -> US_WarFactory.US_WarFactory
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini: AE_WarFactory.Irq_WarFactory -> Irq_WarFactory.Irq_WarFactory
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini: UA_WarFactory.US_WarFactory -> US_WarFactory.US_WarFactory
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini: TR_WarFactory.US_WarFactory -> US_WarFactory.US_WarFactory
+
+LIBYA_UNITS = LibyaTankT72, LibyaTankT62, LibyaVehicleBMP1, LibyaVehicleM113, LibyaVehicle2S1, LibyaVehicleShilka, LibyaVehicleSA6, LibyaVehicleRadar, LibyaVehicleBM21, LibyaVehicleScudB, Libya_Alhussaien, LibyaVehicleATGM, LibyaVehicleBREM
+SYRIA_UNITS = SyriaTankT72, SyriaTankT62, SyriaVehicleBMP1, SyriaVehicleBTR, SyriaVehicle2S1, SyriaVehicleShilka, SyriaVehicleBuk, SyriaVehicleP18, SyriaVehicleBM21, SyriaVehicleScud, SyriaVehicleTOS1A, SyriaVehicleKornet, SyriaVehicleBREM
+PAKISTAN_UNITS = PakistanTankAlKhalid, PakistanTankAlZarrar, PakistanVehicleTalhaIFV, PakistanVehicleTalhaAPC, PakistanVehicleM109, PakistanVehicleLY80, PakistanVehicleHQ9P, PakistanVehicleRadar, PakistanVehicleA100, PakistanVehicleShaheen, PakistanVehicleNasr, PakistanVehicleBaktar, PakistanVehicleARV
+TURKEY_UNITS = TurkeyTankLeopard2A7Plus, TurkeyTankPuma, TurkeyVehicleCortaleMK3, TurkeyVehicleVBCI, TurkeyVehicleM142, TurkeyVehicleCaesar, TurkeyVehicleCentauroB2, TurkeyVehicleIRIST, TurkeyVehicleTRML4D, TurkeyVehicleAltay, TurkeyVehicleFirtina, TurkeyVehicleHisar, TurkeyVehicleM88
+
+INGAME_TESTED = NO
+DATA_CHANGED = YES
+ART_CHANGED = NO

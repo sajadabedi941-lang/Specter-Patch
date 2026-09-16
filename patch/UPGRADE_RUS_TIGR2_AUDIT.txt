@@ -1,0 +1,23 @@
+UPGRADE_RUS_TIGR2
+Reference = PASS
+CommandButton = PASS
+CommandSet = PASS
+Object = PASS
+Crash fixed = YES
+
+FINDINGS
+Before this fix, upgrade_rus_tigr2 / Upgrade_Rus_Tigr2 / rus_tigr2
+had ZERO references in packed DATA, ART, CSF, and loose INI.
+Closest working Russia upgrade is Upgrade_RUS_Tier2
+(Command_RUS_Tier2, sys_tier2, Russia Weapon Industry).
+
+REPAIR
+Added Upgrade_Rus_Tigr2 cloned from Upgrade_RUS_Tier2.
+Added Command_Upgrade_Rus_Tigr2 (PLAYER_UPGRADE).
+Added MappedImage upgrade_rus_tigr2 (same texture coords as sys_tier2).
+Exposed on RussiaWeaponIndustryPlantCommandSet_T / T1 / T2 only.
+War Factory, other upgrades, units, factions, ART unchanged.
+
+DATA SHA256 3808f22f5249358d308d705c1af6476e92150a04e227eb9bba5e9ea49f1f127e
+ART_CHANGED = NO
+INGAME_TESTED = NO

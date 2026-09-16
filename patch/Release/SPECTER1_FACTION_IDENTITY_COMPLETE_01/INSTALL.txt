@@ -1,0 +1,16 @@
+SPECTER1_FACTION_IDENTITY_COMPLETE_01
+==============================
+
+Complete per-country visual identity on the flag-ART baseline.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+   ART is an unchanged copy of the SPECTER1 flag-ART pack.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 bd4e898d6b2d4e1c2b33e3491743fe677bb0ec9ced5d5b9c44de7ef546ef6072
+  ART  SHA256 5cc32f0794d01a6d4f6d2485aebe41352ced0067309ff8ff0339c43d55870340
+
+INGAME_TESTED = NO

@@ -1,0 +1,11 @@
+SPECTER1 faction identity complete 01 (DATA only)
+
+Continues from SPECTER1_FACTION_FLAG_ART_01. Every repaired faction's
+country-select portrait, side icon, observer icon, and watermark now
+points at its own native flag texture through 64 new MappedImages in
+Specter_FactionIdentity.INI. No donor fallbacks remain (Turkey was
+already native). Names resolve via generals.csf; Abbas buildings draw
+native flag meshes (ART pass). Protected factions, ART, gameplay,
+units, weapons, and animations unchanged.
+
+INGAME_TESTED = NO

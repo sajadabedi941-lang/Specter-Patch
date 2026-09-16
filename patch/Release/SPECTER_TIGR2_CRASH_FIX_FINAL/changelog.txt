@@ -1,0 +1,32 @@
+SPECTER_TIGR2_CRASH_FIX_FINAL
+
+Supersedes SPECTER_TIGR2_CRASH_FIX_UPDATE (stub). That package only
+registered Upgrade/CommandButton/MappedImage on unused _T CommandSets
+and had no Tigr2 object.
+
+Crash source:
+  Missing Object RussiaVehicleTigr2, missing UNIT_BUILD, upgrade button
+  on RussiaWeaponIndustryPlantCommandSet_T (China-sided _T plant) instead
+  of live RussiaIndsturialComplexCommandSet.
+
+Fix:
+  - Upgrade Upgrade_Rus_Tigr2 (SU39-style PLAYER_UPGRADE)
+  - Command_Upgrade_Rus_Tigr2 on live Russia Industrial Complex slot 5
+  - Object RussiaVehicleTigr2 = working BTR82A clone (RUS_BTR90,
+    30mm_2A72_dualfeed, 7_62mm_PKT_Coaxial, BTR90Armor, TCD_510diesel)
+  - Command_ConstructRussiaVehicleTigr2 UNIT_BUILD on Industrial Complex
+    slot 6 and Command Center slot 11
+  - No WeaponSetUpgrade / MaxHealthUpgrade / LocomotorSetUpgrade on Tigr2
+    (those SU39 modules would crash without Tigr-specific weapons)
+
+Confirmed:
+  - upgrade_rus_tigr2 crash chain repaired
+  - Russia upgrade menu CommandSet has the Tigr2 button
+  - Purchase uses a complete PLAYER_UPGRADE with existing image/upgrade
+  - Tigr2 spawn uses existing BTR82A weapons/armor/W3D
+  - Only five DATA files changed; War Factory, other factions, identity,
+    and ART unchanged
+
+DATA SHA256 e6416b4c8e345e302a67473b0efc820119414df785b90346b0f35c9acf91d37b
+ART_CHANGED = NO
+UPGRADE_RUS_TIGR2_CRASH = FIXED

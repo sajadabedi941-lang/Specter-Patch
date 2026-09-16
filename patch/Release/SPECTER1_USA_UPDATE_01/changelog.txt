@@ -1,0 +1,15 @@
+SPECTER1_USA_Update_01
+
+Baseline: SPECTER1_Iraq_Followup_Final DATA (SHA256 7eab1a6d80cd059050b6b186ad420863110a7a5c11162d1c89a6b4ed2957e7a8)
+plus original SPECTER1 ART (SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761).
+
+USA only. Previous Iraq/follow-up gameplay is packed unchanged.
+
+1. AmericaJetF117Clean visual Scale 0.9 -> 1.04 (~+15%). Weapons/price/armor/locomotor/button/slot unchanged.
+2. Removed F-15E Strike Eagle (AmericaJetAuterF22, BuildCost 1600) from the live USA production bars. Object definition kept. Unique CommandSets replace the AuterF22 construct button in the same slots.
+3. Added AmericaHelicopterAH1Z (AH-1Z Viper) using donor LSFAH1Z ART and SPECTER1 AmericaVehicleComanche gameplay skeleton. Placed in the freed Strike Eagle slots. No donor DATA imported.
+4. EA-6B (AmericaJetF18Prowler): hide EA6 HOOK subobject; GeometryIsSmall=No. Fixes the flying line-shadow from the arresting-hook volume shadow. Model file not rewritten.
+5. F-35B JSF (AmericaJetF35BJSF): hide AVLightn afterburner/cylinder subobjects; Geometry Cylinder -> Box. Fixes the flying line-shadow. Model file not rewritten.
+6. AmericaJetC17Visual keeps Starlifter model/name/portrait/USA slot, and now uses RussiaJetAn124 transport functionality (C17GlobalMasterCommandSet + Chinook-style TransportContain). An-124 itself unchanged.
+
+Protected: Iraq Mirage/Su-24/L-159, drones, WarFactory, Alhussien, Tu-22, MiG-21/J-7, Large/Heavy AirBase parking architecture, other countries, PlayerTemplate.

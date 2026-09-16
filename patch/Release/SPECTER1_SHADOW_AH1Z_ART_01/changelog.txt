@@ -1,0 +1,9 @@
+SPECTER1 F-35B / EA-6B shadow + AH-1Z ART fix
+
+ART only. Uses crashfix-test DATA unchanged. Does not overwrite the crashfix DATA release.
+
+1. F-35B JSF (AmericaJetF35BJSF, model AVLightn): volume-shadow line came from thin FX submeshes (EX01/EX02, JAFTERBURNED, CYLINDER02/03, TURBO). INI HideSubObject did not stop SHADOW_VOLUME. Set W3D HIDDEN on those meshes in AVLightn.W3D and AVLightn_D.W3D.
+2. EA-6B (AmericaJetF18Prowler, model EA6): same class of bug from the HOOK mesh. Set W3D HIDDEN on HOOK in EA6.W3D.
+3. AH-1Z Viper (AmericaHelicopterAH1Z, model LSFAH1Z): missing from original SPECTER1 ART. This ART BIG includes the donor LSFAH1Z W3D/textures and AH1ZTB cameo.
+
+No DATA edits. No airbase/runway changes. No Iraq Su-24MR change. No Weapon.ini change.

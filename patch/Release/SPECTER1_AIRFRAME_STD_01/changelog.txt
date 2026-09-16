@@ -1,0 +1,13 @@
+SPECTER1 Airframe Standardization Pass 01 (DATA only)
+
+Baseline: SPECTER1_Russia_Unlock_01 packed DATA. No ART. No Release. No CommandSet changes.
+
+Verified Group A foreign copies now use the exact live USA/Russia/China reference Draw model configuration, Scale, and default WeaponSet (Conditions=None). Country identity, DisplayName, buttons, producers, costs, and CommandSets are unchanged.
+
+USA: F-35B, F-35C, F/A-18E/F, EA-18G, EA-6B, F-16CJ Block 52, F-15E, AH-64E, CH-47F, UH-60.
+Russia: Su-27, Tu-22M3 (including Iraq_Tu-22M3 live object; NK/Vietnam objects hosted in Iraq_Mig-25BM.ini filename), cargo Il-76.
+China: J-7 (not J-7B).
+
+Tu-22M3 note: live RussiaJetTu22M3M default WeaponSet is KH101_CruiseMissile_TU22M3M + SVP-24-22_TU22M3M (not 8x FAB). Foreign copies were set to that exact live set. ClipSize was not edited in Weapon.ini.
+
+Excluded: Group B/C, borrowed meshes, Su-25, Mi-28, MiG families, Su-24MR (Iraq jammer preserved).

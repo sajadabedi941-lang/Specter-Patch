@@ -1,0 +1,235 @@
+SPECTER1 INDIA + GERMANY ROSTER 01
+BASELINE_DATA_SHA256 = e63195d16a8ed35d079e6020a6b46e52986a2dbb51b15d582d1ed587015379ce
+BASELINE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+NEW_DATA_SHA256 = bf9104f64226accaa386dcbe96255f7af2b5089f7b6b90bdf6fad13cec787aa0
+NEW_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a (unchanged copy)
+NEW_DATA_BYTES = 365362651
+NEW_DATA_FILE_COUNT = 2826
+MODE = DATA edits from Vietnam+Syria ART baseline; ART packed unchanged
+
+=== INDIA FACTORY / BUILDINGS ===
+BUG = India_WarFactoryCommandSet produced Side=Russia tanks (T-90A etc) requiring RussiaWarFactory
+FIX = retargeted WarFactory CommandSets to Side=India vehicles (T-90S, T-72 Ajeya, Arjun, BMP-2, K9, Pinaka, Tunguska, Akash, BTR-90, BM-21, Al-Khalid, Nag, Prahaar)
+BUILDING_CHAIN = Power/Supply Object prereqs kept; stripped India_AbbasResearchObject lock from Abbas
+DOZER = India_Dozer KindOf DOZER + IndiaDozerCommandSet unchanged
+FACTORY_FIXED = YES
+
+=== INDIA INFANTRY ===
+OLD_PRODUCTION_REMOVED = RepublicanGuard AKMS/RPG7/Igla/SF/TBK14/EliteSSG/Worker from barracks
+REPLACED_WITH = cloned Russia barracks roster, Side=India, Prereq India_Barracks
+RUSSIA_DONOR_FILES_UNCHANGED = YES
+INDIA BARRACKS =
+  Command_ConstructIndiaInfantryRiflemanAK74M
+  Command_ConstructIndiaInfantryAntitank
+  Command_ConstructIndiaInfantryKornetTeam
+  Command_ConstructIndiaInfantryMortarTeam
+  Command_ConstructIndiaInfantryMachinegunner
+  Command_ConstructIndiaInfantryAntiair
+  Command_ConstructIndiaInfantryFieldEngineer
+  Command_ConstructIndiaInfantrySpetsNaz
+  Command_ConstructIndiaInfantryHeavySniper
+  Command_ConstructIndiaInfantryLancetTeam
+  Command_ConstructIndiaInfantryDroneOperatorFPV
+  Command_ConstructIndiaInfantryFieldMedic
+RUSSIAN_INFANTRY_ADDED = YES
+
+=== INDIA BOMB DIVERSITY ===
+INDIA AIRCRAFT | BOMB / STRIKE WEAPON
+IndiaJetSu30MKI | GBU-31 JDAM (GBU_31V2_JDAM_F15E) | ClipSize=3
+India_Mig-29A | GBU-12 Paveway (Gbu-12II_Paveway) | ClipSize=4
+IndiaJetMig29K | KAB-500 (Kab500_LeaserGuidedBomb) | ClipSize=2
+IndiaJetRafaleEH | Paveway IV (Paveway_IV_EF2000) | ClipSize=4
+IndiaJetRafaleDH | JSOW (AGM-154C_JSOW_F16C) | ClipSize=2
+IndiaJetMirage2000H | Mk-82 (6_MK-82) | ClipSize=6
+IndiaJetMirage2000I | GBU-38 JDAM (GBU38_JDAM_F16C) | ClipSize=4
+IndiaJetMig21Bison | ODAB-500 (2x_ODAB_500_PMV_SU24_LR) kept | ClipSize=2
+IndiaJetJaguarIS | KAB-1500 (Kab1500_LeaserGuidedBomb) | ClipSize=3
+IndiaJetMig27 | FAB-250 (Fab-250) | ClipSize=4
+IndiaJetTejas | GBU-39 SDB (GBU-39_SDB_F22A) | ClipSize=4
+IndiaJetAMCA | KAB-2500 (Kab2500_LeaserGuidedBomb) | ClipSize=2
+BOMB_DIVERSITY_APPLIED = YES
+
+=== INDIA DRONES / RADAR ===
+RADAR_WAS = sell-only
+DRONES = India_CombatDrone + India_LoiteringDrone unlocked, KindOf AIRCRAFT DRONE
+PLACED_ON = India_RadarCommandSet + India_HeavyAirBaseCommandSet
+DRONES_ADDED = YES
+
+=== INDIA BOMBERS / HELI ===
+RUSSIAN_BOMBER = IndiaJetTu22M3M clone of RussiaJetTu22M3M
+AMERICAN_BOMBER = IndiaJetB2A clone of AmericaJetB2A
+COMBAT_HELICOPTER = IndiaHelicopterKA52 clone of RussiaHelicopterKA52
+EXISTING_MI8T_KEPT = YES (transport)
+BOMBERS_ADDED = YES
+HELICOPTERS_ADDED = YES
+
+=== INDIA UNLOCK ===
+UNLOCK_OBJECT_FILES_TOUCHED = 32
+SCIENCE_LOCK_LINES_REMOVED = 42
+INDIA_BARRACKS_LOCKED_UNIT_COUNT = 0
+INDIA_WARFACTORY_LOCKED_UNIT_COUNT = 0
+INDIA_AIRCRAFT_LOCKED_UNIT_COUNT = 0
+ALL_UPGRADES_UNLOCKED = YES
+
+=== GERMANY FACTORY / BUILDINGS ===
+BUG = GermanyWarfactoryCommandSet produced Side=Nato vehicles
+FIX = retargeted to Side=Germany Leopard 2A7+, Puma, Cortale, VBCI, M142, Caesar, Centauro, IRIS-T, TRML-4D, Gepard, PzH2000, MARS, Fennek
+DOZER = GermanyVehicleDozer KindOf DOZER + GermanyDozerCommandSet unchanged
+FACTORY_FIXED = YES
+
+=== GERMANY BOMB DIVERSITY ===
+GERMANY AIRCRAFT | BOMB / STRIKE WEAPON
+GermanyJetTyphoonT4 | GBU-39 SDB | ClipSize=4
+GermanyJetTyphoonT1 | Paveway IV | ClipSize=4
+GermanyJetTyphoonECR | GBU-31 JDAM | ClipSize=3
+GermanyJetTornadoADV | GBU-12 Paveway | ClipSize=4
+GermanyJetF35A | JDAM kept (Germany_Weapon_JDAM) | ClipSize=4
+GermanyJetMiG29G | KAB-500 | ClipSize=2
+GermanyJetTornadoIDS | Mk-82 | ClipSize=6
+GermanyJetTornadoECR | JSOW | ClipSize=2
+GermanyJetF4F | FAB-250 | ClipSize=4
+GermanyJetAlphaJet | GBU-38 JDAM | ClipSize=4
+GermanyJetMako | KAB-1500 | ClipSize=3
+GermanyJetFCASNGF | KAB-2500 | ClipSize=2
+BOMB_DIVERSITY_APPLIED = YES
+
+=== GERMANY ROSTER ===
+H145_REMOVED = YES (HeavyAirBase + HelicopterBase)
+C130_REPLACED = YES (GermanyJetC130J production removed; GermanyJetC130 American LSFUSAC130 + An-124 contain)
+A400M_AN124_CAPABILITY_ADDED = YES (TransportContain Slots=64 INFANTRY VEHICLE)
+E3_AWACS_FIXED = YES (FireWeaponUpdate AN_APY2_Radar_Power + PointDefenseLaserUpdate AWACS_BaseMonaitoring; detect range 4000)
+B2_ADDED = YES (GermanyJetB2A clone of AmericaJetB2A)
+COMBAT_HELI = Tiger UHT kept; AH-64E added to HeavyAirBase and HelicopterBase
+GERMANY HEAVY =
+  Command_ConstructGermanyJetA400M
+  Command_ConstructGermanyJetC130
+  Command_ConstructGermanyAircraftE3
+  Command_ConstructGermanyDroneHeronTP
+  Command_ConstructGermanyUAVEuroMALE
+  Command_ConstructGermanyHelicopterTigerUHT
+  Command_ConstructGermanyHelicopterNH90
+  Command_ConstructGermanyHelicopterCH53
+  Command_ConstructGermanyHelicopterAH64E
+  Command_ConstructGermanyJetB2A
+
+=== GERMANY UNLOCK ===
+GERMANY_WARFACTORY_LOCKED_UNIT_COUNT = 0
+GERMANY_AIRCRAFT_LOCKED_UNIT_COUNT = 0
+WEAPON_LOADOUT_UPGRADE_GATE_COUNT = 0
+ALL_UPGRADES_UNLOCKED = YES
+BUILDING_CHAIN_PREREQS_PRESERVED = YES
+
+=== SAFETY ===
+USA_B2A_DONOR_UNCHANGED = YES
+USA_E3_DONOR_UNCHANGED = YES
+RUSSIA_INFANTRY_DONORS_UNCHANGED = YES
+RUSSIA_TU22_KA52_AN124_UNCHANGED = YES
+IRAQ_SU24MR_UNCHANGED = YES
+STD44_FILES_UNCHANGED = YES
+VIETNAM_SYRIA_UNCHANGED = YES
+WEAPON_INI_CHANGED = NO
+OBJECT_FOLDER_COMMANDSET_BLOCKS = 0
+MISSING_COMMANDBUTTONS = 0
+MISSING_BUTTONIMAGES = 0
+
+CHANGED_PATHS =
+  Data\INI\CommandButton.ini
+  Data\INI\CommandSet.ini
+  Data\INI\Object\Specter\German Armed Forces\Airdefense\TRML4D.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyAircraftE3.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetA400M.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetAlphaJet.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetB2A.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetC130.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetF4F.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetFCASNGF.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetMako.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetMiG29G.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoADV.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoECR.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTornadoIDS.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTyphoonECR.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTyphoonT1.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetTyphoonT4.ini
+  Data\INI\Object\Specter\German Armed Forces\FixedWings\EA18G.ini
+  Data\INI\Object\Specter\German Armed Forces\FixedWings\EF2000_T4.ini
+  Data\INI\Object\Specter\German Armed Forces\FixedWings\F35A.ini
+  Data\INI\Object\Specter\German Armed Forces\FixedWings\F35A_AA.ini
+  Data\INI\Object\Specter\German Armed Forces\FixedWings\Rafale_B_F3.ini
+  Data\INI\Object\Specter\German Armed Forces\Infantry\ATGM_Team.ini
+  Data\INI\Object\Specter\German Armed Forces\Infantry\HeavySniper.ini
+  Data\INI\Object\Specter\German Armed Forces\Infantry\MortarTeam.ini
+  Data\INI\Object\Specter\German Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\German Armed Forces\Tracked\Puma_Mech.ini
+  Data\INI\Object\Specter\German Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\German Armed Forces\Wheleed\Caesar.ini
+  Data\INI\Object\Specter\German Armed Forces\Wheleed\Centauro B2.ini
+  Data\INI\Object\Specter\German Armed Forces\Wheleed\M142.ini
+  Data\INI\Object\Specter\German Armed Forces\Wheleed\M142_ATACMS.ini
+  Data\INI\Object\Specter\German Armed Forces\Wheleed\VBCI.ini
+  Data\INI\Object\Specter\Indian Armed Forces\AirDefense\India_AD_MD.ini
+  Data\INI\Object\Specter\Indian Armed Forces\AirDefense\ZSU23.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaHelicopterKA52.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetAMCA.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetB2A.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetJaguarIS.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetMig27.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetMig29K.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetMirage2000H.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetMirage2000I.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetRafaleDH.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetRafaleEH.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetSu30MKI.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetTejas.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetTu22M3M.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_Mig-29A.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\India_Su-25K.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_CombatDrone.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_LoiteringDrone.ini
+  Data\INI\Object\Specter\Indian Armed Forces\IFV\Bmp1P.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\Antitank.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\HeavySniper.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryAntiair.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryAntitank.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryDroneOperatorFPV.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryFieldEngineer.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryFieldMedic.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryHeavySniper.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryKornetTeam.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryLancetTeam.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryMachinegunner.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryMortarTeam.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryRifleman.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantrySpetsNaz.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\India_EliteSSG.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Infantry\SpecialForces.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Wheeled\AbbasLauncher.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Wheeled\India_AbabeelTEL.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Wheeled\India_ShaheenTEL.ini
+  Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+
+INDIA:
+FACTORY_FIXED = YES
+RUSSIAN_INFANTRY_ADDED = YES
+BOMB_DIVERSITY_APPLIED = YES
+DRONES_ADDED = YES
+BOMBERS_ADDED = YES
+HELICOPTERS_ADDED = YES
+ALL_UPGRADES_UNLOCKED = YES
+
+GERMANY:
+FACTORY_FIXED = YES
+BOMB_DIVERSITY_APPLIED = YES
+H145_REMOVED = YES
+C130_REPLACED = YES
+A400M_AN124_CAPABILITY_ADDED = YES
+E3_AWACS_FIXED = YES
+B2_ADDED = YES
+ALL_UPGRADES_UNLOCKED = YES
+
+DATA_CHANGED = YES
+ART_CHANGED = NO
+INGAME_TESTED = NO
+RELEASE_OVERWRITES_PREVIOUS = NO

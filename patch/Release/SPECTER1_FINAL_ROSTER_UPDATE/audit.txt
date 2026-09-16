@@ -1,0 +1,193 @@
+SPECTER1_FINAL_ROSTER_UPDATE
+SOURCE = /workspace/patch/Release/SPECTER1_IRAN_ISRAEL_ROSTER_01
+DATA_SHA256 = 2a06ca987362da5ffecd2121c85d2e49a6da8bb4ee80ac1a45bb9278d74b5921
+ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+DATA_BYTES = 365998943
+ART_BYTES = 1242683027
+DATA_FILE_COUNT = 2880
+ART_CHANGED = NO
+DATA_REBUILT = NO (byte-identical copy of Iran+Israel packed DATA)
+PR_473_STATE = already MERGED to main 2026-09-12; not re-merged
+PR_473_OLD_DATA_SHA256 = 6ce400a40cb6d250443505c5ec56e529f897595ce82e18fb944c0838e955d198
+VALIDATION = PASS
+INGAME_TESTED = NO
+
+=== COUNTRY FILE MARKERS ===
+USA_FILES = 6/6
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaHelicopterAH1Z.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetC17Visual.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetE3Visual.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetV22Visual.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\B1R.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetB2A.ini
+CHINA_FILES = 3/3
+  Data\INI\Object\Specter\PLA\Airforce\H6K.ini
+  Data\INI\Object\Specter\PLA\Airforce\H20.ini
+  Data\INI\Object\Specter\PLA\Airforce\J7.ini
+RUSSIA_FILES = 3/3
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\RussiaJetTU160.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su24MR.ini
+IRAQ_FILES = 1/1
+  Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+VIETNAM_FILES = 3/3
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetB21.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetYak130.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMi17.ini
+SYRIA_FILES = 2/2
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaBomberH6K.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig21.ini
+INDIA_FILES = 3/3
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetTu22M3M.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaJetB2A.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Airforce\IndiaHelicopterKA52.ini
+GERMANY_FILES = 3/3
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetC130.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyJetB2A.ini
+  Data\INI\Object\Specter\German Armed Forces\Airforce\GermanyAircraftE3.ini
+JAPAN_FILES = 1/1
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetEA6BUSA.ini
+FRANCE_FILES = 3/3
+  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetC130US.ini
+  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetB21.ini
+  Data\INI\Object\Specter\French Armed Forces\Airforce\FranceJetB52H.ini
+KOREA_FILES = 4/4
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaHelicopterAH64E.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetCN235US.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetB1R.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetB52H.ini
+ITALY_FILES = 3/3
+  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyAircraftG550CAEW.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Rotary\ItalyHelicopterA129.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Rotary\ItalyHelicopterAW101.ini
+SAUDI_FILES = 4/4
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Airforce\SaudiJetB52H.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Airforce\SaudiJetB1R.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Airforce\SaudiJetB21.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Airforce\SaudiHelicopterAH64E.ini
+UK_FILES = 4/4
+  Data\INI\Object\Specter\British Armed Forces\Rotary\BritainHelicopterChinook.ini
+  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainAircraftE7.ini
+  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetC17.ini
+  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetA400M.ini
+SWEDEN_FILES = 3/3
+  Data\INI\Object\Specter\Swedish Armed Forces\Airforce\SwedenAircraftE3USA.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Airforce\SwedenJetB1R.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Airforce\SwedenJetB2A.ini
+UAE_FILES = 3/3
+  Data\INI\Object\Specter\United Arab Emirates\Airforce\UAEJetB21.ini
+  Data\INI\Object\Specter\United Arab Emirates\Airforce\UAEJetB2A.ini
+  Data\INI\Object\Specter\United Arab Emirates\Airforce\UAEJetB1R.ini
+NATO_FILES = 6/6
+  Data\INI\Object\Specter\NATO\Airforce\NatoAircraftE3USA.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetB1R.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetB2A.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetB52H.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetV22.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetC17.ini
+UKRAINE_FILES = 4/4
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineAircraftE3USA.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetB1R.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetV22.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetB21.ini
+IRAN_FILES = 7/7
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranJetTu22M3M.ini
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranJetTu160.ini
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranBomberH6K.ini
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranBomberH20.ini
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranJetMirageF1CR.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\Airfield.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\Iran_HeavyAirBase.ini
+ISRAEL_FILES = 7/7
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelAircraftE3USA.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelJetV22.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelJetB1R.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelJetB52H.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelJetB2A.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Airforce\IsraelJetB21.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_HeavyAirBase.ini
+
+=== COMMAND MARKERS ===
+INDIA_COMMANDS = YES
+  Command_ConstructIndiaJetTu22M3M
+  Command_ConstructIndiaJetB2A
+GERMANY_COMMANDS = YES
+  Command_ConstructGermanyJetB2A
+  Command_ConstructGermanyJetC130
+JAPAN_COMMANDS = YES
+  Command_ConstructJapanJetEA6BUSA
+FRANCE_COMMANDS = YES
+  Command_ConstructFranceJetB21
+  Command_ConstructFranceJetB52H
+  Command_ConstructFranceJetC130US
+KOREA_COMMANDS = YES
+  Command_ConstructSouthKoreaJetB1R
+  Command_ConstructSouthKoreaJetB52H
+  Command_ConstructSouthKoreaHelicopterAH64E
+SAUDI_COMMANDS = YES
+  Command_ConstructSaudiJetB52H
+  Command_ConstructSaudiJetB1R
+  Command_ConstructSaudiJetB21
+SWEDEN_COMMANDS = YES
+  Command_ConstructSwedenAircraftE3USA
+  Command_ConstructSwedenJetB1R
+  Command_ConstructSwedenJetB2A
+UAE_COMMANDS = YES
+  Command_ConstructUAEJetB21
+  Command_ConstructUAEJetB2A
+  Command_ConstructUAEJetB1R
+NATO_COMMANDS = YES
+  Command_ConstructNatoAircraftE3USA
+  Command_ConstructNatoJetB1R
+  Command_ConstructNatoJetB2A
+  Command_ConstructNatoJetB52H
+  Command_ConstructNatoJetV22
+  Command_ConstructNatoJetC17
+UKRAINE_COMMANDS = YES
+  Command_ConstructUkraineAircraftE3USA
+  Command_ConstructUkraineJetB1R
+  Command_ConstructUkraineJetV22
+  Command_ConstructUkraineJetB21
+SOUTHAFRICA_COMMANDS = YES
+  Command_ConstructSouthAfricaTankOlifant
+  Command_ConstructSouthAfricaTankOlifant1B
+IRAN_COMMANDS = YES
+  Command_ConstructIranJetTu22M3M
+  Command_ConstructIranJetTu160
+  Command_ConstructIranBomberH6K
+  Command_ConstructIranBomberH20
+  Command_ConstructIranJetF14A
+  Command_ConstructIranJetMig29A
+ISRAEL_COMMANDS = YES
+  Command_ConstructIsraelAircraftE3USA
+  Command_ConstructIsraelJetV22
+  Command_ConstructIsraelJetB1R
+  Command_ConstructIsraelJetB52H
+  Command_ConstructIsraelJetB2A
+  Command_ConstructIsraelJetB21
+  Command_ConstructIsraelJetF16CBarak
+  Command_ConstructIsraelJetF15CBaz
+  Command_ConstructIsraelJetKfir
+  Command_ConstructIsraelJetNesher
+  Command_ConstructIsraelJetF4E
+
+=== CONTENT CHECKS ===
+IRAN_AIRFIELD_PARKING = 4x4
+IRAN_MIG29_RUNWAY = NeedsRunway=Yes KeepsParking=No
+IRAN_MI8 = JetAI NeedsRunway=No (no ChinookAI)
+ISRAEL_HEAVY_SIDE = Israel
+ISRAEL_E3 = AmericaJetE3Visual clone + AN_APY2
+NATO_C17 = StarlifterCargo present
+NATO_E3 = AN_APY2 present
+SWEDEN_E3 = AN_APY2 present
+UKRAINE_E3 = AN_APY2 present
+UK_E7 = AN_APY2 present
+JAPAN_EA6B = JapanJetEA6BUSA present
+FRANCE_C130 = An124Cargo present
+IRAN_F1CR = clone present
+VIETNAM_YAK130 = LSFYAK130
+PROTECTED_DONORS_PRESENT = YES
+LIBYA_FILES = 81
+SOUTHAFRICA_OLIFANT = YES
+
+ALL_STACKED_COUNTRY_CHANGES_PRESENT = YES

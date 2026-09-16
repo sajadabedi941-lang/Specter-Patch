@@ -1,0 +1,20 @@
+SPECTER1_FINAL_ROSTER_UPDATE
+==============================
+
+Replace the live Specter DATA and ART BIGs with the files in this folder.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+   ART is an unchanged copy of the current SPECTER1 ART pack.
+4. Launch Specter.
+
+Do not mix this DATA with older SPECTER1 roster ZIPs.
+Do not use the older PR #473 Specter_WarFactory_AirForce_Final DATA
+(SHA 6ce400a4...). This package supersedes that pack.
+
+Checksums:
+  DATA SHA256 2a06ca987362da5ffecd2121c85d2e49a6da8bb4ee80ac1a45bb9278d74b5921
+  ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+INGAME_TESTED = NO

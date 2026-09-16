@@ -1,0 +1,13 @@
+SPECTER_WARFACTORY_CAPTURE_UPDATE
+=================================
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG.
+3. Do not replace ART. ART is unchanged from SPECTER1_BUILDING_FLAGS_01
+   (SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26).
+4. Launch Specter.
+
+DATA SHA256 cc0595379e7f255f98170bd4502ed0479b634162739bd206748c86459176552b
+
+INGAME_TESTED = NO
+FINAL_VALIDATION = PASS

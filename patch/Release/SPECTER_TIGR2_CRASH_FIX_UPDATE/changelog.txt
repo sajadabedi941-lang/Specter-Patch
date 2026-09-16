@@ -1,0 +1,15 @@
+SPECTER_TIGR2_CRASH_FIX_UPDATE
+
+upgrade_rus_tigr2 / Upgrade_Rus_Tigr2 / rus_tigr2 had no Upgrade object,
+CommandButton, MappedImage, or CommandSet slot. Purchasing a PLAYER_UPGRADE
+with a missing Upgrade/ButtonImage crashes SAGE.
+
+Repair (cloned from working Upgrade_RUS_Tier2):
+- Upgrade Upgrade_Rus_Tigr2
+- CommandButton Command_Upgrade_Rus_Tigr2
+- MappedImage upgrade_rus_tigr2 (sys_tier2 texture)
+- Button on Russia Weapon Industry CommandSet T / T1 / T2 only
+
+War Factory, other upgrades, units, factions, identity, ART unchanged.
+FINAL_VALIDATION = PASS
+INGAME_TESTED = NO

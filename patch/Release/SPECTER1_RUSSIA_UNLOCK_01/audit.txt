@@ -1,0 +1,365 @@
+SPECTER1 Russia unlock/scale/Su-24MR fire audit
+BASELINE = China Unlock 01 DATA
+BASELINE_DATA_SHA256 = 0bf3cc948c19ec25d89448f084bdb049dc271bf50004b08cfd0940098cd7c129
+NEW_DATA_SHA256 = 823a3b2a286f3adc2d28fd07d968d94d6dcd12ed729c331354c3c9bf363c8d12
+NEW_DATA_BYTES = 364992494
+NEW_DATA_FILE_COUNT = 2807
+
+RUSSIA_SU34MM_OBJECT = RussiaJetSu34
+RUSSIA_SU34MM_OLD_SCALE = 0.9
+RUSSIA_SU34MM_NEW_SCALE = 1.03
+RUSSIA_SU34MM_SCALE_CHANGED = YES
+
+RUSSIA_SU24MR_OBJECT = RussiaJetSu24MR
+IRAQ_SU24MR_REFERENCE_OBJECT = Iraq_Su-24MR
+IRAQ_SU24MR_REFERENCE_WEAPON = ALQ_99_RadarJamming
+RUSSIA_SU24MR_FIRE_FIXED = YES
+RUSSIA_SU24MR_REFERENCE_USED = IRAQ_SU24MR
+RUSSIA_SU24MR_CAN_ATTACK = YES
+RUSSIA_SU24MR_COMMANDSET = SU24MR_CommandSet
+RUSSIA_SU24MR_FIRE_BUTTON = Command_ALQ99_Jamming
+
+RUSSIA_BARRACKS_LOCKED_UNIT_COUNT = 0
+RUSSIA_WARFACTORY_LOCKED_UNIT_COUNT = 0
+RUSSIA_AIRCRAFT_LOCKED_UNIT_COUNT = 0
+RUSSIA_HELICOPTER_LOCKED_UNIT_COUNT = 0
+RUSSIA_WEAPON_LOADOUT_UPGRADE_GATE_COUNT = 0
+
+PREVIOUS_IRAQ_CHANGES_PRESERVED = YES
+PREVIOUS_USA_CHANGES_PRESERVED = YES
+PREVIOUS_CHINA_CHANGES_PRESERVED = YES
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+AIRBASE_ARCHITECTURE_CHANGED = NO
+ART_CHANGED = NO
+DONOR_DATA_USED = NO
+COMMANDSET_INI_CHANGED = NO
+SIDECAR_COMMANDSET_CREATED = NO
+
+DATA_CHANGED_PATHS =
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\55K6E.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\92N6R.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\96L6TSP.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\9K317.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\S400.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\S500.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\TorM2M.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\MIG31K.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU24M2.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su24MR.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU25T_SU39.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\SU34M.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Su35S_TS.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\APC\BTR82A.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\RS28_AI.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Drones\Lancet3.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Drones\Orion2.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Drones\Orlan10.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\IFV\T15.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\Engineer.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\FPVDroneOperator.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\KornetTeam.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\LancetTeam.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\Medic.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\MortarTeam.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\Sniper.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\SpetsNaz.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\2S33.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\2S7M.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\T14.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\T90A.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\Tos-1A.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Wheeled\9K720.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Wheeled\Bm30.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Wheeled\Krasukha-4.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Wheeled\RS-24_Yars.ini
+
+=== PREVIOUSLY LOCKED PLAYABLE RUSSIAN ITEMS ===
+OBJECT = RussiaInfantryKornetTeam
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 3
+OLD_GATE = SCIENCE_Rank7+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryMortarTeam
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 4
+OLD_GATE = SCIENCE_Rank5+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryFieldEngineer
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 7
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantrySpetsNaz_A
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 8
+OLD_GATE = SCIENCE_Rank7+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryHeavySniper
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 9
+OLD_GATE = SCIENCE_Rank5+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryLancetTeam
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 10
+OLD_GATE = SCIENCE_Rank8+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryDroneOperatorFPV
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 11
+OLD_GATE = SCIENCE_Rank8+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaInfantryFieldMedic
+PRODUCER = RussiaBarracks
+LIVE_COMMANDSET = RussiaBarracksCommandSet
+SLOT = 12
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaTankT90A
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 1
+OLD_GATE = SCIENCE_Rank6
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleBm30
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 3
+OLD_GATE = SCIENCE_Rank5+RussiaIndustrialComplex+Upgrade_WeaponSetUpgrade
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleKrasukha4
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 4
+OLD_GATE = SCIENCE_RS24+SCIENCE_Rank6+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaArtillery2S19M2
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 5
+OLD_GATE = SCIENCE_Rank3+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaTankTorM2M
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 7
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicle92N6R
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 9
+OLD_GATE = SCIENCE_Rank4
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleS400
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 10
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaTankTos1A
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 11
+OLD_GATE = SCIENCE_Rank6
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicle9K720
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 12
+OLD_GATE = SCIENCE_Rank7+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleRS24
+PRODUCER = RussiaWarFactory
+LIVE_COMMANDSET = RussiaWarFactoryCommandSet
+SLOT = 13
+OLD_GATE = SCIENCE_RS24+SCIENCE_Rank7+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaArtillery2S7M
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaIndsturialComplexCommandSet
+SLOT = 7
+OLD_GATE = SCIENCE_Rank7+RussiaWarFactory
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleS500
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaIndsturialComplexCommandSet
+SLOT = 8
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicle96L6TSP
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaIndsturialComplexCommandSet
+SLOT = 9
+OLD_GATE = SCIENCE_Rank8+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussianTankT15
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaIndsturialComplexCommandSet
+SLOT = 11
+OLD_GATE = SCIENCE_Rank6+RussiaWarFactory
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaTankT14
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaIndsturialComplexCommandSet
+SLOT = 12
+OLD_GATE = SCIENCE_Rank8+RussiaWarFactory
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicle9K317
+PRODUCER = RussiaCommandCenter
+LIVE_COMMANDSET = RussiaCommandCenterCommandSet
+SLOT = 3
+OLD_GATE = SCIENCE_Rank3+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicle55K6E
+PRODUCER = RussiaCommandCenter
+LIVE_COMMANDSET = RussiaCommandCenterCommandSet
+SLOT = 4
+OLD_GATE = SCIENCE_Rank4
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaVehicleBTR82A
+PRODUCER = RussiaCommandCenter
+LIVE_COMMANDSET = RussiaCommandCenterCommandSet
+SLOT = 10
+OLD_GATE = RussiaIndustrialComplex+RussiaBarracks
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaDroneOrlan10
+PRODUCER = Russia91N6E
+LIVE_COMMANDSET = RussiaRadarStationCommandSet
+SLOT = 2
+OLD_GATE = RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaDronesOrion2
+PRODUCER = Russia91N6E
+LIVE_COMMANDSET = RussiaRadarStationCommandSet
+SLOT = 4
+OLD_GATE = SCIENCE_Rank4+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaDroneLancet3
+PRODUCER = Russia91N6E
+LIVE_COMMANDSET = RussiaRadarStationCommandSet
+SLOT = 6
+OLD_GATE = SCIENCE_Rank3+RussiaIndustrialComplex
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaRS28NuclearMissileSilo
+PRODUCER = RussiaIndustrialComplex
+LIVE_COMMANDSET = RussiaDozerCommandSet
+SLOT = 8
+OLD_GATE = SCIENCE_Rank8
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetSU25T
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 4
+OLD_GATE = Upgrade_SU39 WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetSu34
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 5
+OLD_GATE = Upgrade_MTS WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetSu35AG
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 6
+OLD_GATE = Upgrade_MTS WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetSU24M2
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 7
+OLD_GATE = Upgrade_MTS WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetMig31K
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 9
+OLD_GATE = Upgrade_NuclearTipWarhead WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+
+OBJECT = RussiaJetTu22M3M
+PRODUCER = RussiaAirfield
+LIVE_COMMANDSET = RussiaAirfieldCommandSet
+SLOT = 13
+OLD_GATE = Upgrade_MTS WeaponSet
+NEW_GATE = NONE
+AVAILABLE_FROM_START = YES
+

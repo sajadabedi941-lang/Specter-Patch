@@ -1,0 +1,23 @@
+SPECTER1_WARFACTORY_FIX_UPDATE
+==============================
+
+WarFactory construction/use repair on the SPECTER1_FINAL_ROSTER_UPDATE baseline.
+Repaired: India, Germany, Japan, France, South Korea, Saudi Arabia, Sweden, UAE,
+Ukraine, Turkey, Libya, Syria, Pakistan.
+Working factions unchanged: USA, Iran, Israel, NATO, Iraq, Italy, UK, Vietnam,
+Egypt, Russia, China. ART, aircraft, weapons, and upgrades unchanged.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+   ART is an unchanged copy of the current SPECTER1 ART pack.
+4. Launch Specter.
+
+Do not mix this DATA with older SPECTER1 roster ZIPs.
+
+Checksums:
+  DATA SHA256 1a4bbd0ff08c3f4c18ea70eb4b4af4d501ef69cdaf7bd77dafef10b1ff31561a
+  ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+WARFACTORY_FIXED = YES
+INGAME_TESTED = NO

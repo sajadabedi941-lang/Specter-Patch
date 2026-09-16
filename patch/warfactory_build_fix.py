@@ -357,9 +357,35 @@ bars; left unchanged.
 
 INGAME_TESTED = NO
 """
+
+    install = f"""SPECTER1_WARFACTORY_FIX_UPDATE
+==============================
+
+WarFactory construction/use repair on the SPECTER1_FINAL_ROSTER_UPDATE baseline.
+Repaired: India, Germany, Japan, France, South Korea, Saudi Arabia, Sweden, UAE,
+Ukraine, Turkey, Libya, Syria, Pakistan.
+Working factions unchanged: USA, Iran, Israel, NATO, Iraq, Italy, UK, Vietnam,
+Egypt, Russia, China. ART, aircraft, weapons, and upgrades unchanged.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+   ART is an unchanged copy of the current SPECTER1 ART pack.
+4. Launch Specter.
+
+Do not mix this DATA with older SPECTER1 roster ZIPs.
+
+Checksums:
+  DATA SHA256 {new_sha}
+  ART  SHA256 {EXPECTED_ART_SHA}
+
+WARFACTORY_FIXED = YES
+INGAME_TESTED = NO
+"""
     for dest in (OUT_DIR, WS_OUT):
         (dest / "audit.txt").write_text(audit, encoding="utf-8")
         (dest / "changelog.txt").write_text(changelog, encoding="utf-8")
+        (dest / "INSTALL.txt").write_text(install, encoding="utf-8")
 
     zpath = WS_OUT / "SPECTER1_WarFactory_Build_Fix.zip"
     with zipfile.ZipFile(zpath, "w", compression=zipfile.ZIP_DEFLATED) as zf:
@@ -367,7 +393,16 @@ INGAME_TESTED = NO
         zf.write(WS_OUT / "_SPEC_ART_ONE.big", "_SPEC_ART_ONE.big")
         zf.write(WS_OUT / "audit.txt", "audit.txt")
         zf.write(WS_OUT / "changelog.txt", "changelog.txt")
+        zf.write(WS_OUT / "INSTALL.txt", "INSTALL.txt")
     (OUT_DIR / zpath.name).write_bytes(zpath.read_bytes())
+    zip_sha = hashlib.sha256(zpath.read_bytes()).hexdigest()
+    sha_txt = (
+        f"_SPEC_DATA_ONE.big  SHA256 {new_sha}\n"
+        f"_SPEC_ART_ONE.big   SHA256 {EXPECTED_ART_SHA} (unchanged copy)\n"
+        f"SPECTER1_WarFactory_Build_Fix.zip  SHA256 {zip_sha}  {zpath.stat().st_size} bytes\n"
+    )
+    for dest in (OUT_DIR, WS_OUT):
+        (dest / "SHA256.txt").write_text(sha_txt, encoding="utf-8")
     print(audit)
     print("WROTE", WS_OUT / "_SPEC_DATA_ONE.big", new_sha)
     print("ZIP", zpath, zpath.stat().st_size)

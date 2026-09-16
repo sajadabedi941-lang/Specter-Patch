@@ -1,0 +1,199 @@
+SPECTER1 BUILDING FLAGS 01
+BASELINE_DATA_SHA256 = bd4e898d6b2d4e1c2b33e3491743fe677bb0ec9ced5d5b9c44de7ef546ef6072
+NEW_DATA_SHA256 = b6b5b9043c1b08e3ed44ee057efb8cbbadb444aa05326af2634be8824d3a3f12
+BASELINE_ART_SHA256 = 5cc32f0794d01a6d4f6d2485aebe41352ced0067309ff8ff0339c43d55870340
+NEW_ART_SHA256 = 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26
+ART_MODE = add-only (no existing entry modified)
+W3D_CLONES = 40 (byte-identical except FLAG01/02/03 + Powerplant BOX08/09 texture)
+DATA_MODEL_SWAPS = 364 Model= lines in 43 files
+GAMEPLAY_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES (USA, Israel, China, Russia, Iran, Iraq, NorthKorea, NATO, Egypt)
+
+METHOD:
+  Buildings whose W3D already contains authored FLAG cloth (Iraq-lineage and
+  NK-lineage War Factory / Power / Supply / Barracks) were cloned with the
+  owner's native flag texture. Geometry, hierarchy, animation names, and
+  FLAG-mesh vertex positions are unchanged -- the flag sits where the donor
+  artist placed it.
+
+  Command Centers of repaired factions use US_Command (USA/NATO reference).
+  That mesh has an FPOLE (camo pole) but NO flag cloth. Radars (Irq_P3,
+  US_RadarSt, Nat_RadarSt) are dishes with no flag cloth. NATO-clone
+  factions (DE/FR/UK/IT/SE/UA/TR) share the same US-lineage meshes.
+  Adding a flag there would require inventing vertex positions, which this
+  pass refuses.
+
+REPAIRED (native FLAG cloth, no Iraqi/DPRK texture left):
+  India, Libya, Pakistan, SaudiArabia, Syria, SouthAfrica, UAE,
+  Japan, SouthKorea, Vietnam
+  -- War Factory, Power, Supply, Barracks: PASS native
+  -- Command Center, Radar: n/a house-color (USA/NATO reference standard)
+
+NATO-CLONE (US-lineage, no flag cloth in any of the 6 types, same as USA):
+  Germany, France, Britain, Italy, Sweden, Ukraine, Turkey
+
+INGAME_TESTED = NO
+
+============================================================
+PER-FACTION AUDIT
+============================================================
+
+Faction: India
+Country Flag: IN_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native IN_Flag.tga via Irq_WarFactory_IN
+Radar Flag: n/a (Irq_P3, no flag cloth)
+Power Flag: PASS native IN_Flag.tga via Iraq_Powerplant_IN
+Supply Flag: PASS native IN_Flag.tga via Iraq_Supply_IN
+Barracks Flag: PASS native IN_Flag.tga via irq_camp_IN
+Result: PASS
+
+Faction: Libya
+Country Flag: LY_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native LY_Flag.tga via Irq_WarFactory_LY
+Radar Flag: n/a (no flag cloth)
+Power Flag: PASS native LY_Flag.tga via Iraq_Powerplant_LY
+Supply Flag: PASS native LY_Flag.tga via Iraq_Supply_LY
+Barracks Flag: PASS native LY_Flag.tga via irq_camp_LY
+Result: PASS
+
+Faction: Pakistan
+Country Flag: PK_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native PK_Flag.tga via Irq_WarFactory_PK
+Radar Flag: n/a (no flag cloth)
+Power Flag: PASS native PK_Flag.tga via Iraq_Powerplant_PK
+Supply Flag: PASS native PK_Flag.tga via Iraq_Supply_PK
+Barracks Flag: PASS native PK_Flag.tga via irq_camp_PK
+Result: PASS
+
+Faction: SaudiArabia
+Country Flag: SA_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native SA_Flag.tga via Irq_WarFactory_SA
+Radar Flag: n/a (Irq_P3, no flag cloth)
+Power Flag: PASS native SA_Flag.tga via Iraq_Powerplant_SA
+Supply Flag: PASS native SA_Flag.tga via Iraq_Supply_SA
+Barracks Flag: PASS native SA_Flag.tga via irq_camp_SA
+Result: PASS
+
+Faction: Syria
+Country Flag: SY_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native SY_Flag.tga via Irq_WarFactory_SY
+Radar Flag: n/a (Irq_P3, no flag cloth)
+Power Flag: PASS native SY_Flag.tga via Iraq_Powerplant_SY
+Supply Flag: PASS native SY_Flag.tga via Iraq_Supply_SY
+Barracks Flag: PASS native SY_Flag.tga via irq_camp_SY
+Result: PASS
+
+Faction: SouthAfrica
+Country Flag: ZA_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native ZA_Flag.tga via Irq_WarFactory_ZA
+Radar Flag: n/a (Irq_P3, no flag cloth)
+Power Flag: PASS native ZA_Flag.tga via Iraq_Powerplant_ZA
+Supply Flag: PASS native ZA_Flag.tga via Iraq_Supply_ZA
+Barracks Flag: PASS native ZA_Flag.tga via irq_camp_ZA
+Result: PASS
+
+Faction: UAE
+Country Flag: UAE_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native UAE_Flag.tga via Irq_WarFactory_UAE
+Radar Flag: n/a (no flag cloth)
+Power Flag: PASS native UAE_Flag.tga via Iraq_Powerplant_UAE
+Supply Flag: PASS native UAE_Flag.tga via Iraq_Supply_UAE
+Barracks Flag: PASS native UAE_Flag.tga via irq_camp_UAE
+Result: PASS
+
+Faction: Japan
+Country Flag: JP_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native JP_Flag.tga via NKr_WarFactory_JP
+Radar Flag: n/a (no flag cloth)
+Power Flag: PASS native JP_Flag.tga via NKor_Powerplant_JP
+Supply Flag: PASS native JP_Flag.tga via NKor_Supply_JP
+Barracks Flag: PASS native JP_Flag.tga via irq_camp_JP
+Result: PASS
+
+Faction: SouthKorea
+Country Flag: SK_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native SK_Flag.tga via NKr_WarFactory_SK
+Radar Flag: n/a (no flag cloth)
+Power Flag: PASS native SK_Flag.tga via NKor_Powerplant_SK
+Supply Flag: PASS native SK_Flag.tga via NKor_Supply_SK
+Barracks Flag: PASS native SK_Flag.tga via irq_camp_SK
+Result: PASS
+
+Faction: Vietnam
+Country Flag: VN_Flag.tga
+Command Center Flag: n/a house-color (US_Command, no flag cloth)
+War Factory Flag: PASS native VN_Flag.tga via NKr_WarFactory_VN
+Radar Flag: n/a (Irq_P3, no flag cloth)
+Power Flag: PASS native VN_Flag.tga via NKor_Powerplant_VN
+Supply Flag: PASS native VN_Flag.tga via NKor_Supply_VN
+Barracks Flag: PASS native VN_Flag.tga via irq_camp_VN
+Result: PASS
+
+Faction: Germany
+Country Flag: DE_Flag.tga (texture exists; no building FLAG cloth to attach)
+Command Center Flag: n/a house-color (US_Command)
+War Factory Flag: n/a house-color (US_WarFactory)
+Radar Flag: n/a (Nat_RadarSt)
+Power Flag: n/a house-color (US_Powerplant)
+Supply Flag: n/a house-color (US_Supply)
+Barracks Flag: n/a house-color (US_Camp)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: France
+Country Flag: FR_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: Britain
+Country Flag: UK_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: Italy
+Country Flag: IT_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: Sweden
+Country Flag: SE_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: Ukraine
+Country Flag: UA_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+Faction: Turkey
+Country Flag: Turkey_Flag.tga
+Command Center / War Factory / Radar / Power / Supply / Barracks:
+  n/a house-color (US-lineage meshes, USA/NATO reference standard)
+Result: PASS (matches USA/NATO reference standard)
+
+PROTECTED (unchanged):
+  USA / NATO: house-color (no flag cloth) -- the reference standard
+  Iraq: native IraqiFlag.tga on CC/WF/Power/Supply/Barracks
+  North Korea: native DPRK_Flag.tga on CC/WF/Supply (Power still Iraq_Powerplant -- protected)
+  Egypt: Iraq-lineage WF/Power/Supply/Barracks with IraqiFlag.tga (protected)
+  Israel: Iraq-lineage WF/Power/Supply/Barracks with IraqiFlag.tga (protected)
+  China / Russia / Iran: native building meshes, no *Flag.tga cloth (protected)
+
+LIMIT (needs authored W3D flag cloth, not a DATA guess):
+  Command Center + Radar of every repaired faction, and all 6 types of
+  DE/FR/UK/IT/SE/UA/TR, have no FLAG submesh. Attaching Irq__IqFlag_Hs as
+  a second Draw would place it at the Abbas origin (clips/floats). That is
+  guessing and was refused.

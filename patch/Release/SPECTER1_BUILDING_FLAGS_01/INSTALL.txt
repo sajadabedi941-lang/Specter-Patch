@@ -1,0 +1,15 @@
+SPECTER1_BUILDING_FLAGS_01
+==============================
+
+Native 3D building flags on the identity-complete baseline.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 b6b5b9043c1b08e3ed44ee057efb8cbbadb444aa05326af2634be8824d3a3f12
+  ART  SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26
+
+INGAME_TESTED = NO

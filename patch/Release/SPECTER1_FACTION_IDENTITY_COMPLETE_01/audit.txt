@@ -1,0 +1,142 @@
+SPECTER1 FACTION IDENTITY COMPLETE 01
+BASELINE_DATA_SHA256 = 41ef2ab8e04ea5aba4c34575edf772ab44161897e317667113e6d7b71f686c42
+NEW_DATA_SHA256 = bd4e898d6b2d4e1c2b33e3491743fe677bb0ec9ced5d5b9c44de7ef546ef6072
+ART_SHA256 = 5cc32f0794d01a6d4f6d2485aebe41352ced0067309ff8ff0339c43d55870340 (unchanged copy)
+ART_CHANGED = NO
+GAMEPLAY_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES (USA, Israel, China, Russia, Iran, Iraq, NorthKorea, NATO, Egypt)
+DONOR_FALLBACKS_REMAINING = NO (all 16 repaired factions use native flag-based images)
+
+PER-FACTION AUDIT:
+
+Faction: India
+Name: Indian Armed Forces (INI:FactionIndia) [ok]
+Logo: India_Logo [ok]
+Flag: IN_Flag.tga [ok]
+Buildings checked: India_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Germany
+Name: Germany Armed Forces (INI:FactionGermany) [ok]
+Logo: Germany_Logo [ok]
+Flag: DE_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Japan
+Name: Japan Self-Defense Forces (INI:FactionJapan) [ok]
+Logo: Japan_Logo [ok]
+Flag: JP_Flag.tga [ok]
+Buildings checked: Japan_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: France
+Name: French Armed Forces (INI:FactionFrance) [ok]
+Logo: France_Logo [ok]
+Flag: FR_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: SouthKorea
+Name: Republic of Korea Armed Forces (INI:FactionSouthKorea) [ok]
+Logo: SouthKorea_Logo [ok]
+Flag: SK_Flag.tga [ok]
+Buildings checked: SouthKorea_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: SaudiArabia
+Name: Saudi Arabia Armed Forces (INI:FactionSaudiArabia) [ok]
+Logo: SaudiArabia_Logo [ok]
+Flag: SA_Flag.tga [ok]
+Buildings checked: SaudiArabia_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Sweden
+Name: Swedish Armed Forces (INI:FactionSweden) [ok]
+Logo: Sweden_Logo [ok]
+Flag: SE_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: UAE
+Name: United Arab Emirates Armed Forces (INI:FactionUAE) [ok]
+Logo: UAE_Logo [ok]
+Flag: UAE_Flag.tga [ok]
+Buildings checked: UAE_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Ukraine
+Name: Ukrainian Armed Forces (INI:FactionUkraine) [ok]
+Logo: Ukraine_Logo [ok]
+Flag: UA_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Libya
+Name: Libyan Armed Forces (INI:FactionLibya) [ok]
+Logo: Libya_Logo [ok]
+Flag: LY_Flag.tga [ok]
+Buildings checked: Libya_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Syria
+Name: Syrian Armed Forces (INI:FactionSyria) [ok]
+Logo: Syria_Logo [ok]
+Flag: SY_Flag.tga [ok]
+Buildings checked: Syria_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Pakistan
+Name: Pakistan Armed Forces (INI:FactionPakistan) [ok]
+Logo: Pakistan_Logo [ok]
+Flag: PK_Flag.tga [ok]
+Buildings checked: Pakistan_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: SouthAfrica
+Name: South African National Defence Force (INI:FactionSouthAfrica) [ok]
+Logo: SouthAfrica_Logo [ok]
+Flag: ZA_Flag.tga [ok]
+Buildings checked: SouthAfrica_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Italy
+Name: Italian Armed Forces (INI:FactionItaly) [ok]
+Logo: Italy_Logo [ok]
+Flag: IT_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Britain
+Name: British Armed Forces (INI:FactionBritain) [ok]
+Logo: Britain_Logo [ok]
+Flag: UK_Flag.tga [ok]
+Buildings checked: n/a (USA/NATO reference standard: house color, no flag mesh) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+Faction: Vietnam
+Name: Vietnam People's Armed Forces (INI:FactionVietnam) [ok]
+Logo: Vietnam_Logo [ok]
+Flag: VN_Flag.tga [ok]
+Buildings checked: Vietnam_Flag_Hs wired (1/1 Abbas files native) [ok]
+Icons: side/observer/watermark [ok]
+Result: PASS
+
+INGAME_TESTED = NO
+DATA_CHANGED = YES (PlayerTemplate.ini repoints + Specter_FactionIdentity.INI)
+ART_CHANGED = NO

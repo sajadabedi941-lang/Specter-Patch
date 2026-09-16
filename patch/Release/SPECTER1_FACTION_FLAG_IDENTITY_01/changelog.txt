@@ -1,0 +1,27 @@
+SPECTER1 faction flag + identity 01 (DATA only)
+
+Continues from SPECTER1_WARFACTORY_BUILD_FIX. Protected factions
+(USA, Israel, China, Russia, Iran, Iraq, North Korea, NATO, Egypt)
+are byte-identical. ART, models, animations, weapons, units, and
+gameplay unchanged.
+
+Building flags: Japan / South Korea / Vietnam Command Centers and
+Abbas-type buildings were cloned from the North Korea donor chain and
+displayed the DPRK flag. Repointed onto the neutral donor meshes used
+by every other non-native faction (US_Command, Irq__IqFlag_Hs — the
+Egypt/NATO reference standard). A universal Side->flag-mesh map is now
+validated across all building objects in the pack step.
+
+Identity: Germany / France / Britain / Italy / Sweden / Ukraine /
+Turkey faction names were blank (templates pointed at INI:Faction*Forces
+keys that do not exist in generals.csf). Repointed at the existing
+INI:Faction* keys. Turkey select images wired to its packed ART
+(Turkey_Logo / GameinfoTurkey / SSObserverTurkey / WatermarkTurkey).
+Japan / South Korea / Vietnam portraits repointed at the resolving
+NorthKorea_Logo donor (no national logo art exists). Clone-boilerplate
+tooltips replaced with national text in generals.csf.
+
+Still needs new ART for true national logos/flags (all factions except
+Turkey) and true per-nation building flags.
+
+INGAME_TESTED = NO

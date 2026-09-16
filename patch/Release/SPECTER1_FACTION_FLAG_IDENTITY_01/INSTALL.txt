@@ -1,0 +1,16 @@
+SPECTER1_FACTION_FLAG_IDENTITY_01
+==============================
+
+Faction flag + identity fix on the SPECTER1 WarFactory-fix baseline.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+   ART is an unchanged copy of the current SPECTER1 ART pack.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 f82eb7772e94c8b1006a7c6dcaba174222f38051cd9135314b727b4509fa07c7
+  ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+INGAME_TESTED = NO

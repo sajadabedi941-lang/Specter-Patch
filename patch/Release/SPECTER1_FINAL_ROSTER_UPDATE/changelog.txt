@@ -1,0 +1,111 @@
+SPECTER1_FINAL_ROSTER_UPDATE
+
+SPECTER1 final roster package. Packed from the verified Iran+Israel DATA
+baseline (which already contains every prior SPECTER1 country pass).
+Does not rebuild DATA. Does not modify ART.
+
+PR #473 (SPECTER WarFactory + Air Force complete live DATA rebuild) was
+already merged to main on 2026-09-12. This package is the later SPECTER1
+packed chain, not a rebuild of that older DATA SHA.
+
+Install:
+1. Close Specter / Generals.
+2. Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into GameRoot, replacing
+   the current Specter DATA/ART BIGs.
+3. Launch Specter.
+
+DATA SHA256 2a06ca987362da5ffecd2121c85d2e49a6da8bb4ee80ac1a45bb9278d74b5921
+ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a (unchanged copy)
+DATA files  2880
+DATA bytes  365998943
+ART bytes   1242683027
+INGAME_TESTED = NO
+ART_CHANGED = NO
+
+Applied country changes (latest packed DATA contains all of these):
+
+USA
+- F-117 scale 1.04. AH-1Z added. EA-6B/F-35B volume-shadow INI hides.
+- Starlifter C-17 uses An-124 transport contain. F-15E Strike Eagle removed
+  from live production bars.
+
+CHINA
+- J-7 scale 1.30. Q-5 scale 1.00. Barracks/WarFactory science gates stripped.
+
+RUSSIA
+- Su-34MM scale 1.03. Su-24MR fire via SU24MR_CommandSet. Faction unlocks.
+
+IRAQ
+- Live-path MiG-21/J-7 scale+bombs, drones, WarFactory gates, Tu-22 8-bomb,
+  Alhussien cost. Su-24MR donor not edited.
+
+VIETNAM
+- Yak-130 LSFYAK130. MiG-29/F-5E scales. Mi-17 fire. 12 fighters + bomb
+  diversity. B-21 and Ka-52 on HeavyAirBase.
+
+SYRIA
+- MiG-21 scales. H-6K clone. Bomb diversity. Iraq infantry barracks. Unlocks.
+
+INDIA
+- Factory Side=India. Russian infantry clones. Tu-22M3M / B-2A / Ka-52.
+  Bomb diversity, drones, unlocks.
+
+GERMANY
+- Factory Side=Germany. USA C-130 + An-124 cargo. E-3 AWACS modules.
+  B-2A and AH-64E. Bomb diversity, unlocks.
+
+JAPAN
+- Factory Side=Japan. USA EA-6B clone. Bomb diversity, unlocks.
+
+FRANCE
+- Factory Side=France. EC725 combat heli. USA C-130 / B-21 / B-52H.
+  E-3 AWACS modules. Mirage F1CR cloned to Iran. Bomb diversity, unlocks.
+
+SOUTH KOREA
+- Native factory roster. USA CN-235 / B-1R / B-52H. E-737 AWACS.
+  AH-64E / UH-60P. FA-50 / F-5E visuals. Bomb diversity, unlocks.
+
+ITALY
+- G550 USA AWACS scan. A129 GeometryIsSmall=No. AW101 JetAI.
+  C-27J US_C130H. Bomb diversity, unlocks.
+
+SAUDI ARABIA
+- Native factory. Hawk 65 LSFKoreaF5. B-52/B-1/B-21. AH-64E/UH-60.
+  Iraqi infantry clones. RQ-180/MQ-4 USA scan. Bomb diversity, unlocks.
+
+UNITED KINGDOM
+- AH-64E takeoff. Merlin GeometryIsSmall=No. American CH-47 clone.
+  E-7 USA scan. C-17/A400M An-124 cargo. Bomb diversity, unlocks.
+
+SWEDEN
+- Native factory. USA E-3 clone. B-1R/B-2A. SK60B LSFT50.
+  Bomb diversity, unlocks.
+
+UAE
+- Native factory. Iraqi infantry clones. B-21/B-2A/B-1R.
+  Bomb diversity, unlocks.
+
+NATO
+- USA B-1R/B-2A/B-52H/V-22/E-3/C-17 on HeavyAirBase.
+  Missing F-18/F-16C/Tornado buttons. Bomb diversity. STD44 EA-18G/F-35C
+  science gates stripped.
+
+LIBYA
+- Fighter bomb diversity only. Unlocks not requested.
+
+UKRAINE
+- Native factory. USA E-3/B-1R/V-22/B-21. Missing fighter buttons.
+  Bomb diversity, unlocks.
+
+SOUTH AFRICA
+- Iraqi infantry clones. Hawk 120 LSFT50 / Hawk 127 LSFKoreaF5.
+  Olifant/Rooikat/Ratel factory. Bomb diversity, unlocks.
+
+IRAN
+- Airfield parking 4x4. Jets NeedsRunway=Yes KeepsParking=No.
+  Mi-8 JetAI NeedsRunway=No. Tu-22M3M/Tu-160/H-6K/H-20 clones. Unlocks.
+
+ISRAEL
+- Side=Israel on Israel-folder objects/airbases.
+  Missing airfield CommandSets + fighter buttons.
+  USA E-3/V-22/B-1R/B-52H/B-2A/B-21. Unlocks.

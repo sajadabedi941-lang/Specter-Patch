@@ -1,0 +1,63 @@
+SPECTER1 FACTION FLAG + IDENTITY 01
+BASELINE_DATA_SHA256 = 1a4bbd0ff08c3f4c18ea70eb4b4af4d501ef69cdaf7bd77dafef10b1ff31561a
+NEW_DATA_SHA256 = f82eb7772e94c8b1006a7c6dcaba174222f38051cd9135314b727b4509fa07c7
+ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a (unchanged copy)
+ART_CHANGED = NO
+MODELS_CHANGED = NO
+WEAPONS_CHANGED = NO
+UPGRADES_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES (USA, Israel, China, Russia, Iran, Iraq, NorthKorea, NATO, Egypt)
+REPAIRED = India, Germany, Japan, France, SouthKorea, SaudiArabia, Sweden, UAE, Ukraine, Turkey, Libya, Syria, Pakistan, SouthAfrica, Italy, Britain, Vietnam
+
+FLAG SYSTEM = universal Side->mesh map validated across ALL building objects (14 Abbas flag Draw refs checked)
+DRAW_FIXES (NK donor -> neutral donor, JP/SK/VN only):
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini: NKr_Command -> US_Command (3 Model + 3 Animation)
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini: NKr_Command -> US_Command (3 Model + 3 Animation)
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini: NKr_Command -> US_Command (3 Model + 3 Animation)
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini: NKr__NKFlag_Hs -> Irq__IqFlag_Hs (3 Model + 3 Animation)
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini: NKr__NKFlag_Hs -> Irq__IqFlag_Hs (3 Model + 3 Animation)
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini: NKr__NKFlag_Hs -> Irq__IqFlag_Hs (3 Model + 3 Animation)
+
+IDENTITY_FIXES:
+  FactionGermany DisplayName INI:FactionGermanyForces -> INI:FactionGermany
+  FactionFrance DisplayName INI:FactionFranceForces -> INI:FactionFrance
+  FactionBritain DisplayName INI:FactionBritainForces -> INI:FactionBritain
+  FactionItaly DisplayName INI:FactionItalyForces -> INI:FactionItaly
+  FactionSweden DisplayName INI:FactionSwedenForces -> INI:FactionSweden
+  FactionUkraine DisplayName INI:FactionUkraineForces -> INI:FactionUkraine
+  FactionTurkey DisplayName INI:FactionTurkeyForces -> INI:FactionTurkey
+  FactionTurkey FlagWaterMark -> WatermarkTurkey
+  FactionTurkey EnabledImage -> SSObserverTurkey
+  FactionTurkey SideIconImage -> GameinfoTurkey
+  FactionTurkey GeneralImage -> Turkey_Logo
+  FactionJapan GeneralImage Japan_Logo -> NorthKorea_Logo (GAP: no national logo in ART)
+  FactionSouthKorea GeneralImage SouthKorea_Logo -> NorthKorea_Logo (GAP: no national logo in ART)
+  FactionVietnam GeneralImage Vietnam_Logo -> NorthKorea_Logo (GAP: no national logo in ART)
+  + packed Turkey_FactionImages.INI (WatermarkTurkey/GameinfoTurkey/Turkey_Logo/SSObserverTurkey/Turkey_Flag)
+  + packed Turkey_FactionStrings.txt
+  CSF TOOLTIP:BioStrategyLong_India tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Germany tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Japan tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_France tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_SouthKorea tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_SaudiArabia tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Sweden tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_UAE tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Ukraine tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Turkey tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Libya tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Syria tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_SouthAfrica tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Italy tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Britain tooltip de-cloned
+  CSF TOOLTIP:BioStrategyLong_Vietnam tooltip de-cloned
+
+GAPS (need new ART, not fixable DATA-only):
+  - JP/SK/VN + all other repaired factions have no national logo/flag textures in ART;
+    select portraits show donor (NK/GLA/USA) images; Turkey is fully wired.
+  - True per-nation building flags need new flag W3Ds; Abbas/CC flags now match
+    the correct-faction reference standard (Egypt/NATO pattern).
+
+INGAME_TESTED = NO
+DATA_CHANGED = YES
+ART_CHANGED = NO

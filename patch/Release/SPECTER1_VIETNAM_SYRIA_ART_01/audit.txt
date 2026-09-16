@@ -1,0 +1,150 @@
+SPECTER1 VIETNAM + SYRIA ART 01
+BASELINE_DATA_SHA256 = 791e37840ab208bebe47ab6cd419e79f33806390cc3b60a200aa625075297261
+BASELINE_ART_SHA256 = b8a7f45dd57a1f56c4e68a5a16af04849834e0775db256637ab1ad1853702abe
+NEW_DATA_SHA256 = e63195d16a8ed35d079e6020a6b46e52986a2dbb51b15d582d1ed587015379ce
+NEW_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+NEW_DATA_BYTES = 365038011
+NEW_ART_BYTES = 1242683027
+NEW_DATA_FILE_COUNT = 2809
+NEW_ART_FILE_COUNT = 4432
+MODE = ART pack + minimal DATA model/icon reference edits on roster 01
+
+=== VIETNAM YAK-130 ===
+DEDICATED_YAK130_W3D_IN_PRIOR_ART = NONE
+WRONG_PRIOR_MODEL = LSFT50d (F22BODY PAK FA / Su-57 mesh + LSFT50d.dds stealth skin)
+M346_FAMILY_INTENDED_DONOR = ItalyJetM346FA INI comment Donor ART AVHawk.W3D
+NEW_MODEL = LSFYAK130 (clone of AVHawk.W3D conventional twin-seat jet trainer)
+NEW_DAMAGED_MODEL = LSFYAK130d (clone of AVHawk_D.W3D)
+NOT_USED = LSFT50 / LSFT50d / qsnt50 / t50t.tga (PAK FA / T-50 magazine art)
+VIETNAM_YAK130_BUTTON_PRESERVED = SPEC_VietnamJetYak130
+VIETNAM_YAK130_SIDE_PRESERVED = Vietnam
+VIETNAM_YAK130_SCALE_PRESERVED = 0.82
+VIETNAM_YAK130_WEAPONS_PRESERVED = YES
+VIETNAM_YAK130_CAMEO = real Yak-130 / M-346 family photo, not pink placeholder
+VIETNAM_YAK130_VISUAL_FIXED = YES
+
+=== VIETNAM AH-1Z ===
+AH1Z_OBJECT = AmericaHelicopterAH1Z (USA unit; ART missing from original SPECTER1)
+AH1Z_MODEL = LSFAH1Z / LSFAH1Zd / LSFAH1Zk
+AH1Z_CAMEO = AH1ZTB.tga (real AH-1Z photo)
+AH1Z_DONOR_RESPIPPED = YES from /tmp/donor_heli
+AH1Z_WEAPONS_STATS_UNCHANGED = YES
+AH1Z_ART_PRESENT = YES
+
+=== VIETNAM ICONS ===
+PLACEHOLDER_SPEC_TGA_BEFORE = 67818-byte pink-stripe 150x113 images
+REPLACED_VIETNAM_CAMEOS = SPEC_VietnamJetYak130, F5E, L39, Mig21, Mig21bis, Su22, Su22M4, Su27, Su27UB, Su30, Su30MK2, plus new SPEC_VietnamJetMig29S and SPEC_VietnamJetMi17
+VIETNAM_ICONS_FIXED = YES
+
+=== VIETNAM MI-17 ===
+MODEL = Egy_MI17 / Egy_MI17D (unchanged DATA refs)
+PRIOR_BUGFIXES_KEPT = CAN_ATTACK + 16x_80mm_S8_Rockets_Mi17 + Egy_MI17D damaged
+W3D_TEXTURE_NAMES = Egy_MI17.tga / MI8BR.tga / MI8_FR.tga
+FIX = pack matching .tga aliases decoded from existing .dds skins
+VIETNAM_MI17_ART_VERIFIED = YES
+
+=== SYRIA AIRCRAFT BUTTONS ===
+PROBLEM = SPEC_SyriaJet* were pink placeholders; irq_* atlas tiles are mixed tank/building-sheet cameos
+FIX = dedicated 150x113 aircraft photo cameos for every live Airfield/HeavyAirBase aircraft button
+SYRIA_MIG29_BUTTON = SPEC_Syria_Mig29A
+SYRIA_MIRAGE_BUTTON = SPEC_Syria_MirageF1
+SYRIA_SU25_BUTTON = SPEC_Syria_Su25K
+SYRIA_MI8_BUTTON = SPEC_Syria_Mi8T
+SYRIA_H6K_BUTTON = SPEC_SyriaBomberH6K
+SYRIA_SPEC_JET_BUTTONS = SPEC_SyriaJetMig21/MF/23/25/J7/Su22/M4/Su24/L39 replaced in ART
+SYRIA_AIRCRAFT_BUTTONS_FIXED = YES
+
+=== SYRIA MIG-21 ===
+SYRIA_MIG21BIS_OBJECT = SyriaJetMig21
+SYRIA_MIG21BIS_MODEL = UVMig-21 / UVMig-21_D / UVMig-21_E
+SYRIA_MIG21BIS_TEXTURE = UVMig-21.dds
+SYRIA_MIG21BIS_SCALE_PRESERVED = 1.18
+SYRIA_MIG21MF_OBJECT = SyriaJetMig21MF
+SYRIA_MIG21MF_MODEL = UVMig-21 / UVMig-21_D / UVMig-21_E
+SYRIA_MIG21MF_SCALE_PRESERVED = 1.08
+SYRIA_MIG21_ART_VERIFIED = YES
+
+=== SYRIA CHINESE BOMBER ===
+SYRIA_CHINESE_BOMBER_OBJECT = SyriaBomberH6K
+SYRIA_CHINESE_BOMBER_MODEL = h6k
+SYRIA_CHINESE_BOMBER_W3D = Art\W3D\h6k.W3D
+SYRIA_CHINESE_BOMBER_TEXTURE = h6k.tga
+SYRIA_CHINESE_BOMBER_PHOTO = CHNH6KTB.tga
+SYRIA_CHINESE_BOMBER_CAMEO = SPEC_SyriaBomberH6K cropped from CHNH6KTB
+CHINA_H6K_DONOR_UNCHANGED = YES
+SYRIA_BOMBER_ART_VERIFIED = YES
+
+=== SAFETY ===
+USA_RUSSIA_CHINA_DONOR_INI_UNCHANGED = YES
+IRAQ_SU24MR_UNCHANGED = YES
+WEAPON_INI_CHANGED = NO
+GAMEPLAY_VALUES_CHANGED = NO
+PREVIOUS_DATA_EDITS_REMOVED = NO
+
+CHANGED_DATA_PATHS =
+  Data\INI\CommandButton.ini
+  Data\INI\MappedImages\HandCreated\Vietnam_Syria_ArtFix_Images.INI
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaBomberH6K.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Mi-8.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Mig-29A.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_MirageF1-Bq.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Su-25K.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMi17.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMi8.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMig29S.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetYak130.ini
+
+CHANGED_ART_FILES =
+  Art\Textures\Egy_MI17.tga
+  Art\Textures\Egy_MI17D.tga
+  Art\Textures\MI8BR.tga
+  Art\Textures\MI8_FR.tga
+  Art\Textures\SPEC_SyriaBomberH6K.tga
+  Art\Textures\SPEC_SyriaJetJ7.tga
+  Art\Textures\SPEC_SyriaJetL39.tga
+  Art\Textures\SPEC_SyriaJetMig21.tga
+  Art\Textures\SPEC_SyriaJetMig21MF.tga
+  Art\Textures\SPEC_SyriaJetMig23.tga
+  Art\Textures\SPEC_SyriaJetMig25.tga
+  Art\Textures\SPEC_SyriaJetSu22.tga
+  Art\Textures\SPEC_SyriaJetSu22M4.tga
+  Art\Textures\SPEC_SyriaJetSu24.tga
+  Art\Textures\SPEC_Syria_Mi8T.tga
+  Art\Textures\SPEC_Syria_Mig29A.tga
+  Art\Textures\SPEC_Syria_MirageF1.tga
+  Art\Textures\SPEC_Syria_Su25K.tga
+  Art\Textures\SPEC_VietnamJetF5E.tga
+  Art\Textures\SPEC_VietnamJetL39.tga
+  Art\Textures\SPEC_VietnamJetMi17.tga
+  Art\Textures\SPEC_VietnamJetMig21.tga
+  Art\Textures\SPEC_VietnamJetMig21bis.tga
+  Art\Textures\SPEC_VietnamJetMig29S.tga
+  Art\Textures\SPEC_VietnamJetSu22.tga
+  Art\Textures\SPEC_VietnamJetSu22M4.tga
+  Art\Textures\SPEC_VietnamJetSu27.tga
+  Art\Textures\SPEC_VietnamJetSu27UB.tga
+  Art\Textures\SPEC_VietnamJetSu30.tga
+  Art\Textures\SPEC_VietnamJetSu30MK2.tga
+  Art\Textures\SPEC_VietnamJetYak130.tga
+  Art\W3D\LSFYAK130.W3D
+  Art\W3D\LSFYAK130d.W3D
+CHANGED_ART_FILE_COUNT = 33
+ADDED_ART_FILES =
+  Art\Textures\Egy_MI17.tga
+  Art\Textures\Egy_MI17D.tga
+  Art\Textures\MI8BR.tga
+  Art\Textures\MI8_FR.tga
+  Art\Textures\SPEC_SyriaBomberH6K.tga
+  Art\Textures\SPEC_Syria_Mi8T.tga
+  Art\Textures\SPEC_Syria_Mig29A.tga
+  Art\Textures\SPEC_Syria_MirageF1.tga
+  Art\Textures\SPEC_Syria_Su25K.tga
+  Art\Textures\SPEC_VietnamJetMi17.tga
+  Art\Textures\SPEC_VietnamJetMig29S.tga
+  Art\W3D\LSFYAK130.W3D
+  Art\W3D\LSFYAK130d.W3D
+
+DATA_CHANGED = YES
+ART_CHANGED = YES
+INGAME_TESTED = NO
+RELEASE_OVERWRITES_PREVIOUS = NO

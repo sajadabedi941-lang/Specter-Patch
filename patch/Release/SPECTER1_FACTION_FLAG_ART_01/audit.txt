@@ -1,0 +1,31 @@
+SPECTER1 FACTION FLAG ART 01
+BASELINE_DATA_SHA256 = f82eb7772e94c8b1006a7c6dcaba174222f38051cd9135314b727b4509fa07c7
+NEW_DATA_SHA256 = 41ef2ab8e04ea5aba4c34575edf772ab44161897e317667113e6d7b71f686c42
+BASELINE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+NEW_ART_SHA256 = 5cc32f0794d01a6d4f6d2485aebe41352ced0067309ff8ff0339c43d55870340
+ART_MODE = add-only (no existing entry modified)
+GAMEPLAY_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES (USA, Israel, China, Russia, Iran, Iraq, NorthKorea, NATO, Egypt)
+
+NATIVE_FLAG_CHECKED = 14 Abbas flag Draw refs, every Side uses its own mesh
+WIRED_MESHES (Abbas Draw -> native W3D + native texture):
+  India: India_Abbas.ini -> India_Flag_Hs.W3D (IN_Flag.tga)
+  Libya: Libya_Abbas.ini -> Libya_Flag_Hs.W3D (LY_Flag.tga)
+  Pakistan: Pakistan_Abbas.ini -> Pakistan_Flag_Hs.W3D (PK_Flag.tga)
+  SaudiArabia: SaudiArabia_Abbas.ini -> SaudiArabia_Flag_Hs.W3D (SA_Flag.tga)
+  Syria: Syria_Abbas.ini -> Syria_Flag_Hs.W3D (SY_Flag.tga)
+  SouthAfrica: SouthAfrica_Abbas.ini -> SouthAfrica_Flag_Hs.W3D (ZA_Flag.tga)
+  UAE: UAE_Abbas.ini -> UAE_Flag_Hs.W3D (UAE_Flag.tga)
+  Japan: Japan_NuclearCenter.ini -> Japan_Flag_Hs.W3D (JP_Flag.tga)
+  SouthKorea: SouthKorea_NuclearCenter.ini -> SouthKorea_Flag_Hs.W3D (SK_Flag.tga)
+  Vietnam: Vietnam_NuclearCenter.ini -> Vietnam_Flag_Hs.W3D (VN_Flag.tga)
+STAGED_TEXTURES (no Abbas consumer yet): DE_Flag, FR_Flag, UK_Flag, IT_Flag, SE_Flag, UA_Flag
+TURKEY: existing Turkey_Flag.tga kept; no Abbas building needs a Turkey W3D.
+
+OUT_OF_SCOPE (no flag attachment points in models; adding Draw blocks would
+misplace flags without W3D placement data): WarFactory/Radar/Power/Supply/Barracks
+show house color automatically, same as the USA/NATO reference standard.
+
+INGAME_TESTED = NO
+DATA_CHANGED = YES (10 Abbas INIs only)
+ART_CHANGED = YES (16 textures + 10 W3D clones added)

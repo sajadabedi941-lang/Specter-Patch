@@ -1,0 +1,15 @@
+SPECTER1_FACTION_FLAG_ART_01
+==============================
+
+Native per-faction building flags on the SPECTER1 identity baseline.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 41ef2ab8e04ea5aba4c34575edf772ab44161897e317667113e6d7b71f686c42
+  ART  SHA256 5cc32f0794d01a6d4f6d2485aebe41352ced0067309ff8ff0339c43d55870340
+
+INGAME_TESTED = NO

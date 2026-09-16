@@ -1,0 +1,14 @@
+SPECTER1 faction flag ART 01
+
+Continues from SPECTER1_FACTION_FLAG_IDENTITY_01. Native national flag
+assets for the repaired factions: 16 new 128x64 flag textures converted
+from reference flag art, plus 10 W3D flag-mesh clones of Irq__IqFlag_Hs
+(byte-identical except the texture name) for every faction with an
+Abbas-type building. Abbas Draw refs retargeted Side -> native mesh, so
+no faction displays another country's flag anymore.
+
+Protected factions, gameplay, units, weapons, animations unchanged. ART
+is add-only. WarFactory/Radar/Power/Supply/Barracks inherit house color
+automatically (USA/NATO reference standard); they have no flag meshes.
+
+INGAME_TESTED = NO

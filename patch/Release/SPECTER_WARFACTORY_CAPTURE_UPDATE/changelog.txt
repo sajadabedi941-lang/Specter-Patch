@@ -1,0 +1,22 @@
+SPECTER_WARFACTORY_CAPTURE_UPDATE
+
+Vietnam_WarFactoryCommandSet is the production list for Japan, South
+Korea, Saudi Arabia, UAE, Libya, South Africa, Syria, Pakistan and
+India (all CS variants). Same 13 USA vehicles + Sell as Vietnam.
+
+European War Factory unit lists were not replaced. Composite Armor,
+TOW, and Sentry Drone Gun purchase buttons were added to DE/FR/UK/IT/
+SE/UA/TR War Factories. The same upgrades plus Chemical Suits,
+Advanced Training, Supply Lines and Drone Armor were restored on those
+Strategy Centers. Upgrade_AmericaTOWMissile / SentryDroneGun /
+DroneArmor were restored in Upgrade.ini.
+
+Capture Building restored for every listed faction: barracks purchase
+and infantry capture command (Upgrade_InfantryCaptureBuilding). Oil
+derricks remain CAPTURABLE tech buildings; capture buttons target
+neutral objects.
+
+Identity, flags, portraits, logos, ART, weapons, animations unchanged.
+ART is not included (unchanged from SPECTER1_BUILDING_FLAGS_01).
+INGAME_TESTED = NO
+FINAL_VALIDATION = PASS

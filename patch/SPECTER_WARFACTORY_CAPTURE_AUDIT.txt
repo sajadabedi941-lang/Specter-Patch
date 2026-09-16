@@ -1,0 +1,201 @@
+SPECTER_WARFACTORY_CAPTURE_AUDIT
+DATA SHA256 cc0595379e7f255f98170bd4502ed0479b634162739bd206748c86459176552b
+ART  SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26 (unchanged)
+IDENTITY_UNCHANGED = YES
+ART_CHANGED = NO
+CHANGED_INI = CommandSet.ini, Upgrade.ini
+
+Faction: Japan
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: South Korea
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Saudi Arabia
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: UAE
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Libya
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: South Africa
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Syria
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Pakistan
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: India
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Vietnam
+War Factory: PASS
+Vietnam Template Applied: PASS
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Germany
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: France
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Britain
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Italy
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Sweden
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Ukraine
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Turkey
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: PASS
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: USA
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: China
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Russia
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Iran
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Iraq
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: NATO
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+Faction: Egypt
+War Factory: PASS
+Vietnam Template Applied: N/A
+All Tanks Available: PASS
+Upgrades: N/A
+Capture Building: PASS
+Oil Capture: PASS
+
+FINAL_VALIDATION = PASS
+INGAME_TESTED = NO

@@ -1,0 +1,21 @@
+SPECTER1 building flags 01
+
+Continues from SPECTER1_FACTION_IDENTITY_COMPLETE_01.
+
+40 per-faction W3D clones give every repaired faction native 3D flags on
+the buildings that already have authored FLAG cloth:
+
+  India, Libya, Pakistan, Saudi Arabia, Syria, South Africa, UAE
+    War Factory / Power / Supply / Barracks  (Iraq-lineage donors)
+  Japan, South Korea, Vietnam
+    War Factory / Power / Supply / Barracks  (NK-lineage donors + irq_camp)
+
+Clones are byte-identical except the FLAG01-03 (and Powerplant BOX08/09)
+texture name. Animation names, hierarchy, and vertex positions unchanged,
+so the flag sits where the donor artist placed it -- no guessed offsets.
+
+Command Centers (US_Command) and Radars have no flag cloth in any faction
+including USA/NATO; NATO-clone factions (DE/FR/UK/IT/SE/UA/TR) share those
+meshes. Protected factions, gameplay, units, weapons, animations unchanged.
+
+INGAME_TESTED = NO

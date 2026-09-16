@@ -1,0 +1,135 @@
+SPECTER1 IRAQ LIVE-PATH FOLLOW-UP AUDIT (continues PR #487)
+BASELINE = PR #487 packed DATA SHA256 ba03fd907844aa0c7404feecfaaabe94bc65f2e448a174dc93372a320f4a233c
+SOURCE_CHAIN = SPECTER1.part001-069 -> PR #487 live-path pack -> this follow-up
+AIRBASE_OBJECTS_TOUCHED = NO
+ART_CHANGED = NO
+PREVIOUS_FIGHTER_UNLOCK_PATHS_TOUCHED = NO
+
+NEW_DATA_BYTES = 364981406
+NEW_DATA_SHA256 = 7eab1a6d80cd059050b6b186ad420863110a7a5c11162d1c89a6b4ed2957e7a8
+NEW_DATA_FILE_COUNT = 2804
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 26
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+
+==================================================
+CHANGED PACKED PATHS
+==================================================
+Data\INI\CommandSet.ini
+Data\INI\Weapon.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iranian Army\Airforce\IranJetMig21Bis.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Sarab3.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Lamiaa.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetJ7.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetMig21.ini
+Data\INI\Object\Specter\North Korea\Airforce\Iraq_Mig-25BM.ini
+Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetJ7.ini
+Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetJ7B.ini
+Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetMig21.ini
+Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetMig21PF.ini
+Data\INI\Object\Specter\PLA\Airforce\J7.ini
+Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetJ7.ini
+Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig21.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetMig21.ini
+Data\INI\Object\Specter\Vietnam People's Armed Forces\Airforce\Iraq_Mig-25BM.ini
+Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMig21.ini
+
+==================================================
+1) MIG-21PF / BIS / J-7 / J-7B LIVE TABLE
+==================================================
+COUNTRY   OBJECT                 OLD_SCALE NEW_SCALE OLD_BOMB                      NEW_BOMB                 LIVE_BUTTON
+Iraq      IraqJetMig21           0.82      0.94      IraqJetMig21_WpnBomb          Kab500_LeaserGuidedBomb  Command_ConstructIraqJetMig21 (LargeAirBase slot 5)
+Iran      IranJetMig21Bis        0.92      1.06      Iran_Weapon_Bomb_Mig21        Kab500_LeaserGuidedBomb  Command_ConstructIranJetMig21Bis
+Libya     LibyaJetMig21          0.92      1.06      LibyaJetMig21_WpnBombHvy      Kab500_LeaserGuidedBomb  Command_ConstructLibyaJetMig21
+Syria     SyriaJetMig21          0.94      1.08      SyriaJetMig21_WpnBomb         Kab500_LeaserGuidedBomb  Command_ConstructSyriaJetMig21
+Ukraine   UkraineJetMig21        0.94      1.08      UkraineJetMig21_WpnBombMed    Kab500_LeaserGuidedBomb  Command_ConstructUkraineJetMig21
+Vietnam   VietnamJetMig21        0.84      0.97      VietnamJetMig21_WpnBomb       Kab500_LeaserGuidedBomb  Command_ConstructVietnamJetMig21
+NK        NorthKoreaJetMig21     0.82      0.94      NorthKoreaJetMig21_WpnBomb    Kab500_LeaserGuidedBomb  Command_ConstructNorthKoreaJetMig21
+NK        NorthKoreaJetMig21PF   0.90      1.04      NorthKoreaJetMig21PF_WpnGun   Kab500_LeaserGuidedBomb  Command_ConstructNorthKoreaJetMig21PF
+China     ChinaJetJ7             1.22      1.40      China_Weapon_FAB_J7 / FAB2    Kab500_LeaserGuidedBomb  Command_ConstructChinaJetJ7
+Libya     LibyaJetJ7             0.94      1.08      China_Weapon_FAB_J7           Kab500_LeaserGuidedBomb  Command_ConstructLibyaJetJ7
+Syria     SyriaJetJ7             0.94      1.08      2x_ODAB_500_PMV_SU24_LR       Kab500_LeaserGuidedBomb  Command_ConstructSyriaJetJ7
+NK        NorthKoreaJetJ7        0.94      1.08      Kab500_LeaserGuidedBomb       Kab500_LeaserGuidedBomb  Command_ConstructNorthKoreaJetJ7
+NK        NorthKoreaJetJ7B       0.92      1.06      China_Weapon_Bomb_Q5          Kab500_LeaserGuidedBomb  Command_ConstructNorthKoreaJetJ7B
+
+SKIPPED (not PF/Bis/J-7/J-7B, or dummy): VietnamJetMig21bis (comment=MF), SyriaJetMig21MF, LibyaJetMig21MF, IndiaJetMig21Bison.
+China J-7 rockets China_Weapon_S5_J7 kept.
+IR/gun roles kept except PF tertiary gun replaced by the requested bomb payload.
+
+==================================================
+2) IRAQ DRONES — live Iraq_RadarStationCommandSet
+==================================================
+PRODUCER = Iraq_RadarStation (CommandSet = Iraq_RadarStationCommandSet) UNCHANGED
+  5 = Command_ConstructIraq_Sarab3      -> Iraq_Sarab3      SCIENCE=NONE  OBJECT_PREREQ=NONE
+  6 = Command_ConstructIraq_Ababil200   -> Iraq_Ababil200   SCIENCE=NONE  OBJECT_PREREQ=NONE
+  7 = Command_ConstructIraq_Lamiaa      -> Iraq_Lamiaa      SCIENCE=NONE  OBJECT_PREREQ=NONE
+ 15 = Command_ConstructIraqDroneQuds5_AI -> IraqDroneQuds5_AI (already no science)
+
+Ababil200 unit CommandSet = Iraq_Ababil200CommandSet
+  1 = Command_FireMainWeapon (existing FIRE_WEAPON PRIMARY)
+  12/13/14 = AttackMove / Guard / Stop
+Weapon remains Ababil200Deathweapon. GenericSuicideDroneCommandSet NOT globally edited.
+
+==================================================
+3) IRAQ WARFACTORY LIVE BUTTONS
+==================================================
+Starting T: T-72, BMP-1, Roland, BTR-90, Alhussien — no science. T-72/BMP-1/Roland already had no object prereq.
+T1+: BMP-2 no prereq; 2S1 Radar removed; SA-6 no prereq; Sam8 keeps SupplyCenter.
+T2: Sarab7 MIC+Radar removed; BM-21 no prereq.
+T3: AssadBabel MIC+Radar removed, SupplyCenter kept; R11 Radar removed.
+AI factory CommandSet / Alhussien_AI / AssadBabel2_AI not unlocked.
+Tier CommandSet upgrades kept (upgrade-required roster).
+
+==================================================
+4) TU-22M3M 8-BOMB
+==================================================
+LIVE_WEAPON = 8x_FAB500_TU22M3M_LIVE  ClipSize=8  PrimaryDamage=897  Projectile=Fab-250
+Shared 3x_FAB500_TU22M3M_* names remain 780 for any leftover users.
+
+OBJECT                 FILE                                         BAR
+RussiaJetTu22M3M       .../Russian Federation/Airforce/TU22M3M.ini  Russia Heavy slot 5 + Iraq Heavy slot 3
+NorthKoreaJetTu22M3M   .../North Korea/Airforce/Iraq_Mig-25BM.ini    NK Heavy slot 7 (was missing from any CommandSet)
+VietnamJetTu22M3M      .../Vietnam .../Iraq_Mig-25BM.ini             VN Heavy slot 4 (was missing from any CommandSet)
+
+Japan/SK *JetTu22M3M stubs (Buildable=No IGNORED_IN_GUI) NOT edited.
+
+==================================================
+5) ALHUSSIEN LIVE CHAIN
+==================================================
+OBJECT = Iraq_Alhussaien
+FILE = Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+BUTTON = Command_ConstructIraq_Alhussaien (no Science)
+COMMANDSET = Iraq_WarFactoryCommandSet_T slot 11 (also T1/T2 11, T3 10)
+PRODUCER = Iraq_WarFactory_T
+SCIENCE_GATE = NONE
+RESEARCH_GATE = NONE
+T3_VISIBILITY_GATE = NONE
+COST = 20000
+BUILDTIME = 1200
+Missile weapons unchanged.
+
+==================================================
+FLAGS
+==================================================
+IRAQ_LARGEAIRBASE_OBJECT_CHANGED = NO
+IRAQ_HEAVYAIRBASE_OBJECT_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+ART_CHANGED = NO
+IRAQ_ALHUSSIEN_BUILDABLE_FROM_START = YES
+IRAQ_ALHUSSIEN_COST = 20000
+IRAQ_ALHUSSIEN_BUILD_TIME = 1200
+IRAQ_ABABIL200_FIRE_BUTTON = YES
+IRAQ_DRONES_SCIENCE_GATE = NONE
+TU22M3M_BOMB_LOAD = 8
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

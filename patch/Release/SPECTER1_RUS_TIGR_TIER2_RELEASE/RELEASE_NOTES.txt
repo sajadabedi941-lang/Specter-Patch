@@ -1,0 +1,59 @@
+SPECTER1_RUS_TIGR_TIER2_RELEASE
+==============================
+
+NOT WINDOWS GAMEPLAY VALIDATED
+
+What this release fixes
+-----------------------
+Zero Hour crashed while parsing Data\\INI\\Upgrade.ini at:
+
+  Upgrade Upgrade_RUS_Tier2
+
+The Tier2 block itself was valid. Capture Default+Upgrade.ini already
+used 128 unique upgrade names. Three hardcoded veterancy templates take
+bits 0-2 of the 128-bit UpgradeMaskType, so only 125 INI names fit.
+Unique 125 (Upgrade_RUS_Tier1) was the last valid bit. Unique 126
+(Upgrade_RUS_Tier2) overflowed the mask.
+
+This pack frees five unused unique upgrade templates, rebuilds the
+Russian Tigr2 research upgrade from the working SU39 vehicle template,
+and keeps Tigr1, Tigr2, Upgrade_RUS_Tier1, and Upgrade_RUS_Tier2.
+
+Kept
+----
+  Upgrade_RUS_Tier1
+  Upgrade_RUS_Tier2
+  Object RussiaVehicleTigr1
+  Object RussiaVehicleTigr2
+
+Tigr path
+---------
+  Upgrade_Rus_Tigr2          SU39-style PLAYER_UPGRADE (rus_btr82)
+  Command_Upgrade_Rus_Tigr2  plant slot 5
+  RussiaVehicleTigr1         always buildable (plant slot 6, CC slot 11)
+  RussiaVehicleTigr2         plant slot 10 after Upgrade_Rus_Tigr2
+
+Parse verification (this packager)
+----------------------------------
+  Upgrade.ini parse errors:     ZERO
+  Unique Default+Upgrade.ini:   124  (limit 125)
+  Upgrade_RUS_Tier1 index:      121
+  Upgrade_RUS_Tier2 index:      122
+  Upgrade_Rus_Tigr2 index:      100
+  Simulated next mask bit:      127  (must be <= 128)
+  Tigr1 / Tigr2 objects:        PRESENT
+  DATA SHA256:                  37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e
+  DATA consistency:             PASS
+
+Files in the DATA BIG
+---------------------
+  Data\\INI\\Upgrade.ini
+  Data\\INI\\CommandButton.ini
+  Data\\INI\\CommandSet.ini
+  Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Buildings\\WeaponIndustryPlant.ini
+  Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\APC\\Tigr.ini  (added)
+
+Unchanged: ART, War Factory CommandSet, identity / PlayerTemplate,
+BTR82A.ini, Default\\Upgrade.ini.
+
+Do not use Wine as a release gate. Validate on Windows generals.exe.

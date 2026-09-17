@@ -1,0 +1,42 @@
+SPECTER1_RUS_TIGR_TIER2_RELEASE
+================================
+
+Windows release package for the Russia Tigr1 / Tigr2 upgrade-mask fix.
+
+NOT WINDOWS GAMEPLAY VALIDATED
+This environment has no Windows generals.exe client. INI parse, object,
+and CommandSet checks passed. Playtest on a real Windows Zero Hour
+install is still required.
+
+CONTENTS
+--------
+  _SPEC_DATA_ONE.big     patched Specter DATA (game loads this)
+  Data\\INI\\...          modified INI files extracted from that BIG
+  INSTALL.txt
+  RELEASE_NOTES.txt
+  SHA256.txt
+  Install_SpecterPatch.bat
+
+ART is unchanged. Do not replace _SPEC_ART_ONE.big.
+
+INSTALL
+-------
+1. Close generals.exe / Specter completely.
+2. In the Zero Hour folder (the folder that contains generals.exe),
+   copy _SPEC_DATA_ONE.big to _SPEC_DATA_ONE.big.bak
+   (or run Install_SpecterPatch.bat and enter that folder).
+3. Copy _SPEC_DATA_ONE.big from this ZIP into that folder, replacing
+   the existing _SPEC_DATA_ONE.big.
+4. Optional PowerShell check:
+     Get-FileHash .\_SPEC_DATA_ONE.big -Algorithm SHA256
+   Must be
+     37419FB5A6E82EDDACA83FF1679157CD189339826F74B0477781494F292A305E
+5. Launch Specter / Zero Hour.
+6. Play Russia. Build Weapon Industry Plant (Industrial Complex):
+     Slot 5  Tigr2 research (Upgrade_Rus_Tigr2)
+     Slot 6  Tigr1 (always available)
+     Slot 10 Tigr2 after the upgrade completes
+   Command Center slot 11 also builds Tigr1.
+   Russia tech buttons still research Upgrade_RUS_Tier1 / Upgrade_RUS_Tier2.
+
+Restore _SPEC_DATA_ONE.big.bak to revert.

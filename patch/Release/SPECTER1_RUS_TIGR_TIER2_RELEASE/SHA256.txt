@@ -1,0 +1,14 @@
+SPECTER1_RUS_TIGR_TIER2_RELEASE
+NOT WINDOWS GAMEPLAY VALIDATED
+
+37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e  _SPEC_DATA_ONE.big
+bc0b818305c153559a8be38818c75ae12cc3c0702eee89ebb4d0123d0e8d2b9b  INSTALL.txt
+040a6c3c81b99ead843fc10cea5aba1396005963fe58c5cecd2bfa0229a5892f  RELEASE_NOTES.txt
+5ed90b58a8f530afee49432177dd68509dccc572ba74d2bdfc106f58a91fd3a7  Install_SpecterPatch.bat
+
+Modified INI files extracted from _SPEC_DATA_ONE.big:
+f75c4eaf22ba77c17499294387e39280c6434f26f505630c3751732be6c37f1d  Data/INI/Upgrade.ini  (32030 bytes)
+1b465c05c6e7e4ae43f57d3c5b6a1fda1400e64384205aaad1d44d428d62fb32  Data/INI/CommandButton.ini  (1220869 bytes)
+7753b1062265a431782d65915fa0b6516e1eea9fb8ad8655b12d297c446df87f  Data/INI/CommandSet.ini  (433136 bytes)
+88a46acffcfb2cad5f831ca5af1ebc19000389841c283863f619ac3781a7f8fd  Data/INI/Object/Specter/Armed Forces Of Russian Federation/Buildings/WeaponIndustryPlant.ini  (6661 bytes)
+3e8fb40c3ece7243d1024439e7ba9c53bc66166b8152a7ecedd0c026da429851  Data/INI/Object/Specter/Armed Forces Of Russian Federation/APC/Tigr.ini  (13430 bytes)

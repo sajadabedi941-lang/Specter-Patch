@@ -1,0 +1,30 @@
+SPECTER_TIGR_SHARED_FIX_UPDATE
+
+Fixes the Tigr1 crash that appeared after the Tigr2-only rebuild.
+Supersedes SPECTER_TIGR2_FULL_FIX_UPDATE.
+
+Tigr1 never existed. Tigr2 sat on a shared Industrial Complex
+CommandSetUpgrade with no base Tigr unit, so building Tigr1 hit a
+missing object.
+
+Repair (capture DATA baseline, BMP3+BMP3MV pair pattern):
+- Object RussiaVehicleTigr1 and RussiaVehicleTigr2 in Tigr.ini
+  (BTR82A clones: RUS_BTR90, 30mm_2A72_dualfeed, 7_62mm_PKT_Coaxial,
+  BTR90Armor, TCD_510diesel)
+- No illegal Prerequisites Upgrade=
+- No WeaponSetUpgrade / MaxHealthUpgrade / LocomotorSetUpgrade
+- Tigr1 always buildable (plant slot 6, Command Center slot 11)
+- Upgrade_Rus_Tigr2 SU39-style PLAYER_UPGRADE (plant slot 5)
+- After purchase, plant CS also offers Tigr2 UNIT_BUILD
+- SU39 / MTS / flares / nuclear buttons kept on the live plant CS
+
+Only four existing DATA files changed plus new Tigr.ini.
+War Factory, other factions, identity, ART, BTR82A.ini unchanged.
+
+TIGR1 = PASS
+TIGR2 = PASS
+RUSSIA_UPGRADE_SYSTEM = PASS
+CRASH_TEST = PASS
+
+DATA SHA256 c12495aaeebda4713bb12e793e816bba4fa12691f3d345945a17b9a500ae2edf
+ART_CHANGED = NO

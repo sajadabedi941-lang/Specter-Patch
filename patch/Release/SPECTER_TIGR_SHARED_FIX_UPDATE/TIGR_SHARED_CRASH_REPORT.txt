@@ -1,0 +1,65 @@
+TIGR_SHARED_CRASH_REPORT
+
+TIGR1 = PASS
+TIGR2 = PASS
+
+Crash source:
+  After the Tigr2-only rebuild, the crash moved to Tigr1 because Tigr1
+  never existed. Packed DATA had RussiaVehicleTigr2 (BTR82A clone) and
+  Upgrade_Rus_Tigr2, but ZERO RussiaVehicleTigr1 / rus_tigr1 /
+  Command_ConstructRussiaVehicleTigr1. The two units are one Tigr family
+  on the shared Russia Industrial Complex. Building Tigr1 resolved a
+  missing object. Tigr2 sitting alone on a CommandSetUpgrade of that
+  shared plant left the base Tigr slot empty.
+
+  Same illegal field as the Tigr2 crash (Prerequisites Upgrade=) was NOT
+  present on Tigr1 because Tigr1 had no object at all.
+
+Broken reference:
+  Missing Object RussiaVehicleTigr1
+  Missing CommandButton Command_ConstructRussiaVehicleTigr1
+  Live RussiaIndsturialComplexCommandSet had no Tigr1 UNIT_BUILD
+  Shared plant CommandSetUpgrade only revealed Tigr2
+
+Affected units:
+  RussiaVehicleTigr1 (missing)
+  RussiaVehicleTigr2 (present, BTR82A clone, no extra modules)
+  RussiaIndustrialComplex (shared CommandSetUpgrade)
+
+Fix applied:
+  Rebuilt both from capture DATA using the working BMP3 + BMP3MV pair:
+  - Object RussiaVehicleTigr1 and RussiaVehicleTigr2 in Tigr.ini
+    (name-only BTR82A clones, Side=Russia, GenericIFVcommandset,
+    weapons 30mm_2A72_dualfeed / 7_62mm_PKT_Coaxial, Armor BTR90Armor,
+    Locomotor TCD_510diesel, Model RUS_BTR90)
+  - No Prerequisites Upgrade=, no WeaponSetUpgrade/MaxHealthUpgrade/
+    LocomotorSetUpgrade on either vehicle
+  - Command_ConstructRussiaVehicleTigr1 on live plant slot 6 and
+    Command Center slot 11 (always buildable)
+  - Upgrade_Rus_Tigr2 (SU39-style PLAYER_UPGRADE) on live plant slot 5
+  - CommandSetUpgrade ModuleTag_Tigr2CS -> CommandSet with Tigr1 kept
+    and Tigr2 UNIT_BUILD added
+  War Factory, _T CommandSets, identity, ART, BTR82A.ini unchanged.
+
+Test result:
+  INGAME_TESTED = NO (no Generals/ZH client in this environment)
+  PACK_EXECUTION_PATH = PASS
+  Tigr1 object exact BTR82A clone = PASS
+  Tigr2 object exact BTR82A clone = PASS
+  Tigr1 on live plant CS = PASS
+  Tigr2 NOT on live plant CS = PASS
+  Tigr1+Tigr2 on post-upgrade CS = PASS
+  Tigr1 on Command Center = PASS
+  Shared Upgrade_Rus_Tigr2 SU39-style = PASS
+  CommandSetUpgrade on plant = PASS
+  No illegal Prerequisites Upgrade = PASS
+  No vehicle WeaponSetUpgrade modules = PASS
+  No stub MappedImage = PASS
+  No Tigr on _T/WF = PASS
+  Weapon/Armor/Locomotor/payload = PASS
+  ART RUS_BTR90 = PASS
+  BTR82A.ini unchanged = PASS
+
+DATA SHA256 c12495aaeebda4713bb12e793e816bba4fa12691f3d345945a17b9a500ae2edf
+ART_CHANGED = NO
+NO_GITHUB_RELEASE = YES

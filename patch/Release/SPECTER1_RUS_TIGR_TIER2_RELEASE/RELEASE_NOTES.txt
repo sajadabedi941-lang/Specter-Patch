@@ -45,15 +45,11 @@ Parse verification (this packager)
   DATA SHA256:                  37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e
   DATA consistency:             PASS
 
-Files in the DATA BIG
----------------------
-  Data\\INI\\Upgrade.ini
-  Data\\INI\\CommandButton.ini
-  Data\\INI\\CommandSet.ini
-  Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Buildings\\WeaponIndustryPlant.ini
-  Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\APC\\Tigr.ini  (added)
+Patched inside _SPEC_DATA_ONE.big (not shipped as loose files):
+  Upgrade.ini, CommandButton.ini, CommandSet.ini,
+  WeaponIndustryPlant.ini, Tigr.ini
 
 Unchanged: ART, War Factory CommandSet, identity / PlayerTemplate,
-BTR82A.ini, Default\\Upgrade.ini.
+BTR82A.ini, Default\Upgrade.ini.
 
-Do not use Wine as a release gate. Validate on Windows generals.exe.
+Copy _SPEC_DATA_ONE.big next to generals.exe. Do not replace ART.

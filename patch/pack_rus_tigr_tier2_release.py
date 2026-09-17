@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import shutil
 import zipfile
 from pathlib import Path
 
@@ -34,14 +35,6 @@ OUT_DIR = Path("/workspace/patch/Release/SPECTER1_RUS_TIGR_TIER2_RELEASE")
 ZIP_PATH = Path("/workspace/patch/Release/SPECTER1_RUS_TIGR_TIER2_RELEASE.zip")
 ARTIFACTS = Path("/opt/cursor/artifacts")
 
-MODIFIED_INI = (
-    P_UPG,
-    P_BTN,
-    P_CS,
-    P_IC,
-    P_TIGR,
-)
-
 
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -53,10 +46,6 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def ini_zip_name(packed_name: str) -> str:
-    return packed_name.replace("\\", "/")
 
 
 def verify(packed) -> dict:
@@ -144,59 +133,36 @@ def main() -> int:
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     data_dst = OUT_DIR / "_SPEC_DATA_ONE.big"
-    data_dst.write_bytes(SRC_DATA.read_bytes())
+    if not data_dst.is_file() or sha256_file(data_dst) != data_sha:
+        data_dst.write_bytes(SRC_DATA.read_bytes())
 
-    ini_written = []
-    for packed_name in MODIFIED_INI:
-        rel = ini_zip_name(packed_name)
-        dest = OUT_DIR / rel
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        raw = bytes(jf.raw_of(packed, packed_name))
-        dest.write_bytes(raw)
-        ini_written.append((rel, sha256_bytes(raw), len(raw)))
+    # Original Specter release ZIPs ship BIG + notes at zip root.
+    # Never extract loose Data/Art folders.
+    data_tree = OUT_DIR / "Data"
+    if data_tree.exists():
+        shutil.rmtree(data_tree)
+    art_tree = OUT_DIR / "Art"
+    if art_tree.exists():
+        shutil.rmtree(art_tree)
 
     install = f"""SPECTER1_RUS_TIGR_TIER2_RELEASE
-================================
-
-Windows release package for the Russia Tigr1 / Tigr2 upgrade-mask fix.
+==============================
 
 NOT WINDOWS GAMEPLAY VALIDATED
-This environment has no Windows generals.exe client. INI parse, object,
-and CommandSet checks passed. Playtest on a real Windows Zero Hour
-install is still required.
 
-CONTENTS
---------
-  _SPEC_DATA_ONE.big     patched Specter DATA (game loads this)
-  Data\\\\INI\\\\...          modified INI files extracted from that BIG
-  INSTALL.txt
-  RELEASE_NOTES.txt
-  SHA256.txt
-  Install_SpecterPatch.bat
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG
+   next to generals.exe (backup the original first).
+3. Do not replace ART. ART is unchanged.
+4. Launch Specter.
+5. Play Russia. Build Weapon Industry Plant (Industrial Complex).
+6. Build Tigr1 (slot 6). Tigr1 is always available.
+7. Purchase Tigr2 research (slot 5). Wait for completion.
+8. Build Tigr2 (slot 10 on the switched CommandSet).
+9. Command Center slot 11 also builds Tigr1.
 
-ART is unchanged. Do not replace _SPEC_ART_ONE.big.
-
-INSTALL
--------
-1. Close generals.exe / Specter completely.
-2. In the Zero Hour folder (the folder that contains generals.exe),
-   copy _SPEC_DATA_ONE.big to _SPEC_DATA_ONE.big.bak
-   (or run Install_SpecterPatch.bat and enter that folder).
-3. Copy _SPEC_DATA_ONE.big from this ZIP into that folder, replacing
-   the existing _SPEC_DATA_ONE.big.
-4. Optional PowerShell check:
-     Get-FileHash .\\_SPEC_DATA_ONE.big -Algorithm SHA256
-   Must be
-     {data_sha.upper()}
-5. Launch Specter / Zero Hour.
-6. Play Russia. Build Weapon Industry Plant (Industrial Complex):
-     Slot 5  Tigr2 research (Upgrade_Rus_Tigr2)
-     Slot 6  Tigr1 (always available)
-     Slot 10 Tigr2 after the upgrade completes
-   Command Center slot 11 also builds Tigr1.
-   Russia tech buttons still research Upgrade_RUS_Tier1 / Upgrade_RUS_Tier2.
-
-Restore _SPEC_DATA_ONE.big.bak to revert.
+DATA SHA256 {data_sha}
+ART_CHANGED = NO
 """
 
     notes = f"""SPECTER1_RUS_TIGR_TIER2_RELEASE
@@ -246,18 +212,14 @@ Parse verification (this packager)
   DATA SHA256:                  {data_sha}
   DATA consistency:             PASS
 
-Files in the DATA BIG
----------------------
-  Data\\\\INI\\\\Upgrade.ini
-  Data\\\\INI\\\\CommandButton.ini
-  Data\\\\INI\\\\CommandSet.ini
-  Data\\\\INI\\\\Object\\\\Specter\\\\Armed Forces Of Russian Federation\\\\Buildings\\\\WeaponIndustryPlant.ini
-  Data\\\\INI\\\\Object\\\\Specter\\\\Armed Forces Of Russian Federation\\\\APC\\\\Tigr.ini  (added)
+Patched inside _SPEC_DATA_ONE.big (not shipped as loose files):
+  Upgrade.ini, CommandButton.ini, CommandSet.ini,
+  WeaponIndustryPlant.ini, Tigr.ini
 
 Unchanged: ART, War Factory CommandSet, identity / PlayerTemplate,
-BTR82A.ini, Default\\\\Upgrade.ini.
+BTR82A.ini, Default\\Upgrade.ini.
 
-Do not use Wine as a release gate. Validate on Windows generals.exe.
+Copy _SPEC_DATA_ONE.big next to generals.exe. Do not replace ART.
 """
 
     bat = r"""@echo off
@@ -336,19 +298,14 @@ exit /b 1
     ]
     for name in top_files:
         sha_lines.append(f"{sha256_file(OUT_DIR / name)}  {name}")
-    sha_lines.append("")
-    sha_lines.append("Modified INI files extracted from _SPEC_DATA_ONE.big:")
-    for rel, digest, size in ini_written:
-        sha_lines.append(f"{digest}  {rel}  ({size} bytes)")
     write_text(OUT_DIR / "SHA256.txt", "\n".join(sha_lines) + "\n")
 
-    zip_names = top_files + ["SHA256.txt"] + [rel for rel, _, _ in ini_written]
+    zip_names = top_files + ["SHA256.txt"]
     if ZIP_PATH.exists():
         ZIP_PATH.unlink()
-    prefix = "SPECTER1_RUS_TIGR_TIER2_RELEASE"
     with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
         for name in zip_names:
-            zf.write(OUT_DIR / name, arcname=f"{prefix}/{name}")
+            zf.write(OUT_DIR / name, arcname=name)
     zip_sha = sha256_file(ZIP_PATH)
     Path(str(ZIP_PATH) + ".sha256").write_text(f"{zip_sha}  {ZIP_PATH.name}\n", encoding="utf-8")
 

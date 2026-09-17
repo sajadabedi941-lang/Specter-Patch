@@ -1,0 +1,33 @@
+WINDOWS ZERO HOUR TEST — DO NOT ZIP YET
+=======================================
+
+DATA: _SPEC_DATA_ONE.big
+SHA256: 4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+ART: do not replace
+
+1. Close generals.exe.
+2. Backup game-folder _SPEC_DATA_ONE.big.
+3. Copy this folder's _SPEC_DATA_ONE.big next to generals.exe.
+4. Run verify_data.ps1 in this folder, or:
+
+     Get-FileHash .\_SPEC_DATA_ONE.big -Algorithm SHA256
+
+5. Launch Windows generals.exe (not Wine).
+6. Follow patch/FINAL_RELEASE_VALIDATION.txt and mark PASS/FAIL:
+
+     Menu
+     Skirmish
+     Russia faction
+     Tigr1 build     (plant slot 6; always on)
+     Upgrade apply   (plant slot 5; researches Upgrade_RUS_Tier1)
+     Tigr2 build     (plant slot 10 after upgrade)
+     Gameplay
+
+7. ZIP is built only if every item is PASS.
+
+Russia Industrial Complex = live plant CommandSet
+  5 = Tigr research (Upgrade_RUS_Tier1)
+  6 = Tigr1
+After upgrade:
+  10 = Tigr2
+Command Center slot 11 = Tigr1

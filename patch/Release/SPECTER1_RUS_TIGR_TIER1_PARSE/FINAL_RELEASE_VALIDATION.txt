@@ -2,74 +2,107 @@ FINAL_RELEASE_VALIDATION
 
 NO_GITHUB_RELEASE = YES
 RELEASE_ZIP = NOT PREPARED
+ENGINE = Windows Zero Hour / Specter (not Wine)
 
-DATA SHA256 4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+DATA file
   patch/Release/SPECTER1_RUS_TIGR_TIER1_PARSE/_SPEC_DATA_ONE.big
-ART SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26
-  (claimed capture/flags ART; not used as a Windows test)
+DATA SHA256
+  4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+ART
+  Do not replace. Expected SHA256
+  81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26
 
 ============================================================
-Engine test
+Windows checklist (fill after a real generals.exe run)
 ============================================================
-Engine test:  NOT RUN
-Menu:         NOT RUN
-Skirmish:     NOT RUN
-Russia:       NOT RUN
-Tigr1:        NOT RUN
-Tigr2:        NOT RUN
-Upgrade:      NOT RUN
-Result:       FAIL
+Menu:            FAIL
+Skirmish:        FAIL
+Russia faction:  FAIL
+Tigr1 build:     FAIL
+Tigr2 build:     FAIL
+Upgrade apply:   FAIL
+Gameplay:        FAIL
 
-Windows Zero Hour client: ABSENT
+Result: FAIL
 
-Searched this run:
-  OS: Linux 6.12.94+ x86_64 (Cursor Cloud Agent)
-  Self-hosted workers: 0 connected
-  Self-hosted cloud agents: 0
-  qemu-system / powershell.exe / cmd.exe: not installed
-  GitHub Actions Windows workflow: none
-  Available generals.exe copies: Linux-hosted SPECTER FINAL trees only
-    (same PE32 game.dat previously launched under Wine 9.0)
+Tester: (none)
+Client: Windows Zero Hour / Specter
+Wine used: NO
+Date: (pending)
 
-Wine 32-bit init AV (EIP 0x007D1A0F write 056F0000) is explicitly
-rejected as release validation. That crash reproduces on stock ZH
-without _SPEC_DATA/_SPEC_ART (see STARTUP_CRASH_REPORT.txt).
+ZIP is created only when every line above is PASS.
 
 ============================================================
-Environment-independent pack checks (NOT a release substitute)
+Install (Windows)
 ============================================================
-These do not load the ZH engine. They only confirm the DATA pack
-still matches the accepted parse fix.
+1. Close Specter / generals.exe completely.
+2. Go to the folder that already contains generals.exe.
+3. Backup the current _SPEC_DATA_ONE.big (rename to _SPEC_DATA_ONE.big.bak).
+4. Copy
+     patch\Release\SPECTER1_RUS_TIGR_TIER1_PARSE\_SPEC_DATA_ONE.big
+   into that folder, replacing the old DATA BIG.
+5. Do not copy ART. Do not copy this file over _SPEC_ART_ONE.big.
+6. In PowerShell, in the game folder:
 
-  Upgrade.ini byte-identical to capture:     PASS
-  Unique Default+Upgrade.ini templates:      128 / 128 (ZH mask limit)
-  No Upgrade_Rus_Tigr2 template:             PASS
+     Get-FileHash .\_SPEC_DATA_ONE.big -Algorithm SHA256
+
+   Must equal
+     4BF21A180A64DBD82A15CF5F9D67E5F7C059422A7BE8BEA6CF2AD9F837FB3855
+
+   Or run
+     patch\Release\SPECTER1_RUS_TIGR_TIER1_PARSE\verify_data.ps1
+7. Start generals.exe on Windows. Do not use Wine.
+
+============================================================
+In-game steps
+============================================================
+Menu
+  Game reaches the main shell. No Technical Difficulties.
+  No ReleaseCrashInfo.txt under
+    Documents\Command and Conquer Generals Zero Hour Data\
+
+Skirmish
+  New skirmish. Pick a map. Start. Loading finishes in-game.
+
+Russia faction
+  Player side = Russia. Command Center builds. No faction crash.
+
+Tigr1 build
+  Build Weapon Industry Plant (RussiaIndustrialComplex).
+  Slot 6 = Tigr1 (always available).
+  Also Command Center slot 11.
+  Queue and complete at least one RussiaVehicleTigr1.
+
+Upgrade apply
+  Same plant, slot 5 = Tigr2 research button (rus_btr82).
+  That button researches Upgrade_RUS_Tier1 (no extra Upgrade.ini name).
+  Wait until the upgrade completes. Plant CommandSet must switch.
+
+Tigr2 build
+  After the upgrade, slot 10 = Tigr2 UNIT_BUILD.
+  Queue and complete at least one RussiaVehicleTigr2.
+
+Gameplay
+  Both units exist on the map. Select, move. No crash.
+  Spawn several Tigr1 and Tigr2.
+
+If any step fails, leave that line FAIL and do not request a ZIP.
+If ReleaseCrashInfo.txt is written, attach it. An INI parse crash names
+Data\INI\... and a line. The Wine init AV at EIP 0x007D1A0F is not this pack.
+
+============================================================
+Pack checks (not a substitute for the Windows list)
+============================================================
+  Upgrade.ini identical to capture:          PASS
+  Unique Default+Upgrade.ini count:          128
   Upgrade_RUS_Tier1 kept:                    PASS
-  Tigr2 PLAYER_UPGRADE -> Upgrade_RUS_Tier1: PASS
-  CommandSetUpgrade TriggeredBy RUS_Tier1:   PASS
-  Tigr1 always on live plant CS:             PASS
-  Tigr2 UNIT_BUILD on post-upgrade CS only:  PASS
-  Tigr1/Tigr2 BTR82A clones, Side=Russia:    PASS
-  No illegal Prerequisites Upgrade=:         PASS
+  Tigr2 uses Upgrade_RUS_Tier1:              PASS
+  Tigr1 live CS slot 6 / CC slot 11:         PASS
+  Tigr2 after CommandSetUpgrade slot 10:     PASS
 
 ============================================================
-Windows test required before ZIP
+Release gate
 ============================================================
-On a real Windows Specter / Zero Hour install:
-
-  1. Close the game.
-  2. Replace _SPEC_DATA_ONE.big with
-     SHA256 4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
-  3. Do not replace ART.
-  4. Launch generals.exe (Windows), not Wine.
-  5. Confirm:
-       Menu loads
-       Skirmish starts
-       Russia faction loads
-       Tigr1 builds
-       Tigr2 builds after Upgrade_RUS_Tier1
-       Upgrade applies with no crash
-  6. If all PASS, then prepare the ZIP. Not before.
-
-Result: FAIL — no Windows client in this environment.
-ZIP not prepared. GitHub release not created.
+ALL_WINDOWS_PASS = NO
+Create ZIP only after Menu, Skirmish, Russia, Tigr1, Tigr2,
+Upgrade apply, and Gameplay are all PASS on Windows generals.exe.

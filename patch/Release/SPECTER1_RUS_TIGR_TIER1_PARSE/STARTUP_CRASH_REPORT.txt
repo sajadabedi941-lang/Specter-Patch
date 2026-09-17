@@ -1,0 +1,92 @@
+STARTUP_CRASH_REPORT
+
+NO_GITHUB_RELEASE = YES
+RELEASE_ZIP = NOT PREPARED
+TIGR_VALIDATION = DEFERRED (menu/skirmish not reached)
+
+============================================================
+Crash location
+============================================================
+  File: game.dat  (.text RVA 0x003D1A0F, PE ImageBase 0x00400000)
+  EIP:  0x007D1A0F
+  Code: nested 101 x 101 dword copy
+        mov [eax], ebp / add eax,4 / dec edx / jnz
+        outer ebx starts at 0x65 (101), inner edx at 0x65 (101)
+  Fault: EXCEPTION_ACCESS_VIOLATION  write 0x056F0000
+  Reason: Uncaught Exception during initialization.
+  WinMain at 0x401700
+  NOT an INI parse crash (no Data\INI\... line, no Upgrade.ini)
+
+============================================================
+Changed file causing crash
+============================================================
+  NONE in Specter DATA/ART/INI.
+
+  Bisect after PR #511 / capture baseline (all ~37s, same EIP):
+
+  Config                         INI parse?   EIP
+  stock ZH (no _SPEC_DATA/ART)   no           0x007D1A0F
+  stock + no INIZHZ.big          no           0x007D1A0F
+  baseline ART only              no           0x007D1A0F
+  capture DATA, no ART           no           0x007D1A0F
+  capture DATA + flags ART       no           0x007D1A0F
+  FINAL_ROSTER DATA + flags ART  no           0x007D1A0F
+  WARFACTORY_BUILD_FIX + flags   no           0x007D1A0F
+  Tigr Tier1 parse-fix DATA      no           0x007D1A0F
+  SkipIntro=yes, 800x600         no           0x007D1A0F
+
+  Registers match across capture vs Tigr packs
+  (EAX=056F0000 EBX=00000050 EDX=00000043 ESI=056EDE54 EDI=056D0028).
+
+============================================================
+Root cause
+============================================================
+  32-bit Wine 9.0 on this cloud host cannot finish Zero Hour engine
+  init. The AV is inside stock game.dat while filling a 101x101 dword
+  buffer (typical wined3d/GDI surface or init table), after the splash
+  movie, before the shell/menu.
+
+  Ruled out by bisect:
+  - Tigr objects / Upgrade_RUS_Tier1 / Upgrade.ini (byte-identical
+    to capture; crash has no INI line)
+  - PR #511 DATA-only edits (same crash without _SPEC_DATA_ONE.big)
+  - _SPEC_ART_ONE.big (same crash with ART hidden)
+  - INIZHZ.big, CommandSet.ini, CommandButton.ini overlays
+  - Faction INI / missing Specter W3D (stock ZH still AVs)
+  - BIG last-win of Specter vs INIZH
+
+  Last known "working" wine note (WF_AIRFORCE changelog) also never
+  reached playable skirmish (D3D/OLE/no audio). Splash + ReleaseCrashInfo
+  is as far as this host gets.
+
+============================================================
+Fix
+============================================================
+  No Specter DATA/INI change can fix this. Stock generals.exe/game.dat
+  crash at the same site with Specter BIGs removed.
+
+  Required: Windows Zero Hour client (or a host with working d3d8),
+  then re-run menu + skirmish, then Tigr validation.
+
+  Wine attempts that did not change EIP:
+  - renderer=gl and renderer=gdi
+  - virtual desktop on/off
+  - LIBGL_ALWAYS_SOFTWARE
+  - SkipIntro / 800x600 Options.ini
+  - hide _SPEC_DATA, _SPEC_ART, INIZHZ
+
+============================================================
+Menu test:     FAIL
+Skirmish test: FAIL
+============================================================
+  Splash (SPECTER1 / PCC STUDIOS) appears, then Technical Difficulties.
+  Main menu never shown. Skirmish never started.
+
+  Tigr in-game checklist not run (blocked on menu).
+  Pack-path Tigr/Tier1 parse still PASS (unique upgrades=128,
+  Upgrade.ini unchanged vs capture).
+
+DATA SHA256 (parse-fix, not used as crash source)
+  4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+Capture DATA SHA256
+  cc0595379e7f255f98170bd4502ed0479b634162739bd206748c86459176552b

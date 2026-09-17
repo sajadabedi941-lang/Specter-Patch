@@ -1,0 +1,24 @@
+SPECTER_TIGR_SHARED_FIX_UPDATE
+==============================
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG.
+3. Do not replace ART. ART is unchanged
+   (SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26).
+4. Launch Specter.
+5. Play Russia. Build Weapon Industry Plant (Industrial Complex).
+6. Open the upgrade menu.
+7. Build Tigr1 (slot 6). Tigr1 is always available.
+8. Purchase upgrade_rus_tigr2 (slot 5). Wait for completion.
+9. Build Tigr2 (slot 10 on the switched CommandSet).
+10. Enter gameplay.
+
+Supersedes SPECTER_TIGR2_FULL_FIX_UPDATE.
+
+TIGR1 = PASS
+TIGR2 = PASS
+RUSSIA_UPGRADE_SYSTEM = PASS
+CRASH_TEST = PASS
+
+DATA SHA256 c12495aaeebda4713bb12e793e816bba4fa12691f3d345945a17b9a500ae2edf
+ART_CHANGED = NO

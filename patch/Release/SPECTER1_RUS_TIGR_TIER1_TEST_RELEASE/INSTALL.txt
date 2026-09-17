@@ -1,0 +1,32 @@
+SPECTER1_RUS_TIGR_TIER1_TEST_RELEASE
+====================================
+
+Unofficial test build for PR #511. Not a final release.
+
+1. Backup original DATA folder.
+   Close generals.exe / Specter.
+   In the Zero Hour folder (the folder that contains generals.exe),
+   copy _SPEC_DATA_ONE.big to _SPEC_DATA_ONE.big.bak
+   (or copy the whole game folder).
+
+2. Copy patched files next to generals.exe / Zero Hour installation.
+   Copy _SPEC_DATA_ONE.big from this ZIP into that folder,
+   replacing the existing _SPEC_DATA_ONE.big.
+   Do not replace _SPEC_ART_ONE.big or any other ART file.
+
+   Optional: PowerShell hash check
+     Get-FileHash .\_SPEC_DATA_ONE.big -Algorithm SHA256
+   Must be
+     4BF21A180A64DBD82A15CF5F9D67E5F7C059422A7BE8BEA6CF2AD9F837FB3855
+
+3. Run the game and test:
+     Menu → Skirmish → Russia → Tigr1 → Upgrade_RUS_Tier1 → Tigr2.
+
+   Russia Weapon Industry Plant (Industrial Complex):
+     Slot 5  Tigr research (applies Upgrade_RUS_Tier1)
+     Slot 6  Tigr1 (always available)
+     Slot 10 Tigr2 after the upgrade completes
+   Command Center slot 11 also builds Tigr1.
+
+Do not use Wine for this test. Windows generals.exe only.
+Restore _SPEC_DATA_ONE.big.bak if you need to revert.

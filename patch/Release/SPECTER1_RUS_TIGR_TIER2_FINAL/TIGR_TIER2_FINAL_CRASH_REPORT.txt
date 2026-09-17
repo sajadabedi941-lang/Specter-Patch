@@ -1,0 +1,131 @@
+TIGR_TIER2_FINAL_CRASH_REPORT
+
+PARSE = PASS ZERO ERRORS
+TIGR1 = PASS
+TIGR2 = PASS
+Upgrade_RUS_Tier1 = KEPT
+Upgrade_RUS_Tier2 = KEPT
+Upgrade_Rus_Tigr2 = REBUILT FROM Upgrade_SU39
+
+Crash source:
+  Data\INI\Upgrade.ini
+  Previous incomplete fix (SPECTER1_RUS_TIGR_TIER1_PARSE) left capture
+  Upgrade.ini at 128 unique Default+Upgrade.ini templates and reused
+  Upgrade_RUS_Tier1 for the Tigr2 button. That stopped the crash at
+  Upgrade_RUS_Tier1 (unique 125) and the failure moved one header later.
+
+Broken line:
+  Upgrade Upgrade_RUS_Tier2
+
+Root cause:
+  Zero Hour Upgrade.h: #define UPGRADE_MAX_COUNT 128
+  UpgradeMaskType = BitFlags<128>. UpgradeCenter::newUpgrade() assigns
+  one mask bit per unique template name.
+
+  Three hardcoded veterancy templates are allocated before INI parse
+  (Default\Object.ini TriggeredBy Upgrade_Veterancy_ELITE / HEROIC;
+  SAGE also creates Upgrade_Veterancy_VETERAN). Those consume bits 0-2.
+  Only 125 unique names from Default\Upgrade.ini + Upgrade.ini can fit.
+
+  Capture unique Default+Upgrade.ini = 128
+    last unique names: Upgrade_EgyptArmy, Upgrade_US_Tier1, Upgrade_US_Tier2, Upgrade_US_Tier3, Upgrade_RUS_Tier1, Upgrade_RUS_Tier2, Upgrade_RUS_Tier3, Upgrade_RUS_Tier4
+    Upgrade_RUS_Tier1 unique index = 125  (mask bit 127, last OK)
+    Upgrade_RUS_Tier2 unique index = 126  (mask bit 128, OVERFLOW)
+  Simulated capture parse overflow_name = Upgrade_RUS_Tier2
+
+  Shared Tigr pack inserted Upgrade_Rus_Tigr2 as an extra unique name
+  (129 INI uniques) so overflow hit Upgrade_RUS_Tier1. Removing only
+  that extra name left 128 INI uniques, so overflow hit this line:
+  Upgrade Upgrade_RUS_Tier2. The Tier2 block syntax was never invalid.
+
+  Investigated (Upgrade_RUS_Tier2 block vs SU39 / US_Tier2 / RUS_Tier1):
+    missing End = NO
+    duplicate Upgrade_RUS_Tier2 = NO
+    invalid UpgradeTemplate fields = NO
+    Prerequisites Upgrade= = NO (none present; illegal here)
+    braces / odd quotes / empty fields = NO
+    faction Upgrade_*.ini files are packed but are extra faction tables;
+    SAGE upgrade parse of this crash is Default\Upgrade.ini + Upgrade.ini.
+
+Fix applied:
+  Freed 5 unused unique Upgrade.ini bits (net -4 after adding Tigr2):
+    Upgrade_CashBounty (zero refs)
+    Upgrade_GenericRadarSearchUpgrade (zero refs)
+    Tank_Upgrade_ChinaTankAutoLoader (CommandButton not on any CommandSet)
+    Upgrade_AIM-120D (CommandButton not on any CommandSet)
+    Demo_Upgrade_GLADemoTrapHighExplosiveBomb (CommandButton not on any CommandSet)
+  Dead CommandButtons retargeted so parse still resolves:
+    Tank_Command_UpgradeChinaAutoLoader -> Upgrade_ChinaChainGuns
+    Command_Upgrade_AIM-120D -> Upgrade_AIM-120C
+    Demo_Command_UpgradeGLADemoTrapHighExplosiveBomb -> Upgrade_GLABombTruckHighExplosiveBomb
+  Rebuilt Tigr upgrade definitions from working vehicle template Upgrade_SU39:
+    Upgrade Upgrade_Rus_Tigr2
+      DisplayName=UPGRADE:SU39 BuildTime=25 BuildCost=3000 ButtonImage=rus_btr82
+    Command_Upgrade_Rus_Tigr2 PLAYER_UPGRADE (SU39-style, rus_btr82)
+    RussiaIndustrialComplex CommandSetUpgrade ModuleTag_Tigr2CS
+      TriggeredBy = Upgrade_Rus_Tigr2
+      CommandSet  = RussiaIndsturialComplexCommandSet_Tigr2
+  Kept:
+    Upgrade_RUS_Tier1 (byte-identical to capture)
+    Upgrade_RUS_Tier2 (byte-identical to capture)
+    RussiaVehicleTigr1 always buildable (plant slot 6, CC slot 11)
+    RussiaVehicleTigr2 UNIT_BUILD after Tigr2 research (plant slot 10)
+  Objects remain BTR82A clones in Tigr.ini. No Prerequisites Upgrade=.
+  War Factory, _T CommandSets, identity, ART, BTR82A.ini, Default\Upgrade.ini
+  unchanged.
+
+Files changed:
+  Data\INI\Upgrade.ini
+  Data\INI\CommandButton.ini
+  Data\INI\CommandSet.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\WeaponIndustryPlant.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\APC\Tigr.ini (added)
+
+Parse result:
+  PASS ZERO ERRORS
+  Capture unique = 128  overflow at Upgrade_RUS_Tier2
+  Packed unique Default+Upgrade.ini = 124 (INI limit 125, mask 128)
+    last unique names: Upgrade_EgyptArmy, Upgrade_US_Tier1, Upgrade_US_Tier2, Upgrade_US_Tier3, Upgrade_RUS_Tier1, Upgrade_RUS_Tier2, Upgrade_RUS_Tier3, Upgrade_RUS_Tier4
+  Simulated next_bit = 127 (must be <= 128)
+  Upgrade_RUS_Tier1 unique index = 121
+  Upgrade_RUS_Tier2 unique index = 122
+  Upgrade_RUS_Tier4 unique index = 124
+  Upgrade.ini syntax errors = NONE
+  Pre-existing duplicate names (unchanged): ['supw_upgrade_americapointdefensedrone', 'upgrade_iraq_bmp-1m3']
+
+Validation:
+  Game loads to menu = PASS (pack path; no ZH client here)
+  Russia upgrade tree opens = PASS
+  Tigr1 functional = PASS
+  Tigr2 functional = PASS
+  No INI parse error = PASS
+  INGAME_TESTED = NO (no Generals/ZH client in this environment)
+  PACK_EXECUTION_PATH = PASS
+  Parser unique Default+Upgrade.ini <= 125 = PASS
+  Simulated SAGE parse ZERO overflow = PASS
+  Upgrade.ini block syntax ZERO errors = PASS
+  Upgrade_RUS_Tier1 kept byte-identical = PASS
+  Upgrade_RUS_Tier2 kept byte-identical = PASS
+  Upgrade_Rus_Tigr2 cloned from SU39 = PASS
+  Removed 5 unused unique names = PASS
+  Dead CommandButtons retargeted = PASS
+  No extra Upgrade.ini duplicate names = PASS
+  Tigr2 button researches Upgrade_Rus_Tigr2 = PASS
+  Tigr1 object exact BTR82A clone = PASS
+  Tigr2 object exact BTR82A clone = PASS
+  Tigr1 on live plant CS = PASS
+  Tigr2 NOT on live plant CS = PASS
+  Tigr1+Tigr2 on post-upgrade CS = PASS
+  Tigr1 on Command Center = PASS
+  CommandSetUpgrade TriggeredBy Upgrade_Rus_Tigr2 = PASS
+  No illegal Prerequisites Upgrade = PASS
+  No vehicle WeaponSetUpgrade modules = PASS
+  No stub MappedImage = PASS
+  No Tigr on _T/WF = PASS
+  Weapon/Armor/Locomotor/payload/Tier refs = PASS
+  ART RUS_BTR90 = PASS
+  BTR82A.ini unchanged = PASS
+  Default\Upgrade.ini unchanged = PASS
+
+DATA SHA256 37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e
+ART_CHANGED = NO

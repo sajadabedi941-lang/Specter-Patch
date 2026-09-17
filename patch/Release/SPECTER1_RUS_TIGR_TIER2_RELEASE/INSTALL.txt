@@ -1,0 +1,18 @@
+SPECTER1_RUS_TIGR_TIER2_RELEASE
+==============================
+
+NOT WINDOWS GAMEPLAY VALIDATED
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG
+   next to generals.exe (backup the original first).
+3. Do not replace ART. ART is unchanged.
+4. Launch Specter.
+5. Play Russia. Build Weapon Industry Plant (Industrial Complex).
+6. Build Tigr1 (slot 6). Tigr1 is always available.
+7. Purchase Tigr2 research (slot 5). Wait for completion.
+8. Build Tigr2 (slot 10 on the switched CommandSet).
+9. Command Center slot 11 also builds Tigr1.
+
+DATA SHA256 37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e
+ART_CHANGED = NO

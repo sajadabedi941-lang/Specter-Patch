@@ -1,0 +1,21 @@
+SPECTER_TIGR2_FULL_FIX_UPDATE
+=============================
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG.
+3. Do not replace ART. ART is unchanged
+   (SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26).
+4. Launch Specter.
+5. Play Russia. Build Weapon Industry Plant (Industrial Complex).
+6. Open the upgrade menu. Purchase upgrade_rus_tigr2 (slot 5).
+7. Wait for the upgrade to finish. The plant CommandSet switches and
+   Tigr2 UNIT_BUILD appears (slot 6).
+8. Build Tigr2 and enter gameplay.
+
+This package supersedes SPECTER_TIGR2_CRASH_FIX_UPDATE and
+SPECTER_TIGR2_CRASH_FIX_FINAL. It is rebuilt from the capture DATA
+baseline with no leftover stub/trace Tigr2 references.
+
+DATA SHA256 2b94e08a62b00e6885f9fcf804d98697d476a78144be1143a8bd21e95308c983
+ART_CHANGED = NO
+UPGRADE_RUS_TIGR2 = WORKING

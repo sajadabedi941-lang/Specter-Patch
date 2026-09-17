@@ -1,0 +1,5 @@
+DOWNLOAD_LINK = https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/SPECTER1_RUS_TIGR_TIER2_RELEASE/SPECTER1_RUS_TIGR_TIER2_RELEASE.zip
+ZIP SHA256 3cfde1993ec1be0273e25111fcd10c71c551ffc9f63580c37c90bb0c7e1d4d84
+DATA SHA256 37419fb5a6e82eddaca83ff1679157cd189339826f74b0477781494f292a305e
+NOT WINDOWS GAMEPLAY VALIDATED = YES
+LAYOUT = original (_SPEC_DATA_ONE.big + installer/notes at zip root; no Data/Art folders)

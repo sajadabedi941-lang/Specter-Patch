@@ -1,0 +1,13 @@
+SPECTER_TIGR2_CRASH_FIX_UPDATE
+=============================
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG.
+3. Do not replace ART. ART is unchanged.
+4. Launch Specter.
+5. Russia -> Weapon Industry -> purchase upgrade_rus_tigr2.
+
+DATA SHA256 3808f22f5249358d308d705c1af6476e92150a04e227eb9bba5e9ea49f1f127e
+
+INGAME_TESTED = NO
+FINAL_VALIDATION = PASS

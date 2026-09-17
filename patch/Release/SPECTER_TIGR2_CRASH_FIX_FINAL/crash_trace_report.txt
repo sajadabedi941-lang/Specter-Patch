@@ -1,0 +1,95 @@
+TIGR2_CRASH_TRACE_REPORT
+
+UPGRADE_RUS_TIGR2_CRASH = FIXED
+
+Crash source:
+  The previous stub only registered Upgrade_Rus_Tigr2 + Command_Upgrade_Rus_Tigr2
+  + MappedImage upgrade_rus_tigr2. It never created Object RussiaVehicleTigr2,
+  never added a UNIT_BUILD button, and never put the upgrade on the CommandSet
+  Russia actually uses.
+
+  Execution path (Russia start):
+    PlayerTemplate FactionRussia StartingBuilding = RussiaCommandCenter
+    RussiaDozerCommandSet -> Command_ConstructRussiaIndustrialComplex
+    Object RussiaIndustrialComplex
+      Side = Russia
+      CommandSet = RussiaIndsturialComplexCommandSet   << live upgrade menu
+    Stub buttons lived only on RussiaWeaponIndustryPlantCommandSet_T/T1/T2
+      which belong to Object RussiaIndustrialComplex_T (Side = China).
+    Russia dozer does not build _T. Purchase on the live plant was impossible
+    or, if a leftover CommandSet referenced a missing object/module, SAGE
+    crashed.
+
+  Working Russia vehicle upgrade (Upgrade_SU39) chain:
+    Upgrade Upgrade_SU39
+    Command_Upgrade_SU39 PLAYER_UPGRADE on RussiaIndsturialComplexCommandSet slot 1
+    Object RussiaJetSU25T modules:
+      MaxHealthUpgrade    TriggeredBy = Upgrade_SU39
+      WeaponSetUpgrade    TriggeredBy = Upgrade_SU39
+      LocomotorSetUpgrade TriggeredBy = Upgrade_SU39
+      Draw PLAYER_UPGRADE Model = RUS_SU39
+      PLAYER_UPGRADE weapons: 9A1472_Vikhr1_SU39 / KH-29T_Missile_SU39 / ODAB_500_PMV_SU39
+    Those modules are SAFE only because the SU39 weapons and RUS_SU39 W3D exist.
+
+  Isolation:
+    Disabled (never added) WeaponSetUpgrade / MaxHealthUpgrade /
+    LocomotorSetUpgrade / ObjectCreationUpgrade / CommandSetUpgrade on Tigr2.
+    No INI contains TriggeredBy = Upgrade_Rus_Tigr2.
+    Tigr2 is a BTR82A clone gated by Prerequisites Upgrade = Upgrade_Rus_Tigr2.
+    Spawn uses the same weapons/armor/locomotor/W3D as working BTR82A.
+
+Broken file:
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\APC\BTR82A.ini
+  (RussiaVehicleTigr2 was absent)
+  Data\INI\CommandSet.ini
+  (RussiaIndsturialComplexCommandSet had no Tigr2 button; stub used _T CS)
+
+Broken object:
+  RussiaVehicleTigr2 (missing). No ART W3D named Tigr / GAZ-Tigr.
+  Donor: RussiaVehicleBTR82A
+    Model RUS_BTR90 / RUS_BTR90D
+    Weapons 30mm_2A72_dualfeed + 7_62mm_PKT_Coaxial
+    Armor BTR90Armor
+    Locomotor TCD_510diesel
+    CommandSet GenericIFVcommandset
+    Side Russia
+
+Fix applied:
+  1. Upgrade Upgrade_Rus_Tigr2 cloned from Upgrade_SU39 (ButtonImage rus_btr82).
+  2. Command_Upgrade_Rus_Tigr2 cloned from Command_Upgrade_SU39
+     (PLAYER_UPGRADE, OK_FOR_MULTI_SELECT commented off, Border ACTION).
+  3. Command_ConstructRussiaVehicleTigr2 UNIT_BUILD -> RussiaVehicleTigr2.
+  4. Object RussiaVehicleTigr2 appended to BTR82A.ini as a BTR82A clone.
+     Prerequisites Upgrade = Upgrade_Rus_Tigr2. UpgradeCameo1 set.
+     ZERO upgrade-triggered modules (the crashy SU39-style ones).
+  5. Live CommandSets:
+     RussiaIndsturialComplexCommandSet slot 5 upgrade, slot 6 construct
+     RussiaCommandCenterCommandSet slot 11 construct (next to BTR82A)
+     _T/_T1/_T2 keep the upgrade button only (no construct on China-sided _T).
+  6. MappedImage upgrade_rus_tigr2 aliases rus_btr82 texture coords.
+  War Factory CommandSet unchanged. ART unchanged.
+
+Test result:
+  INGAME_TESTED = NO (no Generals/ZH client in this environment)
+  PACK_EXECUTION_PATH = PASS
+  Upgrade definition = PASS
+  CommandButton upgrade = PASS
+  CommandButton construct = PASS
+  CommandSet live path = PASS
+  Object RussiaVehicleTigr2 = PASS
+  Weapons on object = PASS
+  Armor on object = PASS
+  Prerequisites Upgrade gate = PASS
+  No SU39-style upgrade modules = PASS
+  No TriggeredBy Upgrade_Rus_Tigr2 = PASS
+  Single Upgrade name = PASS
+  Single CommandButton name = PASS
+  Single Object name = PASS
+  MappedImage = PASS
+  Weapon/Armor/Locomotor/FX/OCL/payload/CS defs = PASS
+  ART RUS_BTR90 + rus_Icons05 = PASS
+  Side=Russia = PASS
+  TriggeredBy leftovers = none
+
+DATA SHA256 e6416b4c8e345e302a67473b0efc820119414df785b90346b0f35c9acf91d37b
+ART_CHANGED = NO

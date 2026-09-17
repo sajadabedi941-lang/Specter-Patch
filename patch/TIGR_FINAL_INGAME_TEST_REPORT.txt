@@ -1,0 +1,97 @@
+TIGR_FINAL_INGAME_TEST_REPORT
+
+NO_GITHUB_RELEASE = YES
+RELEASE_ZIP = NOT PREPARED (not all PASS)
+
+DATA under test
+  SHA256 4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+  Pack   patch/Release/SPECTER1_RUS_TIGR_TIER1_PARSE/_SPEC_DATA_ONE.big
+  Client /tmp/zh_tigr_ingame (SPECTER FINAL copy + this DATA)
+  Wine   wine-9.0 win32  LIBGL_ALWAYS_SOFTWARE=1  generals.exe -win
+
+============================================================
+RESULTS
+============================================================
+Upgrade parse:     PASS
+Tigr1 build:       FAIL
+Tigr2 build:       FAIL
+Upgrade apply:     FAIL
+Gameplay:          FAIL
+Load save:         FAIL
+Skirmish start:    FAIL
+AI Russia faction: FAIL
+
+============================================================
+Upgrade parse: PASS
+============================================================
+Client loaded Specter DATA far enough to show the SPECTER1 / PCC STUDIOS
+splash. ReleaseCrashInfo did NOT report an INI parse failure.
+
+A parse crash at Data\INI\Upgrade.ini / Upgrade Upgrade_RUS_Tier1 would
+read "Error parsing INI file" with that line. That did not happen.
+
+Crash actually written (parse-fix DATA):
+  Reason Uncaught Exception during initialization.
+  EXCEPTION_ACCESS_VIOLATION  write 056F0000  EIP 0x007D1A0F
+  WinMain at 401700
+  No Upgrade.ini line. No CommandButton/CommandSet line.
+
+Unique Default+Upgrade.ini templates remain 128 (ZH UPGRADE_MAX_COUNT).
+Upgrade.ini is byte-identical to capture. Upgrade_RUS_Tier1 kept.
+
+============================================================
+A/B: same crash on known-good capture DATA
+============================================================
+Capture DATA SHA256
+  cc0595379e7f255f98170bd4502ed0479b634162739bd206748c86459176552b
+
+Capture ReleaseCrashInfo is the SAME crash:
+  EXCEPTION_ACCESS_VIOLATION  write 056F0000  EIP 0x007D1A0F
+  same registers (EAX/EBX/ECX/EDX/ESI/EDI/ESP/EBP/EFLAGS)
+
+This init AV is the Wine/host renderer-OLE path, not Tigr / Tier1.
+Prior Specter wine notes: splash can load; playable skirmish cannot
+(D3D/OLE/no audio device).
+
+============================================================
+Russia in-game checklist (not reached)
+============================================================
+1. Open upgrade menu          FAIL  never reached main menu
+2. Build Tigr1                FAIL
+3. Build Tigr2                FAIL
+4. Apply Upgrade_RUS_Tier1    FAIL
+5. Enter gameplay             FAIL
+6. Spawn multiple Tigr1/Tigr2 FAIL
+7. Verify no crash            FAIL  host init AV after splash
+   (identical on capture DATA)
+
+Also:
+- Load save        FAIL  no menu
+- Skirmish start   FAIL  Technical Difficulties dialog after splash
+- AI Russia        FAIL
+
+============================================================
+Client log (Wine)
+============================================================
+Splash window title: Command and Conquer Generals
+Then: Technical Difficulties (generic serious error) / OK
+game.dat runs ~35-40s at high CPU then AV during initialization.
+No playable skirmish. No self-hosted Windows worker available.
+
+Pack-path (non-client) still PASS from UPGRADE_RUS_TIER1_PARSE_FIX_REPORT:
+  Tigr1 live CS + object clone
+  Tigr2 unlocked via Upgrade_RUS_Tier1 CommandSetUpgrade
+  Upgrade.ini unchanged vs capture
+
+============================================================
+Release gate
+============================================================
+INGAME_ALL_PASS = NO
+Do not create GitHub release.
+Do not prepare release ZIP until a real Windows ZH client completes
+the Russia checklist above.
+
+Evidence:
+  patch/Release/SPECTER1_RUS_TIGR_TIER1_PARSE/ReleaseCrashInfo_PARSEFIX.txt
+  patch/Release/SPECTER1_RUS_TIGR_TIER1_PARSE/ReleaseCrashInfo_CAPTURE.txt
+  patch/UPGRADE_RUS_TIER1_PARSE_FIX_REPORT.txt

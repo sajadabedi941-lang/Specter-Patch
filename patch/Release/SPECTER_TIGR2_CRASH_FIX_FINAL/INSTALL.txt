@@ -1,0 +1,19 @@
+SPECTER_TIGR2_CRASH_FIX_FINAL
+=============================
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG.
+3. Do not replace ART. ART is unchanged
+   (SHA256 81352688fcf75b5375ce88106c9fc87f8c37b0645885bd5077d385b4a63f0b26).
+4. Launch Specter.
+5. Play Russia. Build Weapon Industry Plant (Industrial Complex).
+6. Open the upgrade menu. Purchase upgrade_rus_tigr2 (slot 5).
+7. Wait for the upgrade to finish.
+8. Spawn Tigr2 from the same building (slot 6) or from the Command Center
+   next to BTR82A (slot 11).
+
+This package supersedes SPECTER_TIGR2_CRASH_FIX_UPDATE.
+
+DATA SHA256 e6416b4c8e345e302a67473b0efc820119414df785b90346b0f35c9acf91d37b
+ART_CHANGED = NO
+UPGRADE_RUS_TIGR2_CRASH = FIXED

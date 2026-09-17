@@ -1,0 +1,86 @@
+TIGR2_FULL_DEBUG_REPORT
+
+UPGRADE_RUS_TIGR2 = WORKING
+
+Original crash cause:
+  Two failed patches stacked on a missing unit.
+
+  Patch 1 (stub) added Upgrade/CommandButton/MappedImage upgrade_rus_tigr2
+  cloned from Upgrade_RUS_Tier2 and hung the button on
+  RussiaWeaponIndustryPlantCommandSet_T/T1/T2. Those CommandSets belong to
+  Object RussiaIndustrialComplex_T (Side=China). Live Russia builds
+  RussiaIndustrialComplex -> RussiaIndsturialComplexCommandSet. No target
+  object existed.
+
+  Patch 2 (trace) cloned BTR82A as RussiaVehicleTigr2 and gated it with:
+
+      Prerequisites
+        Object = RussiaCommandCenter
+        Upgrade = Upgrade_Rus_Tigr2
+      End
+
+  `Upgrade =` is not a valid Prerequisites field in this DATA set
+  (zero uses; only Object and Science appear). RussiaVehicleTigr2 is
+  KindOf PRELOAD, so SAGE parses it at load. The live upgrade menu also
+  had UNIT_BUILD Tigr2 on slot 6, so a template parse failure crashes
+  when the Weapon Industry Plant is selected.
+
+  WeaponSetUpgrade / MaxHealthUpgrade / LocomotorSetUpgrade were NOT used
+  on Tigr2. Those SU39 modules would also crash if pointed at missing
+  Tigr weapons (9A1472_Vikhr1_SU39 / RUS_SU39). They stay omitted.
+
+Broken file:
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\APC\BTR82A.ini
+  (Patch 2 appended a second Object with illegal Prerequisites Upgrade)
+  Data\INI\CommandSet.ini
+  (construct on live RussiaIndsturialComplexCommandSet; stub buttons on _T)
+
+Broken reference:
+  Prerequisites -> Upgrade = Upgrade_Rus_Tigr2
+  Command_ConstructRussiaVehicleTigr2 on the pre-upgrade CommandSet
+  MappedImage upgrade_rus_tigr2 / ButtonImage upgrade_rus_tigr2 (stub)
+  Command_Upgrade_Rus_Tigr2 on China-sided _T CommandSets
+
+New implementation (from capture DATA, no leftover Tigr2):
+  1. Upgrade Upgrade_Rus_Tigr2 copied from working Upgrade_SU39
+     (ButtonImage rus_btr82, existing MappedImage).
+  2. Command_Upgrade_Rus_Tigr2 copied from working Command_Upgrade_SU39
+     (PLAYER_UPGRADE, OK_FOR_MULTI_SELECT commented, Border ACTION).
+  3. Live CommandSet RussiaIndsturialComplexCommandSet slot 5 = upgrade
+     ONLY. Construct is NOT on the pre-upgrade bar.
+  4. CommandSetUpgrade ModuleTag_Tigr2CS on Object RussiaIndustrialComplex
+     TriggeredBy Upgrade_Rus_Tigr2 -> RussiaIndsturialComplexCommandSet_Tigr2
+     (same module used by working RUS_Tier2 on the _T plant).
+  5. Post-upgrade CommandSet adds Command_ConstructRussiaVehicleTigr2 slot 6
+     and keeps every original plant button.
+  6. Object RussiaVehicleTigr2 in new file Tigr2.ini: BTR82A clone, name
+     only. No Prerequisites Upgrade, no UpgradeCameo, no extra modules.
+     Weapons 30mm_2A72_dualfeed / 7_62mm_PKT_Coaxial, Armor BTR90Armor,
+     Locomotor TCD_510diesel, Model RUS_BTR90, Side Russia.
+  Isolated module: CommandSetUpgrade on the plant. Vehicle has zero
+  upgrade-triggered modules.
+
+Test result:
+  INGAME_TESTED = NO (no Generals/ZH client in this environment)
+  PACK_EXECUTION_PATH = PASS
+  Upgrade definition = PASS
+  CommandButton upgrade SU39-style = PASS
+  CommandButton construct = PASS
+  Live CS has upgrade, no construct = PASS
+  Post-upgrade CS has construct = PASS
+  CommandSetUpgrade on RussiaIndustrialComplex = PASS
+  Object clone exact except name = PASS
+  No Prerequisites Upgrade = PASS
+  No vehicle upgrade modules = PASS
+  No UpgradeCameo on Tigr2 = PASS
+  No MappedImage upgrade_rus_tigr2 = PASS
+  No Tigr2 on _T/WF/CC = PASS
+  BTR82A.ini unchanged = PASS
+  MappedImages unchanged = PASS
+  Side=Russia = PASS
+  Weapon/Armor/Locomotor/FX/OCL/payload = PASS
+  ART RUS_BTR90 = PASS
+
+DATA SHA256 2b94e08a62b00e6885f9fcf804d98697d476a78144be1143a8bd21e95308c983
+ART_CHANGED = NO
+NO_GITHUB_RELEASE = YES

@@ -1,0 +1,26 @@
+Release Crash at Thu Sep 17 20:56:37 2026
+; Reason Uncaught Exception during initialization.
+
+Last error:
+Exception is access violation
+WinMain at 401700
+Error code: EXCEPTION_ACCESS_VIOLATION
+Description: The thread tried to read from or write to a virtual address for which it does not have the appropriate access.
+Access address:056F0000 was written to.
+
+Stack Dump:
+  <Unknown>(-1) : <Unknown> 0x007D1A0F
+
+Details:
+Register dump...
+Eip:007D1A0F	Esp:0031AF58	Ebp:000901CA
+Eax:056F0000	Ebx:00000050	Ecx:FFFE21D4
+Edx:00000043	Esi:056EDE54	Edi:056D0028
+EFlags:00010202 
+CS:0023  SS:002b  DS:002b  ES:002b  FS:006b  GS:0063
+EIP bytes dump...
+
+Bytes at CS:EIP (007D1A0F)  : 89 28 83 C0 04 4A 75 F5 4B 75 E9 5F 5E 5D 5B C3 90 B8 B4 4F 00 00 E8 36 EF 10 00 56 8B B4 24 BC 
+
+
+Current stack:

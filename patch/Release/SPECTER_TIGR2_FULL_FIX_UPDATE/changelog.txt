@@ -1,0 +1,29 @@
+SPECTER_TIGR2_FULL_FIX_UPDATE
+
+Rebuilt upgrade_rus_tigr2 from scratch on the capture DATA baseline.
+Supersedes SPECTER_TIGR2_CRASH_FIX_UPDATE and SPECTER_TIGR2_CRASH_FIX_FINAL.
+
+Previous broken references removed:
+  - Illegal Prerequisites Upgrade = Upgrade_Rus_Tigr2 (never a valid
+    Prerequisites field in this DATA)
+  - UNIT_BUILD Tigr2 on the pre-upgrade live CommandSet
+  - Stub buttons on China-sided _T Weapon Industry CommandSets
+  - MappedImage upgrade_rus_tigr2 / ButtonImage upgrade_rus_tigr2
+  - Tigr2 object appended into BTR82A.ini
+
+New chain:
+  - Upgrade_Rus_Tigr2 copied from working Upgrade_SU39 (rus_btr82)
+  - Command_Upgrade_Rus_Tigr2 copied from working Command_Upgrade_SU39
+  - Live RussiaIndsturialComplexCommandSet slot 5 = upgrade only
+  - CommandSetUpgrade on RussiaIndustrialComplex (same module as RUS_Tier2)
+    -> RussiaIndsturialComplexCommandSet_Tigr2 adds Tigr2 UNIT_BUILD
+  - Object RussiaVehicleTigr2 = name-only BTR82A clone in Tigr2.ini
+    (RUS_BTR90, 30mm_2A72_dualfeed, 7_62mm_PKT_Coaxial, BTR90Armor,
+    TCD_510diesel). No extra upgrade modules.
+
+Only four existing DATA files changed plus new Tigr2.ini.
+War Factory, other factions, identity, ART unchanged.
+
+DATA SHA256 2b94e08a62b00e6885f9fcf804d98697d476a78144be1143a8bd21e95308c983
+ART_CHANGED = NO
+UPGRADE_RUS_TIGR2 = WORKING

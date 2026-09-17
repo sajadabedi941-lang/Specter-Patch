@@ -1,0 +1,3 @@
+_SPEC_DATA_ONE.big  SHA256 4bf21a180a64dbd82a15cf5f9d67e5f7c059422a7be8bea6cf2ad9f837fb3855
+ART unchanged
+Upgrade.ini unchanged vs capture

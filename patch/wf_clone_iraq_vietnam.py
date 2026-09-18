@@ -190,7 +190,7 @@ def adapt_donor(
     dest_display: str,
 ) -> str:
     text = donor
-    n, err = re.subn(
+    text, n = re.subn(
         rf"(?im)^Object\s+{re.escape(src_object)}\s*$",
         f"Object {dest['object']}",
         text,
@@ -198,7 +198,6 @@ def adapt_donor(
     )
     if n != 1:
         raise SystemExit(f"{dest['name']}: object rename failed ({n})")
-    text = err
     n, text = _sub_count(text, r"(?im)^(\s*Side\s*=\s*)\S+", rf"\g<1>{dest['side']}")
     if n != 1:
         raise SystemExit(f"{dest['name']}: Side replace {n}")

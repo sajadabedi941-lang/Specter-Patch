@@ -558,22 +558,186 @@ def main() -> int:
     if "Command_ConstructTurkeyTankLeopard2A7Plus" not in cs_buttons(cmdset["TurkeyWarfactoryCommandSet"]):
         raise SystemExit("Turkey WF CS reverted")
 
+    # BIG integrity: unique packed paths, BIGF readable, same file count.
+    packed_names = [jf.norm(n).lower() for n, _ in packed]
+    if len(packed_names) != len(set(packed_names)):
+        raise SystemExit("duplicate packed paths")
+    if packed[0][0] and jf.read_big_list(WS_OUT / "_SPEC_DATA_ONE.big")[0][0] != packed[0][0]:
+        raise SystemExit("DATA BIG re-read mismatch")
+    art_entries = jf.read_big_list(WS_OUT / "_SPEC_ART_ONE.big")
+    art_names = [jf.norm(n).lower() for n, _ in art_entries]
+    if not art_names or not all(n.startswith("art\\") for n in art_names):
+        raise SystemExit("ART BIG layout is not Art\\...")
+    if any(n.startswith("data\\") for n in art_names):
+        raise SystemExit("DATA paths leaked into ART BIG")
+    data_names = [jf.norm(n).lower() for n, _ in packed]
+    if any(n.startswith("art\\") for n in data_names):
+        raise SystemExit("ART paths leaked into DATA BIG")
+
+    # Duplicate Object templates across packed INIs.
+    obj_homes: dict[str, list[str]] = {}
+    all_objs: dict[str, str] = {}
+    for n, b in packed:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = b.decode("latin1", errors="replace")
+        for oname, blk in parse_objects(t).items():
+            obj_homes.setdefault(oname, []).append(n)
+            all_objs[oname] = blk
+    dup_objs = {k: v for k, v in obj_homes.items() if len(v) > 1}
+    src_homes: dict[str, list[str]] = {}
+    for n, b in src_entries:
+        if not n.lower().endswith(".ini"):
+            continue
+        t = b.decode("latin1", errors="replace")
+        for oname, _blk in parse_objects(t).items():
+            src_homes.setdefault(oname, []).append(n)
+    src_dups = {k for k, v in src_homes.items() if len(v) > 1}
+    new_dups = [k for k in dup_objs if k not in src_dups]
+    if new_dups:
+        raise SystemExit("new duplicate objects introduced: " + ", ".join(new_dups[:10]))
+
+    # Broken INI refs on the nine factions' WF / Camp / MIC / Strategy bars.
+    check_cs = (
+        [
+            "Iraq_WarFactoryCommandSet_T", "Iraq_WarFactoryCommandSet_T3",
+            "Iraq_BarracksCommandSet", "Iraq_MICCommandSet",
+            "Vietnam_WarFactoryCommandSet", "Vietnam_BarracksCommandSet", "Vietnam_MICCommandSet",
+            "SwedenWarfactoryCommandSet", "SwedenCampCommandSet", "SwedenStrategyCenterCommandSet",
+            "TurkeyWarfactoryCommandSet", "TurkeyCampCommandSet", "TurkeyStrategyCenterCommandSet",
+            "BritainWarfactoryCommandSet", "BritainCampCommandSet", "BritainStrategyCenterCommandSet",
+            "GermanyWarfactoryCommandSet", "GermanyCampCommandSet", "GermanyStrategyCenterCommandSet",
+            "FranceWarfactoryCommandSet", "FranceCampCommandSet", "FranceStrategyCenterCommandSet",
+            "ItalyWarfactoryCommandSet", "ItalyCampCommandSet", "ItalyStrategyCenterCommandSet",
+            "UkraineWarfactoryCommandSet", "UkraineCampCommandSet", "UkraineStrategyCenterCommandSet",
+        ]
+    )
+    broken = []
+    for csname in check_cs:
+        if csname not in cmdset:
+            broken.append(f"missing CS {csname}")
+            continue
+        for btn in cs_buttons(cmdset[csname]):
+            if btn not in cmdbtn:
+                broken.append(f"{csname}:{btn} missing CommandButton")
+                continue
+            cmd = field(cmdbtn[btn], "Command") or ""
+            if cmd in ("UNIT_BUILD", "DOZER_CONSTRUCT"):
+                obj = field(cmdbtn[btn], "Object") or ""
+                if obj and obj not in all_objs:
+                    broken.append(f"{csname}:{btn} Object {obj} missing")
+            if cmd == "PLAYER_UPGRADE":
+                up = field(cmdbtn[btn], "Upgrade") or ""
+                if not up:
+                    broken.append(f"{csname}:{btn} PLAYER_UPGRADE has no Upgrade=")
+    if broken:
+        raise SystemExit("broken INI refs: " + "; ".join(broken[:20]))
+
+    def pu_btns(csname: str) -> list[str]:
+        return [
+            b for b in cs_buttons(cmdset[csname])
+            if b in cmdbtn and field(cmdbtn[b], "Command") == "PLAYER_UPGRADE"
+        ]
+
+    country_audit = [
+        "",
+        "===== COUNTRY AUDIT =====",
+        "",
+        "IRAQ",
+        "  BIG_PATHS = Data\\INI\\Object\\Specter\\Iraq Army\\...",
+        "  WARFACTORY = Iraq_WarFactoryCommandSet_T/T1/T2/T3 all equal full T3 roster",
+        "  WARFACTORY_UNLOCKED = T-72 BMP-1 BMP-2 BTR-90 2S1 Sam8 AssadBabel-2 SA-6 Sarab7 Alhussaien Roland3K BM-21 R11ScudB",
+        "  MIC_PATH_KEPT = YES  buttons=" + ", ".join(pu_btns("Iraq_MICCommandSet")),
+        "  CAMP = Iraq_BarracksCommandSet  " + ", ".join(pu_btns("Iraq_BarracksCommandSet")),
+        "  CAMP_UNLOCKED = Capture RGD5 RPG29",
+        "  BLOCKING_PLAYER_UPGRADE = NO  SCIENCE = NO  NEEDEDUPGRADE = NO  PREREQ_UPGRADE = NO",
+        "  KEPT = AADS AA/ABM, ICBM, GLA worker pack/unpack, MIC upgrade buttons",
+        "",
+        "VIETNAM",
+        "  BIG_PATHS = Data\\INI\\Object\\Specter\\Vietnam People's Armed Forces\\...",
+        "  WARFACTORY = Vietnam_WarFactoryCommandSet  tier CommandSetUpgrade removed",
+        "  MIC_PATH_KEPT = YES  buttons=" + ", ".join(pu_btns("Vietnam_MICCommandSet")),
+        "  CAMP = Vietnam_BarracksCommandSet  " + ", ".join(pu_btns("Vietnam_BarracksCommandSet")),
+        "  CAMP_UNLOCKED = Capture RGD5 RPG29",
+        "  BLOCKING_PLAYER_UPGRADE = NO  SCIENCE = NO  NEEDEDUPGRADE = NO  PREREQ_UPGRADE = NO",
+        "  KEPT = AADS AA/ABM, ICBM, MIC upgrade buttons",
+        "",
+        "SWEDEN",
+        "  WARFACTORY = SwedenWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = SwedenCampCommandSet  " + ", ".join(pu_btns("SwedenCampCommandSet")),
+        "  STRATEGY = SwedenStrategyCenterCommandSet  " + ", ".join(pu_btns("SwedenStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "TURKEY",
+        "  WARFACTORY = TurkeyWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = TurkeyCampCommandSet  " + ", ".join(pu_btns("TurkeyCampCommandSet")),
+        "  STRATEGY = TurkeyStrategyCenterCommandSet  " + ", ".join(pu_btns("TurkeyStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "UNITED KINGDOM",
+        "  WARFACTORY = BritainWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = BritainCampCommandSet  " + ", ".join(pu_btns("BritainCampCommandSet")),
+        "  STRATEGY = BritainStrategyCenterCommandSet  " + ", ".join(pu_btns("BritainStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "GERMANY",
+        "  WARFACTORY = GermanyWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = GermanyCampCommandSet  " + ", ".join(pu_btns("GermanyCampCommandSet")),
+        "  STRATEGY = GermanyStrategyCenterCommandSet  " + ", ".join(pu_btns("GermanyStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "FRANCE",
+        "  WARFACTORY = FranceWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = FranceCampCommandSet  " + ", ".join(pu_btns("FranceCampCommandSet")),
+        "  STRATEGY = FranceStrategyCenterCommandSet  " + ", ".join(pu_btns("FranceStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "ITALY",
+        "  WARFACTORY = ItalyWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = ItalyCampCommandSet  " + ", ".join(pu_btns("ItalyCampCommandSet")),
+        "  STRATEGY = ItalyStrategyCenterCommandSet  " + ", ".join(pu_btns("ItalyStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+        "",
+        "UKRAINE",
+        "  WARFACTORY = UkraineWarfactoryCommandSet  PLAYER_UPGRADE conditions promoted",
+        "  CAMP = UkraineCampCommandSet  " + ", ".join(pu_btns("UkraineCampCommandSet")),
+        "  STRATEGY = UkraineStrategyCenterCommandSet  " + ", ".join(pu_btns("UkraineStrategyCenterCommandSet")),
+        "  STRATEGY_UNLOCKED = NuclearReactor MTS",
+        "  BLOCKING_PLAYER_UPGRADE = NO",
+    ]
+
     lines = [
         "SPECTER1 WF + CAMP UPGRADE UNLOCK",
         "BASELINE = SPECTER1_WARFACTORY_BUILD_FIX / PR #505",
         f"BASELINE_DATA_SHA256 = {EXPECTED_DATA_SHA}",
         f"NEW_DATA_SHA256 = {new_sha}",
         f"ART_SHA256 = {EXPECTED_ART_SHA} (unchanged copy)",
+        f"PACKED_DATA_FILES = {len(packed)}",
+        f"PACKED_ART_FILES = {len(art_entries)}",
+        f"DUPLICATE_PACKED_PATHS = NO",
+        f"DUPLICATE_FACTION_OBJECTS_INTRODUCED = NO",
+        f"PREEXISTING_DUPLICATE_OBJECTS = {len(src_dups)} (present in PR #505, not added)",
+        f"BROKEN_INI_REFS_WF_CAMP = NO",
+        "BIG_INTEGRITY = YES",
+        "DATA_LAYOUT = Data\\INI\\... inside _SPEC_DATA_ONE.big",
+        "ART_LAYOUT = Art\\... inside _SPEC_ART_ONE.big",
         "ART_CHANGED = NO",
         "WEAPON_INI_CHANGED = NO",
         "UPGRADE_INI_CHANGED = NO",
         "OTHER_FACTIONS_UNCHANGED = YES",
         "PACKED_FILE_COUNT_UNCHANGED = YES",
         "NEW_DATA_OR_ART_FOLDERS = NO",
+        "NEW_BIG_FILES = NO  (same two archive names as PR #505)",
         "FACTIONS = Iraq, Sweden, Turkey, United Kingdom (Britain), Germany, France, Italy, Ukraine, Vietnam",
         "",
         "WARFACTORY = Iraq T/T1/T2 bars equal T3 full roster; Iraq/Vietnam tier CommandSetUpgrade removed",
-        "MIC = Iraq/Vietnam research bars show all upgrade buttons without sequential tier lock",
+        "MIC = Iraq/Vietnam research bars show all upgrade buttons; MIC path kept",
         "CAMP = Capture/RGD5/RPG29 buttons kept and unlocked (no Science/NeededUpgrade)",
         "STRATEGY = NuclearReactor + MTS buttons kept; research TriggeredBy dropped on faction objects",
         "PLAYER_UPGRADE_CONDITIONS = promoted to default on these nine factions' objects",
@@ -589,7 +753,7 @@ def main() -> int:
         "DATA_CHANGED = YES",
         "ART_CHANGED = NO",
     ]
-    audit = "\n".join(lines) + "\n"
+    audit = "\n".join(lines + country_audit) + "\n"
 
     changelog = """SPECTER1 WarFactory + Camp upgrade unlock
 
@@ -604,9 +768,8 @@ France, Italy, Ukraine, and Vietnam:
    Iraq/Vietnam CommandSetUpgrade modules gated by Upgrade_Irq_Tier1/2/3
    are removed so the factory bar cannot lock or shrink.
 2. Camp / main research building: Camp Capture (and Iraq/Vietnam RGD5/RPG29)
-   buttons stay on the bar. Iraq/Vietnam MIC shows every research button
-   without sequential tier gating. NATO Strategy Center NuclearReactor/MTS
-   buttons stay.
+   buttons stay on the bar. Iraq/Vietnam MIC upgrade buttons stay and are
+   all visible (path kept). NATO Strategy Center NuclearReactor/MTS buttons stay.
 3. PLAYER_UPGRADE WeaponSet/ArmorSet Conditions on these nine factions
    are promoted to default. Research TriggeredBy is dropped (AADS mode
    toggles and ICBM grant kept). Science / NeededUpgrade / Prerequisites

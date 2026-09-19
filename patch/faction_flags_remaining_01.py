@@ -475,7 +475,7 @@ def main() -> int:
     for side, (_c, stem, _cc) in SIDES.items():
         if f"art\\textures\\{stem}".lower() not in art_map:
             raise SystemExit(f"missing flag texture {stem}")
-        if f"art\\w3d\\{hs_of[side]}.w3d" not in art_map:
+        if f"art\\w3d\\{hs_of[side]}.w3d".lower() not in art_map:
             raise SystemExit(f"missing HS mesh {hs_of[side]}")
     for (donor, side), clone in clone_of.items():
         if f"art\\w3d\\{clone}.w3d".lower() not in art_map:

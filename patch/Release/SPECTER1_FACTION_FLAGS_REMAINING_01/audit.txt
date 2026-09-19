@@ -1,0 +1,170 @@
+SPECTER1 REMAINING FACTION FLAGS
+BASELINE = SPECTER1_CAMP_CLONE_IRAQ_VIETNAM
+BASELINE_DATA_SHA256 = e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+BASELINE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+NEW_DATA_SHA256 = c29a14b27609c7e87ceba5df0edbf69ca3d67222a5ef03a030986c228e07d622
+NEW_ART_SHA256 = e1f603a06c3ccb18601e046d0fef212c56888425db3e77fcd5a69be3c612c8c9
+PACKED_DATA_FILES = 2882 (was 2880, +MappedImages)
+PACKED_ART_FILES = 4509 (was 4432, +flag TGA/W3D)
+DUPLICATE_PACKED_PATHS = NO
+BIG_INTEGRITY = YES
+DATA_LAYOUT = Data\INI\... inside _SPEC_DATA_ONE.big
+ART_LAYOUT = Art\... inside _SPEC_ART_ONE.big
+NEW_DATA_OR_ART_FOLDERS = NO
+NEW_BIG_FILES = NO
+WEAPON_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES
+PROTECTED = USA, Iran, Israel, China, Russia, NATO, Egypt, North Korea, Iraq
+HUD_REPOINTS = 68
+BUILDING_MODEL_SWAPS = 368
+ABBAS_FLAG_SWAPS = 0
+EXTRA_FLAG_DRAWS = 62
+SELECT_FLAG = native MappedImage + real national TGA
+HUD_FLAG = native watermark/observer + real national TGA
+BUILDING_FLAG = W3D texture-name clones for baked-flag buildings; extra IqFlag Draw on flagless US/Radar models
+GAMEPLAY_CHANGED = NO
+INGAME_TESTED = NO
+DATA_CHANGED = YES
+ART_CHANGED = YES
+
+===== COUNTRY AUDIT =====
+
+JAPAN
+  FLAGCDN = jp  TEXTURE = Art\Textures\JP_Flag.tga
+  SELECT = GameinfoJapan / Japan_Logo
+  HUD = WatermarkJapan / SSObserverJapan
+  BUILDING_HS = JP_Flag_Hs
+  BUILDING_FILES = 9 baked / 2 extra-draw
+  PROTECTED = NO
+
+VIETNAM
+  FLAGCDN = vn  TEXTURE = Art\Textures\VN_Flag.tga
+  SELECT = GameinfoVietnam / Vietnam_Logo
+  HUD = WatermarkVietnam / SSObserverVietnam
+  BUILDING_HS = VN_Flag_Hs
+  BUILDING_FILES = 9 baked / 2 extra-draw
+  PROTECTED = NO
+
+SOUTHKOREA
+  FLAGCDN = kr  TEXTURE = Art\Textures\SK_Flag.tga
+  SELECT = GameinfoSouthKorea / SouthKorea_Logo
+  HUD = WatermarkSouthKorea / SSObserverSouthKorea
+  BUILDING_HS = SK_Flag_Hs
+  BUILDING_FILES = 9 baked / 2 extra-draw
+  PROTECTED = NO
+
+LIBYA
+  FLAGCDN = ly  TEXTURE = Art\Textures\LY_Flag.tga
+  SELECT = GameinfoLibya / Libya_Logo
+  HUD = WatermarkLibya / SSObserverLibya
+  BUILDING_HS = LY_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+SOUTHAFRICA
+  FLAGCDN = za  TEXTURE = Art\Textures\ZA_Flag.tga
+  SELECT = GameinfoSouthAfrica / SouthAfrica_Logo
+  HUD = WatermarkSouthAfrica / SSObserverSouthAfrica
+  BUILDING_HS = ZA_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+PAKISTAN
+  FLAGCDN = pk  TEXTURE = Art\Textures\PK_Flag.tga
+  SELECT = GameinfoPakistan / Pakistan_Logo
+  HUD = WatermarkPakistan / SSObserverPakistan
+  BUILDING_HS = PK_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+INDIA
+  FLAGCDN = in  TEXTURE = Art\Textures\IN_Flag.tga
+  SELECT = GameinfoIndia / India_Logo
+  HUD = WatermarkIndia / SSObserverIndia
+  BUILDING_HS = IN_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+SYRIA
+  FLAGCDN = sy  TEXTURE = Art\Textures\SY_Flag.tga
+  SELECT = GameinfoSyria / Syria_Logo
+  HUD = WatermarkSyria / SSObserverSyria
+  BUILDING_HS = SY_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+UAE
+  FLAGCDN = ae  TEXTURE = Art\Textures\UAE_Flag.tga
+  SELECT = GameinfoUAE / UAE_Logo
+  HUD = WatermarkUAE / SSObserverUAE
+  BUILDING_HS = UAE_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+SAUDIARABIA
+  FLAGCDN = sa  TEXTURE = Art\Textures\SA_Flag.tga
+  SELECT = GameinfoSaudiArabia / SaudiArabia_Logo
+  HUD = WatermarkSaudiArabia / SSObserverSaudiArabia
+  BUILDING_HS = SA_Flag_Hs
+  BUILDING_FILES = 7 baked / 2 extra-draw
+  PROTECTED = NO
+
+TURKEY
+  FLAGCDN = tr  TEXTURE = Art\Textures\TR_Flag.tga
+  SELECT = GameinfoTurkey / Turkey_Logo
+  HUD = WatermarkTurkey / SSObserverTurkey
+  BUILDING_HS = TR_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+SWEDEN
+  FLAGCDN = se  TEXTURE = Art\Textures\SE_Flag.tga
+  SELECT = GameinfoSweden / Sweden_Logo
+  HUD = WatermarkSweden / SSObserverSweden
+  BUILDING_HS = SE_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+UKRAINE
+  FLAGCDN = ua  TEXTURE = Art\Textures\UA_Flag.tga
+  SELECT = GameinfoUkraine / Ukraine_Logo
+  HUD = WatermarkUkraine / SSObserverUkraine
+  BUILDING_HS = UA_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+ITALY
+  FLAGCDN = it  TEXTURE = Art\Textures\IT_Flag.tga
+  SELECT = GameinfoItaly / Italy_Logo
+  HUD = WatermarkItaly / SSObserverItaly
+  BUILDING_HS = IT_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+BRITAIN
+  FLAGCDN = gb  TEXTURE = Art\Textures\UK_Flag.tga
+  SELECT = GameinfoBritain / Britain_Logo
+  HUD = WatermarkBritain / SSObserverBritain
+  BUILDING_HS = UK_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+GERMANY
+  FLAGCDN = de  TEXTURE = Art\Textures\DE_Flag.tga
+  SELECT = GameinfoGermany / Germany_Logo
+  HUD = WatermarkGermany / SSObserverGermany
+  BUILDING_HS = DE_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+
+FRANCE
+  FLAGCDN = fr  TEXTURE = Art\Textures\FR_Flag.tga
+  SELECT = GameinfoFrance / France_Logo
+  HUD = WatermarkFrance / SSObserverFrance
+  BUILDING_HS = FR_Flag_Hs
+  BUILDING_FILES = 6 baked / 6 extra-draw
+  PROTECTED = NO
+

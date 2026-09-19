@@ -1,0 +1,19 @@
+SPECTER1_FACTION_FLAGS_REMAINING_01
+===================================
+
+National flags for the remaining factions on the Camp-clone baseline.
+Protected factions (USA, Iran, Israel, China, Russia, NATO, Egypt,
+North Korea, Iraq) are unchanged. Gameplay data unchanged.
+Same GameRoot layout: two BIG files, no loose Data/Art.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 c29a14b27609c7e87ceba5df0edbf69ca3d67222a5ef03a030986c228e07d622
+  ART  SHA256 e1f603a06c3ccb18601e046d0fef212c56888425db3e77fcd5a69be3c612c8c9
+
+FLAGS_FIXED = YES
+INGAME_TESTED = NO

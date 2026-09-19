@@ -523,7 +523,8 @@ def main() -> int:
         if re.search(r"(?im)^\s*Model\s*=\s*(Irq__IqFlag_Hs|NKr__NKFlag_Hs)\b", t):
             leftover.append(f"{n} still donor HS flag")
         models_now = set(re.findall(r"(?im)^\s*Model\s*=\s*(\S+)", t))
-        for mdl in models_now:
+        new_models = {hs_of[side]} | {clone_of[k] for k in clone_of if k[1] == side}
+        for mdl in models_now & new_models:
             key = f"art\\w3d\\{mdl}.w3d".lower()
             if key not in art_w3d:
                 missing_art_model.append(f"{n} Model={mdl}")

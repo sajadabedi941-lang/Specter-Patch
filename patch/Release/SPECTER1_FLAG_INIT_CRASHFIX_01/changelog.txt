@@ -1,0 +1,23 @@
+SPECTER1 flag init crashfix
+
+The game booted on the Camp-clone baseline and crashed during
+initialization after the PR #516 / #517 flag BIGs.
+
+Broken references:
+1. Building Model= names longer than SAGE's 15-character W3D name
+   buffer (Iraq_Powerplant_UAE=19, NKor_Powerplant_JP=18, others 17-18).
+   All working donor meshes are <=15.
+2. Extra flag Draws and Abbas flag Draws used Model=<xx>_Flag_Hs but
+   Animation=Irq__IqFlag_Hs.Irq__IqFlag_Hs (or NKr__NKFlag_Hs), so init
+   bound a different W3D/anim container than the Model.
+
+Fix:
+- Rename those W3D clones to IqPwr_XX / NkPwr_XX / IqWF_XX / NkWF_XX
+  (<=8 chars) and retarget Model=.
+- Point Flag_Hs Animation at <mesh>.Irq__IqFlag_Hs.
+- Extra Draws stay (re-enabled after the anim fix). HUD / select /
+  camp MappedImages unchanged. Protected factions unchanged.
+- Weapon / Upgrade / CommandSet / CommandButton / PlayerTemplate
+  byte-identical.
+
+INGAME_TESTED = NO

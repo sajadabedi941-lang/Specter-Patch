@@ -1,0 +1,28 @@
+SPECTER1 FLAG INIT CRASHFIX
+BASELINE = SPECTER1_FACTION_CAMP_FLAGS_01 (#516 + #517)
+BASELINE_DATA_SHA256 = 0cc32a58a439dff4d0ad8c74b1cbf2aa02e34195a373492bf62f0dde0dddf10b
+BASELINE_ART_SHA256 = e1f603a06c3ccb18601e046d0fef212c56888425db3e77fcd5a69be3c612c8c9
+NEW_DATA_SHA256 = 1c22d1b2f70adba77f2889eec0e3d5a00455ef8a039fc2679a2505950075bb7d
+NEW_ART_SHA256 = 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+PACKED_DATA_FILES = 2883
+PACKED_ART_FILES = 4509
+DUPLICATE_PACKED_PATHS = NO
+BIG_INTEGRITY = YES
+CRASH = Uncaught Exception during initialization
+BROKEN_REF_1 = W3D Model= names >15 chars (Iraq_Powerplant_*, NKor_Powerplant_*, Irq_WarFactory_*, NKr_WarFactory_*)
+BROKEN_REF_2 = Flag_Hs Draw Animation container != Model (Irq__IqFlag_Hs / NKr__NKFlag_Hs)
+FILE_CAUSING_CRASH = building Object INIs that Model= long clones + extra/Abbas Flag_Hs Draws
+FIX_1 = renamed 20 W3D clones to <=15 char stems (IqPwr_/NkPwr_/IqWF_/NkWF_)
+FIX_2 = retargeted 260 Model= refs
+FIX_3 = rewrote 92 Flag_Hs Animation lines to <mesh>.Irq__IqFlag_Hs
+EXTRA_FLAG_DRAWS_KEPT = 62 (re-enabled with matching anim container)
+WEAPON_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_CHANGED = NO
+PLAYERTEMPLATE_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES
+GAMEPLAY_CHANGED = NO
+INGAME_TESTED = NO
+DATA_CHANGED = YES
+ART_CHANGED = YES

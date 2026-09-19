@@ -1,0 +1,21 @@
+SPECTER1 infantry Camp/Barracks flags
+
+Continues from SPECTER1_FACTION_FLAGS_REMAINING_01. Weapons, upgrades,
+CommandSets, PlayerTemplates, protected factions, and ART are unchanged.
+
+Replaces leftover USA / Iraq camp portraits and construct cameos for
+Japan, Vietnam, South Korea, Libya, South Africa, Pakistan, India, Syria,
+UAE, Saudi Arabia, Turkey, Sweden, Ukraine, Italy, United Kingdom,
+Germany, and France.
+
+1. Pre-game / build-menu camp preview: construct ButtonImage and
+   Object ButtonImage now use CampFlag<Side> (real national TGA).
+2. In-game HUD camp cameo: Object SelectPortrait uses the same image.
+3. Physical Camp/Barracks cloth: already native from PR #516
+   (irq_camp_* texture clones or extra national IqFlag Draw). Re-checked;
+   no leftover IraqiFlag/DPRK donor models.
+
+Object names and Country IDs unchanged. CommandButton gameplay fields
+other than those 17 ButtonImage lines are unchanged.
+
+INGAME_TESTED = NO

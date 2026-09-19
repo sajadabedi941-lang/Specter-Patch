@@ -184,7 +184,7 @@ def clone_w3d(donor: bytes, donor_tex: str, new_stem: str) -> bytes:
         raise SystemExit(f"no {donor_tex} refs to replace for {new_stem}")
     if len(out) != len(donor):
         raise SystemExit("W3D size changed")
-    if dt in bytes(out):
+    if donor_tex != new_stem and dt in bytes(out):
         raise SystemExit(f"leftover {donor_tex} after clone {new_stem}")
     return bytes(out)
 

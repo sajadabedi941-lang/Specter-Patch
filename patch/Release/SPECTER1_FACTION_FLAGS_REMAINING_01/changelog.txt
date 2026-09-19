@@ -1,0 +1,20 @@
+SPECTER1 remaining faction flags
+
+Continues from SPECTER1_CAMP_CLONE_IRAQ_VIETNAM. Gameplay, weapons,
+upgrades, CommandSets, and protected factions are unchanged.
+
+Replaces incorrect USA / GLA / DPRK flag images for Japan, Vietnam,
+South Korea, Libya, South Africa, Pakistan, India, Syria, UAE,
+Saudi Arabia, Turkey, Sweden, Ukraine, Italy, United Kingdom,
+Germany, and France.
+
+1. Pre-game select: SideIconImage / GeneralImage point at native
+   MappedImages backed by real national flag TGAs.
+2. In-game HUD: FlagWaterMark / EnabledImage point at the same flags.
+3. Building cloth: Power Plant, Camp, Supply, War Factory, and
+   Command Center models that baked IraqiFlag/DPRK_Flag now use
+   per-country W3D clones. Flagless US-lineage buildings and Radar
+   get a small extra national-flag Draw (Iraq IqFlag mesh, native
+   texture). Same object names.
+
+INGAME_TESTED = NO

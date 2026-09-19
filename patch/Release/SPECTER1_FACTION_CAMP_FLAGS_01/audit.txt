@@ -1,0 +1,152 @@
+SPECTER1 INFANTRY CAMP / BARRACKS FLAGS
+BASELINE = SPECTER1_FACTION_FLAGS_REMAINING_01
+BASELINE_DATA_SHA256 = c29a14b27609c7e87ceba5df0edbf69ca3d67222a5ef03a030986c228e07d622
+BASELINE_ART_SHA256 = e1f603a06c3ccb18601e046d0fef212c56888425db3e77fcd5a69be3c612c8c9
+NEW_DATA_SHA256 = 0cc32a58a439dff4d0ad8c74b1cbf2aa02e34195a373492bf62f0dde0dddf10b
+NEW_ART_SHA256 = e1f603a06c3ccb18601e046d0fef212c56888425db3e77fcd5a69be3c612c8c9
+PACKED_DATA_FILES = 2883 (was 2882, +CampFlags MappedImages)
+PACKED_ART_FILES = 4509 (unchanged from PR #516)
+DUPLICATE_PACKED_PATHS = NO
+BIG_INTEGRITY = YES
+DATA_LAYOUT = Data\INI\... inside _SPEC_DATA_ONE.big
+ART_LAYOUT = Art\... inside _SPEC_ART_ONE.big
+NEW_DATA_OR_ART_FOLDERS = NO
+NEW_BIG_FILES = NO
+WEAPON_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_GAMEPLAY_CHANGED = NO
+COMMANDBUTTON_CAMP_IMAGE_SWAPS = 17
+CAMP_PORTRAIT_SWAPS = 34
+CAMP_EXTRA_FLAG_DRAWS = 0
+PROTECTED_FACTIONS_UNCHANGED = YES
+PROTECTED = USA, Iran, Israel, China, Russia, NATO, Egypt, North Korea, Iraq
+SELECT_CAMP = CampFlag<Side> MappedImage + packed national TGA
+HUD_CAMP = same cameo on Object ButtonImage + construct ButtonImage
+BUILDING_CAMP_FLAG = PR #516 irq_camp_* clones / extra IqFlag Draw (verified)
+GAMEPLAY_CHANGED = NO
+INGAME_TESTED = NO
+DATA_CHANGED = YES
+ART_CHANGED = NO
+
+===== CAMP AUDIT =====
+
+BRITAIN
+  FILE = Camp.ini
+  SELECT = CampFlagBritain
+  HUD_CAMEO = CampFlagBritain
+  MODELS = UK_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+FRANCE
+  FILE = Camp.ini
+  SELECT = CampFlagFrance
+  HUD_CAMEO = CampFlagFrance
+  MODELS = FR_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+GERMANY
+  FILE = Camp.ini
+  SELECT = CampFlagGermany
+  HUD_CAMEO = CampFlagGermany
+  MODELS = DE_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+INDIA
+  FILE = India_Barracks.ini
+  SELECT = CampFlagIndia
+  HUD_CAMEO = CampFlagIndia
+  MODELS = irq_camp_IN
+  PROTECTED = NO
+
+ITALY
+  FILE = Camp.ini
+  SELECT = CampFlagItaly
+  HUD_CAMEO = CampFlagItaly
+  MODELS = IT_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+JAPAN
+  FILE = Iraq_Barracks.ini
+  SELECT = CampFlagJapan
+  HUD_CAMEO = CampFlagJapan
+  MODELS = irq_camp_JP
+  PROTECTED = NO
+
+LIBYA
+  FILE = Libya_Barracks.ini
+  SELECT = CampFlagLibya
+  HUD_CAMEO = CampFlagLibya
+  MODELS = irq_camp_LY
+  PROTECTED = NO
+
+PAKISTAN
+  FILE = Pakistan_Barracks.ini
+  SELECT = CampFlagPakistan
+  HUD_CAMEO = CampFlagPakistan
+  MODELS = irq_camp_PK
+  PROTECTED = NO
+
+SAUDIARABIA
+  FILE = SaudiArabia_Barracks.ini
+  SELECT = CampFlagSaudiArabia
+  HUD_CAMEO = CampFlagSaudiArabia
+  MODELS = irq_camp_SA
+  PROTECTED = NO
+
+SOUTHAFRICA
+  FILE = SouthAfrica_Barracks.ini
+  SELECT = CampFlagSouthAfrica
+  HUD_CAMEO = CampFlagSouthAfrica
+  MODELS = irq_camp_ZA
+  PROTECTED = NO
+
+SOUTHKOREA
+  FILE = Iraq_Barracks.ini
+  SELECT = CampFlagSouthKorea
+  HUD_CAMEO = CampFlagSouthKorea
+  MODELS = irq_camp_SK
+  PROTECTED = NO
+
+SWEDEN
+  FILE = Camp.ini
+  SELECT = CampFlagSweden
+  HUD_CAMEO = CampFlagSweden
+  MODELS = SE_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+SYRIA
+  FILE = Syria_Barracks.ini
+  SELECT = CampFlagSyria
+  HUD_CAMEO = CampFlagSyria
+  MODELS = irq_camp_SY
+  PROTECTED = NO
+
+TURKEY
+  FILE = Camp.ini
+  SELECT = CampFlagTurkey
+  HUD_CAMEO = CampFlagTurkey
+  MODELS = TR_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+UKRAINE
+  FILE = Camp.ini
+  SELECT = CampFlagUkraine
+  HUD_CAMEO = CampFlagUkraine
+  MODELS = UA_Flag_Hs, US_Camp
+  PROTECTED = NO
+
+UAE
+  FILE = UAE_Barracks.ini
+  SELECT = CampFlagUAE
+  HUD_CAMEO = CampFlagUAE
+  MODELS = irq_camp_UAE
+  PROTECTED = NO
+
+VIETNAM
+  FILE = Iraq_Barracks.ini
+  SELECT = CampFlagVietnam
+  HUD_CAMEO = CampFlagVietnam
+  MODELS = irq_camp_VN
+  PROTECTED = NO
+

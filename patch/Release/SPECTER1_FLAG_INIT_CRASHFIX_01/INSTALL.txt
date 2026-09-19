@@ -1,0 +1,17 @@
+SPECTER1_FLAG_INIT_CRASHFIX_01
+==============================
+
+Boot-restore patch for the PR #516 / #517 flag crash.
+Same GameRoot layout: two BIG files, no loose Data/Art.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 1c22d1b2f70adba77f2889eec0e3d5a00455ef8a039fc2679a2505950075bb7d
+  ART  SHA256 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+
+INIT_CRASHFIX = YES
+INGAME_TESTED = NO

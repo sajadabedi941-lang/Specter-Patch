@@ -400,7 +400,7 @@ def main() -> int:
         "",
         "===== REMAINING MODIFIED OBJECTS =====",
         f"TARGET_OBJECTS_STILL_DIFF_FROM_CAMP_CLONE = {len(remaining_modified)}",
-        *[f"  {x}" for x in remaining_modified] if remaining_modified else ["  NONE (all target building Objects restored)"],
+        *([f"  {x}" for x in remaining_modified] or ["  NONE (all target building Objects restored)"]),
         "",
         "===== WATCH AFTER STRIP =====",
         *[f"  {w}: {len(watch[w])} object-init hits" for w in watch_names],

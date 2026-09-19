@@ -1,0 +1,18 @@
+SPECTER1 flag boot-safe rollback
+
+#518 FLAG_INIT_CRASHFIX_01 still crashed during initialization.
+This patch does not keep any #516 / #517 / #518 flag Model, Animation,
+Draw, W3D clone, camp cameo, or HUD remap.
+
+It is a byte-identical copy of SPECTER1_CAMP_CLONE_IRAQ_VIETNAM, the
+last known launch before the flag patches.
+
+Isolation: group 0 (boot-safe) is shipped. Groups A-D stay rolled back
+until this pair launches in-game. B and D are the object-init crash
+surface (W3D clones + extra Flag_Hs Draws). A was never isolated.
+
+Protected factions unchanged. Weapon / Upgrade / CommandSet unchanged.
+PlayerTemplate and CommandButton restored to the pre-flag originals.
+
+INGAME_TESTED = NO (ZH exe not in this environment). This build is the
+guaranteed boot-safe pair, not a claim that flags still display.

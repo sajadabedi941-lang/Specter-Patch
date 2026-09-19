@@ -1,0 +1,632 @@
+SPECTER1 FLAG BOOT-SAFE ROLLBACK
+LAST_KNOWN_LAUNCH = SPECTER1_CAMP_CLONE_IRAQ_VIETNAM
+BOOT_SAFE_DATA_SHA256 = e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+BOOT_SAFE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+CRASHING_#518_DATA_SHA256 = 1c22d1b2f70adba77f2889eec0e3d5a00455ef8a039fc2679a2505950075bb7d
+CRASHING_#518_ART_SHA256 = 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+PACKED_DATA_FILES = 2880 (camp-clone 2880)
+PACKED_ART_FILES = 4432 (camp-clone 4432)
+DUPLICATE_PACKED_PATHS = NO
+BIG_INTEGRITY = YES
+IDENTICAL_TO_CAMP_CLONE = YES
+TARGET_INIS_RESTORED = 1213
+PROTECTED_FILES_UNCHANGED = 812
+
+===== #516/#517/#518 INTRODUCTIONS (removed) =====
+ADDED_DATA_FILES = 3
+  + data\ini\mappedimages\handcreated\specter_campflags.ini
+  + data\ini\mappedimages\handcreated\specter_remainingflags.ini
+  + data\ini\mappedimages\handcreated\turkey_factionimages.ini
+ADDED_ART_W3D = 60
+  + art\w3d\de_flag_hs.w3d
+  + art\w3d\fr_flag_hs.w3d
+  + art\w3d\in_flag_hs.w3d
+  + art\w3d\iqpwr_in.w3d
+  + art\w3d\iqpwr_ly.w3d
+  + art\w3d\iqpwr_pk.w3d
+  + art\w3d\iqpwr_sa.w3d
+  + art\w3d\iqpwr_sy.w3d
+  + art\w3d\iqpwr_uae.w3d
+  + art\w3d\iqpwr_za.w3d
+  + art\w3d\iqwf_ly.w3d
+  + art\w3d\iqwf_sa.w3d
+  + art\w3d\iqwf_sy.w3d
+  + art\w3d\iqwf_uae.w3d
+  + art\w3d\iqwf_za.w3d
+  + art\w3d\iraq_supply_in.w3d
+  + art\w3d\iraq_supply_ly.w3d
+  + art\w3d\iraq_supply_pk.w3d
+  + art\w3d\iraq_supply_sa.w3d
+  + art\w3d\iraq_supply_sy.w3d
+  + art\w3d\iraq_supply_uae.w3d
+  + art\w3d\iraq_supply_za.w3d
+  + art\w3d\irq_camp_in.w3d
+  + art\w3d\irq_camp_jp.w3d
+  + art\w3d\irq_camp_ly.w3d
+  + art\w3d\irq_camp_pk.w3d
+  + art\w3d\irq_camp_sa.w3d
+  + art\w3d\irq_camp_sk.w3d
+  + art\w3d\irq_camp_sy.w3d
+  + art\w3d\irq_camp_uae.w3d
+  + art\w3d\irq_camp_vn.w3d
+  + art\w3d\irq_camp_za.w3d
+  + art\w3d\it_flag_hs.w3d
+  + art\w3d\jp_flag_hs.w3d
+  + art\w3d\ly_flag_hs.w3d
+  + art\w3d\nkor_supply_jp.w3d
+  + art\w3d\nkor_supply_sk.w3d
+  + art\w3d\nkor_supply_vn.w3d
+  + art\w3d\nkpwr_jp.w3d
+  + art\w3d\nkpwr_sk.w3d
+  + art\w3d\nkpwr_vn.w3d
+  + art\w3d\nkr_command_jp.w3d
+  + art\w3d\nkr_command_sk.w3d
+  + art\w3d\nkr_command_vn.w3d
+  + art\w3d\nkwf_in.w3d
+  + art\w3d\nkwf_jp.w3d
+  + art\w3d\nkwf_pk.w3d
+  + art\w3d\nkwf_sk.w3d
+  + art\w3d\nkwf_vn.w3d
+  + art\w3d\pk_flag_hs.w3d
+  + art\w3d\sa_flag_hs.w3d
+  + art\w3d\se_flag_hs.w3d
+  + art\w3d\sk_flag_hs.w3d
+  + art\w3d\sy_flag_hs.w3d
+  + art\w3d\tr_flag_hs.w3d
+  + art\w3d\ua_flag_hs.w3d
+  + art\w3d\uae_flag_hs.w3d
+  + art\w3d\uk_flag_hs.w3d
+  + art\w3d\vn_flag_hs.w3d
+  + art\w3d\za_flag_hs.w3d
+ADDED_ART_TGA = 17
+  + art\textures\de_flag.tga
+  + art\textures\fr_flag.tga
+  + art\textures\in_flag.tga
+  + art\textures\it_flag.tga
+  + art\textures\jp_flag.tga
+  + art\textures\ly_flag.tga
+  + art\textures\pk_flag.tga
+  + art\textures\sa_flag.tga
+  + art\textures\se_flag.tga
+  + art\textures\sk_flag.tga
+  + art\textures\sy_flag.tga
+  + art\textures\tr_flag.tga
+  + art\textures\ua_flag.tga
+  + art\textures\uae_flag.tga
+  + art\textures\uk_flag.tga
+  + art\textures\vn_flag.tga
+  + art\textures\za_flag.tga
+OVERWRITTEN_ART_TGA = 5
+  ~ art\textures\gameinfoturkey.tga
+  ~ art\textures\ssobserverturkey.tga
+  ~ art\textures\turkey_flag.tga
+  ~ art\textures\turkey_logo.tga
+  ~ art\textures\watermarkturkey.tga
+CHANGED_DATA_FILES = 120
+  ~ data\ini\commandbutton.ini
+  ~ data\ini\object\specter\british armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\british armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\british armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\british armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\british armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\british armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\french armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\french armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\french armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\french armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\french armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\french armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\german armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\german armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\german armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\german armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\german armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\german armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_abbas.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_barracks.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_commandcenter.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_powerplant.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_radarstation.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_supplycenter.ini
+  ~ data\ini\object\specter\indian armed forces\buildings\india_warfactory.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\italian armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\iraq_barracks.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\iraq_powerplant.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\iraq_radarstation.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\iraq_supplycenter.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\japan_commandcenter.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\japan_nuclearcenter.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\japan_radarstation.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\japan_supplycenter.ini
+  ~ data\ini\object\specter\japan self-defense forces\buildings\japan_warfactory.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_abbas.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_barracks.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_commandcenter.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_powerplant.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_radarstation.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_supplycenter.ini
+  ~ data\ini\object\specter\libyan armed forces\buildings\libya_warfactory.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_abbas.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_barracks.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_commandcenter.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_powerplant.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_radarstation.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_supplycenter.ini
+  ~ data\ini\object\specter\pakistan armed forces\buildings\pakistan_warfactory.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_abbas.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_barracks.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_commandcenter.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_powerplant.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_radarstation.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_supplycenter.ini
+  ~ data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_warfactory.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_abbas.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_barracks.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_commandcenter.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_powerplant.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_radarstation.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_supplycenter.ini
+  ~ data\ini\object\specter\south african national defence force\buildings\southafrica_warfactory.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\iraq_barracks.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\iraq_powerplant.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\iraq_radarstation.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\iraq_supplycenter.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\southkorea_commandcenter.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\southkorea_nuclearcenter.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\southkorea_radarstation.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\southkorea_supplycenter.ini
+  ~ data\ini\object\specter\south korean armed forces\buildings\southkorea_warfactory.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\swedish armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_abbas.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_barracks.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_commandcenter.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_powerplant.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_radarstation.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_supplycenter.ini
+  ~ data\ini\object\specter\syrian armed forces\buildings\syria_warfactory.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\turkish armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\camp.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\commandcenter.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\gm406.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\powerstation.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\supplycenter.ini
+  ~ data\ini\object\specter\ukrainian armed forces\buildings\warfactory.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_abbas.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_barracks.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_commandcenter.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_powerplant.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_radarstation.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_supplycenter.ini
+  ~ data\ini\object\specter\united arab emirates armed forces\buildings\uae_warfactory.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\iraq_barracks.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\iraq_powerplant.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\iraq_radarstation.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\iraq_supplycenter.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\vietnam_commandcenter.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\vietnam_nuclearcenter.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\vietnam_radarstation.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\vietnam_supplycenter.ini
+  ~ data\ini\object\specter\vietnam people's armed forces\buildings\vietnam_warfactory.ini
+  ~ data\ini\playertemplate.ini
+REMOVED_DATA_VS_CLONE = 0
+REMOVED_ART_VS_CLONE = 0
+
+===== COMPLETE DATA REFERENCE SCAN (introduced by #516/#517/#518) =====
+INTRO_MODEL = 60  SAGE_LEN_LE_15 = YES
+  Model=Iraq_Supply_UAE len=15
+  Model=Iraq_Supply_IN len=14
+  Model=Iraq_Supply_LY len=14
+  Model=Iraq_Supply_PK len=14
+  Model=Iraq_Supply_SA len=14
+  Model=Iraq_Supply_SY len=14
+  Model=Iraq_Supply_ZA len=14
+  Model=NKor_Supply_JP len=14
+  Model=NKor_Supply_SK len=14
+  Model=NKor_Supply_VN len=14
+  Model=NKr_Command_JP len=14
+  Model=NKr_Command_SK len=14
+  Model=NKr_Command_VN len=14
+  Model=irq_camp_UAE len=12
+  Model=UAE_Flag_Hs len=11
+  Model=irq_camp_IN len=11
+  Model=irq_camp_JP len=11
+  Model=irq_camp_LY len=11
+  Model=irq_camp_PK len=11
+  Model=irq_camp_SA len=11
+  Model=irq_camp_SK len=11
+  Model=irq_camp_SY len=11
+  Model=irq_camp_VN len=11
+  Model=irq_camp_ZA len=11
+  Model=DE_Flag_Hs len=10
+  Model=FR_Flag_Hs len=10
+  Model=IN_Flag_Hs len=10
+  Model=IT_Flag_Hs len=10
+  Model=JP_Flag_Hs len=10
+  Model=LY_Flag_Hs len=10
+  Model=PK_Flag_Hs len=10
+  Model=SA_Flag_Hs len=10
+  Model=SE_Flag_Hs len=10
+  Model=SK_Flag_Hs len=10
+  Model=SY_Flag_Hs len=10
+  Model=TR_Flag_Hs len=10
+  Model=UA_Flag_Hs len=10
+  Model=UK_Flag_Hs len=10
+  Model=VN_Flag_Hs len=10
+  Model=ZA_Flag_Hs len=10
+  Model=IqPwr_UAE len=9
+  Model=IqPwr_IN len=8
+  Model=IqPwr_LY len=8
+  Model=IqPwr_PK len=8
+  Model=IqPwr_SA len=8
+  Model=IqPwr_SY len=8
+  Model=IqPwr_ZA len=8
+  Model=IqWF_UAE len=8
+  Model=NkPwr_JP len=8
+  Model=NkPwr_SK len=8
+  Model=NkPwr_VN len=8
+  Model=IqWF_LY len=7
+  Model=IqWF_SA len=7
+  Model=IqWF_SY len=7
+  Model=IqWF_ZA len=7
+  Model=NkWF_IN len=7
+  Model=NkWF_JP len=7
+  Model=NkWF_PK len=7
+  Model=NkWF_SK len=7
+  Model=NkWF_VN len=7
+INTRO_ANIMATION = 17
+  Animation=DE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=FR_Flag_Hs.Irq__IqFlag_Hs
+  Animation=IN_Flag_Hs.Irq__IqFlag_Hs
+  Animation=IT_Flag_Hs.Irq__IqFlag_Hs
+  Animation=JP_Flag_Hs.Irq__IqFlag_Hs
+  Animation=LY_Flag_Hs.Irq__IqFlag_Hs
+  Animation=PK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SA_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SY_Flag_Hs.Irq__IqFlag_Hs
+  Animation=TR_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UAE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UA_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=VN_Flag_Hs.Irq__IqFlag_Hs
+  Animation=ZA_Flag_Hs.Irq__IqFlag_Hs
+INTRO_DRAW = 0
+INTRO_W3D_INI = 0
+INTRO_TEXTURE = 22
+  Texture=DE_Flag
+  Texture=FR_Flag
+  Texture=GameinfoTurkey
+  Texture=IN_Flag
+  Texture=IT_Flag
+  Texture=JP_Flag
+  Texture=LY_Flag
+  Texture=PK_Flag
+  Texture=SA_Flag
+  Texture=SE_Flag
+  Texture=SK_Flag
+  Texture=SSObserverTurkey
+  Texture=SY_Flag
+  Texture=TR_Flag
+  Texture=Turkey_Flag
+  Texture=Turkey_Logo
+  Texture=UAE_Flag
+  Texture=UA_Flag
+  Texture=UK_Flag
+  Texture=VN_Flag
+  Texture=WatermarkTurkey
+  Texture=ZA_Flag
+INTRO_MAPPEDIMAGE = 86
+  MappedImage=Britain_Logo
+  MappedImage=CampFlagBritain
+  MappedImage=CampFlagFrance
+  MappedImage=CampFlagGermany
+  MappedImage=CampFlagIndia
+  MappedImage=CampFlagItaly
+  MappedImage=CampFlagJapan
+  MappedImage=CampFlagLibya
+  MappedImage=CampFlagPakistan
+  MappedImage=CampFlagSaudiArabia
+  MappedImage=CampFlagSouthAfrica
+  MappedImage=CampFlagSouthKorea
+  MappedImage=CampFlagSweden
+  MappedImage=CampFlagSyria
+  MappedImage=CampFlagTurkey
+  MappedImage=CampFlagUAE
+  MappedImage=CampFlagUkraine
+  MappedImage=CampFlagVietnam
+  MappedImage=France_Logo
+  MappedImage=GameinfoBritain
+  MappedImage=GameinfoFrance
+  MappedImage=GameinfoGermany
+  MappedImage=GameinfoIndia
+  MappedImage=GameinfoItaly
+  MappedImage=GameinfoJapan
+  MappedImage=GameinfoLibya
+  MappedImage=GameinfoPakistan
+  MappedImage=GameinfoSaudiArabia
+  MappedImage=GameinfoSouthAfrica
+  MappedImage=GameinfoSouthKorea
+  MappedImage=GameinfoSweden
+  MappedImage=GameinfoSyria
+  MappedImage=GameinfoTurkey
+  MappedImage=GameinfoUAE
+  MappedImage=GameinfoUkraine
+  MappedImage=GameinfoVietnam
+  MappedImage=Germany_Logo
+  MappedImage=India_Logo
+  MappedImage=Italy_Logo
+  MappedImage=Japan_Logo
+  MappedImage=Libya_Logo
+  MappedImage=Pakistan_Logo
+  MappedImage=SSObserverBritain
+  MappedImage=SSObserverFrance
+  MappedImage=SSObserverGermany
+  MappedImage=SSObserverIndia
+  MappedImage=SSObserverItaly
+  MappedImage=SSObserverJapan
+  MappedImage=SSObserverLibya
+  MappedImage=SSObserverPakistan
+  MappedImage=SSObserverSaudiArabia
+  MappedImage=SSObserverSouthAfrica
+  MappedImage=SSObserverSouthKorea
+  MappedImage=SSObserverSweden
+  MappedImage=SSObserverSyria
+  MappedImage=SSObserverTurkey
+  MappedImage=SSObserverUAE
+  MappedImage=SSObserverUkraine
+  MappedImage=SSObserverVietnam
+  MappedImage=SaudiArabia_Logo
+  MappedImage=SouthAfrica_Logo
+  MappedImage=SouthKorea_Logo
+  MappedImage=Sweden_Logo
+  MappedImage=Syria_Logo
+  MappedImage=Turkey_Flag
+  MappedImage=Turkey_Logo
+  MappedImage=UAE_Logo
+  MappedImage=Ukraine_Logo
+  MappedImage=Vietnam_Logo
+  MappedImage=WatermarkBritain
+  MappedImage=WatermarkFrance
+  MappedImage=WatermarkGermany
+  MappedImage=WatermarkIndia
+  MappedImage=WatermarkItaly
+  MappedImage=WatermarkJapan
+  MappedImage=WatermarkLibya
+  MappedImage=WatermarkPakistan
+  MappedImage=WatermarkSaudiArabia
+  MappedImage=WatermarkSouthAfrica
+  MappedImage=WatermarkSouthKorea
+  MappedImage=WatermarkSweden
+  MappedImage=WatermarkSyria
+  MappedImage=WatermarkTurkey
+  MappedImage=WatermarkUAE
+  MappedImage=WatermarkUkraine
+  MappedImage=WatermarkVietnam
+MISSING_MODEL_ART_IN_#518 = 0
+MISSING_ANIM_CONTAINER_IN_#518 = 0
+DUPLICATE_INTRO_MODEL_NAMES = 0
+
+===== GROUP A (HUD/select) rolled back =====
+PT_IMAGE_REPOINTS = 65
+  FactionJapan FlagWaterMark WatermarkNorthKorea -> WatermarkJapan
+  FactionJapan EnabledImage SSObserverNorthKorea -> SSObserverJapan
+  FactionJapan SideIconImage GameinfoNorthKorea -> GameinfoJapan
+  FactionVietnam FlagWaterMark WatermarkNorthKorea -> WatermarkVietnam
+  FactionVietnam EnabledImage SSObserverNorthKorea -> SSObserverVietnam
+  FactionVietnam SideIconImage GameinfoNorthKorea -> GameinfoVietnam
+  FactionSouthKorea FlagWaterMark WatermarkNorthKorea -> WatermarkSouthKorea
+  FactionSouthKorea EnabledImage SSObserverNorthKorea -> SSObserverSouthKorea
+  FactionSouthKorea SideIconImage GameinfoNorthKorea -> GameinfoSouthKorea
+  FactionLibya FlagWaterMark WatermarkGLA -> WatermarkLibya
+  FactionLibya EnabledImage SSObserverGLA -> SSObserverLibya
+  FactionLibya SideIconImage GameinfoGLA -> GameinfoLibya
+  FactionLibya GeneralImage GLA_Logo -> Libya_Logo
+  FactionSouthAfrica FlagWaterMark WatermarkGLA -> WatermarkSouthAfrica
+  FactionSouthAfrica EnabledImage SSObserverGLA -> SSObserverSouthAfrica
+  FactionSouthAfrica SideIconImage GameinfoGLA -> GameinfoSouthAfrica
+  FactionSouthAfrica GeneralImage GLA_Logo -> SouthAfrica_Logo
+  FactionPakistan FlagWaterMark WatermarkGLA -> WatermarkPakistan
+  FactionPakistan EnabledImage SSObserverGLA -> SSObserverPakistan
+  FactionPakistan SideIconImage GameinfoGLA -> GameinfoPakistan
+  FactionPakistan GeneralImage GLA_Logo -> Pakistan_Logo
+  FactionIndia FlagWaterMark WatermarkGLA -> WatermarkIndia
+  FactionIndia EnabledImage SSObserverGLA -> SSObserverIndia
+  FactionIndia SideIconImage GameinfoGLA -> GameinfoIndia
+  FactionIndia GeneralImage GLA_Logo -> India_Logo
+  FactionSyria FlagWaterMark WatermarkGLA -> WatermarkSyria
+  FactionSyria EnabledImage SSObserverGLA -> SSObserverSyria
+  FactionSyria SideIconImage GameinfoGLA -> GameinfoSyria
+  FactionSyria GeneralImage GLA_Logo -> Syria_Logo
+  FactionUAE FlagWaterMark WatermarkGLA -> WatermarkUAE
+  FactionUAE EnabledImage SSObserverGLA -> SSObserverUAE
+  FactionUAE SideIconImage GameinfoGLA -> GameinfoUAE
+  FactionUAE GeneralImage GLA_Logo -> UAE_Logo
+  FactionSaudiArabia FlagWaterMark WatermarkGLA -> WatermarkSaudiArabia
+  FactionSaudiArabia EnabledImage SSObserverGLA -> SSObserverSaudiArabia
+  FactionSaudiArabia SideIconImage GameinfoGLA -> GameinfoSaudiArabia
+  FactionSaudiArabia GeneralImage GLA_Logo -> SaudiArabia_Logo
+  FactionTurkey FlagWaterMark WatermarkUSA -> WatermarkTurkey
+  FactionTurkey EnabledImage SSObserverUSA -> SSObserverTurkey
+  FactionTurkey SideIconImage GameinfoAMRCA -> GameinfoTurkey
+  FactionTurkey GeneralImage USA_Laser -> Turkey_Logo
+  FactionSweden FlagWaterMark WatermarkUSA -> WatermarkSweden
+  FactionSweden EnabledImage SSObserverUSA -> SSObserverSweden
+  FactionSweden SideIconImage GameinfoAMRCA -> GameinfoSweden
+  FactionSweden GeneralImage USA_Laser -> Sweden_Logo
+  FactionUkraine FlagWaterMark WatermarkUSA -> WatermarkUkraine
+  FactionUkraine EnabledImage SSObserverUSA -> SSObserverUkraine
+  FactionUkraine SideIconImage GameinfoAMRCA -> GameinfoUkraine
+  FactionUkraine GeneralImage USA_Laser -> Ukraine_Logo
+  FactionItaly FlagWaterMark WatermarkUSA -> WatermarkItaly
+  FactionItaly EnabledImage SSObserverUSA -> SSObserverItaly
+  FactionItaly SideIconImage GameinfoAMRCA -> GameinfoItaly
+  FactionItaly GeneralImage USA_Laser -> Italy_Logo
+  FactionBritain FlagWaterMark WatermarkUSA -> WatermarkBritain
+  FactionBritain EnabledImage SSObserverUSA -> SSObserverBritain
+  FactionBritain SideIconImage GameinfoAMRCA -> GameinfoBritain
+  FactionBritain GeneralImage USA_Laser -> Britain_Logo
+  FactionGermany FlagWaterMark WatermarkUSA -> WatermarkGermany
+  FactionGermany EnabledImage SSObserverUSA -> SSObserverGermany
+  FactionGermany SideIconImage GameinfoAMRCA -> GameinfoGermany
+  FactionGermany GeneralImage USA_Laser -> Germany_Logo
+  FactionFrance FlagWaterMark WatermarkUSA -> WatermarkFrance
+  FactionFrance EnabledImage SSObserverUSA -> SSObserverFrance
+  FactionFrance SideIconImage GameinfoAMRCA -> GameinfoFrance
+  FactionFrance GeneralImage USA_Laser -> France_Logo
+NEW_MI_FILES = 3
+  data\ini\mappedimages\handcreated\specter_remainingflags.ini
+  data\ini\mappedimages\handcreated\turkey_factionimages.ini
+  data\ini\mappedimages\handcreated\specter_campflags.ini
+
+===== GROUP B (building cloth Model=) rolled back =====
+NEW_MODEL_STEMS = 47
+  irq_camp_UAE len=12
+  UAE_Flag_Hs len=11
+  irq_camp_IN len=11
+  irq_camp_JP len=11
+  irq_camp_LY len=11
+  irq_camp_PK len=11
+  irq_camp_SA len=11
+  irq_camp_SK len=11
+  irq_camp_SY len=11
+  irq_camp_VN len=11
+  irq_camp_ZA len=11
+  DE_Flag_Hs len=10
+  FR_Flag_Hs len=10
+  IN_Flag_Hs len=10
+  IT_Flag_Hs len=10
+  JP_Flag_Hs len=10
+  LY_Flag_Hs len=10
+  PK_Flag_Hs len=10
+  SA_Flag_Hs len=10
+  SE_Flag_Hs len=10
+  SK_Flag_Hs len=10
+  SY_Flag_Hs len=10
+  TR_Flag_Hs len=10
+  UA_Flag_Hs len=10
+  UK_Flag_Hs len=10
+  VN_Flag_Hs len=10
+  ZA_Flag_Hs len=10
+  IqPwr_UAE len=9
+  IqPwr_IN len=8
+  IqPwr_LY len=8
+  IqPwr_PK len=8
+  IqPwr_SA len=8
+  IqPwr_SY len=8
+  IqPwr_ZA len=8
+  IqWF_UAE len=8
+  NkPwr_JP len=8
+  NkPwr_SK len=8
+  NkPwr_VN len=8
+  IqWF_LY len=7
+  IqWF_SA len=7
+  IqWF_SY len=7
+  IqWF_ZA len=7
+  NkWF_IN len=7
+  NkWF_JP len=7
+  NkWF_PK len=7
+  NkWF_SK len=7
+  NkWF_VN len=7
+LONG_MODEL_NAMES_GT_15 = 0
+
+===== GROUP C (camp cameos) rolled back =====
+CAMP_INIS = 17
+  data\ini\object\specter\british armed forces\buildings\camp.ini
+  data\ini\object\specter\french armed forces\buildings\camp.ini
+  data\ini\object\specter\german armed forces\buildings\camp.ini
+  data\ini\object\specter\indian armed forces\buildings\india_barracks.ini
+  data\ini\object\specter\italian armed forces\buildings\camp.ini
+  data\ini\object\specter\japan self-defense forces\buildings\iraq_barracks.ini
+  data\ini\object\specter\libyan armed forces\buildings\libya_barracks.ini
+  data\ini\object\specter\pakistan armed forces\buildings\pakistan_barracks.ini
+  data\ini\object\specter\saudi arabia armed forces\buildings\saudiarabia_barracks.ini
+  data\ini\object\specter\south african national defence force\buildings\southafrica_barracks.ini
+  data\ini\object\specter\south korean armed forces\buildings\iraq_barracks.ini
+  data\ini\object\specter\swedish armed forces\buildings\camp.ini
+  data\ini\object\specter\syrian armed forces\buildings\syria_barracks.ini
+  data\ini\object\specter\turkish armed forces\buildings\camp.ini
+  data\ini\object\specter\ukrainian armed forces\buildings\camp.ini
+  data\ini\object\specter\united arab emirates armed forces\buildings\uae_barracks.ini
+  data\ini\object\specter\vietnam people's armed forces\buildings\iraq_barracks.ini
+COMMANDBUTTON_IMAGE_REPOINTS = 17
+  Command_ConstructPakistan_Barracks -> CampFlagPakistan
+  Command_ConstructSaudiArabia_Barracks -> CampFlagSaudiArabia
+  Command_ConstructUAE_Barracks -> CampFlagUAE
+  Command_ConstructIndia_Barracks -> CampFlagIndia
+  Command_ConstructSyria_Barracks -> CampFlagSyria
+  Command_ConstructGermanyBootCamp -> CampFlagGermany
+  Command_ConstructFranceBootCamp -> CampFlagFrance
+  Command_ConstructBritainBootCamp -> CampFlagBritain
+  Command_ConstructItalyBootCamp -> CampFlagItaly
+  Command_ConstructSwedenBootCamp -> CampFlagSweden
+  Command_ConstructUkraineBootCamp -> CampFlagUkraine
+  Command_ConstructTurkeyBootCamp -> CampFlagTurkey
+  Command_ConstructLibya_Barracks -> CampFlagLibya
+  Command_ConstructSouthAfrica_Barracks -> CampFlagSouthAfrica
+  Command_ConstructSouthKorea_Barracks_SAFE -> CampFlagSouthKorea
+  Command_ConstructJapan_Barracks_SAFE -> CampFlagJapan
+  Command_ConstructVietnam_Barracks_SAFE -> CampFlagVietnam
+
+===== GROUP D (extra Flag_Hs Draws) rolled back =====
+EXTRA_DRAW_FILES = 62
+ANIM_CONTAINER_MISMATCHES_IN_#518 = 0
+
+===== WATCH LIST in crashing #518 (rolled back) =====
+  Iraq_Powerplant: 63 hits in crashing #518 BIG (rolled back)
+  NKor_Powerplant: 9 hits in crashing #518 BIG (rolled back)
+  NKr_Powerplant: 0 hits in crashing #518 BIG (rolled back)
+  Irq_WarFactory: 345 hits in crashing #518 BIG (rolled back)
+  NKr_WarFactory: 161 hits in crashing #518 BIG (rolled back)
+  Flag_Hs: 208 hits in crashing #518 BIG (rolled back)
+  UK_Flag_Hs: 12 hits in crashing #518 BIG (rolled back)
+  NKr__NKFlag_Hs: 6 hits in crashing #518 BIG (rolled back)
+  Irq__IqFlag_Hs: 110 hits in crashing #518 BIG (rolled back)
+  IqPwr_: 21 hits in crashing #518 BIG (rolled back)
+  NkPwr_: 9 hits in crashing #518 BIG (rolled back)
+  IqWF_: 115 hits in crashing #518 BIG (rolled back)
+  NkWF_: 115 hits in crashing #518 BIG (rolled back)
+  irq_camp_: 60 hits in crashing #518 BIG (rolled back)
+  SpecterNatFlag: 0 hits in crashing #518 BIG (rolled back)
+  SpecterCampFlag: 0 hits in crashing #518 BIG (rolled back)
+  CampFlag: 0 hits in crashing #518 BIG (rolled back)
+
+ISOLATION ORDER (logical; ZH exe not present)
+  0 BOOT-SAFE (THIS PATCH) = camp-clone DATA+ART, original init paths
+      RESULT = SHIPPED. Byte-identical to last known launch.
+  A HUD/select flags = PlayerTemplate image remaps + new MappedImages + new TGAs
+      PREPARED = NO. 65 PT image remaps and 3 new MI files stay rolled back.
+      REASON = #518 still crashed after W3D-name/anim edits; A was never isolated in-game.
+  B Building cloth = W3D clones + Model= retargets
+      STOPPED. 47 new Model stems, 60 new W3D files.
+  C Camp/Barracks cameos = Object SelectPortrait/ButtonImage + construct ButtonImage
+      STOPPED. 17 camp INIs and 17 CommandButton image remaps.
+  D Extra Flag_Hs Draws = ModuleTag_SpecterNatFlag + Flag_Hs Animation
+      STOPPED. 62 extra-draw files. First failing group class: B+D (object init W3D/Draw).
+FIRST_FAILING_GROUP = B/D (object-init W3D clones + extra Draws). A not proven; not reintroduced.
+
+WEAPON_INI_CHANGED = NO (original camp-clone)
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_CHANGED = NO (restored original)
+PLAYERTEMPLATE_CHANGED = NO (restored original)
+GAMEPLAY_CHANGED = NO
+FLAG_VISUALS = ROLLED_BACK
+INGAME_TESTED = NO
+DATA_CHANGED = YES (restore to camp-clone)
+ART_CHANGED = YES (restore to camp-clone)

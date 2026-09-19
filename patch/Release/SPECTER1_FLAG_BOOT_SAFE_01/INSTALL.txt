@@ -1,0 +1,19 @@
+SPECTER1_FLAG_BOOT_SAFE_01
+=========================
+
+Guaranteed boot-safe rollback of PR #516 / #517 / #518 flag work.
+Byte-identical to SPECTER1_CAMP_CLONE_IRAQ_VIETNAM (last known launch).
+Same GameRoot layout: two BIG files, no loose Data/Art.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums (must match camp-clone):
+  DATA SHA256 e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+  ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+BOOT_SAFE = YES
+FLAG_VISUALS = ROLLED_BACK
+INGAME_TESTED = NO

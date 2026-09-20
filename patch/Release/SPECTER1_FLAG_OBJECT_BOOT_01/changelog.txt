@@ -1,0 +1,18 @@
+SPECTER1 flag object-init boot-safe
+
+#518 still crashed. Isolation named FIRST_FAILING_GROUP = B/D
+(object-init W3D clones + extra Flag_Hs Draws).
+
+This patch restores camp-clone Model=/Animation=/Draw on every target
+building Object (PowerPlant, WarFactory, Camp/Barracks, and the other
+buildings that received extra Draws or cloned meshes). Extra Flag_Hs
+Draw modules are removed. No new cloned W3D is referenced at init.
+
+PlayerTemplate, CommandButton, MappedImages, and TGA/W3D art files
+are kept. Weapon / Upgrade / CommandSet / country IDs / protected
+DATA are unchanged.
+
+Do not re-add B/D flag Draws or cloned Model= until this pair
+launches in-game.
+
+INGAME_TESTED = NO

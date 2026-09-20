@@ -274,12 +274,10 @@ def main() -> int:
     if missing_art:
         raise SystemExit("Model= missing ART:\n  " + "\n  ".join(missing_art[:20]))
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
     WS_OUT.mkdir(parents=True, exist_ok=True)
-    (OUT_DIR / "_SPEC_DATA_ONE.big").write_bytes(jf.build_big_ordered(data))
-    (OUT_DIR / "_SPEC_ART_ONE.big").write_bytes(jf.build_big_ordered(art))
-    shutil.copy2(OUT_DIR / "_SPEC_DATA_ONE.big", WS_OUT / "_SPEC_DATA_ONE.big")
-    shutil.copy2(OUT_DIR / "_SPEC_ART_ONE.big", WS_OUT / "_SPEC_ART_ONE.big")
+    (WS_OUT / "_SPEC_DATA_ONE.big").write_bytes(jf.build_big_ordered(data))
+    (WS_OUT / "_SPEC_ART_ONE.big").write_bytes(jf.build_big_ordered(art))
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     new_data_sha = jf.sha256_file(WS_OUT / "_SPEC_DATA_ONE.big")
     new_art_sha = jf.sha256_file(WS_OUT / "_SPEC_ART_ONE.big")
     packed_d = jf.read_big_list(WS_OUT / "_SPEC_DATA_ONE.big")

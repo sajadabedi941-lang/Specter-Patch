@@ -1,0 +1,14 @@
+SPECTER_BIG_MERGE_PLAYABLE — VERIFY REPORT
+Generated: 2026-07-24 17:49:43 UTC
+
+DATA entries: 2887
+ART entries:  2689
+DATA SHA256:  382cc26404aa7f8aa0c299f8c35ae31be842ef2554c9557e9dc2f8ca4ed28f40
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Spot-check patch content inside BIG: PASS (8 files)
+Original Specter cores still present: PASS
+Faction folders present: PASS (8)
+Failures: 0
+
+STATUS: PLAYABLE BIG ARCHIVES READY

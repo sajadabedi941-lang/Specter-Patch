@@ -1,0 +1,422 @@
+SPECTER1 FLAG OBJECT-INIT BOOT-SAFE
+BASELINE = SPECTER1_FLAG_INIT_CRASHFIX_01 (#518, still crashing)
+BASELINE_DATA_SHA256 = 1c22d1b2f70adba77f2889eec0e3d5a00455ef8a039fc2679a2505950075bb7d
+BASELINE_ART_SHA256 = 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+NEW_DATA_SHA256 = 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+NEW_ART_SHA256 = 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+PACKED_DATA_FILES = 2883
+PACKED_ART_FILES = 4509
+DUPLICATE_PACKED_PATHS = NO
+BIG_INTEGRITY = YES
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+FIRST_FAILING_GROUP = B/D (stripped)
+
+===== REMOVED RISKY REFERENCES =====
+RESTORED_BUILDING_INIS = 118
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Barracks.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_PowerPlant.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_RadarStation.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_SupplyCenter.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_SupplyCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_RadarStation.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_SupplyCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_PowerPlant.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_RadarStation.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_SupplyCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Barracks.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_PowerPlant.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_RadarStation.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_SupplyCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_PowerPlant.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_RadarStation.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_SupplyCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_RadarStation.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_SupplyCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_RadarStation.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Barracks.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_PowerPlant.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_RadarStation.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_SupplyCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_PowerPlant.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_RadarStation.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_SupplyCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_SupplyCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_RadarStation.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_SupplyCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini
+EXTRA_FLAG_DRAWS_REMOVED = 62
+EXTRA_DRAW_FILES = 62
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_RadarStation.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_RadarStation.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_RadarStation.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_RadarStation.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_RadarStation.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_RadarStation.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_RadarStation.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_RadarStation.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_RadarStation.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_RadarStation.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_RadarStation.ini
+REMOVED_CLONE_MODELS = 60
+  Model=Iraq_Supply_UAE len=15
+  Model=Iraq_Supply_IN len=14
+  Model=Iraq_Supply_LY len=14
+  Model=Iraq_Supply_PK len=14
+  Model=Iraq_Supply_SA len=14
+  Model=Iraq_Supply_SY len=14
+  Model=Iraq_Supply_ZA len=14
+  Model=NKor_Supply_JP len=14
+  Model=NKor_Supply_SK len=14
+  Model=NKor_Supply_VN len=14
+  Model=NKr_Command_JP len=14
+  Model=NKr_Command_SK len=14
+  Model=NKr_Command_VN len=14
+  Model=irq_camp_UAE len=12
+  Model=UAE_Flag_Hs len=11
+  Model=irq_camp_IN len=11
+  Model=irq_camp_JP len=11
+  Model=irq_camp_LY len=11
+  Model=irq_camp_PK len=11
+  Model=irq_camp_SA len=11
+  Model=irq_camp_SK len=11
+  Model=irq_camp_SY len=11
+  Model=irq_camp_VN len=11
+  Model=irq_camp_ZA len=11
+  Model=DE_Flag_Hs len=10
+  Model=FR_Flag_Hs len=10
+  Model=IN_Flag_Hs len=10
+  Model=IT_Flag_Hs len=10
+  Model=JP_Flag_Hs len=10
+  Model=LY_Flag_Hs len=10
+  Model=PK_Flag_Hs len=10
+  Model=SA_Flag_Hs len=10
+  Model=SE_Flag_Hs len=10
+  Model=SK_Flag_Hs len=10
+  Model=SY_Flag_Hs len=10
+  Model=TR_Flag_Hs len=10
+  Model=UA_Flag_Hs len=10
+  Model=UK_Flag_Hs len=10
+  Model=VN_Flag_Hs len=10
+  Model=ZA_Flag_Hs len=10
+  Model=IqPwr_UAE len=9
+  Model=IqPwr_IN len=8
+  Model=IqPwr_LY len=8
+  Model=IqPwr_PK len=8
+  Model=IqPwr_SA len=8
+  Model=IqPwr_SY len=8
+  Model=IqPwr_ZA len=8
+  Model=IqWF_UAE len=8
+  Model=NkPwr_JP len=8
+  Model=NkPwr_SK len=8
+  Model=NkPwr_VN len=8
+  Model=IqWF_LY len=7
+  Model=IqWF_SA len=7
+  Model=IqWF_SY len=7
+  Model=IqWF_ZA len=7
+  Model=NkWF_IN len=7
+  Model=NkWF_JP len=7
+  Model=NkWF_PK len=7
+  Model=NkWF_SK len=7
+  Model=NkWF_VN len=7
+REMOVED_CLONE_ANIMATIONS = 17
+  Animation=DE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=FR_Flag_Hs.Irq__IqFlag_Hs
+  Animation=IN_Flag_Hs.Irq__IqFlag_Hs
+  Animation=IT_Flag_Hs.Irq__IqFlag_Hs
+  Animation=JP_Flag_Hs.Irq__IqFlag_Hs
+  Animation=LY_Flag_Hs.Irq__IqFlag_Hs
+  Animation=PK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SA_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=SY_Flag_Hs.Irq__IqFlag_Hs
+  Animation=TR_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UAE_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UA_Flag_Hs.Irq__IqFlag_Hs
+  Animation=UK_Flag_Hs.Irq__IqFlag_Hs
+  Animation=VN_Flag_Hs.Irq__IqFlag_Hs
+  Animation=ZA_Flag_Hs.Irq__IqFlag_Hs
+PP_WF_CAMP_RESTORED = 51
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Barracks.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_PowerPlant.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_PowerPlant.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Barracks.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_PowerPlant.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_PowerPlant.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Barracks.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_PowerPlant.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_PowerPlant.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini
+
+===== REMAINING ACTIVE FLAG REFERENCES =====
+HUD/select PlayerTemplate remaps = KEPT (frozen, not object-init)
+COMMANDBUTTON_CAMPFLAG = 17 (frozen, MappedImage only)
+  Command_ConstructPakistan_Barracks
+  Command_ConstructSaudiArabia_Barracks
+  Command_ConstructUAE_Barracks
+  Command_ConstructIndia_Barracks
+  Command_ConstructSyria_Barracks
+  Command_ConstructGermanyBootCamp
+  Command_ConstructFranceBootCamp
+  Command_ConstructBritainBootCamp
+  Command_ConstructItalyBootCamp
+  Command_ConstructSwedenBootCamp
+  Command_ConstructUkraineBootCamp
+  Command_ConstructTurkeyBootCamp
+  Command_ConstructLibya_Barracks
+  Command_ConstructSouthAfrica_Barracks
+  Command_ConstructSouthKorea_Barracks_SAFE
+  Command_ConstructJapan_Barracks_SAFE
+  Command_ConstructVietnam_Barracks_SAFE
+MAPPEDIMAGE_FILES_KEPT = 3
+  Data\INI\MappedImages\HandCreated\Specter_RemainingFlags.INI
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI
+  Data\INI\MappedImages\HandCreated\Specter_CampFlags.INI
+ART TGA/W3D clones = KEPT but unreferenced by Object Model=
+REMAINING_OBJECT_FLAG_HS (camp-clone originals only) = 30
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+
+===== REMAINING MODIFIED OBJECTS =====
+TARGET_OBJECTS_STILL_DIFF_FROM_CAMP_CLONE = 0
+  NONE (all target building Objects restored)
+
+===== WATCH AFTER STRIP =====
+  Iraq_Powerplant: 10 object-init hits
+  NKor_Powerplant: 3 object-init hits
+  NKr_Powerplant: 0 object-init hits
+  Irq_WarFactory: 5 object-init hits
+  NKr_WarFactory: 5 object-init hits
+  Flag_Hs: 10 object-init hits
+  UK_Flag_Hs: 0 object-init hits
+  NKr__NKFlag_Hs: 3 object-init hits
+  Irq__IqFlag_Hs: 7 object-init hits
+  IqPwr_: 0 object-init hits
+  NkPwr_: 0 object-init hits
+  IqWF_: 0 object-init hits
+  NkWF_: 0 object-init hits
+  irq_camp_: 0 object-init hits
+  NK_camp_: 0 object-init hits
+  CampFlag: 2 object-init hits
+  ModuleTag_SpecterNatFlag: 0 object-init hits
+
+WEAPON_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_CHANGED = NO
+PLAYERTEMPLATE_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES
+GAMEPLAY_CHANGED = NO
+ART_CHANGED = NO (TGA/W3D kept, unused clones not referenced)
+DATA_CHANGED = YES (object Model/Draw/Animation restored)
+FLAG_VISUALS_OBJECT = ROLLED_BACK
+FLAG_VISUALS_HUD = KEPT
+REENGAGE_FLAGS = NO (wait for launch confirmation)

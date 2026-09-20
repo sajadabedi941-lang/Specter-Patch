@@ -1,0 +1,18 @@
+SPECTER1_FLAG_OBJECT_BOOT_01
+===========================
+
+Object-init boot-safe patch. Strips B/D (cloned W3D Model= and extra
+Flag_Hs Draws). Keeps HUD textures and PlayerTemplate/CommandButton.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+  ART  SHA256 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+
+BOOT_SAFE = YES
+FLAG_VISUALS_OBJECT = ROLLED_BACK
+INGAME_TESTED = NO

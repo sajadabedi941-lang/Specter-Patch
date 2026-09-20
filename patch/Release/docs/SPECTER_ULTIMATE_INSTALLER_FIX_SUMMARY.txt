@@ -1,0 +1,30 @@
+SPECTER ULTIMATE INSTALLER — Standalone package
+===============================================
+
+ZIP: SPECTER_ULTIMATE_INSTALLER.zip
+ZIP SHA256: 6448912804038401d7a6d4a8c865a402fbc47f2e2a6c4f0b8fc8d5eccf04a738
+
+Contents
+--------
+  _SPEC_DATA_ONE.big   (same as Ultimate Expansion playable)
+  _SPEC_ART_ONE.big
+  Install_SpecterPatch.exe   (Windows .NET WinForms installer)
+  Launch_Specter.bat
+  README.txt
+
+Installer behavior
+------------------
+  1. Auto-detect GameRoot (installer folder, parents, saved path, common paths)
+     or FolderBrowserDialog / typed path fallback
+  2. Backup existing _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big
+  3. Copy new BIGs into GameRoot
+  4. Confirm INSTALLATION COMPLETED SUCCESSFULLY (+ MessageBox)
+  5. Desktop shortcut: "Specter Ultimate Expansion"
+  6. Optional launch of generals.exe
+
+DATA SHA256: 927196e6b953ddb3e66af211239d7d4520c96abfbc1529db2bd882f249446d0b
+ART  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+EXE  SHA256: a013e1302be5065c6df595d57a8460cec0631c4c7df58d9dbc244d0431b28d2e
+
+Source: patch/tools/installer/Install_SpecterPatch.cs
+Build:  mcs -sdk:4 -target:winexe -r:System.Windows.Forms.dll -r:System.Drawing.dll

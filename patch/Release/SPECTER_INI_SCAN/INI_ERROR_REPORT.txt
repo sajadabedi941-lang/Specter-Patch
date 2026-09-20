@@ -1,0 +1,19 @@
+SPECTER INI ERROR REPORT
+========================
+GeneratedUtc : 2026-07-24T00:58:11.811140+00:00
+Specter      : /workspace/patch/Data/INI/Object/Specter
+Scanned      : 1270 INI files
+Errors       : 0
+Broken files : 0
+Backup       : (not created — no errors)
+Mode         : SCAN ONLY (no deletes, no modifications to game files)
+NOTE         : This sample was generated from the patch tree. Running RUN_SCAN.bat overwrites this file.
+
+SUMMARY BY ERROR TYPE
+---------------------
+  (none — all clear)
+
+DETAILS
+-------
+No errors detected under Data\INI\Object\Specter.
+FINAL VERDICT: PASS

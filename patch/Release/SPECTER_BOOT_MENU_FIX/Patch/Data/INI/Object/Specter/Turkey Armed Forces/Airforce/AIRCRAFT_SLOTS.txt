@@ -1,0 +1,19 @@
+SPECTER PATCH Phase 3 - Turkey Airfield Aircraft Slots (ACTIVE)
+================================================================
+
+Unique Turkey aircraft (buildable):
+  1 KAAN              Turkey_KAAN      cost 2200  time 22  template F-22A AA
+  2 F-16V             Turkey_F16V      cost 1800  time 16  template F-16CM Blk50
+  3 Hürjet            Turkey_Hurjet    cost 1300  time 14  template F-16CJ
+  4 T129 ATAK         Turkey_T129      cost 1500  time 18  template AH-64E
+  5 Anka-3            Turkey_Anka3     cost 1700  time 15  template F-35C (+DRONE)
+  6 Bayraktar TB2     Turkey_TB2       cost  900  time 10  template MQ-9 (NATO)
+  7 Bayraktar Akıncı  Turkey_Akinci    cost 1600  time 15  template MQ-9 (USA)
+
+Legacy Iraq-copy airframes remain available on full CommandSet (slots 8-10).
+
+Airfield upgrades:
+  Upgrade_Turkey_Countermeasures      1000 / 40s
+  Upgrade_Turkey_PrecisionMunitions   1200 / 45s
+  Upgrade_Turkey_AdvancedRadar        1500 / 50s
+  Upgrade_Turkey_AAMissile            1000 / 35s

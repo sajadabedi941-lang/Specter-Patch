@@ -1,0 +1,77 @@
+SPECTER PATCH — Advanced AWACS Command System
+==============================================
+AWACS is an airborne command center, not just a radar unit.
+
+Overlay-only. Unique Patch_* weapons / special powers / CommandSets.
+Does not overwrite Specter archives. Turkey / AAB / runway / installer preserved.
+NO NAVAL. Fixed DelayBetweenShots / ReloadTime for multiplayer sync.
+
+Radar tiers (vs Specter APY2 beam baseline radius 1700)
+-------------------------------------------------------
+Normal AWACS      +50%  => PrimaryDamageRadius 2550, Vision 525, Detect 1500
+Advanced AWACS    +100% => 3400 / Vision 700 / Detect 2000+
+UN/NATO Advanced  +150% => 4250 / Vision 875 / Detect 2500
+
+Country identity
+----------------
+USA E-3 / E-2C     Best radar + elite battle-management paint
+Russia A-50        Long endurance (low fuel bleed) + Krasukha-class EA / stronger ECM
+China KJ-2000      Large detection + network (Advanced tier)
+Turkey Peace Eagle Balanced Advanced + drone-capable stealth detect
+India Phalcon      Advanced tracking (fast DetectionRate)
+UN / NATO          Maximum +150% radar + elite paint + faster EA reload
+
+Air battle management
+---------------------
+Continuous FAERIE_FIRE paint on enemy air/ground via PointDefenseLaserUpdate.
+Friendly Patch weapons gain WeaponBonus TARGET_FAERIE_FIRE:
+  RANGE +15%, RATE_OF_FIRE +15%, DAMAGE +5%
+Player shroud cleared by AWACS Vision/Shroud ranges (team vision benefit).
+KindOf REVEALS_ENEMY_PATHS for pathing intel.
+
+Missile guidance support
+------------------------
+Painted targets lose stealth advantage; long-range AAMs/AGMs use FAERIE bonuses.
+Works with fighters, bombers, cruise missiles, and AD weapons that include the bonus.
+
+Electronic warfare
+------------------
+Passive: Patch_AWACS_ECM_SoftKill (SUBDUAL_MISSILE on PROJECTILE).
+Active: SpecialPower Patch_AWACS_ElectronicAttack* (ReloadTime 60–90s fixed)
+  → OCL_RadioWaveDisabler / OCL_Krasukha4_RadioWaveDisabler (Specter stock effects).
+
+Ground support
+--------------
+Patch_AWACS_GroundSupportCue + OCL_BaseRevealer paints/reveals enemy command nodes
+for artillery / AD reaction (FAERIE_FIRE status).
+
+Survival
+--------
+Elevated MaxHealth (1100–1600), flare + chaff CountermeasuresBehavior,
+CountermeasuresAirplaneArmor on Upgrade_AmericaCountermeasures.
+Slow turbofan locomotor (CMF56). Requires fighter escort (weak self-defense).
+JetAIUpdate ReturnToBaseIdleTime + AAB ParkingPlaceBehavior heal/reload.
+
+AAB connection
+--------------
+All Patch_* AWACS launch from Advanced Air Base CommandSets.
+RTB idle → park → HealAmountPerSecond repair/rearm automatically.
+
+Files
+-----
+Weapon_AdvancedAWACS.ini
+SpecialPower_AdvancedAWACS.ini
+CommandButton_AdvancedAWACS.ini
+CommandSet_AdvancedAWACS.ini
+PatchSystems/AdvancedAWACS/ADVANCED_AWACS_COMMAND.txt (this file)
+Enhanced Objects: Aircraft_AAB_Global.ini AWACS + Turkey_AWACS + E2C/AN71
+
+Test checklist
+--------------
+[ ] Radar detection range by tier
+[ ] Stealth / drone / cruise-missile detect (StealthDetectorUpdate)
+[ ] Fighter coordination (FAERIE paint → WeaponBonus)
+[ ] Missile guidance bonus on painted targets
+[ ] Electronic Attack cooldown sync in MP
+[ ] AAB launch / RTB repair
+[ ] sync_audit.py PASS

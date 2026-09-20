@@ -1,0 +1,41 @@
+SPECTER PATCH — Turkey Phase 4 Ground Warfare
+=============================================
+
+Missile launchers (War Factory / MIC)  LinkKey=Patch_StrategicLauncher max=4
+  Turkey_TRG230   TRG-230                 Cost base 1200 / 14s
+  Turkey_TRG300   TRG-300 Kaplan MLRS     Cost base 1400 / 16s
+  Turkey_TRLG230  TRLG-230                Cost base 1600 / 18s
+  Turkey_Bora     Bora ballistic TEL      Cost base 2800 / 22s
+
+Air defense (War Factory / MIC)  LinkKey=Patch_AirDefense max=10
+  Turkey_HISAR_A  HISAR-A+                Cost base 1300 / 12s
+  Turkey_HISAR_O  HISAR-O+                Cost base 1800 / 16s
+  Turkey_SIPER    SIPER                   Cost base 2600 / 18s
+  Turkey_Korkut   Korkut SPAAG            Cost base 1100 / 12s
+  Turkey_Sungur   Sungur SHORAD           Cost base 900 / 10s
+
+Weapons (patch overlay)
+  Weapon_Turkey_Phase4.ini
+    Turkey_Weapon_TRG230_Salvo
+    Turkey_Weapon_TRG230_HE
+
+Upgrades (MIC / AAB)
+  Upgrade_Turkey_HisarNetwork       1200 / 40s  (AD MaxHealth)
+  Upgrade_Turkey_BoraGuidance       1500 / 45s  (Bora MaxHealth)
+  Upgrade_Turkey_GeneralAirAssault  2000 / 45s  (MIC; science-gated: T129/Mi-28/Mi-35/Mi-8)
+  Upgrade_Turkey_AAMissile          (Hurjet AA weapon set)
+  Upgrade_Turkey_T72B3              (T-72 MaxHealth)
+  Upgrade_TurkishCamoflage          (infantry stealth)
+
+General Star sciences
+  SCIENCE_Turkey_GeneralAirPower     Rank1 → AWACS / Recon
+  SCIENCE_Turkey_GeneralAirAssault   Rank3 → Paradrop / SF Insertion + AirAssault upgrade
+  SCIENCE_Turkey_GeneralStrategic    Rank5 → FOAB / Tu22 cruise
+
+Production unlock (approx)
+  WF_T:   Sungur, Korkut, HISAR-A, TRG-230
+  WF_T1:  + HISAR-O, TRLG-230, TRG-300
+  WF_T2:  layered AD + rockets
+  WF_T3 / MIC: Bora, SIPER + upgrades
+  AAB: KAAN/F16V/Hurjet/T129/Anka3/TB2/Akinci + Mi-28/Mi-35/Mi-8 + B2/B52/Tu-22M3/Tanker
+  AI Airfield T3: assault helos + Mig-29/Su-25 + Tu-22 + AWACS

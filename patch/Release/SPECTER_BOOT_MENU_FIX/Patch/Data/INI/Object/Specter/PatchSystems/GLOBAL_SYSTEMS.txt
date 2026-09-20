@@ -1,0 +1,67 @@
+SPECTER PATCH — Global Systems Contract
+=======================================
+
+1) Advanced Air Base
+   - Object naming: <SidePrefix>_AdvancedAirBase
+   - Model: US_AirField (6 runway parking bones)
+   - ParkingPlaceBehavior NumRows=1 NumCols=6 HasRunways=Yes
+   - MaxSimultaneousOfType (air bases): 4 per faction
+   - Produces tactical + heavy aircraft (AWACS / bomber / tanker / transport)
+   - Replaces tiered "simple airfield upgrade" progression for new patch factions
+   - Files:
+       PatchSystems/AdvancedAirBase_AllFactions.ini   (America/Russia/China/Iran/Iraq/Nato/GLA)
+       PatchSystems/AdvancedAirBase_FutureFactions.ini (Israel/AirF, Ukraine…Japan, NorthKorea)
+       Turkey Armed Forces/Buildings/Turkey_AdvancedAirBase.ini (fully wired)
+
+2) Heavy aircraft scale
+   - Bombers / AWACS / tankers / transports: Scale 0.70 to 0.85
+   - Must fit US_AirField runway bones / game camera scale
+   - Guide: PatchSystems/HeavyAircraft/HEAVY_AIRCRAFT_SCALE.txt
+   - Turkey units: Turkey_B2, Turkey_B52, Turkey_AWACS, Turkey_Tanker, Turkey_Transport
+   - Note: Specter has no native B-2 model; Turkey_B2 uses B1R airframe as stealth-bomber proxy
+
+3) Global build limits (MaxSimultaneousLinkKey)
+   Patch_AirDefense        = 10   (SAM sites, AAA, SHORAD, AD installations)
+   Patch_ArtillerySite     = 6    (fixed artillery emplacements)
+   Patch_StrategicLauncher = 4    (MLRS / conventional strategic launchers)
+   Patch_Nuclear           = 1    (nuclear SW buildings OR nuclear launchers)
+
+Future factions MUST set these LinkKeys on matching objects.
+Turkey objects are annotated in this phase.
+Reference: tools/economy/config/GlobalBuildLimits_SpecterPatch.ini
+(Tool-only — never ship under Data/INI; engine MaxSimultaneous* is baked onto Objects.)
+
+4) Air Force Expansion (mod archive integration)
+   - Overlay-only Patch_* airframes from mod.zip audit (fighters/bombers/AWACS/gunship/UAV/helo)
+   - Tor-M2 AD: PatchSystems/AirDefense/Russia_AD_TorM.ini
+   - Weapons: Data/INI/Weapon_AirForceExpansion.ini
+   - Guide: PatchSystems/AirForceExpansion/AIR_FORCE_EXPANSION.txt
+   - Audit: /MOD_CONTENT_AUDIT.md (repo root)
+   - Missing mod.z23/z24 blocks full W3D extract; Specter art used instead
+
+5) Advanced AWACS Command System
+   - AWACS = airborne command center (radar + battle management + EA + ground cue)
+   - Radar tiers: Normal +50% / Advanced +100% / UN-NATO +150%
+   - Country identity: USA/Russia/China/Turkey/India/UN profiles
+   - FAERIE_FIRE paint + WeaponBonus TARGET_FAERIE_FIRE for missile guidance
+   - Electronic Attack SP (fixed ReloadTime) → Specter RadioWave / Krasukha OCL
+   - Survival: health, flare/chaff, RTB to AAB heal
+   - Guide: PatchSystems/AdvancedAWACS/ADVANCED_AWACS_COMMAND.txt
+   - Weapons/SP/UI: Weapon_AdvancedAWACS.ini, SpecialPower_AdvancedAWACS.ini,
+     CommandButton_AdvancedAWACS.ini, CommandSet_AdvancedAWACS.ini
+
+6) Country Balance System (central)
+   - ONE config: tools/economy/config/CountryBalance.ini (tool-only, not under Data/INI)
+   - Country multipliers: Unit / Aircraft / Weapon / Upgrade + income
+   - Origin / TechClass / Category / Asymmetric / Domestic layers
+   - Path-based classification only (no per-unit cost hardcoding)
+   - Tool: tools/economy/apply_country_balance.py (MP-deterministic bake)
+   - Supply / Oil / Port / Industrial AutoDeposit from Country.*IncomeMult
+     (CommandCenter = oil wealth; WarFactory/MIC = industrial; no TechOilDerrick fork)
+
+7) Air Force Final Integration
+   - Every playable country: fighter, L/M/H bombers, AWACS, transport, helo, drone, strategic
+   - Heavy bomber USA base cost 10000; country-differentiated PatchBaseCost table
+   - Israel_AdvancedAirBase + full Patch_Israel_* fleet
+   - Russia Tu-160 NuclearBomberStrike + RSM-56 Bulava special powers
+   - Guide: PatchSystems/AirForceFinal/AIR_FORCE_FINAL.txt

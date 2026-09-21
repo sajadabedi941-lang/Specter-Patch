@@ -1,0 +1,36 @@
+SPECTER DATA ONE FINAL EGYPT FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+BIG: _SPEC_DATA_ONE.big
+SHA256: fb008f7b13085e33f57069ea22731b3a7c4d25ef8c66fedf6aaebfe61e029b1b
+Source vendor: patch/Release/SPECTER_BIG_MERGE/_SPEC_DATA_ONE.big
+Vendor SHA256: 382cc26404aa7f8aa0c299f8c35ae31be842ef2554c9557e9dc2f8ca4ed28f40
+Old Egypt_CommandCenter SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+New Egypt_CommandCenter SHA256: 4cfc24c92e0f8e93395c3e4e50a1e2b451c42e302985a9be0667d61338a5f0b5
+Broken vendor CC SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+Entries: 2887
+Size: 384510537 bytes
+
+Method: open vendor _SPEC_DATA_ONE.big → replace ONLY
+Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+with exact USA AmericaCommandCenter clone (Object/Side/Faction Egypt kept).
+No overlay. No new Object. No rename.
+
+PASS: 14  FAIL: 0
+
+PASS: only 1 Egypt_CommandCenter.ini
+PASS: no Iraq/Irq substrings in Egypt file
+PASS: no Irq_Command
+PASS: Object Egypt_CommandCenter once
+PASS: Side Egypt
+PASS: America CommandSet
+PASS: USA model/icons
+PASS: AmericaCommandCenter preserved
+PASS: entry count preserved
+PASS: only Egypt_CommandCenter.ini content changed
+PASS: no duplicate Egypt_CommandCenter objects
+PASS: broken vendor tokens absent
+PASS: AmericaCommandCenterCommandSet exists in DATA
+PASS: US_E3G_AWACS exists in DATA
+
+FINAL: PASS

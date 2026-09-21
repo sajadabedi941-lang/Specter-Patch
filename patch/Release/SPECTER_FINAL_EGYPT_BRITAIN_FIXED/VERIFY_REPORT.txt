@@ -1,0 +1,43 @@
+SPECTER FINAL EGYPT + BRITAIN FIXED — VERIFY REPORT
+============================================================
+VERDICT: PASS
+
+_SPEC_DATA_ONE.big SHA256: 785f67311e1d489158f2801ba5b848750a6b89cad68a19447e6c3cb2495eca88
+_SPEC_ART_ONE.big  SHA256: bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+DATA entries: 2887
+ART entries:  2689
+
+COMPARE / MERGE:
+  Current Egypt-fixed DATA still had vendor Britain_F35B sha=4f6e01bc9e33635f…
+  Last working Britain package F35B sha=c92587adf41b34f0… (restored, not reworked)
+  Egypt_CommandCenter kept from FINAL EGYPT FIXED sha=4cfc24c92e0f8e93…
+  ART kept from last working Britain package (US_F35A / US_Command)
+
+Egypt_CommandCenter SHA256: 4cfc24c92e0f8e93395c3e4e50a1e2b451c42e302985a9be0667d61338a5f0b5
+Britain_F35B SHA256:        c92587adf41b34f0abd2ba4c4d4bfaf707abff3447aa41d51cbcf70e83266110
+
+PASS: 21  FAIL: 0
+
+PASS: only 1 Egypt_CommandCenter.ini
+PASS: only 1 Britain_F35B.ini
+PASS: Egypt CC sha = FINAL EGYPT FIXED
+PASS: Britain F35B sha = previous working fix
+PASS: no old broken Egypt CC copy
+PASS: no old broken Britain_F35B copy
+PASS: Object Egypt_CommandCenter unique
+PASS: Object Britain_F35B unique
+PASS: Object duplicates = 0 (Egypt_CommandCenter + Britain_F35B)
+PASS: Egypt Side Egypt + USA systems
+PASS: Egypt no Iraq/Irq refs
+PASS: Britain Side Britain + US_F35A
+PASS: BritainStealthJet path removed
+PASS: entry count preserved
+PASS: only Britain_F35B.ini restored vs Egypt DATA
+PASS: ART SHA = last working Britain ART
+PASS: ART has US_F35A.W3D + US_Command
+PASS: Missing references = 0
+PASS: INI parser PASS Egypt_CommandCenter
+PASS: INI parser PASS Britain_F35B
+PASS: Game initialization PASS (static)
+
+FINAL: PASS

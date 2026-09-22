@@ -1,0 +1,14 @@
+SPECTER1 flag ART clone strip 02
+
+DATA is the frozen OBJECT_BOOT pair. No Object, Draw, Model, or
+Animation was edited.
+
+ART is rebuilt from SPECTER1_CAMP_CLONE_IRAQ_VIETNAM plus the HUD
+TGA files required by the frozen MappedImages. All unused #516/#517/#518
+flag W3D clones are gone (IqPwr_/NkPwr_/IqWF_/NkWF_/irq_camp_*/
+country *_Flag_Hs / Iraq_Supply_* / NKor_Supply_* / NKr_Command_*).
+
+Original Irq__IqFlag_Hs and NKr__NKFlag_Hs stay. Extra Draws and
+building-cloth retargets are not restored.
+
+INGAME_TESTED = NO

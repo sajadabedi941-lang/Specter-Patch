@@ -14,4 +14,4 @@ Checksums:
   ART  SHA256 c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
 
 FIX_APPLIED = YES (Turkey_FactionImages parser fix)
-INGAME_TESTED = NO
+INGAME_TESTED = YES (user: game launches)

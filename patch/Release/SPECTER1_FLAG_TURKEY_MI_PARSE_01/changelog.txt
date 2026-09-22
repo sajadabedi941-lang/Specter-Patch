@@ -10,4 +10,4 @@ are unchanged. ART is the STRIP_02 pair, byte-identical.
 PlayerTemplate, CommandButton, Specter_RemainingFlags,
 Specter_CampFlags, Objects, Weapon, Upgrade, CommandSet are frozen.
 
-INGAME_TESTED = NO
+INGAME_TESTED = YES (user: game launches)

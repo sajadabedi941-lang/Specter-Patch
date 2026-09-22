@@ -1,0 +1,91 @@
+SPECTER1 STRIP_02 FORENSIC SUMMARY
+FIX_APPLIED = NO
+NO_BIG_REBUILD = YES
+INGAME_TESTED = YES (user: STRIP_02 still crashes at initialization)
+CLONE_W3D_PRELOAD_RULED_OUT = YES
+
+Pairs compared
+  STRIP_02 DATA  3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221  (OBJECT_BOOT)
+  STRIP_02 ART   c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
+  CAMP_CLONE DATA e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+  CAMP_CLONE ART  15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+Remaining differences vs last known launch
+  DATA added   3 MappedImage INIs
+               Specter_RemainingFlags.INI
+               Specter_CampFlags.INI
+               Turkey_FactionImages.INI
+  DATA changed PlayerTemplate.ini
+               CommandButton.ini
+  ART added    17 country *_Flag.tga (128x64 32-bit bottom-up, headers valid)
+  ART changed  5 Turkey HUD TGAs (same pixel size; 24-bit top-down -> 32-bit bottom-up)
+  ART W3D      0 added, 0 changed, 0 banned clones packed
+  Object Model/Animation clone refs = 0
+  Extra Flag_Hs Draws = 0
+  Duplicate DATA/ART paths = 0
+
+===== EXACT OFFENDING ASSET (highest confidence) =====
+File:
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI
+
+First bytes:
+  ' ; SPECTER PATCH Phase 2 - Turkey faction flag / UI images
+  ^
+  stray ASCII apostrophe (0x27) before the comment.
+
+This file does not exist in CAMP_CLONE. SAGE parses every INI in the DATA BIG
+during initialization. A non-comment, non-key token at file start is a classic
+Uncaught Exception during initialization with no stack / no last error.
+
+The file then defines WatermarkTurkey, GameinfoTurkey, Turkey_Logo,
+SSObserverTurkey, Turkey_Flag. FactionTurkey PlayerTemplate remaps to those
+names (65 PT remaps total; Turkey uses these five).
+
+===== CRASH HYPOTHESIS RANKING =====
+H1  Turkey_FactionImages.INI leading apostrophe
+    Confidence: high. Exact file. Init-parse surface. Not present on last launch.
+
+H2  The other two new MappedImage INIs (Specter_RemainingFlags, Specter_CampFlags)
+    81 additional MappedImage blocks. Comments are legal `;` like working files.
+    Texture= resolves. Coords fit TGA. No cross-file name collisions.
+    Confidence: medium until H1 is isolated.
+
+H3  PlayerTemplate.ini 65 HUD remaps onto those new MappedImages
+    All names resolve in DATA. Crash would be secondary to H1/H2 parse/bind.
+
+H4  Overwritten Turkey HUD TGAs
+    Same dimensions as camp-clone, format changed 24-bit/top-down -> 32-bit/bottom-up.
+    Possible but weaker than an illegal INI token.
+
+H5  New country Flag TGAs
+    Headers match the intended 128x64 32-bit desc 0x08 pattern. Unlikely alone.
+
+H6  CommandButton CampFlag* remaps
+    17 buttons, MappedImage present. Usually nonfatal if images exist.
+
+Ruled out
+  unused clone W3D preload (STRIP_02 removed 60; still crashed)
+  extra Draws / clone Model= / Animation container mismatch
+  duplicate BIG paths
+  missing Texture= for the new MappedImages
+  remaining ART W3D vs camp-clone (none)
+
+===== NEXT ISOLATED REPAIR (do not do it in this audit) =====
+Do not restore flags, cloth, or extra Draws.
+Do not retarget Model=/Animation=.
+
+Smallest DATA isolation (one file):
+  Rebuild DATA from OBJECT_BOOT / STRIP_02 DATA.
+  Delete or rewrite ONLY Turkey_FactionImages.INI so it starts with
+  `MappedImage` or a legal `;` comment (no leading apostrophe).
+  Keep PlayerTemplate / CommandButton / the other two MI files / ART unchanged.
+  If Turkey PT remaps require those five images, rewrite the file; do not delete
+  it unless PT is also restored.
+
+If that still crashes, next isolation:
+  Restore PlayerTemplate.ini + the 3 new MI files + CommandButton.ini from
+  CAMP_CLONE. Keep STRIP_02 ART. That removes all remaining Group A DATA.
+
+Safest known-good pair remains SPECTER1_FLAG_BOOT_SAFE_01 / CAMP_CLONE.
+
+No BIG rebuild in this audit.

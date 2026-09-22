@@ -1,0 +1,375 @@
+SPECTER1 STRIP_02 FORENSIC INIT-CRASH AUDIT
+FIX_APPLIED = NO
+INGAME_TESTED = YES (user: STRIP_02 still crashes at initialization)
+CLONE_W3D_PRELOAD_RULED_OUT = YES
+STRIP_DATA_SHA256 = 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+STRIP_ART_SHA256 = c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
+CAMP_CLONE_DATA_SHA256 = e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+CAMP_CLONE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+PACKED_STRIP_DATA = 2883  CAMP_CLONE_DATA = 2880
+PACKED_STRIP_ART = 4449  CAMP_CLONE_ART = 4432
+DUPLICATE_DATA = 0
+DUPLICATE_ART = 0
+
+===== REMAINING DIFF vs LAST KNOWN LAUNCH =====
+ADDED_DATA = 3
+  + data\ini\mappedimages\handcreated\specter_campflags.ini
+  + data\ini\mappedimages\handcreated\specter_remainingflags.ini
+  + data\ini\mappedimages\handcreated\turkey_factionimages.ini
+REMOVED_DATA = 0
+CHANGED_DATA = 2
+  ~ data\ini\commandbutton.ini
+  ~ data\ini\playertemplate.ini
+ADDED_ART = 17
+  + art\textures\de_flag.tga
+  + art\textures\fr_flag.tga
+  + art\textures\in_flag.tga
+  + art\textures\it_flag.tga
+  + art\textures\jp_flag.tga
+  + art\textures\ly_flag.tga
+  + art\textures\pk_flag.tga
+  + art\textures\sa_flag.tga
+  + art\textures\se_flag.tga
+  + art\textures\sk_flag.tga
+  + art\textures\sy_flag.tga
+  + art\textures\tr_flag.tga
+  + art\textures\ua_flag.tga
+  + art\textures\uae_flag.tga
+  + art\textures\uk_flag.tga
+  + art\textures\vn_flag.tga
+  + art\textures\za_flag.tga
+REMOVED_ART = 0
+CHANGED_ART = 5
+  ~ art\textures\gameinfoturkey.tga
+  ~ art\textures\ssobserverturkey.tga
+  ~ art\textures\turkey_flag.tga
+  ~ art\textures\turkey_logo.tga
+  ~ art\textures\watermarkturkey.tga
+ADDED_W3D = 0
+CHANGED_W3D = 0
+OTHER_ART_ADDED = 0 []
+OTHER_ART_CHANGED = 0 []
+BANNED_W3D_STILL_PACKED = 0
+DATA_CLONE_MODEL_ANIM = 0
+EXTRA_FLAG_DRAWS = 0
+
+===== TGA HEADERS (STRIP_02 new/changed) =====
+  Art\Textures\DE_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\FR_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\IN_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\IT_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\JP_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\LY_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\PK_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\SA_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\SE_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\SK_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\SY_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\TR_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\UA_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\UAE_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\UK_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\VN_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\ZA_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0
+  Art\Textures\GameinfoTurkey.tga 64x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=16402 expected=16402 size_ok=True cmap=0  WAS 64x64 bpp=24 type=2 desc=32 origin=top-down size=12306
+  Art\Textures\SSObserverTurkey.tga 64x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=16402 expected=16402 size_ok=True cmap=0  WAS 64x64 bpp=24 type=2 desc=32 origin=top-down size=12306
+  Art\Textures\Turkey_Flag.tga 256x128 bpp=32 type=2 desc=0x08 origin=bottom-up size=131090 expected=131090 size_ok=True cmap=0  WAS 256x128 bpp=24 type=2 desc=32 origin=top-down size=98322
+  Art\Textures\Turkey_Logo.tga 128x128 bpp=32 type=2 desc=0x08 origin=bottom-up size=65554 expected=65554 size_ok=True cmap=0  WAS 128x128 bpp=24 type=2 desc=32 origin=top-down size=49170
+  Art\Textures\WatermarkTurkey.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32786 expected=32786 size_ok=True cmap=0  WAS 128x64 bpp=24 type=2 desc=32 origin=top-down size=24594
+KNOWN_GOOD_TGA_REFS
+  Art\Textures\DPRK_Flag.dds 64x0 bpp=128 type=83 desc=0x00 origin=bottom-up size=4224 size_ok=False
+  Art\Textures\DPRK_Flag.tga 128x64 bpp=32 type=2 desc=0x08 origin=bottom-up size=32812 size_ok=False
+
+===== NEW MAPPEDIMAGE FILES =====
+FILE Data\INI\MappedImages\HandCreated\Specter_CampFlags.INI bytes=2870 MappedImage_count=17
+; SPECTER - infantry Camp/Barracks flag images (select / HUD cameo)
+; Texture paths are the packed Art\Textures\<stem> national flags.
+MappedImage CampFlagJapan
+  Texture = JP_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagVietnam
+  Texture = VN_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagSouthKorea
+  Texture = SK_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagLibya
+  Texture = LY_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagSouthAfrica
+  Texture = ZA_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagPakistan
+  Texture = PK_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage CampFlagIndia
+  Texture = IN_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+ 
+---
+FILE Data\INI\MappedImages\HandCreated\Specter_RemainingFlags.INI bytes=10409 MappedImage_count=64
+; SPECTER - remaining faction flag images (select / HUD)
+; Texture paths are the packed Art\Textures\<stem> files.
+MappedImage WatermarkJapan
+  Texture = JP_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage Japan_Logo
+  Texture = JP_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:32 Top:0 Right:96 Bottom:64
+  Status = NONE
+End
+MappedImage GameinfoJapan
+  Texture = JP_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:32 Top:0 Right:96 Bottom:64
+  Status = NONE
+End
+MappedImage SSObserverJapan
+  Texture = JP_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:32 Top:0 Right:96 Bottom:64
+  Status = NONE
+End
+MappedImage WatermarkVietnam
+  Texture = VN_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+MappedImage Vietnam_Logo
+  Texture = VN_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:32 Top:0 Right:96 Bottom:64
+  Status = NONE
+End
+MappedImage GameinfoVietnam
+  Texture = VN_Flag
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:32 Top:0 Right:96
+---
+FILE Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI bytes=858 MappedImage_count=5
+'; SPECTER PATCH Phase 2 - Turkey faction flag / UI images
+
+MappedImage WatermarkTurkey
+  Texture = WatermarkTurkey
+  TextureWidth = 128
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:128 Bottom:64
+  Status = NONE
+End
+
+MappedImage GameinfoTurkey
+  Texture = GameinfoTurkey
+  TextureWidth = 64
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:64 Bottom:64
+  Status = NONE
+End
+
+MappedImage Turkey_Logo
+  Texture = Turkey_Logo
+  TextureWidth = 128
+  TextureHeight = 128
+  Coords = Left:0 Top:0 Right:128 Bottom:128
+  Status = NONE
+End
+
+MappedImage SSObserverTurkey
+  Texture = SSObserverTurkey
+  TextureWidth = 64
+  TextureHeight = 64
+  Coords = Left:0 Top:0 Right:64 Bottom:64
+  Status = NONE
+End
+
+MappedImage Turkey_Flag
+  Texture = Turkey_Flag
+  TextureWidth = 256
+  TextureHeight = 128
+  Coords = Left:0 Top:0 Right:256 Bottom:128
+  Status = NONE
+End
+
+---
+NEW_MAPPEDIMAGE_BLOCKS = 86
+MISSING_TEXTURE_FOR_NEW_MI = 0
+COORDS_OR_SIZE_MISMATCH = 0
+TEXTURE_NAME_LEN_GT_13 = 3
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI Texture=WatermarkTurkey len=15
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI Texture=GameinfoTurkey len=14
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI Texture=SSObserverTurkey len=16
+MAPPEDIMAGE_NAME_DEFINED_IN_MULTIPLE_FILES = 0
+
+===== PLAYERTEMPLATE HUD REPOINTS =====
+PT_REPOINTS = 65
+  FactionBritain FlagWaterMark WatermarkUSA -> WatermarkBritain MappedImage=YES
+  FactionBritain EnabledImage SSObserverUSA -> SSObserverBritain MappedImage=YES
+  FactionBritain SideIconImage GameinfoAMRCA -> GameinfoBritain MappedImage=YES
+  FactionBritain GeneralImage USA_Laser -> Britain_Logo MappedImage=YES
+  FactionFrance FlagWaterMark WatermarkUSA -> WatermarkFrance MappedImage=YES
+  FactionFrance EnabledImage SSObserverUSA -> SSObserverFrance MappedImage=YES
+  FactionFrance SideIconImage GameinfoAMRCA -> GameinfoFrance MappedImage=YES
+  FactionFrance GeneralImage USA_Laser -> France_Logo MappedImage=YES
+  FactionGermany FlagWaterMark WatermarkUSA -> WatermarkGermany MappedImage=YES
+  FactionGermany EnabledImage SSObserverUSA -> SSObserverGermany MappedImage=YES
+  FactionGermany SideIconImage GameinfoAMRCA -> GameinfoGermany MappedImage=YES
+  FactionGermany GeneralImage USA_Laser -> Germany_Logo MappedImage=YES
+  FactionIndia FlagWaterMark WatermarkGLA -> WatermarkIndia MappedImage=YES
+  FactionIndia EnabledImage SSObserverGLA -> SSObserverIndia MappedImage=YES
+  FactionIndia SideIconImage GameinfoGLA -> GameinfoIndia MappedImage=YES
+  FactionIndia GeneralImage GLA_Logo -> India_Logo MappedImage=YES
+  FactionItaly FlagWaterMark WatermarkUSA -> WatermarkItaly MappedImage=YES
+  FactionItaly EnabledImage SSObserverUSA -> SSObserverItaly MappedImage=YES
+  FactionItaly SideIconImage GameinfoAMRCA -> GameinfoItaly MappedImage=YES
+  FactionItaly GeneralImage USA_Laser -> Italy_Logo MappedImage=YES
+  FactionJapan FlagWaterMark WatermarkNorthKorea -> WatermarkJapan MappedImage=YES
+  FactionJapan EnabledImage SSObserverNorthKorea -> SSObserverJapan MappedImage=YES
+  FactionJapan SideIconImage GameinfoNorthKorea -> GameinfoJapan MappedImage=YES
+  FactionLibya FlagWaterMark WatermarkGLA -> WatermarkLibya MappedImage=YES
+  FactionLibya EnabledImage SSObserverGLA -> SSObserverLibya MappedImage=YES
+  FactionLibya SideIconImage GameinfoGLA -> GameinfoLibya MappedImage=YES
+  FactionLibya GeneralImage GLA_Logo -> Libya_Logo MappedImage=YES
+  FactionPakistan FlagWaterMark WatermarkGLA -> WatermarkPakistan MappedImage=YES
+  FactionPakistan EnabledImage SSObserverGLA -> SSObserverPakistan MappedImage=YES
+  FactionPakistan SideIconImage GameinfoGLA -> GameinfoPakistan MappedImage=YES
+  FactionPakistan GeneralImage GLA_Logo -> Pakistan_Logo MappedImage=YES
+  FactionSaudiArabia FlagWaterMark WatermarkGLA -> WatermarkSaudiArabia MappedImage=YES
+  FactionSaudiArabia EnabledImage SSObserverGLA -> SSObserverSaudiArabia MappedImage=YES
+  FactionSaudiArabia SideIconImage GameinfoGLA -> GameinfoSaudiArabia MappedImage=YES
+  FactionSaudiArabia GeneralImage GLA_Logo -> SaudiArabia_Logo MappedImage=YES
+  FactionSouthAfrica FlagWaterMark WatermarkGLA -> WatermarkSouthAfrica MappedImage=YES
+  FactionSouthAfrica EnabledImage SSObserverGLA -> SSObserverSouthAfrica MappedImage=YES
+  FactionSouthAfrica SideIconImage GameinfoGLA -> GameinfoSouthAfrica MappedImage=YES
+  FactionSouthAfrica GeneralImage GLA_Logo -> SouthAfrica_Logo MappedImage=YES
+  FactionSouthKorea FlagWaterMark WatermarkNorthKorea -> WatermarkSouthKorea MappedImage=YES
+  FactionSouthKorea EnabledImage SSObserverNorthKorea -> SSObserverSouthKorea MappedImage=YES
+  FactionSouthKorea SideIconImage GameinfoNorthKorea -> GameinfoSouthKorea MappedImage=YES
+  FactionSweden FlagWaterMark WatermarkUSA -> WatermarkSweden MappedImage=YES
+  FactionSweden EnabledImage SSObserverUSA -> SSObserverSweden MappedImage=YES
+  FactionSweden SideIconImage GameinfoAMRCA -> GameinfoSweden MappedImage=YES
+  FactionSweden GeneralImage USA_Laser -> Sweden_Logo MappedImage=YES
+  FactionSyria FlagWaterMark WatermarkGLA -> WatermarkSyria MappedImage=YES
+  FactionSyria EnabledImage SSObserverGLA -> SSObserverSyria MappedImage=YES
+  FactionSyria SideIconImage GameinfoGLA -> GameinfoSyria MappedImage=YES
+  FactionSyria GeneralImage GLA_Logo -> Syria_Logo MappedImage=YES
+  FactionTurkey FlagWaterMark WatermarkUSA -> WatermarkTurkey MappedImage=YES
+  FactionTurkey EnabledImage SSObserverUSA -> SSObserverTurkey MappedImage=YES
+  FactionTurkey SideIconImage GameinfoAMRCA -> GameinfoTurkey MappedImage=YES
+  FactionTurkey GeneralImage USA_Laser -> Turkey_Logo MappedImage=YES
+  FactionUAE FlagWaterMark WatermarkGLA -> WatermarkUAE MappedImage=YES
+  FactionUAE EnabledImage SSObserverGLA -> SSObserverUAE MappedImage=YES
+  FactionUAE SideIconImage GameinfoGLA -> GameinfoUAE MappedImage=YES
+  FactionUAE GeneralImage GLA_Logo -> UAE_Logo MappedImage=YES
+  FactionUkraine FlagWaterMark WatermarkUSA -> WatermarkUkraine MappedImage=YES
+  FactionUkraine EnabledImage SSObserverUSA -> SSObserverUkraine MappedImage=YES
+  FactionUkraine SideIconImage GameinfoAMRCA -> GameinfoUkraine MappedImage=YES
+  FactionUkraine GeneralImage USA_Laser -> Ukraine_Logo MappedImage=YES
+  FactionVietnam FlagWaterMark WatermarkNorthKorea -> WatermarkVietnam MappedImage=YES
+  FactionVietnam EnabledImage SSObserverNorthKorea -> SSObserverVietnam MappedImage=YES
+  FactionVietnam SideIconImage GameinfoNorthKorea -> GameinfoVietnam MappedImage=YES
+PT_MISSING_MAPPEDIMAGE = 0
+
+===== COMMANDBUTTON CAMPFLAG =====
+BTN_REPOINTS = 17
+  Command_ConstructPakistan_Barracks -> CampFlagPakistan MappedImage=YES
+  Command_ConstructSaudiArabia_Barracks -> CampFlagSaudiArabia MappedImage=YES
+  Command_ConstructUAE_Barracks -> CampFlagUAE MappedImage=YES
+  Command_ConstructIndia_Barracks -> CampFlagIndia MappedImage=YES
+  Command_ConstructSyria_Barracks -> CampFlagSyria MappedImage=YES
+  Command_ConstructGermanyBootCamp -> CampFlagGermany MappedImage=YES
+  Command_ConstructFranceBootCamp -> CampFlagFrance MappedImage=YES
+  Command_ConstructBritainBootCamp -> CampFlagBritain MappedImage=YES
+  Command_ConstructItalyBootCamp -> CampFlagItaly MappedImage=YES
+  Command_ConstructSwedenBootCamp -> CampFlagSweden MappedImage=YES
+  Command_ConstructUkraineBootCamp -> CampFlagUkraine MappedImage=YES
+  Command_ConstructTurkeyBootCamp -> CampFlagTurkey MappedImage=YES
+  Command_ConstructLibya_Barracks -> CampFlagLibya MappedImage=YES
+  Command_ConstructSouthAfrica_Barracks -> CampFlagSouthAfrica MappedImage=YES
+  Command_ConstructSouthKorea_Barracks_SAFE -> CampFlagSouthKorea MappedImage=YES
+  Command_ConstructJapan_Barracks_SAFE -> CampFlagJapan MappedImage=YES
+  Command_ConstructVietnam_Barracks_SAFE -> CampFlagVietnam MappedImage=YES
+BTN_MISSING_MAPPEDIMAGE = 0
+
+===== CRASH HYPOTHESIS RANKING =====
+Ruled out: unused #516-518 clone W3D preload (STRIP_02 removed them; still crashes).
+Ruled out: extra Flag_Hs Draws / clone Model= (OBJECT_BOOT DATA has none).
+Ruled out: packed-path duplicates.
+
+H1  NEW MAPPEDIMAGE INIs loaded at init (3 files, not in last known launch)
+    data\ini\mappedimages\handcreated\specter_campflags.ini, data\ini\mappedimages\handcreated\specter_remainingflags.ini, data\ini\mappedimages\handcreated\turkey_factionimages.ini
+    SAGE parses every INI in the DATA BIG at startup. A bad MappedImage
+    definition can throw Uncaught Exception during initialization with no stack.
+    New blocks=86 missing_tex=0 coord_mismatch=0
+    name_collisions_across_files=0
+
+H2  PLAYERTEMPLATE HUD remaps to those new MappedImages
+    65 fields retargeted vs camp-clone; missing MI=0
+    Init builds every faction template. A missing or colliding image name crashes here.
+
+H3  OVERWRITTEN TURKEY HUD TGAs (dimension/format change vs last launch)
+    resized_vs_camp_clone=[]
+    If MappedImages still declare old TextureWidth/Height/Coords against a new
+    128x64 flag TGA, init can fault while building the image atlas.
+
+H4  NEW COUNTRY FLAG TGAs (format) used by new MappedImages
+    added=17 bad_header=[]
+    Lower probability if headers match working DPRK_Flag (128x64 32-bit desc 0x08).
+
+H5  COMMANDBUTTON CampFlag ButtonImage remaps
+    17 buttons; missing MI=0
+    CommandButton.ini is parsed at init. Usually image-not-found is nonfatal,
+    but a bad MappedImage name shared with H1 can still fault.
+
+H6  OTHER (not remaining vs camp-clone)
+    added_w3d=0 changed_w3d=0 other_art=[]
+    If this is empty, remaining crash surface is DATA Group A + TGA overlays only.
+
+===== NEXT ISOLATED REPAIR (do not run in this audit) =====
+Do not touch building Object INIs. Do not restore cloth/Draws/clones.
+Next pair must keep STRIP_02 ART OR camp-clone ART, and isolate DATA Group A:
+  Step A1: restore PlayerTemplate.ini + the 3 new MappedImage INIs + CommandButton.ini
+           from CAMP_CLONE. Keep STRIP_02 ART (or revert ART Turkey TGAs too).
+           That is: DATA == camp-clone, ART == STRIP_02 or camp-clone.
+  If that boots, crash source is Group A (PT/MI/CommandButton/TGA), not buildings.
+  Then reintroduce: (1) TGA+MI only, PT/CommandButton still original;
+                    (2) PT remaps; (3) CommandButton CampFlag last.
+Safest immediate boot pair remains SPECTER1_FLAG_BOOT_SAFE_01 / CAMP_CLONE
+(byte-identical last known launch).
+
+No BIG rebuild in this audit.

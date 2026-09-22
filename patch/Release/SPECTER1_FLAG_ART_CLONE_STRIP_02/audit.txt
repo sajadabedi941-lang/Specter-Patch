@@ -1,0 +1,197 @@
+SPECTER1 FLAG ART CLONE STRIP 02
+BASELINE_DATA = SPECTER1_FLAG_OBJECT_BOOT_01 (frozen)
+BASELINE_DATA_SHA256 = 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+BASELINE_ART_SHA256 = 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+CAMP_CLONE_ART_SHA256 = 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+NEW_DATA_SHA256 = 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+NEW_ART_SHA256 = c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
+PACKED_DATA_FILES = 2883
+PACKED_ART_FILES = 4449 (camp-clone 4432 + 17 new TGA)
+DUPLICATE_DATA_PATHS = 0
+DUPLICATE_ART_PATHS = 0
+BIG_INTEGRITY = YES
+BOOT_SAFE = YES
+FIX_APPLIED = YES (ART only)
+INGAME_TESTED = NO
+DATA_BYTE_IDENTICAL_TO_OBJECT_BOOT = YES
+
+===== REMOVED W3D CLONES =====
+REMOVED_W3D_COUNT = 60
+  - Art\W3D\DE_Flag_Hs.W3D
+  - Art\W3D\FR_Flag_Hs.W3D
+  - Art\W3D\IN_Flag_Hs.W3D
+  - Art\W3D\IT_Flag_Hs.W3D
+  - Art\W3D\IqPwr_IN.W3D
+  - Art\W3D\IqPwr_LY.W3D
+  - Art\W3D\IqPwr_PK.W3D
+  - Art\W3D\IqPwr_SA.W3D
+  - Art\W3D\IqPwr_SY.W3D
+  - Art\W3D\IqPwr_UAE.W3D
+  - Art\W3D\IqPwr_ZA.W3D
+  - Art\W3D\IqWF_LY.W3D
+  - Art\W3D\IqWF_SA.W3D
+  - Art\W3D\IqWF_SY.W3D
+  - Art\W3D\IqWF_UAE.W3D
+  - Art\W3D\IqWF_ZA.W3D
+  - Art\W3D\Iraq_Supply_IN.W3D
+  - Art\W3D\Iraq_Supply_LY.W3D
+  - Art\W3D\Iraq_Supply_PK.W3D
+  - Art\W3D\Iraq_Supply_SA.W3D
+  - Art\W3D\Iraq_Supply_SY.W3D
+  - Art\W3D\Iraq_Supply_UAE.W3D
+  - Art\W3D\Iraq_Supply_ZA.W3D
+  - Art\W3D\JP_Flag_Hs.W3D
+  - Art\W3D\LY_Flag_Hs.W3D
+  - Art\W3D\NKor_Supply_JP.W3D
+  - Art\W3D\NKor_Supply_SK.W3D
+  - Art\W3D\NKor_Supply_VN.W3D
+  - Art\W3D\NKr_Command_JP.W3D
+  - Art\W3D\NKr_Command_SK.W3D
+  - Art\W3D\NKr_Command_VN.W3D
+  - Art\W3D\NkPwr_JP.W3D
+  - Art\W3D\NkPwr_SK.W3D
+  - Art\W3D\NkPwr_VN.W3D
+  - Art\W3D\NkWF_IN.W3D
+  - Art\W3D\NkWF_JP.W3D
+  - Art\W3D\NkWF_PK.W3D
+  - Art\W3D\NkWF_SK.W3D
+  - Art\W3D\NkWF_VN.W3D
+  - Art\W3D\PK_Flag_Hs.W3D
+  - Art\W3D\SA_Flag_Hs.W3D
+  - Art\W3D\SE_Flag_Hs.W3D
+  - Art\W3D\SK_Flag_Hs.W3D
+  - Art\W3D\SY_Flag_Hs.W3D
+  - Art\W3D\TR_Flag_Hs.W3D
+  - Art\W3D\UAE_Flag_Hs.W3D
+  - Art\W3D\UA_Flag_Hs.W3D
+  - Art\W3D\UK_Flag_Hs.W3D
+  - Art\W3D\VN_Flag_Hs.W3D
+  - Art\W3D\ZA_Flag_Hs.W3D
+  - Art\W3D\irq_camp_IN.W3D
+  - Art\W3D\irq_camp_JP.W3D
+  - Art\W3D\irq_camp_LY.W3D
+  - Art\W3D\irq_camp_PK.W3D
+  - Art\W3D\irq_camp_SA.W3D
+  - Art\W3D\irq_camp_SK.W3D
+  - Art\W3D\irq_camp_SY.W3D
+  - Art\W3D\irq_camp_UAE.W3D
+  - Art\W3D\irq_camp_VN.W3D
+  - Art\W3D\irq_camp_ZA.W3D
+
+===== HUD TEXTURES KEPT/ADDED =====
+ADDED_TGA_FROM_OBJECT_BOOT = 17
+  + Art\Textures\JP_Flag.tga
+  + Art\Textures\VN_Flag.tga
+  + Art\Textures\SK_Flag.tga
+  + Art\Textures\LY_Flag.tga
+  + Art\Textures\ZA_Flag.tga
+  + Art\Textures\PK_Flag.tga
+  + Art\Textures\IN_Flag.tga
+  + Art\Textures\SY_Flag.tga
+  + Art\Textures\UAE_Flag.tga
+  + Art\Textures\SA_Flag.tga
+  + Art\Textures\TR_Flag.tga
+  + Art\Textures\SE_Flag.tga
+  + Art\Textures\UA_Flag.tga
+  + Art\Textures\IT_Flag.tga
+  + Art\Textures\UK_Flag.tga
+  + Art\Textures\DE_Flag.tga
+  + Art\Textures\FR_Flag.tga
+REPLACED_TGA_OVER_CAMP_CLONE = 5
+  ~ Art\Textures\GameinfoTurkey.tga
+  ~ Art\Textures\SSObserverTurkey.tga
+  ~ Art\Textures\Turkey_Flag.tga
+  ~ Art\Textures\Turkey_Logo.tga
+  ~ Art\Textures\WatermarkTurkey.tga
+
+===== PASS SCANS =====
+PASS1_DATA_NO_CLONE_MODEL_ANIM = YES
+PASS1_DATA_NO_EXTRA_DRAWS = YES
+PASS2_ART_NO_BANNED_W3D = YES
+PASS3_DATA_FROZEN = YES
+PASS4_NO_DUPLICATE_ART = YES
+PASS5_MAPPEDIMAGE_TEXTURES_RESOLVE = YES
+
+===== REMAINING ACTIVE FLAG REFERENCES =====
+PlayerTemplate HUD remaps = KEPT (DATA frozen)
+COMMANDBUTTON_CAMPFLAG = 17 (DATA frozen)
+  Command_ConstructPakistan_Barracks
+  Command_ConstructSaudiArabia_Barracks
+  Command_ConstructUAE_Barracks
+  Command_ConstructIndia_Barracks
+  Command_ConstructSyria_Barracks
+  Command_ConstructGermanyBootCamp
+  Command_ConstructFranceBootCamp
+  Command_ConstructBritainBootCamp
+  Command_ConstructItalyBootCamp
+  Command_ConstructSwedenBootCamp
+  Command_ConstructUkraineBootCamp
+  Command_ConstructTurkeyBootCamp
+  Command_ConstructLibya_Barracks
+  Command_ConstructSouthAfrica_Barracks
+  Command_ConstructSouthKorea_Barracks_SAFE
+  Command_ConstructJapan_Barracks_SAFE
+  Command_ConstructVietnam_Barracks_SAFE
+MAPPEDIMAGE_FILES = 3
+  Data\INI\MappedImages\HandCreated\Specter_RemainingFlags.INI
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI
+  Data\INI\MappedImages\HandCreated\Specter_CampFlags.INI
+Original Abbas/NuclearCenter Flag_Hs = KEPT
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas_AI.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas_AI.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas_AI.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_NuclearCenter.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_NuclearCenter.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=Irq__IqFlag_Hs Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+  Model=NKr__NKFlag_Hs Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_NuclearCenter.ini
+Irq__IqFlag_Hs / NKr__NKFlag_Hs W3D = KEPT
+Building cloth / extra Draws / Model retargets = NOT RESTORED
+
+===== REMAINING MODIFIED OBJECTS vs OBJECT_BOOT DATA =====
+NONE (DATA byte-identical)
+
+WEAPON_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+COMMANDSET_CHANGED = NO
+COMMANDBUTTON_CHANGED = NO
+PLAYERTEMPLATE_CHANGED = NO
+PROTECTED_FACTIONS_UNCHANGED = YES
+GAMEPLAY_CHANGED = NO
+ART_CHANGED = YES (unused flag W3D clones removed; HUD TGA kept)
+DATA_CHANGED = NO
+REENGAGE_FLAGS = NO

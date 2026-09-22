@@ -1,0 +1,18 @@
+SPECTER1_FLAG_ART_CLONE_STRIP_02
+================================
+
+ART-only strip of unused flag W3D clones. DATA is unchanged from
+SPECTER1_FLAG_OBJECT_BOOT_01.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+  ART  SHA256 c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
+
+BOOT_SAFE = YES
+FIX_APPLIED = YES (ART only)
+INGAME_TESTED = NO

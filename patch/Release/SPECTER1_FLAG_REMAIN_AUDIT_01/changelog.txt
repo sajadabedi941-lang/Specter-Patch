@@ -1,0 +1,6 @@
+Read-only remaining-init audit of SPECTER1_FLAG_OBJECT_BOOT_01.
+
+No DATA/ART rebuild. No ZIP pair. No claim that the game launches.
+
+Finding: #518 renamed packed W3D files but left donor internal mesh names.
+Those 60 clones are unused by Object on the current DATA pair and still packed in ART.

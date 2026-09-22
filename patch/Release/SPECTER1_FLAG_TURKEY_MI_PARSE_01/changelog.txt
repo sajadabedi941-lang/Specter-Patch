@@ -1,0 +1,13 @@
+SPECTER1 Turkey MappedImage parser fix
+
+STRIP_02 still crashed at initialization. Forensic audit found
+Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI starts
+with a stray apostrophe before the comment.
+
+This packer removes only that apostrophe. The five MappedImage blocks
+are unchanged. ART is the STRIP_02 pair, byte-identical.
+
+PlayerTemplate, CommandButton, Specter_RemainingFlags,
+Specter_CampFlags, Objects, Weapon, Upgrade, CommandSet are frozen.
+
+INGAME_TESTED = NO

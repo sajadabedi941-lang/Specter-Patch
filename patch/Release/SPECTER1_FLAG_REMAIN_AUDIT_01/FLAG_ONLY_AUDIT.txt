@@ -1,0 +1,141 @@
+SPECTER1 FLAG REMAINING-INIT AUDIT
+FIX_APPLIED = NO
+INGAME_TESTED = NO
+
+===== CURRENT PAIR =====
+Release = SPECTER1_FLAG_OBJECT_BOOT_01 (PR #520, latest GitHub release)
+DATA SHA256 3e42c369fb30e229062fcbf29feafb15c9e59472dc16757d8e5f0c0092813221
+ART  SHA256 2b84d7836b6560d22f32ce2c6687a167a52515ea2f70aeecbc934968fccb9af1
+Packed DATA 2883 / ART 4509
+Duplicate DATA paths = 0
+Duplicate ART paths = 0
+BIG integrity = YES
+
+Last known launch = SPECTER1_CAMP_CLONE_IRAQ_VIETNAM
+DATA SHA256 e04a7b08a2fc6ae5648611d68b3b026e5cb004a103e92b2926d246a9ad1c6dfd
+ART  SHA256 15ca142798e737cb7fd7434c02976d55c40948a42b4ee121143253911aad740a
+
+===== HISTORY (do not re-apply) =====
+#516 remaining flags: TGA + W3D clones + building Model= retargets + extra Flag_Hs Draws + PT HUD remaps
+#517 camp/barracks: CampFlag MappedImages + construct ButtonImage + extra camp Draws
+#518 crashfix: renamed long files to IqPwr_/NkPwr_/IqWF_/NkWF_, rewrote Animation= to <file>.Irq__IqFlag_Hs, KEPT extra Draws
+#518 still crashed.
+#519 FLAG_BOOT_SAFE_01: byte-copy of camp-clone (group 0). Flags rolled back.
+#520 FLAG_OBJECT_BOOT_01: #518 ART kept; 118 building INIs restored to camp-clone; extra Draws removed; PT/CommandButton/TGA kept.
+
+===== WHY #518 WAS INCOMPLETE =====
+clone_w3d() only swapped the texture string inside the donor W3D. It never renamed the internal mesh / animation container.
+
+Confirmed by string dump of current ART:
+
+  File UK_Flag_Hs.W3D
+    packed name  = UK_Flag_Hs
+    internal     = IRQ__IQFLAG_HS
+    texture      = UK_Flag.tga
+    donor        = Irq__IqFlag_Hs.W3D (IraqiFlag.dds)
+
+  File DE_Flag_Hs.W3D
+    packed name  = DE_Flag_Hs
+    internal     = IRQ__IQFLAG_HS
+    texture      = DE_Flag.tga
+
+  File IqPwr_UAE.W3D
+    packed name  = IqPwr_UAE
+    internal     = IRAQ_POWERPLANT
+    texture      = UAE_Flag.tga
+    donor        = Iraq_Powerplant.W3D (IraqiFlag.tga)
+
+  File irq_camp_JP.W3D
+    packed name  = irq_camp_JP
+    internal     = IRQ_CAMP
+    texture      = JP_Flag.tga
+
+  File NkWF_JP.W3D
+    packed name  = NkWF_JP
+    internal     = NKR_WARFACTORY
+    texture      = JP_Flag.tga
+
+#518 set Object Model=UK_Flag_Hs and Animation=UK_Flag_Hs.Irq__IqFlag_Hs.
+SAGE loads UK_Flag_Hs.W3D then looks for mesh/container UK_Flag_Hs inside it.
+The container is still IRQ__IQFLAG_HS. That is a broken Object->Draw->Model->W3D chain.
+Shortening the packed filename did not fix the chain.
+
+Same class for IqPwr_XX / NkPwr_XX / IqWF_XX / NkWF_XX / irq_camp_XX / country *_Flag_Hs.
+
+===== FLAG OBJECT CHAINS ON CURRENT PAIR =====
+Extra Draws ModuleTag_SpecterNatFlag / SpecterCampFlag = 0
+Leftover clone Model=/Animation= (IqPwr_/NkPwr_/IqWF_/NkWF_/irq_camp_*/country *_Flag_Hs) = 0
+Used new W3D clones by any Object Model= = 0
+Refs to removed long names (Iraq_Powerplant_UAE etc.) = 0
+
+Remaining Object Flag_Hs (14 objects, camp-clone originals, last known launch):
+  Egypt_Abbas / India_Abbas / Iraq_Abbas / Iraq_Abbas_AI /
+  Libya_Abbas / Pakistan_Abbas / SaudiArabia_Abbas / SouthAfrica_Abbas /
+  Syria_Abbas / UAE_Abbas
+    Draw ModuleTag_03 -> Model=Irq__IqFlag_Hs -> Animation=Irq__IqFlag_Hs.Irq__IqFlag_Hs
+    W3D Art\W3D\Irq__IqFlag_Hs.W3D present, internal IRQ__IQFLAG_HS MATCHES
+
+  Japan_Abbas / NorthKorea_Abbas / SouthKorea_Abbas / Vietnam_Abbas
+    Draw ModuleTag_03 -> Model=NKr__NKFlag_Hs -> Animation=NKr__NKFlag_Hs.NKr__NKFlag_Hs
+    W3D present, name length 14, container matches Model
+
+UK_Flag_Hs object refs = 0
+IqPwr_/NkPwr_/IqWF_/NkWF_/irq_camp_/NK_camp_ object refs = 0
+
+Watch (DATA file hits, not all Model=):
+  Iraq_Powerplant 26  (original donor Model= on restored buildings + Iraq)
+  NKor_Powerplant 3
+  Irq_WarFactory 10
+  NKr_WarFactory 6
+  Flag_Hs 14
+  Irq__IqFlag_Hs 10
+  NKr__NKFlag_Hs 4
+  CampFlag 2 (MappedImage INIs only)
+
+===== STILL PACKED BUT UNREFERENCED (ART leftover) =====
+60 W3D clones still in _SPEC_ART_ONE.big (same ART as crashing #518):
+  17 country *_Flag_Hs (DE/FR/IN/IT/JP/LY/PK/SA/SE/SK/SY/TR/UA/UAE/UK/VN/ZA)
+  7 IqPwr_*  5 IqWF_*  3 NkPwr_*  5 NkWF_*
+  7 Iraq_Supply_*  3 NKor_Supply_*  3 NKr_Command_*  10 irq_camp_*
+
+Every one of those files has packed-name != internal mesh.
+If ZH indexes every W3D in the last-win ART BIG at init, these leftovers can still crash
+even though no Object Model= points at them.
+
+17 new *_Flag.tga + 5 overwritten Turkey HUD TGAs are packed and ARE referenced
+by MappedImages / PlayerTemplate / CommandButton. Texture refs resolve (packed=YES).
+
+===== VS CAMP-CLONE (current DATA/ART) =====
+Added DATA: 3 MappedImage INIs (Specter_RemainingFlags, Specter_CampFlags, Turkey_FactionImages)
+Changed DATA: PlayerTemplate.ini, CommandButton.ini only
+Restored: 118 target building Object INIs == camp-clone bytes
+Added ART: 77 (17 TGA + 60 W3D)
+Changed ART: 5 Turkey HUD TGAs
+Protected DATA / Weapon / Upgrade / CommandSet: not in the changed set
+
+===== NOT FLAG (ignore for this crash) =====
+A full-BIG Model= scan reported ~23988 "missing W3D" because vanilla meshes live in
+INIZH.big / game ART, not in _SPEC_ART_ONE.big. Those are overlay-expected and
+existed on the last known launch. Do not "fix" them.
+
+Long Model= names still present (IRIST_SLM/SLX, M2A3, etc.) are pre-flag NationalGround
+/ vehicle names that already booted. Do not rename them in a flag repair.
+
+===== RESIDUAL INIT RISK (ordered) =====
+1. UNUSED W3D clones still packed in ART, filename != internal mesh. Highest remaining
+   flag-ART risk. #518 crash class. Not referenced by Object, but ART-preload possible.
+2. Group A never isolated in-game: PlayerTemplate remaps + new MappedImages + new TGAs.
+   File-level Texture= refs are present. Parse/format risk only.
+3. CommandButton CampFlag* images (MappedImage only, frozen).
+4. Remaining Abbas Flag_Hs Draws. These matched camp-clone and last known launch.
+
+===== BOOT_SAFE (flag object-init only) =====
+Object-init B/D surface is stripped on this pair.
+ART still contains the #518 clone set.
+Cannot claim in-game boot. ZH exe not in this environment.
+
+Safest next repair (do not do it in this audit turn):
+  Keep current DATA (buildings already original; PT/CommandButton frozen).
+  Rebuild ART from camp-clone ART + the TGA files required by the kept MappedImages.
+  Delete all 60 unused W3D clones. Do not reintroduce any cloned Model= or extra Draws.
+  One complete DATA+ART ZIP. SHA256. Stop. Wait for launch confirmation.

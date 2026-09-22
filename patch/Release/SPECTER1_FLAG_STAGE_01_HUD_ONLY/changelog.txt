@@ -1,0 +1,21 @@
+SPECTER1 FLAG_STAGE_01_HUD_ONLY
+
+The Turkey_FactionImages.INI parser-fix pair launched.
+Country-select HUD is already wired on that pair.
+
+This release freezes those exact DATA/ART bytes as Stage 01.
+No files were rewritten. No cloth. No W3D clones. No gameplay INI edits.
+
+Stage 01 scope (already present):
+- MappedImage blocks in Specter_RemainingFlags.INI and Turkey_FactionImages.INI
+- PlayerTemplate FlagWaterMark / EnabledImage / SideIconImage / GeneralImage
+- 17 country flag TGAs and 5 Turkey HUD TGAs
+
+Not in this stage:
+- ExtraDraw, Flag_Hs W3D, Model=, Animation=, building Objects
+- Camp/Barracks cameos (already on disk; do not expand here)
+- Stage 02
+
+BOOT = PASS
+INGAME_TESTED = YES (boot; same bytes as TURKEY_MI_PARSE)
+HUD_DISPLAY_CONFIRMED = NO

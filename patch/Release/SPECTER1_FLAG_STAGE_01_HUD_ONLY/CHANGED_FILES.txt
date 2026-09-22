@@ -1,0 +1,78 @@
+FLAG_STAGE_01_HUD_ONLY changed files
+
+THIS PACK DOES NOT REWRITE ANY BIG BYTES.
+DATA and ART are byte-identical to SPECTER1_FLAG_TURKEY_MI_PARSE_01,
+the pair the user launched (BOOT = PASS).
+
+DATA_CHANGED = NO
+ART_CHANGED = NO
+GAMEPLAY_DATA_CHANGED = NO
+W3D_CHANGED = NO
+OBJECT_INI_CHANGED = NO
+EXTRADRAW_ADDED = NO
+CLOTH_RESTORED = NO
+
+Stage 01 HUD assets already present on that launching pair
+(country selection / faction display only):
+
+DATA HUD MappedImage
+  Data\INI\MappedImages\HandCreated\Specter_RemainingFlags.INI
+    64 MappedImage blocks (16 remaining sides x 4 HUD names)
+  Data\INI\MappedImages\HandCreated\Turkey_FactionImages.INI
+    WatermarkTurkey GameinfoTurkey Turkey_Logo SSObserverTurkey Turkey_Flag
+
+DATA HUD PlayerTemplate fields (17 factions)
+  Data\INI\PlayerTemplate.ini
+    FlagWaterMark / EnabledImage / SideIconImage / GeneralImage only
+    FactionJapan  FlagWaterMark=WatermarkJapan  EnabledImage=SSObserverJapan  SideIconImage=GameinfoJapan  GeneralImage=Japan_Logo
+    FactionVietnam  FlagWaterMark=WatermarkVietnam  EnabledImage=SSObserverVietnam  SideIconImage=GameinfoVietnam  GeneralImage=Vietnam_Logo
+    FactionSouthKorea  FlagWaterMark=WatermarkSouthKorea  EnabledImage=SSObserverSouthKorea  SideIconImage=GameinfoSouthKorea  GeneralImage=SouthKorea_Logo
+    FactionLibya  FlagWaterMark=WatermarkLibya  EnabledImage=SSObserverLibya  SideIconImage=GameinfoLibya  GeneralImage=Libya_Logo
+    FactionSouthAfrica  FlagWaterMark=WatermarkSouthAfrica  EnabledImage=SSObserverSouthAfrica  SideIconImage=GameinfoSouthAfrica  GeneralImage=SouthAfrica_Logo
+    FactionPakistan  FlagWaterMark=WatermarkPakistan  EnabledImage=SSObserverPakistan  SideIconImage=GameinfoPakistan  GeneralImage=Pakistan_Logo
+    FactionIndia  FlagWaterMark=WatermarkIndia  EnabledImage=SSObserverIndia  SideIconImage=GameinfoIndia  GeneralImage=India_Logo
+    FactionSyria  FlagWaterMark=WatermarkSyria  EnabledImage=SSObserverSyria  SideIconImage=GameinfoSyria  GeneralImage=Syria_Logo
+    FactionUAE  FlagWaterMark=WatermarkUAE  EnabledImage=SSObserverUAE  SideIconImage=GameinfoUAE  GeneralImage=UAE_Logo
+    FactionSaudiArabia  FlagWaterMark=WatermarkSaudiArabia  EnabledImage=SSObserverSaudiArabia  SideIconImage=GameinfoSaudiArabia  GeneralImage=SaudiArabia_Logo
+    FactionSweden  FlagWaterMark=WatermarkSweden  EnabledImage=SSObserverSweden  SideIconImage=GameinfoSweden  GeneralImage=Sweden_Logo
+    FactionUkraine  FlagWaterMark=WatermarkUkraine  EnabledImage=SSObserverUkraine  SideIconImage=GameinfoUkraine  GeneralImage=Ukraine_Logo
+    FactionItaly  FlagWaterMark=WatermarkItaly  EnabledImage=SSObserverItaly  SideIconImage=GameinfoItaly  GeneralImage=Italy_Logo
+    FactionBritain  FlagWaterMark=WatermarkBritain  EnabledImage=SSObserverBritain  SideIconImage=GameinfoBritain  GeneralImage=Britain_Logo
+    FactionGermany  FlagWaterMark=WatermarkGermany  EnabledImage=SSObserverGermany  SideIconImage=GameinfoGermany  GeneralImage=Germany_Logo
+    FactionFrance  FlagWaterMark=WatermarkFrance  EnabledImage=SSObserverFrance  SideIconImage=GameinfoFrance  GeneralImage=France_Logo
+    FactionTurkey  FlagWaterMark=WatermarkTurkey  EnabledImage=SSObserverTurkey  SideIconImage=GameinfoTurkey  GeneralImage=Turkey_Logo
+
+ART country flag TGAs (17)
+  Art\Textures\DE_Flag.tga
+  Art\Textures\FR_Flag.tga
+  Art\Textures\IN_Flag.tga
+  Art\Textures\IT_Flag.tga
+  Art\Textures\JP_Flag.tga
+  Art\Textures\LY_Flag.tga
+  Art\Textures\PK_Flag.tga
+  Art\Textures\SA_Flag.tga
+  Art\Textures\SE_Flag.tga
+  Art\Textures\SK_Flag.tga
+  Art\Textures\SY_Flag.tga
+  Art\Textures\TR_Flag.tga
+  Art\Textures\UA_Flag.tga
+  Art\Textures\UAE_Flag.tga
+  Art\Textures\UK_Flag.tga
+  Art\Textures\VN_Flag.tga
+  Art\Textures\ZA_Flag.tga
+
+ART Turkey HUD TGAs (5)
+  Art\Textures\WatermarkTurkey.tga
+  Art\Textures\GameinfoTurkey.tga
+  Art\Textures\SSObserverTurkey.tga
+  Art\Textures\Turkey_Logo.tga
+  Art\Textures\Turkey_Flag.tga
+
+Present on the pair but NOT Stage 01 (frozen, do not expand this stage):
+  Data\INI\MappedImages\HandCreated\Specter_CampFlags.INI
+  Data\INI\CommandButton.ini
+  building Object INIs
+  Flag_Hs / ExtraDraw / Model= / Animation=
+  Weapon.ini Upgrade.ini CommandSet.ini
+
+Stage 02 is not included.

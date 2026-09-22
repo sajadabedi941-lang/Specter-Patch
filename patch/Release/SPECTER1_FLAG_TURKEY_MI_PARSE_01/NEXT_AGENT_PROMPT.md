@@ -14,13 +14,9 @@ Pair:
   ZIP  SHA256 655737b03076b43adb262cb2fdd928701d1593482743c6749b0e5c9b6fd4a8af
 
 FIX_APPLIED = YES (Turkey_FactionImages parser fix)
-INGAME_TESTED = NO
+INGAME_TESTED = YES (user: game launches)
+BOOT = PASS
 
-If the user reports this pair still crashes:
-1. Do not restore flags, cloth, or extra Draws.
-2. Isolate next: Specter_RemainingFlags.INI + Specter_CampFlags.INI + PlayerTemplate.ini.
-3. Keep CommandButton and ART frozen unless a later isolation requires them.
-4. One change group per pair. Do not claim in-game fixed.
-
-If the user reports this pair launches:
-Record INGAME_TESTED = YES and stop. Do not add cloth.
+Country-select HUD is already wired on this pair. Freeze it as
+FLAG_STAGE_01_HUD_ONLY. Do not rewrite DATA/ART. Do not add cloth.
+Do not start Stage 02 until the user confirms country-select flags.

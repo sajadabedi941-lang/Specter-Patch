@@ -1,0 +1,22 @@
+SPECTER1_FLAG_STAGE_01_HUD_ONLY
+================================
+
+Stage 01 = country selection / faction display flags only.
+These are the same BIG bytes you already launched after the
+Turkey MappedImage parser fix. Installing this zip is optional
+if SPECTER1_FLAG_TURKEY_MI_PARSE_01 is already in GameRoot.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Open country / faction select and check the 17 remaining sides.
+
+Checksums:
+  DATA SHA256 0603b12e855f5f35cfff889362b0a02f2044968b7cdd1dd35c8c1285843f2652
+  ART  SHA256 c16055702267e59770a7f657f843ea49840889b453a5c0611e8971045afe05b7
+
+BOOT = PASS
+INGAME_TESTED = YES (boot; same bytes as TURKEY_MI_PARSE)
+HUD_DISPLAY_CONFIRMED = NO
+STAGE_02_STARTED = NO

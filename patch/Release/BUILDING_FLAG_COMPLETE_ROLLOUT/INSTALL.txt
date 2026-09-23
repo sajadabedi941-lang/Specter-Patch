@@ -1,0 +1,20 @@
+BUILDING_FLAG_COMPLETE_ROLLOUT
+================================
+
+Final combined Flag_Hs pair. Contains Japan, Vietnam, Saudi Arabia,
+UAE, Syria, South Africa, South Korea, and Libya.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+
+Checksums:
+  DATA SHA256 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+  ART  SHA256 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+PROTECTED_ASSETS_CHANGED = NO
+SHARED_MESH_MODIFIED = NO
+NEW_EDITS = NO

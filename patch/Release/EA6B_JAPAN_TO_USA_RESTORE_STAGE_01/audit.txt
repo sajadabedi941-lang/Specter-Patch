@@ -1,0 +1,65 @@
+EA6B_JAPAN_TO_USA_RESTORE_STAGE_01
+SOURCE_DATA = BUILDING_FLAG_COMPLETE_ROLLOUT/_SPEC_DATA_ONE.big
+SOURCE_DATA_SHA = 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+SOURCE_ART_SHA = 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+NEW_DATA_SHA256 = eb58e8e6a4212cedfed7d4007800be5cc28833f6a359c9bbc593987990b784e7
+NEW_DATA_BYTES = 365918650
+NEW_DATA_FILE_COUNT = 2883
+NEW_ART_SHA256 = 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+NEW_ART_BYTES = 1243469487
+ART_CHANGED = NO
+
+DONOR = JapanJetEA6B
+DONOR_FILE = Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetEA6B.ini
+USA_OBJECT = AmericaJetF18Prowler
+USA_FILE = Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+
+REMOVED_BROKEN_USA =
+  Locomotor General_Electric_F414
+  OutOfAmmoDamagePerSecond 10%
+  Mass 500.0
+  Armor AirplaneArmor_P
+  Upgrade_AmericaCountermeasures modules
+
+KEPT_FROM_DONOR =
+  Model EA6
+  HideSubObject HOOK
+  Weapon Specter_Weapon_EA6B_JH7A2_Bomb
+  Locomotor D30-F6_JetLocomotor + BasicJetTaxiLocomotor
+  JetAIUpdate OutOfAmmoDamagePerSecond 0% MinHeight 1
+  Mass 50.0
+  Scale 0.9
+  Armor AirplaneArmor
+  No Prerequisites
+
+USA_IDENTITY_KEPT =
+  Object AmericaJetF18Prowler
+  Side America
+  DisplayName OBJECT:AmericaJetF18Prowler
+  CommandSet GenericTacticalBomberCommandSet
+
+ART_DEPENDENCIES (unchanged, already packed)
+  Art\W3D\EA6.W3D
+  Art\Textures\EA6.tga
+  Art\Textures\USAEA6Prowler.tga
+  Art\Textures\USAEA6ProwlerTB.tga
+  MappedImage EA6Prowler
+
+WEAPON_OK = Specter_Weapon_EA6B_JH7A2_Bomb present in Weapon.ini
+LOCOMOTOR_OK = D30-F6_JetLocomotor present in Locomotor.ini
+UPGRADE_LINKS_REMOVED_FROM_USA_OBJECT = Upgrade_AmericaCountermeasures Upgrade_MTS Upgrade_AmericaAdvancedTraining
+PREREQUISITES = none (donor)
+
+UNTOUCHED
+  JapanJetEA6B.ini
+  JapanJetEA6BUSA.ini
+  other USA aircraft
+  CommandSet.ini CommandButton.ini
+  PlayerTemplate.ini PlayerTemplate_SpecterPatch.ini
+  faction pages HUD unrelated DATA ART
+
+CHANGED_DATA_PATHS =
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

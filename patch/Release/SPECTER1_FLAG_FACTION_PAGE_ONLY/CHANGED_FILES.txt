@@ -1,0 +1,73 @@
+SPECTER1_FLAG_FACTION_PAGE_ONLY changed files
+
+DATA CHANGED
+  Data\INI\PlayerTemplate.ini
+    LoadScreenImage only, 17 remaining factions
+    FactionJapan  SUFactionLogoPage_GLA -> JapanFactionLogoPage  flag=JP_Flag.tga
+    FactionVietnam  SUFactionLogoPage_GLA -> VietnamFactionLogoPage  flag=VN_Flag.tga
+    FactionSouthKorea  SUFactionLogoPage_GLA -> SouthKoreaFactionLogoPage  flag=SK_Flag.tga
+    FactionLibya  SUFactionLogoPage_GLA -> LibyaFactionLogoPage  flag=LY_Flag.tga
+    FactionSouthAfrica  SUFactionLogoPage_GLA -> SouthAfricaFactionLogoPage  flag=ZA_Flag.tga
+    FactionPakistan  SUFactionLogoPage_GLA -> PakistanFactionLogoPage  flag=PK_Flag.tga
+    FactionIndia  SUFactionLogoPage_GLA -> IndiaFactionLogoPage  flag=IN_Flag.tga
+    FactionSyria  SUFactionLogoPage_GLA -> SyriaFactionLogoPage  flag=SY_Flag.tga
+    FactionUAE  SUFactionLogoPage_GLA -> UAEFactionLogoPage  flag=UAE_Flag.tga
+    FactionSaudiArabia  SUFactionLogoPage_GLA -> SaudiArabiaFactionLogoPage  flag=SA_Flag.tga
+    FactionTurkey  SAFactionLogoPage_US -> TurkeyFactionLogoPage  flag=TR_Flag.tga
+    FactionSweden  SAFactionLogoPage_US -> SwedenFactionLogoPage  flag=SE_Flag.tga
+    FactionUkraine  SAFactionLogoPage_US -> UkraineFactionLogoPage  flag=UA_Flag.tga
+    FactionItaly  SAFactionLogoPage_US -> ItalyFactionLogoPage  flag=IT_Flag.tga
+    FactionBritain  SAFactionLogoPage_US -> BritainFactionLogoPage  flag=UK_Flag.tga
+    FactionGermany  SAFactionLogoPage_US -> GermanyFactionLogoPage  flag=DE_Flag.tga
+    FactionFrance  SAFactionLogoPage_US -> FranceFactionLogoPage  flag=FR_Flag.tga
+
+DATA ADDED
+  Data\INI\MappedImages\HandCreated\Specter_FactionLogoPages.INI
+    17 MappedImage blocks, unique names, 1024x1024 / 799x599
+    MappedImage JapanFactionLogoPage
+    MappedImage VietnamFactionLogoPage
+    MappedImage SouthKoreaFactionLogoPage
+    MappedImage LibyaFactionLogoPage
+    MappedImage SouthAfricaFactionLogoPage
+    MappedImage PakistanFactionLogoPage
+    MappedImage IndiaFactionLogoPage
+    MappedImage SyriaFactionLogoPage
+    MappedImage UAEFactionLogoPage
+    MappedImage SaudiArabiaFactionLogoPage
+    MappedImage TurkeyFactionLogoPage
+    MappedImage SwedenFactionLogoPage
+    MappedImage UkraineFactionLogoPage
+    MappedImage ItalyFactionLogoPage
+    MappedImage BritainFactionLogoPage
+    MappedImage GermanyFactionLogoPage
+    MappedImage FranceFactionLogoPage
+
+ART ADDED (17 faction logo pages only)
+  Art\Textures\JapanFactionLogoPage.tga
+  Art\Textures\VietnamFactionLogoPage.tga
+  Art\Textures\SouthKoreaFactionLogoPage.tga
+  Art\Textures\LibyaFactionLogoPage.tga
+  Art\Textures\SouthAfricaFactionLogoPage.tga
+  Art\Textures\PakistanFactionLogoPage.tga
+  Art\Textures\IndiaFactionLogoPage.tga
+  Art\Textures\SyriaFactionLogoPage.tga
+  Art\Textures\UAEFactionLogoPage.tga
+  Art\Textures\SaudiArabiaFactionLogoPage.tga
+  Art\Textures\TurkeyFactionLogoPage.tga
+  Art\Textures\SwedenFactionLogoPage.tga
+  Art\Textures\UkraineFactionLogoPage.tga
+  Art\Textures\ItalyFactionLogoPage.tga
+  Art\Textures\BritainFactionLogoPage.tga
+  Art\Textures\GermanyFactionLogoPage.tga
+  Art\Textures\FranceFactionLogoPage.tga
+
+NOT CHANGED
+  PlayerTemplate fields other than LoadScreenImage
+  FlagWaterMark EnabledImage SideIconImage GeneralImage
+  ScoreScreenImage Medallion*
+  CommandButton.ini Weapon.ini Upgrade.ini CommandSet.ini
+  Specter_RemainingFlags.INI Turkey_FactionImages.INI Specter_CampFlags.INI
+  building Object INIs
+  W3D / Flag_Hs / ExtraDraw / cloth / Model= / Animation=
+  stock SAFactionLogoPage_US SUFactionLogoPage_GLA SNFactionLogoPage_China
+  protected USA Iran Israel China Russia NATO Egypt NorthKorea Iraq

@@ -1,0 +1,13 @@
+SPECTER1 FLAG_FACTION_PAGE_ONLY
+
+Stage 01 HUD remaps booted but did not change country-select pages.
+This pair remaps only PlayerTemplate LoadScreenImage for 17 remaining
+countries onto unique <Country>FactionLogoPage MappedImages and
+1024x1024 TGA pages (visible 799x599). Stock USA/GLA/China pages
+are not reused.
+
+Buildings, W3D, ExtraDraw, cloth, CommandButton, Weapon, Upgrade,
+and CommandSet are frozen.
+
+INGAME_TESTED = NO
+STAGE_02_STARTED = NO

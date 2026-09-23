@@ -1,0 +1,19 @@
+SPECTER1_FLAG_FACTION_PAGE_ONLY
+================================
+
+Stage 01B = country select / load-screen faction pages only.
+Baseline is the launching FLAG_STAGE_01_HUD_ONLY pair.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Open country / faction select and check the 17 remaining sides.
+
+Checksums:
+  DATA SHA256 be392d415c32b31832b736af8bed14d6f3fbb71ca4e3748573aaaba5125c6dc9
+  ART  SHA256 5685a0ae28706092fc1c0790f2ff42fdbd6b05ad884081e5227dce3b9384ec59
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+STAGE_02_STARTED = NO

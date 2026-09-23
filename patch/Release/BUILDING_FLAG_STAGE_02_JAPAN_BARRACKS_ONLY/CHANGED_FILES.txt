@@ -1,0 +1,22 @@
+BUILDING_FLAG_STAGE_02_JAPAN_BARRACKS_ONLY changed files
+
+DATA (1 file)
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+    Object Japan_Barracks
+    ModuleTag_01 UNCHANGED Model=irq_camp Animation=irq_camp.irq_camp
+    Added ModuleTag_03 Draw from Iraq_Abbas Flag pattern
+    Model=JP__JPFlag_Hs Animation=JP__JPFlag_Hs.JP__JPFlag_Hs
+    HideSubObject = NO
+
+ART (1 new file)
+  Art\W3D\JP__JPFlag_Hs.W3D
+    donor=Art\W3D\Irq__IqFlag_Hs.W3D (bytes copied, donor file unmodified)
+    internal=JP__JPFLAG_HS  packed=JP__JPFlag_Hs  MATCH
+    texture=JP_Flag.tga (already packed)
+
+UNCHANGED
+  irq_camp.W3D IraqiFlag.tga IraqiFlag.dds
+  Irq__IqFlag_Hs.W3D NKr__NKFlag_Hs.W3D
+  DPRK_Flag.tga DPRK_Flag.dds
+  PlayerTemplate HUD MappedImages faction pages
+  every other building Object INI

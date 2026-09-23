@@ -1,0 +1,18 @@
+BUILDING_FLAG_STAGE_02_JAPAN_BARRACKS_ONLY
+==========================================
+
+Baseline is SPECTER1_FLAG_STAGE_01_HUD_ONLY.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Build Japan Barracks only. Confirm a Japan Flag_Hs pole appears.
+   Iraqi baked flags on irq_camp are still expected.
+
+Checksums:
+  DATA SHA256 4828413b555ab327f20d63e7236d6674304c8abcd4849c3a72fcb11b351aadee
+  ART  SHA256 75048828b4d2dac692c5d7d5fa251c42c8b536e9ed0363a0747bcba0d2e1a59f
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

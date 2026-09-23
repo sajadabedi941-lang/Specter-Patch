@@ -1,0 +1,15 @@
+BUILDING_FLAG_STAGE_02_JAPAN_BARRACKS_ONLY
+
+First building-flag edit after Stage 01 audit.
+
+Adds one Japan Flag_Hs pole to Japan_Barracks only. The original
+irq_camp mesh and ModuleTag_01 Model=/Animation= are unchanged.
+Baked Iraqi FLAG01/FLAG02/FLAG03 stay visible on purpose so the
+new pole can be confirmed before any HideSubObject work.
+
+One new W3D: JP__JPFlag_Hs.W3D, authored from Irq__IqFlag_Hs with
+internal container JP__JPFLAG_HS (matches packed name) and texture
+JP_Flag.tga. Donor Iraq/NK Flag_Hs files are not modified.
+
+Do not install on other buildings or countries until this pair
+boots in real ZH.

@@ -1,0 +1,8 @@
+AIRCRAFT_ROSTER_EXPANSION_AFRICA_PAKISTAN_SYRIA_STAGE_01
+
+1. Copy _SPEC_DATA_ONE.big over the live Specter DATA pair.
+2. Keep the existing ART pair (SHA 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314).
+3. Play South Africa / Pakistan / Syria. Build Heavy Air Base.
+4. Confirm the 2 imported jets and 1 helicopter appear at high cost.
+
+DATA SHA256 40bb94ac46bc4c8c1e122f124dd4e49a2da073f8d7dc6682e2d6745e4d97024a

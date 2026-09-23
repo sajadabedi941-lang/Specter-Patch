@@ -1,0 +1,9 @@
+AIRCRAFT_ROSTER_EXPANSION_AFRICA_PAKISTAN_SYRIA_STAGE_01
+
+South Africa: USA F-15E + China J-10C + USA AH-64E (5500/5500/4200)
+Pakistan: Russia Su-35S + USA F-15E + China WZ-10 (5500/5500/4200)
+Syria: Russia Su-30SM2 + China J-16D + Russia Ka-52 (5500/5500/4200)
+
+Clones only. Donors, existing aircraft, HUD, PlayerTemplate unchanged.
+Placed on HeavyAirBase because airfield bars are already full.
+ART unchanged.

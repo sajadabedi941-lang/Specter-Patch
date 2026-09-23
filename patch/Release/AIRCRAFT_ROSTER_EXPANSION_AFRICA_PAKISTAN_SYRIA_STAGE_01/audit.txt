@@ -1,0 +1,52 @@
+AIRCRAFT_ROSTER_EXPANSION_AFRICA_PAKISTAN_SYRIA_STAGE_01
+SOURCE_DATA_SHA = eb58e8e6a4212cedfed7d4007800be5cc28833f6a359c9bbc593987990b784e7
+SOURCE_ART_SHA = 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+NEW_DATA_SHA256 = 40bb94ac46bc4c8c1e122f124dd4e49a2da073f8d7dc6682e2d6745e4d97024a
+NEW_DATA_BYTES = 366050655
+NEW_DATA_FILE_COUNT = 2894
+ART_CHANGED = NO
+ART_INCLUDED = NO (use existing ART SHA 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314)
+
+EXISTING_ROSTER
+  SouthAfrica Airfield 12/12 full (Mirage/Cheetah/Gripen/Hawk/Impala/Buccaneer)
+  SouthAfrica Heavy Mi-8 Rooivalk Oryx IL76
+  Pakistan Airfield 12/12 full (F-16/J-10CE/JF-17/F-7/Mirage/A-5)
+  Pakistan Heavy Mi-8 IL76
+  Syria Airfield 12/12 full (MiG/Su/J-7/L-39)
+  Syria Heavy Mi-8 IL76 H-6K
+
+ADDED
+  SouthAfrica | jet | SouthAfricaJetF15E | donor AmericaJetAurora | cost 5500 | Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetF15E.ini
+  SouthAfrica | jet | SouthAfricaJetJ10C | donor ChinaJetJ10C | cost 5500 | Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetJ10C.ini
+  SouthAfrica | heli | SouthAfricaHelicopterAH64E | donor AmericaHelicopterAH64E | cost 4200 | Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaHelicopterAH64E.ini
+  Pakistan | jet | PakistanJetSu35S | donor RussiaJetSu35S | cost 5500 | Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetSu35S.ini
+  Pakistan | jet | PakistanJetF15E | donor AmericaJetAurora | cost 5500 | Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetF15E.ini
+  Pakistan | heli | PakistanHelicopterWZ10 | donor ChinaHelicopterWZ10ME | cost 4200 | Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanHelicopterWZ10.ini
+  Syria | jet | SyriaJetSu30SM2 | donor RussiaJetSu30SM2 | cost 5500 | Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetSu30SM2.ini
+  Syria | jet | SyriaJetJ16D | donor ChinaJetJ16D | cost 5500 | Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetJ16D.ini
+  Syria | heli | SyriaHelicopterKA52 | donor RussiaHelicopterKA52 | cost 4200 | Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaHelicopterKA52.ini
+
+PLACED_ON = *_HeavyAirBaseCommandSet last-win (airfields full)
+PREREQUISITES = none (science locks stripped on clones)
+DONOR_OBJECTS_MODIFIED = NO
+EXISTING_AIRCRAFT_MODIFIED = NO
+PLAYERTEMPLATE_MODIFIED = NO
+HUD_MODIFIED = NO
+COMMANDSET_INI_MODIFIED = NO
+COMMANDBUTTON_INI_MODIFIED = NO
+
+ADDED_DATA_PATHS
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetF15E.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetJ10C.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaHelicopterAH64E.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetSu35S.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetF15E.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanHelicopterWZ10.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetSu30SM2.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetJ16D.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaHelicopterKA52.ini
+  Data\INI\CommandButton_ZZZZ_AfricaPakistanSyria_AirExp.ini
+  Data\INI\CommandSet_ZZZZ_AfricaPakistanSyria_AirExp.ini
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

@@ -1,0 +1,13 @@
+ADDED_DATA_PATHS
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetF15E.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetJ10C.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaHelicopterAH64E.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetSu35S.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanJetF15E.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\PakistanHelicopterWZ10.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetSu30SM2.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaJetJ16D.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaHelicopterKA52.ini
+  Data\INI\CommandButton_ZZZZ_AfricaPakistanSyria_AirExp.ini
+  Data\INI\CommandSet_ZZZZ_AfricaPakistanSyria_AirExp.ini
+ART_CHANGED = NO

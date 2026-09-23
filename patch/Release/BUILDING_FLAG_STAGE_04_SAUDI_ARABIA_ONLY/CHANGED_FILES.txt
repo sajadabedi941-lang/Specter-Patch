@@ -1,0 +1,48 @@
+BUILDING_FLAG_STAGE_04_SAUDI_ARABIA_ONLY changed files
+
+TARGET AUDIT
+  Country = Saudi Arabia only
+  Flag_Hs W3D = SA__SAFlag_Hs.W3D (one new file)
+  Texture = SA_Flag.tga (already packed, not rewritten)
+  Shared donor meshes not edited: irq_camp Iraq_Powerplant Iraq_Supply Irq_WarFactory
+
+DATA (5 files, Saudi Arabia Armed Forces Buildings only)
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+    Object SaudiArabia_Barracks
+    ModuleTag_01 UNCHANGED Model=irq_camp Animation=irq_camp.irq_camp
+    Added ModuleTag_03 Draw Model=SA__SAFlag_Hs
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_PowerPlant.ini
+    Object SaudiArabia_PowerPlant
+    ModuleTag_0231 UNCHANGED Model=Iraq_Powerplant
+    Added ModuleTag_03 Draw Model=SA__SAFlag_Hs
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_SupplyCenter.ini
+    Object SaudiArabia_SupplyCenter
+    ModuleTag_0741 UNCHANGED Model=Iraq_Supply
+    Added ModuleTag_03 Draw Model=SA__SAFlag_Hs
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+    Object SaudiArabia_WarFactory_T
+    ModuleTag_01 UNCHANGED Model=Irq_WarFactory
+    Added ModuleTag_03 Draw Model=SA__SAFlag_Hs
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Abbas.ini
+    Object SaudiArabia_Abbas
+    ModuleTag_01 UNCHANGED Model=Irq_Hussien_A1 / Irq_Hussien
+    ModuleTag_03 Flag_Hs retarget Irq__IqFlag_Hs -> SA__SAFlag_Hs
+    HideSubObject on missiles UNCHANGED; no new HideSubObject
+
+SKIPPED (no baked donor flags / no incorrect Flag_Hs)
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_RadarStation.ini Model=Irq_P3
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini Model=US_Command
+
+ART (1 new file)
+  Art\W3D\SA__SAFlag_Hs.W3D
+    donor=Art\W3D\Irq__IqFlag_Hs.W3D (bytes copied, donor file unmodified)
+    internal=SA__SAFLAG_HS  packed=SA__SAFlag_Hs  MATCH
+    texture=SA_Flag.tga (already packed)
+
+UNCHANGED
+  Japan_Barracks JP__JPFlag_Hs.W3D
+  Vietnam_Barracks VN__VNFlag_Hs.W3D
+  irq_camp.W3D Iraq_Powerplant.W3D Iraq_Supply.W3D Irq_WarFactory.W3D
+  IraqiFlag.dds Irq__IqFlag_Hs.W3D NKr__NKFlag_Hs.W3D
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet
+  every other country building Object INI

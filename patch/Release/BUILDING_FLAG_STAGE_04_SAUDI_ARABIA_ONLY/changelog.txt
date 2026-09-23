@@ -1,0 +1,23 @@
+BUILDING_FLAG_STAGE_04_SAUDI_ARABIA_ONLY
+
+First remaining target-country after the approved Japan and Vietnam
+Barracks Flag_Hs poles.
+
+Saudi barracks, power plant, supply center, and war factory still use
+Iraqi donor meshes with baked FLAG01/FLAG02/FLAG03. This pair adds one
+Saudi Flag_Hs pole (SA__SAFlag_Hs) as a second Draw on those four
+objects. Building Model=/Animation= stay on irq_camp, Iraq_Powerplant,
+Iraq_Supply, and Irq_WarFactory. Shared donor W3Ds are not edited.
+
+SaudiArabia_Abbas already had an Abbas-style Flag_Hs Draw pointed at
+Irq__IqFlag_Hs (Iraqi pole). That Draw is retargeted to SA__SAFlag_Hs.
+The Abbas building mesh (Irq_Hussien / Irq_Hussien_A1) is unchanged.
+
+Radar (Irq_P3) and Command Center (US_Command) have no baked donor
+flags and are left untouched.
+
+One new W3D: SA__SAFlag_Hs.W3D, authored from Irq__IqFlag_Hs with
+internal container SA__SAFLAG_HS (matches packed name) and texture
+SA_Flag.tga. Donor Iraq/NK/Japan/Vietnam Flag_Hs files are not modified.
+
+Wait for a real ZH launch of Saudi Arabia buildings before the next country.

@@ -1,0 +1,23 @@
+BUILDING_FLAG_COMPLETE_ROLLOUT
+
+Final combined install pair for all completed building Flag_Hs stages.
+
+This release copies BUILDING_FLAG_STAGE_09_LIBYA_ONLY byte-for-byte.
+Stage 09 already contains the sequential audited merge of:
+
+  02 Japan_Barracks
+  03 Vietnam_Barracks
+  04 Saudi Arabia
+  05 UAE
+  06 Syria
+  07 South Africa
+  08 South Korea
+  09 Libya
+
+No new edits. Shared donor meshes, Iraq/NK Flag_Hs, HUD flags, and
+PlayerTemplate are unchanged from the HUD baseline except the 35
+country building INIs and 8 new country Flag_Hs W3Ds listed in
+CHANGED_FILES.txt.
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

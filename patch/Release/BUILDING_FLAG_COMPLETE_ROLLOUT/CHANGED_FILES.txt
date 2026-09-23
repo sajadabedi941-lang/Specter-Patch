@@ -1,0 +1,33 @@
+BUILDING_FLAG_COMPLETE_ROLLOUT changed files
+
+SOURCE = BUILDING_FLAG_STAGE_09_LIBYA_ONLY (byte copy, no rebuild)
+HUD_BASELINE = SPECTER1_FLAG_STAGE_01_HUD_ONLY
+
+This pair is the sequential merge of already audited stages 02-09.
+No new INI or W3D edits were made for this release.
+
+ART added vs HUD (8 new Flag_Hs W3Ds, 0 existing modified)
+  Art\W3D\JP__JPFlag_Hs.W3D
+  Art\W3D\VN__VNFlag_Hs.W3D
+  Art\W3D\SA__SAFlag_Hs.W3D
+  Art\W3D\AE__AEFlag_Hs.W3D
+  Art\W3D\SY__SYFlag_Hs.W3D
+  Art\W3D\ZA__ZAFlag_Hs.W3D
+  Art\W3D\SK__SKFlag_Hs.W3D
+  Art\W3D\LY__LYFlag_Hs.W3D
+
+DATA changed vs HUD (35 country building INIs only)
+  Japan_Barracks
+  Vietnam_Barracks
+  SaudiArabia Barracks/Power/Supply/WF/Abbas
+  UAE Barracks/Power/Supply/WF/Abbas
+  Syria Barracks/Power/Supply/WF/Abbas
+  SouthAfrica Barracks/Power/Supply/WF/Abbas
+  SouthKorea Barracks/Power/Supply/WF/CC/Abbas/Systems
+  Libya Barracks/Power/Supply/WF/Abbas
+
+UNCHANGED
+  Iraq / North Korea Flag_Hs and donor meshes
+  irq_camp Iraq_Powerplant Iraq_Supply Irq_WarFactory
+  NKor/NKr/US shared building meshes
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet

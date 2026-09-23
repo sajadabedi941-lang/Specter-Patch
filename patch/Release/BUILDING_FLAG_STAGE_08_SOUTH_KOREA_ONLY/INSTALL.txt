@@ -1,0 +1,20 @@
+BUILDING_FLAG_STAGE_08_SOUTH_KOREA_ONLY
+=======================================
+
+Isolated South Korea Flag_Hs package. Do not mix with other country ZIPs.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Play South Korea only. Confirm Flag_Hs poles on Barracks, Power, Supply, War Factory, Command Center, Abbas.
+
+Checksums:
+  DATA SHA256 7ca39f407084a1035af87158d89263fb7c1797f246d1271469409dd140565ec5
+  ART  SHA256 e11aec85a26cc82ac9f241f221d76956c57572eb0673c3928052e559f952ec44
+  ZIP  SHA256 ded19ea5b2babfea174279ebf037f2368cea650befc12df11a83338ce90ae5a1
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+PROTECTED_ASSETS_CHANGED = NO
+SHARED_MESH_MODIFIED = NO

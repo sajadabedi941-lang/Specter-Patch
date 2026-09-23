@@ -1,0 +1,20 @@
+BUILDING_FLAG_STAGE_06_SYRIA_ONLY
+==================================
+
+Isolated Syria Flag_Hs package. Do not mix with other country ZIPs.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Play Syria only. Confirm Flag_Hs poles on Barracks, Power, Supply, War Factory, Abbas.
+
+Checksums:
+  DATA SHA256 e1673c7b883b2394caea802d93a8cca7751b135dc0c5cf8ef52aa88912d76fe9
+  ART  SHA256 34f4b4cc9e69cef79be87f82e317994c8320cbde165d362912d27714ec6505fe
+  ZIP  SHA256 727804603c815cd21205b37413e2e0644f49fa4571b7025fed72677ad56879ef
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+PROTECTED_ASSETS_CHANGED = NO
+SHARED_MESH_MODIFIED = NO

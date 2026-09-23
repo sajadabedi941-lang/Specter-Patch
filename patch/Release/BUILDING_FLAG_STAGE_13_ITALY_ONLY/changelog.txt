@@ -1,0 +1,6 @@
+BUILDING_FLAG_STAGE_13_ITALY_ONLY
+
+Italy core buildings use US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command. Those W3Ds contain no baked Iraqi/NK/country Flag.tga. No Flag_Hs Draw was added. No BIG rewrite.
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

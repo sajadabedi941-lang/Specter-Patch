@@ -1,0 +1,23 @@
+BUILDING_FLAG_STAGE_07_SOUTH_AFRICA_ONLY changed files
+
+TARGET AUDIT
+  Country = South Africa only
+  Flag_Hs W3D = ZA__ZAFlag_Hs.W3D (one new file)
+  Texture = ZA_Flag.tga (already packed, not rewritten)
+  Barracks/Power/Supply/WF use Iraqi donor meshes with baked FLAG01/02/03. Abbas Flag_Hs pointed at Irq__IqFlag_Hs. Radar Irq_P3 and CommandCenter US_Command have no baked flags.
+
+DATA (5 files)
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_SupplyCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+
+ART (1 new file)
+  Art\W3D\ZA__ZAFlag_Hs.W3D
+    internal=ZA__ZAFLAG_HS packed=ZA__ZAFlag_Hs MATCH
+    texture=ZA_Flag.tga
+
+UNCHANGED
+  shared donor building W3Ds, Iraq/NK Flag_Hs, prior country poles
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet

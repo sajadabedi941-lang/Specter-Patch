@@ -1,0 +1,8 @@
+BUILDING_FLAG_STAGE_08_SOUTH_KOREA_ONLY
+
+Barracks uses irq_camp (Iraqi baked flags). Power/Supply/WF/CC use NK meshes with baked DPRK flags (Power last-win also uses Iraq_Powerplant in Systems.ini). Abbas Flag_Hs is NKr__NKFlag_Hs. Radar Irq_P3 has no baked flags. North Korea files are not touched.
+
+One new W3D SK__SKFlag_Hs.W3D from Irq__IqFlag_Hs. Internal SK__SKFLAG_HS matches packed name. Texture SK_Flag.tga already packed. Original building Model=/Animation= unchanged. Shared donor meshes not edited.
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

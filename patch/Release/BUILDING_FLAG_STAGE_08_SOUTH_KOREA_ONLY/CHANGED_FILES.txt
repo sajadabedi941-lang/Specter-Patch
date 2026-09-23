@@ -1,0 +1,26 @@
+BUILDING_FLAG_STAGE_08_SOUTH_KOREA_ONLY changed files
+
+TARGET AUDIT
+  Country = South Korea only
+  Flag_Hs W3D = SK__SKFlag_Hs.W3D (one new file)
+  Texture = SK_Flag.tga (already packed, not rewritten)
+  Barracks uses irq_camp (Iraqi baked flags). Power/Supply/WF/CC use NK meshes with baked DPRK flags (Power last-win also uses Iraq_Powerplant in Systems.ini). Abbas Flag_Hs is NKr__NKFlag_Hs. Radar Irq_P3 has no baked flags. North Korea files are not touched.
+
+DATA (8 files)
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_NuclearCenter.ini
+
+ART (1 new file)
+  Art\W3D\SK__SKFlag_Hs.W3D
+    internal=SK__SKFLAG_HS packed=SK__SKFlag_Hs MATCH
+    texture=SK_Flag.tga
+
+UNCHANGED
+  shared donor building W3Ds, Iraq/NK Flag_Hs, prior country poles
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet

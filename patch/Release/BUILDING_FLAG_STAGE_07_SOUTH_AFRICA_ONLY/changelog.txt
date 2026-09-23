@@ -1,0 +1,8 @@
+BUILDING_FLAG_STAGE_07_SOUTH_AFRICA_ONLY
+
+Barracks/Power/Supply/WF use Iraqi donor meshes with baked FLAG01/02/03. Abbas Flag_Hs pointed at Irq__IqFlag_Hs. Radar Irq_P3 and CommandCenter US_Command have no baked flags.
+
+One new W3D ZA__ZAFlag_Hs.W3D from Irq__IqFlag_Hs. Internal ZA__ZAFLAG_HS matches packed name. Texture ZA_Flag.tga already packed. Original building Model=/Animation= unchanged. Shared donor meshes not edited.
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO

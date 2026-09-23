@@ -1,0 +1,23 @@
+BUILDING_FLAG_STAGE_05_UAE_ONLY changed files
+
+TARGET AUDIT
+  Country = UAE only
+  Flag_Hs W3D = AE__AEFlag_Hs.W3D (one new file)
+  Texture = UAE_Flag.tga (already packed, not rewritten)
+  Barracks/Power/Supply/WF use Iraqi donor meshes with baked FLAG01/02/03. Abbas Flag_Hs pointed at Irq__IqFlag_Hs. Radar Irq_P3 and CommandCenter US_Command have no baked flags.
+
+DATA (5 files)
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_PowerPlant.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_SupplyCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Abbas.ini
+
+ART (1 new file)
+  Art\W3D\AE__AEFlag_Hs.W3D
+    internal=AE__AEFLAG_HS packed=AE__AEFlag_Hs MATCH
+    texture=UAE_Flag.tga
+
+UNCHANGED
+  shared donor building W3Ds, Iraq/NK Flag_Hs, prior country poles
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet

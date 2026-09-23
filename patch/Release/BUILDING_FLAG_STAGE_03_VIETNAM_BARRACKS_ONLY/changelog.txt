@@ -1,0 +1,14 @@
+BUILDING_FLAG_STAGE_03_VIETNAM_BARRACKS_ONLY
+
+Next isolated country/building after the approved Japan_Barracks pole.
+
+Vietnam_Barracks uses the same irq_camp mesh with baked Iraqi
+FLAG01/FLAG02/FLAG03. This pair adds one Vietnam Flag_Hs pole only.
+ModuleTag_01 Model=/Animation= are unchanged. Shared irq_camp is
+not edited. Japan_Barracks and JP__JPFlag_Hs stay as Stage 02.
+
+One new W3D: VN__VNFlag_Hs.W3D, authored from Irq__IqFlag_Hs with
+internal container VN__VNFLAG_HS (matches packed name) and texture
+VN_Flag.tga. Donor Iraq/NK Flag_Hs files are not modified.
+
+Wait for a real ZH launch of Vietnam Barracks before the next country.

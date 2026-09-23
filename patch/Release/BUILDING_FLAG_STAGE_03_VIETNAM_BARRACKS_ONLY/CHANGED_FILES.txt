@@ -1,0 +1,29 @@
+BUILDING_FLAG_STAGE_03_VIETNAM_BARRACKS_ONLY changed files
+
+TARGET AUDIT
+  Object = Vietnam_Barracks (unique)
+  INI = Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Model= irq_camp  Animation= irq_camp.irq_camp
+  Baked flags = IRQ_CAMP.FLAG01/02/03 + IraqiFlag.tga
+  Shared irq_camp users include Iraq/Egypt/Israel (protected) — mesh not edited
+  Flag_Hs safe = YES (second Draw only, Japan method)
+
+DATA (1 file)
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+    Object Vietnam_Barracks
+    ModuleTag_01 UNCHANGED Model=irq_camp Animation=irq_camp.irq_camp
+    Added ModuleTag_03 Draw from Japan_Barracks / Iraq_Abbas pattern
+    Model=VN__VNFlag_Hs Animation=VN__VNFlag_Hs.VN__VNFlag_Hs
+    HideSubObject = NO
+
+ART (1 new file)
+  Art\W3D\VN__VNFlag_Hs.W3D
+    donor=Art\W3D\Irq__IqFlag_Hs.W3D (bytes copied, donor file unmodified)
+    internal=VN__VNFLAG_HS  packed=VN__VNFlag_Hs  MATCH
+    texture=VN_Flag.tga (already packed)
+
+UNCHANGED
+  Japan_Barracks JP__JPFlag_Hs.W3D
+  irq_camp.W3D IraqiFlag.dds Irq__IqFlag_Hs.W3D NKr__NKFlag_Hs.W3D
+  PlayerTemplate HUD MappedImages faction pages CommandButton CommandSet
+  every other building Object INI

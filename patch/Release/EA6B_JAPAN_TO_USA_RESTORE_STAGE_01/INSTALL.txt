@@ -1,0 +1,9 @@
+EA6B_JAPAN_TO_USA_RESTORE_STAGE_01
+
+1. Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big over the live Specter pair.
+2. Play USA only.
+3. Confirm EA-6B builds and flies using the Japan donor locomotor/weapon.
+4. Do not use this pair to test other aircraft changes.
+
+DATA SHA256 eb58e8e6a4212cedfed7d4007800be5cc28833f6a359c9bbc593987990b784e7
+ART  SHA256 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314

@@ -1,0 +1,10 @@
+EA6B_JAPAN_TO_USA_RESTORE_STAGE_01
+
+Replace the broken USA EA-6B (AmericaJetF18Prowler) with the healthy
+JapanJetEA6B donor. One DATA object path only.
+
+USA production button still builds AmericaJetF18Prowler.
+CommandSet / CommandButton / PlayerTemplate / HUD / other aircraft unchanged.
+ART unchanged (shared EA6.W3D already packed).
+
+Japan files are not edited.

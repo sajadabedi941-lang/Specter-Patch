@@ -1,0 +1,20 @@
+BUILDING_FLAG_STAGE_05_UAE_ONLY
+================================
+
+Isolated UAE Flag_Hs package. Do not mix with other country ZIPs.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Play UAE only. Confirm Flag_Hs poles on Barracks, Power, Supply, War Factory, Abbas.
+
+Checksums:
+  DATA SHA256 480eac03fea96b2ea7d1b5ae3a1e9fd914e77731624bbe50aef3bc2c939a3d4c
+  ART  SHA256 e120849e09c864a9889fa8315f6a6744bc9b966ff0b743cee6ae60bf92258332
+  ZIP  SHA256 b633e24193f9ee4f4c0e2122ecb721a8fe03dd85877ab600c904557c0fa77029
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+PROTECTED_ASSETS_CHANGED = NO
+SHARED_MESH_MODIFIED = NO

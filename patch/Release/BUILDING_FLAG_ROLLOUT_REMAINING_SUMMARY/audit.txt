@@ -1,0 +1,13 @@
+BUILDING_FLAG_ROLLOUT remaining targets
+BASELINE = BUILDING_FLAG_STAGE_04_SAUDI_ARABIA_ONLY
+
+CHANGED
+  05 UAE  06 Syria  07 South Africa  08 South Korea  09 Libya
+
+NO CHANGE (US meshes, no baked donor flags)
+  Turkey Ukraine Sweden Italy United Kingdom Germany France
+
+FINAL_DATA_SHA = 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+FINAL_ART_SHA = 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+BOOT_SAFE = YES
+INGAME_TESTED = NO

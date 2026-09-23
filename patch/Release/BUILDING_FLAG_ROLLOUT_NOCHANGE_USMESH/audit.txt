@@ -1,0 +1,21 @@
+BUILDING_FLAG_ROLLOUT no-change countries
+
+These remaining target countries use US/NATO building meshes
+with no baked *Flag.tga / FLAG01-03 donor flags.
+Per rules: leave buildings with no baked flags unchanged.
+No Flag_Hs W3D added. No INI Draw added. No BIG rewrite.
+
+BASELINE_PAIR = BUILDING_FLAG_STAGE_09_LIBYA_ONLY
+DATA_SHA256 = 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+ART_SHA256 = 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+FIX_APPLIED = NO
+BOOT_SAFE = YES (unchanged bytes)
+INGAME_TESTED = NO
+
+BUILDING_FLAG_STAGE_10_TURKEY_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_11_UKRAINE_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_12_SWEDEN_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_13_ITALY_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_14_UNITED_KINGDOM_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_15_GERMANY_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command
+BUILDING_FLAG_STAGE_16_FRANCE_ONLY  FIX_APPLIED=NO  meshes=US_Camp / US_Powerplant / US_Supply / US_WarFactory / US_Command

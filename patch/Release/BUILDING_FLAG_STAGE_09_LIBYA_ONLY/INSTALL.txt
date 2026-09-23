@@ -1,0 +1,20 @@
+BUILDING_FLAG_STAGE_09_LIBYA_ONLY
+=================================
+
+Isolated Libya Flag_Hs package. Do not mix with other country ZIPs.
+
+1. Close Specter / C&C Generals completely.
+2. Copy _SPEC_DATA_ONE.big over the current Specter DATA BIG in GameRoot.
+3. Copy _SPEC_ART_ONE.big over the current Specter ART BIG in GameRoot.
+4. Launch Specter.
+5. Play Libya only. Confirm Flag_Hs poles on Barracks, Power, Supply, War Factory, Abbas.
+
+Checksums:
+  DATA SHA256 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+  ART  SHA256 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314
+  ZIP  SHA256 1407c171333957f4b57e613111ac692873f071859e5ae3eb80c80a15056bd895
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+PROTECTED_ASSETS_CHANGED = NO
+SHARED_MESH_MODIFIED = NO

@@ -1,0 +1,165 @@
+OIL_RESOURCE_ACCESS_AUDIT_REPORT
+STAGE = OIL_RESOURCE_ACCESS_AUDIT_STAGE_01
+SOURCE = BUILDING_FLAG_COMPLETE_ROLLOUT / _SPEC_DATA_ONE.big
+DATA_SHA = 2a0e9b0d77ceb442376b5e67573a1af12057713884318f2858b6ce30de2d0345
+EDITS = NONE
+BIG_CREATED = NO
+FLAGS_TOUCHED = NO
+BUILDINGS_TOUCHED = NO
+
+================================================================
+OIL OBJECT (shared, not the bug)
+================================================================
+Map oil is TechOilDerrick in Data\INI\Object\CivilianBuilding.ini
+  KindOf = STRUCTURE UNATTACKABLE SELECTABLE IMMOBILE CAPTURABLE TECH_BUILDING
+  AutoDepositUpdate: 200 cash / 12000 ms, InitialCaptureBonus 1000
+  No Side, no CommandSet, no Prerequisites, no Science lock
+
+TechOilRefinery / OilRefinery are not the capture income path.
+No PatchOilIncome on these factions.
+Workers do not harvest oil. Dozers do not capture tech buildings.
+
+Capture chain (working Iraq):
+  Barracks upgrade Command_UpgradeGLARebelCaptureBuilding
+    -> Upgrade_InfantryCaptureBuilding (Upgrade.ini, no Side)
+  Rifle CommandSet Command_GLAInfantryRebelCaptureBuilding
+    -> SpecialAbilityRebelCaptureBuilding (no Science)
+  NEED_UPGRADE + NEED_TARGET_NEUTRAL_OBJECT
+
+================================================================
+WORKING REFERENCE
+================================================================
+Iraq_RepublicanGuardCommandSet
+  1 = Command_GLAInfantryRebelCaptureBuilding
+Iraq_BarracksCommandSet trains Iraq_RepublicanGuard_* and has the capture upgrade.
+Iraq_RepublicanGuard_AKMS CommandSet = Iraq_RepublicanGuardCommandSet
+
+================================================================
+SHARED LIVE LAST-WIN (all five)
+================================================================
+PlayerTemplate.ini last-win (PlayerTemplate_SpecterPatch.ini does not redefine these):
+  StartingBuilding = *_CommandCenter
+  StartingUnit0    = *_Dozer
+  IntrinsicSciences = SCIENCE_GLA
+
+CommandCenterCommandSet last-win: only Command_Construct*_Dozer
+Dozer: KindOf DOZER, DozerAIUpdate, *DozerCommandSet = build only, no capture
+Worker objects exist (HARVESTER + WorkerAIUpdate) but are not the start unit
+  and have no capture button.
+
+Live barracks CommandSet (CommandSet.ini; CommandSet_SaudiArabia.ini /
+CommandSet_UAE.ini / CommandSet_Libya.ini / CommandSet_Syria.ini /
+CommandSet_SouthAfrica.ini are NOT packed):
+  trains Command_ConstructIraq_RepublicanGuard_*
+  11 = Command_UpgradeGLARebelCaptureBuilding
+  empty Prerequisites on *_Barracks objects
+
+Own rifle objects exist and have the capture MODULES:
+  SpecialAbilityRebelCaptureBuilding, StartsPaused=Yes
+  UnpauseSpecialPowerUpgrade TriggeredBy=Upgrade_InfantryCaptureBuilding
+Own rifle CommandSets do NOT have the capture BUTTON:
+  1=Guard 2=AttackMove 14=Stop
+
+Construct*_RepublicanGuard_AKMS buttons already exist in CommandButton.ini.
+
+================================================================
+ROOT CAUSE PER FACTION
+================================================================
+UAE
+  Primary: UAE_RepublicanGuardCommandSet has no capture button.
+  Own UAE_RepublicanGuard_AKMS cannot issue capture.
+  Live UAE_BarracksCommandSet trains Iraq riflemen instead of UAE.
+  Start UAE_Dozer cannot capture TechOilDerrick.
+  Oil object is not faction-locked.
+
+Libya
+  Primary: Libya_RepublicanGuardCommandSet has no capture button.
+  Own Libya_RepublicanGuard_AKMS cannot issue capture.
+  Live Libya_BarracksCommandSet trains Iraq riflemen instead of Libya.
+  Start Libya_Dozer cannot capture TechOilDerrick.
+
+Syria
+  Primary: Syria_RepublicanGuardCommandSet has no capture button.
+  Own Syria_RepublicanGuard_AKMS cannot issue capture.
+  Live Syria_BarracksCommandSet trains Iraq riflemen instead of Syria.
+  Start Syria_Dozer cannot capture TechOilDerrick.
+
+South Africa
+  Primary: SouthAfrica_RepublicanGuardCommandSet has no capture button.
+  Own SouthAfrica_RepublicanGuard_AKMS cannot issue capture.
+  Live SouthAfrica_BarracksCommandSet trains Iraq riflemen instead of SouthAfrica.
+  Start SouthAfrica_Dozer cannot capture TechOilDerrick.
+
+Saudi Arabia
+  Primary: SaudiArabia_RepublicanGuardCommandSet has no capture button.
+  Own SaudiArabia_RepublicanGuard_AKMS cannot issue capture.
+  Live SaudiArabia_BarracksCommandSet trains Iraq riflemen instead of SaudiArabia.
+  Start SaudiArabia_Dozer cannot capture TechOilDerrick.
+
+Same hole on India_RepublicanGuardCommandSet / Egypt_RepublicanGuardCommandSet
+(not in the requested list).
+
+================================================================
+FILES RESPONSIBLE
+================================================================
+Exact last-win file for the CommandSet hole:
+  Data\INI\CommandSet.ini
+    SaudiArabia_RepublicanGuardCommandSet
+    UAE_RepublicanGuardCommandSet
+    Libya_RepublicanGuardCommandSet
+    Syria_RepublicanGuardCommandSet
+    SouthAfrica_RepublicanGuardCommandSet
+    *_BarracksCommandSet (Iraq construct clone)
+    *_CommandCenterCommandSet (Dozer only)
+
+PlayerTemplate last-win (Dozer start; do not edit unless approved):
+  Data\INI\PlayerTemplate.ini
+    FactionUAE FactionLibya FactionSyria FactionSouthAfrica FactionSaudiArabia
+
+Objects (modules OK; no edit needed):
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\South African National Defence Force\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Infantry\Rifleman.ini
+  matching *_Dozer.ini / *_Worker.ini / *_Barracks.ini
+
+Oil / upgrade / power (not the bug):
+  Data\INI\Object\CivilianBuilding.ini  (TechOilDerrick)
+  Data\INI\Upgrade.ini                  (Upgrade_InfantryCaptureBuilding)
+  Data\INI\SpecialPower.ini             (SpecialAbilityRebelCaptureBuilding)
+  Data\INI\CommandButton.ini            (capture + own construct buttons exist)
+
+Workspace-only (NOT packed; do not rely on them):
+  Data\INI\CommandSet_SaudiArabia.ini
+  Data\INI\CommandSet_UAE.ini
+  Data\INI\CommandSet_Libya.ini
+  Data\INI\CommandSet_Syria.ini
+  Data\INI\CommandSet_SouthAfrica.ini
+  These already train own riflemen but still lack the capture button
+  and lack Command_UpgradeGLARebelCaptureBuilding.
+
+================================================================
+MINIMAL SAFE FIX (proposal only — wait for approval)
+================================================================
+Edit Data\INI\CommandSet.ini only. No PlayerTemplate. No flags. No buildings.
+No oil object. No Iraq objects.
+
+1) Add capture button to each of the five rifle CommandSets, Iraq pattern:
+     CommandSet <Faction>_RepublicanGuardCommandSet
+       1  = Command_GLAInfantryRebelCaptureBuilding
+       12 = Command_AttackMove
+       13 = Command_Guard
+       14 = Command_Stop
+
+2) Retarget live barracks slot 1 from
+     Command_ConstructIraq_RepublicanGuard_AKMS
+   to
+     Command_Construct<Faction>_RepublicanGuard_AKMS
+   Keep slot 11 = Command_UpgradeGLARebelCaptureBuilding.
+   Own construct buttons already exist.
+
+Do not pack workspace CommandSet_*.ini as-is: they omit the capture
+button and the barracks capture upgrade.
+
+Do not change starting Dozer unless a later task asks for Worker start.

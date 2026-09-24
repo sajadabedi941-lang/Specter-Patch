@@ -1,0 +1,424 @@
+CAPTURE_BUILDING_ACCESS_AUDIT_STAGE_01
+AUDIT ONLY. NO EDITS APPLIED. NO BIG BUILT.
+
+SOURCE_LIVE_DATA = patch/Release/AIRCRAFT_ROSTER_EXPANSION_AFRICA_PAKISTAN_SYRIA_STAGE_01/_SPEC_DATA_ONE.big
+SOURCE_DATA_SHA256 = 40bb94ac46bc4c8c1e122f124dd4e49a2da073f8d7dc6682e2d6745e4d97024a
+ART_TOUCHED = NO
+FLAGS_TOUCHED = NO
+AIRCRAFT_TOUCHED = NO
+BUILDINGS_TOUCHED = NO
+PLAYERTEMPLATE_TOUCHED = NO
+
+================================================================
+WORKING CAPTURE CHAIN (reference)
+================================================================
+
+Working units:
+  Iraq_RepublicanGuard_AKMS
+    file Data\INI\Object\Specter\Iraq Army\Infantry\Rifleman.ini
+    CommandSet Iraq_RepublicanGuardCommandSet
+  AmericaInfantryRanger
+    file Data\INI\Object\Specter\United States Of America\Infantry\Rifleman_M4.ini
+    CommandSet AmericaInfantryRangerCommandSet
+  GLAInfantryRebel / China redguard use the same three-part pattern.
+
+Required parts (all three must be present):
+  1. OBJECT MODULES
+     SpecialAbility*CaptureBuilding
+     SpecialAbilityUpdate DoCaptureFX=Yes
+     StartsPaused=Yes
+     UnpauseSpecialPowerUpgrade -> same SpecialPower
+     (USA also has TriggeredBy=Upgrade_InfantryCaptureBuilding on Unpause)
+  2. INFANTRY COMMAND BUTTON
+     Command_GLAInfantryRebelCaptureBuilding
+     or Command_AmericaRangerCaptureBuilding
+     or Command_ChinaInfantryRedGuardCaptureBuilding
+     or Command_GenericInfantryCaptureBuilding
+     Options include NEED_UPGRADE + NEED_TARGET_NEUTRAL_OBJECT
+     Upgrade=Upgrade_InfantryCaptureBuilding
+  3. BARRACKS / CAMP UPGRADE BUTTON
+     Command_UpgradeGLARebelCaptureBuilding
+     or Command_UpgradeAmericaRangerCaptureBuilding
+     or Command_UpgradeChinaRedguardCaptureBuilding
+     PLAYER_UPGRADE -> Upgrade_InfantryCaptureBuilding
+
+Shared last-win definitions (present, not missing):
+  Upgrade Upgrade_InfantryCaptureBuilding
+    file Data\INI\Upgrade.ini
+    BuildCost 1000 / BuildTime 30 / no RequiredScience
+  SpecialAbilityRangerCaptureBuilding / Rebel / RedGuard / Generic
+    file Data\INI\SpecialPower.ini
+    RequiredScience=[] (not science-gated)
+  Capture / upgrade CommandButtons
+    file Data\INI\CommandButton.ini
+  Default\CommandButton.ini and Default\Upgrade.ini are comment stubs only.
+    They do not wipe capture buttons or the upgrade.
+
+CanCapture field:
+  Not used on these infantry objects. Absence is not the defect.
+
+PlayerTemplate:
+  StartingUnit0 is a Dozer / Worker / VT72B. Start units cannot capture.
+  IntrinsicSciences (SCIENCE_GLA / SCIENCE_NATO / SCIENCE_Japan / etc.)
+  do not gate Upgrade_InfantryCaptureBuilding.
+  PlayerTemplate is not the missing requirement.
+
+Iraq barracks last-win (working):
+  CommandSet Iraq_BarracksCommandSet
+  file Data\INI\CommandSet.ini
+  slot 11 = Command_UpgradeGLARebelCaptureBuilding
+  trains Iraq_RepublicanGuard_* including the rifle with capture button.
+
+Iraq rifle last-win (working):
+  CommandSet Iraq_RepublicanGuardCommandSet
+  file Data\INI\CommandSet.ini
+  slot 1 = Command_GLAInfantryRebelCaptureBuilding
+
+================================================================
+ROOT CAUSES (three classes)
+================================================================
+
+CLASS A — GLA-style own rifle CommandSet has no capture button
+  Syria, UAE, Saudi Arabia, India (RepublicanGuard path), South Africa,
+  Libya, and Pakistan.
+  Object modules exist and are paused behind the upgrade.
+  Last-win *_RepublicanGuardCommandSet is only Guard / AttackMove / Stop.
+  Exact responsible file:
+    Data\INI\CommandSet.ini  (Pakistan: Data\INI\CommandSet_Pakistan.ini)
+
+CLASS B — NATO rifle is StartsPaused and packed Unpause has no TriggeredBy
+  Turkey, Sweden, Ukraine, Italy, United Kingdom (Britain), Germany, France.
+  Button + camp upgrade exist (USA ranger CommandSet / upgrade).
+  Packed Rifleman_G36.ini UnpauseSpecialPowerUpgrade lists only
+  SpecialPowerTemplate. TriggeredBy=Upgrade_InfantryCaptureBuilding is
+  missing in the live BIG (workspace copy still has that line).
+  Exact responsible file:
+    Data\INI\Object\Specter\<faction>\Infantry\Rifleman_G36.ini
+    (packed last-win object)
+
+CLASS C — no own infantry packed; barracks is an Iraq clone
+  Japan, South Korea, Vietnam.
+  Live barracks CommandSet is Iraq_BarracksCommandSet copied onto
+  *_BarracksCommandSet. It trains Iraq_RepublicanGuard_* who CAN capture.
+  There are zero packed KindOf=INFANTRY objects with Side=Japan /
+  SouthKorea / Vietnam.
+  Workspace Japan infantry INIs exist but are NOT packed.
+  South Korea / Vietnam workspace Infantry folders are empty.
+  Exact responsible files:
+    Data\INI\CommandSet.ini  (*_BarracksCommandSet last-win)
+    missing packed infantry object INIs
+
+Live barracks note for Class A / C (except Pakistan):
+  Last-win *_BarracksCommandSet in Data\INI\CommandSet.ini still constructs
+  Iraq rifles and still has Command_UpgradeGLARebelCaptureBuilding.
+  Those Iraq units have a working capture button.
+  Own-faction rifles that already exist in DATA cannot use it, because
+  their own CommandSet omits the button.
+  Workspace CommandSet_Syria.ini / UAE.ini / SaudiArabia.ini / India.ini /
+  SouthAfrica.ini / Libya.ini / Japan.ini / SouthKorea.ini / Vietnam.ini
+  are NOT packed. Packing them as-is would retarget barracks to own
+  units and would still leave own rifle CommandSets without a capture
+  button.
+
+Pakistan is the only Class A faction whose packed barracks already
+trains own rifles and has no upgrade slot.
+
+================================================================
+PER-FACTION STATUS
+================================================================
+
+--- Syria ---
+Has capture infantry: YES (own rifle + AT have modules; no engineer)
+Capture module present: YES
+  Syria_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\Syrian Armed Forces\Infantry\Rifleman.ini
+  SpecialAbilityRebelCaptureBuilding StartsPaused=Yes
+  Unpause TriggeredBy=Upgrade_InfantryCaptureBuilding
+Missing requirement: infantry CommandSet has no capture button
+Exact file responsible: Data\INI\CommandSet.ini
+  CommandSet Syria_RepublicanGuardCommandSet
+  last-win buttons: Guard / AttackMove / Stop
+Live barracks: Data\INI\CommandSet.ini Syria_BarracksCommandSet
+  still constructs Iraq_RepublicanGuard_* + UpgradeGLARebelCaptureBuilding
+PlayerTemplate FactionSyria: Start0=Syria_Dozer Sci=SCIENCE_GLA (not the hole)
+Workspace CommandSet_Syria.ini NOT packed; its rifle CS also has no capture button.
+
+--- UAE ---
+Has capture infantry: YES (rifle + AT + engineer)
+Capture module present: YES
+  UAE_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\United Arab Emirates Armed Forces\Infantry\Rifleman.ini
+Missing requirement: rifle CommandSet has no capture button
+Exact file responsible: Data\INI\CommandSet.ini
+  CommandSet UAE_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+Engineer exception:
+  UAE_RepublicanGuard_Eng uses GenericFieldEngineerCommandSet
+  (has Command_ChinaInfantryRedGuardCaptureBuilding) but live barracks
+  constructs Iraq engineer, not UAE engineer.
+Live barracks: CommandSet.ini UAE_BarracksCommandSet = Iraq construct list.
+
+--- Saudi Arabia ---
+Has capture infantry: YES (rifle + AT + engineer)
+Capture module present: YES
+  SaudiArabia_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\Saudi Arabia Armed Forces\Infantry\Rifleman.ini
+Missing requirement: rifle CommandSet has no capture button
+Exact file responsible: Data\INI\CommandSet.ini
+  CommandSet SaudiArabia_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+Live barracks: CommandSet.ini SaudiArabia_BarracksCommandSet = Iraq construct list.
+
+--- Turkey ---
+Has capture infantry: YES (TurkeyInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+  SpecialAbilityRangerCaptureBuilding StartsPaused=Yes
+  CommandSet AmericaInfantryRangerCommandSet
+    (has Command_AmericaRangerCaptureBuilding)
+Camp upgrade present:
+  TurkeyBootCamp -> TurkeyCampCommandSet
+  file Data\INI\CommandSet.ini
+  includes Command_UpgradeAmericaRangerCaptureBuilding
+Missing requirement: UnpauseSpecialPowerUpgrade has no TriggeredBy
+  in the packed rifle object (StartsPaused therefore never clears)
+Exact file responsible:
+  Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+PlayerTemplate FactionTurkey: Start0=TurkeyVehicleDozer Sci=SCIENCE_NATO
+  (not the hole)
+Workspace CommandSet_Turkey.ini NOT packed.
+
+--- Sweden ---
+Has capture infantry: YES (SwedenInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+Camp: SwedenBootCamp / SwedenCampCommandSet has
+  Command_UpgradeAmericaRangerCaptureBuilding
+  file Data\INI\CommandSet.ini
+Workspace CommandSet_Sweden.ini NOT packed.
+
+--- Ukraine ---
+Has capture infantry: YES (UkraineInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+Camp: UkraineBootCamp / UkraineCampCommandSet has
+  Command_UpgradeAmericaRangerCaptureBuilding
+  file Data\INI\CommandSet.ini
+Workspace CommandSet_Ukraine.ini NOT packed.
+
+--- Italy ---
+Has capture infantry: YES (ItalyInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\Italian Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\Italian Armed Forces\Infantry\Rifleman_G36.ini
+Camp: ItalyBootCamp / ItalyCampCommandSet has upgrade
+  file Data\INI\CommandSet.ini
+Note: packed CommandSet_Italy.ini Italy_BarracksCommandSet is Sell-only.
+  The building does not use that set (it uses ItalyCampCommandSet).
+
+--- United Kingdom (Side=Britain) ---
+Has capture infantry: YES (BritainInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\British Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\British Armed Forces\Infantry\Rifleman_G36.ini
+Camp: BritainBootCamp / BritainCampCommandSet has upgrade
+  file Data\INI\CommandSet.ini
+Packed CommandSet_Britain.ini Britain_BarracksCommandSet is Sell-only
+  and is not the set on the camp building.
+
+--- Germany ---
+Has capture infantry: YES (GermanyInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\German Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\German Armed Forces\Infantry\Rifleman_G36.ini
+Camp: GermanyBootCamp / GermanyCampCommandSet has upgrade
+  file Data\INI\CommandSet.ini
+
+--- France ---
+Has capture infantry: YES (FranceInfantryRifleman)
+Capture module present: YES
+  file Data\INI\Object\Specter\French Armed Forces\Infantry\Rifleman_G36.ini
+Missing requirement: packed Unpause has no TriggeredBy (StartsPaused stuck)
+Exact file responsible:
+  Data\INI\Object\Specter\French Armed Forces\Infantry\Rifleman_G36.ini
+  Workspace copy of the same path HAS TriggeredBy=Upgrade_InfantryCaptureBuilding.
+  Live BIG last-win does not.
+Camp: FranceBootCamp / FranceCampCommandSet has upgrade
+  file Data\INI\CommandSet.ini
+
+--- India ---
+Has capture infantry: YES (two unused/broken paths)
+Capture module present: YES
+  India_RepublicanGuard_AKMS
+    file Data\INI\Object\Specter\Indian Armed Forces\Infantry\Rifleman.ini
+    CS India_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+    (no capture button)
+  IndiaInfantryRiflemanAK74M
+    file Data\INI\Object\Specter\Indian Armed Forces\Infantry\IndiaInfantryRifleman.ini
+    full China capture chain + TriggeredBy
+    CS ChinaInfantryRedguardCommandSet HAS capture button
+    NOT produced by live barracks
+Missing requirement:
+  1. India_RepublicanGuardCommandSet missing capture button
+     file Data\INI\CommandSet.ini
+  2. Live India_BarracksCommandSet still constructs Iraq units
+     file Data\INI\CommandSet.ini
+Workspace CommandSet_India.ini NOT packed; its rifle CS also has no capture button.
+
+--- Pakistan ---
+Has capture infantry: YES (own rifle + AT have modules)
+Capture module present: YES
+  Pakistan_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\Pakistan Armed Forces\Infantry\Rifleman.ini
+  TriggeredBy=Upgrade_InfantryCaptureBuilding present
+Missing requirement: TWO last-win holes in the packed Pakistan CommandSet
+  1. Pakistan_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+     (no capture button)
+  2. Pakistan_BarracksCommandSet trains own rifles and has NO
+     Command_UpgradeGLARebelCaptureBuilding
+Exact file responsible: Data\INI\CommandSet_Pakistan.ini
+  (last-wins over CommandSet.ini for both sets)
+This is the only target whose packed barracks already produces own
+infantry and also omits the upgrade.
+
+--- South Africa ---
+Has capture infantry: YES (rifle + AT + engineer)
+Capture module present: YES
+  SouthAfrica_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\South African National Defence Force\Infantry\Rifleman.ini
+Missing requirement: rifle CommandSet has no capture button
+Exact file responsible: Data\INI\CommandSet.ini
+  CommandSet SouthAfrica_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+Live barracks: CommandSet.ini SouthAfrica_BarracksCommandSet = Iraq construct list.
+
+--- Libya ---
+Has capture infantry: YES (rifle + AT have modules; no engineer)
+Capture module present: YES
+  Libya_RepublicanGuard_AKMS
+  file Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Rifleman.ini
+Missing requirement: rifle CommandSet has no capture button
+Exact file responsible: Data\INI\CommandSet.ini
+  CommandSet Libya_RepublicanGuardCommandSet = Guard / AttackMove / Stop
+Live barracks: CommandSet.ini Libya_BarracksCommandSet = Iraq construct list.
+
+--- Japan ---
+Has capture infantry: NO (no packed Side=Japan KindOf=INFANTRY objects)
+Capture module present: NO
+Missing requirement: own infantry objects are not in the live DATA pair
+Exact files responsible:
+  Missing packed infantry INIs
+    workspace has patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/
+    (Japan_Rifleman_G36.ini etc.) but those paths are NOT packed
+  Data\INI\CommandSet.ini CommandSet Japan_BarracksCommandSet
+    last-win constructs Iraq_RepublicanGuard_* + UpgradeGLARebelCaptureBuilding
+  Building file
+    Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+    CommandSet=Japan_BarracksCommandSet
+Live workaround: barracks produces Iraq rifles who have the working
+Iraq capture button. Own Japanese infantry are not in the live pair.
+Workspace CommandSet_Japan.ini NOT packed.
+
+--- South Korea ---
+Has capture infantry: NO (no packed Side=SouthKorea KindOf=INFANTRY objects)
+Capture module present: NO
+Missing requirement: own infantry objects are not packed
+  workspace Infantry folder is empty
+Exact files responsible:
+  Data\INI\CommandSet.ini CommandSet SouthKorea_BarracksCommandSet
+    (Iraq construct list)
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+Live workaround: same Iraq rifles as Japan.
+Workspace CommandSet_SouthKorea.ini NOT packed.
+
+--- Vietnam ---
+Has capture infantry: NO (no packed Side=Vietnam KindOf=INFANTRY objects)
+Capture module present: NO
+Missing requirement: own infantry objects are not packed
+  workspace Infantry folder is empty
+Exact files responsible:
+  Data\INI\CommandSet.ini CommandSet Vietnam_BarracksCommandSet
+    (Iraq construct list)
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+Live workaround: same Iraq rifles as Japan.
+Workspace CommandSet_Vietnam.ini NOT packed.
+
+================================================================
+STATUS TABLE
+================================================================
+
+Faction            OwnCaptureInf  Module  Missing requirement                         Exact file
+Syria              YES            YES     rifle CS has no capture button              Data\INI\CommandSet.ini (Syria_RepublicanGuardCommandSet)
+UAE                YES            YES     rifle CS has no capture button              Data\INI\CommandSet.ini (UAE_RepublicanGuardCommandSet)
+Saudi Arabia       YES            YES     rifle CS has no capture button              Data\INI\CommandSet.ini (SaudiArabia_RepublicanGuardCommandSet)
+Turkey             YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+Sweden             YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+Ukraine            YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+Italy              YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\Italian Armed Forces\Infantry\Rifleman_G36.ini
+United Kingdom     YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\British Armed Forces\Infantry\Rifleman_G36.ini
+Germany            YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\German Armed Forces\Infantry\Rifleman_G36.ini
+France             YES            YES     Unpause missing TriggeredBy (StartsPaused)  ...\French Armed Forces\Infantry\Rifleman_G36.ini
+India              YES            YES     RG CS no button; barracks trains Iraq       Data\INI\CommandSet.ini (India_*CommandSet)
+Pakistan           YES            YES     rifle CS no button AND barracks no upgrade  Data\INI\CommandSet_Pakistan.ini
+South Africa       YES            YES     rifle CS has no capture button              Data\INI\CommandSet.ini (SouthAfrica_RepublicanGuardCommandSet)
+Libya              YES            YES     rifle CS has no capture button              Data\INI\CommandSet.ini (Libya_RepublicanGuardCommandSet)
+Japan              NO             NO      no packed own infantry                      missing infantry INIs + CommandSet.ini Japan_BarracksCommandSet
+South Korea        NO             NO      no packed own infantry                      missing infantry INIs + CommandSet.ini SouthKorea_BarracksCommandSet
+Vietnam            NO             NO      no packed own infantry                      missing infantry INIs + CommandSet.ini Vietnam_BarracksCommandSet
+
+================================================================
+NOT THE CAUSE
+================================================================
+- PlayerTemplate IntrinsicSciences
+- Upgrade_InfantryCaptureBuilding definition missing (it exists)
+- Capture SpecialPower RequiredScience (none)
+- Default\CommandButton.ini wipe (stub only)
+- CanCapture key (unused)
+- HUD / flags / aircraft / buildings object geometry
+- Need to rewrite CommandButton.ini (existing buttons are enough)
+
+================================================================
+MINIMAL SAFE FIX (NOT APPLIED — WAITING FOR APPROVAL)
+================================================================
+
+Do not rewrite CommandSet.ini in place if a last-win append file can
+carry the three CommandSets. Do not touch flags, aircraft, HUD,
+PlayerTemplate, or donor USA/Iraq/China/Russia objects.
+
+1. Class A (Syria/UAE/Saudi/India/SouthAfrica/Libya + Pakistan)
+   Last-win *_RepublicanGuardCommandSet:
+     1 = Command_GLAInfantryRebelCaptureBuilding
+     keep Guard / AttackMove / Stop
+   Pakistan only: also last-win Pakistan_BarracksCommandSet to add
+     Command_UpgradeGLARebelCaptureBuilding
+   Do not pack workspace CommandSet_*.ini as-is; those rifle CS
+   still omit the capture button.
+
+2. Class B (NATO seven)
+   On each packed *InfantryRifleman UnpauseSpecialPowerUpgrade add
+     TriggeredBy = Upgrade_InfantryCaptureBuilding
+   Match AmericaInfantryRanger. No CommandSet change required.
+
+3. Class C (Japan/South Korea/Vietnam)
+   Two options; pick one before editing:
+   A. Keep Iraq rifles (they already capture). No capture fix needed
+      for produced units. Own-faction infantry still absent.
+   B. Pack own infantry clones + last-win barracks CS + capture
+      button on the rifle CommandSet. Larger than a button fix.
+
+BOOT_SAFE would stay YES if only last-win CommandSet/CommandButton
+append files and TriggeredBy lines on already-shipping objects are
+added. No BIG was built this stage.
+
+INGAME_TESTED = NO
+EDITS_APPLIED = NO
+)

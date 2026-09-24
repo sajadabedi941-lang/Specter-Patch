@@ -1,0 +1,13 @@
+REPLACED
+  Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\British Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\German Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\French Armed Forces\Infantry\Rifleman_G36.ini
+APPENDED
+  Data\INI\CommandSet_ZZZZ_OilCapture_Class2.ini
+PRESERVED_NEXT14 = YES
+PRESERVED_SA_UAE_SY_IN_PK = YES
+ART_CHANGED = NO

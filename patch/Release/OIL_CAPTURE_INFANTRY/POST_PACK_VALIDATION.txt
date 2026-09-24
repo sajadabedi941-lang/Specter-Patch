@@ -1,0 +1,88 @@
+PACK_STATUS = PASS
+PACKED_FILES = [_SPEC_DATA_ONE.big]
+BASE_SHA256 = 0528e90d4627e7949c683847b00df97626bdc8e36d4f8cd022dae5738856d71a
+FINAL_SHA256 = b754d43373e92816d23fd0cd13e365fcb4619699c93f64ff2cd7c7e037028cb4
+BASE_SIZE = 366161409
+FINAL_SIZE = 366162692
+OIL_OVERLAYS_PACKED = [
+  Data\INI\Object\Specter\Swedish Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\British Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\German Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\Object\Specter\French Armed Forces\Infantry\Rifleman_G36.ini
+  Data\INI\CommandSet_ZZZZ_OilCapture_Class2.ini
+]
+NEXT14_CONTENT_PRESERVED = YES
+PREVIOUS_5_COUNTRY_CONTENT_PRESERVED = YES
+JAPAN_CHANGED = NO
+SOUTH_KOREA_CHANGED = NO
+VIETNAM_CHANGED = NO
+USA_RANGER_CHANGED = NO
+TECH_OIL_DERRICK_CHANGED = NO
+WEAPON_INI_CHANGED = NO
+COMMAND_BUTTON_INI_CHANGED = NO
+COMMAND_SET_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+SPECIALPOWER_INI_CHANGED = NO
+NEW_OBJECTS = 0
+NEW_WEAPONS = 0
+ART_CHANGED = NO
+UNINTENDED_CHANGES = NONE
+POST_PACK_VALIDATION = PASS
+READY_FOR_RELEASE = YES
+INGAME_TESTED = NO
+
+BASELINE
+  live DATA  patch/Release/FIGHTER_ROSTER_NEXT14/_SPEC_DATA_ONE.big
+  SHA256     0528e90d4627e7949c683847b00df97626bdc8e36d4f8cd022dae5738856d71a
+  bytes      366161409
+  files      2903
+
+PACKED
+  file       patch/Release/OIL_CAPTURE_INFANTRY/_SPEC_DATA_ONE.big
+  SHA256     b754d43373e92816d23fd0cd13e365fcb4619699c93f64ff2cd7c7e037028cb4
+  bytes      366162692
+  files      2904  (2903 same-path prefix + 1 last-win append)
+  drop-in    YES  same filename _SPEC_DATA_ONE.big / BIGF / path-order prefix preserved
+
+CHANGED_EXISTING_PATHS = 7 NATO G36 object INIs (Class-1 TriggeredBy restore)
+APPENDED
+  Data\INI\CommandSet_ZZZZ_OilCapture_Class2.ini
+
+CLASS2_OBJECT_NOTE
+  Saudi Arabia / UAE / Libya / South Africa infantry objects were already
+  TriggeredBy-complete in the Next-14 BIG. The validated implementation did
+  not rewrite those objects. They remain byte-identical to the Next-14 base.
+  Class-2 access is the last-win RepublicanGuard CommandSet overlay only.
+
+CHECKS
+  only 7 G36 object paths rewritten                        PASS
+  7 overlays match workspace and restore TriggeredBy       PASS
+  Class2 CS last-win on 4 RepublicanGuard CommandSets      PASS
+  Class2 SA/UAE/Libya/SouthAfrica objects unchanged        PASS
+  40 Next-14 Command_Construct buttons                     PASS
+  54 SA/UAE/SY/IN/PK Command_Construct buttons remain      PASS
+  Pakistan National 12 identical to Next-14                PASS
+  Syria National 12 identical to Next-14                   PASS
+  SA/UAE/India 2/2/6 remains intact                        PASS
+  Pakistan Heavy Su35S+F15E remain                         PASS
+  Syria Heavy Su30SM2+J16D remain                          PASS
+  USA Airfield last-win unchanged                          PASS
+  Arabic Alliance CS unchanged                             PASS
+  North Korea CS unchanged                                 PASS
+  France/Germany/Britain/Italy dual CS intact              PASS
+  Israel national 12 last-win intact                       PASS
+  Egypt has no invented Heavy CS                           PASS
+  Japan / South Korea / Vietnam infantry unchanged         PASS
+  USA Ranger / TechOilDerrick unchanged                    PASS
+  Weapon.ini / CommandButton.ini / CommandSet.ini frozen   PASS
+  Upgrade.ini / SpecialPower.ini frozen                    PASS
+  object set unchanged (4825)                              PASS
+  no new Weapon definitions (2652 == 2652)                 PASS
+  ART files unchanged vs Next-14 (47 editor/locale files)  PASS
+  no unintended rewritten paths                            PASS
+
+NOTE
+  Packaging step only. Not a GitHub Release. In-game test not performed.

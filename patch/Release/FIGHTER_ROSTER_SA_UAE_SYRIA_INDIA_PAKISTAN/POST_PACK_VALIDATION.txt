@@ -1,0 +1,55 @@
+PACK_STATUS = PASS
+PACKED_FILES = [_SPEC_DATA_ONE.big]
+ART_PACKED = NO
+POST_PACK_VALIDATION = PASS
+UNINTENDED_CHANGES = NONE
+READY_FOR_INGAME_TEST = YES
+
+BASELINE
+  live DATA  patch/Release/CAPTURE_BUILDING_FIX_STAGE_JAPAN_SOUTH_KOREA_VIETNAM/_SPEC_DATA_ONE.big
+  SHA256     fbe90ff915af2267d90a12532aff281d4a06e0f3a81a25ee07c4c380b50c74bc
+  files      2899
+
+PACKED
+  file       patch/Release/FIGHTER_ROSTER_SA_UAE_SYRIA_INDIA_PAKISTAN/_SPEC_DATA_ONE.big
+  SHA256     2b5a30a83c99d5284034c1f7b9ff9554dd6974c5eb99ede24bc1ed76c97d9bcb
+  bytes      366131753
+  files      2901  (2899 same-path prefix + 2 last-win appends)
+  drop-in    YES  same filename _SPEC_DATA_ONE.big / BIGF / path-order prefix preserved
+
+CHANGED_EXISTING_PATHS = 56 rebound object INIs (validated overlays, exact match)
+APPENDED
+  Data\INI\CommandButton_ZZZZ_FighterRoster_SAUAESYINPK.ini
+  Data\INI\CommandSet_ZZZZ_FighterRoster_SAUAESYINPK.ini
+
+CHECKS
+  54 new CommandButtons in fighter ZZZZ          PASS
+  6 live CommandButtons reused                   PASS
+  60 airfield last-win buttons exist             PASS
+  every referenced Object exists                 PASS
+  every referenced Weapon exists (52 names)      PASS
+  no Weapon definitions added or removed         PASS
+  Weapon.ini identical to live                   PASS
+  overlays define no Weapon objects              PASS
+  Pakistan remains National 12                   PASS
+  Pakistan not Iraq+expansion mix on airfield    PASS
+  Pakistan_HeavyAirBaseCommandSet unchanged      PASS  (Su35S + F15E still there)
+  Syria_HeavyAirBaseCommandSet unchanged         PASS  (Su30SM2 + J16D still there)
+  fighter ZZZZ defines no Heavy CommandSet       PASS  (comment-only mention)
+  USA airfield CommandSets unchanged             PASS
+  AmericaJetRaptor first-slot homes unchanged    PASS
+  KEEP objects unchanged vs live                 PASS
+  KEEP WeaponSets match donors                   PASS
+    UAE_F16Blk52 / Pakistan_F16Blk52 -> AmericaJetRaptor (F16CJ_BLK52.ini)
+    SyriaJetJ7 -> ChinaJetJ7
+    Syria_Su-25K -> live Iraq-chain unchanged
+    SyriaJetSu30SM2 -> RussiaJetSu30SM2
+    SyriaJetJ16D -> ChinaJetJ16D
+    PakistanJetSu35S -> RussiaJetSu35S
+    PakistanJetF15E -> AmericaJetAurora (F15E_229.ini)
+  approved rebinds present in packed objects     PASS
+  frozen donors / CommandSet.ini / CommandButton.ini / AirExp ZZZZ unchanged  PASS
+  no unintended rewritten paths                  PASS
+
+NOTE
+  Packaging step only. Not a release announcement. In-game test not performed.

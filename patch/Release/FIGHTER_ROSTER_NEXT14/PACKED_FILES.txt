@@ -1,0 +1,19 @@
+REPLACED
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF15J.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_Mig-29A.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_MirageF1-Bq.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetSu24.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetMig23.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_MirageF1-Bq.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetF35A.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetF5E.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetF4E.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetSu24M.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetMig29.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetMig29MU1.ini
+  Data\INI\Object\Specter\Turkey Armed Forces\Airforce\TurkeyJetF16C.ini
+APPENDED
+  Data\INI\CommandButton_ZZZZ_FighterRoster_Next14.ini
+  Data\INI\CommandSet_ZZZZ_FighterRoster_Next14.ini
+PRESERVED_SA_UAE_SY_IN_PK = YES
+ART_CHANGED = NO

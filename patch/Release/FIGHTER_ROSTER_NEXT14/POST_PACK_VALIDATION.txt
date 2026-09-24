@@ -1,0 +1,67 @@
+PACK_STATUS = PASS
+PACKED_FILES = [_SPEC_DATA_ONE.big]
+ART_PACKED = NO
+POST_PACK_VALIDATION = PASS
+WEAPON_DEFINITIONS_ADDED = 0
+WEAPON_INI_CHANGED = NO
+COMMANDSET_INI_CHANGED = NO
+COMMANDBUTTON_INI_CHANGED = NO
+UNINTENDED_CHANGES = NONE
+READY_FOR_RELEASE = YES
+INGAME_TESTED = NO
+
+BASELINE
+  live DATA  patch/Release/FIGHTER_ROSTER_SA_UAE_SYRIA_INDIA_PAKISTAN/_SPEC_DATA_ONE.big
+  SHA256     2b5a30a83c99d5284034c1f7b9ff9554dd6974c5eb99ede24bc1ed76c97d9bcb
+  files      2901
+
+PACKED
+  file       patch/Release/FIGHTER_ROSTER_NEXT14/_SPEC_DATA_ONE.big
+  SHA256     0528e90d4627e7949c683847b00df97626bdc8e36d4f8cd022dae5738856d71a
+  bytes      366161409
+  files      2903  (2901 same-path prefix + 2 last-win appends)
+  drop-in    YES  same filename _SPEC_DATA_ONE.big / BIGF / path-order prefix preserved
+
+CHANGED_EXISTING_PATHS = 13 Next-14 rebound object INIs (validated overlays, exact match)
+APPENDED
+  Data\INI\CommandButton_ZZZZ_FighterRoster_Next14.ini
+  Data\INI\CommandSet_ZZZZ_FighterRoster_Next14.ini
+
+CHECKS
+  40 new Next-14 Command_Construct buttons          PASS
+  54 SA/UAE/SY/IN/PK Command_Construct buttons remain PASS
+  every referenced Object exists                    PASS
+  every referenced Weapon exists                    PASS
+  no Weapon definitions added or removed            PASS  (2642 == 2642)
+  Weapon.ini identical to validated base BIG        PASS
+  CommandSet.ini identical to validated base BIG    PASS
+  CommandButton.ini identical to validated base BIG PASS
+  overlays define no Weapon objects                 PASS
+  workspace Weapon.ini / CommandSet.ini / CommandButton.ini not packed  PASS
+  Pakistan remains National 12                      PASS
+    F16AMLU / Mirage3 / F7P / A5C / F16Blk52 / J10CE / JF17 / JF17Blk3 / Mirage5 / ROSE / F16B / F7PG
+  Syria remains National 12                         PASS
+  SA/UAE/India 2/2/6 remains intact                 PASS
+  Pakistan_HeavyAirBaseCommandSet unchanged         PASS  (Su35S + F15E still there)
+  Syria_HeavyAirBaseCommandSet unchanged            PASS  (Su30SM2 + J16D still there)
+  Next-14 ZZZZ defines no Heavy CommandSet          PASS  (comment-only mention)
+  USA airfield CommandSets unchanged                PASS
+  AmericaJetRaptor first-slot home unchanged        PASS
+  Arabic Alliance airfield CommandSets unchanged    PASS
+  North Korea CommandSets unchanged                 PASS
+  France/Germany/Britain/Italy dual CS last-win     PASS
+  Israel national 12 last-wins USA AirF bar         PASS
+  Egypt has no invented Heavy CommandSet            PASS  (Mi-8T / IL-76 overflow)
+  KEEP objects unchanged vs base BIG                PASS
+  approved Next-14 rebinds present in packed objects PASS
+  5-country object overlays byte-identical          PASS
+  5-country ZZZZ files byte-identical               PASS
+  USA/CHN/RUS donor Objects unchanged               PASS
+  JapanJetEA6B / JapanJetEA6BUSA unchanged          PASS
+  no unintended rewritten paths                     PASS
+  object set unchanged (no new / deleted Objects)   PASS
+
+NOTE
+  Packaging step only. Not a release announcement. In-game test not performed.
+  Pakistan slot-order check used the validated 5-country last-win
+  (A5C slot 4, F16Blk52 slot 5), not a reshuffled expected list.

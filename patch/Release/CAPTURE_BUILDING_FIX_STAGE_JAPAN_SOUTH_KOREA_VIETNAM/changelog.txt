@@ -1,0 +1,11 @@
+CAPTURE_BUILDING_FIX_STAGE_JAPAN_SOUTH_KOREA_VIETNAM
+
+Japan / South Korea / Vietnam basic rifles can use Zero Hour Capture Building.
+
+Packed existing Japan_InfantryRifleman, SouthKorea_InfantryRifleman,
+and Vietnam_RepublicanGuard_AKMS (already authored; were not in the live pair).
+Last-win barracks slot 1 to those rifles. Vietnam rifle CommandSet gains
+Command_GLAInfantryRebelCaptureBuilding.
+
+USA/China/Iraq capture objects unchanged. Buildings, flags, aircraft,
+HUD, PlayerTemplate, and other factions unchanged. ART unchanged.

@@ -1,0 +1,7 @@
+ADDED_DATA_PATHS
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Infantry\Japan_Rifleman_G36.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Infantry\SouthKorea_Rifleman_G36.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Infantry\Rifleman.ini
+  Data\INI\CommandButton_ZZZZ_JapanSKVietnam_Capture.ini
+  Data\INI\CommandSet_ZZZZ_JapanSKVietnam_Capture.ini
+ART_CHANGED = NO

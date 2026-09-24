@@ -1,0 +1,126 @@
+CAPTURE_BUILDING_FIX_STAGE_JAPAN_SOUTH_KOREA_VIETNAM
+SOURCE_DATA_SHA = 40bb94ac46bc4c8c1e122f124dd4e49a2da073f8d7dc6682e2d6745e4d97024a
+NEW_DATA_SHA256 = fbe90ff915af2267d90a12532aff281d4a06e0f3a81a25ee07c4c380b50c74bc
+NEW_DATA_BYTES = 366108914
+NEW_DATA_FILE_COUNT = 2899
+ART_CHANGED = NO
+ART_INCLUDED = NO (use existing ART SHA 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314)
+
+WORKING_REFERENCE
+  AmericaInfantryRanger
+    file Data\INI\Object\Specter\United States Of America\Infantry\Rifleman_M4.ini
+    SpecialAbilityRangerCaptureBuilding StartsPaused=Yes
+    Unpause TriggeredBy=Upgrade_InfantryCaptureBuilding
+    CommandSet AmericaInfantryRangerCommandSet
+      Command_AmericaRangerCaptureBuilding NEED_UPGRADE
+    Barracks Command_UpgradeAmericaRangerCaptureBuilding
+  ChinaInfantryRedguard
+    file Data\INI\Object\Specter\PLA\Infantry\Rifleman.ini
+    SpecialAbilityRedGuardCaptureBuilding StartsPaused=Yes
+    Unpause TriggeredBy=Upgrade_InfantryCaptureBuilding
+    CommandSet ChinaInfantryRedguardCommandSet
+      Command_ChinaInfantryRedGuardCaptureBuilding NEED_UPGRADE
+    Barracks Command_UpgradeChinaRedguardCaptureBuilding
+  Shared upgrade Upgrade_InfantryCaptureBuilding file Data\INI\Upgrade.ini
+  Oil / capturable structures use CAPTURABLE KindOf (TechOilDerrick).
+  NEED_TARGET_NEUTRAL_OBJECT on the capture button covers oil derricks
+  and other capturable buildings.
+
+PREVIOUS_AUDIT_ERROR
+  The earlier report marked Japan / South Korea / Vietnam as
+  Has capture infantry = NO because it only searched packed
+  Japan Self-Defense Forces / South Korean Armed Forces /
+  Vietnam People's Armed Forces folders.
+  Existing basic rifles were already authored here:
+    Japan_InfantryRifleman
+      Data\INI\Object\Specter\Japan Self-Defense Forces\Infantry\Japan_Rifleman_G36.ini
+      FULL USA ranger capture chain already present
+    SouthKorea_InfantryRifleman
+      Data\INI\Object\Specter\Republic of Korea Armed Forces\Infantry\SouthKorea_Rifleman_G36.ini
+      FULL USA ranger capture chain already present
+    Vietnam_RepublicanGuard_AKMS
+      Data\INI\Object\Specter\Vietnam People's Army\Infantry\Rifleman.ini
+      Rebel capture modules + TriggeredBy already present
+  Those three object files and their construct buttons were NOT packed.
+  Live barracks last-win in CommandSet.ini still constructed
+  Iraq_RepublicanGuard_AKMS instead of the faction rifle.
+
+ROOT_CAUSE_PER_FACTION
+  Japan
+    Missing packed object Japan_InfantryRifleman
+    Missing packed Command_ConstructJapan_InfantryRifleman
+    Japan_BarracksCommandSet last-win trained Iraq rifle
+    Object itself already had USA capture modules / ranger CommandSet
+  South Korea
+    Missing packed object SouthKorea_InfantryRifleman
+    Missing packed Command_ConstructSouthKorea_InfantryRifleman
+    SouthKorea_BarracksCommandSet last-win trained Iraq rifle
+    Object itself already had USA capture modules / ranger CommandSet
+  Vietnam
+    Missing packed object Vietnam_RepublicanGuard_AKMS
+    Missing packed Command_ConstructVietnam_RepublicanGuard_AKMS
+    Vietnam_BarracksCommandSet last-win trained Iraq rifle
+    Vietnam_RepublicanGuardCommandSet was unpacked and had no
+    capture button (Guard / AttackMove / Stop only)
+
+FIX_APPLIED
+  Packed the three existing rifle INIs unchanged (weapons/stats preserved).
+  Appended construct buttons.
+  Last-win barracks CommandSets: slot 1 = own basic rifle.
+    Slots 2-9 / 11-14 kept from live Iraq-clone barracks so the rest
+    of the current bar is unchanged.
+  Last-win Vietnam_RepublicanGuardCommandSet = Iraq-style capture button.
+  Existing Command_UpgradeGLARebelCaptureBuilding kept (same upgrade
+  Upgrade_InfantryCaptureBuilding that USA/China/Iraq use).
+
+CHANGED_OBJECTS
+  ADDED Japan_InfantryRifleman
+  ADDED SouthKorea_InfantryRifleman
+  ADDED Vietnam_RepublicanGuard_AKMS
+  NO edits to those objects' weapons, armor, cost, or art.
+
+CHANGED_COMMANDS
+  ADDED Command_ConstructJapan_InfantryRifleman
+  ADDED Command_ConstructSouthKorea_InfantryRifleman
+  ADDED Command_ConstructVietnam_RepublicanGuard_AKMS
+  LAST-WIN Japan_BarracksCommandSet
+  LAST-WIN SouthKorea_BarracksCommandSet
+  LAST-WIN Vietnam_BarracksCommandSet
+  LAST-WIN Vietnam_RepublicanGuardCommandSet
+    + Command_GLAInfantryRebelCaptureBuilding
+  REUSED Command_AmericaRangerCaptureBuilding (Japan/SK)
+  REUSED Command_UpgradeGLARebelCaptureBuilding (all three)
+  REUSED Upgrade_InfantryCaptureBuilding
+  REUSED SpecialAbilityRangerCaptureBuilding / SpecialAbilityRebelCaptureBuilding
+
+CHANGED_FILES
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Infantry\Japan_Rifleman_G36.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Infantry\SouthKorea_Rifleman_G36.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Infantry\Rifleman.ini
+  Data\INI\CommandButton_ZZZZ_JapanSKVietnam_Capture.ini
+  Data\INI\CommandSet_ZZZZ_JapanSKVietnam_Capture.ini
+
+NOT_MODIFIED
+  USA ranger object
+  China redguard object
+  Iraq rifle object
+  CommandSet.ini
+  CommandButton.ini
+  PlayerTemplate
+  Japan/SK/Vietnam barracks building INIs
+  HUD / flags / aircraft / other factions
+
+COMPARISON_AFTER_FIX
+  Japan_InfantryRifleman == USA ranger capture architecture
+    same SP / StartsPaused / TriggeredBy / AmericaInfantryRangerCommandSet
+  SouthKorea_InfantryRifleman == USA ranger capture architecture
+  Vietnam_RepublicanGuard_AKMS == Iraq/GLA capture architecture
+    same SP / StartsPaused / TriggeredBy / GLA capture button
+
+OIL_AND_BUILDINGS
+  Capture buttons already include NEED_TARGET_NEUTRAL_OBJECT.
+  TechOilDerrick is CAPTURABLE. No oil object edit required.
+
+BOOT_SAFE = YES
+INGAME_TESTED = NO
+OTHER_FACTIONS_MODIFIED = NO

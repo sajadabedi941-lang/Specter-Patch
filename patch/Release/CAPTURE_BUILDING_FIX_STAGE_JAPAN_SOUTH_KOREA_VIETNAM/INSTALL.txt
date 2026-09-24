@@ -1,0 +1,10 @@
+CAPTURE_BUILDING_FIX_STAGE_JAPAN_SOUTH_KOREA_VIETNAM
+
+1. Copy _SPEC_DATA_ONE.big over the live Specter DATA pair.
+2. Keep the existing ART pair (SHA 493c16d2a990cad70d459edbbb6eede963172f433a16f57b241688205a19f314).
+3. Play Japan, South Korea, and Vietnam. Build Barracks.
+4. Train the basic rifle. Research Capture Building (existing upgrade).
+5. Confirm the Capture command appears and can target oil derricks
+   and other capturable structures.
+
+DATA SHA256 fbe90ff915af2267d90a12532aff281d4a06e0f3a81a25ee07c4c380b50c74bc

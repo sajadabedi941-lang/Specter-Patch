@@ -1,0 +1,61 @@
+SPECTER USA AIRFIELD COMMANDSET BOOT FIX REPORT
+================================================
+
+1) Was a loose GameRoot\Data\INI\CommandSet.ini present?
+   Cannot inspect the player's GameRoot from this build environment.
+   FIX_COMMANDSET_CRASH.bat detects and disables it if present.
+   Prior Specter patch installs commonly leave a loose Data\INI overlay
+   that SHADOWS the packed BIG CommandSet.ini. That matches:
+   "ASCII-clean BIG still crashed".
+
+2) Which loose file(s) could override the BIG?
+   Primary:
+     GameRoot\Data\INI\CommandSet.ini
+   Also any loose GameRoot\Data\INI\*.ini containing:
+     CommandSet AmericaAirfieldCommandSet
+     CommandSet AmericaAirfieldCommandSet_T
+     CommandSet AmericaAirfieldCommandSet_T1
+     CommandSet AmericaAirfieldCommandSet_T2
+     CommandSet AmericaAirfieldCommandSet_T3
+   The BAT renames those to *.DISABLED_BACKUP (keeps backups).
+
+   Packed BIG also contained many last-wins Airfield CommandSet
+   redefinitions (ZZZZ_* / ZZZZZZZZ_*). Those are separate INI files
+   (not CommandSet.ini). Non-ASCII in several of them was sanitized
+   so they cannot hard-crash the parser after boot.
+
+3) Maximum valid CommandSet slot number proven by original Specter?
+   Global max slot used in known-good CommandSet.ini: 18
+   Original AmericaAirfieldCommandSet uses slots 1..18 (all present).
+   Original AmericaAirfieldCommandSet_T / _T1 / _T2 / _T3 use up to slot 15.
+   Therefore slots 15/16/17/18 ARE valid in this Specter build.
+
+4) Did our broken version use invalid slots?
+   No -- broken/modified versions also used slots 1..18, which original
+   Specter already proves valid. Slot range was NOT the parse crash cause.
+
+5) Exact cause of the crash
+   a) Stale/broken loose GameRoot\Data\INI\CommandSet.ini shadowing the BIG
+      (primary explanation when a verified ASCII-clean BIG still crashes), and/or
+   b) Modified AmericaAirfieldCommandSet* blocks in packed/loose CommandSet.ini
+      that diverged from the last known-good bootable Specter definitions
+      (including non-ASCII comments in earlier packs: UTF-8 em-dash E2 80 94).
+
+6) Exact correction
+   - Restored Data\INI\CommandSet.ini BYTE-FOR-BYTE from known-good
+     SPECTER_USA_STRATEGY_CENTER_RESTORE _SPEC_DATA_ONE.big
+     sha256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+   - Original five AmericaAirfieldCommandSet* blocks preserved exactly
+     (boot first; no forced 14-aircraft roster in CommandSet.ini).
+   - ASCII-sanitized packed overlay INIs that redefine those CommandSets.
+   - Added FIX_COMMANDSET_CRASH.bat to disable loose overrides.
+   - Packed file re-extracted and SHA256-matched to source.
+
+VALIDATION
+  packed CommandSet.ini sha256 = 6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+  source CommandSet.ini sha256 = 6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+  byte-for-byte match = YES
+  non-ASCII = 0
+  BOM = NO
+  _SPEC_DATA_ONE.big sha256 = acdd8d633e87e2fd9b20df590cd0f1dd990535eb231b576f0a3b311020287e92
+  _SPEC_ART_ONE.big sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

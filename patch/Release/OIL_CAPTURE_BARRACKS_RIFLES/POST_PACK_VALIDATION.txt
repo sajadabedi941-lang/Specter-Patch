@@ -1,0 +1,74 @@
+PACK_STATUS = PASS
+PACKED_FILES = [_SPEC_DATA_ONE.big]
+BASE_SHA256 = b754d43373e92816d23fd0cd13e365fcb4619699c93f64ff2cd7c7e037028cb4
+FINAL_SHA256 = 99540f0e7d2374cc4f3ce2dadfc4e6f93b6d9fcc8d28b7ea89ed4eaf569df199
+BASE_SIZE = 366162692
+FINAL_SIZE = 366166706
+NEW_OIL_OVERLAY_PACKED = YES
+SAUDI_TRAINED_OBJECT = SaudiArabia_RepublicanGuard_AKMS
+UAE_TRAINED_OBJECT = UAE_RepublicanGuard_AKMS
+SYRIA_TRAINED_OBJECT = Syria_RepublicanGuard_AKMS
+INDIA_TRAINED_OBJECT = India_RepublicanGuard_AKMS
+PAKISTAN_TRAINED_OBJECT = Pakistan_RepublicanGuard_AKMS
+SAUDI_CAPTURE_CHAIN = PASS
+UAE_CAPTURE_CHAIN = PASS
+SYRIA_CAPTURE_CHAIN = PASS
+INDIA_CAPTURE_CHAIN = PASS
+PAKISTAN_CAPTURE_CHAIN = PASS
+JAPAN_CHANGED = NO
+SOUTH_KOREA_CHANGED = NO
+VIETNAM_CHANGED = NO
+USA_RANGER_CHANGED = NO
+IRAQ_REPUBLICAN_GUARD_CHANGED = NO
+WEAPON_INI_CHANGED = NO
+COMMAND_BUTTON_INI_CHANGED = NO
+COMMAND_SET_INI_CHANGED = NO
+SPECIALPOWER_INI_CHANGED = NO
+UPGRADE_INI_CHANGED = NO
+TECH_OIL_DERRICK_CHANGED = NO
+NEW_OBJECTS = 0
+NEW_WEAPONS = 0
+NEW_COMMANDBUTTONS = 0
+ART_CHANGED = NO
+UNINTENDED_CHANGES = NONE
+POST_PACK_VALIDATION = PASS
+READY_FOR_RELEASE = YES
+INGAME_TESTED = NO
+
+BASELINE
+  live DATA  OIL_CAPTURE_INFANTRY _SPEC_DATA_ONE.big
+  SHA256     b754d43373e92816d23fd0cd13e365fcb4619699c93f64ff2cd7c7e037028cb4
+  bytes      366162692
+  files      2904
+
+PACKED
+  file       patch/Release/OIL_CAPTURE_BARRACKS_RIFLES/_SPEC_DATA_ONE.big
+  SHA256     99540f0e7d2374cc4f3ce2dadfc4e6f93b6d9fcc8d28b7ea89ed4eaf569df199
+  bytes      366166706
+  files      2905  (2904 same-path prefix + 1 last-win append)
+  drop-in    YES  same filename _SPEC_DATA_ONE.big / BIGF / path-order prefix preserved
+
+CHANGED_EXISTING_PATHS = NONE
+APPENDED
+  Data\INI\CommandSet_ZZZZ_OilCapture_BarracksAndRifles.ini
+
+CHECKS
+  only 1 last-win CommandSet overlay appended              PASS
+  overlay bytes match workspace BarracksAndRifles.ini      PASS
+  SA/UAE/Syria/India/Pakistan capture chains               PASS
+  Class2 SA/UAE/Libya/SouthAfrica rifle CS preserved       PASS
+  Next-14 fighter roster last-win preserved (30 CS)        PASS
+  5-country fighter package last-win preserved (20 CS)     PASS
+  Japan / South Korea / Vietnam infantry unchanged         PASS
+  USA Ranger / Iraq_RepublicanGuard_AKMS unchanged         PASS
+  TechOilDerrick unchanged                                 PASS
+  Weapon.ini / CommandButton.ini / CommandSet.ini frozen   PASS
+  Upgrade.ini / SpecialPower.ini frozen                    PASS
+  object set unchanged (4825)                              PASS
+  weapon set unchanged (2652)                              PASS
+  command button set unchanged (3458)                      PASS
+  ART files unchanged vs oil-capture infantry base         PASS
+  no unintended rewritten paths                            PASS
+
+NOTE
+  Packaging step only. Not a GitHub Release. In-game test not performed.

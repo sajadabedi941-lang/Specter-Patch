@@ -1,0 +1,35 @@
+PACK_STATUS = PASS
+PACKED_FILE = patch/Release/NATO_RADAR_USA_REF/_SPEC_DATA_ONE.big
+SHA256 = 11fcfb872b8fd6e8ba8389fcf5cb9b06357ef1392c6af98c364e18f810e79858
+SIZE = 366169284
+FILE_COUNT = 2906
+USA_RADAR_OBJECT = AmericaRadarStation
+USA_RADAR_CHANGED = NO
+ART_CHANGED = NO
+NEW_OBJECTS = 0
+NEW_WEAPONS = 0
+NEW_COMMANDBUTTONS = 0
+POST_PACK_VALIDATION = PASS
+INGAME_TESTED = NO
+
+RADAR_OBJECTS
+  GermanyRadarGM406
+  ItalyRadarGM406
+  FranceRadarGM406
+  BritainRadarGM406
+  TurkeyRadarGM406
+  SwedenRadarGM406
+  UkraineRadarGM406
+
+DATA_CHANGE
+  RadarUpgrade ModuleTag_0d995
+    added TriggeredBy = Upgrade_AmericaRadar
+  GrantUpgradeCreate Upgrade_AmericaRadar already present (unchanged)
+  ShroudClearingRange = 280 already matched USA (unchanged)
+
+FROZEN
+  AmericaRadarStation / AN_FPS117.ini
+  Weapon.ini CommandButton.ini CommandSet.ini Upgrade.ini SpecialPower.ini
+  oil-capture soldier/barracks overlays
+  fighter rosters
+  USA Ranger / TechOilDerrick

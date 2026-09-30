@@ -1,0 +1,8 @@
+REPLACED
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Infantry\Japan_Rifleman_G36.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Infantry\SouthKorea_Rifleman_G36.ini
+  Data\INI\Object\Specter\Iraq Army\Infantry\Rifleman.ini
+APPENDED
+  Data\INI\CommandSet_ZZZZ_OilCapture_SoldierCommand.ini
+BARRACKS_COMMANDSETS_CHANGED = NO
+ART_CHANGED = NO

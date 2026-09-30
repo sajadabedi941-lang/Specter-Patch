@@ -1,0 +1,17 @@
+INI_PARSE_OK
+OK object
+OK no_can_attack
+OK no_weaponset
+OK no_weapon_eq
+OK reveals
+OK stealth
+OK vision
+OK shroud
+OK no_i00
+OK no_j00
+OK no_engine34
+OK no_fake_anim
+OK side_nk
+OK cmdset
+OK draw
+OK bones

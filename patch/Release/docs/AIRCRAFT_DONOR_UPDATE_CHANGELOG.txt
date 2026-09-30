@@ -1,0 +1,41 @@
+SPECTER AIRCRAFT DONOR UPDATE — CHANGE LOG
+
+Source: packed USA-donor-visuals BIGs + New Folder 00PMBeta999 ART
+Status: PACKED_AUDIT_OK (static). This environment cannot launch Zero Hour.
+
+USA
+- AmericaJetF18Prowler: kept EA6.W3D. Removed Engine/Wingtip particle bones (not on EA6). Weapon Specter_Weapon_JH7A2_Bomb6 (ClipSize 6, Fab-250 / JH-7A2 chain).
+- AmericaJetB52H: model US_B52H unchanged. Weapon China_Weapon_FAB_H6K.
+- AmericaJetC17Visual (live Starlifter): model IUAC17HXNew unchanged. TransportContain Slots=64 AllowInsideKindOf=INFANTRY VEHICLE ExitDelay=100 (An-124 cargo logic). No C-141 object exists; none was invented.
+- AmericaJetAuterF22: visual USAJetF15E / LSFUSAF15E / F15TB. Primary weapon China_Weapon_Bomb_Q5.
+- AmericaJetF35C: visual USAJetF35 / LSFUSAF35A / F35. Primary weapon Specter_Weapon_SU34MF_Bomb6 (Gorm_E2, ClipSize 6).
+
+RUSSIA
+- RussiaHelicopterKA52: model unchanged. ControlledWeaponSlots PRIMARY SECONDARY TERTIARY (was PRIMARY only).
+- RussiaJetTu95: model unchanged. Weapon China_Weapon_FAB_H6K.
+- RussiaJetSu35S only (not Iran): visual RussiaJetSu35 / LSFSU35. Weapon Specter_Weapon_JH7A2_Bomb6. RussiaJetSu35Flanker left on Heavy bar.
+
+CHINA
+- ChinaDroneCH5: KindOf AIRCRAFT, JetAIUpdate, Snecma_M88_4E + taxi. Removed PRODUCED_AT_HELIPAD/DRONE. Model CHI_CH5 unchanged.
+- ChinaHelicopterZ18A: model unchanged. TransportContain copied from Chinook (8 slots, INFANTRY VEHICLE).
+
+CHINA SLOTS
+- PLAAirfieldCommandSet + China_LargeAirBaseCommandSet:
+  13 Command_ConstructChinaJetJ15 (donor ChinaJ15A / J15JZ)
+  14 Command_ConstructChinaJetJ11Flanker (LSFJ11B, SU-34MF x6, JIAN11TB)
+- China_HeavyAirBaseCommandSet:
+  13 Command_ConstructChinaBomberH6K_B21A (h6k visual, B-21A x7)
+  14 Command_ConstructChinaJetFEIBAO (CHJH7A, JH-7A2 x4, FEIBAOtb)
+
+NEW OBJECTS (Specter DATA clones, donor ART only)
+- ChinaJetJ11Flanker
+- ChinaJetFEIBAO
+- ChinaBomberH6K_B21A
+
+NOT TOUCHED
+- PlayerTemplate, Science, War Factory, ground forces
+- Iran Su-35S
+- F-35B / Growler Variant B / Hornet meshes
+
+DATA SHA256 b0c277510849f33364bf51f06720211bd6ca15fdef31f7c8ae6cff9875bf6805
+ART  SHA256 e8f70cd8d222cd5b2206f8954a5072a1cac982158a9690b80601a058538a0446

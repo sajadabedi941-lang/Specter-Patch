@@ -1,0 +1,32 @@
+SPECTER EA-6B PROWLER SPAWN CRASH FIX — CHANGE LOG
+
+Source: Saetbyol-fixed packed BIGs
+Status: INI_PARSE_OK + DEPENDENCY_WALK_OK (static). No CrashInfo/ReleaseCrashInfo
+was present in this environment. This environment cannot launch Zero Hour.
+
+ROOT CAUSE
+USA constructs AmericaJetF18Prowler from America_LargeAirBaseCommandSet slot 9.
+That object used GenericMultiRoleFighter_AG_CommandSet, which binds
+Command_RadioWaveDisabler (SuperweaponRadioWaveDisabler) and Command_GMRF_AAM
+(SpecialAbility_AAMode). Working USA jets on the same airfield (F-35C) implement
+OCLSpecialPower SuperweaponRadioWaveDisabler. The Prowler did not.
+Command-bar construction at produce/spawn is a null-deref CTD.
+
+Second init hazard: CountermeasuresBehavior FlareBoneBaseName=Flare, but
+EA6.W3D has no Flare pivot (EMP_V / EMP_B / ENGINE / WINGTIP / BOMB exist).
+
+WHAT CHANGED
+- AmericaJetF18Prowler.ini only:
+  CommandSet -> GenericTacticalBomberCommandSet (same safe bar as A-10C)
+  Weapon -> Specter_Weapon_EA6B_JH7A2_Bomb
+  FlareBoneBaseName -> EMP_V
+  JetAIUpdate NeedsRunway + KeepsParkingSpaceWhenAirborne
+  Keep EA6.W3D / EA6Prowler cameo / Specter jet modules
+- Weapon.ini: appended NEW Specter_Weapon_EA6B_JH7A2_Bomb only
+  (ClipSize=6, ProjectileObject=Fab-250, JH-7A2 2x_ODAB_500_PMV_SU24_LR params)
+  Existing Specter_Weapon_JH7A2_Bomb6 / other weapons unchanged
+
+NOT TOUCHED
+F-35A/B/C, F-18G/EA-18G, F-22, B-52, Starlifter, China/Russia/Iraq/Iran/NK,
+Saetbyol, JapanJetEA6B, Ground, War Factory, PlayerTemplate, Science,
+CommandButton.ini, airfield CommandSets, ART.

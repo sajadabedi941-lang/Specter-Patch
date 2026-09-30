@@ -1,0 +1,36 @@
+SPECTER AIRCRAFT GLOBAL UPDATE — CHANGE LOG
+
+Source: packed aircraft-donor-update BIGs + New Folder F14TB ART
+Status: PACKED_AUDIT_OK (static). This environment cannot launch Zero Hour.
+
+GLOBAL
+- MiG-21bis (Iran/Vietnam/India Bison): +0.10 scale. China none. Iran weapons kept.
+  Vietnam Q-5 bombs; India Bison ODAB-500.
+- MiG-21PF (NK only): +0.10 scale.
+- J-7 / J-7B except China: +0.10 scale + varied existing bombs.
+  ChinaJetJ7 untouched. No China J-7B object.
+- MiG-29UB (NK only; no Russia UB object): +0.10 scale + Kab-500 guided bomb.
+
+IRAQ
+- F-16IQ +0.10 scale; Construct button created.
+- Airfield_T lock removed (full CommandSet, no tier upgrades).
+- Su-24MK / Mirage F1 EQ / Su-24MR buildable without T2/T3.
+- Tu-22M3 removed from Iraq CommandSets only.
+- New IraqJetF14Tomcat: donor LSFIRF14A / F14TB, JH-7A2 x6.
+
+NORTH KOREA
+- New Il-28 (NorthKoreaBomberIl28): Tu-22M3 visual, SU-34MF x6. Russia object not edited.
+- New Il-76 transport clone of RussiaJetCargoIL76.
+- New Saetbyol recon UAV: Dozor-600/AVReaper, large scale, AWACS detect, no weapons.
+- Missing Mig21/PF/J7/J7B/Mig29UB Construct buttons created.
+
+IRAN
+- Created missing F14AM / F4E / Mig21Bis / F7N / Su35S Construct buttons.
+- Iranian weapons not changed.
+
+CHINA
+- CH-5 / Z-18A / airfield slots already correct in source pack; not re-touched.
+
+NOT TOUCHED
+- PlayerTemplate, Science, War Factory, ground forces
+- China J-7, Russia Tu-22M3, Iran weapons

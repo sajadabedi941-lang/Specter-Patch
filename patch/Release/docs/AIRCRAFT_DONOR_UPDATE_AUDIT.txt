@@ -1,0 +1,123 @@
+SPECTER AIRCRAFT DONOR UPDATE — PACKED AUDIT
+PACKED_AUDIT_OK
+DATA SHA256 b0c277510849f33364bf51f06720211bd6ca15fdef31f7c8ae6cff9875bf6805
+ART  SHA256 e8f70cd8d222cd5b2206f8954a5072a1cac982158a9690b80601a058538a0446
+ZIP SHA256  5ad7200d9613fa415089b52bfa822b2b1f76dd410e753a2253630943a40bd00f
+ZIP         Specter_Aircraft_Donor_Update_Final.zip
+
+Static packed-BIG verification only. This environment cannot launch Zero Hour.
+In-game fire / land / produce tests remain with the user.
+
+Errors: none
+
+============================================================
+MODIFIED OBJECTS
+============================================================
+AmericaJetF18Prowler     keep EA6.W3D; strip Engine/Wingtip ParticleSysBones; JH-7A2 x6
+AmericaJetB52H           keep US_B52H; weapon China_Weapon_FAB_H6K
+AmericaJetC17Visual      keep IUAC17HXNew; An-124 cargo (Slots=64 INFANTRY VEHICLE ExitDelay=100)
+AmericaJetAuterF22       visual LSFUSAF15E / F15TB; weapon China_Weapon_Bomb_Q5
+AmericaJetF35C           visual LSFUSAF35A / f35.dds; weapon Specter_Weapon_SU34MF_Bomb6
+RussiaHelicopterKA52     keep RUS_Ka52M2; ControlledWeaponSlots PRIMARY SECONDARY TERTIARY
+RussiaJetTu95            keep CWCruTu95; weapon China_Weapon_FAB_H6K
+RussiaJetSu35S           visual LSFSU35 (Russia only); weapon Specter_Weapon_JH7A2_Bomb6
+ChinaDroneCH5            keep CHI_CH5; AIRCRAFT + JetAIUpdate + Snecma_M88_4E taxi
+ChinaHelicopterZ18A      keep CHI_Z18A; Chinook TransportContain (8 slots INFANTRY VEHICLE)
+
+NEW OBJECTS (Specter DATA clones, donor ART only)
+ChinaJetJ11Flanker       LSFJ11B / JIAN11TB; Specter_Weapon_SU34MF_Bomb6
+ChinaJetFEIBAO           CHJH7A / FEIBAOtb / chfbc.dds; Specter_Weapon_JH7A2_Bomb4
+ChinaBomberH6K_B21A      h6k visual; Specter_Weapon_B21A_Bomb7
+
+EXISTING OBJECT REUSED (no new mesh invented)
+ChinaJetJ15              J15JZ / CHNJ15A — Rally slot on PLA + Large Air Base
+
+============================================================
+DONOR ASSETS USED
+============================================================
+EA6.W3D / EA6.tga                         USA EA-6B (kept, crash bones removed)
+US_B52H                                   USA B-52 (visual unchanged)
+IUAC17HXNew                               USA Starlifter (no C-141 object exists)
+USAJetF15E -> LSFUSAF15E / F15TB.tga      Strike Eagle for AuterF22
+USAJetF35  -> LSFUSAF35A / f35.dds        F-35 Lightning for F-35C
+RUS_Ka52M2                                Ka-52M (kept)
+CWCruTu95                                 Tu-95 (kept)
+RussiaJetSu35 -> LSFSU35 / SU35TB.tga     Su-35 Flanker for Su-35S
+CHI_CH5                                   CH-5 (kept)
+CHI_Z18A                                  Z-18A (kept)
+ChinaJetJ11 -> LSFJ11B / JIAN11TB.tga     J-11 Flanker (new Sell-slot object)
+ChinaJ15A  -> J15JZ / CHNJ15A.tga         J-15A Rally slot (existing object)
+ChinaJetJH7 -> CHJH7A.W3D / chfbc.dds / FEIBAOtb.tga   Flying Leopard
+ChinaBomberH6K -> h6k                     H-6K visual for B-21A clone
+
+============================================================
+WEAPON CHAINS USED
+============================================================
+Specter_Weapon_JH7A2_Bomb6    ClipSize 6  clone of 2x_ODAB_500_PMV_SU24_LR / Fab-250
+Specter_Weapon_JH7A2_Bomb4    ClipSize 4  same JH-7A2 / Fab-250 chain
+China_Weapon_FAB_H6K          ClipSize 8  H-6K FAB / Fab-250
+China_Weapon_Bomb_Q5          ClipSize 8  Q-5 / Fab-250
+Specter_Weapon_SU34MF_Bomb6   ClipSize 6  4x_GormE2GlideBomb_SU34 / Gorm_E2_BombObject
+Specter_Weapon_B21A_Bomb7     ClipSize 7  AmericaB21A_HeavyStandoff / GBU72_GuidedBombObject
+KA-52M                        existing 30mm_2A42_Ka52 + 12x_ATGM_9K121_Vikhr + Vympel_R-73_Ka52
+
+============================================================
+CHINA AIRFIELD SLOTS
+============================================================
+PLAAirfieldCommandSet + China_LargeAirBaseCommandSet
+  13 = Command_ConstructChinaJetJ15
+  14 = Command_ConstructChinaJetJ11Flanker
+China_HeavyAirBaseCommandSet
+  13 = Command_ConstructChinaBomberH6K_B21A
+  14 = Command_ConstructChinaJetFEIBAO
+
+============================================================
+FILES CHANGED (inside packed DATA / ART)
+============================================================
+DATA
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\USA_System.ini  (B-52H weapon)
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetC17Visual.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetAuterF22.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF35C.ini
+  Data\INI\Object\Specter\Russia\Airforce\KA52M.ini  (first object only)
+  Data\INI\Object\Specter\Russia\Airforce\RussiaJetTu95.ini
+  Data\INI\Object\Specter\Russia\Airforce\RussiaJetSu35S.ini
+  Data\INI\Object\Specter\China\Airforce\ChinaDroneCH5.ini
+  Data\INI\Object\Specter\China\Airforce\ChinaHelicopterZ18A.ini
+  Data\INI\Object\Specter\China\Airforce\ChinaJetJ11Flanker.ini   (new)
+  Data\INI\Object\Specter\China\Airforce\ChinaJetFEIBAO.ini      (new)
+  Data\INI\Object\Specter\China\Airforce\ChinaBomberH6K_B21A.ini (new)
+  Data\INI\CommandSet.ini   (three China airfield sets only)
+  Data\INI\CommandButton.ini  (three new Construct buttons, once)
+  Data\INI\Weapon.ini        (four Specter wrappers)
+  Data\INI\MappedImages\China_FighterExpansion_Images.INI  (JIAN11 / FEIBAO)
+  Data\English\generals.csf  (CONTROLBAR / OBJECT keys)
+ART
+  Art\W3D\CHJH7A.W3D
+  Art\W3D\ChJh7a_r.W3D
+  Art\Textures\chfbc.dds
+  Art\Textures\FEIBAOtb.tga
+  Art\Textures\JIAN11TB.tga
+  (Strike Eagle / Su-35 / F-35A / EA6 / J-15 / H-6K meshes already packed)
+
+============================================================
+AUDIT CHECKS
+============================================================
+No missing CONTROLBAR keys for new buttons
+No missing textures for used donor cameos / W3D samples
+No missing W3D for used models (EA6, LSFUSAF15E, LSFUSAF35A, LSFSU35, CHJH7A, LSFJ11B, J15JZ, h6k)
+No duplicate object names for the three new China objects
+No broken CommandSet (slots 13/14 wired to existing or new Construct buttons)
+No broken CommandButton (each new button defined exactly once in CommandButton.ini)
+PlayerTemplate.ini and Science.ini hashes unchanged vs source pack
+No CommandSet.ini under Data\INI\Object\
+IranJetSu35S not patched
+War Factory / ground / unrelated countries not touched
+
+NOT VERIFIED IN-GAME (engine not available here)
+  Produce EA-6B without crash
+  All bombs fire
+  Ka-52M attack / fire
+  CH-5 runway land
+  Starlifter / Z-18A cargo load-unload

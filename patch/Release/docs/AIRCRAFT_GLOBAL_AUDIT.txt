@@ -1,0 +1,94 @@
+SPECTER AIRCRAFT GLOBAL UPDATE — PACKED AUDIT
+PACKED_AUDIT_OK
+DATA SHA256 e36dfbe341af7a2755618cdac2cbacd6d2cad05838f7cb3554971b039e57dca5
+ART  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ZIP SHA256   f800f88654d962fbfc3e5a0bca49efe6b63167ada938311e37ec63fcec639d8c
+ZIP          Specter_Aircraft_Global_Update_Final.zip
+
+Static packed-BIG verification only. This environment cannot launch Zero Hour.
+In-game produce / fire / land / recon tests remain with the user.
+
+Errors: none
+
+============================================================
+MODIFIED AIRCRAFT
+============================================================
+GLOBAL (China excluded)
+  IranJetMig21Bis          Scale 0.82 -> 0.92  weapons UNCHANGED (Iran rule)
+  VietnamJetMig21bis       Scale 0.80 -> 0.90  bomb -> China_Weapon_Bomb_Q5
+  IndiaJetMig21Bison       Scale 0.90 -> 1.00  bomb -> 2x_ODAB_500_PMV_SU24_LR
+  NorthKoreaJetMig21PF     Scale 0.80 -> 0.90  weapons unchanged
+  IranJetF7N               Scale 0.86 -> 0.96  weapons UNCHANGED (Iran rule)
+  NorthKoreaJetJ7          Scale 0.84 -> 0.94  bomb -> Kab500_LeaserGuidedBomb
+  NorthKoreaJetJ7B         Scale 0.82 -> 0.92  bomb -> China_Weapon_Bomb_Q5
+  LibyaJetJ7               Scale 0.84 -> 0.94  bomb -> China_Weapon_FAB_J7
+  SyriaJetJ7               Scale 0.84 -> 0.94  bomb -> 2x_ODAB_500_PMV_SU24_LR
+  PakistanJetF7P           Scale 0.94 -> 1.04  bomb -> China_Weapon_FAB2_J7
+  PakistanJetF7PG          Scale 0.96 -> 1.06  bomb -> 3x_ODAB_500_PMV_SU24
+  NorthKoreaJetMig29UB     Scale 0.88 -> 0.98  gun -> Kab500_LeaserGuidedBomb
+  ChinaJetJ7               UNTOUCHED (scale 1.22, original bombs)
+
+IRAQ
+  IraqJetF16IQ             Scale 0.88 -> 0.98  missing Construct button added
+  Iraq_Su-24MK             unlocked (airfield T lock removed)
+  Iraq_MirageF1_Bq         unlocked
+  Iraq_Su-24MR             unlocked (slot 15 fighter bar + Heavy slot 2)
+  Iraq_Tu-22M3 / _AI       removed from Iraq CommandSets only
+  IraqJetF14Tomcat         NEW  LSFIRF14A / F14TB  JH-7A2 x6
+
+NORTH KOREA
+  NorthKoreaBomberIl28     NEW  RUS_TU22M3M visual  SU-34MF x6  named Il-28
+  NorthKoreaJetIL76        NEW  clone RussiaJetCargoIL76 transport
+  NorthKoreaUAVSaetbyol    NEW  AVReaper / Dozor600  AWACS recon  NO WEAPONS
+  Missing NK Construct buttons added (Mig21/PF/J7/J7B/Mig29UB)
+
+IRAN
+  Missing fighter Construct buttons added (F14AM, F4E, Mig21Bis, F7N, Su35S)
+  Weapons unchanged
+
+CHINA (prior pack, verified unchanged)
+  CH-5 AIRCRAFT + JetAIUpdate
+  Z-18A Chinook transport
+  Sell/Rally slots J-11 Flanker / J-15 / Flying Leopard / H-6K B-21A
+
+============================================================
+DONOR ART USED
+============================================================
+IranJetF14 / LSFIRF14A.W3D / LSFF14A.dds / F14TB.tga   Iraq Tomcat
+RussiaDozor600 / AVReaper.W3D / Dozor600TB.tga         Saetbyol visual
+RussiaJetTu22M3M / RUS_TU22M3M                         Il-28 visual (clone, Russia object not edited)
+RussiaJetCargoIL76 / LSFRussiaYR76                     NK transport (clone)
+FranceAircraftE3 / AmericaJetE3Visual                  Saetbyol AWACS logic reference
+
+============================================================
+WEAPON CHANGES
+============================================================
+Existing chains only (no new Weapon blocks this pass):
+  China_Weapon_Bomb_Q5
+  2x_ODAB_500_PMV_SU24_LR
+  3x_ODAB_500_PMV_SU24
+  China_Weapon_FAB_J7 / China_Weapon_FAB2_J7
+  Kab500_LeaserGuidedBomb
+  Specter_Weapon_JH7A2_Bomb6     (Iraq Tomcat)
+  Specter_Weapon_SU34MF_Bomb6    (NK Il-28; user SH34MF = packed SU-34MF)
+
+============================================================
+FIXED LOCKS
+============================================================
+Iraq_Airfield_T: CommandSet -> Iraq_AirfieldCommandSet; CommandSetUpgrade tiers removed
+Missing Iraq buttons: F16IQ, Mig21, Su25UB, L159
+Iraq Tu-22M3 removed from Iraq bars only
+Iran missing fighter buttons created (5 slots)
+NK missing fighter buttons created (5 slots)
+
+============================================================
+AUDIT CHECKS
+============================================================
+No missing W3D for used models
+No missing F14TB / LSFIRF14A / AVReaper / RUS_TU22M3M / LSFRussiaYR76
+Each new CommandButton defined exactly once
+No duplicate new object names
+PlayerTemplate.ini / Science.ini hashes unchanged
+China J-7 / Russia Tu-22M3 / Iran weapons unchanged
+Saetbyol: no weapons, no CAN_ATTACK, StealthDetector + REVEALS_ENEMY_PATHS
+China J-11 Flanker slot preserved

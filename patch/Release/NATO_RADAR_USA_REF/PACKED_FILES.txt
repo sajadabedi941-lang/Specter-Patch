@@ -1,0 +1,12 @@
+REPLACED
+  Data\INI\Object\Specter\German Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\GM406.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\GM406.ini
+APPENDED
+  NONE
+USA_RADAR_CHANGED = NO
+ART_CHANGED = NO

@@ -1,0 +1,49 @@
+PACK_STATUS = PASS
+PACKED_FILE = patch/Release/OIL_CAPTURE_SOLDIER_COMMAND/_SPEC_DATA_ONE.big
+SHA256 = 817438bd67088b42db28cf65072c385f7569bf6183a14cd6b40982cfbf6b8be6
+SIZE = 366168990
+FILE_COUNT = 2906
+BARRACKS_COMMANDSETS_CHANGED = NO
+NEW_OBJECTS = 0
+NEW_WEAPONS = 0
+NEW_COMMANDBUTTONS = 0
+ART_CHANGED = NO
+USA_RANGER_CHANGED = NO
+TECH_OIL_DERRICK_CHANGED = NO
+POST_PACK_VALIDATION = PASS
+INGAME_TESTED = NO
+
+SOLDIER_OBJECTS
+  SaudiArabia_RepublicanGuard_AKMS
+  UAE_RepublicanGuard_AKMS
+  Syria_RepublicanGuard_AKMS
+  India_RepublicanGuard_AKMS
+  Pakistan_RepublicanGuard_AKMS
+  Iraq_RepublicanGuard_AKMS   (Libya + South Africa barracks-trained soldier; TriggeredBy restored)
+  Japan_InfantryRifleman      (CommandSet retarget only)
+  SouthKorea_InfantryRifleman (CommandSet retarget only)
+  Vietnam_RepublicanGuard_AKMS
+
+COMMANDSETS
+  SaudiArabia_RepublicanGuardCommandSet
+  UAE_RepublicanGuardCommandSet
+  Syria_RepublicanGuardCommandSet
+  India_RepublicanGuardCommandSet
+  Pakistan_RepublicanGuardCommandSet
+  Libya_RepublicanGuardCommandSet
+  SouthAfrica_RepublicanGuardCommandSet
+  Vietnam_RepublicanGuardCommandSet
+  Iraq_RepublicanGuardCommandSet
+  Japan_InfantryRiflemanCommandSet
+  SouthKorea_InfantryRiflemanCommandSet
+
+CAPTURE_BUTTONS_REUSED
+  Command_GLAInfantryRebelCaptureBuilding
+  Command_AmericaRangerCaptureBuilding
+
+CHECKS
+  all 10 soldier CS have Capture Building              PASS
+  all 10 trained soldiers TriggeredBy capture upgrade  PASS
+  barracks CommandSets byte-identical to baseline      PASS
+  no new Objects / Weapons / CommandButtons            PASS
+  ART unchanged                                        PASS

@@ -1,1 +1,2 @@
 patch/Release/OIL_CAPTURE_BARRACKS_RIFLES/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/OIL_CAPTURE_SOLDIER_COMMAND/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text

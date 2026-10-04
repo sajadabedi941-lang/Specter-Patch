@@ -1,0 +1,8 @@
+FLAG_HS_CONTINUOUS
+SOURCE_ART_SHA = ec4f5bdcc8f9e9171a8d9fb0d9523cffa41089eded03b330f0f1738aaf555760
+ROOT_CAUSE = FLAG01/02/03 are a parented cloth chain. First 3x pass pole-stretched every pivot Y, exploding grandchild offsets.
+FIX = verts still *3; LINE01 children Y pole-stretched; deeper bones T*3.
+SIZE = unchanged 3.000x FLAG03 / LINE01
+SCALED_W3D = 100
+DATA = unchanged (use FLAG_SIZE_EVERYWHERE DATA BIG)
+INGAME_TESTED = NO

@@ -1,0 +1,16 @@
+FLAG_HS_CONTINUOUS geometry check (JP__JPFlag_HsPP representative; all 100 clones share this hierarchy)
+
+FLAG03 cloth height: original 5.859 → final 17.578 (3.000x) KEPT
+LINE01 pole height:   original 34.984 → final 104.951 (3.000x) KEPT
+LINE01 attach pivot:  unchanged (-14.342, -32.269, 36.448)
+
+Cloth-chain local join lengths FLAG03→FLAG02 / FLAG02→FLAG01:
+  original     3.606 / 3.082
+  broken 3x   32.388 / 33.781   (grandchild Y pole-stretched — three stacked pieces)
+  fixed 3x    10.818 / 9.247    (= original * 3.000 — continuous chain)
+
+FLAG03 / HOUSECOLOR03 stay pole-top (Y pole-stretched from LINE01).
+FLAG02/01 and HOUSECOLOR02/01 local T * 3 (relative rest pose preserved).
+Animation channels are rotation-only and were not modified.
+
+In-game ZH visual test: NOT PERFORMED.

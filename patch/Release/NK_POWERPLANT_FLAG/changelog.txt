@@ -1,0 +1,10 @@
+NK_POWERPLANT_FLAG
+
+NorthKorea_PowerPlant last-win pointed at Iraq_Powerplant, whose
+FLAG01-03 and BOX08-09 use IraqiFlag.tga. The country clone
+NKor_Powerplant.W3D (DPRK_Flag.tga, same geometry) already exists
+and is how NK Supply/CC/WF get their flags.
+
+Retargeted the six Model/Animation lines (9 tokens) on
+NorthKorea_PowerPlant only. Iraq Power Plant and the other nine
+Power Plants unchanged.

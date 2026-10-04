@@ -1,0 +1,6 @@
+NK_POWERPLANT_FLAG
+
+Copy _SPEC_DATA_ONE.big over GameRoot. ART BIG is unchanged.
+
+DATA SHA256 c035a6c1dabe6dfd064cfa4462d55c7c06bc1691117a5a573e29fa05bc549cad
+INGAME_TESTED = NO

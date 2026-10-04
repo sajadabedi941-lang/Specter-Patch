@@ -1,0 +1,4 @@
+REPLACED
+  Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+  object NorthKorea_PowerPlant only
+ART_CHANGED = NO

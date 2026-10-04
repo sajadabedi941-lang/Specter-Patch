@@ -1,0 +1,27 @@
+SPECTER Camp / Barracks construction-button audit
+Baseline: approved PR #473 + live EUROPEAN_BUILDING_FLAGS_FINAL DATA
+Live DATA: patch/Release/EUROPEAN_BUILDING_FLAGS_FINAL/_SPEC_DATA_ONE.big
+           SHA256 f5bfdefd1aef43ceb9b23327d0fa3bf72d9702e33900d4890e74163a8e387104
+
+FINDING
+  All 17 countries already have a wired Camp OR Barracks construct button
+  (CommandSet slot + CommandButton + Object + DOZER KindOf). None were
+  missing from the builder CommandSet. No CommandSet rewrite was required.
+
+  The live construct buttons used ButtonImage = CampFlag* MappedImages
+  (Specter_CampFlags.INI -> Art\Textures\XX_Flag.tga 128x64 pole flags).
+  Working factions use command-bar atlas cameos:
+    AmericaBarracks / NatoBootCamp = us_camp
+    Iraq_Barracks                  = irq_barracks
+  Pakistan already last-wins us_camp via CommandButton_Pakistan.ini.
+
+FIX (DATA only, no BIG packed)
+  CommandButton_ZZZZZ_CampBarracksConstructCameo.ini last-wins 16 existing
+  construct buttons and changes only ButtonImage:
+    Iraq-mesh Barracks -> irq_barracks
+    US-mesh BootCamp   -> us_camp
+  Pakistan omitted (already us_camp).
+
+OUT OF SCOPE (untouched)
+  ART, Flag_Hs, building models, oil capture, fighter rosters, NATO radar,
+  internal Camp/Barracks training menus, costs, build times, prerequisites.

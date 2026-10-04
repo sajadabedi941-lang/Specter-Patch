@@ -1,0 +1,10 @@
+FLAG_SIZE_EVERYWHERE
+
+3x national Flag_Hs now covers Vietnam, South Korea, Japan, Turkey,
+Italy, Sweden, Britain, France, Germany, Ukraine, Saudi Arabia, UAE,
+Syria, India, Pakistan, Libya, South Africa, Iraq, and North Korea
+on Command Center, War Factory, Camp/Barracks, Power Plant, and
+Supply Center. Iran's already-correct 3x flags are preserved.
+Iraq and North Korea no longer rely on small baked building flags.
+Shared Irq__IqFlag_Hs / NKr__NKFlag_Hs donors are unchanged.
+In-game test: NOT PERFORMED.

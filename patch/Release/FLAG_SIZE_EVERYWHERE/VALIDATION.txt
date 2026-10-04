@@ -1,0 +1,17 @@
+FLAG_SIZE_EVERYWHERE static validation
+
+PASS 19 countries x 5 buildings have the correct country Flag_Hs last-win.
+PASS FLAG03 cloth height 17.578 (3.000x of 5.859) on every required Flag_Hs.
+PASS LINE01 pole height 104.951 (3.000x of 34.984); attach pivot unchanged.
+PASS Japan/South Korea/Vietnam Power Plants stay Iraq_Powerplant+hide+country Flag_HsPP.
+PASS NorthKorea_Barracks last-win uses DPRK Flag_HsCP, not Iraq_Barracks / IQ__IQFlag.
+PASS Command_ConstructNorthKorea_Barracks_SAFE overlay Object = NorthKorea_Barracks.
+PASS Irq__IqFlag_Hs and NKr__NKFlag_Hs remain unscaled (Abbas / NuclearCenter / Egypt).
+PASS Building W3Ds, Object Scale, CommandSet.ini, CommandButton.ini, weapons, oil, rosters unchanged.
+PASS Iran 3x Flag_Hs attachments unchanged.
+PASS complete replacement BIGs:
+  _SPEC_DATA_ONE.big c802b3bcecbf735af13ec1e0a25e2505f6538317991b8b2624b3d9a7755f8dc4 366325698
+  _SPEC_ART_ONE.big  23960dad5e8ca70d9e099e94f4ecd87d56384315966ba98a1bc2e572288ff6ef 1245376986
+PASS ZIP FLAG_SIZE_EVERYWHERE.zip 9b73f60e7f6cc8e2abcead4b8a00b654dfb58f4d96648b58ac55cb642632fbae
+
+INGAME_TESTED = NO

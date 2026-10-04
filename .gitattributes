@@ -17,3 +17,6 @@ patch/Release/IRAN_BUILDING_FLAGS/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lf
 patch/Release/CC_START_BUILD_MATCH/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
 patch/Release/PP_FLAG_SIZE_3X/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
 patch/Release/PP_FLAG_SIZE_3X/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_EVERYWHERE/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_EVERYWHERE/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_EVERYWHERE/FLAG_SIZE_EVERYWHERE.zip filter=lfs diff=lfs merge=lfs -text

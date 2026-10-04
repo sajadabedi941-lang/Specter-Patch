@@ -1,0 +1,9 @@
+FLAG_SIZE_EVERYWHERE
+SOURCE_DATA_SHA = 90bbe149c0797336e53aca6188886e411b82e70057a03b8b57618ff272eba303
+SOURCE_ART_SHA = d5564372f4a450eb071a54b645c650acd85f8c6ef52baf3d4cc87f03013d6b70
+PRIOR = PP_FLAG_SIZE_3X already 3x for 18 country Flag_Hs sets.
+GAP = Iraq/NK still used baked FLAG01-03 on building meshes; NK Camp button constructed Iraq_Barracks.
+FIX = country-specific 3x Flag_Hs clones + hide baked cloth; NorthKorea_Barracks Object + CommandButton overlay.
+SKIP_SHARED = Irq__IqFlag_Hs NKr__NKFlag_Hs building W3Ds
+CAMP = BootCamp for EU; Barracks (irq_camp) for Iraq-family; NorthKorea_Barracks for NK.
+INGAME_TESTED = NO

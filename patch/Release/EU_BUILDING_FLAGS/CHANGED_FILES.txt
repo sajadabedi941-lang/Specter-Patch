@@ -1,0 +1,79 @@
+EU_BUILDING_FLAGS changed files
+
+DATA (35 last-win Object files)
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\British Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\French Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\SupplyCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\CommandCenter.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Camp.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\PowerStation.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\SupplyCenter.ini
+
+ART (35 add-only Flag_Hs clones; existing ART untouched)
+  Art\W3D\TR__TRFlag_HsCU.W3D
+  Art\W3D\TR__TRFlag_HsWF.W3D
+  Art\W3D\TR__TRFlag_HsCP.W3D
+  Art\W3D\TR__TRFlag_HsPP.W3D
+  Art\W3D\TR__TRFlag_HsSC.W3D
+  Art\W3D\IT__ITFlag_HsCU.W3D
+  Art\W3D\IT__ITFlag_HsWF.W3D
+  Art\W3D\IT__ITFlag_HsCP.W3D
+  Art\W3D\IT__ITFlag_HsPP.W3D
+  Art\W3D\IT__ITFlag_HsSC.W3D
+  Art\W3D\SE__SEFlag_HsCU.W3D
+  Art\W3D\SE__SEFlag_HsWF.W3D
+  Art\W3D\SE__SEFlag_HsCP.W3D
+  Art\W3D\SE__SEFlag_HsPP.W3D
+  Art\W3D\SE__SEFlag_HsSC.W3D
+  Art\W3D\UK__UKFlag_HsCU.W3D
+  Art\W3D\UK__UKFlag_HsWF.W3D
+  Art\W3D\UK__UKFlag_HsCP.W3D
+  Art\W3D\UK__UKFlag_HsPP.W3D
+  Art\W3D\UK__UKFlag_HsSC.W3D
+  Art\W3D\FR__FRFlag_HsCU.W3D
+  Art\W3D\FR__FRFlag_HsWF.W3D
+  Art\W3D\FR__FRFlag_HsCP.W3D
+  Art\W3D\FR__FRFlag_HsPP.W3D
+  Art\W3D\FR__FRFlag_HsSC.W3D
+  Art\W3D\DE__DEFlag_HsCU.W3D
+  Art\W3D\DE__DEFlag_HsWF.W3D
+  Art\W3D\DE__DEFlag_HsCP.W3D
+  Art\W3D\DE__DEFlag_HsPP.W3D
+  Art\W3D\DE__DEFlag_HsSC.W3D
+  Art\W3D\UA__UAFlag_HsCU.W3D
+  Art\W3D\UA__UAFlag_HsWF.W3D
+  Art\W3D\UA__UAFlag_HsCP.W3D
+  Art\W3D\UA__UAFlag_HsPP.W3D
+  Art\W3D\UA__UAFlag_HsSC.W3D
+
+UNCHANGED
+  USA / Iraq / prior 10-country Flag_Hs / NK Power Plant
+  Shared US_* W3Ds, Weapon/CommandSet/Upgrade, oil/radar/rosters

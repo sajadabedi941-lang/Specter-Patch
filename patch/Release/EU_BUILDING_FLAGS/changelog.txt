@@ -1,0 +1,10 @@
+EU_BUILDING_FLAGS
+
+Turkey, Italy, Sweden, Britain, France, Germany, and Ukraine Command
+Center / War Factory / Camp / Power Plant / Supply Center last-wins
+all used shared US_* meshes (F1/F2/F3 US flag cloth) with no Flag_Hs.
+
+Add-only per-building Flag_Hs clones (Iraq-donor remap + LINE01 on
+each US FPOLE / Supply LINE01 + half-pole). Hide F1 F2 F3 FPOLE
+HOUSECOLOR04-06 on CU/CP/WF/PP. Hide F1 F2 F3 HOUSECOLOR01-03 LINE01
+on Supply. Shared US meshes and prior country Flag_Hs are unchanged.

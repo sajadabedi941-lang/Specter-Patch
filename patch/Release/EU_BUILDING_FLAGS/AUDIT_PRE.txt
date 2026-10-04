@@ -1,0 +1,6 @@
+EU_BUILDING_FLAGS AUDIT (before edits)
+
+All 35 last-wins share USA meshes and show US F1/F2/F3 cloth.
+No TR/IT/SE/UK/FR/DE/UA Flag_Hs W3Ds existed.
+Country TGAs already present and visually correct.
+ART-only remap of US_* would break USA. DATA Draw + hide required.

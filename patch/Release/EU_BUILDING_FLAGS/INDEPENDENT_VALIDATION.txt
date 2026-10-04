@@ -1,0 +1,44 @@
+INDEPENDENT_REEXTRACT = PASS
+PASS 35 FAIL 0
+CHANGED_DATA_FILES 35
+ART_ADDED 35
+EXISTING_ART_UNCHANGED YES
+DATA_SHA256 f5bfdefd1aef43ceb9b23327d0fa3bf72d9702e33900d4890e74163a8e387104
+ART_SHA256 fce888aca990e511df7bdb74c302b51a253eb89b250a4b92f8733f3cb28b0702
+
+COUNTRY | BUILDING | OBJECT | BUILDING MODEL | OLD FLAG | NEW FLAG W3D | FLAG TEXTURE | HIDES US FLAG | NATIONAL FLAG PRESENT | DUPLICATE FLAG | STATUS
+Turkey | Command Center | TurkeyCommandCenter | US_Command | US F1/F2/F3 | TR__TRFlag_HsCU | TR_Flag.tga | YES | YES | NO | PASS
+Turkey | War Factory | TurkeyWarFactory | US_WarFactory | US F1/F2/F3 | TR__TRFlag_HsWF | TR_Flag.tga | YES | YES | NO | PASS
+Turkey | Camp | TurkeyBootCamp | US_Camp | US F1/F2/F3 | TR__TRFlag_HsCP | TR_Flag.tga | YES | YES | NO | PASS
+Turkey | Power Plant | TurkeyPowerStation | US_Powerplant | US F1/F2/F3 | TR__TRFlag_HsPP | TR_Flag.tga | YES | YES | NO | PASS
+Turkey | Supply Center | TurkeySupplyCenter | US_Supply | US F1/F2/F3 | TR__TRFlag_HsSC | TR_Flag.tga | YES | YES | NO | PASS
+Italy | Command Center | ItalyCommandCenter | US_Command | US F1/F2/F3 | IT__ITFlag_HsCU | IT_Flag.tga | YES | YES | NO | PASS
+Italy | War Factory | ItalyWarFactory | US_WarFactory | US F1/F2/F3 | IT__ITFlag_HsWF | IT_Flag.tga | YES | YES | NO | PASS
+Italy | Camp | ItalyBootCamp | US_Camp | US F1/F2/F3 | IT__ITFlag_HsCP | IT_Flag.tga | YES | YES | NO | PASS
+Italy | Power Plant | ItalyPowerStation | US_Powerplant | US F1/F2/F3 | IT__ITFlag_HsPP | IT_Flag.tga | YES | YES | NO | PASS
+Italy | Supply Center | ItalySupplyCenter | US_Supply | US F1/F2/F3 | IT__ITFlag_HsSC | IT_Flag.tga | YES | YES | NO | PASS
+Sweden | Command Center | SwedenCommandCenter | US_Command | US F1/F2/F3 | SE__SEFlag_HsCU | SE_Flag.tga | YES | YES | NO | PASS
+Sweden | War Factory | SwedenWarFactory | US_WarFactory | US F1/F2/F3 | SE__SEFlag_HsWF | SE_Flag.tga | YES | YES | NO | PASS
+Sweden | Camp | SwedenBootCamp | US_Camp | US F1/F2/F3 | SE__SEFlag_HsCP | SE_Flag.tga | YES | YES | NO | PASS
+Sweden | Power Plant | SwedenPowerStation | US_Powerplant | US F1/F2/F3 | SE__SEFlag_HsPP | SE_Flag.tga | YES | YES | NO | PASS
+Sweden | Supply Center | SwedenSupplyCenter | US_Supply | US F1/F2/F3 | SE__SEFlag_HsSC | SE_Flag.tga | YES | YES | NO | PASS
+Britain | Command Center | BritainCommandCenter | US_Command | US F1/F2/F3 | UK__UKFlag_HsCU | UK_Flag.tga | YES | YES | NO | PASS
+Britain | War Factory | BritainWarFactory | US_WarFactory | US F1/F2/F3 | UK__UKFlag_HsWF | UK_Flag.tga | YES | YES | NO | PASS
+Britain | Camp | BritainBootCamp | US_Camp | US F1/F2/F3 | UK__UKFlag_HsCP | UK_Flag.tga | YES | YES | NO | PASS
+Britain | Power Plant | BritainPowerStation | US_Powerplant | US F1/F2/F3 | UK__UKFlag_HsPP | UK_Flag.tga | YES | YES | NO | PASS
+Britain | Supply Center | BritainSupplyCenter | US_Supply | US F1/F2/F3 | UK__UKFlag_HsSC | UK_Flag.tga | YES | YES | NO | PASS
+France | Command Center | FranceCommandCenter | US_Command | US F1/F2/F3 | FR__FRFlag_HsCU | FR_Flag.tga | YES | YES | NO | PASS
+France | War Factory | FranceWarFactory | US_WarFactory | US F1/F2/F3 | FR__FRFlag_HsWF | FR_Flag.tga | YES | YES | NO | PASS
+France | Camp | FranceBootCamp | US_Camp | US F1/F2/F3 | FR__FRFlag_HsCP | FR_Flag.tga | YES | YES | NO | PASS
+France | Power Plant | FrancePowerStation | US_Powerplant | US F1/F2/F3 | FR__FRFlag_HsPP | FR_Flag.tga | YES | YES | NO | PASS
+France | Supply Center | FranceSupplyCenter | US_Supply | US F1/F2/F3 | FR__FRFlag_HsSC | FR_Flag.tga | YES | YES | NO | PASS
+Germany | Command Center | GermanyCommandCenter | US_Command | US F1/F2/F3 | DE__DEFlag_HsCU | DE_Flag.tga | YES | YES | NO | PASS
+Germany | War Factory | GermanyWarFactory | US_WarFactory | US F1/F2/F3 | DE__DEFlag_HsWF | DE_Flag.tga | YES | YES | NO | PASS
+Germany | Camp | GermanyBootCamp | US_Camp | US F1/F2/F3 | DE__DEFlag_HsCP | DE_Flag.tga | YES | YES | NO | PASS
+Germany | Power Plant | GermanyPowerStation | US_Powerplant | US F1/F2/F3 | DE__DEFlag_HsPP | DE_Flag.tga | YES | YES | NO | PASS
+Germany | Supply Center | GermanySupplyCenter | US_Supply | US F1/F2/F3 | DE__DEFlag_HsSC | DE_Flag.tga | YES | YES | NO | PASS
+Ukraine | Command Center | UkraineCommandCenter | US_Command | US F1/F2/F3 | UA__UAFlag_HsCU | UA_Flag.tga | YES | YES | NO | PASS
+Ukraine | War Factory | UkraineWarFactory | US_WarFactory | US F1/F2/F3 | UA__UAFlag_HsWF | UA_Flag.tga | YES | YES | NO | PASS
+Ukraine | Camp | UkraineBootCamp | US_Camp | US F1/F2/F3 | UA__UAFlag_HsCP | UA_Flag.tga | YES | YES | NO | PASS
+Ukraine | Power Plant | UkrainePowerStation | US_Powerplant | US F1/F2/F3 | UA__UAFlag_HsPP | UA_Flag.tga | YES | YES | NO | PASS
+Ukraine | Supply Center | UkraineSupplyCenter | US_Supply | US F1/F2/F3 | UA__UAFlag_HsSC | UA_Flag.tga | YES | YES | NO | PASS

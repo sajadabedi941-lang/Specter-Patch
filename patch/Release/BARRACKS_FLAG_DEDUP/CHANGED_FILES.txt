@@ -1,0 +1,27 @@
+BARRACKS_FLAG_DEDUP changed files
+
+DATA replaced (8 packed Barracks INIs, HideSubObject FLAG01-03 only)
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Barracks.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+
+DATA inspected and preserved
+  India_Barracks.ini
+  Pakistan_Barracks.ini
+  Iraq_Barracks.ini
+  Egypt_Barracks.ini
+  Israel_Barracks.ini
+  USA Camp.ini
+  All War Factory / Supply / Power / Command Center / Airfield INIs
+  Oil-capture CommandSet overlays
+  Fighter-roster CommandSet overlays
+  NATO radar GM406.ini (7 countries)
+  Weapon.ini CommandSet.ini CommandButton.ini Upgrade.ini SpecialPower.ini
+
+ART
+  Unchanged. irq_camp.W3D not modified. Flag_Hs W3Ds not modified.

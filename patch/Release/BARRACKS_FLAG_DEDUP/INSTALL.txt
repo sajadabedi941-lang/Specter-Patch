@@ -1,0 +1,9 @@
+BARRACKS_FLAG_DEDUP
+
+Install: copy _SPEC_DATA_ONE.big over the existing Specter DATA BIG
+in GameRoot. ART BIG is unchanged — do not replace _SPEC_ART_ONE.big.
+
+This is a complete DATA replacement (2906 files), not an INI-only
+loose overlay.
+
+SHA256: see SHA256.txt

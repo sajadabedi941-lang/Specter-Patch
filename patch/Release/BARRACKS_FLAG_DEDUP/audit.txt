@@ -1,0 +1,88 @@
+BARRACKS_FLAG_DEDUP — per-country root cause
+
+Baseline: NATO_RADAR_USA_REFERENCE_FIX _SPEC_DATA_ONE.big
+SHA256 11fcfb872b8fd6e8ba8389fcf5cb9b06357ef1392c6af98c364e18f810e79858
+Active pack branch: cursor/barracks-flag-dedup-7da3
+Locked workspace baseline: cursor/iraq-unlock-airforce-7da3
+
+METHOD
+- Parsed all 2906 packed DATA entries (BIGF last-win).
+- Last-win Object Draw/Model/HideSubObject for each target Barracks.
+- Compared to BUILDING_FLAG_COMPLETE_ROLLOUT (stages 02-09 Flag_Hs)
+  and SPECTER1_BUILDING_FLAGS_01 (irq_camp FLAG01-03 cloth clones).
+- ART not modified. Shared irq_camp.W3D not modified.
+
+JAPAN
+  Last-win: Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Cause: additional Draw. ModuleTag_01 Model=irq_camp (baked FLAG01-03 Iraq
+  cloth) plus ModuleTag_03 Model=JP__JPFlag_Hs. Flag_Hs stage 02 added the
+  pole without hiding the inherited cloth.
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: JP__JPFlag_Hs.
+
+SOUTH KOREA
+  Last-win: Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus SK__SKFlag_Hs (stage 08).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: SK__SKFlag_Hs.
+
+VIETNAM
+  Last-win: Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus VN__VNFlag_Hs (stage 03).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: VN__VNFlag_Hs.
+
+LIBYA
+  Last-win: Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus LY__LYFlag_Hs (stage 09).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: LY__LYFlag_Hs.
+
+SYRIA
+  Last-win: Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus SY__SYFlag_Hs (stage 06).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: SY__SYFlag_Hs.
+
+UAE
+  Last-win: Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus AE__AEFlag_Hs (stage 05).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: AE__AEFlag_Hs.
+
+SAUDI ARABIA
+  Last-win: Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus SA__SAFlag_Hs (stage 04).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: SA__SAFlag_Hs.
+
+SOUTH AFRICA
+  Last-win: Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+  Cause: additional Draw. irq_camp FLAG01-03 plus ZA__ZAFlag_Hs (stage 07).
+  Fix: HideSubObject FLAG01 FLAG02 FLAG03 on ModuleTag_01 only.
+  Preserved: ZA__ZAFlag_Hs.
+
+INDIA
+  Last-win: Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Barracks.ini
+  Cause: NOT a dual-Draw duplicate in live DATA. Only ModuleTag_01
+  Model=irq_camp. No Flag_Hs ModuleTag_03. Flag_Hs rollout never included
+  India. SPECTER1_BUILDING_FLAGS_01 cloth clones are not referenced by
+  this last-win. Hiding FLAG01-03 would leave zero 3D flags. Adding a
+  Flag_Hs pole is forbidden. No DATA change.
+
+PAKISTAN
+  Last-win: Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Barracks.ini
+  Cause: same as India. Only irq_camp ModuleTag_01. No Flag_Hs. No DATA
+  change.
+
+NOT A SHARED-MESH BUG
+  irq_camp.W3D is shared with Iraq / Egypt / Israel Barracks. Those
+  countries correctly show the baked FLAG01-03 cloth and were frozen.
+  Country-specific HideSubObject on the eight dual-Draw objects hides
+  the cloth only for those objects.
+
+SCOPE GUARDS
+  Command Centers, War Factories, Airfields, Supply Centers: unchanged
+  (several still have their own Flag_Hs pair; out of scope).
+  Oil-capture overlays, fighter-roster overlays, NATO radar GM406: frozen.
+  ART: not packed.

@@ -1,0 +1,10 @@
+FLAG_SIZE_FINAL
+SOURCE_DATA_SHA = c802b3bcecbf735af13ec1e0a25e2505f6538317991b8b2624b3d9a7755f8dc4
+SOURCE_ART_SHA = ec4f5bdcc8f9e9171a8d9fb0d9523cffa41089eded03b330f0f1738aaf555760
+SIZE = 1.5x original Flag_Hs = ~50% of current 3x oversized flags.
+Still larger than the original 1x baked/small flags.
+SCALE_METHOD = scale_flag_hs_continuous (LINE01 Y from ymin; FLAG/HOUSECOLOR XYZ*; LINE01 children Ty pole-stretched; deeper T*).
+NEW = USA China Russia Israel NATO hide baked cloth + country Flag_Hs.
+IRAN = included (existing IR__IRFlag_Hs* re-scaled 1.5x).
+SKIP_SHARED = Irq__IqFlag_Hs NKr__NKFlag_Hs building W3Ds
+INGAME_TESTED = NO

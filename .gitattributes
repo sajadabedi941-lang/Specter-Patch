@@ -22,3 +22,6 @@ patch/Release/FLAG_SIZE_EVERYWHERE/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=l
 patch/Release/FLAG_SIZE_EVERYWHERE/FLAG_SIZE_EVERYWHERE.zip filter=lfs diff=lfs merge=lfs -text
 patch/Release/FLAG_HS_CONTINUOUS/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
 patch/Release/FLAG_HS_CONTINUOUS/FLAG_HS_CONTINUOUS.zip filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_FINAL/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_FINAL/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/FLAG_SIZE_FINAL/FLAG_SIZE_FINAL.zip filter=lfs diff=lfs merge=lfs -text

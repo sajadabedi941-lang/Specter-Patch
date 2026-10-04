@@ -1,0 +1,12 @@
+CC_START_BUILD_MATCH
+
+Starting MilitaryHQ now hides US_Command F1/F2/F3 and attaches the existing
+country Flag_HsCU. Constructible CommandCenter keeps that Flag_Hs, gains the
+starting strobe draw and starting special-power modules, and its CommandSet
+matches the starting Worker/VT72B/IL-76/Alhussaien production.
+
+Preserved on constructible: Object name, CommandSet name, BuildCost 2000,
+BuildTime 4.0, Scale 0.9, HP 2000, 65x65 geometry, construct button target.
+Preserved on starting: Object name, CommandSet name, Scale 0.8, HP 5000,
+BuildTime 45.0, 110x90 geometry, strobes, specials.
+In-game test: NOT PERFORMED.

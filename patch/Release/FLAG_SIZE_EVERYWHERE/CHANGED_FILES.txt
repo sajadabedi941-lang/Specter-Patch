@@ -1,0 +1,34 @@
+DATA replaced
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+  Data\INI\Object\Specter\Iraq Army\AI\Iraq_WarFactory.ini
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory_AI.ini
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_PowerPlant.ini
+  Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_SupplyCenter.ini
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CommandCenter.ini
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_WarFactory.ini
+  Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini  (NorthKorea_PowerPlant only)
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_SupplyCenter.ini
+
+DATA added
+  Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_Barracks.ini
+  Data\INI\CommandButton_ZZZZ_NKBarracksFlag.ini
+
+ART added (3x Flag_Hs clones; donors unchanged)
+  Art\W3D\IQ__IQFlag_HsCU.W3D
+  Art\W3D\IQ__IQFlag_HsWF.W3D
+  Art\W3D\IQ__IQFlag_HsCP.W3D
+  Art\W3D\IQ__IQFlag_HsPP.W3D
+  Art\W3D\IQ__IQFlag_HsSC.W3D
+  Art\W3D\NK__NKFlag_HsCU.W3D
+  Art\W3D\NK__NKFlag_HsWF.W3D
+  Art\W3D\NK__NKFlag_HsCP.W3D
+  Art\W3D\NK__NKFlag_HsPP.W3D
+  Art\W3D\NK__NKFlag_HsSC.W3D
+
+ART already 3x from PP_FLAG_SIZE_3X (unchanged this pack)
+  90 country Flag_Hs W3Ds for VN SK JP TR IT SE UK FR DE UA SA AE SY IN PK LY ZA IR
+
+ART skipped
+  Irq__IqFlag_Hs.W3D  NKr__NKFlag_Hs.W3D  building meshes  DPRK_Flag.tga

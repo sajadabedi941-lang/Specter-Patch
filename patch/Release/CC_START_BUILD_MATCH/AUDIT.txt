@@ -1,0 +1,12 @@
+CC_START_BUILD_MATCH
+SOURCE_DATA_SHA = 6d31c347d790cd18e6ea8e20696e49cdeb0f9013da3d940f89b4f70f196f170a
+SOURCE_ART_SHA = ec4f5bdcc8f9e9171a8d9fb0d9523cffa41089eded03b330f0f1738aaf555760
+COUNTRIES = SaudiArabia UAE Syria India Pakistan SouthAfrica Libya
+STARTING = *_MilitaryHQ (PlayerTemplate StartingBuilding)
+CONSTRUCTIBLE = *_CommandCenter (Command_Construct*_CommandCenter)
+ROOT_CAUSE = Egypt-clone CommandCenter strip: Dozer-only CommandSet, no specials, no strobes;
+             starting MHQ has USA baked F1/F2/F3 and no national Flag_Hs.
+PAKISTAN_NOTE = CC already produced Worker; still missed vehicles/powers/strobes/flag-on-start.
+ART = UNCHANGED (reuse existing *Flag_HsCU + country TGA)
+DATA_REQUIRED = YES (Draw + behaviors + CommandSet last-win)
+INGAME_TESTED = NO

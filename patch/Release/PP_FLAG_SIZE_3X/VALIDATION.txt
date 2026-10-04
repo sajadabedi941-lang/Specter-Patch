@@ -1,0 +1,20 @@
+PP_FLAG_SIZE_3X static validation
+
+PASS Japan_PowerPlant both Object defs use Iraq_Powerplant + Hide FLAG01-03 BOX08 BOX09 LINE01 + JP__JPFlag_HsPP (JP_Flag.tga). No NKor_Powerplant / DPRK_Flag / NKr__NKFlag.
+PASS SouthKorea_PowerPlant both Object defs use Iraq_Powerplant + Hide + SK__SKFlag_HsPP (SK_Flag.tga). No NK refs.
+PASS Vietnam_PowerPlant both Object defs use Iraq_Powerplant + Hide + VN__VNFlag_HsPP (VN_Flag.tga). No NK refs.
+PASS NorthKorea_PowerPlant unchanged (NKor_Powerplant, byte-identical Object).
+PASS Iraq_PowerPlant unchanged.
+PASS Irq__IqFlag_Hs / NKr__NKFlag_Hs / NKor_Powerplant / Iraq_Powerplant / DPRK_Flag.tga unchanged.
+PASS Japan/SouthKorea/Vietnam Barracks Objects unchanged.
+PASS IranCommandCenter / SaudiArabia_CommandCenter unchanged.
+PASS oil-capture / fighter-roster / CommandCenterMatchStart / CommandButton.ini unchanged.
+PASS 90 country Flag_Hs W3Ds: FLAG03 and LINE01 extents * 3.000; LINE01 ymin and LINE01 pivot unchanged; file size 20341 unchanged; national textures retained.
+PASS ART/DATA BIG key sets identical to sources (3 DATA files replaced, 90 ART files replaced).
+PASS complete replacement BIGs:
+  _SPEC_DATA_ONE.big 90bbe149c0797336e53aca6188886e411b82e70057a03b8b57618ff272eba303 366303666
+  _SPEC_ART_ONE.big  d5564372f4a450eb071a54b645c650acd85f8c6ef52baf3d4cc87f03013d6b70 1245173216
+
+OUT OF SCOPE (not edited, documented):
+  Japan_Abbas / Vietnam_Abbas NuclearCenter still attach NKr__NKFlag_Hs (not Power Plant).
+  In-game ZH visual test: NOT PERFORMED.

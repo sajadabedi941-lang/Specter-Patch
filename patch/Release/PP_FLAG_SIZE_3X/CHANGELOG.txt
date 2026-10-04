@@ -1,0 +1,7 @@
+PP_FLAG_SIZE_3X
+
+Japan/South Korea/Vietnam Power Plants no longer last-win (or first-win) to
+NKor_Powerplant. Both Object definitions now use Iraq_Powerplant + hide + Flag_HsPP.
+Approved country Flag_Hs meshes are 3x larger (cloth and pole). Attachment pivots
+and textures are unchanged. North Korea Power Plant is unchanged.
+In-game test: NOT PERFORMED.

@@ -1,0 +1,23 @@
+PP_FLAG_SIZE_3X dimensions (all 90 scaled Flag_Hs clones share Iraq donor geometry)
+
+Mechanism: W3D mesh vertex scale (not Object Scale, not ART attachment Scale).
+Cloth FLAG01-03 / HOUSECOLOR01-03: XYZ * 3 around local origin (proportions preserved).
+Pole LINE01: Y stretched from ymin so the base stays planted; height * 3.
+LINE01 attach pivot: unchanged (keeps the existing building attach point).
+FLAG/HOUSECOLOR pivots: Y from ymin * 3 so cloth stays on the taller pole.
+
+FLAG03 cloth AABB (visible flag):
+  original  3.442 x 5.859 x 0.395
+  final    10.326 x 17.578 x 1.185
+  factor    3.000 x 3.000 x 3.000
+
+LINE01 pole height:
+  original  34.984  ymin -17.579
+  final    104.951  ymin -17.579 (base unchanged)
+  factor    3.000
+
+Shared donor meshes NOT scaled:
+  Art\W3D\Irq__IqFlag_Hs.W3D
+  Art\W3D\NKr__NKFlag_Hs.W3D
+  Art\W3D\NKor_Powerplant.W3D
+  Art\W3D\Iraq_Powerplant.W3D

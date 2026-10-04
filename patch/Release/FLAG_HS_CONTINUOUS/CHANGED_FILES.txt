@@ -1,0 +1,3 @@
+ART replaced: all country *Flag_Hs*.W3D (90 prior + 10 IQ/NK clones)
+ART skipped: Irq__IqFlag_Hs NKr__NKFlag_Hs building meshes
+DATA: none (unchanged)

@@ -1,0 +1,7 @@
+FLAG_HS_CONTINUOUS
+
+Keeps the approved 3x national flag size. Restores FLAG01/02/03 as one
+continuous cloth chain (plus HOUSECOLOR) by scaling child-bone translations
+in their local parent space instead of pole-mesh space.
+ART-only. DATA from FLAG_SIZE_EVERYWHERE is unchanged.
+In-game test: NOT PERFORMED.

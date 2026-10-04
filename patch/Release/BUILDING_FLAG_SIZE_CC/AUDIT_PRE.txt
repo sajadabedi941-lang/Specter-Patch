@@ -1,0 +1,67 @@
+BUILDING_FLAG_SIZE_CC AUDIT (before edits)
+
+Baseline
+  Branch: cursor/barracks-flag-dedup-7da3
+  DATA: BUILDING_FLAG_HS_10x4
+        SHA256 acd4b18d2bd9ab5f42e883dcc50982711ac0f7c80a5cdf9cefab7444336da222
+  ART:  BARRACKS_FLAG_COMPLETE
+        SHA256 de5f1e93a20f117a8244a6c1d7ad467b43671628ba05d350fc82ccc446b9d4d3
+
+10 countries (unchanged scope)
+  India IN__INFlag_Hs / IN_Flag.tga
+  Pakistan PK__PKFlag_Hs / PK_Flag.tga
+  SouthKorea SK__SKFlag_Hs / SK_Flag.tga
+  Libya LY__LYFlag_Hs / LY_Flag.tga
+  Syria SY__SYFlag_Hs / SY_Flag.tga
+  UAE AE__AEFlag_Hs / UAE_Flag.tga
+  SaudiArabia SA__SAFlag_Hs / SA_Flag.tga
+  SouthAfrica ZA__ZAFlag_Hs / ZA_Flag.tga
+  Japan JP__JPFlag_Hs / JP_Flag.tga
+  Vietnam VN__VNFlag_Hs / VN_Flag.tga
+
+PROBLEM 1 — size inconsistency
+  All 11 Flag_Hs W3Ds (10 countries + Iraq donor) are 20341-byte clones with
+  identical mesh vertices and identical LINE01 (6.991, -23.974, 21.686).
+  Size differences are NOT from different country meshes.
+
+  Flag_Hs is a self-contained pole+cloth authored for irq_camp. It is attached
+  as a second Draw at the building origin, so every building shows the camp
+  flag at the camp offset — not on that building's native pole.
+
+  Native poles (authoring space):
+    Iraq_Powerplant LINE01   (-14.342, -32.269, 36.448)  center-style
+    Iraq/NKor_Supply LINE01  ( 56.662,  29.918,  8.617)  base-style
+    Irq/NKr_WarFactory LINE01( 53.595,  36.922,  5.945)  base-style
+    US_Command FPOLE         ( 61.513, -64.028,  0.767)  base-style
+    NKr_Command LINE01       ( 14.259, -10.538, 19.156)  same euler as Flag_Hs
+
+  Object Scale=0.9 on Power/Supply/CC/Barracks; War Factory Scale=1.0.
+  Same for all 10 countries, so Scale is a building-type difference only.
+
+  Fix: add-only per-building Flag_Hs clones (proven Iraq-donor remap) with
+  LINE01 moved onto that building's pole. Do not edit existing Flag_Hs
+  (Barracks). Do not scale meshes — preserve Flag_Hs proportions.
+  Base-pivoted poles get +17.492 Z (half Flag_Hs pole) so the center-pivoted
+  clone stands on the native base instead of sinking.
+
+PROBLEM 2 — old Command Center flags
+  Previous audit missed US_Command cloth. It is NOT named FLAG01-03.
+  US_Command (IN/PK/LY/SY/UAE/SA/ZA):
+    F1 F2 F3 = US flag cloth
+    FPOLE    = pole
+    HOUSECOLOR04-06 = housecolor stripe on that flag
+    HideSubObject count = 0  → old US flag still visible
+    Flag_Hs added at camp offset (second, smaller flag)
+
+  NKr_Command (JP/SK/VN):
+    FLAG01-03 already hidden (DPRK cloth)
+    LINE01 (native pole) still visible
+    Flag_Hs still at camp offset, not on NKr LINE01
+
+  Fix: hide F1 F2 F3 FPOLE HOUSECOLOR04-06 on US_Command CCs.
+        hide FLAG01-03 LINE01 on NKr_Command CCs.
+        point each CC Flag_Hs Draw at a CC-positioned clone.
+
+Protected
+  Existing *Flag_Hs.W3D (barracks), irq_camp.W3D, shared building W3Ds
+  Barracks INIs, Iraq/Egypt/Israel/USA, oil-capture, fighter-roster, NATO radar

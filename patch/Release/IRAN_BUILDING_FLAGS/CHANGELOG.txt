@@ -1,0 +1,15 @@
+IRAN_BUILDING_FLAGS
+
+- Japan / South Korea / Vietnam Barracks: no code or ART change.
+  Live chain already correct (irq_camp HideSubObject FLAG01-03 +
+  JP__/SK__/VN__Flag_Hs + JP/SK/VN_Flag.tga). Textures are the
+  Japanese, South Korean, and Vietnamese national flags.
+
+- Iran: restored missing national flag system.
+  Root cause: no IR_Flag.tga, no Flag_Hs W3D, no building Draw.
+  Added IR_Flag.tga and five Irq__IqFlag_Hs clones, plus ModuleTag_03
+  on IranBarracks (Camp+Barracks), Command Center, War Factory,
+  Power Plant, and Supply Center. Power Plant hides empty FPOLE.
+
+DATA change required (flag Draw cannot attach from ART alone).
+Complete replacement BIGs only. In-game test: NOT PERFORMED.

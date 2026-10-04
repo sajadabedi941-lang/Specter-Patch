@@ -1,0 +1,22 @@
+ART added
+  Art\Textures\IR_Flag.tga
+  Art\W3D\IR__IRFlag_HsCP.W3D
+  Art\W3D\IR__IRFlag_HsCU.W3D
+  Art\W3D\IR__IRFlag_HsWF.W3D
+  Art\W3D\IR__IRFlag_HsPP.W3D
+  Art\W3D\IR__IRFlag_HsSC.W3D
+
+ART removed / modified
+  NONE
+
+DATA replaced
+  Data\INI\Object\Specter\Iranian Army\Buildings\Camp.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\Warfactory.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\Powerplant.ini
+  Data\INI\Object\Specter\Iranian Army\Buildings\SupplyCenter.ini
+
+Frozen (byte-identical vs EUROPEAN_BUILDING_FLAGS_FINAL)
+  Japan / South Korea / Vietnam Barracks INIs and Flag_Hs / flag TGAs
+  Oil capture, fighter roster, NATO radar, Camp/Barracks button overlay (not in this branch)
+  Existing Flag_Hs W3Ds and shared building meshes

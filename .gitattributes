@@ -12,3 +12,5 @@ patch/Release/EU_BUILDING_FLAGS/EU_BUILDING_FLAGS.zip filter=lfs diff=lfs merge=
 patch/Release/EUROPEAN_BUILDING_FLAGS_FINAL/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
 patch/Release/EUROPEAN_BUILDING_FLAGS_FINAL/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
 patch/Release/EUROPEAN_BUILDING_FLAGS_FINAL/EUROPEAN_BUILDING_FLAGS_FINAL.zip filter=lfs diff=lfs merge=lfs -text
+patch/Release/IRAN_BUILDING_FLAGS/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/IRAN_BUILDING_FLAGS/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text

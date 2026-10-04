@@ -1,0 +1,10 @@
+IRAN_BUILDING_FLAGS
+SOURCE_DATA_SHA = f5bfdefd1aef43ceb9b23327d0fa3bf72d9702e33900d4890e74163a8e387104
+SOURCE_ART_SHA = fce888aca990e511df7bdb74c302b51a253eb89b250a4b92f8733f3cb28b0702
+JP_SK_VN_BARRACKS = UNCHANGED (already correct Flag_Hs + national TGA)
+IRAN_ROOT_CAUSE = missing IR_Flag.tga, missing Flag_Hs W3Ds, missing Draw ModuleTag_03
+IRAN_TEXTURE = Art\Textures\IR_Flag.tga (128x64 32bpp, same header as JP/SK/VN_Flag)
+IRAN_MESHES = IR__IRFlag_Hs{CP,CU,WF,PP,SC} cloned from Irq__IqFlag_Hs
+IRAN_OBJECTS = IranBarracks (Camp+Barracks), IranCommandCenter, IranWarFactory, IranPowerplant, IranSupplyCenter
+DATA_REQUIRED = YES (buildings had no flag Draw)
+INGAME_TESTED = NO

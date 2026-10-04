@@ -1,0 +1,6 @@
+ART: re-scaled existing country Flag_Hs (90) to 1.5x
+ART: IQ/NK Flag_Hs clones at 1.5x
+ART: US/CN/RU/IL/NT Flag_Hs clones at 1.5x + US/CN/RU/IL/NT_Flag.tga
+ART skipped: Irq__IqFlag_Hs NKr__NKFlag_Hs building meshes
+DATA: USA/China/Russia/Israel/NATO five-building hide + Flag_Hs
+DATA unchanged: CommandSet/CommandButton/Weapon/oil/roster overlays

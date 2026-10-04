@@ -1,0 +1,37 @@
+FLAG_SIZE_FINAL — 25 countries × 5 buildings
+
+SIZE
+  Original FLAG03 height:          5.859
+  Previous oversized 3x FLAG03:   17.578
+  Final FLAG03 height:             8.789   (= 1.500x original, 50.0% of 3x)
+  Original LINE01 pole:           34.984
+  Previous 3x pole:              104.951
+  Final LINE01 pole:              52.475   (= 1.500x original, 50.0% of 3x)
+  Cloth joins FLAG03→FLAG02 / FLAG02→FLAG01:
+    original   3.606 / 3.082
+    broken 3x 32.388 / 33.781   (three-piece bug)
+    fixed 3x  10.818 /  9.247
+    FINAL      5.409 /  4.623   (= original * 1.500; 50% of fixed 3x)
+
+MATRIX: 125 / 125 PASS (identical FLAG03 8.789, pole 52.475, joins 5.409/4.623)
+
+1. Correct national flag          PASS (country Flag_Hs + country texture)
+2. Same final target size         PASS (all 125 FLAG03 = 8.789)
+3. ~50% of current oversized      PASS (8.789 / 17.578 = 0.500)
+4. Still larger than original     PASS (8.789 / 5.859 = 1.500)
+5. One continuous piece           PASS (FLAG03←FLAG02←FLAG01 parents; local T * 1.5)
+6. Attached to pole               PASS (LINE01 children Ty pole-stretched; LINE01 pivot kept)
+7. No three-piece separation      PASS (grandchild Y not pole-stretched)
+8. No gaps / detached sections    PASS (join lengths = original * 1.5)
+9. No wrong-country inheritance   PASS (JP/SK/VN PP stay country Flag_HsPP; NK not Iraq)
+10. No unrelated gameplay change  PASS (CommandSet/CommandButton/Weapon/oil/roster frozen;
+    building W3Ds and shared Irq__/NKr__ donors unchanged)
+
+INCLUDED (were previously old baked size):
+  Iran, Iraq, USA, China, Russia, Israel, NATO
+ALSO CHECKED (prior flag-size problems):
+  Vietnam, South Korea, Japan, North Korea
+
+BUILDINGS: Command Center, War Factory, Camp/Barracks, Power Plant, Supply Center
+
+In-game ZH visual test: NOT PERFORMED (no Zero Hour runtime in this environment).

@@ -1,0 +1,11 @@
+FLAG_SIZE_FINAL
+
+Reduces the current oversized 3x national flags to approximately 50%
+of that size (1.5x the original Flag_Hs). All 25 listed countries now
+use the same hierarchical Flag_Hs size on Command Center, War Factory,
+Camp/Barracks, Power Plant, and Supply Center.
+
+USA, China, Russia, Israel, and NATO no longer keep the old baked
+building-mesh flags. Iran is included.
+FLAG01/02/03 remain one continuous cloth chain.
+In-game test: NOT PERFORMED.

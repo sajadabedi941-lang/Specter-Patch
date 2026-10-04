@@ -1,0 +1,16 @@
+BARRACKS_FLAG_COMPLETE changed files
+
+DATA (2 files)
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_Barracks.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_Barracks.ini
+
+ART (2 new files)
+  Art\W3D\IN__INFlag_Hs.W3D
+  Art\W3D\PK__PKFlag_Hs.W3D
+
+UNCHANGED
+  Eight previously patched Barracks INIs
+  irq_camp.W3D Irq__IqFlag_Hs.W3D all existing Flag_Hs W3Ds
+  Iraq/Egypt/Israel/USA Barracks
+  War Factory / Supply / Power / Command Center / Airfield
+  Oil-capture, fighter-roster, NATO radar overlays

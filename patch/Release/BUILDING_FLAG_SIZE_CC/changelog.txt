@@ -1,0 +1,17 @@
+BUILDING_FLAG_SIZE_CC
+
+Repositions the accepted Flag_Hs pole onto each building's native flag
+location and removes leftover Command Center flags.
+
+Root cause (size): all country Flag_Hs W3Ds are identical camp-sized
+clones attached at origin, so they appear at the irq_camp offset instead
+of the Power/Supply/CC/WF pole.
+
+Root cause (old CC flags): US_Command cloth is F1/F2/F3 (not FLAG01-03)
+and was never hidden. NKr_Command FLAG01-03 were hidden but the native
+LINE01 pole and camp-offset Flag_Hs remained.
+
+Fix: add-only per-building Flag_Hs clones (Iraq-donor remap + LINE01
+move). Hide F1 F2 F3 FPOLE HOUSECOLOR04-06 on US_Command CCs. Hide
+native LINE01 with the previous FLAG cloth hides on the other buildings.
+Existing Barracks Flag_Hs W3Ds are not modified.

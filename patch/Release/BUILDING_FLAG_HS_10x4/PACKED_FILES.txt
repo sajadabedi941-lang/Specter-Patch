@@ -1,0 +1,42 @@
+REPLACED
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_PowerPlant.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_PowerPlant.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_PowerPlant.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_PowerPlant.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_PowerPlant.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_PowerPlant.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Systems.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_Systems.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_SupplyCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_SupplyCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_SupplyCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_SupplyCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_SupplyCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_SupplyCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_SupplyCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_SupplyCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_SupplyCenter.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+ART_CHANGED = NO

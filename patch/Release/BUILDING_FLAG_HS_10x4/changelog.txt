@@ -1,0 +1,11 @@
+BUILDING_FLAG_HS_10x4
+
+Applies the accepted Barracks Flag_Hs method to Power Plant, Supply
+Centre, Command Center, and War Factory for the same 10 countries.
+
+Reuses existing country Flag_Hs W3Ds. No new ART clones.
+Hides baked FLAG01-03 (and Power Plant BOX08-09) on shared meshes
+via country-object HideSubObject only. irq_camp and Barracks unchanged.
+
+US_Command CCs have no FLAG cloth; a Flag_Hs pole is added the same
+way as SouthKorea_CommandCenter. FPOLE is not hidden.

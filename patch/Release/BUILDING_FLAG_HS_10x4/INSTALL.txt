@@ -1,0 +1,6 @@
+BUILDING_FLAG_HS_10x4
+
+Copy _SPEC_DATA_ONE.big over GameRoot. ART BIG is unchanged.
+
+DATA SHA256 acd4b18d2bd9ab5f42e883dcc50982711ac0f7c80a5cdf9cefab7444336da222
+INGAME_TESTED = NO

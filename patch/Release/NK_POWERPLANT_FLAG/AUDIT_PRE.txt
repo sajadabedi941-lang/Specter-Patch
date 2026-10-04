@@ -1,0 +1,21 @@
+NK_POWERPLANT_FLAG AUDIT (before edits)
+
+Last-win: Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+  Object NorthKorea_PowerPlant
+  Model/Animation = Iraq_Powerplant (3 condition states)
+  No HideSubObject, no Flag_Hs
+
+Iraq_Powerplant.W3D: FLAG01-03 + BOX08-09 = IraqiFlag.tga
+NKor_Powerplant.W3D: same 62852-byte clone, 189 byte diffs,
+  FLAG textures remapped to DPRK_Flag.tga (already in live ART)
+
+NK Supply  = NKor_Supply   (DPRK baked)  — correct
+NK CC      = NKr_Command   (DPRK baked)  — correct
+NK WF      = NKr_WarFactory(DPRK baked)  — correct
+NK PP      = Iraq_Powerplant (Iraqi baked) — BUG
+
+NKr__NKFlag_Hs exists (camp pole). Not used here: NKor_Powerplant
+already carries the correct pole + wall flags. Adding Flag_Hs on
+Iraq_Powerplant would hide BOX08-09 wall flags and/or duplicate.
+
+Single last-win. Japan/SK/VN Systems.ini do not redefine this object.

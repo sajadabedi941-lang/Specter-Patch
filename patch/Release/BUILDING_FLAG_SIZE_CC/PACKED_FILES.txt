@@ -1,0 +1,82 @@
+REPLACED DATA
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_PowerPlant.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_PowerPlant.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_PowerPlant.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_PowerPlant.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_PowerPlant.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_PowerPlant.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Systems.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_Systems.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_SupplyCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_SupplyCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_SupplyCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_SupplyCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_SupplyCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_SupplyCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_SupplyCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_SupplyCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_SupplyCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_SupplyCenter.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_WarFactory.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_WarFactory.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_WarFactory.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_WarFactory.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_WarFactory.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_WarFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_WarFactory.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_WarFactory.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CommandCenter.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CommandCenter.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CommandCenter.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CommandCenter.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CommandCenter.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CommandCenter.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CommandCenter.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+ADDED ART
+  Art\W3D\IN__INFlag_HsPP.W3D
+  Art\W3D\PK__PKFlag_HsPP.W3D
+  Art\W3D\LY__LYFlag_HsPP.W3D
+  Art\W3D\SY__SYFlag_HsPP.W3D
+  Art\W3D\AE__AEFlag_HsPP.W3D
+  Art\W3D\SA__SAFlag_HsPP.W3D
+  Art\W3D\ZA__ZAFlag_HsPP.W3D
+  Art\W3D\JP__JPFlag_HsPP.W3D
+  Art\W3D\SK__SKFlag_HsPP.W3D
+  Art\W3D\VN__VNFlag_HsPP.W3D
+  Art\W3D\IN__INFlag_HsSC.W3D
+  Art\W3D\PK__PKFlag_HsSC.W3D
+  Art\W3D\LY__LYFlag_HsSC.W3D
+  Art\W3D\SY__SYFlag_HsSC.W3D
+  Art\W3D\AE__AEFlag_HsSC.W3D
+  Art\W3D\SA__SAFlag_HsSC.W3D
+  Art\W3D\ZA__ZAFlag_HsSC.W3D
+  Art\W3D\JP__JPFlag_HsSC.W3D
+  Art\W3D\SK__SKFlag_HsSC.W3D
+  Art\W3D\VN__VNFlag_HsSC.W3D
+  Art\W3D\IN__INFlag_HsWF.W3D
+  Art\W3D\PK__PKFlag_HsWF.W3D
+  Art\W3D\LY__LYFlag_HsWF.W3D
+  Art\W3D\SY__SYFlag_HsWF.W3D
+  Art\W3D\AE__AEFlag_HsWF.W3D
+  Art\W3D\SA__SAFlag_HsWF.W3D
+  Art\W3D\ZA__ZAFlag_HsWF.W3D
+  Art\W3D\JP__JPFlag_HsWF.W3D
+  Art\W3D\SK__SKFlag_HsWF.W3D
+  Art\W3D\VN__VNFlag_HsWF.W3D
+  Art\W3D\IN__INFlag_HsCU.W3D
+  Art\W3D\PK__PKFlag_HsCU.W3D
+  Art\W3D\LY__LYFlag_HsCU.W3D
+  Art\W3D\SY__SYFlag_HsCU.W3D
+  Art\W3D\AE__AEFlag_HsCU.W3D
+  Art\W3D\SA__SAFlag_HsCU.W3D
+  Art\W3D\ZA__ZAFlag_HsCU.W3D
+  Art\W3D\JP__JPFlag_HsCK.W3D
+  Art\W3D\SK__SKFlag_HsCK.W3D
+  Art\W3D\VN__VNFlag_HsCK.W3D

@@ -1,0 +1,18 @@
+BARRACKS_FLAG_COMPLETE
+
+Completes Barracks national-flag de-dup for all ten target countries.
+
+Eight countries already had Flag_Hs poles + HideSubObject FLAG01-03
+from BARRACKS_FLAG_DEDUP. Those eight INIs are byte-identical here.
+
+India and Pakistan had only shared irq_camp (Iraqi FLAG01-03 cloth)
+and no Flag_Hs W3D in live ART. irq_camp_IN / irq_camp_PK were stripped
+from ART. Safe fix uses the accepted Flag_Hs system:
+
+  - New add-only W3Ds IN__INFlag_Hs / PK__PKFlag_Hs
+  - Donor Irq__IqFlag_Hs (unmodified), texture IN_Flag.tga / PK_Flag.tga
+  - Clone method byte-reproduces live JP__JPFlag_Hs
+  - HideSubObject FLAG01 FLAG02 FLAG03 on irq_camp ConditionStates
+
+Shared irq_camp.W3D, other buildings, oil capture, fighter rosters,
+and NATO radar overlays are unchanged.

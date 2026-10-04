@@ -1,0 +1,27 @@
+BARRACKS_FLAG_DEDUP
+
+Surgical DATA-only fix for duplicate Barracks flags.
+
+SOURCE = NATO_RADAR_USA_REFERENCE_FIX
+SOURCE_DATA_SHA = 11fcfb872b8fd6e8ba8389fcf5cb9b06357ef1392c6af98c364e18f810e79858
+
+8 countries (Japan, South Korea, Vietnam, Libya, Syria, UAE,
+Saudi Arabia, South Africa) had two Barracks flag sources:
+
+  1. Shared irq_camp FLAG01-03 Iraq cloth (original)
+  2. Country Flag_Hs ModuleTag_03 pole (newer national flag)
+
+Fix: HideSubObject = FLAG01 FLAG02 FLAG03 on every irq_camp
+ConditionState of those eight Barracks objects only.
+Country Flag_Hs draws are unchanged.
+
+India and Pakistan live last-win Barracks have irq_camp only
+and no Flag_Hs Draw. They were inspected and left unchanged
+because hiding FLAG01-03 would remove their only 3D flag, and
+adding a Flag_Hs pole is forbidden.
+
+ART, irq_camp.W3D, other buildings, oil capture, fighter rosters,
+NATO radar, and unaffected countries are unchanged.
+
+INGAME_TESTED = NO
+BOOT_SAFE = YES (DATA last-win object replace, 8 INIs only)

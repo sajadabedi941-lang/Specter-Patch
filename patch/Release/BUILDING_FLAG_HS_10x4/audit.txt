@@ -1,0 +1,51 @@
+BUILDING_FLAG_HS_10x4
+
+Pre-edit audit of BARRACKS_FLAG_COMPLETE last-wins, then DATA-only Flag_Hs
+application to Power Plant, Supply Centre, Command Center, and War Factory
+for the same 10 Barracks-flag countries.
+
+10 countries (from live Barracks last-wins)
+  India        IN__INFlag_Hs / IN_Flag.tga
+  Pakistan     PK__PKFlag_Hs / PK_Flag.tga
+  SouthKorea   SK__SKFlag_Hs / SK_Flag.tga
+  Libya        LY__LYFlag_Hs / LY_Flag.tga
+  Syria        SY__SYFlag_Hs / SY_Flag.tga
+  UAE          AE__AEFlag_Hs / UAE_Flag.tga
+  SaudiArabia  SA__SAFlag_Hs / SA_Flag.tga
+  SouthAfrica  ZA__ZAFlag_Hs / ZA_Flag.tga
+  Japan        JP__JPFlag_Hs / JP_Flag.tga
+  Vietnam      VN__VNFlag_Hs / VN_Flag.tga
+
+All 10 Flag_Hs W3Ds already exist in live ART. NEW_W3D_COUNT = 0.
+Shared meshes were not edited. Barracks last-wins are byte-identical.
+
+Per-building method
+  Power Plant (Iraq_Powerplant): HideSubObject FLAG01-03 BOX08-09 + Flag_Hs
+  Supply (Iraq_Supply / NKor_Supply): HideSubObject FLAG01-03 + Flag_Hs
+  War Factory (Irq_WarFactory / NKr_WarFactory): HideSubObject FLAG01-03 + Flag_Hs
+  Command Center NKr_Command (JP/SK/VN): HideSubObject FLAG01-03 + Flag_Hs
+  Command Center US_Command (IN/PK/LY/SY/UAE/SA/ZA): Flag_Hs only.
+    US_Command has FPOLE and no FLAG cloth. FPOLE is not hidden.
+    US_Command.W3D was not edited. Same origin Flag_Hs Draw as SK CC.
+
+Already had Flag_Hs (hide added only):
+  Power/Supply/WF: LY SA ZA SK SY UAE
+  CC: SK
+
+Flag_Hs inserted:
+  Power/Supply/WF: IN PK JP VN
+  CC: IN PK LY SY UAE SA ZA JP VN
+
+Japan/SK/Vietnam PowerPlant last-wins live inside *_Systems.ini.
+Only the PowerPlant object slice was patched; other objects in those
+files are byte-identical.
+
+SOURCE_DATA_SHA 41064996aa6e3889719e45e5c1e1df687913a600102cc1429e8af6214a3db567
+DATA_SHA256 acd4b18d2bd9ab5f42e883dcc50982711ac0f7c80a5cdf9cefab7444336da222
+BYTES 366204881
+FILE_COUNT 2906
+ART_CHANGED = NO
+BARRACKS_UNCHANGED = YES
+SHARED_W3D_UNCHANGED = YES
+STATIC_PACKED_AUDIT = PASS
+INGAME_TESTED = NO

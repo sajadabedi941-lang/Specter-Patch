@@ -1,0 +1,8 @@
+patch/Release/BARRACKS_FLAG_DEDUP/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/BARRACKS_FLAG_COMPLETE/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/BARRACKS_FLAG_COMPLETE/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/BARRACKS_FLAG_COMPLETE/BARRACKS_FLAG_COMPLETE.zip filter=lfs diff=lfs merge=lfs -text
+patch/Release/BUILDING_FLAG_HS_10x4/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/BUILDING_FLAG_SIZE_CC/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/BUILDING_FLAG_SIZE_CC/_SPEC_ART_ONE.big filter=lfs diff=lfs merge=lfs -text
+patch/Release/NK_POWERPLANT_FLAG/_SPEC_DATA_ONE.big filter=lfs diff=lfs merge=lfs -text

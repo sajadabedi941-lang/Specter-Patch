@@ -1,0 +1,58 @@
+BUILDING_FLAG_HS_10x4 AUDIT (before edits)
+
+Baseline
+  Branch: cursor/barracks-flag-dedup-7da3
+  DATA: BARRACKS_FLAG_COMPLETE
+        SHA256 41064996aa6e3889719e45e5c1e1df687913a600102cc1429e8af6214a3db567
+  ART:  BARRACKS_FLAG_COMPLETE
+        SHA256 de5f1e93a20f117a8244a6c1d7ad467b43671628ba05d350fc82ccc446b9d4d3
+
+10 countries (from live Barracks last-wins, not guessed)
+  India        IN__INFlag_Hs / IN_Flag.tga
+  Pakistan     PK__PKFlag_Hs / PK_Flag.tga
+  SouthKorea   SK__SKFlag_Hs / SK_Flag.tga
+  Libya        LY__LYFlag_Hs / LY_Flag.tga
+  Syria        SY__SYFlag_Hs / SY_Flag.tga
+  UAE          AE__AEFlag_Hs / UAE_Flag.tga (W3D AE__)
+  SaudiArabia  SA__SAFlag_Hs / SA_Flag.tga
+  SouthAfrica  ZA__ZAFlag_Hs / ZA_Flag.tga
+  Japan        JP__JPFlag_Hs / JP_Flag.tga
+  Vietnam      VN__VNFlag_Hs / VN_Flag.tga
+
+All 10 Flag_Hs W3Ds already exist in live ART. No new W3D clones required.
+
+Camp/Barracks: already Flag_Hs + HideSubObject FLAG01-03. DO NOT TOUCH.
+
+Power Plant — all 10 last-win Model=Iraq_Powerplant
+  Mesh FLAG01-03 + BOX08-09 = IraqiFlag.tga
+  Already have Flag_Hs, no hide: LY SA ZA SK SY UAE  (duplicate Iraq cloth + pole)
+  Missing Flag_Hs: IN PK JP VN
+  JP/SK/VN objects live inside *_Systems.ini (many other objects — patch slice only)
+
+Supply Centre
+  IN PK LY SY UAE SA ZA: Iraq_Supply  FLAG01-03 IraqiFlag.tga
+  JP SK VN: NKor_Supply FLAG01-03 DPRK_Flag.tga
+  Already Flag_Hs, no hide: LY SA ZA SK SY UAE
+  Missing Flag_Hs: IN PK JP VN
+
+War Factory
+  LY SY UAE SA ZA: Irq_WarFactory FLAG01-03 IraqiFlag.tga
+  IN PK JP VN SK: NKr_WarFactory FLAG01-03 DPRK_Flag.tga
+  Already Flag_Hs, no hide: LY SA ZA SK SY UAE
+  Missing Flag_Hs: IN PK JP VN
+  Object names: *_WarFactory_T (Iraq-lineage) vs Japan/SK/Vietnam_WarFactory
+
+Command Center
+  IN PK LY SY UAE SA ZA: US_Command — FPOLE only, NO FLAG cloth
+  JP VN SK: NKr_Command FLAG01-03 DPRK_Flag.tga
+  SK already has Flag_Hs, no hide (DPRK cloth + pole = duplicate)
+  Missing Flag_Hs: IN PK LY SY UAE SA ZA JP VN
+  US_Command has no authored FLAG mesh. Safest compatible solution:
+  add the same origin Flag_Hs Draw used on SK CC / barracks (DATA-only).
+  Do not edit US_Command.W3D. Do not hide FPOLE (not a national flag).
+
+Protected / frozen
+  Barracks of all 10, Iraq/Egypt/Israel/USA buildings
+  Shared W3Ds: Iraq_Powerplant Iraq_Supply Irq_WarFactory NKor_Supply
+               NKr_WarFactory US_Command NKr_Command irq_camp
+  Oil-capture, fighter-roster, NATO radar, Weapon/CommandSet/CommandButton

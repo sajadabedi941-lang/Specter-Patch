@@ -1,0 +1,13 @@
+NK_POWERPLANT_FLAG changed files
+
+DATA (1 file, 1 object slice)
+  Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini  Object NorthKorea_PowerPlant
+    Model/Animation Iraq_Powerplant -> NKor_Powerplant (9 tokens / 6 lines)
+
+ART
+  none (NKor_Powerplant.W3D already in live ART with DPRK_Flag.tga)
+
+UNCHANGED
+  Iraq_PowerPlant and the other nine country Power Plants
+  NorthKorea Supply/CommandCenter/WarFactory
+  Barracks Flag_Hs, shared W3Ds, oil/radar/rosters

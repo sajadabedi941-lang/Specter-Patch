@@ -1,0 +1,14 @@
+REPLACED
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_Barracks.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_Barracks.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_Barracks.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+APPENDED
+  NONE
+ART_CHANGED = NO
+INDIA_PAKISTAN_CHANGED = NO
+IRAQ_BARRACKS_CHANGED = NO

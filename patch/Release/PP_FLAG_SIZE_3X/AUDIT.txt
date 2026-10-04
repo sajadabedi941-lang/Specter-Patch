@@ -1,0 +1,9 @@
+PP_FLAG_SIZE_3X
+SOURCE_DATA_SHA = 03526c0ea0c7b2b1d87528284cf01f933a47953a21d9c4e73e84cfc6fa1f8a89
+SOURCE_ART_SHA = ec4f5bdcc8f9e9171a8d9fb0d9523cffa41089eded03b330f0f1738aaf555760
+PP_ROOT_CAUSE = duplicate Object in Buildings\Iraq_PowerPlant.ini uses NKor_Powerplant with no HideSubObject (SK also attached barracks SK__SKFlag_Hs).
+PP_FIX = copy each country's Systems.ini Power Plant object over the dupe file.
+SIZE = Flag_Hs cloth XYZ * 3; pole length * 3 from LINE01 ymin; LINE01 pivot unchanged.
+SCALED_W3D = 90
+SKIP = Irq__IqFlag_Hs NKr__NKFlag_Hs NKor_Powerplant Iraq_Powerplant
+INGAME_TESTED = NO

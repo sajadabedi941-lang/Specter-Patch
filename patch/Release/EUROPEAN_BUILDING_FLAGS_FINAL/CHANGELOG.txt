@@ -1,0 +1,13 @@
+EUROPEAN_BUILDING_FLAGS_FINAL
+
+Complete replacement DATA + ART BIGs for the frozen European
+building-flag implementation (7 countries x 5 buildings = 35).
+
+Turkey, Italy, Sweden, Britain, France, Germany, and Ukraine Command
+Center / War Factory / Camp / Power Plant / Supply Center last-wins
+use shared US_* meshes. Country Flag_Hs Draws were added and US
+F1/F2/F3 cloth was hidden. Shared US W3Ds were not modified.
+
+Copy both BIGs over GameRoot.
+STATIC_PACKED_AUDIT_OK
+IN_GAME_TEST = NOT_PERFORMED

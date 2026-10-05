@@ -4,6 +4,12 @@
 Reads the current s _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big (does not rebuild
 from old PRs). Adds only the missile-factory DATA/ART. Does not import
 abarfrccmd* and does not replace Irq_WarFactory.W3D.
+
+Do NOT mutate Data\\INI\\CommandSet.ini. Live s CommandSet.ini never
+references a CommandButton that exists only in an extra CommandButton_*.ini;
+doing so leaves Iraq_VT72BCommandSet slot 14 unresolved and crashes the
+command bar. Slot 14 is last-won by CommandSet_Iraq_MissileFactory.ini after
+CommandButton_Iraq_MissileFactory.ini is loaded.
 """
 from __future__ import annotations
 
@@ -101,30 +107,6 @@ def build_big(file_map: dict[str, bytes]) -> bytes:
     return bytes(out)
 
 
-def patch_commandset_ini(text: str) -> str:
-    old = (
-        "  13 = Command_ConstructIraq_HeavyAirBase\r\n"
-        "  14 = Command_DisarmMinesAtPosition\r\n"
-        "  15 = Command_ConstructIraq_Abbas_AI"
-    )
-    new = (
-        "  13 = Command_ConstructIraq_HeavyAirBase\r\n"
-        "  14 = Command_ConstructIraq_MissileFactory\r\n"
-        "  15 = Command_ConstructIraq_Abbas_AI"
-    )
-    if old not in text:
-        old_n = old.replace("\r\n", "\n")
-        new_n = new.replace("\r\n", "\n")
-        if old_n not in text:
-            raise SystemExit("Iraq_VT72BCommandSet slot 13-15 context not found in CommandSet.ini")
-        if text.count(old_n) != 1:
-            raise SystemExit("ambiguous VT72B slot context")
-        return text.replace(old_n, new_n, 1)
-    if text.count(old) != 1:
-        raise SystemExit("ambiguous VT72B slot context (crlf)")
-    return text.replace(old, new, 1)
-
-
 def csf_append(csf: bytes, labels: dict[str, str]) -> bytes:
     if csf[:4] != b" FSC":
         raise SystemExit(f"unexpected CSF magic {csf[:4]!r}")
@@ -193,7 +175,19 @@ def main() -> int:
     cs_key = "Data\\INI\\CommandSet.ini"
     if cs_key not in data_map:
         raise SystemExit("CommandSet.ini missing")
-    data_map[cs_key] = patch_commandset_ini(data_map[cs_key].decode("latin1")).encode("latin1")
+    # Crash fix: leave CommandSet.ini byte-identical to s. Slot 14 of
+    # Iraq_VT72BCommandSet must stay Command_DisarmMinesAtPosition here.
+    cs_text = data_map[cs_key].decode("latin1")
+    vt = re.search(r"CommandSet Iraq_VT72BCommandSet\r?\n.*?^End", cs_text, re.M | re.S)
+    if not vt:
+        raise SystemExit("Iraq_VT72BCommandSet missing from s CommandSet.ini")
+    if "  14 = Command_ConstructIraq_MissileFactory" in vt.group(0):
+        raise SystemExit("CommandSet.ini must not reference extra-only MissileFactory button")
+    if "  14 = Command_DisarmMinesAtPosition" not in vt.group(0):
+        raise SystemExit("s Iraq_VT72BCommandSet slot 14 is not DisarmMines")
+    wk = re.search(r"CommandSet Iraq_WorkerCommandSet\r?\n.*?^End", cs_text, re.M | re.S)
+    if not wk or "  14 = Command_DisarmMinesAtPosition" not in wk.group(0):
+        raise SystemExit("Iraq_WorkerCommandSet Clear Mines missing")
 
     csf_key = "Data\\English\\generals.csf"
     if csf_key not in data_map:

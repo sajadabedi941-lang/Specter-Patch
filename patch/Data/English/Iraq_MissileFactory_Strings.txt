@@ -1,0 +1,7 @@
+//--------------------------------------------------------------------------------
+// Iraq Missile Factory strings
+//--------------------------------------------------------------------------------
+
+OBJECT:Iraq_MissileFactory = Iraq Missile Factory
+CONTROLBAR:ConstructIraq_MissileFactory = Missile Factory
+CONTROLBAR:ToolTipIraqBuildMissileFactory = Builds the Iraqi Missile Factory. Produces missile vehicles.

@@ -176,29 +176,10 @@ def patch_csf(content: bytes, labels: list[tuple[str, str]]) -> bytes:
         raise RuntimeError(f"Unrecognized CSF magic {content[:4]!r}")
     magic = content[:4]
     version, nlab, nstr, unk, lang = struct.unpack_from("<IIIII", content, 4)
-    pos = 24
-    existing = set()
-    # walk labels
-    for _ in range(nlab):
-        tag = content[pos : pos + 4]
-        if tag != b" LBL":
-            raise RuntimeError(f"Bad CSF label tag {tag!r} at {pos}")
-        str_count, name_len = struct.unpack_from("<II", content, pos + 4)
-        pos += 12
-        name = content[pos : pos + name_len].decode("ascii", errors="replace")
-        pos += name_len
-        existing.add(name)
-        for _s in range(str_count):
-            stag = content[pos : pos + 4]
-            slen = struct.unpack_from("<I", content, pos + 4)[0]
-            pos += 8 + slen * 2
-            if stag == b"WRTS":  # extra value
-                vlen = struct.unpack_from("<I", content, pos)[0]
-                pos += 4 + vlen
     extra = bytearray()
     added = 0
     for name, value in labels:
-        if name in existing:
+        if name.encode("ascii") in content:
             continue
         extra += b" LBL"
         extra += struct.pack("<II", 1, len(name))
@@ -211,7 +192,8 @@ def patch_csf(content: bytes, labels: list[tuple[str, str]]) -> bytes:
     if added == 0:
         return content
     header = magic + struct.pack("<IIIII", version, nlab + added, nstr + added, unk, lang)
-    return header + content[24:] + bytes(extra)
+    body = content[24:].rstrip(b"\x00")
+    return header + body + bytes(extra)
 
 
 def sha256(data: bytes) -> str:
@@ -306,9 +288,7 @@ def main() -> int:
         raise RuntimeError("abarfrccmd must not be in required import set")
     irq_wf = next((n for n in final_art if norm_key(n) == "art\\w3d\\irq_warfactory.w3d"), None)
     if irq_wf:
-        old = dict((norm_key(n), (n, c)) for n, c in [(n, art_raw[o:o+s]) for n,o,s in art_entries])
-        # compare against original ART big if present
-        orig = {norm_key(n): raw[off:off+sz] for n, off, sz in art_entries}
+        orig = {norm_key(n): art_raw[off : off + sz] for n, off, sz in art_entries}
         if "art\\w3d\\irq_warfactory.w3d" in orig:
             if final_art[irq_wf] != orig["art\\w3d\\irq_warfactory.w3d"]:
                 raise RuntimeError("Irq_WarFactory.W3D was modified")

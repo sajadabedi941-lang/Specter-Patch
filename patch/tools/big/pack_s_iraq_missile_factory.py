@@ -5,11 +5,12 @@ Reads the current s _SPEC_DATA_ONE.big / _SPEC_ART_ONE.big (does not rebuild
 from old PRs). Adds only the missile-factory DATA/ART. Does not import
 abarfrccmd* and does not replace Irq_WarFactory.W3D.
 
-Do NOT mutate Data\\INI\\CommandSet.ini. Live s CommandSet.ini never
-references a CommandButton that exists only in an extra CommandButton_*.ini;
-doing so leaves Iraq_VT72BCommandSet slot 14 unresolved and crashes the
-command bar. Slot 14 is last-won by CommandSet_Iraq_MissileFactory.ini after
-CommandButton_Iraq_MissileFactory.ini is loaded.
+Runtime-visible VT72B construct buttons must live in core CommandButton.ini
++ CommandSet.ini (same as Command_ConstructIraq_HeavyAirBase slot 13).
+Inject the Missile Factory button into CommandButton.ini first, then set
+Iraq_VT72BCommandSet slot 14 in CommandSet.ini. Unique-path extra
+CommandSet_Iraq_MissileFactory.ini holds only the NEW production set.
+Do not pack a unique-path CommandButton file (duplicate CommandButton crash).
 """
 from __future__ import annotations
 
@@ -107,6 +108,50 @@ def build_big(file_map: dict[str, bytes]) -> bytes:
     return bytes(out)
 
 
+BUTTON_BLOCK = (
+    "CommandButton Command_ConstructIraq_MissileFactory\r\n"
+    "  Command          = DOZER_CONSTRUCT\r\n"
+    "  Object           = Iraq_MissileFactory\r\n"
+    "  TextLabel        = CONTROLBAR:ConstructIraqMissileFactory\r\n"
+    "  ButtonImage      = irq_mslbrg\r\n"
+    "  ButtonBorderType = BUILD\r\n"
+    "  DescriptLabel    = CONTROLBAR:ToolTipIraqBuildMissileFactory\r\n"
+    "End\r\n"
+)
+
+
+def inject_core_command_button(text: str) -> str:
+    if "CommandButton Command_ConstructIraq_MissileFactory" in text:
+        raise SystemExit("Command_ConstructIraq_MissileFactory already in CommandButton.ini")
+    if "\r\n" not in text:
+        raise SystemExit("s CommandButton.ini is not CRLF")
+    if not text.endswith("\r\n"):
+        text += "\r\n"
+    return text + "\r\n" + BUTTON_BLOCK
+
+
+def patch_vt72b_slot14(text: str) -> str:
+    old = (
+        "  13 = Command_ConstructIraq_HeavyAirBase\r\n"
+        "  14 = Command_DisarmMinesAtPosition\r\n"
+        "  15 = Command_ConstructIraq_Abbas_AI"
+    )
+    new = (
+        "  13 = Command_ConstructIraq_HeavyAirBase\r\n"
+        "  14 = Command_ConstructIraq_MissileFactory\r\n"
+        "  15 = Command_ConstructIraq_Abbas_AI"
+    )
+    if old not in text:
+        raise SystemExit("Iraq_VT72BCommandSet slot 13-15 context not found in CommandSet.ini")
+    if text.count(old) != 1:
+        raise SystemExit("ambiguous VT72B slot context")
+    return text.replace(old, new, 1)
+
+
+def to_crlf(data: bytes) -> bytes:
+    return data.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+
+
 def csf_append(csf: bytes, labels: dict[str, str]) -> bytes:
     if csf[:4] != b" FSC":
         raise SystemExit(f"unexpected CSF magic {csf[:4]!r}")
@@ -164,30 +209,36 @@ def main() -> int:
         raise SystemExit("Irq_WarFactory.W3D missing from s ART baseline")
     irq_wf_hash = hashlib.sha256(irq_wf).hexdigest()
 
-    # DATA inserts
+    # DATA inserts: object + NEW production CommandSet only.
+    # Visible VT72B slot 14 follows HeavyAirBase: core CommandButton.ini + CommandSet.ini.
     obj = (PATCH_DATA / "INI/Object/Specter/Iraq Army/Buildings/Iraq_MissileFactory.ini").read_bytes()
-    btn = (PATCH_DATA / "INI/CommandButton_Iraq_MissileFactory.ini").read_bytes()
-    cset = (PATCH_DATA / "INI/CommandSet_Iraq_MissileFactory.ini").read_bytes()
+    cset = to_crlf((PATCH_DATA / "INI/CommandSet_Iraq_MissileFactory.ini").read_bytes())
+    if b"CommandSet Iraq_VT72BCommandSet" in cset:
+        raise SystemExit("extra CommandSet file must not redefine Iraq_VT72BCommandSet")
     data_map["Data\\INI\\Object\\Specter\\Iraq Army\\Buildings\\Iraq_MissileFactory.ini"] = obj
-    data_map["Data\\INI\\CommandButton_Iraq_MissileFactory.ini"] = btn
     data_map["Data\\INI\\CommandSet_Iraq_MissileFactory.ini"] = cset
+
+    cb_key = "Data\\INI\\CommandButton.ini"
+    if cb_key not in data_map:
+        raise SystemExit("CommandButton.ini missing")
+    data_map[cb_key] = inject_core_command_button(data_map[cb_key].decode("latin1")).encode("latin1")
 
     cs_key = "Data\\INI\\CommandSet.ini"
     if cs_key not in data_map:
         raise SystemExit("CommandSet.ini missing")
-    # Crash fix: leave CommandSet.ini byte-identical to s. Slot 14 of
-    # Iraq_VT72BCommandSet must stay Command_DisarmMinesAtPosition here.
-    cs_text = data_map[cs_key].decode("latin1")
+    cs_text = patch_vt72b_slot14(data_map[cs_key].decode("latin1"))
     vt = re.search(r"CommandSet Iraq_VT72BCommandSet\r?\n.*?^End", cs_text, re.M | re.S)
-    if not vt:
-        raise SystemExit("Iraq_VT72BCommandSet missing from s CommandSet.ini")
-    if "  14 = Command_ConstructIraq_MissileFactory" in vt.group(0):
-        raise SystemExit("CommandSet.ini must not reference extra-only MissileFactory button")
-    if "  14 = Command_DisarmMinesAtPosition" not in vt.group(0):
-        raise SystemExit("s Iraq_VT72BCommandSet slot 14 is not DisarmMines")
+    if not vt or "  14 = Command_ConstructIraq_MissileFactory" not in vt.group(0):
+        raise SystemExit("VT72B slot 14 patch failed")
+    if "Command_ConstructIraq_HeavyAirBase" not in vt.group(0):
+        raise SystemExit("VT72B slot 13 HeavyAirBase lost")
     wk = re.search(r"CommandSet Iraq_WorkerCommandSet\r?\n.*?^End", cs_text, re.M | re.S)
     if not wk or "  14 = Command_DisarmMinesAtPosition" not in wk.group(0):
         raise SystemExit("Iraq_WorkerCommandSet Clear Mines missing")
+    data_map[cs_key] = cs_text.encode("latin1")
+
+    if data_map[cb_key].decode("latin1").count("CommandButton Command_ConstructIraq_MissileFactory") != 1:
+        raise SystemExit("Missile Factory CommandButton count != 1")
 
     csf_key = "Data\\English\\generals.csf"
     if csf_key not in data_map:

@@ -7,3 +7,5 @@ __pycache__/
 # Complete replacement BIGs / ZIPs exceed GitHub git file limits; ship via GitHub Release.
 patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL/*.big
 patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL/*.zip
+patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FIX_FINAL/*.big
+patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FIX_FINAL/*.zip

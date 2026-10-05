@@ -23,7 +23,7 @@ from pathlib import Path
 ROOT = Path("/workspace")
 S_DATA = Path("/tmp/s-bigs/_SPEC_DATA_ONE.big")
 S_ART = Path("/tmp/s-bigs/_SPEC_ART_ONE.big")
-OUT = ROOT / "patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FIX_FINAL"
+OUT = ROOT / "patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL_FIX"
 DONOR_W3D = Path("/tmp/iqmiss-donor")
 DONOR_TEX = Path("/tmp/iqmiss-donor/textures")
 PATCH_DATA = ROOT / "patch/Data"
@@ -277,7 +277,7 @@ def main() -> int:
     data_path.write_bytes(data_big)
     art_path.write_bytes(art_big)
 
-    zip_path = OUT / "SPECTER_IRAQ_MISSILE_FACTORY_FIX_FINAL.zip"
+    zip_path = OUT / "SPECTER_IRAQ_MISSILE_FACTORY_FINAL_FIX.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_STORED, allowZip64=True) as zf:
         zf.write(data_path, arcname="_SPEC_DATA_ONE.big")
         zf.write(art_path, arcname="_SPEC_ART_ONE.big")
@@ -286,7 +286,7 @@ def main() -> int:
     (OUT / "SHA256.txt").write_text(
         f"_SPEC_DATA_ONE.big  {data_path.stat().st_size}  SHA256={dhash}\n"
         f"_SPEC_ART_ONE.big  {art_path.stat().st_size}  SHA256={ahash}\n"
-        f"SPECTER_IRAQ_MISSILE_FACTORY_FIX_FINAL.zip  {zip_path.stat().st_size}  SHA256={zhash}\n",
+        f"SPECTER_IRAQ_MISSILE_FACTORY_FINAL_FIX.zip  {zip_path.stat().st_size}  SHA256={zhash}\n",
         encoding="ascii",
     )
     print("DATA", data_path, data_path.stat().st_size, dhash)

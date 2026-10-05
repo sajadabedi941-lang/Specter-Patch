@@ -3319,3 +3319,7 @@ CONTROLBAR:ToolTipConstructSouthKorea_F15K = Produce SouthKorea_F15K.
 OBJECT:Taiwan_F16V = Taiwan F16V
 CONTROLBAR:ConstructTaiwan_F16V = F16V
 CONTROLBAR:ToolTipConstructTaiwan_F16V = Produce Taiwan_F16V.
+
+OBJECT:Iraq_MissileFactory = Iraq Missile Factory
+CONTROLBAR:ConstructIraq_MissileFactory = Missile Factory
+CONTROLBAR:ToolTipIraqBuildMissileFactory = Builds the Iraqi Missile Factory. Produces missile vehicles.

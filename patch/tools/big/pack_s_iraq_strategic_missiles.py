@@ -1070,6 +1070,15 @@ Scale = {spec['pscale']:.2f}
   Behavior = PhysicsBehavior ModuleTag_04
     Mass = 15
   End
+  Behavior = MissileAIUpdate ModuleTag_07
+    DetonateCallsKill = Yes
+    TryToFollowTarget = No
+    FuelLifetime = 0
+    IgnitionDelay = 0
+    InitialVelocity = {310 if spec['ploc'] == 'PGMRaad2RocketLocomotor' else 10}
+    DistanceToTravelBeforeTurning = {200 if spec['ploc'] == 'PGMRaad2RocketLocomotor' else 1000}
+    DistanceToTargetBeforeDiving = {500 if spec['ploc'] == 'PGMRaad2RocketLocomotor' else 800}
+  End
   Locomotor = SET_NORMAL {spec['ploc']}
   Geometry            = Cylinder
   GeometryMajorRadius = 4.0

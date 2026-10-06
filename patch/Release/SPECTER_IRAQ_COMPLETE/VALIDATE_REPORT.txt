@@ -1,0 +1,31 @@
+SPECTER complete DATA+ART package - static validation
+
+Authority:
+  DATA = current factory-integration BIG
+         SHA256=90988e56b16c6b1169a5eed6b420faf9003b97fcc63c21de020d5d4543be7b89
+  ART  = current 8-missile ART BIG
+         SHA256=5b96933007ddcffc633af4089adf64eae1576b5e83cb44707ff8fb27e10c95ab
+
+Staged copies byte-identical to those sources.
+ZIP re-extract matches staged BIGs.
+ZIP members: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only.
+
+DATA PASS
+- Object Iraq_MissileFactory
+- CommandSet Iraq_MissileFactoryCommandSet (single definition)
+- 14-slot factory bar exact (Ababil through Sell)
+- 8 Objects / Weapons / Projectiles / OCLs / CommandButtons
+- Command_ConstructIraq_MissileFactory in core CommandButton.ini
+- 8 new buttons factory-exclusive
+- R11 / Alhussaien / SA-6 / BM-21 / Rally / Sell preserved
+- no ZZZZ override of factory or new missiles
+- 9P117 / Sarab7 INIs unchanged from live content in this DATA
+
+ART PASS
+- all 8 private TEL/D/R + missile W3Ds present (IQ_*TEL / TELD / TELR / MSL)
+- all private TGA textures present
+- DATA Model references resolve to those W3Ds
+- original donor W3Ds still present (Irq_9P117, Irq_Sarab7, Irq_Abbas_L, etc.)
+- Missile Factory W3D LSFIQMCheChang present
+
+Not an in-game runtime test.

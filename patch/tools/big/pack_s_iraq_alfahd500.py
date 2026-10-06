@@ -326,10 +326,10 @@ def csf_append(csf: bytes, labels: dict[str, str]) -> bytes:
 
 
 def patch_factory_construct_slot(cs: str) -> str:
-    """Keep VT72B slots 1-18. Factory construct goes on Worker unused slot 12.
+    """Factory construct on reachable VT72B slot 15 (Abbas_AI duplicate).
 
-    Slot 19 overflows Zero Hour MAX_COMMANDS_PER_SET=18 and crashes
-    Iraq_VT72BCommandSet (crash dialog: Iraq_VT2BCommandSet).
+    Slot 19 overflows MAX_COMMANDS_PER_SET=18. Iraq_Worker is untrainable,
+    so Worker-only placement is invisible in-game.
     """
     if "19 = Command_ConstructIraq_AlFahdMissileFactory" in cs:
         cs = cs.replace(
@@ -337,6 +337,11 @@ def patch_factory_construct_slot(cs: str) -> str:
             "  18 = Command_Stop\r\nEnd",
             1,
         )
+    cs = cs.replace(
+        "  15 = Command_ConstructIraq_Abbas_AI\r\n",
+        "  15 = Command_ConstructIraq_AlFahdMissileFactory\r\n",
+        1,
+    )
     old = (
         "CommandSet Iraq_WorkerCommandSet\r\n"
         "  1  = Command_ConstructIraq_PowerPlant\r\n"
@@ -354,17 +359,17 @@ def patch_factory_construct_slot(cs: str) -> str:
         "  14 = Command_DisarmMinesAtPosition\r\n"
         "End"
     )
-    if "12 = Command_ConstructIraq_AlFahdMissileFactory" in cs:
-        return cs
-    if cs.count(old) != 1:
-        raise SystemExit(f"unique Worker block count={cs.count(old)}")
-    new = old.replace(
-        "  11 = Command_ConstructIraq_Abbas\r\n  13 = Command_Stop\r\n",
-        "  11 = Command_ConstructIraq_Abbas\r\n"
-        "  12 = Command_ConstructIraq_AlFahdMissileFactory\r\n"
-        "  13 = Command_Stop\r\n",
-    )
-    return cs.replace(old, new, 1)
+    if "12 = Command_ConstructIraq_AlFahdMissileFactory" not in cs:
+        if cs.count(old) != 1:
+            raise SystemExit(f"unique Worker block count={cs.count(old)}")
+        new = old.replace(
+            "  11 = Command_ConstructIraq_Abbas\r\n  13 = Command_Stop\r\n",
+            "  11 = Command_ConstructIraq_Abbas\r\n"
+            "  12 = Command_ConstructIraq_AlFahdMissileFactory\r\n"
+            "  13 = Command_Stop\r\n",
+        )
+        cs = cs.replace(old, new, 1)
+    return cs
 
 
 def validate(data: dict[str, bytes], art: dict[str, bytes], src_data: dict[str, bytes], src_art: dict[str, bytes]) -> list[str]:
@@ -430,6 +435,8 @@ def validate(data: dict[str, bytes], art: dict[str, bytes], src_data: dict[str, 
     if vt and "19 = Command_ConstructIraq_AlFahdMissileFactory" in vt.group(0):
         fails.append("illegal VT72B slot 19 present")
     wk = re.search(r"(?ms)^CommandSet Iraq_WorkerCommandSet\r?\n.*?^End", core_cs)
+    if not vt or "15 = Command_ConstructIraq_AlFahdMissileFactory" not in vt.group(0):
+        fails.append("VT72B slot 15 factory button missing")
     if not wk or "12 = Command_ConstructIraq_AlFahdMissileFactory" not in wk.group(0):
         fails.append("Worker slot 12 factory button missing")
     if not wk or "14 = Command_DisarmMinesAtPosition" not in wk.group(0):

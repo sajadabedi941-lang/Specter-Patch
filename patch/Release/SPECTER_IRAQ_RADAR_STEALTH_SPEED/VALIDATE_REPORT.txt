@@ -1,0 +1,39 @@
+# SPECTER Radar Stealth = projectile travel speed
+
+MOTHER / 9P117 UNCHANGED. ART UNCHANGED.
+Radar Stealth UI label kept. Mechanic is Locomotor Speed + WeaponSpeed + InitialVelocity.
+
+- DATA size: 366473321
+- DATA SHA256: acaa2a5e8a8851bbb6ce5021e920f7391f80f2d868f933daa0f21e72352bdae4
+- DATA files: 2930
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+# Radar Stealth speed audit (MOTHER 5/100 = R11SRBMLocomotor Speed 450)
+
+Authoritative stack: Locomotor Speed (cruise) + Acceleration + WeaponSpeed + InitialVelocity.
+Scale = score / 5 vs MOTHER. R11SRBMLocomotor / SRBM_ALHIJARAH_HE / ALHIJARAH_MRBM_Object UNCHANGED.
+
+| Missile | Score | Loco | Speed old→new | Accel old→new | WeaponSpeed old→new | InitVel old→new | HP old→new | RadarPriority old→new | Expected TTI |
+|---|---|---|---|---|---|---|---|---|---|
+| MOTHER / Iraq_R11ScudB | 5/100 | R11SRBMLocomotor | 450 → 450 | 250 → 250 | 280 → 280 | 10 → 10 | 400 → 400 | none → none | baseline slowest |
+| Iraq_AlFahd500 | 20/100 | Iraq_AlFahd500_Locomotor | 450 → 1800 | 250 → 1000 | 280 → 1120 | 10 → 40 | 1600 → 400 | LOCAL_UNIT_ONLY → none (removed) | 4x MOTHER cruise |
+| Iraq_AlHusseinII | 10/100 | Iraq_AlHusseinII_Locomotor | 450 → 900 | 250 → 500 | 280 → 560 | 10 → 20 | 800 → 400 | none → none (removed) | 2x MOTHER cruise |
+| Iraq_AlAbbas | 15/100 | Iraq_AlAbbas_Locomotor | 450 → 1350 | 250 → 750 | 280 → 840 | 10 → 30 | 1200 → 400 | none → none (removed) | 3x MOTHER cruise |
+| Iraq_AlSamoudII | 30/100 | Iraq_AlSamoudII_Locomotor | 450 → 2700 | 250 → 1500 | 280 → 1680 | 10 → 60 | 2400 → 400 | LOCAL_UNIT_ONLY → none (removed) | 6x MOTHER cruise |
+| Iraq_AlBasrah | 60/100 | Iraq_AlBasrah_Locomotor | 450 → 5400 | 250 → 3000 | 280 → 3360 | 10 → 120 | 4800 → 400 | NOT_ON_RADAR → none (removed) | 12x MOTHER cruise |
+| Iraq_AlNasir | 70/100 | Iraq_AlNasir_Locomotor | 450 → 6300 | 250 → 3500 | 280 → 3920 | 10 → 140 | 5600 → 400 | NOT_ON_RADAR → none (removed) | 14x MOTHER cruise |
+| Iraq_AlMansour | 85/100 | Iraq_AlMansour_Locomotor | 450 → 7650 | 250 → 4250 | 280 → 4760 | 10 → 170 | 6800 → 400 | NOT_ON_RADAR → none (removed) | 17x MOTHER cruise |
+
+Relative order (slowest to fastest): MOTHER 5 < Al-Hussein II 10 < Al-Abbas 15 < Al-Fahd500 20 < Al-Samoud II 30 < Al-Basrah 60 < Al-Nasir 70 < Al-Mansour 85.
+
+
+## VALIDATION PASS (static)
+- MOTHER loco/weapon/projectile byte-identical
+- dedicated locos last-win from Locomotor_IraqFactoryMissiles.ini
+- projectile HP restored to 400; RadarPriority removed from projectiles
+- range/damage/accuracy/cost/rebuild/CommandSet unchanged
+- E/F/G/K/L unwired; no ZZZZ; ART not rebuilt
+
+RUNTIME TEST: NOT PERFORMED
+

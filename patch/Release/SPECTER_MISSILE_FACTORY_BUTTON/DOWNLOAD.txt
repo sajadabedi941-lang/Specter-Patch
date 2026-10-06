@@ -1,7 +1,8 @@
 Complete replacement BIGs:
-  _SPEC_ART_ONE.big
-  _SPEC_DATA_ONE.big
+  ART: https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-factory-button/_SPEC_ART_ONE.big
+  DATA: https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-factory-button/_SPEC_DATA_ONE.big
   ART_SIZE=1262299096
   ART_SHA256=e4faa16ab307e8127fd15144c3aaf0193c87d56c604c98ea84beb660be25fcca
   DATA_SIZE=366368481
   DATA_SHA256=fcc5cc49fc50e22bf89c5af40b7a1a1cde9035f83c212c90b6fbee2b8bd40288
+  TAG=s-missile-factory-button

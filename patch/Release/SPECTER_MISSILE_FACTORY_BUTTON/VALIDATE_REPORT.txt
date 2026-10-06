@@ -1,0 +1,26 @@
+# Universal missile_factory CommandButton ART
+
+Static packed last-wins. The game was not launched.
+
+ButtonImage identifier: missile_factory
+Texture: Art\Textures\missile_factory.tga (128x128 TGA)
+MappedImage: Data\INI\MappedImages\HandCreated\MissileFactory_Images.INI
+CommandButton Command_ConstructIraq_AlFahdMissileFactory ButtonImage only
+Gameplay Command/Object/production unchanged. irq_warfctry kept for other buttons.
+No country flag or Iraq-specific marking in the cameo.
+
+- DATA size: 366368481
+- DATA SHA256: fcc5cc49fc50e22bf89c5af40b7a1a1cde9035f83c212c90b6fbee2b8bd40288
+- DATA files: 2914
+- ART size: 1262299096
+- ART SHA256: e4faa16ab307e8127fd15144c3aaf0193c87d56c604c98ea84beb660be25fcca
+- ART files: 4603
+
+## VALIDATION PASS (static / packed last-wins)
+- missile_factory MappedImage unique; TGA readable 128x128
+- construct button ButtonImage = missile_factory; Object/Command unchanged
+- factory still produces Iraq_AlFahd500; VT72B slot 14 factory kept; no slot 19
+- no unrelated ART removed; existing ART blobs byte-identical
+- no old 8-missile / Iraq_MissileFactory residue
+
+RUNTIME_TEST=NOT RUN

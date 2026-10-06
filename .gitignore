@@ -7,3 +7,5 @@ __pycache__/
 # Complete replacement BIGs exceed GitHub git file limits; ship via GitHub Release.
 patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/*.big
 patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/*.zip
+patch/Release/SPECTER_IRAQ_ALFAHD500/*.big
+patch/Release/SPECTER_IRAQ_ALFAHD500/*.zip

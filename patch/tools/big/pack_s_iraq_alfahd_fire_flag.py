@@ -7,7 +7,9 @@ Live baselines:
   ART   SPECTER_MISSILE_FACTORY_TGA24
         SHA256 77ea62f6e28ad356e7c6ac6f46f6c69b2b9736999a46d89988ee333db3610e33
 
-Does not touch Missile Factory, missile_factory.tga, R11ScudB, or GENERIC-MISSILES.dds.
+Does not touch Missile Factory, missile_factory.tga, original 9P117/R11 assets,
+or GENERIC-MISSILES.dds. Al-Fahd W3D internals are renamed so they cannot
+overwrite IRQ_9P117 / IRQ_R11_M at runtime.
 """
 from __future__ import annotations
 
@@ -33,6 +35,10 @@ BASE_ART_SIZE = 1262282712
 
 OLD_WEAPON_KEY = r"Data\INI\Weapon_Iraq_AlFahd500.ini"
 WEAPON_INI_KEY = r"Data\INI\Weapon.ini"
+UNIT_KEY = r"Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini"
+UNIT_SRC = ROOT / "patch/Data/INI/Object/Specter/Iraq Army/Wheeled/Iraq_AlFahd500.ini"
+LAUNCHER_W3D_KEY = r"Art\W3D\Irq_AlFahd500.W3D"
+LAUNCHERD_W3D_KEY = r"Art\W3D\Irq_AlFahd500D.W3D"
 PROJ_W3D_KEY = r"Art\W3D\Irq_AlFahd500M.W3D"
 PROJ_TEX_KEY = r"Art\Textures\Irq_AlFahd500P.tga"
 LAUNCHER_TEX_KEY = r"Art\Textures\Irq_AlFahd500M.tga"
@@ -132,6 +138,26 @@ def build_big(file_map: dict[str, bytes]) -> bytes:
 
 def zstr(buf: bytes) -> str:
     return buf.split(b"\x00", 1)[0].decode("latin1", errors="replace")
+
+
+def to_crlf(data: bytes) -> bytes:
+    text = data.decode("latin1").replace("\r\n", "\n").replace("\n", "\r\n")
+    return text.encode("latin1")
+
+
+def uniquify_w3d_identity(blob: bytes, replacements: list[tuple[bytes, bytes]]) -> bytes:
+    """Same-length ASCII rename of W3D hierarchy/container/anim identities.
+
+    ZH registers W3D assets globally by these 16-char names. Al-Fahd clones that
+    still said IRQ_9P117 / IRQ_R11_M overwrote the original 9P117/R11 visuals
+    at runtime even though the original files were byte-identical.
+    """
+    out = blob
+    for old, new in replacements:
+        if len(old) != len(new):
+            raise ValueError(f"identity length mismatch {old!r} -> {new!r}")
+        out = out.replace(old, new)
+    return out
 
 
 def walk_rebuild(blob: bytes, mesh_name: str | None = None) -> bytes:
@@ -419,6 +445,10 @@ def validate(
         fails.append("unit commandset")
     if "KindOf = PRELOAD SELECTABLE CAN_ATTACK" not in unit:
         fails.append("unit KindOf")
+    if "Animation       = Irq_9P117.Irq_9P117" in unit or "Animation       = Irq_9P117D.Irq_9P117D" in unit:
+        fails.append("AlFahd still plays original 9P117 animations")
+    if "Irq_AlFahd500.IRQ_AF500" not in unit or "Irq_AlFahd500D.IRQ_AF500D" not in unit:
+        fails.append("AlFahd dedicated animations missing")
 
     proj = data[r"Data\INI\Object\Specter\Iraq Army\Iraq_AlFahd500_Projectile.ini"].decode("latin1")
     if "Model = Irq_AlFahd500M" not in proj:
@@ -469,10 +499,44 @@ def validate(
         fails.append("missile_factory.tga mutated")
     if art[LAUNCHER_TEX_KEY] != src_art[LAUNCHER_TEX_KEY]:
         fails.append("launcher missile atlas mutated")
-    for donor in ["Irq_9P117", "Irq_9P117D", "Irq_R11_M"]:
+    for donor in ["Irq_9P117", "Irq_9P117D", "Irq_9P117R", "Irq_R11_M"]:
         k = f"Art\\W3D\\{donor}.W3D"
         if art[k] != src_art[k]:
             fails.append(f"donor W3D mutated {donor}")
+    for tex in ["Irq_9P117.dds", "Irq_9P117D.dds", "Irq_9P117R.dds"]:
+        k = f"Art\\Textures\\{tex}"
+        if art[k] != src_art[k]:
+            fails.append(f"donor texture mutated {tex}")
+
+    for key, forbidden in [
+        (LAUNCHER_W3D_KEY, b"IRQ_9P117"),
+        (LAUNCHERD_W3D_KEY, b"IRQ_9P117"),
+        (PROJ_W3D_KEY, b"IRQ_R11_M"),
+        (PROJ_W3D_KEY, b"IRQ_9P117"),
+    ]:
+        if forbidden in art[key]:
+            fails.append(f"{key} still contains {forbidden.decode()}")
+    for key, required in [
+        (LAUNCHER_W3D_KEY, b"IRQ_AF500"),
+        (LAUNCHERD_W3D_KEY, b"IRQ_AF500D"),
+        (PROJ_W3D_KEY, b"IRQ_ALF_M"),
+    ]:
+        if required not in art[key]:
+            fails.append(f"{key} missing dedicated identity {required.decode()}")
+    # Original 9P117 still owns its identities.
+    if b"IRQ_9P117" not in art[r"Art\W3D\Irq_9P117.W3D"]:
+        fails.append("original 9P117 lost IRQ_9P117 identity")
+    if b"IRQ_AF500" in art[r"Art\W3D\Irq_9P117.W3D"] or b"Irq_AlFahd500" in art[r"Art\W3D\Irq_9P117.W3D"]:
+        fails.append("original 9P117 W3D picked up Al-Fahd identity")
+    if b"IRQ_R11_M" not in art[r"Art\W3D\Irq_R11_M.W3D"]:
+        fails.append("original Irq_R11_M lost identity")
+    if b"Irq_AlFahd500P.tga" in art[r"Art\W3D\Irq_R11_M.W3D"] or b"Irq_AlFahd500M.tga" in art[r"Art\W3D\Irq_R11_M.W3D"]:
+        fails.append("original R11 missile references Al-Fahd texture")
+    r11 = data[r"Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini"].decode("latin1")
+    if "Model                           = Irq_9P117" not in r11:
+        fails.append("R11 model retargeted")
+    if "Irq_AlFahd500" in r11 or "IRQ_AF500" in r11 or "Irq_AlFahd500P" in r11:
+        fails.append("R11 INI references Al-Fahd visuals")
 
     w3d = art[PROJ_W3D_KEY]
     if hlod_name(w3d) != "Irq_AlFahd500M":
@@ -500,13 +564,13 @@ def validate(
         fails.append(f"body UV bbox misses flag sheet {min(us):.3f}..{max(us):.3f} {min(vs):.3f}..{max(vs):.3f}")
 
     changed_d = sorted(k for k in set(data) | set(src_data) if data.get(k) != src_data.get(k))
-    allowed_d = {WEAPON_INI_KEY, OLD_WEAPON_KEY}
+    allowed_d = {WEAPON_INI_KEY, OLD_WEAPON_KEY, UNIT_KEY}
     unexpected_d = [k for k in changed_d if k not in allowed_d]
     if unexpected_d:
         fails.append(f"unexpected DATA changes {unexpected_d[:8]}")
 
     changed_a = sorted(k for k in set(art) | set(src_art) if art.get(k) != src_art.get(k))
-    allowed_a = {PROJ_W3D_KEY, PROJ_TEX_KEY}
+    allowed_a = {PROJ_W3D_KEY, PROJ_TEX_KEY, LAUNCHER_W3D_KEY, LAUNCHERD_W3D_KEY}
     unexpected_a = [k for k in changed_a if k not in allowed_a]
     if unexpected_a:
         fails.append(f"unexpected ART changes {unexpected_a[:8]}")
@@ -550,12 +614,24 @@ def main() -> int:
     block = weapon_block()
     data[WEAPON_INI_KEY] = append_weapon(data[WEAPON_INI_KEY], block)
     data.pop(OLD_WEAPON_KEY, None)
+    data[UNIT_KEY] = to_crlf(UNIT_SRC.read_bytes())
 
     flag = Image.open(io.BytesIO(src_art[FLAG_KEY]))
     sheet = make_projectile_texture(flag)
     tga = make_tga24(sheet)
     art[PROJ_TEX_KEY] = tga
-    art[PROJ_W3D_KEY] = walk_rebuild(src_art[PROJ_W3D_KEY])
+    art[PROJ_W3D_KEY] = uniquify_w3d_identity(
+        walk_rebuild(src_art[PROJ_W3D_KEY]),
+        [(b"IRQ_R11_M", b"IRQ_ALF_M")],
+    )
+    art[LAUNCHER_W3D_KEY] = uniquify_w3d_identity(
+        src_art[LAUNCHER_W3D_KEY],
+        [(b"IRQ_9P117D", b"IRQ_AF500D"), (b"IRQ_9P117", b"IRQ_AF500")],
+    )
+    art[LAUNCHERD_W3D_KEY] = uniquify_w3d_identity(
+        src_art[LAUNCHERD_W3D_KEY],
+        [(b"IRQ_9P117D", b"IRQ_AF500D"), (b"IRQ_9P117", b"IRQ_AF500")],
+    )
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -603,6 +679,13 @@ def main() -> int:
         "Fix: dedicated Irq_AlFahd500P.tga (yellow + large IraqiFlag.dds) and remap projectile UVs.",
         "Launcher still uses Irq_AlFahd500M.tga. Flying model Irq_AlFahd500M.W3D uses Irq_AlFahd500P.tga.",
         "",
+        "## Root cause (9P117 visual contamination)",
+        "Original Irq_9P117.W3D / Irq_R11_M.W3D / textures were NOT byte-modified.",
+        "Al-Fahd clones still registered globally as IRQ_9P117 / IRQ_R11_M, so ZH last-wins",
+        "overwrote the original 9P117/R11 visuals at runtime with the black/yellow copies.",
+        "Fix: rename Al-Fahd internals to IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M and point",
+        "Al-Fahd INI animations at Irq_AlFahd500.IRQ_AF500. Original 9P117 files left intact.",
+        "",
         f"- DATA size: {out_data.stat().st_size}",
         f"- DATA SHA256: {data_sha}",
         f"- DATA files: {len(extracted_d)}",
@@ -631,7 +714,9 @@ def main() -> int:
         "- Iraq_AlFahd500 PRIMARY -> Weapon_Iraq_AlFahd500 -> Projectile_Iraq_AlFahd500 -> Irq_AlFahd500M -> Irq_AlFahd500P.tga",
         "- body UVs overlap the Iraqi flag region of the dedicated sheet",
         "- CommandSet unchanged; no slot > 18; factory intact",
-        "- GENERIC-MISSILES.dds / IraqiFlag.dds / R11 / missile_factory.tga unchanged",
+        "- GENERIC-MISSILES.dds / IraqiFlag.dds / original 9P117 W3D+DDS / missile_factory.tga unchanged",
+        "- Al-Fahd W3Ds use IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M (no IRQ_9P117 / IRQ_R11_M)",
+        "- Al-Fahd INI animations no longer reference Irq_9P117.W3D",
         "- old 8-missile project not restored",
         "",
         "RUNTIME_TEST=NOT RUN",
@@ -651,6 +736,8 @@ def main() -> int:
         "PROJECTILE_MODEL=Irq_AlFahd500M\n"
         "PROJECTILE_TEXTURE=Art\\Textures\\Irq_AlFahd500P.tga\n"
         "FLAG_SOURCE=Art\\Textures\\IraqiFlag.dds\n"
+        "ALFAHD_HIER=IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M\n"
+        "9P117_HIER=IRQ_9P117 / IRQ_9P117D / IRQ_R11_M (frozen original files)\n"
         "BASELINE_DATA=s-missile-factory-button / fcc5cc49fc50e22bf89c5af40b7a1a1cde9035f83c212c90b6fbee2b8bd40288\n"
         "BASELINE_ART=s-missile-factory-tga24 / 77ea62f6e28ad356e7c6ac6f46f6c69b2b9736999a46d89988ee333db3610e33\n"
         "STATIC_VALIDATION=PASS\n"
@@ -658,10 +745,11 @@ def main() -> int:
         encoding="utf-8",
     )
     (OUT / "README.txt").write_text(
-        "SPECTER Iraq Al-Fahd 500 fire + flying-missile flag\n"
+        "SPECTER Iraq Al-Fahd 500 fire + flying-missile flag + 9P117 visual freeze\n"
         "Place BOTH complete replacement BIG files in the game folder.\n"
-        "  _SPEC_DATA_ONE.big  (weapon now loaded from Weapon.ini)\n"
-        "  _SPEC_ART_ONE.big   (dedicated yellow projectile + Iraqi flag)\n"
+        "  _SPEC_DATA_ONE.big  (weapon loaded from Weapon.ini; dedicated Al-Fahd anims)\n"
+        "  _SPEC_ART_ONE.big   (dedicated Al-Fahd W3D identities + yellow flag projectile)\n"
+        "Original Iraq_R11ScudB / 9P117 visuals are unchanged.\n"
         "Do not use a partial INI/W3D patch.\n",
         encoding="utf-8",
     )

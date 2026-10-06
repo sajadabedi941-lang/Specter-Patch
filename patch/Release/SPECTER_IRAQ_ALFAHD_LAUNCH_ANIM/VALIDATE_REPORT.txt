@@ -1,0 +1,24 @@
+# Iraq_AlFahd500 launch-prep animation restore
+
+DATA-only. Keep flag-text _SPEC_ART_ONE.big.
+
+## Audit
+Original object Iraq_R11ScudB uses Irq_9P117.W3D clip IRQ_9P117.IRQ_9P117
+(200 frames @ 30 fps) on UNPACKING / PACKING / DEPLOYED via DeployStyleAIUpdate
+UnpackTime=6555. Al-Fahd cloned that Draw/AI but looked up Irq_AlFahd500.IRQ_AF500.
+ZH registers the clip as IRQ_AF500.IRQ_AF500, so the raise never played.
+
+- DATA size: 366368717
+- DATA SHA256: b3ce190a555edc336006abfc763e1d44d11889233c79b72f159054d69b64d8f3
+- DATA files: 2913
+- ART unchanged SHA256: b242265f79404e0d07f2f1f52599becb0eb73e28a741e9b79f0ba67a6078bb34
+
+## VALIDATION PASS (static)
+- Al-Fahd Animation now IRQ_AF500.IRQ_AF500 / IRQ_AF500D.IRQ_AF500D
+- Matches W3D HRawAnim registration HierarchyName.AnimName
+- UNPACKING/PACKING/DEPLOYED + UnpackTime=6555 identical to Iraq_R11ScudB
+- Weapon/projectile/factory/commandsets/9P117 INI unchanged
+- Live ART still has 200-frame raise clip + Iraqi flag / AL-FAHD500 skin
+
+RUNTIME_TEST=NOT RUN
+

@@ -1,0 +1,15 @@
+Complete replacement BIGs (place both in the game folder):
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd-9p117-freeze/_SPEC_DATA_ONE.big
+  SIZE=366368616
+  SHA256=aed109b44177bcf6c03cff56b42106f985115404f0ace80811ae262e999b9cc0
+  FILES=2913
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd-9p117-freeze/_SPEC_ART_ONE.big
+  SIZE=1263069228
+  SHA256=0fa219d868ad1e6f6ddc8d0c955910cdd627b353869cae1459e3b969ece91a65
+  FILES=4604
+
+TAG=s-iraq-alfahd-9p117-freeze

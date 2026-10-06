@@ -1,4 +1,5 @@
 Complete replacement DATA (do not use a partial patch ZIP):
-  _SPEC_DATA_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-visible/_SPEC_DATA_ONE.big
   SIZE=366368035
   SHA256=95e5331c29f161c570586d7b18dee1e43670e128817d6fe6f08feb84349296ab
+  TAG=s-iraq-factory-visible

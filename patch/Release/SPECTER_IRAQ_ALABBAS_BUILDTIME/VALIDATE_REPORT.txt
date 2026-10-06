@@ -1,0 +1,24 @@
+# SPECTER Iraq Al-Abbas BuildTime 30s; Fire already unlocked
+
+Object: Iraq_AlAbbas
+Construct: CB_MISSILE_D
+Fire: Command_FireMainWeapon (no Science / no Upgrade / no NEED_SPECIAL_POWER_SCIENCE)
+CommandSet: Iraq_AlAbbas_TELCommandSet slot 1 = Fire, slot 2 = rebuild
+BuildTime 35.0 -> 30.0
+Price $2600 unchanged. Rebuild $1300 / 35.0s unchanged.
+
+- DATA size: 366473321
+- DATA SHA256: d57a6f7451c0032ab774ce352d736715ddea1b20ae6176393a1967bbc659c30c
+- DATA files: 2930
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static)
+- last-wins Iraq_AlAbbas BuildTime = 30.0
+- Fire Command_FireMainWeapon has no Science/Upgrade gate (already unlocked; no CommandButton edit)
+- rebuild Upgrade_Iraq_AlAbbas_Rebuild $1300 / 35s + ReplaceObjectUpgrade + ClipSize 1 + AutoReloadsClip No
+- range/damage/accuracy/speed/loco/projectile/price/queue icon unchanged
+- MOTHER/9P117 byte-identical; other missiles unchanged; ART not rebuilt; no ZZZZ
+
+RUNTIME TEST: NOT PERFORMED
+

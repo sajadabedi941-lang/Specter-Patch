@@ -1,0 +1,23 @@
+# SPECTER universal missile slot A (Iraq maps to Iraq_AlFahd500)
+
+ZH CommandButton.Object is per-button. CB_MISSILE_A binds Iraq_AlFahd500.
+Artwork specter_missile_a is universal (no country / no Al-Fahd name).
+
+- DATA size: 366369779
+- DATA SHA256: 5ee8034acadfaf38545db90486334e460890aa4c7b89ed1babdd615c658692bf
+- DATA files: 2914
+- ART size: 1266526339
+- ART SHA256: 1fa2de6da5eebe152750c223c9c33a93a67f92de951ce6eaff07a47cb9551da4
+- ART files: 4605
+- TGA: type=2 bpp=24 alpha=0 128x128
+
+## VALIDATION PASS (static)
+- CommandButton CB_MISSILE_A -> UNIT_BUILD Iraq_AlFahd500, ButtonImage specter_missile_a
+- Iraq_AlFahdMissileFactoryCommandSet slot 1 = CB_MISSILE_A
+- MappedImage specter_missile_a -> specter_missile_a.tga 128x128 24-bit
+- Iraq_AlFahd500 object / weapon / flag ART / 9P117 / factory object unchanged
+- no ZZZZ override of CB_MISSILE_A
+- R11 still uses irq_9p117
+
+RUNTIME_TEST=NOT RUN
+

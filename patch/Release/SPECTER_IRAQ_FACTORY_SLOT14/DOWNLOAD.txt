@@ -1,4 +1,5 @@
 Complete replacement DATA (do not use a partial patch ZIP):
-  _SPEC_DATA_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-slot14/_SPEC_DATA_ONE.big
   SIZE=366368036
   SHA256=281b68c4659d9181202783d9911e552ec3d3ffce5b51443ae8fef375505c5073
+  TAG=s-iraq-factory-slot14

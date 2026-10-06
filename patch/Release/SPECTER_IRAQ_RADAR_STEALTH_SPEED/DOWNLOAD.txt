@@ -1,0 +1,27 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-radar-stealth-speed/SPECTER_IRAQ_RADAR_STEALTH_SPEED.zip
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-radar-stealth-speed/_SPEC_DATA_ONE.big
+  SIZE=366473321
+  SHA256=acaa2a5e8a8851bbb6ce5021e920f7391f80f2d868f933daa0f21e72352bdae4
+  FILES=2930
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-data-bcdhij/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+MECHANIC=Locomotor Speed + Acceleration + WeaponSpeed + InitialVelocity
+SCALE=score/5 vs MOTHER Speed 450
+HP_RESTORED=400
+RADARPRIORITY_REMOVED=projectile
+MOTHER_UNCHANGED=YES
+
+TAG=s-iraq-radar-stealth-speed
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-radar-stealth-speed
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/575
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT PERFORMED

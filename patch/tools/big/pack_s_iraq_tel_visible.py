@@ -162,11 +162,14 @@ def validate(art: dict[str, bytes], src_art: dict[str, bytes], data: dict[str, b
     fails = []
     patched = []
     skipped_long = []
+    family_prefix = ("IQ_Al", "IQ_Badr", "IQ_Tammuz", "IQ_Ababil")
     for k, blob in art.items():
         lk = k.replace("/", "\\").lower()
-        if not lk.startswith("art\\w3d\\iq_") or not lk.endswith(".w3d"):
+        if not lk.startswith("art\\w3d\\") or not lk.endswith(".w3d"):
             continue
         stem = Path(k.replace("\\", "/")).stem
+        if not stem.startswith(family_prefix):
+            continue
         name = hlod_name(blob)
         if len(stem) >= W3D_NAME_LEN:
             skipped_long.append((stem, name))
@@ -201,11 +204,16 @@ def validate(art: dict[str, bytes], src_art: dict[str, bytes], data: dict[str, b
         "Irq_9P117D",
         "Irq_R11_M",
         "Irq_Abbas_L",
+        "Irq_AbbasM",
         "RUS_9K720K",
+        "Hwasong7",
         "Irq_Sarab7",
         "Irq_Lamiaa",
+        "Irq_Alraad2M",
         "Iraq_Alhusain_L",
+        "Iraq_Alhusain_M",
         "RUS_RS24",
+        "RUS_RS24M",
         "GENERIC-MISSILES.dds",
         "AAM-GENTEX.dds",
         "KH-GENTEX.dds",
@@ -220,6 +228,13 @@ def validate(art: dict[str, bytes], src_art: dict[str, bytes], data: dict[str, b
             fails.append(f"donor missing {donor}")
         elif src_art[sk] != art[dk]:
             fails.append(f"donor mutated {donor}")
+
+    # factory flag W3Ds (already visible) must stay byte-identical
+    for k, blob in src_art.items():
+        lk = k.replace("/", "\\").lower()
+        if lk.startswith("art\\w3d\\iq__iqflag") and lk.endswith(".w3d"):
+            if k not in art or art[k] != blob:
+                fails.append(f"flag W3D mutated {k}")
 
     # IQ files: only W3D HLod bytes may change; textures identical; no extras
     extra = [k for k in art if k not in src_art]
@@ -265,11 +280,14 @@ def main() -> int:
     data = parse_big(SRC_DATA.read_bytes())
 
     notes = []
+    family_prefix = ("IQ_Al", "IQ_Badr", "IQ_Tammuz", "IQ_Ababil")
     for k, blob in list(art.items()):
         lk = k.replace("/", "\\").lower()
-        if not lk.startswith("art\\w3d\\iq_") or not lk.endswith(".w3d"):
+        if not lk.startswith("art\\w3d\\") or not lk.endswith(".w3d"):
             continue
         stem = Path(k.replace("\\", "/")).stem
+        if not stem.startswith(family_prefix):
+            continue
         if len(stem) >= W3D_NAME_LEN:
             notes.append(f"SKIP long stem {stem} (W3D name field is 15 chars)")
             continue

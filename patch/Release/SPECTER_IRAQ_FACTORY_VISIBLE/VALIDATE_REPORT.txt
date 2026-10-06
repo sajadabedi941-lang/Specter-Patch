@@ -1,0 +1,51 @@
+# Iraq Missile Factory button visibility (DATA-only)
+
+Static validation of packed last-wins. The game was not launched.
+
+## Root cause
+
+The factory CommandButton and Worker slot 12 were valid, but the
+player never selects Iraq_Worker.
+
+Assigned CommandSets:
+  Object Iraq_VT72B  -> Iraq_VT72BCommandSet   (StartingUnit0)
+  Object Iraq_Worker -> Iraq_WorkerCommandSet  (untrainable)
+
+Command_ConstructIraq_Worker is not referenced by any CommandSet.
+Command Center produces Iraq_VT72B. Supply Center produces Ural375.
+The command bar that still showed Clear Mines is Iraq_VT72BCommandSet
+slot 14. That set had no factory button. Slot 12 on the Worker set
+is unreachable in normal play.
+
+The factory button itself is valid (DOZER_CONSTRUCT, Object =
+Iraq_AlFahdMissileFactory, ButtonImage irq_warfctry present,
+no Science/Upgrade/SpecialPower hide fields).
+
+VT72B slots 1-18 were all occupied. Slot 15 Command_ConstructIraq_Abbas_AI
+is the legitimate duplicate of slot 11 Command_ConstructIraq_Abbas
+(same ButtonImage irq_alhussien, same TextLabel, cheaper AI object).
+
+## Fix
+
+- Iraq_VT72BCommandSet slot 15 = Command_ConstructIraq_AlFahdMissileFactory
+- slot 11 Abbas kept; slot 14 Clear Mines kept; no slot 19
+- Iraq_WorkerCommandSet slot 12 factory kept for map-placed workers
+- Worker slot 14 Clear Mines kept
+- factory still produces Iraq_AlFahd500; ART not rebuilt
+
+- DATA size: 366368035
+- DATA SHA256: 95e5331c29f161c570586d7b18dee1e43670e128817d6fe6f08feb84349296ab
+- DATA files: 2913
+- Files changed vs crash-fix DATA: Data\INI\CommandSet.ini only
+
+## VALIDATION PASS (static / packed last-wins)
+- exactly one Iraq_VT72BCommandSet and one Iraq_WorkerCommandSet
+- factory button on reachable VT72B slot 15
+- CommandButton Command_ConstructIraq_AlFahdMissileFactory -> Iraq_AlFahdMissileFactory
+- factory CommandSet still builds Iraq_AlFahd500
+- Clear Mines remains slot 14 on VT72B and Worker
+- no CommandSet slot > 18; crash-fix slot 19 not reintroduced
+- no old 8-missile objects / no Object Iraq_MissileFactory
+- ART not touched
+
+RUNTIME_TEST=NOT RUN. Static PASS does not prove in-game visibility.

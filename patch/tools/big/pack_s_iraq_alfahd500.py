@@ -325,36 +325,44 @@ def csf_append(csf: bytes, labels: dict[str, str]) -> bytes:
     return bytes(out)
 
 
-def patch_vt72b_slot19(cs: str) -> str:
+def patch_factory_construct_slot(cs: str) -> str:
+    """Keep VT72B slots 1-18. Factory construct goes on Worker unused slot 12.
+
+    Slot 19 overflows Zero Hour MAX_COMMANDS_PER_SET=18 and crashes
+    Iraq_VT72BCommandSet (crash dialog: Iraq_VT2BCommandSet).
+    """
+    if "19 = Command_ConstructIraq_AlFahdMissileFactory" in cs:
+        cs = cs.replace(
+            "  18 = Command_Stop\r\n  19 = Command_ConstructIraq_AlFahdMissileFactory\r\nEnd",
+            "  18 = Command_Stop\r\nEnd",
+            1,
+        )
     old = (
-        "CommandSet Iraq_VT72BCommandSet\r\n"
+        "CommandSet Iraq_WorkerCommandSet\r\n"
         "  1  = Command_ConstructIraq_PowerPlant\r\n"
         "  2  = Command_ConstructIraq_CommandCenter\r\n"
         "  3  = Command_ConstructIraq_SupplyCenter\r\n"
-        "  4  = Command_ConstructIraq_WarFactory_T\r\n"
-        "  5  = Command_ConstructIraq_Airfield_T\r\n"
-        "  6  = Command_ConstructIraq_MIC\r\n"
-        "  7  = Command_ConstructIraq_DefenseSite ;Command_ConstructIraq_100mmCannon\r\n"
+        " ; 4  = Command_ConstructIraq_WarFactory\r\n"
+        "  ;5  = Command_ConstructIraq_Airfield\r\n"
+        "  6 = Command_ConstructIraq_MIC\r\n"
+        "  7  = Command_ConstructIraq_100mmCannon\r\n"
         "  8  = Command_ConstructIraq_RadarStation\r\n"
         "  9  = Command_ConstructIraq_Sam2\r\n"
         "  10 = Command_ConstructIraq_Barracks\r\n"
         "  11 = Command_ConstructIraq_Abbas\r\n"
-        "  12 = Command_ConstructIraq_D30_Howitzer\r\n"
-        "  13 = Command_ConstructIraq_HeavyAirBase\r\n"
+        "  13 = Command_Stop\r\n"
         "  14 = Command_DisarmMinesAtPosition\r\n"
-        "  15 = Command_ConstructIraq_Abbas_AI\r\n"
-        "  16 = Command_ConstructIraqFahad3SamSite\r\n"
-        "  17 = Command_ConstructIraqMilitaryWarfactory\r\n"
-        "  18 = Command_Stop\r\n"
         "End"
     )
-    if cs.count(old) != 1:
-        raise SystemExit(f"unique VT72B block count={cs.count(old)}")
-    if "19 = Command_ConstructIraq_AlFahdMissileFactory" in cs:
+    if "12 = Command_ConstructIraq_AlFahdMissileFactory" in cs:
         return cs
+    if cs.count(old) != 1:
+        raise SystemExit(f"unique Worker block count={cs.count(old)}")
     new = old.replace(
-        "  18 = Command_Stop\r\nEnd",
-        "  18 = Command_Stop\r\n  19 = Command_ConstructIraq_AlFahdMissileFactory\r\nEnd",
+        "  11 = Command_ConstructIraq_Abbas\r\n  13 = Command_Stop\r\n",
+        "  11 = Command_ConstructIraq_Abbas\r\n"
+        "  12 = Command_ConstructIraq_AlFahdMissileFactory\r\n"
+        "  13 = Command_Stop\r\n",
     )
     return cs.replace(old, new, 1)
 
@@ -419,13 +427,13 @@ def validate(data: dict[str, bytes], art: dict[str, bytes], src_data: dict[str, 
     vt = re.search(r"(?ms)^CommandSet Iraq_VT72BCommandSet\r?\n.*?^End", core_cs)
     if not vt or "14 = Command_DisarmMinesAtPosition" not in vt.group(0):
         fails.append("VT72B Clear Mines lost")
-    if not vt or "19 = Command_ConstructIraq_AlFahdMissileFactory" not in vt.group(0):
-        fails.append("VT72B slot 19 missing")
+    if vt and "19 = Command_ConstructIraq_AlFahdMissileFactory" in vt.group(0):
+        fails.append("illegal VT72B slot 19 present")
     wk = re.search(r"(?ms)^CommandSet Iraq_WorkerCommandSet\r?\n.*?^End", core_cs)
-    src_cs = src_data[r"Data\INI\CommandSet.ini"].decode("latin1")
-    src_wk = re.search(r"(?ms)^CommandSet Iraq_WorkerCommandSet\r?\n.*?^End", src_cs)
-    if not wk or not src_wk or wk.group(0) != src_wk.group(0):
-        fails.append("Worker CommandSet changed")
+    if not wk or "12 = Command_ConstructIraq_AlFahdMissileFactory" not in wk.group(0):
+        fails.append("Worker slot 12 factory button missing")
+    if not wk or "14 = Command_DisarmMinesAtPosition" not in wk.group(0):
+        fails.append("Worker Clear Mines lost")
     if core_cs.count("CommandSet Iraq_AlFahdMissileFactoryCommandSet") != 1:
         fails.append("factory CommandSet count")
     if "Command_ConstructIraq_R11ScudB" not in core_cs:
@@ -552,7 +560,7 @@ def main() -> int:
     data[r"Data\INI\CommandButton.ini"] = (cb + FACTORY_BUTTON).encode("latin1")
 
     cs = data[r"Data\INI\CommandSet.ini"].decode("latin1")
-    cs = patch_vt72b_slot19(cs)
+    cs = patch_factory_construct_slot(cs)
     if not cs.endswith("\r\n"):
         cs += "\r\n"
     cs += "\r\n" + FACTORY_SET
@@ -601,9 +609,9 @@ def main() -> int:
         "",
         "## Core DATA patches",
         "- CommandButton.ini: factory + AL-Fahd construct buttons",
-        "- CommandSet.ini: VT72B slot 19 factory construct; new factory CommandSet",
+        "- CommandSet.ini: Worker unused slot 12 factory construct; new factory CommandSet",
         "- generals.csf: AL-Fahd / factory labels",
-        "- Worker CommandSet unchanged; War Factory / 9P117 unchanged",
+        "- VT72B slots 1-18 unchanged (no illegal slot 19); War Factory / 9P117 unchanged",
         "",
     ]
     if fails:
@@ -617,7 +625,7 @@ def main() -> int:
         "- Iraq_AlFahd500 exists; cost 3000; damage 4000; range 1720/800; build 17.0",
         "- fire/reload/deploy/locomotor match 9P117",
         "- Iraq_R11ScudB and SRBM_ALHIJARAH_HE unchanged (2000 damage)",
-        "- factory produces only AL-Fahd 500; VT72B Clear Mines kept; Worker untouched",
+        "- factory produces only AL-Fahd 500; VT72B Clear Mines kept; factory on Worker slot 12",
         "- cloned W3D HLod names match Model=; textures resolve",
         "- donor 9P117 / Irq_R11_M / GENERIC-MISSILES byte-identical",
         "- no old 8-missile / Iraq_*_New / IQ_* residue",

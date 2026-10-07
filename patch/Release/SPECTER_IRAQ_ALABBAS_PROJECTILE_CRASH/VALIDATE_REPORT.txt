@@ -1,0 +1,23 @@
+# SPECTER Iraq Al-Abbas projectile crash fix (DATA-only)
+
+Crash path: Data/INI/Specter/Iraq Army/Iraq-AlAbbas-Projectile.ini
+Root cause: that path was missing; dedicated Iraq_AlAbbas_Locomotor was not in Locomotor.ini.
+Fix: add the crash-path alias INI + register Iraq_AlAbbas_Locomotor in Locomotor.ini.
+Al-Abbas stats/model/skin/rebuild/Fire/MOTHER/other missiles/ART unchanged.
+
+- DATA size: 366476915
+- DATA SHA256: 2d7d72b46b663189b0d261fe986ec672f46f63279418ae4292d0dac9e662146e
+- DATA files: 2931
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static)
+- crash-path alias Data\INI\Specter\Iraq Army\Iraq-AlAbbas-Projectile.ini present
+- Object Projectile_Iraq_AlAbbas still uses Irq_AlAbbas2M + Iraq_AlAbbas_Locomotor + InitialVelocity 30
+- Iraq_AlAbbas_Locomotor Speed=1350 Acceleration=750 now in Locomotor.ini
+- R11SRBMLocomotor / AlAbbasMissileLocomotor / 9P117 byte-identical
+- Al-Abbas BuildTime 30.0 / $2600 / range / damage / accuracy / rebuild / Fire unchanged
+- other factory missiles unchanged; ART not rebuilt
+
+RUNTIME TEST: NOT PERFORMED
+

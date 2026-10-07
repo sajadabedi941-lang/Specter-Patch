@@ -1,0 +1,19 @@
+Locomotor Iraq_AlAbbas_Locomotor
+  Surfaces = AIR
+  Speed = 1350
+  SpeedDamaged = 2640
+  MinSpeed = 70
+  Acceleration = 750
+  AccelerationDamaged = 2460
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End

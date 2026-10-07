@@ -1,0 +1,29 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-wf-defense-unlock/_SPEC_DATA_ONE.big
+  SIZE=366488735
+  SHA256=a13aeb3e769194f2f042ad0f92f010571b1d37a94592522d4160666d17899c8f
+  FILES=2928
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-wf-defense-unlock/SPECTER_WF_DEFENSE_UNLOCK.zip
+
+Place `_SPEC_DATA_ONE.big` in the SPECTER folder.
+Keep the existing PR #574 ART BIG (not rebuilt):
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  SIZE=1292294758
+
+FIX=Unlock two War Factory defenses (THAAD / M1075I Trident) for India, Pakistan, South Korea, Japan, Vietnam
+CHANGED=Data\INI\CommandSet.ini + Data\INI\CommandButton.ini + Data\INI\Object\Specter\WFUnlock\Specter_WFDefenseUnlock.ini
+BASELINE_DATA=PR #584
+BASELINE_ART=PR #574
+PR585PLUS=NOT IMPORTED
+CC_CONSTRUCT=UNCHANGED
+MISSILES=UNCHANGED
+MOTHER=UNCHANGED
+ART=PR #574 unchanged
+
+TAG=s-wf-defense-unlock
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-wf-defense-unlock
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/586
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

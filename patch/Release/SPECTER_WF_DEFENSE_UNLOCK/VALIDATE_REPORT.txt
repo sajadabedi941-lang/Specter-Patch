@@ -1,0 +1,50 @@
+# SPECTER War Factory: unlock two defenses for 5 countries
+
+Baseline DATA: PR #584 (CC start=construct + PR #583 missiles).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+PR #585+ NOT imported.
+
+INDIA / PAKISTAN / SOUTH KOREA / JAPAN / VIETNAM
+  Defense #1 Object = US_THAAD (unlocked clone Specter_WF_THAAD)
+  Old lock = Prerequisites Object AmericaStrategyCenter / AmericaStrategyCenter_T
+  Defense #2 Object = US_M1075I_Trident (unlocked clone Specter_WF_M1075I)
+  Old lock = Prerequisites Object AmericaStrategyCenter_T + Science SCIENCE_M1075I
+  CommandSet = <Country>_WarFactoryCommandSet slots 10 and 12
+  Lock was inherited from shared USA objects, not country-specific NEED_UPGRADE.
+
+- DATA size: 366488735
+- DATA SHA256: a13aeb3e769194f2f042ad0f92f010571b1d37a94592522d4160666d17899c8f
+- DATA files: 2928
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static / packed last-wins)
+- five countries: WF slots 10/12 now UNIT_BUILD unlocked clones (no Strategy Center / SCIENCE_M1075I)
+- clone stats/model/cost match the original USA objects
+- shared US_THAAD / US_M1075I_Trident files unchanged (USA WF still locked as before)
+- SCIENCE_M1075I definition unchanged
+- other countries' WarFactory CommandSets unchanged
+- PR #584 Command Center construct slots intact
+- PR #583 missile data / MOTHER / 9P117 intact
+- ART not rebuilt
+
+## Independent re-extract (separate from packer)
+- Re-parsed packed BIG vs PR #584 BIG; SHA256 matches HASHES.txt
+- ART SHA256 unchanged vs PR #574
+- File set 2927 -> 2928; only changed: CommandSet.ini, CommandButton.ini, new Specter_WFDefenseUnlock.ini
+- Shared US_M1120.ini / US_MGM134.ini byte-identical (USA Strategy Center / SCIENCE_M1075I locks remain)
+- Upgrade.ini byte-identical (126 Upgrade defs intact)
+- Science.ini byte-identical; SCIENCE_M1075I definition intact
+- Exactly slots 10 and 12 changed on the 8 country WarFactory CommandSets; other slots identical
+- USA / Iraq / Saudi / UAE / Libya / Syria / SouthAfrica / Russia / China WarFactory CommandSets unchanged
+- CommandSet.ini last-wins dups: 0. Each country WF set has exactly 1 def.
+- CommandButton.ini last-wins dups: 20, identical to PR #584, none are the new unlock buttons (defs=1 each)
+- 13 packed ZZZZ sidecars unchanged and still not engine-loaded
+- CommandSet_ZZZZ_WarFactoryRebuild.ini not packed
+- PR #584 Dozer slot 2 Command_Construct*_CommandCenter intact
+- PR #583 missiles / MOTHER / 9P117 / Weapon.ini / Locomotor.ini / Al-Fahd500 intact
+- WF objects: India_WarFactory_T, Pakistan_WarFactory_T, SouthKorea_WarFactory, Japan_WarFactory, Vietnam_WarFactory still point at the patched CommandSets
+- Clones: no Prerequisites / SCIENCE_M1075I; BuildCost 3000/3400; models US_M1120 / US_MGM134; UNIT_BUILD buttons have no NEED_UPGRADE
+
+Static validation completed; runtime game test not performed.
+

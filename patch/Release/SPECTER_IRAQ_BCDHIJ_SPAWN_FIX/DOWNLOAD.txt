@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-bcdhij-spawn-fix/_SPEC_DATA_ONE.big
+  SIZE=366460824
+  SHA256=6d1ff28fae8fdca41eef06b7ab3b5c4f57fec6898164cb27beef7460e6138514
+  FILES=2927
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-bcdhij-spawn-fix/SPECTER_IRAQ_BCDHIJ_SPAWN_FIX.zip
+
+Place `_SPEC_DATA_ONE.big` in the SPECTER folder.
+Keep the existing PR #574 ART BIG (not rebuilt):
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  SIZE=1292294758
+  FILES=4628
+
+FIXES=B/C/D/H/I/J spawn crash + engine-loaded Weapon.ini
+STATS=PR #574 preserved
+ART=PR #574 unchanged
+PR575PLUS=NOT IMPORTED
+ALFAHD=UNCHANGED
+MOTHER=UNCHANGED
+
+TAG=s-iraq-bcdhij-spawn-fix
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-bcdhij-spawn-fix
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/583
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

@@ -1,0 +1,30 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-india-radar-drones/_SPEC_DATA_ONE.big
+  SIZE=366461097
+  SHA256=2810f025c243a050cf6db023f3ae96341ebce221097bb23be07fa8fd7c1e3fc1
+  FILES=2927
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-india-radar-drones/SPECTER_INDIA_RADAR_DRONES.zip
+
+Place `_SPEC_DATA_ONE.big` in the SPECTER folder.
+Keep the existing PR #574 ART BIG (not rebuilt):
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  SIZE=1292294758
+
+DRONE_1=India_CombatDrone
+DRONE_2=India_LoiteringDrone
+CHANGED=Data\INI\CommandSet.ini (India_RadarCommandSet slots 1 and 2 removed)
+BASELINE_DATA=PR #584
+BASELINE_ART=PR #574
+PR585PLUS_IMPORT=NOT IMPORTED
+CC_CONSTRUCT=UNCHANGED
+MISSILES=UNCHANGED
+MOTHER=UNCHANGED
+ART=PR #574 unchanged
+
+TAG=s-india-radar-drones
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-india-radar-drones
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/585
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

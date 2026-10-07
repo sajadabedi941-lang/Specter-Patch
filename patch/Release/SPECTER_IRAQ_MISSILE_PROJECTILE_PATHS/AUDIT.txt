@@ -1,0 +1,61 @@
+Iraq factory missile projectile family audit (static)
+
+Implemented factory slots (wired):
+  A Iraq_AlFahd500
+  B Iraq_AlHusseinII
+  C Iraq_AlSamoudII
+  D Iraq_AlAbbas
+  H Iraq_AlBasrah
+  I Iraq_AlNasir
+  J Iraq_AlMansour
+
+Not implemented (buttons exist, no Object; not invented):
+  E Iraq_AlTammuz / CB_MISSILE_E
+  F Iraq_AlQuds / CB_MISSILE_F
+  G Ababil-100 / CB_MISSILE_G
+  K CB_MISSILE_K
+  L CB_MISSILE_L
+
+Root cause (same class as Al-Abbas / Al-Basrah):
+  SPECTER reports/opens Data/INI/Specter/Iraq Army/Iraq-<Name>-Projectile.ini
+  Live definitions only existed under Data/INI/Object/Specter/Iraq Army/
+  Dedicated locos lived in Locomotor_IraqFactoryMissiles.ini; only Al-Abbas
+  was also registered in Locomotor.ini after the previous crash fix.
+
+Projectile paths (after this pack):
+  A Object\...\Iraq_AlFahd500_Projectile.ini
+    Specter\...\Iraq-AlFahd500-Projectile.ini
+    Object=Projectile_Iraq_AlFahd500 Loco=Iraq_AlFahd500_Locomotor Model=Irq_AlFahd500M
+  B Object\...\Iraq_AlHusseinII_Projectile.ini
+    Specter\...\Iraq-AlHusseinII-Projectile.ini
+    Object=Projectile_Iraq_AlHusseinII Loco=Iraq_AlHusseinII_Locomotor Model=Irq_AlHussein2M
+  C Object\...\Iraq_AlSamoudII_Projectile.ini
+    Specter\...\Iraq-AlSamoudII-Projectile.ini
+    Object=Projectile_Iraq_AlSamoudII Loco=Iraq_AlSamoudII_Locomotor Model=Irq_AlSamoud2M
+  D Object\...\Iraq_AlAbbas_Projectile.ini
+    Specter\...\Iraq-AlAbbas-Projectile.ini
+    Object=Projectile_Iraq_AlAbbas Loco=Iraq_AlAbbas_Locomotor Model=Irq_AlAbbas2M
+  H Object\...\Iraq_AlBasrah_Projectile.ini
+    Specter\...\Iraq-AlBasrah-Projectile.ini
+    Object=Projectile_Iraq_AlBasrah Loco=Iraq_AlBasrah_Locomotor Model=Irq_AlBasrahM
+  I Object\...\Iraq_AlNasir_Projectile.ini
+    Specter\...\Iraq-AlNasir-Projectile.ini
+    Object=Projectile_Iraq_AlNasir Loco=Iraq_AlNasir_Locomotor Model=Irq_AlNasirM
+  J Object\...\Iraq_AlMansour_Projectile.ini
+    Specter\...\Iraq-AlMansour-Projectile.ini
+    Object=Projectile_Iraq_AlMansour Loco=Iraq_AlMansour_Locomotor Model=Irq_AlMansourM
+
+Locomotor.ini registration: ALL SEVEN dedicated locos present
+Sidecar Locomotor_IraqFactoryMissiles.ini: unchanged
+R11SRBMLocomotor: unchanged
+AlAbbasMissileLocomotor: unchanged (original superweapon, not factory)
+
+ART: all seven W3D + dedicated TGA present in current ART BIG. ART not rebuilt.
+
+MOTHER / Iraq_R11ScudB / 9P117.ini: byte-identical
+Al-Abbas BuildTime=30.0 Fire=Command_FireMainWeapon unlocked
+
+Last-wins: each Projectile_Iraq_* is defined twice (Object path + Specter alias)
+with the same object body. Aliases do not invent new object names.
+
+RUNTIME TEST: NOT PERFORMED

@@ -1,0 +1,25 @@
+# Combined DATA+ART release audit
+
+DATA size: 366473321
+DATA SHA256: d57a6f7451c0032ab774ce352d736715ddea1b20ae6176393a1967bbc659c30c
+DATA files: 2930
+ART size: 1292294758
+ART SHA256: e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+ART files: 4628
+ART rebuilt: NO (identity copy of current baseline ART BIG)
+
+Al-Abbas Object Iraq_AlAbbas BuildTime=30.0
+Fire Command_FireMainWeapon no Science/Upgrade
+Rebuild $1300 / 35.0s preserved
+MOTHER 9P117 unchanged
+
+## VALIDATION PASS (static)
+- both BIGs are complete replacement packages
+- DATA is the current Al-Abbas 30s package
+- ART is the current dedicated-skin baseline (4628 files), not rebuilt
+- required missile/9P117/Al-Fahd/cameo ART present
+- Fire available from the start; rebuild mechanic unchanged
+- MOTHER / 9P117 unchanged
+
+RUNTIME TEST: NOT PERFORMED
+

@@ -1,0 +1,7 @@
+CommandSet Iraq_AlFahdMissileFactoryCommandSet
+  1  = CB_MISSILE_A
+  ; 2-12 reserved for CB_MISSILE_B .. CB_MISSILE_L once each has a real Object.
+  ; UNIT_BUILD with a null Object is unsafe to show on the factory bar.
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

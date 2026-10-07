@@ -1,0 +1,4 @@
+Recovered exact PR #572 / s-iraq-alfahd500-stats baseline.
+DATA and ART are byte-identical copies; not rebuilt.
+No PR #573–#581 files, locos, aliases, skins, or flags.
+RUNTIME TEST: NOT PERFORMED

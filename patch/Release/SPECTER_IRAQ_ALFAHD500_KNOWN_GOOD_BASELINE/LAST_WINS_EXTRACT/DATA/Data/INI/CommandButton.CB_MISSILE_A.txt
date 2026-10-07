@@ -1,0 +1,8 @@
+CommandButton CB_MISSILE_A
+  Command       = UNIT_BUILD
+  Object        = Iraq_AlFahd500
+  TextLabel     = CONTROLBAR:SpecterMissileA
+  ButtonImage   = specter_missile_a
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileA
+End

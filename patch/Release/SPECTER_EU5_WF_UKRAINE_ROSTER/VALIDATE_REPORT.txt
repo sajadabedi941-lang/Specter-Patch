@@ -1,0 +1,59 @@
+# SPECTER EU5 War Factory: Ukraine production roster
+
+Baseline DATA: PR #587 Sweden WF USA roster on PR #584 (CC + PR #583 missiles).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+
+DONOR object     = UkraineWarFactory
+DONOR CommandSet = UkraineWarfactoryCommandSet
+DONOR roster:
+  1 = Command_ConstructUkraineTankLeopard2A7Plus
+  2 = Command_ConstructUkraineTankPuma
+  3 = Command_ConstructUkraineVehicleCortaleMK3
+  4 = Command_ConstructUkraineVehicleVBCI
+  5 = Command_ConstructUkraineVehicleM142
+  6 = Command_ConstructUkraineVehicleCaesar
+  7 = Command_ConstructUkraineVehicleCentauroB2
+  8 = Command_ConstructUkraineVehicleIRIST
+  9 = Command_ConstructUkraineVehicleTRML4D
+  10 = Command_ConstructUkraineVehicleM142ATACMS
+  14 = Command_Sell
+
+Targets: Germany, France, Britain, Italy, Turkey
+Each country's *WarfactoryCommandSet now matches Ukraine exactly.
+Building objects/flags/models/stats unchanged. Ukraine/USA/Sweden unchanged.
+
+- DATA size: 366460881
+- DATA SHA256: 81efb3aa9067bed72c37546f16c6ef719d0b7f1170eceb4ccb4fa4d043f46872
+- DATA files: 2927
+- Object defs: 4861
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static / packed last-wins)
+- five target CommandSets == UkraineWarfactoryCommandSet slots
+- Ukraine CommandSet and War Factory object unchanged
+- USA and Sweden War Factories unchanged
+- building flags/models/CommandSet field names unchanged
+- CommandButton.ini unchanged (reuse Ukraine buttons)
+- CommandSet.ini last-wins dups: 0 for target sets
+- PR #584 Command Center construct slots intact
+- PR #583 missile data / MOTHER / 9P117 intact
+- ART not rebuilt
+
+## Independent re-extract
+- Re-parsed packed BIG vs PR #587 baseline; SHA256 matches HASHES.txt
+- ART SHA256 unchanged vs PR #574
+- Only changed packed file: Data\INI\CommandSet.ini
+- File count still 2927; Object defs 4861
+- Germany/France/Britain/Italy/Turkey CommandSets identical to UkraineWarfactoryCommandSet (same buttons, same order)
+- No leftover country-specific vehicle buttons; no duplicate buttons
+- Each target set has exactly 1 definition (last-wins dups=0)
+- Ukraine CommandSet and UkraineWarFactory object byte-identical
+- USA AmericaWarFactory_T and SwedenWarFactory objects byte-identical
+- CommandButton.ini unchanged; CB last-wins dups 20 identical to baseline
+- 13 ZZZZ sidecars unchanged / not used
+- Building objects/flags/models unchanged for all five targets
+- PR #584 CC construct and PR #583 missiles/MOTHER intact
+
+Static validation completed; runtime game test not performed.
+

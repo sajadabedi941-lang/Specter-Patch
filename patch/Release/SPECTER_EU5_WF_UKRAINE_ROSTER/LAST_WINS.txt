@@ -1,0 +1,41 @@
+SPECTER Germany/France/Britain/Italy/Turkey War Factory = Ukraine roster
+Forensic last-wins on packed PR #587 DATA (Sweden USA T3 on PR #584).
+
+Engine loads CommandSet.ini (not CommandSet_* sidecars). 1 def each.
+
+DONOR
+  Object: UkraineWarFactory
+  File: Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Warfactory.ini
+  CommandSet: UkraineWarfactoryCommandSet
+  Flag UA__UAFlag_HsWF / Side Ukraine / no CommandSetUpgrade
+  Roster:
+    1  Command_ConstructUkraineTankLeopard2A7Plus -> UkraineTankLeopard2A7Plus
+    2  Command_ConstructUkraineTankPuma           -> UkraineTankPuma
+    3  Command_ConstructUkraineVehicleCortaleMK3  -> UkraineVehicleCortaleMK3
+    4  Command_ConstructUkraineVehicleVBCI        -> UkraineVehicleVBCI (Prereq UkraineStrategyCenter)
+    5  Command_ConstructUkraineVehicleM142        -> UkraineVehicleM142 (Prereq UkraineStrategyCenter)
+    6  Command_ConstructUkraineVehicleCaesar      -> UkraineVehicleCaesar (Prereq UkraineStrategyCenter)
+    7  Command_ConstructUkraineVehicleCentauroB2  -> UkraineVehicleCentauroB2 (Prereq UkraineStrategyCenter)
+    8  Command_ConstructUkraineVehicleIRIST       -> UkraineVehicleIRIST (Prereq UkraineStrategyCenter)
+    9  Command_ConstructUkraineVehicleTRML4D      -> UkraineVehicleTRML4D (Prereq UkraineStrategyCenter)
+    10 Command_ConstructUkraineVehicleM142ATACMS  -> UkraineVehicleM142ATACMS (Prereq UkraineStrategyCenter)
+    14 Command_Sell
+  Buttons: UNIT_BUILD, no NEED_UPGRADE, defs=1.
+
+TARGETS (objects unchanged; CommandSets rewritten to Ukraine buttons)
+  GermanyWarFactory  CommandSet GermanyWarfactoryCommandSet  flag DE__DEFlag_HsWF
+  FranceWarFactory   CommandSet FranceWarfactoryCommandSet   flag FR__FRFlag_HsWF
+  BritainWarFactory  CommandSet BritainWarfactoryCommandSet  flag UK__UKFlag_HsWF
+  ItalyWarFactory    CommandSet ItalyWarfactoryCommandSet    flag IT__ITFlag_HsWF
+  TurkeyWarFactory   CommandSet TurkeyWarfactoryCommandSet   flag TR__TRFlag_HsWF
+
+OLD country-only WF units removed from those five CommandSets
+  (Germany Gepard/PzH2000/MARS/Fennek; France Leclerc/AMX30/Jaguar/SAMPT/...;
+   Britain/Italy NATO clones + NNato M142ATACMS; Turkey Altay/Firtina/Hisar/M88).
+
+NatoWarfactoryCommandSet left on NatoWarFactory (not a target).
+Ukraine/USA/Sweden objects and CommandSets not modified by this pack
+  (Sweden remains AmericaWarFactoryCommandSet_T3 from PR #587).
+
+FIX: CommandSet.ini only. Reuse Ukraine CommandButtons. No new objects/buttons.
+ZZZZ not used.

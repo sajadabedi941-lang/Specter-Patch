@@ -1,0 +1,5 @@
+Windows crash at Al-Basrah was missing Iraq_AlBasrah_Locomotor in Locomotor.ini.
+This pack = #578 + six sidecar loco blocks appended to Locomotor.ini.
+Hyphenated Specter-path duplicates for A/B/C/H/I/J are not present.
+Sidecar, Objects, construction, MOTHER, stats, ART unchanged.
+Windows runtime: NOT TESTED in this environment.

@@ -1,0 +1,33 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-loco-register/_SPEC_DATA_ONE.big
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-loco-register/_SPEC_DATA_ONE.big
+  SIZE=366480074
+  SHA256=614fbb4e1a0f7afd5810342dc2e1c229037c7eaf57793a2749bb2ca30df583fd
+  FILES=2931
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+BASED_ON=PR578
+CHANGE=REGISTER_SIX_EXISTING_LOCOS_IN_LOCOMOTOR_INI
+HYPHENATED_A_B_C_H_I_J=ABSENT
+UNIMPLEMENTED=E,F,G,K,L
+LOCOMOTOR_INI_DEFS=522
+LOCOMOTOR_INI_BYTES=667174
+SIX_LOCOS_MATCH_SIDECAR=YES
+SIDECAR_UNCHANGED=YES
+MOTHER_UNCHANGED=YES
+ALABBAS_BUILDTIME=30.0
+ALABBAS_FIRE=UNLOCKED
+ART_REBUILT=NO
+STATIC_VALIDATION=PASS
+RUNTIME_WINDOWS=NOT_YET_VERIFIED
+TAG=s-iraq-missile-loco-register
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-loco-register
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/581

@@ -1,0 +1,31 @@
+# SPECTER Iraq factory missile Locomotor.ini registration (DATA-only)
+
+Based on exact PR #578 DATA.
+Registers the six existing dedicated factory locos in Locomotor.ini.
+Does NOT add hyphenated Data\INI\Specter\Iraq Army\ duplicates.
+Al-Abbas Locomotor.ini registration unchanged from #578.
+Sidecar unchanged. No gameplay stats, construction, MOTHER, or ART changes.
+
+- DATA size: 366480074
+- DATA SHA256: 614fbb4e1a0f7afd5810342dc2e1c229037c7eaf57793a2749bb2ca30df583fd
+- DATA files: 2931
+- Locomotor.ini defs: 522
+- Locomotor.ini bytes: 667174
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static)
+- Locomotor.ini has 522 definitions; six new blocks match sidecar exactly
+- Iraq_AlAbbas_Locomotor / R11SRBMLocomotor unchanged
+- Locomotor_IraqFactoryMissiles.ini byte-identical to #578
+- no hyphenated Specter-path files for A/B/C/H/I/J
+- Al-Abbas hyphenated #578 file kept; all Object-path projectiles kept
+- no duplicate locomotor names; factory projectile Objects count 1 (Al-Abbas 2 = #578 alias)
+- R11 / 9P117 / construction files byte-identical
+- Al-Abbas BuildTime 30.0 / Fire unlocked / rebuild unchanged
+- E/F/G/K/L not invented; factory slots 5-7/11-12 still empty
+- ART not rebuilt
+- packed DATA re-extracted and last-wins/duplicate audited
+
+RUNTIME TEST: WINDOWS NOT TESTED IN THIS ENVIRONMENT
+

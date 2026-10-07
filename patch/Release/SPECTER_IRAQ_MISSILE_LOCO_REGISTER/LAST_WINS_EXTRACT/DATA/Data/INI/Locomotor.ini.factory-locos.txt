@@ -1,0 +1,158 @@
+Locomotor.ini defs=522 bytes=667174
+ALABBAS_UNCHANGED=YES
+SIDECAR_UNCHANGED=YES
+REGISTERED_FROM_SIDECAR:
+  Iraq_AlAbbas_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlAbbas_Locomotor
+  Surfaces = AIR
+  Speed = 1350
+  SpeedDamaged = 2640
+  MinSpeed = 70
+  Acceleration = 750
+  AccelerationDamaged = 2460
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlFahd500_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlFahd500_Locomotor
+  Surfaces = AIR
+  Speed = 1800
+  SpeedDamaged = 3520
+  MinSpeed = 70
+  Acceleration = 1000
+  AccelerationDamaged = 3280
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlHusseinII_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlHusseinII_Locomotor
+  Surfaces = AIR
+  Speed = 900
+  SpeedDamaged = 1760
+  MinSpeed = 70
+  Acceleration = 500
+  AccelerationDamaged = 1640
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlSamoudII_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlSamoudII_Locomotor
+  Surfaces = AIR
+  Speed = 2700
+  SpeedDamaged = 5280
+  MinSpeed = 70
+  Acceleration = 1500
+  AccelerationDamaged = 4920
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlBasrah_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlBasrah_Locomotor
+  Surfaces = AIR
+  Speed = 5400
+  SpeedDamaged = 10560
+  MinSpeed = 70
+  Acceleration = 3000
+  AccelerationDamaged = 9840
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlNasir_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlNasir_Locomotor
+  Surfaces = AIR
+  Speed = 6300
+  SpeedDamaged = 12320
+  MinSpeed = 70
+  Acceleration = 3500
+  AccelerationDamaged = 11480
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+  Iraq_AlMansour_Locomotor sidecar_match=YES
+
+Locomotor Iraq_AlMansour_Locomotor
+  Surfaces = AIR
+  Speed = 7650
+  SpeedDamaged = 14960
+  MinSpeed = 70
+  Acceleration = 4250
+  AccelerationDamaged = 13940
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+

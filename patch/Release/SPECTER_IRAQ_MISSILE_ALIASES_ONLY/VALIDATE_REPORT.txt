@@ -25,5 +25,10 @@ E/F/G/K/L remain unimplemented. No gameplay stats changed. ART not rebuilt.
 - ART not rebuilt
 - packed DATA re-extracted and last-wins/duplicate audited
 
-RUNTIME TEST: PENDING
+RUNTIME TEST (Wine 9.0 win32 / llvmpipe bench, same harness as isolation):
+- CLASS=PARSE_BASRAH (splash YES, Technical Difficulties on Al-Basrah Object parse)
+- Matches #578 / isolation ALIAS_six_only
+- Does NOT reproduce the #579 six-locomotor SILENT_EXIT
+- Al-Basrah sidecar-locomotor limitation is a known test-engine behavior; not "fixed"
+- Windows runtime: NOT TESTED
 

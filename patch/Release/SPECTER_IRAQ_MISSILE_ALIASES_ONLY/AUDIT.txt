@@ -3,3 +3,5 @@ This pack = #578 + six Specter aliases only.
 Locomotor.ini 516 defs / 664015 bytes, byte-identical to #578.
 Sidecar still has all seven dedicated factory locos.
 No construction / VT-72B / MOTHER / stats / ART changes.
+Wine boot: PARSE_BASRAH like #578; not #579 SILENT_EXIT.
+Windows runtime: NOT TESTED.

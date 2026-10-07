@@ -1,0 +1,31 @@
+Primary package (DATA + ART):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alabbas-data-art
+
+Place BOTH complete replacement files in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_DATA_ONE.big
+  SIZE=366473321
+  SHA256=d57a6f7451c0032ab774ce352d736715ddea1b20ae6176393a1967bbc659c30c
+  FILES=2930
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  FILES=4628
+
+OBJECT=Iraq_AlAbbas
+BUILDTIME=30.0
+PRICE=2600
+REBUILD_COST=1300
+REBUILD_TIME=35.0
+FIRE=Command_FireMainWeapon already unlocked (no Science/Upgrade)
+ART_REBUILT=NO
+MOTHER_UNCHANGED=YES
+
+TAG=s-iraq-alabbas-data-art
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alabbas-data-art
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/577
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT PERFORMED

@@ -1,0 +1,20 @@
+SPECTER EU5 War Factory start-unlock (PR #588 roster preserved)
+
+DONOR Ukraine (UNCHANGED)
+  Object UkraineWarFactory / CommandSet UkraineWarfactoryCommandSet
+  Slots 4-10 still Prerequisites Object = UkraineStrategyCenter
+
+LOCK CHAIN (PR #588 packed last-wins)
+  CommandButtons: UNIT_BUILD, no NEED_UPGRADE, no Science, no Upgrade
+  Slots 1-3 objects: no Prerequisites (already start-available)
+  Slots 4-10 objects: Prerequisites { Object = UkraineStrategyCenter }
+  No Science / player Upgrade / CommandSetUpgrade production gates.
+  IRIST CommandSetUpgrade TriggeredBy Upgrade_AADS_* is in-unit AA/ABM mode, not a build lock.
+
+FIX (five countries only)
+  Clone slots 4-10 without Prerequisites into Specter_EU5_* objects.
+  New CommandButtons Command_ConstructSpecterEU5_* (same cameo/text, Object = clone).
+  Retarget Germany/France/Britain/Italy/Turkey CommandSets slots 4-10 only.
+  Slots 1-3 and Sell (INI 14) unchanged. Ukraine CommandSet/objects unchanged.
+
+Sell is INI slot 14 as in PR #588 (11th command: 10 vehicles + Sell).

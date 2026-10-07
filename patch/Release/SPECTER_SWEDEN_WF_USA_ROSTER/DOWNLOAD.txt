@@ -1,0 +1,34 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sweden-wf-usa-roster/_SPEC_DATA_ONE.big
+  SIZE=366461188
+  SHA256=9b139e75ebb02c442541a4c5e97e89d5396e68ffb41f323da629a22e5689d036
+  FILES=2927
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sweden-wf-usa-roster/SPECTER_SWEDEN_WF_USA_ROSTER.zip
+
+Place `_SPEC_DATA_ONE.big` in the SPECTER folder.
+Keep the existing PR #574 ART BIG (not rebuilt):
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  SIZE=1292294758
+
+FIX=Sweden War Factory production uses USA AmericaWarFactoryCommandSet_T3
+CHANGED=Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+SWEDEN_OBJECT=SwedenWarFactory
+USA_OBJECT=AmericaWarFactory_T
+OLD_COMMANDSET=SwedenWarfactoryCommandSet
+NEW_COMMANDSET=AmericaWarFactoryCommandSet_T3
+BASELINE_DATA=PR #584
+BASELINE_ART=PR #574
+PR585PLUS=NOT IMPORTED
+CC_CONSTRUCT=UNCHANGED
+MISSILES=UNCHANGED
+MOTHER=UNCHANGED
+USA_WARFACTORY=UNCHANGED
+ART=PR #574 unchanged
+
+TAG=s-sweden-wf-usa-roster
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-sweden-wf-usa-roster
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/587
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

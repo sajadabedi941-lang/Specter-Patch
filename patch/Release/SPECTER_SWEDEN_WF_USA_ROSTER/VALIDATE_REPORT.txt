@@ -1,0 +1,62 @@
+# SPECTER Sweden War Factory: use USA production roster
+
+Baseline DATA: PR #584 (CC start=construct + PR #583 missiles).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+PR #585+ NOT imported.
+
+SWEDEN War Factory Object = SwedenWarFactory
+USA War Factory Object    = AmericaWarFactory_T (player)
+OLD Sweden CommandSet     = SwedenWarfactoryCommandSet
+NEW Sweden CommandSet     = AmericaWarFactoryCommandSet_T3 (full unlocked USA player roster)
+Sweden building/flag/model/stats unchanged. USA WF unchanged.
+
+Removed from Sweden WF:
+  - Command_ConstructSwedenTankStrv122
+  - Command_ConstructSwedenTankStrv121
+  - Command_ConstructSwedenVehicleCV90R
+  - Command_ConstructSwedenVehicleCV90
+  - Command_ConstructSwedenVehiclePatgb203
+  - Command_ConstructSwedenVehicleLvkv90
+  - Command_ConstructSwedenVehicleGiraffe
+  - Command_ConstructSwedenVehiclePULS
+  - Command_ConstructSwedenVehicleRBS15
+  - Command_ConstructSwedenVehicleArcher
+  - Command_ConstructSwedenVehicleCV90AT
+  - Command_ConstructSwedenVehicleBgbv120
+  - Command_ConstructSwedenTankStrv122B
+USA T3 units now used (existing CommandButtons):
+  Crusader, M1128, M1296, SentryDrone, Tomahawk, M109A7, Avenger,
+  Microwave, AN_TPY2, THAAD, M142, M1075I, M1075T, Sell, M1075I_AI
+
+- DATA size: 366461188
+- DATA SHA256: 9b139e75ebb02c442541a4c5e97e89d5396e68ffb41f323da629a22e5689d036
+- DATA files: 2927
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static / packed last-wins)
+- Sweden WF production CommandSet == AmericaWarFactoryCommandSet_T3
+- Sweden object still SwedenWarFactory, Side=Sweden, flag SE__SEFlag_HsWF
+- USA Warfactory.ini / CommandSet.ini / CommandButton.ini unchanged
+- other countries' War Factories unchanged
+- PR #584 Command Center construct slots intact
+- PR #583 missile data / MOTHER / 9P117 intact
+- ART not rebuilt
+
+## Independent re-extract
+- Re-parsed packed BIG vs PR #584; SHA256 matches HASHES.txt
+- ART SHA256 unchanged vs PR #574
+- Only changed packed file: Swedish Armed Forces/Buildings/Warfactory.ini
+- File count still 2927
+- Sweden production slots 1-15 identical to AmericaWarFactoryCommandSet_T3
+- Sweden object still SwedenWarFactory, Side=Sweden, flag SE__SEFlag_HsWF, model US_WarFactory, prereq SwedenSupplyCenter, health 2000
+- USA Warfactory.ini / Warfactory_AI.ini / CommandSet.ini / CommandButton.ini byte-identical
+- Sweden Command Center unchanged; Dozer slot 11 still Command_ConstructSwedenWarFactory
+- CommandSet.ini last-wins dups: 0 (AmericaWarFactoryCommandSet_T3 defs=1)
+- CommandButton.ini last-wins dups: 20, identical to PR #584
+- 13 packed ZZZZ sidecars unchanged
+- PR #584 Dozer Command Center construct slots intact
+- PR #583 missiles / MOTHER / 9P117 / Weapon.ini / Locomotor.ini intact
+
+Static validation completed; runtime game test not performed.
+

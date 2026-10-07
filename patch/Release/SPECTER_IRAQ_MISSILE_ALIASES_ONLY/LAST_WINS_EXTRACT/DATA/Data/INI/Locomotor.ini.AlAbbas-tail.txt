@@ -1,0 +1,33 @@
+Locomotor.ini defs=516 bytes=664015
+IDENTICAL_TO_578=YES
+SIX_NEW_LOCOS_PRESENT=NO
+ALABBAS_PRESENT=YES
+
+Locomotor Iraq_AlAbbas_Locomotor
+  Surfaces = AIR
+  Speed = 1350
+  SpeedDamaged = 2640
+  MinSpeed = 70
+  Acceleration = 750
+  AccelerationDamaged = 2460
+  Braking = 0
+  TurnRate = 9999
+  MaxThrustAngle = 45
+  AllowAirborneMotiveForce = Yes
+  Appearance = THRUST
+  PreferredHeight = 1200
+  PreferredHeightDamping = 0.9
+  ThrustRoll                     = 0.02
+  ThrustWobbleRate               = 0.002
+  ThrustMinWobble                = -0.002
+  ThrustMaxWobble                = 0.002
+End
+
+
+FORBIDDEN_ABSENT:
+  Iraq_AlFahd500_Locomotor=ABSENT
+  Iraq_AlHusseinII_Locomotor=ABSENT
+  Iraq_AlSamoudII_Locomotor=ABSENT
+  Iraq_AlBasrah_Locomotor=ABSENT
+  Iraq_AlNasir_Locomotor=ABSENT
+  Iraq_AlMansour_Locomotor=ABSENT

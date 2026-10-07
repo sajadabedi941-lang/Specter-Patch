@@ -1,0 +1,36 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-aliases-only/_SPEC_DATA_ONE.big
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-aliases-only/_SPEC_DATA_ONE.big
+  SIZE=366494812
+  SHA256=9cb53e4a949eb0d960f370f3fa751e8814cb6a0390d1434da519db5e7ac5e270
+  FILES=2937
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+BASED_ON=PR578
+ALIASES=A,B,C,D,H,I,J
+UNIMPLEMENTED=E,F,G,K,L
+LOCOS_IN_LOCOMOTOR_INI=ALABBAS_ONLY
+SIX_NEW_LOCOS_IN_LOCOMOTOR_INI=NO
+SIX_LOCOS_IN_SIDECAR=YES
+LOCOMOTOR_INI_DEFS=516
+LOCOMOTOR_INI_BYTES=664015
+MOTHER_UNCHANGED=YES
+ALABBAS_BUILDTIME=30.0
+ALABBAS_FIRE=UNLOCKED
+ART_REBUILT=NO
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=WINE_PARSE_BASRAH_LIKE_578
+RUNTIME_WINE=PARSE_BASRAH
+RUNTIME_WINE_SILENT_EXIT=NO
+RUNTIME_WINDOWS=NOT_TESTED
+TAG=s-iraq-missile-aliases-only
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-aliases-only
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/580

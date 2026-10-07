@@ -1,0 +1,35 @@
+# SPECTER Command Center start=construct match (7 countries)
+
+Baseline DATA: PR #583 (s-iraq-bcdhij-spawn-fix).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+PR #575+ NOT imported.
+MOTHER / Iraq_R11ScudB / 9P117 — NOT MODIFIED
+Missile factory / B-J spawn-fix — NOT MODIFIED
+
+- DATA size: 366461184
+- DATA SHA256: 3802cafba1af5609e0725d32cdc5f4d0e9e8a183746d9c85070854ea06c1e3af
+- DATA files: 2927
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+Forensic: engine-loaded StartingBuilding already used *_CommandCenter;
+Dozer/Worker slot 2 constructed *_MilitaryHQ (different object).
+Fix: point those construct slots at Command_Construct*_CommandCenter.
+Pakistan: add missing engine-loaded construct button.
+
+## VALIDATION PASS (static / packed last-wins)
+- 7 countries: StartingBuilding == constructed object == *_CommandCenter
+- same W3D (US_Command) and country flag W3D on that object
+- same CommandSet (*_CommandCenterCommandSet) for start and built
+- CommandButton construct Object = *_CommandCenter
+- Pakistan construct button added to engine-loaded CommandButton.ini
+- MilitaryHQ object INIs left in place but no longer selected by Dozer/Worker
+- USA / Iraq / Russia / China / Japan / Vietnam / South Korea CC unchanged
+- Egypt Worker still constructs Egypt_MilitaryHQ
+- PR #583 missile data / Weapon.ini / factory CommandSet unchanged
+- MOTHER / 9P117 unchanged
+- ZZZZ_CommandCenterMatchStart sidecar unchanged (not engine-loaded)
+- ART not rebuilt
+
+Static validation completed; runtime game test not performed.
+

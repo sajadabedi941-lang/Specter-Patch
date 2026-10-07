@@ -1,0 +1,29 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-projectile-paths/_SPEC_DATA_ONE.big
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-projectile-paths/_SPEC_DATA_ONE.big
+  SIZE=366497963
+  SHA256=1a10f0809b6755f5e12e7326e18f6c22955d27895626445d488504c4d9597d6a
+  FILES=2937
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+ALIASES=A,B,C,D,H,I,J
+UNIMPLEMENTED=E,F,G,K,L
+LOCOS_IN_LOCOMOTOR_INI=ALL_SEVEN
+MOTHER_UNCHANGED=YES
+ALABBAS_BUILDTIME=30.0
+ALABBAS_FIRE=UNLOCKED
+ART_REBUILT=NO
+
+TAG=s-iraq-missile-projectile-paths
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-projectile-paths
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/579
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT PERFORMED

@@ -1,0 +1,23 @@
+# SPECTER Iraq factory missile projectile crash-path family fix (DATA-only)
+
+Same structural crash as Al-Abbas: SPECTER opens Data/INI/Specter/Iraq Army/Iraq-<Name>-Projectile.ini
+while the live definition only existed under Data/INI/Object/Specter/Iraq Army/.
+Dedicated locos were sidecar-only except Al-Abbas. Register all seven in Locomotor.ini.
+E/F/G/K/L remain unimplemented. No gameplay stats changed. ART not rebuilt.
+
+- DATA size: 366497963
+- DATA SHA256: 1a10f0809b6755f5e12e7326e18f6c22955d27895626445d488504c4d9597d6a
+- DATA files: 2937
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static)
+- aliases for A/B/C/D/H/I/J present under Data\INI\Specter\Iraq Army\
+- all seven dedicated locos registered in Locomotor.ini; sidecar unchanged
+- R11SRBMLocomotor / AlAbbasMissileLocomotor / 9P117 byte-identical
+- Al-Abbas BuildTime 30.0 / Fire unlocked / rebuild unchanged
+- E/F/G/K/L not invented; factory slots 5-7/11-12 still empty
+- ART not rebuilt
+
+RUNTIME TEST: NOT PERFORMED
+

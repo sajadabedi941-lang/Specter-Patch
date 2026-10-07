@@ -1,0 +1,87 @@
+SPECTER Sweden War Factory → USA production roster
+Forensic last-wins on packed PR #584 DATA.
+
+Engine loads: CommandSet.ini, CommandButton.ini, Upgrade.ini, recursive Object.
+Does NOT glob CommandSet_* / CommandButton_* sidecars.
+
+================================================================
+SWEDEN War Factory Object
+  Object: SwedenWarFactory
+  File: Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Warfactory.ini
+  Side: Sweden
+  Flag: SE__SEFlag_HsWF
+  Building model: US_WarFactory (shared mesh; Swedish flag draw remains)
+  Prerequisites: Object = SwedenSupplyCenter
+  BuildCost 2000 / BuildTime 15 / MaxHealth 2000
+  OLD CommandSet: SwedenWarfactoryCommandSet (1 loaded def, no CommandSetUpgrade)
+
+OLD Sweden production (SwedenWarfactoryCommandSet):
+  1  Command_ConstructSwedenTankStrv122        -> SwedenTankStrv122
+  2  Command_ConstructSwedenTankStrv121        -> SwedenTankStrv121
+  3  Command_ConstructSwedenVehicleCV90R       -> SwedenVehicleCV90R
+  4  Command_ConstructSwedenVehicleCV90        -> SwedenVehicleCV90
+  5  Command_ConstructSwedenVehiclePatgb203    -> SwedenVehiclePatgb203
+  6  Command_ConstructSwedenVehicleLvkv90      -> SwedenVehicleLvkv90
+  7  Command_ConstructSwedenVehicleGiraffe     -> SwedenVehicleGiraffe
+  8  Command_ConstructSwedenVehiclePULS        -> SwedenVehiclePULS
+  9  Command_ConstructSwedenVehicleRBS15       -> SwedenVehicleRBS15
+  10 Command_ConstructSwedenVehicleArcher      -> SwedenVehicleArcher
+  11 Command_ConstructSwedenVehicleCV90AT      -> SwedenVehicleCV90AT
+  12 Command_ConstructSwedenVehicleBgbv120     -> SwedenVehicleBgbv120
+  13 Command_ConstructSwedenTankStrv122B       -> SwedenTankStrv122B
+  14 Command_Sell
+
+Sweden-specific production restriction: none on the CommandButtons (no NEED_UPGRADE).
+Difference vs USA is the CommandSet itself (country-specific unit list).
+
+Sweden cannot research Upgrade_US_Tier1/2/3:
+  those PLAYER_UPGRADE buttons live on AmericaStrategyCenterCommandSet_T/T1/T2.
+  SwedenStrategyCenterCommandSet has NuclearReactor + MTS only.
+  Sweden Command Center is out of scope and has no US_Tier buttons.
+
+================================================================
+USA War Factory Object (player)
+  Object: AmericaWarFactory_T
+  File: Data\INI\Object\Specter\United States Of America\Buildings\Warfactory.ini
+  Side: America
+  Flag: US__USFlag_HsWF
+  CommandSet: AmericaWarFactoryCommandSet_T
+  CommandSetUpgrade:
+    Upgrade_US_Tier1 -> AmericaWarFactoryCommandSet_T1
+    Upgrade_US_Tier2 -> AmericaWarFactoryCommandSet_T2
+    Upgrade_US_Tier3 -> AmericaWarFactoryCommandSet_T3
+
+USA AI object AmericaWarFactory uses AmericaWarFactoryCommandSet (different mix:
+Humvee/Paladin/extra slots). Donor for playable production is AmericaWarFactory_T.
+Full unlocked player roster = AmericaWarFactoryCommandSet_T3.
+
+USA T3:
+  1  Command_ConstructAmericaTankCrusader      -> AmericaTankCrusader
+  2  Command_ConstructAmericaVehicleM1128      -> AmericaVehicle_M1128
+  3  Command_ConstructAmericaVehicleM1296      -> AmericaVehicleM1296
+  4  Command_ConstructAmericaVehicleSentryDrone-> AmericaVehicleSentryDrone
+  5  Command_ConstructAmericaVehicleTomahawk   -> AmericaVehicleTomahawk
+  6  Command_ConstructAmericaTankM109A7        -> AmericaTankM109A7
+  7  Command_ConstructAmericaVehicleAvenger    -> AmericaTankAvenger
+  8  Command_ConstructAmericaVehicleMicrowave  -> AmericaTankMicrowave
+  9  Command_ConstructAmericaVehicleAN_TPY2    -> US_AN_TPY2
+  10 Command_ConstructAmericaVehicleTHAAD      -> US_THAAD
+  11 Command_ConstructAmericaVehicleM142       -> AmericaVehicleM142
+  12 Command_ConstructAmericaVehicleM1075I     -> US_M1075I_Trident
+  13 Command_ConstructAmericaVehicleM1075T     -> US_M1075T_BGM109
+  14 Command_Sell
+  15 Command_ConstructAmericaVehicleM1075I_AI  -> US_M1075I_Trident_AI
+
+================================================================
+FIX
+Cannot copy USA CommandSetUpgrade TriggeredBy Upgrade_US_Tier* onto Sweden:
+Sweden has no research path for those upgrades and Strategy Center / Command Center
+are out of scope. Starting on AmericaWarFactoryCommandSet_T would leave Sweden
+with only Crusader/M1296/Avenger.
+
+Point SwedenWarFactory.CommandSet at AmericaWarFactoryCommandSet_T3 (reuse existing
+USA CommandSet and CommandButtons). Building object/flag/model/stats/prereq stay Swedish.
+USA Warfactory.ini and CommandSet.ini / CommandButton.ini unchanged.
+SwedenWarfactoryCommandSet left defined but unused (no object references it).
+
+Dozer still constructs SwedenWarFactory (slot 11).

@@ -1,0 +1,31 @@
+# SPECTER India Radar: remove two drones
+
+Baseline DATA: PR #584 (Command Center start=construct + PR #583 missiles).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+PR #585+ NOT imported.
+
+DRONE_1=India_CombatDrone
+DRONE_2=India_LoiteringDrone
+SOURCE=India_RadarStation CommandSet India_RadarCommandSet slots 1 and 2
+MECHANISM=UNIT_BUILD CommandButtons (not SpawnBehavior / SpecialPower)
+
+- DATA size: 366461097
+- DATA SHA256: 2810f025c243a050cf6db023f3ae96341ebce221097bb23be07fa8fd7c1e3fc1
+- DATA files: 2927
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static / packed last-wins)
+- India_RadarStation object unchanged (detection, RadarUpgrade, SpySatellite scan)
+- India_RadarCommandSet no longer produces India_CombatDrone or India_LoiteringDrone
+- Rally + Sell remain on the Radar
+- India_HeavyAirBaseCommandSet still produces both drones (not Radar)
+- drone Object INIs not deleted (still referenced by Heavy Air Base)
+- other countries' Radar CommandSets unchanged
+- PR #584 Command Center start/build construct slots intact
+- PR #583 missile data / Weapon.ini / factory CommandSet / MOTHER intact
+- only packed file changed: Data\INI\CommandSet.ini
+- ART not rebuilt
+
+Static validation completed; runtime game test not performed.
+

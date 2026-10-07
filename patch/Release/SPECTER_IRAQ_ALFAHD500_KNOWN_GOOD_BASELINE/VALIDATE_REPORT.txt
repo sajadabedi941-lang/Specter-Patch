@@ -1,0 +1,21 @@
+# SPECTER Iraq Al-Fahd500 known-good baseline recovery (DATA+ART)
+
+Exact byte copies of PR #572 / s-iraq-alfahd500-stats DATA and the ART BIG that release documents.
+No rebuild. No PR #573–#581 content.
+
+- DATA size: 366379397 SHA256: a8b7af7354d2887ac43b9a0a498771828689d19f747da71ff5dd0895afc07256 files: 2915
+- ART size: 1267067968 SHA256: 5fdc19145769b81bce2cddaeeb91701d6c9ce0f4e288e0d55baa03cbfdb33ea9 files: 4616
+
+## VALIDATION PASS (static)
+- hashes match required PR #572 values exactly
+- BIG structure OK; re-extracted
+- CB_MISSILE_A last-wins Object=Iraq_AlFahd500 ButtonImage=specter_missile_a
+- factory CommandSet slot 1=CB_MISSILE_A; B–L unwired
+- Al-Fahd500 BuildCost 2200 BuildTime 30.0 queue icons specter_missile_a
+- MOTHER 9P117 / R11SRBMLocomotor present; no post-572 factory locos in Locomotor.ini (515 defs)
+- no hyphenated Specter aliases; no sidecar Locomotor_IraqFactoryMissiles.ini
+- no later B/C/D/H/I/J projectile Objects or skins
+- ART contains Art\Textures\specter_missile_a.tga
+- ART not rebuilt from later branches
+
+RUNTIME TEST: NOT PERFORMED

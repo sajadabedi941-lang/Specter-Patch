@@ -1,0 +1,25 @@
+Primary package (DATA + ART complete replacements):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd500-known-good-baseline
+
+Place BOTH complete replacement files in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-known-good-baseline/_SPEC_DATA_ONE.big
+  SIZE=366379397
+  SHA256=a8b7af7354d2887ac43b9a0a498771828689d19f747da71ff5dd0895afc07256
+  FILES=2915
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-known-good-baseline/_SPEC_ART_ONE.big
+  SIZE=1267067968
+  SHA256=5fdc19145769b81bce2cddaeeb91701d6c9ce0f4e288e0d55baa03cbfdb33ea9
+  FILES=4616
+
+BASED_ON=PR572 / s-iraq-alfahd500-stats
+EXCLUDES=PR573-PR581
+REBUILT=NO
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT PERFORMED
+TAG=s-iraq-alfahd500-known-good-baseline
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd500-known-good-baseline
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/582

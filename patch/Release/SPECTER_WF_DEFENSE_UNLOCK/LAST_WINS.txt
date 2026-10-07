@@ -1,0 +1,130 @@
+SPECTER War Factory defense unlock — forensic last-wins (PR #584 packed DATA)
+
+Engine loads: CommandSet.ini, CommandButton.ini, Upgrade.ini, Weapon.ini,
+PlayerTemplate.ini, recursive Object. Does NOT glob CommandSet_*, CommandButton_*,
+Upgrade_* sidecars. Packed last-wins is authoritative.
+
+================================================================
+COUNTRY: INDIA
+War Factory object: India_WarFactory_T
+CommandSet (loaded last-wins, 1 def): India_WarFactoryCommandSet
+  (India_WarFactoryCommandSet1/2/3 also exist; no object references them)
+
+Defense #1 Object name: US_THAAD
+  Current CommandButton: Command_ConstructAmericaVehicleTHAAD (slot 10)
+  Current CommandSet: India_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+  Exact field/reference: Object US_THAAD in Data\INI\Object\Specter\United States Of America\AirDefense\US_M1120.ini
+    Prerequisites { Object = AmericaStrategyCenter AmericaStrategyCenter_T }
+  Lock country-specific or inherited: INHERITED from shared USA object. CommandButton has no NEED_UPGRADE.
+
+Defense #2 Object name: US_M1075I_Trident
+  Current CommandButton: Command_ConstructAmericaVehicleM1075I (slot 12)
+  Current CommandSet: India_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter_T AND Science = SCIENCE_M1075I
+  Exact field/reference: Object US_M1075I_Trident in Data\INI\Object\Specter\United States Of America\Wheeled\US_MGM134.ini
+    Prerequisites { Object = AmericaStrategyCenter_T ; Science = SCIENCE_M1075I }
+  Lock country-specific or inherited: INHERITED from shared USA object. CommandButton has no NEED_UPGRADE.
+
+================================================================
+COUNTRY: PAKISTAN
+War Factory object: Pakistan_WarFactory_T
+CommandSet (loaded last-wins, 1 def): Pakistan_WarFactoryCommandSet
+
+Defense #1 Object name: US_THAAD
+  Current CommandButton: Command_ConstructAmericaVehicleTHAAD (slot 10)
+  Current CommandSet: Pakistan_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+  Exact field/reference: same inherited US_THAAD Prerequisites block as India
+  Lock: INHERITED (not country-specific NEED_UPGRADE)
+
+Defense #2 Object name: US_M1075I_Trident
+  Current CommandButton: Command_ConstructAmericaVehicleM1075I (slot 12)
+  Current CommandSet: Pakistan_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter_T + Science SCIENCE_M1075I
+  Exact field/reference: same inherited US_M1075I_Trident Prerequisites block as India
+  Lock: INHERITED (not country-specific NEED_UPGRADE)
+
+================================================================
+COUNTRY: SOUTH KOREA
+War Factory object: SouthKorea_WarFactory
+CommandSet (loaded last-wins, 1 def): SouthKorea_WarFactoryCommandSet
+
+Defense #1 Object name: US_THAAD
+  Current CommandButton: Command_ConstructAmericaVehicleTHAAD (slot 10)
+  Current CommandSet: SouthKorea_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+  Exact field/reference: inherited US_THAAD Prerequisites
+  Lock: INHERITED
+
+Defense #2 Object name: US_M1075I_Trident
+  Current CommandButton: Command_ConstructAmericaVehicleM1075I (slot 12)
+  Current CommandSet: SouthKorea_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter_T + Science SCIENCE_M1075I
+  Exact field/reference: inherited US_M1075I_Trident Prerequisites
+  Lock: INHERITED
+
+================================================================
+COUNTRY: JAPAN
+War Factory object: Japan_WarFactory
+CommandSet (loaded last-wins, 1 def): Japan_WarFactoryCommandSet
+
+Defense #1 Object name: US_THAAD
+  Current CommandButton: Command_ConstructAmericaVehicleTHAAD (slot 10)
+  Current CommandSet: Japan_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+  Exact field/reference: inherited US_THAAD Prerequisites
+  Lock: INHERITED
+
+Defense #2 Object name: US_M1075I_Trident
+  Current CommandButton: Command_ConstructAmericaVehicleM1075I (slot 12)
+  Current CommandSet: Japan_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter_T + Science SCIENCE_M1075I
+  Exact field/reference: inherited US_M1075I_Trident Prerequisites
+  Lock: INHERITED
+
+================================================================
+COUNTRY: VIETNAM
+War Factory object: Vietnam_WarFactory
+CommandSet (loaded last-wins, 1 def): Vietnam_WarFactoryCommandSet
+
+Defense #1 Object name: US_THAAD
+  Current CommandButton: Command_ConstructAmericaVehicleTHAAD (slot 10)
+  Current CommandSet: Vietnam_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter AmericaStrategyCenter_T
+  Exact field/reference: inherited US_THAAD Prerequisites
+  Lock: INHERITED
+
+Defense #2 Object name: US_M1075I_Trident
+  Current CommandButton: Command_ConstructAmericaVehicleM1075I (slot 12)
+  Current CommandSet: Vietnam_WarFactoryCommandSet
+  Current Upgrade/prereq: Object Prerequisites Object = AmericaStrategyCenter_T + Science SCIENCE_M1075I
+  Exact field/reference: inherited US_M1075I_Trident Prerequisites
+  Lock: INHERITED
+
+================================================================
+NOT THE LOCKED PAIR (forensic notes)
+- CommandButtons themselves have no NEED_UPGRADE.
+- Packed War Factory CommandSetUpgrade modules are empty (Tire comments only);
+  the full 14-slot America-like bar is shown; only THAAD and M1075I are gated.
+- Avenger / AN_TPY2 / M1075T on the same bar are not gated (commented or absent prereqs).
+- Country-named vehicles (IndiaVehicleTunguska/Akash, JapanVehicleType87/ChuSAM,
+  SouthKoreaVehicleK30/Cheongung, VietnamVehicleShilka/S300, PakistanVehicleHQ9P)
+  exist in NationalGroundForces.ini but are NOT on the loaded WF CommandSets.
+- CommandSet_ZZZZ_WarFactoryRebuild.ini and CommandSet_India.ini are NOT packed
+  (engine would not load those sidecars anyway).
+- SCIENCE_M1075I remains defined in Science.ini (USA still uses it).
+- Upgrade.ini (126 Upgrade defs) is unchanged.
+
+FIX
+Cannot strip Prerequisites from shared US_THAAD / US_M1075I_Trident (would unlock USA).
+Cannot delete SCIENCE_M1075I (USA science purchase).
+Cannot grant SCIENCE_M1075I / AmericaStrategyCenter to the five countries.
+
+Applied:
+  - Clone objects Specter_WF_THAAD / Specter_WF_M1075I with Prerequisites stripped
+    (stats/model/weapons/cost/build time unchanged).
+  - New UNIT_BUILD buttons Command_ConstructSpecterWF_THAAD / Command_ConstructSpecterWF_M1075I
+    (no NEED_UPGRADE / Science / Upgrade).
+  - Retarget ONLY the five countries' WarFactory CommandSet slots 10 and 12.
+  - Shared USA object files, USA CommandSets, Upgrade.ini, Science.ini unchanged.

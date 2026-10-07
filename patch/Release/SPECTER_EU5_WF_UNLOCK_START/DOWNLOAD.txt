@@ -1,0 +1,29 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-eu5-wf-unlock-start/_SPEC_DATA_ONE.big
+  SIZE=366514449
+  SHA256=92b4ea699116f4fa12e81c923019370f84d25f58404d0438debe997a08912c27
+  FILES=2928
+
+ART (unchanged PR #574 / PR #588):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-eu5-wf-unlock-start/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-eu5-wf-unlock-start/SPECTER_EU5_WF_UNLOCK_START.zip
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+FIX=Unlock PR #588 Ukraine WF slots 4-10 at game start for Germany/France/Britain/Italy/Turkey
+CHANGED=Data\INI\CommandSet.ini + Data\INI\CommandButton.ini + Data\INI\Object\Specter\EU5Unlock\Specter_EU5WFUnlock.ini
+BASELINE_DATA=PR #588
+BASELINE_ART=PR #574
+UKRAINE=UNCHANGED
+USA=UNCHANGED
+SWEDEN=UNCHANGED
+
+TAG=s-eu5-wf-unlock-start
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-eu5-wf-unlock-start
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/589
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

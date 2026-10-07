@@ -1,0 +1,42 @@
+# SPECTER EU5 War Factory: unlock Ukraine vehicles at game start
+
+Baseline DATA: PR #588 (EU5 = Ukraine roster on PR #587/#584).
+Baseline ART: PR #574 / PR #588 ART BIG (unchanged, not rebuilt).
+
+Lock: Object Prerequisites Object = UkraineStrategyCenter on slots 4-10.
+CommandButtons have no NEED_UPGRADE. Slots 1-3 already unrestricted.
+Clones + new UNIT_BUILD buttons for Germany/France/Britain/Italy/Turkey only.
+Ukraine CommandSet and Ukraine vehicle objects unchanged.
+
+- DATA size: 366514449
+- DATA SHA256: 92b4ea699116f4fa12e81c923019370f84d25f58404d0438debe997a08912c27
+- DATA files: 2928
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static / packed last-wins)
+- slots 1-3 original Ukraine buttons (no Object Prerequisites)
+- slots 4-10 unlocked clones (no UkraineStrategyCenter / Science / NEED_UPGRADE)
+- Command_Sell remains INI slot 14 (11th command; PR #588 layout)
+- button order otherwise unchanged
+- Ukraine CommandSet and shared Ukraine objects unchanged
+- USA and Sweden War Factories unchanged
+- ART not rebuilt
+
+## Independent re-extract
+- Re-parsed packed BIG vs PR #588; SHA256 matches HASHES.txt
+- ART SHA256 unchanged vs PR #574/#588
+- Changed: CommandSet.ini, CommandButton.ini, new Specter_EU5WFUnlock.ini (2927 -> 2928 files)
+- Germany/France/Britain/Italy/Turkey: slots 1-10 present; slots 1-3 original Ukraine buttons; slots 4-10 unlocked clones
+- Each of 10 production buttons: UNIT_BUILD, no NEED_UPGRADE, no Science, no Upgrade, no Object Prerequisites
+- Command_Sell remains INI slot 14 (11th command; PR #588 layout; slots 11-13 unused)
+- Button order unchanged (same 10 vehicles then Sell)
+- UkraineWarfactoryCommandSet byte-identical; slots 4-10 still Object = UkraineStrategyCenter
+- Shared Ukraine vehicle object files byte-identical
+- USA and Sweden War Factory objects byte-identical
+- CommandSet last-wins dups=0; new unlock buttons defs=1 each
+- CommandButton last-wins dups=20 (identical set vs PR #588 plus 7 new unique buttons)
+- 13 ZZZZ sidecars unchanged / unused
+
+Static validation completed; runtime game test not performed.
+

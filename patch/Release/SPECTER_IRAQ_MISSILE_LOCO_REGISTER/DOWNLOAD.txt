@@ -1,10 +1,10 @@
 Primary package (DATA):
-  PLACEHOLDER — GitHub Release withheld until real Windows runtime passes
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-loco-register/_SPEC_DATA_ONE.big
 
 Place this complete replacement DATA file in the game folder:
 
 DATA:
-  FILE=_SPEC_DATA_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-loco-register/_SPEC_DATA_ONE.big
   SIZE=366480074
   SHA256=614fbb4e1a0f7afd5810342dc2e1c229037c7eaf57793a2749bb2ca30df583fd
   FILES=2931
@@ -27,5 +27,7 @@ ALABBAS_BUILDTIME=30.0
 ALABBAS_FIRE=UNLOCKED
 ART_REBUILT=NO
 STATIC_VALIDATION=PASS
-RUNTIME_WINDOWS=NOT_TESTED
+RUNTIME_WINDOWS=NOT_YET_VERIFIED
 TAG=s-iraq-missile-loco-register
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-loco-register
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/581

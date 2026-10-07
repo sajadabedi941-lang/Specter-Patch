@@ -1,0 +1,28 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-projectile-crash/_SPEC_DATA_ONE.big
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-projectile-crash/_SPEC_DATA_ONE.big
+  SIZE=366476915
+  SHA256=2d7d72b46b663189b0d261fe986ec672f46f63279418ae4292d0dac9e662146e
+  FILES=2931
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-data-art/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+CRASH_PATH=Data/INI/Specter/Iraq Army/Iraq-AlAbbas-Projectile.ini
+OBJECT=Projectile_Iraq_AlAbbas
+LOCO=Iraq_AlAbbas_Locomotor registered in Locomotor.ini
+STATS_UNCHANGED=YES
+MOTHER_UNCHANGED=YES
+ART_REBUILT=NO
+
+TAG=s-iraq-alabbas-projectile-crash
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alabbas-projectile-crash
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/578
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT PERFORMED

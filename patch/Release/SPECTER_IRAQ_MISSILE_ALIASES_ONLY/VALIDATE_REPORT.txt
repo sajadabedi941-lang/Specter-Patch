@@ -1,0 +1,29 @@
+# SPECTER Iraq factory missile SPECTER-path aliases only (DATA-only)
+
+Based on PR #578 DATA. Adds six SPECTER crash-path aliases.
+Does NOT append the six dedicated locomotors to Locomotor.ini.
+Those locos remain only in Locomotor_IraqFactoryMissiles.ini.
+Al-Abbas Locomotor.ini registration unchanged from #578.
+E/F/G/K/L remain unimplemented. No gameplay stats changed. ART not rebuilt.
+
+- DATA size: 366494812
+- DATA SHA256: 9cb53e4a949eb0d960f370f3fa751e8814cb6a0390d1434da519db5e7ac5e270
+- DATA files: 2937
+- Locomotor.ini defs: 516
+- Locomotor.ini bytes: 664015
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+
+## VALIDATION PASS (static)
+- six aliases A/B/C/H/I/J added under Data\INI\Specter\Iraq Army\
+- Al-Abbas alias unchanged from #578
+- Locomotor.ini byte-identical to #578 (516 defs, Al-Abbas only extra)
+- six dedicated locos present in sidecar only; not in Locomotor.ini
+- R11SRBMLocomotor / 9P117 / construction files byte-identical
+- Al-Abbas BuildTime 30.0 / Fire unlocked / rebuild unchanged
+- E/F/G/K/L not invented; factory slots 5-7/11-12 still empty
+- ART not rebuilt
+- packed DATA re-extracted and last-wins/duplicate audited
+
+RUNTIME TEST: PENDING
+

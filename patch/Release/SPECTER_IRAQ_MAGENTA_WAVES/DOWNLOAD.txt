@@ -1,0 +1,29 @@
+DATA replacement (byte-identical to PR #598):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-magenta-waves/_SPEC_DATA_ONE.big
+  SIZE=366615017
+  SHA256=ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+  FILES=2930
+
+ART replacement (PR #593 ART + TWWater01.tga + TSCloudWis.tga):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-magenta-waves/_SPEC_ART_ONE.big
+  SIZE=1295713019
+  SHA256=9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+  FILES=4642
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-magenta-waves/SPECTER_IRAQ_MAGENTA_WAVES.zip
+  SIZE=1662332258
+  SHA256=d66dc7b615e4a90b49cbf5b3fc9bba5669cf1ad45240d123f05855744763942c
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Adds missing Water.ini texture names TWWater01.tga and TSCloudWis.tga.
+DATA is unchanged from PR #598. Factory rearm stays off.
+
+TAG=s-iraq-magenta-waves
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-magenta-waves
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/599
+BASELINE=PR #598 DATA + PR #593 ART + 2 texture aliases
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN
+MAGENTA_WATER_CLAIMED_FIXED=NO

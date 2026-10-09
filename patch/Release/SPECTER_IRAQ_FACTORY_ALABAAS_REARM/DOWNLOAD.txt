@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-alabaas-rearm/_SPEC_DATA_ONE.big
+  SIZE=366616562
+  SHA256=2335a8e211c288547be629aa520995a91a120eba6e061b6a87943c1e2d08523a
+  FILES=2930
+
+ART replacement (byte-identical to PR #593):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-alabaas-rearm/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-alabaas-rearm/SPECTER_IRAQ_FACTORY_ALABAAS_REARM.zip
+  SIZE=1661095167
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Factory A-J spawn as in PR #593 (no contain/riders). Re-arm payment is the
+Alabaas OBJECT_UPGRADE at half build cost.
+
+TAG=s-iraq-factory-alabaas-rearm
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-factory-alabaas-rearm
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/596
+BASELINE=PR #595 history + PR #593 factory objects/ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

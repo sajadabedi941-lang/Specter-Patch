@@ -1,0 +1,4 @@
+E display Build 20s vs object BuildTime 22.0; AttackRange 1200 vs card 400k; ClipSize 2 matches two missiles; BuildCost 1200 matches $1,200
+G display Build 20s vs object BuildTime 17.0; AttackRange 1720 vs card 1000k; PrimaryDamage 2000 vs card 400k; BuildCost 1200 matches $1,200
+K display Build 5 minutes vs object BuildTime 30.0; AttackRange 2300 vs card 1400k; AlAbidMissileWeapon PrimaryDamage 1 (warhead is separate) vs card 15000k; BuildCost 20000 matches $20,000
+K ICBM CSF OBJECT:abbasicbmm left unchanged; factory card first line is Alabaas

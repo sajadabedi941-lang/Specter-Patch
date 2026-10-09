@@ -1,0 +1,183 @@
+SPECTER missile reactivation — packed last-wins audit and STOP
+
+Baseline inspected: PR #599 / tag s-iraq-magenta-waves
+  DATA SHA-256 ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+  ART  SHA-256 9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+  DATA is byte-identical to PR #598 spawn-control.
+  ART is PR #593 plus TWWater01.tga / TSCloudWis.tga aliases.
+
+No DATA or ART was changed in this report. No new BIG was packed.
+
+
+1. Alabaas ICBM mechanism (IDENTIFIED)
+
+Packed object: Iraq_Alhussaien
+File: Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+
+There is no native SAGE "reload missile" field. SPECTER implements
+reactivation with the rider / OBJECT_UPGRADE machine:
+
+  spawn   KindOf includes GARRISONABLE_UNTIL_DESTROYED
+          RiderChangeContain ModuleTag_WarheadRider
+          Rider1 = GenericFakeRider1 ... Iraq_Alhussaien_UnarmedRearmSet
+          Rider2 = GenericFakeRider2 ... Iraq_AlhussaienArmedCommandSet
+          InitialPayload = GenericFakeRider2_Default_Rank 1
+          (first shot is already loaded)
+
+  fire    HussieanMissileWeapon / AlAbidMissileWeapon
+          ClipSize = 1
+          FireOCL = OCL_HussienMissileDisarm
+            -> GenericFakeRider1 ContainInsideSourceObject (unarmed)
+            -> hussienPreparationUpgradeRemover
+
+  pay     Unarmed command set button Command_Rearm_Iraq_Alhussaien
+          Command = OBJECT_UPGRADE
+          Upgrade = Upgrade_Rearm_Iraq_Alhussaien
+          Type = OBJECT, BuildTime = 0.0
+
+  restore ObjectCreationUpgrade ModuleTag_Rearm
+          TriggeredBy = Upgrade_Rearm_Iraq_Alhussaien
+          UpgradeObject = OCL_Rearm_Iraq_Alhussaien
+            -> RearmStrip_Iraq_Alhussaien (UpgradeDie, so the OBJECT
+               upgrade can be bought again; no double-charge)
+            -> GenericFakeRider2 ContainInsideSourceObject (armed)
+
+Original SPECTER upgrade still present but not used by Iraq_Alhussaien
+after PR #594:
+
+  Upgrade_AlhussaienWarheadRearm  BuildCost = 2000
+  Command_BuyAlhussaienMissile    (commented on the armed set;
+                                   still slot 5 of Iraq_AlhussaienCommandSet)
+
+Last-wins Iraq_Alhussaien BuildCost = 20000, so 50% = 10000.
+Current Upgrade_Rearm_Iraq_Alhussaien BuildCost = 10000.
+
+The $2,000 figure is the original flat SPECTER Alabaas upgrade, not 50%
+of the current $20,000 launcher price. This report does not change that
+price (rule: do not change launcher cost). 50% of last-wins build is
+$10,000.
+
+
+2. Rounding rule (already applied on country TELs)
+
+  reactivation_cost = (BuildCost + 1) // 2
+  i.e. integer round-half-up / odd prices round away from zero.
+
+  Even example: ChinaVehicleDF41 3500 -> 1750
+  Odd example:  Egypt_Alhussaien 2301 -> 1151  (not 1150)
+
+
+3. Country Alabaas-pattern TELs (already at 50% in this baseline)
+
+These already have the rider machine + per-object OBJECT_UPGRADE at 50%.
+They were added in PR #594 and kept through #598/#599. Runtime was never
+tested in this environment.
+
+  object                         build    re-arm   notes
+  Iraq_Alhussaien                20000    10000    reference ICBM; starts armed
+  Arab_Khalid                     2500     1250
+  ChinaVehicleDF41                3500     1750    starts unarmed (Rider1)
+  Egypt_Alhussaien                2301     1151    odd, round-up
+  India_AbabeelTEL                2100     1050
+  India_Alhussaien                1853      927    odd, round-up
+  India_ShaheenTEL                2039     1020    odd, round-up
+  IranVehicleKhormshar            2500     1250    riders present; KindOf has
+                                                   no GARRISONABLE (pre-existing)
+  Libya_AbabeelTEL                2100     1050
+  Libya_Alhussaien                1853      927
+  Libya_ShaheenTEL                2039     1020
+  Pakistan_AbabeelTEL             2100     1050
+  Pakistan_Alhussaien             1853      927
+  Pakistan_ShaheenTEL             2039     1020
+  RussiaVehicleRS24               3500     1750
+  SaudiArabia_AbabeelTEL          2100     1050
+  SaudiArabia_Alhussaien          1853      927
+  SaudiArabia_ShaheenTEL          2039     1020
+  SouthAfrica_AbabeelTEL          2100     1050
+  SouthAfrica_Alhussaien          1853      927
+  SouthAfrica_ShaheenTEL          2039     1020
+  Syria_AbabeelTEL                2100     1050
+  Syria_Alhussaien                1853      927
+  Syria_ShaheenTEL                2039     1020
+  UAE_AbabeelTEL                  2100     1050
+  UAE_Alhussaien                  1853      927
+  UAE_ShaheenTEL                  2039     1020
+  US_M1075I_Trident               3400     1700
+
+28 launchers. Costs match (BuildCost+1)//2. Unarmed sets use Command_Rearm_<object>
+pointing at Upgrade_Rearm_<object>, which is what ObjectCreationUpgrade TriggeredBy
+expects. That is required so payment actually restores the armed rider.
+
+
+4. Factory A-J — BLOCKER (do not invent a workaround)
+
+  object              build   50%    current state
+  Iraq_AlFahd500       2200   1100   PR #593 spawn-safe body, Scud_B_CommandSet
+  Iraq_AlHusseinII     1800    900   same
+  Iraq_AlSamoudII      1700    850   same
+  Iraq_AlAbbas         2600   1300   same (building CommandSet remains unique)
+  Iraq_AlBasrah        5000   2500   same
+  Iraq_AlNasir         6500   3250   same
+  Iraq_AlMansour       8000   4000   same
+
+These are 9P117-style TELs:
+  KindOf = PRELOAD SELECTABLE CAN_ATTACK CAN_CAST_REFLECTIONS VEHICLE SCORE
+  no RiderChangeContain, no InitialPayload, no GARRISONABLE_UNTIL_DESTROYED
+  empty WeaponSetUpgrade ModuleTag_09h56u56j (no TriggeredBy)
+  CommandSet = Scud_B_CommandSet
+  same pattern as frozen MOTHER Iraq_R11ScudB ($1200)
+
+Proven failures when Alabaas rearm was copied onto them:
+
+  PR #594  RiderChangeContain + InitialPayload GenericFakeRider2
+           -> CTD when production finishes and the unit spawns
+  PR #595  plus GARRISONABLE_UNTIL_DESTROYED, still RiderChangeContain
+           -> still CTD at spawn
+  PR #596  removed contain; WeaponSetUpgrade TriggeredBy + unique CommandSet
+           + FireOCL stripper
+           -> startup CTD, duplicate Iraq_AlAbbasCommandSet
+  PR #597  renamed TEL set to Iraq_AlAbbasTELCommandSet
+           -> boots, still CTD at factory A-J spawn
+  PR #598  restored PR #593 factory object bodies and weapons
+           -> game launches; factory rearm left off
+
+The Alabaas machine requires a garrisonable contain/rider state machine.
+Factory A-J do not have that setup. Copying it crashes spawn. The
+WeaponSetUpgrade + FireOCL substitute also crashed spawn. SAGE has no
+other native reload field.
+
+STOP: a correct factory A-J reactivation is not implemented. Doing so
+would reintroduce a known spawn CTD or invent a third unsupported
+workaround.
+
+
+5. Frozen / out of scope
+
+  Iraq_R11ScudB (MOTHER / 9P117)  build $1200  no rearm  (preserve accepted work)
+  Aircraft/combat-bike RiderChangeContain objects are not constructed
+  ballistic-missile TELs and were not given payment upgrades.
+
+
+6. Smallest safe alternative (needs approval)
+
+  KEEP current PR #599 DATA+ART:
+    - country Alabaas-pattern TELs already pay 50% to re-arm
+    - factory A-J stay spawn-safe with no rearm
+    - MOTHER / 9P117 untouched
+    - ART unchanged except the already-shipped water aliases
+
+  DO NOT copy RiderChangeContain onto factory A-J.
+  DO NOT re-add PLAYER_UPGRADE WeaponSet / TriggeredBy / FireOCL on A-J.
+
+  If factory A-J paid rearm is still required later, it needs a new
+  isolated experiment with a single lever (for example TriggeredBy only,
+  or unique CommandSet only), knowing #597 already crashed with those
+  combined. That experiment is not done here.
+
+
+7. Test status
+
+  Static packed last-wins audit: completed (this file).
+  Runtime game test: NOT RUN (no Zero Hour executable here).
+  Country TEL 50% rearm is NOT claimed working in-game.
+  Factory A-J rearm is NOT implemented and NOT claimed fixed.

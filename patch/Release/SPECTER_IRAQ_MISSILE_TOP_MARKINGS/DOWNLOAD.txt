@@ -12,6 +12,7 @@ ART replacement:
 
 ZIP:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-top-markings/SPECTER_IRAQ_MISSILE_TOP_MARKINGS.zip
+  SIZE=1660986230
 
 Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
 

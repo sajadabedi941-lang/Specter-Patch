@@ -1,0 +1,23 @@
+# SPECTER Iraq_AlFahd500 Alabaas-style unique rider rearm
+
+Missile A only. First shot uses spawn-safe Conditions=None (no InitialPayload).
+FireOCL contains unique unarmed rider. $1100 OBJECT_UPGRADE contains unique
+armed rider + stripper. Not a CommandSet-only / payment-only patch.
+
+- DATA size: 366617832
+- DATA SHA256: f2406200669b6062b6b342eda6665e42f7dab4a7a22fcc05d542a670fa1c5a22
+- DATA files: 2931
+- ART size: 1295713019
+- ART SHA256: 9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+- Changed vs PR #599: Data\INI\ObjectCreationList.ini, Data\INI\Object\Specter\Iraq Army\Iraq_AlFahd500_Riders.ini, Data\INI\Object\Specter\Iraq Army\MissileHalfPriceRearm.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Weapon\Weapon_Iraq_AlFahd500.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Unique riders/OCLs; leftover OCL_Rearm_Iraq_AlFahd500 now contains armed rider
+- No InitialPayload, no PRIMARY NONE, no GenericFakeRider, no Alabaas FireOCL ID
+- Conditions=None kept; GARRISONABLE + RiderChangeContain for post-fire contain
+- CB_MISSILE_A still builds Iraq_AlFahd500; Scud_B / B-J / MOTHER / Alhussaien unchanged
+- ART byte-identical to PR #599
+
+Static validation completed; runtime game test not performed.
+Spawn CTD is NOT claimed fixed. Do not proceed to missile B.
+

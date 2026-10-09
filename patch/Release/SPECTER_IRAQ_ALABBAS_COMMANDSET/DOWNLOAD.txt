@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-commandset/_SPEC_DATA_ONE.big
+  SIZE=366616568
+  SHA256=238d63e6cbe9e09a7b02d4b864fe3c9333fbf08d536460592a1cb4663579ea17
+  FILES=2930
+
+ART replacement (byte-identical to PR #593):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-commandset/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-commandset/SPECTER_IRAQ_ALABBAS_COMMANDSET.zip
+  SIZE=1661087127
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Fixes the PR #596 startup crash: factory TEL no longer last-wins-overwrites
+the Al-Abbas building CommandSet Iraq_AlAbbasCommandSet.
+
+TAG=s-iraq-alabbas-commandset
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alabbas-commandset
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/597
+BASELINE=PR #596 DATA + PR #593 ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

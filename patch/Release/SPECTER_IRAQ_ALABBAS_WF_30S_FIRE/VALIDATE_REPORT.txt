@@ -1,0 +1,36 @@
+# SPECTER Iraq Al-Abbas: 30s BuildTime + immediate fire
+
+Baseline DATA: PR #589 (EU5 WF unlock on PR #588/#587/#584).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+
+Production last-wins: CB_MISSILE_D UNIT_BUILD Object=Iraq_AlAbbas
+on Iraq_AlFahdMissileFactoryCommandSet slot 4. Iraq War Factory
+CommandSets do not produce Al-Abbas and were left unchanged.
+
+BuildTime: 35.0 -> 30.0 on Object Iraq_AlAbbas only.
+Fire lock: Weapon_Iraq_AlAbbas AutoReloadsClip = No (clip never
+reloads / can stay empty). Removed so the weapon uses the default
+Yes path, same as known-good Missile A. Damage, range, projectile,
+ClipReloadTime 35000, and Deploy Pack/Unpack 6555 left unchanged.
+
+- DATA size: 366514412
+- DATA SHA256: 8f4a7e1950b44638cf77d91f6da50eca695d9e053784894e42f6cf1e3d399bca
+- DATA files: 2928
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+- Changed packed files: Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Weapon.ini
+
+## VALIDATION PASS (static / packed last-wins + independent re-extract)
+- Iraq_AlAbbas BuildTime is exactly 30.0
+- CB_MISSILE_D still UNIT_BUILD Object=Iraq_AlAbbas, no NEED_UPGRADE/Science
+- Weapon_Iraq_AlAbbas AutoReloadsClip removed; damage/range/projectile unchanged
+- CommandSet remains Scud_B_CommandSet -> Command_FireMainWeapon PRIMARY
+- Sibling missile BuildTimes unchanged (A 30 / B 25 / C 22 / H 60 / I 75 / J 90)
+- Iraq War Factory CommandSets unchanged; Al-Abbas not added to WF
+- PR #589 EU5 unlock file unchanged
+- Missile A object + weapon unchanged; 9P117 / factory / loco / upgrade / PT unchanged
+- Independent clean extract repeated the same audit
+- ART not rebuilt
+
+Static validation completed; runtime game test not performed.
+

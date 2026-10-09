@@ -1,0 +1,7 @@
+OBJECT=Iraq_AlAbbas defs=1 Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini
+WEAPON=Weapon_Iraq_AlAbbas defs=1 Data\INI\Weapon.ini
+BUTTON=CB_MISSILE_D defs=1 Data\INI\CommandButton.ini
+FACTORY_SET=Iraq_AlFahdMissileFactoryCommandSet slot 4 CB_MISSILE_D
+IRAQ_WF=Iraq_WarFactoryCommandSet_T3 does not list Al-Abbas
+UNIT_COMMANDSET=Scud_B_CommandSet -> Command_FireMainWeapon PRIMARY
+UNUSED_SET=Iraq_AlAbbasCommandSet is on building Iraq_Abbas only

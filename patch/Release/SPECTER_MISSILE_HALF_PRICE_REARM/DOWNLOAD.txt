@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-half-price-rearm/_SPEC_DATA_ONE.big
+  SIZE=366620007
+  SHA256=af77afe778c7536126b26f6abb29f8a338c0f2fa1697be4d0a3025a4b48675a3
+  FILES=2930
+
+ART replacement (byte-identical to PR #593):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-half-price-rearm/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-half-price-rearm/SPECTER_MISSILE_HALF_PRICE_REARM.zip
+  SIZE=1661100669
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+After a listed missile system fires, pay 50% of its build cost to restore
+firing immediately. The launcher is not replaced.
+
+TAG=s-missile-half-price-rearm
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-missile-half-price-rearm
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/594
+BASELINE=PR #593
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

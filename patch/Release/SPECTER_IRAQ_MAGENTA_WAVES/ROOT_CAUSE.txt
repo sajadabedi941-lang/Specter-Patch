@@ -1,0 +1,11 @@
+Offending references (Data\INI\Water.ini last-wins):
+  StandingWaterTexture = TWWater01.tga   (missing from ART)
+  SkyTexture           = TSCloudWis.tga  (MORNING/AFTERNOON; missing from ART)
+
+Not the cause:
+  WTR*.W3D wave meshes (TSNoiseM.tga / TSCloudWit.tga present)
+  PR #598 factory object/weapon DATA (byte-identical, rearm still off)
+  ART file mutations vs PR #593 (ART was byte-identical before this add)
+
+SAGE draws missing textures as bright magenta. Standing water is a
+tessellated grid, which appears as magenta wave/tile segments.

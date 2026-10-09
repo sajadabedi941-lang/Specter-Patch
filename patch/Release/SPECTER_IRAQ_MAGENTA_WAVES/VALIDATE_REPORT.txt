@@ -1,0 +1,30 @@
+# SPECTER magenta ocean/wave tiles: missing Water.ini textures
+
+ROOT CAUSE: packed last-wins Data\INI\Water.ini (same as PR #593)
+names StandingWaterTexture TWWater01.tga and SkyTexture TSCloudWis.tga.
+Neither file exists in SPECTER ART (PR #593/#598, COMPLETE, ROLLBACK).
+SAGE missing textures render bright magenta. Standing water is a grid
+of wave/tile segments. WTR wave meshes already resolve in ART.
+PR #598 DATA was not the cause; factory spawn-control DATA is unchanged.
+
+FIX: add two last-wins ART aliases copied from this same ART archive:
+  Art\Textures\TWWater01.tga  <- Art\Textures\TSWater.tga  sha f3d9ed651348ff5d2cfcf0a31478f8938f97fc848f3c4c2a5b699120a0f96b91
+  Art\Textures\TSCloudWis.tga <- Art\Textures\TSCloudWit.tga sha 09ce2e3ac396c864486ccce9aa79200671a8438dc08536dbedc812e2f7f0b17c
+
+- DATA size: 366615017 (UNCHANGED vs PR #598)
+- DATA SHA256: ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+- DATA files: 2930
+- ART size: 1295713019
+- ART SHA256: 9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+- ART files: 4642 (was 4640; added Art\Textures\TSCloudWis.tga, Art\Textures\TWWater01.tga)
+
+## VALIDATION PASS (static / packed last-wins)
+- DATA SHA-256 identical to PR #598 spawn-control
+- Water.ini StandingWaterTexture / SkyTexture names unchanged
+- TWWater01.tga and TSCloudWis.tga now present and match in-archive donors
+- All Water.ini texture basenames resolve in ART (case-insensitive)
+- No other ART files added, removed, or mutated; no path duplicates
+
+Static validation completed; runtime game test not performed.
+Magenta water is NOT claimed fixed. Unresolved: look at ocean tiles in Zero Hour.
+

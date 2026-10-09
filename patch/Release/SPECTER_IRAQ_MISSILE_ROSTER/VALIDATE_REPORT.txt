@@ -1,0 +1,99 @@
+# SPECTER Iraq missile roster + missile D display rename
+
+Baseline packed last-wins: PR #599 DATA
+  SHA256 ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+
+Identified existing objects (not created):
+  missile G / 9P117     Object=Iraq_R11ScudB   DisplayName=OBJECT:9P117S
+  missile E / Sarab7    Object=Iraq_Sarab7     DisplayName=OBJECT:Sarab7
+  missile K / Al-Abbas  Object=Iraq_Alhussaien DisplayName=OBJECT:abbasicbmm
+  missile M / BM-21     Object=Iraq_BM-21      DisplayName=OBJECT:BM-21
+  missile D             Object=Iraq_AlAbbas    DisplayName key OBJECT:Iraq_AlAbbas
+
+War Factory last-wins (Iraq_WarFactoryCommandSet_T/T1/T2/T3 + unsuffixed AI):
+  REMOVED Command_ConstructIraq_R11ScudB (9P117)
+  REMOVED Command_ConstructIraq_Sarab7
+  REMOVED Command_ConstructIraq_Alhussaien (+ Alhussaien_AI on AI set)
+  REMOVED Command_ConstructIraq_BM-21
+  Objects/assets/buttons kept. Other-country WF sets that still reference
+  those construct buttons were not changed.
+
+Missile factory Iraq_AlFahdMissileFactoryCommandSet last-wins:
+  slot 5  CB_MISSILE_E Object=Iraq_Sarab7
+  slot 7  CB_MISSILE_G Object=Iraq_R11ScudB
+  slot 11 CB_MISSILE_K Object=Iraq_Alhussaien
+  slot 13 CB_MISSILE_M Object=Iraq_BM-21 (replaces Rally Point)
+  A-D/H-J/Sell unchanged. F/L remain reserved/empty.
+
+Missile D display:
+  CSF OBJECT:Iraq_AlAbbas 'Al-Abbas' -> 'Al-Raad'
+  Internal ID Iraq_AlAbbas unchanged. ICBM OBJECT:abbasicbmm unchanged.
+  Exact 'Al-Raad' was unused. Distinct leftover OBJECT:Alraad='Alraad' (MLRS) kept.
+
+No cooldown, rider, or paid rearm work in this pack.
+
+- DATA size: 366614827
+- DATA SHA256: 1f226a9de7f1d9fb121e07f6083def0d553bac6bc2f3be223dbea30b432c5d16
+- DATA files: 2930
+- ART size: 1295713019 (UNCHANGED vs PR #599)
+- ART SHA256: 9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+
+Factory last-wins:
+CommandSet Iraq_AlFahdMissileFactoryCommandSet
+  1  = CB_MISSILE_A
+  2  = CB_MISSILE_B
+  3  = CB_MISSILE_C
+  4  = CB_MISSILE_D
+  5  = CB_MISSILE_E
+  ; 6 reserved (F)
+  7  = CB_MISSILE_G
+  8  = CB_MISSILE_H
+  9  = CB_MISSILE_I
+  10 = CB_MISSILE_J
+  11 = CB_MISSILE_K
+  ; 12 reserved (L)
+  13 = CB_MISSILE_M
+  14 = Command_Sell
+End
+
+Iraq WF T3 last-wins:
+CommandSet Iraq_WarFactoryCommandSet_T3
+  1 = Command_ConstructIraq_T-72
+  2 = Command_ConstructIraq_BMP-1
+  3 = Command_ConstructIraq_BMP-2
+  4 = Command_ConstructIraq_BTR-90
+  5 = Command_ConstructIraq_2S1
+  6 = Command_ConstructIraq_Sam8
+  7 = Command_ConstructIraq_AssadBabel-2
+  8 = Command_ConstructIraq_SA-6
+  11 = Command_ConstructIraqVehicleRoland3K
+  14 = Command_Sell
+End
+
+Iraq WF unsuffixed last-wins:
+CommandSet Iraq_WarFactoryCommandSet
+  1 = Command_ConstructIraq_T-72
+  2 = Command_ConstructIraq_BMP-1
+  3 = Command_ConstructIraq_BMP-2
+  4 = Command_ConstructIraq_BTR-90
+  5 = Command_ConstructIraq_2S1
+  6 = Command_ConstructIraq_Sam8
+  7 = Command_ConstructIraqTankAssadBabel2_AI
+  8 = Command_ConstructIraq_SA-6
+  12 = Command_ConstructIraqVehicleRoland3K
+  14 = Command_Sell
+End
+
+## VALIDATION PASS (static / packed last-wins)
+- Factory E/G/K/M buttons point at existing Iraq_Sarab7 / Iraq_R11ScudB / Iraq_Alhussaien / Iraq_BM-21
+- Iraq WF last-wins no longer produce those four units
+- Construct buttons and object bodies still present (not deleted)
+- Other-country WF and Iraq Command Center rosters unchanged
+- Missile D CSF display is Al-Raad; ICBM display unchanged
+- No duplicate CommandSet/CommandButton names
+- Only CommandSet.ini, CommandButton.ini, generals.csf mutated vs PR #599
+- ART byte-identical to PR #599
+- No cooldown / rider / rearm added
+
+Static validation completed; runtime game test not performed.
+

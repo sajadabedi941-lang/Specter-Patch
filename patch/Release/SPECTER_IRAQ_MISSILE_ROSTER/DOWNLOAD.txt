@@ -1,0 +1,26 @@
+DATA replacement (roster + Al-Raad display):
+  TAG=s-iraq-missile-roster
+  FILE=_SPEC_DATA_ONE.big
+  SIZE=366614827
+  SHA256=1f226a9de7f1d9fb121e07f6083def0d553bac6bc2f3be223dbea30b432c5d16
+  FILES=2930
+
+ART replacement (byte-identical to PR #599):
+  FILE=_SPEC_ART_ONE.big
+  SIZE=1295713019
+  SHA256=9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+  FILES=4642
+
+ZIP:
+  FILE=SPECTER_IRAQ_MISSILE_ROSTER.zip
+  SIZE=1662333286
+  SHA256=4ebccbf0c131d495ad7374c7942db7f3079248f328b1132d45c82d60bbcb03aa
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+Open downloads in a desktop browser if the GitHub app reports the BIGs unavailable.
+
+BASELINE=PR #599
+MISSILE_D_DISPLAY=Al-Raad
+COOLDOWN=NOT IMPLEMENTED
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

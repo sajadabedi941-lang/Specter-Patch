@@ -1,0 +1,31 @@
+# SPECTER missile top-surface flag/name + Hussein green / Basrah gray
+
+Baseline: PR #592 TEL pre-launch color DATA+ART.
+DATA is a byte-identical copy. ART replaces seven missile P.tga skins.
+
+UV fix: projectile BOOSTER +Z (top) is V~0.725; TEL MISSILE01 +Y (top) is V~0.22.
+Previous skins painted flags at V~0.21-0.54 (cylinder sides). New skins paint
+Iraqi flag + exact missile name on both dorsal bands, along the length (U).
+
+Al-Hussein II body -> green. Al-Basrah body -> gray. Other colors preserved.
+Missile A body stays yellow; only its markings move onto the top bands.
+W3Ds, 9P117, weapons, radar, costs: unchanged.
+
+- DATA size: 366515208
+- DATA SHA256: 6af19c95f508a80752e26fd603d2745b5c2c51d446890a3f373816d329033f27
+- ART size: 1294467676
+- ART SHA256: 95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+- ART files: 4640
+- Changed ART: Art\Textures\Irq_AlAbbas2P.tga, Art\Textures\Irq_AlBasrahP.tga, Art\Textures\Irq_AlFahd500P.tga, Art\Textures\Irq_AlHussein2P.tga, Art\Textures\Irq_AlMansourP.tga, Art\Textures\Irq_AlNasirP.tga, Art\Textures\Irq_AlSamoud2P.tga
+
+## VALIDATION PASS (static / packed last-wins)
+- DATA SHA identical to PR #592
+- All TEL and projectile W3Ds byte-identical
+- 9P117 / GENERIC-MISSILES / IraqiFlag.dds / vehicle TGAs unchanged
+- Flag red/white/black present on TEL dorsal band AND projectile dorsal band
+- Name plates present on both dorsal bands
+- Al-Hussein II body classified green; Al-Basrah body classified gray
+- Missile A body remains yellow; C/D/I/J body colors unchanged
+
+Static validation completed; runtime game test not performed.
+

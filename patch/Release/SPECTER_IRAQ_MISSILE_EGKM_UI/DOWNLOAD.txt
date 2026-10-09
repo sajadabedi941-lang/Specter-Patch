@@ -1,21 +1,27 @@
 DATA replacement:
-  FILE=_SPEC_DATA_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-egkm-ui/_SPEC_DATA_ONE.big
   SIZE=366615607
   SHA256=9067cc23e3465281e83c40053956e0841fa7b6d7d99b4ce08391cea3eba5d7f6
+  HTTP=200 content-length=366615607
 
 ART replacement (M cameo + Al-Mansour teal):
-  FILE=_SPEC_ART_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-egkm-ui/_SPEC_ART_ONE.big
   SIZE=1295762258
   SHA256=f35c8ac324ba22f2f6eafc63ac680e5ebb52cd6e0c22362d7edfda88ec10c16f
+  HTTP=200 content-length=1295762258
 
 ZIP:
-  FILE=SPECTER_IRAQ_MISSILE_EGKM_UI.zip
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-egkm-ui/SPECTER_IRAQ_MISSILE_EGKM_UI.zip
   SIZE=1662382173
   SHA256=9b1bcba5d1cf9793cfa7cce965fa0ea4df9a19ed5d1e20383590ad1e0d9f2e17
+  HTTP=200 content-length=1662382173
 
 Place both BIGs in the SPECTER folder.
 Open downloads in a desktop browser if the GitHub app reports BIGs unavailable.
 
+TAG=s-iraq-missile-egkm-ui
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-egkm-ui
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/606
 BASELINE=PR #605
 COOLDOWN=NOT IMPLEMENTED
 STATIC_VALIDATION=PASS

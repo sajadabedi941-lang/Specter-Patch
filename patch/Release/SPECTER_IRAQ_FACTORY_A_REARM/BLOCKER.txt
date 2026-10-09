@@ -1,0 +1,41 @@
+STOP — no DATA/ART change for factory missile A
+
+Requirement: paid rearm after fire, 50% of $2200 = $1100, then fire again,
+without a spawn CTD, without touching B–J / country TELs / MOTHER.
+
+Alabaas reference (Iraq_Alhussaien) is a garrisonable rider state machine:
+  FireOCL disarms -> OBJECT_UPGRADE payment -> ObjectCreationUpgrade restores rider.
+SAGE has no native missile-reload field.
+
+Factory A is a 9P117-style TEL (same KindOf / Scud_B_CommandSet as MOTHER).
+A working paid-rearm state machine on this object requires at least:
+
+  1. A unique CommandSet so the rearm button is not added to MOTHER's Scud_B
+  2. Something that stops free clip reload after fire (AutoReloadsClip=No)
+  3. Something that restores firing after payment (WeaponSetUpgrade TriggeredBy
+     and/or Alabaas riders + ObjectCreationUpgrade)
+  4. Something that clears the OBJECT upgrade after fire so the player pays
+     again (FireOCL stripper / UpgradeDie)
+
+Those are exactly the PR #594–#597 experiments:
+
+  #594/#595  riders + InitialPayload on this TEL family  -> CTD at spawn
+  #596/#597  unique CommandSet + WeaponSetUpgrade TriggeredBy
+             + PLAYER_UPGRADE WeaponSet + FireOCL          -> CTD at spawn
+             (#597 still CTD after the AlAbbas CommandSet rename)
+
+This task forbids restoring those experiments and forbids copying Alabaas
+riders blindly. No other SAGE mechanic can both (a) block the next shot until
+payment and (b) restore the shot after payment.
+
+Isolated experiment conclusion: do not point Iraq_AlFahd500 at the leftover
+Iraq_AlFahd500CommandSet, do not add TriggeredBy, do not add FireOCL, do not
+add riders. Leave the PR #593 spawn-safe body in place.
+
+Not done:
+  - paid rearm on missile A
+  - any change to B–J, country TELs, or Iraq_R11ScudB
+  - ART changes
+
+Runtime game test: NOT RUN (no Zero Hour here). Spawn safety of a new
+A-only #597-lite pack is NOT claimed; #597 already CTD'd on this family.

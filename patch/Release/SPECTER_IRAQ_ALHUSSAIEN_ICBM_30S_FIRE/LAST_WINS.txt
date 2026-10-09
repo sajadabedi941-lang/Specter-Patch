@@ -1,0 +1,7 @@
+SCREENSHOT=Al Abbas ICBM Launcher / cost 20000 / between SA-6 and BM-21 Grad
+BUTTON=Command_ConstructIraq_Alhussaien UNIT_BUILD Object=Iraq_Alhussaien
+OBJECT=Iraq_Alhussaien file=Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini defs=1
+NOT_SCREENSHOT=Iraq_AlAbbas CB_MISSILE_D cost 2600 (PR #590, preserved)
+WF_T3_SLOT10=Command_ConstructIraq_Alhussaien
+ARMED_SET=Iraq_AlhussaienArmedCommandSet slot1 Command_IraqAlAbbasICBMFire
+ISKANDER=Command_TacticalStrike UNCHANGED

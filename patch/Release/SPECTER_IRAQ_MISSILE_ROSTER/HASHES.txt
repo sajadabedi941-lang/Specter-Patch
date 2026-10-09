@@ -22,3 +22,5 @@ ZIP_SIZE=1662333286
 ZIP_SHA256=4ebccbf0c131d495ad7374c7942db7f3079248f328b1132d45c82d60bbcb03aa
 STATIC_VALIDATION=PASS
 RUNTIME_TEST=NOT RUN
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/605
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-roster

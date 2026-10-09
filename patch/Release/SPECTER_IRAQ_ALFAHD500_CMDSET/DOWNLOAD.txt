@@ -1,0 +1,29 @@
+DATA replacement (PR #599 + Iraq_AlFahd500 CommandSet only):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-cmdset/_SPEC_DATA_ONE.big
+  SIZE=366615024
+  SHA256=1dd1fdaf41f56585e5c4f13360ba4e6a81165930bff59dc9dc68c01362d2750b
+  FILES=2930
+
+ART replacement (byte-identical to PR #599):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-cmdset/_SPEC_ART_ONE.big
+  SIZE=1295713019
+  SHA256=9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-cmdset/SPECTER_IRAQ_ALFAHD500_CMDSET.zip
+  SIZE=1662330683
+  SHA256=c11e6d9acc78e71e928bd65230bc9e1894c505ddce6c5583255cd8ca691bb91e
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+ONE field: Iraq_AlFahd500 CommandSet Scud_B -> leftover Iraq_AlFahd500CommandSet.
+Paid rearm LOOP is NOT complete. Clip still auto-reloads in 95s.
+
+TAG=s-iraq-alfahd500-cmdset
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd500-cmdset
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/602
+BASELINE=PR #599
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN
+SPAWN_CTD_CLAIMED_FIXED=NO
+PAID_REARM_LOOP_COMPLETE=NO

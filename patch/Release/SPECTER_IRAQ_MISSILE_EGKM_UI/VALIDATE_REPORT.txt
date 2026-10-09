@@ -1,0 +1,42 @@
+# SPECTER Iraq E/G/K/M cameos + cards + missile J teal
+
+Baseline packed last-wins: PR #605 DATA + PR #599/#605 ART
+
+QUEUE/TIMER ROOT CAUSE: ZH build-queue icon is Object ButtonImage.
+A/B/C/D already use specter_missile_*. E/G/K/M used WF portraits.
+Command type was already UNIT_BUILD on the factory; not a command-type bug.
+
+Fixes:
+  E object Iraq_Sarab7     irq_sarab7  -> specter_missile_e
+  G object Iraq_R11ScudB   irq_9p117   -> specter_missile_g
+  K object Iraq_Alhussaien irq_alabbas -> specter_missile_k
+  M object Iraq_BM-21      irq_bm21    -> specter_missile_m
+  CB_MISSILE_M ButtonImage irq_bm21    -> specter_missile_m
+  ART add specter_missile_m.tga (same generator as A-L, letter M)
+  ART replace Irq_AlMansourP.tga only (J flying + pre-launch missile)
+
+DISPLAY/GAMEPLAY CONFLICTS (gameplay NOT changed):
+  - E display Build 20s vs object BuildTime 22.0; AttackRange 1200 vs card 400k; ClipSize 2 matches two missiles; BuildCost 1200 matches $1,200
+  - G display Build 20s vs object BuildTime 17.0; AttackRange 1720 vs card 1000k; PrimaryDamage 2000 vs card 400k; BuildCost 1200 matches $1,200
+  - K display Build 5 minutes vs object BuildTime 30.0; AttackRange 2300 vs card 1400k; AlAbidMissileWeapon PrimaryDamage 1 (warhead is separate) vs card 15000k; BuildCost 20000 matches $20,000
+  - K ICBM CSF OBJECT:abbasicbmm left unchanged; factory card first line is Alabaas
+
+- DATA size: 366615607
+- DATA SHA256: 9067cc23e3465281e83c40053956e0841fa7b6d7d99b4ce08391cea3eba5d7f6
+- ART size: 1295762258
+- ART SHA256: f35c8ac324ba22f2f6eafc63ac680e5ebb52cd6e0c22362d7edfda88ec10c16f
+
+## VALIDATION PASS (static / packed last-wins)
+- Factory CommandSet unchanged vs PR #605
+- A/B/C/D buttons and objects unchanged
+- E/G/K/M CommandButtons remain UNIT_BUILD on the correct objects
+- E/G/K/M object portraits now match A/B/C/D slot cameos (queue/timer)
+- M button image is specter_missile_m; label Missile M
+- E/G/K tooltip cards use the A/B/C/D layout with requested text
+- ICBM object ID/weapon/cost/time and OBJECT:abbasicbmm unchanged
+- Weapons and BuildCost/BuildTime unchanged
+- ART: only specter_missile_m.tga added and Irq_AlMansourP.tga replaced
+- J W3Ds still reference Irq_AlMansourP.tga; shared 9P117 truck tex untouched
+
+Static validation completed; runtime game test not performed.
+

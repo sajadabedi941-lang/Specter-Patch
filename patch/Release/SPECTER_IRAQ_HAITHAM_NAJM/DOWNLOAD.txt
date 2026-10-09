@@ -2,21 +2,26 @@ DATA replacement:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-najm/_SPEC_DATA_ONE.big
   SIZE=366674916
   SHA256=67cdb31bc458c46cb56acba9073714e020418cbae6a391ac46f2928fc998797d
+  HTTP=200 content-length=366674916
 
 ART replacement:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-najm/_SPEC_ART_ONE.big
   SIZE=1305667638
   SHA256=7fb8b996ec45222142e41a68b1a2eb825a6ae0bf19ebe2c351fd6ccb18507937
+  HTTP=200 content-length=1305667638
 
 ZIP:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-najm/SPECTER_IRAQ_HAITHAM_NAJM.zip
   SIZE=1672346538
   SHA256=99270e5c0566f8f7d363a53f42bf2749783b2fdd9106de6523fbf60e9e52f167
+  HTTP=200 content-length=1672346538
 
 Place both BIGs in the SPECTER folder.
 Open downloads in a desktop browser if the GitHub app reports BIGs unavailable.
 
 TAG=s-iraq-haitham-najm
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-haitham-najm
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/607
 BASELINE=PR #606
 PARENT_HAITHAM=Iraq_Alhussaien
 PARENT_NAJM=Iraq_Sarab7

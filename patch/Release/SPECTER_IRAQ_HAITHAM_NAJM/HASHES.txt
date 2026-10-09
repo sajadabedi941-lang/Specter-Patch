@@ -29,3 +29,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_IRAQ_HAITHAM_NAJM.zip
 ZIP_SIZE=1672346538
 ZIP_SHA256=99270e5c0566f8f7d363a53f42bf2749783b2fdd9106de6523fbf60e9e52f167
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/607
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-haitham-najm

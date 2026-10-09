@@ -1,0 +1,7 @@
+UV_PROJ_TOP=BOOSTER V~0.725 U=length
+UV_TEL_TOP=MISSILE01 V~0.22 +Y
+MARKINGS=flag+name on both dorsal bands along U
+B_BODY=green (32,128,54) nose=red
+H_BODY=gray (124,126,130) nose=black
+A_BODY=yellow preserved; markings moved to dorsal bands
+DATA=PR592 byte-identical

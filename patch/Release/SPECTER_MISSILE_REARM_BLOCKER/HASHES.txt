@@ -18,3 +18,5 @@ ALABAAS_REARM_LASTWINS_50PCT=10000
 FACTORY_A_J_REARM=NOT IMPLEMENTED (spawn CTD if Alabaas riders copied)
 STATIC_VALIDATION=AUDIT ONLY
 RUNTIME_TEST=NOT RUN
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-missile-rearm-blocker
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/600

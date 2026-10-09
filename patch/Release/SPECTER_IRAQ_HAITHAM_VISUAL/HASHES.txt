@@ -31,3 +31,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_IRAQ_HAITHAM_VISUAL.zip
 ZIP_SIZE=1672345188
 ZIP_SHA256=d2702d5c29a4a2d97c1fd7a7b84235bc8cdb7119ef3e69c18f73a435d3cbd2dd
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/608
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-haitham-visual

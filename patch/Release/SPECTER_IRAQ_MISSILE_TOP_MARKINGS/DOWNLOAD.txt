@@ -1,0 +1,27 @@
+DATA replacement (byte-identical to PR #592):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-top-markings/_SPEC_DATA_ONE.big
+  SIZE=366515208
+  SHA256=6af19c95f508a80752e26fd603d2745b5c2c51d446890a3f373816d329033f27
+  FILES=2928
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-top-markings/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-top-markings/SPECTER_IRAQ_MISSILE_TOP_MARKINGS.zip
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Iraqi flag + exact missile name on the top-facing UV band (TEL and projectile).
+Al-Hussein II body is green. Al-Basrah body is gray.
+W3Ds / 9P117 / weapons / radar / costs unchanged.
+
+TAG=s-iraq-missile-top-markings
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-top-markings
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/593
+BASELINE=PR #592
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

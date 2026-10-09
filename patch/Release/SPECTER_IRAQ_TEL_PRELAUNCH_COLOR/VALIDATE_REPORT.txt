@@ -1,0 +1,30 @@
+# SPECTER Iraq TEL pre-launch skins + original 9P117 carrier color
+
+Baseline DATA: PR #591 Alhussaien ICBM 30s fire.
+Baseline ART: PR #574 missile skins BCDHIJ.
+
+Missile A projectile / INI unchanged. B-J flying projectile W3Ds unchanged.
+A-J TEL vehicle meshes now reference original Irq_9P117.tga / Irq_9P117D.tga.
+B-J pre-launch MISSILE01 now uses each missile's existing projectile TGA.
+
+- DATA size: 366515208
+- DATA SHA256: 6af19c95f508a80752e26fd603d2745b5c2c51d446890a3f373816d329033f27
+- DATA files: 2928
+- ART size: 1294467676
+- ART SHA256: 72afcc72a12c5cf576a43351a0143796789faa8a55743012bbaf8329c0011246
+- ART files: 4640
+- Changed DATA: Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini
+- Changed ART: Art\W3D\Irq_AlAbbas2TL.W3D, Art\W3D\Irq_AlAbbas2TLD.W3D, Art\W3D\Irq_AlBasrahTL.W3D, Art\W3D\Irq_AlBasrahTLD.W3D, Art\W3D\Irq_AlFahd500.W3D, Art\W3D\Irq_AlFahd500D.W3D, Art\W3D\Irq_AlHussein2.W3D, Art\W3D\Irq_AlHussein2D.W3D, Art\W3D\Irq_AlMansourT.W3D, Art\W3D\Irq_AlMansourTD.W3D, Art\W3D\Irq_AlNasirTEL.W3D, Art\W3D\Irq_AlNasirTELD.W3D, Art\W3D\Irq_AlSamoud2T.W3D, Art\W3D\Irq_AlSamoud2TD.W3D
+
+## VALIDATION PASS (static / packed last-wins)
+- Missile A INI, projectile INI, and projectile W3D byte-identical
+- A TEL MISSILE01 still Irq_AlFahd500P.tga; vehicle meshes Irq_9P117.tga
+- B/C/D/H/I/J TEL MISSILE01 uses that variant's projectile P.tga
+- B/C/D/H/I/J TEL vehicle meshes Irq_9P117.tga / Irq_9P117D.tga
+- Original 9P117 W3D/DDS and GENERIC-MISSILES byte-identical
+- Flying projectile W3Ds/TGAs for B-J byte-identical
+- Weapons, radar, HP, costs, 9P117 object, factory, EU5, AbbasLauncher unchanged
+- 12 new dedicated TEL W3Ds added (6 variants x healthy/damaged)
+
+Static validation completed; runtime game test not performed.
+

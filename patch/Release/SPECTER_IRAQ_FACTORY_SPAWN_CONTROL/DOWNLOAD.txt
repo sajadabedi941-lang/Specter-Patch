@@ -1,0 +1,31 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-spawn-control/_SPEC_DATA_ONE.big
+  SIZE=366615017
+  SHA256=ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+  FILES=2930
+
+ART replacement (byte-identical to PR #593):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-spawn-control/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-spawn-control/SPECTER_IRAQ_FACTORY_SPAWN_CONTROL.zip
+  SIZE=1661087582
+  SHA256=6d0a06f03a8c0eb8452b701b7dca215aa07b0ca2c3e55f4220f690c5839085bd
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+CONTROL: restores PR #593 factory A-J object bodies and weapons.
+Factory half-price rearm is removed from A-J. Iraq_AlAbbasTELCommandSet
+is reserved so the building CommandSet is not overwritten.
+
+TAG=s-iraq-factory-spawn-control
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-factory-spawn-control
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/598
+BASELINE=PR #597 history + PR #593 factory bodies/ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN
+SPAWN_CRASH_CLAIMED_FIXED=NO
+FACTORY_REARM=REMOVED from A-J until spawn is proven in-game

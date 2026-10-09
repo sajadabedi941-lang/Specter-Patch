@@ -1,0 +1,32 @@
+# SPECTER factory A-J spawn-safe CONTROL (rearm stripped)
+
+593 vs 597 factory object diffs were ONLY rearm add-ons:
+  PLAYER_UPGRADE WeaponSet, unique CommandSet, WeaponSetUpgrade TriggeredBy,
+  FireOCL OCL_Rearm_*, AutoReloadsClip=No on A/D.
+KindOf/Draw/Body/Locomotor/Geometry/module tags were already identical.
+Contain/riders were already absent in #597; spawn still crashed.
+
+CONTROL: restore PR #593 factory object bodies and weapon blocks.
+Keep Iraq_AlAbbasTELCommandSet so the building CommandSet is unique.
+Factory TELs use Scud_B_CommandSet again. Country TEL rearm unchanged.
+Factory half-price rearm is NOT present on A-J.
+
+- DATA size: 366615017
+- DATA SHA256: ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+- DATA files: 2930
+- ART size: 1294467676
+- ART SHA256: 95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+- Changed vs PR #597: Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini, Data\INI\Weapon.ini, Data\INI\Weapon\Weapon_Iraq_AlFahd500.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Factory A-J object bodies byte-match PR #593
+- Factory A-J weapons byte-match PR #593 (no rearm FireOCL)
+- Scud_B_CommandSet restored; no PLAYER_UPGRADE / TriggeredBy on A-J
+- Iraq_AlAbbasCommandSet unique and identical to PR #593 building set
+- Iraq_AlAbbasTELCommandSet still reserved (startup collision fix)
+- Iraq_Alhussaien rider rearm and 9P117 unchanged; ART = PR #593
+
+Static validation completed; runtime game test not performed.
+Spawn crash is NOT claimed fixed. Unresolved: produce A-J in Zero Hour.
+Factory half-price rearm is withheld until this control is spawn-safe.
+

@@ -1,0 +1,38 @@
+PR #603 vs last spawn-safe factory A (PR #599 DATA = PR #598 = PR #593 factory A body)
+
+In-game first failure (user, Zero Hour): Iraq_AlFahd500 CTD at produce/spawn.
+This environment could not reproduce a playable Wine session (no exception log).
+
+#603 DATA SHA256=f2406200669b6062b6b342eda6665e42f7dab4a7a22fcc05d542a670fa1c5a22
+#599 DATA SHA256=ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+
+Changed packed paths (A only):
+- Data/INI/Object/Specter/Iraq Army/Wheeled/Iraq_AlFahd500.ini
+- Data/INI/Weapon/Weapon_Iraq_AlFahd500.ini
+- Data/INI/Object/Specter/Iraq Army/Iraq_AlFahd500_Riders.ini (new)
+- Data/INI/ObjectCreationList.ini
+- Data/INI/Object/Specter/Iraq Army/MissileHalfPriceRearm.ini (stripper tag only)
+Unchanged: B-J, 9P117, CommandSet.ini, Alhussaien, ART.
+
+Iraq_AlFahd500 spawn-time deltas vs #599:
+  CommandSet Scud_B -> Iraq_AlFahd500CommandSet
+  KindOf += GARRISONABLE_UNTIL_DESTROYED
+  Extra WeaponSet WEAPON_RIDER1 (SECONDARY NONE, no PRIMARY)
+  Extra WeaponSet WEAPON_RIDER2 (PRIMARY Weapon_Iraq_AlFahd500)
+  RiderChangeContain ModuleTag_AlFahd500Rider (NO InitialPayload)
+  ObjectCreationUpgrade ModuleTag_AlFahd500Rearm TriggeredBy Upgrade_Rearm_Iraq_AlFahd500
+Weapon_Iraq_AlFahd500: FireOCL=OCL_Disarm_Iraq_AlFahd500 (should not run until fire)
+NOT present vs #594/#595: InitialPayload, PRIMARY NONE, GenericFakeRider, OCL_HussienMissileDisarm
+NOT present vs #597: PLAYER_UPGRADE, AutoReloadsClip=No
+
+Hypotheses for spawn CTD (not isolated in-game):
+  H1 RiderChangeContain on 9P117 TEL even with empty contain
+  H2 GARRISONABLE_UNTIL_DESTROYED on this KindOf/draw
+  H3 WEAPON_RIDER1 SECONDARY NONE evaluated at spawn with no rider
+  H4 ObjectCreationUpgrade present at instantiate
+  H5 unique CommandSet (less likely: #594 kept Scud_B and still CTD)
+  H6 combination of H1-H4
+FireOCL is a fire-time field; user crash is at produce/spawn, so H6/H1 are strongest.
+
+Blocker: Alabaas RiderChangeContain is not spawn-safe on factory A 9P117 TEL.
+Isolated one-lever in-game tests were not possible here. Restore #599 factory A.

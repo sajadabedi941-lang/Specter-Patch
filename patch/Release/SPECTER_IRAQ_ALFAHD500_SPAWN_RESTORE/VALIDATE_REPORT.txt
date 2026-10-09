@@ -1,0 +1,12 @@
+# Restore spawn-safe Iraq_AlFahd500 from PR #599
+
+Recommended DATA SHA256=ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+Recommended ART  SHA256=9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+BYTE_IDENTICAL_TO_PR599=YES
+
+Crashing #603 DATA SHA256=f2406200669b6062b6b342eda6665e42f7dab4a7a22fcc05d542a670fa1c5a22
+kept at release tag s-iraq-alfahd500-rider-rearm for comparison only.
+
+Factory A object matches PR #593/#599 spawn-safe body. B-J / MOTHER / ART
+unchanged. Static identity check only. Runtime not re-run in this environment.
+User reported PR #603 spawn CTD in Zero Hour.

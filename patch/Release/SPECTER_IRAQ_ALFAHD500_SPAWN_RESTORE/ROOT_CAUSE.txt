@@ -1,0 +1,28 @@
+First reproducible failure (user, live Zero Hour): producing/spawning
+Iraq_AlFahd500 from factory slot A CTDs with PR #603 installed.
+
+This cloud environment cannot run a playable Zero Hour session (Wine
+generals.exe/game.dat exits without INI-parse log, exception, or
+ReleaseCrashInfo). No dump from the user's machine was available here.
+Do not treat static INI checks as a spawn-CTD fix.
+
+Packed last-wins vs spawn-safe PR #599 (factory A body = PR #593/#598):
+#603 added, on Iraq_AlFahd500 only:
+  RiderChangeContain (no InitialPayload)
+  KindOf GARRISONABLE_UNTIL_DESTROYED
+  WeaponSet WEAPON_RIDER1 / WEAPON_RIDER2
+  ObjectCreationUpgrade TriggeredBy Upgrade_Rearm_Iraq_AlFahd500
+  unique CommandSet Iraq_AlFahd500CommandSet
+  FireOCL OCL_Disarm_Iraq_AlFahd500 on the weapon (fire-time)
+
+#603 did NOT restore #594/#595 InitialPayload, PRIMARY NONE, or
+GenericFakeRider. User still got a spawn CTD. Therefore omitting
+InitialPayload was not sufficient.
+
+Strongest remaining spawn-time hypothesis (not isolated in-game):
+  RiderChangeContain on this 9P117-style TEL, alone or combined with
+  GARRISONABLE / rider WeaponSets / ObjectCreationUpgrade at instantiate.
+
+Blocker: the Alabaas rider machine is not spawn-safe on factory missile A.
+Priority is eliminating the spawn crash. Recommended DATA/ART are
+byte-identical to PR #599. Keep PR #603 BIGs for comparison only.

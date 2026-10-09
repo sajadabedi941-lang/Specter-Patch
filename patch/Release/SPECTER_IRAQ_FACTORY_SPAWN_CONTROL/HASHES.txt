@@ -1,0 +1,16 @@
+DATA_CHANGED=YES
+ART_CHANGED=NO
+DATA_FILE=_SPEC_DATA_ONE.big
+DATA_SIZE=366615017
+DATA_SHA256=ec066f71382d3d1d732d4a9cdde54ffee86258eb0362aa0c8087155bc5e7f4d8
+DATA_FILES=2930
+ART_FILE=_SPEC_ART_ONE.big
+ART_SIZE=1294467676
+ART_SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+CHANGED_VS_597=Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini, Data\INI\Weapon.ini, Data\INI\Weapon\Weapon_Iraq_AlFahd500.ini
+CONTROL=PR593 factory objects+weapons; AlAbbasTELCommandSet reserved
+FACTORY_REARM=REMOVED from A-J until spawn is proven in-game
+BASELINE=PR #597 history + PR #593 factory bodies/ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN
+SPAWN_CRASH_CLAIMED_FIXED=NO

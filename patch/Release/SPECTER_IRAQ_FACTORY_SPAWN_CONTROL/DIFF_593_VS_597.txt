@@ -1,0 +1,15 @@
+Factory A-J packed last-wins differences (593 spawn-safe vs 597 crashing):
+
+UNCHANGED: KindOf, Draw=W3DTruckDraw, Body=ActiveBody, Locomotor,
+Geometry, DeployStyleAIUpdate, Physics, empty-then-TriggeredBy module
+tag ModuleTag_09h56u56j, death/FX modules, ProductionUpdate, costs.
+No RiderChangeContain / InitialPayload / GARRISONABLE in #597.
+
+CHANGED (all rearm add-ons introduced #594-#596):
+1. WeaponSet Conditions=PLAYER_UPGRADE (same primary weapon)
+2. CommandSet Scud_B_CommandSet -> unique Iraq_*CommandSet / TELCommandSet
+3. WeaponSetUpgrade TriggeredBy = Upgrade_Rearm_<object>
+4. Weapon FireOCL = OCL_Rearm_<object> (non-contained stripper)
+5. AutoReloadsClip=No on A (AlFahd500) and D (AlAbbas); B/C/H/I/J already No
+
+CONTROL restores 1-5 to PR #593. Country TEL rearm kept.

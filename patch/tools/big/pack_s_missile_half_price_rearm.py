@@ -279,6 +279,10 @@ def patch_factory_object(text: str, spec: dict) -> str:
         r"    Weapon = PRIMARY\s+" + re.escape(weapon) + r"\n"
         r"  End\n",
         "  WeaponSet\n"
+        "    Conditions = None\n"
+        f"    Weapon = PRIMARY   {weapon}\n"
+        "  End\n"
+        "  WeaponSet\n"
         "    Conditions = WEAPON_RIDER1\n"
         "    Weapon = PRIMARY   NONE\n"
         "    AutoChooseSources = PRIMARY  NONE\n"
@@ -292,6 +296,10 @@ def patch_factory_object(text: str, spec: dict) -> str:
     )
     if "WEAPON_RIDER2" not in new:
         raise SystemExit(f"factory weaponset patch failed: {spec['object']}")
+    kind_old = "PRELOAD SELECTABLE CAN_ATTACK CAN_CAST_REFLECTIONS VEHICLE SCORE"
+    kind_new = kind_old + " GARRISONABLE_UNTIL_DESTROYED"
+    if kind_old in new and "GARRISONABLE_UNTIL_DESTROYED" not in new:
+        new = new.replace(kind_old, kind_new, 1)
     insert = (
         "  Behavior = RiderChangeContain ModuleTag_WarheadRider\n"
         f"    Rider1 = GenericFakeRider1_Default_Rank RIDER1 WEAPON_RIDER1 STATUS_RIDER1 {ids['unarmed']} SET_NORMAL\n"
@@ -301,6 +309,7 @@ def patch_factory_object(text: str, spec: dict) -> str:
         "    DamagePercentToUnits  = 100%\n"
         "    BurnedDeathToUnits    = No\n"
         "    AllowInsideKindOf     = PRELOAD\n"
+        "    ForbidInsideKindOf    = INFANTRY VEHICLE STRUCTURE\n"
         "    ScuttleDelay          = 1\n"
         "    ScuttleStatus         = TOPPLED\n"
         "  End\n"
@@ -483,7 +492,9 @@ def make_strip_objects(specs: list[dict]) -> str:
             f"  End\n"
             f"  Behavior = UpgradeDie  ModuleTag_12\n"
             f"    DeathTypes = ALL\n"
-            f"    UpgradeToRemove     = {ids['upgrade']} ModuleTag_MissileRearm02\n"
+            f"    UpgradeToRemove     = {ids['upgrade']} "
+            + ("ModuleTag_Rearm" if spec.get("factory") else "ModuleTag_MissileRearm02")
+            + "\n"
             f"  End\n"
             f"  Behavior = LifetimeUpdate ModuleTag_032\n"
             f"    MinLifetime = 100\n"
@@ -563,6 +574,10 @@ def validate(data: dict[str, bytes], src: dict[str, bytes], specs: list[dict]) -
                 fails.append(f"{spec['object']} not starting armed")
             if ids["unarmed"] not in body:
                 fails.append(f"{spec['object']} rider1 set missing")
+            if "GARRISONABLE_UNTIL_DESTROYED" not in field(body, "KindOf"):
+                fails.append(f"{spec['object']} KindOf missing GARRISONABLE_UNTIL_DESTROYED")
+            if "WeaponSet\n    Conditions = None\n" not in body:
+                fails.append(f"{spec['object']} missing Conditions=None WeaponSet")
             wblock = command_block(weapons, "Weapon", spec["weapon"])
             if spec["object"] == "Iraq_AlFahd500":
                 wblock = command_block(decode(data[WEAPON_A_KEY]), "Weapon", spec["weapon"]) or wblock

@@ -1,0 +1,14 @@
+DATA_CHANGED=YES
+ART_CHANGED=NO
+DATA_FILE=_SPEC_DATA_ONE.big
+DATA_SIZE=366621160
+DATA_SHA256=6c3e2d75fdb2b0cbe6063563285bcb4794c03639c124421718de9b16c038e2f9
+DATA_FILES=2930
+ART_FILE=_SPEC_ART_ONE.big
+ART_SIZE=1294467676
+ART_SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+CHANGED_DATA=Data\INI\Object\Specter\Iraq Army\MissileHalfPriceRearm.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini
+ROOT_CAUSE=factory RiderChangeContain InitialPayload without GARRISONABLE_UNTIL_DESTROYED
+BASELINE=PR #594 DATA + PR #593 ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

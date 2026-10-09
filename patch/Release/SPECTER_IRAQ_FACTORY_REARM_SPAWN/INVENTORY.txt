@@ -1,0 +1,9 @@
+Factory A-J spawn fix; re-arm costs unchanged from PR #594:
+- Iraq_AlFahd500: build $2200 -> re-arm $1100
+- Iraq_AlHusseinII: build $1800 -> re-arm $900
+- Iraq_AlSamoudII: build $1700 -> re-arm $850
+- Iraq_AlAbbas: build $2600 -> re-arm $1300
+- Iraq_AlBasrah: build $5000 -> re-arm $2500
+- Iraq_AlNasir: build $6500 -> re-arm $3250
+- Iraq_AlMansour: build $8000 -> re-arm $4000
+KindOf += GARRISONABLE_UNTIL_DESTROYED; Conditions=None WeaponSet restored.

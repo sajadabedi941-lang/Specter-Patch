@@ -1,0 +1,7 @@
+Alabaas card still shows 15000k / 5 minutes / 1400k; those remain display-only on the parent.
+Haitham AlAbid alternate strike uses 4 parent MIRVs; each DeathWeapon is 15000 kg / 4 so the salvo totals 15000 kg.
+Haitham primary ICBM fire (Hussiean) is 1 RV at 15000 kg.
+Sarab7 parent still has AttackRange 1200 / PrimaryDamage 1200 vs its old 400k card.
+Najm range 800 is implemented as 800 km on the MOTHER 1.72/km scale (AttackRange 1376), not raw 800.
+Radar stealth is projectile MaxHealth + RadarPriority, not a native 0-100 field and not speed.
+Accuracy is ScatterRadius, not a native 0-100 field.

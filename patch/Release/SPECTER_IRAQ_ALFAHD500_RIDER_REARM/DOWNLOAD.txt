@@ -1,0 +1,29 @@
+DATA replacement (PR #599 + Iraq_AlFahd500 unique rider rearm):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-rider-rearm/_SPEC_DATA_ONE.big
+  SIZE=366617832
+  SHA256=f2406200669b6062b6b342eda6665e42f7dab4a7a22fcc05d542a670fa1c5a22
+  FILES=2931
+
+ART replacement (byte-identical to PR #599):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-rider-rearm/_SPEC_ART_ONE.big
+  SIZE=1295713019
+  SHA256=9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-rider-rearm/SPECTER_IRAQ_ALFAHD500_RIDER_REARM.zip
+  SIZE=1662335293
+  SHA256=3371c3ee2b4ac71303fab88d20623826f2b99cc9748d822c7d3cb967f481d2aa
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Unique-ID Alabaas rider chain on Iraq_AlFahd500 only. No InitialPayload / PRIMARY NONE.
+Rearm cost $1100. ART unchanged from PR #599.
+
+TAG=s-iraq-alfahd500-rider-rearm
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd500-rider-rearm
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/603
+BASELINE=PR #599
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN
+SPAWN_CTD_CLAIMED_FIXED=NO
+PAID_REARM_LOOP_COMPLETE=STATIC_ONLY

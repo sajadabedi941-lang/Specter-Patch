@@ -14,3 +14,5 @@ ART_BYTE_IDENTICAL_TO_PR599=YES
 ART_BYTE_IDENTICAL_TO_PR593=NO
 STATIC_VALIDATION=IDENTITY + BLOCKER AUDIT
 RUNTIME_TEST=NOT RUN
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-factory-a-rearm
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/601

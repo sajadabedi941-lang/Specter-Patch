@@ -1,0 +1,34 @@
+# SPECTER Iraq factory missile spawn crash fix (PR #594 regression)
+
+Baseline: PR #594 half-price re-arm DATA + PR #593 ART.
+ART is a byte-identical copy of PR #593.
+
+ROOT CAUSE: Factory A-J spawn (case B/C). PR #594 copied Alabaas
+RiderChangeContain + InitialPayload onto 9P117-style factory TELs that
+lack GARRISONABLE_UNTIL_DESTROYED, and removed Conditions=None WeaponSet.
+Working Alabaas-pattern TELs all have that KindOf flag. Contain init
+crashes when the factory finishes producing the unit.
+
+FIX: factory objects only — garrison KindOf, restore None WeaponSet,
+ForbidInsideKindOf INFANTRY VEHICLE STRUCTURE, stripper ModuleTag_Rearm.
+Half-price OBJECT_UPGRADE re-arm, first-shot armed rider, FireOCL disarm,
+costs, weapons, 9P117, and unrelated country TELs unchanged.
+
+- DATA size: 366621160
+- DATA SHA256: 6c3e2d75fdb2b0cbe6063563285bcb4794c03639c124421718de9b16c038e2f9
+- DATA files: 2930
+- ART size: 1294467676
+- ART SHA256: 95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+- Changed DATA: Data\INI\Object\Specter\Iraq Army\MissileHalfPriceRearm.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Factory A-J KindOf includes GARRISONABLE_UNTIL_DESTROYED
+- Conditions=None WeaponSet restored; WEAPON_RIDER1/2 retained
+- InitialPayload GenericFakeRider2 (first shot armed, no pre-pay)
+- Re-arm still 50% BuildCost, BuildTime 0.0, unique OBJECT upgrades
+- 9P117 / weapons damage/speed/range / unrelated TELs / ART unchanged
+
+Static validation completed; runtime game test not performed.
+Unresolved runtime steps: produce A-J, first shot, pay re-arm,
+insufficient funds, repeat fire/re-arm.
+

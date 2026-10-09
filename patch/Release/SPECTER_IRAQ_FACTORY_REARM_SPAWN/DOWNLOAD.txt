@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-rearm-spawn/_SPEC_DATA_ONE.big
+  SIZE=366621160
+  SHA256=6c3e2d75fdb2b0cbe6063563285bcb4794c03639c124421718de9b16c038e2f9
+  FILES=2930
+
+ART replacement (byte-identical to PR #593):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-rearm-spawn/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-factory-rearm-spawn/SPECTER_IRAQ_FACTORY_REARM_SPAWN.zip
+  SIZE=1661093337
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Fixes the PR #594 crash when the Iraq missile factory produces A-J.
+Half-price re-arm is preserved.
+
+TAG=s-iraq-factory-rearm-spawn
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-factory-rearm-spawn
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/595
+BASELINE=PR #594 DATA + PR #593 ART
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

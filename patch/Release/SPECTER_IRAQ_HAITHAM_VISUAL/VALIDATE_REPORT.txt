@@ -1,0 +1,21 @@
+SPECTER Al-Haitham / Al-Najm visual + spawn-CTD fix
+DATA 366674844 66109b457ed8e3fcdb7ec3430cbc97498f485095f3b509f077fcb021266eeac5
+ART  1305667638 fd17c94bcfc6f89bf2d6d567064b965cad1ecb6f1ba73cadbb90dae94523d7d6
+
+BROKEN REFERENCE:
+  Iraq_AlHaitham Model/Animation Irq_AlHthm_L* -> rewritten W3D HLod IRQ_ALHTM_L
+  Iraq_AlNajm    Model/Animation Irq_AlNajm    -> rewritten W3D HLod IRQ_ALNAJT
+  Parent working HLods are IRQ_ABBAS_L / IRQ_SARAB7 with Animation File.File.
+  Naive W3D uniquify also left truncated texture fragments (ithamMissile.tga).
+
+WHY INVISIBLE: INI asked for Irq_AlHthm_L.Irq_AlHthm_L / Irq_AlNajm.Irq_AlNajm
+  but the cloned W3Ds no longer contained a proven HLod/animation pair.
+WHY HAITHAM CTD: Alabaas ICBM Draw+animation+ParticlesAttachedToAnimatedBones
+  on an invalid rewritten W3D. Sarab7 has a simpler draw stack so Najm only vanished.
+
+FIX: restore parent Irq_Abbas_* / Irq_Sarab7 visual chains on the TELs.
+  Projectile W3Ds rebuilt as parent copies + texture-only black/red skins.
+  Gameplay values unchanged.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN (visual/CTD claim requires in-game retest)

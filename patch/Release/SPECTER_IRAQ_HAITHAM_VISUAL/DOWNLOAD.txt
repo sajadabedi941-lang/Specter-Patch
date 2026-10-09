@@ -1,0 +1,28 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-visual/_SPEC_DATA_ONE.big
+  SIZE=366674844
+  SHA256=66109b457ed8e3fcdb7ec3430cbc97498f485095f3b509f077fcb021266eeac5
+  HTTP=200 content-length=366674844
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-visual/_SPEC_ART_ONE.big
+  SIZE=1305667638
+  SHA256=fd17c94bcfc6f89bf2d6d567064b965cad1ecb6f1ba73cadbb90dae94523d7d6
+  HTTP=200 content-length=1305667638
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-haitham-visual/SPECTER_IRAQ_HAITHAM_VISUAL.zip
+  SIZE=1672345188
+  SHA256=d2702d5c29a4a2d97c1fd7a7b84235bc8cdb7119ef3e69c18f73a435d3cbd2dd
+  HTTP=200 content-length=1672345188
+
+Place both BIGs in the SPECTER folder.
+Open downloads in a desktop browser if the GitHub app reports BIGs unavailable.
+
+TAG=s-iraq-haitham-visual
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-haitham-visual
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/608
+BASELINE=PR #607
+GAMEPLAY=UNCHANGED
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

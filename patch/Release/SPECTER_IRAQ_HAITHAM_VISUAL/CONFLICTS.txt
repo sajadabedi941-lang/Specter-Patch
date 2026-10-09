@@ -1,0 +1,6 @@
+Parked Al-Haitham TEL now uses the proven Alabaas Irq_Abbas_* models, so the launcher looks like Alabaas until launch.
+Parked Al-Najm TEL now uses the proven Sarab7 Irq_Sarab7 models, so the launcher looks like Sarab7 until launch.
+In-flight skins stay dedicated: black AlHaithamMissile.tga and red AlNajmSkin.tga.
+Unused rewritten TEL W3Ds (Irq_AlHthm_L*, Irq_AlNajm.W3D) remain in ART but are no longer referenced.
+PR #607 gameplay values are unchanged.
+Alabaas, Sarab7, and 9P117 are not modified.

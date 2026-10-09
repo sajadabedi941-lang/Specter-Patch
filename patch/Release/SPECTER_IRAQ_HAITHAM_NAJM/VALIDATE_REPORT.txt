@@ -1,0 +1,23 @@
+SPECTER Iraq Al-Haitham + Al-Najm packed last-wins validation
+DATA 366674916 67cdb31bc458c46cb56acba9073714e020418cbae6a391ac46f2928fc998797d
+ART  1305667638 7fb8b996ec45222142e41a68b1a2eb825a6ae0bf19ebe2c351fd6ccb18507937
+DATA files 2935 ART files 4654
+
+PARENTS (unchanged objects):
+  Alabaas ICBM = Iraq_Alhussaien (AbbasLauncher.ini) BuildCost 20000 BuildTime 30.0
+  Sarab7       = Iraq_Sarab7     (AlNida.ini)        BuildCost 1200  BuildTime 22.0
+  9P117        = Iraq_R11ScudB   (9P117.ini)         NOT MODIFIED
+
+NEW OBJECTS:
+  Iraq_AlHaitham slot L  range 4300 (=2500 km)  HussieanWH 75000  AlAbidWH 18750 x4  scatter 35  HP 6800 NOT_ON_RADAR  build 300s $30000 rearm $20000
+  Iraq_AlNajm    slot F  range 1376 (=800 km)   dmg 2000+2200 ClipSize 2  scatter 35  HP 2000 LOCAL_UNIT_ONLY  build 50s $2500 (no rearm; parent has none)
+
+Alabaas rebuild Upgrade_Rearm_Iraq_Alhussaien BuildCost 15000 (was 10000).
+Alabaas object/weapon/art/production otherwise unchanged.
+
+ACCURACY = ScatterRadius on the real weapon (MIRV for Haitham, 2x_MRPGM clone for Najm).
+RADAR STEALTH = projectile MaxHealth + RadarPriority (NOT speed).
+WARHEAD = DeathWeapon PrimaryDamage on the cloned ICBM RV / Najm AP warhead + Najm PrimaryDamage.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

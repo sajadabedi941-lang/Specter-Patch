@@ -1,0 +1,10 @@
+Alabaas (unchanged rider path): Iraq_Alhussaien build $20000 -> re-arm $10000
+Factory A-J (PR #593 spawn body + OBJECT_UPGRADE payment):
+- Iraq_AlFahd500: build $2200 -> re-arm $1100
+- Iraq_AlHusseinII: build $1800 -> re-arm $900
+- Iraq_AlSamoudII: build $1700 -> re-arm $850
+- Iraq_AlAbbas: build $2600 -> re-arm $1300
+- Iraq_AlBasrah: build $5000 -> re-arm $2500
+- Iraq_AlNasir: build $6500 -> re-arm $3250
+- Iraq_AlMansour: build $8000 -> re-arm $4000
+No RiderChangeContain / InitialPayload / GARRISONABLE on factory A-J.

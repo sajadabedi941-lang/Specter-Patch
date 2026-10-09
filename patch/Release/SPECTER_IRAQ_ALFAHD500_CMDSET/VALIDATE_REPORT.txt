@@ -1,0 +1,24 @@
+# SPECTER isolated lever 1: Iraq_AlFahd500 unique CommandSet
+
+ONE spawn-time object field: CommandSet Scud_B -> Iraq_AlFahd500CommandSet.
+No riders, no GARRISONABLE, no PLAYER_UPGRADE, no TriggeredBy, no FireOCL.
+Factory CB_MISSILE_A still UNIT_BUILDs Iraq_AlFahd500. MOTHER keeps Scud_B.
+Paid rearm LOOP is NOT complete. Clip still auto-reloads in 95s.
+
+- DATA size: 366615024
+- DATA SHA256: 1dd1fdaf41f56585e5c4f13360ba4e6a81165930bff59dc9dc68c01362d2750b
+- DATA files: 2930
+- ART size: 1295713019
+- ART SHA256: 9c1dc445c17b024f8a4c1c55e699371a94d4991d1dff1eb377f3976a6c54545e
+- Changed vs PR #599: Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Only Iraq_AlFahd500.ini changed; B-J, 9P117, Alhussaien, weapons, CommandSet.ini unchanged
+- Unique set buttons resolve; no duplicate CommandSet names
+- CB_MISSILE_A still builds Iraq_AlFahd500
+- ART byte-identical to PR #599
+
+Static validation completed; runtime game test not performed.
+Spawn CTD is NOT claimed fixed. Unresolved: produce A in Zero Hour.
+Do not add TriggeredBy/FireOCL/riders until this lever is spawn-safe in-game.
+

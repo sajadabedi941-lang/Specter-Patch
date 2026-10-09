@@ -211,10 +211,12 @@ def command_block(text: str, kind: str, name: str) -> str | None:
 
 
 def ids_for(obj: str) -> dict[str, str]:
+    # Iraq_AlAbbasCommandSet already belongs to the Al-Abbas BUILDING.
+    cmdset = f"{obj}TELCommandSet" if obj == "Iraq_AlAbbas" else f"{obj}CommandSet"
     return {
         "upgrade": f"Upgrade_Rearm_{obj}",
         "button": f"Command_Rearm_{obj}",
-        "cmdset": f"{obj}CommandSet",
+        "cmdset": cmdset,
         "ocl": f"OCL_Rearm_{obj}",
         "strip": f"RearmStrip_{obj}",
     }

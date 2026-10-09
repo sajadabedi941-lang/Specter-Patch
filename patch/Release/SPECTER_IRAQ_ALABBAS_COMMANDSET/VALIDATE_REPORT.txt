@@ -1,0 +1,29 @@
+# SPECTER startup crash fix: Iraq_AlAbbasCommandSet last-wins collision
+
+ROOT CAUSE: PR #596 appended CommandSet Iraq_AlAbbasCommandSet for the
+factory TEL. That name already belonged to the Al-Abbas BUILDING
+(Iraq_Abbas / Iraq_Abbas_AI): Command_AlAbbasGroundAttack + Command_Sell.
+Last-wins replaced the building set with vehicle FireMainWeapon/re-arm
+buttons. Crash dialog: Data/INI/CommandSet.ini / Iraq_AlabbasCommandSet.
+
+FIX: rename the TEL set to Iraq_AlAbbasTELCommandSet. Building set is
+again the unique last-wins definition, identical to PR #593.
+
+- DATA size: 366616568
+- DATA SHA256: 238d63e6cbe9e09a7b02d4b864fe3c9333fbf08d536460592a1cb4663579ea17
+- DATA files: 2930
+- ART size: 1294467676
+- ART SHA256: 95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+- Changed vs PR #596: Data\INI\CommandSet.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Exactly one Iraq_AlAbbasCommandSet; last-wins == PR #593 building set
+- Factory TEL uses unique Iraq_AlAbbasTELCommandSet
+- Iraq_Abbas / Iraq_Abbas_AI still reference Iraq_AlAbbasCommandSet
+- All CommandButtons in both sets exist
+- No duplicate CommandSet names (case-insensitive)
+- ART byte-identical to PR #593; 9P117 unchanged
+
+Static validation completed; runtime game test not performed.
+Unresolved runtime step: launch Zero Hour past CommandSet.ini load.
+

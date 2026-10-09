@@ -1,0 +1,33 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-wf-30s-fire/_SPEC_DATA_ONE.big
+  SIZE=366514412
+  SHA256=8f4a7e1950b44638cf77d91f6da50eca695d9e053784894e42f6cf1e3d399bca
+  FILES=2928
+
+ART (unchanged PR #574):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-wf-30s-fire/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alabbas-wf-30s-fire/SPECTER_IRAQ_ALABBAS_WF_30S_FIRE.zip
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+OBJECT=Iraq_AlAbbas
+PRODUCTION_BUTTON=CB_MISSILE_D
+PRODUCTION_COMMANDSET=Iraq_AlFahdMissileFactoryCommandSet slot 4
+BUILD_TIME=35.0 -> 30.0
+FIRE_LOCK=Weapon_Iraq_AlAbbas AutoReloadsClip=No
+FIRE_FIX=removed AutoReloadsClip (default Yes)
+CHANGED=Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini + Data\INI\Weapon.ini
+BASELINE_DATA=PR #589
+BASELINE_ART=PR #574
+IRAQ_WAR_FACTORY=UNCHANGED
+MISSILE_A=UNCHANGED
+
+TAG=s-iraq-alabbas-wf-30s-fire
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alabbas-wf-30s-fire
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/590
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

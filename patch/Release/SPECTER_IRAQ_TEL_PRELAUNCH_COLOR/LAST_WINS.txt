@@ -1,0 +1,8 @@
+A_TEL=Irq_AlFahd500 vehicle=Irq_9P117.tga missile=Irq_AlFahd500P.tga
+B_TEL=Irq_AlHussein2 vehicle=Irq_9P117.tga missile=Irq_AlHussein2P.tga
+C_TEL=Irq_AlSamoud2T vehicle=Irq_9P117.tga missile=Irq_AlSamoud2P.tga
+D_TEL=Irq_AlAbbas2TL vehicle=Irq_9P117.tga missile=Irq_AlAbbas2P.tga
+H_TEL=Irq_AlBasrahTL vehicle=Irq_9P117.tga missile=Irq_AlBasrahP.tga
+I_TEL=Irq_AlNasirTEL vehicle=Irq_9P117.tga missile=Irq_AlNasirP.tga
+J_TEL=Irq_AlMansourT vehicle=Irq_9P117.tga missile=Irq_AlMansourP.tga
+FLYING=unchanged Irq_AlFahd500M / Irq_AlHussein2M / Irq_AlSamoud2M / Irq_AlAbbas2M / Irq_AlBasrahM / Irq_AlNasirM / Irq_AlMansourM

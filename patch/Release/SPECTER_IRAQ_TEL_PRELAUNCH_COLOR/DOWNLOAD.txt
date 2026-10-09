@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-tel-prelaunch-color/_SPEC_DATA_ONE.big
+  SIZE=366515208
+  SHA256=6af19c95f508a80752e26fd603d2745b5c2c51d446890a3f373816d329033f27
+  FILES=2928
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-tel-prelaunch-color/_SPEC_ART_ONE.big
+  SIZE=1294467676
+  SHA256=72afcc72a12c5cf576a43351a0143796789faa8a55743012bbaf8329c0011246
+  FILES=4640
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-tel-prelaunch-color/SPECTER_IRAQ_TEL_PRELAUNCH_COLOR.zip
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+Missile A projectile/INI unchanged. A-J carriers use original 9P117 vehicle textures.
+B/C/D/H/I/J pre-launch TEL MISSILE01 uses each missile's existing projectile TGA.
+Flying projectile W3Ds unchanged. Weapons/radar/costs unchanged.
+
+TAG=s-iraq-tel-prelaunch-color
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-tel-prelaunch-color
+BASELINE_DATA=PR #591
+BASELINE_ART=PR #574
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

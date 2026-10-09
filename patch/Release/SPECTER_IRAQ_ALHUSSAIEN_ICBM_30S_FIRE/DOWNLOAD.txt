@@ -1,0 +1,32 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alhussaien-icbm-30s-fire/_SPEC_DATA_ONE.big
+  SIZE=366514886
+  SHA256=a7b8e569c96244014733b1447226e1a8fda5a8065934d794f61a72da55608b24
+  FILES=2928
+
+ART (unchanged PR #574):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alhussaien-icbm-30s-fire/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alhussaien-icbm-30s-fire/SPECTER_IRAQ_ALHUSSAIEN_ICBM_30S_FIRE.zip
+
+Place `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big` in the SPECTER folder.
+
+SCREENSHOT_OBJECT=Iraq_Alhussaien
+PRODUCTION_BUTTON=Command_ConstructIraq_Alhussaien
+PRODUCTION_COMMANDSET=Iraq_WarFactoryCommandSet_T3 slot 10
+BUILD_COST=20000
+BUILD_TIME=1200 -> 30.0
+CSF_TITLE=Al Abbas ICBM Launcher
+NOT_THE_SCREENSHOT=Iraq_AlAbbas / CB_MISSILE_D / $2600 (PR #590, preserved)
+CHANGED=AbbasLauncher.ini + CommandButton.ini + CommandSet.ini
+BASELINE_DATA=PR #590
+BASELINE_ART=PR #574
+
+TAG=s-iraq-alhussaien-icbm-30s-fire
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alhussaien-icbm-30s-fire
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/591
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

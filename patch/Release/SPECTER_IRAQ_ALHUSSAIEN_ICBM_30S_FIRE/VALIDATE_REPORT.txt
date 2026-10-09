@@ -1,0 +1,38 @@
+# SPECTER Iraq Al Abbas ICBM Launcher (Iraq_Alhussaien): 30s + fire
+
+Baseline DATA: PR #590 (Al-Abbas missile-D 30s on PR #589).
+Baseline ART: PR #574 ART BIG (unchanged, not rebuilt).
+
+Screenshot unit is NOT missile-factory Iraq_AlAbbas (CB_MISSILE_D, $2600).
+It is War Factory slot 10 Command_ConstructIraq_Alhussaien -> Iraq_Alhussaien
+($20000, CSF title 'Al Abbas ICBM Launcher', between SA-6 and BM-21 Grad).
+
+BuildTime: 1200 -> 30.0 on Object Iraq_Alhussaien only.
+Fire: start armed (Rider2), Iraq-only FIRE_WEAPON button without science,
+AlAbid science lock stripped (Iraq-only button). Deploy + 500s post-shot
+rearm upgrade time preserved. Iskander Command_TacticalStrike unchanged.
+PR #590 Iraq_AlAbbas 30.0 / AutoReloadsClip fix preserved.
+
+- DATA size: 366514886
+- DATA SHA256: a7b8e569c96244014733b1447226e1a8fda5a8065934d794f61a72da55608b24
+- DATA files: 2928
+- ART SHA256 (unchanged): e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART size (unchanged): 1292294758
+- Changed packed files: Data\INI\CommandButton.ini, Data\INI\CommandSet.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+
+## VALIDATION PASS (static / packed last-wins + independent re-extract)
+- Screenshot button Command_ConstructIraq_Alhussaien still Object=Iraq_Alhussaien
+- Iraq_Alhussaien BuildTime is exactly 30.0, BuildCost 20000
+- Starts GenericFakeRider2 / ArmedCommandSet (WEAPON_RIDER2 ICBM loaded)
+- Command_IraqAlAbbasICBMFire = FIRE_WEAPON SECONDARY, no science
+- Command_AlAbidMissileStrike science lock removed (Iraq-only)
+- Deploy Command_IraqDeployUnitWeapon + Pack/Unpack 6700/6735 preserved
+- Post-shot Upgrade_AlhussaienWarheadRearm BuildTime still 500.0
+- Iskander Command_TacticalStrike unchanged
+- PR #590 Iraq_AlAbbas BuildTime 30.0 preserved; Weapon.ini unchanged this patch
+- PR #589 EU5 unlock unchanged; Missile A / 9P117 / factory unchanged
+- Independent clean extract repeated the same audit
+- ART not rebuilt
+
+Static validation completed; runtime game test not performed.
+

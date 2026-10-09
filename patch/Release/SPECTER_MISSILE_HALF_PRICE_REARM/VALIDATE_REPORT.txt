@@ -1,0 +1,63 @@
+# SPECTER half-price immediate missile re-arm
+
+Baseline: PR #593 missile top-surface markings (DATA+ART).
+ART is a byte-identical copy. DATA adds per-object half-price re-arm.
+
+Reference: Iraq_Alhussaien OBJECT_UPGRADE + ObjectCreationUpgrade + OCL rider restore.
+Each launcher now has its own OBJECT upgrade at 50% of its BuildCost, BuildTime 0.0.
+Factory missiles A-J gain the same rider re-arm (start armed; after fire, pay to restore).
+Iraq_R11ScudB / 9P117, weapons damage/speed/range, and all ART are unchanged.
+
+## Inventory
+- Arab_Khalid: build $2500 -> re-arm $1250 [Alabaas-pattern]
+- ChinaVehicleDF41: build $3500 -> re-arm $1750 [Alabaas-pattern]
+- Egypt_Alhussaien: build $2301 -> re-arm $1151 [Alabaas-pattern]
+- India_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- India_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- India_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- IranVehicleKhormshar: build $2500 -> re-arm $1250 [Alabaas-pattern]
+- Iraq_Alhussaien: build $20000 -> re-arm $10000 [Alabaas-pattern]
+- Libya_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- Libya_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- Libya_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- Pakistan_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- Pakistan_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- Pakistan_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- RussiaVehicleRS24: build $3500 -> re-arm $1750 [Alabaas-pattern]
+- SaudiArabia_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- SaudiArabia_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- SaudiArabia_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- SouthAfrica_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- SouthAfrica_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- SouthAfrica_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- Syria_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- Syria_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- Syria_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- UAE_AbabeelTEL: build $2100 -> re-arm $1050 [Alabaas-pattern]
+- UAE_Alhussaien: build $1853 -> re-arm $927 [Alabaas-pattern]
+- UAE_ShaheenTEL: build $2039 -> re-arm $1020 [Alabaas-pattern]
+- US_M1075I_Trident: build $3400 -> re-arm $1700 [Alabaas-pattern]
+- Iraq_AlFahd500: build $2200 -> re-arm $1100 [factory A-J]
+- Iraq_AlHusseinII: build $1800 -> re-arm $900 [factory A-J]
+- Iraq_AlSamoudII: build $1700 -> re-arm $850 [factory A-J]
+- Iraq_AlAbbas: build $2600 -> re-arm $1300 [factory A-J]
+- Iraq_AlBasrah: build $5000 -> re-arm $2500 [factory A-J]
+- Iraq_AlNasir: build $6500 -> re-arm $3250 [factory A-J]
+- Iraq_AlMansour: build $8000 -> re-arm $4000 [factory A-J]
+
+- DATA size: 366620007
+- DATA SHA256: af77afe778c7536126b26f6abb29f8a338c0f2fa1697be4d0a3025a4b48675a3
+- DATA files: 2930
+- ART size: 1294467676
+- ART SHA256: 95a0737f7f6e7d0f15a2a1234b222d1cf9643d1199b00e28e7e87e7c89083ed4
+- Changed DATA: Data\INI\CommandButton.ini, Data\INI\CommandSet.ini, Data\INI\ObjectCreationList.ini, Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arab_Khalid.ini, Data\INI\Object\Specter\Armed Forces Of Russian Federation\Wheeled\RS-24_Yars.ini, Data\INI\Object\Specter\Egyptian Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Indian Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Indian Armed Forces\Wheeled\India_AbabeelTEL.ini, Data\INI\Object\Specter\Indian Armed Forces\Wheeled\India_ShaheenTEL.ini, Data\INI\Object\Specter\Iranian Army\Wheeled\Khormshar.ini, Data\INI\Object\Specter\Iraq Army\MissileHalfPriceRearm.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlAbbas.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlBasrah.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlHusseinII.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlMansour.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlNasir.ini, Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlSamoudII.ini, Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_AbabeelTEL.ini, Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_ShaheenTEL.ini, Data\INI\Object\Specter\PLA\Wheeled\DF41.ini, Data\INI\Object\Specter\Pakistan Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Pakistan Armed Forces\Wheeled\Pakistan_AbabeelTEL.ini, Data\INI\Object\Specter\Pakistan Armed Forces\Wheeled\Pakistan_ShaheenTEL.ini, Data\INI\Object\Specter\Saudi Arabia Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Saudi Arabia Armed Forces\Wheeled\SaudiArabia_AbabeelTEL.ini, Data\INI\Object\Specter\Saudi Arabia Armed Forces\Wheeled\SaudiArabia_ShaheenTEL.ini, Data\INI\Object\Specter\South African National Defence Force\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_AbabeelTEL.ini, Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_ShaheenTEL.ini, Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\Syria_AbabeelTEL.ini, Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\Syria_ShaheenTEL.ini, Data\INI\Object\Specter\United Arab Emirates Armed Forces\Wheeled\AbbasLauncher.ini, Data\INI\Object\Specter\United Arab Emirates Armed Forces\Wheeled\UAE_AbabeelTEL.ini, Data\INI\Object\Specter\United Arab Emirates Armed Forces\Wheeled\UAE_ShaheenTEL.ini, Data\INI\Object\Specter\United States Of America\Wheeled\US_MGM134.ini, Data\INI\Upgrade.ini, Data\INI\Upgrade_MissileHalfPriceRearm.ini, Data\INI\Weapon.ini, Data\INI\Weapon\Weapon_Iraq_AlFahd500.ini
+
+## VALIDATION PASS (static / packed last-wins)
+- Each listed launcher re-arm cost is exactly ceil(BuildCost/2)
+- Each re-arm upgrade BuildTime is 0.0 (immediate after payment)
+- Unique OBJECT upgrades; shared Upgrade_AlhussaienWarheadRearm time set to 0.0 fallback only
+- Factory A-J start with Rider2 (first shot unchanged) and FireOCL disarm
+- 9P117 / Iraq_R11ScudB, weapon damage/speed/range, ART unchanged
+
+Static validation completed; runtime game test not performed.
+

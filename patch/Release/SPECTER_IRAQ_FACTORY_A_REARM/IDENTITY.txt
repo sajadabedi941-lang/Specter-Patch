@@ -1,0 +1,38 @@
+Iraq factory missile A — packed last-wins identity (PR #599 DATA)
+
+Factory building
+  Object     = Iraq_AlFahdMissileFactory
+  File       = Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_AlFahdMissileFactory.ini
+  CommandSet = Iraq_AlFahdMissileFactoryCommandSet
+
+Production roster (slot order is the A–J lineup):
+  1  = CB_MISSILE_A   UNIT_BUILD  Object=Iraq_AlFahd500     Image=specter_missile_a
+  2  = CB_MISSILE_B   UNIT_BUILD  Object=Iraq_AlHusseinII    Image=specter_missile_b
+  3  = CB_MISSILE_C   UNIT_BUILD  Object=Iraq_AlSamoudII     Image=specter_missile_c
+  4  = CB_MISSILE_D   UNIT_BUILD  Object=Iraq_AlAbbas        Image=specter_missile_d
+  8  = CB_MISSILE_H   UNIT_BUILD  Object=Iraq_AlBasrah       Image=specter_missile_h
+  9  = CB_MISSILE_I   UNIT_BUILD  Object=Iraq_AlNasir        Image=specter_missile_i
+  10 = CB_MISSILE_J   UNIT_BUILD  Object=Iraq_AlMansour      Image=specter_missile_j
+
+Missile A
+  Production button = CB_MISSILE_A
+  TextLabel         = CONTROLBAR:SpecterMissileA
+  ButtonImage       = specter_missile_a
+  Launcher object   = Iraq_AlFahd500
+  Object file       = Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini
+  Weapon            = Weapon_Iraq_AlFahd500
+  Weapon file       = Data\INI\Weapon\Weapon_Iraq_AlFahd500.ini (last-wins after Weapon.ini)
+  BuildCost         = 2200
+  BuildTime         = 30.0
+  50% rearm (round-up) = (2200+1)//2 = 1100
+  CommandSet        = Scud_B_CommandSet  (shared with MOTHER Iraq_R11ScudB)
+  KindOf            = PRELOAD SELECTABLE CAN_ATTACK CAN_CAST_REFLECTIONS VEHICLE SCORE
+  No RiderChangeContain / InitialPayload / GARRISONABLE / TriggeredBy / PLAYER_UPGRADE
+  WeaponSetUpgrade ModuleTag_09h56u56j is present but empty (PR #593 spawn-safe)
+  ClipSize=1 ClipReloadTime=95000 (AutoReloadsClip omitted; SAGE default is Yes = free 95s reload)
+
+Leftover unused defs from PR #596/#597 still in DATA but NOT referenced by Iraq_AlFahd500:
+  Upgrade_Rearm_Iraq_AlFahd500        BuildCost=1100
+  Command_Rearm_Iraq_AlFahd500        OBJECT_UPGRADE
+  CommandSet Iraq_AlFahd500CommandSet  (FireMainWeapon + rearm + Scud switch)
+  Pointing the TEL at that CommandSet was part of the #597 spawn CTD.

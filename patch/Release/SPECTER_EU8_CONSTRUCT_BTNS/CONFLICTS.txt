@@ -1,0 +1,2 @@
+No last-wins path conflicts. New Button_Bio / Button_Mantis MappedImages only.
+Command_ConstructAmericaLgm30 is shared with AmericaDozerCommandSet; ButtonImage change is last-wins for that shared button.

@@ -1,0 +1,164 @@
+## Germany  CommandSet=GermanyDozerCommandSet
+  slot  1 | Command_ConstructGermanyPowerStation | GermanyPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructGermanyStrategyCenter | GermanyStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructGermanyBootCamp | GermanyBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructGermany_HeavyAirBase | Germany_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructGermanySupplyCenter | GermanySupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructGermanyRadarGM406 | GermanyRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructGermanyIRISTSamSite | GermanyIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructGermanyCommandCenter | GermanyCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructGermanyM777 | GermanyM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructGermanyMantis | GermanyMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructGermanyWarFactory | GermanyWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructGermanyAirfield | Germany_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructGermanyNASAMSIII | GermanyNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructGermanySkySabre | GermanySkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructGermanySkyranger30 | GermanySkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## France  CommandSet=FranceDozerCommandSet
+  slot  1 | Command_ConstructFrancePowerStation | FrancePowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructFranceStrategyCenter | FranceStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructFranceBootCamp | FranceBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructFrance_HeavyAirBase | France_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructFranceSupplyCenter | FranceSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructFranceRadarGM406 | FranceRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructFranceIRISTSamSite | FranceIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructFranceCommandCenter | FranceCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructFranceM777 | FranceM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructFranceMantis | FranceMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructFranceWarFactory | FranceWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructFranceAirfield | France_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructFranceNASAMSIII | FranceNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructFranceSkySabre | FranceSkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructFranceSkyranger30 | FranceSkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Britain  CommandSet=BritainDozerCommandSet
+  slot  1 | Command_ConstructBritainPowerStation | BritainPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructBritainStrategyCenter | BritainStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructBritainBootCamp | BritainBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructBritain_HeavyAirBase | Britain_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructBritainSupplyCenter | BritainSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructBritainRadarGM406 | BritainRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructBritainIRISTSamSite | BritainIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructBritainCommandCenter | BritainCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructBritainM777 | BritainM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructBritainMantis | BritainMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructBritainWarFactory | BritainWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructBritainAirfield | Britain_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructBritainNASAMSIII | BritainNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructBritainSkySabre | BritainSkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructBritainSkyranger30 | BritainSkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Italy  CommandSet=ItalyDozerCommandSet
+  slot  1 | Command_ConstructItalyPowerStation | ItalyPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructItalyStrategyCenter | ItalyStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructItalyBootCamp | ItalyBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructItaly_HeavyAirBase | Italy_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructItalySupplyCenter | ItalySupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructItalyRadarGM406 | ItalyRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructItalyIRISTSamSite | ItalyIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructItalyCommandCenter | ItalyCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructItalyM777 | ItalyM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructItalyMantis | ItalyMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructItalyWarFactory | ItalyWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructItalyAirfield | Italy_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructItalyNASAMSIII | ItalyNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructItalySkySabre | ItalySkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructItalySkyranger30 | ItalySkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Turkey  CommandSet=TurkeyDozerCommandSet
+  slot  1 | Command_ConstructTurkeyPowerStation | TurkeyPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructTurkeyStrategyCenter | TurkeyStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructTurkeyBootCamp | TurkeyBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructTurkey_HeavyAirBase | Turkey_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructTurkeySupplyCenter | TurkeySupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructTurkeyRadarGM406 | TurkeyRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructTurkeyIRISTSamSite | TurkeyIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructTurkeyCommandCenter | TurkeyCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructTurkeyM777 | TurkeyM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructTurkeyMantis | TurkeyMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructTurkeyWarFactory | TurkeyWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructTurkeyAirfield | Turkey_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructTurkeyNASAMSIII | TurkeyNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructTurkeySkySabre | TurkeySkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructTurkeySkyranger30 | TurkeySkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Sweden  CommandSet=SwedenDozerCommandSet
+  slot  1 | Command_ConstructSwedenPowerStation | SwedenPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructSwedenStrategyCenter | SwedenStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructSwedenBootCamp | SwedenBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructSweden_HeavyAirBase | Sweden_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructSwedenSupplyCenter | SwedenSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructSwedenRadarGM406 | SwedenRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructSwedenIRISTSamSite | SwedenIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructSwedenCommandCenter | SwedenCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructSwedenM777 | SwedenM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructSwedenMantis | SwedenMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructSwedenWarFactory | SwedenWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructSwedenAirfield | Sweden_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructSwedenNASAMSIII | SwedenNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructSwedenSkySabre | SwedenSkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructSwedenSkyranger30 | SwedenSkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Ukraine  CommandSet=UkraineDozerCommandSet
+  slot  1 | Command_ConstructUkrainePowerStation | UkrainePowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructUkraineStrategyCenter | UkraineStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructUkraineBootCamp | UkraineBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructUkraine_HeavyAirBase | Ukraine_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructUkraineSupplyCenter | UkraineSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructUkraineRadarGM406 | UkraineRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructUkraineIRISTSamSite | UkraineIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructUkraineCommandCenter | UkraineCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructUkraineM777 | UkraineM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructUkraineMantis | UkraineMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructUkraineWarFactory | UkraineWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructUkraineAirfield | Ukraine_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructUkraineNASAMSIII | UkraineNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructUkraineSkySabre | UkraineSkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructUkraineSkyranger30 | UkraineSkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Nato  CommandSet=NatoDozerCommandSet
+  slot  1 | Command_ConstructNatoPowerStation | NatoPowerStation | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga | CORRECTED
+  slot  2 | Command_ConstructNatoStrategyCenter | NatoStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga | CORRECTED
+  slot  3 | Command_ConstructNatoBootCamp | NatoBootCamp | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga | CORRECTED
+  slot  4 | Command_ConstructNato_HeavyAirBase | Nato_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga | CORRECTED
+  slot  5 | Command_ConstructNatoSupplyCenter | NatoSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga | CORRECTED
+  slot  6 | Command_ConstructNatoRadarGM406 | NatoRadarGM406 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga | CORRECTED
+  slot  7 | Command_ConstructNatoIRISTSamSite | NatoIRISTSamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga | CORRECTED
+  slot  8 | Command_ConstructNatoCommandCenter | NatoCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga | CORRECTED
+  slot  9 | Command_ConstructNatoM777 | NatoM777 | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga | CORRECTED
+  slot 10 | Command_ConstructNatoMantis | NatoMantis | DOZER_CONSTRUCT | Button_Mantis | Art\Textures\Button_Mantis.tga | CORRECTED
+  slot 11 | Command_ConstructNatoWarFactory | NatoWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga | CORRECTED
+  slot 13 | Command_ConstructNatoAirfield | Nato_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga | ALREADY CORRECT
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | (pre-existing) | UNIT_BUILD skipped
+  slot 16 | Command_ConstructNatoNASAMSIII | NatoNASAMSIII | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 17 | Command_ConstructNatoSkySabre | NatoSkySabre | DOZER_CONSTRUCT | Nat_irist | (pre-existing) | PRESERVED (no matching uploaded image)
+  slot 18 | Command_ConstructNatoSkyranger30 | NatoSkyranger30 | DOZER_CONSTRUCT | Nat_mantis | (pre-existing) | PRESERVED (no matching uploaded image)
+
+## Iraq Abbas correction
+  Command_ConstructIraq_Abbas | Iraq_Abbas | Button_Bio | Art\Textures\Button_Bio.tga | CORRECTED (was Button_Atom)
+  Command_ConstructIraq_Abbas_AI | Iraq_Abbas_AI | Button_Bio | Art\Textures\Button_Bio.tga | CORRECTED (was Button_Atom)
+  Iraq_VT72BCommandSet slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Button_MissileFactory | RETAINED

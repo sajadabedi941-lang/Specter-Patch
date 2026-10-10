@@ -1,1 +1,31 @@
-DATA/ART/ZIP links are filled after the GitHub Release is published.
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-abbas-haitham-oneshot/_SPEC_DATA_ONE.big
+  SIZE=366668586
+  SHA256=353dc3b0c25b81213edfa630d8c1d957ad0b3b70b5faac4d2fa06ccca02a4c6f
+  HTTP=200 content-length=366668586
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-abbas-haitham-oneshot/_SPEC_ART_ONE.big
+  SIZE=1305667638
+  SHA256=2bc140fd19ad138ed6fd34e61d8cea32976af287e2183d5725ca060112236309
+  HTTP=200 content-length=1305667638
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-abbas-haitham-oneshot/SPECTER_IRAQ_ABBAS_HAITHAM_ONESHOT.zip
+  SIZE=1672338679
+  SHA256=868b806cc30641e42da9bfe47ed116670fbd7bbcd7188bc0e99a3c0591983523
+  HTTP=200 content-length=1672338679
+
+Place both BIGs in the SPECTER folder.
+Open downloads in a desktop browser if the GitHub app reports BIGs unavailable.
+
+TAG=s-iraq-abbas-haitham-oneshot
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-abbas-haitham-oneshot
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/611
+BASELINE=PR #610
+ALABAAS_REARM=REMOVED
+HAITHAM_REARM=NONE
+ALABAAS_BUILDTIME=300
+HAITHAM_BUILDTIME=300
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

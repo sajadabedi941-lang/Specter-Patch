@@ -14,3 +14,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_IRAQ_ABBAS_HAITHAM_ONESHOT.zip
 ZIP_SIZE=1672338679
 ZIP_SHA256=868b806cc30641e42da9bfe47ed116670fbd7bbcd7188bc0e99a3c0591983523
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/611
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-abbas-haitham-oneshot

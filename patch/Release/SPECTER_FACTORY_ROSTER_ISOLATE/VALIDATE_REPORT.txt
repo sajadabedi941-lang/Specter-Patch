@@ -1,0 +1,171 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #620 s-mena7-construct-btns
+DATA_SIZE=366682208
+DATA_SHA256=7090bc97ac54de9e88c0ff9e9f27c7523f235155d154e0a5a8f53690bb554275
+ART_SIZE=1306997028
+ART_SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+ART_UNCHANGED=YES
+IRAQ_FACTORY_OBJECT_UNCHANGED=YES
+IRAQ_FACTORY_COMMANDSET_UNCHANGED=YES
+IRAQ_VT72B_FACTORY_BUTTON_RETAINED=YES
+CONSTRUCTION_BUTTON_IMAGES_UNCHANGED=YES
+
+CONFIRMED TRANSFER:
+  Shared construct button built Iraq_AlFahdMissileFactory, whose CommandSet
+  is Iraq_AlFahdMissileFactoryCommandSet (CB_MISSILE_A..M).
+  Country-prefixed CommandSets did not copy the roster; the object reference did.
+
+CORRECTIVE ACTION:
+  Assigned countries now construct Iraq_AlFahdMissileFactoryBuilding
+  (same model/cost/time/health/prereqs, Sell-only CommandSet).
+  Iraq factory object, roster, and Iraq construct button are unchanged.
+  Pre-existing war-factory Alhussaien buttons were not part of #613 and were left alone.
+
+STATIC AUDIT / FIX REPORT
+RUNTIME TEST: NOT RUN
+
+Iraq factory object: Iraq_AlFahdMissileFactory (UNCHANGED)
+Iraq factory CommandSet: Iraq_AlFahdMissileFactoryCommandSet (UNCHANGED)
+Iraq construct button: Command_ConstructIraq_AlFahdMissileFactory -> Iraq_AlFahdMissileFactory (UNCHANGED)
+
+Assigned-country factory now constructs Iraq_AlFahdMissileFactoryBuilding
+with CommandSet Iraq_AlFahdMissileFactoryBuildingCommandSet = Sell only.
+No missile production menu was invented.
+
+# China
+## PLADozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## ChinaDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Russia
+## RussiaDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Britain
+## BritainDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Germany
+## GermanyDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# France
+## FranceDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Italy
+## ItalyDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Ukraine
+## UkraineDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Sweden
+## SwedenDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Turkey
+## TurkeyDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# NATO
+## NatoDozerCommandSet
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Saudi Arabia
+## SaudiArabiaDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## SaudiArabia_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## SaudiArabia_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# UAE
+## UAEDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## UAE_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## UAE_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Syria
+## SyriaDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Syria_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Syria_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# India
+## IndiaDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## India_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## India_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Pakistan
+## PakistanDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Pakistan_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Pakistan_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Libya
+## LibyaDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Libya_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## Libya_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# South Africa
+## SouthAfricaDozerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## SouthAfrica_VT72BCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+## SouthAfrica_WorkerCommandSet
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Japan
+## Japan_VT72BCommandSet
+  slot 6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# Vietnam
+## Vietnam_VT72BCommandSet
+  slot 6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# South Korea
+## SouthKorea_VT72BCommandSet
+  slot 6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+# North Korea
+## NorthKorea_VT72BCommandSet
+  slot 6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | prod=Iraq_AlFahdMissileFactoryBuildingCommandSet | units=['(none)'] | Iraq-specific production=False | action=retargeted to building-only factory
+  pre-transfer: no factory / no factory missile menu. War-factory Alhussaien (if present) is pre-#613 and was left unchanged.
+
+

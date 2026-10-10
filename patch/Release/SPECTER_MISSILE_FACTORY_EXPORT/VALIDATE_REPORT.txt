@@ -1,0 +1,17 @@
+SPECTER missile factory building button export
+DATA 366670447 6fe954541ed93327879bba50ed1995be5da0080a036b1cd2fd87ed077e3a0a3c
+ART  1305667638 fa46c291d9cec1b106977e7a5ec3ded54e9bc0c9e2c94ab4d4852b90d4e96359
+
+BUILDING ONLY:
+  Same Iraq_AlFahdMissileFactory object / model / health / cost / time.
+  Factory production CommandSet unchanged. No missiles transferred.
+  Iraq construct button removed from VT72B/Worker.
+
+SLOTS:
+  Group1 Clear Mines -> factory on EU/NATO/China dozers.
+  Group2 MIC -> factory on SK/NK/Vietnam/Japan VT72B.
+  Group3 Stop -> factory on India/Pakistan/Saudi/UAE/Syria/Libya/SA construction sets.
+  Russia empty slot 14 -> factory. No existing Russia command replaced.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

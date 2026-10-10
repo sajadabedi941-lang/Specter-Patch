@@ -1,0 +1,3 @@
+Replaces Clear Mines / MIC / Stop on the listed construction CommandSets.
+Russia uses previously empty slot 14.
+STATIC ONLY.

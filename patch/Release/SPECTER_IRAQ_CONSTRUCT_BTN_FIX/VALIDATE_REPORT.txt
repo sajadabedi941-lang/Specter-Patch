@@ -1,0 +1,29 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #615 s-iraq-building-buttons
+DATA_SIZE=366674056
+DATA_SHA256=a3dc851ec3d1d4042d8ae46a32beb299fd84fd394bf35544d3d43ff94fec09cb
+ART_SIZE=1306406185
+ART_SHA256=a4f033e556c280a7f0fd50f5ead273d736a1238ec11233924aedb82f4e915481
+MISSILE_FACTORY_RESTORED=YES Iraq_VT72BCommandSet slot 14 = Command_ConstructIraq_AlFahdMissileFactory
+WORKER_COMMANDSET_UNCHANGED=YES
+IMAGE_NOTE=Button_missilefactory.png does not exist; used actual file Button_MissileFactory.png
+
+CHANGED FILES:
+  DATA Data\INI\CommandButton.ini — ButtonImage only on 5 Iraq DOZER_CONSTRUCT buttons
+  DATA Data\INI\CommandSet.ini — Iraq_VT72BCommandSet slot 14 only
+  DATA Data\INI\MappedImages\HandCreated\IraqConstructFix_Images.INI — new
+  ART Art\Textures\Button_Artillery.tga — new
+  ART Art\Textures\Button_AirDefense.tga — new
+  ART Art\Textures\Button_GlobalMarket.tga — new
+  ART Art\Textures\Button_DefenceSite.tga — new
+  ART Art\Textures\Button_MissileFactory.tga — new
+
+MAPPINGS:
+  D30 Howitzer Command_ConstructIraq_D30_Howitzer -> Button_Artillery
+  S125 Command_ConstructIraq_Sam2 -> Button_AirDefense
+  MIC Command_ConstructIraq_MIC -> Button_GlobalMarket
+  DefenseSite Command_ConstructIraq_DefenseSite -> Button_DefenceSite
+  Missile Factory Command_ConstructIraq_AlFahdMissileFactory -> Button_MissileFactory
+  Clear Mines image NOT changed; slot 14 now builds the factory
+

@@ -1,0 +1,92 @@
+## North Korea  CommandSet=NorthKorea_VT72BCommandSet
+  slot  1 | Command_ConstructNorthKorea_PowerPlant | NorthKorea_PowerPlant | DOZER_CONSTRUCT | irq_powerplant
+  slot  2 | Command_ConstructNorthKorea_CommandCenter | NorthKorea_CommandCenter | DOZER_CONSTRUCT | irq_comndcntr
+  slot  3 | Command_ConstructNorthKorea_SupplyCenter | NorthKorea_SupplyCenter | DOZER_CONSTRUCT | irq_money
+  slot  4 | Command_ConstructNorthKorea_WarFactory | NorthKorea_WarFactory | DOZER_CONSTRUCT | irq_warfctry
+  slot  5 | Command_ConstructNorthKorea_LargeAirBase | NorthKorea_LargeAirBase | DOZER_CONSTRUCT | irq_airfld
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory
+  slot  7 | Command_ConstructNorthKorea_DefenseSite_SAFE | NorthKorea_DefenseSite | DOZER_CONSTRUCT | irq_defsite
+  slot  8 | Command_ConstructNorthKorea_RadarStation | NorthKorea_RadarStation | DOZER_CONSTRUCT | irq_rdrstatn
+  slot  9 | Command_ConstructNorthKorea_HeavyAirBase | NorthKorea_HeavyAirBase | DOZER_CONSTRUCT | us_airfield
+  slot 10 | Command_ConstructNorthKorea_Barracks_SAFE | Iraq_Barracks | DOZER_CONSTRUCT | irq_barracks
+  slot 11 | Command_ConstructNorthKorea_NuclearCenter | NorthKorea_Abbas | DOZER_CONSTRUCT | irq_alhussien
+  slot 12 | Command_ConstructNorthKorea_D30_SAFE | NorthKorea_D30_Howitzer | DOZER_CONSTRUCT | irq_d30
+  slot 13 | Command_ConstructNorthKorea_CRAM | NorthKorea_CRAM | DOZER_CONSTRUCT | us_mim90d
+  slot 14 | Command_ConstructNorthKorea_Hq9_Site | NorthKorea_Hq9_Site | DOZER_CONSTRUCT | pla_hq9b
+  slot 15 | Command_Stop | - | STOP | sys_stop
+
+  Required-mapping status for North Korea:
+    LGM30G: DOES NOT EXIST — no LGM30G DOZER_CONSTRUCT button on NorthKorea_VT72BCommandSet or as a NorthKorea construct CommandButton
+    M777: DOES NOT EXIST — no M777 DOZER_CONSTRUCT button on NorthKorea_VT72BCommandSet or as a NorthKorea construct CommandButton
+    IRIS-T SLX: DOES NOT EXIST — no IRIS-T SLX DOZER_CONSTRUCT button on NorthKorea_VT72BCommandSet or as a NorthKorea construct CommandButton
+    Strategy Center: DOES NOT EXIST — no Strategy Center DOZER_CONSTRUCT button on NorthKorea_VT72BCommandSet or as a NorthKorea construct CommandButton
+
+## South Korea  CommandSet=SouthKorea_VT72BCommandSet
+  slot  1 | Command_ConstructSouthKorea_PowerPlant | SouthKorea_PowerPlant | DOZER_CONSTRUCT | irq_powerplant
+  slot  2 | Command_ConstructSouthKorea_CommandCenter | SouthKorea_CommandCenter | DOZER_CONSTRUCT | irq_comndcntr
+  slot  3 | Command_ConstructSouthKorea_SupplyCenter | SouthKorea_SupplyCenter | DOZER_CONSTRUCT | irq_money
+  slot  4 | Command_ConstructSouthKorea_WarFactory | SouthKorea_WarFactory | DOZER_CONSTRUCT | irq_warfctry
+  slot  5 | Command_ConstructSouthKorea_LargeAirBase | SouthKorea_LargeAirBase | DOZER_CONSTRUCT | irq_airfld
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory
+  slot  7 | Command_ConstructSouthKorea_DefenseSite_SAFE | SouthKorea_DefenseSite | DOZER_CONSTRUCT | irq_defsite
+  slot  8 | Command_ConstructSouthKorea_RadarStation | SouthKorea_RadarStation | DOZER_CONSTRUCT | irq_rdrstatn
+  slot  9 | Command_ConstructSouthKorea_HeavyAirBase | SouthKorea_HeavyAirBase | DOZER_CONSTRUCT | us_airfield
+  slot 10 | Command_ConstructSouthKorea_Barracks_SAFE | SouthKorea_Barracks | DOZER_CONSTRUCT | CampFlagSouthKorea
+  slot 11 | Command_ConstructSouthKorea_NuclearCenter | SouthKorea_Abbas | DOZER_CONSTRUCT | irq_alhussien
+  slot 12 | Command_ConstructSouthKorea_D30_SAFE | SouthKorea_D30_Howitzer | DOZER_CONSTRUCT | irq_d30
+  slot 13 | Command_ConstructSouthKorea_CRAM | SouthKorea_CRAM | DOZER_CONSTRUCT | us_mim90d
+  slot 14 | Command_ConstructSouthKorea_Hq9_Site | SouthKorea_Hq9_Site | DOZER_CONSTRUCT | pla_hq9b
+  slot 15 | Command_Stop | - | STOP | sys_stop
+
+  Required-mapping status for South Korea:
+    LGM30G: DOES NOT EXIST — no LGM30G DOZER_CONSTRUCT button on SouthKorea_VT72BCommandSet or as a SouthKorea construct CommandButton
+    M777: DOES NOT EXIST — no M777 DOZER_CONSTRUCT button on SouthKorea_VT72BCommandSet or as a SouthKorea construct CommandButton
+    IRIS-T SLX: DOES NOT EXIST — no IRIS-T SLX DOZER_CONSTRUCT button on SouthKorea_VT72BCommandSet or as a SouthKorea construct CommandButton
+    Strategy Center: DOES NOT EXIST — no Strategy Center DOZER_CONSTRUCT button on SouthKorea_VT72BCommandSet or as a SouthKorea construct CommandButton
+
+## Japan  CommandSet=Japan_VT72BCommandSet
+  slot  1 | Command_ConstructJapan_PowerPlant | Japan_PowerPlant | DOZER_CONSTRUCT | irq_powerplant
+  slot  2 | Command_ConstructJapan_CommandCenter | Japan_CommandCenter | DOZER_CONSTRUCT | irq_comndcntr
+  slot  3 | Command_ConstructJapan_SupplyCenter | Japan_SupplyCenter | DOZER_CONSTRUCT | irq_money
+  slot  4 | Command_ConstructJapan_WarFactory | Japan_WarFactory | DOZER_CONSTRUCT | irq_warfctry
+  slot  5 | Command_ConstructJapan_LargeAirBase | Japan_LargeAirBase | DOZER_CONSTRUCT | irq_airfld
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory
+  slot  7 | Command_ConstructJapan_DefenseSite_SAFE | Japan_DefenseSite | DOZER_CONSTRUCT | irq_defsite
+  slot  8 | Command_ConstructJapan_RadarStation | Japan_RadarStation | DOZER_CONSTRUCT | irq_rdrstatn
+  slot  9 | Command_ConstructJapan_HeavyAirBase | Japan_HeavyAirBase | DOZER_CONSTRUCT | us_airfield
+  slot 10 | Command_ConstructJapan_Barracks_SAFE | Japan_Barracks | DOZER_CONSTRUCT | CampFlagJapan
+  slot 11 | Command_ConstructJapan_NuclearCenter | Japan_Abbas | DOZER_CONSTRUCT | irq_alhussien
+  slot 12 | Command_ConstructJapan_D30_SAFE | Japan_D30_Howitzer | DOZER_CONSTRUCT | irq_d30
+  slot 13 | Command_ConstructJapan_CRAM | Japan_CRAM | DOZER_CONSTRUCT | us_mim90d
+  slot 14 | Command_ConstructJapan_Hq9_Site | Japan_Hq9_Site | DOZER_CONSTRUCT | pla_hq9b
+  slot 15 | Command_Stop | - | STOP | sys_stop
+
+  Required-mapping status for Japan:
+    LGM30G: DOES NOT EXIST — no LGM30G DOZER_CONSTRUCT button on Japan_VT72BCommandSet or as a Japan construct CommandButton
+    M777: DOES NOT EXIST — no M777 DOZER_CONSTRUCT button on Japan_VT72BCommandSet or as a Japan construct CommandButton
+    IRIS-T SLX: DOES NOT EXIST — no IRIS-T SLX DOZER_CONSTRUCT button on Japan_VT72BCommandSet or as a Japan construct CommandButton
+    Strategy Center: DOES NOT EXIST — no Strategy Center DOZER_CONSTRUCT button on Japan_VT72BCommandSet or as a Japan construct CommandButton
+
+## Vietnam  CommandSet=Vietnam_VT72BCommandSet
+  slot  1 | Command_ConstructVietnam_PowerPlant | Vietnam_PowerPlant | DOZER_CONSTRUCT | irq_powerplant
+  slot  2 | Command_ConstructVietnam_CommandCenter | Vietnam_CommandCenter | DOZER_CONSTRUCT | irq_comndcntr
+  slot  3 | Command_ConstructVietnam_SupplyCenter | Vietnam_SupplyCenter | DOZER_CONSTRUCT | irq_money
+  slot  4 | Command_ConstructVietnam_WarFactory | Vietnam_WarFactory | DOZER_CONSTRUCT | irq_warfctry
+  slot  5 | Command_ConstructVietnam_LargeAirBase | Vietnam_LargeAirBase | DOZER_CONSTRUCT | irq_airfld
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory
+  slot  7 | Command_ConstructVietnam_DefenseSite_SAFE | Vietnam_DefenseSite | DOZER_CONSTRUCT | irq_defsite
+  slot  8 | Command_ConstructVietnam_RadarStation | Vietnam_RadarStation | DOZER_CONSTRUCT | irq_rdrstatn
+  slot  9 | Command_ConstructVietnam_HeavyAirBase | Vietnam_HeavyAirBase | DOZER_CONSTRUCT | us_airfield
+  slot 10 | Command_ConstructVietnam_Barracks_SAFE | Vietnam_Barracks | DOZER_CONSTRUCT | CampFlagVietnam
+  slot 11 | Command_ConstructVietnam_NuclearCenter | Vietnam_Abbas | DOZER_CONSTRUCT | irq_alhussien
+  slot 12 | Command_ConstructVietnam_D30_SAFE | Vietnam_D30_Howitzer | DOZER_CONSTRUCT | irq_d30
+  slot 13 | Command_ConstructVietnam_CRAM | Vietnam_CRAM | DOZER_CONSTRUCT | us_mim90d
+  slot 14 | Command_ConstructVietnam_Hq9_Site | Vietnam_Hq9_Site | DOZER_CONSTRUCT | pla_hq9b
+  slot 15 | Command_Stop | - | STOP | sys_stop
+
+  Required-mapping status for Vietnam:
+    LGM30G: DOES NOT EXIST — no LGM30G DOZER_CONSTRUCT button on Vietnam_VT72BCommandSet or as a Vietnam construct CommandButton
+    M777: DOES NOT EXIST — no M777 DOZER_CONSTRUCT button on Vietnam_VT72BCommandSet or as a Vietnam construct CommandButton
+    IRIS-T SLX: DOES NOT EXIST — no IRIS-T SLX DOZER_CONSTRUCT button on Vietnam_VT72BCommandSet or as a Vietnam construct CommandButton
+    Strategy Center: DOES NOT EXIST — no Strategy Center DOZER_CONSTRUCT button on Vietnam_VT72BCommandSet or as a Vietnam construct CommandButton
+

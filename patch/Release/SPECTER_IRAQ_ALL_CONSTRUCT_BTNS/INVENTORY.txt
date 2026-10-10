@@ -1,0 +1,19 @@
+Power Plant | Iraq_PowerPlant | Command_ConstructIraq_PowerPlant | Button_PowerPlant.png | CORRECTED (was irqbtn_power)
+Command Center | Iraq_CommandCenter | Command_ConstructIraq_CommandCenter | Button_CommandCenter.png | CORRECTED (was irqbtn_cmdctr)
+Supply Center | Iraq_SupplyCenter | Command_ConstructIraq_SupplyCenter | Button_SupplyCenter.png | CORRECTED (was irqbtn_supply)
+War Factory | Iraq_WarFactory_T | Command_ConstructIraq_WarFactory_T | Button_WarFactory.png | CORRECTED (was irqbtn_warfac)
+War Factory (military) | IraqMilitaryWarfactory | Command_ConstructIraqMilitaryWarfactory | Button_WarFactory.png | CORRECTED (was irqbtn_warfac)
+Fighter Base | Iraq_LargeAirBase | Command_ConstructIraq_Airfield_T | Button_FighterBase.png | CORRECTED (was irqbtn_fighter)
+Fighter Base (military) | Iraq_LargeAirBase | Command_ConstructIraqMilitaryAirfield | Button_FighterBase.png | CORRECTED (was irqbtn_fighter)
+Camp / Barracks | Iraq_Barracks | Command_ConstructIraq_Barracks | Button_Camp.png | CORRECTED (was irqbtn_camp)
+Atom / Abbas | Iraq_Abbas | Command_ConstructIraq_Abbas | Button_Atom.png | CORRECTED (was irqbtn_atom)
+Atom / Abbas AI | Iraq_Abbas_AI | Command_ConstructIraq_Abbas_AI | Button_Atom.png | CORRECTED (was irqbtn_atom)
+Aircraft Base | Iraq_HeavyAirBase | Command_ConstructIraq_HeavyAirBase | Button_AircraftBase.png | CORRECTED (was irqbtn_airbase)
+Radar | Iraq_RadarStation | Command_ConstructIraq_RadarStation | Button_Radar.png | CORRECTED (was irqbtn_radar)
+Artillery / D30 | Iraq_D30_Howitzer | Command_ConstructIraq_D30_Howitzer | Button_Artillery.png | ALREADY CORRECT (#616)
+S125 | Iraq_Sam2 | Command_ConstructIraq_Sam2 | Button_AirDefense.png | ALREADY CORRECT (#616)
+M.I.C. | Iraq_MIC | Command_ConstructIraq_MIC | Button_GlobalMarket.png | ALREADY CORRECT (#616)
+DefenseSite | Iraq_DefenseSite | Command_ConstructIraq_DefenseSite | Button_DefenceSite.png | ALREADY CORRECT (#616)
+Missile Factory | Iraq_AlFahdMissileFactory | Command_ConstructIraq_AlFahdMissileFactory | Button_MissileFactory.png | ALREADY CORRECT (#616); VT72B slot 14 retained
+100mm Cannon | Iraq_100mmCannon | Command_ConstructIraq_100mmCannon | (none uploaded) | PRESERVED irq_100canon
+Fahad-3 SAM | IraqFahad3SamSite | Command_ConstructIraqFahad3SamSite | (none uploaded) | PRESERVED irq_fahad3

@@ -1,0 +1,22 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-all-construct-btns/_SPEC_DATA_ONE.big
+  SIZE=366675916
+  SHA256=5db24a2aeed226e2fb19416c390d6907c5d68a566b99d7220d410ff8bf16f044
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-all-construct-btns/_SPEC_ART_ONE.big
+  SIZE=1306849327
+  SHA256=b61729185bff96f9e54130dd4d475da8fcca2d9fafd185f9be7af1d053168d4c
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-all-construct-btns/SPECTER_IRAQ_ALL_CONSTRUCT_BTNS.zip
+  SIZE=788270398
+  SHA256=af8d5d60b2ad749bc2f1c30f01f677e9eeb5fc6019e87b49cb24c5b84449317f
+
+Place both BIGs in the SPECTER folder.
+TAG=s-iraq-all-construct-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-all-construct-btns
+BASELINE=PR #616
+FACTORY_SLOT14_RETAINED=YES
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

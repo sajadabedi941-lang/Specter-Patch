@@ -1,0 +1,22 @@
+SPECTER missile factory construction prerequisite fix
+DATA 366670870 f00a086300d8e6c552bb6e2c29dd63d875a326f44457fc051dbf9635f5ff2ea3
+ART  1305667638 fa46c291d9cec1b106977e7a5ec3ded54e9bc0c9e2c94ab4d4852b90d4e96359
+
+ROOT CAUSE:
+  Button visible because CommandSets already list
+  Command_ConstructIraq_AlFahdMissileFactory.
+  Construction fails because canBuild() requires
+  Prerequisites Object = Iraq_SupplyCenter.
+  Assigned countries never own that Iraq-only building.
+  Command button, builders, W3D, and factory production
+  CommandSet were already valid.
+
+FIX:
+  Same Iraq_AlFahdMissileFactory object.
+  Prerequisites now OR every assigned country's live
+  Supply Center (plus Iraq_SupplyCenter).
+  Supply-center progression gate is kept. Slots unchanged.
+  No missiles transferred. ART unchanged from #613.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

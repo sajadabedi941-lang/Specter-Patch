@@ -1,0 +1,370 @@
+# Libya
+## LibyaDozerCommandSet
+  slot  1 | Command_ConstructLibya_PowerPlant | Libya_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructLibya_CommandCenter | Libya_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructLibya_SupplyCenter | Libya_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructLibya_WarFactory_T | Libya_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructLibya_HeavyAirBase | Libya_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructLibya_MIC | Libya_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructLibya_RadarStation | Libya_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructLibya_Sam2 | Libya_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructLibya_Barracks | Libya_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructLibya_FireBase | Libya_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructLibya_Airfield_T | Libya_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructLibya_CRAM | Libya_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructLibya_Lgm30 | Libya_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## Libya_VT72BCommandSet
+  slot  1 | Command_ConstructLibya_PowerPlant | Libya_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructLibya_CommandCenter | Libya_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructLibya_SupplyCenter | Libya_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructLibya_WarFactory_T | Libya_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructLibya_Airfield_T | Libya_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructLibya_MIC | Libya_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructLibya_RadarStation | Libya_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructLibya_Sam2 | Libya_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructLibya_Barracks | Libya_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructLibya_Abbas | Libya_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## Libya_WorkerCommandSet
+  slot  1 | Command_ConstructLibya_PowerPlant | Libya_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructLibya_CommandCenter | Libya_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructLibya_SupplyCenter | Libya_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructLibya_WarFactory_T | Libya_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructLibya_MIC | Libya_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructLibya_RadarStation | Libya_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructLibya_Sam2 | Libya_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructLibya_Barracks | Libya_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructLibya_Abbas | Libya_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructLibya_Airfield_T | Libya_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructLibya_FireBase | Libya_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructLibya_Sam2 | Libya_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructLibya_MIC | Libya_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructLibya_Lgm30 | Libya_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# South Africa
+## SouthAfricaDozerCommandSet
+  slot  1 | Command_ConstructSouthAfrica_PowerPlant | SouthAfrica_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSouthAfrica_CommandCenter | SouthAfrica_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSouthAfrica_SupplyCenter | SouthAfrica_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSouthAfrica_WarFactory_T | SouthAfrica_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSouthAfrica_HeavyAirBase | SouthAfrica_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSouthAfrica_MIC | SouthAfrica_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSouthAfrica_RadarStation | SouthAfrica_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSouthAfrica_Sam2 | SouthAfrica_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSouthAfrica_Barracks | SouthAfrica_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSouthAfrica_FireBase | SouthAfrica_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSouthAfrica_Airfield_T | SouthAfrica_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructSouthAfrica_CRAM | SouthAfrica_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructSouthAfrica_Lgm30 | SouthAfrica_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## SouthAfrica_VT72BCommandSet
+  slot  1 | Command_ConstructSouthAfrica_PowerPlant | SouthAfrica_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSouthAfrica_CommandCenter | SouthAfrica_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSouthAfrica_SupplyCenter | SouthAfrica_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSouthAfrica_WarFactory_T | SouthAfrica_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSouthAfrica_Airfield_T | SouthAfrica_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSouthAfrica_MIC | SouthAfrica_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSouthAfrica_RadarStation | SouthAfrica_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSouthAfrica_Sam2 | SouthAfrica_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSouthAfrica_Barracks | SouthAfrica_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSouthAfrica_Abbas | SouthAfrica_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## SouthAfrica_WorkerCommandSet
+  slot  1 | Command_ConstructSouthAfrica_PowerPlant | SouthAfrica_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSouthAfrica_CommandCenter | SouthAfrica_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSouthAfrica_SupplyCenter | SouthAfrica_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSouthAfrica_WarFactory_T | SouthAfrica_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSouthAfrica_MIC | SouthAfrica_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSouthAfrica_RadarStation | SouthAfrica_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSouthAfrica_Sam2 | SouthAfrica_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSouthAfrica_Barracks | SouthAfrica_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSouthAfrica_Abbas | SouthAfrica_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSouthAfrica_Airfield_T | SouthAfrica_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructSouthAfrica_FireBase | SouthAfrica_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructSouthAfrica_Sam2 | SouthAfrica_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructSouthAfrica_MIC | SouthAfrica_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructSouthAfrica_Lgm30 | SouthAfrica_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# United Arab Emirates
+## UAEDozerCommandSet
+  slot  1 | Command_ConstructUAE_PowerPlant | UAE_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructUAE_CommandCenter | UAE_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructUAE_SupplyCenter | UAE_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructUAE_WarFactory_T | UAE_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructUAE_HeavyAirBase | UAE_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructUAE_MIC | UAE_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructUAE_RadarStation | UAE_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructUAE_Sam2 | UAE_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructUAE_Barracks | UAE_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructUAE_FireBase | UAE_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructUAE_Airfield_T | UAE_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructUAE_CRAM | UAE_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructUAE_Lgm30 | UAE_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## UAE_VT72BCommandSet
+  slot  1 | Command_ConstructUAE_PowerPlant | UAE_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructUAE_CommandCenter | UAE_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructUAE_SupplyCenter | UAE_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructUAE_WarFactory_T | UAE_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructUAE_Airfield_T | UAE_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructUAE_MIC | UAE_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructUAE_RadarStation | UAE_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructUAE_Sam2 | UAE_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructUAE_Barracks | UAE_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructUAE_Abbas | UAE_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## UAE_WorkerCommandSet
+  slot  1 | Command_ConstructUAE_PowerPlant | UAE_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructUAE_CommandCenter | UAE_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructUAE_SupplyCenter | UAE_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructUAE_WarFactory_T | UAE_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructUAE_MIC | UAE_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructUAE_RadarStation | UAE_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructUAE_Sam2 | UAE_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructUAE_Barracks | UAE_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructUAE_Abbas | UAE_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructUAE_Airfield_T | UAE_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructUAE_FireBase | UAE_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructUAE_Sam2 | UAE_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructUAE_MIC | UAE_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructUAE_Lgm30 | UAE_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# Saudi Arabia
+## SaudiArabiaDozerCommandSet
+  slot  1 | Command_ConstructSaudiArabia_PowerPlant | SaudiArabia_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSaudiArabia_CommandCenter | SaudiArabia_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSaudiArabia_SupplyCenter | SaudiArabia_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSaudiArabia_WarFactory_T | SaudiArabia_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSaudiArabia_HeavyAirBase | SaudiArabia_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSaudiArabia_MIC | SaudiArabia_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSaudiArabia_RadarStation | SaudiArabia_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSaudiArabia_Sam2 | SaudiArabia_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSaudiArabia_Barracks | SaudiArabia_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSaudiArabia_FireBase | SaudiArabia_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSaudiArabia_Airfield_T | SaudiArabia_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructSaudiArabia_CRAM | SaudiArabia_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructSaudiArabia_Lgm30 | SaudiArabia_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## SaudiArabia_VT72BCommandSet
+  slot  1 | Command_ConstructSaudiArabia_PowerPlant | SaudiArabia_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSaudiArabia_CommandCenter | SaudiArabia_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSaudiArabia_SupplyCenter | SaudiArabia_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSaudiArabia_WarFactory_T | SaudiArabia_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSaudiArabia_Airfield_T | SaudiArabia_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSaudiArabia_MIC | SaudiArabia_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSaudiArabia_RadarStation | SaudiArabia_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSaudiArabia_Sam2 | SaudiArabia_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSaudiArabia_Barracks | SaudiArabia_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSaudiArabia_Abbas | SaudiArabia_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## SaudiArabia_WorkerCommandSet
+  slot  1 | Command_ConstructSaudiArabia_PowerPlant | SaudiArabia_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSaudiArabia_CommandCenter | SaudiArabia_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSaudiArabia_SupplyCenter | SaudiArabia_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSaudiArabia_WarFactory_T | SaudiArabia_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSaudiArabia_MIC | SaudiArabia_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSaudiArabia_RadarStation | SaudiArabia_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSaudiArabia_Sam2 | SaudiArabia_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSaudiArabia_Barracks | SaudiArabia_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSaudiArabia_Abbas | SaudiArabia_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSaudiArabia_Airfield_T | SaudiArabia_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructSaudiArabia_FireBase | SaudiArabia_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructSaudiArabia_Sam2 | SaudiArabia_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructSaudiArabia_MIC | SaudiArabia_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructSaudiArabia_Lgm30 | SaudiArabia_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# Syria
+## SyriaDozerCommandSet
+  slot  1 | Command_ConstructSyria_PowerPlant | Syria_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSyria_CommandCenter | Syria_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSyria_SupplyCenter | Syria_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSyria_WarFactory_T | Syria_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSyria_HeavyAirBase | Syria_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSyria_MIC | Syria_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSyria_RadarStation | Syria_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSyria_Sam2 | Syria_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSyria_Barracks | Syria_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSyria_FireBase | Syria_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSyria_Airfield_T | Syria_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructSyria_CRAM | Syria_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructSyria_Lgm30 | Syria_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## Syria_VT72BCommandSet
+  slot  1 | Command_ConstructSyria_PowerPlant | Syria_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSyria_CommandCenter | Syria_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSyria_SupplyCenter | Syria_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSyria_WarFactory_T | Syria_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructSyria_Airfield_T | Syria_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSyria_MIC | Syria_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSyria_RadarStation | Syria_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSyria_Sam2 | Syria_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSyria_Barracks | Syria_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSyria_Abbas | Syria_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## Syria_WorkerCommandSet
+  slot  1 | Command_ConstructSyria_PowerPlant | Syria_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructSyria_CommandCenter | Syria_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructSyria_SupplyCenter | Syria_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructSyria_WarFactory_T | Syria_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructSyria_MIC | Syria_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructSyria_RadarStation | Syria_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructSyria_Sam2 | Syria_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructSyria_Barracks | Syria_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructSyria_Abbas | Syria_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructSyria_Airfield_T | Syria_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructSyria_FireBase | Syria_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructSyria_Sam2 | Syria_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructSyria_MIC | Syria_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructSyria_Lgm30 | Syria_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# India
+## IndiaDozerCommandSet
+  slot  1 | Command_ConstructIndia_PowerPlant | India_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructIndia_CommandCenter | India_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructIndia_SupplyCenter | India_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructIndia_WarFactory_T | India_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructIndia_HeavyAirBase | India_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructIndia_MIC | India_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructIndia_RadarStation | India_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructIndia_Sam2 | India_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructIndia_Barracks | India_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructIndia_FireBase | India_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructIndia_Airfield_T | India_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructIndia_CRAM | India_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructIndia_Lgm30 | India_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## India_VT72BCommandSet
+  slot  1 | Command_ConstructIndia_PowerPlant | India_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructIndia_CommandCenter | India_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructIndia_SupplyCenter | India_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructIndia_WarFactory_T | India_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructIndia_Airfield_T | India_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructIndia_MIC | India_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructIndia_RadarStation | India_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructIndia_Sam2 | India_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructIndia_Barracks | India_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructIndia_Abbas | India_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## India_WorkerCommandSet
+  slot  1 | Command_ConstructIndia_PowerPlant | India_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructIndia_CommandCenter | India_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructIndia_SupplyCenter | India_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructIndia_WarFactory_T | India_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructIndia_MIC | India_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructIndia_RadarStation | India_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructIndia_Sam2 | India_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructIndia_Barracks | India_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructIndia_Abbas | India_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructIndia_Airfield_T | India_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructIndia_FireBase | India_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructIndia_Sam2 | India_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructIndia_MIC | India_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructIndia_Lgm30 | India_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+# Pakistan
+## PakistanDozerCommandSet
+  slot  1 | Command_ConstructPakistan_PowerPlant | Pakistan_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructPakistan_CommandCenter | Pakistan_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructPakistan_SupplyCenter | Pakistan_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructPakistan_WarFactory_T | Pakistan_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructPakistan_HeavyAirBase | Pakistan_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructPakistan_MIC | Pakistan_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructPakistan_RadarStation | Pakistan_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructPakistan_Sam2 | Pakistan_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructPakistan_Barracks | Pakistan_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructPakistan_FireBase | Pakistan_FireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructPakistan_Airfield_T | Pakistan_Airfield_T | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructPakistan_CRAM | Pakistan_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_ConstructPakistan_Lgm30 | Pakistan_Lgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+
+## Pakistan_VT72BCommandSet
+  slot  1 | Command_ConstructPakistan_PowerPlant | Pakistan_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructPakistan_CommandCenter | Pakistan_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructPakistan_SupplyCenter | Pakistan_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructPakistan_WarFactory_T | Pakistan_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructPakistan_Airfield_T | Pakistan_Airfield_T | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructPakistan_MIC | Pakistan_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructPakistan_RadarStation | Pakistan_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructPakistan_Sam2 | Pakistan_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructPakistan_Barracks | Pakistan_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructPakistan_Abbas | Pakistan_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+## Pakistan_WorkerCommandSet
+  slot  1 | Command_ConstructPakistan_PowerPlant | Pakistan_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructPakistan_MilitaryHQ | Pakistan_MilitaryHQ | UNIT_BUILD | us_commandcenter | Art\Textures\us_commandcenter.tga exists=n/a | NON-CONSTRUCT preserved
+  slot  3 | Command_ConstructPakistan_SupplyCenter | Pakistan_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructPakistan_WarFactory_T | Pakistan_WarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructPakistan_MIC | Pakistan_MIC | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructPakistan_RadarStation | Pakistan_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructPakistan_Sam2 | Pakistan_Sam2 | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructPakistan_Barracks | Pakistan_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructPakistan_Abbas | Pakistan_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructPakistan_Airfield_T | Pakistan_Airfield_T | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+
+### Mandatory mappings
+  M777 | Command_ConstructPakistan_FireBase | Pakistan_FireBase | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | OK
+  S-125 | Command_ConstructPakistan_Sam2 | Pakistan_Sam2 | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | OK
+  Strategy Center (absent; MIC mapped) | Command_ConstructPakistan_MIC | Pakistan_MIC | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | OK
+  LGM30G | Command_ConstructPakistan_Lgm30 | Pakistan_Lgm30 | Button_Atom | Art\Textures\Button_Atom.tga exists=True | OK
+  Strategy Center construct button: DOES NOT EXIST
+
+## Preserved prior work
+  Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | Button_MissileFactory | RETAINED
+  Command_ConstructIraq_Abbas | Iraq_Abbas | Button_Bio | RETAINED
+  Command_ConstructIraq_Abbas_AI | Iraq_Abbas_AI | Button_Bio | RETAINED
+  Command_ConstructAmericaLgm30 | AmericaLgm30 | Button_Atom | RETAINED
+  Iraq_VT72BCommandSet slot 14 | Command_ConstructIraq_AlFahdMissileFactory | Button_MissileFactory | RETAINED

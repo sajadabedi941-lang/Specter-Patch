@@ -1,0 +1,22 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-mena7-construct-btns/_SPEC_DATA_ONE.big
+  SIZE=366677659
+  SHA256=fbf7748816d2229b8819ea05c8fbe0917d72362a10b4b7a809dafd7236e07f33
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-mena7-construct-btns/_SPEC_ART_ONE.big
+  SIZE=1306997028
+  SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-mena7-construct-btns/SPECTER_MENA7_CONSTRUCT_BTNS.zip
+  SIZE=788407460
+  SHA256=99f163d60fc92fe89d9d8bf1a08b0bc1793d8486819419a8f8a4300f48b66ee5
+
+Place both BIGs in the SPECTER folder.
+TAG=s-mena7-construct-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-mena7-construct-btns
+BASELINE=PR #618 / #619
+FACTORY_SLOT14_RETAINED=YES
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

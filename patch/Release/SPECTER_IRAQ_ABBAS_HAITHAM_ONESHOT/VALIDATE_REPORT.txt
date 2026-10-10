@@ -1,0 +1,19 @@
+SPECTER Al-Abbas / Al-Haitham one-shot (no paid rearm)
+DATA 366668586 353dc3b0c25b81213edfa630d8c1d957ad0b3b70b5faac4d2fa06ccca02a4c6f
+ART  1305667638 2bc140fd19ad138ed6fd34e61d8cea32976af287e2183d5725ca060112236309 (identical to PR #610)
+
+AL-ABBAS (Iraq_Alhussaien, slot K):
+  Removed Upgrade/Button/OCL/Strip/ObjectCreationUpgrade.
+  Existing FireOCL disarm remains; first shot consumes the payload.
+  Unarmed set no longer has a paid restore button.
+  BuildTime 300.0 (5 min). BuildCost 20000 unchanged.
+  Shared Hussiean/AlAbid weapons not edited.
+
+AL-HAITHAM (Iraq_AlHaitham, slot L):
+  Paid rearm IDs were already absent. Launch weapons now AutoReloadsClip = No.
+  BuildTime 300 / BuildCost 30000 unchanged. No riders, no FireOCL.
+
+UNCHANGED: Sarab7, 9P117, Al-Najm, factory roster, fire buttons, ART.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

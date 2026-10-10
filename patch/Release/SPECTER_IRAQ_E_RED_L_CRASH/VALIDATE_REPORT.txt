@@ -1,0 +1,32 @@
+SPECTER Al-Najm red + Al-Haitham produce-CTD isolation
+DATA 366673569 d3ebef1c9135ac8831fb0b9129441dd7978dc4d148239a3da294908ad58bc138
+ART  1302521910 cb5384f9ef81d6c37e57a8ad96079c391151d0d933a9d70b7c41ab91a1e6481d
+
+NAJM OLD COLOR ROOT CAUSE:
+  Effective parked Model/Animation was Irq_Sarab7 / Irq_Sarab7.Irq_Sarab7.
+  MISSILE01/02 on that W3D use AAM-GENTEX.dds (shared with Sarab7).
+  Dedicated Irq_AlNajm.W3D was unreferenced after PR #608.
+  AlNajmSkin.tga was a 1024 make_skin with a black center; Raad2 UVs
+  do not paint from that sheet the way AAM-GENTEX islands do.
+
+NAJM FIX:
+  Irq_AlNajm.W3D = Irq_Sarab7 copy, texture-only, HLod IRQ_SARAB7.
+  Animation = Irq_AlNajm.Irq_Sarab7 (file new, internal anim parent).
+  AlNajmSkin.tga = solid red 512 so every UV sample is red.
+  Flying Irq_AlNajmM keeps IRQ_RAAD2M + AlNajmSkin.tga.
+  Slot E remains Iraq_Sarab7. Al-Najm is slot F. Sarab7 not modified.
+
+HAITHAM CTD — STATIC FINDING (runtime unconfirmed):
+  #608 parent TEL restore did not stop the produce crash.
+  All packed object/weapon/OCL/command/art IDs resolve.
+  Remaining Haitham-only create-time modules vs working Alabaas:
+    RiderChangeContain + InitialPayload GenericFakeRider2
+    ObjectCreationUpgrade OCL_Rearm contain riders
+    unique Irq_AlHaithamM + ParticlesAttachedToAnimatedBones
+    FireOCL OCL_HussienMissileDisarm (contain Rider1)
+  Isolated those. Always-armed WeaponSet. Flying model Irq_AbbasM.
+  $20000 Upgrade_Rearm_Iraq_AlHaitham kept on the armed command set.
+  Rider restore itself was removed so it cannot keep crashing spawn.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN (produce/color claim requires in-game retest)

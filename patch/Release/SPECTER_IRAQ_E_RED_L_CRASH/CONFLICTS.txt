@@ -1,0 +1,7 @@
+Slot E is still Iraq_Sarab7. Producing E will not be red; that is Sarab7, not Al-Najm.
+Al-Najm is slot F. Parked truck body still uses Irq_Sarab7.dds; only MISSILE01/02 are red.
+Haitham flying model is the working parent Irq_AbbasM (not a dedicated black W3D).
+Haitham rider-based rebuild restore was removed. The $20000 upgrade button remains.
+Without riders, FireOCL disarm was also removed so fire cannot inject Rider1 into a non-contain unit.
+Alabaas, Sarab7, and 9P117 are not modified.
+STATIC ONLY. Produce/color not claimed fixed in-game.

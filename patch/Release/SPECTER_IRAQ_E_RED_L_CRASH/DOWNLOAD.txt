@@ -1,0 +1,31 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-e-red-l-crash/_SPEC_DATA_ONE.big
+  SIZE=366673569
+  SHA256=d3ebef1c9135ac8831fb0b9129441dd7978dc4d148239a3da294908ad58bc138
+  HTTP=200 content-length=366673569
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-e-red-l-crash/_SPEC_ART_ONE.big
+  SIZE=1302521910
+  SHA256=cb5384f9ef81d6c37e57a8ad96079c391151d0d933a9d70b7c41ab91a1e6481d
+  HTTP=200 content-length=1302521910
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-e-red-l-crash/SPECTER_IRAQ_E_RED_L_CRASH.zip
+  SIZE=1669198993
+  SHA256=e905ef0ab5188502eceea825f1e43b2cabcacbab13f17278d87ec68efc65b59e
+  HTTP=200 content-length=1669198993
+
+Place both BIGs in the SPECTER folder.
+Open downloads in a desktop browser if the GitHub app reports BIGs unavailable.
+
+TAG=s-iraq-e-red-l-crash
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-e-red-l-crash
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/609
+BASELINE=PR #608
+GAMEPLAY_NUMBERS=UNCHANGED
+NAJM_SLOT=F
+HAITHAM_SLOT=L
+SARAB7_SLOT=E
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

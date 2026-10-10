@@ -1,0 +1,16 @@
+SPECTER Haitham/Najm fire bind + isolated dedicated colors
+DATA 366669703 21a7746b6a68203bedf306c3e96121fa6d916a1b059129963702e655f3228caf
+ART  1305667638 fa46c291d9cec1b106977e7a5ec3ded54e9bc0c9e2c94ab4d4852b90d4e96359
+
+FIRE:
+  Haitham CommandSet uses proven Al-Abbas FIRE_WEAPON buttons.
+  Haitham DEPLOYED states now have WeaponLaunchBone PRIMARY/SECONDARY.
+  Najm keeps Smerch_CommandSet -> Command_FireMainWeapon PRIMARY.
+  No riders, no paid rearm.
+
+DEDICATED ART:
+  Unique HLod prefixes, unique solid black/red TGAs.
+  Parent Sarab7/Al-Abbas W3D and textures byte-identical to #611.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

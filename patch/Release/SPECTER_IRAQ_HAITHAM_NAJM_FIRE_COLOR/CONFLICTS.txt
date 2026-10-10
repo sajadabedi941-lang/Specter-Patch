@@ -1,0 +1,3 @@
+Dedicated colors use unique HLod copies. Parked TEL trucks still use the parent launcher sheet.
+Only the missile meshes sample the dedicated black/red TGA.
+STATIC ONLY.

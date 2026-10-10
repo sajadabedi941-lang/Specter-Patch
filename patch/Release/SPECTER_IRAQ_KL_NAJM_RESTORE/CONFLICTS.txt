@@ -1,0 +1,5 @@
+Al-Najm parked/flying currently look like Sarab7. Dedicated red is deferred.
+Slot E is Sarab7; slot F is Al-Najm; slot K is Alabaas; slot L is Al-Haitham.
+Haitham has no paid rearm and no rider contain. After fire it uses normal clip behavior.
+K/L crash is isolated at the HLod-collision class; not proven in-game.
+STATIC ONLY.

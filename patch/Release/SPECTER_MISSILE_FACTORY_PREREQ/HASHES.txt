@@ -14,3 +14,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_MISSILE_FACTORY_PREREQ.zip
 ZIP_SIZE=1672340868
 ZIP_SHA256=7de03b3a6bc74f0999dadee852e321feb4bcb55db29d2a48c9f6319a46072cc1
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/614
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-missile-factory-prereq

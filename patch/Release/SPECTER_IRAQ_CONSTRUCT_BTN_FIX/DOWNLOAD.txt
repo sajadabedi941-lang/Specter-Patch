@@ -1,0 +1,22 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-construct-btn-fix/_SPEC_DATA_ONE.big
+  SIZE=366674056
+  SHA256=a3dc851ec3d1d4042d8ae46a32beb299fd84fd394bf35544d3d43ff94fec09cb
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-construct-btn-fix/_SPEC_ART_ONE.big
+  SIZE=1306406185
+  SHA256=a4f033e556c280a7f0fd50f5ead273d736a1238ec11233924aedb82f4e915481
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-construct-btn-fix/SPECTER_IRAQ_CONSTRUCT_BTN_FIX.zip
+  SIZE=787851018
+  SHA256=9762b6fd45dc398ce6fce108c832302592199a2c330872970ed4d78d51badc87
+
+Place both BIGs in the SPECTER folder.
+TAG=s-iraq-construct-btn-fix
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-construct-btn-fix
+BASELINE=PR #615
+MISSILE_FACTORY_RESTORED=YES
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

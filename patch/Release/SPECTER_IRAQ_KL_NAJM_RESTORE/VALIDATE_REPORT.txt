@@ -1,0 +1,28 @@
+SPECTER restore Sarab7 / visible Najm / K+L isolation / no paid rearm
+DATA 366671017 9f8311b469fe1fc3a807dccf302c27cb525b4da3cfb3608fcb80556399e7d5ee
+ART  1305667638 2bc140fd19ad138ed6fd34e61d8cea32976af287e2183d5725ca060112236309
+
+SARAB7 COLOR CONTAMINATION:
+  Parent Irq_Sarab7.W3D and AAM-GENTEX.dds were never edited.
+  #609 Irq_AlNajm.W3D reused HLod IRQ_SARAB7 with AlNajmSkin.tga.
+  SAGE HLod lookup then drew Sarab7 with the Najm material.
+
+NAJM INVISIBLE / NO FIRE:
+  Animation = Irq_AlNajm.Irq_Sarab7 is not a working File.Anim pair.
+  Failed unpack/deploy = no model and no PRIMARY fire.
+  Restored proven Irq_Sarab7 / Irq_Sarab7.Irq_Sarab7 and Irq_Raad2M.
+  Dedicated red deferred: same-HLod recolor contaminates the parent;
+  uniquified HLod/anim previously hid the unit.
+
+SLOT K (Iraq_Alhussaien) vs L (Iraq_AlHaitham):
+  K object/INI/CommandSet/OCL were not text-changed in #609.
+  Shared suspect: Irq_AlHaithamM.W3D also reused parent HLod IRQ_ABBASM.
+  Neutralized unique ICBM/Sarab W3Ds to bit-identical parent copies.
+  L still has no riders/paid rearm (requested). That is NOT claimed as the K fix.
+
+PAID REARM:
+  Removed Upgrade/Button/OCL/CommandSet/Strip for Al-Haitham.
+  Al-Najm has none. Alabaas Upgrade_Rearm_Iraq_Alhussaien stays 15000.
+
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

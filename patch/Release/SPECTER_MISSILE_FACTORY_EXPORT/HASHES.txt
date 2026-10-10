@@ -13,3 +13,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_MISSILE_FACTORY_EXPORT.zip
 ZIP_SIZE=1672340321
 ZIP_SHA256=7f2a7fc19b1130b1ccacd38bff96d27786c7a189b409d55c25add9da0a6d2250
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/613
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-missile-factory-export

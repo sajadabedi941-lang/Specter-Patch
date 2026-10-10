@@ -1,0 +1,35 @@
+SPECTER1 global airbase construction repair
+
+Built directly on top of the user-tested booting PR #482 DATA baseline.
+Only global aviation-building construction chains were repaired.
+PR #482 Iraq changes were preserved.
+
+What was broken
+- Dozer buttons for the two aviation production buildings were live, but the
+  target LargeAirBase / HeavyAirBase objects referenced TheAirPort.W3D and
+  HXUSABigAirPort.W3D. Those ART files have hierarchy headers with no stored
+  pivot data, so the construction templates could not load.
+- GLA worker pointed at CommandSet GLAWorkerCommandSet (does not exist;
+  live set is GLAWorkerCommandSetg).
+- Israel StartingUnit0 Israel_VehicleDozer did not exist.
+
+What changed
+- Large/Heavy airbase Draw + geometry now use each faction's original working
+  airfield W3D (US_AirField, Irq_Airfield, Chi_Airfield, RUS_Airfield,
+  iran_airfield, Isr_Airfield) already present in SPEC ART.
+- Object names, Sides, Prerequisites, aircraft CommandSets, parking counts,
+  and production bars were not changed.
+- GLA worker CommandSet typo corrected.
+- Israel dozer object + Israel-side construct buttons for the existing
+  Israel_Airfield_T chain.
+
+What was not changed
+- ART pack
+- CommandSet.ini (keeps PR #482 Iraq MIC + Tu-22 Heavy slot 3)
+- CommandButton.ini
+- PlayerTemplate
+- Aircraft rosters / weapons / scale
+- Egypt CommandCenter
+- WarFactory / infantry / economy
+
+INGAME_TESTED = NO

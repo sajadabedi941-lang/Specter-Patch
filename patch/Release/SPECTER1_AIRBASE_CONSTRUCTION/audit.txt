@@ -1,0 +1,215 @@
+SPECTER1 GLOBAL AIRBASE CONSTRUCTION REPAIR
+Built directly on the user-tested booting PR #482 DATA baseline.
+Only aviation-building construction chains were repaired.
+PR #482 Iraq changes were preserved.
+INGAME_TESTED = NO
+
+======================================================================
+BASELINE
+======================================================================
+BASELINE = PR #482 RELEASE DATA
+Release: SPECTER1_Iraq_Controlled_Unlock
+PR: https://github.com/sajadabedi941-lang/Specter-Patch/pull/482
+
+BASELINE_DATA_BYTES = 364977521
+BASELINE_DATA_SHA256 = a6f022ff41664a9085c3a7197e71fb75776afd370702d63a0c3ece0b9cb1fd0c
+BASELINE_DATA_FILE_COUNT = 2804
+
+NEW_DATA_BYTES = 364974023
+NEW_DATA_SHA256 = 277fab2e8e579b62e69261c2d5a6f5109a19204950d8bb3c684255170d5bd5df
+NEW_DATA_FILE_COUNT = 2804
+
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 54
+ORDER_IDENTICAL = YES
+ART_CHANGED = NO
+
+======================================================================
+ROOT CAUSE (identified before patching)
+======================================================================
+GLOBAL_COMMON_CAUSE = YES
+GLOBAL_AIRBASE_CONSTRUCTION_ROOT_CAUSE = Player-buildable LargeAirBase / HeavyAirBase objects used Model TheAirPort / HXUSABigAirPort. Those W3Ds exist in SPEC ART but their hierarchy chunks store no pivot data (TheAirPort header claims 101 pivots with an empty hierarchy container; HXUSABigAirPort has no PIVOTS chunk). ExtraPublicBone + W3DModelDraw against a pivot-less hierarchy invalidates the ThingTemplates, so the two dozer aviation buildings cannot be constructed. PR #482 did not introduce this: CommandButton.ini is byte-identical to SPECTER1; CommandSet.ini differs only by the approved Iraq MIC buttons and Iraq Heavy AirBase slot 3.
+
+SECONDARY (faction-specific, also blocking construction):
+- GLAInfantryWorker CommandSet = GLAWorkerCommandSet, but only CommandSet GLAWorkerCommandSetg exists.
+- Israel StartingUnit0 Israel_VehicleDozer was OBJECT_NOT_PRESENT (file defined only AirF_AmericaVehicleDozer).
+
+AFFECTED_FACTIONS = all playable factions whose builder exposes LargeAirBase and/or HeavyAirBase (USA, China, Russia, Iran, Iraq, Syria, UAE, Saudi, Libya, India, Pakistan, Israel/AirF, Turkey, France, Germany, Italy, Britain, Sweden, Ukraine, NATO, Japan, South Korea, North Korea, Vietnam, South Africa, Egypt Large only). GLA uses stock Arabic airfields (working Arb_Airfield) but the worker CommandSet name was broken.
+
+AFFECTED_BUILDING_TYPES = *LargeAirBase (TheAirPort) and *HeavyAirBase (HXUSABigAirPort)
+
+PR #482 vs SPECTER1 aviation construction: NO unintended global CommandSet/CommandButton construction regression.
+
+======================================================================
+REPAIR (minimal, DATA only)
+======================================================================
+For every *LargeAirBase / *HeavyAirBase object:
+- Replace Draw/ExtraPublicBone/Model/Animation with that faction's original working airfield W3D
+  (US_AirField, Irq_Airfield, Chi_Airfield, RUS_Airfield, iran_airfield, Isr_Airfield)
+- Replace GeometryMajor/Minor/Height with the donor airfield footprint so placement is legal
+- Preserve Object name, Side, Prerequisites, BuildCost/Time, KindOf, CommandSet (aircraft slots),
+  ParkingPlaceBehavior NumRows/NumCols, production bars
+
+GLA: CommandSet GLAWorkerCommandSet -> GLAWorkerCommandSetg (typo fix only)
+
+Israel: add Object Israel_VehicleDozer (clone of AirF dozer, Side=Israel) and IsraelDozerCommandSet
+targeting existing Side=Israel objects. Intended Israel-side aviation building is Israel_Airfield_T
+(Irq_Airfield). Israel_LargeAirBase / Israel_HeavyAirBase remain AirF-sided (AmericaAirForceGeneral)
+and were model-repaired for AirF.
+
+ART was not rebuilt. TheAirPort.W3D and HXUSABigAirPort.W3D remain in ART unused by construction.
+
+Boss_VehicleDozer / Boss CC objects remain missing (pre-existing; no aviation pair exposed).
+No Boss objects were invented.
+
+======================================================================
+CONSTRUCTION MATRIX
+Faction | Builder | Fighter button / object | Second button / object | Buildable
+----------------------------------------------------------------------
+USA | AmericaVehicleDozer | Command_ConstructAmericaAirfield_T / America_LargeAirBase / US_AirField | Command_ConstructAmerica_HeavyAirBase / America_HeavyAirBase / US_AirField | YES
+China | ChinaVehicleDozer | Command_ConstructChinaAirfield / China_LargeAirBase / Chi_Airfield | Command_ConstructChina_HeavyAirBase / China_HeavyAirBase / Chi_Airfield | YES
+GLA | GLAInfantryWorker | Command_ConstructArabicAirfield_T / ArabicArmy_Airfield_T / Arb_Airfield | Command_ConstructArabicAirfield / ArabicArmy_Airfield / Arb_Airfield | YES
+Russia | RussiaVehicleDozer | Command_ConstructRussiaAirfield / Russia_LargeAirBase / RUS_Airfield | Command_ConstructRussia_HeavyAirBase / Russia_HeavyAirBase / RUS_Airfield | YES
+Iran | IranVehicleDozer | Command_ConstructIranAirfield / Iran_LargeAirBase / iran_airfield | Command_ConstructIran_HeavyAirBase / Iran_HeavyAirBase / iran_airfield | YES
+Iraq | Iraq_VT72B | Command_ConstructIraq_Airfield_T / Iraq_LargeAirBase / Irq_Airfield | Command_ConstructIraq_HeavyAirBase / Iraq_HeavyAirBase / Irq_Airfield | YES
+Syria | Syria_Dozer | Command_ConstructSyria_Airfield_T / Syria_LargeAirBase / Irq_Airfield | Command_ConstructSyria_HeavyAirBase / Syria_HeavyAirBase / Irq_Airfield | YES
+UAE | UAE_Dozer | Command_ConstructUAE_Airfield_T / UAE_LargeAirBase / Irq_Airfield | Command_ConstructUAE_HeavyAirBase / UAE_HeavyAirBase / Irq_Airfield | YES
+Saudi | SaudiArabia_Dozer | Command_ConstructSaudiArabia_Airfield_T / SaudiArabia_LargeAirBase / Irq_Airfield | Command_ConstructSaudiArabia_HeavyAirBase / SaudiArabia_HeavyAirBase / Irq_Airfield | YES
+Libya | Libya_Dozer | Command_ConstructLibya_Airfield_T / Libya_LargeAirBase / Irq_Airfield | Command_ConstructLibya_HeavyAirBase / Libya_HeavyAirBase / Irq_Airfield | YES
+Egypt | Egypt_Worker | Command_ConstructEgypt_Airfield_T / Egypt_LargeAirBase / Irq_Airfield | (none; no Egypt_HeavyAirBase — legitimate single airbase) | YES
+Israel | Israel_VehicleDozer | Command_ConstructIsrael_Airfield_T / Israel_Airfield_T / Irq_Airfield | (none on Israel side; Large/Heavy are AirF-sided) | YES
+AirF | AirF_AmericaVehicleDozer | AirF_Command_ConstructAmericaAirfield / Israel_LargeAirBase / Isr_Airfield | Command_ConstructIsrael_HeavyAirBase / Israel_HeavyAirBase / Isr_Airfield | YES
+Turkey | TurkeyVehicleDozer | Command_ConstructTurkeyAirfield / Turkey_LargeAirBase / US_AirField | Command_ConstructTurkey_HeavyAirBase / Turkey_HeavyAirBase / US_AirField | YES
+France | FranceVehicleDozer | Command_ConstructFranceAirfield / France_LargeAirBase / US_AirField | Command_ConstructFrance_HeavyAirBase / France_HeavyAirBase / US_AirField | YES
+Germany | GermanyVehicleDozer | Command_ConstructGermanyAirfield / Germany_LargeAirBase / US_AirField | Command_ConstructGermany_HeavyAirBase / Germany_HeavyAirBase / US_AirField | YES
+Italy | ItalyVehicleDozer | Command_ConstructItalyAirfield / Italy_LargeAirBase / US_AirField | Command_ConstructItaly_HeavyAirBase / Italy_HeavyAirBase / US_AirField | YES
+Britain | BritainVehicleDozer | Command_ConstructBritainAirfield / Britain_LargeAirBase / US_AirField | Command_ConstructBritain_HeavyAirBase / Britain_HeavyAirBase / US_AirField | YES
+Sweden | SwedenVehicleDozer | Command_ConstructSwedenAirfield / Sweden_LargeAirBase / US_AirField | Command_ConstructSweden_HeavyAirBase / Sweden_HeavyAirBase / US_AirField | YES
+Ukraine | UkraineVehicleDozer | Command_ConstructUkraineAirfield / Ukraine_LargeAirBase / US_AirField | Command_ConstructUkraine_HeavyAirBase / Ukraine_HeavyAirBase / US_AirField | YES
+NATO | NatoVehicleDozer | Command_ConstructNatoAirfield / Nato_LargeAirBase / US_AirField | Command_ConstructNato_HeavyAirBase / Nato_HeavyAirBase / US_AirField | YES
+Pakistan | Pakistan_Dozer | Command_ConstructPakistan_Airfield_T / Pakistan_Airfield_T / Irq_Airfield | Command_ConstructPakistan_HeavyAirBase / Pakistan_HeavyAirBase / Irq_Airfield | YES
+India | India_Dozer | Command_ConstructIndia_Airfield_T / India_LargeAirBase / Irq_Airfield | Command_ConstructIndia_HeavyAirBase / India_HeavyAirBase / Irq_Airfield | YES
+Japan | Japan_VT72B | Command_ConstructJapan_LargeAirBase / Japan_LargeAirBase / Irq_Airfield | Command_ConstructJapan_HeavyAirBase / Japan_HeavyAirBase / Irq_Airfield | YES
+South Korea | SouthKorea_VT72B | Command_ConstructSouthKorea_LargeAirBase / SouthKorea_LargeAirBase / Irq_Airfield | Command_ConstructSouthKorea_HeavyAirBase / SouthKorea_HeavyAirBase / Irq_Airfield | YES
+North Korea | NorthKorea_VT72B | Command_ConstructNorthKorea_LargeAirBase / NorthKorea_LargeAirBase / Irq_Airfield | Command_ConstructNorthKorea_HeavyAirBase / NorthKorea_HeavyAirBase / Irq_Airfield | YES
+Vietnam | Vietnam_VT72B | Command_ConstructVietnam_LargeAirBase / Vietnam_LargeAirBase / Irq_Airfield | Command_ConstructVietnam_HeavyAirBase / Vietnam_HeavyAirBase / Irq_Airfield | YES
+South Africa | SouthAfrica_Dozer | Command_ConstructSouthAfrica_Airfield_T / SouthAfrica_LargeAirBase / Irq_Airfield | Command_ConstructSouthAfrica_HeavyAirBase / SouthAfrica_HeavyAirBase / Irq_Airfield | YES
+Boss | Boss_VehicleDozer MISSING | no aviation pair exposed | | NO_BUILDER (pre-existing)
+
+USA_AIRBASES_BUILDABLE = YES
+CHINA_AIRBASES_BUILDABLE = YES
+GLA_AIRBASES_BUILDABLE = YES
+RUSSIA_AIRBASES_BUILDABLE = YES
+IRAN_AIRBASES_BUILDABLE = YES
+IRAQ_AIRBASES_BUILDABLE = YES
+SYRIA_AIRBASES_BUILDABLE = YES
+UAE_AIRBASES_BUILDABLE = YES
+SAUDI_AIRBASES_BUILDABLE = YES
+LIBYA_AIRBASES_BUILDABLE = YES
+EGYPT_AIRBASES_BUILDABLE = YES
+ISRAEL_AIRBASES_BUILDABLE = YES
+TURKEY_AIRBASES_BUILDABLE = YES
+FRANCE_AIRBASES_BUILDABLE = YES
+GERMANY_AIRBASES_BUILDABLE = YES
+ITALY_AIRBASES_BUILDABLE = YES
+BRITAIN_AIRBASES_BUILDABLE = YES
+SWEDEN_AIRBASES_BUILDABLE = YES
+UKRAINE_AIRBASES_BUILDABLE = YES
+NATO_AIRBASES_BUILDABLE = YES
+PAKISTAN_AIRBASES_BUILDABLE = YES
+INDIA_AIRBASES_BUILDABLE = YES
+JAPAN_AIRBASES_BUILDABLE = YES
+SOUTH_KOREA_AIRBASES_BUILDABLE = YES
+NORTH_KOREA_AIRBASES_BUILDABLE = YES
+VIETNAM_AIRBASES_BUILDABLE = YES
+SOUTH_AFRICA_AIRBASES_BUILDABLE = YES
+AMERICA_AIRFORCE_GENERAL_AIRBASES_BUILDABLE = YES
+
+ALL_DISCOVERED_FACTIONS_AIRBASES_BUILDABLE = YES
+(Boss has no builder and no intended aviation pair; not repaired / not invented.)
+
+======================================================================
+PR #482 IRAQ PRESERVED
+======================================================================
+IRAQ_L159_CLIPSIZE = 3
+IRAQ_MIG21_SCALE = 0.91
+IRAQ_TU22_BUILDABLE = YES
+IRAQ_TU22_HEAVY_AIRBASE_SLOT = 3
+IRAQ_MIRAGE_UNLOCKED = YES
+IRAQ_SU24MK_UNLOCKED = YES
+IRAQ_SU24MR_UNLOCKED = YES
+ABBAS_RESEARCH_GATE_REMOVED = YES
+RUSSIA_TU22_BOMB = Kab1500_LeaserGuidedBomb
+PR482_IRAQ_CHANGES_PRESERVED = YES
+
+EGYPT_COMMANDCENTER_UNCHANGED = YES
+UNRELATED_UNIT_ROSTERS_CHANGED = 0
+ART_CHANGED = NO
+CommandSet.ini (PR #482 Iraq MIC + Tu-22 slot 3) UNCHANGED
+CommandButton.ini UNCHANGED
+PlayerTemplate.ini UNCHANGED
+Weapon.ini UNCHANGED
+Airbase aircraft CommandSets UNCHANGED
+Parking NumRows/NumCols UNCHANGED
+
+======================================================================
+CHANGED PACKED PATHS (54)
+======================================================================
+Data\INI\CommandSet_Israel.ini
+Data\INI\Object\Specter\Arabic Alliance\Wheeled\Dozer.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Russia_HeavyAirBase.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Russia_LargeAirBase.ini
+Data\INI\Object\Specter\British Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\British Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_LargeAirBase.ini
+Data\INI\Object\Specter\French Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\French Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\German Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\German Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_HeavyAirBase.ini
+Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_LargeAirBase.ini
+Data\INI\Object\Specter\Iranian Army\Buildings\Iran_HeavyAirBase.ini
+Data\INI\Object\Specter\Iranian Army\Buildings\Iran_LargeAirBase.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_HeavyAirBase.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_LargeAirBase.ini
+Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_HeavyAirBase.ini
+Data\INI\Object\Specter\Israel Defense Forces\Buildings\Israel_LargeAirBase.ini
+Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Dozer.ini
+Data\INI\Object\Specter\Italian Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\Italian Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_HeavyAirBase.ini
+Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_LargeAirBase.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_HeavyAirBase.ini
+Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_LargeAirBase.ini
+Data\INI\Object\Specter\NATO\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\NATO\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_HeavyAirBase.ini
+Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_LargeAirBase.ini
+Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_HeavyAirBase.ini
+Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_LargeAirBase.ini
+Data\INI\Object\Specter\PLA\Buildings\China_HeavyAirBase.ini
+Data\INI\Object\Specter\PLA\Buildings\China_LargeAirBase.ini
+Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_HeavyAirBase.ini
+Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_LargeAirBase.ini
+Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_HeavyAirBase.ini
+Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_LargeAirBase.ini
+Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_HeavyAirBase.ini
+Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_LargeAirBase.ini
+Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_HeavyAirBase.ini
+Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_LargeAirBase.ini
+Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Nato_HeavyAirBase.ini
+Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Nato_LargeAirBase.ini
+Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_HeavyAirBase.ini
+Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_LargeAirBase.ini
+Data\INI\Object\Specter\United States Of America\Buildings\America_HeavyAirBase.ini
+Data\INI\Object\Specter\United States Of America\Buildings\America_LargeAirBase.ini
+Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_HeavyAirBase.ini
+Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_LargeAirBase.ini
+
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

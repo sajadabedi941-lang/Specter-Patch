@@ -1,0 +1,1 @@
+No last-wins path conflicts. New irqbtn_* names only.

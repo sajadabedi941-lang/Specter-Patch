@@ -1,0 +1,34 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #614 s-missile-factory-prereq
+DATA_SIZE=366672869
+DATA_SHA256=708ef7a599dfcb1c073cf19e3201fbc0d3fbf3bd1c2c0398c0bae9dd2b853809
+ART_SIZE=1306159984
+ART_SHA256=fee4ac85eb53d47e1a972b90b04b42996f14031bfcb9e0b9736916e12915c895
+DATA mutations: CommandButton.ini ButtonImage only + new MappedImage INI
+ART mutations: 10 new irqbtn_*.tga only
+CommandSets unchanged
+Iraq_AlFahdMissileFactory object unchanged
+Non-Iraq CommandButtons unchanged
+
+INTEGRATED:
+  Aircraft Base -> Command_ConstructIraq_HeavyAirBase -> Iraq_HeavyAirBase (irqbtn_airbase)
+  Fighter Base -> Command_ConstructIraq_Airfield_T / MilitaryAirfield -> Iraq_LargeAirBase (irqbtn_fighter)
+  Command Center -> Command_ConstructIraq_CommandCenter -> Iraq_CommandCenter (irqbtn_cmdctr)
+  Camp -> Command_ConstructIraq_Barracks -> Iraq_Barracks model irq_camp (irqbtn_camp)
+  Power Plant -> Command_ConstructIraq_PowerPlant -> Iraq_PowerPlant (irqbtn_power)
+  Supply Center -> Command_ConstructIraq_SupplyCenter -> Iraq_SupplyCenter (irqbtn_supply)
+  War Factory -> Command_ConstructIraq_WarFactory_T / MilitaryWarfactory (irqbtn_warfac)
+  Radar -> Command_ConstructIraq_RadarStation -> Iraq_RadarStation (irqbtn_radar)
+  Atom -> Command_ConstructIraq_Abbas / Abbas_AI -> Iraq_Abbas (irqbtn_atom)
+  Missile Factory -> Command_ConstructIraq_AlFahdMissileFactory (irqbtn_mslfac); not on Iraq dozer menu after #613
+UNUSED UPLOADED IMAGES:
+  bio.png from ChatGPT Image Oct 10, 2026, 07_01_48 PM.png — Iraq has no Bio building; Iraq_MIC is Military Industry Corporation, not assigned
+  cram.png — no Iraq_CRAM object; not created
+  mantis.png — no Iraq_Mantis object; not created
+  mim80.png — no Iraq MIM-80 object; not created
+MISSING IMAGES / NO IRAQ BUILDING:
+  Air Defense — Iraq_DefenseSite / Iraq_Sam2 / Iraq_100mmCannon / IraqFahad3SamSite exist; no uploaded Air Defense card (no AirDefense.png / irq_Defsite replacement uploaded)
+  Artillery — Iraq_D30_Howitzer exists; no uploaded Artillery card (no Artillery.png / irq_d30 replacement uploaded)
+  Strategy Center — no Iraq Strategy Center object and no uploaded image
+  World Market — no Iraq World Market object and no uploaded image

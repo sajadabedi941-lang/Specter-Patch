@@ -13,3 +13,5 @@ RUNTIME_TEST=NOT RUN
 ZIP_FILE=SPECTER_IRAQ_HAITHAM_NAJM_FIRE_COLOR.zip
 ZIP_SIZE=1672339462
 ZIP_SHA256=add2481e960f57d7e52b9a8f6dd8f8cb7648bc93c2aed6c095c3af48eb3bf466
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/612
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-haitham-najm-fire-color

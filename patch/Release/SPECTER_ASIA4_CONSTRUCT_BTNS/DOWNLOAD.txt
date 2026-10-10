@@ -1,0 +1,21 @@
+DATA replacement (identical to PR #618):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-asia4-construct-btns/_SPEC_DATA_ONE.big
+  SIZE=366676852
+  SHA256=bae544986974b2c4b96e9071024091f96833b686796dd6bdf0d233003a4603ee
+
+ART replacement (identical to PR #618):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-asia4-construct-btns/_SPEC_ART_ONE.big
+  SIZE=1306947794
+  SHA256=2a89dd356f1b3938fc9f34b6f63572e758c5f96f2486dfe578daab737b2cc8a7
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-asia4-construct-btns/SPECTER_ASIA4_CONSTRUCT_BTNS.zip
+  SIZE=788347306
+  SHA256=f3123e00a7acc29230534e2d86dd367cfc9cac76a8049269b058b719030fb583
+
+Place both BIGs in the SPECTER folder.
+TAG=s-asia4-construct-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-asia4-construct-btns
+BASELINE=PR #618
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

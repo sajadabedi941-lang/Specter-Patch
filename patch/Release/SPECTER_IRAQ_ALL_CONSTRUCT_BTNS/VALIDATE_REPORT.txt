@@ -1,0 +1,45 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #616 s-iraq-construct-btn-fix
+DATA_SIZE=366675916
+DATA_SHA256=5db24a2aeed226e2fb19416c390d6907c5d68a566b99d7220d410ff8bf16f044
+ART_SIZE=1306849327
+ART_SHA256=b61729185bff96f9e54130dd4d475da8fcca2d9fafd185f9be7af1d053168d4c
+COMMANDSET_UNCHANGED=YES
+FACTORY_SLOT14_RETAINED=YES
+DATA mutations: CommandButton.ini ButtonImage on remaining Iraq construct buttons + new MappedImage INI
+ART mutations: 9 new Button_*.tga only
+
+COMPLETE IRAQ CONSTRUCTION-BUTTON INVENTORY:
+  Power Plant | Iraq_PowerPlant | Command_ConstructIraq_PowerPlant | Button_PowerPlant.png | CORRECTED (was irqbtn_power)
+  Command Center | Iraq_CommandCenter | Command_ConstructIraq_CommandCenter | Button_CommandCenter.png | CORRECTED (was irqbtn_cmdctr)
+  Supply Center | Iraq_SupplyCenter | Command_ConstructIraq_SupplyCenter | Button_SupplyCenter.png | CORRECTED (was irqbtn_supply)
+  War Factory | Iraq_WarFactory_T | Command_ConstructIraq_WarFactory_T | Button_WarFactory.png | CORRECTED (was irqbtn_warfac)
+  War Factory (military) | IraqMilitaryWarfactory | Command_ConstructIraqMilitaryWarfactory | Button_WarFactory.png | CORRECTED (was irqbtn_warfac)
+  Fighter Base | Iraq_LargeAirBase | Command_ConstructIraq_Airfield_T | Button_FighterBase.png | CORRECTED (was irqbtn_fighter)
+  Fighter Base (military) | Iraq_LargeAirBase | Command_ConstructIraqMilitaryAirfield | Button_FighterBase.png | CORRECTED (was irqbtn_fighter)
+  Camp / Barracks | Iraq_Barracks | Command_ConstructIraq_Barracks | Button_Camp.png | CORRECTED (was irqbtn_camp)
+  Atom / Abbas | Iraq_Abbas | Command_ConstructIraq_Abbas | Button_Atom.png | CORRECTED (was irqbtn_atom)
+  Atom / Abbas AI | Iraq_Abbas_AI | Command_ConstructIraq_Abbas_AI | Button_Atom.png | CORRECTED (was irqbtn_atom)
+  Aircraft Base | Iraq_HeavyAirBase | Command_ConstructIraq_HeavyAirBase | Button_AircraftBase.png | CORRECTED (was irqbtn_airbase)
+  Radar | Iraq_RadarStation | Command_ConstructIraq_RadarStation | Button_Radar.png | CORRECTED (was irqbtn_radar)
+  Artillery / D30 | Iraq_D30_Howitzer | Command_ConstructIraq_D30_Howitzer | Button_Artillery.png | ALREADY CORRECT (#616)
+  S125 | Iraq_Sam2 | Command_ConstructIraq_Sam2 | Button_AirDefense.png | ALREADY CORRECT (#616)
+  M.I.C. | Iraq_MIC | Command_ConstructIraq_MIC | Button_GlobalMarket.png | ALREADY CORRECT (#616)
+  DefenseSite | Iraq_DefenseSite | Command_ConstructIraq_DefenseSite | Button_DefenceSite.png | ALREADY CORRECT (#616)
+  Missile Factory | Iraq_AlFahdMissileFactory | Command_ConstructIraq_AlFahdMissileFactory | Button_MissileFactory.png | ALREADY CORRECT (#616); VT72B slot 14 retained
+  100mm Cannon | Iraq_100mmCannon | Command_ConstructIraq_100mmCannon | (none uploaded) | PRESERVED irq_100canon
+  Fahad-3 SAM | IraqFahad3SamSite | Command_ConstructIraqFahad3SamSite | (none uploaded) | PRESERVED irq_fahad3
+
+UNUSED UPLOADED IMAGES (no Iraq building created):
+  Button_Bio.png — no Iraq Bio building; Iraq_MIC already uses Button_GlobalMarket
+  Button_C-RAM.png — no Iraq_CRAM object
+  Button_Mantis.png — no Iraq_Mantis object
+  Button_StrategyCenter.png — no Iraq Strategy Center object
+
+CHANGED vs PR #616:
+  DATA Data\INI\CommandButton.ini — ButtonImage only on 12 remaining Iraq DOZER_CONSTRUCT buttons
+  DATA Data\INI\MappedImages\HandCreated\IraqAllConstructCameos_Images.INI — new
+  ART 9 new Button_{PowerPlant,CommandCenter,SupplyCenter,WarFactory,FighterBase,Camp,Atom,AircraftBase,Radar}.tga
+  CommandSet.ini unchanged (factory slot 14 already restored)
+

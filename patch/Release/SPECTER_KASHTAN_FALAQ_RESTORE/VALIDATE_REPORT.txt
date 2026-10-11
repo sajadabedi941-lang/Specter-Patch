@@ -1,0 +1,29 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #623 s-kashtan-falaq-btns
+DATA_SIZE=366683148
+DATA_SHA256=a3b1cc8efb2d84ee3f5d1dff8c4ded944802823733bf8a9e7ecb23d4d9a0b15b
+ART_SIZE=1307095498
+ART_SHA256=02376df9e1ba9dfe8069e368bf41ac71fa0de3a15bc7e7b72f98042a41248521
+ART_ADDED=Button_kashtan.tga,Button_falaq.tga
+EXISTING_ART_UNCHANGED=YES
+COMMANDSET_UNCHANGED=YES
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+RUSSIA_CHINA_FACTORY_BUILDING_ONLY=YES
+
+SOURCE:
+  origin/main 306191dc patch/Art/Textures/Button_kashtan.png
+  origin/main 306191dc patch/Art/Textures/Button_falaq.png
+  Converted with established tight-crop + LANCZOS 128x128 24-bit TGA pipeline.
+  Images were not redrawn or approximated.
+
+# Source artwork
+  Kashtan: patch/Art/Textures/Button_kashtan.png  (origin/main 306191dc, 1254x1254 RGB)
+  Falaq:   patch/Art/Textures/Button_falaq.png    (origin/main 306191dc, 1254x1254 RGB)
+  Packed:  Art\Textures\Button_kashtan.tga and Art\Textures\Button_falaq.tga (128x128 24-bit)
+
+# Before / after
+  Russia | RussiaDozerCommandSet slot 5 | Command_ConstructRussiaKashtan | RussiaKashtan | Button_C-RAM -> Button_kashtan | Art\Textures\Button_kashtan.tga exists=True
+  China | PLADozerCommandSet slot 9 | Command_ConstructChinaGattlingCannon | ChinaGattlingCannon | Button_C-RAM -> Button_kashtan | Art\Textures\Button_kashtan.tga exists=True
+  Iran | IranDozerCommandSet slot 12 | Command_ConstructIranFalaqTrench | IranFalaqTrench | Button_DefenceSite -> Button_falaq | Art\Textures\Button_falaq.tga exists=True
+

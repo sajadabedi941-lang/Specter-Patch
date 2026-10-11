@@ -1,0 +1,2 @@
+No ART or MappedImage changes. Three CommandButton ButtonImages only.
+Command_ConstructChinaGattlingCannon is China's live Kashtan/LD2000 entry; vanilla Tank_/Nuke_/Infa_/Boss_ copies were not changed.

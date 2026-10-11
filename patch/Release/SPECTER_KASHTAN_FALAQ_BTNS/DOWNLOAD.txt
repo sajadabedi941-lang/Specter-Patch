@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-btns/_SPEC_DATA_ONE.big
+  SIZE=366682583
+  SHA256=89f2b05fde9e9548170d4232a88744c96f97f5d1440802ce9d23e67d81831d04
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-btns/_SPEC_ART_ONE.big
+  SIZE=1306997028
+  SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-btns/SPECTER_KASHTAN_FALAQ_BTNS.zip
+  SIZE=788407667
+  SHA256=df291216dd747e6aa2d8d759992f5e3713dbf769bd9a87e6bf6d716ee1947ec1
+
+Place both BIGs in the SPECTER folder.
+TAG=s-kashtan-falaq-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-kashtan-falaq-btns
+BASELINE=PR #622
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

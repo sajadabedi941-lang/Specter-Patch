@@ -1,0 +1,4 @@
+# Before / after
+  Russia | RussiaDozerCommandSet slot 5 | Command_ConstructRussiaKashtan | RussiaKashtan | rus_kashtan -> Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True
+  China | PLADozerCommandSet slot 9 | Command_ConstructChinaGattlingCannon | ChinaGattlingCannon | rus_kashtan -> Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True
+  Iran | IranDozerCommandSet slot 12 | Command_ConstructIranFalaqTrench | IranFalaqTrench | irn_falaq -> Button_DefenceSite | Art\Textures\Button_DefenceSite.tga exists=True

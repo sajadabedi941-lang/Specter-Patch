@@ -1,0 +1,118 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #621 s-factory-roster-isolate
+DATA_SIZE=366682572
+DATA_SHA256=81d4c6471c70450d15c32c149ebb426c77f4af6b9ae3a261d13eef3e75f2f9e6
+ART_SIZE=1306997028
+ART_SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+ART_UNCHANGED=YES
+COMMANDSET_UNCHANGED=YES
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+RUSSIA_CHINA_FACTORY_BUILDING_ONLY=YES
+AMERICA_LGM30=Button_Atom
+
+PRESERVED (no matching uploaded image):
+  Iran Falaq trench, Israel Jericho uplink, Russia Kashtan, China bunker, China LD2000
+  America THAAD slot is UNIT_BUILD and was not changed
+
+OBJECT-FOLLOWED MAPPINGS:
+  AmericaPatriotBattery object is C-RAM -> Button_C-RAM
+  America_MIM104F object is SAM -> Button_AirDefense
+  Israel PatriotBattery object is Iron Dome SAM -> Button_AirDefense
+  IsraelBuildingC-RAM object is C-RAM -> Button_C-RAM
+
+# Iran
+## IranDozerCommandSet
+  slot  1 | Command_ConstructIranPowerplant | IranPowerplant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructIranIndustrialComplex | IranIndustrialComplex | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructIranSupplyCenter | IranSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructIranCommandCenter | IranCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructIranBarracks | IranBarracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructIranSejjilSilo | IranSejjilSilo | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructIranD30Post | IranD30Post | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructIranKhordad15SamSite | IranKhordad15SamSite | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructIranRadarStation | IranRadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructIranBavarSiteAI | IranBavarSiteAI | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructIranWarFactory | IranWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructIranFalaqTrench | IranFalaqTrench | DOZER_CONSTRUCT | irn_falaq | Art\Textures\irn_falaq.tga exists=n/a | PRESERVED (unique Falaq trench)
+  slot 13 | Command_ConstructIranAirfield | Iran_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 14 | Command_ConstructIran_HeavyAirBase | Iran_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+
+# America
+## AmericaDozerCommandSet
+  slot  1 | Command_ConstructAmericaPowerPlant | AmericaPowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructAmericaStrategyCenter_T | AmericaStrategyCenter_T | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructAmericaBarracks | AmericaBarracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructAmerica_HeavyAirBase | America_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructAmericaSupplyCenter | AmericaSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructAmericaRadarStation | AmericaRadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructAmericaPatriotBattery | AmericaPatriotBattery | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructAmericaCommandCenter | AmericaCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructAmericaFireBase | AmericaFireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructAmerica_MIM104F | America_MIM104F | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructAmericaWarFactory_T | AmericaWarFactory_T | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructAmericaLgm30 | AmericaLgm30 | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | ALREADY CORRECT
+  slot 13 | Command_ConstructAmericaAirfield_T | America_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+  slot 15 | Command_ConstructAmericaStrategyCenter | AmericaStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot 16 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | Art\Textures\us_thaad.tga exists=n/a | NON-CONSTRUCT preserved
+  slot 17 | Command_ConstructAmericaWarFactory | AmericaWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 18 | Command_ConstructAmericaAirfield | America_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+
+# Israel
+## AirF_AmericaDozerCommandSet
+  slot  1 | AirF_Command_ConstructAmericaPowerPlant | AirF_AmericaPowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | AirF_Command_ConstructAmericaStrategyCenter | AirF_AmericaStrategyCenter | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  3 | AirF_Command_ConstructAmericaBarracks | AirF_AmericaBarracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructIsrael_HeavyAirBase | Israel_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  5 | AirF_Command_ConstructAmericaSupplyCenter | AirF_AmericaSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  6 | AirF_Command_ConstructAmericaParticleCannonUplink | AirF_AmericaParticleCannonUplink | DOZER_CONSTRUCT | isi_jericho | Art\Textures\isi_jericho.tga exists=n/a | PRESERVED (Jericho uplink)
+  slot  7 | AirF_Command_ConstructAmericaPatriotBattery | AirF_AmericaPatriotBattery | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot  8 | AirF_Command_ConstructAmericaCommandCenter | AirF_AmericaCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot  9 | AirF_Command_ConstructAmericaFireBase | AirF_AmericaFireBase | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructIsraelBuildingC-RAM | IsraelBuildingC-RAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | CORRECTED
+  slot 11 | AirF_Command_ConstructAmericaWarFactory | AirF_AmericaWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructIsraelBuildingRadarStation | IsraelBuildingRadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot 13 | AirF_Command_ConstructAmericaAirfield | Israel_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot 14 | Command_DisarmMinesAtPosition | - | FIRE_WEAPON | SSClearMines_L | Art\Textures\SSClearMines_L.tga exists=n/a | NON-CONSTRUCT preserved
+  slot 15 | Command_ConstructAmericaVehicleTHAAD_AI | US_THAAD_Site_AI | UNIT_BUILD | us_thaad | Art\Textures\us_thaad.tga exists=n/a | NON-CONSTRUCT preserved
+
+# Russia
+## RussiaDozerCommandSet
+  slot  1 | Command_ConstructRussiaPowerPlant | RussiaPowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructRussiaIndustrialComplex | RussiaIndustrialComplex | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructRussiaBarracks | RussiaBarracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructRussia91N6E | Russia91N6E | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructRussiaKashtan | RussiaKashtan | DOZER_CONSTRUCT | rus_kashtan | Art\Textures\rus_kashtan.tga exists=n/a | PRESERVED (Kashtan CIWS)
+  slot  6 | Command_ConstructRussiaSupplyCenter | RussiaSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructRussiaAirfield | Russia_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  8 | Command_ConstructRussiaRS28NuclearMissileSilo | RussiaRS28NuclearMissileSilo | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructRussiaWarFactory | RussiaWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 10 | Command_ConstructRussiaCommandCenter | RussiaCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructRussia2A65Site | Russia2A65Site | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructRussiaS400Site_AI | RussiaS400Site_AI | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructRussia_HeavyAirBase | Russia_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+
+# China
+## PLADozerCommandSet
+  slot  1 | Command_ConstructChinaPowerPlant | ChinaPowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | CORRECTED
+  slot  2 | Command_ConstructChina_HeavyAirBase | China_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | CORRECTED
+  slot  3 | Command_ConstructChinaBarracks | ChinaBarracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | CORRECTED
+  slot  4 | Command_ConstructChinaAirfield | China_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | CORRECTED
+  slot  5 | Command_ConstructChinaSupplyCenter | ChinaSupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | CORRECTED
+  slot  6 | Command_ConstructChinaIndustrialWeaponComplex | ChinaIndustrialWeaponComplex | DOZER_CONSTRUCT | Button_GlobalMarket | Art\Textures\Button_GlobalMarket.tga exists=True | CORRECTED
+  slot  7 | Command_ConstructChinaBunker | ChinaBunker | DOZER_CONSTRUCT | rus_d30 | Art\Textures\rus_d30.tga exists=n/a | PRESERVED (bunker)
+  slot  8 | Command_ConstructChinaRadarYj26 | ChinaRadarYj26 | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | CORRECTED
+  slot  9 | Command_ConstructChinaGattlingCannon | ChinaGattlingCannon | DOZER_CONSTRUCT | rus_kashtan | Art\Textures\rus_kashtan.tga exists=n/a | PRESERVED (LD2000 CIWS)
+  slot 10 | Command_ConstructChinaDF5NuclearMissileSilo | ChinaDF5NuclearMissileSilo | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | CORRECTED
+  slot 11 | Command_ConstructChinaWarFactory | ChinaWarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | CORRECTED
+  slot 12 | Command_ConstructChinaCommandCenter | ChinaCommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | CORRECTED
+  slot 13 | Command_ConstructChina_Hq9_Site | China_Hq9_Site | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | CORRECTED
+  slot 14 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | ALREADY CORRECT
+
+## Preserved factory isolation / prior work
+  Command_ConstructAmericaLgm30 | AmericaLgm30 | Button_Atom | RETAINED
+  Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | Button_MissileFactory | RETAINED
+  Command_ConstructIraq_AlFahdMissileFactory | Iraq_AlFahdMissileFactory | Button_MissileFactory | RETAINED
+

@@ -1,0 +1,6 @@
+Vietnam_VT72BCommandSet last-wins from Data\INI\CommandSet_VietnamMissiles.ini
+(after CommandSet.ini, before ZZZZ capture files). Other country VT72B sets unchanged.
+Iraq_AlFahdMissileFactoryCommandSet and Iraq_AlFahdMissileFactoryBuildingCommandSet
+are not edited. CommandButton.ini is not edited; new buttons live in
+CommandButton_VietnamMissiles.ini. No ZZZZ files added.
+9P117 / SRBM_ALHIJARAH_HE / HE_9M729_450kg / CB_MISSILE_A-M stay frozen.

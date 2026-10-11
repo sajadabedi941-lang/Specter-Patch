@@ -1,0 +1,75 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #625 s-asia4-construct-btns-fix
+DATA_SIZE=366800464
+DATA_SHA256=426940cef020cf85622bf59bf9f9ed11c8ab5a407a50d43315f7aa6fa0618c1f
+ART_SIZE=1343628546
+ART_SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+NINE_P117_UNCHANGED=YES
+KASHTAN_FALAQ_RETAINED=YES
+IRAQ_ABBAS_BIO_RETAINED=YES
+NO_REARM=YES
+NO_ZZZZ=YES
+
+Vietnam missiles A-H last-wins (static).
+Factory: Vietnam_MissileFactory / Vietnam_MissileFactoryCommandSet.
+Vietnam_VT72BCommandSet slot 6 = Command_ConstructVietnam_MissileFactory.
+Other isolated countries still construct Iraq_AlFahdMissileFactoryBuilding (Sell-only).
+Iraq factory A-M, 9P117, Kashtan, Falaq, Abbas Bio unchanged.
+
+GAMEPLAY MAPPING (9P117 MOTHER scale, properties independent):
+  AttackRange 1720 = 1000 km design. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg design. Formula: 2000 * (kg / 400).
+  Death warhead 2200 = 400 kg extra. Formula: 2200 * (kg / 400).
+  ScatterRadius 175 = 10/100 accuracy. Formula: 175 * (10 / acc).
+    Limitation: ScatterRadius is impact dispersion, not a 0-100 hit chance.
+  Projectile MaxHealth 400 = 5/100 stealth. Formula: 400 * (stealth / 5).
+  RadarPriority: <20 none (on radar); >=20 LOCAL_UNIT_ONLY; >=60 NOT_ON_RADAR.
+    Limitation: not a true intercept-probability percentage.
+  MinimumAttackRange kept at 800 engine units (not scaled).
+  BuildCost / BuildTime set on the unit Object (factory production).
+  Optional researched Vietnam production upgrades can still multiply cost/time.
+
+SLOT  NAME            KM   KG   ACC STL TIME COST  RANGE  DMG    DEATH SCATTER  HP     RADAR
+  A    VCM-01         500  1000 10  5   15   800   860    5000   5500  175     400    on-radar
+  B    VCM-02         700  250  75  15  20   1200  1204   1250   1375  23.333  1200   on-radar
+  C    Sông Hồng      800  400  25  80  25   1600  1376   2000   2200  70      6400   NOT_ON_RADAR
+  D    Hồng Hà        900  1800 15  10  30   2000  1548   9000   9900  116.667 800    on-radar
+  E    Cửu Long       1000 350  55  45  35   2500  1720   1750   1925  31.818  3600   LOCAL_UNIT_ONLY
+  F    Trường Sơn     1100 600  85  20  40   3000  1892   3000   3300  20.588  1600   LOCAL_UNIT_ONLY
+  G    Bạch Đằng      1300 500  30  90  50   4000  2236   2500   2750  58.333  7200   NOT_ON_RADAR
+  H    Thăng Long     1500 1200 60  55  60   5000  2580   6000   6600  29.167  4400   LOCAL_UNIT_ONLY
+
+NEW DATA FILES:
+  Data\INI\CommandSet_VietnamMissiles.ini
+  Data\INI\CommandButton_VietnamMissiles.ini
+  Data\INI\Weapon\Weapon_Vietnam_Missiles.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_MissileFactory.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_VCM01.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_VCM01_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_VCM02.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_VCM02_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_SongHong.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_SongHong_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_HongHa.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_HongHa_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_CuuLong.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_CuuLong_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_TruongSon.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_TruongSon_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_BachDang.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_BachDang_Projectile.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Wheeled\Vietnam_ThangLong.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_ThangLong_Projectile.ini
+
+NEW ART FILES:
+  Art\W3D\Vnm_VCM01.W3D / Art\W3D\Vnm_VCM01D.W3D / Art\W3D\Vnm_VCM01M.W3D / Art\Textures\Vnm_VCM01P.tga
+  Art\W3D\Vnm_VCM02.W3D / Art\W3D\Vnm_VCM02D.W3D / Art\W3D\Vnm_VCM02M.W3D / Art\Textures\Vnm_VCM02P.tga
+  Art\W3D\Vnm_SongH.W3D / Art\W3D\Vnm_SongHD.W3D / Art\W3D\Vnm_SongHM.W3D / Art\Textures\Vnm_SongHP.tga
+  Art\W3D\Vnm_HongH.W3D / Art\W3D\Vnm_HongHD.W3D / Art\W3D\Vnm_HongHM.W3D / Art\Textures\Vnm_HongHP.tga
+  Art\W3D\Vnm_CuuLg.W3D / Art\W3D\Vnm_CuuLgD.W3D / Art\W3D\Vnm_CuuLgM.W3D / Art\Textures\Vnm_CuuLgP.tga
+  Art\W3D\Vnm_TrSon.W3D / Art\W3D\Vnm_TrSonD.W3D / Art\W3D\Vnm_TrSonM.W3D / Art\Textures\Vnm_TrSonP.tga
+  Art\W3D\Vnm_BachD.W3D / Art\W3D\Vnm_BachDD.W3D / Art\W3D\Vnm_BachDM.W3D / Art\Textures\Vnm_BachDP.tga
+  Art\W3D\Vnm_ThgLg.W3D / Art\W3D\Vnm_ThgLgD.W3D / Art\W3D\Vnm_ThgLgM.W3D / Art\Textures\Vnm_ThgLgP.tga
+

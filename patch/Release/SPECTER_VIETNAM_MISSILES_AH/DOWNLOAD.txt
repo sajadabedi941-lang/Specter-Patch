@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-missiles-ah/_SPEC_DATA_ONE.big
+  SIZE=366800464
+  SHA256=426940cef020cf85622bf59bf9f9ed11c8ab5a407a50d43315f7aa6fa0618c1f
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-missiles-ah/_SPEC_ART_ONE.big
+  SIZE=1343628546
+  SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-missiles-ah/SPECTER_VIETNAM_MISSILES_AH.zip
+  SIZE=789617911
+  SHA256=3519034ba435849ea7ee8d5cb996e36feb556d84cacd68f2d71bc7f05f249cc3
+
+Place both BIGs in the SPECTER folder.
+TAG=s-vietnam-missiles-ah
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-vietnam-missiles-ah
+BASELINE=PR #625
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

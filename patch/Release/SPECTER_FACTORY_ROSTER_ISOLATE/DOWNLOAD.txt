@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-factory-roster-isolate/_SPEC_DATA_ONE.big
+  SIZE=366682208
+  SHA256=7090bc97ac54de9e88c0ff9e9f27c7523f235155d154e0a5a8f53690bb554275
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-factory-roster-isolate/_SPEC_ART_ONE.big
+  SIZE=1306997028
+  SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-factory-roster-isolate/SPECTER_FACTORY_ROSTER_ISOLATE.zip
+  SIZE=788407606
+  SHA256=2ed70d8e575bcaf699f0c77b2c0d35ad8b10ecfec898fa6dc5ce11114991b712
+
+Place both BIGs in the SPECTER folder.
+TAG=s-factory-roster-isolate
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-factory-roster-isolate
+BASELINE=PR #620
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

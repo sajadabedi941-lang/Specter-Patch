@@ -1,0 +1,9 @@
+# Source artwork
+  Kashtan: patch/Art/Textures/Button_kashtan.png  (origin/main 306191dc, 1254x1254 RGB)
+  Falaq:   patch/Art/Textures/Button_falaq.png    (origin/main 306191dc, 1254x1254 RGB)
+  Packed:  Art\Textures\Button_kashtan.tga and Art\Textures\Button_falaq.tga (128x128 24-bit)
+
+# Before / after
+  Russia | RussiaDozerCommandSet slot 5 | Command_ConstructRussiaKashtan | RussiaKashtan | Button_C-RAM -> Button_kashtan | Art\Textures\Button_kashtan.tga exists=True
+  China | PLADozerCommandSet slot 9 | Command_ConstructChinaGattlingCannon | ChinaGattlingCannon | Button_C-RAM -> Button_kashtan | Art\Textures\Button_kashtan.tga exists=True
+  Iran | IranDozerCommandSet slot 12 | Command_ConstructIranFalaqTrench | IranFalaqTrench | Button_DefenceSite -> Button_falaq | Art\Textures\Button_falaq.tga exists=True

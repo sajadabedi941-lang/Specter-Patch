@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-restore/_SPEC_DATA_ONE.big
+  SIZE=366683148
+  SHA256=a3b1cc8efb2d84ee3f5d1dff8c4ded944802823733bf8a9e7ecb23d4d9a0b15b
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-restore/_SPEC_ART_ONE.big
+  SIZE=1307095498
+  SHA256=02376df9e1ba9dfe8069e368bf41ac71fa0de3a15bc7e7b72f98042a41248521
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-kashtan-falaq-restore/SPECTER_KASHTAN_FALAQ_RESTORE.zip
+  SIZE=788483582
+  SHA256=d927d11987b956c2d7af13a19789ea54b1d20ca75fbae470dcc784259672f940
+
+Place both BIGs in the SPECTER folder.
+TAG=s-kashtan-falaq-restore
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-kashtan-falaq-restore
+BASELINE=PR #623
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

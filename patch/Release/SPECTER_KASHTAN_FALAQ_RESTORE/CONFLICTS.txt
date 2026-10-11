@@ -1,0 +1,2 @@
+New MappedImages Button_kashtan / Button_falaq. Existing Button_* and rus_kashtan / irn_falaq portraits untouched.
+Vanilla Tank_/Nuke_/Infa_/Boss_ China gattling buttons untouched.

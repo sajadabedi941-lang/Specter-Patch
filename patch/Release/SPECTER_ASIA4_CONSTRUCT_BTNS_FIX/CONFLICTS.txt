@@ -1,0 +1,3 @@
+NK barracks last-wins from CommandButton_ZZZZ_NKBarracksFlag.ini; that file is spliced.
+Japan/SK/Vietnam Capture ZZZZ file contains UNIT_BUILD rifles only and was not changed.
+Unused MIC/Sam2 construct buttons are not on the live VT72B and were not remapped.

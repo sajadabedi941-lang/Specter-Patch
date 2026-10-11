@@ -1,0 +1,93 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #624 s-kashtan-falaq-restore
+DATA_SIZE=366683401
+DATA_SHA256=36b3dd0b05c8aa715183f454178b547d3dfb426c0035f88f65e5028180b2e5ab
+ART_SIZE=1307095498
+ART_SHA256=02376df9e1ba9dfe8069e368bf41ac71fa0de3a15bc7e7b72f98042a41248521
+ART_UNCHANGED=YES
+COMMANDSET_UNCHANGED=YES
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+RUSSIA_CHINA_FACTORY_BUILDING_ONLY=YES
+KASHTAN_FALAQ_RETAINED=YES
+IRAQ_ABBAS_BIO_RETAINED=YES
+
+CAUSE: PR #619 audit-only; no live VT72B ButtonImages were changed.
+FIX: splice packed CommandButton.ini (52 live construct buttons) and
+     CommandButton_ZZZZ_NKBarracksFlag.ini (NK barracks last-wins).
+
+# Cause of previous Asia4 failure
+  PR #619 was audit-only (DATA/ART identical to #618). Live VT72B ButtonImages were never remapped.
+  Live builders are {Country}_VT72B, not unused first CommandSet.ini MIC/Sam2 definition.
+  North Korea barracks last-wins from CommandButton_ZZZZ_NKBarracksFlag.ini (must be spliced).
+
+# Before / after
+## NorthKorea  CommandSet=NorthKorea_VT72BCommandSet  builder=NorthKorea_VT72B
+  slot  1 | Command_ConstructNorthKorea_PowerPlant | NorthKorea_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_powerplant -> Button_PowerPlant
+  slot  2 | Command_ConstructNorthKorea_CommandCenter | NorthKorea_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_comndcntr -> Button_CommandCenter
+  slot  3 | Command_ConstructNorthKorea_SupplyCenter | NorthKorea_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_money -> Button_SupplyCenter
+  slot  4 | Command_ConstructNorthKorea_WarFactory | NorthKorea_WarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_warfctry -> Button_WarFactory
+  slot  5 | Command_ConstructNorthKorea_LargeAirBase | NorthKorea_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_airfld -> Button_FighterBase
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | ALREADY CORRECT
+  slot  7 | Command_ConstructNorthKorea_DefenseSite_SAFE | NorthKorea_DefenseSite | DOZER_CONSTRUCT | Button_DefenceSite | Art\Textures\Button_DefenceSite.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_defsite -> Button_DefenceSite
+  slot  8 | Command_ConstructNorthKorea_RadarStation | NorthKorea_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_rdrstatn -> Button_Radar
+  slot  9 | Command_ConstructNorthKorea_HeavyAirBase | NorthKorea_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_airfield -> Button_AircraftBase
+  slot 10 | Command_ConstructNorthKorea_Barracks_SAFE | NorthKorea_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | last-wins=Data\INI\CommandButton_ZZZZ_NKBarracksFlag.ini | CORRECTED irq_barracks -> Button_Camp
+  slot 11 | Command_ConstructNorthKorea_NuclearCenter | NorthKorea_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_alhussien -> Button_Atom
+  slot 12 | Command_ConstructNorthKorea_D30_SAFE | NorthKorea_D30_Howitzer | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_d30 -> Button_Artillery
+  slot 13 | Command_ConstructNorthKorea_CRAM | NorthKorea_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_mim90d -> Button_C-RAM
+  slot 14 | Command_ConstructNorthKorea_Hq9_Site | NorthKorea_Hq9_Site | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED pla_hq9b -> Button_AirDefense
+  slot 15 | Command_Stop | - | STOP | sys_stop | Art\Textures\sys_stop.tga exists=n/a | last-wins=Data\INI\CommandButton.ini | NON-CONSTRUCT preserved
+
+## SouthKorea  CommandSet=SouthKorea_VT72BCommandSet  builder=SouthKorea_VT72B
+  slot  1 | Command_ConstructSouthKorea_PowerPlant | SouthKorea_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_powerplant -> Button_PowerPlant
+  slot  2 | Command_ConstructSouthKorea_CommandCenter | SouthKorea_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_comndcntr -> Button_CommandCenter
+  slot  3 | Command_ConstructSouthKorea_SupplyCenter | SouthKorea_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_money -> Button_SupplyCenter
+  slot  4 | Command_ConstructSouthKorea_WarFactory | SouthKorea_WarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_warfctry -> Button_WarFactory
+  slot  5 | Command_ConstructSouthKorea_LargeAirBase | SouthKorea_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_airfld -> Button_FighterBase
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | ALREADY CORRECT
+  slot  7 | Command_ConstructSouthKorea_DefenseSite_SAFE | SouthKorea_DefenseSite | DOZER_CONSTRUCT | Button_DefenceSite | Art\Textures\Button_DefenceSite.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_defsite -> Button_DefenceSite
+  slot  8 | Command_ConstructSouthKorea_RadarStation | SouthKorea_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_rdrstatn -> Button_Radar
+  slot  9 | Command_ConstructSouthKorea_HeavyAirBase | SouthKorea_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_airfield -> Button_AircraftBase
+  slot 10 | Command_ConstructSouthKorea_Barracks_SAFE | SouthKorea_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED CampFlagSouthKorea -> Button_Camp
+  slot 11 | Command_ConstructSouthKorea_NuclearCenter | SouthKorea_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_alhussien -> Button_Atom
+  slot 12 | Command_ConstructSouthKorea_D30_SAFE | SouthKorea_D30_Howitzer | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_d30 -> Button_Artillery
+  slot 13 | Command_ConstructSouthKorea_CRAM | SouthKorea_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_mim90d -> Button_C-RAM
+  slot 14 | Command_ConstructSouthKorea_Hq9_Site | SouthKorea_Hq9_Site | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED pla_hq9b -> Button_AirDefense
+  slot 15 | Command_Stop | - | STOP | sys_stop | Art\Textures\sys_stop.tga exists=n/a | last-wins=Data\INI\CommandButton.ini | NON-CONSTRUCT preserved
+
+## Japan  CommandSet=Japan_VT72BCommandSet  builder=Japan_VT72B
+  slot  1 | Command_ConstructJapan_PowerPlant | Japan_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_powerplant -> Button_PowerPlant
+  slot  2 | Command_ConstructJapan_CommandCenter | Japan_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_comndcntr -> Button_CommandCenter
+  slot  3 | Command_ConstructJapan_SupplyCenter | Japan_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_money -> Button_SupplyCenter
+  slot  4 | Command_ConstructJapan_WarFactory | Japan_WarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_warfctry -> Button_WarFactory
+  slot  5 | Command_ConstructJapan_LargeAirBase | Japan_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_airfld -> Button_FighterBase
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | ALREADY CORRECT
+  slot  7 | Command_ConstructJapan_DefenseSite_SAFE | Japan_DefenseSite | DOZER_CONSTRUCT | Button_DefenceSite | Art\Textures\Button_DefenceSite.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_defsite -> Button_DefenceSite
+  slot  8 | Command_ConstructJapan_RadarStation | Japan_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_rdrstatn -> Button_Radar
+  slot  9 | Command_ConstructJapan_HeavyAirBase | Japan_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_airfield -> Button_AircraftBase
+  slot 10 | Command_ConstructJapan_Barracks_SAFE | Japan_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED CampFlagJapan -> Button_Camp
+  slot 11 | Command_ConstructJapan_NuclearCenter | Japan_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_alhussien -> Button_Atom
+  slot 12 | Command_ConstructJapan_D30_SAFE | Japan_D30_Howitzer | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_d30 -> Button_Artillery
+  slot 13 | Command_ConstructJapan_CRAM | Japan_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_mim90d -> Button_C-RAM
+  slot 14 | Command_ConstructJapan_Hq9_Site | Japan_Hq9_Site | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED pla_hq9b -> Button_AirDefense
+  slot 15 | Command_Stop | - | STOP | sys_stop | Art\Textures\sys_stop.tga exists=n/a | last-wins=Data\INI\CommandButton.ini | NON-CONSTRUCT preserved
+
+## Vietnam  CommandSet=Vietnam_VT72BCommandSet  builder=Vietnam_VT72B
+  slot  1 | Command_ConstructVietnam_PowerPlant | Vietnam_PowerPlant | DOZER_CONSTRUCT | Button_PowerPlant | Art\Textures\Button_PowerPlant.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_powerplant -> Button_PowerPlant
+  slot  2 | Command_ConstructVietnam_CommandCenter | Vietnam_CommandCenter | DOZER_CONSTRUCT | Button_CommandCenter | Art\Textures\Button_CommandCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_comndcntr -> Button_CommandCenter
+  slot  3 | Command_ConstructVietnam_SupplyCenter | Vietnam_SupplyCenter | DOZER_CONSTRUCT | Button_SupplyCenter | Art\Textures\Button_SupplyCenter.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_money -> Button_SupplyCenter
+  slot  4 | Command_ConstructVietnam_WarFactory | Vietnam_WarFactory | DOZER_CONSTRUCT | Button_WarFactory | Art\Textures\Button_WarFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_warfctry -> Button_WarFactory
+  slot  5 | Command_ConstructVietnam_LargeAirBase | Vietnam_LargeAirBase | DOZER_CONSTRUCT | Button_FighterBase | Art\Textures\Button_FighterBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_airfld -> Button_FighterBase
+  slot  6 | Command_ConstructIraq_AlFahdMissileFactoryBuilding | Iraq_AlFahdMissileFactoryBuilding | DOZER_CONSTRUCT | Button_MissileFactory | Art\Textures\Button_MissileFactory.tga exists=True | last-wins=Data\INI\CommandButton.ini | ALREADY CORRECT
+  slot  7 | Command_ConstructVietnam_DefenseSite_SAFE | Vietnam_DefenseSite | DOZER_CONSTRUCT | Button_DefenceSite | Art\Textures\Button_DefenceSite.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_defsite -> Button_DefenceSite
+  slot  8 | Command_ConstructVietnam_RadarStation | Vietnam_RadarStation | DOZER_CONSTRUCT | Button_Radar | Art\Textures\Button_Radar.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_rdrstatn -> Button_Radar
+  slot  9 | Command_ConstructVietnam_HeavyAirBase | Vietnam_HeavyAirBase | DOZER_CONSTRUCT | Button_AircraftBase | Art\Textures\Button_AircraftBase.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_airfield -> Button_AircraftBase
+  slot 10 | Command_ConstructVietnam_Barracks_SAFE | Vietnam_Barracks | DOZER_CONSTRUCT | Button_Camp | Art\Textures\Button_Camp.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED CampFlagVietnam -> Button_Camp
+  slot 11 | Command_ConstructVietnam_NuclearCenter | Vietnam_Abbas | DOZER_CONSTRUCT | Button_Atom | Art\Textures\Button_Atom.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_alhussien -> Button_Atom
+  slot 12 | Command_ConstructVietnam_D30_SAFE | Vietnam_D30_Howitzer | DOZER_CONSTRUCT | Button_Artillery | Art\Textures\Button_Artillery.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED irq_d30 -> Button_Artillery
+  slot 13 | Command_ConstructVietnam_CRAM | Vietnam_CRAM | DOZER_CONSTRUCT | Button_C-RAM | Art\Textures\Button_C-RAM.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED us_mim90d -> Button_C-RAM
+  slot 14 | Command_ConstructVietnam_Hq9_Site | Vietnam_Hq9_Site | DOZER_CONSTRUCT | Button_AirDefense | Art\Textures\Button_AirDefense.tga exists=True | last-wins=Data\INI\CommandButton.ini | CORRECTED pla_hq9b -> Button_AirDefense
+  slot 15 | Command_Stop | - | STOP | sys_stop | Art\Textures\sys_stop.tga exists=n/a | last-wins=Data\INI\CommandButton.ini | NON-CONSTRUCT preserved
+
+

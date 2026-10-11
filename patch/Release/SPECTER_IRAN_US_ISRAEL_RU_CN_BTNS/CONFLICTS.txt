@@ -1,0 +1,2 @@
+No new ART or MappedImages. Command_ConstructAmericaLgm30 already Button_Atom (EU8 shared).
+CommandSets unchanged. Factory isolation from PR #621 retained.

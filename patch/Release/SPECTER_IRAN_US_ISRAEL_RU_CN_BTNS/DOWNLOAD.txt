@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-ru-cn-btns/_SPEC_DATA_ONE.big
+  SIZE=366682572
+  SHA256=81d4c6471c70450d15c32c149ebb426c77f4af6b9ae3a261d13eef3e75f2f9e6
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-ru-cn-btns/_SPEC_ART_ONE.big
+  SIZE=1306997028
+  SHA256=d487dd508857a496502bfee0fd5919210346db0d83b80832289035002a0dbdc3
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-ru-cn-btns/SPECTER_IRAN_US_ISRAEL_RU_CN_BTNS.zip
+  SIZE=788407622
+  SHA256=3d47d1209f2242d65bdfba8fcfdaac8721cc535d1292aaf2ed3caa027aadf83c
+
+Place both BIGs in the SPECTER folder.
+TAG=s-iran-us-israel-ru-cn-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iran-us-israel-ru-cn-btns
+BASELINE=PR #621
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

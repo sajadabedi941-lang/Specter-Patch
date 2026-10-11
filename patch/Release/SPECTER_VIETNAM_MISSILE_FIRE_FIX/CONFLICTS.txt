@@ -1,0 +1,4 @@
+Weapon.ini now last-wins Weapon_Vietnam_* and *_Warhead after the existing catalog.
+Data\INI\Weapon\Weapon_Vietnam_Missiles.ini kept with the same cleaned blocks.
+CommandSet.ini / CommandButton.ini / Vietnam factory objects are unchanged from PR #627.
+9P117 SRBM_ALHIJARAH_HE and Iraq factory weapons are unchanged.

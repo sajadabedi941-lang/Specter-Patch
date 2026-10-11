@@ -1,0 +1,28 @@
+LIVE FIRE CHAIN (packed last-wins)
+
+Vietnam_MissileFactoryCommandSet last-wins in CommandSet.ini
+  CB_VIETNAM_MISSILE_A-H (UNIT_BUILD) last-wins in CommandButton.ini
+    Object Vietnam_* last-wins in Vietnam Wheeled INI
+      CommandSet = Scud_B_CommandSet
+      Scud_B_CommandSet slot 1 = Command_FireMainWeapon
+        Command_FireMainWeapon = FIRE_WEAPON / PRIMARY / NEED_TARGET_POS
+      WeaponSet PRIMARY = Weapon_Vietnam_*
+        last-wins now in Data\INI\Weapon.ini (was satellite-only)
+        ProjectileObject = Projectile_Vietnam_*
+
+A Vietnam_VCM01: CB_VIETNAM_MISSILE_A -> Vietnam_VCM01 -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_VCM01 -> Projectile_Vietnam_VCM01
+    AttackRange=860.0 Min=800.0 PrimaryDamage=5000.0 SecondaryDamage=250.0 BuildCost=800 BuildTime=15.0
+B Vietnam_VCM02: CB_VIETNAM_MISSILE_B -> Vietnam_VCM02 -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_VCM02 -> Projectile_Vietnam_VCM02
+    AttackRange=1204.0 Min=800.0 PrimaryDamage=1250.0 SecondaryDamage=62.5 BuildCost=1200 BuildTime=20.0
+C Vietnam_SongHong: CB_VIETNAM_MISSILE_C -> Vietnam_SongHong -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_SongHong -> Projectile_Vietnam_SongHong
+    AttackRange=1376.0 Min=800.0 PrimaryDamage=2000.0 SecondaryDamage=100.0 BuildCost=1600 BuildTime=25.0
+D Vietnam_HongHa: CB_VIETNAM_MISSILE_D -> Vietnam_HongHa -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_HongHa -> Projectile_Vietnam_HongHa
+    AttackRange=1548.0 Min=800.0 PrimaryDamage=9000.0 SecondaryDamage=450.0 BuildCost=2000 BuildTime=30.0
+E Vietnam_CuuLong: CB_VIETNAM_MISSILE_E -> Vietnam_CuuLong -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_CuuLong -> Projectile_Vietnam_CuuLong
+    AttackRange=1720.0 Min=800.0 PrimaryDamage=1750.0 SecondaryDamage=87.5 BuildCost=2500 BuildTime=35.0
+F Vietnam_TruongSon: CB_VIETNAM_MISSILE_F -> Vietnam_TruongSon -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_TruongSon -> Projectile_Vietnam_TruongSon
+    AttackRange=1892.0 Min=800.0 PrimaryDamage=3000.0 SecondaryDamage=150.0 BuildCost=3000 BuildTime=40.0
+G Vietnam_BachDang: CB_VIETNAM_MISSILE_G -> Vietnam_BachDang -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_BachDang -> Projectile_Vietnam_BachDang
+    AttackRange=2236.0 Min=800.0 PrimaryDamage=2500.0 SecondaryDamage=125.0 BuildCost=4000 BuildTime=50.0
+H Vietnam_ThangLong: CB_VIETNAM_MISSILE_H -> Vietnam_ThangLong -> Scud_B_CommandSet / Command_FireMainWeapon -> Weapon_Vietnam_ThangLong -> Projectile_Vietnam_ThangLong
+    AttackRange=2580.0 Min=800.0 PrimaryDamage=6000.0 SecondaryDamage=300.0 BuildCost=5000 BuildTime=60.0

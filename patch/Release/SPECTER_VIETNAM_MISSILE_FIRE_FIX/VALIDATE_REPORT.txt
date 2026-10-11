@@ -1,0 +1,23 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #627 s-vietnam-factory-menu-fix
+DATA_SIZE=366815742
+DATA_SHA256=06bdaafb04b3001af2b3cf8beead296c2132dc1326c0305a5e78e3c9dd8dd316
+ART_SIZE=1343628546
+ART_SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+ART_UNCHANGED=YES
+FACTORY_MENU_UNCHANGED=YES
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+NINE_P117_UNCHANGED=YES
+KASHTAN_FALAQ_RETAINED=YES
+IRAQ_ABBAS_BIO_RETAINED=YES
+NO_REARM=YES
+NO_ZZZZ=YES
+
+ROOT CAUSE: Weapon_Vietnam_* lived only in Data\INI\Weapon\Weapon_Vietnam_Missiles.ini.
+Command_FireMainWeapon is FIRE_WEAPON / PRIMARY. PRIMARY was empty at runtime,
+same class of bug as Al-Fahd before it was spliced into Weapon.ini.
+Satellite also had illegal SecondaryDamage 62.5.0 / 87.5.0 (VCM-02 / Cửu Long).
+FIX: sanitize those floats; append A-H weapons+warheads to Weapon.ini last-wins.
+CommandSet.ini / CommandButton.ini / factory / ART / 9P117 / Iraq A-M untouched.
+

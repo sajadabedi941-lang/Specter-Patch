@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-factory-menu-fix/_SPEC_DATA_ONE.big
+  SIZE=366803309
+  SHA256=7667eeff006b9afc7a46e3f710e4797d8052d98fd12787f9d7e3c1983ab85ebd
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-factory-menu-fix/_SPEC_ART_ONE.big
+  SIZE=1343628546
+  SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-factory-menu-fix/SPECTER_VIETNAM_FACTORY_MENU_FIX.zip
+  SIZE=789618150
+  SHA256=1ac2509d4888aa310b7437fa38bf2dc950cc581c4517dc5d8cb4af6d8ec6b8cc
+
+Place both BIGs in the SPECTER folder.
+TAG=s-vietnam-factory-menu-fix
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-vietnam-factory-menu-fix
+BASELINE=PR #626
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

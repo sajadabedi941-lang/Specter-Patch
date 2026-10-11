@@ -1,0 +1,4 @@
+CommandSet.ini last Vietnam_VT72BCommandSet is now the Vietnam factory construct.
+CommandSet_VietnamMissiles.ini still last-wins the same two CommandSets.
+CommandButton.ini now defines the construct + A-H buttons; satellite file matches.
+Other country VT72B sets and Iraq factory CommandSets are unchanged.

@@ -1,0 +1,21 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #626 s-vietnam-missiles-ah
+DATA_SIZE=366803309
+DATA_SHA256=7667eeff006b9afc7a46e3f710e4797d8052d98fd12787f9d7e3c1983ab85ebd
+ART_SIZE=1343628546
+ART_SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+ART_UNCHANGED=YES
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+NINE_P117_UNCHANGED=YES
+KASHTAN_FALAQ_RETAINED=YES
+IRAQ_ABBAS_BIO_RETAINED=YES
+NO_REARM=YES
+NO_ZZZZ=YES
+
+ROOT CAUSE: A-H / Vietnam factory CommandSet were only in satellite INI files.
+Live WarFactory and Iraq factory last-wins are CommandSet.ini + CommandButton.ini.
+CommandSet.ini still constructed the shared Sell-only factory.
+FIX: splice Vietnam_VT72BCommandSet + Vietnam_MissileFactoryCommandSet into
+CommandSet.ini and append construct + CB_VIETNAM_MISSILE_A-H into CommandButton.ini.
+

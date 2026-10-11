@@ -1,0 +1,7 @@
+FactionVietnam StartingUnit0 = Vietnam_VT72B
+Vietnam_VT72B CommandSet = Vietnam_VT72BCommandSet
+last-wins CommandSet.ini slot 6 = Command_ConstructVietnam_MissileFactory
+  Object = Vietnam_MissileFactory
+Vietnam_MissileFactory CommandSet = Vietnam_MissileFactoryCommandSet
+Vietnam_MissileFactoryCommandSet last-wins in CommandSet.ini = CB_VIETNAM_MISSILE_A-H
+Each CB_VIETNAM_MISSILE_* last-wins in CommandButton.ini -> dedicated Vietnam_* object

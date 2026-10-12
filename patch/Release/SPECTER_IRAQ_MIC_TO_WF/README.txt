@@ -1,0 +1,2 @@
+Moved Command_ConstructIraqVehicleB340, Command_ConstructIraq_Karrar2, and Command_ConstructIraqVehicleFahad3 from Iraq_MICCommandSet to Iraq_WarFactoryCommandSet_T3.
+ART unchanged. RUNTIME_TEST=NOT RUN

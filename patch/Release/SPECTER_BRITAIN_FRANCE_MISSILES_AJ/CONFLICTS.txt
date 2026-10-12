@@ -1,0 +1,5 @@
+CommandSet_BritainMissiles.ini and CommandSet_FranceMissiles.ini last-win dozer + factory sets.
+Weapon\Weapon_Britain_Missiles.ini and Weapon_France_Missiles.ini last-win factory pairs.
+Britain_Weapon_StormShadow and France_Weapon_SCALP_RafaleB air weapons are unchanged.
+UK_Flag.tga and FR_Flag.tga are frozen. New dorsal stamps are generated, not those files.
+Germany/Italy #647, Vietnam/SK #646, UAE/Japan #645, Saudi #644, NK, India, Pakistan, Iraq, and 9P117 stay frozen.

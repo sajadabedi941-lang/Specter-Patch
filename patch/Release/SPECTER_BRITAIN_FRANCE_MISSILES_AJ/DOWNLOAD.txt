@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-britain-france-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=369211512
+  SHA256=104f01eb0310cdb05b54d9a260ce37a3f1b33725276fb7d9e5cc0ac8dcfbb50b
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-britain-france-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=2021434626
+  SHA256=d7bba4b32dc053b7d8857fa64d9a27db6bb98b73def0544871b4aa7911d6a523
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-britain-france-missiles-aj/SPECTER_BRITAIN_FRANCE_MISSILES_AJ.zip
+  SIZE=815645978
+  SHA256=88916a2390df85c39d635a55fc821b76c8369f6dcdf670aaf17c2cda4ba1a094
+
+Place both BIGs in the SPECTER folder.
+TAG=s-britain-france-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-britain-france-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

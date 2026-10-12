@@ -1,0 +1,71 @@
+CommandSet BritainDozerCommandSet
+  1  = Command_ConstructBritainPowerStation
+  2  = Command_ConstructBritainStrategyCenter
+  3  = Command_ConstructBritainBootCamp
+  4  = Command_ConstructBritain_HeavyAirBase
+  5  = Command_ConstructBritainSupplyCenter
+  6  = Command_ConstructBritainRadarGM406
+  7  = Command_ConstructBritainIRISTSamSite
+  8  = Command_ConstructBritainCommandCenter
+  9  = Command_ConstructBritainM777
+ 10  = Command_ConstructBritainMantis
+ 11  = Command_ConstructBritainWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructBritainAirfield
+ 14  = Command_ConstructBritain_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructBritainNASAMSIII
+ 17  = Command_ConstructBritainSkySabre
+ 18  = Command_ConstructBritainSkyranger30
+End
+
+CommandSet Britain_MissileFactoryCommandSet
+  1  = CB_BRITAIN_MISSILE_A
+  2  = CB_BRITAIN_MISSILE_B
+  3  = CB_BRITAIN_MISSILE_C
+  4  = CB_BRITAIN_MISSILE_D
+  5  = CB_BRITAIN_MISSILE_E
+  6  = CB_BRITAIN_MISSILE_F
+  7  = CB_BRITAIN_MISSILE_G
+  8  = CB_BRITAIN_MISSILE_H
+  9  = CB_BRITAIN_MISSILE_I
+  10  = CB_BRITAIN_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+CommandSet FranceDozerCommandSet
+  1  = Command_ConstructFrancePowerStation
+  2  = Command_ConstructFranceStrategyCenter
+  3  = Command_ConstructFranceBootCamp
+  4  = Command_ConstructFrance_HeavyAirBase
+  5  = Command_ConstructFranceSupplyCenter
+  6  = Command_ConstructFranceRadarGM406
+  7  = Command_ConstructFranceIRISTSamSite
+  8  = Command_ConstructFranceCommandCenter
+  9  = Command_ConstructFranceM777
+ 10  = Command_ConstructFranceMantis
+ 11  = Command_ConstructFranceWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructFranceAirfield
+ 14  = Command_ConstructFrance_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructFranceNASAMSIII
+ 17  = Command_ConstructFranceSkySabre
+ 18  = Command_ConstructFranceSkyranger30
+End
+
+CommandSet France_MissileFactoryCommandSet
+  1  = CB_FRANCE_MISSILE_A
+  2  = CB_FRANCE_MISSILE_B
+  3  = CB_FRANCE_MISSILE_C
+  4  = CB_FRANCE_MISSILE_D
+  5  = CB_FRANCE_MISSILE_E
+  6  = CB_FRANCE_MISSILE_F
+  7  = CB_FRANCE_MISSILE_G
+  8  = CB_FRANCE_MISSILE_H
+  9  = CB_FRANCE_MISSILE_I
+  10  = CB_FRANCE_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

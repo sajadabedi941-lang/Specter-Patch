@@ -1,0 +1,20 @@
+INDIA A-J ART MARKINGS (static inspection)
+
+Flag: saffron upper, white middle with navy Ashoka chakra, green lower.
+SPECTER Side=India / Indian Armed Forces identity. Not SA / Syria / UAE / Saudi / Iraq flags.
+Dedicated Ind_TEL / Ind_TELD saffron-olive truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL / Sau_TEL / Uae_TEL / Lby_TEL / Syr_TEL / Saf_TEL.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    Prahaar                  orange    PASS    PASS
+  B    Prithvi                  muddy     PASS    PASS
+  C    Pralay                   yellow    PASS    PASS
+  D    Shaurya                  petrol    PASS    PASS
+  E    BrahMos                  blue      PASS    PASS
+  F    Nirbhay                  green     PASS    PASS
+  G    Agni-I                   cream     PASS    PASS
+  H    Agni-P                   white     PASS    PASS
+  I    Agni-III                 gray      PASS    PASS
+  J    Agni-V                   red       PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

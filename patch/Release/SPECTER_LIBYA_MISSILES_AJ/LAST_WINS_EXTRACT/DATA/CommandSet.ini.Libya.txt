@@ -1,0 +1,61 @@
+CommandSet LibyaDozerCommandSet
+  1 = Command_ConstructLibya_PowerPlant
+  2 = Command_ConstructLibya_CommandCenter
+  3 = Command_ConstructLibya_SupplyCenter
+  4 = Command_ConstructLibya_WarFactory_T
+  5 = Command_ConstructLibya_HeavyAirBase
+  6 = Command_ConstructLibya_MIC
+  7 = Command_ConstructLibya_RadarStation
+  8 = Command_ConstructLibya_Sam2
+  9 = Command_ConstructLibya_Barracks
+  10 = Command_ConstructLibya_FireBase
+  11 = Command_ConstructLibya_Airfield_T
+  12 = Command_ConstructLibya_CRAM
+  13 = Command_ConstructLibya_MissileFactory
+  14 = Command_ConstructLibya_Lgm30
+End
+
+CommandSet Libya_WorkerCommandSet
+  1 = Command_ConstructLibya_PowerPlant
+  2 = Command_ConstructLibya_CommandCenter
+  3 = Command_ConstructLibya_SupplyCenter
+  4 = Command_ConstructLibya_WarFactory_T
+  6 = Command_ConstructLibya_MIC
+  7 = Command_ConstructLibya_RadarStation
+  8 = Command_ConstructLibya_Sam2
+  9 = Command_ConstructLibya_Barracks
+  10 = Command_ConstructLibya_Abbas
+  11 = Command_ConstructLibya_Airfield_T
+  13 = Command_ConstructLibya_MissileFactory
+  14 = Command_DisarmMinesAtPosition
+End
+
+CommandSet Libya_VT72BCommandSet
+  1 = Command_ConstructLibya_PowerPlant
+  2 = Command_ConstructLibya_CommandCenter
+  3 = Command_ConstructLibya_SupplyCenter
+  4 = Command_ConstructLibya_WarFactory_T
+  5 = Command_ConstructLibya_Airfield_T
+  6 = Command_ConstructLibya_MIC
+  7 = Command_ConstructLibya_RadarStation
+  8 = Command_ConstructLibya_Sam2
+  9 = Command_ConstructLibya_Barracks
+  10 = Command_ConstructLibya_Abbas
+  13 = Command_ConstructLibya_MissileFactory
+  14 = Command_DisarmMinesAtPosition
+End
+
+CommandSet Libya_MissileFactoryCommandSet
+  1  = CB_LIBYA_MISSILE_A
+  2  = CB_LIBYA_MISSILE_B
+  3  = CB_LIBYA_MISSILE_C
+  4  = CB_LIBYA_MISSILE_D
+  5  = CB_LIBYA_MISSILE_E
+  6  = CB_LIBYA_MISSILE_F
+  7  = CB_LIBYA_MISSILE_G
+  8  = CB_LIBYA_MISSILE_H
+  9  = CB_LIBYA_MISSILE_I
+  10  = CB_LIBYA_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

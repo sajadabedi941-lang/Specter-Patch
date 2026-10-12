@@ -1,0 +1,20 @@
+LIBYA A-J ART MARKINGS (static inspection)
+
+Flag: red upper, black middle with white crescent and star, green lower.
+Not the former all-green Libyan flag. Not UAE / Saudi / Iraq flags.
+Dedicated Lby_TEL / Lby_TELD ochre truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL / Sau_TEL / Uae_TEL.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    Fajr                     yellow    PASS    PASS
+  B    Sahra                    orange    PASS    PASS
+  C    Waha                     white     PASS    PASS
+  D    Jamahiriya               red       PASS    PASS
+  E    Murzuq                   muddy     PASS    PASS
+  F    Akhdar                   green     PASS    PASS
+  G    Sirt                     petrol    PASS    PASS
+  H    Fezzan                   gray      PASS    PASS
+  I    Orouba                   blue      PASS    PASS
+  J    Great Man-Made River     cream     PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

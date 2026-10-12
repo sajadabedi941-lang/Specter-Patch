@@ -1,0 +1,7 @@
+CommandSet.ini last Japan_VT72BCommandSet is now the Japan factory construct.
+CommandSet_JapanMissiles.ini last-wins the same two CommandSets.
+CommandButton.ini now defines the construct + A-G buttons; satellite file matches.
+Weapon.ini last-wins Weapon_Japan_* (satellite Weapon\Weapon_Japan_Missiles.ini is not the load path).
+Other country VT72B sets, Iraq factory, Vietnam factory, and 9P117 are unchanged.
+JapanVehicleType12 and Japan_Hwasong5 are untouched.
+Japan_WarFactory is untouched.

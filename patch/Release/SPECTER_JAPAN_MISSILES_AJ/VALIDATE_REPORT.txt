@@ -1,0 +1,108 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #629 s-missile-5min-cd-dmg
+DATA_SIZE=366990039
+DATA_SHA256=45c7f33b50c4927b6e16849dbb15c5ca88a82ff753a8e0ba675e060ba422e924
+ART_SIZE=1391390907
+ART_SHA256=84eb2b41187cc9cb51fa22ec454c380740b15cda2768f0f834f0e0be625b1bc3
+IRAQ_FACTORY_ROSTER_UNCHANGED=YES
+VIETNAM_AH_UNCHANGED=YES
+NINE_P117_UNCHANGED=YES
+KASHTAN_FALAQ_RETAINED=YES
+IRAQ_ABBAS_BIO_RETAINED=YES
+NO_REARM=YES
+NO_ZZZZ=YES
+NO_RADARPRIORITY=YES
+ROSTER_COUNT=10
+KM_FLOOR=1000
+KG_FLOOR=400
+JAPAN_A_KG=400
+
+PRE-CHANGE JAPAN ROSTER (packed last-wins, PR #629):
+  FactionJapan StartingUnit0 = Japan_VT72B
+  Japan_VT72B CommandSet = Japan_VT72BCommandSet
+  Japan_VT72BCommandSet slot 6 = Command_ConstructIraq_AlFahdMissileFactoryBuilding (Sell-only)
+  Japan_MissileFactory: MISSING
+  Japan_WarFactory: USA vehicle roster (untouched)
+  JapanVehicleType12 / Japan_Hwasong5: existing unrelated units (untouched)
+
+POST-CHANGE JAPAN ROSTER:
+  Japan_VT72BCommandSet slot 6 = Command_ConstructJapan_MissileFactory
+  Japan_MissileFactory / Japan_MissileFactoryCommandSet = CB_JAPAN_MISSILE_A-J
+  Weapons last-wins in Data\INI\Weapon.ini
+  Buttons last-wins in Data\INI\CommandButton.ini
+  PRIMARY only + Scud_B_CommandSet / Command_FireMainWeapon
+  5-minute clip reload. No RadarPriority. No rearm.
+
+GAMEPLAY MAPPING (9P117 MOTHER scale, properties independent):
+  AttackRange 1720 = 1000 km design. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death warhead HACK 2200 = 400 kg extra. Formula: 2200 * (kg / 400).
+    Death HACK is a separate path and is NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy design. Formula: 175 * (10 / acc).
+    Limitation: ScatterRadius is impact dispersion, not a hit-chance percent.
+  Projectile MaxHealth 400 = 5/100 intercept-challenge design.
+    Formula: 400 * (challenge / 5). No RadarPriority.
+    Limitation: no native interception-probability percentage.
+  All missiles >= 1000 km so MinimumAttackRange stays 800.
+  Japan A mass is 400 kg (global floor; was 250 kg in PR #630).
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000 (5 minutes).
+  PRIMARY only; no SECONDARY/TERTIARY fire path to bypass cooldown.
+  BuildCost / BuildTime set on the unit Object (factory production).
+
+SLOT  NAME            KM   KG   ACC CHL TIME COST  RANGE  PD     SD    DEATH SCATTER  HP     MINR
+  A    Type 12 Kai    1000 400  85  25  15   800   1720.0 2000.0 100.0 2200  20.588  2000.0 800.0
+  B    Type 88 Kai    1100 400  70  35  20   1200  1892.0 2000.0 100.0 2200  25.0    2800.0 800.0
+  C    Kōryū          1400 600  45  70  28   1800  2408.0 3000.0 150.0 3300  38.889  5600.0 800.0
+  D    Raijin         2000 1200 35  45  38   3000  3440.0 6000.0 300.0 6600  50.0    3600.0 800.0
+  E    Hayate         2200 800  80  55  42   3800  3784.0 4000.0 200.0 4400  21.875  4400.0 800.0
+  F    Yamato         2800 2500 25  30  65   6500  4816.0 12500.0 625.0 13750 70.0    2400.0 800.0
+  G    Kurogane       3200 3500 15  20  85   9000  5504.0 17500.0 875.0 19250 116.667 1600.0 800.0
+  H    Shiden         1200 400  75  40  22   1400  2064.0 2000.0 100.0 2200  23.333  3200.0 800.0
+  I    Fūjin          1800 1000 40  65  35   2700  3096.0 5000.0 250.0 5500  43.75   5200.0 800.0
+  J    Tenrai         3600 4000 20  25  95   10000 6192.0 20000.0 1000.0 22000 87.5    2000.0 800.0
+
+NEW / SPLICED DATA FILES:
+  Data\INI\CommandSet.ini (Japan_VT72BCommandSet + Japan_MissileFactoryCommandSet)
+  Data\INI\CommandButton.ini (construct + CB_JAPAN_MISSILE_A-J)
+  Data\INI\Weapon.ini (Weapon_Japan_* + warheads)
+  Data\English\generals.csf
+  Data\INI\CommandSet_JapanMissiles.ini
+  Data\INI\CommandButton_JapanMissiles.ini
+  Data\INI\Weapon\Weapon_Japan_Missiles.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_MissileFactory.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Type12Kai.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Type12Kai_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Type88Kai.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Type88Kai_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Koryu.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Koryu_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Raijin.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Raijin_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Hayate.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Hayate_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Yamato.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Yamato_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Kurogane.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Kurogane_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Shiden.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Shiden_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Fujin.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Fujin_Projectile.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Wheeled\Japan_Tenrai.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Tenrai_Projectile.ini
+
+NEW ART FILES:
+  Art\Textures\Jpn_TEL.tga / Art\Textures\Jpn_TELD.tga
+  Art\W3D\Jpn_Type12.W3D / Art\W3D\Jpn_Type12D.W3D / Art\W3D\Jpn_Type12M.W3D / Art\Textures\Jpn_Type12P.tga
+  Art\W3D\Jpn_Type88.W3D / Art\W3D\Jpn_Type88D.W3D / Art\W3D\Jpn_Type88M.W3D / Art\Textures\Jpn_Type88P.tga
+  Art\W3D\Jpn_Koryu.W3D / Art\W3D\Jpn_KoryuD.W3D / Art\W3D\Jpn_KoryuM.W3D / Art\Textures\Jpn_KoryuP.tga
+  Art\W3D\Jpn_Raijin.W3D / Art\W3D\Jpn_RaijinD.W3D / Art\W3D\Jpn_RaijinM.W3D / Art\Textures\Jpn_RaijinP.tga
+  Art\W3D\Jpn_Hayate.W3D / Art\W3D\Jpn_HayateD.W3D / Art\W3D\Jpn_HayateM.W3D / Art\Textures\Jpn_HayateP.tga
+  Art\W3D\Jpn_Yamato.W3D / Art\W3D\Jpn_YamatoD.W3D / Art\W3D\Jpn_YamatoM.W3D / Art\Textures\Jpn_YamatoP.tga
+  Art\W3D\Jpn_Kurogn.W3D / Art\W3D\Jpn_KurognD.W3D / Art\W3D\Jpn_KurognM.W3D / Art\Textures\Jpn_KurognP.tga
+  Art\W3D\Jpn_Shiden.W3D / Art\W3D\Jpn_ShidenD.W3D / Art\W3D\Jpn_ShidenM.W3D / Art\Textures\Jpn_ShidenP.tga
+  Art\W3D\Jpn_Fujin.W3D / Art\W3D\Jpn_FujinD.W3D / Art\W3D\Jpn_FujinM.W3D / Art\Textures\Jpn_FujinP.tga
+  Art\W3D\Jpn_Tenrai.W3D / Art\W3D\Jpn_TenraiD.W3D / Art\W3D\Jpn_TenraiM.W3D / Art\Textures\Jpn_TenraiP.tga
+

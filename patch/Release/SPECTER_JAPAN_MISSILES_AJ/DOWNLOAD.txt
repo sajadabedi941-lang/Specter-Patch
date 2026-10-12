@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-japan-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=366990039
+  SHA256=45c7f33b50c4927b6e16849dbb15c5ca88a82ff753a8e0ba675e060ba422e924
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-japan-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1391390907
+  SHA256=84eb2b41187cc9cb51fa22ec454c380740b15cda2768f0f834f0e0be625b1bc3
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-japan-missiles-aj/SPECTER_JAPAN_MISSILES_AJ.zip
+  SIZE=791440280
+  SHA256=4eeccdaf2da20efd15589448d7a132337361155afba2dc7045d5fedc425ff805
+
+Place both BIGs in the SPECTER folder.
+TAG=s-japan-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-japan-missiles-aj
+BASELINE=PR #629
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

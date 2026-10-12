@@ -1,0 +1,71 @@
+CommandSet SwedenDozerCommandSet
+  1  = Command_ConstructSwedenPowerStation
+  2  = Command_ConstructSwedenStrategyCenter
+  3  = Command_ConstructSwedenBootCamp
+  4  = Command_ConstructSweden_HeavyAirBase
+  5  = Command_ConstructSwedenSupplyCenter
+  6  = Command_ConstructSwedenRadarGM406
+  7  = Command_ConstructSwedenIRISTSamSite
+  8  = Command_ConstructSwedenCommandCenter
+  9  = Command_ConstructSwedenM777
+ 10  = Command_ConstructSwedenMantis
+ 11  = Command_ConstructSwedenWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructSwedenAirfield
+ 14  = Command_ConstructSweden_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructSwedenNASAMSIII
+ 17  = Command_ConstructSwedenSkySabre
+ 18  = Command_ConstructSwedenSkyranger30
+End
+
+CommandSet Sweden_MissileFactoryCommandSet
+  1  = CB_SWEDEN_MISSILE_A
+  2  = CB_SWEDEN_MISSILE_B
+  3  = CB_SWEDEN_MISSILE_C
+  4  = CB_SWEDEN_MISSILE_D
+  5  = CB_SWEDEN_MISSILE_E
+  6  = CB_SWEDEN_MISSILE_F
+  7  = CB_SWEDEN_MISSILE_G
+  8  = CB_SWEDEN_MISSILE_H
+  9  = CB_SWEDEN_MISSILE_I
+  10  = CB_SWEDEN_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+CommandSet UkraineDozerCommandSet
+  1  = Command_ConstructUkrainePowerStation
+  2  = Command_ConstructUkraineStrategyCenter
+  3  = Command_ConstructUkraineBootCamp
+  4  = Command_ConstructUkraine_HeavyAirBase
+  5  = Command_ConstructUkraineSupplyCenter
+  6  = Command_ConstructUkraineRadarGM406
+  7  = Command_ConstructUkraineIRISTSamSite
+  8  = Command_ConstructUkraineCommandCenter
+  9  = Command_ConstructUkraineM777
+ 10  = Command_ConstructUkraineMantis
+ 11  = Command_ConstructUkraineWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructUkraineAirfield
+ 14  = Command_ConstructUkraine_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructUkraineNASAMSIII
+ 17  = Command_ConstructUkraineSkySabre
+ 18  = Command_ConstructUkraineSkyranger30
+End
+
+CommandSet Ukraine_MissileFactoryCommandSet
+  1  = CB_UKRAINE_MISSILE_A
+  2  = CB_UKRAINE_MISSILE_B
+  3  = CB_UKRAINE_MISSILE_C
+  4  = CB_UKRAINE_MISSILE_D
+  5  = CB_UKRAINE_MISSILE_E
+  6  = CB_UKRAINE_MISSILE_F
+  7  = CB_UKRAINE_MISSILE_G
+  8  = CB_UKRAINE_MISSILE_H
+  9  = CB_UKRAINE_MISSILE_I
+  10  = CB_UKRAINE_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

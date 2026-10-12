@@ -1,0 +1,5 @@
+CommandSet_SwedenMissiles.ini and CommandSet_UkraineMissiles.ini last-win dozer + factory sets.
+Weapon\Weapon_Sweden_Missiles.ini and Weapon_Ukraine_Missiles.ini last-win factory pairs.
+Britain_Weapon_StormShadow and France_Weapon_SCALP_RafaleB air weapons are unchanged.
+SE_Flag.tga and UA_Flag.tga are frozen. New dorsal stamps are generated, not those files.
+Britain/France #648, Germany/Italy #647, Vietnam/SK #646, UAE/Japan #645, Saudi #644, NK, India, Pakistan, Iraq, and 9P117 stay frozen.

@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sweden-ukraine-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=369546080
+  SHA256=2f4ea581ca6f7e14aed998af6e06f23a9d95deb9cc6fdc6b8492c0c14c6adf42
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sweden-ukraine-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=2116959300
+  SHA256=fd9a4649a51aac2a1fa3f6533b2b3ffd428cdac913535125752d6210ec1fd93c
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sweden-ukraine-missiles-aj/SPECTER_SWEDEN_UKRAINE_MISSILES_AJ.zip
+  SIZE=819250248
+  SHA256=09c8e192eca2075e4a32f463d2a9bc1b6b5fe9eb225dcf21dc5bbbf350eab6ce
+
+Place both BIGs in the SPECTER folder.
+TAG=s-sweden-ukraine-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-sweden-ukraine-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

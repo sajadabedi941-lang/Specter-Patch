@@ -37,8 +37,19 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: Missing patch file _SPEC_ART_TWO.big
+  echo Building models live in _SPEC_ART_TWO.big.
+  echo Put _SPEC_ART_TWO.big next to Install_SpecterPatch.bat
+  echo Do not install a .gz file as a .big
+  echo.
+  pause
+  exit /b 1
+)
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
+echo   Found _SPEC_ART_TWO.big
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -60,7 +71,7 @@ if not defined GAME_ROOT (
   echo.
   echo ERROR: generals.exe was not found.
   echo.
-  echo Put the SPECTER_ULTIMATE_FIXED_INSTALLER folder INSIDE your
+  echo Put this installer folder INSIDE your
   echo Command and Conquer Generals Zero Hour / Specter folder
   echo ^(the folder that already contains generals.exe^), then run
   echo Install_SpecterPatch.bat again.
@@ -116,6 +127,19 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
 ) else (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
+
+if exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo   Backing up old _SPEC_ART_TWO.big ...
+  copy /Y "%GAME_ROOT%_SPEC_ART_TWO.big" "%BACKUP%\_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for _SPEC_ART_TWO.big
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing _SPEC_ART_TWO.big to backup
+)
 echo   Backup folder:
 echo   %BACKUP%
 echo.
@@ -149,6 +173,16 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK
+
+  echo   Copying _SPEC_ART_TWO.big ...
+  copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Failed to copy _SPEC_ART_TWO.big
+    echo Backup is in: %BACKUP%
+    pause
+    exit /b 1
+  )
+  echo   OK
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -158,6 +192,11 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 )
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo ERROR: _SPEC_ART_ONE.big missing after install.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo ERROR: _SPEC_ART_TWO.big missing after install.
   pause
   exit /b 1
 )
@@ -173,6 +212,11 @@ echo Installed to:
 echo   %GAME_ROOT%
 echo Backup:
 echo   %BACKUP%
+echo.
+echo Required files:
+echo   _SPEC_DATA_ONE.big
+echo   _SPEC_ART_ONE.big
+echo   _SPEC_ART_TWO.big
 echo.
 echo You can start the game with Launch_Specter.bat
 echo.

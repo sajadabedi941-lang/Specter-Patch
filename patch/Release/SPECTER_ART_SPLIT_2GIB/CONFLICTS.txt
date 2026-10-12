@@ -1,0 +1,4 @@
+Replaces the oversized single _SPEC_ART_ONE.big (SHA de0e9988..., 2451295403 bytes).
+Does not modify DATA last-wins, missile INIs, Draw modules, or faction content.
+Do not keep the old oversized ART_ONE beside ART_TWO.
+Launcher scripts now require _SPEC_ART_TWO.big next to ART_ONE and DATA_ONE.

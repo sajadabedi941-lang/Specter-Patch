@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-sk-aj-acc-desc/_SPEC_DATA_ONE.big
+  SIZE=368542635
+  SHA256=cd5a6dfe0ded29f8c76819f5c4de7286025eb45b84530b2161745a85e79b4e59
+
+ART replacement (unchanged from s-uae-japan-aj-acc-desc / s-saudi-aj-acc-desc):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-sk-aj-acc-desc/_SPEC_ART_ONE.big
+  SIZE=1830385382
+  SHA256=3c3872d21e09ad3f71960c11f88f0187ed21a9ff1942664e74846070bd2485bb
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-vietnam-sk-aj-acc-desc/SPECTER_VIETNAM_SK_ACC_DESC.zip
+  SIZE=808368506
+  SHA256=81cfbe6f00c36878f0203424d86f57979d82b76cc46209425a4949b2e87c76ed
+
+Place both BIGs in the SPECTER folder.
+TAG=s-vietnam-sk-aj-acc-desc
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-vietnam-sk-aj-acc-desc
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

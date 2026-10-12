@@ -1,0 +1,42 @@
+VIETNAM + SOUTH KOREA A-J ACCURACY / RADAR-STEALTH DESCRIPTION CORRECTION
+
+Baseline packed last-wins: SPECTER_UAE_JAPAN_ACC_DESC (PR #645 on #644).
+Accepted ratings: Vietnam PR #632, South Korea PR #631. Reused, not redesigned.
+Problem: CSF tooltips showed name/range/kg/time/price only. Acc/CHL omitted.
+Warhead audit: all 20 packed PD/SD/HACK values already match 2000/100/2200*(kg/400).
+No warhead or gameplay field was changed.
+SK J Cheonwang 4200 km is an accepted anomaly and is preserved.
+
+ENGINE IMPLEMENTATION (unchanged from packed last-wins):
+  Accuracy rating -> ScatterRadius = 175 * (10 / Acc).
+    SAGE ScatterRadius is impact dispersion around the aimed point.
+    It is not a hit-chance percentage. No Accuracy=N% field exists.
+  Radar-Stealth rating -> projectile MaxHealth = 400 * (CHL / 5).
+    SPECTER interceptors with AntiProjectile / AntiBallisticMissile deal
+    damage to KindOf PROJECTILE BALLISTIC_MISSILE bodies. Higher MaxHealth
+    takes more interceptor hits to destroy. This is intercept toughness,
+    not radar stealth, not an evade-percentage, and not RadarPriority.
+    SAGE has no RadarStealth field. The tooltip label is the design rating.
+  WeaponSpeed remains 280. ClipReloadTime remains 300000.
+
+CTRY  SLOT NAME            KM   KG   ACC  CHL  SCATTER  HP     PD      SD     HACK  TIP
+  Vietnam A    VCM-01         1000 1000 10   5    175.0   400.0  5000.0  250.0  5500  CSF_UPDATED
+  Vietnam B    VCM-02         1000 400  75   15   23.333  1200.0 2000.0  100.0  2200  CSF_UPDATED
+  Vietnam C    Sông Hồng      1000 400  25   80   70.0    6400.0 2000.0  100.0  2200  CSF_UPDATED
+  Vietnam D    Hồng Hà        1000 1800 15   10   116.667 800.0  9000.0  450.0  9900  CSF_UPDATED
+  Vietnam E    Cửu Long       1000 400  55   45   31.818  3600.0 2000.0  100.0  2200  CSF_UPDATED
+  Vietnam F    Trường Sơn     1100 600  85   20   20.588  1600.0 3000.0  150.0  3300  CSF_UPDATED
+  Vietnam G    Bạch Đằng      1300 500  30   90   58.333  7200.0 2500.0  125.0  2750  CSF_UPDATED
+  Vietnam H    Thăng Long     1500 1200 60   55   29.167  4400.0 6000.0  300.0  6600  CSF_UPDATED
+  Vietnam I    Hùng Vương     3400 2500 75   50   23.333  4000.0 12500.0 625.0  13750 CSF_UPDATED
+  Vietnam J    Lạc Việt       4000 4000 20   25   87.5    2000.0 20000.0 1000.0 22000 CSF_UPDATED
+  SK   A    Baekho         1000 400  70   30   25.0    2400.0 2000.0  100.0  2200  CSF_UPDATED
+  SK   B    Cheonma        1100 800  50   35   35.0    2800.0 4000.0  200.0  4400  CSF_UPDATED
+  SK   C    Haeryong       1300 600  85   25   20.588  2000.0 3000.0  150.0  3300  CSF_UPDATED
+  SK   D    Hwarang        1500 1000 45   65   38.889  5200.0 5000.0  250.0  5500  CSF_UPDATED
+  SK   E    Mugunghwa      1800 1200 80   40   21.875  3200.0 6000.0  300.0  6600  CSF_UPDATED
+  SK   F    Taebaek        2200 2000 35   45   50.0    3600.0 10000.0 500.0  11000 CSF_UPDATED
+  SK   G    Jindallae      2600 1500 40   75   43.75   6000.0 7500.0  375.0  8250  CSF_UPDATED
+  SK   H    Geommu         3000 3000 25   35   70.0    2800.0 15000.0 750.0  16500 CSF_UPDATED
+  SK   I    Haetsal        3500 2500 75   50   23.333  4000.0 12500.0 625.0  13750 CSF_UPDATED
+  SK   J    Cheonwang      4200 4500 20   25   87.5    2000.0 22500.0 1125.0 24750 CSF_UPDATED

@@ -1,0 +1,19 @@
+SAUDI A-J ART MARKINGS (static inspection)
+
+Flag: green field, white shahada (Noto Naskh RAQM), white sword to hoist.
+Dedicated Sau_TEL / Sau_TELD desert-olive truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL.
+
+SLOT  NAME         COLOR     FLAG    NAME PLATE
+  A    Najm         cream     PASS    PASS
+  B    Sahm         orange    PASS    PASS
+  C    Rimal        white     PASS    PASS
+  D    Barq         red       PASS    PASS
+  E    Hajar        yellow    PASS    PASS
+  F    Wadi         petrol    PASS    PASS
+  G    Saqr         black     PASS    PASS
+  H    Qasr         blue      PASS    PASS
+  I    Fajr         gray      PASS    PASS
+  J    Al-Wa'd      muddy     PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

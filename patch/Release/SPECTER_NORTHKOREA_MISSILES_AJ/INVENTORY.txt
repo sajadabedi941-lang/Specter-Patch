@@ -1,0 +1,110 @@
+PRE-CHANGE NORTH KOREA (packed last-wins, India A-J heavy baseline):
+  No NorthKorea_MissileFactory.
+  Only builder NorthKorea_VT72B last-wins CommandSet.ini.
+  Slot 6 constructed isolated Iraq_AlFahdMissileFactoryBuilding.
+  Existing Hwasong5 / Hwasong7 / Hwasong15BB / KN23 / KN06 / KN09 preserved.
+  Packed faction path: North Korea. Side=NorthKorea. BaseSide=Iraq.
+
+POST-CHANGE NORTH KOREA:
+  Dedicated NorthKorea_MissileFactory A-J + Rally/Sell.
+  CommandSet_NorthKoreaMissiles.ini last-wins VT72B + factory roster.
+  Hwasong/KN/Pukguksong mix 1000-3800 km / 400-9000 kg. Crude-heavy, not SK/Japan/India.
+
+COUNTRY BALANCE (inspected packed / accepted factory A-J, not runtime):
+  India J Agni-V 4000 km / 7000 kg Acc 58. Pakistan J Shaheen-III 3000/3600 Acc 56.
+  North Korea J Hwasong-17 3800/9000 Acc 32 CHL 28. Heavier, shorter, cruder, costlier.
+  SK J Cheonwang 4200/4500 Acc 20 (accepted, not modified). Japan J Tenrai 3600/4000 Acc 20.
+  China factory ABSENT. Iran factory ABSENT. Not invented.
+
+NAME MAPPING:
+  A KN-02 new as NorthKorea_KN02 (tactical; distinct from NorthKorea_KN23/KN06/KN09)
+  B Hwasong-6 new as NorthKorea_Hwasong6 (distinct from NorthKorea_Hwasong5/7)
+  C KN-24 new as NorthKorea_KN24 (precision tactical)
+  D Pukguksong-2 new as NorthKorea_Pukguksong2 (solid/SLBM-heritage CHL standout)
+  E Hwasong-10 new as NorthKorea_Hwasong10 (Musudan-class IRBM analogue)
+  F KN-25 new as NorthKorea_KN25 (guided MLRS/SRBM analogue)
+  G Hwasong-12 new as NorthKorea_Hwasong12 (heavy IRBM analogue)
+  H Hwasong-14 new as NorthKorea_Hwasong14 (early ICBM-class analogue)
+  I Hwasong-15 new as NorthKorea_Hwasong15 (distinct from NorthKorea_Hwasong15BB)
+  J Hwasong-17 new as NorthKorea_Hwasong17 (flagship; 3800 km / 9000 kg SPECTER)
+
+EXISTING NORTH KOREA MISSILE OBJECTS PRESERVED (not factory A-J):
+  NorthKorea_Hwasong5 / NK_Hwasong5_SRBM
+  NorthKorea_Hwasong7 / NK_Hwasong7_MRBM
+  NorthKorea_Hwasong15BB / NK_Hwasong15_BunkerBuster
+  NorthKorea_KN23 / NK_KN23_SRBM
+  NorthKorea_KN06 / NorthKorea_KN09 (SAM / MLRS, not factory A-J)
+  NorthKorea_MIC object and MIC command sets unchanged and not added to VT72B.
+  NorthKorea_WarFactory, CommandCenter, SupplyCenter, VT72B object unchanged.
+
+FACTORY CONSTRUCT:
+  Pre-change NorthKorea_VT72BCommandSet last-wins CommandSet.ini slot 6
+  constructed isolated Iraq_AlFahdMissileFactoryBuilding.
+  Post-change CommandSet.ini + CommandSet_NorthKoreaMissiles.ini last-win the NK factory.
+  Slots 1-5 and 7-15 preserved (Power/CC/Supply/WF/LargeAirBase/Defense/Radar/
+  HeavyAirBase/Barracks/Nuclear/D30/CRAM/Hq9/Stop). No Dozer/Worker to patch.
+
+REAL-WORLD vs GAMEPLAY:
+  Public sources describe KN-02, Hwasong-6, KN-24, Pukguksong-2, Hwasong-10,
+  KN-25, Hwasong-12, Hwasong-14, Hwasong-15, and Hwasong-17 families.
+  Reported ranges (KN-02 ~120-220 km; Hwasong-17 ICBM-class) are uncertain.
+  SPECTER floor is 1000 km and ceiling 4000 km. Tactical classes sit on the floor.
+  North Korea J Hwasong-17 is 3800 km / 9000 kg Acc 32, below India Agni-V reach
+  and Acc/CHL, above India payload, below the 10000 kg global ceiling.
+  Values below are SPECTER design, not verified military specifications.
+
+PUBLIC BACKGROUND (not in-game specs):
+  CSIS Missile Threat, Missiles of North Korea:
+    https://missilethreat.csis.org/country/dprk/
+  NTI, North Korea missile overview:
+    https://www.nti.org/countries/north-korea/
+  Public names (KN-02/Toksa, Hwasong-6, KN-24, Pukguksong-2, Hwasong-10/Musudan,
+  KN-25, Hwasong-12/14/15/17) inform identity only. SPECTER km/kg are fictional.
+
+GAMEPLAY MAPPING (9P117 MOTHER scale):
+  AttackRange 1720 = 1000 km. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death HACK 2200 = 400 kg extra. NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy. Limitation: dispersion, not hit %.
+  Projectile MaxHealth 400 = 5/100 intercept proxy. No RadarPriority.
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000.
+  Acc/CHL table columns are design labels only.
+
+SLOT  NAME                    KM   KG   ACC CHL TIME COST  RANGE  PD     SD    DEATH SCATTER  HP     MINR
+  A    KN-02                  1000 400  62  18  16   750   1720.0 2000.0 100.0 2200  28.226  1440.0 800.0
+  B    Hwasong-6              1100 700  38  20  20   1100  1892.0 3500.0 175.0 3850  46.053  1600.0 800.0
+  C    KN-24                  1200 400  72  26  24   1600  2064.0 2000.0 100.0 2200  24.306  2080.0 800.0
+  D    Pukguksong-2           1400 500  68  50  32   2800  2408.0 2500.0 125.0 2750  25.735  4000.0 800.0
+  E    Hwasong-10             1600 900  42  28  36   2600  2752.0 4500.0 225.0 4950  41.667  2240.0 800.0
+  F    KN-25                  1500 600  70  32  34   2400  2580.0 3000.0 150.0 3300  25.0    2560.0 800.0
+  G    Hwasong-12             2000 2800 34  30  52   4800  3440.0 14000.0 700.0 15400 51.471  2400.0 800.0
+  H    Hwasong-14             2500 3600 40  34  64   6200  4300.0 18000.0 900.0 19800 43.75   2720.0 800.0
+  I    Hwasong-15             3200 5500 44  36  78   8200  5504.0 27500.0 1375.0 30250 39.773  2880.0 800.0
+  J    Hwasong-17             3800 9000 32  28  96   11000 6536.0 45000.0 2250.0 49500 54.688  2240.0 800.0
+
+MISSION ROLES:
+  A KN-02: Tactical SRBM analogue (KN-02/Toksa; real short range mapped to SPECTER floor)
+  B Hwasong-6: Liquid SRBM analogue (Hwasong-6/Scud-C class; heavier, modest Acc; distinct from Hwasong5/7)
+  C KN-24: Precision tactical BM analogue (KN-24; higher Acc than Hwasong-6, below India Pralay)
+  D Pukguksong-2: Solid MRBM/SLBM-heritage analogue (Pukguksong-2; CHL standout, not the heaviest)
+  E Hwasong-10: IRBM analogue (Hwasong-10/Musudan class; heavier/cruder than Pukguksong-2)
+  F KN-25: Guided MLRS/SRBM analogue (KN-25; precision regional, cheaper than Hwasong-10)
+  G Hwasong-12: IRBM analogue (Hwasong-12; SPECTER heavy warhead, cruder than India Agni-I)
+  H Hwasong-14: Early ICBM-class analogue (Hwasong-14; heavier/less precise than India Agni-P)
+  I Hwasong-15: Heavy ICBM-class analogue (Hwasong-15; distinct from NorthKorea_Hwasong15BB)
+  J Hwasong-17: Flagship ICBM-class analogue (Hwasong-17; SPECTER 9000 kg, below 4000 km India cap)
+
+COUNTRY BALANCE (packed inspected, not runtime):
+  India J Agni-V 4000 km / 7000 kg Acc 58 CHL 42 $10800 t92.
+  Pakistan J Shaheen-III 3000 km / 3600 kg Acc 56 CHL 38 $8600 t80.
+  North Korea J Hwasong-17 3800 km / 9000 kg Acc 32 CHL 28 $11000 t96.
+    NK is heavier and cruder: more payload, less reach, worse Acc/CHL, higher cost/time.
+  India I Agni-III 3300/4000 Acc 52 vs NK I Hwasong-15 3200/5500 Acc 44.
+  India G Agni-I 1900/2000 Acc 50 vs NK G Hwasong-12 2000/2800 Acc 34 vs Pakistan G Ghauri 1900/2400 Acc 36.
+  NK D Pukguksong-2 is the CHL standout (50), below India Shaurya 58 and Pakistan Babur 54.
+  SK uses Korean flower/myth names; NK uses Hwasong/KN/Pukguksong. Japan stays precision-first.
+  SK J Cheonwang 4200/4500 Acc 20 (accepted SK anomaly, not modified). Japan J Tenrai 3600/4000 Acc 20.
+  Libya J 3900/8000 Acc 20. UAE J 4000/7000 Acc 20. Saudi J 4000/4000 Acc 20.
+  China has no accepted A-J factory roster. Iran has no accepted A-J factory roster.
+  USA/EU strategic systems remain on other production paths.

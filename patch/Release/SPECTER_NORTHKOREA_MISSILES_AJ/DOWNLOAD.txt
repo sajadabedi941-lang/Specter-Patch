@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-northkorea-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=368525237
+  SHA256=3f3e4f88c4a657aac2bc314d0a51a69527b9135ff90e5f43d1bc29c60e33b7c5
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-northkorea-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1830385382
+  SHA256=3c3872d21e09ad3f71960c11f88f0187ed21a9ff1942664e74846070bd2485bb
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-northkorea-missiles-aj/SPECTER_NORTHKOREA_MISSILES_AJ.zip
+  SIZE=808367762
+  SHA256=0a4d460cb92003b47148f766920cd8904485dff65e321fc143d89cf8ee85f1bc
+
+Place both BIGs in the SPECTER folder.
+TAG=s-northkorea-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-northkorea-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

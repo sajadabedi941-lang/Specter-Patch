@@ -1,0 +1,56 @@
+STATIC VALIDATION: PASS
+RUNTIME_TEST=NOT RUN
+BASELINE: PR #656 SPECTER_ART_SPLIT_2GIB
+ART_ONE_UNCHANGED=YES
+ART_TWO_UNCHANGED=YES
+DATA_SIZE=370741726
+DATA_SHA256=3a6db9de97abd35eb647ca1661e1dac2b8ffca9da085e0062cd3bac65ac44345
+ART_ONE_SIZE=2144061050
+ART_ONE_SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+ART_TWO_SIZE=307234369
+ART_TWO_SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+ZIP_SIZE=831859206
+ZIP_SHA256=f38cb875ccace3b5be9fade37b0f732d6b99aa7350bac63998e952aac1d67328
+COUNTRIES=25
+ROWS_PASS=25
+SPY_SPECIALPOWER_LASTWINS=Data\INI\SpecialPower_ZZZZ_SpySatellite.ini
+SPY_BUTTON_LASTWINS=Data\INI\CommandButton_ZZZZ_SpySatellite.ini
+RELOAD_MS=60000
+UPGRADE_BUILDCOST=5000
+COST_MECHANISM=Upgrade BuildCost=5000 (engine spend field); Command remains SPECIAL_POWER
+COST_RUNTIME=NOT RUN — ZH SPECIAL_POWER does not debit Upgrade BuildCost
+INSUFFICIENT_FUNDS_RUNTIME=NOT RUN
+MAP_REVEAL_RUNTIME=NOT RUN
+COOLDOWN_RUNTIME=NOT RUN
+
+25-COUNTRY PACKED LAST-WINS MATRIX
+Country | Faction | Radar object | CommandSet | Radar cmd | SP module | OCL ping | CREATE_AT_LOCATION | One module | Reload 60s | SPECIAL_POWER | Upgrade $5000 | Original ping | ROW
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+Iran | FactionIran | IranRadarStation | IranExpandedRadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Iraq | FactionIraq | Iraq_RadarStation | Iraq_RadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+North Korea | FactionNorthKorea | NorthKorea_RadarStation | NorthKorea_RadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+South Korea | FactionSouthKorea | SouthKorea_RadarStation | SouthKorea_RadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Japan | FactionJapan | Japan_RadarStation | Japan_RadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Vietnam | FactionVietnam | Vietnam_RadarStation | Vietnam_RadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+China | FactionChina | ChinaRadarYj26 | ChinaRadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Russia | FactionRussia | Russia91N6E | RussiaRadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Israel | FactionIsrael | IsraelBuildingRadarStation | IsraelRadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+USA | FactionAmerica | AmericaRadarStation | AmericaRadarStationCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+NATO | FactionNato | NatoRadarGM406 | NatoGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+France | FactionFrance | FranceRadarGM406 | FranceGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Britain | FactionBritain | BritainRadarGM406 | BritainGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Italy | FactionItaly | ItalyRadarGM406 | ItalyGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Turkey | FactionTurkey | TurkeyRadarGM406 | TurkeyGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Sweden | FactionSweden | SwedenRadarGM406 | SwedenGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Ukraine | FactionUkraine | UkraineRadarGM406 | UkraineGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Germany | FactionGermany | GermanyRadarGM406 | GermanyGM406CommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+India | FactionIndia | India_RadarStation | India_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Pakistan | FactionPakistan | Pakistan_RadarStation | Pakistan_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+South Africa | FactionSouthAfrica | SouthAfrica_RadarStation | SouthAfrica_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Libya | FactionLibya | Libya_RadarStation | Libya_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Syria | FactionSyria | Syria_RadarStation | Syria_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+UAE | FactionUAE | UAE_RadarStation | UAE_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+Saudi Arabia | FactionSaudiArabia | SaudiArabia_RadarStation | SaudiArabia_RadarCommandSet | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS
+
+Packed checks cover INI last-wins only. In-game activation, funds,
+reveal, and cooldown were not executed (no Zero Hour runtime here).

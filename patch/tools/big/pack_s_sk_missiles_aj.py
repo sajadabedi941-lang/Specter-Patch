@@ -869,20 +869,29 @@ def _trigram(draw: ImageDraw.ImageDraw, cx: float, cy: float, pattern: str, scal
 
 
 def make_sk_flag() -> Image.Image:
-    """Taegeukgi: white field, red-over-blue taegeuk, four black trigrams."""
+    """Taegeukgi: white field, red-over-blue taegeuk swirl, four black trigrams.
+
+    Official corners: UL geon ☰, UR gam ☵, LL ri ☲, LR gon ☷.
+    The taegeuk is a two-comma swirl (no Chinese-style eyes): red head toward
+    the upper hoist, blue head toward the lower fly.
+    """
     w, h = 450, 300
     im = Image.new("RGBA", (w, h), (255, 255, 255, 255))
-    draw = ImageDraw.Draw(im)
-    cx, cy = w / 2, h / 2
-    r = h * 0.22
     red, blue = (205, 46, 58, 255), (0, 71, 160, 255)
+    side = int(h * 0.50)
+    tg = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    d = ImageDraw.Draw(tg)
+    cx = cy = side / 2.0
+    r = side / 2.0 - 1.0
     box = [cx - r, cy - r, cx + r, cy + r]
-    draw.pieslice(box, 180, 360, fill=red)
-    draw.pieslice(box, 0, 180, fill=blue)
-    r2 = r / 2
-    draw.ellipse([cx - r2, cy - r, cx + r2, cy], fill=red)
-    draw.ellipse([cx - r2, cy, cx + r2, cy + r], fill=blue)
-    # Official corners: UL geon ☰, UR gam ☵, LL ri ☲, LR gon ☷
+    d.pieslice(box, 90, 270, fill=blue)
+    d.pieslice(box, 270, 450, fill=red)
+    r2 = r / 2.0
+    d.ellipse([cx - r2, cy - r, cx + r2, cy], fill=red)
+    d.ellipse([cx - r2, cy, cx + r2, cy + r], fill=blue)
+    tg = tg.rotate(45, resample=Image.Resampling.BICUBIC, expand=False)
+    im.paste(tg, (int((w - side) / 2), int((h - side) / 2)), tg)
+    draw = ImageDraw.Draw(im)
     s = h * 0.11
     _trigram(draw, w * 0.18, h * 0.20, "111", s)
     _trigram(draw, w * 0.82, h * 0.20, "010", s)

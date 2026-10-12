@@ -1,0 +1,7 @@
+CommandSet.ini last SouthKorea_VT72BCommandSet is now the South Korea factory construct.
+CommandSet_SouthKoreaMissiles.ini last-wins the same two CommandSets.
+CommandButton.ini now defines the construct + A-J buttons; satellite file matches.
+Weapon.ini last-wins Weapon_SouthKorea_* (satellite Weapon\Weapon_SouthKorea_Missiles.ini is not the load path).
+Japan A-J factory/weapons, Iraq factory, Vietnam factory, and 9P117 are unchanged.
+SouthKoreaVehicleHyunmoo and Hwasong units are untouched.
+SouthKorea_WarFactory and existing SK construction buttons are untouched.

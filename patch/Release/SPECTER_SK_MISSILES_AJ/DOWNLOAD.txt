@@ -1,0 +1,21 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sk-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=367155360
+  SHA256=b8e4e37449844e9d075efaa05648dcc6ea12f9418a0f9a822158ff86d3917641
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sk-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1439153220
+  SHA256=9bab43586d69becf388ce2d2765829aed9bee9fdd6114c687135e4e1282fe1a4
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-sk-missiles-aj/SPECTER_SK_MISSILES_AJ.zip
+  SIZE=793323642
+  SHA256=885e6ff4dd6b25a0b2b060a5c600cdfd3cfcdf43db06433fc6da88d335e37e31
+
+Place both BIGs in the SPECTER folder.
+TAG=s-sk-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-sk-missiles-aj
+BASELINE=PR #630
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

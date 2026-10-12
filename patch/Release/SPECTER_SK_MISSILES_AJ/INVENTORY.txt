@@ -1,0 +1,88 @@
+PRE-CHANGE SOUTH KOREA ROSTER (packed last-wins, PR #630 Japan A-J):
+  FactionSouthKorea StartingUnit0 = SouthKorea_VT72B
+  SouthKorea_VT72B CommandSet = SouthKorea_VT72BCommandSet
+  SouthKorea_VT72BCommandSet slot 6 = Command_ConstructIraq_AlFahdMissileFactoryBuilding (Sell-only)
+  SouthKorea_MissileFactory: MISSING
+  SouthKorea_WarFactory: USA vehicle roster (untouched)
+  SouthKoreaVehicleHyunmoo / SouthKorea Hwasong: existing unrelated units (untouched)
+  Japan A-J factory and weapons remain in the baseline (frozen).
+
+POST-CHANGE SOUTH KOREA ROSTER:
+  SouthKorea_VT72BCommandSet slot 6 = Command_ConstructSouthKorea_MissileFactory
+  SouthKorea_MissileFactory / SouthKorea_MissileFactoryCommandSet = CB_SOUTHKOREA_MISSILE_A-J
+  Weapons last-wins in Data\INI\Weapon.ini
+  Buttons last-wins in Data\INI\CommandButton.ini
+  PRIMARY only + Scud_B_CommandSet / Command_FireMainWeapon
+  5-minute clip reload. No RadarPriority. No rearm.
+
+GAMEPLAY MAPPING (9P117 MOTHER scale, properties independent):
+  AttackRange 1720 = 1000 km design. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death warhead HACK 2200 = 400 kg extra. Formula: 2200 * (kg / 400).
+    Death HACK is a separate path and is NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy design. Formula: 175 * (10 / acc).
+    Limitation: ScatterRadius is impact dispersion, not a hit-chance percent.
+  Projectile MaxHealth 400 = 5/100 intercept-challenge design.
+    Formula: 400 * (challenge / 5). No RadarPriority.
+    Limitation: no native interception-probability percentage.
+  All missiles >= 1000 km so MinimumAttackRange stays 800.
+  South Korea roster is independently balanced (not a copy of Japan A-J).
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000 (5 minutes).
+  PRIMARY only; no SECONDARY/TERTIARY fire path to bypass cooldown.
+  BuildCost / BuildTime set on the unit Object (factory production).
+
+SLOT  NAME            KM   KG   ACC CHL TIME COST  RANGE  PD     SD    DEATH SCATTER  HP     MINR
+  A    Baekho         1000 400  70  30  18   900   1720.0 2000.0 100.0 2200  25.0    2400.0 800.0
+  B    Cheonma        1100 800  50  35  24   1400  1892.0 4000.0 200.0 4400  35.0    2800.0 800.0
+  C    Haeryong       1300 600  85  25  26   1700  2236.0 3000.0 150.0 3300  20.588  2000.0 800.0
+  D    Hwarang        1500 1000 45  65  32   2400  2580.0 5000.0 250.0 5500  38.889  5200.0 800.0
+  E    Mugunghwa      1800 1200 80  40  40   3200  3096.0 6000.0 300.0 6600  21.875  3200.0 800.0
+  F    Taebaek        2200 2000 35  45  48   4500  3784.0 10000.0 500.0 11000 50.0    3600.0 800.0
+  G    Jindallae      2600 1500 40  75  55   5200  4472.0 7500.0 375.0 8250  43.75   6000.0 800.0
+  H    Geommu         3000 3000 25  35  68   7000  5160.0 15000.0 750.0 16500 70.0    2800.0 800.0
+  I    Haetsal        3500 2500 75  50  75   8000  6020.0 12500.0 625.0 13750 23.333  4000.0 800.0
+  J    Cheonwang      4200 4500 20  25  100  11000 7224.0 22500.0 1125.0 24750 87.5    2000.0 800.0
+
+NEW / SPLICED DATA FILES:
+  Data\INI\CommandSet.ini (SouthKorea_VT72BCommandSet + SouthKorea_MissileFactoryCommandSet)
+  Data\INI\CommandButton.ini (construct + CB_SOUTHKOREA_MISSILE_A-J)
+  Data\INI\Weapon.ini (Weapon_SouthKorea_* + warheads)
+  Data\English\generals.csf
+  Data\INI\CommandSet_SouthKoreaMissiles.ini
+  Data\INI\CommandButton_SouthKoreaMissiles.ini
+  Data\INI\Weapon\Weapon_SouthKorea_Missiles.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_MissileFactory.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Baekho.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Baekho_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Cheonma.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Cheonma_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Haeryong.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Haeryong_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Hwarang.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Hwarang_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Mugunghwa.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Mugunghwa_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Taebaek.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Taebaek_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Jindallae.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Jindallae_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Geommu.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Geommu_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Haetsal.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Haetsal_Projectile.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\Wheeled\SouthKorea_Cheonwang.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Cheonwang_Projectile.ini
+
+NEW ART FILES:
+  Art\Textures\Skr_TEL.tga / Art\Textures\Skr_TELD.tga
+  Art\W3D\Skr_Baekho.W3D / Art\W3D\Skr_BaekhoD.W3D / Art\W3D\Skr_BaekhoM.W3D / Art\Textures\Skr_BaekhoP.tga
+  Art\W3D\Skr_Chonma.W3D / Art\W3D\Skr_ChonmaD.W3D / Art\W3D\Skr_ChonmaM.W3D / Art\Textures\Skr_ChonmaP.tga
+  Art\W3D\Skr_Haery.W3D / Art\W3D\Skr_HaeryD.W3D / Art\W3D\Skr_HaeryM.W3D / Art\Textures\Skr_HaeryP.tga
+  Art\W3D\Skr_Hwara.W3D / Art\W3D\Skr_HwaraD.W3D / Art\W3D\Skr_HwaraM.W3D / Art\Textures\Skr_HwaraP.tga
+  Art\W3D\Skr_Mugun.W3D / Art\W3D\Skr_MugunD.W3D / Art\W3D\Skr_MugunM.W3D / Art\Textures\Skr_MugunP.tga
+  Art\W3D\Skr_Taeba.W3D / Art\W3D\Skr_TaebaD.W3D / Art\W3D\Skr_TaebaM.W3D / Art\Textures\Skr_TaebaP.tga
+  Art\W3D\Skr_Jinda.W3D / Art\W3D\Skr_JindaD.W3D / Art\W3D\Skr_JindaM.W3D / Art\Textures\Skr_JindaP.tga
+  Art\W3D\Skr_Geomu.W3D / Art\W3D\Skr_GeomuD.W3D / Art\W3D\Skr_GeomuM.W3D / Art\Textures\Skr_GeomuP.tga
+  Art\W3D\Skr_Haets.W3D / Art\W3D\Skr_HaetsD.W3D / Art\W3D\Skr_HaetsM.W3D / Art\Textures\Skr_HaetsP.tga
+  Art\W3D\Skr_Cheon.W3D / Art\W3D\Skr_CheonD.W3D / Art\W3D\Skr_CheonM.W3D / Art\Textures\Skr_CheonP.tga

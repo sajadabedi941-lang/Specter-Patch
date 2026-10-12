@@ -1,0 +1,41 @@
+STATIC INVENTORY + EFFECTIVE LAST-WINS
+Mother 9P117 / Iraq_R11ScudB / SRBM_ALHIJARAH_HE: 400 kg.
+Actual impact damage = PrimaryDamage 2000 ARMOR_PIERCING + splash SecondaryDamage 100.
+Death HE_9M729_450kg = 2200 HACK r=20 (not added into AP total).
+Formula: PD = 2000 * (kg/400); SD = 100 * (kg/400).
+Cooldown: ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000 ms after the shot.
+
+REPRESENTATIVE SCALE
+  200 kg -> PD 1000 / SD 50   (no current factory missile at exactly 200 kg; VCM-02 is 250 kg = 1250)
+  400 kg -> PD 2000 / SD 100  (mother, Sông Hồng)
+  800 kg -> PD 4000 / SD 200  (Al-Hussein II)
+ 1200 kg -> PD 6000 / SD 300  (Al-Abbas, Thăng Long)
+ 1600 kg -> PD 8000 / SD 400  (Al-Fahd 500; was 4000/100 in Weapon.ini)
+
+Iraq_R11ScudB            400kg SRBM_ALHIJARAH_HE            PD=2000.0   SD=100.0  RL=300000 MOTHER-FROZEN-DMG
+Iraq_AlFahd500          1600kg Weapon_Iraq_AlFahd500        PD=8000.0   SD=400.0  RL=300000 
+Iraq_AlHusseinII         800kg Weapon_Iraq_AlHusseinII      PD=4000.0   SD=200.0  RL=300000 
+Iraq_AlSamoudII          600kg Weapon_Iraq_AlSamoudII       PD=3000.0   SD=150.0  RL=300000 
+Iraq_AlAbbas            1200kg Weapon_Iraq_AlAbbas          PD=6000.0   SD=300.0  RL=300000 
+Iraq_AlBasrah           2400kg Weapon_Iraq_AlBasrah         PD=12000.0  SD=600.0  RL=300000 
+Iraq_AlNasir            3200kg Weapon_Iraq_AlNasir          PD=16000.0  SD=800.0  RL=300000 
+Iraq_AlMansour          4000kg Weapon_Iraq_AlMansour        PD=20000.0  SD=1000.0 RL=300000 
+Vietnam_VCM01           1000kg Weapon_Vietnam_VCM01         PD=5000.0   SD=250.0  RL=300000 
+Vietnam_VCM02            250kg Weapon_Vietnam_VCM02         PD=1250.0   SD=62.5   RL=300000 
+Vietnam_SongHong         400kg Weapon_Vietnam_SongHong      PD=2000.0   SD=100.0  RL=300000 
+Vietnam_HongHa          1800kg Weapon_Vietnam_HongHa        PD=9000.0   SD=450.0  RL=300000 
+Vietnam_CuuLong          350kg Weapon_Vietnam_CuuLong       PD=1750.0   SD=87.5   RL=300000 
+Vietnam_TruongSon        600kg Weapon_Vietnam_TruongSon     PD=3000.0   SD=150.0  RL=300000 
+Vietnam_BachDang         500kg Weapon_Vietnam_BachDang      PD=2500.0   SD=125.0  RL=300000 
+Vietnam_ThangLong       1200kg Weapon_Vietnam_ThangLong     PD=6000.0   SD=300.0  RL=300000 
+
+LIMITATIONS
+- Iraq_BM-21 uses shared 122mm Grad weapons also used by Iran BM21, Israel PULS,
+  AirF Tomahawk. Those weapons were not changed.
+- Vanilla SCUDLauncherGun* (Stealth GLA Scud) not changed.
+- Haitham / Alhussaien have two warhead slots; each clip is 300s independently.
+  Switching to the other slot can fire immediately (no shared-across-slots reload).
+- Missiles with no documented kg kept their existing PrimaryDamage.
+- ClipSize 2->1 on 2x_* launchers so the second round cannot bypass the 300s clock.
+- RUNTIME TEST: NOT RUN. Game was not launched.
+

@@ -1,0 +1,19 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-5min-cd-dmg/_SPEC_DATA_ONE.big
+  SIZE=366826867
+  SHA256=2c6b967ce57236e1e1682faf375a38b5e531925607139e2345ca57d2d86cc53c
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-5min-cd-dmg/_SPEC_ART_ONE.big
+  SIZE=1343628546
+  SHA256=3030c68abc11b801121feeac44a21af4407ffa9be385fba0f979d01fd7e4ab44
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-missile-5min-cd-dmg/SPECTER_MISSILE_5MIN_CD_DMG.zip
+  SIZE=789618896
+  SHA256=9cc338e969ac6287fec8b0c5a31a834899f5eebe587b17252379fb59db74412e
+
+TAG=s-missile-5min-cd-dmg
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-missile-5min-cd-dmg
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN — the game was not launched. No 5-minute in-game test.

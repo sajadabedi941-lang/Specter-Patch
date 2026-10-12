@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=370725498
+  SHA256=99a695f81c5adfa5d412f397d1df2951c40bfe7ebfbb7c26f3633cb5e67d6695
+
+ART replacement (complete BIG, gzipped for GitHub's 2 GiB asset limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-missiles-aj/_SPEC_ART_ONE.big.gz
+  GZ_SIZE=524713479
+  GZ_SHA256=c759a09f94ac407337691ec8cd86dbdc85bc3d6a00cd1766e55bf21b67d8bfaf
+  UNCOMPRESSED_SIZE=2451295403
+  UNCOMPRESSED_SHA256=de0e998813bb7f74ff634c4a5aefb901692334e1e0d2a52637d3699b1d8f1f8a
+  gunzip -k _SPEC_ART_ONE.big.gz
+  Do not install the .gz file as the game BIG.
+
+ART is also inside the ZIP as uncompressed _SPEC_ART_ONE.big (same SHA).
+GitHub rejects raw files >= 2147483648 bytes.
+
+ZIP (complete uncompressed DATA + ART BIGs):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-missiles-aj/SPECTER_IRAN_US_ISRAEL_MISSILES_AJ.zip
+  SIZE=831825146
+  SHA256=8b38515f668d035f0c83b0aa96fd8f756b27ed50c56e563f8617eb1790222c80
+
+Place both uncompressed BIGs in the SPECTER folder.
+TAG=s-iran-us-israel-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iran-us-israel-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

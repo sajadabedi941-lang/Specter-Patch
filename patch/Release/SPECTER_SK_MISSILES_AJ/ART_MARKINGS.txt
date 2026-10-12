@@ -1,0 +1,32 @@
+SOUTH KOREA A-J ART MARKINGS (static inspection)
+
+Tesseract 5.3.4, PSM 7, name-plate crop. Vision-model OCR is not authoritative
+(it doubles letters). Overhead-camera readability judged from packed PREVIEW
+dorsal crops of the actual last-wins TGA skins.
+
+Flag: dedicated Taegeukgi (white field, red-over-blue taegeuk swirl, four
+black trigrams UL geon / UR gam / LL ri / LR gon). Not Hinomaru.
+
+Truck: Skr_TEL / Skr_TELD cool slate remap of Irq_9P117. Not Japanese olive.
+
+SLOT  NAME        COLOR        TEL OCR     PROJ OCR    FLAG    NAME PLATE
+A     Baekho      gray         BAEKHO      BAEKHO      PASS    PASS
+B     Cheonma     black        CHEONMA     CHEONMA     PASS    PASS
+C     Haeryong    blue         HAERYONG    HAERYONG    PASS    PASS
+D     Hwarang     petrol blue  HWARANG     HWARANG     PASS    PASS
+E     Mugunghwa   white        MUGUNGHWA   MUGUNGHWA   PASS    PASS
+F     Taebaek     red          TAEBAEK     TAEBAEK     PASS    PASS
+G     Jindallae   orange       JINDALLAE   JINDALLAE   PASS    PASS
+H     Geommu      yellow       GEOMMU      GEOMMU      PASS    PASS
+I     Haetsal     muddy green  HAETSAL     HAETSAL     PASS    PASS
+J     Cheonwang   cream        CHEONWANG   CHEONWANG   PASS    PASS
+
+W3D last-wins: dedicated Skr_* TEL / TELD / projectile models. Texture refs
+are Skr_TEL.tga / Skr_TELD.tga + per-missile Skr_*P.tga. No Irq_9P117.tga
+and no Jpn_TEL.tga on South Korean launchers.
+
+Buttons: shared specter_missile_a-j cameos (SPECTER missile-button style).
+ButtonImage and SelectPortrait both use the cameo, matching Japan/Vietnam.
+
+Limitation: this is a 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

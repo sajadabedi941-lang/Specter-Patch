@@ -6,6 +6,10 @@ REM ------------------------------------------------------------
 REM  Specter Ultimate Expansion - Real Launcher
 REM  Finds this folder, verifies files, loads SPEC BIGs into the
 REM  game folder, then starts generals.exe from that folder.
+REM
+REM  Zero Hour auto-loads every *.big next to generals.exe.
+REM  SPECTER needs DATA_ONE + ART_ONE (textures) + ART_TWO (W3D).
+REM  generals.exe -mod cannot enable more than one extra archive.
 REM ------------------------------------------------------------
 
 cd /d "%~dp0"
@@ -43,8 +47,19 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: Missing _SPEC_ART_TWO.big
+  echo Building models live in _SPEC_ART_TWO.big.
+  echo Put _SPEC_ART_TWO.big next to Launch_Specter.bat
+  echo Do not install a .gz file as a .big
+  echo.
+  pause
+  exit /b 1
+)
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
+echo   OK: _SPEC_ART_TWO.big
 echo.
 
 echo [2/4] Checking generals.exe...
@@ -94,8 +109,11 @@ echo.
 
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
-echo   Specter loads _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from
-echo   the game folder automatically when generals.exe starts.
+echo   Zero Hour auto-loads every *.big from the game folder when
+echo   generals.exe starts. SPECTER needs all three:
+echo     _SPEC_DATA_ONE.big
+echo     _SPEC_ART_ONE.big
+echo     _SPEC_ART_TWO.big
 echo.
 
 set "SAME=0"
@@ -126,6 +144,17 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK: copied _SPEC_ART_ONE.big
+
+  echo   Copying _SPEC_ART_TWO.big ...
+  copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo.
+    echo ERROR: Failed to copy _SPEC_ART_TWO.big into game folder.
+    echo.
+    pause
+    exit /b 1
+  )
+  echo   OK: copied _SPEC_ART_TWO.big
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -138,6 +167,14 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo.
   echo ERROR: _SPEC_ART_ONE.big is not in the game folder.
+  echo.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is not in the game folder.
+  echo  Building models will be missing without it.
   echo.
   pause
   exit /b 1
@@ -180,6 +217,7 @@ echo.
 echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
 echo.
 echo You can close this window.
 echo.

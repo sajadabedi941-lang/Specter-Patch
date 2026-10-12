@@ -1,0 +1,27 @@
+DATA (unchanged from PR #655):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-art-split-2gib/_SPEC_DATA_ONE.big
+  SIZE=370734307
+  SHA256=06ab43ec2b28fb04a4d13801727c40ac0bbfbd9be728fe37e715ffb489bf2175
+
+ART textures (uncompressed BIGF, under SAGE 2GiB limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-art-split-2gib/_SPEC_ART_ONE.big
+  SIZE=2144061050
+  SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+
+ART models (uncompressed BIGF, under SAGE 2GiB limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-art-split-2gib/_SPEC_ART_TWO.big
+  SIZE=307234369
+  SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+
+ZIP (DATA + both ART BIGs + INSTALL + launcher):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-art-split-2gib/SPECTER_ART_SPLIT_2GIB.zip
+  SIZE=831858334
+  SHA256=52f98f43a2ddfd0c5b8c36ae837159640f24cfff2d048360fdb6c7197ba23b08
+
+Place all three uncompressed BIGs in the SPECTER folder.
+Delete the old oversized _SPEC_ART_ONE.big first.
+Do not install gzip as .big. Every .big must start with BIGF.
+TAG=s-art-split-2gib
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-art-split-2gib
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

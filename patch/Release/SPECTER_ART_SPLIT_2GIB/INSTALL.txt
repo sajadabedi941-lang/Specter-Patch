@@ -1,0 +1,37 @@
+SPECTER ART 2GiB SPLIT — INSTALL
+
+The previous single _SPEC_ART_ONE.big is larger than 2,147,483,648 bytes.
+Zero Hour stores BIG offsets in 32-bit fields, so W3D models past that
+boundary become invisible / white / untextured. DATA is unchanged.
+
+HOW THE GAME LOADS THESE FILES
+  Zero Hour auto-loads every *.big sitting next to generals.exe
+  (case-insensitive alphabetical order; later archives last-win).
+  SPECTER already uses that scan for _SPEC_DATA_ONE.big and
+  _SPEC_ART_ONE.big. Do NOT use generals.exe -mod (one archive only).
+  Place all three files in the SPECTER / game folder (same place as
+  the current _SPEC_* BIGs):
+
+    _SPEC_DATA_ONE.big   DATA (byte-identical to PR #655)
+    _SPEC_ART_ONE.big    textures (Art\Textures\*)
+    _SPEC_ART_TWO.big    models   (Art\W3D\*)
+
+  Load order of the SPECTER pair: ART_ONE, then ART_TWO, then DATA_ONE.
+  Texture and W3D keys are looked up across all loaded archives, the
+  same way vanilla Textures.big + W3D.big already work.
+
+STEPS
+  1. Close the game.
+  2. DELETE or REPLACE the old oversized _SPEC_ART_ONE.big
+     (2,451,295,403 bytes, SHA256 de0e9988...). Leaving it installed
+     keeps the broken offsets.
+  3. Copy these three uncompressed BIGs into the SPECTER folder:
+       _SPEC_DATA_ONE.big
+       _SPEC_ART_ONE.big
+       _SPEC_ART_TWO.big
+  4. Confirm each file starts with the four bytes BIGF.
+     Do not install any .gz / .gzip stream as a .big.
+  5. Optional: run Install_SpecterPatch.bat / Launch_Specter.bat from
+     this ZIP (they now copy ART_TWO as well).
+
+Do not keep a combined ART archive over 2,147,483,648 bytes.

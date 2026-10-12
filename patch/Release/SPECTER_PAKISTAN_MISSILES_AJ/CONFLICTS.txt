@@ -1,0 +1,7 @@
+CommandSet_PakistanMissiles.ini last-wins Pakistan builder + factory CommandSets over CommandSet_Pakistan.ini.
+CommandButton_PakistanMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_Pakistan_Missiles.ini last-wins Weapon_Pakistan_* factory pair.
+Weapon_Pakistan.ini and CommandSet_Pakistan.ini are frozen.
+Pakistan_Nasr/Abdali/Ghaznavi/Shaheen1/Babur/Raad/Ghauri/Shaheen2/AbabeelMRV/Shaheen3 are new objects.
+Pakistan_ShaheenTEL, Pakistan_AbabeelTEL, PakistanVehicleNasr, Pakistan_Babur_Projectile, and Shaheen-III special power are unchanged.
+India, South Africa, Syria, Libya, UAE, Saudi, Vietnam, Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.

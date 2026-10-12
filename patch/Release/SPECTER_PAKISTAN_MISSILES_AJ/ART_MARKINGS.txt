@@ -1,0 +1,20 @@
+PAKISTAN A-J ART MARKINGS (static inspection)
+
+Flag: white hoist stripe, green fly, white crescent and star.
+SPECTER Side=Pakistan / Pakistan Armed Forces identity. Not India / SA / Syria flags.
+Dedicated Pak_TEL / Pak_TELD forest-olive truck. Not Ind_TEL / Saf_TEL / Syr_TEL / Irq_9P117.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    Nasr                     yellow    PASS    PASS
+  B    Abdali                   orange    PASS    PASS
+  C    Ghaznavi                 muddy     PASS    PASS
+  D    Shaheen-I                cream     PASS    PASS
+  E    Babur                    green     PASS    PASS
+  F    Ra'ad                    petrol    PASS    PASS
+  G    Ghauri                   gray      PASS    PASS
+  H    Shaheen-II               white     PASS    PASS
+  I    Ababeel                  red       PASS    PASS
+  J    Shaheen-III              blue      PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

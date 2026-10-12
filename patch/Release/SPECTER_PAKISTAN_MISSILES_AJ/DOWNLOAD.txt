@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-pakistan-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=368354874
+  SHA256=0b49d68d484531fe76e9b4b14bd29c054e34ee51472e48f9b7f63efebeb782cb
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-pakistan-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1782622889
+  SHA256=a7375becdf29e23c8a5e926a3329167561194bfee09dfe4d714ea30573edd24f
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-pakistan-missiles-aj/SPECTER_PAKISTAN_MISSILES_AJ.zip
+  SIZE=806515388
+  SHA256=79d051a84645acfbb8823a60b9366f788402c8e2a1674f73b1f66594b100ccca
+
+Place both BIGs in the SPECTER folder.
+TAG=s-pakistan-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-pakistan-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

@@ -13,6 +13,7 @@ CommandSet IranExpandedRadarCommandSet
  12 = Command_ConstructIranDroneHomaX
  14 = Command_Sell
   13 = Command_SpySatelliteScan
+  15 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -26,6 +27,7 @@ CommandSet Iraq_RadarStationCommandSet
   14 = Command_Sell
   15 = Command_ConstructIraqDroneQuds5_AI
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -36,6 +38,7 @@ CommandSet NorthKorea_RadarStationCommandSet
   3  = Command_ConstructNorthKoreaDrone_Light
   4  = Command_ConstructNorthKoreaDrone_Heavy
   14 = Command_Sell
+  5  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -46,6 +49,7 @@ CommandSet SouthKorea_RadarStationCommandSet
   3  = Command_ConstructSouthKoreaDrone_Light
   4  = Command_ConstructSouthKoreaDrone_Heavy
   14 = Command_Sell
+  5  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -56,6 +60,7 @@ CommandSet Japan_RadarStationCommandSet
   3  = Command_ConstructJapanDrone_Light
   4  = Command_ConstructJapanDrone_Heavy
   14 = Command_Sell
+  5  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -66,6 +71,7 @@ CommandSet Vietnam_RadarStationCommandSet
   3  = Command_ConstructVietnamDrone_Light
   4  = Command_ConstructVietnamDrone_Heavy
   14 = Command_Sell
+  5  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -82,6 +88,7 @@ CommandSet ChinaRadarStationCommandSet
   9  = Command_ConstructChinaDroneWZ8
   14 = Command_Sell
   15 = Command_ConstructChinaDroneGJ11
+  10  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -91,6 +98,7 @@ CommandSet RussiaRadarStationCommandSet
   4  = Command_ConstructRussiaDronesOrion2
   6  = Command_ConstructRussiaDroneLancet3
   14 = Command_Sell
+  3  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -103,6 +111,7 @@ CommandSet IsraelRadarStationCommandSet
   5  = Command_ConstructIsraelDroneEitanHeronTP
   6  = Command_ConstructIsraelDroneHaropExpanded
  14  = Command_Sell
+  7  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -116,6 +125,7 @@ CommandSet AmericaRadarStationCommandSet
   6  = Command_ConstrucAmericaDronesMq9
   7  = Command_ConstructAmericaDroneMQ4
  14  = Command_Sell
+  8  = Command_SpecterSpySatelliteFee
 End
 
 
@@ -128,6 +138,7 @@ CommandSet NatoGM406CommandSet
   5 = Command_ConstructNatoDroneNEURON
   6 = Command_ConstructNatoDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -140,6 +151,7 @@ CommandSet FranceGM406CommandSet
   5 = Command_ConstructFranceDroneNEURON
   6 = Command_ConstructFranceDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -152,6 +164,7 @@ CommandSet BritainGM406CommandSet
   5 = Command_ConstructBritainDroneNEURON
   6 = Command_ConstructBritainDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -164,6 +177,7 @@ CommandSet ItalyGM406CommandSet
   5 = Command_ConstructItalyDroneNEURON
   6 = Command_ConstructItalyDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -176,6 +190,7 @@ CommandSet TurkeyGM406CommandSet
   5 = Command_ConstructTurkeyDroneNEURON
   6 = Command_ConstructTurkeyDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -188,6 +203,7 @@ CommandSet SwedenGM406CommandSet
   5 = Command_ConstructSwedenDroneNEURON
   6 = Command_ConstructSwedenDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -200,6 +216,7 @@ CommandSet UkraineGM406CommandSet
   5 = Command_ConstructUkraineDroneNEURON
   6 = Command_ConstructUkraineDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -212,6 +229,7 @@ CommandSet GermanyGM406CommandSet
   5 = Command_ConstructGermanyDroneNEURON
   6 = Command_ConstructGermanyDroneMantisWingman
  14 = Command_Sell
+  7 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -222,6 +240,7 @@ CommandSet India_RadarCommandSet
   13 = Command_SetRallyPoint
   14 = Command_Sell
   3 = Command_SpySatelliteScan
+  4 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -229,6 +248,7 @@ End
 CommandSet Pakistan_RadarCommandSet
   14 = Command_Sell
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -236,6 +256,7 @@ End
 CommandSet SouthAfrica_RadarCommandSet
   14 = Command_Sell
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -243,6 +264,7 @@ End
 CommandSet Libya_RadarCommandSet
   14 = Command_Sell
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -250,6 +272,7 @@ End
 CommandSet Syria_RadarCommandSet
   14 = Command_Sell
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -257,6 +280,7 @@ End
 CommandSet UAE_RadarCommandSet
   14 = Command_Sell
   1 = Command_SpySatelliteScan
+  2 = Command_SpecterSpySatelliteFee
 End
 
 
@@ -266,6 +290,7 @@ CommandSet SaudiArabia_RadarCommandSet
   2 = Command_ConstructSaudiArabiaDroneMQ4
   14 = Command_Sell
   3 = Command_SpySatelliteScan
+  4 = Command_SpecterSpySatelliteFee
 End
 
 

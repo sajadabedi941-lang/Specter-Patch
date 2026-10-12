@@ -1,24 +1,24 @@
 DATA:
-  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-25-countries/_SPEC_DATA_ONE.big
-  SIZE=370741726
-  SHA256=3a6db9de97abd35eb647ca1661e1dac2b8ffca9da085e0062cd3bac65ac44345
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-cost-5000/_SPEC_DATA_ONE.big
+  SIZE=370744963
+  SHA256=00b07a188d25edabe9b18d8671c514467bd6cbb07c78f81d89a8015ee30c4bf3
 
 ART textures (unchanged from PR #656):
-  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-25-countries/_SPEC_ART_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-cost-5000/_SPEC_ART_ONE.big
   SIZE=2144061050
   SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
 
 ART models (unchanged from PR #656):
-  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-25-countries/_SPEC_ART_TWO.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-cost-5000/_SPEC_ART_TWO.big
   SIZE=307234369
   SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
 
 ZIP:
-  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-25-countries/SPECTER_SPY_SATELLITE_25_COUNTRIES.zip
-  SIZE=831859206
-  SHA256=f38cb875ccace3b5be9fade37b0f732d6b99aa7350bac63998e952aac1d67328
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-cost-5000/SPECTER_SPY_SATELLITE_25_COUNTRIES.zip
+  SIZE=831860064
+  SHA256=f21309356787e16029cd882c33e90cefcdb5d62c986e382a442c2cbe04c8a388
 
-TAG=s-spy-satellite-25-countries
-RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-25-countries
+TAG=s-spy-satellite-cost-5000
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-cost-5000
 STATIC_VALIDATION=PASS
 RUNTIME_TEST=NOT RUN

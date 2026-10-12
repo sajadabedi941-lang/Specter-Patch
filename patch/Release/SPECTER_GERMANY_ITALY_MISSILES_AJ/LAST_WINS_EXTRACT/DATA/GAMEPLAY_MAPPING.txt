@@ -1,0 +1,42 @@
+GERMANY + ITALY A-J MISSILE ROSTERS
+
+Baseline packed last-wins: SPECTER_VIETNAM_SK_ACC_DESC (PR #646).
+Germany and Italy had no missile factory. Dozer slot 14 constructed
+isolated Iraq_AlFahdMissileFactoryBuilding. That slot now constructs
+the country factory. War Factory, Lgm30, THAAD, NASAMS, SkySabre,
+Skyranger, and existing air weapons stay frozen.
+
+SPECTER design values. Not claimed real-world range or payload.
+Germany: precision/tech mix. Italy: independent tactical/medium/limited heavy.
+A is not red in either country. Color sequences differ.
+
+ENGINE:
+  AttackRange 1720 = 1000 km. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death HACK 2200 = 400 kg extra. NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy. Dispersion, not hit %.
+  Projectile MaxHealth 400 = 5/100 intercept proxy. No RadarPriority.
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000.
+
+CTRY  SLOT NAME            KM   KG   ACC CHL TIME COST  SCATTER  HP     PD      SD    HACK
+  DE   A    KEPD-350       1000 400  88  30  16   900   19.886  2400.0 2000.0  100.0 2200
+  DE   B    JFS-M          1200 500  82  35  22   1400  21.341  2800.0 2500.0  125.0 2750
+  DE   C    ELSA           1400 600  76  42  28   1900  23.026  3360.0 3000.0  150.0 3300
+  DE   D    Pfeil          1600 900  60  25  32   2200  29.167  2000.0 4500.0  225.0 4950
+  DE   E    Adler          1800 800  84  48  40   3600  20.833  3840.0 4000.0  200.0 4400
+  DE   F    Donar          2100 1400 55  38  48   4300  31.818  3040.0 7000.0  350.0 7700
+  DE   G    Odin           2500 1800 72  52  58   5600  24.306  4160.0 9000.0  450.0 9900
+  DE   H    Siegfried      2800 2500 50  40  68   6800  35.0    3200.0 12500.0 625.0 13750
+  DE   I    Polarstern     3400 3200 66  62  82   9000  26.515  4960.0 16000.0 800.0 17600
+  DE   J    Walküre        3800 4800 48  36  94   10400 36.458  2880.0 24000.0 1200.0 26400
+  IT   A    Marte          1000 400  68  22  15   800   25.735  1760.0 2000.0  100.0 2200
+  IT   B    Teseo          1100 700  50  26  20   1300  35.0    2080.0 3500.0  175.0 3850
+  IT   C    Freccia        1300 450  78  40  24   1700  22.436  3200.0 2250.0  112.5 2475
+  IT   D    Saetta         1500 800  45  32  30   2100  38.889  2560.0 4000.0  200.0 4400
+  IT   E    Folgore        1700 600  72  55  36   2700  24.306  4400.0 3000.0  150.0 3300
+  IT   F    Vesuvio        2000 1700 38  28  46   3900  46.053  2240.0 8500.0  425.0 9350
+  IT   G    Etna           2300 1500 58  36  52   4700  30.172  2880.0 7500.0  375.0 8250
+  IT   H    Stromboli      2100 1000 64  60  50   4600  27.344  4800.0 5000.0  250.0 5500
+  IT   I    Aquila         3000 2200 42  34  70   6800  41.667  2720.0 11000.0 550.0 12100
+  IT   J    Roma           3600 3800 32  28  88   9000  54.688  2240.0 19000.0 950.0 20900

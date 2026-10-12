@@ -1,0 +1,5 @@
+CommandSet_GermanyMissiles.ini and CommandSet_ItalyMissiles.ini last-win dozer + factory sets.
+Weapon\Weapon_Germany_Missiles.ini and Weapon_Italy_Missiles.ini last-win factory pairs.
+Germany_Weapon_Taurus and Italy_Weapon_StormShadow air weapons are unchanged.
+DE_Flag.tga and IT_Flag.tga are frozen. New dorsal stamps are generated, not those files.
+Vietnam/SK #646, UAE/Japan #645, Saudi #644, NK, India, Pakistan, Iraq, and 9P117 stay frozen.

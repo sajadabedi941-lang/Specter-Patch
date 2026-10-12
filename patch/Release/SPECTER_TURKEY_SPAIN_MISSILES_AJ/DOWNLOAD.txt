@@ -3,12 +3,18 @@ DATA replacement:
   SIZE=369880031
   SHA256=2465e216756685dd2d6dbf9fbc53f6a6a07ae30e323cb977364440bdd5f83cb3
 
-ART replacement:
-  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/_SPEC_ART_ONE.big
-  SIZE=2212483982
-  SHA256=698ac6178222cb98bb8c777d72044daf308b78955946d13350cb7b5abf0ffac1
+ART replacement (complete BIG, gzipped for GitHub's 2 GiB asset limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/_SPEC_ART_ONE.big.gz
+  GZ_SIZE=515797421
+  GZ_SHA256=cfcb83a0ba2aa38644c7b83e8dd29abf19c8ded5b5886a6076f5c2a6d31faf3f
+  UNCOMPRESSED_SIZE=2212483982
+  UNCOMPRESSED_SHA256=698ac6178222cb98bb8c777d72044daf308b78955946d13350cb7b5abf0ffac1
+  gunzip -k _SPEC_ART_ONE.big.gz
 
-ZIP:
+ART is also inside the ZIP as uncompressed _SPEC_ART_ONE.big (same SHA).
+GitHub rejects raw files >= 2147483648 bytes. This ART is 2212483982.
+
+ZIP (complete uncompressed DATA + ART BIGs):
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/SPECTER_TURKEY_SPAIN_MISSILES_AJ.zip
   SIZE=822867694
   SHA256=55d09466b2832ad8d10cce1f8bbb328720c99d4e518acca332389cf80666c9c4

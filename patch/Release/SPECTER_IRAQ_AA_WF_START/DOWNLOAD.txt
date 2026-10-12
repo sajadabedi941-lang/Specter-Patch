@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-aa-wf-start/_SPEC_DATA_ONE.big
+  SIZE=370746408
+  SHA256=dce5fb7f5d018d5df0d340096095b9a69d8f361cdeeee34d07e82d0eb129579f
+
+ART textures (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-aa-wf-start/_SPEC_ART_ONE.big
+  SIZE=2144061050
+  SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+
+ART models (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-aa-wf-start/_SPEC_ART_TWO.big
+  SIZE=307234369
+  SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-aa-wf-start/SPECTER_IRAQ_AA_WF_START.zip
+  SIZE=831860090
+  SHA256=6da98cbc7f6284e8c5fd8af86d976416ba885ed0ac01a56c06e477b9e8562448
+
+TAG=s-iraq-aa-wf-start
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-aa-wf-start
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

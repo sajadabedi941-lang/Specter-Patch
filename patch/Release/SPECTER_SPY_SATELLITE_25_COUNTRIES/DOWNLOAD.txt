@@ -16,7 +16,7 @@ ART models (unchanged from PR #656):
 ZIP:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-cost-5000/SPECTER_SPY_SATELLITE_25_COUNTRIES.zip
   SIZE=831860064
-  SHA256=9d8dabcd05696ab5a97d1281320eccffabb952ca221c2c7fff442bc61d8cceff
+  SHA256=f21309356787e16029cd882c33e90cefcdb5d62c986e382a442c2cbe04c8a388
 
 TAG=s-spy-satellite-cost-5000
 RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-cost-5000

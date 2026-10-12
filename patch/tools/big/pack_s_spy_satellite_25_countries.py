@@ -748,6 +748,12 @@ def matrix_row(
     ocl_creates = SPY_PING in (ocl_block or "")
     ocl_strip = STRIP_OBJ in (ocl_block or "")
     strip_die = "UpgradeDie" in (strip_block or "") and FEE_UPGRADE in (strip_block or "")
+    radius_ok = field(btn_block, "RadiusCursorType") == "SPYSATELLITE"
+    science_ok = not field(sp_block, "RequiredScience") and "NEED_SPECIAL_POWER_SCIENCE" not in field(
+        btn_block, "Options"
+    )
+    construct_ok = bool(c.get("construct_found"))
+    no_cs_swap = "CommandSetUpgrade" not in (obj_block or "")
     flags = {
         "country": c["name"],
         "faction": c["faction"],
@@ -763,12 +769,15 @@ def matrix_row(
         "production_update": "PASS" if prod_ok else "FAIL",
         "reload_60s": "PASS" if reload_ok else "FAIL",
         "enum_spy_sat": "PASS" if enum_ok else "FAIL",
-        "button_special_power": "PASS" if btn_cmd and btn_sp and btn_opt else "FAIL",
+        "button_special_power": "PASS" if btn_cmd and btn_sp and btn_opt and radius_ok else "FAIL",
         "need_upgrade_gate": "PASS" if btn_need and btn_up and sc_need and sc_up else "FAIL",
         "fee_object_upgrade": "PASS" if fee_cmd_ok and fee_up_ok else "FAIL",
         "cost_5000_upgrade": "PASS" if cost_ok and type_ok and time_ok else "FAIL",
         "original_ping": "PASS" if ping_ok and ocl_creates else "FAIL",
         "fee_stripper": "PASS" if ocl_strip and strip_die else "FAIL",
+        "no_science_prereq": "PASS" if science_ok else "FAIL",
+        "construct_required": "PASS" if construct_ok else "FAIL",
+        "no_commandset_swap": "PASS" if no_cs_swap else "FAIL",
         "n_spy_modules": n_spy,
     }
     flags["row"] = (
@@ -791,6 +800,9 @@ def matrix_row(
                 "cost_5000_upgrade",
                 "original_ping",
                 "fee_stripper",
+                "no_science_prereq",
+                "construct_required",
+                "no_commandset_swap",
             )
         )
         else "FAIL"
@@ -818,6 +830,9 @@ def format_matrix(rows: list[dict]) -> str:
         "Upgrade $5000",
         "Original ping",
         "Fee stripper",
+        "No science",
+        "Radar construct",
+        "No CS swap",
         "ROW",
     ]
     lines = [" | ".join(headers), " | ".join("---" for _ in headers)]
@@ -843,6 +858,9 @@ def format_matrix(rows: list[dict]) -> str:
                     r["cost_5000_upgrade"],
                     r["original_ping"],
                     r["fee_stripper"],
+                    r["no_science_prereq"],
+                    r["construct_required"],
+                    r["no_commandset_swap"],
                     r["row"],
                 ]
             )
@@ -986,6 +1004,8 @@ def main() -> None:
         if src_obj != c["obj_key"] and src_obj != "":
             # object last-wins from its original file after splice; that is OK
             pass
+        _, construct_btn = last_from(packed_order, packed, "CommandButton", c["construct"])
+        c["construct_found"] = bool(construct_btn)
         row = matrix_row(
             c,
             cs_block,
@@ -1040,6 +1060,16 @@ def main() -> None:
 
     if len(COUNTRIES) != 25:
         fails.append(f"country count {len(COUNTRIES)}")
+    cs_names = [c["cs"] for c in COUNTRIES]
+    if len(set(cs_names)) != 25:
+        fails.append(f"shared CommandSet among 25: {cs_names}")
+    radar_names = [c["radar"] for c in COUNTRIES]
+    if len(set(radar_names)) != 25:
+        fails.append(f"shared radar object among 25: {radar_names}")
+    if field(sp_block, "RequiredScience"):
+        fails.append("SpecialPowerSpySatellite has RequiredScience")
+    if field(btn_block, "RadiusCursorType") != "SPYSATELLITE":
+        fails.append("lost RadiusCursorType SPYSATELLITE")
 
     if fails:
         raise SystemExit("VALIDATION FAILED\n" + "\n".join(fails))

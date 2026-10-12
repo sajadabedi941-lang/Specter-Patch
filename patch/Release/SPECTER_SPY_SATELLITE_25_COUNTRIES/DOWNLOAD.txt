@@ -15,8 +15,8 @@ ART models (unchanged from PR #656):
 
 ZIP:
   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-spy-satellite-25-countries/SPECTER_SPY_SATELLITE_25_COUNTRIES.zip
-  SIZE=2822050049
-  SHA256=9d3b48f49f9ac103ec73c8c380612c413cabe7f1972c32f36d30971dcad84495
+  SIZE=831859206
+  SHA256=f38cb875ccace3b5be9fade37b0f732d6b99aa7350bac63998e952aac1d67328
 
 TAG=s-spy-satellite-25-countries
 RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-25-countries

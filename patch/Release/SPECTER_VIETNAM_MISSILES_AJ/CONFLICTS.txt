@@ -1,0 +1,6 @@
+CommandSet_VietnamMissiles.ini last-wins Vietnam_MissileFactoryCommandSet A-J.
+CommandButton_VietnamMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_Vietnam_Missiles.ini last-wins Weapon_Vietnam_* (sorted after Weapon.ini).
+Weapon.ini also updated so live catalog matches.
+A-H unit/W3D/skin files are unchanged. Only I/J ART and objects are new.
+Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.

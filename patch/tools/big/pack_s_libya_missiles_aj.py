@@ -424,6 +424,19 @@ def commandset_file(builders: dict[str, str]) -> str:
     return "\r\n\r\n".join(parts) + "\r\n"
 
 
+def player_tooltip(m: dict) -> str:
+    """Player-visible production tooltip. Ratings are design indexes, not probabilities."""
+    return (
+        f"{m['slot']} {m['name']}\n"
+        f"Range: {m['km']} km\n"
+        f"Warhead: {m['kg']} kg\n"
+        f"Accuracy: {m['acc']}/100 (impact scatter, not a hit %)\n"
+        f"Radar evasion: {m['stealth']}/100 (interceptor toughness, not stealth)\n"
+        f"Build Time: {m['rebuild']} sec\n"
+        f"Price: ${m['price']}"
+    )
+
+
 def csf_map() -> dict[str, str]:
     mapping = {
         "OBJECT:LibyaMissileFactory": "Missile Factory",
@@ -434,8 +447,8 @@ def csf_map() -> dict[str, str]:
     }
     for m in DERIVED:
         mapping[f"OBJECT:{m['object']}"] = m["name"]
-        mapping[f"CONTROLBAR:LibyaMissile{m['slot']}"] = m["name"]
-        mapping[f"CONTROLBAR:ToolTipLibyaMissile{m['slot']}"] = m["tooltip"]
+        mapping[f"CONTROLBAR:LibyaMissile{m['slot']}"] = f"{m['slot']} {m['name']}"
+        mapping[f"CONTROLBAR:ToolTipLibyaMissile{m['slot']}"] = player_tooltip(m)
     return mapping
 
 
@@ -718,8 +731,10 @@ def validate(data, art, src_data, src_art, order) -> list[str]:
             fails.append(f"{m['slot']} button object")
         if sk.field(bblock, "ButtonImage") != m["cameo"]:
             fails.append(f"{m['slot']} button image")
-        if sk.csf_get(csf, f"CONTROLBAR:LibyaMissile{m['slot']}") != m["name"]:
+        if sk.csf_get(csf, f"CONTROLBAR:LibyaMissile{m['slot']}") != f"{m['slot']} {m['name']}":
             fails.append(f"{m['slot']} CSF name")
+        if sk.csf_get(csf, f"CONTROLBAR:ToolTipLibyaMissile{m['slot']}") != player_tooltip(m):
+            fails.append(f"{m['slot']} CSF tooltip")
 
         tel = art[m["tel_key"]]
         teld = art[m["teld_key"]]

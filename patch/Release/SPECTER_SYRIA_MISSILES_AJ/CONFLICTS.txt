@@ -1,0 +1,6 @@
+CommandSet_SyriaMissiles.ini last-wins Syria builder + factory CommandSets.
+CommandButton_SyriaMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_Syria_Missiles.ini last-wins Weapon_Syria_* factory pair.
+Weapon_Syria.ini (Shaheen/Ababeel and other Syria weapons) is unchanged.
+Syria_Luna/Tochka/Khaibar/R17/Homs/Tishreen/Qalamoun/Yakhont/Sham/Barada are new objects.
+Libya, UAE, Saudi, Vietnam, Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.

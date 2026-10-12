@@ -1,0 +1,52 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #643 s-northkorea-missiles-aj + PR #642 + #641 + #640 + #639 + #633
+DATA_SIZE=368528717
+DATA_SHA256=1133213de66987f5a48a0f9e6341c6f5254a279fbc305d358b7fc227b37070a4
+ART_SIZE=1830385382
+ART_SHA256=3c3872d21e09ad3f71960c11f88f0187ed21a9ff1942664e74846070bd2485bb
+ART_UNCHANGED=YES
+WEAPONS_UNCHANGED=YES
+PROJECTILES_UNCHANGED=YES
+SCATTER_UNCHANGED=YES
+MAXHEALTH_UNCHANGED=YES
+NO_RADARPRIORITY=YES
+NO_SPEED_CHANGE=YES
+CSF_TOOLTIPS_UPDATED=YES
+NORTHKOREA_AJ_UNCHANGED=YES
+INDIA_AJ_HEAVY_UNCHANGED=YES
+PAKISTAN_AJ_HEAVY_UNCHANGED=YES
+IRAQ_AM_UNCHANGED=YES
+
+SAUDI A-J ACCURACY / RADAR-STEALTH DESCRIPTION CORRECTION
+
+Baseline packed last-wins: SPECTER_NORTHKOREA_MISSILES_AJ (PR #643 on #642).
+Accepted ratings: PR #633 pack_s_saudi_missiles_aj.py. Reused, not redesigned.
+Problem: CSF tooltips showed name/range/kg/time/price only. Acc/CHL omitted.
+Gameplay ScatterRadius and projectile MaxHealth already matched those ratings.
+
+ENGINE IMPLEMENTATION (unchanged from packed last-wins):
+  Accuracy rating -> ScatterRadius = 175 * (10 / Acc).
+    SAGE ScatterRadius is impact dispersion around the aimed point.
+    It is not a hit-chance percentage. No Accuracy=N% field exists.
+  Radar-Stealth rating -> projectile MaxHealth = 400 * (CHL / 5).
+    SPECTER interceptors with AntiProjectile / AntiBallisticMissile deal
+    damage to KindOf PROJECTILE BALLISTIC_MISSILE bodies. Higher MaxHealth
+    takes more interceptor hits to destroy. This is intercept toughness,
+    not radar stealth, not an evade-percentage, and not RadarPriority.
+    SAGE has no RadarStealth field. The tooltip label is the design rating.
+  WeaponSpeed remains 280 on every Saudi A-J PRIMARY weapon.
+  No RadarPriority on projectiles.
+
+SLOT  NAME            KM   KG   ACC  CHL  SCATTER  HP     ENGINE ACC           ENGINE RATING
+  A    Najm           1000 400  55   30   31.818  2400.0 ScatterRadius         MaxHealth
+  B    Sahm           1100 600  40   35   43.75   2800.0 ScatterRadius         MaxHealth
+  C    Rimal          1300 500  75   25   23.333  2000.0 ScatterRadius         MaxHealth
+  D    Barq           1500 1200 35   50   50.0    4000.0 ScatterRadius         MaxHealth
+  E    Hajar          1800 1000 60   40   29.167  3200.0 ScatterRadius         MaxHealth
+  F    Wadi           2100 2000 30   45   58.333  3600.0 ScatterRadius         MaxHealth
+  G    Saqr           2400 1500 45   70   38.889  5600.0 ScatterRadius         MaxHealth
+  H    Qasr           2800 3000 25   40   70.0    3200.0 ScatterRadius         MaxHealth
+  I    Fajr           3400 2500 70   55   25.0    4400.0 ScatterRadius         MaxHealth
+  J    Al-Wa'd        4000 4000 20   30   87.5    2400.0 ScatterRadius         MaxHealth
+

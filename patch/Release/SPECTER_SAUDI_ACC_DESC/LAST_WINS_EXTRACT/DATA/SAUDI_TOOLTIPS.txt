@@ -1,0 +1,119 @@
+CONTROLBAR:SaudiArabiaMissileA=A Najm
+CONTROLBAR:ToolTipSaudiArabiaMissileA=
+A Najm
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 55/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 18 sec
+Price: $900
+
+CONTROLBAR:SaudiArabiaMissileB=B Sahm
+CONTROLBAR:ToolTipSaudiArabiaMissileB=
+B Sahm
+Range: 1100 km
+Warhead: 600 kg
+Accuracy: 40/100
+Radar Stealth: 35/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 22 sec
+Price: $1300
+
+CONTROLBAR:SaudiArabiaMissileC=C Rimal
+CONTROLBAR:ToolTipSaudiArabiaMissileC=
+C Rimal
+Range: 1300 km
+Warhead: 500 kg
+Accuracy: 75/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 27 sec
+Price: $1700
+
+CONTROLBAR:SaudiArabiaMissileD=D Barq
+CONTROLBAR:ToolTipSaudiArabiaMissileD=
+D Barq
+Range: 1500 km
+Warhead: 1200 kg
+Accuracy: 35/100
+Radar Stealth: 50/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 33 sec
+Price: $2400
+
+CONTROLBAR:SaudiArabiaMissileE=E Hajar
+CONTROLBAR:ToolTipSaudiArabiaMissileE=
+E Hajar
+Range: 1800 km
+Warhead: 1000 kg
+Accuracy: 60/100
+Radar Stealth: 40/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 40 sec
+Price: $3100
+
+CONTROLBAR:SaudiArabiaMissileF=F Wadi
+CONTROLBAR:ToolTipSaudiArabiaMissileF=
+F Wadi
+Range: 2100 km
+Warhead: 2000 kg
+Accuracy: 30/100
+Radar Stealth: 45/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 48 sec
+Price: $4400
+
+CONTROLBAR:SaudiArabiaMissileG=G Saqr
+CONTROLBAR:ToolTipSaudiArabiaMissileG=
+G Saqr
+Range: 2400 km
+Warhead: 1500 kg
+Accuracy: 45/100
+Radar Stealth: 70/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 56 sec
+Price: $5300
+
+CONTROLBAR:SaudiArabiaMissileH=H Qasr
+CONTROLBAR:ToolTipSaudiArabiaMissileH=
+H Qasr
+Range: 2800 km
+Warhead: 3000 kg
+Accuracy: 25/100
+Radar Stealth: 40/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 68 sec
+Price: $7000
+
+CONTROLBAR:SaudiArabiaMissileI=I Fajr
+CONTROLBAR:ToolTipSaudiArabiaMissileI=
+I Fajr
+Range: 3400 km
+Warhead: 2500 kg
+Accuracy: 70/100
+Radar Stealth: 55/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 80 sec
+Price: $8400
+
+CONTROLBAR:SaudiArabiaMissileJ=J Al-Wa'd
+CONTROLBAR:ToolTipSaudiArabiaMissileJ=
+J Al-Wa'd
+Range: 4000 km
+Warhead: 4000 kg
+Accuracy: 20/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 95 sec
+Price: $10000

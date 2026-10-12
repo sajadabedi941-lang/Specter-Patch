@@ -1,0 +1,4 @@
+Weapon.ini last-wins many missile ClipReloadTime values at 300000.
+Satellite Weapon_Vietnam_Missiles.ini / Weapon_Iraq_AlFahd500.ini / Weapon_Iraq_AlHaithamNajm.ini and country Weapon_*.ini match.
+CommandSet.ini, CommandButton.ini, factory objects, 9P117 object, ART unchanged.
+122mm Grad and SCUDLauncherGun* left frozen because they are shared.

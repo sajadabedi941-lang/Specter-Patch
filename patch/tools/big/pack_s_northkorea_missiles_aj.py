@@ -158,7 +158,7 @@ MISSILES = [
     },
     {
         "slot": "D", "object": "NorthKorea_Pukguksong2", "name": "Pukguksong-2",
-        "model": "Nkr_Pukguksong2", "modeld": "Nkr_Pukguksong2D", "proj_model": "Nkr_Pukguksong2M",
+        "model": "Nkr_Pukguk2", "modeld": "Nkr_Pukguk2D", "proj_model": "Nkr_Pukguk2M",
         "hier": b"NKR_PKGSD", "hierd": b"NKR_PKGSDD", "proj_hier": b"NKR_MSL_D",
         "tex": "Nkr_Pukguksong2P.tga", "body": (10, 72, 84), "nose": NOSE_W,
         "expect": "petrol", "km": 1400, "kg": 500, "acc": 68, "stealth": 50,
@@ -261,6 +261,7 @@ FROZEN_ART = list(dict.fromkeys(FROZEN_ART))
 
 for _m in MISSILES:
     assert len(_m["hier"]) == 9 and len(_m["hierd"]) == 10 and len(_m["proj_hier"]) == 9
+    assert len(_m["model"]) <= 15 and len(_m["modeld"]) <= 15 and len(_m["proj_model"]) <= 15
     assert 1000 <= _m["km"] <= 4000 and 400 <= _m["kg"] <= 10000
     assert _m["acc"] != 28
 assert MISSILES[-1]["kg"] < 10000

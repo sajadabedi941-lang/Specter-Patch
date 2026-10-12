@@ -1,0 +1,23 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-factory-btns/_SPEC_DATA_ONE.big
+  SIZE=370231382
+  SHA256=9a20ef1bd5ef08029dfd8e9bee59f411663e05a21092994f7cc4302dddaa495a
+
+ART replacement (unchanged from PR #651; gzipped for GitHub 2 GiB limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-factory-btns/_SPEC_ART_ONE.big.gz
+  GZ_SIZE=519337956
+  GZ_SHA256=c0b5892fb696fc003837195a102a94b772fc79c2791930c2598979f711a7f129
+  UNCOMPRESSED_SIZE=2308008528
+  UNCOMPRESSED_SHA256=cf83e8cfedff3b3cf3ef5ff890d2ee79dd551dc68d9c6ae3f6295b36935f6d35
+  gunzip -k _SPEC_ART_ONE.big.gz
+
+ZIP (complete uncompressed DATA + ART BIGs):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iran-us-israel-factory-btns/SPECTER_IRAN_US_ISRAEL_FACTORY_BTNS.zip
+  SIZE=826426400
+  SHA256=9033bfb9995ab960a4c86a5c94f30b54b91c029b537eb976d152bc4648f94f59
+
+Place both uncompressed BIGs in the SPECTER folder.
+TAG=s-iran-us-israel-factory-btns
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iran-us-israel-factory-btns
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

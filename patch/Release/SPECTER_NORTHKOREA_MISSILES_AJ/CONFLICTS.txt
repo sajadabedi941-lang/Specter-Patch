@@ -1,0 +1,7 @@
+CommandSet_NorthKoreaMissiles.ini last-wins NorthKorea_VT72BCommandSet and factory CommandSet.
+CommandButton_NorthKoreaMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_NorthKorea_Missiles.ini last-wins Weapon_NorthKorea_* factory pair.
+NorthKorea_Systems.ini, VT72B object, WarFactory, existing Hwasong5/7/15BB/KN23/KN06/KN09 are frozen.
+NorthKorea_KN02/Hwasong6/KN24/Pukguksong2/Hwasong10/KN25/Hwasong12/Hwasong14/Hwasong15/Hwasong17 are new.
+India, Pakistan, South Africa, Syria, Libya, UAE, Saudi, Vietnam, Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.
+China and Iran A-J factory objects remain absent.

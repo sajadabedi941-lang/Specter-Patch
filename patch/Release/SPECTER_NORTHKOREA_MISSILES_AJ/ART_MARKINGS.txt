@@ -1,0 +1,21 @@
+NORTH KOREA A-J ART MARKINGS (static inspection)
+
+Flag: red field, blue/white stripes, white disk + red star.
+SPECTER Side=NorthKorea / North Korea identity. Not SK Taegeuk / Japan Hinomaru / India Tiranga / Pakistan flag.
+Dedicated Nkr_TEL / Nkr_TELD dark olive-gray truck. Not Skr_TEL / Jpn_TEL / Ind_TEL / Pak_TEL / Irq_9P117.
+Existing DPRK_Flag.tga/dds, NKr_Command.W3D, NKr_WarFactory.W3D, NKr__NKFlag_Hs.W3D frozen.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    KN-02                    yellow    PASS    PASS
+  B    Hwasong-6                muddy     PASS    PASS
+  C    KN-24                    cream     PASS    PASS
+  D    Pukguksong-2             petrol    PASS    PASS
+  E    Hwasong-10               orange    PASS    PASS
+  F    KN-25                    green     PASS    PASS
+  G    Hwasong-12               gray      PASS    PASS
+  H    Hwasong-14               white     PASS    PASS
+  I    Hwasong-15               red       PASS    PASS
+  J    Hwasong-17               blue      PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

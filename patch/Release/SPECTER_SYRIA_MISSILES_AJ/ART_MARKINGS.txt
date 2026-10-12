@@ -1,0 +1,20 @@
+SYRIA A-J ART MARKINGS (static inspection)
+
+Flag: red upper, white middle with two green stars, black lower.
+SPECTER Side=Syria / Syrian Armed Forces identity. Not UAE / Saudi / Iraq / Libya flags.
+Dedicated Syr_TEL / Syr_TELD drab truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL / Sau_TEL / Uae_TEL / Lby_TEL.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    Luna                     muddy     PASS    PASS
+  B    Tochka                   cream     PASS    PASS
+  C    Khaibar                  orange    PASS    PASS
+  D    R-17                     red       PASS    PASS
+  E    Homs                     white     PASS    PASS
+  F    Tishreen                 green     PASS    PASS
+  G    Qalamoun                 yellow    PASS    PASS
+  H    Yakhont                  blue      PASS    PASS
+  I    Sham                     gray      PASS    PASS
+  J    Barada                   petrol    PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

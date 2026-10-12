@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-syria-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=367847106
+  SHA256=7bf022bfb3553f269a01ff3c8fccd24e848fe4631d45e71e43691c8517507a75
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-syria-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1639335694
+  SHA256=92905fd2cfc9b98a5ce398d68c426c16e313f55a009354a2f6004d623ed6214f
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-syria-missiles-aj/SPECTER_SYRIA_MISSILES_AJ.zip
+  SIZE=800970857
+  SHA256=d2cbb98b75cdea78ddaa43a602e313146040f0569bcc42fd3f65dbbe90b03027
+
+Place both BIGs in the SPECTER folder.
+TAG=s-syria-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-syria-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

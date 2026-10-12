@@ -1,0 +1,76 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #653 s-iran-us-israel-missiles-aj
+DATA_SIZE=370733139
+DATA_SHA256=9f502c614f97e64566d1480da8e5f3596e3e81462a719d2c6f72c5f1d1ae499a
+ART_SIZE=2451295403
+ART_SHA256=de0e998813bb7f74ff634c4a5aefb901692334e1e0d2a52637d3699b1d8f1f8a
+ART_GZ_SIZE=524713479
+ART_GZ_SHA256=c759a09f94ac407337691ec8cd86dbdc85bc3d6a00cd1766e55bf21b67d8bfaf
+ART_CHANGED=NO
+FACTION_CREATED=NO
+FACTIONGLA_REMAINS_ARABIC_ALLIANCE=YES
+EGYPT_UAE_UNCHANGED=YES
+OTHER_FACTIONS_UNCHANGED=YES
+OVERLAY_KEYS=Data\INI\CommandButton_ArabicAllianceUnlock.ini | Data\INI\CommandSet_ArabicAllianceUnlock.ini | Data\INI\Science_ArabicAllianceUnlock.ini
+AA_OBJECT_RANK_STRIP=8
+GLAWORKERCOMMANDSET_LASTWINS=YES
+
+UNLOCKED:
+  - Upgrade_Arb_Tier1 (PLAYER_UPGRADE; Rank2 removed; Industry Planet T/T1/T2)
+  - Upgrade_Arb_Tier2 (already had no rank; now on Industry Planet T/T1 as well as T1)
+  - Upgrade_Arb_Tier3 (PLAYER_UPGRADE; Rank3 removed; Industry Planet T/T1/T2)
+  - Upgrade_EgyptArmy (already on GLACommandCenter; Science commented; unchanged)
+  - Upgrade_GLAFortifiedStructure (Industry Planet / Palace; no rank; unchanged)
+  - Upgrade_GLACamouflage (Industry Planet / Palace; no rank; unchanged)
+  - Upgrade_GLAToxinShells (GLAPalaceCommandSet; no rank; unchanged)
+  - Upgrade_GLAAnthraxBeta (GLAPalaceCommandSet; no rank; unchanged)
+  - Upgrade_MTS (Industry Planet / Palace; aircraft TriggeredBy; no rank; unchanged)
+  - Upgrade_NuclearReactor (Industry Planet / Palace; no rank; unchanged)
+  - Upgrade_AmericaCountermeasures (ArabicAirfieldCommandSet_T*; no rank; unchanged)
+  - Upgrade_GLAInfantryRebelBoobyTrapAttack (GLABarracksCommandSet; no rank; unchanged)
+  - Upgrade_InfantryCaptureBuilding (GLABarracksCommandSet; no rank; unchanged)
+  - Upgrade_AmericaRadar (granted by ArabicArmy59N6E GrantUpgradeCreate; unchanged)
+  - Upgrade_Rearm_Arab_Khalid (existing Khalid rearm; unchanged)
+  - SCIENCE_ArabicAWACS (Rank dropped; Rank1 purchase row)
+  - SCIENCE_ArabicParadrop (Rank3 dropped; moved to Rank1 row)
+  - SCIENCE_ArabicAroumredParadrop (Rank3 dropped; moved to Rank1 row)
+  - SCIENCE_ArabDrones (Rank3 dropped; moved to Rank1 row; CH4B still requires this science)
+  - SCIENCE_Arabic155mm1/2/3 (Rank3 dropped; 1-2-3 chain kept; Rank1 row)
+  - SCIENCE_AlegeriaAirForce (already Rank1; Su30MKA still requires this science)
+  - SCIENCE_ScudLauncher (already Rank1; Arab_Khalid still requires this science)
+  - SCIENCE_MarauderTank (already Rank1; GLATankMarauder still requires this science)
+  - SCIENCE_RebelAmbush1/2/3 (Rank3 dropped; 1-2-3 chain kept; Rank1 row)
+  - SCIENCE_AnthraxBomb (Rank5 dropped; Rank1 row)
+  - SCIENCE_GPSScrambler (Rank5 dropped; Rank1 row)
+
+UNIT_SCIENCE_RANK_STRIPPED (production access after existing building/science locks):
+  - Arb_30N6E / Arabic_S300PMU2: SCIENCE_Rank4 stripped (keep building CS unlock via Tier2/3)
+  - Arab_Tor1M: SCIENCE_Rank5 stripped; still requires GLAPalace + ArabicArmy_IndustryPlanet
+  - ArabicArmy_Su-24MR: SCIENCE_Rank6 stripped
+  - GLAVehicleRocketBuggy (M109A6): SCIENCE_Rank3 stripped; still requires GLAPalace + Industry Planet
+  - Arb_9K720SV1 / Arb_9K720M_AI / GLAVehicleScudLauncher: SCIENCE_Rank6 stripped; still require GLAPalace + Industry Planet
+
+REMAINS UNAVAILABLE:
+  - SCIENCE_EmergencyRepair1/2/3: shared with USA/China; still SCIENCE_Rank3. Changing it would unlock other factions.
+  - SCIENCE_ArabicAWACSSCAN: definition unlocked (Rank dropped) but no PURCHASE_SCIENCE button exists; likely AWACS scan mode, not a separately purchasable upgrade.
+  - Upgrade_AmericaCompositeArmor / Upgrade_AmericaAdvancedTraining / Upgrade_AmericaChemicalSuits: AA units TriggeredBy them, but no AA CommandSet carries the purchase buttons (America Strategy Center path). Not fabricating AA buttons.
+  - Upgrade_Kab-2500: Arab_Su-24MK TriggeredBy it; Command_UpgradeKab-2500 exists but is not on any Arabic Alliance CommandSet. Not adding a cosmetic button.
+  - Upgrade_Egypt_* and Upgrade_UAE_*: packed as FactionEgypt / FactionUAE, not FactionGLA (Arabic Alliance). Not wired onto AA.
+  - Upgrade_ChaffUpgrade: cost 0 auto/object upgrade, not a player purchase.
+  - Upgrade_AADS_AA_Mode / Upgrade_AADS_ABM_Mode: object-mode toggles on S-300, not player research.
+  - Upgrade_ICBM_BoosterKiller: granted by radar GrantUpgradeCreate, not purchased.
+
+CHANGED_KEYS:
+  Data\INI\CommandButton_ArabicAllianceUnlock.ini
+  Data\INI\CommandSet_ArabicAllianceUnlock.ini
+  Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini
+  Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini
+  Data\INI\Object\Specter\Arabic Alliance\AirDefense\Tor1M.ini
+  Data\INI\Object\Specter\Arabic Alliance\Airforce\Su24MR.ini
+  Data\INI\Object\Specter\Arabic Alliance\Tracked\M109A6.ini
+  Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M.ini
+  Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729MV.ini
+  Data\INI\Object\Specter\Arabic Alliance\Wheeled\Arb_9K729M_AI.ini
+  Data\INI\Science_ArabicAllianceUnlock.ini
+

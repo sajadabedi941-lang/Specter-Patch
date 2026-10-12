@@ -1,0 +1,8 @@
+CommandButton_ArabicAllianceUnlock.ini last-wins Command_Arb_Tier1 and Command_Arb_Tier3.
+CommandSet_ArabicAllianceUnlock.ini last-wins SCIENCE_GLA_CommandSetRank1,
+ArabicIndustryPlanetCommandSet_T/T1/T2, and GLAWorkerCommandSet.
+Science_ArabicAllianceUnlock.ini last-wins AA/GLA-only sciences (not EmergencyRepair).
+Eight Arabic Alliance object INIs last-win with SCIENCE_Rank stripped from Prerequisites.
+PlayerTemplate.ini, Upgrade.ini, CommandButton.ini, CommandSet.ini, Science.ini,
+Upgrade_Egypt.ini, Upgrade_UAE.ini, and all non-AA objects are frozen.
+ART is copied unchanged from PR #653.

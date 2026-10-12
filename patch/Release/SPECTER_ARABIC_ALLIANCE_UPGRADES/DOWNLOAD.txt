@@ -1,0 +1,27 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-arabic-alliance-upgrades/_SPEC_DATA_ONE.big
+  SIZE=370733139
+  SHA256=9f502c614f97e64566d1480da8e5f3596e3e81462a719d2c6f72c5f1d1ae499a
+
+ART replacement (complete BIG, gzipped for GitHub's 2 GiB asset limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-arabic-alliance-upgrades/_SPEC_ART_ONE.big.gz
+  GZ_SIZE=524713479
+  GZ_SHA256=c759a09f94ac407337691ec8cd86dbdc85bc3d6a00cd1766e55bf21b67d8bfaf
+  UNCOMPRESSED_SIZE=2451295403
+  UNCOMPRESSED_SHA256=de0e998813bb7f74ff634c4a5aefb901692334e1e0d2a52637d3699b1d8f1f8a
+  gunzip -k _SPEC_ART_ONE.big.gz
+  Do not install the .gz file as the game BIG.
+
+ART is also inside the ZIP as uncompressed _SPEC_ART_ONE.big (same SHA).
+GitHub rejects raw files >= 2147483648 bytes. ART is unchanged from PR #653.
+
+ZIP (complete uncompressed DATA + ART BIGs):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-arabic-alliance-upgrades/SPECTER_ARABIC_ALLIANCE_UPGRADES.zip
+  SIZE=831827438
+  SHA256=4baf6b1257096d773cc273e2fd4af8c630895a18391fb0d5d326a28f43655dc6
+
+Place both uncompressed BIGs in the SPECTER folder.
+TAG=s-arabic-alliance-upgrades
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-arabic-alliance-upgrades
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

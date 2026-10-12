@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=369880031
+  SHA256=2465e216756685dd2d6dbf9fbc53f6a6a07ae30e323cb977364440bdd5f83cb3
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=2212483982
+  SHA256=698ac6178222cb98bb8c777d72044daf308b78955946d13350cb7b5abf0ffac1
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-turkey-spain-missiles-aj/SPECTER_TURKEY_SPAIN_MISSILES_AJ.zip
+  SIZE=822867694
+  SHA256=55d09466b2832ad8d10cce1f8bbb328720c99d4e518acca332389cf80666c9c4
+
+Place both BIGs in the SPECTER folder.
+TAG=s-turkey-spain-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-turkey-spain-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

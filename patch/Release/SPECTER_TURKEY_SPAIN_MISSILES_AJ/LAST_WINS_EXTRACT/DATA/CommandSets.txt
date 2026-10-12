@@ -1,0 +1,71 @@
+CommandSet TurkeyDozerCommandSet
+  1  = Command_ConstructTurkeyPowerStation
+  2  = Command_ConstructTurkeyStrategyCenter
+  3  = Command_ConstructTurkeyBootCamp
+  4  = Command_ConstructTurkey_HeavyAirBase
+  5  = Command_ConstructTurkeySupplyCenter
+  6  = Command_ConstructTurkeyRadarGM406
+  7  = Command_ConstructTurkeyIRISTSamSite
+  8  = Command_ConstructTurkeyCommandCenter
+  9  = Command_ConstructTurkeyM777
+ 10  = Command_ConstructTurkeyMantis
+ 11  = Command_ConstructTurkeyWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructTurkeyAirfield
+ 14  = Command_ConstructTurkey_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructTurkeyNASAMSIII
+ 17  = Command_ConstructTurkeySkySabre
+ 18  = Command_ConstructTurkeySkyranger30
+End
+
+CommandSet Turkey_MissileFactoryCommandSet
+  1  = CB_TURKEY_MISSILE_A
+  2  = CB_TURKEY_MISSILE_B
+  3  = CB_TURKEY_MISSILE_C
+  4  = CB_TURKEY_MISSILE_D
+  5  = CB_TURKEY_MISSILE_E
+  6  = CB_TURKEY_MISSILE_F
+  7  = CB_TURKEY_MISSILE_G
+  8  = CB_TURKEY_MISSILE_H
+  9  = CB_TURKEY_MISSILE_I
+  10  = CB_TURKEY_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+CommandSet NatoDozerCommandSet
+  1  = Command_ConstructNatoPowerStation
+  2  = Command_ConstructNatoStrategyCenter
+  3  = Command_ConstructNatoBootCamp
+  4  = Command_ConstructNato_HeavyAirBase
+  5  = Command_ConstructNatoSupplyCenter
+  6  = Command_ConstructNatoRadarGM406
+  7  = Command_ConstructNatoIRISTSamSite
+  8  = Command_ConstructNatoCommandCenter
+  9  = Command_ConstructNatoM777
+ 10  = Command_ConstructNatoMantis
+ 11  = Command_ConstructNatoWarFactory
+ 12  = Command_ConstructAmericaLgm30
+ 13  = Command_ConstructNatoAirfield
+ 14  = Command_ConstructSpain_MissileFactory
+ 15  = Command_ConstructAmericaVehicleTHAAD_AI
+ 16  = Command_ConstructNatoNASAMSIII
+ 17  = Command_ConstructNatoSkySabre
+ 18  = Command_ConstructNatoSkyranger30
+End
+
+CommandSet Spain_MissileFactoryCommandSet
+  1  = CB_SPAIN_MISSILE_A
+  2  = CB_SPAIN_MISSILE_B
+  3  = CB_SPAIN_MISSILE_C
+  4  = CB_SPAIN_MISSILE_D
+  5  = CB_SPAIN_MISSILE_E
+  6  = CB_SPAIN_MISSILE_F
+  7  = CB_SPAIN_MISSILE_G
+  8  = CB_SPAIN_MISSILE_H
+  9  = CB_SPAIN_MISSILE_I
+  10  = CB_SPAIN_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

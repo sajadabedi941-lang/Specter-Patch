@@ -1,0 +1,20 @@
+UAE A-J ART MARKINGS (static inspection)
+
+Flag: vertical red hoist, horizontal green / white / black stripes.
+Dedicated Uae_TEL / Uae_TELD pearl-sand truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL / Sau_TEL.
+Existing Art\Textures\UAE_Flag.tga is frozen and not overwritten.
+
+SLOT  NAME         COLOR     FLAG    NAME PLATE
+  A    Falcon       blue      PASS    PASS
+  B    Barq         green     PASS    PASS
+  C    Liwa         yellow    PASS    PASS
+  D    Dhafra       red       PASS    PASS
+  E    Al Ain       petrol    PASS    PASS
+  F    Buraq        other     PASS    PASS
+  G    Siraj        orange    PASS    PASS
+  H    Mezyad       cream     PASS    PASS
+  I    Qamar        gray      PASS    PASS
+  J    Al Watan     black     PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

@@ -1,0 +1,60 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #648 s-britain-france-missiles-aj + #647 + #646 + #645 + #644
+DATA_SIZE=369546080
+DATA_SHA256=2f4ea581ca6f7e14aed998af6e06f23a9d95deb9cc6fdc6b8492c0c14c6adf42
+ART_SIZE=2116959300
+ART_SHA256=fd9a4649a51aac2a1fa3f6533b2b3ffd428cdac913535125752d6210ec1fd93c
+SWEDEN_FACTORY_NEW=YES
+UKRAINE_FACTORY_NEW=YES
+SE_UA_FLAGS_FROZEN=YES
+GB_FR_DE_IT_AJ_KEPT=YES
+LGM30_THAAD_KEPT=YES
+STORMSHADOW_SCALP_AIR_KEPT=YES
+NO_REARM=YES
+NO_RADARPRIORITY=YES
+ROSTER_COUNT=20
+
+SWEDEN + UKRAINE A-J MISSILE ROSTERS
+
+Baseline packed last-wins: SPECTER_BRITAIN_FRANCE_MISSILES_AJ (PR #648).
+Sweden and Ukraine had no missile factory. Dozer slot 14 constructed
+isolated Iraq_AlFahdMissileFactoryBuilding. That slot now constructs
+the country factory. War Factory, Lgm30, THAAD, NASAMS, SkySabre,
+Skyranger, GB/FR/DE/IT A-J, and existing air weapons stay frozen.
+
+SPECTER design values. Not claimed real-world range or payload.
+Sweden: Nordic precision/naval mix. Ukraine: mobile tactical + earlier
+heavy + CHL standouts. A is not red. Color sequences differ from GB/FR/DE/IT.
+
+ENGINE:
+  AttackRange 1720 = 1000 km. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death HACK 2200 = 400 kg extra. NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy. Dispersion, not hit %.
+  Projectile MaxHealth 400 = 5/100 intercept proxy. No RadarPriority.
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000.
+
+CTRY  SLOT NAME            KM   KG   ACC CHL TIME COST  SCATTER  HP     PD      SD    HACK
+  SE   A    RBS15          1000 400  78  28  16   880   22.436  2240.0 2000.0  100.0 2200
+  SE   B    Gungnir        1250 600  72  36  23   1500  24.306  2880.0 3000.0  150.0 3300
+  SE   C    Norrsken       1450 550  84  48  29   2100  20.833  3840.0 2750.0  137.5 3025
+  SE   D    Vidar          1600 1100 50  22  35   2500  35.0    1760.0 5500.0  275.0 6050
+  SE   E    Berserk        1850 800  76  52  41   3400  23.026  4160.0 4000.0  200.0 4400
+  SE   F    Fenrir         2050 1700 42  32  49   4400  41.667  2560.0 8500.0  425.0 9350
+  SE   G    Sleipnir       2450 1500 66  54  57   5400  26.515  4320.0 7500.0  375.0 8250
+  SE   H    Midgard        2750 2400 38  36  70   7000  46.053  2880.0 12000.0 600.0 13200
+  SE   I    Aurora         3300 2800 60  60  78   8400  29.167  4800.0 14000.0 700.0 15400
+  SE   J    Yggdrasil      3850 4000 34  28  94   9600  51.471  2240.0 20000.0 1000.0 22000
+  UA   A    Neptune        1000 400  58  18  15   760   30.172  1440.0 2000.0  100.0 2200
+  UA   B    Vilkha         1150 900  42  22  21   1400  41.667  1760.0 4500.0  225.0 4950
+  UA   C    Hrim           1400 550  70  40  25   1850  25.0    3200.0 2750.0  137.5 3025
+  UA   D    Sapsan         1550 1200 36  20  32   2250  48.611  1600.0 6000.0  300.0 6600
+  UA   E    Dnipro         1700 700  64  50  37   2900  27.344  4000.0 3500.0  175.0 3850
+  UA   F    Grom           1950 2000 32  26  47   4000  54.688  2080.0 10000.0 500.0 11000
+  UA   G    Kozak          2250 1400 54  38  53   4800  32.407  3040.0 7000.0  350.0 7700
+  UA   H    Odesa          2400 1100 60  62  55   5000  29.167  4960.0 5500.0  275.0 6050
+  UA   I    Kyiv           3050 2400 46  34  74   7300  38.043  2720.0 12000.0 600.0 13200
+  UA   J    Tryzub         3650 4600 26  24  90   9900  67.308  1920.0 23000.0 1150.0 25300
+

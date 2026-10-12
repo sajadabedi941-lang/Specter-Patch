@@ -1,0 +1,31 @@
+FUTURE NATO-TO-SPAIN CONVERSION (not done in this pack)
+
+Already Spain-specific (keep, do not duplicate):
+  Spain_MissileFactory, Spain_MissileFactoryCommandSet
+  Command_ConstructSpain_MissileFactory
+  Spain_Albatros … Spain_Iberia launchers and projectiles
+  CB_SPAIN_MISSILE_A-J, CONTROLBAR:SpainMissileA-J
+  CommandSet_SpainMissiles.ini, CommandButton_SpainMissiles.ini
+  Weapon\Weapon_Spain_Missiles.ini
+  Art\Textures\Esp_TEL.tga / Esp_TELD.tga and Esp_* skins
+
+Must remain Nato for current load (change in the conversion task):
+  FactionNato (Side=Nato, StartingUnit0=NatoVehicleDozer,
+    StartingBuilding=NatoCommandCenter, DisplayName=INI:FactionNatoForces)
+  NatoDozerCommandSet (builder name referenced by NatoVehicleDozer)
+  NatoVehicleDozer CommandSet = NatoDozerCommandSet
+  NatoWarFactory, NatoSupplyCenter, NatoCommandCenter, and other Nato*
+  NT_Flag.tga (Nato flag). Missile dorsal stamps are already Spanish.
+  Spain_* object Side=Nato (required so FactionNato can own them now)
+
+Conversion checklist:
+  1. Add FactionSpain Side=Spain. Retire or hide FactionNato.
+  2. Rename or last-win NatoDozerCommandSet -> SpainDozerCommandSet and
+     point the Spain dozer CommandSet at it. Keep slot 14 =
+     Command_ConstructSpain_MissileFactory.
+  3. Change Side=Nato to Side=Spain on Spain_MissileFactory and Spain_* TELs.
+  4. Provide SpainSupplyCenter (or keep NatoSupplyCenter in the OR prereq
+     list until renamed). Do not add a second missile factory.
+  5. Replace NT_Flag.tga / Nato UI with Spanish country identity.
+  6. Leave Turkey_MissileFactory and Turkey A-J untouched.
+  7. Do not create NATO-named duplicate missiles.

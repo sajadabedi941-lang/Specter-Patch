@@ -1,0 +1,6 @@
+CommandSet_TurkeyMissiles.ini last-wins TurkeyDozerCommandSet.
+CommandSet_SpainMissiles.ini last-wins NatoDozerCommandSet (Spain factory on slot 14).
+Weapon\Weapon_Turkey_Missiles.ini and Weapon_Spain_Missiles.ini last-win factory pairs.
+Turkey_Weapon_SOM_F16C air weapon is unchanged. Weapon_Turkey_SOM is the factory missile.
+TR_Flag.tga, Turkey_Flag.tga, and NT_Flag.tga are frozen. Dorsal stamps are generated.
+Sweden/Ukraine #649, Britain/France #648, Germany/Italy #647, Vietnam/SK #646, UAE/Japan #645, Saudi #644, NK, India, Pakistan, Iraq, and 9P117 stay frozen.

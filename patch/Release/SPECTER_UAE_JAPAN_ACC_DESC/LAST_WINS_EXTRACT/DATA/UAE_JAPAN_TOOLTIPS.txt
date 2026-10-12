@@ -1,0 +1,241 @@
+===== UAE =====
+CONTROLBAR:UAEMissileA=A Falcon
+CONTROLBAR:ToolTipUAEMissileA=
+A Falcon
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 60/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 18 sec
+Price: $900
+
+CONTROLBAR:UAEMissileB=B Barq
+CONTROLBAR:ToolTipUAEMissileB=
+B Barq
+Range: 1100 km
+Warhead: 800 kg
+Accuracy: 45/100
+Radar Stealth: 40/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 23 sec
+Price: $1400
+
+CONTROLBAR:UAEMissileC=C Liwa
+CONTROLBAR:ToolTipUAEMissileC=
+C Liwa
+Range: 1300 km
+Warhead: 600 kg
+Accuracy: 75/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 28 sec
+Price: $1800
+
+CONTROLBAR:UAEMissileD=D Dhafra
+CONTROLBAR:ToolTipUAEMissileD=
+D Dhafra
+Range: 1500 km
+Warhead: 1500 kg
+Accuracy: 35/100
+Radar Stealth: 55/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 34 sec
+Price: $2500
+
+CONTROLBAR:UAEMissileE=E Al Ain
+CONTROLBAR:ToolTipUAEMissileE=
+E Al Ain
+Range: 1800 km
+Warhead: 1200 kg
+Accuracy: 65/100
+Radar Stealth: 35/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 41 sec
+Price: $3300
+
+CONTROLBAR:UAEMissileF=F Buraq
+CONTROLBAR:ToolTipUAEMissileF=
+F Buraq
+Range: 2100 km
+Warhead: 2500 kg
+Accuracy: 30/100
+Radar Stealth: 50/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 50 sec
+Price: $4600
+
+CONTROLBAR:UAEMissileG=G Siraj
+CONTROLBAR:ToolTipUAEMissileG=
+G Siraj
+Range: 2400 km
+Warhead: 1800 kg
+Accuracy: 50/100
+Radar Stealth: 70/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 58 sec
+Price: $5500
+
+CONTROLBAR:UAEMissileH=H Mezyad
+CONTROLBAR:ToolTipUAEMissileH=
+H Mezyad
+Range: 2800 km
+Warhead: 3500 kg
+Accuracy: 25/100
+Radar Stealth: 45/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 70 sec
+Price: $7200
+
+CONTROLBAR:UAEMissileI=I Qamar
+CONTROLBAR:ToolTipUAEMissileI=
+I Qamar
+Range: 3400 km
+Warhead: 5000 kg
+Accuracy: 70/100
+Radar Stealth: 55/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 82 sec
+Price: $8700
+
+CONTROLBAR:UAEMissileJ=J Al Watan
+CONTROLBAR:ToolTipUAEMissileJ=
+J Al Watan
+Range: 4000 km
+Warhead: 7000 kg
+Accuracy: 20/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 98 sec
+Price: $11000
+
+===== Japan =====
+CONTROLBAR:JapanMissileA=A Type 12 Kai
+CONTROLBAR:ToolTipJapanMissileA=
+A Type 12 Kai
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 85/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 15 sec
+Price: $800
+
+CONTROLBAR:JapanMissileB=B Type 88 Kai
+CONTROLBAR:ToolTipJapanMissileB=
+B Type 88 Kai
+Range: 1100 km
+Warhead: 400 kg
+Accuracy: 70/100
+Radar Stealth: 35/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 20 sec
+Price: $1200
+
+CONTROLBAR:JapanMissileC=C Kōryū
+CONTROLBAR:ToolTipJapanMissileC=
+C Kōryū
+Range: 1400 km
+Warhead: 600 kg
+Accuracy: 45/100
+Radar Stealth: 70/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 28 sec
+Price: $1800
+
+CONTROLBAR:JapanMissileD=D Raijin
+CONTROLBAR:ToolTipJapanMissileD=
+D Raijin
+Range: 2000 km
+Warhead: 1200 kg
+Accuracy: 35/100
+Radar Stealth: 45/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 38 sec
+Price: $3000
+
+CONTROLBAR:JapanMissileE=E Hayate
+CONTROLBAR:ToolTipJapanMissileE=
+E Hayate
+Range: 2200 km
+Warhead: 800 kg
+Accuracy: 80/100
+Radar Stealth: 55/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 42 sec
+Price: $3800
+
+CONTROLBAR:JapanMissileF=F Yamato
+CONTROLBAR:ToolTipJapanMissileF=
+F Yamato
+Range: 2800 km
+Warhead: 2500 kg
+Accuracy: 25/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 65 sec
+Price: $6500
+
+CONTROLBAR:JapanMissileG=G Kurogane
+CONTROLBAR:ToolTipJapanMissileG=
+G Kurogane
+Range: 3200 km
+Warhead: 3500 kg
+Accuracy: 15/100
+Radar Stealth: 20/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 85 sec
+Price: $9000
+
+CONTROLBAR:JapanMissileH=H Shiden
+CONTROLBAR:ToolTipJapanMissileH=
+H Shiden
+Range: 1200 km
+Warhead: 400 kg
+Accuracy: 75/100
+Radar Stealth: 40/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 22 sec
+Price: $1400
+
+CONTROLBAR:JapanMissileI=I Fūjin
+CONTROLBAR:ToolTipJapanMissileI=
+I Fūjin
+Range: 1800 km
+Warhead: 1000 kg
+Accuracy: 40/100
+Radar Stealth: 65/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 35 sec
+Price: $2700
+
+CONTROLBAR:JapanMissileJ=J Tenrai
+CONTROLBAR:ToolTipJapanMissileJ=
+J Tenrai
+Range: 3600 km
+Warhead: 4000 kg
+Accuracy: 20/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 95 sec
+Price: $10000

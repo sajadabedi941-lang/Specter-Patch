@@ -1,0 +1,3 @@
+Only Data\English\generals.csf UAE and Japan missile caption/tooltip labels changed.
+Weapon satellites, factory command sets, objects, warheads, and ART are unchanged.
+Saudi #644, North Korea, India, Pakistan, Libya, SK, Vietnam, Syria, Iraq, and 9P117 stay frozen.

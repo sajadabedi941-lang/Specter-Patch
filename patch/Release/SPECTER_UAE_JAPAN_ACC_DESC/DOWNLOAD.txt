@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-uae-japan-aj-acc-desc/_SPEC_DATA_ONE.big
+  SIZE=368535677
+  SHA256=ea66f6ee59c520ce6d7763dec0ec8f4683fe21f1057b0e82c07308d8f4ce051b
+
+ART replacement (unchanged from s-saudi-aj-acc-desc / s-northkorea-missiles-aj):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-uae-japan-aj-acc-desc/_SPEC_ART_ONE.big
+  SIZE=1830385382
+  SHA256=3c3872d21e09ad3f71960c11f88f0187ed21a9ff1942664e74846070bd2485bb
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-uae-japan-aj-acc-desc/SPECTER_UAE_JAPAN_ACC_DESC.zip
+  SIZE=808368203
+  SHA256=3a7ddb9354e19f01eb596201e4c079f5d152d7fda9adb2e4e0f6cb0b3edc71b3
+
+Place both BIGs in the SPECTER folder.
+TAG=s-uae-japan-aj-acc-desc
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-uae-japan-aj-acc-desc
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

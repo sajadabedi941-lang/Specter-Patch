@@ -894,7 +894,7 @@ def main() -> None:
     shutil.copy2(INSTALLER / "Install_SpecterPatch.bat", OUT / "Install_SpecterPatch.bat")
 
     zip_path = OUT / "SPECTER_SPY_SATELLITE_25_COUNTRIES.zip"
-    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_STORED) as zf:
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
         for name in (
             "_SPEC_DATA_ONE.big",
             "_SPEC_ART_ONE.big",

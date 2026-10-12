@@ -1,0 +1,42 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #651 s-china-russia-missiles-aj + #650 + #649 + #648 + #647
+DATA_SIZE=370231382
+DATA_SHA256=9a20ef1bd5ef08029dfd8e9bee59f411663e05a21092994f7cc4302dddaa495a
+ART_SIZE=2308008528
+ART_SHA256=cf83e8cfedff3b3cf3ef5ff890d2ee79dd551dc68d9c6ae3f6295b36935f6d35
+ART_CHANGED=NO
+ART_GZ_SIZE=519337956
+ART_GZ_SHA256=c0b5892fb696fc003837195a102a94b772fc79c2791930c2598979f711a7f129
+IRAN_SLOT10=Command_ConstructIran_MissileFactory
+AMERICA_SLOT14=Command_ConstructAmerica_MissileFactory
+ISRAEL_AIRF_SLOT14=Command_ConstructIsrael_MissileFactory
+BAVAR373_OBJECTS_KEPT=YES
+DISARM_MINES_DEFINITION_KEPT=YES
+NO_AJ_ROSTER=YES
+CN_RU_TR_ES_SE_UA_GB_FR_DE_IT_KEPT=YES
+
+IRAN / AMERICA / ISRAEL MISSILE FACTORY CONSTRUCTION ACCESS
+
+Baseline packed last-wins: SPECTER_CHINA_RUSSIA_MISSILES_AJ (PR #651).
+Construction menus only. No A-J launchers, weapons, or projectiles.
+Factories are Rally/Sell shells using Irq_FahdFac / Button_MissileFactory.
+ART is byte-identical to PR #651.
+
+IRAN  live builder IranDozerCommandSet (IranVehicleDozer)
+  slot 10 Command_ConstructIranBavarSiteAI -> Command_ConstructIran_MissileFactory
+  Bavar-373 objects and Command_ConstructIranBavarSiteAI definition kept.
+  IranHQCommandSet still builds Iran_Bavar via Command_ConstructIran_Bavar.
+
+AMERICA live builder AmericaDozerCommandSet (AmericaVehicleDozer)
+  slot 14 Command_DisarmMinesAtPosition -> Command_ConstructAmerica_MissileFactory
+  Command_DisarmMinesAtPosition definition kept for other menus.
+
+ISRAEL packed live builder AirF_AmericaDozerCommandSet
+  (AirF_AmericaVehicleDozer Side=Israel in Israel Defense Forces Dozer.ini)
+  slot 14 Command_DisarmMinesAtPosition -> Command_ConstructIsrael_MissileFactory
+  FactionIsrael StartingUnit0=Israel_VehicleDozer remains absent in packed DATA
+  (pre-existing). FactionAmericaAirForceGeneral shares this packed dozer object.
+
+China/Russia #651, Turkey/Spain #650, SE/UA #649, GB/FR #648, DE/IT #647 kept.
+

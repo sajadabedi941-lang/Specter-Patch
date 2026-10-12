@@ -1,0 +1,7 @@
+CommandSet_IranMissileFactory.ini last-wins IranDozerCommandSet.
+CommandSet_AmericaMissileFactory.ini last-wins AmericaDozerCommandSet.
+CommandSet_IsraelMissileFactory.ini last-wins AirF_AmericaDozerCommandSet.
+Command_ConstructIranBavarSiteAI and Command_DisarmMinesAtPosition definitions stay.
+IranHQCommandSet still has Command_ConstructIran_Bavar.
+FactionAmericaAirForceGeneral shares packed AirF_AmericaVehicleDozer / AirF_AmericaDozerCommandSet.
+China/Russia #651, Turkey/Spain #650, and earlier A-J factories stay frozen.

@@ -1,0 +1,88 @@
+STATIC VALIDATION: PASS
+RUNTIME TEST: NOT RUN
+BASELINE: PR #652 s-iran-us-israel-factory-btns + #651 + #650 + #649 + #648 + #647
+DATA_SIZE=370725498
+DATA_SHA256=99a695f81c5adfa5d412f397d1df2951c40bfe7ebfbb7c26f3633cb5e67d6695
+ART_SIZE=2451295403
+ART_SHA256=de0e998813bb7f74ff634c4a5aefb901692334e1e0d2a52637d3699b1d8f1f8a
+ART_GZ_SIZE=524713479
+ART_GZ_SHA256=c759a09f94ac407337691ec8cd86dbdc85bc3d6a00cd1766e55bf21b67d8bfaf
+IRAN_FACTORY_EXISTING=YES
+AMERICA_FACTORY_EXISTING=YES
+ISRAEL_FACTORY_EXISTING=YES
+IRAN_REMAINS_IRAN=YES
+AMERICA_REMAINS_AMERICA=YES
+ISRAEL_REMAINS_ISRAEL=YES
+IRAN_DOZER_SLOT10=Command_ConstructIran_MissileFactory
+AMERICA_DOZER_SLOT14=Command_ConstructAmerica_MissileFactory
+ISRAEL_DOZER_SLOT14=Command_ConstructIsrael_MissileFactory
+AIRF_SLOT14_RESTORED=Command_DisarmMinesAtPosition
+ISRAEL_VEHICLE_DOZER_LASTWINS=YES
+AIRF_AMERICA_VEHICLE_DOZER_FROZEN=YES
+BAVAR373_KEPT=YES
+IR_US_IL_FLAGS_FROZEN=YES
+CN_RU_TR_ES_SE_UA_GB_FR_DE_IT_AJ_KEPT=YES
+NO_REARM=YES
+NO_RADARPRIORITY=YES
+ROSTER_COUNT=30
+
+IRAN + AMERICA + ISRAEL A-J MISSILE ROSTERS
+
+Baseline packed last-wins: SPECTER_IRAN_US_ISRAEL_FACTORY_BTNS (PR #652).
+Factories already existed as Rally/Sell shells. This pack fills A-J production.
+Iran dozer slot 10 and America/Israel construction slots from #652 are unchanged.
+
+ISRAEL DOZER packed last-wins resolution:
+  FactionIsrael StartingUnit0=Israel_VehicleDozer was ABSENT in #652.
+  Packed Israel dozer file still last-wins Object AirF_AmericaVehicleDozer
+  Side=Israel CommandSet=AirF_AmericaDozerCommandSet (FROZEN, shared with AFG).
+  NEW last-wins Object Israel_VehicleDozer CommandSet=IsraelDozerCommandSet
+  with slot 14=Command_ConstructIsrael_MissileFactory.
+  AirF_AmericaDozerCommandSet slot 14 restored to Command_DisarmMinesAtPosition.
+
+SPECTER design values. Not claimed real-world range or payload.
+Iran: Persian family (Hormuz … Simorgh). America: US family (LRASM … PK).
+Israel: Hebrew/Israeli family (Popeye … Keren). A is not red.
+Bavar-373 objects and IranHQ Command_ConstructIran_Bavar stay.
+
+ENGINE:
+  AttackRange 1720 = 1000 km. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death HACK 2200 = 400 kg extra. NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy. Dispersion, not hit %.
+  Projectile MaxHealth 400 = 5/100 intercept proxy. No RadarPriority.
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000.
+
+CTRY  SLOT NAME            KM   KG   ACC CHL TIME COST  SCATTER  HP     PD      SD    HACK
+  IR   A    Hormuz         1000 400  64  22  16   820   27.344  1760.0 2000.0  100.0 2200
+  IR   B    Qader          1220 520  70  36  24   1580  25.0    2880.0 2600.0  130.0 2860
+  IR   C    Qiam           1480 880  44  18  29   2050  39.773  1440.0 4400.0  220.0 4840
+  IR   D    Emad           1660 1400 34  16  34   2380  51.471  1280.0 7000.0  350.0 7700
+  IR   E    Khalij         1840 620  84  50  39   3320  20.833  4000.0 3100.0  155.0 3410
+  IR   F    Dezful         2080 1800 36  26  47   4180  48.611  2080.0 9000.0  450.0 9900
+  IR   G    Khorram        2360 1500 58  40  54   4980  30.172  3200.0 7500.0  375.0 8250
+  IR   H    Kheibar        2720 2500 30  30  66   6620  58.333  2400.0 12500.0 625.0 13750
+  IR   I    Ghadr          3260 2800 46  48  74   7820  38.043  3840.0 14000.0 700.0 15400
+  IR   J    Simorgh        3880 4500 22  20  92   9550  79.545  1600.0 22500.0 1125.0 24750
+  US   A    LRASM          1000 400  76  28  17   920   23.026  2240.0 2000.0  100.0 2200
+  US   B    JASSM          1260 540  82  44  26   1780  21.341  3520.0 2700.0  135.0 2970
+  US   C    ATACMS         1440 720  52  22  28   1980  33.654  1760.0 3600.0  180.0 3960
+  US   D    PrSM           1620 900  68  38  36   2680  25.735  3040.0 4500.0  225.0 4950
+  US   E    ALCM           1820 600  88  54  42   3580  19.886  4320.0 3000.0  150.0 3300
+  US   F    PershingII     2040 1600 40  24  45   4020  43.75   1920.0 8000.0  400.0 8800
+  US   G    MX             2320 1800 54  42  52   4920  32.407  3360.0 9000.0  450.0 9900
+  US   H    D5             2680 2200 48  48  62   6120  36.458  3840.0 11000.0 550.0 12100
+  US   I    Sentinel       3220 2600 42  36  70   6980  41.667  2880.0 13000.0 650.0 14300
+  US   J    PK             3960 3800 26  26  90   9400  67.308  2080.0 19000.0 950.0 20900
+  IL   A    Popeye         1000 400  70  26  16   880   25.0    2080.0 2000.0  100.0 2200
+  IL   B    Delilah        1200 480  86  48  25   1720  20.349  3840.0 2400.0  120.0 2640
+  IL   C    LORA           1420 800  50  22  28   1960  35.0    1760.0 4000.0  200.0 4400
+  IL   D    EXTRA          1600 1100 38  16  32   2240  46.053  1280.0 5500.0  275.0 6050
+  IL   E    Rampage        1780 560  90  56  41   3500  19.444  4480.0 2800.0  140.0 3080
+  IL   F    Rocks          1960 1700 32  22  44   3780  54.688  1760.0 8500.0  425.0 9350
+  IL   G    Shavit         2280 1400 60  52  50   4800  29.167  4160.0 7000.0  350.0 7700
+  IL   H    Jericho2       2560 2000 36  34  58   5480  48.611  2720.0 10000.0 500.0 11000
+  IL   I    Jericho3       3180 2300 44  40  71   7100  39.773  3200.0 11500.0 575.0 12650
+  IL   J    Keren          3760 3600 24  24  86   8900  72.917  1920.0 18000.0 900.0 19800
+

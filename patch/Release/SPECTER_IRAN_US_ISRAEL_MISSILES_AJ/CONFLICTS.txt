@@ -1,0 +1,9 @@
+CommandSet_IranMissiles.ini last-wins IranDozerCommandSet and Iran_MissileFactoryCommandSet.
+CommandSet_AmericaMissiles.ini last-wins AmericaDozerCommandSet and America_MissileFactoryCommandSet.
+CommandSet_IsraelMissiles.ini last-wins IsraelDozerCommandSet, Israel_MissileFactoryCommandSet,
+and restores AirF_AmericaDozerCommandSet to Clear Mines after CommandSet_IsraelMissileFactory.ini.
+Packed AirF_AmericaVehicleDozer file is frozen. NEW Israel_VehicleDozer.ini last-wins the starting dozer.
+Factory object INIs from PR #652 are frozen (Rally/Sell CommandSet field still valid; menu last-wins).
+IR_Flag.tga / US_Flag.tga / IL_Flag.tga are frozen. Dorsal stamps are generated.
+Bavar-373 objects and Command_ConstructIranBavarSiteAI / Command_ConstructIran_Bavar stay.
+China/Russia #651, Turkey/Spain #650, Sweden/Ukraine #649, Britain/France #648, Germany/Italy #647 stay.

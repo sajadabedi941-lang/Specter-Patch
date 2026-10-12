@@ -1,0 +1,4 @@
+Weapon.ini and Weapon\Weapon_India_Missiles.ini last-win F/G/H/I/J fire/warhead pairs.
+India_Nirbhay / Agni1 / AgniP / Agni3 / Agni5 BuildCost/BuildTime updated.
+CSF tooltips for F-J updated to the new packed kg/time/cost.
+Factory, builders, buttons, ART, A-E, Acc/CHL/km, and Pakistan #641 unchanged.

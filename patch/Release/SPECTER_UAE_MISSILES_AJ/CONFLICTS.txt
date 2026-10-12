@@ -1,0 +1,6 @@
+CommandSet_UAEMissiles.ini last-wins UAE builder + factory CommandSets.
+CommandButton_UAEMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_UAE_Missiles.ini last-wins Weapon_UAE_* factory pair.
+Weapon_UAE.ini (Shaheen/Ababeel and other UAE weapons) is unchanged.
+UAE_Barq is not SaudiArabia_Barq. Existing UAE_Flag.tga is unchanged.
+Saudi, Vietnam, Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.

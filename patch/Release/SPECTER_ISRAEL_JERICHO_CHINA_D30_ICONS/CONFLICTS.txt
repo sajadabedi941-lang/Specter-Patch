@@ -1,0 +1,5 @@
+CommandButton_IsraelJerichoChinaD30Icons.ini last-wins
+AirF_Command_ConstructAmericaParticleCannonUplink and Command_ConstructChinaBunker.
+CommandButton.ini, CommandSets, objects, factory Jericho2/3 buttons, and ART are frozen.
+AirF_AmericaDozerCommandSet still references the same Jericho construct command ID
+(packed object last-wins as Israel's Jericho silo).

@@ -1,0 +1,426 @@
+; ===== Pakistan missiles A-J (Weapon.ini load path for Command_FireMainWeapon) =====
+; 9P117 scale. Dedicated Pakistan A-J. Distinct from India/SA/Syria/Libya/UAE/Saudi/Vietnam/Japan/SK/Iraq.
+; Hatf-family informed mix. Shaheen-III below India Agni-V. Ababeel is MIRV analogue, not ICBM.
+; ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000 (PR #629).
+; Death HACK is a separate path and is not folded into PrimaryDamage.
+; Acc/CHL columns are design labels mapped to ScatterRadius / MaxHealth.
+
+Weapon Weapon_Pakistan_Nasr
+  PrimaryDamage               = 2000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 100.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 25.0
+  ScatterRadiusVsInfantry     = 40.0
+  AttackRange                 = 1720.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Nasr
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Nasr_Warhead
+  PrimaryDamage           = 2200
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Abdali
+  PrimaryDamage               = 2000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 100.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 32.407
+  ScatterRadiusVsInfantry     = 51.852
+  AttackRange                 = 1806.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Abdali
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Abdali_Warhead
+  PrimaryDamage           = 2200
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Ghaznavi
+  PrimaryDamage               = 2500.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 125.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 36.458
+  ScatterRadiusVsInfantry     = 58.333
+  AttackRange                 = 1978.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Ghaznavi
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Ghaznavi_Warhead
+  PrimaryDamage           = 2750
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Shaheen1
+  PrimaryDamage               = 3500.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 175.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 35.0
+  ScatterRadiusVsInfantry     = 56.0
+  AttackRange                 = 2236.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Shaheen1
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Shaheen1_Warhead
+  PrimaryDamage           = 3850
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Babur
+  PrimaryDamage               = 2250.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 112.5
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 24.306
+  ScatterRadiusVsInfantry     = 38.889
+  AttackRange                 = 2494.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Babur
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Babur_Warhead
+  PrimaryDamage           = 2475
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Raad
+  PrimaryDamage               = 2000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 100.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 22.436
+  ScatterRadiusVsInfantry     = 35.897
+  AttackRange                 = 2752.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Raad
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Raad_Warhead
+  PrimaryDamage           = 2200
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Ghauri
+  PrimaryDamage               = 12000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 600.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 48.611
+  ScatterRadiusVsInfantry     = 77.778
+  AttackRange                 = 3268.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Ghauri
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Ghauri_Warhead
+  PrimaryDamage           = 13200
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Shaheen2
+  PrimaryDamage               = 10000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 500.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 32.407
+  ScatterRadiusVsInfantry     = 51.852
+  AttackRange                 = 3784.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Shaheen2
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Shaheen2_Warhead
+  PrimaryDamage           = 11000
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_AbabeelMRV
+  PrimaryDamage               = 14000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 700.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 38.043
+  ScatterRadiusVsInfantry     = 60.87
+  AttackRange                 = 4300.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_AbabeelMRV
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_AbabeelMRV_Warhead
+  PrimaryDamage           = 15400
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Pakistan_Shaheen3
+  PrimaryDamage               = 18000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 900.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 31.25
+  ScatterRadiusVsInfantry     = 50.0
+  AttackRange                 = 5160.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Pakistan_Shaheen3
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Pakistan_Shaheen3_Warhead
+  PrimaryDamage           = 19800
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End

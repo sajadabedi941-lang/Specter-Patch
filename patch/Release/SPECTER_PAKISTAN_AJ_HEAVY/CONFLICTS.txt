@@ -1,0 +1,4 @@
+Weapon.ini and Weapon\Weapon_Pakistan_Missiles.ini last-win G-J fire/warhead pairs.
+Pakistan_Ghauri / Shaheen2 / AbabeelMRV / Shaheen3 BuildCost/BuildTime updated.
+CSF tooltips for G-J updated to the new packed kg/PD/SD/time/cost.
+Factory, builders, buttons, ART, A-F, Acc/CHL/km, India, and other countries unchanged.

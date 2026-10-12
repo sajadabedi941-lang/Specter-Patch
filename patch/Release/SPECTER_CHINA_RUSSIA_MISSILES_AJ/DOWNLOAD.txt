@@ -1,0 +1,26 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-china-russia-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=370212639
+  SHA256=ad40fe44269bc5dc7a139077a0b8656215e723fc8df8fbbfd67499d930492cc6
+
+ART replacement (complete BIG, gzipped for GitHub's 2 GiB asset limit):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-china-russia-missiles-aj/_SPEC_ART_ONE.big.gz
+  GZ_SIZE=519337956
+  GZ_SHA256=c0b5892fb696fc003837195a102a94b772fc79c2791930c2598979f711a7f129
+  UNCOMPRESSED_SIZE=2308008528
+  UNCOMPRESSED_SHA256=cf83e8cfedff3b3cf3ef5ff890d2ee79dd551dc68d9c6ae3f6295b36935f6d35
+  gunzip -k _SPEC_ART_ONE.big.gz
+
+ART is also inside the ZIP as uncompressed _SPEC_ART_ONE.big (same SHA).
+GitHub rejects raw files >= 2147483648 bytes.
+
+ZIP (complete uncompressed DATA + ART BIGs):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-china-russia-missiles-aj/SPECTER_CHINA_RUSSIA_MISSILES_AJ.zip
+  SIZE=826422455
+  SHA256=016b11a12bcd941e5f068e7bebc980a1dc20727fac8feb9947977a264c83cd42
+
+Place both uncompressed BIGs in the SPECTER folder.
+TAG=s-china-russia-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-china-russia-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

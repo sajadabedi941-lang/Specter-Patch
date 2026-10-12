@@ -1,0 +1,8 @@
+CommandSet_ChinaMissiles.ini last-wins PLADozerCommandSet (live China builder).
+CommandSet_RussiaMissiles.ini last-wins RussiaDozerCommandSet.
+Unused ChinaDozerCommandSet stays on isolated Iraq factory (not the live builder).
+Weapon\Weapon_China_Missiles.ini and Weapon_Russia_Missiles.ini last-win factory pairs.
+China_Weapon_CJ10_H6K / CJ100_H20 / MRBM_DF21C air weapons are unchanged.
+CN_Flag.tga and RU_Flag.tga are frozen. Dorsal stamps are generated.
+ChinaVehicleDF12/DF17/DF21C/DF41 and Russia_RS28 / Russia_RS24_Yars_AI stay frozen.
+Turkey/Spain #650, Sweden/Ukraine #649, Britain/France #648, Germany/Italy #647, Vietnam/SK, UAE/Japan, Saudi, NK, India, Pakistan, Iraq, and 9P117 stay frozen.

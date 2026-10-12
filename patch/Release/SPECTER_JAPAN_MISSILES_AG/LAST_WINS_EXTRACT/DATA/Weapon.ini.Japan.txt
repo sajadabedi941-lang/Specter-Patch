@@ -1,0 +1,300 @@
+; ===== Japan missiles A-G (Weapon.ini load path for Command_FireMainWeapon) =====
+; 9P117 scale: 1000 km -> AttackRange 1720; 400 kg -> PD 2000 / SD 100;
+; accuracy 10/100 -> ScatterRadius 175; intercept 5/100 -> MaxHealth 400.
+; Type 12 Kai MinimumAttackRange = 400 because 350 km -> 602 < 800.
+; ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000 (PR #629).
+; Death HACK is a separate path and is not folded into PrimaryDamage.
+
+Weapon Weapon_Japan_Type12Kai
+  PrimaryDamage               = 1250.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 62.5
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 20.588
+  ScatterRadiusVsInfantry     = 32.941
+  AttackRange                 = 602.0
+  MinimumAttackRange          = 400.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Type12Kai
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Type12Kai_Warhead
+  PrimaryDamage           = 1375
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Type88Kai
+  PrimaryDamage               = 2000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 100.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 25.0
+  ScatterRadiusVsInfantry     = 40.0
+  AttackRange                 = 946.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Type88Kai
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Type88Kai_Warhead
+  PrimaryDamage           = 2200
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Koryu
+  PrimaryDamage               = 3000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 150.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 38.889
+  ScatterRadiusVsInfantry     = 62.222
+  AttackRange                 = 1376.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Koryu
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Koryu_Warhead
+  PrimaryDamage           = 3300
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Raijin
+  PrimaryDamage               = 6000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 300.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 50.0
+  ScatterRadiusVsInfantry     = 80.0
+  AttackRange                 = 2236.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Raijin
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Raijin_Warhead
+  PrimaryDamage           = 6600
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Hayate
+  PrimaryDamage               = 4000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 200.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 21.875
+  ScatterRadiusVsInfantry     = 35.0
+  AttackRange                 = 3096.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Hayate
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Hayate_Warhead
+  PrimaryDamage           = 4400
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Yamato
+  PrimaryDamage               = 12500.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 625.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 70.0
+  ScatterRadiusVsInfantry     = 112.0
+  AttackRange                 = 4300.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Yamato
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Yamato_Warhead
+  PrimaryDamage           = 13750
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End
+
+Weapon Weapon_Japan_Kurogane
+  PrimaryDamage               = 17500.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 875.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 116.667
+  ScatterRadiusVsInfantry     = 186.667
+  AttackRange                 = 5504.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Japan_Kurogane
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  AutoReloadsClip             = Yes
+  ClipReloadTime              = 300000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+Weapon Weapon_Japan_Kurogane_Warhead
+  PrimaryDamage           = 19250
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End

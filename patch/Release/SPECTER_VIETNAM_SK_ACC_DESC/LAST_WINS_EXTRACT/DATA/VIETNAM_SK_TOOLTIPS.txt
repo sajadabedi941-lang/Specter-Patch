@@ -1,0 +1,241 @@
+===== Vietnam =====
+CONTROLBAR:VietnamMissileA=A VCM-01
+CONTROLBAR:ToolTipVietnamMissileA=
+A VCM-01
+Range: 1000 km
+Warhead: 1000 kg
+Accuracy: 10/100
+Radar Stealth: 5/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 15 sec
+Price: $800
+
+CONTROLBAR:VietnamMissileB=B VCM-02
+CONTROLBAR:ToolTipVietnamMissileB=
+B VCM-02
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 75/100
+Radar Stealth: 15/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 20 sec
+Price: $1200
+
+CONTROLBAR:VietnamMissileC=C Sông Hồng
+CONTROLBAR:ToolTipVietnamMissileC=
+C Sông Hồng
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 25/100
+Radar Stealth: 80/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 25 sec
+Price: $1600
+
+CONTROLBAR:VietnamMissileD=D Hồng Hà
+CONTROLBAR:ToolTipVietnamMissileD=
+D Hồng Hà
+Range: 1000 km
+Warhead: 1800 kg
+Accuracy: 15/100
+Radar Stealth: 10/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 30 sec
+Price: $2000
+
+CONTROLBAR:VietnamMissileE=E Cửu Long
+CONTROLBAR:ToolTipVietnamMissileE=
+E Cửu Long
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 55/100
+Radar Stealth: 45/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 35 sec
+Price: $2500
+
+CONTROLBAR:VietnamMissileF=F Trường Sơn
+CONTROLBAR:ToolTipVietnamMissileF=
+F Trường Sơn
+Range: 1100 km
+Warhead: 600 kg
+Accuracy: 85/100
+Radar Stealth: 20/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 40 sec
+Price: $3000
+
+CONTROLBAR:VietnamMissileG=G Bạch Đằng
+CONTROLBAR:ToolTipVietnamMissileG=
+G Bạch Đằng
+Range: 1300 km
+Warhead: 500 kg
+Accuracy: 30/100
+Radar Stealth: 90/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 50 sec
+Price: $4000
+
+CONTROLBAR:VietnamMissileH=H Thăng Long
+CONTROLBAR:ToolTipVietnamMissileH=
+H Thăng Long
+Range: 1500 km
+Warhead: 1200 kg
+Accuracy: 60/100
+Radar Stealth: 55/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 60 sec
+Price: $5000
+
+CONTROLBAR:VietnamMissileI=I Hùng Vương
+CONTROLBAR:ToolTipVietnamMissileI=
+I Hùng Vương
+Range: 3400 km
+Warhead: 2500 kg
+Accuracy: 75/100
+Radar Stealth: 50/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 78 sec
+Price: $8200
+
+CONTROLBAR:VietnamMissileJ=J Lạc Việt
+CONTROLBAR:ToolTipVietnamMissileJ=
+J Lạc Việt
+Range: 4000 km
+Warhead: 4000 kg
+Accuracy: 20/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 95 sec
+Price: $10000
+
+===== SK =====
+CONTROLBAR:SouthKoreaMissileA=A Baekho
+CONTROLBAR:ToolTipSouthKoreaMissileA=
+A Baekho
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 70/100
+Radar Stealth: 30/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 18 sec
+Price: $900
+
+CONTROLBAR:SouthKoreaMissileB=B Cheonma
+CONTROLBAR:ToolTipSouthKoreaMissileB=
+B Cheonma
+Range: 1100 km
+Warhead: 800 kg
+Accuracy: 50/100
+Radar Stealth: 35/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 24 sec
+Price: $1400
+
+CONTROLBAR:SouthKoreaMissileC=C Haeryong
+CONTROLBAR:ToolTipSouthKoreaMissileC=
+C Haeryong
+Range: 1300 km
+Warhead: 600 kg
+Accuracy: 85/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 26 sec
+Price: $1700
+
+CONTROLBAR:SouthKoreaMissileD=D Hwarang
+CONTROLBAR:ToolTipSouthKoreaMissileD=
+D Hwarang
+Range: 1500 km
+Warhead: 1000 kg
+Accuracy: 45/100
+Radar Stealth: 65/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 32 sec
+Price: $2400
+
+CONTROLBAR:SouthKoreaMissileE=E Mugunghwa
+CONTROLBAR:ToolTipSouthKoreaMissileE=
+E Mugunghwa
+Range: 1800 km
+Warhead: 1200 kg
+Accuracy: 80/100
+Radar Stealth: 40/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 40 sec
+Price: $3200
+
+CONTROLBAR:SouthKoreaMissileF=F Taebaek
+CONTROLBAR:ToolTipSouthKoreaMissileF=
+F Taebaek
+Range: 2200 km
+Warhead: 2000 kg
+Accuracy: 35/100
+Radar Stealth: 45/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 48 sec
+Price: $4500
+
+CONTROLBAR:SouthKoreaMissileG=G Jindallae
+CONTROLBAR:ToolTipSouthKoreaMissileG=
+G Jindallae
+Range: 2600 km
+Warhead: 1500 kg
+Accuracy: 40/100
+Radar Stealth: 75/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 55 sec
+Price: $5200
+
+CONTROLBAR:SouthKoreaMissileH=H Geommu
+CONTROLBAR:ToolTipSouthKoreaMissileH=
+H Geommu
+Range: 3000 km
+Warhead: 3000 kg
+Accuracy: 25/100
+Radar Stealth: 35/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 68 sec
+Price: $7000
+
+CONTROLBAR:SouthKoreaMissileI=I Haetsal
+CONTROLBAR:ToolTipSouthKoreaMissileI=
+I Haetsal
+Range: 3500 km
+Warhead: 2500 kg
+Accuracy: 75/100
+Radar Stealth: 50/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 75 sec
+Price: $8000
+
+CONTROLBAR:SouthKoreaMissileJ=J Cheonwang
+CONTROLBAR:ToolTipSouthKoreaMissileJ=
+J Cheonwang
+Range: 4200 km
+Warhead: 4500 kg
+Accuracy: 20/100
+Radar Stealth: 25/100
+Accuracy is impact scatter, not a hit %.
+Radar Stealth is a rating for interceptor toughness, not stealth and not a penetration %.
+Build Time: 100 sec
+Price: $11000

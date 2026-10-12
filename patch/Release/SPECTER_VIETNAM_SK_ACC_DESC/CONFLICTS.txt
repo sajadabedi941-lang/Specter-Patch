@@ -1,0 +1,4 @@
+Only Data\English\generals.csf Vietnam and South Korea missile caption/tooltip labels changed.
+Weapon satellites, factory command sets, objects, warheads, and ART are unchanged.
+UAE+Japan #645, Saudi #644, North Korea, India, Pakistan, Libya, Syria, South Africa, Iraq, and 9P117 stay frozen.
+SK J Cheonwang 4200 km is preserved.

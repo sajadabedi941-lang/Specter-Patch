@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-southafrica-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=368016423
+  SHA256=1409644315a0f01e071ecacd96cc0d21aab61721ce2ea2560b17136f97415304
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-southafrica-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1687098071
+  SHA256=bda1e04614392571bf2755b0202654627e5602feb81bb0cfc8d12b66ded127ff
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-southafrica-missiles-aj/SPECTER_SOUTHAFRICA_MISSILES_AJ.zip
+  SIZE=802847094
+  SHA256=087032f694adc109e8ea8842be47860e8fd84f0a0f8a06ce8a7370da9c6583a1
+
+Place both BIGs in the SPECTER folder.
+TAG=s-southafrica-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-southafrica-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

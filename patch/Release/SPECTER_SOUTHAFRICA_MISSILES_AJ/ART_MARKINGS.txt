@@ -1,0 +1,21 @@
+SOUTH AFRICA A-J ART MARKINGS (static inspection)
+
+Flag: black hoist triangle, gold/green Y pall, red upper fly, blue lower fly.
+SPECTER Side=SouthAfrica / South African National Defence Force identity.
+Not Syria / UAE / Saudi / Iraq / Libya flags.
+Dedicated Saf_TEL / Saf_TELD veld truck. Not Irq_9P117 / Skr_TEL / Jpn_TEL / Sau_TEL / Uae_TEL / Lby_TEL / Syr_TEL.
+
+SLOT  NAME                     COLOR     FLAG    NAME PLATE
+  A    Mokopa                   green     PASS    PASS
+  B    Valkiri                  orange    PASS    PASS
+  C    Ingwe                    yellow    PASS    PASS
+  D    Skerpioen                blue      PASS    PASS
+  E    Raptor                   white     PASS    PASS
+  F    Overberg                 cream     PASS    PASS
+  G    Karoo                    muddy     PASS    PASS
+  H    Umbani                   petrol    PASS    PASS
+  I    RSA-2                    gray      PASS    PASS
+  J    RSA-3                    red       PASS    PASS
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

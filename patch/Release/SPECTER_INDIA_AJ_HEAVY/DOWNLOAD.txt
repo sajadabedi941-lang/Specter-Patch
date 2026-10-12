@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-india-aj-heavy/_SPEC_DATA_ONE.big
+  SIZE=368355059
+  SHA256=770075b8d28636ca0d07588e9b152e5b9b4a582310e76e173b6ae41474c6334e
+
+ART replacement (byte-identical to s-pakistan-aj-heavy / s-pakistan-missiles-aj):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-india-aj-heavy/_SPEC_ART_ONE.big
+  SIZE=1782622889
+  SHA256=a7375becdf29e23c8a5e926a3329167561194bfee09dfe4d714ea30573edd24f
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-india-aj-heavy/SPECTER_INDIA_AJ_HEAVY.zip
+  SIZE=806515524
+  SHA256=8de25d6eef38f2d378ac4380f9ed6cd1f9325d8b95565bc094d19ce675d595cf
+
+Place both BIGs in the SPECTER folder.
+TAG=s-india-aj-heavy
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-india-aj-heavy
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

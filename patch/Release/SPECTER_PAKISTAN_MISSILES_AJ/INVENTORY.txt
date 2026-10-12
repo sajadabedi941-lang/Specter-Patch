@@ -1,0 +1,102 @@
+PRE-CHANGE PAKISTAN (packed last-wins, India A-J baseline):
+  No Pakistan_MissileFactory.
+  Dozer last-wins CommandSet.ini; Worker/VT72B last-win CommandSet_Pakistan.ini.
+  Slot 13 constructed isolated Iraq_AlFahdMissileFactoryBuilding.
+  MIC on slot 6. Existing ShaheenTEL / AbabeelTEL / Alhussaien / Lgm30 preserved.
+  Packed faction path: Pakistan Armed Forces. Side=Pakistan.
+
+POST-CHANGE PAKISTAN:
+  Dedicated Pakistan_MissileFactory A-J + Rally/Sell.
+  CommandSet_PakistanMissiles.ini last-wins Worker/VT72B over CommandSet_Pakistan.ini.
+  Hatf-informed mix 1000-3000 km / 400-1200 kg. Not an India reskin.
+
+COUNTRY BALANCE (inspected packed / accepted factory A-J, not runtime):
+  India J Agni-V 4000 km / 1800 kg Acc 58. Pakistan J Shaheen-III 3000/1100 Acc 56.
+  India BrahMos Acc 84 CHL 62. Pakistan Babur Acc 72 CHL 54; Ra'ad Acc 78 CHL 48.
+  Pakistan Ghauri 1900/1200 Acc 36 vs India Agni-I 1900/900 Acc 50 (heavier, less precise).
+  Ababeel MIRV analogue is Pakistan's unique CHL outlier (58), range 2500 km not max.
+  Nasr is cheaper/faster than India Prahaar. Syria J 2200/1500; SA J 2400/1200.
+  Libya J 3900/8000. USA/EU strategic systems remain on other production paths.
+
+NAME MAPPING:
+  A Nasr new as Pakistan_Nasr (tactical; distinct from PakistanVehicleNasr)
+  B Abdali new (Hatf-II SRBM analogue)
+  C Ghaznavi new (Hatf-III SRBM analogue)
+  D Shaheen-I new as Pakistan_Shaheen1 (distinct from Pakistan_ShaheenTEL / VehicleShaheen)
+  E Babur new as Pakistan_Babur (cruise analogue; distinct from Pakistan_Babur_Projectile)
+  F Ra'ad new as Pakistan_Raad (Hatf-VIII ALCM heritage; SPECTER TEL stretch)
+  G Ghauri new (Hatf-V liquid MRBM analogue; heavy, modest Acc)
+  H Shaheen-II new as Pakistan_Shaheen2
+  I Ababeel new as Pakistan_AbabeelMRV (MIRV analogue; distinct from Pakistan_AbabeelTEL)
+  J Shaheen-III new as Pakistan_Shaheen3 (distinct from SpecialPower PakistanSpecialPowerShaheenIII)
+
+EXISTING PAKISTAN MISSILE OBJECTS PRESERVED (not factory A-J):
+  Pakistan_ShaheenTEL / Pakistan_Weapon_Shaheen / PakistanVehicleShaheen
+  Pakistan_AbabeelTEL / Pakistan_Weapon_Ababeel
+  Pakistan_Alhussaien (AbbasLauncher.ini)
+  Pakistan_Babur_Projectile / Pakistan_Babur_Cruise_Projectile
+  PakistanVehicleNasr
+  Pakistan_Lgm30 unchanged.
+  SpecialPower PakistanSpecialPowerShaheenIII unchanged.
+
+FACTORY CONSTRUCT:
+  Pre-change Dozer (CommandSet.ini) and Worker/VT72B (CommandSet_Pakistan.ini)
+  constructed isolated Iraq_AlFahdMissileFactoryBuilding.
+  Post-change CommandSet.ini + CommandSet_PakistanMissiles.ini last-win the Pakistan factory.
+  CommandSet_Pakistan.ini is frozen. MIC remains on slot 6.
+
+REAL-WORLD vs GAMEPLAY:
+  Public sources describe Pakistani Hatf families: Nasr, Abdali, Ghaznavi,
+  Shaheen-I/II/III, Ghauri, Babur, Ra'ad, and Ababeel (MIRV developmental).
+  Reported ranges are often uncertain (Shaheen-III commonly ~2750 km; Ababeel ~2200 km).
+  SPECTER floor is 1000 km and ceiling 4000 km. Tactical classes sit on the floor.
+  Pakistan J Shaheen-III is 3000 km / 1100 kg, below India Agni-V 4000/1800.
+  Values below are SPECTER design, not verified military specifications.
+
+PUBLIC BACKGROUND (not in-game specs):
+  CSIS Missile Threat, Missiles of Pakistan (updated 2022):
+    https://missilethreat.csis.org/country/pakistan/
+  NTI, Pakistani ballistic and cruise missile models:
+    https://www.nti.org/analysis/articles/pakistani-ballistic-and-cruise-missile-models/
+  NTI, Nuclear Disarmament Pakistan:
+    https://www.nti.org/analysis/articles/pakistan-nuclear-disarmament/
+  Bulletin of the Atomic Scientists, Pakistan nuclear weapons 2025:
+    https://www.tandfonline.com/doi/full/10.1080/00963402.2025.2543685
+  Public status differs by family (Abdali/Ghaznavi/Shaheen-I/II/Ghauri/Nasr/Babur-1A
+  commonly described as operational; Shaheen-III/Ababeel/Ra'ad often developmental).
+  Reported ranges (Nasr ~60-70 km, Shaheen-III ~2750 km, Ababeel ~2200 km) are uncertain.
+  SPECTER values below are fictional game design, not those public figures.
+
+GAMEPLAY MAPPING (9P117 MOTHER scale):
+  AttackRange 1720 = 1000 km. Formula: 1720 * (km / 1000).
+  PrimaryDamage 2000 = 400 kg. Formula: 2000 * (kg / 400).
+  SecondaryDamage 100 = 400 kg splash. Formula: 100 * (kg / 400).
+  Death HACK 2200 = 400 kg extra. NOT folded into PrimaryDamage.
+  ScatterRadius 175 = 10/100 accuracy. Limitation: dispersion, not hit %.
+  Projectile MaxHealth 400 = 5/100 intercept proxy. No RadarPriority.
+  ClipSize=1 AutoReloadsClip=Yes ClipReloadTime=300000.
+  Acc/CHL table columns are design labels only.
+
+SLOT  NAME                    KM   KG   ACC CHL TIME COST  RANGE  PD     SD    DEATH SCATTER  HP     MINR
+  A    Nasr                   1000 400  70  20  16   800   1720.0 2000.0 100.0 2200  25.0    1600.0 800.0
+  B    Abdali                 1050 400  54  18  18   900   1806.0 2000.0 100.0 2200  32.407  1440.0 800.0
+  C    Ghaznavi               1150 500  48  24  22   1250  1978.0 2500.0 125.0 2750  36.458  1920.0 800.0
+  D    Shaheen-I              1300 700  50  28  28   2000  2236.0 3500.0 175.0 3850  35.0    2240.0 800.0
+  E    Babur                  1450 450  72  54  34   3000  2494.0 2250.0 112.5 2475  24.306  4320.0 800.0
+  F    Ra'ad                  1600 400  78  48  36   2900  2752.0 2000.0 100.0 2200  22.436  3840.0 800.0
+  G    Ghauri                 1900 1200 36  30  44   3300  3268.0 6000.0 300.0 6600  48.611  2400.0 800.0
+  H    Shaheen-II             2200 850  54  34  50   4100  3784.0 4250.0 212.5 4675  32.407  2720.0 800.0
+  I    Ababeel                2500 800  46  58  58   5200  4300.0 4000.0 200.0 4400  38.043  4640.0 800.0
+  J    Shaheen-III            3000 1100 56  38  68   6200  5160.0 5500.0 275.0 6050  31.25   3040.0 800.0
+
+MISSION ROLES:
+  A Nasr: Tactical SRBM analogue (Nasr/Hatf-IX; real ~60 km mapped to SPECTER floor)
+  B Abdali: SRBM analogue (Abdali/Hatf-II; modest Acc, cheap)
+  C Ghaznavi: SRBM analogue (Ghaznavi/Hatf-III; heavier than Abdali)
+  D Shaheen-I: SRBM analogue (Shaheen-I/Hatf-IV; distinct from Pakistan_ShaheenTEL)
+  E Babur: Land-attack cruise analogue (Babur/Hatf-VII; below India BrahMos Acc/CHL)
+  F Ra'ad: Cruise analogue (Ra'ad/Hatf-VIII ALCM heritage on TEL; SPECTER stretch)
+  G Ghauri: Liquid MRBM analogue (Ghauri/Hatf-V; heavier and less precise than Agni-I)
+  H Shaheen-II: Solid MRBM analogue (Shaheen-II/Hatf-VI; public ~1500-2000 km, SPECTER stretch)
+  I Ababeel: MIRV-class analogue (Ababeel; developmental/uncertain; distinct from Pakistan_AbabeelTEL)
+  J Shaheen-III: Long MRBM analogue (Shaheen-III; public ~2750 km uncertain; below India Agni-V cap)

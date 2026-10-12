@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-to-wf/_SPEC_DATA_ONE.big
+  SIZE=370746506
+  SHA256=08f680c93345fe4dd4941e63d15e3a9dfca66492a6be815f86573eba7bc8f265
+
+ART textures (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-to-wf/_SPEC_ART_ONE.big
+  SIZE=2144061050
+  SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+
+ART models (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-to-wf/_SPEC_ART_TWO.big
+  SIZE=307234369
+  SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-to-wf/SPECTER_IRAQ_MIC_TO_WF.zip
+  SIZE=831860030
+  SHA256=bb8f1aede80dd14f14f24714d96ac20d6c92d10a6bc5c7002fef8fb18df71f73
+
+TAG=s-iraq-mic-to-wf
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-mic-to-wf
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

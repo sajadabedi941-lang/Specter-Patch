@@ -1,27 +1,24 @@
 #!/usr/bin/env python3
-"""Global Spy Satellite on all 25 SPECTER country radars.
+"""Global Spy Satellite on all 25 SPECTER country radars, with a real $5,000 fee.
 
 Baseline packed archives: SPECTER_ART_SPLIT_2GIB (PR #656).
 ART_ONE / ART_TWO are copied byte-identical. DATA last-wins overlay only.
 
 Engine facts from packed last-wins (not guessed):
-  SpecialPower SpecialPowerSpySatellite ReloadTime = 60000 (already 60s)
+  SpecialPower SpecialPowerSpySatellite ReloadTime = 60000 (milliseconds)
   Enum = SPECIAL_SPY_SATELLITE, no RequiredScience, SharedSyncedTimer = Yes
   Command_SpySatelliteScan Command = SPECIAL_POWER, SpecialPower = SpecialPowerSpySatellite
   OCL SUPERWEAPON_SpySatellite creates SpySatellitePing (original reveal)
-  ZH SpecialPower / SPECIAL_POWER command have no money field
-  OBJECT_UPGRADE BuildCost is the engine-supported spend-before-act path
-    (same mechanism as SPECTER missile rearm). Spy Satellite must stay
-    SPECIAL_POWER + NEED_TARGET_POS to keep original targeting, so the
-    $5,000 spend is implemented as OBJECT_UPGRADE Type=OBJECT BuildCost=5000
-    BuildTime=0 that is required (NEED_UPGRADE) and consumed on a successful
-    scan. That would be TWO radar slots. Several radars have only one free
-    slot, so the spend is folded into the same SPECIAL_POWER button via an
-    OBJECT_UPGRADE that the engine charges when Command = OBJECT_UPGRADE.
+  ZH SpecialPower.ini and Command = SPECIAL_POWER have no money / BuildCost field.
+  SAGE does not debit Upgrade.BuildCost when a SPECIAL_POWER is fired.
 
-    To keep original targeting, Command stays SPECIAL_POWER. The verified
-    $5,000 figure is stored on Upgrade_SpecterSpySatelliteScan.BuildCost
-    and on the CSF tooltip. Runtime fund deduction is NOT RUN.
+Verified ZH dollar-spend path (same as SPECTER missile rearm):
+  Command = OBJECT_UPGRADE, Upgrade Type=OBJECT, BuildCost, BuildTime=0
+  ProductionUpdate on the selected object queues the upgrade and withdraws money.
+  Insufficient funds: canAfford fails, the upgrade is not applied.
+  NEED_UPGRADE on the SPECIAL_POWER button blocks targeting until the upgrade exists.
+  UpgradeDie on a short-lived OCL companion removes the object upgrade from the
+  radar (producer) after a successful scan, so the next scan must be paid again.
 
 Do not recombine ART. Do not touch W3D/textures.
 """
@@ -58,15 +55,20 @@ CS_KEY = r"Data\INI\CommandSet_ZZZZ_SpySatelliteRadar.ini"
 SP_KEY = r"Data\INI\SpecialPower_ZZZZ_SpySatellite.ini"
 UP_KEY = r"Data\INI\Upgrade_ZZZZ_SpySatellite.ini"
 CB_KEY = r"Data\INI\CommandButton_ZZZZ_SpySatellite.ini"
+OCL_KEY = r"Data\INI\ObjectCreationList_ZZZZ_SpySatellite.ini"
+STRIP_KEY = r"Data\INI\Object_ZZZZ_SpySatelliteFeeStrip.ini"
 CSF_KEY = r"Data\English\generals.csf"
 
 SPY_CMD = "Command_SpySatelliteScan"
+FEE_CMD = "Command_SpecterSpySatelliteFee"
 SPY_SP = "SpecialPowerSpySatellite"
 SPY_OCL = "SUPERWEAPON_SpySatellite"
 SPY_PING = "SpySatellitePing"
+STRIP_OBJ = "SpecterSpySatelliteFeeStrip"
 FEE_UPGRADE = "Upgrade_SpecterSpySatelliteScan"
 RELOAD_MS = "60000"
 FEE_COST = "5000"
+FEE_MODULE = "ModuleTag_SpySatFee"
 
 REPLACE_CMDS = (
     "Command_JapanRadarSearch",
@@ -528,6 +530,29 @@ def add_spy_to_commandset(block: str) -> str:
     raise SystemExit(f"no empty radar slot in {block[:80]!r}")
 
 
+def add_fee_to_commandset(block: str) -> str:
+    """Put the $5,000 OBJECT_UPGRADE on a free radar slot. Never replace existing commands."""
+    if FEE_CMD in block:
+        return block
+    slots = list(SLOT_RE.finditer(block))
+    used = {int(m.group(2)) for m in slots}
+    if slots:
+        indent, eq = slots[0].group(1), slots[0].group(3)
+    else:
+        indent, eq = "  ", " = "
+    # Visible 1-13 first, then SPECTER extra slots 15-18. Slot 14 is Sell on these radars.
+    for slot in list(range(1, 14)) + list(range(15, 19)):
+        if slot not in used:
+            line = f"{indent}{slot}{eq}{FEE_CMD}\r\n"
+            if "\r\n" not in block:
+                line = line.replace("\r\n", "\n")
+            replaced, n = re.subn(r"(?m)^End[ \t]*\r?$", line + "End", block, count=1)
+            if n != 1:
+                raise SystemExit("failed to insert Spy Satellite fee into CommandSet")
+            return replaced
+    raise SystemExit(f"no empty radar fee slot in {block[:80]!r}")
+
+
 def specialpower_overlay() -> str:
     return (
         "; SPECTER last-wins: original Spy Satellite, 60-second ReloadTime.\r\n"
@@ -547,9 +572,7 @@ def specialpower_overlay() -> str:
 
 
 def upgrade_overlay() -> str:
-    # Engine-supported spend field. SPECIAL_POWER cannot debit money; this
-    # upgrade holds the verified $5,000 BuildCost used by the tooltip and audit.
-    # Command_SpySatelliteScan stays SPECIAL_POWER (original targeting).
+    # Same spend fields as Upgrade_AlhussaienWarheadRearm (OBJECT, BuildTime 0, BuildCost).
     return (
         f"Upgrade {FEE_UPGRADE}\r\n"
         "  DisplayName        = UPGRADE:SpySatellite\r\n"
@@ -562,13 +585,14 @@ def upgrade_overlay() -> str:
 
 
 def commandbutton_overlay() -> str:
-    # Last-wins the original USA/China/Russia/Israel/NATO/EU button.
-    # Command type and targeting options stay engine Spy Satellite.
+    # Scan keeps original SPECIAL_POWER targeting. NEED_UPGRADE gates it on the paid
+    # object upgrade. Shortcut gets the same gate so it cannot bypass the fee.
     return (
         f"CommandButton {SPY_CMD}\r\n"
         "  Command           = SPECIAL_POWER\r\n"
         f"  SpecialPower      = {SPY_SP}\r\n"
-        "  Options           = NEED_TARGET_POS CONTEXTMODE_COMMAND\r\n"
+        "  Options           = NEED_TARGET_POS CONTEXTMODE_COMMAND NEED_UPGRADE\r\n"
+        f"  Upgrade           = {FEE_UPGRADE}\r\n"
         "  TextLabel         = CONTROLBAR:SpySatellite\r\n"
         "  ButtonImage       = SSSpySat\r\n"
         "  ButtonBorderType  = ACTION\r\n"
@@ -580,12 +604,84 @@ def commandbutton_overlay() -> str:
         "CommandButton Command_SpySatelliteScanFromShortcut\r\n"
         "  Command           = SPECIAL_POWER_FROM_SHORTCUT\r\n"
         f"  SpecialPower      = {SPY_SP}\r\n"
-        "  Options           = NEED_TARGET_POS CONTEXTMODE_COMMAND\r\n"
+        "  Options           = NEED_TARGET_POS CONTEXTMODE_COMMAND NEED_UPGRADE\r\n"
+        f"  Upgrade           = {FEE_UPGRADE}\r\n"
         "  TextLabel         = CONTROLBAR:NoHotKeySpySatellite\r\n"
         "  ButtonImage       = SSSpySat\r\n"
         "  DescriptLabel     = CONTROLBAR:TooltipFireSpySatScan\r\n"
         "  RadiusCursorType  = SPYSATELLITE\r\n"
         "  InvalidCursorName = GenericInvalid\r\n"
+        "End\r\n"
+        "\r\n"
+        f"CommandButton {FEE_CMD}\r\n"
+        "  Command           = OBJECT_UPGRADE\r\n"
+        f"  Upgrade           = {FEE_UPGRADE}\r\n"
+        "  Options           = OK_FOR_MULTI_SELECT NOT_QUEUEABLE\r\n"
+        "  TextLabel         = CONTROLBAR:SpecterSpySatelliteFee\r\n"
+        "  ButtonImage       = SSSpySat\r\n"
+        "  ButtonBorderType  = UPGRADE\r\n"
+        "  DescriptLabel     = CONTROLBAR:ToolTipSpecterSpySatelliteFee\r\n"
+        "  PurchasedLabel    = CONTROLBAR:ToolTipSpecterSpySatelliteFee\r\n"
+        "  UnitSpecificSound = MoneyWithdraw\r\n"
+        "End\r\n"
+    )
+
+
+def ocl_overlay() -> str:
+    # Keep original ping create; add the fee stripper as a second CreateObject.
+    return (
+        f"ObjectCreationList {SPY_OCL}\r\n"
+        "  CreateObject\r\n"
+        f"    ObjectNames = {SPY_PING}\r\n"
+        "    Count = 1\r\n"
+        "  End\r\n"
+        "  CreateObject\r\n"
+        f"    ObjectNames = {STRIP_OBJ}\r\n"
+        "    Count = 1\r\n"
+        "  End\r\n"
+        "End\r\n"
+    )
+
+
+def stripper_overlay() -> str:
+    # Same UpgradeDie + LifetimeUpdate 100ms pattern as RearmStrip_* missile rearm.
+    return (
+        f"Object {STRIP_OBJ}\r\n"
+        "  EditorSorting   = SYSTEM\r\n"
+        "  TransportSlotCount  = 0\r\n"
+        "  ArmorSet\r\n"
+        "    Conditions        = None\r\n"
+        "    Armor             = InvulnerableAllArmor\r\n"
+        "    DamageFX          = EmptyDamageFX\r\n"
+        "  End\r\n"
+        "  KindOf = PRELOAD NO_COLLIDE IMMOBILE UNATTACKABLE INERT\r\n"
+        "  Draw = W3DModelDraw ModuleTag_01\r\n"
+        "    DefaultConditionState\r\n"
+        "      Model = None\r\n"
+        "    End\r\n"
+        "  End\r\n"
+        "  Body = ActiveBody ModuleTag_03\r\n"
+        "    MaxHealth       = 1.0\r\n"
+        "    InitialHealth   = 1.0\r\n"
+        "  End\r\n"
+        "  Behavior = AIUpdateInterface ModuleTag_04\r\n"
+        "  End\r\n"
+        "  Behavior = DestroyDie ModuleTag_08\r\n"
+        "    DeathTypes = ALL\r\n"
+        "  End\r\n"
+        "  Behavior = UpgradeDie  ModuleTag_12\r\n"
+        "    DeathTypes = ALL\r\n"
+        f"    UpgradeToRemove     = {FEE_UPGRADE} {FEE_MODULE}\r\n"
+        "  End\r\n"
+        "  Behavior = LifetimeUpdate ModuleTag_032\r\n"
+        "    MinLifetime = 100\r\n"
+        "    MaxLifetime = 100\r\n"
+        "  End\r\n"
+        "  Geometry = CYLINDER\r\n"
+        "  GeometryMajorRadius = 1.0\r\n"
+        "  GeometryMinorRadius = 1.0\r\n"
+        "  GeometryHeight = 1.0\r\n"
+        "  GeometryIsSmall = Yes\r\n"
         "End\r\n"
     )
 
@@ -611,37 +707,68 @@ def sha256_path(path: Path) -> str:
     return h.hexdigest()
 
 
-def matrix_row(c, cs_block, obj_block, sp_block, btn_block, up_block, ping_block, ocl_block):
+def matrix_row(
+    c,
+    cs_block,
+    obj_block,
+    sp_block,
+    btn_block,
+    fee_btn_block,
+    shortcut_block,
+    up_block,
+    ping_block,
+    ocl_block,
+    strip_block,
+):
     cmd_ok = SPY_CMD in (cs_block or "")
+    fee_ok = FEE_CMD in (cs_block or "")
+    fee_once = (cs_block or "").count(FEE_CMD) == 1
+    spy_once = (cs_block or "").count(SPY_CMD) == 1
     sp_mod = ocl_spy_modules(obj_block or "")
     spy_sp_ok = any(SPY_SP in rec[1] for rec in sp_mod)
     ocl_ok = any(SPY_OCL in rec[1] for rec in sp_mod)
     loc_ok = any("CREATE_AT_LOCATION" in rec[1] for rec in sp_mod)
     n_spy = sum(1 for rec in sp_mod if SPY_SP in rec[1])
+    prod_ok = "ProductionUpdate" in (obj_block or "")
     reload_ok = field(sp_block, "ReloadTime") == RELOAD_MS
     enum_ok = field(sp_block, "Enum") == "SPECIAL_SPY_SATELLITE"
     btn_cmd = field(btn_block, "Command") == "SPECIAL_POWER"
     btn_sp = field(btn_block, "SpecialPower") == SPY_SP
     btn_opt = "NEED_TARGET_POS" in field(btn_block, "Options")
+    btn_need = "NEED_UPGRADE" in field(btn_block, "Options")
+    btn_up = field(btn_block, "Upgrade") == FEE_UPGRADE
+    fee_cmd_ok = field(fee_btn_block, "Command") == "OBJECT_UPGRADE"
+    fee_up_ok = field(fee_btn_block, "Upgrade") == FEE_UPGRADE
+    sc_need = "NEED_UPGRADE" in field(shortcut_block, "Options")
+    sc_up = field(shortcut_block, "Upgrade") == FEE_UPGRADE
     cost_ok = field(up_block, "BuildCost") == FEE_COST
+    type_ok = field(up_block, "Type") == "OBJECT"
+    time_ok = field(up_block, "BuildTime").startswith("0")
     ping_ok = "DynamicShroudClearingRangeUpdate" in (ping_block or "")
     ocl_creates = SPY_PING in (ocl_block or "")
+    ocl_strip = STRIP_OBJ in (ocl_block or "")
+    strip_die = "UpgradeDie" in (strip_block or "") and FEE_UPGRADE in (strip_block or "")
     flags = {
         "country": c["name"],
         "faction": c["faction"],
         "side": c["side"],
         "radar": c["radar"],
         "commandset": c["cs"],
-        "cmd_in_radar": "PASS" if cmd_ok else "FAIL",
+        "cmd_in_radar": "PASS" if cmd_ok and spy_once else "FAIL",
+        "fee_in_radar": "PASS" if fee_ok and fee_once else "FAIL",
         "sp_module": "PASS" if spy_sp_ok else "FAIL",
         "ocl": "PASS" if ocl_ok else "FAIL",
         "create_at_location": "PASS" if loc_ok else "FAIL",
         "no_duplicate_module": "PASS" if n_spy == 1 else "FAIL",
+        "production_update": "PASS" if prod_ok else "FAIL",
         "reload_60s": "PASS" if reload_ok else "FAIL",
         "enum_spy_sat": "PASS" if enum_ok else "FAIL",
         "button_special_power": "PASS" if btn_cmd and btn_sp and btn_opt else "FAIL",
-        "cost_5000_upgrade": "PASS" if cost_ok else "FAIL",
+        "need_upgrade_gate": "PASS" if btn_need and btn_up and sc_need and sc_up else "FAIL",
+        "fee_object_upgrade": "PASS" if fee_cmd_ok and fee_up_ok else "FAIL",
+        "cost_5000_upgrade": "PASS" if cost_ok and type_ok and time_ok else "FAIL",
         "original_ping": "PASS" if ping_ok and ocl_creates else "FAIL",
+        "fee_stripper": "PASS" if ocl_strip and strip_die else "FAIL",
         "n_spy_modules": n_spy,
     }
     flags["row"] = (
@@ -650,15 +777,20 @@ def matrix_row(c, cs_block, obj_block, sp_block, btn_block, up_block, ping_block
             flags[k] == "PASS"
             for k in (
                 "cmd_in_radar",
+                "fee_in_radar",
                 "sp_module",
                 "ocl",
                 "create_at_location",
                 "no_duplicate_module",
+                "production_update",
                 "reload_60s",
                 "enum_spy_sat",
                 "button_special_power",
+                "need_upgrade_gate",
+                "fee_object_upgrade",
                 "cost_5000_upgrade",
                 "original_ping",
+                "fee_stripper",
             )
         )
         else "FAIL"
@@ -673,14 +805,19 @@ def format_matrix(rows: list[dict]) -> str:
         "Radar object",
         "CommandSet",
         "Radar cmd",
+        "Fee cmd",
         "SP module",
         "OCL ping",
         "CREATE_AT_LOCATION",
         "One module",
+        "ProductionUpdate",
         "Reload 60s",
         "SPECIAL_POWER",
+        "NEED_UPGRADE",
+        "OBJECT_UPGRADE",
         "Upgrade $5000",
         "Original ping",
+        "Fee stripper",
         "ROW",
     ]
     lines = [" | ".join(headers), " | ".join("---" for _ in headers)]
@@ -693,14 +830,19 @@ def format_matrix(rows: list[dict]) -> str:
                     r["radar"],
                     r["commandset"],
                     r["cmd_in_radar"],
+                    r["fee_in_radar"],
                     r["sp_module"],
                     r["ocl"],
                     r["create_at_location"],
                     r["no_duplicate_module"],
+                    r["production_update"],
                     r["reload_60s"],
                     r["button_special_power"],
+                    r["need_upgrade_gate"],
+                    r["fee_object_upgrade"],
                     r["cost_5000_upgrade"],
                     r["original_ping"],
+                    r["fee_stripper"],
                     r["row"],
                 ]
             )
@@ -725,7 +867,8 @@ def main() -> None:
         raw = cs_map.get(c["cs"])
         if not raw:
             raise SystemExit(f"missing CommandSet {c['cs']}")
-        overlay_sets.append(add_spy_to_commandset(raw))
+        patched = add_spy_to_commandset(raw)
+        overlay_sets.append(add_fee_to_commandset(patched))
 
     obj_keys = []
     for c in COUNTRIES:
@@ -750,12 +893,19 @@ def main() -> None:
     files[SP_KEY] = sk.to_crlf(specialpower_overlay())
     files[UP_KEY] = sk.to_crlf(upgrade_overlay())
     files[CB_KEY] = sk.to_crlf(commandbutton_overlay())
+    files[OCL_KEY] = sk.to_crlf(ocl_overlay())
+    files[STRIP_KEY] = sk.to_crlf(stripper_overlay())
     files[CSF_KEY] = sk.csf_upsert(
         original[CSF_KEY],
         {
             "CONTROLBAR:TooltipFireSpySatScan": (
-                "Reveal target area. Spot hidden units \n "
-                "Cost: $5,000 \n Countdown Timer: 1:00"
+                "Reveal target area. Requires $5,000 authorization. "
+                "Spot hidden units \n Countdown Timer: 1:00"
+            ),
+            "CONTROLBAR:SpecterSpySatelliteFee": "Authorize Spy Satellite",
+            "CONTROLBAR:ToolTipSpecterSpySatelliteFee": (
+                "Pay $5,000 to arm one Spy Satellite scan. "
+                "Insufficient funds prevent authorization."
             ),
             "UPGRADE:SpySatellite": "Spy Satellite",
         },
@@ -770,8 +920,13 @@ def main() -> None:
 
     src_sp, sp_block = last_from(packed_order, packed, "SpecialPower", SPY_SP)
     src_btn, btn_block = last_from(packed_order, packed, "CommandButton", SPY_CMD)
+    src_fee_btn, fee_btn_block = last_from(packed_order, packed, "CommandButton", FEE_CMD)
+    src_sc, shortcut_block = last_from(
+        packed_order, packed, "CommandButton", "Command_SpySatelliteScanFromShortcut"
+    )
     src_up, up_block = last_from(packed_order, packed, "Upgrade", FEE_UPGRADE)
     src_ping, ping_block = last_from(packed_order, packed, "Object", SPY_PING)
+    src_strip, strip_block = last_from(packed_order, packed, "Object", STRIP_OBJ)
     src_ocl, ocl_block = last_from(
         packed_order, packed, "ObjectCreationList", SPY_OCL
     )
@@ -782,18 +937,40 @@ def main() -> None:
         fails.append(f"SpecialPower last-wins {src_sp}")
     if src_btn != CB_KEY:
         fails.append(f"CommandButton last-wins {src_btn}")
+    if src_fee_btn != CB_KEY:
+        fails.append(f"Fee CommandButton last-wins {src_fee_btn}")
+    if src_sc != CB_KEY:
+        fails.append(f"Shortcut CommandButton last-wins {src_sc}")
     if src_up != UP_KEY:
         fails.append(f"Upgrade last-wins {src_up}")
+    if src_ocl != OCL_KEY:
+        fails.append(f"OCL last-wins {src_ocl}")
+    if src_strip != STRIP_KEY:
+        fails.append(f"Fee stripper last-wins {src_strip}")
     if field(sp_block, "ReloadTime") != RELOAD_MS:
         fails.append(f"ReloadTime {field(sp_block, 'ReloadTime')}")
     if field(btn_block, "Command") != "SPECIAL_POWER":
         fails.append("Command_SpySatelliteScan is not SPECIAL_POWER")
     if "NEED_TARGET_POS" not in field(btn_block, "Options"):
         fails.append("Spy Satellite lost NEED_TARGET_POS")
+    if "NEED_UPGRADE" not in field(btn_block, "Options"):
+        fails.append("Spy Satellite lost NEED_UPGRADE gate")
+    if field(btn_block, "Upgrade") != FEE_UPGRADE:
+        fails.append("Spy Satellite missing fee Upgrade gate")
+    if field(fee_btn_block, "Command") != "OBJECT_UPGRADE":
+        fails.append("Fee command is not OBJECT_UPGRADE")
+    if field(fee_btn_block, "Upgrade") != FEE_UPGRADE:
+        fails.append("Fee command missing Upgrade_SpecterSpySatelliteScan")
     if field(up_block, "BuildCost") != FEE_COST:
         fails.append("Upgrade BuildCost is not 5000")
+    if field(up_block, "Type") != "OBJECT":
+        fails.append("Upgrade Type is not OBJECT")
     if SPY_PING not in ocl_block:
         fails.append("OCL SUPERWEAPON_SpySatellite lost SpySatellitePing")
+    if STRIP_OBJ not in ocl_block:
+        fails.append("OCL SUPERWEAPON_SpySatellite missing fee stripper")
+    if "UpgradeDie" not in strip_block:
+        fails.append("fee stripper missing UpgradeDie")
 
     packed_cs = collect_commandsets(packed_order, packed)
     rows = []
@@ -810,7 +987,17 @@ def main() -> None:
             # object last-wins from its original file after splice; that is OK
             pass
         row = matrix_row(
-            c, cs_block, obj_block, sp_block, btn_block, up_block, ping_block, ocl_block
+            c,
+            cs_block,
+            obj_block,
+            sp_block,
+            btn_block,
+            fee_btn_block,
+            shortcut_block,
+            up_block,
+            ping_block,
+            ocl_block,
+            strip_block,
         )
         rows.append(row)
         if row["row"] != "PASS":
@@ -823,13 +1010,28 @@ def main() -> None:
         lost = orig_cmds - new_cmds - set(REPLACE_CMDS)
         if lost:
             fails.append(f"{c['name']} lost radar commands {sorted(lost)}")
+        if FEE_CMD not in new_cmds:
+            fails.append(f"{c['name']} missing {FEE_CMD}")
+        if SPY_CMD not in new_cmds:
+            fails.append(f"{c['name']} missing {SPY_CMD}")
 
     for name in OUT_OF_SCOPE_CS:
         src, blk = last_from(packed_order, packed, "CommandSet", name)
         if blk and SPY_CMD in blk and name not in {c["cs"] for c in COUNTRIES}:
             fails.append(f"out-of-scope {name} gained {SPY_CMD} from {src}")
+        if blk and FEE_CMD in blk and name not in {c["cs"] for c in COUNTRIES}:
+            fails.append(f"out-of-scope {name} gained {FEE_CMD} from {src}")
 
-    allowed = {CS_KEY, SP_KEY, UP_KEY, CB_KEY, CSF_KEY, *set(obj_keys)}
+    allowed = {
+        CS_KEY,
+        SP_KEY,
+        UP_KEY,
+        CB_KEY,
+        OCL_KEY,
+        STRIP_KEY,
+        CSF_KEY,
+        *set(obj_keys),
+    }
     for key in original:
         if key in allowed:
             continue
@@ -856,13 +1058,18 @@ def main() -> None:
     (LOOSE / "SpecialPower_ZZZZ_SpySatellite.ini").write_bytes(files[SP_KEY])
     (LOOSE / "Upgrade_ZZZZ_SpySatellite.ini").write_bytes(files[UP_KEY])
     (LOOSE / "CommandButton_ZZZZ_SpySatellite.ini").write_bytes(files[CB_KEY])
+    (LOOSE / "ObjectCreationList_ZZZZ_SpySatellite.ini").write_bytes(files[OCL_KEY])
+    (LOOSE / "Object_ZZZZ_SpySatelliteFeeStrip.ini").write_bytes(files[STRIP_KEY])
 
     ext = OUT / "LAST_WINS_EXTRACT" / "DATA"
     ext.mkdir(parents=True)
     (ext / "AUDIT_MATRIX.md").write_text(format_matrix(rows), encoding="utf-8")
     (ext / "SpecialPowerSpySatellite.ini").write_text(sp_block + "\n", encoding="utf-8")
     (ext / "Command_SpySatelliteScan.ini").write_text(btn_block + "\n", encoding="utf-8")
+    (ext / "Command_SpecterSpySatelliteFee.ini").write_text(fee_btn_block + "\n", encoding="utf-8")
     (ext / "Upgrade_SpecterSpySatelliteScan.ini").write_text(up_block + "\n", encoding="utf-8")
+    (ext / "SUPERWEAPON_SpySatellite.ini").write_text(ocl_block + "\n", encoding="utf-8")
+    (ext / "SpecterSpySatelliteFeeStrip.ini").write_text(strip_block + "\n", encoding="utf-8")
     cs_extract = []
     for c in COUNTRIES:
         cs_extract.append(last_from(packed_order, packed, "CommandSet", c["cs"])[1])
@@ -886,6 +1093,8 @@ def main() -> None:
     (OUT / "INSTALL.txt").write_text(install_txt, encoding="utf-8")
     (OUT / "README.txt").write_text(
         "SPECTER Spy Satellite for all 25 playable countries.\n"
+        "Real $5,000 fee uses OBJECT_UPGRADE (same engine spend as missile rearm).\n"
+        "Scan stays SPECIAL_POWER + NEED_TARGET_POS, gated by NEED_UPGRADE.\n"
         "ART_ONE / ART_TWO are unchanged from PR #656.\n"
         "RUNTIME_TEST=NOT RUN\n",
         encoding="utf-8",
@@ -939,8 +1148,13 @@ def main() -> None:
         f"SPY_BUTTON_LASTWINS={src_btn}",
         f"RELOAD_MS={field(sp_block, 'ReloadTime')}",
         f"UPGRADE_BUILDCOST={field(up_block, 'BuildCost')}",
-        "COST_MECHANISM=Upgrade BuildCost=5000 (engine spend field); Command remains SPECIAL_POWER",
-        "COST_RUNTIME=NOT RUN — ZH SPECIAL_POWER does not debit Upgrade BuildCost",
+        f"FEE_COMMAND_LASTWINS={src_fee_btn}",
+        f"OCL_LASTWINS={src_ocl}",
+        "COST_MECHANISM=OBJECT_UPGRADE Upgrade_SpecterSpySatelliteScan BuildCost=5000 BuildTime=0 Type=OBJECT",
+        "COST_GATE=NEED_UPGRADE on Command_SpySatelliteScan and Command_SpySatelliteScanFromShortcut",
+        "COST_CONSUME=UpgradeDie on SpecterSpySatelliteFeeStrip created by SUPERWEAPON_SpySatellite",
+        "SCAN_COMMAND=SPECIAL_POWER NEED_TARGET_POS RadiusCursorType=SPYSATELLITE ReloadTime=60000",
+        "COST_RUNTIME=NOT RUN",
         "INSUFFICIENT_FUNDS_RUNTIME=NOT RUN",
         "MAP_REVEAL_RUNTIME=NOT RUN",
         "COOLDOWN_RUNTIME=NOT RUN",
@@ -956,9 +1170,12 @@ def main() -> None:
         "# 25-country Spy Satellite packed last-wins matrix\n\n"
         "RUNTIME_TEST=NOT RUN\n\n"
         + matrix
-        + "\nCost: Upgrade_SpecterSpySatelliteScan BuildCost=5000 is packed.\n"
-        "Command_SpySatelliteScan remains SPECIAL_POWER + NEED_TARGET_POS.\n"
-        "ReloadTime=60000 ms on SpecialPowerSpySatellite.\n",
+        + "\nCost mechanism: Command_SpecterSpySatelliteFee is OBJECT_UPGRADE of\n"
+        "Upgrade_SpecterSpySatelliteScan (Type=OBJECT, BuildCost=5000, BuildTime=0).\n"
+        "Command_SpySatelliteScan remains SPECIAL_POWER + NEED_TARGET_POS + NEED_UPGRADE.\n"
+        "Successful scans create SpecterSpySatelliteFeeStrip which UpgradeDie-removes the fee.\n"
+        "ReloadTime=60000 ms on SpecialPowerSpySatellite.\n"
+        "RUNTIME_TEST=NOT RUN — packed last-wins only.\n",
         encoding="utf-8",
     )
     hashes = "\n".join(
@@ -983,7 +1200,7 @@ def main() -> None:
     (OUT / "HASHES.txt").write_text(hashes, encoding="utf-8")
     rel_base = (
         "https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/"
-        "s-spy-satellite-25-countries"
+        "s-spy-satellite-cost-5000"
     )
     (OUT / "DOWNLOAD.txt").write_text(
         "\n".join(
@@ -1008,8 +1225,8 @@ def main() -> None:
                 f"  SIZE={zip_path.stat().st_size}",
                 f"  SHA256={zip_sha}",
                 "",
-                "TAG=s-spy-satellite-25-countries",
-                "RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-25-countries",
+                "TAG=s-spy-satellite-cost-5000",
+                "RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-spy-satellite-cost-5000",
                 "STATIC_VALIDATION=PASS",
                 "RUNTIME_TEST=NOT RUN",
                 "",
@@ -1020,11 +1237,24 @@ def main() -> None:
     (OUT / "RELEASE_NOTES.md").write_text(
         "\n".join(
             [
-                "# SPECTER Spy Satellite — 25 countries",
+                "# SPECTER Spy Satellite — real $5,000 activation cost",
                 "",
-                "Original `SpecialPowerSpySatellite` / `Command_SpySatelliteScan` /",
-                "`SUPERWEAPON_SpySatellite` → `SpySatellitePing` on every playable",
-                "SPECTER radar. ReloadTime pinned at 60000 ms.",
+                "Original targeted Spy Satellite remains on all 25 country radars.",
+                "ReloadTime stays 60000 ms.",
+                "",
+                "Engine-compatible cost path (not a tooltip-only value):",
+                "1. `Command_SpecterSpySatelliteFee` = `OBJECT_UPGRADE` of",
+                "   `Upgrade_SpecterSpySatelliteScan` (`BuildCost = 5000`, `BuildTime = 0`).",
+                "   SAGE withdraws $5,000 through ProductionUpdate. Less than $5,000",
+                "   cannot purchase the upgrade.",
+                "2. `Command_SpySatelliteScan` stays `SPECIAL_POWER` + `NEED_TARGET_POS`",
+                "   + `RadiusCursorType = SPYSATELLITE`, now gated with `NEED_UPGRADE`.",
+                "3. A successful scan still creates `SpySatellitePing` via",
+                "   `SUPERWEAPON_SpySatellite`, and also creates `SpecterSpySatelliteFeeStrip`",
+                "   whose `UpgradeDie` removes the object upgrade so the next scan is paid again.",
+                "",
+                "Trade-off: SAGE has no native money field on SPECIAL_POWER, so the player",
+                "authorizes ($5,000) then targets. Targeting, reveal, and 60s cooldown are unchanged.",
                 "",
                 "ART_ONE and ART_TWO are byte-identical to PR #656.",
                 "RUNTIME_TEST=NOT RUN",

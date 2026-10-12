@@ -1,0 +1,7 @@
+CommandSet_IndiaMissiles.ini last-wins India builder + factory CommandSets.
+CommandButton_IndiaMissiles.ini last-wins construct + A-J.
+Weapon\Weapon_India_Missiles.ini last-wins Weapon_India_* factory pair.
+Weapon_India.ini (Shaheen/Ababeel and other India weapons) is unchanged.
+India_Prahaar/Prithvi/Pralay/Shaurya/BrahMos/Nirbhay/Agni1/AgniP/Agni3/Agni5 are new objects.
+IndiaVehiclePrahaar and SpecialPower IndiaSpecialPowerAgniV are unchanged.
+South Africa, Syria, Libya, UAE, Saudi, Vietnam, Japan, South Korea, Iraq, and 9P117 packed definitions are unchanged.

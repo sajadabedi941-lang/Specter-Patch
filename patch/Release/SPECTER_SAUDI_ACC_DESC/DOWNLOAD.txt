@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-aj-acc-desc/_SPEC_DATA_ONE.big
+  SIZE=368528717
+  SHA256=1133213de66987f5a48a0f9e6341c6f5254a279fbc305d358b7fc227b37070a4
+
+ART replacement (unchanged from s-northkorea-missiles-aj):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-aj-acc-desc/_SPEC_ART_ONE.big
+  SIZE=1830385382
+  SHA256=3c3872d21e09ad3f71960c11f88f0187ed21a9ff1942664e74846070bd2485bb
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-aj-acc-desc/SPECTER_SAUDI_ACC_DESC.zip
+  SIZE=808367764
+  SHA256=07591b793ff986b18974514449e129d7b1f695867726791afefb1e29d3ac3a5b
+
+Place both BIGs in the SPECTER folder.
+TAG=s-saudi-aj-acc-desc
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-saudi-aj-acc-desc
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

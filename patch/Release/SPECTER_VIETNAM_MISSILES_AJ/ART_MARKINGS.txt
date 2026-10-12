@@ -1,0 +1,27 @@
+VIETNAM A-J ART MARKINGS (static inspection)
+
+Tesseract 5.3.4, PSM 7, name-plate crop. Vision-model OCR doubles letters
+and is not authoritative. A-H skins/W3Ds are the accepted packed last-wins
+(not regenerated). I/J skins are new.
+
+Flag: red field + centered yellow five-pointed star. Not Hinomaru or Taegeukgi.
+
+SLOT  NAME         COLOR        TEL OCR          FLAG    NAME PLATE  ART
+A     VCM-01       red          VCM-01           PASS    PASS        frozen A-H
+B     VCM-02       yellow       (accepted plate) PASS    PASS        frozen A-H
+C     Sông Hồng    muddy/olive  SONG HONG        PASS    PASS        frozen A-H
+D     Hồng Hà      blue         HONG HA          PASS    PASS        frozen A-H
+E     Cửu Long     petrol       CUU LONG         PASS    PASS        frozen A-H
+F     Trường Sơn   black        TRUONG SON       PASS    PASS        frozen A-H
+G     Bạch Đằng    white        (accepted plate) PASS    PASS        frozen A-H
+H     Thăng Long   orange       THANG LONG       PASS    PASS        frozen A-H
+I     Hùng Vương   gray         HUNG VUONG       PASS    PASS        new
+J     Lạc Việt     cream        LAC VIET         PASS    PASS        new
+
+I/J W3D last-wins: Vnm_HungV / Vnm_LacVt + Irq_9P117.tga truck (accepted
+Vietnam TEL identity). No Skr_TEL or Jpn_TEL.
+
+Buttons: shared specter_missile_a-j cameos.
+
+Limitation: 2D UV-band inspection, not an in-engine overhead camera.
+RUNTIME TEST: NOT RUN

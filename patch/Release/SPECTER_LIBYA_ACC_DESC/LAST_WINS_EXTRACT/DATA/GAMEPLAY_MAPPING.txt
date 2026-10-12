@@ -1,0 +1,23 @@
+ENGINE IMPLEMENTATION (unchanged from PR #635 packed last-wins):
+  Accuracy rating -> ScatterRadius = 175 * (10 / Acc).
+    SAGE ScatterRadius is impact dispersion around the aimed point.
+    It is not a hit-chance percentage. No Accuracy=N% field exists.
+  Radar-evasion rating -> projectile MaxHealth = 400 * (CHL / 5).
+    SPECTER interceptors with AntiProjectile / AntiBallisticMissile deal
+    damage to KindOf PROJECTILE BALLISTIC_MISSILE bodies. Higher MaxHealth
+    takes more interceptor hits to destroy. This is intercept toughness,
+    not radar stealth, not an evade-percentage, and not RadarPriority.
+  WeaponSpeed remains 280 on every Libya A-J PRIMARY weapon.
+  No RadarPriority on projectiles.
+
+SLOT  NAME                    KM   KG   ACC  CHL  SCATTER  HP     ENGINE ACC           ENGINE EVADE
+  A    Fajr                   1000 400  55   35   31.818  2800.0 ScatterRadius         MaxHealth
+  B    Sahra                  1100 700  45   30   38.889  2400.0 ScatterRadius         MaxHealth
+  C    Waha                   1250 500  75   25   23.333  2000.0 ScatterRadius         MaxHealth
+  D    Jamahiriya             1450 1400 35   50   50.0    4000.0 ScatterRadius         MaxHealth
+  E    Murzuq                 1700 1100 65   40   26.923  3200.0 ScatterRadius         MaxHealth
+  F    Akhdar                 2000 2200 30   45   58.333  3600.0 ScatterRadius         MaxHealth
+  G    Sirt                   2300 1800 50   70   35.0    5600.0 ScatterRadius         MaxHealth
+  H    Fezzan                 2700 3200 25   40   70.0    3200.0 ScatterRadius         MaxHealth
+  I    Orouba                 3300 5500 70   55   25.0    4400.0 ScatterRadius         MaxHealth
+  J    Great Man-Made River   3900 8000 20   30   87.5    2400.0 ScatterRadius         MaxHealth

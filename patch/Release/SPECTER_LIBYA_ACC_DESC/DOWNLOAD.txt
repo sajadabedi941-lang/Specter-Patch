@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-libya-aj-acc-desc/_SPEC_DATA_ONE.big
+  SIZE=367680770
+  SHA256=ae367d5ae8d2b342f31d6c3cbe4c2c73b0acd47c4e16be2ba3954b1f892992a1
+
+ART replacement (unchanged from s-libya-missiles-aj):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-libya-aj-acc-desc/_SPEC_ART_ONE.big
+  SIZE=1591573341
+  SHA256=52701d0c089144a4201cdb8946fc8f70f5e5b0a42b45f051c8dca1938ca3fa79
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-libya-aj-acc-desc/SPECTER_LIBYA_ACC_DESC.zip
+  SIZE=799151137
+  SHA256=cbe5c142b28012f1168e538331623defc554e6d8ca8a180745ea6cd06049039b
+
+Place both BIGs in the SPECTER folder.
+TAG=s-libya-aj-acc-desc
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-libya-aj-acc-desc
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

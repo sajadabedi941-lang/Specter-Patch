@@ -1,0 +1,99 @@
+CONTROLBAR:LibyaMissileA=A Fajr
+CONTROLBAR:ToolTipLibyaMissileA=
+A Fajr
+Range: 1000 km
+Warhead: 400 kg
+Accuracy: 55/100 (impact scatter, not a hit %)
+Radar evasion: 35/100 (interceptor toughness, not stealth)
+Build Time: 17 sec
+Price: $800
+
+CONTROLBAR:LibyaMissileB=B Sahra
+CONTROLBAR:ToolTipLibyaMissileB=
+B Sahra
+Range: 1100 km
+Warhead: 700 kg
+Accuracy: 45/100 (impact scatter, not a hit %)
+Radar evasion: 30/100 (interceptor toughness, not stealth)
+Build Time: 22 sec
+Price: $1200
+
+CONTROLBAR:LibyaMissileC=C Waha
+CONTROLBAR:ToolTipLibyaMissileC=
+C Waha
+Range: 1250 km
+Warhead: 500 kg
+Accuracy: 75/100 (impact scatter, not a hit %)
+Radar evasion: 25/100 (interceptor toughness, not stealth)
+Build Time: 26 sec
+Price: $1600
+
+CONTROLBAR:LibyaMissileD=D Jamahiriya
+CONTROLBAR:ToolTipLibyaMissileD=
+D Jamahiriya
+Range: 1450 km
+Warhead: 1400 kg
+Accuracy: 35/100 (impact scatter, not a hit %)
+Radar evasion: 50/100 (interceptor toughness, not stealth)
+Build Time: 32 sec
+Price: $2300
+
+CONTROLBAR:LibyaMissileE=E Murzuq
+CONTROLBAR:ToolTipLibyaMissileE=
+E Murzuq
+Range: 1700 km
+Warhead: 1100 kg
+Accuracy: 65/100 (impact scatter, not a hit %)
+Radar evasion: 40/100 (interceptor toughness, not stealth)
+Build Time: 39 sec
+Price: $3000
+
+CONTROLBAR:LibyaMissileF=F Akhdar
+CONTROLBAR:ToolTipLibyaMissileF=
+F Akhdar
+Range: 2000 km
+Warhead: 2200 kg
+Accuracy: 30/100 (impact scatter, not a hit %)
+Radar evasion: 45/100 (interceptor toughness, not stealth)
+Build Time: 47 sec
+Price: $4200
+
+CONTROLBAR:LibyaMissileG=G Sirt
+CONTROLBAR:ToolTipLibyaMissileG=
+G Sirt
+Range: 2300 km
+Warhead: 1800 kg
+Accuracy: 50/100 (impact scatter, not a hit %)
+Radar evasion: 70/100 (interceptor toughness, not stealth)
+Build Time: 55 sec
+Price: $5100
+
+CONTROLBAR:LibyaMissileH=H Fezzan
+CONTROLBAR:ToolTipLibyaMissileH=
+H Fezzan
+Range: 2700 km
+Warhead: 3200 kg
+Accuracy: 25/100 (impact scatter, not a hit %)
+Radar evasion: 40/100 (interceptor toughness, not stealth)
+Build Time: 67 sec
+Price: $6800
+
+CONTROLBAR:LibyaMissileI=I Orouba
+CONTROLBAR:ToolTipLibyaMissileI=
+I Orouba
+Range: 3300 km
+Warhead: 5500 kg
+Accuracy: 70/100 (impact scatter, not a hit %)
+Radar evasion: 55/100 (interceptor toughness, not stealth)
+Build Time: 80 sec
+Price: $9000
+
+CONTROLBAR:LibyaMissileJ=J Great Man-Made River
+CONTROLBAR:ToolTipLibyaMissileJ=
+J Great Man-Made River
+Range: 3900 km
+Warhead: 8000 kg
+Accuracy: 20/100 (impact scatter, not a hit %)
+Radar evasion: 30/100 (interceptor toughness, not stealth)
+Build Time: 100 sec
+Price: $12000

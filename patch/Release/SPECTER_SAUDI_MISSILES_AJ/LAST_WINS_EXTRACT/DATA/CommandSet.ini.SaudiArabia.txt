@@ -1,0 +1,61 @@
+CommandSet SaudiArabiaDozerCommandSet
+  1 = Command_ConstructSaudiArabia_PowerPlant
+  2 = Command_ConstructSaudiArabia_CommandCenter
+  3 = Command_ConstructSaudiArabia_SupplyCenter
+  4 = Command_ConstructSaudiArabia_WarFactory_T
+  5 = Command_ConstructSaudiArabia_HeavyAirBase
+  6 = Command_ConstructSaudiArabia_MIC
+  7 = Command_ConstructSaudiArabia_RadarStation
+  8 = Command_ConstructSaudiArabia_Sam2
+  9 = Command_ConstructSaudiArabia_Barracks
+  10 = Command_ConstructSaudiArabia_FireBase
+  11 = Command_ConstructSaudiArabia_Airfield_T
+  12 = Command_ConstructSaudiArabia_CRAM
+  13 = Command_ConstructSaudiArabia_MissileFactory
+  14 = Command_ConstructSaudiArabia_Lgm30
+End
+
+CommandSet SaudiArabia_WorkerCommandSet
+  1 = Command_ConstructSaudiArabia_PowerPlant
+  2 = Command_ConstructSaudiArabia_CommandCenter
+  3 = Command_ConstructSaudiArabia_SupplyCenter
+  4 = Command_ConstructSaudiArabia_WarFactory_T
+  6 = Command_ConstructSaudiArabia_MIC
+  7 = Command_ConstructSaudiArabia_RadarStation
+  8 = Command_ConstructSaudiArabia_Sam2
+  9 = Command_ConstructSaudiArabia_Barracks
+  10 = Command_ConstructSaudiArabia_Abbas
+  11 = Command_ConstructSaudiArabia_Airfield_T
+  13 = Command_ConstructSaudiArabia_MissileFactory
+  14 = Command_DisarmMinesAtPosition
+End
+
+CommandSet SaudiArabia_VT72BCommandSet
+  1 = Command_ConstructSaudiArabia_PowerPlant
+  2 = Command_ConstructSaudiArabia_CommandCenter
+  3 = Command_ConstructSaudiArabia_SupplyCenter
+  4 = Command_ConstructSaudiArabia_WarFactory_T
+  5 = Command_ConstructSaudiArabia_Airfield_T
+  6 = Command_ConstructSaudiArabia_MIC
+  7 = Command_ConstructSaudiArabia_RadarStation
+  8 = Command_ConstructSaudiArabia_Sam2
+  9 = Command_ConstructSaudiArabia_Barracks
+  10 = Command_ConstructSaudiArabia_Abbas
+  13 = Command_ConstructSaudiArabia_MissileFactory
+  14 = Command_DisarmMinesAtPosition
+End
+
+CommandSet SaudiArabia_MissileFactoryCommandSet
+  1  = CB_SAUDIARABIA_MISSILE_A
+  2  = CB_SAUDIARABIA_MISSILE_B
+  3  = CB_SAUDIARABIA_MISSILE_C
+  4  = CB_SAUDIARABIA_MISSILE_D
+  5  = CB_SAUDIARABIA_MISSILE_E
+  6  = CB_SAUDIARABIA_MISSILE_F
+  7  = CB_SAUDIARABIA_MISSILE_G
+  8  = CB_SAUDIARABIA_MISSILE_H
+  9  = CB_SAUDIARABIA_MISSILE_I
+  10  = CB_SAUDIARABIA_MISSILE_J
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End

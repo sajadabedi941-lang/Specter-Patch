@@ -1,0 +1,20 @@
+DATA replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-missiles-aj/_SPEC_DATA_ONE.big
+  SIZE=367350979
+  SHA256=817b0090bc306f4ca806f6a0138d0edaa36e2840a24e8b701908f09dffd63742
+
+ART replacement:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-missiles-aj/_SPEC_ART_ONE.big
+  SIZE=1496048723
+  SHA256=a74545ef775a2d6d32a73e249f9f34a96f5d8b04f9d24d31ae4881e16f9fc2d4
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-saudi-missiles-aj/SPECTER_SAUDI_MISSILES_AJ.zip
+  SIZE=795507257
+  SHA256=510b9c3c71f256b17fc350aeb4aa1e6f85fbdc2acb28da82f9977bb9b8567c7f
+
+Place both BIGs in the SPECTER folder.
+TAG=s-saudi-missiles-aj
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-saudi-missiles-aj
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

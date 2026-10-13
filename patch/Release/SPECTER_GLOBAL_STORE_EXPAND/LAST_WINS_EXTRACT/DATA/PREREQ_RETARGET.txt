@@ -1,0 +1,15 @@
+Germany|GermanyStrategyCenter|Germany_GlobalStore|19
+France|FranceStrategyCenter|France_GlobalStore|17
+Britain|BritainStrategyCenter|Britain_GlobalStore|20
+Italy|ItalyStrategyCenter|Italy_GlobalStore|20
+NATO|NatoStrategyCenter|Nato_GlobalStore|20
+Ukraine|UkraineStrategyCenter|Ukraine_GlobalStore|20
+Turkey|TurkeyStrategyCenter|Turkey_GlobalStore|20
+Sweden|SwedenStrategyCenter|Sweden_GlobalStore|18
+UAE|UAE_MIC|UAE_GlobalStore|3
+India|India_MIC|India_GlobalStore|5
+Pakistan|Pakistan_MIC|Pakistan_GlobalStore|5
+Syria|Syria_MIC|Syria_GlobalStore|5
+Saudi Arabia|SaudiArabia_MIC|SaudiArabia_GlobalStore|3
+Libya|Libya_MIC|Libya_GlobalStore|5
+South Africa|SouthAfrica_MIC|SouthAfrica_GlobalStore|3

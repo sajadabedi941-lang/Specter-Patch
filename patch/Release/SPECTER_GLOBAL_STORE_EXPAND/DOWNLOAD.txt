@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-global-store-expand/_SPEC_DATA_ONE.big
+  SIZE=373098243
+  SHA256=98ee820bdfd4afdc6a907eea1ce90ecff0a7552470cb5e1120891bf8375195bc
+
+ART textures (unchanged from PR #667 / #668 / tag s-iraq-global-store-name):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-global-store-name/_SPEC_ART_ONE.big
+  SIZE=2144972013
+  SHA256=9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+
+ART models (HsGM flag scaled 1.25):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-global-store-expand/_SPEC_ART_TWO.big
+  SIZE=307254782
+  SHA256=a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-global-store-expand/SPECTER_GLOBAL_STORE_EXPAND.zip
+  SIZE=832956654
+  SHA256=02cd2f55c3cd8414884ab8a88a98d8aa5ae090543d359c54105ff7f187931c7c
+
+TAG=s-global-store-expand
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-global-store-expand
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

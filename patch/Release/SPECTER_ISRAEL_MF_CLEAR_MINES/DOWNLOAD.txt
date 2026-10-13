@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-israel-mf-clear-mines/_SPEC_DATA_ONE.big
+  SIZE=373898957
+  SHA256=169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8
+
+ART textures (unchanged; standalone asset on tag s-iraq-global-store-name):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-global-store-name/_SPEC_ART_ONE.big
+  SIZE=2144972013
+  SHA256=9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+
+ART models (unchanged from PR #669 / tag s-global-store-expand):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-global-store-expand/_SPEC_ART_TWO.big
+  SIZE=307254782
+  SHA256=a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-israel-mf-clear-mines/SPECTER_ISRAEL_MF_CLEAR_MINES.zip
+  SIZE=833040992
+  SHA256=04de8d78d74f5d0cdae4f52be24051366df335573ac1cc4f9b583ddb50b929b0
+
+TAG=s-israel-mf-clear-mines
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-israel-mf-clear-mines
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

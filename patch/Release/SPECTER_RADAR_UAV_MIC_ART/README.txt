@@ -1,0 +1,1 @@
+Corrects 18-country radar UAV button art (slots 9-12) and Iraq Global Market radar/AD button art from uploaded images. Sets the Iraq Global Market building flag to the futuristic globe emblem via a cloned HsWF flag model. Gameplay unchanged. RUNTIME_TEST=NOT RUN

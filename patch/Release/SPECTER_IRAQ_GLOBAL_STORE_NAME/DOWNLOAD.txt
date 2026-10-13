@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-global-store-name/_SPEC_DATA_ONE.big
+  SIZE=370921399
+  SHA256=86882e2d6116f0b137dc0e198f8276203bdcdc8a3968ad8a40b140391e203215
+
+ART textures (unchanged from PR #667 / tag s-radar-uav-mic-art):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/_SPEC_ART_ONE.big
+  SIZE=2144972013
+  SHA256=9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+
+ART models (unchanged from PR #667 / tag s-radar-uav-mic-art):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/_SPEC_ART_TWO.big
+  SIZE=307254782
+  SHA256=c2985f5a7bd53ab1a465c30bb85357db05aaa2724d12fabc92492fe12486bf10
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-global-store-name/SPECTER_IRAQ_GLOBAL_STORE_NAME.zip
+  SIZE=832732350
+  SHA256=dfe89640d457e5a1bf534906afba68601b3914e808733643563db8f00af699f7
+
+TAG=s-iraq-global-store-name
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-global-store-name
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

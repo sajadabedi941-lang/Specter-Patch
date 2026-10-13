@@ -1,0 +1,1 @@
+Iraq Global Store (Iraq_MIC) in-game name is Global Store, BuildCost is 7000, and the construct tooltip is Global Aerospace Market plus the marketplace description. ART unchanged from PR #667. RUNTIME_TEST=NOT RUN

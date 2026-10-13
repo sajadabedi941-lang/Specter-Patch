@@ -1,0 +1,12 @@
+OBJECT=Iraq_MIC
+DISPLAY_NAME_KEY=OBJECT:IraqGlobalStore
+DISPLAY_NAME=Global Store
+BUILD_COST=7000
+CONSTRUCT_BUTTON=Command_ConstructIraq_MIC
+CONSTRUCT_LABEL=CONTROLBAR:ConstructIraq_MIC -> Global Store
+DESCRIPT_LABEL=CONTROLBAR:ToolTipIraq_MIC
+DESCRIPTION_TITLE=Global Aerospace Market
+DESCRIPTION_BODY=An international marketplace for aviation systems, reconnaissance drones, radar technology, and air-defense equipment.
+SHARED_OBJECT_MIC_UNCHANGED=YES
+ART_UNCHANGED=YES
+RUNTIME_TEST=NOT RUN

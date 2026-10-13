@@ -1,0 +1,108 @@
+STATIC VALIDATION: PASS
+RUNTIME_TEST=NOT RUN
+BASELINE: PR #669 SPECTER_GLOBAL_STORE_EXPAND
+COUNTRIES=5 (Russia China Iran Industrial Complex; America Israel Strategy Center)
+IRAQ_GLOBAL_STORE_UNCHANGED=YES
+PR669_19_GLOBAL_STORES_UNCHANGED=YES
+ART_UNCHANGED=YES
+MIC_SLOTS_1_14_SELL_15=YES
+UAV_SLOTS_9_12_UNCHANGED=YES
+WF_T3_UNCHANGED=YES
+DATA_SIZE=373897679
+DATA_SHA256=283d5b1bd0a60561e32cd58bb99274d2d126fd3fc1276d49ceca3046aa22237d
+ART_ONE_SIZE=2144972013
+ART_ONE_SHA256=9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+ART_TWO_SIZE=307254782
+ART_TWO_SHA256=a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+ZIP_SIZE=833040852
+ZIP_SHA256=4c603dc26f35842ca5b740d3d6397c70585abc53b5fcb0f54f2369b29996d723
+RUNTIME_TEST=NOT RUN
+
+country|group|replaced_kind|replaced_object|slot|old_cmd|gs_object|gs_cmd|cost|commandsets
+Russia|IC|Industrial Complex|RussiaIndustrialComplex|2|Command_ConstructRussiaIndustrialComplex|Russia_GlobalStore|Command_ConstructRussia_GlobalStore|7000|RussiaDozerCommandSet
+China|IC|Industrial Complex (Weapon Industry Plant; no ChinaIndustrialComplex object)|ChinaIndustrialWeaponComplex|6|Command_ConstructChinaIndustrialWeaponComplex|China_GlobalStore|Command_ConstructChina_GlobalStore|7000|PLADozerCommandSet
+Iran|IC|Industrial Complex|IranIndustrialComplex|2|Command_ConstructIranIndustrialComplex|Iran_GlobalStore|Command_ConstructIran_GlobalStore|7000|IranDozerCommandSet
+America|SC|Strategy Center (slot 2 AmericaStrategyCenter_T; slot 15 original SC kept)|AmericaStrategyCenter_T|2|Command_ConstructAmericaStrategyCenter_T|America_GlobalStore|Command_ConstructAmerica_GlobalStore|7000|AmericaDozerCommandSet
+Israel|SC|Strategy Center (Industry Planet / AirF_AmericaStrategyCenter)|AirF_AmericaStrategyCenter|2|AirF_Command_ConstructAmericaStrategyCenter|Israel_GlobalStore|Command_ConstructIsrael_GlobalStore|7000|IsraelDozerCommandSet
+
+PREREQ_RETARGET:
+Russia|RussiaIndustrialComplex|Russia_GlobalStore|7
+China|ChinaIndustrialWeaponComplex|China_GlobalStore|9
+Iran|IranIndustrialComplex|Iran_GlobalStore|18
+America|AmericaStrategyCenter_T|America_GlobalStore|13
+Israel|AirF_AmericaStrategyCenter|Israel_GlobalStore|26
+
+PREREQ_DETAIL:
+Russia|RussiaVehicle96L6TSP|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussiaVehicleS500|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussiaTankTorM2MV|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussiaRS28NuclearMissileSilo|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussianTankT15|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussiaArtillery2S7M|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+Russia|RussiaTankT14|RussiaIndustrialComplex->Russia_GlobalStore|same-side tech lockout
+China|ChinaJetFEIBAO|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaJetJ20B_AG|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaJetJ20B_AA|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaJetJH7A2|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaDF5NuclearMissileSilo|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaDroneCH7|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaDroneWZ8|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaVehicleGJ11Launcher|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+China|ChinaVehicleKrasukha4|ChinaIndustrialWeaponComplex->China_GlobalStore|same-side tech lockout
+Iran|Iran_Bavar|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|Iran_Meraj|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranSejjilSilo|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranInfantryFieldEngineer|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranDroneKarrar|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranDroneKaman22|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranDroneFotros|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranDroneShahed149Gaza|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranDroneHomaX|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranVehicleDezfulPenetrator|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranVehicleZolfagharM|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranVehicleFattah2|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranJetSu47Berkut|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranJetSu57E|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranJetJ20E|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranJetMiG41|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranVehicleFattah|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+Iran|IranVehicleKhormshar|IranIndustrialComplex->Iran_GlobalStore|same-side tech lockout
+America|US_THAAD|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|US_THAAD_PackMode|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaSupplyDropZone|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaLgm30|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaDronesMq9|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryPathfinder|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryJTACOperator|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryMarines_Eng|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryMarines_Jav|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryMortarTeam|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaInfantryNavySeals|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|AmericaAircraftCarrierCVN78_AnchorUp|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+America|US_M1075I_Trident|AmericaStrategyCenter_T->America_GlobalStore|same-side tech lockout
+Israel|Israel_AN_TPY2|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|Israel_Arrow|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaJetAurora|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|Israel_F15I_AA|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaJetStealthFighter|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelJetF35I_AA|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaSupplyDropZone|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaParticleCannonUplink|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelDroneHerms900|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelDroneHarop|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaInfantryPathfinder|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelInfantryMortarTeam|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelInfantryEngineer|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaInfantryColonelBurton|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelInfantrySpikeTeam|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelInfantryStingerSoldier|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelJetF15IRaamDeepStrike|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelJetF35IAdirPenetrator|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelJetF15BazHeavyBomber|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelDroneEitanHeronTP|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|Israel_M109A6|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaVehicleSentryDrone|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaVehicleHumvee|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|IsraelArtillaryPulsPredatorHawk|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaVehicleMedic|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout
+Israel|AirF_AmericaVehicleTomahawk|AirF_AmericaStrategyCenter->Israel_GlobalStore|same-side tech lockout

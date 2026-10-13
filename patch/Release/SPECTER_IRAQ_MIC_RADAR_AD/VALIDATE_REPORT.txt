@@ -1,0 +1,51 @@
+STATIC VALIDATION: PASS
+RUNTIME_TEST=NOT RUN
+BASELINE: PR #663 SPECTER_IRAQ_MIC_EMPTY
+ART_ONE_UNCHANGED=YES
+ART_TWO_UNCHANGED=YES
+DATA_SIZE=370866479
+DATA_SHA256=50867f319262f646d32583ffcf98d2c8fb51e1156fa2035ed2a3ea061bb9ff41
+ART_ONE_SIZE=2144061050
+ART_ONE_SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+ART_TWO_SIZE=307234369
+ART_TWO_SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+ZIP_SIZE=831868155
+ZIP_SHA256=5f132801295a01843c02d8b9faaab55b41a52876edcc8b7be338fb9917b59558
+CHANGED_PACKED_FILES=Data\INI\CommandSet_ZZZZ_IraqMicToWfRadarAd.ini;Data\INI\CommandButton_ZZZZ_IraqMicRadarAd.ini;Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+MIC_SLOTS=1-14_COPIES_SELL_15
+WF_TRANSFER_PRESERVED=YES
+KARRAR2_MIC_PREREQ=REMOVED
+MIC_START_GAME_PRESERVED=YES
+SOURCE_MENUS_PRESERVED=YES
+ART_CHANGED=NO
+WEAPON_PROJECTILE_RESOLVE=TEXT_ONLY
+MODEL_RESOLVE=INHERITED_FROM_SOURCE_TEXT
+RUNTIME_TEST=NOT RUN
+
+slot|country|source_object|iraq_copy|cost|button|src_cmd|validation
+1|Israel|Israel_Arrow|Iraq_MIC_Arrow|8000|isi_arrow|Command_ConstructIsrael_Arrow|STATIC_PASS
+2|Israel|Israel_AN_TPY2|Iraq_MIC_AN_TPY2|6000|isi_tpy2|Command_ConstructIsrael_AN_TPY2|STATIC_PASS
+3|Russia|RussiaVehicle92N6R|Iraq_MIC_92N6R|6000|rus_92n6r|Command_ConstructRussiaVehicle92N6R|STATIC_PASS
+4|Russia|RussiaVehicleS400|Iraq_MIC_S400|8000|rus_s400r|Command_ConstructRussiaVehicleS400|STATIC_PASS
+5|Russia|RussiaVehiclePantsirS1M|Iraq_MIC_PantsirS1M|4000|rus_pantsirs1m|Command_ConstructRussiaVehiclePantsirS1M|STATIC_PASS
+6|Russia|RussiaVehicleKrasukha4|Iraq_MIC_Krasukha4|12000|rus_krasukha4|Command_ConstructRussiaVehicleKrasukha4|STATIC_PASS
+7|Russia|RussiaVehicle96L6TSP|Iraq_MIC_96L6TSP|15000|rus_96l6tsp|Command_ConstructRussiaVehicle96L6TSP|STATIC_PASS
+8|Russia|RussiaVehicleS500|Iraq_MIC_S500|15000|rus_s500|Command_ConstructRussiaVehicleS500|STATIC_PASS
+9|China|ChinaVehicleHQ9|Iraq_MIC_HQ9|8000|pla_hq9b|Command_ConstructChinaVehicleHQ9|STATIC_PASS
+10|China|ChinaVehicleHT233|Iraq_MIC_HT233|5000|pla_ht233|Command_ConstructChinaVehicleHT233|STATIC_PASS
+11|NATO|NatoVehicleTRML4D|Iraq_MIC_TRML4D|5000|Nat_trml4d|Command_ConstructNatoVehicleTRML4D|STATIC_PASS
+12|NATO|NatoVehicleIRIST|Iraq_MIC_IRIST|7000|Nat_irist|Command_ConstructNatoVehicleIRIST|STATIC_PASS
+13|USA|US_AN_TPY2|Iraq_MIC_US_AN_TPY2|10000|us_tpy2|Command_ConstructAmericaVehicleAN_TPY2|STATIC_PASS
+14|USA|US_THAAD|Iraq_MIC_THAAD|15000|us_thaad|Command_ConstructAmericaVehicleTHAAD|STATIC_PASS
+
+ADAPTATIONS (Iraq copies only; originals unchanged):
+- Side rewritten to Iraq on every copy.
+- BuildCost set to the requested Iraq M.I.C. price.
+- Country-specific Prerequisites emptied so MIC production is not gated
+  on Israel/Russia/China/NATO/US buildings.
+- Iraq_MIC_96L6TSP also drops SCIENCE_Rank6 (source second Prerequisites).
+- CombatMode/PackMode/FireControl companion objects stay shared by name.
+- Source weapons, projectiles, models, and selected-unit CommandSets reused.
+- Slot 8 button uses MappedImage rus_s500 (source UNIT_BUILD last-wins
+  rus_s400r; object portrait RUS_S500r).
+- Sell is slot 15 (project already uses 15+; slot 14 is THAAD).

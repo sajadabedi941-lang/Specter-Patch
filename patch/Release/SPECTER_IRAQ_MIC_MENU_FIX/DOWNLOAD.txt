@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/_SPEC_DATA_ONE.big
+  SIZE=370871289
+  SHA256=2de43345a2fa3b1789c50c0bad4d0bf8279e8a6c9e6919d5aa47f337e57e75c8
+
+ART textures (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/_SPEC_ART_ONE.big
+  SIZE=2144061050
+  SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+
+ART models (unchanged):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/_SPEC_ART_TWO.big
+  SIZE=307234369
+  SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/SPECTER_IRAQ_MIC_MENU_FIX.zip
+  SIZE=831868933
+  SHA256=cbabf298b480e44881bc717b555aefdc202dac10b6331285b4ee579771e64b6a
+
+TAG=s-iraq-mic-menu-fix
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-mic-menu-fix
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

@@ -1,0 +1,1 @@
+PR #664 last-wins overlay was CommandSet_ZZZZ_IraqMicToWfRadarAd.ini. Packed CommandSet.ini still defined Iraq_MICCommandSet as the old Iraqi upgrade/production menu (Karrar-2, B340, Fahad-3, Abbas/Hussien/S-8/BMP/Tier). SPECTER live catalogs are CommandSet.ini and CommandButton.ini. The in-game MIC menu matched CommandSet.ini, not the ZZZZ sidecar.

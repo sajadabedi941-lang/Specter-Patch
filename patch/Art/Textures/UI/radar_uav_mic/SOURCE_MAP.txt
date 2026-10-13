@@ -1,0 +1,22 @@
+Uploaded GitHub patch/ PNG  ->  processed 128x128 (flag 128x64)  ->  unit / surface
+Inspected image contents; filenames are not the identity proof.
+
+heron.png                                            -> heron.png                 -> SpecterRadar_Heron (radar slot 9)
+MQ_4 Global hawk.png                                 -> mq4_global_hawk.png       -> SpecterRadar_MQ4 (radar slot 10)
+orlan_10.png                                         -> orlan_10.png              -> SpecterRadar_Orlan10 (radar slot 11)
+shahed_136 mobile.png                                -> shahed_136_mobile.png     -> SpecterRadar_ShahedLauncher (radar slot 12)
+Arrow AAM Launcher.png                               -> arrow_aam_launcher.png    -> Iraq_MIC_Arrow (MIC slot 1)
+Radar an.png                                         -> radar_an.png              -> Iraq_MIC_AN_TPY2 Israeli AN/TPY-2 (MIC slot 2)
+92N6E Radar.png                                      -> 92n6e_radar.png           -> Iraq_MIC_92N6R (MIC slot 3)
+S-400 TEL.png                                        -> s400_tel.png              -> Iraq_MIC_S400 (MIC slot 4)
+Pantsir-S1M.png                                      -> pantsir_s1m.png           -> Iraq_MIC_PantsirS1M (MIC slot 5)
+Krasukha-4.png                                       -> krasukha_4.png            -> Iraq_MIC_Krasukha4 (MIC slot 6)
+96L6-TSP.png                                         -> 96l6_tsp.png              -> Iraq_MIC_96L6TSP (MIC slot 7)
+S-500 TEL.png                                        -> s500_tel.png              -> Iraq_MIC_S500 (MIC slot 8)
+HQ-9B TEL.png                                        -> hq9b_tel.png              -> Iraq_MIC_HQ9 (MIC slot 9)
+HT-233 Radar.png                                     -> ht233_radar.png           -> Iraq_MIC_HT233 (MIC slot 10)
+TRML-4D.png                                          -> trml_4d.png               -> Iraq_MIC_TRML4D (MIC slot 11)
+system matching the existing repository object.png   -> iris_t_system.png         -> Iraq_MIC_IRIST NATO IRIS-T (MIC slot 12)
+Radar System usa.png                                 -> radar_system_usa.png      -> Iraq_MIC_US_AN_TPY2 (MIC slot 13)
+THAAD Air Defence System.png                         -> thaad.png                 -> Iraq_MIC_THAAD (MIC slot 14)
+Futuristic Orbital Globe Emblem Flag.png             -> futuristic_flag.png       -> Iraq_MIC building flag (IQ__IQFlag_HsGM FLAG01-03)

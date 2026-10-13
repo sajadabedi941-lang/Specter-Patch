@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/_SPEC_DATA_ONE.big
+  SIZE=370921471
+  SHA256=16fe4be2b4fc8c693b59c3340b996535a26c1c2abc50be62f205ef62145284aa
+
+ART textures:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/_SPEC_ART_ONE.big
+  SIZE=2144972013
+  SHA256=9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+
+ART models:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/_SPEC_ART_TWO.big
+  SIZE=307254782
+  SHA256=c2985f5a7bd53ab1a465c30bb85357db05aaa2724d12fabc92492fe12486bf10
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-mic-art/SPECTER_RADAR_UAV_MIC_ART.zip
+  SIZE=832732158
+  SHA256=db484d4c4c1c858da6fcc9ed1d374e084ef89a8a01b76e707e0be6b24a919e4e
+
+TAG=s-radar-uav-mic-art
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-radar-uav-mic-art
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

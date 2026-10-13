@@ -1,0 +1,20 @@
+uploaded|processed_png|visual_id|unit|slot|command|mapped_image|art_texture|notes
+heron.png|heron.png|Heron|SpecterRadar_Heron|radar-9|Command_ConstructSpecterRadarHeron|specbtn_heron|specbtn_heron.tga|ButtonImage only; SelectPortrait unchanged
+MQ_4 Global hawk.png|mq4_global_hawk.png|MQ-4 Global Hawk|SpecterRadar_MQ4|radar-10|Command_ConstructSpecterRadarMQ4|specbtn_mq4|specbtn_mq4.tga|ButtonImage only; SelectPortrait unchanged
+orlan_10.png|orlan_10.png|Orlan-10|SpecterRadar_Orlan10|radar-11|Command_ConstructSpecterRadarOrlan10|specbtn_orlan10|specbtn_orlan10.tga|ButtonImage only; SelectPortrait unchanged
+shahed_136 mobile.png|shahed_136_mobile.png|Shahed-136 Mobile Launcher|SpecterRadar_ShahedLauncher|radar-12|Command_ConstructSpecterRadarShahedLauncher|specbtn_shahedlnchr|specbtn_shahedlnchr.tga|ButtonImage only; SelectPortrait unchanged
+Arrow AAM Launcher.png|arrow_aam_launcher.png|Arrow AAM Launcher|Iraq_MIC_Arrow|mic-1|Command_ConstructIraq_MIC_Arrow|specbtn_mic_arrow|specbtn_mic_arrow.tga|ButtonImage only; SelectPortrait unchanged
+Radar an.png|radar_an.png|Israeli AN/TPY-2 (Radar an)|Iraq_MIC_AN_TPY2|mic-2|Command_ConstructIraq_MIC_AN_TPY2|specbtn_mic_tpy2|specbtn_mic_tpy2.tga|ButtonImage only; SelectPortrait unchanged
+92N6E Radar.png|92n6e_radar.png|92N6E Radar|Iraq_MIC_92N6R|mic-3|Command_ConstructIraq_MIC_92N6R|specbtn_mic_92n6r|specbtn_mic_92n6r.tga|ButtonImage only; SelectPortrait unchanged
+S-400 TEL.png|s400_tel.png|S-400 TEL|Iraq_MIC_S400|mic-4|Command_ConstructIraq_MIC_S400|specbtn_mic_s400|specbtn_mic_s400.tga|ButtonImage only; SelectPortrait unchanged
+Pantsir-S1M.png|pantsir_s1m.png|Pantsir-S1M|Iraq_MIC_PantsirS1M|mic-5|Command_ConstructIraq_MIC_PantsirS1M|specbtn_mic_pantsir|specbtn_mic_pantsir.tga|ButtonImage only; SelectPortrait unchanged
+Krasukha-4.png|krasukha_4.png|Krasukha-4|Iraq_MIC_Krasukha4|mic-6|Command_ConstructIraq_MIC_Krasukha4|specbtn_mic_krasukha|specbtn_mic_krasukha.tga|ButtonImage only; SelectPortrait unchanged
+96L6-TSP.png|96l6_tsp.png|96L6-TSP|Iraq_MIC_96L6TSP|mic-7|Command_ConstructIraq_MIC_96L6TSP|specbtn_mic_96l6tsp|specbtn_mic_96l6tsp.tga|ButtonImage only; SelectPortrait unchanged
+S-500 TEL.png|s500_tel.png|S-500 TEL|Iraq_MIC_S500|mic-8|Command_ConstructIraq_MIC_S500|specbtn_mic_s500|specbtn_mic_s500.tga|ButtonImage only; SelectPortrait unchanged
+HQ-9B TEL.png|hq9b_tel.png|HQ-9B TEL|Iraq_MIC_HQ9|mic-9|Command_ConstructIraq_MIC_HQ9|specbtn_mic_hq9|specbtn_mic_hq9.tga|ButtonImage only; SelectPortrait unchanged
+HT-233 Radar.png|ht233_radar.png|HT-233 Radar|Iraq_MIC_HT233|mic-10|Command_ConstructIraq_MIC_HT233|specbtn_mic_ht233|specbtn_mic_ht233.tga|ButtonImage only; SelectPortrait unchanged
+TRML-4D.png|trml_4d.png|TRML-4D|Iraq_MIC_TRML4D|mic-11|Command_ConstructIraq_MIC_TRML4D|specbtn_mic_trml4d|specbtn_mic_trml4d.tga|ButtonImage only; SelectPortrait unchanged
+system matching the existing repository object.png|iris_t_system.png|NATO IRIS-T (System)|Iraq_MIC_IRIST|mic-12|Command_ConstructIraq_MIC_IRIST|specbtn_mic_irist|specbtn_mic_irist.tga|ButtonImage only; SelectPortrait unchanged
+Radar System usa.png|radar_system_usa.png|US AN/TPY-2|Iraq_MIC_US_AN_TPY2|mic-13|Command_ConstructIraq_MIC_US_AN_TPY2|specbtn_mic_ustpy2|specbtn_mic_ustpy2.tga|ButtonImage only; SelectPortrait unchanged
+THAAD Air Defence System.png|thaad.png|THAAD|Iraq_MIC_THAAD|mic-14|Command_ConstructIraq_MIC_THAAD|specbtn_mic_thaad|specbtn_mic_thaad.tga|ButtonImage only; SelectPortrait unchanged
+Futuristic Orbital Globe Emblem Flag.png|futuristic_flag.png|futuristic orbital globe emblem|Iraq_MIC building flag surface|n/a|ModuleTag_Flag_Hs IQ__IQFlag_HsGM|n/a|SpecterFuturisticFlag.tga|cloned from IQ__IQFlag_HsWF; FLAG01-03 only; not a production button

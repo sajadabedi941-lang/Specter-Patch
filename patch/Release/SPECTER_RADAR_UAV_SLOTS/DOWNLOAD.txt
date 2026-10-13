@@ -1,0 +1,24 @@
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-slots/_SPEC_DATA_ONE.big
+  SIZE=370916915
+  SHA256=a4844ce0dfeacb45300ee2003057088b3c1cd5d3b54253bebc15d9c777f46b86
+
+ART textures (unchanged from PR #665 / tag s-iraq-mic-menu-fix):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/_SPEC_ART_ONE.big
+  SIZE=2144061050
+  SHA256=dd53835d7119e7609d2bd955879f234da83a0c6c650d7d7ed1194385d9bbd0f2
+
+ART models (unchanged from PR #665 / tag s-iraq-mic-menu-fix):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-mic-menu-fix/_SPEC_ART_TWO.big
+  SIZE=307234369
+  SHA256=daf5e3bb3d4b0f763fee4bd39ceafa06000b9c7261f538a0e84a7b6b54fb7f21
+
+ZIP:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-radar-uav-slots/SPECTER_RADAR_UAV_SLOTS.zip
+  SIZE=831874781
+  SHA256=93dc39856d0f64122b12a55a37daa9d2841703896a016e52a13abab82a7cd432
+
+TAG=s-radar-uav-slots
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-radar-uav-slots
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

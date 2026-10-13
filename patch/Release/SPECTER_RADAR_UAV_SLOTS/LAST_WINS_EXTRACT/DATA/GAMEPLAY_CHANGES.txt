@@ -1,0 +1,9 @@
+Copy-only adaptations on SpecterRadar_* objects:
+1. BuildCost set to 10000 / 12000 / 10000 / 8000.
+2. SpecterRadar_Orlan10 Prerequisites emptied because the source
+   RussiaDroneOrlan10 requires Object=Russia91N6E, which the 18
+   target countries do not own. Required for buildability.
+No weapon, damage, speed, targeting, reload, KindOf, Side,
+DisplayName, model, or SelectPortrait changes.
+ButtonImage stays on the CommandButton; SelectPortrait stays on
+the object.

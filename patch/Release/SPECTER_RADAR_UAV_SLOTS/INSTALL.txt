@@ -1,0 +1,11 @@
+SPECTER RADAR UAV SLOTS — INSTALL
+
+Keep the split ART arrangement. Do not recombine ART.
+Place all three uncompressed BIGs next to generals.exe:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+
+Zero Hour auto-loads every *.big in that folder.
+Each .big must start with BIGF. Do not install gzip as .big.
+Replace any older SPECTER_IRAQ_MIC_MENU_FIX DATA file.

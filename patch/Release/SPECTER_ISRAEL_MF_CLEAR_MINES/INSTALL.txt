@@ -1,0 +1,10 @@
+SPECTER ISRAEL MISSILE FACTORY / CLEAR MINES — INSTALL
+
+Keep the split ART arrangement. Do not recombine ART.
+Place all three uncompressed BIGs next to generals.exe:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+
+Zero Hour auto-loads every *.big in that folder.
+Replace SPECTER_GLOBAL_STORE_FIVE DATA. ART is unchanged from PR #670.

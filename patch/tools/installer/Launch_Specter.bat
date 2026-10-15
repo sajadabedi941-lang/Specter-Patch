@@ -43,17 +43,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%PATCH_DIR%zz_SPECTER_NoGeneralSpySatellite.big" (
+if not exist "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" (
   echo.
-  echo ERROR: Missing zz_SPECTER_NoGeneralSpySatellite.big
-  echo Put zz_SPECTER_NoGeneralSpySatellite.big next to Launch_Specter.bat
+  echo ERROR: Missing 0_SPECTER_NoGeneralSpySatellite.big
+  echo Put 0_SPECTER_NoGeneralSpySatellite.big next to Launch_Specter.bat
   echo.
   pause
   exit /b 1
 )
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
-echo   OK: zz_SPECTER_NoGeneralSpySatellite.big
+echo   OK: 0_SPECTER_NoGeneralSpySatellite.big
 echo.
 
 echo [2/4] Checking generals.exe...
@@ -104,7 +104,7 @@ echo.
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Specter loads _SPEC_DATA_ONE.big, _SPEC_ART_ONE.big, and
-echo   zz_SPECTER_NoGeneralSpySatellite.big from the game folder
+echo   0_SPECTER_NoGeneralSpySatellite.big from the game folder
 echo   automatically when generals.exe starts.
 echo.
 
@@ -137,16 +137,16 @@ if "%SAME%"=="1" (
   )
   echo   OK: copied _SPEC_ART_ONE.big
 
-  echo   Copying zz_SPECTER_NoGeneralSpySatellite.big ...
-  copy /Y "%PATCH_DIR%zz_SPECTER_NoGeneralSpySatellite.big" "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" >nul
+  echo   Copying 0_SPECTER_NoGeneralSpySatellite.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" >nul
   if errorlevel 1 (
     echo.
-    echo ERROR: Failed to copy zz_SPECTER_NoGeneralSpySatellite.big into game folder.
+    echo ERROR: Failed to copy 0_SPECTER_NoGeneralSpySatellite.big into game folder.
     echo.
     pause
     exit /b 1
   )
-  echo   OK: copied zz_SPECTER_NoGeneralSpySatellite.big
+  echo   OK: copied 0_SPECTER_NoGeneralSpySatellite.big
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -163,9 +163,9 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" (
+if not exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
   echo.
-  echo ERROR: zz_SPECTER_NoGeneralSpySatellite.big is not in the game folder.
+  echo ERROR: 0_SPECTER_NoGeneralSpySatellite.big is not in the game folder.
   echo.
   pause
   exit /b 1
@@ -208,7 +208,7 @@ echo.
 echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
-echo   %GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big
+echo   %GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big
 echo.
 echo You can close this window.
 echo.

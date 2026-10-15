@@ -37,17 +37,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%PATCH_DIR%zz_SPECTER_NoGeneralSpySatellite.big" (
+if not exist "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" (
   echo.
-  echo ERROR: Missing patch file zz_SPECTER_NoGeneralSpySatellite.big
-  echo Put zz_SPECTER_NoGeneralSpySatellite.big next to Install_SpecterPatch.bat
+  echo ERROR: Missing patch file 0_SPECTER_NoGeneralSpySatellite.big
+  echo Put 0_SPECTER_NoGeneralSpySatellite.big next to Install_SpecterPatch.bat
   echo.
   pause
   exit /b 1
 )
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
-echo   Found zz_SPECTER_NoGeneralSpySatellite.big
+echo   Found 0_SPECTER_NoGeneralSpySatellite.big
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -126,17 +126,17 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
 
-if exist "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" (
-  echo   Backing up old zz_SPECTER_NoGeneralSpySatellite.big ...
-  copy /Y "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" "%BACKUP%\zz_SPECTER_NoGeneralSpySatellite.big" >nul
+if exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
+  echo   Backing up old 0_SPECTER_NoGeneralSpySatellite.big ...
+  copy /Y "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" "%BACKUP%\0_SPECTER_NoGeneralSpySatellite.big" >nul
   if errorlevel 1 (
-    echo ERROR: Backup failed for zz_SPECTER_NoGeneralSpySatellite.big
+    echo ERROR: Backup failed for 0_SPECTER_NoGeneralSpySatellite.big
     pause
     exit /b 1
   )
   echo   OK
 ) else (
-  echo   No existing zz_SPECTER_NoGeneralSpySatellite.big to backup
+  echo   No existing 0_SPECTER_NoGeneralSpySatellite.big to backup
 )
 echo   Backup folder:
 echo   %BACKUP%
@@ -172,10 +172,10 @@ if "%SAME%"=="1" (
   )
   echo   OK
 
-  echo   Copying zz_SPECTER_NoGeneralSpySatellite.big ...
-  copy /Y "%PATCH_DIR%zz_SPECTER_NoGeneralSpySatellite.big" "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" >nul
+  echo   Copying 0_SPECTER_NoGeneralSpySatellite.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" >nul
   if errorlevel 1 (
-    echo ERROR: Failed to copy zz_SPECTER_NoGeneralSpySatellite.big
+    echo ERROR: Failed to copy 0_SPECTER_NoGeneralSpySatellite.big
     echo Backup is in: %BACKUP%
     pause
     exit /b 1
@@ -193,8 +193,8 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" (
-  echo ERROR: zz_SPECTER_NoGeneralSpySatellite.big missing after install.
+if not exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
+  echo ERROR: 0_SPECTER_NoGeneralSpySatellite.big missing after install.
   pause
   exit /b 1
 )

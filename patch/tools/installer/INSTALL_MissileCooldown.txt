@@ -1,0 +1,20 @@
+SPECTER — global 300-second missile re-fire cooldown and heavy-warhead radii
+
+Put these files in ONE folder. Do not rename them.
+
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+- 0_SPECTER_MissileCooldown.big
+- Launch_Specter.bat
+- Install_SpecterPatch.bat
+
+Run Install_SpecterPatch.bat once, or Launch_Specter.bat to play.
+Both copy the BIG files beside generals.exe. Do not put BIGs inside Data or Art.
+Do not rename 0_SPECTER_MissileCooldown.big to zz_.
+
+This overlay owns Data\INI\Weapon.ini and the Data\INI\Weapon\ last-wins
+fragments. It sets DelayBetweenShots = 300000 on every factory A-J PRIMARY
+weapon and scales splash / shock / detonation FX / Death HACK radius for
+factory missiles whose configured warhead mass exceeds 4000 kg.
+
+Zero Hour was not launched while this package was built.

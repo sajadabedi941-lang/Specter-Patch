@@ -1,0 +1,20 @@
+SPECTER — remove Spy Satellite from USA, Israel, and Iraq radar menus
+حذف دکمهٔ عمومی Spy Satellite از رادار آمریکا، اسرائیل و عراق
+
+Put these files in ONE folder. Do not rename them.
+
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big
+- 0_SPECTER_USAIsraelIraqRadar.big
+- Launch_Specter.bat
+- Install_SpecterPatch.bat
+
+Run Install_SpecterPatch.bat once, or Launch_Specter.bat to play.
+Both copy the BIG files beside generals.exe. Do not put BIGs inside Data or Art.
+Do not rename 0_SPECTER_USAIsraelIraqRadar.big to zz_.
+
+This overlay owns Data\INI\CommandSet.ini and only changes
+AmericaRadarStationCommandSet, IsraelRadarStationCommandSet, and
+Iraq_RadarStationCommandSet. Other countries keep the Specter DATA menus.
+
+Zero Hour was not launched while this package was built.

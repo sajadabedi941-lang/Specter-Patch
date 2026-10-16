@@ -12,9 +12,15 @@ Run Install_SpecterPatch.bat once, or Launch_Specter.bat to play.
 Both copy the BIG files beside generals.exe. Do not put BIGs inside Data or Art.
 Do not rename 0_SPECTER_MissileCooldown.big to zz_.
 
-This overlay owns Data\INI\Weapon.ini and the Data\INI\Weapon\ last-wins
-fragments. It sets DelayBetweenShots = 300000 on every factory A-J PRIMARY
-weapon and scales splash / shock / detonation FX / Death HACK radius for
-factory missiles whose configured warhead mass exceeds 4000 kg.
+This overlay owns Data\INI\Weapon.ini, the Data\INI\Weapon\ last-wins
+fragments, and Data\English\generals.csf. It sets DelayBetweenShots = 300000
+on every factory A-J PRIMARY weapon and scales splash / shock / detonation FX
+/ Death HACK radius for factory missiles whose configured warhead mass exceeds
+4000 kg.
+
+Production-button tooltips show Re-fire: 300 sec on all 250 factory missiles
+and Blast radius from the live PrimaryDamageRadius on the 16 missiles above
+4000 kg. Warhead kg, range, accuracy, and radar-stealth lines are unchanged
+where they already matched last-wins DATA.
 
 Zero Hour was not launched while this package was built.

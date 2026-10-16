@@ -37,17 +37,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" (
+if not exist "%PATCH_DIR%0_SPECTER_USAIsraelIraqRadar.big" (
   echo.
-  echo ERROR: Missing patch file 0_SPECTER_NoGeneralSpySatellite.big
-  echo Put 0_SPECTER_NoGeneralSpySatellite.big next to Install_SpecterPatch.bat
+  echo ERROR: Missing patch file 0_SPECTER_USAIsraelIraqRadar.big
+  echo Put 0_SPECTER_USAIsraelIraqRadar.big next to Install_SpecterPatch.bat
   echo.
   pause
   exit /b 1
 )
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
-echo   Found 0_SPECTER_NoGeneralSpySatellite.big
+echo   Found 0_SPECTER_USAIsraelIraqRadar.big
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -126,17 +126,17 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
 
-if exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
-  echo   Backing up old 0_SPECTER_NoGeneralSpySatellite.big ...
-  copy /Y "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" "%BACKUP%\0_SPECTER_NoGeneralSpySatellite.big" >nul
+if exist "%GAME_ROOT%0_SPECTER_USAIsraelIraqRadar.big" (
+  echo   Backing up old 0_SPECTER_USAIsraelIraqRadar.big ...
+  copy /Y "%GAME_ROOT%0_SPECTER_USAIsraelIraqRadar.big" "%BACKUP%\0_SPECTER_USAIsraelIraqRadar.big" >nul
   if errorlevel 1 (
-    echo ERROR: Backup failed for 0_SPECTER_NoGeneralSpySatellite.big
+    echo ERROR: Backup failed for 0_SPECTER_USAIsraelIraqRadar.big
     pause
     exit /b 1
   )
   echo   OK
 ) else (
-  echo   No existing 0_SPECTER_NoGeneralSpySatellite.big to backup
+  echo   No existing 0_SPECTER_USAIsraelIraqRadar.big to backup
 )
 echo   Backup folder:
 echo   %BACKUP%
@@ -172,10 +172,10 @@ if "%SAME%"=="1" (
   )
   echo   OK
 
-  echo   Copying 0_SPECTER_NoGeneralSpySatellite.big ...
-  copy /Y "%PATCH_DIR%0_SPECTER_NoGeneralSpySatellite.big" "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" >nul
+  echo   Copying 0_SPECTER_USAIsraelIraqRadar.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_USAIsraelIraqRadar.big" "%GAME_ROOT%0_SPECTER_USAIsraelIraqRadar.big" >nul
   if errorlevel 1 (
-    echo ERROR: Failed to copy 0_SPECTER_NoGeneralSpySatellite.big
+    echo ERROR: Failed to copy 0_SPECTER_USAIsraelIraqRadar.big
     echo Backup is in: %BACKUP%
     pause
     exit /b 1
@@ -193,12 +193,22 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
-if not exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
-  echo ERROR: 0_SPECTER_NoGeneralSpySatellite.big missing after install.
+if not exist "%GAME_ROOT%0_SPECTER_USAIsraelIraqRadar.big" (
+  echo ERROR: 0_SPECTER_USAIsraelIraqRadar.big missing after install.
   pause
   exit /b 1
 )
 echo.
+
+
+if exist "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" (
+  echo   Removing old 0_SPECTER_NoGeneralSpySatellite.big so this radar fix can load...
+  del /F /Q "%GAME_ROOT%0_SPECTER_NoGeneralSpySatellite.big" >nul
+)
+if exist "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" (
+  echo   Removing old zz_SPECTER_NoGeneralSpySatellite.big so this radar fix can load...
+  del /F /Q "%GAME_ROOT%zz_SPECTER_NoGeneralSpySatellite.big" >nul
+)
 
 echo [5/5] Done.
 echo.

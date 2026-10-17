@@ -1,0 +1,567 @@
+SPECTER INI REPAIR REPORT
+========================
+Source archive: New folder.zip
+ReleaseCrashInfo.txt: not present in workspace (used Generals ZH INI parse rules)
+Original Specter archives / other INIs / maps / models / textures: NOT MODIFIED
+
+FILE:
+AbbasLauncher.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Airborne.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Aircraft_AAB_Global.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Aircraft_AirForceExpansion.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Britain_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Britain_F35B.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Egypt_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Egypt_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+France_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Germany_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+India_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+India_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+India_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+India_TejasMk2.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Israel_CommandCenter.ini
+
+ERROR:
+Invalid BuildCompletion PLACE_ON_GROUND
+
+FIX:
+Restored valid Generals enum PLACED_BY_PLAYER
+
+
+FILE:
+Israel_MilitaryHQ.ini
+
+ERROR:
+Invalid BuildCompletion PLACE_ON_GROUND
+
+FIX:
+Restored valid Generals enum PLACED_BY_PLAYER
+
+
+FILE:
+Italy_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Japan_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Japan_MQ9.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Karrar-2.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Lamiaa.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Libya_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Libya_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+MilitaryHQ_StockFactions.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Pakistan_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Pakistan_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Russia_AD_TorM.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SaudiArabia_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SaudiArabia_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SaudiArabia_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SouthAfrica_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SouthAfrica_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SouthKorea_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+SpecialForces.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Sweden_CombatDrone.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Syria_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Syria_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_AWACS.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_Akinci.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_Bora.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_EliteMaroonBerets.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_F16Block70.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_Kizilelma.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_TB2.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_Tu-22M3.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Turkey_WeaponObjects.ini
+
+ERROR:
+Invalid block terminator End; with trailing comment x2 (causes Error parsing INI file)
+
+FIX:
+Repaired module/block End tokens; moved comments to separate lines
+
+
+FILE:
+UAE_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+UAE_MQ9.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+UAE_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Ukraine_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Ukraine_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Vietnam_CommandCenter.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FILE:
+Vietnam_MilitaryHQ.ini
+
+ERROR:
+None (syntax valid)
+
+FIX:
+Validated Generals INI structure; no parse defects found
+
+
+FINAL VALIDATION
+----------------
+Files validated: 55
+Substantive repairs: 3
+  - Israel_CommandCenter.ini
+  - Israel_MilitaryHQ.ini
+  - Turkey_WeaponObjects.ini
+VERDICT: PASS
+
+INSTALL NOTE:
+Place each file under Data\INI\Object\Specter\<Faction>\... — never as flat Data\INI\*.ini

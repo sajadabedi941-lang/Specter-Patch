@@ -1,0 +1,602 @@
+SPECTER1 CUSTOM AIRBASE RESTORE — STATIC AUDIT
+INGAME_TESTED = NO
+
+============================================================
+PHASE 1 — FULL PACKED-PATH COMPARISON (no edits)
+============================================================
+
+OLD donor archive: /workspace/_SPEC.part01.rar .. _SPEC.part15.rar
+Extracted BIG:     /tmp/SPEC_OLD_DONOR_LOCKED/_SPEC_DATA_ONE.big
+OLD_DATA_SHA256  = a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+OLD_DATA_BYTES   = 384197258
+OLD_DATA_FILE_COUNT = 2836
+
+PR482 baseline:    PR #482 / Release SPECTER1_Iraq_Controlled_Unlock
+PR482 BIG:         /tmp/PR482_BASELINE/_SPEC_DATA_ONE.big
+PR482_DATA_SHA256= a6f022ff41664a9085c3a7197e71fb75776afd370702d63a0c3ece0b9cb1fd0c
+PR482_DATA_BYTES = 364977521
+PR482_DATA_FILE_COUNT = 2804
+
+BYTE_DIFFERENCE        = 19219737
+FILE_COUNT_DIFFERENCE  = 32
+
+ONLY_IN_OLD_COUNT      = 1195
+ONLY_IN_PR482_COUNT    = 1163
+COMMON_CHANGED_COUNT   = 413
+COMMON_IDENTICAL_COUNT = 1228
+
+The "32 extra files" figure is a NET count (1195 - 1163 = 32), not 32 unique
+airbase paths. Full only-in-OLD list: ONLY_IN_OLD.txt (1195 paths).
+
+Byte breakdown (content, not BIG header):
+  ONLY_IN_OLD_BYTES            = 33279589
+  ONLY_IN_PR482_BYTES          = 12206079
+  COMMON_CHANGED_DELTA         = -1849854
+  of which India leftover z01  = 19922944
+    path = Data\INI\Object\Specter\Indian Armed Forces\Peace Mission Beta Ver 1.0.z01
+    type = Zip multi-volume archive (unrelated leftover)
+
+OLD_SPEC_MISSING_32_PATHS_IDENTIFIED = YES
+OLD_SPEC_19MB_DIFFERENCE_EXPLAINED   = YES
+
+============================================================
+PHASE 2 — OLD CUSTOM AIRBASE SYSTEM
+============================================================
+
+Searched OLD _SPEC for TheAirPort, HXUSABigAirPort, LargeAirBase,
+HeavyAirBase, AirPort, AirBase, Airfield, ParkingPlace, Runway, Parking,
+Hangar.
+
+Result: OLD _SPEC has NO Object *LargeAirBase, NO Object *HeavyAirBase,
+NO TheAirPort, NO HXUSABigAirPort.
+
+The working custom system is AdvancedAirBase:
+
+  FIGHTER / STRATEGIC AIRBASE (OLD)
+    Object family     = *_AdvancedAirBase
+    Model             = US_AirField
+    Scale             = 1.60
+    Parking           = NumRows 2 x NumCols 8 = 16 pads
+    ExtraPublicBone   = Runway1..8 Parking/ParkHan/Prep + HeliPark
+    Geometry          = BOX 180 x 118 x 40
+    KindOf            includes FS_AIRFIELD
+    Documented in     = PatchSystems/AdvancedAirBase/RUNWAY_SYSTEM.txt
+
+  HEAVY AIRBASE (OLD)
+    There is no separate 6-aircraft / 3x2 building.
+    Heavy / bomber / AWACS / tanker / transport production is on the SAME
+    16-pad AdvancedAirBase (see RUNWAY_SYSTEM.txt and
+    *_AdvancedAirBaseCommandSet in CommandSet_AdvancedAirBase.ini).
+
+  Visible mesh US_AirField is an INTERNAL dependency of the OLD custom
+  implementation, not a PR #483 stock substitution of LargeAirBase.
+
+Builder chain in OLD (core):
+  Dozer.ini CommandSet = *_DozerCommandSet_PatchAAB
+  -> Command_Construct*_AdvancedAirBase
+  -> Object *_AdvancedAirBase
+  -> Draw W3DModelDraw Model=US_AirField Scale=1.60
+  -> ParkingPlaceBehavior 2x8
+  -> CommandSet *_AdvancedAirBaseCommandSet
+
+Iraq in OLD: Iraq_AdvancedAirBase object + construct button exist, but the
+button is not referenced by Iraq_WorkerCommandSet or Iraq_VT72BCommandSet.
+This restore wires Command_ConstructIraq_AdvancedAirBase onto the PR #482
+Iraq_VT72BCommandSet (the builder that already constructs airfields).
+
+Britain in OLD: construct button exists, Object Britain_AdvancedAirBase does
+not. No Britain AAB object was invented.
+
+============================================================
+PHASE 3 — WHAT PR #482 LOST (airbase-related)
+============================================================
+
+Classification of OLD airbase-related paths:
+
+MISSING_FROM_PR482 (restored):
+  CommandButton_AdvancedAirBase_SpecterFactions.ini
+  CommandSet_AdvancedAirBase.ini          (donor only; not copied wholesale)
+  AdvancedAirBase_Images.INI
+  AdvancedAirBase_Strings.txt
+  AdvancedAirBase_AllFactions.ini         (America/Russia/China/Iran/Iraq/Nato/GLA)
+  AdvancedAirBase_FutureFactions.ini      (AirF / NorthKorea / Israel)
+  France/Germany/Italy/Japan/Libya/Taiwan/SK/SA/Sweden/Turkey/Ukraine/UN/Vietnam
+    *_AdvancedAirBase.ini
+  RUNWAY_SYSTEM.txt
+
+CHANGED_IN_PR482 (stubs overwritten from OLD):
+  Egypt/India/Pakistan/SaudiArabia/Syria/UAE *_AdvancedAirBase.ini
+  (PR #482 reduced these to ~270-byte "REMOVED" comments)
+
+IDENTICAL: none of the live AAB objects (they were missing or stubbed)
+
+OBSOLETE / NOT RESTORED:
+  CommandButton_AdvancedAirBase_Aircraft.ini   (Patch_* aircraft)
+  Aircraft_AAB_Global.ini                      (unrelated old fleet)
+  Aircraft_AAB_StrategicBombers.ini            (unrelated old fleet)
+  India Peace Mission Beta Ver 1.0.z01         (19.9 MB leftover)
+  Faction-expansion CommandSet_*.ini wholesale
+  Orphan packed path North Korea\*
+
+UNRELATED:
+  The remaining ~1100 only-in-OLD paths are faction-expansion armies,
+  weapons, sciences, Turkey clone trees — not airbase infrastructure.
+
+PR #482-only LargeAirBase/HeavyAirBase files were LEFT IN PLACE (not used
+as the construct target). Their TheAirPort/HXUSABigAirPort Draw was not
+patched (PR #483 rejected).
+
+============================================================
+FINAL PACK
+============================================================
+
+BASELINE              = PR #482 RELEASE DATA
+OLD_SPEC_BYTES        = 384197258
+OLD_SPEC_FILE_COUNT   = 2836
+PR482_BYTES           = 364977521
+PR482_FILE_COUNT      = 2804
+NEW_DATA_BYTES        = 365383929
+NEW_DATA_SHA256       = 83ba27deb8ba5c0f8a516982534de85fc61634b7c00d61c698802bead6f7e2dc
+NEW_DATA_FILE_COUNT   = 2824
+MISSING_PATH_COUNT    = 0
+ADDED_PATH_COUNT      = 20
+CONTENT_CHANGED_PATH_COUNT = 6
+
+ADDED paths (all SOURCE=OLD_SPEC except the overlay):
+  Data\English\AdvancedAirBase_Strings.txt
+    PURPOSE=AAB display/tooltip strings
+    WHY_REQUIRED=DisplayName OBJECT:Patch_AdvancedAirBase
+  Data\INI\CommandButton_AdvancedAirBase_SpecterFactions.ini
+    PURPOSE=DOZER_CONSTRUCT buttons for every OLD AAB object
+    WHY_REQUIRED=builder -> object link
+  Data\INI\CommandSet_ZZZZ_RestoreAdvancedAirBase.ini
+    SOURCE=PR482+OLD_SPEC
+    PURPOSE=last-win builder wiring + AAB production from PR482 aircraft
+    WHY_REQUIRED=dozers must construct AAB; Iraq roster must survive
+  Data\INI\MappedImages\HandCreated\AdvancedAirBase_Images.INI
+    PURPOSE=Patch_AdvancedAirBase portrait
+    WHY_REQUIRED=button/portrait image
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase_AllFactions.ini
+    PURPOSE=America/Russia/China/Iran/Iraq/Nato/GLA AAB objects
+    WHY_REQUIRED=core custom buildings
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase_FutureFactions.ini
+    PURPOSE=AirF/NorthKorea/Israel AAB objects
+    WHY_REQUIRED=core custom buildings
+  Data\INI\Object\Specter\PatchSystems\AdvancedAirBase\RUNWAY_SYSTEM.txt
+    PURPOSE=OLD parking contract documentation
+    WHY_REQUIRED=reference only
+  Data\INI\Object\Specter\French Armed Forces\Buildings\France_AdvancedAirBase.ini
+  Data\INI\Object\Specter\German Armed Forces\Buildings\Germany_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Buildings\Italy_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Republic of China Armed Forces\Buildings\Taiwan_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Buildings\SouthKorea_AdvancedAirBase.ini
+  Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Sweden_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Turkey Armed Forces\Buildings\Turkey_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Ukraine_AdvancedAirBase.ini
+  Data\INI\Object\Specter\United Nations Forces\Buildings\UN_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Buildings\Vietnam_AdvancedAirBase.ini
+    PURPOSE=national AAB object (16-pad US_AirField @ 1.60)
+    WHY_REQUIRED=OLD custom building for that faction
+
+CHANGED paths (SOURCE=OLD_SPEC, overwrite PR #482 stubs):
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_AdvancedAirBase.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_AdvancedAirBase.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_AdvancedAirBase.ini
+    PURPOSE=restore live AAB object over PR #482 "REMOVED" stub
+    WHY_REQUIRED=stub had no Object / Draw / parking
+
+============================================================
+FACTION MATRIX
+============================================================
+Parking/capacity for every restored AAB: 16 (2x8). Model: US_AirField @ 1.60.
+CUSTOM_HEAVY is the same AAB (OLD has no separate heavy building).
+
+FACTION=USA
+BUILDER=AmericaVehicleDozer / AmericaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=America_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructAmerica_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=America_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructAmerica_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=China
+BUILDER=ChinaVehicleDozer / PLADozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=China_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructChina_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=China_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructChina_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Russia
+BUILDER=RussiaVehicleDozer / RussiaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Russia_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructRussia_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Russia_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructRussia_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Iran
+BUILDER=IranVehicleDozer / IranDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Iran_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructIran_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Iran_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructIran_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Iraq
+BUILDER=Iraq_VT72B / Iraq_VT72BCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Iraq_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructIraq_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Iraq_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructIraq_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+NOTE=OLD object+button existed; builder slot was missing in OLD and is now wired.
+
+FACTION=GLA
+BUILDER=GLAInfantryWorker / GLAWorkerCommandSet (+ g alias)
+CUSTOM_FIGHTER_AIRBASE_OBJECT=GLA_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructGLA_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=GLA_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructGLA_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=NATO
+BUILDER=NatoVehicleDozer / NatoDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Nato_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructNato_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Nato_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructNato_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=AmericaAirForceGeneral / Israel
+BUILDER=AirF_AmericaVehicleDozer / AirF_AmericaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=AirF_AmericaAdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructAirF_AmericaAdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=AirF_AmericaAdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructAirF_AmericaAdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+NOTE=Israel_AdvancedAirBase object also restored (OLD FutureFactions).
+
+FACTION=Egypt
+BUILDER=Egypt_Worker / EgyptDozerCommandSet (GLA worker upgrade)
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Egypt_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructEgypt_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Egypt_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructEgypt_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Syria
+BUILDER=SyriaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Syria_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructSyria_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Syria_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructSyria_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=UAE
+BUILDER=UAEDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=UAE_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructUAE_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=UAE_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructUAE_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=SaudiArabia
+BUILDER=SaudiArabiaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=SaudiArabia_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructSaudiArabia_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=SaudiArabia_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructSaudiArabia_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Libya
+BUILDER=LibyaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Libya_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructLibya_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Libya_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructLibya_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Turkey
+BUILDER=TurkeyDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Turkey_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructTurkey_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Turkey_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructTurkey_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=France
+BUILDER=FranceDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=France_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructFrance_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=France_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructFrance_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Germany
+BUILDER=GermanyDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Germany_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructGermany_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Germany_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructGermany_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Italy
+BUILDER=ItalyDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Italy_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructItaly_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Italy_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructItaly_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Britain
+BUILDER=BritainDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=NONE (OLD never defined Britain_AdvancedAirBase)
+CUSTOM_FIGHTER_AIRBASE_BUTTON=NONE
+CUSTOM_FIGHTER_AIRBASE_MODEL=NONE
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=NONE
+CUSTOM_HEAVY_AIRBASE_OBJECT=NONE
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructBritain_HeavyAirBase (PR482 leftover)
+CUSTOM_HEAVY_AIRBASE_MODEL=HXUSABigAirPort (PR482 leftover, not restored)
+CUSTOM_HEAVY_AIRBASE_CAPACITY=n/a
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=NO
+NOTE=Did not invent a Britain AAB object. OLD button existed without an Object.
+
+FACTION=Sweden
+BUILDER=SwedenDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Sweden_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructSweden_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Sweden_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructSweden_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Ukraine
+BUILDER=UkraineDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Ukraine_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructUkraine_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Ukraine_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructUkraine_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Pakistan
+BUILDER=PakistanDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Pakistan_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructPakistan_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Pakistan_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructPakistan_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=India
+BUILDER=IndiaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=India_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructIndia_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=India_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructIndia_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Japan
+BUILDER=Japan_VT72BCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Japan_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructJapan_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Japan_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructJapan_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=SouthKorea
+BUILDER=SouthKorea_VT72BCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=SouthKorea_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructSouthKorea_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=SouthKorea_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructSouthKorea_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=NorthKorea
+BUILDER=NorthKorea_VT72BCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=NorthKorea_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructNorthKorea_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=NorthKorea_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructNorthKorea_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Vietnam
+BUILDER=Vietnam_VT72BCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=Vietnam_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructVietnam_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=Vietnam_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructVietnam_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=SouthAfrica
+BUILDER=SouthAfricaDozerCommandSet
+CUSTOM_FIGHTER_AIRBASE_OBJECT=SouthAfrica_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_BUTTON=Command_ConstructSouthAfrica_AdvancedAirBase
+CUSTOM_FIGHTER_AIRBASE_MODEL=US_AirField
+CUSTOM_FIGHTER_AIRBASE_CAPACITY=16
+CUSTOM_HEAVY_AIRBASE_OBJECT=SouthAfrica_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_BUTTON=Command_ConstructSouthAfrica_AdvancedAirBase
+CUSTOM_HEAVY_AIRBASE_MODEL=US_AirField
+CUSTOM_HEAVY_AIRBASE_CAPACITY=16
+MATCHES_OLD_SPEC_IMPLEMENTATION=YES
+CONSTRUCTION_CHAIN_COMPLETE=YES
+
+FACTION=Taiwan / UN
+Objects restored from OLD. Not playable in PR #482 PlayerTemplate.
+No builder invented.
+
+FACTION=Boss
+No AAB in OLD. No builder. Not invented.
+
+============================================================
+PR #482 PRESERVE
+============================================================
+IRAQ_L159_CLIPSIZE = 3                    (Weapon.ini IraqJetL159_WpnBomb unchanged)
+IRAQ_MIG21_SCALE = 0.91                   (IraqJetMig21.ini unchanged)
+IRAQ_TU22_BUILDABLE = YES                 (Iraq_HeavyAirBaseCommandSet + AAB)
+IRAQ_TU22_HEAVY_AIRBASE_SLOT = 3          (Iraq_HeavyAirBaseCommandSet unchanged)
+IRAQ_MIRAGE_UNLOCKED = YES
+IRAQ_SU24MK_UNLOCKED = YES
+IRAQ_SU24MR_UNLOCKED = YES
+ABBAS_RESEARCH_GATE_REMOVED = YES         (Iraq_Abbas Prerequisites empty)
+RUSSIA_TU22_BOMB = Kab1500_LeaserGuidedBomb
+PR482_IRAQ_CHANGES_PRESERVED = YES
+
+EGYPT_COMMANDCENTER_UNCHANGED_FROM_PR482 = YES
+EGYPT_PLAYER_TEMPLATE_UNCHANGED_FROM_PR482 = YES
+EGYPT_WORKER_CHAIN_UNCHANGED_FROM_PR482 = YES
+EGYPT_WARFACTORY_UNCHANGED_FROM_PR482 = YES
+(only Egypt_AdvancedAirBase.ini restored)
+
+PlayerTemplate.ini / Weapon.ini / CommandButton.ini / CommandSet.ini
+byte-identical to PR #482.
+
+============================================================
+MANDATORY FINAL FLAGS
+============================================================
+OLD_SPEC_USED_AS_DONOR_ONLY = YES
+PR482_USED_AS_BASELINE = YES
+PR483_USED = NO
+OLD_SPEC_MISSING_32_PATHS_IDENTIFIED = YES
+OLD_SPEC_19MB_DIFFERENCE_EXPLAINED = YES
+CUSTOM_FIGHTER_AIRBASE_SYSTEM_RECOVERED = YES
+CUSTOM_HEAVY_AIRBASE_SYSTEM_RECOVERED = YES
+  (OLD heavy system = same 16-pad AAB; no separate 6-pad building existed)
+OLD_STOCK_AIRFIELD_SUBSTITUTION_USED = NO
+PR482_IRAQ_CHANGES_PRESERVED = YES
+EGYPT_COMMANDCENTER_UNCHANGED_FROM_PR482 = YES
+EGYPT_PLAYER_TEMPLATE_UNCHANGED_FROM_PR482 = YES
+UNRELATED_OLD_GAMEPLAY_IMPORTED = NO
+ART_CHANGED = NO
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO

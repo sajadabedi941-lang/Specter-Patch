@@ -1,0 +1,72 @@
+PR #482 remains the gameplay baseline.
+The previous working _SPEC.part01-15 DATA was used only as a donor/reference
+to recover the project's original custom airbase infrastructure and missing
+dependencies. PR #483 was not used.
+
+What was actually lost
+----------------------
+The old DATA is 19,219,737 bytes / 32 files larger than PR #482, but that is a
+NET count, not 32 extra airbase files.
+
+  ONLY_IN_OLD_COUNT     = 1195
+  ONLY_IN_PR482_COUNT   = 1163
+  COMMON_CHANGED_COUNT  = 413
+  COMMON_IDENTICAL_COUNT= 1228
+
+The ~19 MB gap is almost entirely one accidental packed leftover:
+
+  Data\INI\Object\Specter\Indian Armed Forces\Peace Mission Beta Ver 1.0.z01
+  = 19,922,944 bytes (PKZIP multi-volume archive)
+
+That file is unrelated and was NOT restored.
+
+The custom airbase system in OLD _SPEC
+--------------------------------------
+OLD _SPEC contains ZERO LargeAirBase / HeavyAirBase / TheAirPort /
+HXUSABigAirPort object definitions.
+
+The working custom aviation building is AdvancedAirBase:
+
+  Mesh     = US_AirField   (internal dependency of the OLD implementation)
+  Scale    = 1.60
+  Parking  = NumRows 2 x NumCols 8 = 16 pads
+  KindOf   includes FS_AIRFIELD
+  Heavies  are produced FROM the same 16-pad AdvancedAirBase
+           (there is no separate 6-pad / 3x2 heavy building in OLD)
+
+PR #482 had stubbed those objects to comments and added LargeAirBase /
+HeavyAirBase (TheAirPort / HXUSABigAirPort) which do not construct.
+
+What this DATA restores
+-----------------------
+Starting from a fresh PR #482 extract:
+
+  * Restored every OLD AdvancedAirBase object (16-pad, US_AirField @ 1.60)
+  * Restored construct CommandButtons
+  * Restored Patch_AdvancedAirBase mapped image + strings
+  * Last-win builder CommandSets: replace Large/Heavy construct buttons
+    with AdvancedAirBase. All other PR #482 builder slots are kept.
+  * AdvancedAirBase production CommandSets merge PR #482 Large+Heavy
+    aircraft buttons so Iraq unlocks survive.
+
+Not restored (unrelated old gameplay)
+-------------------------------------
+  * Peace Mission Beta Ver 1.0.z01
+  * Faction-expansion army overlays / Turkey wholesale
+  * AirForceExpansion / AirForceFinal aircraft
+  * Aircraft_AAB_Global.ini / Aircraft_AAB_StrategicBombers.ini
+  * old PlayerTemplate.ini / Weapon.ini / CommandSet.ini / CommandButton.ini
+  * Egypt CommandCenter, Worker, WarFactory, PlayerTemplate
+
+Britain
+-------
+OLD defined Command_ConstructBritain_AdvancedAirBase but never defined
+Object Britain_AdvancedAirBase. Britain was not given an invented object.
+Britain builders still use the PR #482 HeavyAirBase button.
+
+ART
+---
+ART_CHANGED = NO
+US_AirField.W3D and Patch_AdvancedAirBase.tga already exist in SPECTER1 ART.
+
+INGAME_TESTED = NO

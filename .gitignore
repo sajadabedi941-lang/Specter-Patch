@@ -3,3 +3,13 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Complete replacement BIGs exceed GitHub git file limits; ship via GitHub Release.
+patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/*.big
+patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/*.zip
+patch/Release/SPECTER_IRAQ_ALFAHD500/*.big
+patch/Release/SPECTER_IRAQ_ALFAHD500/*.zip
+patch/Release/SPECTER_IRAQ_VT72B_CRASHFIX/*.big
+patch/Release/SPECTER_IRAQ_VT72B_CRASHFIX/*.zip
+patch/Release/SPECTER_IRAQ_FACTORY_VISIBLE/*.big
+patch/Release/SPECTER_IRAQ_FACTORY_VISIBLE/*.zip

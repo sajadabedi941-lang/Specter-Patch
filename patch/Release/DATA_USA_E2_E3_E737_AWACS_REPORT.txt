@@ -1,0 +1,83 @@
+USA E2/E3/E737 AWACS FUNCTIONALITY = STRUCTURAL PASS
+
+ORIGINAL AWACS (reference):
+Object = NatoJetE3AAWACS (Specter NATO AEW; same family as BritainJetE3AAWACS)
+Also noted USA science variant US_E3G_AWACS (special-power/loiter — not used as flight base)
+Radar radius (ShroudClearingRange) = 700.0
+Vision range = 900.0
+Stealth detection = 1000.0 (StealthDetectorUpdate present = YES)
+Cost = 4200
+Build time = 70.0
+Health = 1000.0
+Speed = 128.0 (CMF56_2_Turbofan_engine)
+Turn rate = 37.0
+Acceleration = 73.0
+Original AWACS stealth detection support = YES
+
+Passive modules applied (no weapons / no SpecialPower):
+- VisionRange / ShroudClearingRange
+- StealthDetectorUpdate
+- KindOf += REVEALS_ENEMY_PATHS
+- Role-scaled F100-family locomotors (runway JetAIUpdate preserved)
+
+------------------------------
+E-3:
+Radar/Shroud=875
+Vision=1080.0
+Stealth detection=1150
+Cost=5250
+Build time=80.5
+Health=1150.0
+Speed=115
+Acceleration=66
+Turn rate=33
+Locomotor=F100_PW_229_E3AWACS
+Role = STRATEGIC AWACS
+
+------------------------------
+E-737:
+Radar/Shroud=735
+Vision=945.0
+Stealth detection=1000
+Cost=4410
+Build time=70.0
+Health=1000.0
+Speed=141
+Acceleration=80
+Turn rate=41
+Locomotor=F100_PW_229_E737AEW
+Role = BALANCED AEW&C
+
+------------------------------
+E-2:
+Radar/Shroud=525
+Vision=720.0
+Stealth detection=850
+Cost=3150
+Build time=52.5
+Health=850.0
+Speed=147
+Acceleration=88
+Turn rate=44
+Locomotor=F100_PW_229_E2AEW
+Role = TACTICAL AEW
+
+VALIDATION:
+AmericaJetE3Visual has active AWACS functionality = YES
+AmericaJetE737Visual has active AWACS functionality = YES
+AmericaJetE2Visual has active AWACS functionality = YES
+All three values different = YES
+E-3 radar range > E-737 radar range > E-2 radar range = YES
+E-2 mobility > E-737 mobility > E-3 mobility = YES
+E-2 cost < E-737 cost < E-3 cost = YES
+Weapons on all three = NONE
+Flight system preserved = YES (JetAIUpdate + BasicJetTaxiLocomotor + F100-family)
+HeavyAirBase unchanged = YES
+Other aircraft unchanged = YES
+ART unchanged = YES
+In-game radar effectiveness = USER TEST REQUIRED
+
+DATA sha256 = ad6514c3cab753b3ec0954182bdacabaa2e381ecb7682d2c0ddbe43f0e4031b6
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef
+ZIP = SPECTER_MASTER_DATA_USA_E2_E3_E737_AWACS.zip
+URL = https://gofile.io/d/ZtkCK8oH

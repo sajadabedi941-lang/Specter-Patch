@@ -145,6 +145,30 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
 echo   Active BIGs ready in game folder.
 echo.
 
+REM Temporary debug: record the exact BIG order generals.exe will mount.
+REM Zero Hour loads every *.big in this folder, case-insensitive alphabetical,
+REM later same-path wins. This is the order that previously hid Japan under INIZH.big.
+set "DBG=%GAME_ROOT%SPECTER_JAPAN_AIRFIELD_DEBUG.txt"
+echo SPECTER Japan airfield debug > "%DBG%"
+echo Game folder: %GAME_ROOT%>> "%DBG%"
+echo Launch_Specter copies _SPEC_ART_ONE.big and _SPEC_DATA_ONE.big next to generals.exe.>> "%DBG%"
+echo Zero Hour then mounts every *.big here in case-insensitive alphabetical order.>> "%DBG%"
+echo Later same-path wins. Loose Data\ overrides every BIG.>> "%DBG%"
+echo.>> "%DBG%"
+echo BIG files present:>> "%DBG%"
+dir /b /a-d "%GAME_ROOT%*.big" >> "%DBG%"
+echo.>> "%DBG%"
+echo Wrote BIG list to:
+echo   %DBG%
+echo.
+
+if exist "%PATCH_DIR%verify_japan_airfield_load.py" (
+  echo Running Japan airfield source resolver...
+  where py >nul 2>&1 && py "%PATCH_DIR%verify_japan_airfield_load.py" --game-root "%GAME_ROOT%" --write-debug --debug-path "%DBG%"
+  if errorlevel 1 where python >nul 2>&1 && python "%PATCH_DIR%verify_japan_airfield_load.py" --game-root "%GAME_ROOT%" --write-debug --debug-path "%DBG%"
+  echo.
+)
+
 echo [4/4] Launching generals.exe...
 echo.
 echo   %GENEXE%

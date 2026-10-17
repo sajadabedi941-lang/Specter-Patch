@@ -1,0 +1,4 @@
+_SPEC_DATA_ONE.big sha256=3e16fa87c9fa2b1ddd49658dc10d8ebb24e381da1f63c014912d54ed201471af
+_SPEC_ART_ONE.big sha256=52cc368e1feafe8d6f35a3d95965c2679ad2f79c6d37319ab6c1e213242ee5a4
+ART files added (11): ['Art\\W3D\\AVB21.W3D', 'Art\\W3D\\AVB21_A.W3D', 'Art\\W3D\\AVB21_A_D.W3D', 'Art\\W3D\\AVB21_D.W3D', 'Art\\W3D\\AVB21_E.W3D', 'Art\\W3D\\AVB21_E1.W3D', 'Art\\W3D\\JetPickBox.W3D', 'Art\\Textures\\B-21.dds', 'Art\\Textures\\B-21_D.dds', 'Art\\Textures\\B-21_E.dds', 'Art\\Textures\\US-Icons03.tga']
+ZIP=SPECTER_MASTER_DATA_USA_HEAVY_BOMBER_RESTORE.zip

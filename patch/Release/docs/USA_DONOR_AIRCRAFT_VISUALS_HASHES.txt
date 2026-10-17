@@ -1,0 +1,7 @@
+DATA SHA256 06a6cb50732be5062422d37fc5f99b77ab5a87ed79b8329624020a90ceea8a21
+ART  SHA256 b22db8f1635d7dec83db7725551ea22895ce9a2d82c0d5b137e1343f7ec01703
+DATA bytes 364959652
+ART  bytes 1234949357
+status PACKED_AUDIT_OK
+source /tmp/usa_donor_aircraft_visuals/_SPEC_DATA_ONE.big
+source /tmp/usa_donor_aircraft_visuals/_SPEC_ART_ONE.big

@@ -1,0 +1,28 @@
+SPECTER_USA_EMPTY_GENERALSTAR_RELEASE — PUBLIC DOWNLOAD
+=========================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/98gaf0.zip
+
+Branch: cursor/usa-empty-generalstar-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  07df0455f806b7f32cecb6eac3d4022149ea64ea655edc7d9b102eb73cf40745
+SHA256 DATA: 524859f783404dc16e10d0857044115197961958fada28c814fc7b63b7567752
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA General Star panel emptied:
+  SCIENCE_AMERICA_CommandSetRank1/3/8 — no entries
+  SpecialPowerShortcutUSA — empty
+  AmericaSpecialPowerCommandSet — empty
+  ParaDrop / Repair / Spy / CarpetBomb / all General Powers removed from Star UI
+
+NOT modified:
+  Strategy Center CommandSets / construct
+  Airfield slots / aircraft Objects / aircraft CommandButtons
+  Weapon / Cost / AI / Units
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

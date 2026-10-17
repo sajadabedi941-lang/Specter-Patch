@@ -1,0 +1,29 @@
+Iraq follow-up from the same _SPEC.part*.rar baseline as PR #480.
+
+Built directly from the newly uploaded _SPEC.part*.rar working DATA baseline.
+SOURCE_DATA_BYTES = 384197258
+SOURCE_DATA_SHA256 = a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+SOURCE_DATA_FILE_COUNT = 2836
+
+Preserves every PR #480 Iraq change. Adds one extra Iraq-only edit.
+
+1) L-159 / Tucano
+IRAQ_L159_OBJECT_FOUND = NO
+No L-159, ALCA, Tucano, Super Tucano, A-29, or EMB-314 Iraq aircraft exists in this DATA.
+No object was invented.
+
+2) Iraq MiG-21
+IRAQ_MIG21_OBJECT_FOUND = NO
+No Iraq MiG-21 / Fishbed object exists. Only NK and Vietnam AAB MiG-21 patches exist.
+No object was invented. Scale was not changed on any other MiG.
+
+3) Abbas research lock
+ABBAS_RESEARCH_GATE_REMOVED = YES
+Iraq_Abbas no longer requires AbbasResearchObject.
+That object is created only after purchasing Upgrade_AbbasResearchProgram, so it was a research/upgrade production gate.
+Normal Power -> Supply -> factory/airbase construction chain is unchanged.
+
+INSTALL
+Replace the game _SPEC_DATA_ONE.big with the file from this ZIP. Do not replace ART.
+
+INGAME_TESTED = NO. Static packed audit only.

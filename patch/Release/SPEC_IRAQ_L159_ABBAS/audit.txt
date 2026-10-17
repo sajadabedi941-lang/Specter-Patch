@@ -1,0 +1,77 @@
+SOURCE_ARCHIVE = _SPEC.part01.rar -> _SPEC.part15.rar
+SOURCE_DATA_BYTES = 384197258
+SOURCE_DATA_SHA256 = a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+SOURCE_DATA_FILE_COUNT = 2836
+UNTOUCHED_REPACK_BYTE_IDENTICAL = YES
+
+NEW_DATA_BYTES = 384196156
+NEW_DATA_SHA256 = 98d17214b3159f02e63036140ba8bf8bfc7a7912595aca156293262dcd3d052a
+NEW_DATA_FILE_COUNT = 2836
+
+MISSING_PATH_COUNT = 0
+ADDED_PATH_COUNT = 0
+CONTENT_CHANGED_PATH_COUNT = 27
+
+This pack preserves every PR #480 Iraq change and adds the Abbas research-gate removal.
+
+NEW PATH vs PR #480:
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+
+ALL CHANGED PACKED PATHS:
+Data\INI\CommandSet.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\TU22M3M.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\B340.ini
+Data\INI\Object\Specter\Iraq Army\AirDefense\Fahad3.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_MirageF1-Bq.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MK.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-24MR.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Abbas.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_Airfield_T.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_WarFactory.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Ababil200R.ini
+Data\INI\Object\Specter\Iraq Army\Drones\Sarab3.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Airborne.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Enginer.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\HeavySniper.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\KornetTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\MortarTeam.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\SpecialForces.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\2S1.ini
+Data\INI\Object\Specter\Iraq Army\Tracked\AssadBabel2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\9P117.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\AlNida.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Karrar-2.ini
+Data\INI\Object\Specter\Iraq Army\Wheeled\Lamiaa.ini
+
+IRAQ_L159_OBJECT_FOUND = NO
+IRAQ_L159_GUIDED_BOMB_COUNT = FAIL
+IRAQ_MIG21_OBJECT_FOUND = NO
+IRAQ_MIG21_SCALE = ABSENT
+ABBAS_RESEARCH_GATE_REMOVED = YES
+IRAQ_COMBAT_UPGRADE_GATES_REMAINING = NONE
+UNRELATED_COUNTRY_PATHS_CHANGED = NONE
+ART_CHANGED = NO
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+
+L-159 / TUCANO SEARCH (this exact _SPEC DATA)
+Searched packed filenames, INI, CommandSet, CommandButton, English strings, and generals.csf for:
+L159, L-159, ALCA, Tucano, Super Tucano, A-29, EMB314, EMB-314.
+Iraq airfield roster in this DATA: Su-25K, Su-24MK, Mig-23ML, Mi-35M3, Mi-28NE, Mig-29A, Mig-25BM, Tu-22M3, Su-22M3, Su-24MR, Mi-8T, Mirage F1.EQ.
+Iraq AAB roster: F-16IQ, Mirage F1, Su-25, AWACS, Transport, generic Light/Medium/HeavyBomber (F-16 model), Tu22Cruise, Nasr2500, B-2, B-52.
+No L-159 / ALCA / Tucano / A-29 / EMB-314 Iraq object exists. None invented.
+
+MIG-21 SEARCH (this exact _SPEC DATA)
+Searched Mig21, MiG21, Mig-21, Fishbed plus Iraq CommandSets/buttons.
+Only Patch_NK_Mig21 and Patch_Vietnam_Mig21 exist (North Korea / Vietnam AAB). No Iraq MiG-21 object or button. None invented.
+
+ABBAS
+AbbasResearchObject is a SYSTEM dummy spawned by Upgrade_AbbasResearchProgram via OCL_AbbasResearchObject.
+Iraq_Abbas required Object = AbbasResearchObject. That research/upgrade gate was removed.
+Dozer still builds Iraq_Abbas. Power/Supply/factory/airfield/MIC construction chain unchanged.
+North Korea and other-country Abbas files were not edited.
+
+PR #480 Iraq unlocks, Tu-22 bombs, WF/MIC/airfield start rosters are preserved.

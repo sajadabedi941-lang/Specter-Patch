@@ -1,0 +1,7 @@
+AmericaAirfield_T -> AmericaAirfieldCommandSet_T3
+AmericaWarFactory_T -> AmericaWarFactoryCommandSet_T3
+No Upgrade_US_Tier purchase needed
+No roster-lock token on Airfield
+No simulated purchases added
+B-2/B-52H/B-21 unchanged from PR #285
+Strategy Center unchanged

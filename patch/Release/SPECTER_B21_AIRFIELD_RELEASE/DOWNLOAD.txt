@@ -1,0 +1,26 @@
+SPECTER_B21_AIRFIELD_RELEASE — PUBLIC DOWNLOAD
+==============================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/bmf9k3.zip
+
+Branch: cursor/america-jet-b21-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  f4469ad17fec2b2586a8d180430cda64133f09b1200e57059d9b3076b66eb2c1
+SHA256 DATA: 1cd64750b37b4c829b42b868f58d350a68a928711eec2fa0ff5049e861fab341
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+AmericaJetB21 (B-21 Raider):
+  Cloned from AmericaJetB1R heavy pipeline (B-2/B-52 method)
+  Command_ConstructAmericaJetB21 -> AmericaJetB21 (UNIT_BUILD)
+  Airfield slot 11 on all AmericaAirfieldCommandSet* (replaces EA-18 button only)
+  No Strategy Center / TEOD / Science / Rank
+  Draw fallback US_B1R / us_b1r (no dedicated B-21 ART)
+  Weapon placeholder America_Weapon_B21_JASSM
+  B-2 / B-52 / other slots untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

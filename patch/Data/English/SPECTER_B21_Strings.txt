@@ -1,0 +1,7 @@
+; SPECTER AmericaJetB21 (B-21 Raider) strings
+OBJECT:AmericaJetB21 = B-21 Raider
+CONTROLBAR:ConstructAmericaJetB21 = B-21 Raider
+CONTROLBAR:ToolTipAmericaJetB21 = Produce B-21 Raider from USA Airfield. Strategic stealth bomber.
+OBJECT:Patch_America_B21 = B-21 Raider
+CONTROLBAR:ConstructPatch_America_B21 = B-21 Raider
+CONTROLBAR:ToolTipConstructPatch_America_B21 = Produce B-21 Raider from USA Airfield.

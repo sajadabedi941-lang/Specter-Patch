@@ -1,0 +1,223 @@
+SPECTER1 VIETNAM + SYRIA ROSTER 01
+BASELINE_DATA_SHA256 = f29f31e6555ffc4d6c95951a9624210bd8dfe30ee055604a3535206e71e582db
+BASELINE_ART_SHA256 = b8a7f45dd57a1f56c4e68a5a16af04849834e0775db256637ab1ad1853702abe
+NEW_DATA_SHA256 = 791e37840ab208bebe47ab6cd419e79f33806390cc3b60a200aa625075297261
+NEW_ART_SHA256 = b8a7f45dd57a1f56c4e68a5a16af04849834e0775db256637ab1ad1853702abe (unchanged copy)
+NEW_DATA_BYTES = 365036353
+NEW_DATA_FILE_COUNT = 2808
+MODE = DATA edits from crashfix+shadow ART baseline; ART packed unchanged
+
+=== VIETNAM YAK-130 ===
+CURRENT_MODEL_BEFORE = LSFT50 (T-50 / FA-50 / L-159 family mesh)
+DEDICATED_YAK130_W3D_IN_ART = NONE
+CORRECT_EXISTING_YAK130_FAMILY_VISUAL = ItalyJetM346FA DefaultConditionState Model LSFT50d
+NOTE = M-346 is the Yak-130 derivative; LSFT50d is the live Yak-130-family visual already in Specter ART.
+VIETNAM_YAK130_NEW_MODEL = LSFT50d
+VIETNAM_YAK130_BUTTON_PRESERVED = SPEC_VietnamJetYak130
+VIETNAM_YAK130_SIDE_PRESERVED = Vietnam
+VIETNAM_YAK130_VISUAL_FIXED = YES
+
+=== VIETNAM SCALES ===
+VIETNAM_MIG29_OLD_SCALE = 0.90
+VIETNAM_MIG29_NEW_SCALE = 1.00
+VIETNAM_MIG29_REFERENCE = UkraineJetMig29 0.96 / GermanyJetMiG29G 0.90 same mesh LSFruMiG29; moderate +11%
+VIETNAM_MIG29_SCALE_FIXED = YES
+VIETNAM_F5E_OLD_SCALE = 0.80
+VIETNAM_F5E_NEW_SCALE = 0.90
+VIETNAM_F5E_REFERENCE = SouthKoreaJetF5E 1.00 same mesh LSFKoreaF5; moderate +12.5% not full jump
+VIETNAM_F5E_SCALE_FIXED = YES
+
+=== VIETNAM MI-17 ===
+BUG = production VietnamJetMi17 had Egy_MI17 visual but no WeaponSet, no CAN_ATTACK, AutoAcquire=No
+VISUAL_FIX = damaged mesh Egy_MI17D (Egypt donor draw); live mesh remains Egy_MI17
+DONOR_OBJECT = VietnamHelicopterMi8AMTSh
+DONOR_WEAPON = 16x_80mm_S8_Rockets_Mi17
+DONOR_LOGIC = CAN_ATTACK + AutoAcquireEnemiesWhenIdle=Yes + same ChinookLocomotor / JetAIUpdate
+VIETNAM_MI17_BUG_FIXED = YES
+VIETNAM_MI17_FIRE_WORKING = YES (static: weapon+CAN_ATTACK grafted from working donor)
+
+=== VIETNAM FIGHTERS 7 -> 12 ===
+CURRENT_7 = VietnamJetMig29S, VietnamJetMig21, VietnamJetSu22, VietnamJetSu27, VietnamJetSu30, VietnamJetYak130, VietnamJetF5E
+ADDED_5 = VietnamJetMig21bis, VietnamJetSu22M4, VietnamJetSu30MK2, VietnamJetSu27UB, VietnamJetL39
+ADDED_SOURCE = existing Vietnam People's Army objects + CommandButtons already in CommandSet.ini
+VIETNAM_FIGHTER_COUNT = 12
+FINAL_12 =
+  1 VietnamJetMig29S
+  2 VietnamJetMig21
+  3 VietnamJetSu22
+  4 VietnamJetSu27
+  5 VietnamJetSu30
+  6 VietnamJetYak130
+  7 VietnamJetF5E
+  8 VietnamJetMig21bis
+  9 VietnamJetSu22M4
+  10 VietnamJetSu30MK2
+  11 VietnamJetSu27UB
+  12 VietnamJetL39
+
+=== VIETNAM BOMB DIVERSITY ===
+VIETNAM AIRCRAFT | DEFAULT AIR WEAPON | BOMB TYPE | BOMB COUNT
+VietnamJetMig29S | VietnamJetMig29S_WpnRadar / WpnIR | GBU-12 Paveway (Gbu-12II_Paveway) | 4
+VietnamJetMig21 | VietnamJetMig21_WpnIR / WpnGun | KAB-500 (Kab500_LeaserGuidedBomb) | 2
+VietnamJetSu22 | VietnamJetSu22_WpnIR | GBU-24 (VietnamJetSu22_WpnBomb / GBU24_GuidedBombObject) | 7
+VietnamJetSu27 | KH29T_AGM_SU30MKA | FAB-500 (4x_Fab500_SU34) [STD44 preserved] | 4
+VietnamJetSu30 | VietnamJetSu30_WpnRadar / WpnIR | GBU-31 JDAM (GBU_31V2_JDAM_F15E) | 3
+VietnamJetYak130 | VietnamJetYak130_WpnGun / WpnRkt | GBU-38 JDAM (GBU38_JDAM_F16C) | 4
+VietnamJetF5E | VietnamJetF5E_WpnGun / WpnRkt | Mk-82 (6_MK-82) | 6
+VietnamJetMig21bis | VietnamJetMig21bis_WpnIR / WpnGun | Q-5 bomb family (China_Weapon_Bomb_Q5) | 8
+VietnamJetSu22M4 | VietnamJetSu22M4_WpnGun / WpnRkt | ODAB-500 (ODAB_500_PMV_SU39) | 2
+VietnamJetSu27UB | VietnamJetSu27UB_WpnRadar / WpnIR | GBU-39 SDB (GBU-39_SDB_F22A) | 4
+VietnamJetSu30MK2 | VietnamJetSu30MK2_WpnIR | KAB-2500 (Kab2500_LeaserGuidedBomb) | 2
+VietnamJetL39 | VietnamJetL39_WpnGun / WpnRkt | Paveway IV (Paveway_IV_EF2000) | 4
+VIETNAM_BOMB_DIVERSITY_APPLIED = YES
+WEAPON_INI_NEW_ENTRIES = 0
+
+=== VIETNAM B-21 / COMBAT HELI ===
+VIETNAM_B21_ADDED = YES
+VIETNAM_B21_OBJECT = VietnamJetB21
+VIETNAM_B21_DONOR = AmericaJetB21Clean (NOT modified)
+VIETNAM_B21_MODEL = AVB21_A
+VIETNAM_B21_WEAPON = AmericaB21_DualGBU72Weapon
+VIETNAM_B21_COST = 15000
+VIETNAM_COMBAT_HELICOPTER_ADDED = YES
+VIETNAM_COMBAT_HELICOPTER = VietnamHelicopterKa52M
+VIETNAM_COMBAT_HELICOPTER_BUTTON = Command_ConstructVietnamAir_Ka52M
+VIETNAM_COMBAT_HELICOPTER_MODEL = RUS_Ka52M2
+VIETNAM_COMBAT_HELICOPTER_WEAPONS = 30mm_2A42_Ka52 / 12x_ATGM_9K121_Vikhr / Vympel_R-73_Ka52
+
+=== SYRIA SCALES ===
+SYRIA_MIG21BIS_OBJECT = SyriaJetMig21 (live slot 5; UVMig-21 bis mesh)
+SYRIA_MIG21BIS_OLD_SCALE = 1.08
+SYRIA_MIG21BIS_NEW_SCALE = 1.18
+SYRIA_MIG21BIS_REFERENCE = UkraineJetMig21/LibyaJetMig21 1.06-1.08 same UVMig-21; moderate +9%
+SYRIA_MIG21BIS_SCALE_FIXED = YES
+SYRIA_MIG21MF_OBJECT = SyriaJetMig21MF
+SYRIA_MIG21MF_OLD_SCALE = 0.96
+SYRIA_MIG21MF_NEW_SCALE = 1.08
+SYRIA_MIG21MF_REFERENCE = LibyaJetMig21MF 0.96; match prior Syria bis size; moderate +12.5%
+SYRIA_MIG21MF_SCALE_FIXED = YES
+
+=== SYRIA AIRCRAFT BUTTONS ===
+SYRIA AIRCRAFT -> OLD BUTTON IMAGE -> NEW BUTTON IMAGE -> SELECT PORTRAIT
+Syria_Mig-29A -> irq_t72a / us_airfield -> irq_mig29a -> irq_mig29a
+Syria_MirageF1_Bq -> irq_t72a / us_commandcenter -> irq_miragef -> irq_miragef
+SyriaJetMig23 -> SPEC_SyriaJetMig23 -> SPEC_SyriaJetMig23 (correct, unchanged) -> SPEC_SyriaJetMig23
+SyriaJetMig25 -> SPEC_SyriaJetMig25 -> SPEC_SyriaJetMig25 (correct, unchanged) -> SPEC_SyriaJetMig25
+SyriaJetMig21 -> SPEC_SyriaJetMig21 -> SPEC_SyriaJetMig21 (correct, unchanged) -> SPEC_SyriaJetMig21
+SyriaJetMig21MF -> SPEC_SyriaJetMig21MF -> SPEC_SyriaJetMig21MF (correct, unchanged) -> SPEC_SyriaJetMig21MF
+SyriaJetJ7 -> SPEC_SyriaJetJ7 -> SPEC_SyriaJetJ7 (correct, unchanged) -> SPEC_SyriaJetJ7
+SyriaJetSu22 -> SPEC_SyriaJetSu22 -> SPEC_SyriaJetSu22 (correct, unchanged) -> SPEC_SyriaJetSu22
+SyriaJetSu22M4 -> SPEC_SyriaJetSu22M4 -> SPEC_SyriaJetSu22M4 (correct, unchanged) -> SPEC_SyriaJetSu22M4
+Syria_Su-25K -> irq_t72a / us_airfield -> irq_su25k -> irq_su25k
+SyriaJetSu24 -> SPEC_SyriaJetSu24 -> SPEC_SyriaJetSu24 (correct, unchanged) -> SPEC_SyriaJetSu24
+SyriaJetL39 -> SPEC_SyriaJetL39 -> SPEC_SyriaJetL39 (correct, unchanged) -> SPEC_SyriaJetL39
+Syria_Mi-8T -> irq_t72a / us_commandcenter -> irq_mi8t -> irq_mi8t
+SpecterPlayableIL76 (Syria IL-76 button) -> irq_t72a -> yier76 -> yier76
+SYRIA_AIRCRAFT_BUTTONS_FIXED = YES
+
+=== SYRIA CHINESE BOMBER ===
+SYRIA_CHINESE_BOMBER_ADDED = YES
+SYRIA_CHINESE_BOMBER_OBJECT = SyriaBomberH6K
+SYRIA_CHINESE_BOMBER_DONOR = ChinaBomberH6K (China_HeavyAirBase slot 3, NOT modified)
+SYRIA_CHINESE_BOMBER_MODEL = h6k
+SYRIA_CHINESE_BOMBER_WEAPONS = China_Weapon_Carpet_H6K / China_Weapon_CJ10_H6K / China_Weapon_FAB_H6K
+SYRIA_CHINESE_BOMBER_COST = 20000
+
+=== SYRIA BOMB DIVERSITY ===
+SYRIA AIRCRAFT | DEFAULT AIR WEAPON | BOMB TYPE | BOMB COUNT
+Syria_Mig-29A | 4x_R27_MRBVR_Mig29A / Vympel_R-73_Mig29A | GBU-12 Paveway (Gbu-12II_Paveway) | 4
+Syria_MirageF1_Bq | 2x_KH29L_AGM_F1EQ | Paveway IV (Paveway_IV_EF2000) | 4
+SyriaJetMig23 | SyriaJetMig23_WpnRadar / WpnIR | GBU-31 JDAM (GBU_31V2_JDAM_F15E) | 3
+SyriaJetMig25 | SyriaJetMig25_WpnRadar / WpnIR | JSOW (AGM-154C_JSOW_F16C) | 2
+SyriaJetMig21 | SyriaJetMig21_WpnIR / WpnGun | KAB-500 (Kab500_LeaserGuidedBomb) | 2
+SyriaJetMig21MF | SyriaJetMig21MF_WpnIR / WpnGun | Mk-82 (6_MK-82) | 6
+SyriaJetJ7 | China_Weapon_S5_J7 | KAB-500 (Kab500_LeaserGuidedBomb) [STD44 preserved] | 2
+SyriaJetSu22 | SyriaJetSu22_WpnIR | KAB-1500 (Kab1500_LeaserGuidedBomb) | 3
+SyriaJetSu22M4 | SyriaJetSu22M4_WpnGun / WpnRkt | ODAB-500 (ODAB_500_PMV_SU39) | 2
+Syria_Su-25K | KH-25ML_Missile / S-8_Rocket_SU25 | FAB-250 (Fab-250) | 4
+SyriaJetSu24 | SyriaJetSu24_WpnIR | KAB-2500 (Kab2500_LeaserGuidedBomb) | 2
+SyriaJetL39 | SyriaJetL39_WpnGun / WpnRkt | GBU-38 JDAM (GBU38_JDAM_F16C) | 4
+SYRIA_BOMB_DIVERSITY_APPLIED = YES
+
+=== SYRIA INFANTRY ===
+SYRIA_OLD_INFANTRY_REMOVED_FROM_PRODUCTION = YES
+IRAQ_INFANTRY_ROSTER_USED_FOR_SYRIA = YES
+SYRIA BARRACKS INFANTRY OBJECTS =
+  Iraq_RepublicanGuard_AKMS
+  Iraq_RepublicanGuard_RPG7
+  Iraq_RepublicanGuardMortar
+  Iraq_RepublicanGuardKornet
+  Iraq_RepublicanGuard_Pkm
+  Iraq_RepublicanGuard_TBK14
+  Iraq_RepublicanGuard_Eng
+  Iraq_SpecialForces_Akms
+  Iraq_RepublicanGuardIgla
+SYRIA_INFANTRY_REPLACED_WITH_IRAQ = YES
+
+=== SYRIA UNLOCK ===
+UNLOCK_OBJECT_FILES_TOUCHED = 13
+SCIENCE_LOCK_LINES_REMOVED = 11
+SYRIA_BARRACKS_LOCKED_UNIT_COUNT = 0
+SYRIA_WARFACTORY_LOCKED_UNIT_COUNT = 0
+SYRIA_AIRCRAFT_LOCKED_UNIT_COUNT = 0
+SYRIA_HELICOPTER_LOCKED_UNIT_COUNT = 0
+SYRIA_WEAPON_LOADOUT_UPGRADE_GATE_COUNT = 0
+SYRIA_ALL_UNIT_UPGRADE_LOCKS_REMOVED = YES
+BUILDING_CHAIN_PREREQS_PRESERVED = YES (Power/Supply/Barracks/WarFactory/Airbase Object prereqs not stripped from buildings)
+
+=== SAFETY ===
+USA_B21_DONOR_UNCHANGED = YES
+CHINA_H6K_DONOR_UNCHANGED = YES
+IRAQ_SU24MR_UNCHANGED = YES
+STD44_FILES_UNCHANGED = YES
+AIRBASE_ARCHITECTURE_UNCHANGED = YES
+WEAPON_INI_CHANGED = NO
+OBJECT_FOLDER_COMMANDSET_BLOCKS = 0
+DUPLICATE_OBJECT_NAMES = 0
+MISSING_COMMANDBUTTONS = 0
+MISSING_BUTTONIMAGES = 2 Command_ConstructVietnamJetMig29S ButtonImage=LSFRUMIG29; Command_ConstructIraq_RepublicanGuardIgla ButtonImage=irq_Igla
+
+CHANGED_PATHS =
+  Data\INI\CommandButton.ini
+  Data\INI\CommandSet.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetL39.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig21.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig21MF.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig23.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig25.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetSu22.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetSu22M4.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetSu24.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Syria_AD_MD.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\ZSU23.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\SyriaBomberH6K.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Mi-8.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Mig-29A.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_MirageF1-Bq.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Airforce\Syria_Su-25K.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Drones\Syria_CombatDrone.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Drones\Syria_LoiteringDrone.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\IFV\Bmp1P.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\Antitank.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\HeavySniper.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\Rifleman.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\SpecialForces.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Infantry\Syria_EliteSSG.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\AbbasLauncher.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\Syria_AbabeelTEL.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Wheeled\Syria_ShaheenTEL.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetB21.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetF5E.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetL39.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMi17.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMig29S.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetSu22M4.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetSu27UB.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetSu30.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetSu30MK2.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetYak130.ini
+
+DATA_CHANGED = YES
+ART_CHANGED = NO
+INGAME_TESTED = NO
+RELEASE_OVERWRITES_PREVIOUS = NO

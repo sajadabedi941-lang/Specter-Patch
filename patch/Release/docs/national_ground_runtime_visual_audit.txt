@@ -1,0 +1,290 @@
+SPECTER NATIONAL GROUND RUNTIME VISUAL AUDIT
+========================================================================
+DATA_SHA256 9eca9e739fc0861509f7d7ee2c09042e2909f60fe9629daca173ef535cdc751d
+ART_SHA256 db165043b149aaf956a4daf094eabd60f1a4177feef05de7d100e97f14f07f92
+DATA_FILES 2800 ART_FILES 4391
+
+Country | Slot | Unit | Object | Model | Texture closure | Weapon bone compatibility | Status
+------------------------------------------------------------------------
+Japan | 1 MBT | Type 10 | JapanTankType10 | LSFJapan10Tank | OK | OK | VISUAL_OK
+Japan | 2 Heavy Tank | Type 90 | JapanTankType90 | LSF90tank | OK | OK | VISUAL_OK
+Japan | 3 Recon | Type 16 MCV | JapanVehicleType16 | JP_NAT_Cortale | OK | OK | VISUAL_OK
+Japan | 4 IFV | Type 89 IFV | JapanVehicleType89 | LSF89 | OK | OK | VISUAL_OK
+Japan | 5 APC | Type 96 WAPC | JapanVehicleType96 | JP96 | OK | OK | VISUAL_OK
+Japan | 6 SHORAD | Type 87 SPAAG | JapanVehicleType87 | LSFJP87V | OK | OK | VISUAL_OK
+Japan | 7 Mobile SAM | Type 03 Chu-SAM | JapanVehicleChuSAM | JP_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+Japan | 8 Radar | J/TPS-P18 | JapanVehicleRadar | JP_UVRadarVan | OK | OK | VISUAL_OK
+Japan | 9 MLRS | M270 MLRS | JapanVehicleM270 | LSFJPM270 | OK | OK | VISUAL_OK
+Japan | 10 Ballistic/Cruise TEL | Type 12 SSM | JapanVehicleType12 | AGMZJP88 | OK | OK | VISUAL_OK
+Japan | 11 SPA | Type 99 SPH | JapanVehicleType99 | LSFJP99 | OK | OK | VISUAL_OK
+Japan | 12 AT Vehicle | Type 96 MPMS | JapanVehicleType16AT | JP_NAT_Cortale | OK | OK | VISUAL_OK
+Japan | 13 Engineer | Type 11 ARV | JapanVehicleType11ARV | JP_Irq_VT72B | OK | OK | VISUAL_OK
+Japan | 14 Special | Type 88 SSM | JapanVehicleType12Btry | AGMZJP88 | OK | OK | VISUAL_OK
+SouthKorea | 1 MBT | K2 Black Panther | SouthKoreaTankK1A2 | LSFXK2 | OK | OK | VISUAL_OK
+SouthKorea | 2 Heavy Tank | K1A2 | SouthKoreaTankK1A1 | LSFK1A1 | OK | OK | VISUAL_OK
+SouthKorea | 3 Recon | K806 White Tiger | SouthKoreaVehicleK200 | SK_US_M1126 | OK | OK | VISUAL_OK
+SouthKorea | 4 IFV | K21 IFV | SouthKoreaVehicleK21 | LSFK21 | OK | OK | VISUAL_OK
+SouthKorea | 5 APC | K200A1 | SouthKoreaVehicleK200APC | SK_US_M1126 | OK | OK | VISUAL_OK
+SouthKorea | 6 SHORAD | K30 Biho | SouthKoreaVehicleK30 | SK_US_M6 | OK | OK | VISUAL_OK
+SouthKorea | 7 Mobile SAM | KM-SAM | SouthKoreaVehicleCheongung | KVKMSAM | OK | OK | VISUAL_OK
+SouthKorea | 8 Radar | TPS-830K | SouthKoreaVehicleRadar | SK_NAT_TRML | OK | OK | VISUAL_OK
+SouthKorea | 9 MLRS | K239 Chunmoo | SouthKoreaVehicleChunmoo | KVChunmoo | OK | OK | VISUAL_OK
+SouthKorea | 10 Ballistic/Cruise TEL | Hyunmoo Missile | SouthKoreaVehicleHyunmoo | SK_LSFIskander | OK | OK | VISUAL_OK
+SouthKorea | 11 SPA | K9 Thunder | SouthKoreaVehicleK9 | SK_LSFSKK55 | OK | OK | VISUAL_OK
+SouthKorea | 12 AT Vehicle | AT-1K Raybolt | SouthKoreaVehicleK21AT | SK_US_M1128 | OK | OK | VISUAL_OK
+SouthKorea | 13 Engineer | K288 ARV | SouthKoreaVehicleK288 | SK_Irq_VT72B | OK | OK | VISUAL_OK
+SouthKorea | 14 Special | Hyunmoo-3 | SouthKoreaVehicleHyunmoo2B | SK_LSFIskander | OK | OK | VISUAL_OK
+Germany | 1 MBT | Leopard 2A7 | GermanyTankLeopard2A7 | DE_NAT_L2A7V | OK | OK | VISUAL_OK
+Germany | 2 Heavy Tank | Leopard 2A6 | GermanyTankLeopard2A6 | DE_LSFB2A6 | OK | OK | VISUAL_OK
+Germany | 3 Recon | Fennek | GermanyVehicleFennek | LSFPHD | OK | OK | VISUAL_OK
+Germany | 4 IFV | Puma | GermanyVehiclePuma | LSFMZS | OK | OK | VISUAL_OK
+Germany | 5 APC | Boxer | GermanyVehicleBoxer | DE_LSFBoxer | OK | OK | VISUAL_OK
+Germany | 6 SHORAD | Gepard | GermanyVehicleGepard | DE_LSFLIEBAO | OK | OK | VISUAL_OK
+Germany | 7 Mobile SAM | IRIS-T | GermanyVehicleIRIST | DE_NAT_IRIST_SLX | OK | OK | VISUAL_OK
+Germany | 8 Radar | TRML-4D | GermanyVehicleTRML | DE_NAT_TRML | OK | OK | VISUAL_OK
+Germany | 9 MLRS | MARS II | GermanyVehicleMARS | DE_NAT_M142 | OK | OK | VISUAL_OK
+Germany | 10 Ballistic/Cruise TEL | Taurus | GermanyVehicleTaurusTEL | DE_US_M1075 | OK | OK | VISUAL_OK
+Germany | 11 SPA | PzH 2000 | GermanyVehiclePzH2000 | LSFzh2000 | OK | OK | VISUAL_OK
+Germany | 12 AT Vehicle | Wiesel TOW | GermanyVehicleWieselAT | DE_US_M1128 | OK | OK | VISUAL_OK
+Germany | 13 Engineer | BPz3 Buffel | GermanyVehicleBuffel | DE_Irq_VT72B | OK | OK | VISUAL_OK
+Germany | 14 Special | Boxer Skyranger | GermanyVehicleBoxerAA | LSFBoxerAA | OK | OK | VISUAL_OK
+France | 1 MBT | Leclerc | FranceTankLeclerc | FR_LSFLKLR | OK | OK | VISUAL_OK
+France | 2 Heavy Tank | AMX-30B2 | FranceTankAMX30 | LSFAMX30 | OK | OK | VISUAL_OK
+France | 3 Recon | AMX-10RC | FranceVehicleAMX10RC | LSFamx10 | OK | OK | VISUAL_OK
+France | 4 IFV | VBCI | FranceVehicleVBCI | FR_LSFVBCI | OK | OK | VISUAL_OK
+France | 5 APC | VBMR Griffon | FranceVehicleVAB | FR_NAT_VBCI | OK | OK | VISUAL_OK
+France | 6 SHORAD | Mistral | FranceVehicleMistral | LSFAMX30SA | OK | OK | VISUAL_OK
+France | 7 Mobile SAM | SAMP/T | FranceVehicleSAMPT | FR_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+France | 8 Radar | Ground Master 200 | FranceVehicleGM200 | FR_NAT_TRML | OK | OK | VISUAL_OK
+France | 9 MLRS | M270 | FranceVehicleLRU | FR_US_M270 | OK | OK | VISUAL_OK
+France | 10 Ballistic/Cruise TEL | SCALP | FranceVehicleSCALPTEL | FR_US_M1075 | OK | OK | VISUAL_OK
+France | 11 SPA | Caesar | FranceVehicleCaesar | LSFkaisa | OK | OK | VISUAL_OK
+France | 12 AT Vehicle | VAB HOT | FranceVehicleVABHOT | FR_US_M1128 | OK | OK | VISUAL_OK
+France | 13 Engineer | Leclerc DNG | FranceVehicleDNG | FR_Irq_VT72B | OK | OK | VISUAL_OK
+France | 14 Special | EBRC Jaguar | FranceVehicleJaguar | LSFamx10 | OK | OK | VISUAL_OK
+Britain | 1 MBT | Challenger 2 | BritainTankChallenger2 | LSFChallenger2 | OK | OK | VISUAL_OK
+Britain | 2 Heavy Tank | Challenger 2 TES | BritainTankChallenger2TES | LSFChallenger2 | OK | OK | VISUAL_OK
+Britain | 3 Recon | Ajax | BritainVehicleAjax | GB_US_M1296 | OK | OK | VISUAL_OK
+Britain | 4 IFV | Warrior | BritainVehicleWarrior | LSFWarrior | OK | OK | VISUAL_OK
+Britain | 5 APC | Mastiff | BritainVehicleMastiff | GB_LSFBoxer | OK | OK | VISUAL_OK
+Britain | 6 SHORAD | Stormer HVM | BritainVehicleStormer | GB_US_M6 | OK | OK | VISUAL_OK
+Britain | 7 Mobile SAM | Sky Sabre | BritainVehicleSkySabre | GB_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+Britain | 8 Radar | Giraffe | BritainVehicleGiraffe | GB_NAT_TRML | OK | OK | VISUAL_OK
+Britain | 9 MLRS | M270 GMLRS | BritainVehicleGMLRS | GB_US_M270 | OK | OK | VISUAL_OK
+Britain | 10 Ballistic/Cruise TEL | Storm Shadow | BritainVehicleStormShadowTEL | GB_US_M1075 | OK | OK | VISUAL_OK
+Britain | 11 SPA | AS90 | BritainVehicleAS90 | LSFAS90 | OK | OK | VISUAL_OK
+Britain | 12 AT Vehicle | FV102 Striker | BritainVehicleStriker | GB_US_M1128 | OK | OK | VISUAL_OK
+Britain | 13 Engineer | CRARRV | BritainVehicleCRARRV | GB_Irq_VT72B | OK | OK | VISUAL_OK
+Britain | 14 Special | Trojan AVRE | BritainVehicleTrojan | LSFChallenger2 | OK | OK | VISUAL_OK
+Italy | 1 MBT | C2 Ariete | ItalyTankAriete | LSFITGY | OK | OK | VISUAL_OK
+Italy | 2 Heavy Tank | C1 Ariete | ItalyTankArieteC1 | LSFITGY | OK | OK | VISUAL_OK
+Italy | 3 Recon | B1 Centauro | ItalyVehicleCentauro | IT_NAT_Cortale | OK | OK | VISUAL_OK
+Italy | 4 IFV | Dardo | ItalyVehicleDardo | IT_NAT_Puma | OK | OK | VISUAL_OK
+Italy | 5 APC | Freccia | ItalyVehicleVBM | IT_NAT_VBCI | OK | OK | VISUAL_OK
+Italy | 6 SHORAD | SIDAM 25 | ItalyVehicleSIDAM | IT_US_M6 | OK | OK | VISUAL_OK
+Italy | 7 Mobile SAM | SAMP/T | ItalyVehicleSAMPT | IT_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+Italy | 8 Radar | RAT-31DL | ItalyVehicleRAT31 | IT_NAT_TRML | OK | OK | VISUAL_OK
+Italy | 9 MLRS | M270 MLRS | ItalyVehicleM270 | IT_US_M270 | OK | OK | VISUAL_OK
+Italy | 10 Ballistic/Cruise TEL | Storm Shadow | ItalyVehicleStormShadowTEL | IT_US_M1075 | OK | OK | VISUAL_OK
+Italy | 11 SPA | PzH 2000 | ItalyVehiclePzH2000 | IT_NAT_Caesar | OK | OK | VISUAL_OK
+Italy | 12 AT Vehicle | Centauro 105 | ItalyVehicleCentauroAT | IT_NAT_Cortale | OK | OK | VISUAL_OK
+Italy | 13 Engineer | Ariete ARV | ItalyVehicleARV | IT_Irq_VT72B | OK | OK | VISUAL_OK
+Italy | 14 Special | Centauro II | ItalyVehicleCentauro2 | IT_NAT_Cortale | OK | OK | VISUAL_OK
+Turkey | 1 MBT | Leopard 2A4 | TurkeyTankLeopard2A4 | TR_LSFB2A6 | OK | OK | VISUAL_OK
+Turkey | 2 Heavy Tank | M60T Sabra | TurkeyTankM60T | TR_US_M1A2Sep2 | OK | OK | VISUAL_OK
+Turkey | 3 Recon | Kaplan-20 | TurkeyVehicleKaplan | TR_US_M1296 | OK | OK | VISUAL_OK
+Turkey | 4 IFV | Tulpar IFV | TurkeyVehicleACV15 | TR_NAT_Puma | OK | OK | VISUAL_OK
+Turkey | 5 APC | Kirpi | TurkeyVehicleKirpi | TR_US_M1126 | OK | OK | VISUAL_OK
+Turkey | 6 SHORAD | Korkut | TurkeyVehicleKorkut | TR_LSFLIEBAO | OK | OK | VISUAL_OK
+Turkey | 7 Mobile SAM | Hisar | TurkeyVehicleHisar | TR_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+Turkey | 8 Radar | Kalkan | TurkeyVehicleKalkan | TR_NAT_TRML | OK | OK | VISUAL_OK
+Turkey | 9 MLRS | T-300 Kasirga | TurkeyVehicleKasirga | TR_US_M270 | OK | OK | VISUAL_OK
+Turkey | 10 Ballistic/Cruise TEL | Bora Missile | TurkeyVehicleBora | TR_LSFIskander | OK | OK | VISUAL_OK
+Turkey | 11 SPA | T-155 Firtina | TurkeyVehicleFirtina | TR_US_M109A7 | OK | OK | VISUAL_OK
+Turkey | 12 AT Vehicle | ACV-15 TOW | TurkeyVehicleACVTOW | TR_US_M1128 | OK | OK | VISUAL_OK
+Turkey | 13 Engineer | M88 ARV | TurkeyVehicleM88 | TR_Irq_VT72B | OK | OK | VISUAL_OK
+Turkey | 14 Special | Altay | TurkeyVehicleAltay | LSFBAO2 | OK | OK | VISUAL_OK
+Ukraine | 1 MBT | T-84 | UkraineTankT84 | LSFPKT84 | OK | OK | VISUAL_OK
+Ukraine | 2 Heavy Tank | T-72AMT | UkraineTankT72AMT | UA_Irq_T72M1 | OK | OK | VISUAL_OK
+Ukraine | 3 Recon | BRDM-2 | UkraineVehicleBRDM | UA_US_MATV | OK | OK | VISUAL_OK
+Ukraine | 4 IFV | BMP-2 | UkraineVehicleBMP2 | UA_RUS_BMP3M | OK | OK | VISUAL_OK
+Ukraine | 5 APC | BTR-4 | UkraineVehicleBTR4 | UA_LSFIDBTR80 | OK | OK | VISUAL_OK
+Ukraine | 6 SHORAD | Gepard | UkraineVehicleGepard | UA_LSFLIEBAO | OK | OK | VISUAL_OK
+Ukraine | 7 Mobile SAM | Buk-M1 | UkraineVehicleBuk | UA_NAT_IRIST_SLM | OK | OK | VISUAL_OK
+Ukraine | 8 Radar | 35D6 | UkraineVehicleP18 | UA_UVRadarVan | OK | OK | VISUAL_OK
+Ukraine | 9 MLRS | HIMARS | UkraineVehicleHIMARS | UA_NAT_M142 | OK | OK | VISUAL_OK
+Ukraine | 10 Ballistic/Cruise TEL | Hrim-2 | UkraineVehicleHrim2 | UA_LSFIskander | OK | OK | VISUAL_OK
+Ukraine | 11 SPA | 2S22 Bohdana | UkraineVehicleBohdana | UA_LSF2S19 | OK | OK | VISUAL_OK
+Ukraine | 12 AT Vehicle | Stugna-P | UkraineVehicleStugna | UA_US_M1128 | OK | OK | VISUAL_OK
+Ukraine | 13 Engineer | BREM-1 | UkraineVehicleBREM | UA_Irq_VT72B | OK | OK | VISUAL_OK
+Ukraine | 14 Special | Neptune | UkraineTankT64BV | UA_Irq_T72M1 | OK | OK | VISUAL_OK
+Sweden | 1 MBT | Strv 122 | SwedenTankStrv122 | strv122 | OK | OK | VISUAL_OK
+Sweden | 2 Heavy Tank | Strv 121 | SwedenTankStrv121 | strv121 | OK | OK | VISUAL_OK
+Sweden | 3 Recon | CV90 Recce | SwedenVehicleCV90R | LSFCV90 | OK | OK | VISUAL_OK
+Sweden | 4 IFV | CV90 | SwedenVehicleCV90 | LSFCV90 | OK | OK | VISUAL_OK
+Sweden | 5 APC | Patgb 203 | SwedenVehiclePatgb203 | PATGB203 | OK | OK | VISUAL_OK
+Sweden | 6 SHORAD | Lvkv 90 | SwedenVehicleLvkv90 | LSFlvkvA2 | OK | OK | VISUAL_OK
+Sweden | 7 Mobile SAM | IRIS-T SLS | SwedenVehicleIRIST | SE_NAT_IRIST_SLX | OK | OK | VISUAL_OK
+Sweden | 8 Radar | Giraffe AMB | SwedenVehicleGiraffe | ARTHUR | OK | OK | VISUAL_OK
+Sweden | 9 MLRS | PULS | SwedenVehiclePULS | SE_US_M270 | OK | OK | VISUAL_OK
+Sweden | 10 Ballistic/Cruise TEL | RBS-15 | SwedenVehicleRBS15 | SE_US_M1075 | OK | OK | VISUAL_OK
+Sweden | 11 SPA | Archer | SwedenVehicleArcher | SE_NAT_Caesar | OK | OK | VISUAL_OK
+Sweden | 12 AT Vehicle | CV90120 | SwedenVehicleCV90AT | LSFCV90120 | OK | OK | VISUAL_OK
+Sweden | 13 Engineer | Bgbv 120 | SwedenVehicleBgbv120 | SE_Irq_VT72B | OK | OK | VISUAL_OK
+Sweden | 14 Special | Strv 122B+ | SwedenTankStrv122B | strv122 | OK | OK | VISUAL_OK
+India | 1 MBT | T-90 Bhishma | IndiaTankT90S | IndiaT90S | OK | OK | VISUAL_OK
+India | 2 Heavy Tank | T-72 Ajeya | IndiaTankT72Ajeya | IN_Irq_T72M1 | OK | OK | VISUAL_OK
+India | 3 Recon | NAMICA | IndiaVehicleNAMICA | IN_US_M1296 | OK | OK | VISUAL_OK
+India | 4 IFV | BMP-2 | IndiaVehicleBMP2 | LSFIDBMP2 | OK | OK | VISUAL_OK
+India | 5 APC | Tata Kestrel | IndiaVehicleKestrel | IN_LSFIDBTR80 | OK | OK | VISUAL_OK
+India | 6 SHORAD | 2S6 Tunguska | IndiaVehicleTunguska | LSFIndia2C6 | OK | OK | VISUAL_OK
+India | 7 Mobile SAM | Akash | IndiaVehicleAkash | IN_LSFHQ9 | OK | OK | VISUAL_OK
+India | 8 Radar | Rajendra | IndiaVehicleRajendra | IN_UVRadarVan | OK | OK | VISUAL_OK
+India | 9 MLRS | Pinaka | IndiaVehiclePinaka | IN_RUS_BM30 | OK | OK | VISUAL_OK
+India | 10 Ballistic/Cruise TEL | Prahaar | IndiaVehiclePrahaar | IN_LSFIskander | OK | OK | VISUAL_OK
+India | 11 SPA | K9 Vajra | IndiaVehicleK9Vajra | IN_LSFSKK55 | OK | OK | VISUAL_OK
+India | 12 AT Vehicle | Nag | IndiaVehicleNag | IN_US_M1128 | OK | OK | VISUAL_OK
+India | 13 Engineer | VT-72B | IndiaVehicleVT72B | IN_Irq_VT72B | OK | OK | VISUAL_OK
+India | 14 Special | Arjun | IndiaTankArjun | LSFAQIONG | OK | OK | VISUAL_OK
+Pakistan | 1 MBT | Al-Khalid | PakistanTankAlKhalid | hld | OK | OK | VISUAL_OK
+Pakistan | 2 Heavy Tank | Al-Zarrar | PakistanTankAlZarrar | LSFAZL | OK | OK | VISUAL_OK
+Pakistan | 3 Recon | Mohafiz | PakistanVehicleMohafiz | PK_US_MATV | OK | OK | VISUAL_OK
+Pakistan | 4 IFV | Saad | PakistanVehicleTalhaIFV | PK_RUS_BMP3M | OK | OK | VISUAL_OK
+Pakistan | 5 APC | Talha | PakistanVehicleTalhaAPC | PK_Irq_BTR90 | OK | OK | VISUAL_OK
+Pakistan | 6 SHORAD | LY-80 | PakistanVehicleLY80 | PK_US_M6 | OK | OK | VISUAL_OK
+Pakistan | 7 Mobile SAM | HQ-9/P | PakistanVehicleHQ9P | PK_LSFHQ9 | OK | OK | VISUAL_OK
+Pakistan | 8 Radar | IBIS-150 | PakistanVehicleRadar | PK_UVRadarVan | OK | OK | VISUAL_OK
+Pakistan | 9 MLRS | A-100 | PakistanVehicleA100 | PK_RUS_BM30 | OK | OK | VISUAL_OK
+Pakistan | 10 Ballistic/Cruise TEL | Shaheen-II | PakistanVehicleShaheen | PK_LSFIskander | OK | OK | VISUAL_OK
+Pakistan | 11 SPA | M109A2 | PakistanVehicleM109 | PK_US_M109A7 | OK | OK | VISUAL_OK
+Pakistan | 12 AT Vehicle | Baktar-Shikan | PakistanVehicleBaktar | PK_US_M1128 | OK | OK | VISUAL_OK
+Pakistan | 13 Engineer | Al-Hadeed | PakistanVehicleARV | PK_Irq_VT72B | OK | OK | VISUAL_OK
+Pakistan | 14 Special | Nasr | PakistanVehicleNasr | PK_LSFIskander | OK | OK | VISUAL_OK
+SaudiArabia | 1 MBT | M1A2S Abrams | SaudiArabiaTankM1A2 | M1A2sudarb | OK | OK | VISUAL_OK
+SaudiArabia | 2 Heavy Tank | M1A2 Abrams | SaudiArabiaTankM1A2S | SA_US_M1A2Sep2 | OK | OK | VISUAL_OK
+SaudiArabia | 3 Recon | LAV-25 | SaudiArabiaVehicleLAV25 | SA_US_M1296 | OK | OK | VISUAL_OK
+SaudiArabia | 4 IFV | M2 Bradley | SaudiArabiaVehicleM2 | SA_US_M2A3Bskiii | OK | OK | VISUAL_OK
+SaudiArabia | 5 APC | Tuwaiq-2 | SaudiArabiaVehicleLAV | SA_US_M1126 | OK | OK | VISUAL_OK
+SaudiArabia | 6 SHORAD | Avenger | SaudiArabiaVehicleAvenger | SA_US_M6 | OK | OK | VISUAL_OK
+SaudiArabia | 7 Mobile SAM | Patriot PAC-3 | SaudiArabiaVehiclePatriot | pac3_sudarb | OK | OK | VISUAL_OK
+SaudiArabia | 8 Radar | AN/MPQ-53 | SaudiArabiaVehicleMPQ53 | radarsude | OK | OK | VISUAL_OK
+SaudiArabia | 9 MLRS | HIMARS | SaudiArabiaVehicleASTROS | SA_US_M270 | OK | OK | VISUAL_OK
+SaudiArabia | 10 Ballistic/Cruise TEL | ATACMS | SaudiArabiaVehicleATACMS | SA_US_M1075 | OK | OK | VISUAL_OK
+SaudiArabia | 11 SPA | M109A6 Paladin | SaudiArabiaVehicleM109 | Arb_M109A6 | OK | OK | VISUAL_OK
+SaudiArabia | 12 AT Vehicle | LAV-AT | SaudiArabiaVehicleLAVAT | SA_US_M1128 | OK | OK | VISUAL_OK
+SaudiArabia | 13 Engineer | M88 ARV | SaudiArabiaVehicleM88 | SA_Irq_VT72B | OK | OK | VISUAL_OK
+SaudiArabia | 14 Special | THAAD | SaudiArabiaVehiclePatriotBtry | pac3_sudarb | OK | OK | VISUAL_OK
+UAE | 1 MBT | Leclerc UAE | UAETankLeclerc | AE_LSFLKLR | OK | OK | VISUAL_OK
+UAE | 2 Heavy Tank | BMP-3 | UAEVehicleBMP3 | AE_RUS_BMP3M | OK | OK | VISUAL_OK
+UAE | 3 Recon | Nimr Ajban | UAEVehicleNimr | AE_US_M1296 | OK | OK | VISUAL_OK
+UAE | 4 IFV | Rabdan | UAEVehicleRabdan | AE_LSFVBCI | OK | OK | VISUAL_OK
+UAE | 5 APC | Nimr Hafeet | UAEVehiclePatria | AE_LSFVBCI | OK | OK | VISUAL_OK
+UAE | 6 SHORAD | Pantsir-S1 | UAEVehiclePantsir | Arb_PantsirS1 | OK | OK | VISUAL_OK
+UAE | 7 Mobile SAM | Patriot PAC-3 | UAEVehiclePatriot | ABPatriot | OK | OK | VISUAL_OK
+UAE | 8 Radar | AN/MPQ-65 | UAEVehicleRadar | AE_US_AN_TPY2 | OK | OK | VISUAL_OK
+UAE | 9 MLRS | HIMARS | UAEVehicleHIMARS | AE_NAT_M142 | OK | OK | VISUAL_OK
+UAE | 10 Ballistic/Cruise TEL | ATACMS | UAEVehicleThunder | AE_US_M1075 | OK | OK | VISUAL_OK
+UAE | 11 SPA | G6 Rhino | UAEVehicleG6 | AE_LSFG6R | OK | OK | VISUAL_OK
+UAE | 12 AT Vehicle | BMP-3 Kornet | UAEVehicleBMP3AT | AE_RUS_BMP3M | OK | OK | VISUAL_OK
+UAE | 13 Engineer | Leclerc ARV | UAEVehicleLeclercARV | AE_Irq_VT72B | OK | OK | VISUAL_OK
+UAE | 14 Special | Jobaria MLS | UAEVehicleJobaria | AE_US_M270 | OK | OK | VISUAL_OK
+Vietnam | 1 MBT | T-90S | VietnamTankT90S | Egy_T90MS | OK | OK | VISUAL_OK
+Vietnam | 2 Heavy Tank | T-54M3 | VietnamTankT54M3 | VN_Irq_T72M1 | OK | OK | VISUAL_OK
+Vietnam | 3 Recon | BRDM-2 | VietnamVehicleBRDM | VN_US_MATV | OK | OK | VISUAL_OK
+Vietnam | 4 IFV | BMP-2 | VietnamVehicleBMP1 | VN_RUS_BMP3M | OK | OK | VISUAL_OK
+Vietnam | 5 APC | BTR-80 | VietnamVehicleBTR80 | VN_Irq_BTR90 | OK | OK | VISUAL_OK
+Vietnam | 6 SHORAD | ZSU-23-4 | VietnamVehicleShilka | VN_LSFShilka | OK | OK | VISUAL_OK
+Vietnam | 7 Mobile SAM | S-300PMU1 | VietnamVehicleS300 | VN_Arb_S300 | OK | OK | VISUAL_OK
+Vietnam | 8 Radar | 36D6 | VietnamVehicle36D6 | VN_UVRadarVan | OK | OK | VISUAL_OK
+Vietnam | 9 MLRS | BM-21 Grad | VietnamVehicleBM21 | VN_LSFBM21 | OK | OK | VISUAL_OK
+Vietnam | 10 Ballistic/Cruise TEL | Scud-B | VietnamVehicleScud | VN_LSFIskander | OK | OK | VISUAL_OK
+Vietnam | 11 SPA | 2S3 Akatsiya | VietnamVehicle2S3 | VN_LSF2S19 | OK | OK | VISUAL_OK
+Vietnam | 12 AT Vehicle | 9P148 Konkurs | VietnamVehicleKonkurs | VN_US_M1128 | OK | OK | VISUAL_OK
+Vietnam | 13 Engineer | BREM-1 | VietnamVehicleBREM | VN_Irq_VT72B | OK | OK | VISUAL_OK
+Vietnam | 14 Special | K-300P Bastion | VietnamVehicleBastion | VN_US_M1075 | OK | OK | VISUAL_OK
+Syria | 1 MBT | T-72 | SyriaTankT72 | SY_Irq_T72M1 | OK | OK | VISUAL_OK
+Syria | 2 Heavy Tank | T-62 | SyriaTankT62 | SY_Irq_T72M1 | OK | OK | VISUAL_OK
+Syria | 3 Recon | BRDM-2 | SyriaVehicleBRDM | SY_US_MATV | OK | OK | VISUAL_OK
+Syria | 4 IFV | BMP-1 | SyriaVehicleBMP1 | SY_RUS_BMP3M | OK | OK | VISUAL_OK
+Syria | 5 APC | BTR-80 | SyriaVehicleBTR | SY_Irq_BTR90 | OK | OK | VISUAL_OK
+Syria | 6 SHORAD | ZSU-23-4 | SyriaVehicleShilka | SY_LSFShilka | OK | OK | VISUAL_OK
+Syria | 7 Mobile SAM | Buk-M2 | SyriaVehicleBuk | SY_Arb_S300 | OK | OK | VISUAL_OK
+Syria | 8 Radar | P-18 | SyriaVehicleP18 | SY_UVRadarVan | OK | OK | VISUAL_OK
+Syria | 9 MLRS | BM-21 Grad | SyriaVehicleBM21 | SY_LSFBM21 | OK | OK | VISUAL_OK
+Syria | 10 Ballistic/Cruise TEL | Scud | SyriaVehicleScud | SY_LSFIskander | OK | OK | VISUAL_OK
+Syria | 11 SPA | 2S1 Gvozdika | SyriaVehicle2S1 | SY_LSF2S19 | OK | OK | VISUAL_OK
+Syria | 12 AT Vehicle | 9K135 Kornet | SyriaVehicleKornet | SY_US_M1128 | OK | OK | VISUAL_OK
+Syria | 13 Engineer | BREM-1 | SyriaVehicleBREM | SY_Irq_VT72B | OK | OK | VISUAL_OK
+Syria | 14 Special | TOS-1A | SyriaVehicleTOS1A | SY_RUS_TOS1A | OK | OK | VISUAL_OK
+Libya | 1 MBT | T-72 | LibyaTankT72 | LibyanT72 | OK | OK | VISUAL_OK
+Libya | 2 Heavy Tank | T-62 | LibyaTankT62 | LY_Irq_T72M1 | OK | OK | VISUAL_OK
+Libya | 3 Recon | EE-9 Cascavel | LibyaVehicleBRDM | LY_US_MATV | OK | OK | VISUAL_OK
+Libya | 4 IFV | BMP-1 | LibyaVehicleBMP1 | LY_RUS_BMP3M | OK | OK | VISUAL_OK
+Libya | 5 APC | M113 | LibyaVehicleM113 | LY_US_M1126 | OK | OK | VISUAL_OK
+Libya | 6 SHORAD | ZSU-23-4 | LibyaVehicleShilka | LY_LSFShilka | OK | OK | VISUAL_OK
+Libya | 7 Mobile SAM | 2K12 Kub | LibyaVehicleSA6 | LY_Irq_Roland3k | OK | OK | VISUAL_OK
+Libya | 8 Radar | P-15 | LibyaVehicleRadar | LY_UVRadarVan | OK | OK | VISUAL_OK
+Libya | 9 MLRS | BM-21 Grad | LibyaVehicleBM21 | LY_LSFBM21 | OK | OK | VISUAL_OK
+Libya | 10 Ballistic/Cruise TEL | Scud-B | LibyaVehicleScudB | LY_LSFIskander | OK | OK | VISUAL_OK
+Libya | 11 SPA | 2S1 Gvozdika | LibyaVehicle2S1 | LY_US_M109A7 | OK | OK | VISUAL_OK
+Libya | 12 AT Vehicle | 9P122 Malyutka | LibyaVehicleATGM | LY_US_M1128 | OK | OK | VISUAL_OK
+Libya | 13 Engineer | BREM-1 | LibyaVehicleBREM | LY_Irq_VT72B | OK | OK | VISUAL_OK
+Libya | 14 Special | 9K52 Luna-M | LibyaVehicleScudBtry | LY_LSFIskander | OK | OK | VISUAL_OK
+SouthAfrica | 1 MBT | Olifant Mk2 | SouthAfricaTankOlifant | LSFhaojiao | OK | OK | VISUAL_OK
+SouthAfrica | 2 Heavy Tank | Olifant Mk1B | SouthAfricaTankOlifant1B | ZA_Irq_T72M1 | OK | OK | VISUAL_OK
+SouthAfrica | 3 Recon | Rooikat | SouthAfricaVehicleRooikat | LSFshanmao | OK | OK | VISUAL_OK
+SouthAfrica | 4 IFV | Ratel | SouthAfricaVehicleRatel | LSFmihuan | OK | OK | VISUAL_OK
+SouthAfrica | 5 APC | Casspir | SouthAfricaVehicleCasspir | ZA_US_M1126 | OK | OK | VISUAL_OK
+SouthAfrica | 6 SHORAD | Ystervark | SouthAfricaVehicleYstervark | ZA_US_M6 | OK | OK | VISUAL_OK
+SouthAfrica | 7 Mobile SAM | Cactus | SouthAfricaVehicleCactus | ZA_Irq_Roland3k | OK | OK | VISUAL_OK
+SouthAfrica | 8 Radar | Thutlwa | SouthAfricaVehicleThutlwa | ZA_NAT_TRML | OK | OK | VISUAL_OK
+SouthAfrica | 9 MLRS | Valkiri | SouthAfricaVehicleValkiri | ZA_LSFBM21 | OK | OK | VISUAL_OK
+SouthAfrica | 10 Ballistic/Cruise TEL | Bateleur | SouthAfricaVehicleBateleur | ZA_US_M270 | OK | OK | VISUAL_OK
+SouthAfrica | 11 SPA | G6 Rhino | SouthAfricaVehicleG6 | ZA_LSFG6R | OK | OK | VISUAL_OK
+SouthAfrica | 12 AT Vehicle | Ratel ZT3 | SouthAfricaVehicleZT3 | ZA_US_M1128 | OK | OK | VISUAL_OK
+SouthAfrica | 13 Engineer | Olifant ARV | SouthAfricaVehicleARV | ZA_Irq_VT72B | OK | OK | VISUAL_OK
+SouthAfrica | 14 Special | Rooikat 76 | SouthAfricaVehicleRooikat76 | LSFshanmao | OK | OK | VISUAL_OK
+
+STATUS_COUNTS {'VISUAL_OK': 238}
+VISIBLE_DEFAULT 238/238
+TEXTURE_CLOSURE 238/238
+WEAPON_BONE 238/238
+ERRORS 0
+AUDIT_OK
+
+------------------------------------------------------------------------
+REPAIRS APPLIED (pre-repair packed failures)
+------------------------------------------------------------------------
+WAR_FACTORY_BUILD_FIXED:
+Germany, France, Britain, Italy
+  Overlay CommandSet_* last-wins aliases were slot-14 Sell only.
+  Restored the live 14-slot national War Factory CommandSet.
+
+INVISIBLE_UNITS_FIXED (missing W3D textures injected from New Donor / packed aliases):
+JapanVehicleType12          AGMZJP88       JapTY81M1.dds JapTY81M2.dds IN02.TGA
+JapanVehicleType12Btry      AGMZJP88       same
+JapanVehicleType99          LSFJP99        JPTANK.tga 90_T.tga JPTank_Headlights.TGA
+FranceVehicleMistral        LSFAMX30SA     Treads.dds
+FranceVehicleCaesar         LSFkaisa       CWCruUral.dds
+SwedenVehicleGiraffe        ARTHUR         avtreads.dds
+SaudiArabiaTankM1A2         M1A2sudarb     USBarracksDesert.dds
+SaudiArabiaVehiclePatriot   pac3_sudarb    pac_3_gdghtrsud.tga
+SaudiArabiaVehiclePatriotBtry pac3_sudarb  pac_3_gdghtrsud.tga
+UAEVehiclePatriot           ABPatriot      ABNPatriot02.dds
+SouthAfricaVehicleRooikat   LSFshanmao     CWCusHumvee.dds
+SouthAfricaVehicleRatel     LSFmihuan      CWCusHumvee.dds
+SouthAfricaVehicleRooikat76 LSFshanmao     CWCusHumvee.dds
+
+BROKEN_WEAPONS_FIXED:
+GermanyVehicleIRIST   Prerequisites StrategyCenter+SCIENCE_Rank3+NatoAirdefenseNetwork -> GermanyWarFactory; added CAN_ATTACK
+SwedenVehicleIRIST    same pattern -> SwedenWarFactory; added CAN_ATTACK
+FranceVehicleVBCI     Prerequisites FranceStrategyCenter+SCIENCE_Rank5 -> FranceWarFactory
+FranceVehicleCaesar   Prerequisites FranceStrategyCenter+SCIENCE_Rank3 -> FranceWarFactory
+221 objects           WeaponFireFXBone/LaunchBone/MuzzleFlash/Turret remapped onto real W3D pivot names
+
+DONOR_VISUALS_REPLACED:
+none (no Model= W3D swaps; missing textures were injected under the names the existing W3Ds already reference)
+
+PROTECTED_FACTIONS: UNCHANGED
+AIRFIELD_COMMANDSETS: 35 resolved
+COMMANDSET.INI: CRLF-only, 0 LF-only, 0 bare CR, 0 glued End+CommandSet

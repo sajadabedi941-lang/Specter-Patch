@@ -1,0 +1,20 @@
+WAR FACTORY BUILD CHAIN
+Country | Builder | WarFactory Button | WarFactory Object | WarFactory CommandSet | Prerequisites | Result
+------------------------------------------------------------------------
+Japan | Japan_VT72B | Command_ConstructJapan_WarFactory | Japan_WarFactory | Japan_WarFactoryCommandSet | Object = Japan_SupplyCenter | BUILD_CHAIN_OK
+SouthKorea | SouthKorea_VT72B | Command_ConstructSouthKorea_WarFactory | SouthKorea_WarFactory | SouthKorea_WarFactoryCommandSet | Object = SouthKorea_SupplyCenter | BUILD_CHAIN_OK
+Germany | GermanyVehicleDozer | Command_ConstructGermanyWarFactory | GermanyWarFactory | GermanyWarfactoryCommandSet | Object = GermanySupplyCenter | BUILD_CHAIN_OK
+France | FranceVehicleDozer | Command_ConstructFranceWarFactory | FranceWarFactory | FranceWarfactoryCommandSet | Object = FranceSupplyCenter | BUILD_CHAIN_OK
+Britain | BritainVehicleDozer | Command_ConstructBritainWarFactory | BritainWarFactory | BritainWarfactoryCommandSet | Object = BritainSupplyCenter | BUILD_CHAIN_OK
+Italy | ItalyVehicleDozer | Command_ConstructItalyWarFactory | ItalyWarFactory | ItalyWarfactoryCommandSet | Object = ItalySupplyCenter | BUILD_CHAIN_OK
+Turkey | TurkeyVehicleDozer | Command_ConstructTurkeyWarFactory | TurkeyWarFactory | TurkeyWarfactoryCommandSet | Object = TurkeySupplyCenter | BUILD_CHAIN_OK
+Ukraine | UkraineVehicleDozer | Command_ConstructUkraineWarFactory | UkraineWarFactory | UkraineWarfactoryCommandSet | Object = UkraineSupplyCenter | BUILD_CHAIN_OK
+Sweden | SwedenVehicleDozer | Command_ConstructSwedenWarFactory | SwedenWarFactory | SwedenWarfactoryCommandSet | Object = SwedenSupplyCenter | BUILD_CHAIN_OK
+India | India_Dozer | Command_ConstructIndia_WarFactory_T | India_WarFactory_T | India_WarFactoryCommandSet | Object = India_SupplyCenter | BUILD_CHAIN_OK
+Pakistan | Pakistan_Dozer | Command_ConstructPakistan_WarFactory_T | Pakistan_WarFactory_T | Pakistan_WarFactoryCommandSet | Object = Pakistan_SupplyCenter | BUILD_CHAIN_OK
+SaudiArabia | SaudiArabia_Dozer | Command_ConstructSaudiArabia_WarFactory_T | SaudiArabia_WarFactory_T | SaudiArabia_WarFactoryCommandSet | Object = SaudiArabia_SupplyCenter | BUILD_CHAIN_OK
+UAE | UAE_Dozer | Command_ConstructUAE_WarFactory_T | UAE_WarFactory_T | UAE_WarFactoryCommandSet | Object = UAE_SupplyCenter | BUILD_CHAIN_OK
+Vietnam | Vietnam_VT72B | Command_ConstructVietnam_WarFactory | Vietnam_WarFactory | Vietnam_WarFactoryCommandSet | Object = Vietnam_SupplyCenter | BUILD_CHAIN_OK
+Syria | Syria_Dozer | Command_ConstructSyria_WarFactory_T | Syria_WarFactory_T | Syria_WarFactoryCommandSet | Object = Syria_SupplyCenter | BUILD_CHAIN_OK
+Libya | Libya_Dozer | Command_ConstructLibya_WarFactory_T | Libya_WarFactory_T | Libya_WarFactoryCommandSet | Object = Libya_SupplyCenter | BUILD_CHAIN_OK
+SouthAfrica | SouthAfrica_Dozer | Command_ConstructSouthAfrica_WarFactory_T | SouthAfrica_WarFactory_T | SouthAfrica_WarFactoryCommandSet | Object = SouthAfrica_SupplyCenter | BUILD_CHAIN_OK

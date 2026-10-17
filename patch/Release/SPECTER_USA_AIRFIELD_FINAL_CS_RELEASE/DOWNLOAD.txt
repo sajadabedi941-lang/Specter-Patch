@@ -1,0 +1,24 @@
+SPECTER_USA_AIRFIELD_FINAL_CS_RELEASE — PUBLIC DOWNLOAD
+========================================================
+
+Public download:
+https://gofile.io/d/4RYl0K
+
+Branch: cursor/usa-airfield-final-commandset-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  03e6d1631715be7e6c473ae1051265f4b1d7be1183da0a96da2c36302784ea89
+SHA256 DATA: 22e52dc239a9fd1441388ce45770299aaa9785010984ff649105ce9b904a4567
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+FIX: USA Airfield starts in final upgraded CommandSet
+  Before: AmericaAirfieldCommandSet_T (pre-tier)
+  Chain:  Upgrade_US_Tier1 -> _T1; Tier2 -> _T2; Tier3 -> _T3 (FINAL)
+  Forced: AmericaAirfield_T CommandSet = AmericaAirfieldCommandSet_T3
+  Roster: FINAL_ROSTER T3 with B-2 Spirit / B-52H / B-21 (no upgrade purchase buttons)
+  Also forces WarFactory_T -> _T3, StrategyCenter_T -> _T2_PatchAAB
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

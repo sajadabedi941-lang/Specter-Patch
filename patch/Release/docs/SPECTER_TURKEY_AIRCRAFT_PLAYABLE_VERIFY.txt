@@ -1,0 +1,28 @@
+SPECTER_TURKEY_AIRCRAFT_PLAYABLE — VERIFY REPORT
+Generated: 2026-07-24 UTC
+
+Rebuild:
+  merge_patch_into_spec_big.py
+  stock DATA/ART + patch/ from current main (PR #75 merged)
+
+DATA entries: 2885
+ART entries:  2689
+DATA SHA256:  53f59157803e062b60e19c04c1b542048043dc8134829bd17db618059213abe4
+ART SHA256:   bf7ca6982fe38c51260be7b0a2ba25eef17c7c50ce2e9b20119001fcac8b0a73
+
+Inside _SPEC_DATA_ONE.big (byte-match patch sources):
+  PASS Turkey_F16Block70 — US_F16CMB50 / US_F16D_B52 models OK; Side=Turkey
+  PASS Turkey_Kizilelma — US_MQ9 models/anims OK; no SCIENCE_UAEStealthJet
+  PASS Turkey_TB2 — US_MQ9 models/anims OK; no foreign StealthJet gate
+  PASS Turkey_Akinci — US_MQ9 models/anims OK
+  PASS Turkey_Tu-22M3 — RUS_TU22M3M model/anim OK; no irq_tu22 / Turkey_Tu22m3
+
+Iraqi leftovers: ABSENT from repaired Turkey aircraft objects
+Missing model refs: NONE (all W3D present in ART BIG)
+INI load-sanity (Object/Draw/Side/CommandSet/End structure): PASS
+
+ZIP SHA256:   39f24f68af0dbe6c61dfcc243ee9439489697bd3c91aff026d570b0e25455926
+
+STATUS: PLAYABLE BIG ARCHIVES READY (TURKEY AIRCRAFT)
+Note: Full generals.exe boot cannot run in this Linux cloud; structural
+INI/BIG load-sanity verification passed for all five Turkey aircraft.

@@ -1,0 +1,61 @@
+SPECTER USA AIRFIELD TIER UNLOCK (from PR #285 only)
+====================================================
+
+1. Base CommandSet of AmericaAirfield_T:
+   AmericaAirfieldCommandSet_T
+
+2. Upgrade #1 name:
+   Upgrade_US_Tier1
+   Scope: PLAYER-WIDE (Command_US_Tier1 uses Command = PLAYER_UPGRADE)
+
+3. CommandSet after Upgrade #1:
+   AmericaAirfieldCommandSet_T1
+
+4. Upgrade #2 name:
+   Upgrade_US_Tier2
+   Scope: PLAYER-WIDE
+
+5. CommandSet after Upgrade #2:
+   AmericaAirfieldCommandSet_T2
+
+6. Upgrade #3 name:
+   Upgrade_US_Tier3
+   Scope: PLAYER-WIDE
+
+7. Final fully-upgraded CommandSet:
+   AmericaAirfieldCommandSet_T3
+
+8. Scope summary:
+   Upgrade_US_Tier1 = PLAYER-WIDE
+   Upgrade_US_Tier2 = PLAYER-WIDE
+   Upgrade_US_Tier3 = PLAYER-WIDE
+
+9. Auto-grant mechanism (proven repo syntax):
+   Object AmericaCommandCenter
+     Behavior = GrantUpgradeCreate ModuleTag_USAAirfieldTier_T1/T2/T3
+       UpgradeToGrant = Upgrade_US_Tier1/2/3
+
+   Plus restore AmericaAirfield_T CommandSetUpgrade TriggeredBy back to
+   Upgrade_US_Tier1/2/3 (undoing Upgrade_USA_AirfieldRosterLocked lock from
+   ZZ_ZZ_AIRFIELD_RUNTIME_ROSTER).
+
+10. Proof AmericaAirfield_T reaches final original CommandSet automatically:
+    - Last-wins Object AmericaAirfield_T @ Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_AIRFIELD_TIER_UNLOCK.ini
+    - Base = AmericaAirfieldCommandSet_T
+    - Tier1/2/3 TriggeredBy = Upgrade_US_Tier1/2/3 -> T1/T2/T3
+    - Last-wins AmericaCommandCenter grants Upgrade_US_Tier1/2/3 at match start
+    - Therefore on Airfield create, all three player upgrades are already owned
+      and CommandSetUpgrade advances to AmericaAirfieldCommandSet_T3
+
+NOT MODIFIED:
+- CommandSet.ini
+- Airfield CommandSet slot contents / FINAL_RUNTIME roster file bytes
+- PR #286 FINAL14 / PR #287 SC fix (not present)
+- B-2 / B-52H / B-21 object definitions (byte-identical to PR #285)
+- Strategy Center
+
+HASHES
+------
+_SPEC_DATA_ONE.big sha256 = 4e7aab2e463f2ea2bf6611095441859e343b5e0f457d779fc882b1dc74d1b685
+_SPEC_ART_ONE.big  sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+PR#285 base DATA     sha256 = f5c33858ac16391fd085a53179c46808093b6d91eb7bbe634e51a62fb26dbd39

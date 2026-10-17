@@ -1,0 +1,7 @@
+AmericaAirfield_T
+  base = AmericaAirfieldCommandSet_T
+  Upgrade_US_Tier1 -> AmericaAirfieldCommandSet_T1
+  Upgrade_US_Tier2 -> AmericaAirfieldCommandSet_T2
+  Upgrade_US_Tier3 -> AmericaAirfieldCommandSet_T3 (FINAL)
+
+All three upgrades: PLAYER-WIDE, granted via GrantUpgradeCreate on AmericaCommandCenter.

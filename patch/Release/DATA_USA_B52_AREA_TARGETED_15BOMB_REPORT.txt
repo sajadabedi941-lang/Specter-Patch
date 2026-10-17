@@ -1,0 +1,97 @@
+B52 AREA-TARGETED 15-BOMB CARPET STRIKE = PASS
+
+B-52 Object = AmericaJetB52H
+
+==============================
+KNOWN-GOOD PHYSICAL BOMB CHAIN
+==============================
+Known-good B-52 Object = AmericaJetB52H
+Known-good Weapon = AmericaB52TenBombLineWeapon (FireOCL architecture restored)
+Known-good Projectile = NONE (FireOCL spawn, not instant FX)
+Known-good Bomb Object = AmericaB52TenBombLineBomb
+Known-good OCL / payload mechanism = FireOCL → CreateObject LIKE_EXISTING INHERIT_VELOCITY
+Known-good impact Weapon = AmericaB52LineBombDetonation
+Known-good DetonationFX = FX_FreeFallBombsDetonation
+
+==============================
+TARGETING UI
+==============================
+Reference area-target ability = Command_CarpetBomb / SuperweaponCarpetBomb
+Reference CommandButton = Command_CarpetBomb
+Reference RadiusCursorType = CARPETBOMB
+Radius size pattern = Command_ALQ99_Jamming + GenericRadarJamCursor (FIRE_WEAPON + SPECIAL_INVALID)
+
+B-52 bombing CommandButton = Command_AmericaB52CarpetStrike
+Command = FIRE_WEAPON
+RadiusCursorType = CARPETBOMB
+Large red targeting circle visible by configuration = YES
+Cursor radius = 450
+Approximate real bombing footprint radius = 420 (half of 840 span)
+Clicked location becomes bombing center = YES (attack target + Bomb 8 offset 0 at release)
+
+==============================
+PAYLOAD
+==============================
+Known-good physical bomb Weapon = FireOCL path via AmericaB52FifteenBombLineWeapon
+Known-good Bomb Object = AmericaB52TenBombLineBomb
+Projectile = NONE
+Impact Weapon = AmericaB52LineBombDetonation
+DetonationFX = FX_FreeFallBombsDetonation
+
+Final B-52 Weapon = AmericaB52FifteenBombLineWeapon
+Final OCL / payload system = FireOCL → OCL_AmericaB52FifteenBombLine (15× CreateObject)
+
+Trigger count per bombing order = 1
+Real bomb Objects = 15
+
+==============================
+OFFSETS
+==============================
+Bomb 1  = -420
+Bomb 2  = -360
+Bomb 3  = -300
+Bomb 4  = -240
+Bomb 5  = -180
+Bomb 6  = -120
+Bomb 7  = -60
+Bomb 8  = 0  <- PLAYER SELECTED TARGET / release center
+Bomb 9  = 60
+Bomb 10  = 120
+Bomb 11  = 180
+Bomb 12  = 240
+Bomb 13  = 300
+Bomb 14  = 360
+Bomb 15  = 420
+
+Spacing = 60
+Bomb 8 = clicked target center = YES (offset 0; AttackRange≈PreferredHeight overhead release)
+Total line span = 840
+Line rotates with B-52 heading = YES (LIKE_EXISTING local Y)
+
+==============================
+SPAWN VALIDATION
+==============================
+Weapon activation resolves = YES
+Target reference resolves = YES (NEED_TARGET_POS)
+Payload trigger resolves = YES (FireOCL)
+Bomb Object references resolved = 15/15
+Bombs spawn at valid altitude = YES (Z:-8 aircraft-relative known-good)
+Falling behavior resolves = YES (PhysicsBehavior + HeightDieUpdate)
+Impact Weapon resolves = YES (AmericaB52LineBombDetonation)
+DetonationFX resolves = YES (FX_FreeFallBombsDetonation)
+Old zero-bomb-spawn chain removed = YES (ProjectileDetonationOCL no longer on active weapon)
+
+==============================
+
+One bombing action = 15 bombs
+Sequential Clip bombing = NO
+Random scatter = NO
+All bombs overlapping = NO
+
+B-52 flight changed = NO
+Other aircraft changed = NO
+ART changed = NO (reuses existing CARPETBOMB / us_b52h)
+
+DATA SHA256 = c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_USA_B52_AREA_TARGETED_15BOMB.zip
+IMPORTANT: DO NOT CLAIM IN-GAME VISUAL PASS.

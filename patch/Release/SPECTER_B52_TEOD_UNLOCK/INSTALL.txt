@@ -1,0 +1,9 @@
+SPECTER_B52_TEOD_UNLOCK — Install
+=================================
+
+1. Backup your current Data\_SPEC_DATA_ONE.big and Art\_SPEC_ART_ONE.big
+2. Replace with the files from this zip
+3. Launch Specter / Zero Hour as usual
+
+Unlock only — Draw / Model / Scale / Weapon / Ammo / AI / Locomotor /
+Cost / Limit unchanged from SPECTER_B52_VISUAL_DRAW base.

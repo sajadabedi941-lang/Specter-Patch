@@ -1,0 +1,7 @@
+SPECTER_B52_NO_RANK
+===================
+Removed StrategyCenter / SCIENCE_Rank4 locks from AmericaJetB52H.
+Normal Airfield production only.
+
+Download:
+https://gofile.io/d/ymbmdc

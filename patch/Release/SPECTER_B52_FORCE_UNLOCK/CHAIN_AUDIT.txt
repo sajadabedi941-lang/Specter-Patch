@@ -1,0 +1,22 @@
+SPECTER_B52_TEOD_UNLOCK — chain audit
+=====================================
+
+ZH Data\INI load order is case-insensitive. Final winners:
+
+CommandSets (all AmericaAirfieldCommandSet / _T / _T1 / _T2 / _T3):
+  last file = ZZZZZZZZ_ZZZZ_USA_B52_BUTTON_UNLOCK.ini
+  B-52 slots = Command_ConstructTEODAmericaJetB52
+  B-2 slot 5 = Command_ConstructTEODAmericaJetB2
+
+Buttons:
+  Command_ConstructTEODAmericaJetB52 -> AmericaJetB52
+  Command_ConstructAmericaJetB52H -> AmericaJetB52
+  Command_ConstructPatch_America_B52 -> AmericaJetB52
+
+Object AmericaJetB52:
+  Buildable = Ignore_Prerequisites (from BUTTON_UNLOCK; VISUAL after merges Draw only)
+  Prerequisites End
+  KindOf without IGNORED_IN_GUI
+
+Named force file (user-requested):
+  ZZZZZZZZ_ZZZ_USA_B52_FORCE_UNLOCK.ini

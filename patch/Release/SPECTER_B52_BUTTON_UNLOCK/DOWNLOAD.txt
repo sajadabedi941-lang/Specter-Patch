@@ -1,0 +1,10 @@
+SPECTER_B52_BUTTON_UNLOCK
+=========================
+AmericaJetB52 / AmericaJetB52H Airfield build-button unlock.
+
+Download (gofile):
+https://gofile.io/d/vusKAW
+
+Contents:
+- _SPEC_DATA_ONE.big
+- _SPEC_ART_ONE.big

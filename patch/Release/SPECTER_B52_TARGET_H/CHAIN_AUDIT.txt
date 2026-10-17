@@ -1,0 +1,8 @@
+Final Command_ConstructTEODAmericaJetB52:
+  Object = AmericaJetB52H
+  Winning file: Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_BUTTON_UNLOCK.ini
+
+AmericaJetB52H:
+  Buildable = Ignore_Prerequisites (runtime patch)
+  Prerequisites empty
+  BuildCost / BuildTime / MaxSim from USA_System.ini (untouched)

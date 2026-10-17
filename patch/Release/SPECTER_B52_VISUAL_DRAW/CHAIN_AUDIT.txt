@@ -1,0 +1,15 @@
+SPECTER_B52_VISUAL_DRAW — chain audit
+=====================================
+
+Method: B-2 visual last-wins pattern
+File: Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_VISUAL_DRAW_ONLY.ini
+
+Objects:
+- AmericaJetB52
+- AmericaJetB52H (Draw-only sibling lock)
+
+Model:
+- US_B52H (Art\W3D\US_B52H.W3D present in ART BIG)
+
+No gameplay fields in the new INI (no WeaponSet / BuildCost /
+JetAIUpdate / Locomotor / CommandSet).

@@ -5,6 +5,9 @@
 OBJECT:Patch_America_B21 = Patch America B21
 CONTROLBAR:ConstructPatch_America_B21 = Patch America B21
 CONTROLBAR:ToolTipConstructPatch_America_B21 = Produce America B-21 Raider. Strategic stealth bomber.
+OBJECT:AmericaJetB21 = B-21 Raider
+CONTROLBAR:ConstructAmericaJetB21 = B-21 Raider
+CONTROLBAR:ToolTipAmericaJetB21 = Produce America B-21 Raider. Strategic stealth bomber.
 OBJECT:Patch_Russia_Su75 = Patch Russia Su75
 CONTROLBAR:ConstructPatch_Russia_Su75 = Patch Russia Su75
 CONTROLBAR:ToolTipConstructPatch_Russia_Su75 = Produce Russia Su-75 Checkmate. Light 5th-gen fighter.

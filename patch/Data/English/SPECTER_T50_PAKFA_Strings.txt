@@ -1,0 +1,8 @@
+OBJECT:RussiaJetT50PAKFA
+SU-T50 PAK FA
+
+CONTROLBAR:ConstructRussiaJetT50PAKFA
+SU-T50 PAK FA
+
+CONTROLBAR:ToolTipRussiaJetT50PAKFA
+Russian fifth-generation stealth multirole fighter.

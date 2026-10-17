@@ -1,0 +1,30 @@
+Primary package (DATA):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-stats/SPECTER_IRAQ_ALFAHD500_STATS.zip
+
+Place this complete replacement DATA file in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd500-stats/_SPEC_DATA_ONE.big
+  SIZE=366379397
+  SHA256=a8b7af7354d2887ac43b9a0a498771828689d19f747da71ff5dd0895afc07256
+  FILES=2915
+
+ART unchanged — keep previous complete ART BIG:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-queue-slots/_SPEC_ART_ONE.big
+  SIZE=1267067968
+  SHA256=5fdc19145769b81bce2cddaeeb91701d6c9ce0f4e288e0d55baa03cbfdb33ea9
+
+MAPPING=موشک A -> Iraq_AlFahd500
+QUEUE_ICON=specter_missile_a
+PRICE=2200
+BUILDTIME=30
+DAMAGE=4x MOTHER (8000+8800 vs 2000+2200)
+RANGE=AttackRange 1720 equal to MOTHER
+ACCURACY=ScatterRadius 175 equal to MOTHER
+STEALTH=RadarPriority LOCAL_UNIT_ONLY + projectile HP 1600 (4x 400)
+
+TAG=s-iraq-alfahd500-stats
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd500-stats
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/572
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

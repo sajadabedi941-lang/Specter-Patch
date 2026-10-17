@@ -1,0 +1,22 @@
+# SPECTER Al-Fahd500 final stats (Missile A)
+
+MOTHER = Iraq_R11ScudB / SRBM_ALHIJARAH_HE — NOT MODIFIED
+Al-Fahd500 warhead 4x, range/accuracy equal, stealth 20 vs 5, $2200 / 30s
+
+- DATA size: 366379397
+- DATA SHA256: a8b7af7354d2887ac43b9a0a498771828689d19f747da71ff5dd0895afc07256
+- DATA files: 2915
+- ART changed: NO (keep previous _SPEC_ART_ONE.big)
+
+## VALIDATION PASS (static)
+- CB_MISSILE_A -> Iraq_AlFahd500, ButtonImage specter_missile_a
+- Queue/countdown Object ButtonImage+SelectPortrait = specter_missile_a
+- Range AttackRange 1720 = MOTHER (1000 km scale)
+- Damage 8000 + warhead 8800 = 4x MOTHER 2000+2200
+- ScatterRadius 175 = MOTHER accuracy 10/100
+- Projectile RadarPriority LOCAL_UNIT_ONLY, MaxHealth 1600 (4x 400)
+- BuildCost 2200, BuildTime 30.0
+- 9P117 / Weapon.ini / factory CommandSet / CB_MISSILE_B-L unchanged
+
+RUNTIME_TEST=NOT RUN
+

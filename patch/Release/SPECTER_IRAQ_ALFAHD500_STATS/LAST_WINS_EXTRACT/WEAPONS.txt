@@ -1,0 +1,71 @@
+=== MOTHER SRBM_ALHIJARAH_HE (Weapon.ini, unchanged) ===
+Weapon SRBM_ALHIJARAH_HE
+  PrimaryDamage               = 2000.0
+  PrimaryDamageRadius         = 80.0      
+  SecondaryDamage             = 100.0          
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 175    
+  ScatterRadiusVsInfantry     = 280.0     ;When this weapon is used against infantry, it can randomly miss by as much as this distance.
+  AttackRange                 = 1720.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = ALHIJARAH_MRBM_Object ;ALHIJARAH_SRBM_Object
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion ;FX_HE_LightMirvExplosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1               ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime              = 95000
+  ShockWaveAmount             = 170.0 ; represents the shockwave amount. The larger the amount, the greater and more dramatic the shockwave effect    
+  ShockWaveRadius             = 150.0 ;100 ; should be no more than the primary/secondary damage radius, whichever is larger.
+  ShockWaveTaperOff           = 0.33    ; 0.33 means at the shockwave edge, the shockwave amount is 33%.
+End
+
+=== LAST-WINS Weapon_Iraq_AlFahd500 ===
+Weapon Weapon_Iraq_AlFahd500
+  PrimaryDamage               = 8000.0
+  PrimaryDamageRadius         = 80.0
+  SecondaryDamage             = 400.0
+  SecondaryDamageRadius       = 10.0
+  ScatterRadius               = 175
+  ScatterRadiusVsInfantry     = 280.0
+  AttackRange                 = 1720.0
+  MinimumAttackRange          = 800.0
+  PreAttackDelay              = 500
+  PreAttackType               = PER_SHOT
+  DamageType                  = ARMOR_PIERCING
+  DeathType                   = EXPLODED
+  FireFX                      = FX_IskanderFiringEffects
+  ProjectileObject            = Projectile_Iraq_AlFahd500
+  ProjectileDetonationFX      = FX_SmallSRBM_Explosion
+  RadiusDamageAffects         = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  FireSound                   = Iskander_Firing
+  WeaponSpeed                 = 280
+  AcceptableAimDelta          = 360
+  DelayBetweenShots           = 3000
+  ClipSize                    = 1
+  ClipReloadTime              = 95000
+  ShockWaveAmount             = 680.0
+  ShockWaveRadius             = 150.0
+  ShockWaveTaperOff           = 0.33
+  AntiGround                  = Yes
+End
+
+=== LAST-WINS Weapon_Iraq_AlFahd500_Warhead ===
+Weapon Weapon_Iraq_AlFahd500_Warhead
+  PrimaryDamage           = 8800
+  PrimaryDamageRadius     = 20.0
+  AttackRange             = 1
+  DamageType              = HACK
+  DeathType               = EXPLODED
+  WeaponSpeed             = 9999999999
+  RadiusDamageAffects     = ALLIES ENEMIES NEUTRALS NOT_SIMILAR
+  ClipSize                = 1
+  ProjectileCollidesWith  = STRUCTURES
+End

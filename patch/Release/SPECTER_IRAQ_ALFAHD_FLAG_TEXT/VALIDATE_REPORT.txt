@@ -1,0 +1,35 @@
+# Iraq_AlFahd500 missile flag + AL-FAHD500 stencil
+
+Live baseline: SPECTER_IRAQ_ALFAHD_FIRE_FLAG (s-iraq-alfahd-9p117-freeze).
+DATA unchanged. ART-only complete replacement of _SPEC_ART_ONE.big.
+
+## Audit chain
+Object Iraq_AlFahd500 -> Model Irq_AlFahd500 / Irq_AlFahd500D
+  MISSILE01 material now -> Irq_AlFahd500P.tga (was Irq_AlFahd500M.tga atlas)
+Object Projectile_Iraq_AlFahd500 -> Model Irq_AlFahd500M
+  BOOSTER + MISSILE01 -> Irq_AlFahd500P.tga
+Texture source flag: Art\Textures\IraqiFlag.dds (unchanged asset, composited onto skin)
+
+## Root cause
+1. Flying skin was 24-bit TGA desc 0x00; working Al-Fahd W3D textures are 32-bit desc 0x08.
+2. TEL-mounted missile kept GENERIC-MISSILES atlas UVs on Irq_AlFahd500M.tga; flag texels were unused.
+3. AL-FAHD500 stencil was never present on the sampled skin.
+
+- ART size: 1266477100
+- ART SHA256: b242265f79404e0d07f2f1f52599becb0eb73e28a741e9b79f0ba67a6078bb34
+- ART files: 4604
+- projectile TGA: type=2 bpp=32 alpha=8 desc=0x08 1024x1024
+- DATA SHA256 (unchanged): aed109b44177bcf6c03cff56b42106f985115404f0ace80811ae262e999b9cc0
+
+## VALIDATION PASS (static / packed last-wins)
+- DATA byte-identical to s-iraq-alfahd-9p117-freeze
+- Projectile Irq_AlFahd500M.W3D still references Irq_AlFahd500P.tga
+- Launcher / destroyed MISSILE01 now reference Irq_AlFahd500P.tga
+- Irq_AlFahd500P.tga is 32-bit bottom-origin, same profile as working Al-Fahd W3D textures
+- Sheet contains two Iraqi flags from IraqiFlag.dds and two AL-FAHD500 stencils
+- Body UVs of flying + mounted missile overlap those markings
+- GENERIC-MISSILES.dds / IraqiFlag.dds / 9P117 W3D+DDS / missile_factory.tga unchanged
+- Al-Fahd identities remain IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M
+
+RUNTIME_TEST=NOT RUN
+

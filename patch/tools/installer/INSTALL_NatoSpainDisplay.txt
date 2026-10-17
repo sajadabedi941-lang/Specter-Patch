@@ -26,8 +26,10 @@ SPEC BIGs next to Install_SpecterPatch.bat, or keep an already-correct
 _SPEC_ART_TWO.big beside generals.exe from the original SPECTER extract.
 Install_SpecterPatch.bat and Launch_Specter.bat now copy ART_TWO when it
 is next to the bat, and they refuse to finish if it is missing from the
-game folder. They also reject ART_ONE / DATA_ONE / ART_TWO of the wrong
-byte size (truncated copies).
+game folder. They reject a wrong-size overlay (1608985) and wrong-size
+DATA_ONE / ART_ONE / ART_TWO, then re-check those four sizes in the
+game folder after copy. Byte size is not a SHA-256. Verify hashes with
+certutil before play if the download is untrusted.
 
 What the overlay first-wins
 ---------------------------

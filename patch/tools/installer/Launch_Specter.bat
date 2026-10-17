@@ -62,8 +62,13 @@ if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
 )
 echo.
 
+set "SZ_DATA="
+set "SZ_ART1="
+set "SZ_ART2="
+set "SZ_SPAIN="
 for %%A in ("%PATCH_DIR%_SPEC_DATA_ONE.big") do set "SZ_DATA=%%~zA"
 for %%A in ("%PATCH_DIR%_SPEC_ART_ONE.big") do set "SZ_ART1=%%~zA"
+for %%A in ("%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big") do set "SZ_SPAIN=%%~zA"
 if exist "%PATCH_DIR%_SPEC_ART_TWO.big" for %%A in ("%PATCH_DIR%_SPEC_ART_TWO.big") do set "SZ_ART2=%%~zA"
 if not "%SZ_DATA%"=="373898957" (
   echo.
@@ -76,6 +81,13 @@ if not "%SZ_ART1%"=="2144972013" (
   echo.
   echo ERROR: _SPEC_ART_ONE.big is %SZ_ART1% bytes, expected 2144972013.
   echo A truncated ART_ONE copy leaves buildings black or magenta.
+  echo.
+  pause
+  exit /b 1
+)
+if not "%SZ_SPAIN%"=="1608985" (
+  echo.
+  echo ERROR: 0_SPECTER_NatoSpainDisplay.big is %SZ_SPAIN% bytes, expected 1608985.
   echo.
   pause
   exit /b 1
@@ -230,7 +242,35 @@ if not exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
   pause
   exit /b 1
 )
-echo   Active BIGs ready in game folder.
+set "DST_DATA="
+set "DST_ART1="
+set "DST_ART2="
+set "DST_SPAIN="
+for %%A in ("%GAME_ROOT%_SPEC_DATA_ONE.big") do set "DST_DATA=%%~zA"
+for %%A in ("%GAME_ROOT%_SPEC_ART_ONE.big") do set "DST_ART1=%%~zA"
+for %%A in ("%GAME_ROOT%_SPEC_ART_TWO.big") do set "DST_ART2=%%~zA"
+for %%A in ("%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big") do set "DST_SPAIN=%%~zA"
+if not "%DST_DATA%"=="373898957" (
+  echo ERROR: game-folder _SPEC_DATA_ONE.big is %DST_DATA% bytes, expected 373898957.
+  pause
+  exit /b 1
+)
+if not "%DST_ART1%"=="2144972013" (
+  echo ERROR: game-folder _SPEC_ART_ONE.big is %DST_ART1% bytes, expected 2144972013.
+  pause
+  exit /b 1
+)
+if not "%DST_ART2%"=="307254782" (
+  echo ERROR: game-folder _SPEC_ART_TWO.big is %DST_ART2% bytes, expected 307254782.
+  pause
+  exit /b 1
+)
+if not "%DST_SPAIN%"=="1608985" (
+  echo ERROR: game-folder 0_SPECTER_NatoSpainDisplay.big is %DST_SPAIN% bytes, expected 1608985.
+  pause
+  exit /b 1
+)
+echo   Active BIGs ready in game folder. Destination byte sizes match.
 echo.
 
 echo [4/4] Launching generals.exe...

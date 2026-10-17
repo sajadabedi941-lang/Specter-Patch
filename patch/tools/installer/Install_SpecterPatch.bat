@@ -57,9 +57,14 @@ if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
 echo.
 
 REM Official SPEC byte sizes from SPECTER_SPEC_ART_DATA.SHA256.txt
-REM and inspected archives. Catches truncated ART_ONE copies.
+REM and inspected archives. Catches truncated copies. Size is not a hash.
+set "SZ_DATA="
+set "SZ_ART1="
+set "SZ_ART2="
+set "SZ_SPAIN="
 for %%A in ("%PATCH_DIR%_SPEC_DATA_ONE.big") do set "SZ_DATA=%%~zA"
 for %%A in ("%PATCH_DIR%_SPEC_ART_ONE.big") do set "SZ_ART1=%%~zA"
+for %%A in ("%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big") do set "SZ_SPAIN=%%~zA"
 if exist "%PATCH_DIR%_SPEC_ART_TWO.big" for %%A in ("%PATCH_DIR%_SPEC_ART_TWO.big") do set "SZ_ART2=%%~zA"
 if not "%SZ_DATA%"=="373898957" (
   echo.
@@ -77,6 +82,14 @@ if not "%SZ_ART1%"=="2144972013" (
   pause
   exit /b 1
 )
+if not "%SZ_SPAIN%"=="1608985" (
+  echo.
+  echo ERROR: 0_SPECTER_NatoSpainDisplay.big is %SZ_SPAIN% bytes, expected 1608985.
+  echo The overlay is incomplete. Do not install this copy.
+  echo.
+  pause
+  exit /b 1
+)
 if defined SZ_ART2 goto CHECK_ART2_SIZE
 goto AFTER_ART2_SIZE
 :CHECK_ART2_SIZE
@@ -89,7 +102,7 @@ if not "%SZ_ART2%"=="307254782" (
   exit /b 1
 )
 :AFTER_ART2_SIZE
-echo   Official SPEC byte sizes match for the files found here.
+echo   Source byte sizes match for the files found here.
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -277,6 +290,38 @@ if not exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
   pause
   exit /b 1
 )
+
+REM Revalidate destination sizes so a truncated copy or leftover
+REM game-folder ART_TWO cannot print SUCCESS.
+set "DST_DATA="
+set "DST_ART1="
+set "DST_ART2="
+set "DST_SPAIN="
+for %%A in ("%GAME_ROOT%_SPEC_DATA_ONE.big") do set "DST_DATA=%%~zA"
+for %%A in ("%GAME_ROOT%_SPEC_ART_ONE.big") do set "DST_ART1=%%~zA"
+for %%A in ("%GAME_ROOT%_SPEC_ART_TWO.big") do set "DST_ART2=%%~zA"
+for %%A in ("%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big") do set "DST_SPAIN=%%~zA"
+if not "%DST_DATA%"=="373898957" (
+  echo ERROR: installed _SPEC_DATA_ONE.big is %DST_DATA% bytes, expected 373898957.
+  pause
+  exit /b 1
+)
+if not "%DST_ART1%"=="2144972013" (
+  echo ERROR: installed _SPEC_ART_ONE.big is %DST_ART1% bytes, expected 2144972013.
+  pause
+  exit /b 1
+)
+if not "%DST_ART2%"=="307254782" (
+  echo ERROR: installed _SPEC_ART_TWO.big is %DST_ART2% bytes, expected 307254782.
+  pause
+  exit /b 1
+)
+if not "%DST_SPAIN%"=="1608985" (
+  echo ERROR: installed 0_SPECTER_NatoSpainDisplay.big is %DST_SPAIN% bytes, expected 1608985.
+  pause
+  exit /b 1
+)
+echo   Destination byte sizes match for all four required archives.
 echo.
 
 echo [5/5] Done.

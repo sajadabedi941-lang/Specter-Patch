@@ -1,0 +1,8 @@
+RESTORE POINT — PR #253-era B-2 stable (pre #254+)
+Commit: 6efa9b9a274908c3bff4c37ad0f30d3500e6b4fd
+Backup branch: backup/pre-pr253-rollback-dc1693c2
+Working tree: clean
+Excluded: PR #254/#255 B-52 unlock overlays, #256 B-21, #257 Strategy Center
+ZIP contents: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only
+B2 overlays included: 20
+Direct GameRoot replace: YES

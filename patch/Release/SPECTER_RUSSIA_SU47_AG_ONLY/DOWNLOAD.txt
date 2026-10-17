@@ -1,0 +1,9 @@
+SPECTER_RUSSIA_SU47_AG_ONLY
+
+Download: https://gofile.io/d/tlglPm
+
+SU-47 Berkut retargeted AIR-TO-GROUND ONLY (Kh-29T / KH29T_MissileObject).
+Ammo 4, 2 per attack pass, RTB. Slot/model/cost/MaxSim preserved.
+SU-75 + TU-160 preserved. No CommandSet mass merge.
+
+CLAIM: SU-47 RETARGETED AIR-TO-GROUND ONLY — RUNTIME COMBAT TEST REQUIRED

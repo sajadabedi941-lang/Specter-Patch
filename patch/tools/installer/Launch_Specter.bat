@@ -54,7 +54,43 @@ if not exist "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" (
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
 echo   OK: 0_SPECTER_NatoSpainDisplay.big
+if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo   OK: _SPEC_ART_TWO.big
+) else (
+  echo   _SPEC_ART_TWO.big is not next to this launcher.
+  echo   It must already sit beside generals.exe.
+)
 echo.
+
+for %%A in ("%PATCH_DIR%_SPEC_DATA_ONE.big") do set "SZ_DATA=%%~zA"
+for %%A in ("%PATCH_DIR%_SPEC_ART_ONE.big") do set "SZ_ART1=%%~zA"
+if exist "%PATCH_DIR%_SPEC_ART_TWO.big" for %%A in ("%PATCH_DIR%_SPEC_ART_TWO.big") do set "SZ_ART2=%%~zA"
+if not "%SZ_DATA%"=="373898957" (
+  echo.
+  echo ERROR: _SPEC_DATA_ONE.big is %SZ_DATA% bytes, expected 373898957.
+  echo.
+  pause
+  exit /b 1
+)
+if not "%SZ_ART1%"=="2144972013" (
+  echo.
+  echo ERROR: _SPEC_ART_ONE.big is %SZ_ART1% bytes, expected 2144972013.
+  echo A truncated ART_ONE copy leaves buildings black or magenta.
+  echo.
+  pause
+  exit /b 1
+)
+if defined SZ_ART2 goto CHECK_ART2_SIZE
+goto AFTER_ART2_SIZE
+:CHECK_ART2_SIZE
+if not "%SZ_ART2%"=="307254782" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is %SZ_ART2% bytes, expected 307254782.
+  echo.
+  pause
+  exit /b 1
+)
+:AFTER_ART2_SIZE
 
 echo [2/4] Checking generals.exe...
 set "GAME_ROOT="
@@ -103,10 +139,10 @@ echo.
 
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
-echo   Specter loads 0_SPECTER_NatoSpainDisplay.big, _SPEC_DATA_ONE.big
-echo   and _SPEC_ART_ONE.big from the game folder when generals.exe starts.
-echo   The 0_ overlay wins Data\English\generals.csf so the former NATO
-echo   faction shows as Spanish Armed Forces from new-game selection.
+echo   Specter loads 0_SPECTER_NatoSpainDisplay.big, _SPEC_DATA_ONE.big,
+echo   _SPEC_ART_ONE.big, and _SPEC_ART_TWO.big from the game folder.
+echo   ART_TWO holds W3D models including US_Command. The 0_ overlay wins
+echo   Data\English\generals.csf so FactionNato shows as Spanish Armed Forces.
 echo.
 
 set "SAME=0"
@@ -138,6 +174,19 @@ if "%SAME%"=="1" (
   )
   echo   OK: copied _SPEC_ART_ONE.big
 
+  if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+    echo   Copying _SPEC_ART_TWO.big ...
+    copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+    if errorlevel 1 (
+      echo.
+      echo ERROR: Failed to copy _SPEC_ART_TWO.big into game folder.
+      echo.
+      pause
+      exit /b 1
+    )
+    echo   OK: copied _SPEC_ART_TWO.big
+  )
+
   echo   Copying 0_SPECTER_NatoSpainDisplay.big ...
   copy /Y "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" >nul
   if errorlevel 1 (
@@ -160,6 +209,16 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo.
   echo ERROR: _SPEC_ART_ONE.big is not in the game folder.
+  echo.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is not in the game folder.
+  echo US_Command.W3D is only in this archive. Copy it beside generals.exe.
+  echo Official SPEC size 307254782 bytes,
+  echo SHA-256 a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
   echo.
   pause
   exit /b 1
@@ -210,6 +269,7 @@ echo Active files:
 echo   %GAME_ROOT%0_SPECTER_NatoSpainDisplay.big
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
 echo.
 echo You can close this window.
 echo.

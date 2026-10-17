@@ -25,7 +25,7 @@
     "NT_Flag.tga": "First-wins ART_ONE's NATO compass rose. Same 128x64 TGA as ES_Flag. Existing NT__NTFlag_* W3Ds keep sampling NT_Flag.tga.",
     "building_flag_w3ds": "not packed; ART_TWO originals keep NT_Flag.tga",
     "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo",
-    "black_magenta_note": "US_Command.W3D and US_BUILDINGS.dds remain in _SPEC_ART_TWO / _SPEC_ART_ONE. This overlay does not replace building models or USA textures. Solid-black silhouettes with one magenta mesh match ART_ONE textures not loaded (W3Ds still present). _SPEC_ART_ONE.big must sit beside generals.exe."
+            "black_magenta_note": "US_Command.W3D exists only in _SPEC_ART_TWO.big. US_BUILDINGS.dds is in _SPEC_ART_ONE.big. This overlay does not replace those files. Installer/launcher now require ART_TWO beside generals.exe and reject truncated ART_ONE (2144972013 bytes)."
   },
   "overlay_files": [
     "Art\\Textures\\ES_Flag.tga",

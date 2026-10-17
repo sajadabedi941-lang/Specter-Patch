@@ -48,6 +48,48 @@ if not exist "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" (
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
 echo   Found 0_SPECTER_NatoSpainDisplay.big
+if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo   Found _SPEC_ART_TWO.big
+) else (
+  echo   _SPEC_ART_TWO.big is not next to this installer.
+  echo   It must already sit beside generals.exe, or install will stop.
+)
+echo.
+
+REM Official SPEC byte sizes from SPECTER_SPEC_ART_DATA.SHA256.txt
+REM and inspected archives. Catches truncated ART_ONE copies.
+for %%A in ("%PATCH_DIR%_SPEC_DATA_ONE.big") do set "SZ_DATA=%%~zA"
+for %%A in ("%PATCH_DIR%_SPEC_ART_ONE.big") do set "SZ_ART1=%%~zA"
+if exist "%PATCH_DIR%_SPEC_ART_TWO.big" for %%A in ("%PATCH_DIR%_SPEC_ART_TWO.big") do set "SZ_ART2=%%~zA"
+if not "%SZ_DATA%"=="373898957" (
+  echo.
+  echo ERROR: _SPEC_DATA_ONE.big is %SZ_DATA% bytes, expected 373898957.
+  echo The file is incomplete. Use the official SPEC archive.
+  echo.
+  pause
+  exit /b 1
+)
+if not "%SZ_ART1%"=="2144972013" (
+  echo.
+  echo ERROR: _SPEC_ART_ONE.big is %SZ_ART1% bytes, expected 2144972013.
+  echo A truncated ART_ONE copy leaves buildings black or magenta.
+  echo.
+  pause
+  exit /b 1
+)
+if defined SZ_ART2 goto CHECK_ART2_SIZE
+goto AFTER_ART2_SIZE
+:CHECK_ART2_SIZE
+if not "%SZ_ART2%"=="307254782" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is %SZ_ART2% bytes, expected 307254782.
+  echo The file is incomplete. US_Command.W3D lives only in this archive.
+  echo.
+  pause
+  exit /b 1
+)
+:AFTER_ART2_SIZE
+echo   Official SPEC byte sizes match for the files found here.
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -126,6 +168,19 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
 
+if exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo   Backing up old _SPEC_ART_TWO.big ...
+  copy /Y "%GAME_ROOT%_SPEC_ART_TWO.big" "%BACKUP%\_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for _SPEC_ART_TWO.big
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing _SPEC_ART_TWO.big to backup
+)
+
 if exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
   echo   Backing up old 0_SPECTER_NatoSpainDisplay.big ...
   copy /Y "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" "%BACKUP%\0_SPECTER_NatoSpainDisplay.big" >nul
@@ -172,6 +227,18 @@ if "%SAME%"=="1" (
   )
   echo   OK
 
+  if exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+    echo   Copying _SPEC_ART_TWO.big ...
+    copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+    if errorlevel 1 (
+      echo ERROR: Failed to copy _SPEC_ART_TWO.big
+      echo Backup is in: %BACKUP%
+      pause
+      exit /b 1
+    )
+    echo   OK
+  )
+
   echo   Copying 0_SPECTER_NatoSpainDisplay.big ...
   copy /Y "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" >nul
   if errorlevel 1 (
@@ -193,6 +260,18 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is not in the game folder.
+  echo NATO Command Center uses Art\W3D\US_Command.W3D from this archive.
+  echo Put _SPEC_ART_TWO.big next to Install_SpecterPatch.bat, or copy it
+  echo beside generals.exe. Official SPEC size 307254782 bytes,
+  echo SHA-256 a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+  echo ^(SPECTER_SPEC_ART_DATA.SHA256.txt^).
+  echo.
+  pause
+  exit /b 1
+)
 if not exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
   echo ERROR: 0_SPECTER_NatoSpainDisplay.big missing after install.
   pause
@@ -210,6 +289,12 @@ echo Installed to:
 echo   %GAME_ROOT%
 echo Backup:
 echo   %BACKUP%
+echo.
+echo Active BIGs beside generals.exe:
+echo   %GAME_ROOT%0_SPECTER_NatoSpainDisplay.big
+echo   %GAME_ROOT%_SPEC_DATA_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
 echo.
 echo You can start the game with Launch_Specter.bat
 echo.

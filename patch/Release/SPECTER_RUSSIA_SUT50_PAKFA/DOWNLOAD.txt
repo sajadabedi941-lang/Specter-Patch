@@ -1,0 +1,9 @@
+SPECTER_RUSSIA_SUT50_PAKFA
+
+Download: https://gofile.io/d/YISGLf
+
+SU-T50 PAK FA slot 11 preserved. Projectile now Russia_T50_R27_Projectile
+(complete unique TEOD R27 clone). Object R27 NOT redefined.
+EXTERNAL_TEOD_PROJECTILE_DEPENDENCY = NO
+
+CLAIM: SU-T50 PATCH-SAFE R27 CLONE — RUNTIME COMBAT TEST REQUIRED

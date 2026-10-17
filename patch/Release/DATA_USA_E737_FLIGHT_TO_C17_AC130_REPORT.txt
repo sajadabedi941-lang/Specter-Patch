@@ -1,0 +1,68 @@
+E737 FLIGHT TEMPLATE → C17 + AC130 = PASS (structural readiness)
+
+REFERENCE:
+E-737 Object = AmericaJetE737Visual
+E-737 Locomotor = F100_PW_229 + BasicJetTaxiLocomotor
+E-737 AIUpdate = JetAIUpdate (KeepsParkingSpaceWhenAirborne=Yes, MinHeight=1, NeedsRunway=Yes, TakeoffPause=1000, TakeoffDistForMaxLift=0%, ParkingOffset=5, ReturnToBaseIdleTime=10000, AutoAcquireEnemiesWhenIdle=No)
+E-737 Physics = Mass 500.0
+E-737 important flight parameters = Geometry 40.0/10.0/10.0; Scale=0.8 (frozen)
+
+------------------------------
+
+C-17:
+Object = AmericaJetC17Visual
+W3D = IUAC17HXNew
+Visual scale changed = NO
+Old Locomotor = AC130Locomotor
+New Locomotor = F100_PW_229
+Old AIUpdate = MinHeight=5 ParkingOffset=10 TakeoffDistForMaxLift=25% TakeoffPause=900
+New AIUpdate = MinHeight=1 ParkingOffset=5 TakeoffDistForMaxLift=0% TakeoffPause=1000 (E-737-identical JetAIUpdate)
+Physics changes = Mass 500.0 -> 500.0 (already 500; matches E-737)
+Geometry changes = 42.0/14.0/14.0 -> 40.0/10.0/10.0 (aligned to E-737 runway-proven collision; visual unchanged)
+E-737 flight structure adopted = YES
+Weapons = NONE
+
+Expected:
+Takeoff = READY
+Flight = READY
+Return = READY
+Landing = READY
+Parking = READY
+
+------------------------------
+
+AC-130:
+Object = AmericaJetAC130
+W3D = US_AC130W
+Visual changed = NO
+Scale changed = NO (remains 0.85)
+Weapons changed = NO (M102_105mm_Howitzer WeaponSet preserved)
+Old Locomotor = AC130Locomotor
+New Locomotor = F100_PW_229
+Old AIUpdate = MinHeight=5 ParkingOffset=10 TakeoffDistForMaxLift=25%
+New AIUpdate = MinHeight=1 ParkingOffset=5 TakeoffDistForMaxLift=0% KeepsParkingSpaceWhenAirborne=Yes (OutOfAmmoDamagePerSecond kept 8%; AutoAcquireEnemiesWhenIdle not forced No)
+SpectreGunshipUpdate preserved = N/A (not present in current Object)
+Combat functionality preserved = YES (WeaponSet, CAN_ATTACK, CountermeasuresBehavior, health, icon intact)
+Geometry changes = 42.0/14.0/14.0 -> 40.0/10.0/10.0 (E-737 runway-proven collision; visual Scale unchanged)
+E-737 flight structure adopted = YES
+
+Expected:
+Takeoff = READY
+Flight = READY
+Combat = PRESERVED
+Return = READY
+Landing = READY
+Parking = READY
+
+------------------------------
+
+E-737 changed = NO
+E-2 changed = NO
+V-22 changed = NO
+E-3 changed = NO
+Bombers changed = NO
+HeavyAirBase changed = NO
+Other factions changed = NO
+ART changed = NO
+DATA sha256 = 26c4a5a5737d991b9f375a9739514f2588085565d3a88a082c817e66f85cd8ea
+NOTE = In-game flight not launched here; structural readiness only.

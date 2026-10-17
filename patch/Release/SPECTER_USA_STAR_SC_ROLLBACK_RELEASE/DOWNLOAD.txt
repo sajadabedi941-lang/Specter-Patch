@@ -1,0 +1,26 @@
+SPECTER_USA_STAR_SC_ROLLBACK_RELEASE — PUBLIC DOWNLOAD
+==========================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/4tmwin.zip
+
+Branch: cursor/usa-generalstar-sc-rollback-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  831ec5b3a7f37f4f60ded9a55d09a6b7c98f396a443d23e100413739b74e7d82
+SHA256 DATA: 2fbf24df06f014f45b06ecc859711d8407d7864f1e4255e32e94d294dd059296
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+Stability rollback:
+  Removed General Star aircraft-upgrade experiment overlays
+  Restored original USA SCIENCE_AMERICA Rank1/3/8 star powers
+  Restored SpecialPowerShortcutUSA + AmericaSpecialPowerCommandSet
+  Restored Strategy Center building construct + original upgrade path
+    (F15EX, MTS, AdvancedTraining, MOAB, battle plans, etc.)
+  Removed at-start air GrantUpgradeCreate experiment files
+  Airfield CommandSets/slots and aircraft Objects/Weapon/Draw/Cost/Limit untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

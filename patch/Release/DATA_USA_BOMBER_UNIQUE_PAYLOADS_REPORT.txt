@@ -1,0 +1,79 @@
+USA BOMBER PAYLOAD OVERHAUL = STRUCTURAL PASS
+
+B-2:
+Object = AmericaJetB2Spirit
+Weapon = AmericaB2SixGuidedBombWeapon
+Projectile = GBU-31V2
+Guided = YES (MissileAIUpdate TryToFollowTarget = Yes on GBU-31V2)
+ClipSize = 6
+Shots per attack = 6
+Release delay = DelayBetweenShots 80 ms
+Total payload = 6
+BuildCost = 10000
+Expected release: 6 in one attack = YES
+AutoReloadsClip = RETURN_TO_BASE
+
+------------------------------
+
+B-52:
+Object = AmericaJetB52H
+Weapon = AmericaB52SevenBombSalvoA + AmericaB52SevenBombSalvoB
+Projectile = MK-84 (conventional freefall — NOT guided)
+ClipSize / total payload = 7 + 7 = 14
+Salvo 1 = PRIMARY ClipSize 7 (DelayBetweenShots 80)
+Salvo 2 = SECONDARY ClipSize 7 (PreAttackDelay 1200 then DelayBetweenShots 80)
+Inter-salvo delay = PreAttackDelay 1200 ms on SECONDARY
+Total payload = 14
+Expected: 7 + 7 = YES
+AutoReloadsClip = RETURN_TO_BASE on both
+
+------------------------------
+
+B-1:
+Object = AmericaJetB1R
+Weapon = AmericaB1ThreeGuidedBombWeapon
+Projectile = GBU-31V2
+Guided = YES
+ClipSize = 3
+Total payload = 3
+Release delay = DelayBetweenShots 100 ms
+BuildCost = unchanged (2500)
+Expected: 3 guided bombs per attack = YES
+AutoReloadsClip = RETURN_TO_BASE
+
+------------------------------
+
+B-2A:
+Object = AmericaJetB2A
+Weapon = AmericaB2A10TonBombWeapon
+Projectile = AmericaB2A10TonBombProjectile (MK-84 freefall clone; conventional)
+Payload = 1
+ClipSize = 1
+Conventional = YES
+Nuclear = NO
+Direct damage = 12000.0
+Primary radius = 480.0
+Secondary radius = 560.0
+Reference conventional heavy bomb = GBU43B_HighExplosion (PrimaryDamage 6000 / Radius 320)
+Damage multiplier = 2.0
+Radius multiplier = 1.5 (secondary radius 1.75x)
+BuildCost = 15000
+Expected: ONE 10-ton bomb per sortie = YES
+AutoReloadsClip = RETURN_TO_BASE
+
+------------------------------
+
+Flight systems changed = NO
+Visuals changed = NO
+HeavyAirBase changed = NO
+Other aircraft changed = NO (E-2/E-3/E-737/C-17/V-22/AC-130/B-21/Chinook frozen)
+Other factions changed = NO
+ART changed = NO
+Shared old weapons left intact for non-targets (e.g. B-21 still USA_B52H_AreaBombardment)
+
+In-game bombing behavior = USER TEST REQUIRED
+
+DATA sha256 = b8ab682e1b5c1e12ff21683c9abbb54fa218fbca09518bd178982d4415d32dd4
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef
+ZIP = SPECTER_MASTER_DATA_USA_BOMBER_UNIQUE_PAYLOADS.zip
+URL = https://gofile.io/d/Lpz6AOeL

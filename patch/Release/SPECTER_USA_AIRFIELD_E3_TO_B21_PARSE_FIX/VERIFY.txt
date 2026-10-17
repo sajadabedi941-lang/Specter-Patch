@@ -1,0 +1,10 @@
+PR #296 crash fix:
+
+Root cause: Command_ConstructAmericaJetB21 was only defined in late ZZZZ_* INIs,
+so CommandSet.ini referenced it before the button existed.
+
+Fix:
+1) Restore CommandSet.ini from PR #295; only 4 token replacements E3AWACS->B21 on Airfield T/T1/T2/T3 slot 12.
+2) Add early CommandButton_ZZZZ_USA_B21_EARLY.ini (loads before CommandSet.ini) with the existing B21 button definition.
+
+Packed CommandSet.ini diff vs PR #295: exactly those 4 lines.

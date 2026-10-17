@@ -1,0 +1,44 @@
+SPECTER — NATO display name → Spain
+===================================
+
+This overlay only renames the existing playable NATO faction's visible
+country name. It does not replace NATO gameplay, copy another roster, or
+change internal identifiers.
+
+Install
+-------
+Place these files next to generals.exe (or run Install_SpecterPatch.bat /
+Launch_Specter.bat from this folder):
+
+  0_SPECTER_NatoSpainDisplay.big
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Do not rename 0_SPECTER_NatoSpainDisplay.big to zz_ or put it inside Data\
+or Art\. Zero Hour registers 0_* archives first (overwrite=FALSE), so this
+named Data\English\generals.csf wins over _SPEC_DATA_ONE.big from new-game
+faction selection onward.
+
+Visible rename (English CSF)
+----------------------------
+INI:FactionNatoForces          NATO Armies  →  Spanish Armed Forces
+SIDE:Nato                      Nato Armies  →  Spanish Armed Forces
+GUI:BioFeatures_Nato           Europe/USA bio first line → Spanish Armed Forces
+TOOLTIP:BioStrategyLong_Nato   prefixed with Spanish Armed Forces
+
+Packed DATA ships English generals.csf only. Peer factions already use
+"British / French / Italian Armed Forces", and the existing missile kit
+lives under "Spanish Armed Forces", so the display string is English
+"Spanish Armed Forces" rather than España.
+
+Unchanged
+---------
+PlayerTemplate FactionNato, Side=Nato, Nato* objects, CommandSets, AI,
+sciences, weapons, missiles, prices, stats, models, textures, flags.
+FlagWaterMark / EnabledImage / LoadScreenImage / SideIconImage stay on
+the accepted USA identity images because WatermarkSpain, SSObserverSpain,
+GameinfoSpain, and ES_Flag are not in packed ART/DATA. NT_Flag.tga is
+unused and is not invented as a Spain flag.
+
+Challenge "NATO Forces" / USA Laser General / USA SuperWeapon General
+strings are other factions and are left as internal/technical leftovers.

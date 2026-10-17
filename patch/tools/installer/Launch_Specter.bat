@@ -43,8 +43,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" (
+  echo.
+  echo ERROR: Missing 0_SPECTER_NatoSpainDisplay.big
+  echo Put 0_SPECTER_NatoSpainDisplay.big next to Launch_Specter.bat
+  echo.
+  pause
+  exit /b 1
+)
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
+echo   OK: 0_SPECTER_NatoSpainDisplay.big
 echo.
 
 echo [2/4] Checking generals.exe...
@@ -94,8 +103,10 @@ echo.
 
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
-echo   Specter loads _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from
-echo   the game folder automatically when generals.exe starts.
+echo   Specter loads 0_SPECTER_NatoSpainDisplay.big, _SPEC_DATA_ONE.big
+echo   and _SPEC_ART_ONE.big from the game folder when generals.exe starts.
+echo   The 0_ overlay wins Data\English\generals.csf so the former NATO
+echo   faction shows as Spanish Armed Forces from new-game selection.
 echo.
 
 set "SAME=0"
@@ -126,6 +137,17 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK: copied _SPEC_ART_ONE.big
+
+  echo   Copying 0_SPECTER_NatoSpainDisplay.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" >nul
+  if errorlevel 1 (
+    echo.
+    echo ERROR: Failed to copy 0_SPECTER_NatoSpainDisplay.big into game folder.
+    echo.
+    pause
+    exit /b 1
+  )
+  echo   OK: copied 0_SPECTER_NatoSpainDisplay.big
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -138,6 +160,13 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo.
   echo ERROR: _SPEC_ART_ONE.big is not in the game folder.
+  echo.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
+  echo.
+  echo ERROR: 0_SPECTER_NatoSpainDisplay.big is not in the game folder.
   echo.
   pause
   exit /b 1
@@ -178,6 +207,7 @@ echo.
 echo SUCCESS: Game launch requested with Specter patch BIGs loaded.
 echo.
 echo Active files:
+echo   %GAME_ROOT%0_SPECTER_NatoSpainDisplay.big
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
 echo.

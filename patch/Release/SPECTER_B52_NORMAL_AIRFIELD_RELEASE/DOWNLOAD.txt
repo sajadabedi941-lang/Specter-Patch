@@ -1,0 +1,24 @@
+SPECTER_B52_NORMAL_AIRFIELD_RELEASE — PUBLIC DOWNLOAD
+====================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/1531bl.zip
+
+Commit: 01843611
+Branch: cursor/b52-normal-airfield-production-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  9e4eb02345af44f390e1bdcb527da2db8870c5b590ad559634f7bfb4a0596c1e
+SHA256 DATA: 766f778bf4ed145d38449455145954254020aad57834c830fdc9a9533e2d3d5a
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+AmericaJetB52H:
+  Normal Airfield UNIT_BUILD (Command_ConstructAmericaJetB52H)
+  No Rank / Science / StrategyCenter / TEOD locks
+  BuildCost 8500, MaxSimultaneousOfType 3
+  B-2 production unchanged
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

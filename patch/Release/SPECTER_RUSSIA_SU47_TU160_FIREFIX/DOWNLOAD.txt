@@ -1,0 +1,8 @@
+SPECTER_RUSSIA_SU47_TU160_FIREFIX
+
+Download: https://gofile.io/d/vXNGrYFd
+
+SU-47: launch bone WeaponB→WEAPONA (WEAPONA01/02); Kh-29T donor chain; ClipSize=4.
+TU-160: Russia_TU160_KH55MS_Projectile (unique KH55MS clone); ClipSize=6; Object KH55MS NOT redefined.
+
+CLAIM: FIRE PATH FIXED — RUNTIME COMBAT TEST REQUIRED

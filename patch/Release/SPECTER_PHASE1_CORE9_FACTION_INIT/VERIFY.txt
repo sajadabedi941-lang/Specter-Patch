@@ -1,0 +1,31 @@
+SPECTER_PHASE1_CORE9_FACTION_INIT — STATIC VERIFY
+================================================
+Built from clean staging (not USA-only stripped staging).
+
+BASELINE_USA_DATA = patch/Release/SPECTER_USA_E3_RESTORE_B21_ROUTING/_SPEC_DATA_ONE.big
+DONOR = Specter_Data.zip (Phase-1 Object trees only)
+UAE/Israel/NK overlays = patch/Data SpecterPatch files
+
+PACKED_DATA_ENTRIES = 1561
+SPECTER_OBJECT_FOLDERS =
+  United States Of America (current patched USA — preserved)
+  PatchSystems
+  PLA
+  Armed Forces Of Russian Federation
+  Iranian Army
+  Iraq Army
+  Israel Defense Forces
+  NATO
+  North Korea
+  United Arab Emirates
+
+OTHER_FACTIONS_RESTORED = 0
+
+STATIC RESULT (re-extracted packed BIG):
+  All 9 Phase-1 factions STATUS = RESOLVED
+  CORE_UNRESOLVED_START_OBJECTS = 0
+  CORE_MISSING_DEPENDENCIES = 0
+  USA_CURRENT_MODIFICATIONS_PRESERVED = YES
+
+RUNTIME_TEST_REQUIRED = YES
+Do not claim in-game success until user tests each faction match entry.

@@ -1,0 +1,4 @@
+; Russia Tu-95 display / command bar strings
+OBJECT:RussiaJetTu95 = Tu-95 Bear
+CONTROLBAR:ConstructRussiaJetTu95 = Tu-95 Bear
+CONTROLBAR:ToolTipRussiaJetTu95 = Build Tu-95 strategic bomber (B-52 bomb system)

@@ -1,0 +1,13 @@
+SPECTER DATA — USA HeavyAirBase production-queue icon sync
+
+Synced Object ButtonImage (+ SelectPortrait, Specter TB pattern) to the
+verified HeavyAirBase CommandButton ButtonImage values.
+
+Fixed: B-2, B-52, B-1R, AC-130
+Already matched: B-2A, E-3, E-737, E-2, C-17, V-22
+
+CommandButton.ini untouched. Gameplay untouched. ART unchanged.
+
+Download: https://gofile.io/d/FZjs0v9w
+ZIP root: _SPEC_DATA_ONE.big only
+DATA sha256: 1204a018dcc4743e1024146ee23ec8e831388f76494a06bf1e5269347046a995

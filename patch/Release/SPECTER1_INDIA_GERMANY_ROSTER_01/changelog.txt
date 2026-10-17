@@ -1,0 +1,24 @@
+SPECTER1 India + Germany Roster 01
+
+Continues from SPECTER1_Vietnam_Syria_ART_01. Does not revert previous country work.
+Does not overwrite previous GitHub Releases. USA/Russia/China donor INIs untouched.
+
+India:
+- War factory production retargeted from Side=Russia tanks to Side=India vehicles.
+- Barracks production replaced with cloned Russian infantry (AK-74M, AT, Kornet, mortar, MG, AA, engineer, Spetsnaz, sniper, Lancet, FPV, medic). Russia files not modified.
+- Distinct bomb/strike loadouts on all 12 airfield fighters.
+- Combat + loitering drones unlocked onto Radar and HeavyAirBase.
+- Added Tu-22M3M, B-2A, and Ka-52 clones to HeavyAirBase.
+- Stripped Science/RequiredScience/NeededUpgrade unit locks. Building Object chains kept.
+
+Germany:
+- War factory production retargeted from Side=Nato to Side=Germany vehicles.
+- Distinct bomb loadouts on fighter roster (F-35A keeps JDAM uniquely).
+- Removed H145 and C-130J production. Added American C-130 (LSFUSAC130 + An-124 TransportContain).
+- A400M gained An-124 TransportContain (Slots=64 infantry/vehicle).
+- E-3 gained USA AWACS FireWeaponUpdate + PointDefenseLaserUpdate.
+- Added B-2A clone and AH-64E combat helicopter.
+- Stripped German upgrade/science locks.
+
+No Weapon.ini new entries. ART packed unchanged (donor meshes already present).
+INGAME_TESTED = NO

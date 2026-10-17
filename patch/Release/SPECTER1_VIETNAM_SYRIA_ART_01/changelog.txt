@@ -1,0 +1,18 @@
+SPECTER1 Vietnam + Syria ART 01
+
+Continues from SPECTER1_Vietnam_Syria_Roster_01. Does not revert roster DATA gameplay.
+Does not modify USA/Russia/China donor files. New GitHub Release (does not overwrite).
+
+Vietnam:
+- Yak-130 no longer uses LSFT50/LSFT50d (PAK FA / T-50 stealth mesh). Dedicated LSFYAK130 / LSFYAK130d cloned from the Italy M-346 family intended donor AVHawk (conventional jet trainer). Button ID SPEC_VietnamJetYak130 kept. Scale 0.82 and weapons kept.
+- Yak-130 selection icon replaced (was pink-stripe placeholder) with a Yak-130 / M-346 family photo cameo.
+- AH-1Z Viper ART package re-shipped (LSFAH1Z W3D/textures + AH1ZTB cameo). Weapons/stats unchanged.
+- All live Vietnam SPEC_* fighter cameos replaced. MiG-29 and Mi-17 buttons now use aircraft photo cameos instead of UV-sheet / mixed atlas tiles.
+- Mi-17 Egy_MI17 W3D texture names packed as .tga aliases. Prior Mi-17 fire/CAN_ATTACK DATA kept.
+
+Syria:
+- Aircraft production buttons now use dedicated aircraft photo cameos, not tank/building atlas tiles or pink placeholders.
+- MiG-21bis / MiG-21MF keep scale 1.18 / 1.08. UVMig-21 model+texture verified present.
+- H-6K bomber W3D/texture/photo verified; button uses a CHNH6KTB crop.
+
+INGAME_TESTED = NO

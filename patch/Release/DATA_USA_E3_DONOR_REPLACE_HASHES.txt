@@ -1,0 +1,4 @@
+_SPEC_DATA_ONE.big sha256=c7410bb0c465ba3017dfee9bc6ee26b2b1f47d237c05de574b207c057de3b6c8
+_SPEC_ART_ONE.big sha256=6320515bf3b02d4a7b4bb33cecb32baa9de3fb21379b8161d4767abad8976eb7
+ART=['Art\\W3D\\E3.W3D', 'Art\\W3D\\chj10_r.W3D', 'Art\\Textures\\avE3.tga', 'Art\\Textures\\avE3ACC.tga', 'Art\\Textures\\E3USA.tga', 'Art\\Textures\\E3USATB.tga', 'Art\\Textures\\ChinaGear.dds', 'Art\\Textures\\housecolor.dds', 'Art\\Textures\\LSFJetAftburn.dds', 'Art\\Textures\\exlnzflar10.dds']
+ZIP=SPECTER_MASTER_DATA_USA_E3_DONOR_REPLACE.zip

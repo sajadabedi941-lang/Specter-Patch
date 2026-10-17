@@ -1,0 +1,82 @@
+USA HEAVY SUPPORT — DONOR DATA RECOVERY + ART IMPORT
+
+SOURCE: DONOR_INI.rar / INI/object/America.ini (+ CommandButton/Set/Locomotor/Armor)
+
+--- C-17 Globemaster ---
+Original donor DATA found = YES (Object USAC17GlobalMaster)
+Real donor ART used = YES (IUAC17HXNew)
+Behavior source = donor USAC17GlobalMaster (JetAI + TransportContain Slots=40 Allow INFANTRY VEHICLE HUGE_VEHICLE)
+Final Object = AmericaJetC17Globemaster
+Primary W3D = IUAC17HXNew
+CommandButton = Command_ConstructAmericaJetC17Globemaster
+HeavyAirBase slot = 8
+Role = HEAVY STRATEGIC TRANSPORT
+Weapons = NONE
+Transport/radar functionality = TransportContain load/unload (MBT via HUGE_VEHICLE)
+Buildable = YES
+
+--- E-737 ---
+Original donor DATA found = YES (Object avionE737)
+Real donor ART used = YES (KVE737)
+Behavior source = donor avionE737 + StealthDetectorUpdate from working AmericaJetE3AWACS
+Final Object = AmericaJetE737AEW
+Primary W3D = KVE737
+CommandButton = Command_ConstructAmericaJetE737AEW
+HeavyAirBase slot = 9
+Role = AEW&C / AIRBORNE EARLY WARNING
+Weapons = NONE (donor ECM weapons stripped — missing Specter weapon deps)
+Transport/radar functionality = Vision 1000 / Shroud 1610 + StealthDetectorUpdate
+Buildable = YES
+
+--- E2avionHe ---
+Original donor DATA found = YES (Object E2avionHE)
+Real donor ART used = YES (AVHawk + AVHawk_P propeller family; icons E2avionHE/AvionE2)
+Identity = E-2 Hawkeye (icons confirm; donor Object uses AVHawk turboprop/prop mesh)
+Behavior source = donor E2avionHE + StealthDetectorUpdate from AmericaJetE3AWACS
+Final Object = E2avionHE
+Primary W3D = AVHawk
+CommandButton = Command_ConstructAmericaE2avionHE
+HeavyAirBase slot = 10
+Role = AEW / carrier-style airborne radar
+Weapons = NONE
+Transport/radar functionality = Vision 1000 / Shroud 1610 + StealthDetectorUpdate
+Buildable = YES
+
+--- Osprey ---
+Original donor DATA found = YES (Object USAHelixV22)
+Real donor ART used = YES (AVOsprey family)
+Variant = V-22 / MV-22 tiltrotor (AVOsprey + LSFV22 icons)
+Behavior source = donor USAHelixV22 (ChinookAIUpdate + LSFV22Locomotor + TransportContain Slots=10)
+Final Object = USAHelixV22
+Primary W3D = AVOsprey
+CommandButton = Command_ConstructAmericaV22
+HeavyAirBase slot = 11
+Role = VTOL / TILTROTOR TRANSPORT
+Weapons = NONE
+Transport/radar functionality = infantry+light vehicle transport; Forbid HUGE_VEHICLE (no MBT)
+Buildable = YES
+
+AC-130 CHANGED = NO
+E-3 DUPLICATED = NO
+C-17 DUPLICATED = NO
+
+America_HeavyAirBaseCommandSet:
+CommandSet America_HeavyAirBaseCommandSet
+  1  = Command_ConstructAmericaJetB2Spirit
+  2  = Command_ConstructAmericaJetB21
+  3  = Command_ConstructAmericaJetB52H
+  4  = Command_ConstructAmericaJetB1R
+  5  = Command_ConstructAmericaJetE3AWACS
+  6  = Command_Upgrade_NuclearTipWarhead2
+  7  = Command_ConstructAmericaJetAC130
+  8  = Command_ConstructAmericaJetC17Globemaster
+  9  = Command_ConstructAmericaJetE737AEW
+  10 = Command_ConstructAmericaE2avionHE
+  11 = Command_ConstructAmericaV22
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+ART files packed: 36
+CSF sha256 unchanged = e5be6c4e3bc96eb0792592c2bd6a3edc0e8a094d531024dfb50b0626fc1484b3
+AC130 sha256 unchanged = 6933bbca1f6e036324e159170c369b2be523017a678b4b39dd88535a3a75343a

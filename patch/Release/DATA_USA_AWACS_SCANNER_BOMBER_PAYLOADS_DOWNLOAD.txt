@@ -1,0 +1,20 @@
+SPECTER DATA — USA mobile AWACS scanners + B-2/B-52/B-21 payload rework
+
+PART A: E-2 / E-3 / E-737
+Reference: US_E3G_AWACS (General Star)
+Passive mobile scanner: Vision/Shroud + StealthDetector + AN_APY2_Radar_Power
+  + AWACS_BaseMonaitoring PointDefenseLaser (moves with aircraft)
+SAR button: Command_ANAPY2_SARSCANMODEFromShortcut
+No attack weapons. CommandSet AmericaHeavyAWACSCommandSet
+R=1000 → E-3 1350 / E-737 1100 / E-2 800 vision
+
+PART B:
+B-2  AmericaJetB2Spirit  3+3 GBU-31 (SalvoA/B), cost 10000
+B-52 AmericaJetB52H      10x MK-84 linear carpet, 280ms spacing
+B-21 AmericaJetB21Clean  2x GBU-72 (935 dmg = 110% of 850), 150ms
+
+B-2A / B-1 unchanged. ART unchanged.
+
+Download: https://gofile.io/d/ybH0qCT2
+ZIP root: _SPEC_DATA_ONE.big only
+DATA sha256: d24c9ab6656003b89ee543e8a5d377011211d4f986a9b29f8690af20daa89c4f

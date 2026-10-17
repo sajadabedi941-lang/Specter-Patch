@@ -1,0 +1,8 @@
+SPECTER1 China unlock/scale (DATA only)
+
+Baseline: SPECTER1_USA_Update_01 DATA. Iraq and USA changes packed unchanged. No ART.
+
+1. ChinaJetJ7 visual Scale 1.40 -> 1.30. Libya/Syria/North Korea J-7 files untouched.
+2. ChinaJetQ5 visual Scale 0.88 -> 1.00 (~+13.6%). Weapons/price/armor/locomotor/slot unchanged.
+3. Live ChinaBarracks uses unique ChinaBarracksCommandSet_CHINA01 (DATA roster). Science/rank/IWC/PropagandaCenter production gates removed from player infantry. Capture upgrade left in place (not a build gate).
+4. Live ChinaWarFactory already uses unique PLAWarFactoryCommandSet. Science/rank/IWC production gates removed from player vehicles. AI-only DF41/AFT10/ZBD04 files untouched. Capture/weapon upgrades that are not build gates left in place.

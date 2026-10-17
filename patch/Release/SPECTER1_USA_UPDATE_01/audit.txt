@@ -1,0 +1,95 @@
+SPECTER1_USA_Update_01 audit
+BASELINE_DATA = /workspace/patch/Release/SPECTER1_IRAQ_LIVEPATH/_SPEC_DATA_ONE.big
+BASELINE_DATA_SHA256 = 7eab1a6d80cd059050b6b186ad420863110a7a5c11162d1c89a6b4ed2957e7a8
+BASELINE_DATA_BYTES = 364981406
+BASELINE_ART = /tmp/SPECTER1_IRAQ_LIVE_20260914/SPECTER FINAL (GeneralsMode.com)/_SPEC_ART_ONE.big
+BASELINE_ART_SHA256 = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+BASELINE_ART_BYTES = 1235909246
+NEW_DATA_SHA256 = b59ed4a8b1b7dce3aa9ab5669b39d600a4017a4a472ba996753abc0c38c212c3
+NEW_DATA_BYTES = 364993681
+NEW_DATA_FILE_COUNT = 2806
+NEW_ART_SHA256 = 8f024c3454d6e8783cfb50d140933c98236aeb7129287dbf3ee73f356a3bacbe
+NEW_ART_BYTES = 1237830812
+NEW_ART_FILE_COUNT = 4419
+
+USA_F117_OBJECT = AmericaJetF117Clean
+OLD_SCALE = 0.9
+NEW_SCALE = 1.04
+USA_F117_SCALE_CHANGED = YES
+
+REMOVED_STRIKE_EAGLE_OBJECT = AmericaJetAuterF22
+REMOVED_STRIKE_EAGLE_BUTTON = Command_ConstructAmericaJetAuterF22 (DATA LargeAirBase slot 14); Command_ConstructAmerica_AuterF22 (INIZHZ AmericaAirfield slot 6)
+REMOVED_FROM_COMMANDSET = America_LargeAirBaseCommandSet_USA01 ; AmericaAirfieldCommandSet_USA01
+REMOVED_SLOT = 14 (America_LargeAirBase) ; 6 (AmericaAirfield)
+USA_STRIKE_EAGLE_1600_REMOVED_FROM_LIVE_BAR = YES
+STRIKE_EAGLE_OBJECT_DELETED = NO
+
+DONOR_HELICOPTER_SELECTED = AH-1Z Viper / Super Cobra (LSFAH1Z)
+DONOR_ART_PATHS_IMPORTED =
+  Art\W3D\LSFAH1Z.W3D
+  Art\W3D\LSFAH1Zd.W3D
+  Art\W3D\LSFAH1Zk.W3D
+  Art\W3D\LSFAH1ZAIM9.W3D
+  Art\Textures\LSFAH1Z.dds
+  Art\Textures\LSFAH1Zd.dds
+  Art\Textures\LSFAH1Zk.dds
+  Art\Textures\AH1ZTB.tga
+DATA_SKELETON_USED = AmericaVehicleComanche (AH64D.ini) stripped of OverlordContain/ReplaceObjectUpgrade/ObjectCreationUpgrade
+USA_HELICOPTER_OBJECT = AmericaHelicopterAH1Z
+USA_HELICOPTER_BUTTON = Command_ConstructAmericaHelicopterAH1Z
+USA_HELICOPTER_COMMANDSET = America_LargeAirBaseCommandSet_USA01 and AmericaAirfieldCommandSet_USA01
+USA_HELICOPTER_SLOT = 14 (LargeAirBase) ; 6 (Airfield)
+USA_NEW_DONOR_HELICOPTER_ADDED = YES
+DONOR_DATA_IMPORTED = NO
+DONOR_ART_USED = YES
+DONOR_DATA_USED = NO
+
+EA6B_OBJECT = AmericaJetF18Prowler
+EA6B_ARTIFACT_ROOT_CAUSE = EA6.W3D subobject HOOK remains visible; SHADOW_VOLUME + GeometryIsSmall=Yes stretched that hook into a long line under the aircraft in flight. JetLenzflare/contrails are normal engine FX, not the shadow line. W3D mesh not rewritten.
+EA6B_FILES_CHANGED = Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+EA6B_LINE_ARTIFACT_FIX_APPLIED = YES
+EA6B_ART_W3D_CHANGED = NO
+
+F35B_OBJECT = AmericaJetF35BJSF
+F35B_ARTIFACT_ROOT_CAUSE = AVLightn.W3D afterburner/cylinder subobjects (JAFTERBURNED, CYLINDER02, CYLINDER03, TURBO, EX01, EX02) were never hidden, and RUBBLE states set HideSubObject=None which shows them. Geometry=Cylinder + SHADOW_VOLUME + GeometryIsSmall=Yes casts a tube/line shadow while flying. W3D mesh not rewritten.
+F35B_FILES_CHANGED = Data\INI\Object\Specter\United States Of America\Airforce\F35C_AA.ini
+F35B_LINE_ARTIFACT_FIX_APPLIED = YES
+F35B_ART_W3D_CHANGED = NO
+
+USA_STARLIFTER_OBJECT = AmericaJetC17Visual
+RUSSIA_AN124_REFERENCE_OBJECT = RussiaJetAn124
+AN124_FUNCTION_MODULES_COPIED = CommandSet C17GlobalMasterCommandSet; TransportContain Slots=64 DamagePercentToUnits=100% (no InitialPayload); JetAIUpdate MinHeight/TakeoffPause/ReturnToBaseIdleTime; Physics Mass=900; Body MaxHealth=550; Geometry 48/14/12; removed OCLSpecialPower SpecialPowerAmericaC17SafeUnload; removed SpawnBehavior Comanche escorts
+STARLIFTER_VISUAL_PRESERVED = YES
+USA_STARLIFTER_USES_AN124_FUNCTIONALITY = YES
+RUSSIA_AN124_CHANGED = NO
+
+USA_F117_SCALE_CHANGED = YES
+PREVIOUS_IRAQ_CHANGES_PRESERVED = YES
+AIRBASE_ARCHITECTURE_CHANGED = NO
+UNRELATED_COUNTRY_CHANGED_PATH_COUNT = 0
+DATA_CHANGED = YES
+ART_CHANGED = YES
+INGAME_TESTED = NO
+
+DATA_CHANGED_PATHS =
+  Data\English\generals.csf
+  Data\INI\Object\Specter\United States Of America\Airforce\F35C_AA.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetC17Visual.ini
+  Data\INI\Object\Specter\United States Of America\AmericaJetF117Clean.ini
+  Data\INI\Object\Specter\United States Of America\Buildings\Airfield.ini
+  Data\INI\Object\Specter\United States Of America\Buildings\America_LargeAirBase.ini
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaJetF18Prowler.ini
+DATA_ADDED_PATHS =
+  Data\INI\Object\Specter\United States Of America\Airforce\AmericaHelicopterAH1Z.ini
+  Data\INI\Object\Specter\United States Of America\USA_Update_01.ini
+ART_CHANGED_PATHS =
+  (none)
+ART_ADDED_PATHS =
+  Art\W3D\LSFAH1Z.W3D
+  Art\W3D\LSFAH1Zd.W3D
+  Art\W3D\LSFAH1Zk.W3D
+  Art\W3D\LSFAH1ZAIM9.W3D
+  Art\Textures\LSFAH1Z.dds
+  Art\Textures\LSFAH1Zd.dds
+  Art\Textures\LSFAH1Zk.dds
+  Art\Textures\AH1ZTB.tga

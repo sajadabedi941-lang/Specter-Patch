@@ -1,0 +1,13 @@
+SPECTER_B52_BUTTON_UNLOCK — chain audit
+=======================================
+
+File: Data\INI\ZZZZZZZZ_ZZZZ_USA_B52_BUTTON_UNLOCK.ini
+(sorts after CommandButton_ZZZZZ_USA_HeavyAircraft_Unlock_Final.ini)
+
+Buttons:
+- Command_ConstructAmericaJetB52H -> AmericaJetB52H
+- Command_ConstructPatch_America_B52 -> AmericaJetB52H
+
+Objects unlocked:
+- AmericaJetB52
+- AmericaJetB52H

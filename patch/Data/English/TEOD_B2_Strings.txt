@@ -1,3 +1,5 @@
 OBJECT:B2 = B-2 Spirit
 CONTROLBAR:ConstructTEODAmericaJetB2 = B-2 Spirit
 CONTROLBAR:ToolTipConstructTEODAmericaJetB2 = Produce B-2 Spirit from USA Airfield. Flies, bombs, returns to base.
+CONTROLBAR:ConstructTEODAmericaJetB52 = B-52 Stratofortress
+CONTROLBAR:ToolTipConstructTEODAmericaJetB52 = Produce B-52 Stratofortress from USA Airfield.

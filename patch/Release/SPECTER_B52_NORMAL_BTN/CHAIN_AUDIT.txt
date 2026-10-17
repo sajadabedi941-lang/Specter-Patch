@@ -1,0 +1,8 @@
+Final winners:
+  CommandSets B-52 slots = Command_ConstructAmericaJetB52H
+    <- ZZZZZZZZ_ZZZZ_USA_B52_ZZZZ_BUILD_TARGET.ini
+  Button Object = AmericaJetB52H
+  AmericaJetB52H Buildable = Ignore_Prerequisites, Prerequisites empty
+  BuildCost=8500 BuildTime=115 MaxSim=3 from USA_System.ini
+
+NOT used: Command_ConstructTEODAmericaJetB52

@@ -1,0 +1,3 @@
+1. Backup Data\_SPEC_DATA_ONE.big and Art\_SPEC_ART_ONE.big
+2. Replace with this zip
+3. Launch Specter

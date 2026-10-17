@@ -1,0 +1,112 @@
+SPECTER1 Iraq Update From Real Baseline
+=======================================
+
+SOURCE OF TRUTH
+---------------
+This pack was built ONLY from the GitHub multipart archive:
+
+  SPECTER1.part001.rar through SPECTER1.part069.rar  (69/69, no missing parts)
+
+Extracted by opening SPECTER1.part001.rar only (parts 002-069 consumed automatically)
+into a new clean directory. No previous PR, release, Test1, or reconstructed DATA
+was used as the baseline.
+
+Baseline files from that extract:
+
+  _SPEC_DATA_ONE.big
+    bytes  = 364979021
+    SHA256 = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+    files  = 2804
+
+  _SPEC_ART_ONE.big
+    bytes  = 1235909246
+    SHA256 = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+    files  = 4411
+
+ART unchanged — keep the original SPECTER1 _SPEC_ART_ONE.big.
+
+This ZIP contains DATA only.
+
+NEW DATA
+--------
+  _SPEC_DATA_ONE.big
+    bytes  = 364977811
+    SHA256 = 8351d3d8b372dbe0e8b3c05c96acc0c87c9de50daa45e4c74c65487ab82f9f53
+    files  = 2804  (same paths and same order as the SPECTER1 archive DATA)
+
+WHAT CHANGED (player-facing)
+----------------------------
+Iraq fighter / large airfield (already on Iraq_LargeAirBaseCommandSet /
+Iraq_AirfieldCommandSet; object locks removed):
+
+  * Mirage F1.EQ  (Iraq_MirageF1_Bq / Command_ConstructIraq_mirageF1Bq)
+      Removed RadarStation production prerequisite.
+
+  * Su-24MK  (Iraq_Su-24MK / Command_ConstructIraq_Su-24MK)
+      Removed RadarStation + MIC production prerequisites.
+
+  * L-159  (IraqJetL159 / existing weapon IraqJetL159_WpnBomb)
+      Bomb loadout changed from 6x unguided Fab-250 to 3x guided Kab500.
+      Uses the existing Kab500 projectile already defined in SPECTER1 DATA
+      (same projectile as Kab500_LeaserGuidedBomb). ClipSize = 3.
+      AutoReloadsClip remains RETURN_TO_BASE.
+
+  * MiG-21  (IraqJetMig21 only)
+      Scale 0.82 -> 0.91  (+0.09). No other country MiG-21 edited.
+
+Iraq heavy airbase (Iraq_HeavyAirBaseCommandSet):
+
+  * Su-24MR  (Iraq_Su-24MR / Command_ConstructIraq_Su-24MR)
+      Removed MIC production prerequisite. Already on Large + Heavy bars.
+
+  * Tu-22M3  (existing object Iraq_Tu-22M3 / existing button Command_ConstructIraq_Tu-22M3)
+      Added to Heavy Air Base slot 3.
+      Removed SCIENCE_Tu-22 + MIC gates.
+      Draw model switched to the working Russian RUS_TU22M3M (already in SPECTER1 ART).
+      Default bombs now Kab1500_LeaserGuidedBomb (existing SPECTER1 weapon,
+      Kab2500 projectile, 1150 damage, ClipSize 3, RETURN_TO_BASE).
+
+Russia (only requested exception):
+
+  * RussiaJetTu22M3M default FAB-500 racks replaced with the same
+    Kab1500_LeaserGuidedBomb chain. Visual / locomotor / upgrade
+    (KH101) loadout otherwise unchanged.
+
+Iraq ground / other player units
+--------------------------------
+Once the normal production building exists, Iraq player units are no longer
+hidden behind Radar / MIC / purchased sciences / rank sciences / research
+objects / WarFactory-MIC tier CommandSetUpgrade.
+
+  * WarFactory starts on Iraq_WarFactoryCommandSet_T3 (full T3 roster).
+    Tier CommandSetUpgrade modules now all point at T3 so buying tiers
+    cannot shrink the bar.
+
+  * MIC starting CommandSet now includes Karrar-2, B340, Fahad-3.
+    MIC building prereq accepts the live dozer airfields
+    Iraq_LargeAirBase and Iraq_HeavyAirBase in addition to the old
+    Iraq_Airfield_T name.
+
+  * Object-level production gates removed from Iraq tanks / IFVs /
+    launchers / AD vehicles / drones / barracks infantry / Abbas building.
+    Building-chain requirements kept (Supply Center, Power Plant, MIC's
+    Radar+Airfield+WarFactory requirement).
+
+NOT CHANGED
+-----------
+  * _SPEC_ART_ONE.big  (byte-identical to the 69-part archive ART)
+  * CommandButton.ini
+  * PlayerTemplate.ini
+  * Science.ini
+  * Armor.ini
+  * Locomotor.ini
+  * Data\English\generals.csf
+  * Any non-Iraq country except the Russia Tu-22M3 default bomb
+  * No ZZZZ overlays, no loose Data\INI, no files copied from PR #473-#476
+
+INSTALL
+-------
+Replace only _SPEC_DATA_ONE.big in the SPECTER1 game folder.
+Keep the original SPECTER1 _SPEC_ART_ONE.big.
+
+This is a static packed-file audit only. The game was not launched here.

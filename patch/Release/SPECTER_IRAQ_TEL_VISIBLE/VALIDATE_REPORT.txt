@@ -1,0 +1,77 @@
+# Iraq strategic TEL visibility ART fix
+
+Static validation only. The game was not launched.
+
+## Exact root cause
+
+All 8 constructed TEL Objects use `Model = IQ_<Name>TEL`.
+Those W3D files existed in the live ART BIG, but their HLod
+prototype names were still the donor names (IRQ_9P117, IRQ_ABBAS_L,
+RUS_9K720K, IRQ_SARAB7, IRQ_LAMIAA, IRAQ_ALHUSAIN_L, RUS_RS24).
+WW3D `Create_Render_Obj(Model)` looks up the HLod by that string,
+not the filename. The lookup misses, the drawable is empty, and the
+unit is invisible. All 8 units were affected. Draw modules and
+donor Animation= lines were already structurally valid.
+
+## Fix
+
+Patched only the HLod header Name inside each cloned IQ_* W3D whose
+filename stem is <= 15 characters so it matches `Model=`.
+HierarchyName / animation names stay on the donor so INI
+Animation=Irq_9P117.Irq_9P117 etc. still resolve.
+Shared donor W3Ds and shared atlases were not modified.
+DATA was not modified (parse fix + factory CommandSet intact).
+
+## Pack
+
+- ART path: `/workspace/patch/Release/SPECTER_IRAQ_TEL_VISIBLE/_SPEC_ART_ONE.big`
+- ART size: 1302315536
+- ART SHA256: df88bcd66e8325b35f256c9cc2736867230f6a56f65984393fc60240b0256d9e
+- files: 4669
+- DATA: unchanged (s-iraq-factory-commandset)
+
+## HLod patches
+
+- HLod IRQ_ALRAAD2M -> IQ_Ababil100MSL in Art\W3D\IQ_Ababil100MSL.W3D
+- HLod IRQ_LAMIAA -> IQ_Ababil100TEL in Art\W3D\IQ_Ababil100TEL.W3D
+- SKIP long stem IQ_Ababil100TELD (W3D name field is 15 chars)
+- SKIP long stem IQ_Ababil100TELR (W3D name field is 15 chars)
+- HLod IRQ_ABBASM -> IQ_AlAbbasMSL in Art\W3D\IQ_AlAbbasMSL.W3D
+- HLod IRQ_ABBAS_L -> IQ_AlAbbasTEL in Art\W3D\IQ_AlAbbasTEL.W3D
+- HLod IRQ_ABBAS_L_D -> IQ_AlAbbasTELD in Art\W3D\IQ_AlAbbasTELD.W3D
+- HLod IRQ_ABBAS_L_R -> IQ_AlAbbasTELR in Art\W3D\IQ_AlAbbasTELR.W3D
+- HLod RUS_RS24M -> IQ_AlAbidMSL in Art\W3D\IQ_AlAbidMSL.W3D
+- HLod RUS_RS24 -> IQ_AlAbidTEL in Art\W3D\IQ_AlAbidTEL.W3D
+- HLod RUS_RS24_D -> IQ_AlAbidTELD in Art\W3D\IQ_AlAbidTELD.W3D
+- HLod RUS_RS24_R -> IQ_AlAbidTELR in Art\W3D\IQ_AlAbidTELR.W3D
+- HLod IRQ_R11_M -> IQ_AlHijarahMSL in Art\W3D\IQ_AlHijarahMSL.W3D
+- HLod IRQ_9P117 -> IQ_AlHijarahTEL in Art\W3D\IQ_AlHijarahTEL.W3D
+- SKIP long stem IQ_AlHijarahTELD (W3D name field is 15 chars)
+- SKIP long stem IQ_AlHijarahTELR (W3D name field is 15 chars)
+- HLod IRQ_R11_M -> IQ_AlHusseinMSL in Art\W3D\IQ_AlHusseinMSL.W3D
+- HLod IRQ_9P117 -> IQ_AlHusseinTEL in Art\W3D\IQ_AlHusseinTEL.W3D
+- SKIP long stem IQ_AlHusseinTELD (W3D name field is 15 chars)
+- SKIP long stem IQ_AlHusseinTELR (W3D name field is 15 chars)
+- HLod IRQ_R11_M -> IQ_AlSamoudMSL in Art\W3D\IQ_AlSamoudMSL.W3D
+- HLod IRQ_SARAB7 -> IQ_AlSamoudTEL in Art\W3D\IQ_AlSamoudTEL.W3D
+- HLod IRQ_SARAB7 -> IQ_AlSamoudTELD in Art\W3D\IQ_AlSamoudTELD.W3D
+- HLod IRQ_SARAB7R -> IQ_AlSamoudTELR in Art\W3D\IQ_AlSamoudTELR.W3D
+- HLod HWASONG7 -> IQ_Badr2000MSL in Art\W3D\IQ_Badr2000MSL.W3D
+- HLod RUS_9K720K -> IQ_Badr2000TEL in Art\W3D\IQ_Badr2000TEL.W3D
+- HLod RUS_9K720KD -> IQ_Badr2000TELD in Art\W3D\IQ_Badr2000TELD.W3D
+- HLod RUS_9K720KD -> IQ_Badr2000TELR in Art\W3D\IQ_Badr2000TELR.W3D
+- HLod IRAQ_ALHUSAIN_M -> IQ_Tammuz1MSL in Art\W3D\IQ_Tammuz1MSL.W3D
+- HLod IRAQ_ALHUSAIN_L -> IQ_Tammuz1TEL in Art\W3D\IQ_Tammuz1TEL.W3D
+- HLod IRAQ_ALHUSAIN_L -> IQ_Tammuz1TELD in Art\W3D\IQ_Tammuz1TELD.W3D
+- HLod IRAQ_ALHUSAIN_L -> IQ_Tammuz1TELR in Art\W3D\IQ_Tammuz1TELR.W3D
+
+## VALIDATION PASS
+- patched HLod names: 26
+- long stems left on donor HLod (16-char TELD/TELR): 6
+- all 8 default TEL W3Ds exist and HLod==Model stem
+- all 8 projectile MSL W3Ds exist and HLod==Model stem
+- cloned W3D textures resolve
+- donor W3Ds / shared atlases byte-identical
+- no extra/missing ART paths; no IQ W3D last-wins dupes
+- DATA parse fix MissileAIUpdate x8 unchanged
+- DATA factory CommandSet in core CommandSet.ini unchanged

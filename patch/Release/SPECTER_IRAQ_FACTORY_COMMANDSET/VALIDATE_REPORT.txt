@@ -1,0 +1,39 @@
+# Iraq Missile Factory CommandSet restore
+
+Static validation only. The game was not launched.
+
+## Exact empty-bar cause
+
+`Iraq_MissileFactory` already pointed at `Iraq_MissileFactoryCommandSet`.
+All 14 CommandButtons existed once in core `CommandButton.ini`.
+The CommandSet itself existed only in extra `CommandSet_Iraq_MissileFactory.ini`.
+Core `CommandSet.ini` had zero `Iraq_MissileFactoryCommandSet` definitions.
+SPECTER runtime uses core `CommandSet.ini` as the visible CommandSet store
+(same class of bug as extra `Iraq_VT72BCommandSet` last-win being invisible).
+A factory CommandSet that exists only on an extra path is not applied,
+so the built factory shows an empty production bar.
+
+## Fix
+
+Appended the 14-slot `Iraq_MissileFactoryCommandSet` to core `CommandSet.ini`.
+Removed that definition from the extra CommandSet file so it exists exactly once.
+Left `Iraq_StrategicMissileNewCommandSet` in the extra file (TELs untouched).
+Projectile parse-fix INI / MissileAIUpdate blocks unchanged.
+
+## Pack
+
+- DATA path: `/workspace/patch/Release/SPECTER_IRAQ_FACTORY_COMMANDSET/_SPEC_DATA_ONE.big`
+- DATA size: 366432515
+- DATA SHA256: 9f48f097c2b476a9de40dc21ade6a4df538d6aed8c4a9ca5bf870d859d3525c1
+- files: 2916
+- ART: unchanged; not rebuilt
+
+## VALIDATION PASS
+- factory object CommandSet = Iraq_MissileFactoryCommandSet
+- CommandSet defined exactly once, in core CommandSet.ini
+- all 14 slots present
+- all 8 new construct CommandButtons resolve once
+- no later last-wins override
+- VT72B slot 14 / Worker Clear Mines unchanged
+- projectile MissileAIUpdate x8 unchanged
+- 9P117 / Sarab7 / TELs / weapons / factory object / CommandButton.ini unchanged

@@ -1,0 +1,40 @@
+SPECTER USA AIRFIELD START T3 (PR #285 baseline only)
+=====================================================
+
+1. Baseline: PR #285 tip 718d99ff / DATA sha f5c33858ac16391fd085a53179c46808093b6d91eb7bbe634e51a62fb26dbd39
+2. Runtime object: AmericaAirfield_T
+3. Starting CommandSet: AmericaAirfieldCommandSet_T3
+4. CommandSetUpgrade ModuleTag_Tier1/2/3 all target AmericaAirfieldCommandSet_T3
+5. Upgrade_USA_AirfieldRosterLocked NOT on effective AmericaAirfield_T
+6. No Tier grant / purchase required
+7. Effective T3 slot map (PR#285 FINAL_RUNTIME, unchanged):
+
+CommandSet AmericaAirfieldCommandSet_T3
+  1  = Command_ConstructAmericaJetRaptor
+  2  = Command_ConstructAmericaHelicopterAH64E
+  3  = Command_ConstructAmericaJetAurora
+  4  = Command_ConstructAmericaJetA10C
+  5  = Command_ConstructAmericaJetB2Spirit
+  6  = Command_ConstructAmericaJetF-16C_AG
+  7  = Command_ConstructAmericaJetB52H
+  8  = Command_ConstructAmericaJetF-22A_AA
+  9  = Command_ConstructAmericaJetF35C
+  10 = Command_ConstructAmericaJetB21
+  11 = Command_ConstructAmericaJetE3AWACS
+  12 = Command_ConstructAmericaJetB1R
+  13 = Command_ConstructAmericaJetEA18
+  14 = Command_ConstructAmericaJetF-15E_AA
+  15 = Command_Sell
+  16 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  17 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  18 = Command_FAKECOMMAND_PurchaseScienceMOAB
+End
+
+
+8. B-2 / B-52H / B-21 entries byte-identical to PR #285
+
+Overlay: Data\INI\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZ_USA_AIRFIELD_START_T3.ini
+
+HASHES
+_SPEC_DATA_ONE.big d38fea006265c514c9d40234f86ecfb862bcf6ac10046097e823b641689ca180
+_SPEC_ART_ONE.big  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

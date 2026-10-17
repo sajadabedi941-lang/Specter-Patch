@@ -1,0 +1,58 @@
+USA COMMANDSET PARSE FIX = PASS
+
+Reported crash header =
+CommandSet AmericaAirfieldCommandSet
+
+Actual root cause = AmericaAirfieldCommandSet (and T/T1/T2/T3) still referenced Command_ConstructAmericaJetE3AWACS after that CommandButton was removed during E-3 ART-only reset; parser fails while reading AmericaAirfieldCommandSet
+Was defect inside previous CommandSet = NO
+Previous CommandSet = Command_ScriptedA10ThunderboltStrike
+Previous starts at line = 825
+Previous ends at line = 827
+Missing/extra End found = NO (previous block End present)
+
+AmericaAirfieldCommandSet count = 1
+Expected = 1
+America_HeavyAirBaseCommandSet count = 1
+Expected = 1
+
+Missing End total (file-wide, End/END-aware) = 0
+Extra End total = 0
+Nested/unclosed at EOF = 0
+AmericaAirfieldCommandSet / previous / HeavyAirBase local structure = BALANCED
+
+Stale E-3 HeavyAirBase button = 0
+Stale C-17 HeavyAirBase button = 0
+Stale E-737 HeavyAirBase button = 0
+Stale E2 HeavyAirBase button = 0
+Stale V-22 HeavyAirBase button = 0
+Stale E-3 AmericaAirfield slot lines removed = 5
+
+HeavyAirBase final slots:
+1 = B-2 (Command_ConstructAmericaJetB2Spirit)
+2 = B-21 (Command_ConstructAmericaJetB21)
+3 = B-52 (Command_ConstructAmericaJetB52H)
+4 = B-1R (Command_ConstructAmericaJetB1R)
+5 = EMPTY (EMPTY)
+6 = Nuclear Tip Warhead (Command_Upgrade_NuclearTipWarhead2)
+7 = AC-130 (Command_ConstructAmericaJetAC130)
+8 = EMPTY (EMPTY)
+9 = EMPTY (EMPTY)
+10 = EMPTY (EMPTY)
+11 = EMPTY (EMPTY)
+13 = Rally Point (Command_SetRallyPoint)
+14 = Sell (Command_Sell)
+
+E-3 ART preserved = YES
+C-17 ART preserved = YES
+E-737 ART preserved = YES
+E2 ART preserved = YES
+V-22 ART preserved = YES
+
+B-2/B-21/B-52/B-1R changed = NO
+AC-130 changed = NO
+ART changed = NO
+
+FINAL PACKED CommandSet.ini STRUCTURAL VALIDATION = PASS
+GAME BOOT CLAIMED = NO
+DATA sha256 = 7804668e987940dbec3e10f01ef7b4b4536cc67fee47fb24240e62245ef2daee
+CommandSet.ini sha256 = 9d31ebcd05fd7cb5a4c5bbcb9446e8a7c352c9de3946db42f8bfbbafbd532e4e

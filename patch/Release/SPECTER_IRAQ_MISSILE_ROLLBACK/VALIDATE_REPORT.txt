@@ -1,0 +1,46 @@
+# Iraq 8-missile + Missile Factory rollback
+
+Static validation only. The game was not launched.
+
+## Pre-project healthy state
+
+Last git commit before this project: 0ff5d1c2582b3972ac6b74bfcb0a5f5f21297e8e
+(Add files via upload). First project commit: 220b7feb Add Iraqi Missile Factory.
+Live s BIGs the project started from: /tmp/s-bigs (FLAG_SIZE_FINAL-era, 2026-10-04).
+All later live-s commits were this project only. No unrelated packed-BIG changes.
+
+## Removed from current live s
+
+- removed DATA Data\INI\CommandSet_Iraq_MissileFactory.ini
+- removed DATA Data\INI\ObjectCreationList_Iraq_StrategicMissiles.ini
+- removed DATA Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MissileFactory.ini
+- removed DATA Data\INI\Object\Specter\Iraq Army\Hulk\Iraq_StrategicMissile_Hulks.ini
+- removed DATA Data\INI\Object\Specter\Iraq Army\Iraq_StrategicMissile_Projectiles.ini
+- removed DATA Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_StrategicMissiles_New.ini
+- removed DATA Data\INI\Weapon_Iraq_StrategicMissiles.ini
+- restored DATA Data\INI\CommandSet.ini from pre-project s
+- restored DATA Data\INI\CommandButton.ini from pre-project s
+- restored DATA Data\English\generals.csf from pre-project s
+- removed ART files 89
+
+## Pack
+
+- DATA path: `/workspace/patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/_SPEC_DATA_ONE.big`
+- DATA size: 366350648
+- DATA SHA256: 8fa3dcbde4f4a7256a9dbb85936c9ab5875cf62c7c4f7770246c68bd42796e34
+- DATA files: 2909
+- ART path: `/workspace/patch/Release/SPECTER_IRAQ_MISSILE_ROLLBACK/_SPEC_ART_ONE.big`
+- ART size: 1246050506
+- ART SHA256: 389803f96644b44b46e527b791857d25c3bc4e6d808a0ae1e7a379a4fa7ef2e3
+- ART files: 4580
+
+## VALIDATION PASS
+- no 8 new Objects / buttons / projectiles / weapons / OCLs / hulks
+- no Iraq_MissileFactory / construct button / factory CommandSet
+- no IQ_* family clones; no factory LSF imports
+- donor W3Ds byte-identical to pre-project s
+- existing R11 / Sarab7 / Alhussaien / SA-6 / BM-21 / HeavyAirBase intact
+- Iraq_VT72BCommandSet slot 14 restored to Command_DisarmMinesAtPosition
+- Iraq_WorkerCommandSet unchanged
+- stripped DATA/ART maps byte-identical to pre-project /tmp/s-bigs
+- shipped BIGs are the original pre-project live s archives

@@ -1,0 +1,82 @@
+STARLIFTER HEAVY TRANSPORT = STRUCTURAL PASS
+
+Starlifter:
+Object = AmericaJetC17Visual
+W3D = IUAC17HXNew
+CommandButton = Command_ConstructAmericaJetC17Visual
+HeavyAirBase Slot = 8
+
+Flight system changed = NO
+Visual changed = NO
+Scale changed = NO
+
+------------------------------
+
+CHINOOK REFERENCE:
+
+Object = AmericaVehicleChinook
+TransportContain module = ModuleTag_08
+Slots = 8
+
+Allowed cargo = INFANTRY VEHICLE
+Forbidden cargo = AIRCRAFT HUGE_VEHICLE
+DamagePercentToUnits = 100%
+ExitDelay = 100
+NumberOfExitPaths = 1
+
+Unload command = Command_ChinookUnload (EVACUATE) + Command_TransportExit (EXIT_CONTAINER)
+Chinook CommandSet = AmericaVehicleChinookCommandSet
+
+------------------------------
+
+STARLIFTER:
+
+TransportContain source = Chinook
+Chinook Slots = 8
+Multiplier = 4
+Final Starlifter Slots = 32
+
+Allows infantry = YES
+Allows vehicles = YES
+Allows tanks = YES (VEHICLE KindOf; not HUGE_VEHICLE)
+
+Unload command available = YES
+Starlifter CommandSet = C17GlobalMasterCommandSet
+  (existing Specter set: Command_TransportExit x10 + Command_ChinookUnload + Guard + Stop)
+
+KindOf += TRANSPORT = YES
+JetAIUpdate preserved = YES
+HelicopterAIUpdate added = NO
+Helicopter locomotor added = NO
+
+------------------------------
+
+CAPACITY TEST:
+
+Example infantry (AmericaInfantryRanger):
+TransportSlotCount = 1
+Chinook capacity = 8
+Starlifter capacity = 32
+Example vehicle (AmericaVehicleHumvee):
+TransportSlotCount = 3
+Chinook capacity = 2
+Starlifter capacity = 10
+Example tank (AmericaTankCrusader):
+TransportSlotCount = 4
+Chinook capacity = 2
+Starlifter capacity = 8
+
+Transported-unit SlotCounts changed = NO
+
+Starlifter remains fixed-wing = YES
+Other aircraft changed = NO
+Chinook changed = NO
+HeavyAirBase changed = NO
+ART changed = NO
+
+In-game load/unload effectiveness = USER TEST REQUIRED
+
+DATA sha256 = 0cf39719447676a4652ddb65b719f68d2945bcf0c1b8f89d7d97534cf5f64c02
+ART sha256 = 30e473118caf551fdb7c097b45ee8515c74b3d3d17c4c9449fe0f5ecf47094ef
+ZIP = SPECTER_MASTER_DATA_USA_STARLIFTER_4X_CHINOOK_CARGO.zip
+URL = https://gofile.io/d/68RsUk2A

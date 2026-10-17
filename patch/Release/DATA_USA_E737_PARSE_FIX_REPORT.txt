@@ -1,0 +1,24 @@
+E-737 STARTUP CRASH FIX = PASS
+
+Root cause = UTF-8 em-dash (U+2014) in invented comment '; WeaponSet NONE — ...' inside AmericaJetE737AEW.ini (bytes E2 80 94). Generals INI parser rejects non-ASCII.
+Original donor Object = avionE737
+Donor INI path = DONOR_INI.rar / INI/object/America.ini
+Final Object = AmericaJetE737AEW
+Primary W3D = KVE737
+Final file = Data\INI\Object\Specter\United States Of America\AmericaJetE737AEW.ini
+Encoding = ASCII
+BOM = NO
+Object count = 1
+
+HeavyAirBase Slot 9 preserved = YES
+E-3 changed = NO
+AC-130 changed = NO
+C-17 gameplay changed = NO (ASCII sanitize of UTF-8 comments only; donor body restored)
+E2avionHE gameplay changed = NO (ASCII sanitize; donor body restored)
+V-22 changed = NO
+Bombers changed = NO
+Other factions changed = NO
+
+C-17 parse audit = PASS
+E2avionHE parse audit = PASS
+V-22 parse audit = PASS

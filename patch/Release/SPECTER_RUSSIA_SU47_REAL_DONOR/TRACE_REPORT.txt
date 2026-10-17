@@ -1,0 +1,43 @@
+==================================================
+STEP 1 — CURRENT SU-47 (SU-75 pack / Core-9 baseline)
+==================================================
+RUSSIA_AIRFIELD = RussiaAirfield_T
+RUSSIA_AIRFIELD_COMMANDSET = RussiaAirfieldCommandSet_T4
+SU47_BUTTON_SLOT = 8
+SU47_COMMAND_BUTTON = Command_ConstructRussiaJetSu47Recon
+CURRENT_SU47_OBJECT = RussiaJetSu47Recon (MISSING from packed baseline DATA)
+CURRENT_SU47_W3D = RUS_SU35S (from older Russia_System.ini donor-scan copy)
+CURRENT_SU47_WEAPON = none (no WeaponSet; FireWeaponUpdate radar only)
+CURRENT_SU47_COST = 2300
+CURRENT_SU47_MAX_SIMULTANEOUS = 2
+CURRENT_SU47_RANK_REQUIREMENT = SCIENCE_Rank2
+CURRENT_SU47_SCIENCE_REQUIREMENT = SCIENCE_Rank2
+CURRENT_SU47_UPGRADE_REQUIREMENT = none
+Also: Prerequisites Object = RussiaIndustrialComplex
+
+==================================================
+STEP 2 — DONOR
+==================================================
+DONOR_SU47_FOUND = YES
+DONOR_OBJECT = Russia_VehicleSU47
+DONOR_INI = !TEOD_INI.big / Data\INI\Object\Russia\Aircrafts\SU47.ini
+DONOR_MAIN_W3D = RUSU-47.W3D
+DONOR_DAMAGED_W3D = RUSU-47_D.W3D
+DONOR_REALLYDAMAGED_W3D = RUSU-47_D.W3D
+DONOR_DEAD_W3D = RUSU-47_E.W3D
+DONOR_DEBRIS_W3D = RUSU-47_E1.W3D
+DONOR_TEXTURES = SU-47.dds / SU-47_D.dds / SU-47_E.dds
+DONOR_BUTTON_IMAGE = SU-47ic_L (RU-Icons02.tga)
+DONOR_PRIMARY_WEAPON = SU47AAMissileWeapon
+DONOR_SECONDARY_WEAPON = SU47AAMissileWeapon
+DONOR_PROJECTILES = R33 (not packed-stable) → clean uses R77_Object
+DONOR_JETAI = JetAIUpdate
+DONOR_LOCOMOTOR = SU47Locomotor (not packed → use Saturn_AL-41F)
+DONOR_ARMORSET = AntiAircraftJetArmor (use AirplaneArmor_P)
+
+==================================================
+STEP 3
+==================================================
+REAL_SU47_W3D_DIFFERENT_FROM_CURRENT = YES
+  OLD = RUS_SU35S
+  NEW = RUSU-47

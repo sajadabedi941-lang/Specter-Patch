@@ -1,0 +1,4 @@
+B21_EXACT_B2_WEAPON_FIRE_DIAGNOSTIC
+AmericaJetB21Clean PRIMARY temporarily = America_Weapon_B2_BunkerBuster (exact working B-2 weapon).
+Visual AVB21_A / cost 12000 / stealth / CommandSet unchanged. B-2 unmodified.
+Download: https://litter.catbox.moe/a03gqd.zip

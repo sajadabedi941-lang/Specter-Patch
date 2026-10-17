@@ -1,0 +1,18 @@
+SPECTER_USA_B21_ATTACKMOVE_BGM109
+
+B21_OBJECT = AmericaJetB21Clean
+B21_PRIMARY_WEAPON = AmericaJetB21_AirLaunchedBGM109Weapon
+B21_PROJECTILE = AmericaJetB21_AirLaunchedBGM109
+B21_PROJECTILE_W3D = US_BGM109
+TOTAL_BGM109_AMMO = 7
+MISSILES_PER_ATTACK_RUN = 7
+ATTACK_MOVE_SUPPORTED = YES
+MANUAL_FIRE_REQUIRED = NO
+RETURN_TO_BASE_AFTER_EMPTY = YES
+AIRFIELD_REARM = YES
+SPECIALPOWER_USED = NO
+
+Ammo: ClipSize=7 x ShotsPerBarrel=1 = 7 (SAGE: one projectile per fireWeapon).
+Chain: ATTACK MOVE -> JetAIUpdate -> PRIMARY -> AmericaJetB21_AirLaunchedBGM109
+B-21 airfield buttons spawn AmericaJetB21Clean again (TEST-A undone).
+B-2 / B-52H / CommandSet.ini / AVB21_A / cost / stealth unchanged.

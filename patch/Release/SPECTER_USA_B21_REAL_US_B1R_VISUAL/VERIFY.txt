@@ -1,0 +1,27 @@
+Working B-21 Object = AmericaJetB21Clean
+
+Old incorrect visual model = AVB3bmbr / AVB3bmbr_D / AVB3bmbr_D1
+
+Actual original patch B-21 Object = AmericaJetB21
+Original B-21 source INI = Data/INI/Object/Specter/United States Of America/Airforce/B21.ini
+
+Real B-21 main W3D = US_B1R
+Real B-21 damaged W3D = US_B1R (same; original has no separate damaged W3D)
+Real B-21 really damaged W3D = US_B1R (same)
+Real B-21 textures = US_B1R.dds (W3D refs US_B1R.tga basename)
+Real B-21 ButtonImage = us_b1r (kept; original B-21 icon)
+
+New AmericaJetB21Clean Draw model = US_B1R
+Scale = 0.72 (copied from original AmericaJetB21 visual scale)
+
+B-2 W3D = AVB3bmbr / AVB3bmbr_D / AVB3bmbr_D1
+
+B-21 W3D different from B-2 = PASS
+CommandSet.ini unchanged = PASS
+CommandButton routing unchanged = PASS
+AmericaJetB21Clean gameplay unchanged = PASS
+B-2 unchanged = PASS
+B-52H unchanged = PASS
+B-21 assets present in final packed ART BIG = PASS
+
+Geometry left unchanged from working Clean object (not copied from original B-21).

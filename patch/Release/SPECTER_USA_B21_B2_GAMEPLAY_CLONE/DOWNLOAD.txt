@@ -1,0 +1,10 @@
+SPECTER_USA_B21_B2_GAMEPLAY_CLONE
+
+Public download:
+https://litter.catbox.moe/pap7ip.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+B-21 gameplay cloned from working AmericaJetB2; AVB21_A visual kept.

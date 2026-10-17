@@ -1,0 +1,13 @@
+SPECTER_USA_B21_FIRE_SIZE_FIX
+
+Public download:
+https://litter.catbox.moe/8098f8.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+Fixes vs PR#302:
+  - Removed Scale=0.60 (native AVB21_A / TEOD size)
+  - WeaponLaunchBone PRIMARY WeaponA01 on flyable states (FIRE grey fix)
+  - CommandSet / Airfield / B-2 / ART unchanged

@@ -1,0 +1,13 @@
+SPECTER_USA_B21_F16AG_AUTOATTACK_ONE_MISSILE
+
+Download: https://gofile.io/d/A2mN8C
+
+Replace _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big in your Generals Zero Hour / Specter install.
+
+B-21 uses AmericaJetF-16C_AG verified auto-attack architecture.
+PRIMARY = AmericaJetB21_AirLaunchedBGM109Weapon (ClipSize=1, US_BGM109).
+Test: Select B-21 -> right-click ATTACK on ground target -> one BGM-109 must launch.
+
+DATA SHA256: 2323f26ca9e0062c98a95f38c2551b7afe592280bdb84e65688c1a8db234be08
+ART  SHA256: 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+CommandSet.ini SHA256: 2cb5a68301bf0db91751ffabecf0d5f52671d8ff81200b824aaab5b1c600ff8e

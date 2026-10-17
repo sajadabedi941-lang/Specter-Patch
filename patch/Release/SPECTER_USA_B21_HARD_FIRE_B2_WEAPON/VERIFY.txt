@@ -1,0 +1,24 @@
+SPECTER_USA_B21_HARD_FIRE_B2_WEAPON
+
+ROOT CAUSE:
+  Slot 10 Command_ConstructAmericaJetB21 -> AmericaJetB21
+  PRIMARY America_Weapon_B21_JASSM ClipReloadTime=200000 => FIRE grey.
+
+FIX:
+  Last-wins redirect file sorts after airfield runtime roster.
+  All B-21 construct buttons -> AmericaJetB21Clean
+  Clean PRIMARY = America_Weapon_B2_BunkerBuster (ClipReloadTime=0)
+  CommandSet GenericTacticalBomberCommandSet / B-2 JetAI / AVB21_A / cost 12000
+
+Effective B21 Object = AmericaJetB21Clean
+Effective B21 CommandSet = GenericTacticalBomberCommandSet
+Effective B21 PRIMARY = America_Weapon_B2_BunkerBuster
+Effective B21 JetAIUpdate = YES
+Effective FIRE command = Command_FireMainWeapon
+Effective ClipReloadTime = 0
+PRIMARY weapon exists = YES
+AI exists = YES
+Unit disabled = NO
+Conflicting B21Clean PRIMARY = none
+B-2 modified = NO
+Airfield CommandSet slots = unchanged

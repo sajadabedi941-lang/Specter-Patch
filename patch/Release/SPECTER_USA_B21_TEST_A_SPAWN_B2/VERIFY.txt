@@ -1,0 +1,16 @@
+SPECTER_USA_B21_TEST_A_SPAWN_B2
+
+TEST A B21 slot object = AmericaJetB2
+
+Change: last-wins CommandButton redirects only
+  Command_ConstructAmericaJetB21 -> AmericaJetB2
+  Command_ConstructPatch_America_B21 -> AmericaJetB2
+  Command_ConstructAmericaJetE3AWACS -> AmericaJetB2
+
+AmericaJetB2 modified = NO
+AmericaJetB21Clean modified = NO (baseline content retained, unused by these buttons)
+CommandSet.ini = unchanged
+Airfield CommandSet slot list = unchanged
+
+Purpose: prove the B-21 Airfield button path can produce a unit with working FIRE
+when the spawned object is the exact original AmericaJetB2.

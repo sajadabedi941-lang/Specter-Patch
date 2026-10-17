@@ -1,0 +1,4 @@
+SPECTER_USA_B21_TEST_A_SPAWN_B2
+CONTROL TEST A ONLY: B-21 Airfield buttons construct Object = AmericaJetB2
+AmericaJetB2 itself is unmodified.
+Download: https://litter.catbox.moe/qnijlz.zip

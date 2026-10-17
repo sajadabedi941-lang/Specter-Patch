@@ -1,0 +1,11 @@
+SPECTER_USA_B21_B2WEAPON_BGM109
+
+Public download:
+https://litter.catbox.moe/zljqhb.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+B-21 PRIMARY = exact USA_B2_Spirit_BunkerBuster clone with US_BGM109 projectile.
+Not derived from 8x_BGM109_CruiseMissile.

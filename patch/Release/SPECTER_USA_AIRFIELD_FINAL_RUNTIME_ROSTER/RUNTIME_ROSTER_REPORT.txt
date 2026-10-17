@@ -1,0 +1,33 @@
+SPECTER USA AIRFIELD FINAL RUNTIME ROSTER (slot-map corrected)
+=============================================================
+
+Conflict was REAL in prior pack:
+  slot 9/14 were FAKE clears instead of F-35C / F-15E_AA.
+
+Corrected AmericaAirfieldCommandSet_T map:
+  1  = Command_ConstructAmericaJetRaptor
+  2  = Command_ConstructAmericaHelicopterAH64E
+  3  = Command_ConstructAmericaJetAurora
+  4  = Command_ConstructAmericaJetA10C
+  5  = Command_ConstructAmericaJetB2Spirit
+  6  = Command_ConstructAmericaJetF-16C_AG
+  7  = Command_ConstructAmericaJetB52H
+  8  = Command_ConstructAmericaJetF-22A_AA
+  9  = Command_ConstructAmericaJetF35C
+  10 = Command_ConstructAmericaJetB21
+  11 = Command_ConstructAmericaJetE3AWACS
+  12 = Command_ConstructAmericaJetB1R
+  13 = Command_ConstructAmericaJetEA18
+  14 = Command_ConstructAmericaJetF-15E_AA
+  15 = Command_Sell
+  16 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  17 = Command_FAKECOMMAND_PurchaseScienceMOAB
+  18 = Command_FAKECOMMAND_PurchaseScienceMOAB
+
+Chain:
+  AmericaAirfield_T -> AmericaAirfieldCommandSet_T -> FINAL_RUNTIME (absolute last)
+
+CommandSet.ini unchanged sha256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+FINAL_RUNTIME.ini sha256=c10ad47c83b7a6dd6b698ccb39298b874ac21ed0ab392c7a8fc20e3b07b05aa2
+_SPEC_DATA_ONE.big sha256=f5c33858ac16391fd085a53179c46808093b6d91eb7bbe634e51a62fb26dbd39
+_SPEC_ART_ONE.big sha256=227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

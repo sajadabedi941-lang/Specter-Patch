@@ -1,0 +1,31 @@
+SPECTER_USA_B21_FINAL_TUNING — VERIFY
+============================================================
+B-21 Object = AmericaJetB21Clean
+B-21 Model = AVB21_A
+B-21 Scale = 0.60
+B-21 BuildCost = 12000
+B-21 primary weapon = AmericaJetB21_SingleHeavyBunkerBuster
+B-21 bomb projectile = AmericaJetB21_MOP_Bomb (GBU_57)
+Existing source heavy bunker-buster = USA_B2_Spirit_BunkerBuster
+Existing source projectile lineage = MK-84 damage/FX + TEOD B21 MOP/GBU_57 visual
+Existing damage = 9000.0
+Existing damage radius = 170.0
+Bomb ClipSize = 1
+Bomb ShotsPerBarrel = 1
+One click/attack releases = 1 bomb
+Additional offensive B-21 weapons = NONE
+B-21 stealth behavior = PRESENT
+B-21 stealth implementation copied from = TEOD USA/Aircrafts/B2.ini (AmericaJetB2 donor) StealthUpdate + FireWeaponUpdate StealthBombersRadarWeapon
+CONTROLBAR:ConstructAmericaJetB21 = PRESENT IN FINAL PACK (= B-21 Raider)
+CONTROLBAR:ToolTipAmericaJetB21 = PRESENT IN FINAL PACK
+Final displayed name = B-21 Raider
+Final tooltip = Stealth strategic bomber armed with one 10-ton heavy bomb.
+
+CommandSet.ini unchanged = PASS
+Real B-21 model still present = PASS
+B-2 unchanged = PASS
+
+DATA sha256 = a7eb446bc731955abc3be7c81eeedb77b51766ecb1b87c1ce332a08cdb41dd4d
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = fe44f70bc961962ade27c711302e022e60e2d49d51756b88fb017edfed851ee0
+Download = https://litter.catbox.moe/n3nk1k.zip

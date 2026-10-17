@@ -1,0 +1,4 @@
+SPECTER_USA_B21_HARD_FIRE_B2_WEAPON
+Root cause: Airfield B-21 button spawned AmericaJetB21/JASSM (ClipReloadTime=200000), greying FIRE.
+Fix: all B-21 construct buttons -> AmericaJetB21Clean with America_Weapon_B2_BunkerBuster.
+Download: https://litter.catbox.moe/bssyi4.zip

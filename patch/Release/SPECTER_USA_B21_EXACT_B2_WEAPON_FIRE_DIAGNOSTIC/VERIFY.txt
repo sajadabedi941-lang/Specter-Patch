@@ -1,0 +1,21 @@
+B21_EXACT_B2_WEAPON_FIRE_DIAGNOSTIC
+
+B2_OBJECT = AmericaJetB2
+B2_PRIMARY = America_Weapon_B2_BunkerBuster
+
+B21_OBJECT = AmericaJetB21Clean
+B21_PRIMARY_BEFORE = AmericaJetB21_HeavyGuidedMissileWeapon
+B21_PRIMARY_TEST = America_Weapon_B2_BunkerBuster
+B21_COMMANDSET = GenericTacticalBomberCommandSet
+B21_FIRE_BUTTON = Command_FireMainWeapon
+B21_VISUAL = AVB21_A
+B21_COST = 12000
+B21_STEALTH = UNCHANGED
+B2 MODIFIED = NO
+
+Surgical DATA change: AmericaJetB21Clean.ini WeaponSet PRIMARY only.
+B-21 7-missile weapon/projectile defs remain in pack but UNUSED.
+ART baseline unchanged.
+CommandSet.ini / Airfield / AmericaJetB2 unchanged.
+
+In-game question: does Command_FireMainWeapon enable with exact B-2 PRIMARY?

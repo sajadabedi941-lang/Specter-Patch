@@ -1,0 +1,33 @@
+B21_FIRE_BUTTON_ENGINE_GATE
+
+Source (GeneralsGameCode ControlBarCommand.cpp, GUI_COMMAND_FIRE_WEAPON):
+
+  if( w && w->getClipReloadTime( obj ) == 0 )
+      return COMMAND_AVAILABLE;   // button ACTIVE
+
+  if( w == nullptr || w->getStatus() != READY_TO_FIRE ... )
+      return COMMAND_NOT_READY / COMMAND_RESTRICTED;  // grey
+
+Working B-2 PRIMARY America_Weapon_B2_BunkerBuster:
+  ClipReloadTime = 0  => FIRE always AVAILABLE
+
+AmericaJetB21_15BombWeapon (current):
+  ClipReloadTime = 0  => FIRE always AVAILABLE (same gate)
+
+Previous grey-FIRE B-21 guided missile:
+  ClipReloadTime = 600000  => bypass NOT taken; requires READY_TO_FIRE
+
+Other grey conditions (only if weapon missing / no AI):
+  w == nullptr  => COMMAND_RESTRICTED
+  ai == nullptr => COMMAND_RESTRICTED
+
+CONCLUSION:
+No INI change required for FIRE enablement on current 15-bomb weapon.
+Command_FireMainWeapon on GenericTacticalBomberCommandSet is already the B-2 manual FIRE path.
+NEED_TARGET_POS => target cursor.
+
+NOTE (engine Weapon.cpp, separate from FIRE greying):
+  each privateFireWeapon() fires ONE projectile and decrements ammo by 1.
+  ShotsPerBarrel only cycles barrels; it does NOT multiply projectiles per shot.
+  Therefore ClipSize=3 currently means 3 physical bombs total, not 15.
+  FIRE button availability is independent of that ammo-count math.

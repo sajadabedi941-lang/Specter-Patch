@@ -1,0 +1,53 @@
+SPECTER_USA_B21_B2_GAMEPLAY_CLONE — VERIFY
+============================================================
+Continue strictly from PR #303.
+
+Working B-2 object = AmericaJetB2
+Working B-2 full-object source in same BIG = TEOD_AmericaJetB2.ini
+Working B-2 stealth source in same BIG = ZZZZZZZZ_ZZZZZ_USA_B2_ZZ_Z_DEDICATED_BUNKERBUSTER.ini
+Working B-2 CommandSet = GenericTacticalBomberCommandSet
+Working B-2 Fire button = Command_FireMainWeapon
+Working B-2 PRIMARY weapon (base object) = USA_B2_Spirit_BunkerBuster
+Working B-2 PRIMARY weapon (gameplay override in same BIG) = America_Weapon_B2_BunkerBuster
+Working B-2 JetAIUpdate = present (OutOfAmmoDamagePerSecond 10%, ReturnToBaseIdleTime 10000)
+
+ROOT CAUSE OF FAILED FIRE =
+  B-21 was not a full working-B-2 gameplay clone. First attack-chain difference vs
+  in-release AmericaJetB2: Behavior FireWeaponUpdate + StealthBombersRadarWeapon
+  (AntiGround=Yes) from obsolete TEOD donor — absent on working B-2. Also mismatched
+  stealth/radar (StealthDelay 1000 / RadarPriority UNIT vs working 0 / LOCAL_UNIT_ONLY)
+  and weapon ClipReloadTime not matching dedicated B-2 RTB path.
+
+FIX APPLIED =
+  Rebuilt AmericaJetB21Clean gameplay from TEOD_AmericaJetB2.ini + working B-2
+  StealthUpdate/LOCAL_UNIT_ONLY. Kept AVB21_A Draw. Removed FireWeaponUpdate.
+  PRIMARY only AmericaJetB21_SingleHeavyBunkerBuster ClipSize/ShotsPerBarrel=1.
+
+B-21 object = AmericaJetB21Clean
+B-21 model = AVB21_A
+B-21 gameplay template = AmericaJetB2 (TEOD_AmericaJetB2.ini + dedicated stealth override)
+B-21 CommandSet = GenericTacticalBomberCommandSet
+B-21 Fire button = Command_FireMainWeapon
+B-21 WeaponSlot = PRIMARY
+B-21 PRIMARY weapon = AmericaJetB21_SingleHeavyBunkerBuster
+B-21 projectile = AmericaJetB21_MOP_Bomb
+ClipSize = 1
+ShotsPerBarrel = 1
+BuildCost = 12000
+Explicit Scale = NONE
+Stealth = working B-2 StealthUpdate ModuleTag_Stealth
+
+STATIC CONFIGURATION CHECK = PASS
+EXPECTED RUNTIME ATTACK CHAIN =
+  AmericaJetB21Clean -> GenericTacticalBomberCommandSet -> Command_FireMainWeapon
+  -> PRIMARY -> AmericaJetB21_SingleHeavyBunkerBuster -> JetAIUpdate
+  -> WeaponA01 -> AmericaJetB21_MOP_Bomb -> empty clip -> RETURN_TO_BASE
+  (Steps 1-14 require in-game playtest; not simulated here.)
+
+REGRESSION: B-21 visual/size PASS; B-2/CommandSet/ART unchanged PASS
+
+DATA sha256 = 8e9009ee428edb05dbd661794af410445d81a453f3b7e14e47f7f37dfbd8e165
+ART  sha256 = 904c0fd9eef3fa3cebd0baac1a9d8fc69f10cec84440f48820275ba9c1264f01
+ZIP  sha256 = 904c56bc6ed5207ce1f40234257b9a622caa97ee5170f3331a245f6fbe7fde4e
+
+Download = https://litter.catbox.moe/pap7ip.zip

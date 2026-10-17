@@ -1,0 +1,48 @@
+SPECTER IRAQ COMPLETE UNLOCK + AIR FORCE UPDATE
+================================================
+Baseline: PR #473  HEAD c17e1b8e444413ab90f3305ad353d12bcf903b1b
+Pack: DATA-only. ART unchanged.
+
+This rebuild starts from the accepted PR #473 packed DATA BIG.
+It does not use main, PR #469, PR #471, or CommandSet_ZZZZ files.
+
+IRAQ FIGHTER AIRFIELD (Iraq_AirfieldCommandSet)
+- Mirage F1.EQ (Iraq_MirageF1_Bq) production Prerequisites emptied
+- Su-24MK (Iraq_Su-24MK) production Prerequisites emptied
+- L-159 / Tucano-class (IraqJetL159) bomb last-win:
+    old IraqJetL159_WpnBomb  ClipSize=6  Projectile=Fab-250
+    new IraqJetL159_WpnBomb  ClipSize=3  Projectile=GBU24_GuidedBombObject
+  Gun and rocket weapons unchanged.
+- Iraq MiG-21 (IraqJetMig21) Scale 0.82 -> 0.90
+
+IRAQ LARGE / HEAVY AIR
+- Su-24MR (Iraq_Su-24MR) production Prerequisites emptied
+- Iraq Tu-22M3 last-won onto the Russian Tu-22M3M architecture:
+    Object Iraq_Tu-22M3
+    Model  RUS_TU22M3M
+    Weapon Kab2500_LeaserGuidedBomb
+    Button Command_ConstructIraq_Tu-22M3 (already in CommandButton.ini)
+    Heavy slot 3, Large slot 16
+    No Science / Upgrade / MIC gate
+
+RUSSIA (bomb only)
+- RussiaJetTu22M3M default WeaponSet FAB-500 racks replaced with
+  Kab2500_LeaserGuidedBomb
+- Model RUS_TU22M3M / CommandSet / airbase slots unchanged
+- PLAYER_UPGRADE cruise WeaponSet unchanged
+
+IRAQ PRODUCTION UNLOCK
+- Iraq_WarFactory_T now starts on Iraq_WarFactoryCommandSet_T3
+  CommandSetUpgrade T1/T2/T3 modules removed
+  Roster buttons are the accepted Iraq T3 set (not another nation)
+- Iraq_MIC now starts on Iraq_MICCommandSet3
+  CommandSetUpgrade modules removed
+  Karrar-2 added to MIC slot 2 so it is visible without a tier purchase
+- Production Prerequisites / Science gates stripped from Iraq units on
+  WarFactory, airfields, barracks, radar, MIC, and Command Center
+  construct buttons (including IraqDronesAbabil200Recon).
+
+ART
+- _SPEC_ART_ONE.big was not rebuilt
+- Inherited ART SHA256 remains
+  2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761

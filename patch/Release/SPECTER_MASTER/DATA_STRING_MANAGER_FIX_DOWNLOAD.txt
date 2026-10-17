@@ -1,0 +1,13 @@
+SPECTER_MASTER_DATA_STRING_MANAGER_FIX.zip
+
+Contains ONLY: _SPEC_DATA_ONE.big
+
+STRING MANAGER FIX = PASS
+Root cause = CSF RTS length written as bytes instead of UTF-16 chars during 4-faction clone.
+Active string file = Data\English\generals.csf
+Active BIG = _SPEC_DATA_ONE.big
+
+DATA sha256 = abd7a7731a8c9351a5a7275b15c67f31693bec1dc6597f8eb790c143a8f6b209
+ZIP sha256  = b8158f4ab6f1f7aab5f62f0d1e0c13d54e1f88685a38ff4a572431abd7e722b9
+
+Download: https://litter.catbox.moe/lsfwqu.zip

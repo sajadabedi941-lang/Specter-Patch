@@ -1,0 +1,11 @@
+SPECTER DATA — Pakistan Skirmish menu visibility fix
+
+Egypt untouched.
+
+Root cause: ControlBarScheme Pakistan8x6 had "Side Egypt" (copy error).
+Fixed to "Side Pakistan" to match Egypt's ControlBar Side registration.
+Also added CSF Side:Pakistan = Pakistan Armed Forces (mirrors Egypt Side:Egypt).
+
+Download: https://gofile.io/d/RUb4kG9H
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged

@@ -1,0 +1,12 @@
+PAKISTAN HEAVY AIRBASE (DATA+ART)
+
+ZIP: SPECTER_MASTER_PAKISTAN_HEAVY_AIRBASE.zip
+Contents: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big
+
+_SPEC_DATA_ONE.big sha256=2d8bdef3912482a96135a975a7f83a598a6c69a051a1f9071d9ab16fe273223d
+_SPEC_ART_ONE.big sha256=74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822
+
+Imported ART: Art\W3D\HXUSABigAirPort.W3D
+Reused ART: Art\Textures\CJJCWUJUN.dds
+
+Download: https://litter.catbox.moe/gd4ydk.zip

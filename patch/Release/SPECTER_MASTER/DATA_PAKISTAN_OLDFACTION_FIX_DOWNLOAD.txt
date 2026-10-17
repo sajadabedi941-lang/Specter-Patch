@@ -1,0 +1,13 @@
+SPECTER DATA — Pakistan OldFaction menu visibility fix
+
+Egypt untouched. No gameplay changes.
+
+Only change: FactionPakistan OldFaction No -> Yes
+(matches Iran/Iraq/NK/USA/Russia/China/Nato visible customs)
+
+oldFactionsOnly filtering is documented in PlayerTemplate.ini comments:
+OldFaction=No templates are hidden when oldFactionsOnly is set.
+
+Download: https://gofile.io/d/ScfZwx5W
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged

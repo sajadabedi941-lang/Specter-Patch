@@ -1,0 +1,74 @@
+NORTH KOREA PALETTE UPDATE = PASS
+
+ACTIVE BUILDER = NorthKorea_VT72B
+ACTIVE BUILDER COMMANDSET = NorthKorea_VT72BCommandSet
+
+CLEAR MINES:
+Old Command = Command_DisarmMinesAtPosition
+Old slot = 14
+
+CHINESE AIR DEFENSE:
+Exact donor Object = China_Hq9_Site
+Donor faction = China (PLA)
+North Korea Object = NorthKorea_Hq9_Site
+ConstructButton = Command_ConstructNorthKorea_Hq9_Site
+Weapon = SpawnHT233ViaWeapon + spawn ChinaVehicleHq9_AAM_AI / ChinaVehicleHq9_ABM_AI (shared)
+W3D = Spec_SamRusCnfg
+Prerequisite = NorthKorea_PowerPlant (was ChinaPowerPlant)
+New slot = 14
+
+STOP:
+Exact old Command = Command_Stop
+Old slot = 13
+Engine-required Stop = YES
+How Stop functionality was preserved = Moved to slot 15 (Command_Stop retained on builder CommandSet)
+
+C-RAM:
+Exact donor Object = Pakistan_CRAM
+North Korea Object = NorthKorea_CRAM
+ConstructButton = Command_ConstructNorthKorea_CRAM
+Weapon = 20mm_HEIT-SD_LPWS_G / _AAM / _AA + America_BGMM71F_RCWS payload
+W3D = US_CRAM
+Prerequisite = NorthKorea_PowerPlant (was Pakistan_PowerPlant)
+New slot = 13
+
+Clear Mines removed from North Korea palette = YES
+Chinese Air Defense added = YES
+C-RAM added = YES
+Builder Stop functionality preserved = YES
+
+LargeAirBase preserved = YES
+HeavyAirBase preserved = YES
+
+China changed = NO
+Other factions changed = NO
+
+FULL PALETTE:
+Slot 1 = Command_ConstructNorthKorea_PowerPlant -> NorthKorea_PowerPlant
+Slot 2 = Command_ConstructNorthKorea_CommandCenter -> NorthKorea_CommandCenter
+Slot 3 = Command_ConstructNorthKorea_SupplyCenter -> NorthKorea_SupplyCenter
+Slot 4 = Command_ConstructNorthKorea_WarFactory -> NorthKorea_WarFactory
+Slot 5 = Command_ConstructNorthKorea_LargeAirBase -> NorthKorea_LargeAirBase
+Slot 6 = Command_ConstructNorthKorea_MIC_SAFE -> NorthKorea_MIC
+Slot 7 = Command_ConstructNorthKorea_DefenseSite_SAFE -> NorthKorea_DefenseSite
+Slot 8 = Command_ConstructNorthKorea_RadarStation -> NorthKorea_RadarStation
+Slot 9 = Command_ConstructNorthKorea_HeavyAirBase -> NorthKorea_HeavyAirBase
+Slot 10 = Command_ConstructNorthKorea_Barracks_SAFE -> Iraq_Barracks
+Slot 11 = Command_ConstructNorthKorea_NuclearCenter -> NorthKorea_Abbas
+Slot 12 = Command_ConstructNorthKorea_D30_SAFE -> NorthKorea_D30_Howitzer
+Slot 13 = Command_ConstructNorthKorea_CRAM -> NorthKorea_CRAM
+Slot 14 = Command_ConstructNorthKorea_Hq9_Site -> NorthKorea_Hq9_Site
+Slot 15 = Command_Stop -> -
+
+ACTIVE FILES CHANGED:
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_Hq9_Site.ini (NEW)
+- Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CRAM.ini (NEW)
+
+DATA sha256 = b1a21d339fe97721f34597bf83c2d2d55fae760a8019b0189a308baffdaf75e8
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 4e0e32f4458a1d819b936ec7210243040c4a9feeb103e8de220b04b2fae24d22
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_NK_PALETTE_AD_CRAM.zip
+ZIP size    = 306222110
+DOWNLOAD = https://litter.catbox.moe/tvl4fk.zip

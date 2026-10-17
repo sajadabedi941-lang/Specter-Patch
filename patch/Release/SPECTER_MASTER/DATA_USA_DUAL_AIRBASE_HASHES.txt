@@ -1,0 +1,62 @@
+USA TWO-AIRBASE CONVERSION = PASS
+
+USA Side identifier = America
+
+OLD AIRFIELD:
+Object = AmericaAirfield
+ConstructButton = Command_ConstructAmericaAirfield
+Builder slot = 18 (AmericaDozerCommandSet)
+
+NEW LARGE AIRBASE:
+Object = America_LargeAirBase
+ConstructButton = Command_ConstructAmerica_LargeAirBase
+CommandSet = America_LargeAirBaseCommandSet
+W3D = TheAirPort.W3D
+Capacity = 16 (NumRows=4 x NumCols=4)
+Aircraft roster = Command_ConstructAmericaJetRaptor, Command_ConstructAmericaVehicleComanche, Command_ConstructAmericaJetAurora, Command_ConstructAmericaJetA10C, Command_ConstructAmericaJetF-16C_AG, Command_ConstructAmericaJetF-15E_AA, Command_ConstructAmericaJetF-22A_AA, Command_UpgradeAmericaCountermeasures, Command_ConstructAmericaVehicleUH60, Command_ConstructAmericaJetEA18, Command_ConstructAmericaJetF35C, Command_ConstructAmericaJetF35C_AA
+
+OLD PATRIOT:
+Object = America_MIM104F
+ConstructButton = Command_ConstructAmericaPatriotPAC3MSE
+Builder slot = 4 (AmericaDozerCommandSet)
+
+NEW HEAVY AIRBASE:
+Object = America_HeavyAirBase
+ConstructButton = Command_ConstructAmerica_HeavyAirBase
+CommandSet = America_HeavyAirBaseCommandSet
+W3D = HXUSABigAirPort.W3D
+Capacity = 6 (NumRows=2 x NumCols=3)
+Heavy aircraft roster = Command_ConstructAmericaJetB2Spirit, Command_ConstructAmericaJetB52H, Command_ConstructAmericaJetB1R, Command_ConstructAmericaJetE3AWACS, Command_Upgrade_NuclearTipWarhead2
+Prerequisite = AmericaSupplyCenter (mirrors Pakistan_HeavyAirBase; NO Patriot Science/Upgrade)
+
+Patriot removed from USA builder palette = YES
+Patriot globally deleted = NO
+
+Pakistan airbases changed = NO
+Other factions changed = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\English\generals.csf
+- Data\INI\Object\Specter\United States Of America\Buildings\America_LargeAirBase.ini (NEW)
+- Data\INI\Object\Specter\United States Of America\Buildings\America_HeavyAirBase.ini (NEW)
+
+STATIC VALIDATION:
+undefined CommandSet = 0
+undefined CommandButton = 0
+undefined Object = 0
+undefined Science = 0
+undefined Upgrade = 0
+missing W3D = 0
+duplicate Object = 0
+duplicate CommandSet = 0
+duplicate CommandButton = 0
+
+DATA sha256 = bf0dae5838e465ce6d9ee643941f97484a3f56470b39ceef0292465858403db2
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 095cc5fd4306e969f236afbdf85ce88e090d5e79897aaac6c396dba93976c466
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_USA_DUAL_AIRBASE.zip
+ZIP size    = 306439018
+
+DOWNLOAD = https://litter.catbox.moe/b8knor.zip

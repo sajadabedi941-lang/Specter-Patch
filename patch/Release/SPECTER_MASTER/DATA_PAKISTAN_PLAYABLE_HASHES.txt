@@ -1,0 +1,21 @@
+Pakistan playable (DATA only)
+Egypt untouched (all Egypt BIG entries byte-identical to pre-Pakistan master).
+
+_SPEC_DATA_ONE.big
+  sha256: cb0336783ca7c7aecd574f16606d20ed7991b1c55ad02f460357fce0455eb61e
+  size:   350659709
+  entries: 1580
+
+PlayerTemplate: FactionPakistan
+Side: Pakistan
+PlayableSide: Yes
+DisplayName: INI:FactionPakistan (= Pakistan Armed Forces)
+StartingBuilding: Pakistan_CommandCenter
+StartingUnit0: Pakistan_Worker
+ControlBarScheme: Pakistan8x6
+
+SIDE:Pakistan = Pakistan Armed Forces
+
+ZIP: SPECTER_MASTER_DATA_PAKISTAN_PLAYABLE.zip
+  sha256: 4a5e5bea443be6b384c2ef3565cd8f1f758f1ed8c14ba0cfda9d37366f4bd0ff
+  Download: https://gofile.io/d/CZpAByRt

@@ -1,0 +1,11 @@
+North Korea dual-airbase upgrade (Pakistan Large/Heavy templates)
+(DATA-only; ART unchanged — reuses TheAirPort.W3D + HXUSABigAirPort.W3D)
+
+Slot 5 Airfield -> NorthKorea_LargeAirBase (16)
+Slot 9 Sam2     -> NorthKorea_HeavyAirBase (6)
+NorthKorea_Sam2 not deleted globally.
+
+DATA sha256 = fada163a72c44b95f742aa660886c2633506194ada0700955b910927e9ea256b
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = 0725dc04757ec1dffa516eb31d0225e8261e50d4aa2fb46c6021d5248a5ee0bc
+DOWNLOAD = https://litter.catbox.moe/uz2ygv.zip

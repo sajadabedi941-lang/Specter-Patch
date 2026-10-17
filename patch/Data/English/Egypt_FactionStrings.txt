@@ -1,0 +1,35 @@
+; SPECTER PATCH — Egypt unique faction / boot strings
+
+INI:FactionEgypt = Egypt
+Side:Egypt = Egypt
+FACTION:Egypt = Egypt
+SCIENCE:Egypt = Egypt Technology
+TOOLTIP:BioStrategyLong_Egypt = Egyptian Armed Forces — combined-arms doctrine with air and armor support.
+GUI:BioFeatures_Egypt = Armor, airpower, and layered air defense.
+
+OBJECT:Egypt_MilitaryHQ = Military Headquarters
+OBJECT:Egypt_CommandCenter = Command Center
+OBJECT:Egypt_Worker = Worker
+OBJECT:Egypt_PowerPlant = Power Plant
+OBJECT:Egypt_Barracks = Barracks
+OBJECT:Egypt_SupplyCenter = Supply Center
+OBJECT:Egypt_WarFactory_T = War Factory
+OBJECT:Egypt_Airfield_T = Airfield
+OBJECT:Egypt_RadarStation = Radar Station
+OBJECT:Egypt_MIC = Arms Market
+OBJECT:Egypt_Abbas = Abbas Missile
+OBJECT:Egypt_Sam2 = SAM Site
+OBJECT:EgyptCamp = Camp
+
+CONTROLBAR:ConstructEgypt_MilitaryHQ = Military HQ
+CONTROLBAR:ConstructEgypt_CommandCenter = Command Center
+CONTROLBAR:ConstructEgypt_Worker = Worker
+CONTROLBAR:ConstructEgypt_PowerPlant = Power Plant
+CONTROLBAR:ConstructEgypt_Barracks = Barracks
+CONTROLBAR:ConstructEgypt_SupplyCenter = Supply Center
+CONTROLBAR:ConstructEgypt_WarFactory_T = War Factory
+CONTROLBAR:ConstructEgypt_Airfield_T = Airfield
+CONTROLBAR:ConstructEgypt_RadarStation = Radar Station
+CONTROLBAR:ConstructEgypt_MIC = Arms Market
+CONTROLBAR:ConstructEgypt_Abbas = Abbas Missile
+CONTROLBAR:ConstructEgypt_Sam2 = SAM Site

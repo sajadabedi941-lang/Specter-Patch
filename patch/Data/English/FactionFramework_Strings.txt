@@ -13,8 +13,8 @@ INI:FactionEgypt = Egypt
 Side:Egypt = Egypt
 FACTION:Egypt = Egypt
 SCIENCE:Egypt = Egypt Technology
-TOOLTIP:BioStrategyLong_Egypt = Egypt — faction framework placeholder. Unit roster TBD.
-GUI:BioFeatures_Egypt = Framework scaffold. Content coming in later phases.
+TOOLTIP:BioStrategyLong_Egypt = Egyptian Armed Forces — combined-arms doctrine with air and armor support.
+GUI:BioFeatures_Egypt = Armor, airpower, and layered air defense.
 
 INI:FactionFrance = France
 Side:France = France

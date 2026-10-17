@@ -1,0 +1,10 @@
+Nato → Sweden / Ukraine / Turkey full independent playable clones
+(DATA-only; ART unchanged)
+
+Template: CURRENT Nato (FactionNato) — same method as Germany/France/Britain/Italy
+Science: REUSES SCIENCE_NATO_CommandSetRank* + SpecialPowerShortcutNATO (no invented country sciences)
+
+DATA sha256 = 41ae7a1745c4864243a38f3fbb6fe5826033d63c95e96b67c8a5144229b3accf
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = 0614ad6c55dad5fce459e5a7e37a47a7a19416a365e449816b98079217fcbcaa
+DOWNLOAD = https://litter.catbox.moe/zojxiw.zip

@@ -1,0 +1,28 @@
+SPECTER_MASTER_DATA_EGYPT_CC_FIX.zip
+
+Download: https://gofile.io/d/7qJ5qlcc
+
+ROOT CAUSE:
+Egypt_CommandCenter.ini (inside the live _SPEC_DATA_ONE.big) contained a UTF-8
+em-dash (U+2014, bytes E2 80 94) in the first comment line, plus Unix LF line
+endings. Generals Zero Hour's INI parser fails on that non-ASCII and reports the
+crash at "Object Egypt_CommandCenter" (first Object in the file).
+
+FIX (DATA-only):
+- Sanitized Egypt_CommandCenter.ini to plain ASCII + Windows CRLF, no BOM
+  (em-dash -> "--"; structure/Side/CommandSet/Egypt identity preserved)
+- Scanned and sanitized all Egyptian Armed Forces INIs for the same class of
+  Unicode (em-dash, multiply-sign, mojibake) and normalized CRLF
+- Validated Egypt_CommandCenter refs (CommandSet/SpecialPowers/OCLs/Upgrades/
+  Science/Armor/Weapon/FX) — all existed
+- Validated Egypt_MilitaryHQ / Worker CommandSets and starting objects
+- Side consistently "Egypt"; one Object Egypt_CommandCenter definition
+- Russia WO left untouched (sha 2d5edd80...)
+
+Re-extracted FINAL rebuilt BIG: CC SHA before-pack == after-re-extract.
+
+DATA SHA256: f9d91223b9b32630922862663f459061152326433c1768850692c7f1b4cf1b26
+ZIP  SHA256: b3091188849268d73695c3fc230229c2097a9fdcf32799e3da1b3c11c139a767
+CC   SHA256: 3193c7a2191b0302c56d640b32c46ea32c45a35deffef0c1c01c2fd53534c139
+
+Install: replace only _SPEC_DATA_ONE.big; keep existing _SPEC_ART_ONE.big

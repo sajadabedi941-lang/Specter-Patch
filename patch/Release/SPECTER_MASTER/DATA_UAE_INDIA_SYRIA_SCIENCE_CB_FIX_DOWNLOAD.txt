@@ -1,0 +1,18 @@
+SPECTER_MASTER_DATA_UAE_INDIA_SYRIA_SCIENCE_CB_FIX.zip
+
+Contains ONLY: _SPEC_DATA_ONE.big
+
+Fix: same Saudi science-chain pattern for UAE + India + Syria.
+Remove helper-only country PurchaseScience / Upgrade / FromShortcut buttons from ACTIVE
+CommandButton.ini; remove SCIENCE_<fac>_CommandSetRank*; empty SpecialPowerShortcut<fac>System.
+PlayerTemplates already reuse SCIENCE_Pakistan_CommandSetRank* + SpecialPowerShortcutPakistanSystem.
+
+PAKISTAN CHANGED = NO
+SAUDI ARABIA CHANGED = NO
+EGYPT CHANGED = NO
+ART CHANGED = NO
+
+DATA sha256 = ee925c57ed69ae2fd7b71799d312341e0f07e8f79f2a01ee239e1664a6c51e8c
+ZIP sha256  = 643143f97fffad21818912a7e4dac70bb780ef96963714b725b52c7624354ccc
+
+Download: https://litter.catbox.moe/tqgbic.zip

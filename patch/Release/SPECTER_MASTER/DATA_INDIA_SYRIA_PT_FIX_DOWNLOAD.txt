@@ -1,0 +1,16 @@
+India + Syria PlayerTemplate preemptive fix (DATA-only)
+
+Root cause (same as Saudi/UAE): unsupported ControlBarScheme field +
+SCIENCE_India_* / SCIENCE_Syria_* inside PlayerTemplates.
+
+Fix: rewrite both as field-for-field clones of working FactionPakistan
+(identity-only diffs); reuse Pakistan science/shortcut CommandSet names;
+remove ControlBarScheme. Full boot-chain audit PASS.
+
+ZIP: SPECTER_MASTER_DATA_INDIA_SYRIA_PT_FIX.zip
+Contents: _SPEC_DATA_ONE.big only
+
+_SPEC_DATA_ONE.big sha256=9fbb4865405f165c911e4c51cc36abfa69e94f21b139a60e9add7c89f7bbef9d
+_SPEC_ART_ONE.big sha256=74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+
+Download: https://litter.catbox.moe/t62m8d.zip

@@ -1,0 +1,11 @@
+SPECTER_MASTER_DATA_SIDE_STRINGS_FIX.zip
+
+Contains ONLY: _SPEC_DATA_ONE.big
+
+SIDE:SaudiArabia / UAE / India / Syria added to Data\English\generals.csf
+Canonical template: SIDE:Pakistan = Pakistan Armed Forces
+
+DATA sha256 = f68348c514e5ffb9af5f5372818d0029deba26b30c858691973fc2c8ab2f1b34
+ZIP sha256  = 90c1c7adf1e24079cb271fd53d17aedce95b59dfd5567c847a61ff601111109f
+
+Download: https://litter.catbox.moe/bqyuwh.zip

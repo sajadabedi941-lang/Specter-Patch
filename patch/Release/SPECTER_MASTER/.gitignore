@@ -1,0 +1,4 @@
+# Master BIG binaries + full ZIP are too large for git; keep locally + publish via HTTPS.
+_SPEC_DATA_ONE.big
+_SPEC_ART_ONE.big
+../SPECTER_MASTER_PATCH_EGYPT.zip

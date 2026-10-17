@@ -1,0 +1,15 @@
+SPECTER_MASTER_DATA_EGYPT_AIR_EXISTING_AUDIT.zip
+
+Download: https://gofile.io/d/qYVZXR0P
+
+Egypt aircraft audited against CURRENT _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big.
+No invented aircraft. ART unchanged.
+
+DATA fixes only:
+- CH47: removed AVChinook_* (not in SPEC ART); use US_CH47F only; Side=Egypt
+- Side corrections to Egypt for AH64/F16C/Ka52/Mi17/Mig29M2/Rafale_DM/_AA/Su35BM
+
+Full roster table: EGYPT_AIRCRAFT_EXISTING_CONTENT_AUDIT.txt
+
+DATA SHA256: a6cfac547bd4ff46c39584cda6e639bda6a270542626a3ecd5490ef91625b1fa
+ZIP  SHA256: ead60f470a916a36978d287c7374062d63c79c7adcda24f624bcaaebf676c714

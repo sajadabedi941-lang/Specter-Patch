@@ -1,0 +1,57 @@
+SPECTER1 Iraq Update — known-working archive baseline
+=====================================================
+
+SOURCE_BASELINE = SPECTER1_PART001_TO_PART069
+SPECTER1_USED_DIRECTLY = YES
+PREVIOUS_PR_DATA_USED = NO
+PREVIOUS_RELEASE_DATA_USED = NO
+
+The complete SPECTER1 install extracted from SPECTER1.part001.rar through
+SPECTER1.part069.rar is the known-working baseline.
+
+Launch_Specter.bat lives in the same folder as generals.exe and loads:
+
+  <game root>\_SPEC_DATA_ONE.big
+  <game root>\_SPEC_ART_ONE.big
+
+There is only one copy of each SPEC BIG in the extracted tree.
+
+ART unchanged — keep the original SPECTER1 _SPEC_ART_ONE.big.
+
+INSTALL
+-------
+Replace only _SPEC_DATA_ONE.big in the SPECTER1 game folder.
+Keep the original _SPEC_ART_ONE.big.
+
+PLAYER CHANGES
+--------------
+Iraq fighter / Large Air Base (already on the live bar; object gates removed):
+  * Mirage F1.EQ — RadarStation lock removed
+  * Su-24MK — RadarStation + MIC locks removed
+  * L-159 — existing IraqJetL159_WpnBomb now 3x guided Kab500, RETURN_TO_BASE
+  * Iraq MiG-21 only — Scale 0.82 -> 0.91
+
+Iraq Heavy Air Base:
+  * Su-24MR — MIC lock removed
+  * Tu-22M3 — existing Iraq_Tu-22M3 + existing button added to slot 3
+    Uses working Russian RUS_TU22M3M model already in SPECTER1 ART
+
+Tu-22 default bombs (Russia + Iraq):
+  * Existing Kab1500_LeaserGuidedBomb (Kab2500 projectile)
+
+Iraq WarFactory / MIC combat units:
+  * WarFactory starts on the full T3 roster; tier upgrades stay on T3
+  * MIC starting bar includes Karrar-2, B340, Fahad-3
+  * Unit science / radar / MIC / rank gates removed
+  * Building chain kept: Power -> Supply -> WarFactory / Airbase / MIC
+
+NOT CHANGED
+-----------
+  * ART
+  * PlayerTemplate.ini, Armor.ini, Locomotor.ini, Science.ini, CommandButton.ini
+  * generals.csf
+  * Unrelated countries except Russia Tu-22 default bomb
+  * No ZZZZ overlays, no files from PR #473-#477
+
+INGAME_TESTED = NO
+This environment cannot launch Zero Hour. Static packed audit only.

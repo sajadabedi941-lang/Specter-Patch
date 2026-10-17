@@ -1,0 +1,30 @@
+; SPECTER PATCH — Port / Oil / Supply / Industrial income wiring
+; Values come from CountryBalance.ini Country.*IncomeMult + BalanceSystem bases.
+; Baked by tools/economy/apply_country_balance.py (MP deterministic).
+;
+; SupplyCenter / SupplyStash:
+;   Behavior = AutoDepositUpdate ModuleTag_PatchResourceIncome
+;     DepositTiming = SupplyDepositTimingMS
+;     DepositAmount = round(SupplyDepositBase × Country.SupplyIncomeMult)
+;   End
+;
+; CommandCenter (national oil wealth — do NOT fork shared TechOilDerrick):
+;   Behavior = AutoDepositUpdate ModuleTag_PatchOilIncome
+;     DepositTiming = OilDepositTimingMS
+;     DepositAmount = round(OilDepositBase × Country.OilIncomeMult)
+;   End
+;
+; Port / Harbor / Seaport / NavalYard (when faction Objects exist):
+;   Behavior = AutoDepositUpdate ModuleTag_PatchPortIncome
+;     DepositTiming = PortDepositTimingMS
+;     DepositAmount = round(PortDepositBase × Country.PortIncomeMult)
+;   End
+;
+; WarFactory / MIC (industrial economy — USA high):
+;   Behavior = AutoDepositUpdate ModuleTag_PatchIndustrialIncome
+;     DepositTiming = IndustrialDepositTimingMS
+;     DepositAmount = round(IndustrialDepositBase × Country.IndustrialIncomeMult)
+;   End
+;
+; Shared civilian TechOilDerrick stays untouched for map MP sync.
+; Country.OilIncomeMult is expressed via faction CommandCenter oil-wealth deposits.

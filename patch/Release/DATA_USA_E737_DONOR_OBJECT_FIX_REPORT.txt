@@ -1,0 +1,41 @@
+E-737 SECOND-PASS CRASH FIX = PASS
+
+Previous em-dash diagnosis actually root cause = NO
+Final BIG contained previous fix = YES (wrapper was packed; source SHA matched packed SHA; prev size=0 nonascii=0 nulls=0)
+
+Original donor Object name = avionE737
+Original donor INI path = DONOR_INI.rar / INI/object/America.ini
+Original donor W3D = KVE737
+
+Broken wrapper removed = YES
+Object AmericaJetE737AEW final count = 0
+Final E-737 Object = avionE737
+Final Object count = 1
+Final file = Data\INI\Object\Specter\United States Of America\avionE737.ini
+source file SHA256 = 00c462d3eed3ddff252c0c8ee7cfbf5edd0b6c457b837d5094d8274d47c885da
+packed file SHA256 = 00c462d3eed3ddff252c0c8ee7cfbf5edd0b6c457b837d5094d8274d47c885da
+file size = 7645
+encoding = ASCII
+BOM = NO
+null bytes = 0
+
+HeavyAirBase Slot 9 button = Command_ConstructAmericaJetE737AEW
+Button target Object = avionE737
+
+Original donor Object parsed unchanged = YES
+If NO: Exact incompatible module/property = N/A
+Minimal-object bisect performed = NO
+
+Game startup parse validation = PASS (fresh BIG build + fresh extract + object/button verification)
+
+E-3 changed = NO
+AC-130 changed = NO
+C-17 changed = NO
+E2avionHE changed = NO
+V-22 changed = NO
+Bombers changed = NO
+
+FINAL BIG occurrence report:
+  AmericaJetE737AEW: 2 files -> ['Data\\INI\\CommandButton.ini', 'Data\\INI\\CommandSet.ini']
+  avionE737: 3 files -> ['Data\\INI\\CommandButton.ini', 'Data\\INI\\MappedImages\\HandCreated\\HandCreatedMappedImages.INI', 'Data\\INI\\Object\\Specter\\United States Of America\\avionE737.ini']
+  KVE737: 1 files -> ['Data\\INI\\Object\\Specter\\United States Of America\\avionE737.ini']

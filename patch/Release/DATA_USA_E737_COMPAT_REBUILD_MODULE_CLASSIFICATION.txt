@@ -1,0 +1,41 @@
+E-737 donor Object avionE737 module/property classification
+Corpus = working Specter _SPEC_DATA_ONE.big EXCLUDING avionE737.ini
+
+Module/Property                                      Found  Compatible  Notes
+--------------------------------------------------------------------------------
+Draw = W3DModelDraw                                  YES    YES         kept (E-3 style ConditionStates)
+OkToChangeModelColor                                 YES    YES         kept
+ParticlesAttachedToAnimatedBones                     YES    YES         kept
+AnimationsRequirePower                               YES    YES         omitted (not required for boot)
+Model KVE737                                         ART    YES         kept as Primary W3D
+AliasConditionState WITHOUT '='                      YES    AVOID       donor Draw used bare form; rebuilt uses ConditionState blocks
+AliasConditionState WITH '='                         YES    YES         E-3 bridge pattern
+VisionRange 1000 / ShroudClearingRange 1610          YES    YES         Group A kept from donor
+WeaponSet                                            YES    OMIT        AEW role; no weapons
+EA_18AntiRadarECMDevice                              YES    OMIT        ECM attack omitted
+EA_18AntiRadarBuildingECMDevice                      YES    OMIT        ECM attack omitted
+AirplaneArmor / CountermeasuresAirplaneArmor         YES    YES         kept
+ExperienceRequired / CrusherLevel / CrushableLevel   YES    YES         omitted from minimal Object
+AmericaJetF16CommandSet                              YES    YES         kept
+KindOf CAN_ATTACK                                    YES    OMIT        AEW has no attack; REVEALS_ENEMY_PATHS used
+ActiveBody                                           YES    YES         kept
+ArmorUpgrade                                         YES    YES         kept (AmericaCountermeasures)
+CountermeasuresBehavior                              YES    YES         kept with AmericaCountermeasures
+Upgrade_LSFCountermeasures                           YES    AVOID       only E2/donor; America path used instead
+LSFusCountermeasureFlare                             YES    AVOID       only E2/donor; America flare used
+ExperienceScalarUpgrade                              YES    YES         omitted from minimal boot Object
+JetSlowDeathBehavior                                 YES    YES         kept
+EjectPilotDie                                        YES    YES         omitted from minimal boot Object
+PhysicsBehavior                                      YES    YES         kept
+TransitionDamageFX                                   YES    YES         kept
+JetAIUpdate                                          YES    YES         kept (simplified; no Lockon*)
+LockonTime/InitialDist/Freq/AngleSpin/Blinky         YES    OMIT        present on E-3/E2; omitted for minimal boot
+AmericaF16ALocomotor / BasicJetTaxiLocomotor         YES    YES         kept (E-3 bridge)
+FlammableUpdate                                      YES    YES         kept
+WeaponBonusUpgrade + BunkerBusters                   YES    OMIT        weapon-related; not for AEW
+SHADOW_VOLUME                                        YES    YES         kept
+StealthDetectorUpdate                                YES    N/A         donor had none; none added
+Full Object avionE737 unchanged load                 ---    NO          crashes Specter runtime
+
+Final active Object = AmericaJetE737AEW only
+Reference-only donor copy = _ref/avionE737_donor_reference_ONLY.txt

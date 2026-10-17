@@ -1,0 +1,24 @@
+SPECTER DATA — USA B-2A heavy conventional bomb (Tsar/FOAB-scale explosion)
+
+BGM-108CALL was NOT found in active Specter DATA, DONOR_INI, or DONOR_ART.
+Closest proven heavy conventional reference used:
+  Object  = Russia_Fab9000
+  Weapon  = 9000kg_TsarBomb
+  FX      = Tsar_Explosion
+
+AmericaJetB2A:
+  Payload/ClipSize = 1
+  BuildCost = 15000
+  Weapon = AmericaB2A10TonBombWeapon
+  Projectile = AmericaB2A10TonBombProjectile
+  DetonationFX = Tsar_Explosion (was WeaponFX_BigBombExplosion)
+  PrimaryDamage = 12000 (unchanged)
+  PrimaryDamageRadius = 620 (was 480)
+  SecondaryDamage = 2200 / SecondaryDamageRadius = 750
+  Conventional only — no nuclear / radiation modules
+
+Other bombers / B-2A flight / ART unchanged.
+
+Download: https://gofile.io/d/FKfdFPho
+ZIP root: _SPEC_DATA_ONE.big only
+DATA sha256: a85ee706b0f89c120d014a46f5aa2964cc10b0b5bf717e060f46186a5b4501f4

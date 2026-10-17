@@ -1,0 +1,115 @@
+SPECTER1 AIRFRAME STANDARDIZATION PASS 01 AUDIT
+BASELINE = SPECTER1_Russia_Unlock_01 DATA
+BASELINE_DATA_SHA256 = 823a3b2a286f3adc2d28fd07d968d94d6dcd12ed729c331354c3c9bf363c8d12
+NEW_DATA_SHA256 = 43f8e611d416ff17bac178900556101cb4e8472e48ff0fb8ecbff29dcc3a37db
+NEW_DATA_BYTES = 365019758
+NEW_DATA_FILE_COUNT = 2807
+MODE = DATA ONLY — NO RELEASE
+
+REFERENCE_COUNTRY | REFERENCE_OBJECT | TARGET_COUNTRY | TARGET_OBJECT | OLD_MODEL | NEW_MODEL | OLD_SCALE | NEW_SCALE | OLD_DEFAULT_WEAPON | NEW_DEFAULT_WEAPON | OLD_BOMB | NEW_BOMB | OLD_CLIP | NEW_CLIP | MODEL_MATCH | SCALE_MATCH | WEAPON_MATCH | BOMB_MATCH
+USA | AmericaJetF35BJSF | Britain | BritainJetF35B | AVLightn | AVLightn | 0.95 | 1.0 | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF35BJSF | Italy | ItalyJetF35B | AVLightn | AVLightn | 0.92 | 1.0 | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF35BJSF | Japan | JapanJetF35B | AVLightn | AVLightn | 0.88 | 1.0 | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF35BJSF | Nato | NatoJetF35B | AVLightn | AVLightn | 0.88 | 1.0 | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF35BJSF | SouthKorea | SouthKoreaJetF35B | AVLightn | AVLightn | 0.88 | 1.0 | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | AmericaF35C_AA_AIM120, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF35C | Nato | NatoJetF35C | LSFUSAF35A | LSFUSAF35A | 1.0(default) | 1.0 | GBU_31V2_JDAM_F35C | Specter_Weapon_SU34MF_Bomb6 | GBU_31V2_JDAM_F35C | Specter_Weapon_SU34MF_Bomb6 | 4 | 6 | YES | YES | YES | YES
+USA | AmericaJetFA18E | Nato | NatoJetF18E | F18SEA | AVF-18 | 0.96 | 1.0 | NatoJetF18E_WpnIR, NatoJetF18E_WpnBomb, NatoJetF18E_WpnStandoff | AGM88G_AARGM_ER_F16CJ_LR, AGM88G_AARGM_ER_F16CJ_RR | NatoJetF18E_WpnBomb | NONE | 8 | NONE | YES | YES | YES | YES
+USA | AmericaJetFA18F | Nato | NatoJetF18F | US_FA18F | US_FA18F | 0.96 | 1.0 | NatoJetF18F_WpnRadar, NatoJetF18F_WpnIR, NatoJetF18F_WpnStrike | 1x_AGM65F_FA18F, 2x_GBU12II_FA18F | NONE | 2x_GBU12II_FA18F | NONE | 2 | YES | YES | YES | YES
+USA | AmericaJetEA18G | Nato | NatoJetEA18G | LSFEA18G | LSFEA18G | 1.0(default) | 0.9 | ALQ_99_RadarJamming, AGM88G_AARGM-ER, AIM9X_HOBS_SRAAM_F35C | ALQ_99_RadarJamming, AGM88G_AARGM-ER, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetEA18G | Japan | JapanJetF18G | LSFEA18G | LSFEA18G | 0.92 | 0.9 | ALQ_99_RadarJamming, AGM88G_AARGM-ER, AIM9X_HOBS_SRAAM_F22A | ALQ_99_RadarJamming, AGM88G_AARGM-ER, AIM9X_HOBS_SRAAM_F35C | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetF18Prowler | Japan | JapanJetEA6B | EA6 | EA6 | 1.00 | 0.9 | Specter_Weapon_EA6B_GuidedBomb | Specter_Weapon_EA6B_JH7A2_Bomb | Specter_Weapon_EA6B_GuidedBomb | Specter_Weapon_EA6B_JH7A2_Bomb | 6 | 6 | YES | YES | YES | YES
+USA | AmericaJetRaptor | Pakistan | Pakistan_F16Blk52 | US_F16CJ_blk52 | US_F16CJ_blk52 | 1.0(default) | 1.0 | Pakistan_Weapon_AIM120_F16AMLU, Pakistan_Weapon_AIM9_F16AMLU, Pakistan_Weapon_Bomb_F16AMLU | 2x_AGM88G_AARGM-ER_F16CJ | Pakistan_Weapon_Bomb_F16AMLU | NONE | 4 | NONE | YES | YES | YES | YES
+USA | AmericaJetRaptor | UAE | UAE_F16Blk52 | US_F16CJ_blk52 | US_F16CJ_blk52 | 1.0(default) | 1.0 | UAE_Weapon_AAM_Medium | 2x_AGM88G_AARGM-ER_F16CJ | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetRaptor | Iraq | IraqJetF16IQ | US_F16CJ_blk52 | US_F16CJ_blk52 | 0.98 | 1.0 | IraqJetF16IQ_WpnRadar, IraqJetF16IQ_WpnIR, IraqJetF16IQ_WpnStrike | 2x_AGM88G_AARGM-ER_F16CJ | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaJetAurora | UAE | UAEJetF15E | US_F15E | US_F15E, US_F15EX | 1.04 | 1.0 | UAEJetF15E_WpnIR, UAEJetF15E_WpnBomb, UAEJetF15E_WpnStandoff | GBU_31V2_JDAM_F15E, AN/AAQ33_SniperXR_ATP, AN/APG77_AESA_Radar_AGMode | UAEJetF15E_WpnBomb | GBU_31V2_JDAM_F15E | 8 | 3 | YES | YES | YES | YES
+USA | AmericaVehicleComanche | Nato | NatoHelicopterAH64E | US_AH64E | US_AH64E | 0.9 | 0.92 | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleComanche | SouthKorea | SouthKoreaJetAH64E | US_AH64E | US_AH64E | 0.90 | 0.92 | NONE | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleComanche | Sweden | SwedenHelicopterAH64E | US_AH64E | US_AH64E | 0.9 | 0.92 | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleComanche | Turkey | TurkeyHelicopterAH64E | US_AH64E | US_AH64E | 0.9 | 0.92 | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleComanche | Ukraine | UkraineHelicopterAH64E | US_AH64E | US_AH64E | 0.9 | 0.92 | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | GenericHeliGunnerSight, 8x_MRATGM_AGM114L, 70mm_Hydra_AH64E | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Britain | BritainHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Germany | GermanyHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Italy | ItalyHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Nato | NatoHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Sweden | SwedenHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Turkey | TurkeyHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaVehicleChinook | Ukraine | UkraineHelicopterCH47F | US_CH47F, AVChinook_A, AVChinook_A1MSH | US_CH47F, AVChinook_A, AVChinook_A1MSH | 1.0(default) | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaHelicopterUH60 | Nato | NatoHelicopterUH60 | US_UH60 | US_UH60 | 1.0(default) | 1.0 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaHelicopterUH60 | Sweden | SwedenHelicopterUH60 | US_UH60 | US_UH60 | 1.0(default) | 1.0 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaHelicopterUH60 | Turkey | TurkeyHelicopterUH60 | US_UH60 | US_UH60 | 1.0(default) | 1.0 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+USA | AmericaHelicopterUH60 | Ukraine | UkraineHelicopterUH60 | US_UH60 | US_UH60 | 1.0(default) | 1.0 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+Russia | RussiaJetSu27Flanker | Ukraine | UkraineJetSu27 | LSFRUSU27SK, LSFRUSU27SKk | LSFRUSU27SK, LSFRUSU27SKk | 0.98 | 0.9 | UkraineJetSu27_WpnRadar, UkraineJetSu27_WpnIR, UkraineJetSu27_WpnGun | KH29T_AGM_SU30MKA, 4x_Fab500_SU34, 4X_S25OF_Rocket_SU30MKA | NONE | 4x_Fab500_SU34 | NONE | 4 | YES | YES | YES | YES
+Russia | RussiaJetSu27Flanker | Vietnam | VietnamJetSu27 | LSFRUSU27SK, LSFRUSU27SKk | LSFRUSU27SK, LSFRUSU27SKk | 0.98 | 0.9 | VietnamJetSu27_WpnRadar, VietnamJetSu27_WpnIR, VietnamJetSu27_WpnGun | KH29T_AGM_SU30MKA, 4x_Fab500_SU34, 4X_S25OF_Rocket_SU30MKA | NONE | 4x_Fab500_SU34 | NONE | 4 | YES | YES | YES | YES
+Russia | RussiaJetTu22M3M | NorthKorea | NorthKoreaJetTu22M3M | RUS_TU22M3M | RUS_TU22M3M | 0.8 | 0.8 | 8x_FAB500_TU22M3M_LIVE | KH101_CruiseMissile_TU22M3M, SVP-24-22_TU22M3M | 8x_FAB500_TU22M3M_LIVE | NONE | 8 | NONE | YES | YES | YES | YES
+Russia | RussiaJetTu22M3M | Vietnam | VietnamJetTu22M3M | RUS_TU22M3M | RUS_TU22M3M | 0.8 | 0.8 | 8x_FAB500_TU22M3M_LIVE | KH101_CruiseMissile_TU22M3M, SVP-24-22_TU22M3M | 8x_FAB500_TU22M3M_LIVE | NONE | 8 | NONE | YES | YES | YES | YES
+Russia | RussiaJetTu22M3M | Iraq | Iraq_Tu-22M3 | Iraq_Tu22m3 | RUS_TU22M3M | 0.8 | 0.8 | 3x_Fab500_TU22M3_RightRack, 3x_Fab500_TU22M3_LeftRack, 2x_Fab500_TU22M3_Center | KH101_CruiseMissile_TU22M3M, SVP-24-22_TU22M3M | 3x_Fab500_TU22M3_RightRack, 3x_Fab500_TU22M3_LeftRack, 2x_Fab500_TU22M3_Center | NONE | 3, 3, 2 | NONE | YES | YES | YES | YES
+Russia | RussiaJetCargoIL76 | Iraq | IraqJetIL76 | Iraq_IL-76 | LSFRussiaYR76, LSFRussiaYR76k | 0.95 | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+Russia | RussiaJetCargoIL76 | Iraq | SpecterPlayableIL76 | RUS_IL76MD90A | LSFRussiaYR76, LSFRussiaYR76k | 0.95 | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+Russia | RussiaJetCargoIL76 | Libya | LibyaJetIL76 | Iraq_IL-76 | LSFRussiaYR76, LSFRussiaYR76k | 0.95 | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+Russia | RussiaJetCargoIL76 | SouthAfrica | SouthAfricaJetIL76 | Iraq_IL-76 | LSFRussiaYR76, LSFRussiaYR76k | 0.95 | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+Russia | RussiaJetCargoIL76 | Vietnam | VietnamJetIL76 | Iraq_IL-76 | LSFRussiaYR76, LSFRussiaYR76k | 0.95 | 0.9 | NONE | NONE | NONE | NONE | NONE | NONE | YES | YES | YES | YES
+China | ChinaJetJ7 | NorthKorea | NorthKoreaJetJ7 | LSFJ7, LSFJ7k | LSFJ7, LSFJ7k | 1.08 | 1.30 | NorthKoreaJetJ7_WpnIR, NorthKoreaJetJ7_WpnGun, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, China_Weapon_S5_J7, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, Kab500_LeaserGuidedBomb | 2 | 2, 2 | YES | YES | YES | YES
+China | ChinaJetJ7 | Libya | LibyaJetJ7 | LSFJ7, LSFJ7k | LSFJ7, LSFJ7k | 1.08 | 1.30 | LibyaJetJ7_WpnIR, LibyaJetJ7_WpnGun, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, China_Weapon_S5_J7, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, Kab500_LeaserGuidedBomb | 2 | 2, 2 | YES | YES | YES | YES
+China | ChinaJetJ7 | Syria | SyriaJetJ7 | LSFJ7, LSFJ7k | LSFJ7, LSFJ7k | 1.08 | 1.30 | SyriaJetJ7_WpnIR, SyriaJetJ7_WpnGun, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, China_Weapon_S5_J7, Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb | Kab500_LeaserGuidedBomb, Kab500_LeaserGuidedBomb | 2 | 2, 2 | YES | YES | YES | YES
+
+CHANGED_DATA_PATHS =
+  Data\INI\Object\Specter\British Armed Forces\Airforce\BritainJetF35B.ini
+  Data\INI\Object\Specter\British Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\German Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetF16IQ.ini
+  Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetIL76.ini
+  Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Tu-22M3.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Airforce\ItalyJetF35B.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetEA6B.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF18G.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Airforce\JapanJetF35B.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetIL76.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetJ7.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetF18E.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetF18F.ini
+  Data\INI\Object\Specter\NATO\Airforce\NatoJetF35B.ini
+  Data\INI\Object\Specter\NATO\FixedWings\EA18G.ini
+  Data\INI\Object\Specter\NATO\FixedWings\F35A.ini
+  Data\INI\Object\Specter\NATO\Rotary\AH64E.ini
+  Data\INI\Object\Specter\NATO\Rotary\CH47F.ini
+  Data\INI\Object\Specter\NATO\Rotary\UH60.ini
+  Data\INI\Object\Specter\North Korea\Airforce\Iraq_Mig-25BM.ini
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetJ7.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Airforce\Pakistan_F16Blk52.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetAH64E.ini
+  Data\INI\Object\Specter\Republic of Korea Armed Forces\Airforce\SouthKoreaJetF35B.ini
+  Data\INI\Object\Specter\Shared\SpecterPlayableIL76.ini
+  Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfricaJetIL76.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Rotary\AH64E.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Rotary\UH60.ini
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetJ7.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Rotary\AH64E.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Rotary\UH60.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetSu27.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\AH64E.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\CH47F.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Rotary\UH60.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Airforce\UAE_F16Blk52.ini
+  Data\INI\Object\Specter\United Arab Emirates\Airforce\UAEJetF15E.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Airforce\Iraq_Mig-25BM.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetIL76.ini
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetSu27.ini
+
+TOTAL_TARGETS_MODIFIED = 44
+USA_TARGETS_MODIFIED = 31
+RUSSIA_TARGETS_MODIFIED = 10
+CHINA_TARGETS_MODIFIED = 3
+UNCERTAIN_TARGETS_MODIFIED = 0
+BORROWED_MESH_FALSE_POSITIVES_MODIFIED = 0
+PREVIOUS_IRAQ_CHANGES_PRESERVED = YES
+PREVIOUS_USA_CHANGES_PRESERVED = YES
+PREVIOUS_CHINA_CHANGES_PRESERVED = YES
+PREVIOUS_RUSSIA_CHANGES_PRESERVED = YES
+AIRBASE_ARCHITECTURE_CHANGED = NO
+ART_CHANGED = NO
+COMMANDSET_CHANGED = NO
+INGAME_TESTED = NO
+RELEASE_CREATED = NO

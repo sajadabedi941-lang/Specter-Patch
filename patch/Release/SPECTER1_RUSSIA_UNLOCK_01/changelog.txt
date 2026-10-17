@@ -1,0 +1,8 @@
+SPECTER1 Russia unlock / Su-34MM scale / Su-24MR fire (DATA only)
+
+Baseline: SPECTER1_CHINA_UNLOCK_01 DATA. Iraq, USA, and China packed files unchanged. No ART. No Release.
+
+1. RussiaJetSu34 (Su-34MM) visual Scale 0.9 -> 1.03 (~+14.4%). Model/weapons/locomotor/armor/price/slot/producer unchanged. RussiaJetSu34F untouched.
+2. RussiaJetSu24MR FIRE: keep Russian model/name/producer/side. Switch unit CommandSet GenericTacticalBomberCommandSet -> SU24MR_CommandSet (Iraq working Command_ALQ99_Jamming + ALQ_99_RadarJamming PRIMARY). Add AttackLocomotorType SET_SLUGGISH like Iraq. Iraq_Su-24MR.ini not edited.
+3. Live Russian production gates (Science/Rank/IWC/RS24) stripped from player-buildable units. Starting live CommandSets already held construct buttons; CommandSet.ini not rewritten.
+4. Intended PLAYER_UPGRADE aircraft/Bm30 loadouts copied onto Conditions=None. Upgraded WeaponSets and WeaponSetUpgrade modules kept.

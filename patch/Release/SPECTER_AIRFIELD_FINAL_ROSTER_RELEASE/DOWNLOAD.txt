@@ -1,0 +1,26 @@
+SPECTER_AIRFIELD_FINAL_ROSTER_RELEASE — PUBLIC DOWNLOAD
+=======================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/0x9od1.zip
+
+Branch: cursor/airfield-final-roster-fix-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  acd11fdce67b1674099201512c25801378d19417b061fb169c1c307fff156e89
+SHA256 DATA: baec316b1cd727de1c90f1c584386ba5893d8e2ea5e0ad6f120c6fd1d8ea0714
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA Airfield FINAL roster (CommandSet only):
+  Last-wins: ZZZZZZZZ_ZZZZZZ_ZZZZ_USA_AIRFIELD_FINAL_ROSTER.ini
+  18 slots kept
+  Slot 5: TEOD B-2 -> Command_ConstructAmericaJetB2Spirit (still AmericaJetB2)
+  Slot 11: B-21 kept
+  B-52H kept (Command_ConstructAmericaJetB52H, not TEOD/Science)
+  Duplicate F-35C_AA replaced with EA-18
+  Objects / Weapon / Draw / Cost / Limit untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

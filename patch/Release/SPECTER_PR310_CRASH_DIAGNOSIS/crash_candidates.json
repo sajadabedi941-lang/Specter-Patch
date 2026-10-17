@@ -1,0 +1,645 @@
+[
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; missing_buttons=['Command_ConstructAmericaJetB21']; button_count=35>27; button_count=35>18",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaHelicopterAH64E",
+      "Command_ConstructAmericaJetA10C",
+      "Command_ConstructAmericaJetAurora",
+      "Command_ConstructAmericaJetB1R",
+      "Command_ConstructAmericaJetB21",
+      "Command_ConstructAmericaJetB2Spirit",
+      "Command_ConstructAmericaJetB52H",
+      "Command_ConstructAmericaJetE3AWACS",
+      "Command_ConstructAmericaJetEA18",
+      "Command_ConstructAmericaJetF-15E_AA"
+    ]
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; missing_buttons=['Command_ConstructAmericaJetB21']; button_count=35>27; button_count=35>18",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaHelicopterAH64E",
+      "Command_ConstructAmericaJetA10C",
+      "Command_ConstructAmericaJetAurora",
+      "Command_ConstructAmericaJetB1R",
+      "Command_ConstructAmericaJetB21",
+      "Command_ConstructAmericaJetB2Spirit",
+      "Command_ConstructAmericaJetB52H",
+      "Command_ConstructAmericaJetE3AWACS",
+      "Command_ConstructAmericaJetEA18",
+      "Command_ConstructAmericaJetF-15E_AA"
+    ]
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T1",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; missing_buttons=['Command_ConstructAmericaJetB21']; button_count=35>27; button_count=35>18",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaHelicopterAH64E",
+      "Command_ConstructAmericaJetA10C",
+      "Command_ConstructAmericaJetAurora",
+      "Command_ConstructAmericaJetB1R",
+      "Command_ConstructAmericaJetB21",
+      "Command_ConstructAmericaJetB2Spirit",
+      "Command_ConstructAmericaJetB52H",
+      "Command_ConstructAmericaJetE3AWACS",
+      "Command_ConstructAmericaJetEA18",
+      "Command_ConstructAmericaJetF-15E_AA"
+    ]
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T2",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; missing_buttons=['Command_ConstructAmericaJetB21']; button_count=35>27; button_count=35>18",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaHelicopterAH64E",
+      "Command_ConstructAmericaJetA10C",
+      "Command_ConstructAmericaJetAurora",
+      "Command_ConstructAmericaJetB1R",
+      "Command_ConstructAmericaJetB21",
+      "Command_ConstructAmericaJetB2Spirit",
+      "Command_ConstructAmericaJetB52H",
+      "Command_ConstructAmericaJetE3AWACS",
+      "Command_ConstructAmericaJetEA18",
+      "Command_ConstructAmericaJetF-15E_AA"
+    ]
+  },
+  {
+    "COMMANDSET": "AmericaWarFactoryCommandSet_T3",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; missing_buttons=['Command_ConstructAmericaJetB21']; button_count=35>27; button_count=35>18",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaHelicopterAH64E",
+      "Command_ConstructAmericaJetA10C",
+      "Command_ConstructAmericaJetAurora",
+      "Command_ConstructAmericaJetB1R",
+      "Command_ConstructAmericaJetB21",
+      "Command_ConstructAmericaJetB2Spirit",
+      "Command_ConstructAmericaJetB52H",
+      "Command_ConstructAmericaJetE3AWACS",
+      "Command_ConstructAmericaJetEA18",
+      "Command_ConstructAmericaJetF-15E_AA"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaHelicopterWZ10ME",
+      "Command_ConstructChinaHelicopterZ18A",
+      "Command_ConstructChinaJetJ10C",
+      "Command_ConstructChinaJetJ16D",
+      "Command_ConstructChinaJetJ20B_AA",
+      "Command_ConstructChinaJetJ20B_AG",
+      "Command_ConstructChinaJetJH7A2",
+      "Command_ConstructChinaJetMIG",
+      "Command_ConstructChinaVehicleHelix",
+      "Command_ConstructRussia_Mi-28NE"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaHelicopterWZ10ME",
+      "Command_ConstructChinaHelicopterZ18A",
+      "Command_ConstructChinaJetJ10C",
+      "Command_ConstructChinaJetJ16D",
+      "Command_ConstructChinaJetJ20B_AA",
+      "Command_ConstructChinaJetJ20B_AG",
+      "Command_ConstructChinaJetJH7A2",
+      "Command_ConstructChinaVehicleHelix",
+      "Command_ConstructRussiaHelicopterKA52",
+      "Command_ConstructRussiaHelicopterMi28N"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T1",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaHelicopterWZ10ME",
+      "Command_ConstructChinaHelicopterZ18A",
+      "Command_ConstructChinaJetJ10C",
+      "Command_ConstructChinaJetJ16D",
+      "Command_ConstructChinaJetJ20B_AA",
+      "Command_ConstructChinaJetJ20B_AG",
+      "Command_ConstructChinaJetJH7A2",
+      "Command_ConstructChinaVehicleHelix",
+      "Command_ConstructRussiaHelicopterKA52",
+      "Command_ConstructRussiaHelicopterMi28N"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T2",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaHelicopterWZ10ME",
+      "Command_ConstructChinaHelicopterZ18A",
+      "Command_ConstructChinaJetJ10C",
+      "Command_ConstructChinaJetJ16D",
+      "Command_ConstructChinaJetJ20B_AA",
+      "Command_ConstructChinaJetJ20B_AG",
+      "Command_ConstructChinaJetJH7A2",
+      "Command_ConstructChinaVehicleHelix",
+      "Command_ConstructRussiaHelicopterKA52",
+      "Command_ConstructRussiaHelicopterMi28N"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T3",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaHelicopterWZ10ME",
+      "Command_ConstructChinaHelicopterZ18A",
+      "Command_ConstructChinaJetJ10C",
+      "Command_ConstructChinaJetJ16D",
+      "Command_ConstructChinaJetJ20B_AA",
+      "Command_ConstructChinaJetJ20B_AG",
+      "Command_ConstructChinaJetJH7A2",
+      "Command_ConstructRussiaHelicopterKA52",
+      "Command_ConstructRussiaHelicopterMi28N",
+      "Command_ConstructRussiaJetMig31K"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaAirfieldCommandSet_T4",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35]; button_count=35>27; button_count=35>18; missing_objects=[('Command_ConstructRussiaJetSu75Checkmate', 'RussiaJetSu75Checkmate'), ('Command_ConstructRussiaJetSu47Recon', 'RussiaJetSu47Recon'), ('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE')]; cross_faction=[('Command_ConstructChinaJetMIG', 'Infa_ChinaJetMIG', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleHelix', 'Infa_ChinaVehicleHelix', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaJetJ20B_AG', 'ChinaJetJ20B_AG', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 35,
+    "MAX_SLOT": 35,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaJetMIG",
+      "Command_ConstructChinaVehicleHelix",
+      "Command_ConstructRussiaHelicopterKA52",
+      "Command_ConstructRussiaHelicopterMi28N",
+      "Command_ConstructRussiaJetMig31K",
+      "Command_ConstructRussiaJetSU24M2",
+      "Command_ConstructRussiaJetSU24MP",
+      "Command_ConstructRussiaJetSU25T",
+      "Command_ConstructRussiaJetSu30SM2",
+      "Command_ConstructRussiaJetSu34"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankECM",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_LBD",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41",
+      "Command_ConstructChinaVehicleDF41_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructRussia_Krasukha-4', 'ChinaVehicleKrasukha4', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleInfernoCannon', 'Infa_ChinaVehicleInfernoCannon', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleNukeLauncher', 'Infa_ChinaVehicleNukeLauncher', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41",
+      "Command_ConstructChinaVehicleDF41_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T1",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41",
+      "Command_ConstructChinaVehicleDF41_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T2",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41",
+      "Command_ConstructChinaVehicleDF41_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T3",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankAFT10",
+      "Command_ConstructChinaTankBattleMaster",
+      "Command_ConstructChinaTankPGZ04",
+      "Command_ConstructChinaTankTorM2",
+      "Command_ConstructChinaTankZBD04",
+      "Command_ConstructChinaVehicleDF12",
+      "Command_ConstructChinaVehicleDF17",
+      "Command_ConstructChinaVehicleDF21C",
+      "Command_ConstructChinaVehicleDF41",
+      "Command_ConstructChinaVehicleDF41_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaWarFactoryCommandSet_T4",
+    "REASON": "out_of_range=[28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]; button_count=42>27; button_count=42>18; cross_faction=[('Command_ConstructChinaTankBattleMaster', 'ChinaTankBattleMaster', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaTankAFT10', 'ChinaTankAFT10', 'CHINA', 'RUSSIA'), ('Command_ConstructChinaVehicleDF17', 'ChinaVehicleDF17', 'CHINA', 'RUSSIA')]",
+    "NEW_BUTTON_COUNT": 42,
+    "MAX_SLOT": 42,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankECM",
+      "Command_ConstructChinaVehicleInfernoCannon",
+      "Command_ConstructChinaVehicleNukeLauncher",
+      "Command_ConstructRussiaArtillery2S19M2",
+      "Command_ConstructRussiaTankBMP3",
+      "Command_ConstructRussiaTankT72B3",
+      "Command_ConstructRussiaTankT72B3M",
+      "Command_ConstructRussiaTankT90A",
+      "Command_ConstructRussiaTankTorM2M",
+      "Command_ConstructRussiaTankTos1A"
+    ]
+  },
+  {
+    "COMMANDSET": "NatoDozerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructNato_AdvancedAirBase']; button_count=20>18; missing_objects=[('Command_ConstructNatoSAMPTNG', 'NatoSAMPTNG'), ('Command_ConstructNatoNASAMSIII', 'NatoNASAMSIII'), ('Command_ConstructNatoSkySabre', 'NatoSkySabre')]; cross_faction=[('Command_ConstructAmericaLgm30', 'AmericaLgm30', 'USA', 'NATO'), ('Command_ConstructAmericaVehicleTHAAD_AI', 'US_THAAD_Site_AI', 'USA', 'NATO'), ('Command_ConstructAmericaSupplyDropZone', 'AmericaSupplyDropZone', 'USA', 'NATO')]",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaSupplyDropZone",
+      "Command_ConstructNato_AdvancedAirBase"
+    ]
+  },
+  {
+    "COMMANDSET": "NatoDozerCommandSet_PatchAAB",
+    "REASON": "missing_buttons=['Command_ConstructNato_AdvancedAirBase']; button_count=20>18; missing_objects=[('Command_ConstructNatoSAMPTNG', 'NatoSAMPTNG'), ('Command_ConstructNatoNASAMSIII', 'NatoNASAMSIII'), ('Command_ConstructNatoSkySabre', 'NatoSkySabre')]; cross_faction=[('Command_ConstructAmericaLgm30', 'AmericaLgm30', 'USA', 'NATO'), ('Command_ConstructAmericaVehicleTHAAD_AI', 'US_THAAD_Site_AI', 'USA', 'NATO'), ('Command_ConstructAmericaSupplyDropZone', 'AmericaSupplyDropZone', 'USA', 'NATO')]",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaLgm30",
+      "Command_ConstructAmericaVehicleTHAAD_AI",
+      "Command_ConstructNatoNASAMSIII",
+      "Command_ConstructNatoSAMPTNG",
+      "Command_ConstructNatoSkySabre",
+      "Command_ConstructNatoSkyranger30",
+      "Command_ConstructNatoStrategyCenter"
+    ]
+  },
+  {
+    "COMMANDSET": "ChinaAirfieldCommandSet",
+    "REASON": "button_count=20>18; missing_objects=[('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE'), ('Command_ConstructRussian_Su57', 'Patch_Russia_Su57'), ('Command_ConstructRussian_Su57AA', 'Patch_Russia_Su57')]; cross_faction=[('Command_ConstructRussian_Su35', 'RussiaJetSu35S', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_Su34', 'RussiaJetSu34', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_Su35ts', 'RussiaJetSu35S', 'RUSSIA', 'CHINA')]",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_SetRallyPoint",
+      "Command_UpgradeChinaAircraftArmor",
+      "Command_UpgradeEMPMines"
+    ]
+  },
+  {
+    "COMMANDSET": "ChinaAirfieldCommandSetUpgrade",
+    "REASON": "button_count=20>18; missing_objects=[('Command_ConstructRussia_Mi-28NE', 'Turkey_Mi-28NE'), ('Command_ConstructRussian_Su57', 'Patch_Russia_Su57'), ('Command_ConstructRussian_Su57AA', 'Patch_Russia_Su57')]; cross_faction=[('Command_ConstructRussian_Su35', 'RussiaJetSu35S', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_Su34', 'RussiaJetSu34', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_Su35ts', 'RussiaJetSu35S', 'RUSSIA', 'CHINA')]",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructRussiaDroneLancet3",
+      "Command_ConstructRussia_Mi-28NE",
+      "Command_ConstructRussia_Mig-31K",
+      "Command_ConstructRussia_SU24MP_AI",
+      "Command_ConstructRussia_Su-24M2",
+      "Command_ConstructRussia_Su-24MP",
+      "Command_ConstructRussia_Su-25T",
+      "Command_ConstructRussia_Tu-22M3M",
+      "Command_ConstructRussian_Su34",
+      "Command_ConstructRussian_Su35"
+    ]
+  },
+  {
+    "COMMANDSET": "AirF_AmericaDozerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructAirF_AmericaAdvancedAirBase']; cross_faction=[('AirF_Command_ConstructAmericaPowerPlant', 'AirF_AmericaPowerPlant', 'ISRAEL', 'USA'), ('AirF_Command_ConstructAmericaStrategyCenter', 'AirF_AmericaStrategyCenter', 'ISRAEL', 'USA'), ('AirF_Command_ConstructAmericaBarracks', 'AirF_AmericaBarracks', 'ISRAEL', 'USA')]",
+    "NEW_BUTTON_COUNT": 17,
+    "MAX_SLOT": 17,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "AirF_Command_ConstructAmericaSupplyDropZone",
+      "Command_ConstructAirF_AmericaAdvancedAirBase"
+    ]
+  },
+  {
+    "COMMANDSET": "PLADozerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructChina_AdvancedAirBase']",
+    "NEW_BUTTON_COUNT": 18,
+    "MAX_SLOT": 18,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaInternetCenter",
+      "Command_ConstructChinaNuclearMissileLauncher",
+      "Command_ConstructChinaPropagandaCenter",
+      "Command_ConstructChinaSpeakerTower",
+      "Command_ConstructChina_AdvancedAirBase"
+    ]
+  },
+  {
+    "COMMANDSET": "PLADozerCommandSet_PatchAAB",
+    "REASON": "missing_buttons=['Command_ConstructChina_AdvancedAirBase']",
+    "NEW_BUTTON_COUNT": 18,
+    "MAX_SLOT": 18,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaDF5NuclearMissileSilo",
+      "Command_ConstructChinaIndustrialWeaponComplex",
+      "Command_ConstructChinaRadarYj26"
+    ]
+  },
+  {
+    "COMMANDSET": "ChinaWarFactoryCommandSet",
+    "REASON": "button_count=25>18; cross_faction=[('Command_ConstructRussiaTankT72B3', 'RussiaTankT72B3M', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_T15', 'RussianTankT15', 'RUSSIA', 'CHINA'), ('Command_ConstructRussia_TOR_M2U', 'RussiaVehiclePantsirS1M', 'RUSSIA', 'CHINA')]",
+    "NEW_BUTTON_COUNT": 25,
+    "MAX_SLOT": 25,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructChinaTankGattling",
+      "Command_ConstructChinaTankOverlord",
+      "Command_ConstructChinaVehicleListeningOutpost",
+      "Command_ConstructChinaVehicleTroopCrawler",
+      "Command_ConstructRussian_92N6E",
+      "Command_ConstructRussian_92N6E_AI",
+      "Command_UpgradeEMPMines"
+    ]
+  },
+  {
+    "COMMANDSET": "ChinaWarFactoryCommandSetUpgrade",
+    "REASON": "button_count=25>18; cross_faction=[('Command_ConstructRussiaTankT72B3', 'RussiaTankT72B3M', 'RUSSIA', 'CHINA'), ('Command_ConstructRussian_T15', 'RussianTankT15', 'RUSSIA', 'CHINA'), ('Command_ConstructRussia_TOR_M2U', 'RussiaVehiclePantsirS1M', 'RUSSIA', 'CHINA')]",
+    "NEW_BUTTON_COUNT": 25,
+    "MAX_SLOT": 25,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructRussiaArtillery2S7M",
+      "Command_ConstructRussiaTankT72B3",
+      "Command_ConstructRussiaTankT90A",
+      "Command_ConstructRussiaVehicle9K720K",
+      "Command_ConstructRussia_Krasukha-4",
+      "Command_ConstructRussia_RS24_Yars",
+      "Command_ConstructRussia_TOR_M2U",
+      "Command_ConstructRussian_T15"
+    ]
+  },
+  {
+    "COMMANDSET": "IranDozerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructIran_AdvancedAirBase']",
+    "NEW_BUTTON_COUNT": 15,
+    "MAX_SLOT": 15,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructIran_AdvancedAirBase"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_T-72', 'Command_ConstructUAE_BMP-1', 'Command_ConstructUAE_BTR-90', 'Command_ConstructUAE_VehicleRoland3K', 'Command_ConstructUAE_ZSU-23-4']",
+    "NEW_BUTTON_COUNT": 15,
+    "MAX_SLOT": 15,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_Alhussaien"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet1",
+    "REASON": "missing_buttons=['Command_ConstructUAE_T-72', 'Command_ConstructUAE_BMP-1', 'Command_ConstructUAE_BTR-90', 'Command_ConstructUAE_VehicleRoland3K', 'Command_ConstructUAE_ZSU-23-4']",
+    "NEW_BUTTON_COUNT": 15,
+    "MAX_SLOT": 15,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_Alhussaien"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet2",
+    "REASON": "missing_buttons=['Command_ConstructUAE_T-72', 'Command_ConstructUAE_BMP-1', 'Command_ConstructUAE_BTR-90', 'Command_ConstructUAE_VehicleRoland3K', 'Command_ConstructUAE_ZSU-23-4']",
+    "NEW_BUTTON_COUNT": 15,
+    "MAX_SLOT": 15,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_LoiteringDrone"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_WarFactoryCommandSet3",
+    "REASON": "missing_buttons=['Command_ConstructUAE_T-72', 'Command_ConstructUAE_BMP-1', 'Command_ConstructUAE_BTR-90', 'Command_ConstructUAE_VehicleRoland3K', 'Command_ConstructUAE_ZSU-23-4']",
+    "NEW_BUTTON_COUNT": 15,
+    "MAX_SLOT": 15,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_LoiteringDrone"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaDozerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructRussia_AdvancedAirBase']",
+    "NEW_BUTTON_COUNT": 14,
+    "MAX_SLOT": 14,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructRussia_AdvancedAirBase",
+      "Command_DisarmMinesAtPosition"
+    ]
+  },
+  {
+    "COMMANDSET": "RussiaDozerCommandSet_PatchAAB",
+    "REASON": "missing_buttons=['Command_ConstructRussia_AdvancedAirBase']",
+    "NEW_BUTTON_COUNT": 14,
+    "MAX_SLOT": 14,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructRussiaS400Site_AI"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_VT72BCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_PowerPlant', 'Command_ConstructUAE_CommandCenter', 'Command_ConstructUAE_SupplyCenter', 'Command_ConstructUAE_WarFactory_T', 'Command_ConstructUAE_Airfield_T']",
+    "NEW_BUTTON_COUNT": 12,
+    "MAX_SLOT": 12,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_WorkerCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_PowerPlant', 'Command_ConstructUAE_SupplyCenter', 'Command_ConstructUAE_WarFactory_T', 'Command_ConstructUAE_MIC', 'Command_ConstructUAE_RadarStation']",
+    "NEW_BUTTON_COUNT": 12,
+    "MAX_SLOT": 12,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Mig-29A', 'Command_ConstructUAE_MirageF1_Bq', 'Command_ConstructUAE_Su-25K', 'Command_ConstructUAE_Mi-8T', 'Command_ConstructUAE_IL-76']",
+    "NEW_BUTTON_COUNT": 9,
+    "MAX_SLOT": 9,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet1",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Mig-29A', 'Command_ConstructUAE_MirageF1_Bq', 'Command_ConstructUAE_Su-25K', 'Command_ConstructUAE_Mi-8T', 'Command_ConstructUAE_IL-76']",
+    "NEW_BUTTON_COUNT": 9,
+    "MAX_SLOT": 9,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet2",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Mig-29A', 'Command_ConstructUAE_MirageF1_Bq', 'Command_ConstructUAE_Su-25K', 'Command_ConstructUAE_Mi-8T', 'Command_ConstructUAE_IL-76']",
+    "NEW_BUTTON_COUNT": 9,
+    "MAX_SLOT": 9,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructUAE_F16Blk60",
+      "Command_ConstructUAE_MQ9"
+    ]
+  },
+  {
+    "COMMANDSET": "UAE_AirfieldCommandSet3",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Mig-29A', 'Command_ConstructUAE_MirageF1_Bq', 'Command_ConstructUAE_Su-25K', 'Command_ConstructUAE_Mi-8T', 'Command_ConstructUAE_IL-76']",
+    "NEW_BUTTON_COUNT": 9,
+    "MAX_SLOT": 9,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_BarracksCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_RepublicanGuard_AKMS', 'Command_ConstructUAE_RepublicanGuard_RPG7', 'Command_ConstructUAE_RepublicanGuardIgla', 'Command_ConstructUAE_SpecialForces_Akms', 'Command_ConstructUAE_RepublicanGuard_TBK14']",
+    "NEW_BUTTON_COUNT": 8,
+    "MAX_SLOT": 8,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_CommandCenterCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Worker', 'Command_ConstructUAE_VT72B', 'Command_ConstructUAE_IL-76', 'Command_ConstructUAE_Alhussaien']",
+    "NEW_BUTTON_COUNT": 6,
+    "MAX_SLOT": 6,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "UAE_SupplyCenterCommandSet",
+    "REASON": "missing_buttons=['Command_ConstructUAE_Ural375_Supply']",
+    "NEW_BUTTON_COUNT": 2,
+    "MAX_SLOT": 2,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": []
+  },
+  {
+    "COMMANDSET": "AmericaDozerCommandSet",
+    "REASON": "button_count=20>18",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaSupplyDropZone",
+      "Command_ConstructAmerica_AdvancedAirBase"
+    ]
+  },
+  {
+    "COMMANDSET": "AmericaDozerCommandSet_PatchAAB",
+    "REASON": "button_count=20>18",
+    "NEW_BUTTON_COUNT": 20,
+    "MAX_SLOT": 20,
+    "SOURCE": "Data\\INI\\ZZZZZZZZ_ZZZZZZZZ_ZZZZZZZZ_ZZZZZZ_CORE9_FULL_TECH_COMMANDSETS.ini",
+    "SAMPLE_NEW_BUTTONS": [
+      "Command_ConstructAmericaPatriotPAC3MSE",
+      "Command_ConstructAmericaStrategyCenter",
+      "Command_ConstructAmericaStrategyCenter_T",
+      "Command_ConstructAmericaVehicleTHAAD_AI"
+    ]
+  }
+]

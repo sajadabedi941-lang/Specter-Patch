@@ -1,0 +1,11 @@
+SPECTER_RUSSIA_SU75_REAL_DONOR test package
+
+Download: https://gofile.io/d/LPf3j9
+
+Contents:
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  VERIFY.txt
+  README_INSTALL.txt
+
+Install over the Core-9 rollback / full-unlock baseline BIGs.

@@ -1,0 +1,9 @@
+VERIFY — AmericaJetB2 visual mesh clean
+Object: AmericaJetB2
+Model: AVB3bmbr (all ConditionStates)
+Scale: 0.85
+HideSubObject: BurnerFX01-04
+ShowSubObject: None
+No Model=US_B1R / US_B52H on AmericaJetB2
+ZIP: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only
+Gameplay unchanged

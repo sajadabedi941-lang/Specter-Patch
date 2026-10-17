@@ -1,0 +1,5 @@
+_SPEC_DATA_ONE.big sha256=a1b908efa63d51bb7490f0c0bd51e87566366f4a30ed7640229fc1d137574e2d
+_SPEC_ART_ONE.big sha256=6320515bf3b02d4a7b4bb33cecb32baa9de3fb21379b8161d4767abad8976eb7 (unchanged)
+ZIP=SPECTER_MASTER_DATA_USA_E2_V22_VISUAL_FIX.zip
+gofile_code=txKNUyjK
+download=https://gofile.io/d/qCF8N1IZ

@@ -1,0 +1,40 @@
+E737/E2 SCALE CORRECTION = PASS
+
+E-737:
+Object = AmericaJetE737Visual
+W3D = KVE737
+Current wrong scale = 1.1
+Previous known-good scale = 0.8 (git eb1f8c74 / pre-enlargement)
+Final scale = 0.8
+Previous size restored = YES
+
+E-2:
+Object = AmericaJetE2Visual
+W3D = AVHawk
+Full donor E-2 model confirmed = YES (donor Object E2avionHE Model=AVHawk; AVHawk_P is smaller prop/submesh only)
+Current scale = 0.8
+Calculated new scale = 3.931878
+Final scale = 3.932
+
+KVE737 native X = 103.664
+KVE737 native Y = 7.833
+KVE737 native Z = 37.417
+KVE737 native horizontal span = 103.664
+AVHawk native X = 21.092
+AVHawk native Y = 5.831
+AVHawk native Z = 20.825
+AVHawk native horizontal span = 21.092
+
+Restored E-737 effective span = 82.931
+Final E-2 effective span = 82.934
+
+E-2 enlarged = YES
+E-737 enlarged = NO
+
+C-17 changed = NO
+V-22 changed = NO
+E-3 changed = NO
+AC-130 changed = NO
+HeavyAirBase changed = NO
+ART changed = NO
+DATA sha256 = fbe749e1058e59c738cb0a7c242460d27a93aaf9017e21599b3b0a9305ca14fa

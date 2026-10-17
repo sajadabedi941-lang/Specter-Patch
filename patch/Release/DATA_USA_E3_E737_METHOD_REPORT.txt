@@ -1,0 +1,55 @@
+USA E-3 E737-STYLE INTEGRATION = PASS
+
+Reference method:
+E-737 method followed = YES
+
+Root cause fixed:
+Prior TextLabel CONTROLBAR:AmericaAWACS collided with SCIENCE-gated
+SPECIAL_POWER Command_AmericaAWACS. Replaced with unique E-737-style labels.
+
+E-3:
+Object = AmericaJetE3Visual
+Real donor primary W3D = E3
+Real donor textures = avE3.tga, avE3ACC.tga, housecolor (ART)
+Real donor animation dependencies = (in-mesh E3.RADAR / chassis; gear W3D chj10_r present in ART, not bound in Specter-safe Draw — matches E-737 method)
+Button = Command_ConstructAmericaJetE3Visual
+ButtonImage = E3USA
+Exact donor E-3 icon = YES
+HeavyAirBase Slot = 5
+
+Build chain:
+HeavyAirBase -> CommandSet -> Button -> Object = YES
+
+Donor DATA used = NO
+Specter-safe DATA used = YES
+
+Old AmericaJetE3AWACS active = 0
+USAE3 gameplay Object active = 0
+AmericaJetE3Visual active = 1
+
+Weapons = NONE
+AWACS functionality = NOT YET
+
+E-737 changed = NO
+E-2 changed = NO
+C-17 changed = NO
+V-22 changed = NO
+AC-130 changed = NO
+Bombers changed = NO
+HeavyAirBase parking changed = NO
+Other factions changed = NO
+
+ART CHANGED = NO
+ART present = {'E3.W3D': True, 'avE3.tga': True, 'avE3ACC.tga': True, 'E3USA.tga': True, 'E3USATB.tga': True, 'chj10_r.W3D': True}
+
+FINAL PACKED-BIG VERIFICATION:
+Command_ConstructAmericaJetE3Visual exists = 1
+Object AmericaJetE3Visual exists = 1
+America_HeavyAirBaseCommandSet Slot 5 references E-3 button = YES
+Button Object target resolves = YES
+E-3 donor W3D exists in ART = YES
+E-3 donor ButtonImage exists in ART = YES
+
+DATA sha256 = cce16a282571fe59e2a0c69b019605a45a808a0d8e1f80da642bba49b7e3bdb7
+ZIP = SPECTER_MASTER_DATA_USA_E3_E737_METHOD.zip
+URL = https://litter.catbox.moe/jtk4px.zip

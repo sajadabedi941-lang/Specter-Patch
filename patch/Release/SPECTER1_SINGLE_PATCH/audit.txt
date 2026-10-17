@@ -1,0 +1,150 @@
+SPECTER1 SINGLE PATCH AUDIT
+Baseline: SPECTER1.part001.rar -> SPECTER1.part069.rar only
+DATA1 unused. Previous PRs/releases unused. ART not rebuilt.
+
+ORIG_DATA_SIZE = 364979021
+ORIG_DATA_SHA256 = 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+ORIG_DATA_FILE_COUNT = 2804
+
+NEW_DATA_SIZE = 364982811
+NEW_DATA_SHA256 = 6ae10e3a72769b47412345483b4b78b57f60b2d926b9f81bf81a26aa3d37b6d5
+NEW_DATA_FILE_COUNT = 2806
+
+ORIG_ART_SIZE = 1235909246
+ORIG_ART_SHA256 = 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART_CHANGED = NO
+
+AIRBASE_ARCHITECTURE_CHANGED = NO
+MISSING_PATHS = []
+ADDED_PATH_COUNT = 2
+MODIFIED_PATH_COUNT = 69
+CHANGED_PATH_COUNT = 71
+
+PACKER = BIGF uncompressed payloads, archive-size BIG-ENDIAN, original path order preserved, new files appended.
+
+==================================================
+LIST_ALL_CHANGED_PATHS
+==================================================
+ADDED
+  Data\INI\CommandSet_Iraq.ini
+    Last-win Iraq_HeavyAirBaseCommandSet: empty slot 3 now builds existing RussiaJetTu22M3M. HeavyAirBase object untouched.
+  Data\INI\Weapon_Tu22.ini
+    Last-win existing Tu-22M3 / Tu-22M3M FAB500 bomb weapons with a slight Primary/Secondary damage increase. No new weapon names.
+
+MODIFIED
+  Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetL159.ini
+    Ground gun/rocket/bomb WeaponSet removed. PRIMARY = existing IraqJetMig21_WpnIR (air-to-air missiles only). Object/behavior otherwise unchanged.
+  Data\INI\Object\Specter\Iraq Army\APC\BTR90.ini
+    Barracks Prerequisites gate removed. Object/model unchanged. War Factory production remains the building requirement.
+  Data\INI\Object\Specter\Iraq Army\Wheeled\AbbasLauncher.ini
+    Iraq_Alhussaien BuildCost=15000, BuildTime=1200.0 seconds (20 minutes). Object, missile behavior, visuals unchanged.
+  Data\INI\Object\Specter\Iraq Army\Airforce\IraqJetMig21.ini
+    MiG-21Bis Scale 0.82 -> 0.94. Tertiary bomb IraqJetMig21_WpnBomb -> existing Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\Iranian Army\Airforce\IranJetMig21Bis.ini
+    MiG-21Bis Scale 0.92 -> 1.06. Tertiary Iran_Weapon_Bomb_Mig21 -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetMig21.ini
+    MiG-21Bis Scale 0.92 -> 1.06. Tertiary LibyaJetMig21_WpnBombHvy -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetMig21.ini
+    MiG-21Bis Scale 0.82 -> 0.94. Tertiary NorthKoreaJetMig21_WpnBomb -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetMig21.ini
+    MiG-21Bis Scale 0.94 -> 1.08. Tertiary SyriaJetMig21_WpnBomb -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Airforce\UkraineJetMig21.ini
+    MiG-21Bis Scale 0.94 -> 1.08. Tertiary UkraineJetMig21_WpnBombMed -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\Vietnam People's Army\Airforce\VietnamJetMig21.ini
+    MiG-21Bis Scale 0.84 -> 0.97. Tertiary VietnamJetMig21_WpnBomb -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetMig21PF.ini
+    MiG-21PF Scale 0.90 -> 1.03. Tertiary gun -> existing Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\PLA\Airforce\J7.ini
+    J-7 Scale 1.22 -> 1.40. China_Weapon_FAB_J7 -> Kab500_LeaserGuidedBomb; China_Weapon_FAB2_J7 -> 2x_ODAB_500_PMV_SU24_LR. Rockets kept.
+  Data\INI\Object\Specter\Libyan Armed Forces\Airforce\LibyaJetJ7.ini
+    J-7 Scale 0.94 -> 1.08. Tertiary China_Weapon_FAB_J7 -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetJ7.ini
+    J-7 Scale 0.94 -> 1.08. Tertiary Kab500_LeaserGuidedBomb -> China_Weapon_FAB_J7 (already had Kab500).
+  Data\INI\Object\Specter\Syrian Arab Army\Airforce\SyriaJetJ7.ini
+    J-7 Scale 0.94 -> 1.08. Tertiary 2x_ODAB_500_PMV_SU24_LR -> Kab500_LeaserGuidedBomb.
+  Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaJetJ7B.ini
+    J-7B Scale 0.92 -> 1.06. Tertiary China_Weapon_Bomb_Q5 -> Kab500_LeaserGuidedBomb.
+
+  Remaining modified paths: drone unit Prerequisites Science= / RequiredScience lines removed only. Building Object= prerequisites kept. Drone objects not deleted.
+
+  Data\INI\Object\Specter\Arabic Alliance\UAV\CH4B.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Drones\Lancet3.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Drones\Orion2.ini
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Infantry\FPVDroneOperator.ini
+  Data\INI\Object\Specter\British Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\British Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\Egyptian Armed Forces\Drones\Egypt_CombatDrone.ini
+  Data\INI\Object\Specter\Egyptian Armed Forces\UAV\Rq20B.ini
+  Data\INI\Object\Specter\Egyptian Armed Forces\UAV\Wingloong1.ini
+  Data\INI\Object\Specter\French Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\French Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\German Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\German Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_CombatDrone.ini
+  Data\INI\Object\Specter\Indian Armed Forces\Drones\India_LoiteringDrone.ini
+  Data\INI\Object\Specter\Iranian Army\Drones\Arash2.ini
+  Data\INI\Object\Specter\Iranian Army\Drones\Shahed121.ini
+  Data\INI\Object\Specter\Iranian Army\Drones\Shahed129.ini
+  Data\INI\Object\Specter\Iranian Army\Drones\Shahed136.ini
+  Data\INI\Object\Specter\Iranian Army\Iran_System.ini
+  Data\INI\Object\Specter\Iraq Army\Drones\Ababil200.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Drones\Herms900.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Drones\IAI_Harop.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Israel_Systems.ini
+  Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Eitan MGS.ini
+  Data\INI\Object\Specter\Italian Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\Italian Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Systems.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Drones\Libya_CombatDrone.ini
+  Data\INI\Object\Specter\Libyan Armed Forces\Drones\Libya_LoiteringDrone.ini
+  Data\INI\Object\Specter\NATO\Nato_Systems.ini
+  Data\INI\Object\Specter\NATO\UAV\Mq9.ini
+  Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Drones\Pakistan_CombatDrone.ini
+  Data\INI\Object\Specter\Pakistan Armed Forces\Drones\Pakistan_LoiteringDrone.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Drones\SaudiArabia_CombatDrone.ini
+  Data\INI\Object\Specter\Saudi Arabia Armed Forces\Drones\SaudiArabia_LoiteringDrone.ini
+  Data\INI\Object\Specter\South African National Defence Force\Drones\SouthAfrica_CombatDrone.ini
+  Data\INI\Object\Specter\South African National Defence Force\Drones\SouthAfrica_LoiteringDrone.ini
+  Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\Swedish Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Drones\Syria_CombatDrone.ini
+  Data\INI\Object\Specter\Syrian Armed Forces\Drones\Syria_LoiteringDrone.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\Turkish Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\Nato_Systems.ini
+  Data\INI\Object\Specter\Ukrainian Armed Forces\UAV\Mq9.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Drones\UAE_CombatDrone.ini
+  Data\INI\Object\Specter\United Arab Emirates Armed Forces\Drones\UAE_LoiteringDrone.ini
+  Data\INI\Object\Specter\United States Of America\Drones\Mq9.ini
+  Data\INI\Object\Specter\United States Of America\USA_System.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_Systems.ini
+
+==================================================
+REQUEST FLAGS
+==================================================
+IRAQ_L159_AIR_TO_AIR_ROLE = YES
+IRAQ_TU22M3_ADDED = YES
+  Note: SPECTER1 has no separate Russian object named Tu-22M3. Live Russian bomber is RussiaJetTu22M3M. That existing Russian object is now on Iraq HeavyAirBase slot 3. Iraq_Tu-22M3 object was not replaced.
+RUSSIA_TU22_BOMB_CHANGED = YES
+  3x_FAB500_TU22M3M_CRF / CRB / 2x_FAB500_TU22M3M_WR PrimaryDamage 780 -> 860, SecondaryDamage 100 -> 115.
+IRAQ_TU22_BOMB_CHANGED = YES
+  3x_Fab500_TU22M3_RightRack / LeftRack / 2x_Fab500_TU22M3_Center PrimaryDamage 300 -> 345, SecondaryDamage 50 -> 60.
+  Shared-weapon side effect: NorthKoreaJetTu22M3M and VietnamJetTu22M3M use the same TU22M3M FAB500 names, so they inherit the Russia bomb numbers. No duplicate weapons created.
+DRONE_UPGRADE_GATES_REMOVED = YES
+IRAQ_BTR90_UNLOCKED = YES
+MIG21PF_SIZE_CHANGED = YES
+MIG21BIS_SIZE_CHANGED = YES
+J7_SIZE_CHANGED = YES
+J7B_SIZE_CHANGED = YES
+IRAQ_ALHUSSIEN_COST = 15000
+IRAQ_ALHUSSIEN_BUILD_TIME = 20_MINUTES
+
+ART_CHANGED = NO
+AIRBASE_ARCHITECTURE_CHANGED = NO
+STATIC_VALIDATION = PASS
+INGAME_TESTED = NO
+
+Not in this patch (out of named family list):
+  MiG-21MF, MiG-21 Bison, F-7N, F-7PG, VietnamJetMig21bis (file comment is MiG-21MF).

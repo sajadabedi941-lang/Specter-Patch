@@ -1,0 +1,24 @@
+SPECTER1 Vietnam + Syria Roster 01
+
+Continues from SPECTER1_Aircraft_Standardization_01_CRASHFIX_TEST DATA and SPECTER1_Shadow_AH1Z_ART_01 ART.
+Does not rebuild from older SPECTER archives. Does not overwrite previous GitHub Releases.
+
+Vietnam:
+- Yak-130 visual: no dedicated Yak-130 W3D exists in current ART. Switched DefaultConditionState from LSFT50 (T-50 family) to LSFT50d, the live Italy M-346 / Yak-130-family mesh. Button/side preserved.
+- MiG-29 scale 0.90 -> 1.00. F-5E scale 0.80 -> 0.90.
+- Mi-17: fixed missing weapons/CAN_ATTACK; damaged mesh Egy_MI17D; combat fire from VietnamHelicopterMi8AMTSh weapon 16x_80mm_S8_Rockets_Mi17. Model remains Egy_MI17.
+- Airfield fighters 7 -> 12 by adding existing VietnamJetMig21bis, Su22M4, Su30MK2, Su27UB, L39.
+- Bomb diversity across 12 fighters using existing Weapon.ini families (GBU-12/24/31/38/39, Mk-82, KAB-500/2500, ODAB, Paveway IV, Q-5). STD44 VietnamJetSu27 FAB-500 left unchanged.
+- Added VietnamJetB21 clone of AmericaJetB21Clean at cost 15000. USA B-21 not modified.
+- Added existing VietnamHelicopterKa52M to HeavyAirBase.
+
+Syria:
+- MiG-21bis (SyriaJetMig21) 1.08 -> 1.18. MiG-21MF 0.96 -> 1.08.
+- Replaced tank-icon aircraft buttons (irq_t72a / us_airfield / us_commandcenter) with irq_mig29a, irq_miragef, irq_su25k, irq_mi8t, yier76. SPEC_SyriaJet* buttons were already correct.
+- Added SyriaBomberH6K clone of live ChinaBomberH6K at cost 20000. China H-6K not modified.
+- Bomb diversity across Syrian fighters using existing families. STD44 SyriaJetJ7 KAB-500 left unchanged.
+- Barracks production replaced with Iraq infantry roster. Old Syria infantry buttons removed from production only.
+- Stripped Science/RequiredScience/NeededUpgrade unit locks on Syria object INIs. Promoted Syria_Su-25K PLAYER_UPGRADE WeaponSet to default. Building-chain Object prerequisites kept.
+
+No Weapon.ini new entries. No airbase architecture change. No Iraq Su-24MR / USA / Russia / China donor edits. ART packed unchanged.
+INGAME_TESTED = NO

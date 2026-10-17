@@ -1,0 +1,11 @@
+SPECTER1 Aircraft Standardization 01 CRASHFIX TEST
+
+Baseline: exact PR #491 packed DATA. No ART. Does not overwrite SPECTER1_Aircraft_Standardization_01.
+
+ROOT_CAUSE: China_Update_01.ini lived under Data\INI\Object\ and contained a top-level CommandSet block. Zero Hour's Object parser rejects CommandSet there (ReleaseCrashInfo: CommandSet ChinaBarracksCommandSet_CHINA01).
+
+FIX: Moved ChinaBarracksCommandSet_CHINA01 into Data\INI\CommandSet.ini with the exact China Unlock slots. Removed the empty/invalid Object overlay.
+
+Same illegal overlay class existed in USA_Update_01.ini (MappedImage / CommandButton / CommandSet). Those blocks were relocated to CommandButton.ini, CommandSet.ini, and MappedImages\HandCreated\USA_AH1Z_Images.INI so init cannot crash on the next Object file. Airfield/LargeAirBase objects still use the unique _USA01 CommandSet names. Slots unchanged.
+
+No 44-target airframe edits. No Iraq_Su-24MR edit. No Weapon.ini edit. No ART.

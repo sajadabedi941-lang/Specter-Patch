@@ -1,0 +1,34 @@
+SPECTER SAETBYOL CRASH FIX — CHANGE LOG
+
+Source DATA/ART: Specter_Aircraft_Global_Update_Final pack
+  DATA SHA256 e36dfbe341af7a2755618cdac2cbacd6d2cad05838f7cb3554971b039e57dca5
+Status: INI_PARSE_OK + PACKED_AUDIT_OK (static). This environment cannot launch Zero Hour.
+
+WHAT CRASHED
+The previous Saetbyol object was cloned from FranceAircraftE3 with a broken
+Python regex. VisionRange/ShroudClearingRange replacements used \\11100 and
+\\11200, which Python treated as octal escapes producing garbage tokens I00
+and J00. The draw also kept E3 ENGINE01-04 ParticleSysBones and an invented
+AVReaper.AVReaper animation on the Dozor-600 / AVReaper model (which only
+has Wingtip01/02 and CHASSIS).
+
+FIX (one DATA file only)
+- Data\INI\Object\Specter\North Korea\Airforce\NorthKoreaUAVSaetbyol.ini
+  Rewritten as a reconnaissance UAV:
+  - Object NorthKoreaUAVSaetbyol (matches CommandButton / CommandSet / CSF)
+  - Side = NorthKorea
+  - Draw = W3DModelDraw using AVReaper / AVReaper_D / AVReaper_D1
+    bones Wingtip01, Wingtip02, CHASSIS (same as working Dozor-600)
+  - No weapons, no WeaponSet, no CAN_ATTACK
+  - KindOf includes REVEALS_ENEMY_PATHS
+  - StealthDetectorUpdate (rate 1500, range 3600)
+  - CommandSet = AmericaE3AWACSCommandSet (SAR scan / AttackMove / Guard / Stop)
+  - OCLSpecialPower AmericaE3TargetedSARScan
+  - VisionRange 1100 / ShroudClearingRange 1200
+  - Locomotor Saturn_AL-41F + BasicJetTaxiLocomotor (existing)
+
+NOT TOUCHED
+- Any other aircraft object
+- PlayerTemplate, Science, Ground, War Factory
+- CommandButton.ini / CommandSet.ini / other countries
+- ART (_SPEC_ART_ONE.big bytes unchanged)

@@ -1,0 +1,8 @@
+DATA SHA256  e36dfbe341af7a2755618cdac2cbacd6d2cad05838f7cb3554971b039e57dca5
+DATA bytes   365019957
+ART SHA256   2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+ART bytes    1235909246
+ZIP SHA256   f800f88654d962fbfc3e5a0bca49efe6b63167ada938311e37ec63fcec639d8c
+ZIP          Specter_Aircraft_Global_Update_Final.zip
+Status       PACKED_AUDIT_OK
+Note         This environment cannot launch Zero Hour. User in-game tests remain authoritative.

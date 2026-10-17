@@ -1,0 +1,40 @@
+E737 + C17 FIX = PASS (structural readiness; in-game untested)
+
+E-737:
+Object = AmericaJetE737Visual
+Old Scale = 0.8
+New Scale = 1.1
+W3D changed = NO (KVE737)
+Gameplay changed = NO
+
+C-17:
+Object = AmericaJetC17Visual
+Primary W3D = IUAC17HXNew
+Visual scale changed = NO
+
+Flight reference Object = AmericaJetAC130
+Reason selected = Proven large fixed-wing NeedsRunway aircraft already building from America_HeavyAirBase with stable taxi/takeoff/return; uses dedicated AC130Locomotor (high Lift, low MinTurnSpeed) and HeavyAirBase-safe collision geometry. B-21/B-1R use tiny GeometryIsSmall fighter-like boxes; E-3 shares the same broken large-airframe fighter locomotor pattern as C-17.
+
+Root cause of takeoff/landing issue = C-17 used fighter locomotor F100_PW_229 (Lift=117, MinTurnSpeed=120) with oversized collision (Major=55.0/Minor=16.0/Height=14.0) and Mass=800.0, plus JetAI MinHeight=1 / TakeoffDistForMaxLift=0% — poor runway clearance and lift profile for HXUSABigAirPort vs working AC-130.
+
+Changed:
+Locomotor = F100_PW_229 -> AC130Locomotor (taxi BasicJetTaxiLocomotor unchanged)
+JetAIUpdate = MinHeight 5, ParkingOffset 10, TakeoffPause 900, TakeoffDistForMaxLift 25%, ReturnToBaseIdleTime 12000 (kept NeedsRunway=Yes, KeepsParkingSpaceWhenAirborne=Yes, OutOfAmmoDamagePerSecond=0%, AutoAcquireEnemiesWhenIdle=No)
+Physics = Mass 800.0 -> 500.0
+Geometry = Major 55.0->42.0, Minor 16.0->14.0, Height 14.0->14.0 (match AC-130 proven HeavyAirBase clearance; visual unchanged)
+Airfield-related settings = JetAI runway fields above
+
+C-17 weapons = NONE
+
+C-17 build = READY
+C-17 takeoff structure = READY
+C-17 landing structure = READY
+C-17 return-to-parking structure = READY
+
+HeavyAirBase 3+3 parking changed = NO
+Other aircraft changed = NO
+Other factions changed = NO
+ART changed = NO (ART present C17=True E737=True)
+DATA sha256 = 1a0bde93eeb3dab932188a8b68202ab19d3421987e52445a766cbe91c1a5728f
+
+NOTE = In-game takeoff/landing not executed in this environment; report is structural readiness only.

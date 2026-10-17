@@ -1,0 +1,133 @@
+NON-USA MATCH ENTRY CRASH — DIAGNOSIS (PACKED RELEASE AUDIT)
+============================================================
+Packed baseline audited:
+  patch/Release/SPECTER_USA_E3_RESTORE_B21_ROUTING/_SPEC_DATA_ONE.big
+  (930 entries; Specter Object factions present: USA + PatchSystems only)
+
+CRASH_REASON = ReleaseCrashInfo.txt NOT FOUND in workspace/game dirs
+CRASH_FILE = (no crash log available — diagnosis from packed init refs)
+CRASH_BLOCK = PlayerTemplate StartingUnit1 / StartingBuilding spawn
+CRASH_LINE = N/A
+
+USA_RUNTIME_STATUS = WORKING
+
+NON_USA_CRASH_STAGE = Match initialization / starting-unit spawn
+  (PlayerTemplate StartingBuilding + StartingUnit0/1 resolution)
+
+COMMON_NON_USA_DEPENDENCY =
+  PlayerTemplate StartingUnit1 = <Faction>SystemSpecialPowerShortcut
+  Specter-only immortal “special power shortcut” system object
+
+PROVEN_ROOT_CAUSE =
+  Current USA aircraft DATA BIGs are surgically stripped (~930 files).
+  They retain AmericaSystemSpecialPowerShortcut (USA_System.ini) but omit
+  nearly all non-USA Specter Object trees, including every other faction’s
+  *SystemSpecialPowerShortcut object definition.
+
+  PlayerTemplate still references those missing objects as StartingUnit1.
+  Engine fails when spawning the missing ThingTemplate at match start.
+
+  Additionally, Specter-native factions (Russia/Iran/Nato/Iraq/…) also lack
+  StartingBuilding / StartingUnit0 Object defs in this pack (not in stock ZH).
+
+ROOT_CAUSE_FILE =
+  Data\INI\PlayerTemplate.ini  (references)
+  Missing Object defs that should come from e.g.:
+    Data\INI\Object\Specter\PLA\China_System.ini
+    Data\INI\Object\Specter\Armed Forces Of Russian Federation\Russia_System.ini
+    Data\INI\Object\Specter\Iranian Army\Iran_System.ini
+    … (present in Specter_Data.zip donor, absent from current packed BIG)
+
+ROOT_CAUSE_BLOCK =
+  PlayerTemplate FactionChina / FactionRussia / FactionIran / …
+    StartingUnit1 = ChinaSystemSpecialPowerShortcut / Russia… / Iran…
+
+ROOT_CAUSE_REFERENCE =
+  ChinaSystemSpecialPowerShortcut (and siblings) — Object definition MISSING
+  in packed BIG; CommandSet SpecialPowerShortcutChinaCommandSet EXISTS
+
+WHY_USA_DOES_NOT_CRASH =
+  FactionAmerica StartingBuilding=AmericaCommandCenter EXISTS (packed)
+  StartingUnit0=AmericaVehicleDozer EXISTS (packed)
+  StartingUnit1=AmericaSystemSpecialPowerShortcut EXISTS
+    in Data\INI\Object\Specter\United States Of America\USA_System.ini
+
+WHY_OTHER_FACTIONS_CRASH =
+  Same PlayerTemplate pattern, but their SystemSpecialPowerShortcut Objects
+  were dropped from the stripped DATA pack. Specter-native CCs/dozers also
+  missing for Russia/Iran/Nato/Iraq/NorthKorea.
+
+--------------------------------------------------
+FIRST BROKEN REFERENCES
+--------------------------------------------------
+CHINA_FIRST_BROKEN_REFERENCE =
+  StartingUnit1 = ChinaSystemSpecialPowerShortcut  (Object MISSING in pack)
+  Note: ChinaCommandCenter + ChinaVehicleDozer exist in STOCK ZH INIZH,
+        so China likely dies first on StartingUnit1 (Specter-only).
+
+RUSSIA_FIRST_BROKEN_REFERENCE =
+  StartingBuilding = RussiaCommandCenter  (MISSING in pack AND stock ZH)
+  Also: RussiaVehicleDozer MISSING; RussiaSystemSpecialPowerShortcut MISSING
+
+IRAN_FIRST_BROKEN_REFERENCE =
+  StartingBuilding = IranCommandCenter  (MISSING in pack AND stock ZH)
+  Also: IranVehicleDozer MISSING; IranSystemSpecialPowerShortcut MISSING
+
+--------------------------------------------------
+MATRIX (PACKED BIG + stock ZH where noted)
+--------------------------------------------------
+                     USA     China          Russia         Iran
+PlayerTemplate       VALID   VALID          VALID          VALID
+StartingBuilding     EXISTS  STOCK_EXISTS   MISSING        MISSING
+StartingBuilder      EXISTS  STOCK_EXISTS   MISSING        MISSING
+StartingUnit1/SPS    EXISTS  MISSING        MISSING        MISSING
+Sci/CS refs          EXISTS  EXISTS         EXISTS         EXISTS
+Initialization       OK      FAIL@Unit1     FAIL@Building  FAIL@Building
+
+Packed Specter Object INIs: 179
+Loose source Specter Object INIs: ~1328
+Donor with missing Systems: Specter_Data.zip (multivolume)
+
+--------------------------------------------------
+SCANS
+--------------------------------------------------
+PLAYER_TEMPLATE_SCAN =
+  Playable templates in pack: America, China, Russia, Iran, GLA, Nato,
+  Iraq, NorthKorea, Boss, AmericaAirForceGeneral
+  Turkey/Saudi/Egypt/Britain PlayerTemplates: not in this packed PlayerTemplate.ini
+
+STARTING_OBJECT_SCAN =
+  Only USA (+ Boss) have Specter StartingBuilding/Unit Objects packed.
+  China/GLA can lean on stock ZH for CC/Dozer; still missing SPS shortcut.
+  Russia/Iran/Nato/Iraq/NK: Specter CC/Dozer/SPS all missing from pack.
+
+COMMANDSET_SCAN =
+  SpecialPowerShortcut* CommandSets for China/Russia/Iran/GLA/Nato/Iraq:
+  EXIST in packed CommandSet.ini (not the failure).
+
+SCIENCE_SCAN =
+  IntrinsicSciences + PurchaseScienceCommandSets for playable factions: EXIST
+
+UPGRADE_SCAN =
+  No upgrade-missing evidence required for match-entry of these templates
+
+STRATEGY_CENTER_REFERENCE_SCAN =
+  Not the first common failure for match entry; StartingUnit1 SPS missing
+  is sufficient and common across non-USA templates.
+
+--------------------------------------------------
+MINIMAL_FIX_REQUIRED
+--------------------------------------------------
+1) Restore non-USA SystemSpecialPowerShortcut Object INIs into the DATA BIG
+   (ThingFactory path: Data\INI\Object\…).
+   China first: PLA/China_System.ini from Specter_Data.zip
+
+2) For Specter-native factions (Russia/Iran/Nato/…), also restore their
+   StartingBuilding + StartingUnit0 Object definitions (full faction Object
+   trees), not only the shortcut.
+
+3) Long-term: stop shipping surgically USA-only DATA BIGs that drop other
+   factions’ Object folders; merge USA aircraft changes into a FULL Specter
+   DATA baseline.
+
+DO NOT modify USA aircraft / Airfield / B-2 / B-21 / B-52H / F-117 to fix this.

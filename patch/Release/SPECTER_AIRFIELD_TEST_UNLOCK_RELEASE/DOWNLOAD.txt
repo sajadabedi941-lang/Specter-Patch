@@ -1,0 +1,23 @@
+SPECTER_AIRFIELD_TEST_UNLOCK_RELEASE — PUBLIC DOWNLOAD
+======================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/kln8jo.zip
+
+Branch: cursor/airfield-test-unlock-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  8d3518a73ebd77cd2a74b0d1a76a9c68d78e9aeefca4b5a2fd3386671d831669
+SHA256 DATA: abef3761f604fedaea1498cc0d8404499c9668845e5fb279c32615c70a2d43c9
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+TEMPORARY TEST UNLOCK — USA Airfield aircraft production:
+  Cleared Science / Rank / RequiredObject / StrategyCenter-class gates
+  All Airfield-produced America aircraft use Ignore_Prerequisites
+  Cost / MaxSimultaneousOfType / Draw / Model / Weapon / AI / Locomotor unchanged
+  For testing before B-21 — not a permanent balance change
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

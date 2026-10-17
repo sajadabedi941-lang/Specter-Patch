@@ -1,0 +1,15 @@
+SPECTER_B2_AMMO10_FIX — chain audit
+===================================
+
+Actual weapon used by AmericaJetB2:
+  WeaponSet PRIMARY = USA_B2_Spirit_BunkerBuster
+
+Verified ClipSize=10 in packaged DATA BIG for:
+  Data\INI\Weapon.ini
+  Data\INI\Weapon_B2_Complete.ini
+  Data\INI\Weapon_B2_Spirit.ini
+  Data\INI\ZZZZZZZZ_ZZZZ_USA_B2_STRIKE_COOLDOWN.ini
+  Data\INI\ZZZZZZZZ_ZZZ_USA_B2_ZZ_AMMO_CLIP.ini  (absolute last-wins ammo)
+
+Weapon.ini change was surgical (ClipSize/ClipReloadTime/AutoReloadsClip only
+on USA_B2_Spirit_BunkerBuster). Full stock Weapon.ini body preserved.

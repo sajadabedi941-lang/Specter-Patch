@@ -1,0 +1,10 @@
+Install SPECTER_B2_STRIKE_COOLDOWN
+=================================
+
+1. Download ZIP from DOWNLOAD.txt
+2. Extract _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big
+3. Replace prior Specter ONE.big pair in the game Data folder
+4. Launch and verify:
+   - B-2 still builds from USA Airfield
+   - After emptying bunker-buster clip, attack is unavailable
+   - After ~5 minutes, attack returns without landing / spending money

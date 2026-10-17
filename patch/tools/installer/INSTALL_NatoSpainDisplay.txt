@@ -1,8 +1,9 @@
-SPECTER — NATO display name → Spain
-===================================
+SPECTER — NATO display name and flag → Spain
+============================================
 
-This overlay only renames the existing playable NATO faction's visible
-country name. It does not replace NATO gameplay, copy another roster, or
+This overlay renames the existing playable NATO faction's visible country
+name and replaces its USA/NATO identity flag artwork with the Spanish
+national flag. It does not replace NATO gameplay, copy another roster, or
 change internal identifiers.
 
 Install
@@ -15,9 +16,9 @@ Launch_Specter.bat from this folder):
   _SPEC_ART_ONE.big
 
 Do not rename 0_SPECTER_NatoSpainDisplay.big to zz_ or put it inside Data\
-or Art\. Zero Hour registers 0_* archives first (overwrite=FALSE), so this
-named Data\English\generals.csf wins over _SPEC_DATA_ONE.big from new-game
-faction selection onward.
+or Art\. Zero Hour registers 0_* archives first (overwrite=FALSE), so named
+Data\English\generals.csf and Data\INI\PlayerTemplate.ini in this overlay
+win over _SPEC_DATA_ONE.big from new-game faction selection onward.
 
 Visible rename (English CSF)
 ----------------------------
@@ -26,19 +27,26 @@ SIDE:Nato                      Nato Armies  →  Spanish Armed Forces
 GUI:BioFeatures_Nato           Europe/USA bio first line → Spanish Armed Forces
 TOOLTIP:BioStrategyLong_Nato   prefixed with Spanish Armed Forces
 
-Packed DATA ships English generals.csf only. Peer factions already use
-"British / French / Italian Armed Forces", and the existing missile kit
-lives under "Spanish Armed Forces", so the display string is English
-"Spanish Armed Forces" rather than España.
+Identity artwork (FactionNato only)
+-----------------------------------
+Art\Textures\ES_Flag.tga — 128x64 Spanish flag (red-yellow-red, coat of arms).
+NT_Flag.tga was inspected and is the NATO compass rose; it is unused and
+was not retargeted.
+
+FactionNato identity slots now use unique Spain mapped images:
+  FlagWaterMark  = WatermarkSpain   (full ES_Flag)
+  EnabledImage   = SSObserverSpain  (center 64x64 crop)
+  SideIconImage  = GameinfoSpain    (center 64x64 crop)
+  GeneralImage   = Spain_Logo       (center 64x64 crop)
+
+FactionAmerica still uses WatermarkUSA / SSObserverUSA / GameinfoAMRCA /
+USA_Logo. LoadScreenImage stays SAFactionLogoPage_US, matching Britain,
+France, and Italy.
 
 Unchanged
 ---------
-PlayerTemplate FactionNato, Side=Nato, Nato* objects, CommandSets, AI,
-sciences, weapons, missiles, prices, stats, models, textures, flags.
-FlagWaterMark / EnabledImage / LoadScreenImage / SideIconImage stay on
-the accepted USA identity images because WatermarkSpain, SSObserverSpain,
-GameinfoSpain, and ES_Flag are not in packed ART/DATA. NT_Flag.tga is
-unused and is not invented as a Spain flag.
+PlayerTemplate name FactionNato, Side=Nato, Nato* objects, CommandSets, AI,
+sciences, weapons, missiles, prices, stats, unit/building models.
 
 Challenge "NATO Forces" / USA Laser General / USA SuperWeapon General
 strings are other factions and are left as internal/technical leftovers.

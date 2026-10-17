@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
-"""Rename the playable NATO faction's visible country name to Spain.
+"""Rename the playable NATO faction's visible country name and flag to Spain.
 
 Patches packed Data\\English\\generals.csf so FactionNato's DisplayName,
 in-game SIDE name, and country-selection bio/tooltip show Spanish Armed
-Forces (English CSF convention, matching British/French/Italian Armed
-Forces). Internal Side=Nato, FactionNato, objects, and ART are unchanged.
+Forces. Retargets FactionNato identity images to ES_Flag (Spanish national
+flag) via unique WatermarkSpain / SSObserverSpain / GameinfoSpain /
+Spain_Logo mapped images. Internal Side=Nato, FactionNato, objects, and
+unrelated ART stay unchanged.
 
-Writes first-wins overlay 0_SPECTER_NatoSpainDisplay.big containing only
-the patched CSF. Win32BIGFileSystem overwrite=FALSE: 0_* registers before
-_SPEC_DATA_ONE.big, so this named CSF wins at game start.
+Writes first-wins overlay 0_SPECTER_NatoSpainDisplay.big. Named files
+(generals.csf, PlayerTemplate.ini) win over _SPEC_DATA_ONE.big; unique
+Spain mapped-image and texture paths are additive.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import re
 import struct
 from pathlib import Path
 
@@ -30,6 +33,22 @@ DEFAULT_MANIFEST = Path(
 )
 
 CSF_NAME = "Data\\English\\generals.csf"
+PT_NAME = "Data\\INI\\PlayerTemplate.ini"
+SPAIN_IMAGES_NAME = "Data\\INI\\MappedImages\\HandCreated\\Spain_FactionImages.INI"
+ES_FLAG_NAME = "Art\\Textures\\ES_Flag.tga"
+REPO_ROOT = SCRIPT_DIR.parents[2]
+ES_FLAG_SRC = REPO_ROOT / "patch" / "Art" / "Textures" / "ES_Flag.tga"
+SPAIN_IMAGES_SRC = (
+    REPO_ROOT / "patch" / "Data" / "INI" / "MappedImages" / "HandCreated"
+    / "Spain_FactionImages.INI"
+)
+
+NATO_IDENTITY_LINES = (
+    ("FlagWaterMark     = WatermarkUSA", "FlagWaterMark     = WatermarkSpain"),
+    ("EnabledImage      = SSObserverUSA", "EnabledImage      = SSObserverSpain"),
+    ("SideIconImage     = GameinfoAMRCA", "SideIconImage     = GameinfoSpain"),
+    ("GeneralImage      = USA_Laser", "GeneralImage      = Spain_Logo"),
+)
 
 # English CSF only in packed DATA. Peer convention is "X Armed Forces".
 # Object kit already lives under Data\\INI\\Object\\Specter\\Spanish Armed Forces\\.
@@ -157,11 +176,41 @@ def write_csf(recs: list[tuple[str, str]]) -> bytes:
     return bytes(out)
 
 
-def extract_csf(entries, raw) -> bytes:
+def extract_named(entries, raw, want: str) -> bytes:
+    key = want.replace("/", "\\").lower()
     for name, off, size in entries:
-        if name.replace("/", "\\").lower() == CSF_NAME.lower():
+        if name.replace("/", "\\").lower() == key:
             return raw[off : off + size]
-    raise SystemExit(f"{CSF_NAME} missing from DATA BIG")
+    raise SystemExit(f"{want} missing from DATA BIG")
+
+
+def extract_csf(entries, raw) -> bytes:
+    return extract_named(entries, raw, CSF_NAME)
+
+
+def patch_faction_nato_identity(pt_text: str) -> str:
+    m = re.search(r"(PlayerTemplate FactionNato\b.*?\nEnd)", pt_text, re.S)
+    if not m:
+        raise SystemExit("PlayerTemplate FactionNato block missing")
+    block = m.group(1)
+    new = block
+    for old, repl in NATO_IDENTITY_LINES:
+        if old not in block:
+            raise SystemExit(f"FactionNato missing identity line: {old}")
+        if block.count(old) != 1:
+            raise SystemExit(f"FactionNato identity line not unique: {old}")
+        new = new.replace(old, repl, 1)
+    if "Side              = Nato" not in new:
+        raise SystemExit("FactionNato Side=Nato was lost")
+    if "DisplayName       = INI:FactionNatoForces" not in new:
+        raise SystemExit("FactionNato DisplayName key was lost")
+    if "WatermarkUSA" in new or "SSObserverUSA" in new or "GameinfoAMRCA" in new:
+        raise SystemExit("FactionNato still references USA identity images")
+    return pt_text[: m.start(1)] + new + pt_text[m.end(1) :]
+
+
+def crlf_ini(text: str) -> bytes:
+    return text.replace("\r\n", "\n").replace("\n", "\r\n").encode("latin1")
 
 
 def main() -> int:
@@ -206,13 +255,63 @@ def main() -> int:
     if len(verify) != len(recs):
         raise SystemExit("label count changed")
 
-    overlay = build_big({CSF_NAME: csf_out})
+    pt_blob = extract_named(entries, raw, PT_NAME)
+    pt_text = pt_blob.decode("latin1")
+    america_before = re.search(
+        r"PlayerTemplate FactionAmerica\b.*?\nEnd", pt_text, re.S
+    )
+    if not america_before:
+        raise SystemExit("FactionAmerica missing before identity patch")
+    pt_patched = patch_faction_nato_identity(pt_text)
+    america_after = re.search(
+        r"PlayerTemplate FactionAmerica\b.*?\nEnd", pt_patched, re.S
+    )
+    if america_after.group(0) != america_before.group(0):
+        raise SystemExit("FactionAmerica identity leaked Spain assets")
+    if "WatermarkSpain" not in pt_patched or "GameinfoSpain" not in pt_patched:
+        raise SystemExit("FactionNato Spain identity images not applied")
+    if pt_patched.count("WatermarkSpain") != 1:
+        raise SystemExit("WatermarkSpain leaked beyond FactionNato")
+
+    if not ES_FLAG_SRC.is_file():
+        raise SystemExit(f"missing {ES_FLAG_SRC}")
+    es_flag = ES_FLAG_SRC.read_bytes()
+    if es_flag[:18] != bytes([0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 64, 0, 32, 8]):
+        raise SystemExit("ES_Flag.tga header does not match peer 128x64 32-bit TGA")
+    if len(es_flag) != 32786:
+        raise SystemExit(f"ES_Flag.tga size {len(es_flag)} != 32786")
+
+    if not SPAIN_IMAGES_SRC.is_file():
+        raise SystemExit(f"missing {SPAIN_IMAGES_SRC}")
+    spain_images = crlf_ini(SPAIN_IMAGES_SRC.read_text(encoding="latin1"))
+    for token in (
+        b"MappedImage WatermarkSpain",
+        b"MappedImage SSObserverSpain",
+        b"MappedImage GameinfoSpain",
+        b"MappedImage Spain_Logo",
+        b"Texture = ES_Flag",
+    ):
+        if token not in spain_images:
+            raise SystemExit(f"Spain_FactionImages.INI missing {token!r}")
+
+    overlay = build_big(
+        {
+            CSF_NAME: csf_out,
+            PT_NAME: pt_patched.encode("latin1"),
+            SPAIN_IMAGES_NAME: spain_images,
+            ES_FLAG_NAME: es_flag,
+        }
+    )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_bytes(overlay)
 
     ov_entries, ov_raw = read_big(args.out)
     ov_files = [n.replace("/", "\\") for n, _, _ in ov_entries]
-    if ov_files != [CSF_NAME]:
+    expect = sorted(
+        [CSF_NAME, PT_NAME, SPAIN_IMAGES_NAME, ES_FLAG_NAME],
+        key=str.lower,
+    )
+    if ov_files != expect:
         raise SystemExit(f"overlay contents unexpected: {ov_files}")
 
     manifest = {
@@ -238,12 +337,16 @@ def main() -> int:
             "Nato* objects, CommandSets, sciences, weapons",
         ],
         "identity_art": {
-            "FlagWaterMark": "WatermarkUSA (unchanged; no WatermarkSpain / ES_Flag)",
-            "EnabledImage": "SSObserverUSA (unchanged; no SSObserverSpain)",
-            "LoadScreenImage": "SAFactionLogoPage_US (unchanged; no Spain load page)",
-            "SideIconImage": "GameinfoAMRCA (unchanged; no GameinfoSpain)",
-            "NT_Flag.tga": "present in ART but unused by PlayerTemplate",
+            "FlagWaterMark": "WatermarkSpain -> ES_Flag (full 128x64)",
+            "EnabledImage": "SSObserverSpain -> ES_Flag center 64x64",
+            "SideIconImage": "GameinfoSpain -> ES_Flag center 64x64",
+            "GeneralImage": "Spain_Logo -> ES_Flag center 64x64",
+            "LoadScreenImage": "SAFactionLogoPage_US (shared EU load page; Britain/France/Italy use the same)",
+            "ScoreScreenImage": "America_ScoreScreen (shared EU score page; unchanged)",
+            "NT_Flag.tga": "NATO compass rose; unused; not retargeted",
+            "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo",
         },
+        "overlay_files": ov_files,
         "changed": changed,
         "already_applied": [
             {"label": label, "value": new}

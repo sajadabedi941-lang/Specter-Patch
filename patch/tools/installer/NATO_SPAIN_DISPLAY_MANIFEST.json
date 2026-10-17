@@ -1,7 +1,7 @@
 {
   "overlay": "0_SPECTER_NatoSpainDisplay.big",
-  "overlay_sha256": "1df1e31dd98fe433d28c147ad7173a480549ce505b72074d1991f8b0c29c7e2f",
-  "overlay_bytes": 1498452,
+  "overlay_sha256": "9662f7f0d2436ad8e50fb744e7c1977ae74fa79d8148e3018cc007f80cbe4a9a",
+  "overlay_bytes": 1576166,
   "source_data_big": "/tmp/sp_work/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big",
   "source_data_sha256": "169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8",
   "csf_path": "Data\\English\\generals.csf",
@@ -16,12 +16,21 @@
     "Nato* objects, CommandSets, sciences, weapons"
   ],
   "identity_art": {
-    "FlagWaterMark": "WatermarkUSA (unchanged; no WatermarkSpain / ES_Flag)",
-    "EnabledImage": "SSObserverUSA (unchanged; no SSObserverSpain)",
-    "LoadScreenImage": "SAFactionLogoPage_US (unchanged; no Spain load page)",
-    "SideIconImage": "GameinfoAMRCA (unchanged; no GameinfoSpain)",
-    "NT_Flag.tga": "present in ART but unused by PlayerTemplate"
+    "FlagWaterMark": "WatermarkSpain -> ES_Flag (full 128x64)",
+    "EnabledImage": "SSObserverSpain -> ES_Flag center 64x64",
+    "SideIconImage": "GameinfoSpain -> ES_Flag center 64x64",
+    "GeneralImage": "Spain_Logo -> ES_Flag center 64x64",
+    "LoadScreenImage": "SAFactionLogoPage_US (shared EU load page; Britain/France/Italy use the same)",
+    "ScoreScreenImage": "America_ScoreScreen (shared EU score page; unchanged)",
+    "NT_Flag.tga": "NATO compass rose; unused; not retargeted",
+    "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo"
   },
+  "overlay_files": [
+    "Art\\Textures\\ES_Flag.tga",
+    "Data\\English\\generals.csf",
+    "Data\\INI\\MappedImages\\HandCreated\\Spain_FactionImages.INI",
+    "Data\\INI\\PlayerTemplate.ini"
+  ],
   "changed": [
     {
       "label": "INI:FactionNatoForces",

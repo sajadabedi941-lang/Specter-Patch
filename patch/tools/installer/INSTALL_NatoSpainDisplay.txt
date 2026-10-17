@@ -1,52 +1,51 @@
-SPECTER — NATO display name and flag → Spain
-============================================
+SPECTER — Spanish Armed Forces name and flag (draft overlay)
+============================================================
 
-This overlay renames the existing playable NATO faction's visible country
-name and replaces its USA/NATO identity flag artwork with the Spanish
-national flag. It does not replace NATO gameplay, copy another roster, or
-change internal identifiers.
+PR #685 is a draft and is NOT on main. The GitHub Release built from main
+(specter-spec-art-data) does NOT contain this overlay. If that package is
+what is installed, the faction still shows as NATO Armies with USA identity
+images. This 0_ BIG must sit beside generals.exe.
 
-Install
--------
-Place these files next to generals.exe (or run Install_SpecterPatch.bat /
-Launch_Specter.bat from this folder):
-
-  0_SPECTER_NatoSpainDisplay.big
-  _SPEC_DATA_ONE.big
-  _SPEC_ART_ONE.big
-
-Do not rename 0_SPECTER_NatoSpainDisplay.big to zz_ or put it inside Data\
-or Art\. Zero Hour registers 0_* archives first (overwrite=FALSE), so named
-Data\English\generals.csf and Data\INI\PlayerTemplate.ini in this overlay
-win over _SPEC_DATA_ONE.big from new-game faction selection onward.
-
-Visible rename (English CSF)
-----------------------------
-INI:FactionNatoForces          NATO Armies  →  Spanish Armed Forces
-SIDE:Nato                      Nato Armies  →  Spanish Armed Forces
-GUI:BioFeatures_Nato           Europe/USA bio first line → Spanish Armed Forces
-TOOLTIP:BioStrategyLong_Nato   prefixed with Spanish Armed Forces
-
-Identity artwork (FactionNato only)
+Required files next to generals.exe
 -----------------------------------
-Art\Textures\ES_Flag.tga — 128x64 Spanish flag (red-yellow-red, coat of arms).
-NT_Flag.tga was inspected and is the NATO compass rose; it is unused and
-was not retargeted.
+  0_SPECTER_NatoSpainDisplay.big          <-- this overlay; name must start with 0_
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big                       <-- textures; without it buildings are black/pink
+  _SPEC_ART_TWO.big                       <-- W3D models (original SPECTER art set)
 
-FactionNato identity slots now use unique Spain mapped images:
-  FlagWaterMark  = WatermarkSpain   (full ES_Flag)
-  EnabledImage   = SSObserverSpain  (center 64x64 crop)
-  SideIconImage  = GameinfoSpain    (center 64x64 crop)
-  GeneralImage   = Spain_Logo       (center 64x64 crop)
+Do not rename 0_SPECTER_NatoSpainDisplay.big to zz_.
+Do not put BIG files inside Data\ or Art\.
+Run Install_SpecterPatch.bat or Launch_Specter.bat from this folder.
 
-FactionAmerica still uses WatermarkUSA / SSObserverUSA / GameinfoAMRCA /
-USA_Logo. LoadScreenImage stays SAFactionLogoPage_US, matching Britain,
-France, and Italy.
+What this overlay first-wins
+----------------------------
+  Data\English\generals.csf
+      INI:FactionNatoForces / SIDE:Nato = Spanish Armed Forces
+  Data\INI\PlayerTemplate.ini
+      FactionNato only: WatermarkSpain, SSObserverSpain, GameinfoSpain, Spain_Logo
+      FactionAmerica unchanged (WatermarkUSA / SSObserverUSA / GameinfoAMRCA)
+  Art\Textures\ES_Flag.tga
+      Spanish national flag (red-yellow-red, coat of arms)
+  Art\W3D\NT__NTFlag_Hs{CP,CU,PP,SC,WF}.W3D
+      Existing NATO Flag_Hs meshes; texture name NT_Flag.tga -> ES_Flag.tga
+      Command Center, Camp, Power Station, Supply Center, War Factory only
 
-Unchanged
----------
-PlayerTemplate name FactionNato, Side=Nato, Nato* objects, CommandSets, AI,
-sciences, weapons, missiles, prices, stats, unit/building models.
+Black / magenta buildings
+-------------------------
+NATO Command Center model is still US_Command.W3D with US_BUILDINGS.dds in
+_SPEC_ART_ONE.big. This overlay does not replace those files.
 
-Challenge "NATO Forces" / USA Laser General / USA SuperWeapon General
-strings are other factions and are left as internal/technical leftovers.
+Solid-black silhouettes plus one magenta mesh is the engine missing-texture
+look when W3Ds load from _SPEC_ART_TWO.big but textures from _SPEC_ART_ONE.big
+do not. Confirm _SPEC_ART_ONE.big is beside generals.exe, ~2.0 GB, SHA-256
+9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8.
+
+The magenta mesh on the Command Center is the Flag_Hs draw (NT__NTFlag_HsCU)
+when its flag TGA is missing. With this overlay loaded it uses ES_Flag.tga.
+
+Not included
+------------
+Missile cooldown / warhead changes (draft PR #684).
+No GitHub Release is produced with this fix.
+
+Internal identifiers FactionNato and Side=Nato are unchanged.

@@ -10,7 +10,9 @@ unrelated ART stay unchanged.
 
 Writes first-wins overlay 0_SPECTER_NatoSpainDisplay.big. Named files
 (generals.csf, PlayerTemplate.ini) win over _SPEC_DATA_ONE.big; unique
-Spain mapped-image and texture paths are additive.
+Spain mapped-image and ES_Flag paths are additive. NATO building Flag_Hs
+W3Ds (NT__NTFlag_*) are first-won with the same meshes, texture retargeted
+to ES_Flag.tga. US_Command / US_BUILDINGS and USA identity are not packed.
 """
 from __future__ import annotations
 
@@ -25,6 +27,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_DATA = Path(
     "/tmp/sp_work/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big"
 )
+DEFAULT_ART_TWO = Path("/tmp/specter_spec_zip_src/_SPEC_ART_TWO.big")
 DEFAULT_OUT = Path(
     "/workspace/patch/tools/installer/0_SPECTER_NatoSpainDisplay.big"
 )
@@ -42,6 +45,16 @@ SPAIN_IMAGES_SRC = (
     REPO_ROOT / "patch" / "Data" / "INI" / "MappedImages" / "HandCreated"
     / "Spain_FactionImages.INI"
 )
+
+NT_FLAG_W3DS = (
+    "Art\\W3D\\NT__NTFlag_HsCP.W3D",
+    "Art\\W3D\\NT__NTFlag_HsCU.W3D",
+    "Art\\W3D\\NT__NTFlag_HsPP.W3D",
+    "Art\\W3D\\NT__NTFlag_HsSC.W3D",
+    "Art\\W3D\\NT__NTFlag_HsWF.W3D",
+)
+NT_FLAG_TEX = b"NT_Flag.tga"
+ES_FLAG_TEX = b"ES_Flag.tga"
 
 NATO_IDENTITY_LINES = (
     ("FlagWaterMark     = WatermarkUSA", "FlagWaterMark     = WatermarkSpain"),
@@ -213,9 +226,25 @@ def crlf_ini(text: str) -> bytes:
     return text.replace("\r\n", "\n").replace("\n", "\r\n").encode("latin1")
 
 
+def retarget_nt_flag_w3d(blob: bytes, name: str) -> bytes:
+    if NT_FLAG_TEX not in blob:
+        raise SystemExit(f"{name} does not contain {NT_FLAG_TEX!r}")
+    if ES_FLAG_TEX in blob:
+        return blob
+    patched = blob.replace(NT_FLAG_TEX, ES_FLAG_TEX)
+    if patched.count(ES_FLAG_TEX) < 1:
+        raise SystemExit(f"{name}: failed to retarget flag texture")
+    if b"US_Flag.tga" in patched or b"US_BUILDINGS" in patched:
+        raise SystemExit(f"{name}: unexpected USA texture after patch")
+    if NT_FLAG_TEX in patched:
+        raise SystemExit(f"{name}: NT_Flag.tga still present")
+    return patched
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-big", type=Path, default=DEFAULT_DATA)
+    ap.add_argument("--art-two-big", type=Path, default=DEFAULT_ART_TWO)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     args = ap.parse_args()
@@ -294,21 +323,29 @@ def main() -> int:
         if token not in spain_images:
             raise SystemExit(f"Spain_FactionImages.INI missing {token!r}")
 
-    overlay = build_big(
-        {
-            CSF_NAME: csf_out,
-            PT_NAME: pt_patched.encode("latin1"),
-            SPAIN_IMAGES_NAME: spain_images,
-            ES_FLAG_NAME: es_flag,
-        }
-    )
+    if not args.art_two_big.is_file():
+        raise SystemExit(f"missing ART_TWO {args.art_two_big}")
+    art2_entries, art2_raw = read_big(args.art_two_big)
+    w3d_files: dict[str, bytes] = {}
+    for w3d_name in NT_FLAG_W3DS:
+        blob = extract_named(art2_entries, art2_raw, w3d_name)
+        w3d_files[w3d_name] = retarget_nt_flag_w3d(blob, w3d_name)
+
+    file_map = {
+        CSF_NAME: csf_out,
+        PT_NAME: pt_patched.encode("latin1"),
+        SPAIN_IMAGES_NAME: spain_images,
+        ES_FLAG_NAME: es_flag,
+    }
+    file_map.update(w3d_files)
+    overlay = build_big(file_map)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_bytes(overlay)
 
     ov_entries, ov_raw = read_big(args.out)
     ov_files = [n.replace("/", "\\") for n, _, _ in ov_entries]
     expect = sorted(
-        [CSF_NAME, PT_NAME, SPAIN_IMAGES_NAME, ES_FLAG_NAME],
+        [CSF_NAME, PT_NAME, SPAIN_IMAGES_NAME, ES_FLAG_NAME, *NT_FLAG_W3DS],
         key=str.lower,
     )
     if ov_files != expect:
@@ -343,8 +380,16 @@ def main() -> int:
             "GeneralImage": "Spain_Logo -> ES_Flag center 64x64",
             "LoadScreenImage": "SAFactionLogoPage_US (shared EU load page; Britain/France/Italy use the same)",
             "ScoreScreenImage": "America_ScoreScreen (shared EU score page; unchanged)",
-            "NT_Flag.tga": "NATO compass rose; unused; not retargeted",
+            "NT_Flag.tga": "NATO compass rose; unused by PlayerTemplate; building Flag_Hs W3Ds retargeted to ES_Flag.tga",
+            "building_flag_w3ds": list(NT_FLAG_W3DS),
             "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo",
+            "black_magenta_note": (
+                "US_Command.W3D and US_BUILDINGS.dds remain in _SPEC_ART_TWO / "
+                "_SPEC_ART_ONE. This overlay does not replace building models "
+                "or USA textures. Solid-black silhouettes with one magenta mesh "
+                "match ART_ONE textures not loaded (W3Ds still present). "
+                "_SPEC_ART_ONE.big must sit beside generals.exe."
+            ),
         },
         "overlay_files": ov_files,
         "changed": changed,

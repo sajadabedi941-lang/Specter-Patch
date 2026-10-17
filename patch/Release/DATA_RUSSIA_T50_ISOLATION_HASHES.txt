@@ -1,0 +1,3 @@
+_SPEC_DATA_ONE.big sha256=1d723b9f1397c490076ca438c1b46b037087fccd3998890f9b8f6a5efb2c26b7
+ZIP sha256=29a65870fc0eafc6daebf2dedec7e80fb829563aa6bd39dd5ccb59a88f5f41ce
+download=https://litter.catbox.moe/j3zmg7.zip

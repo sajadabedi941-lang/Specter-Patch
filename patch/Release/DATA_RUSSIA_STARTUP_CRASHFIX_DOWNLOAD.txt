@@ -1,0 +1,6 @@
+ZIP (DATA only — contains _SPEC_DATA_ONE.big):
+https://litter.catbox.moe/2j13iu.zip
+
+_SPEC_DATA_ONE.big sha256=4667a421600766229ea5095fae3680b68e8d3b82101b9b318219239071122761
+ZIP sha256=c0b41f012c9f2bd64a4706de20e9376978fd21b479e07c0c77b5b45eb1dee6ac
+ART: unchanged — do not replace _SPEC_ART_ONE.big

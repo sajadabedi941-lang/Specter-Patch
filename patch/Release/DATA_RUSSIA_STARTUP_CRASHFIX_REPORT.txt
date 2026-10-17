@@ -1,0 +1,76 @@
+RUSSIA STARTUP CRASH FIX = PASS
+
+Crash file =
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_TU160_KH55MS_Projectile.ini
+  AND
+  Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_T50_R27_Projectile.ini
+  (ReleaseCrashInfo.txt was not present in this agent workspace; root cause matched
+   prior proven SAGE parse crashes on these exact Airforce projectile Objects —
+   PR#318 / PR#319. Screenshot context: Russian Airforce INI / projectile Object.)
+
+Reported crash line/header =
+  Object Russia_TU160_KH55MS_Projectile  /  Object Russia_T50_R27_Projectile
+  (custom clones previously documented to crash SAGE INI parse)
+
+Actual root cause =
+  Accidental reactivation of helper-only custom projectile clones that were already
+  proven to crash Generals/SAGE parse. They were packed into active DATA by the
+  Russia expansion from the firefix branch, AFTER earlier crash-fix PRs had
+  removed them.
+
+Broken Object/Weapon/Projectile =
+  Object Russia_TU160_KH55MS_Projectile
+  Object Russia_T50_R27_Projectile
+  (+ support: Weapon_Russia_T50_R27_Support, ObjectCreationList_Russia_T50_R27,
+     Locomotor_Russia_TU160_KH55_Clean)
+
+Was reported line itself broken = YES
+  (custom projectile Object blocks / ClientUpdate+support chain previously crashed parse)
+
+Was previous block missing End = NO
+  (root cause was activating the known-bad projectile files themselves)
+
+Was an old helper-only Russia file accidentally activated = YES
+
+Was donor gameplay DATA accidentally activated = NO
+  (donor Tu95/An124/An225/A50/cargoIL76/avionIL76 Objects remain count=0)
+
+Exact fix applied =
+  1) DELETE packed keys for both custom projectile INIs + support files
+  2) Retarget Russia_Weapon_TU160_KH55 → ProjectileObject = KH55MS (TEOD)
+  3) Retarget Russia_Weapon_T50_PAKFA → ProjectileObject = R27 (TEOD)
+  4) Rebuild _SPEC_DATA_ONE.big from CLEAN staging; re-extract verify
+  ART unchanged.
+
+Removed keys:
+  - Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_T50_R27_Projectile.ini
+  - Data\INI\Object\Specter\Armed Forces Of Russian Federation\Airforce\Russia_TU160_KH55MS_Projectile.ini
+  - Data\INI\Weapon_Russia_T50_R27_Support.ini
+  - Data\INI\ObjectCreationList_Russia_T50_R27.ini
+  - Data\INI\Locomotor_Russia_TU160_KH55_Clean.ini
+
+Su-47 retained = YES
+SuT50 retained = YES
+SuT75 retained = YES
+Tu-160 retained = YES
+
+Tu-95 wrapper retained = YES
+An-124 wrapper retained = YES
+An-225 wrapper retained = YES
+avionIL76 wrapper retained = YES
+A-50 wrapper retained = YES
+cargoIL76 wrapper retained = YES
+
+Other factions changed = NO
+Airbase parking changed = NO
+ART changed = NO
+
+DATA sha256 = 4667a421600766229ea5095fae3680b68e8d3b82101b9b318219239071122761
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_RUSSIA_STARTUP_CRASHFIX.zip
+
+IMPORTANT: DO NOT CLAIM GAME-TESTED PASS. User must launch to verify startup.
+Requires !TEOD_INI.big in load order for Object KH55MS / Object R27 (same as prior crashfix packs).
+
+Download ZIP (DATA only):
+https://litter.catbox.moe/2j13iu.zip
+

@@ -1,0 +1,176 @@
+RUSSIA AIRCRAFT CLEANUP = PASS
+
+==============================
+TU-95
+==============================
+
+Object = RussiaJetTu95Visual
+Old Primary W3D = CWCruTu95
+Final Primary W3D = CWCruTu95
+
+Required W3Ds = CWCruTu95 / CWCruTu95_d / CWCruTu95_k
+Required textures = CWCruTu95*.dds + CWCgenPropellor + CWCgenReflective
+Propeller dependencies = CWCgenPropellor + LOOP animation on PROP bones
+Complete donor visual family imported = YES
+
+Donor DATA imported = NO
+
+==============================
+AN-225
+==============================
+
+Object = RussiaJetAn225Visual
+
+Final W3D = A_AN225_100
+Required dependencies = A_AN225_100.W3D + A_E-3_100.tga (mesh texture ref)
+Textures = A_AN225_100.tga + A_E-3_100.tga
+
+Old visible text = (broken / incomplete CSF overlay)
+Final visible text = An-225 Mriya
+
+Text fixed = YES
+Visual fixed by complete donor ART = YES
+
+Donor DATA imported = NO
+
+==============================
+A-50
+==============================
+
+Object = RussiaJetA50Visual
+
+Primary W3D = CWCruA50
+Radar dome dependency = CWCruA50 DOME/DISH_H01/DISH_H02 + LOOP animation
+Other W3Ds = (single family CWCruA50)
+Textures = CWCruA50.dds + CWCgenReflective + CWCruAn124NavL/R
+
+Complete A-50 appearance = YES
+Donor DATA imported = NO
+
+==============================
+TU-160
+==============================
+
+Object = RussiaJetTU160Clean
+Primary W3D = LSFRussiaTu160 (was RU-TU160)
+
+Old wing visual architecture = RU-TU160 static mesh (no sweep animation)
+Final wing visual architecture = LSFRussiaTu160 WING01/WING02 + DOOR_1 ONCE/ONCE_BACKWARDS
+
+Left wing dependency = LSFRussiaTu160.WING01
+Right wing dependency = LSFRussiaTu160.WING02
+
+Extended-wing state = Default/MANUAL + DOOR_1_CLOSING (ONCE_BACKWARDS)
+Swept-wing state = DOOR_1_OPENING (ONCE)
+
+Wing animation = LSFRussiaTu160.LSFRussiaTu160
+Wing visual state reference = JetAI DOOR_1 (donor RussiaTu160 pattern)
+
+Parked wings correct = YES
+Takeoff wing state = YES
+Flight wing state = YES
+Landing wing state = YES
+
+Both wings synchronized = YES
+
+Wing W3Ds physically present in ART = YES
+Wing textures physically present in ART = YES
+
+Tu-160 weapons changed = NO
+Tu-160 flight changed = NO
+Tu-160 price changed = NO
+
+Donor gameplay DATA imported = NO
+
+==============================
+AVION IL-76
+==============================
+
+Good Object = RussiaJetAvionIL76Visual
+Good W3D = Yier76 (+ missing yujing1.dds texture restored)
+Good slot = HeavyAirBase slot 6
+
+Broken duplicate Object = (same Object was visually broken due to missing yujing1 texture; no second Object ID)
+Broken duplicate W3D = Yier76 without yujing1
+Broken slot = n/a
+
+Broken duplicate removed = YES (fixed by restoring required texture; single Object retained)
+
+Final avionIL76 count = 1
+
+cargoIL76 preserved = YES
+
+==============================
+SU-24MR
+==============================
+
+Object = RussiaJetSU24MP
+Old airbase = Russia Heavy AirBase
+New airbase = Russia Fighter Airbase
+
+Old ButtonImage = rus_su24mp
+Final donor ButtonImage = autreSU24
+Queue icon matched = YES
+
+==============================
+SU-24M2
+==============================
+
+Object = RussiaJetSU24M2
+Old airbase = Russia Heavy AirBase
+New airbase = Russia Fighter Airbase
+
+Old ButtonImage = rus_su24m2
+Final donor ButtonImage = SU24
+Queue icon matched = YES
+
+==============================
+SU-34M
+==============================
+
+Object = RussiaJetSu34
+Old airbase = Russia Heavy AirBase
+New airbase = Russia Fighter Airbase
+
+Old ButtonImage = SU34 / rus variants
+Final donor ButtonImage = SU34
+Queue icon matched = YES
+
+==============================
+TU-22M3M
+==============================
+
+Object = RussiaJetTu22M3M
+Airbase = Russia Heavy AirBase
+Old ButtonImage = rus_tu22m3m
+Final donor ButtonImage = TU22M3
+Object ButtonImage matched = YES
+Queue icon matched = YES
+
+Gameplay changed = NO
+
+==============================
+SAFETY
+==============================
+
+Russia Fighter Airbase parking changed = NO
+Russia Heavy Airbase parking changed = NO
+
+Global airbase master entries preserved = YES
+
+T50 broken runtime file re-enabled = NO
+
+No donor gameplay DATA imported = YES
+
+Other factions changed = NO
+
+DATA files before/after = 2550/2550
+ART files before/after = 2770/2786
+
+DATA sha256 = ed2b2eb4c4571c0b1aad3404c9597a30b32af9b9e503a9ea50d168f11e4a2c02
+ART sha256 = addeca8ba2944be12053dd167e70965924c608bc000abc56c74e826d442b1c7d
+ZIP = /workspace/patch/Release/SPECTER_MASTER_RUSSIA_AIRCRAFT_CLEANUP.zip
+
+IMPORTANT: static PASS only. User must verify in-game visuals/icons/slots.
+
+ZIP upload URL = https://litter.catbox.moe/0h5vt9.zip

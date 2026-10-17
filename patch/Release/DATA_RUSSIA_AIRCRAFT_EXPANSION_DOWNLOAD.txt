@@ -1,0 +1,5 @@
+https://litter.catbox.moe/o9ox5c.zip
+
+Contents: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only
+DATA sha256: 73e6de9e09d475789af61bf4bca39f7a80ba998bd9a61e8cf24407f1cd15b603
+ART sha256: 4ad105b43bec2b87764cd69f2bf3e6de2a3d11f3b484c944bbd37724f54f0105

@@ -1,0 +1,7 @@
+PACKED CommandSet.ini:
+Airfield slot 12 = Command_ConstructAmericaJetB21 in T/T1/T2/T3
+No Command_ConstructAmericaJetE3AWACS in Airfield sets
+Airfield T==T1==T2==T3 PASS
+War Factory T==T1==T2==T3 PASS
+B21 button Object=AmericaJetB21
+THAAD/M1075I unlocks preserved

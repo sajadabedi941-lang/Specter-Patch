@@ -1,0 +1,23 @@
+SPECTER_AIRFIELD_MENU_VISIBILITY_RELEASE — PUBLIC DOWNLOAD
+==========================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/s5de1i.zip
+
+Branch: cursor/airfield-aircraft-visibility-unlock-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  42f59e39e42c9cf7fd32195f395d50fd89a5947542bbc76be6d2ed6144f0aa73
+SHA256 DATA: 7c37775881113f2fe06248b09fd2d5b90e48f28198a6fdb91b4e5b0517d31a7b
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA Airfield menu aircraft visibility:
+  Ignore_Prerequisites on all Objects wired to AmericaAirfieldCommandSet*
+  CommandSets / Command_Construct buttons / slots UNCHANGED
+  Weapon / Draw / Cost / Limit / AI / Locomotor untouched
+  B-2 / B-52 / B-21 production + B-21 AVB3bmbr visual intact
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

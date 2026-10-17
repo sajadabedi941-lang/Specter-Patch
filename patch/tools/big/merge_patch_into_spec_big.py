@@ -16,8 +16,29 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import re
 import struct
 from pathlib import Path
+
+# Retarget SPEC Japan_AirfieldCommandSet slot 9 only. Does not add a CommandSet.
+_JAPAN_AIRFIELD_SLOT9 = re.compile(
+    r"(^CommandSet\s+Japan_AirfieldCommandSet\s*$"
+    r".*?"
+    r"^\s*9\s*=\s*)Command_ConstructJapanJetF35A(\s*$)",
+    re.M | re.S,
+)
+
+
+def patch_spec_japan_airfield_slot9(content: bytes) -> bytes:
+    text = content.decode("latin1", errors="replace")
+    patched, n = _JAPAN_AIRFIELD_SLOT9.subn(
+        r"\1Command_ConstructJapan_F35J\2", text, count=1
+    )
+    if n != 1:
+        raise SystemExit(
+            f"SPEC CommandSet.ini Japan_AirfieldCommandSet slot 9 patch failed (matches={n})"
+        )
+    return patched.encode("latin1", errors="replace")
 
 STOCK_SKIP = {
     "data\\ini\\weapon.ini",
@@ -132,6 +153,12 @@ def main() -> int:
             continue
         rel = path.relative_to(patch_data).as_posix()
         merge_data("Data\\" + rel.replace("/", "\\"), path.read_bytes())
+
+    cs_key = "data\\ini\\commandset.ini"
+    if cs_key not in data_map:
+        raise SystemExit("SPEC CommandSet.ini missing; cannot patch Japan airfield slot 9")
+    cs_name, cs_content = data_map[cs_key]
+    data_map[cs_key] = (cs_name, patch_spec_japan_airfield_slot9(cs_content))
 
     art_added = art_updated = 0
     if patch_art.exists():

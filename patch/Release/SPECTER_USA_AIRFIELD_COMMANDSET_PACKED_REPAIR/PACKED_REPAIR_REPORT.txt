@@ -1,0 +1,88 @@
+PACKED CommandSet.ini REPAIR REPORT
+====================================
+
+1) Exact real bad line found in PACKED prior release
+   File: Data\INI\CommandSet.ini inside
+   SPECTER_USA_AIRFIELD_RUNTIME_ROSTER / TEST_BUILD packs
+   Line 840:
+     ; USA Airfield \xe2\x80\x94 final runtime roster (Countermeasures cleared).
+   Bytes: UTF-8 em-dash U+2014 (E2 80 94) inside the comment.
+
+2) 20 lines before and after (prior packed RUNTIME release)
+--- BEFORE ---
+822: ;  9  = Command_MOAB               ;NOTE THIS GOT UPGRADED FROM ABOVE
+823: ; 10  = Command_SpySatelliteScan 
+824: ; 13 = Command_SetRallyPoint
+825: ; 14 = Command_Sell
+826: ;End
+827: 
+828: CommandSet Command_ScriptedTransportDrops
+829:   1 = Command_DaisyCutter
+830:   2 = Command_Paradrop
+831:   3 = Command_CarpetBomb
+832:   4 = Command_ClusterMines
+833:   5 = Command_CrateDrop
+834: End
+835: 
+836: CommandSet Command_ScriptedA10ThunderboltStrike
+837:   1 = Command_A10ThunderboltMissileStrike
+838: End
+839: 
+840: ; USA Airfield \xe2\x80\x94 final runtime roster (Countermeasures cleared).
+841: ; Last-wins ownership: ZZZZZZZZ_ZZZZZZ_ZZZZZZZZ_ZZ_ZZ_AIRFIELD_RUNTIME_ROSTER.ini
+--- AFTER (includes CommandSet AmericaAirfieldCommandSet) ---
+842: CommandSet AmericaAirfieldCommandSet
+843:   1  = Command_ConstructAmericaJetRaptor
+844:   2  = Command_ConstructAmericaHelicopterAH64E
+845:   3  = Command_ConstructAmericaJetAurora
+846:   4  = Command_ConstructAmericaJetA10C
+847:   5  = Command_ConstructAmericaJetB2Spirit
+848:   6  = Command_ConstructAmericaJetF-16C_AG
+849:   7  = Command_ConstructAmericaJetB52H
+850:   8  = Command_ConstructAmericaJetF-22A_AA
+851:   9  = Command_FAKECOMMAND_PurchaseScienceMOAB
+852:   10 = Command_ConstructAmericaJetF35C
+853:   11 = Command_ConstructAmericaJetB21
+854:   12 = Command_ConstructAmericaJetE3AWACS
+855:   13 = Command_ConstructAmericaJetB1R
+856:   14 = Command_FAKECOMMAND_PurchaseScienceMOAB
+857:   15 = Command_Sell
+858:   16 = Command_ConstructAmericaJetEA18
+859:   17 = Command_ConstructAmericaJetF-15E_AA
+860:   18 = Command_FAKECOMMAND_PurchaseScienceMOAB
+861: End
+862: CommandSet AmericaAirfieldCommandSet_T
+
+3) Did previous release (PR #282 PARSE_FIX) contain stale CommandSet.ini?
+   PR #282 PARSE_FIX packed CommandSet.ini was ASCII-cleaned
+   (sha256=72dc063e94590f42cdc0649be6e95d882003275f22e5e01b961850d7136826e2, nonascii=0) but still had comment lines
+   immediately before AmericaAirfieldCommandSet.
+   RUNTIME_ROSTER / TEST_BUILD packs STILL contained the em-dash
+   (stale non-ASCII CommandSet.ini). Crash persistence strongly
+   indicates an installed stale RUNTIME BIG, or unsafe comments.
+
+4) What was repaired
+   - Base: known-good Specter CommandSet.ini from
+     SPECTER_USA_STRATEGY_CENTER_RESTORE (_SPEC_DATA_ONE.big)
+     sha256=6d2749ef50ed262fb2aa273d19a83b4585682cfca9f7e788ae110d4f4cd7af31
+   - Replaced ONLY these five blocks with the intended final roster:
+     AmericaAirfieldCommandSet
+     AmericaAirfieldCommandSet_T
+     AmericaAirfieldCommandSet_T1
+     AmericaAirfieldCommandSet_T2
+     AmericaAirfieldCommandSet_T3
+   - NO comments around or inside these five blocks
+   - ASCII only, no BOM
+   - Slot clears use real Command_FAKECOMMAND_PurchaseScienceMOAB
+   - Packed into latest DATA BIG preserving original entry ORDER
+
+5) Packed CommandSet.ini validation result
+   source sha256 = 3885253b8a0d81864582b01d50420b28eb52391d2e8dac9109804f27ae5ad621
+   packed sha256 = 3885253b8a0d81864582b01d50420b28eb52391d2e8dac9109804f27ae5ad621
+   byte-for-byte match = YES
+   non-ASCII bytes = 0
+   BOM = NO
+   each of 5 blocks: one CommandSet header, 18 unique slots, one End
+   AmericaAirfieldCommandSet appears once as intended
+   NEW BIG DATA sha256 = 0b933c76a31b33ae00d7abcb3bde52311a706a1b9d2ad902d4963411612d9831
+   NEW BIG ART  sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b

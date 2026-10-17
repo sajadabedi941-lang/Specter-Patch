@@ -1,0 +1,11 @@
+SPECTER_USA_B21_AVB21_REAL_VISUAL
+
+Public download:
+https://litter.catbox.moe/csu0qp.zip
+
+Contents:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+AmericaJetB21Clean visual = TEOD AVB21_A (real B-21 Raider)
+Gameplay / CommandSet / Airfield E3 routing unchanged from working E3 build.

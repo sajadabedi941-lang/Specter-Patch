@@ -1,0 +1,105 @@
+RUSSIA AIR FORCE EXPANSION = PACKED FULL BUILD READY FOR USER TEST
+
+1. BASELINE
+- Source: uploaded art_data.part01-22.rar
+- Recovered DATA SHA256 (pre-change) = c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05
+- Recovered ART  SHA256 (pre-change) = bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7
+- Matches historical #370 DATA SHA = YES
+
+2. USA UNCHANGED = YES
+- AmericaJetB2A unchanged
+- AmericaJetB52H (FifteenBombLine) unchanged
+- AmericaJetE737Visual unchanged
+- AmericaJetE3Visual unchanged
+- CH47F Chinook unchanged
+- Weapon.ini / ObjectCreationList.ini / SpecialPower.ini hashes unchanged
+
+3. DONOR ART IMPORTED
+- Art\W3D\LSFRussiaTu160.W3D
+- Art\W3D\LSFRussiaTu160d.W3D
+- Art\W3D\LSFRussiaTu160k.W3D
+- Art\Textures\LSFRussiaTU160.dds
+- Art\Textures\LSFRussiaTU160d.dds
+- Art\Textures\LSFRussiaTU160k.dds
+- Art\Textures\TU-160.tga
+- Art\Textures\TU160TB.tga
+- Art\W3D\CWCruTu95.W3D
+- Art\W3D\CWCruTu95_d.W3D
+- Art\W3D\CWCruTu95_k.W3D
+- Art\Textures\CWCruTu95.dds
+- Art\Textures\CWCruTu95_d.dds
+- Art\Textures\CWCruTu95_k.dds
+- Art\Textures\CWCruTU95.dds
+- Art\Textures\CWCruTU95_d.dds
+- Art\Textures\CWCruTU95_k.dds
+- Art\Textures\CWCgenPropellor.dds
+- Art\Textures\CWCgenPropellor.tga
+- Art\Textures\CWCgenReflective.dds
+- Art\Textures\CWCgenReflective.tga
+- Art\Textures\Tu95.tga
+- Art\Textures\Tu95TB.tga
+- Art\W3D\CWCruAn124.W3D
+- Art\W3D\CWCruAn124_b.W3D
+- Art\Textures\CWCruAn124.dds
+- Art\Textures\CWCruAn124Nav.dds
+- Art\Textures\CWCruAn124NavL.dds
+- Art\Textures\CWCruAn124NavR.dds
+- Art\Textures\AN124.tga
+- Art\Textures\AN124TB.tga
+- Art\W3D\A_AN225_100.W3D
+- Art\W3D\A_E-3_100.W3D
+- Art\Textures\A_AN225_100.tga
+- Art\Textures\A_E-3_100.tga
+- Art\Textures\RussiaAN225.tga
+- Art\Textures\RussiaAN225TB.tga
+- Art\W3D\CWCruA50.W3D
+- Art\Textures\CWCruA50.dds
+- Art\Textures\CWCruA50.tga
+- Art\Textures\RussiaA50.tga
+- Art\Textures\RussiaA50TB.tga
+- Art\W3D\Yier76.W3D
+- Art\Textures\yier76.tga
+- Art\Textures\yier76TB.tga
+- Art\Textures\yujing1.dds
+- Art\Textures\yujing1.tga
+- Art\W3D\LSFRussiaYR76.W3D
+- Art\W3D\LSFRussiaYR76d.W3D
+- Art\W3D\LSFRussiaYR76k.W3D
+- Art\Textures\LSFRussiaYR76.tga
+- Art\Textures\LSFRussiaYR76d.tga
+- Art\Textures\LSFRussiaYR76k.tga
+- Art\Textures\CargoIL76Russia.tga
+- Art\Textures\CargoIL76RussiaTB.tga
+
+4. RUSSIA DATA CHANGES
+- Tu-160: AmericaB2A10TonBombWeapon (B-2A fire chain reuse)
+- Tu-95: AmericaB52FifteenBombLineWeapon + RussiaJetTu95CommandSet (B-52 carpet button reuse)
+- A-50: AmericaE737TargetedSARScan + OCL_AmericaE737TargetedSARScan + Vision/Shroud 810 + Stealth 2700
+- An-225: AmericaE3TargetedSARScan + OCL_AmericaE3TargetedSARScan + Vision/Shroud 1200 + Stealth 4000
+- An-124: TransportContain Slots=64 (8x Chinook), no WeaponSet
+- avionIL76: TransportContain Slots=32 (4x Chinook)
+- cargoIL76: TransportContain Slots=48 (6x Chinook)
+- Su-34 / SU24M2 / SU24MP moved Heavy -> Large (Fighter) AirBase
+- Russia_HeavyAirBaseCommandSet rebuilt for 7 heavy aircraft + Tu22/Su47 retained
+
+5. MODIFIED FILES (runtime keys)
+- Data\INI\CommandSet.ini (Russia CS + new aircraft CS only)
+- Data\INI\CommandButton.ini (Russia construct buttons)
+- Data\INI\Object\...\Airforce\RussiaJet*.ini (7 aircraft)
+- Art\W3D\* / Art\Textures\* (donor visual families)
+- MappedImages / SPECTER_RUSSIA_AIRCRAFT_EXPANSION_Strings.txt helpers
+
+6. FINAL HASHES
+_SPEC_DATA_ONE.big SHA256 = c43fdfa5bd403cb9a6b30e719058fd474415a80e14ae380883ef5e3e16becc39
+_SPEC_DATA_ONE.big SIZE   = 361303816
+_SPEC_ART_ONE.big  SHA256 = c9ab76a9ad6c32444159453f184666e46c530cc9d39a9d677051fc0ac81b83de
+_SPEC_ART_ONE.big  SIZE   = 562446184
+ZIP SHA256 = 75e53043a0935ef5004867f56bfe549a655a2b4cc766feeeaa22a0a3adab855d
+ZIP PATH   = /workspace/patch/Release/SPECTER_MASTER_RUSSIA_AIRFORCE_EXPANSION/SPECTER_MASTER_RUSSIA_AIRFORCE_EXPANSION.zip
+
+7. CONFIRM
+Built from uploaded art_data complete runtime (#370 DATA identity).
+USA preserved. Other factions' Objects not edited.
+Re-extract verification: ALL CHECKS PASS.
+
+Do not claim in-game success. User performs final runtime test.

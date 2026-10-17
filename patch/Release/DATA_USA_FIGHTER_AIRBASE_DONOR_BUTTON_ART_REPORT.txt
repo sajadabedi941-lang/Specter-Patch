@@ -1,0 +1,195 @@
+USA FIGHTER AIRBASE REAL BUTTON ART = PASS
+
+Airbase Object = America_LargeAirBase
+CommandSet = America_LargeAirBaseCommandSet
+
+Aircraft = F-16CJ Block 52
+Slot = 1
+Object = AmericaJetRaptor
+CommandButton = Command_ConstructAmericaJetRaptor
+Old ButtonImage = us_f16c
+Donor ButtonImage = F16
+Final ButtonImage = F16
+MappedImage = F16
+Texture = F16TB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F16
+Queue icon synchronized = YES
+
+Aircraft = AH-64
+Slot = 2
+Object = AmericaVehicleComanche
+CommandButton = Command_ConstructAmericaVehicleComanche
+Old ButtonImage = us_ah64d
+Donor ButtonImage = APAQIDTB
+Final ButtonImage = APAQIDTB
+MappedImage = APAQIDTB
+Texture = APAQIDTB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = APAQIDTB
+Queue icon synchronized = YES
+
+Aircraft = F-15E
+Slot = 3
+Object = AmericaJetAurora
+CommandButton = Command_ConstructAmericaJetAurora
+Old ButtonImage = us_f15e
+Donor ButtonImage = F15E
+Final ButtonImage = F15E
+MappedImage = F15E
+Texture = F15TB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F15E
+Queue icon synchronized = YES
+
+Aircraft = A-10C
+Slot = 4
+Object = AmericaJetA10C
+CommandButton = Command_ConstructAmericaJetA10C
+Old ButtonImage = us_a10c
+Donor ButtonImage = A10TB
+Final ButtonImage = A10TB
+MappedImage = A10TB
+Texture = A10TB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = A10TB
+Queue icon synchronized = YES
+
+Aircraft = F-16CM Block 50
+Slot = 5
+Object = AmericaJetF-16C_AG
+CommandButton = Command_ConstructAmericaJetF-16C_AG
+Old ButtonImage = us_f16cb50
+Donor ButtonImage = USAF16CTB
+Final ButtonImage = USAF16CTB
+MappedImage = USAF16CTB
+Texture = USAF16CTB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = USAF16CTB
+Queue icon synchronized = YES
+
+Aircraft = F-15C
+Slot = 6
+Object = AmericaJetF-15E_AA
+CommandButton = Command_ConstructAmericaJetF-15E_AA
+Old ButtonImage = us_f15e
+Donor ButtonImage = F15
+Final ButtonImage = F15
+MappedImage = F15
+Texture = USAF15TB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F15
+Queue icon synchronized = YES
+
+Aircraft = F-22A
+Slot = 7
+Object = AmericaJetF-22A_AA
+CommandButton = Command_ConstructAmericaJetF-22A_AA
+Old ButtonImage = us_f22a
+Donor ButtonImage = F22AV
+Final ButtonImage = F22AV
+MappedImage = F22AV
+Texture = F22AVTB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F22AV
+Queue icon synchronized = YES
+
+Aircraft = UH-60
+Slot = 9
+Object = AmericaHelicopterUH60
+CommandButton = Command_ConstructAmericaVehicleUH60
+Old ButtonImage = us_uh60
+Donor ButtonImage = UH602
+Final ButtonImage = UH602
+MappedImage = UH602
+Texture = UH602TB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = UH602
+Queue icon synchronized = YES
+
+Aircraft = EA-18G
+Slot = 10
+Object = AmericaJetEA18G
+CommandButton = Command_ConstructAmericaJetEA18
+Old ButtonImage = us_ea18g
+Donor ButtonImage = EA18G
+Final ButtonImage = EA18G
+MappedImage = EA18G
+Texture = EA18GTB.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = EA18G
+Queue icon synchronized = YES
+
+Aircraft = F-35
+Slot = 11
+Object = AmericaJetF35C
+CommandButton = Command_ConstructAmericaJetF35C
+Old ButtonImage = Nat_f35a
+Donor ButtonImage = F35
+Final ButtonImage = F35
+MappedImage = F35
+Texture = F35tb.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F35
+Queue icon synchronized = YES
+
+Aircraft = F-35 AA
+Slot = 12
+Object = AmericaJetF35C_AA
+CommandButton = Command_ConstructAmericaJetF35C_AA
+Old ButtonImage = Nat_f35a
+Donor ButtonImage = F35
+Final ButtonImage = F35
+MappedImage = F35
+Texture = F35tb.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = F35
+Queue icon synchronized = YES
+
+Aircraft = F-117 Nighthawk
+Slot = 13
+Object = AmericaJetF117Clean
+CommandButton = Command_ConstructAmericaJetF117
+Old ButtonImage = SAStealth
+Donor ButtonImage = CWCusF117_Command
+Final ButtonImage = CWCusF117_Command
+MappedImage = CWCusF117_Command
+Texture = CWCusCameos_Command01.tga
+Real donor aircraft image = YES
+Texture present in final ART = YES
+Object ButtonImage = CWCusF117_Command
+Queue icon synchronized = YES
+
+--------------------------------
+F-117:
+Real donor icon = YES
+Final ButtonImage = CWCusF117_Command
+Queue icon matched = YES
+
+--------------------------------
+Countermeasure changed = NO
+Aircraft gameplay changed = NO
+Weapons changed = NO
+Prices changed = NO
+Flight changed = NO
+W3Ds changed = NO
+Airbase slots changed = NO
+Parking changed = NO
+HeavyAirBase changed = NO
+Other factions changed = NO
+
+DATA SHA256 = bea846c815625b94d6b35718868351b20510d3bf69318482d4080e831be5008d
+ART SHA256 = bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7
+ZIP = /workspace/patch/Release/SPECTER_MASTER_DATA_ART_USA_FIGHTER_AIRBASE_DONOR_BUTTON_ART.zip
+IMPORTANT: DO NOT CLAIM IN-GAME PASS.

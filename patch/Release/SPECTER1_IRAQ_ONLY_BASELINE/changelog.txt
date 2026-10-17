@@ -1,0 +1,22 @@
+SPECTER1 — Iraq-only controlled modification
+
+Built directly from the locked clean SPECTER1.part001-069 baseline.
+No previous PR or release DATA was used.
+Only the requested Iraq changes and the explicitly authorized Russian
+Tu-22M3M bomb change were applied.
+The original SPECTER1 airbase/building architecture was preserved.
+
+Changes:
+- Iraq Mirage F1.EQ (Iraq_MirageF1_Bq): radar/research production gate removed; already on LargeAirBase.
+- Iraq Su-24MK: Radar/MIC production gates removed; already on LargeAirBase.
+- Iraq Su-24MR: MIC production gate removed; already on live airbase bars.
+- Iraq L-159: existing IraqJetL159_WpnBomb last-won to 3x guided Kab500 bombs; RETURN_TO_BASE kept; gun/rockets unchanged.
+- Iraq MiG-21: visual Scale 0.82 -> 0.91 only.
+- Iraq Tu-22M3: existing object added to HeavyAirBase empty slot 3; SCIENCE_Tu-22/MIC gates removed; default bomb = Kab1500_LeaserGuidedBomb.
+- RussiaJetTu22M3M only: default bomb = Kab1500_LeaserGuidedBomb.
+- Iraq WarFactory: starts on existing final T3 combat roster; tier CommandSet upgrades removed.
+- Iraq MIC: starts on existing set 2 combat roster (Karrar-2, B340, Fahad-3); tier CommandSet upgrades removed.
+- Iraq Abbas building: AbbasResearchObject dummy prerequisite removed.
+- Remaining Iraq combat-vehicle Science/research/radar unlock gates on that roster removed.
+
+ART was not changed. INGAME_TESTED = NO.

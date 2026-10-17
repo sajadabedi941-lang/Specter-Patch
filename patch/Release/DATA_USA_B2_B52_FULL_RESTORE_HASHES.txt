@@ -1,0 +1,15 @@
+_SPEC_DATA_ONE.big sha256=bdcc6a5e0b8f5a5f4339f604c9838b13028f7830db5761b11bca5f943b91354f
+_SPEC_ART_ONE.big sha256=3bb421da5ef26c45bba523e5d16c1e95f72056fa90858bcde913d1318d9934c0
+ART restored (AVB3bmbr W3D+textures from prior working B-2 / TEOD):
+  Art\W3D\AVB3bmbr.W3D
+  Art\W3D\AVB3bmbr_D.W3D
+  Art\W3D\AVB3bmbr_D1.W3D
+  Art\W3D\AVB3bmbr_D2.W3D
+  Art\Textures\avb3bmbr.dds
+  Art\Textures\avb3bmbr_D.dds
+  Art\Textures\avb3bmbr_E.dds
+B-2 icon MappedImage B2-ic_L -> US-Icons01.dds (already in ART)
+B-52 icon MappedImage us_b52h (already in DATA)
+CSF unchanged sha256=e5be6c4e3bc96eb0792592c2bd6a3edc0e8a094d531024dfb50b0626fc1484b3
+ZIP=SPECTER_MASTER_DATA_USA_B2_B52_FULL_RESTORE.zip
+URL=https://litter.catbox.moe/c7rzkj.zip

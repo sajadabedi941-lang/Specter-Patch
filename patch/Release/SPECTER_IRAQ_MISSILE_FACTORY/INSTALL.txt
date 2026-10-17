@@ -1,0 +1,21 @@
+INSTALL — Iraq Missile Factory replacement BIGs
+================================================
+
+Package: SPECTER_IRAQ_MISSILE_FACTORY.zip
+Contains:
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+  HASHES.txt
+
+1. Close Generals ZH / GenLauncher.
+2. Back up the current game-folder copies of:
+     _SPEC_ART_ONE.big
+     _SPEC_DATA_ONE.big
+3. Extract this ZIP.
+4. Copy both BIG files into the SPECTER game folder (same folder as generals.exe).
+   Replace the existing files of the same name.
+5. Do not delete INIZH.big, INIZHZ.big, or other ZH archives.
+6. Launch SPECTER.
+
+The zip is a complete ART+DATA replacement pair based on SPECTER FINAL
+(2026-09-09) plus this Iraq Missile Factory import.

@@ -1,0 +1,8 @@
+Downloadable package (workspace path):
+
+  patch/Release/SPECTER_IRAQ_MISSILE_FACTORY/SPECTER_IRAQ_MISSILE_FACTORY.zip
+
+SHA256(zip)=1c73d7a2c528139bbcc7ab1dc585b6d9ebd6b5960e88b658f3ea2e4a765e17d1
+
+The zip contains the two replacement BIGs plus HASHES.txt.
+The individual BIG files are also in this folder.

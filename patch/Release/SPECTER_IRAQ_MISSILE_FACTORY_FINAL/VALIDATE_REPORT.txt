@@ -1,0 +1,41 @@
+STATIC VALIDATION — SPECTER_IRAQ_MISSILE_FACTORY_FINAL
+======================================================
+Date: 2026-10-05
+Result: PASS (static archive/INI checks only; no in-game launch)
+
+DATA _SPEC_DATA_ONE.big
+  Path: /workspace/patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL/_SPEC_DATA_ONE.big
+  Size: 396563104
+  SHA256: f1b4907607ac51a372c9d9a35628d43538f3e3a3beb56548870a6222bf47ed4d
+  BIGF valid, 3995 files (complete replacement from SPECTER FINAL 2804 + overlay)
+
+  Present:
+    Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MissileFactory.ini
+    Data\INI\CommandButton_Iraq_MissileFactory.ini
+    Data\INI\CommandSet_Iraq_MissileFactory.ini
+    Data\INI\CommandSet.ini Iraq_VT72BCommandSet slot 14 = Command_ConstructIraq_MissileFactory
+    Data\English\generals.csf labels for OBJECT/CONTROLBAR Missile Factory
+
+  Unchanged as required:
+    Iraq_WorkerCommandSet still has Command_DisarmMinesAtPosition
+    39 Clear Mines entries remain for other bars/countries
+    Iraq_WarFactory.ini still present
+    Slot 13 still Command_ConstructIraq_HeavyAirBase
+    Slot 4 still Command_ConstructIraq_WarFactory_T
+
+ART _SPEC_ART_ONE.big
+  Path: /workspace/patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL/_SPEC_ART_ONE.big
+  Size: 1248650123
+  SHA256: 338596b6ca77cdd0ace3888cc1b89f4f6e578e46ff03b069be8303e794608b50
+  BIGF valid, 4429 files (SPECTER FINAL 4411 + exactly 18 IQMISS files)
+
+  Added only the required IQMISS W3D/textures.
+  abarfrccmd* not packaged.
+  Irq_WarFactory.W3D byte-identical to SPECTER FINAL (142191).
+  LSFDF11M.W3D / YILAKEflag.W3D not added.
+
+ZIP SPECTER_IRAQ_MISSILE_FACTORY_FINAL.zip
+  Path: /workspace/patch/Release/SPECTER_IRAQ_MISSILE_FACTORY_FINAL/SPECTER_IRAQ_MISSILE_FACTORY_FINAL.zip
+  Size: 1645214557
+  SHA256: 27008b1ced0edbcbd3e17816cce353f6aff2b83a51aa916dbc352d631ac68cb9
+  Contents: _SPEC_DATA_ONE.big, _SPEC_ART_ONE.big, README.txt, SHA256.txt

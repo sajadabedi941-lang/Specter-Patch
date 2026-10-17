@@ -1,0 +1,41 @@
+STATIC VALIDATION REPORT — Iraq Missile Factory
+================================================
+Date: 2026-10-05
+Base DATA: SPECTER FINAL _SPEC_DATA_ONE.big (2026-09-09, 364979021 bytes)
+Base ART:  SPECTER FINAL _SPEC_ART_ONE.big  (2026-09-09, 1235909246 bytes)
+
+RESULT: PASS (static only; no in-game launch)
+
+ART
+- Required 18 IQMISS files present in packed ART (4 W3D + 14 textures)
+- abarfrccmd.dds / abarfrccmd_d.dds NOT packed (stock reuse)
+- LSFDF11M.W3D / YILAKEflag.W3D NOT packed (not building dependencies)
+- Irq_WarFactory.W3D byte-identical to SPECTER FINAL original (142191)
+
+DATA
+- Object Iraq_MissileFactory defined once:
+    Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_MissileFactory.ini
+- CommandButton Command_ConstructIraq_MissileFactory defined once:
+    Data\INI\CommandButton_Iraq_MissileFactory.ini
+- Factory CommandSet Iraq_MissileFactoryCommandSet:
+    Data\INI\CommandSet_Iraq_MissileFactory.ini
+- Iraq_WarFactory.ini still present and untouched
+- CSF labels added: OBJECT:Iraq_MissileFactory,
+  CONTROLBAR:ConstructIraq_MissileFactory,
+  CONTROLBAR:ToolTipIraqBuildMissileFactory
+
+COMMANDSET (live packed Data\INI\CommandSet.ini)
+Iraq_VT72BCommandSet slot 14:
+  BEFORE: Command_DisarmMinesAtPosition
+  AFTER:  Command_ConstructIraq_MissileFactory
+Unchanged slots: 1-13, 15-18
+  Slot 4 still Command_ConstructIraq_WarFactory_T
+  Slot 13 still Command_ConstructIraq_HeavyAirBase
+Iraq_WorkerCommandSet slot 14 still Command_DisarmMinesAtPosition
+Other factions still have Clear Mines (39 remaining DisarmMines entries)
+
+OUTPUT HASHES
+_SPEC_DATA_ONE.big  396563104  SHA256=f1b4907607ac51a372c9d9a35628d43538f3e3a3beb56548870a6222bf47ed4d
+_SPEC_ART_ONE.big   1248650123 SHA256=338596b6ca77cdd0ace3888cc1b89f4f6e578e46ff03b069be8303e794608b50
+SPECTER_IRAQ_MISSILE_FACTORY.zip
+                    SHA256=1c73d7a2c528139bbcc7ab1dc585b6d9ebd6b5960e88b658f3ea2e4a765e17d1

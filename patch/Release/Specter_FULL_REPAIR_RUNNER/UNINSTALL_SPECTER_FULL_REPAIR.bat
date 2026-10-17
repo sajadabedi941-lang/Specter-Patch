@@ -44,7 +44,7 @@ if not exist "%PSEXE%" set "PSEXE=powershell.exe"
 echo Restoring backup / removing installed repair files...
 echo.
 
-"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPTDIR%\Uninstall_Specter_Full_Repair.ps1" -GameRoot "%GAMEROOT%" -ScriptDir "%SCRIPTDIR%"
+"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPTDIR%\Uninstall_Specter_Full_Repair.ps1" -LiteralPath "%GAMEROOT%" -ScriptDir "%SCRIPTDIR%"
 set "ERR=%ERRORLEVEL%"
 
 if not "%ERR%"=="0" (

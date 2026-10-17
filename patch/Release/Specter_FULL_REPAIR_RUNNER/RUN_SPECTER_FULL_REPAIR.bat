@@ -6,7 +6,7 @@ cd /d "%~dp0"
 REM ============================================================
 REM  GameRoot = this BAT's folder only (%~dp0). No GameRoot prompt.
 REM  Supports spaces, parentheses, Unicode/Persian paths.
-REM  Extract/copy this package INTO the game folder, then run.
+REM  Copy package INTO the game folder, then run this BAT.
 REM ============================================================
 
 chcp 65001 >nul 2>&1
@@ -29,7 +29,7 @@ if not exist "%GAMEROOT%\Data\" (
   echo Place this package inside the main game folder that contains:
   echo   Data\
   echo   Generals.exe
-  echo Example: SPECTER FINAL ^(GeneralsMode.com^)
+  echo Example: D:\New folder ^(5^)\SPECTER FINAL ^(GeneralsMode.com^)
   echo.
   pause
   exit /b 1
@@ -38,7 +38,6 @@ if not exist "%GAMEROOT%\Data\" (
 if not exist "%SCRIPTDIR%\Specter_FULL_REPAIR_Data\" (
   echo [ERROR] Patch payload folder not found next to this BAT.
   echo Expected: "%SCRIPTDIR%\Specter_FULL_REPAIR_Data\"
-  echo Extract the full Specter_FULL_REPAIR_RUNNER.zip into the game folder.
   echo.
   pause
   exit /b 1
@@ -65,7 +64,8 @@ echo Creating backup...
 echo Installing repaired files...
 echo.
 
-"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPTDIR%\Install_Specter_Full_Repair.ps1" -GameRoot "%GAMEROOT%" -ScriptDir "%SCRIPTDIR%"
+REM Pass game folder as -LiteralPath (required by Install_Specter_Full_Repair.ps1)
+"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPTDIR%\Install_Specter_Full_Repair.ps1" -LiteralPath "%GAMEROOT%" -ScriptDir "%SCRIPTDIR%"
 set "ERR=%ERRORLEVEL%"
 
 if not "%ERR%"=="0" (

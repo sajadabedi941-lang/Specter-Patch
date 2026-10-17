@@ -1,14 +1,33 @@
 param(
-  [Parameter(Mandatory = $true)]
-  [string]$GameRoot,
-  [Parameter(Mandatory = $true)]
+  [Parameter(Mandatory = $false)]
+  [Alias("GameRoot", "Path")]
+  [string]$LiteralPath,
+
+  [Parameter(Mandatory = $false)]
   [string]$ScriptDir
 )
 
 $ErrorActionPreference = "Stop"
 
-$GameRoot = $GameRoot.Trim().TrimEnd('\', '/')
-$ScriptDir = $ScriptDir.Trim().TrimEnd('\', '/')
+function Ensure-Directory([string]$DirPath) {
+  if (-not $DirPath) { return }
+  # New-Item LiteralPath switch is NOT supported on Windows PowerShell 5.1
+  [void][System.IO.Directory]::CreateDirectory($DirPath)
+}
+
+if (-not $LiteralPath) {
+  throw "LiteralPath (GameRoot) is required."
+}
+
+$GameRoot = $LiteralPath.Trim().TrimEnd('\', '/')
+if (-not $ScriptDir) {
+  $ScriptDir = $GameRoot
+}
+else {
+  $ScriptDir = $ScriptDir.Trim().TrimEnd('\', '/')
+}
+
+Write-Host ("GameRoot (LiteralPath): " + $GameRoot)
 
 $dstData = Join-Path $GameRoot "Data"
 $stamp = Join-Path $GameRoot "Specter_FULL_REPAIR_INSTALL.stamp"
@@ -71,10 +90,7 @@ foreach ($rel in $lines) {
   }
 
   if ($bak -and (Test-Path -LiteralPath $bak)) {
-    $dstParent = Split-Path -Parent $dst
-    if (-not (Test-Path -LiteralPath $dstParent)) {
-      New-Item -ItemType Directory -Force -LiteralPath $dstParent | Out-Null
-    }
+    Ensure-Directory (Split-Path -Parent $dst)
     Copy-Item -LiteralPath $bak -Destination $dst -Force
     $restored++
   }

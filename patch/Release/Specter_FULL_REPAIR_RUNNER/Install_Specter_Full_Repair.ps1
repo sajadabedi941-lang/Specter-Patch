@@ -1,20 +1,41 @@
 param(
-  [Parameter(Mandatory = $true)]
-  [string]$GameRoot,
-  [Parameter(Mandatory = $true)]
+  # Primary: game folder path (supports spaces / parentheses)
+  [Parameter(Mandatory = $false)]
+  [Alias("GameRoot", "Path")]
+  [string]$LiteralPath,
+
+  # Optional: folder containing this script + payload (defaults to LiteralPath)
+  [Parameter(Mandatory = $false)]
   [string]$ScriptDir
 )
 
 $ErrorActionPreference = "Stop"
 
-$GameRoot = $GameRoot.Trim().TrimEnd('\', '/')
-$ScriptDir = $ScriptDir.Trim().TrimEnd('\', '/')
+function Ensure-Directory([string]$DirPath) {
+  if (-not $DirPath) { return }
+  # New-Item LiteralPath switch is NOT supported on Windows PowerShell 5.1
+  [void][System.IO.Directory]::CreateDirectory($DirPath)
+}
+
+if (-not $LiteralPath) {
+  throw "LiteralPath (GameRoot) is required."
+}
+
+$GameRoot = $LiteralPath.Trim().TrimEnd('\', '/')
+if (-not $ScriptDir) {
+  $ScriptDir = $GameRoot
+}
+else {
+  $ScriptDir = $ScriptDir.Trim().TrimEnd('\', '/')
+}
+
+Write-Host ("GameRoot (LiteralPath): " + $GameRoot)
+Write-Host ("ScriptDir: " + $ScriptDir)
 
 # Payload is Specter_FULL_REPAIR_Data\ (same layout as Data\) so it does not
 # collide with the live game Data\ folder when this package sits in GameRoot.
 $srcData = Join-Path $ScriptDir "Specter_FULL_REPAIR_Data"
 if (-not (Test-Path -LiteralPath $srcData)) {
-  # Fallback for older layouts
   $srcData = Join-Path $ScriptDir "Data"
 }
 $dstData = Join-Path $GameRoot "Data"
@@ -25,7 +46,7 @@ if (-not (Test-Path -LiteralPath $dstData)) {
   throw "Data folder not found: $dstData"
 }
 if (-not (Test-Path -LiteralPath $srcData)) {
-  throw "Patch payload folder not found: Specter_FULL_REPAIR_Data" 
+  throw "Patch payload folder not found: Specter_FULL_REPAIR_Data"
 }
 if (-not (Test-Path -LiteralPath $manifest)) {
   throw "RepairManifest.txt not found: $manifest"
@@ -33,7 +54,7 @@ if (-not (Test-Path -LiteralPath $manifest)) {
 
 $ts = Get-Date -Format "yyyyMMdd_HHmmss"
 $backupRoot = Join-Path $GameRoot ("SpecterPatch_Backup\FULL_REPAIR_" + $ts)
-New-Item -ItemType Directory -Force -LiteralPath $backupRoot | Out-Null
+Ensure-Directory $backupRoot
 
 $stamp = Join-Path $GameRoot "Specter_FULL_REPAIR_INSTALL.stamp"
 $lines = @(
@@ -55,7 +76,6 @@ foreach ($rel in $lines) {
     continue
   }
 
-  # Never copy a file onto itself (can happen if payload was wrongly merged into Data)
   $srcFull = [System.IO.Path]::GetFullPath($src)
   $dstFull = [System.IO.Path]::GetFullPath($dst)
   if ($srcFull -eq $dstFull) {
@@ -65,18 +85,12 @@ foreach ($rel in $lines) {
 
   if (Test-Path -LiteralPath $dst) {
     $bak = Join-Path $backupRoot $relWin
-    $bakParent = Split-Path -Parent $bak
-    if (-not (Test-Path -LiteralPath $bakParent)) {
-      New-Item -ItemType Directory -Force -LiteralPath $bakParent | Out-Null
-    }
+    Ensure-Directory (Split-Path -Parent $bak)
     Copy-Item -LiteralPath $dst -Destination $bak -Force
     $backed++
   }
 
-  $dstParent = Split-Path -Parent $dst
-  if (-not (Test-Path -LiteralPath $dstParent)) {
-    New-Item -ItemType Directory -Force -LiteralPath $dstParent | Out-Null
-  }
+  Ensure-Directory (Split-Path -Parent $dst)
   Copy-Item -LiteralPath $src -Destination $dst -Force
   $copied++
 }

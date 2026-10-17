@@ -1,0 +1,28 @@
+Primary package (DATA + ART together):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-a-button/SPECTER_IRAQ_MISSILE_A_BUTTON.zip
+
+Or place both complete replacement files in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-a-button/_SPEC_DATA_ONE.big
+  SIZE=366369779
+  SHA256=5ee8034acadfaf38545db90486334e460890aa4c7b89ed1babdd615c658692bf
+  FILES=2914
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-a-button/_SPEC_ART_ONE.big
+  SIZE=1266526339
+  SHA256=1fa2de6da5eebe152750c223c9c33a93a67f92de951ce6eaff07a47cb9551da4
+  FILES=4605
+
+COMMANDBUTTON=CB_MISSILE_A
+BUTTONIMAGE=specter_missile_a
+TEXTURE=Art\Textures\specter_missile_a.tga
+COMMANDSET=Iraq_AlFahdMissileFactoryCommandSet slot 1
+MAPPING=موشک A -> Iraq_AlFahd500
+
+TAG=s-iraq-missile-a-button
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-a-button
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/570
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

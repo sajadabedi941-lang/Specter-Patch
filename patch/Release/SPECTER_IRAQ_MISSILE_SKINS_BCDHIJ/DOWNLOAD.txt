@@ -1,0 +1,25 @@
+Primary package (ART):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-skins-bcdhij/SPECTER_IRAQ_MISSILE_SKINS_BCDHIJ.zip
+
+Place this complete replacement ART file in the game folder:
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-skins-bcdhij/_SPEC_ART_ONE.big
+  SIZE=1292294758
+  SHA256=e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+  FILES=4628
+
+DATA unchanged — keep the current DATA BIG.
+
+B Irq_AlHussein2M.W3D -> Irq_AlHussein2P.tga (white/red AL-HUSSEIN II)
+C Irq_AlSamoud2M.W3D -> Irq_AlSamoud2P.tga (black/red AL-SAMOUD II)
+D Irq_AlAbbas2M.W3D -> Irq_AlAbbas2P.tga (red/white AL-ABBAS)
+H Irq_AlBasrahM.W3D -> Irq_AlBasrahP.tga (white/black AL-BASRAH)
+I Irq_AlNasirM.W3D -> Irq_AlNasirP.tga (orange/red AL-NASIR)
+J Irq_AlMansourM.W3D -> Irq_AlMansourP.tga (yellow/red AL-MANSOUR)
+
+TAG=s-iraq-missile-skins-bcdhij
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-skins-bcdhij
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/573
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

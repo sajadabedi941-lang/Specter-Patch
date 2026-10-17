@@ -1,0 +1,8 @@
+# Last-wins missile skin audit
+
+Slot B AL-HUSSEIN II: Irq_AlHussein2M -> Irq_AlHussein2P.tga hier=IRQ_AH2_M textures=['Irq_AlHussein2P.tga'] HLod=Irq_AlHussein2M
+Slot C AL-SAMOUD II: Irq_AlSamoud2M -> Irq_AlSamoud2P.tga hier=IRQ_AS2_M textures=['Irq_AlSamoud2P.tga'] HLod=Irq_AlSamoud2M
+Slot D AL-ABBAS: Irq_AlAbbas2M -> Irq_AlAbbas2P.tga hier=IRQ_AAB_M textures=['Irq_AlAbbas2P.tga'] HLod=Irq_AlAbbas2M
+Slot H AL-BASRAH: Irq_AlBasrahM -> Irq_AlBasrahP.tga hier=IRQ_ABS_M textures=['Irq_AlBasrahP.tga'] HLod=Irq_AlBasrahM
+Slot I AL-NASIR: Irq_AlNasirM -> Irq_AlNasirP.tga hier=IRQ_ANS_M textures=['Irq_AlNasirP.tga'] HLod=Irq_AlNasirM
+Slot J AL-MANSOUR: Irq_AlMansourM -> Irq_AlMansourP.tga hier=IRQ_AMN_M textures=['Irq_AlMansourP.tga'] HLod=Irq_AlMansourM

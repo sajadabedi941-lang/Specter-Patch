@@ -1,0 +1,4 @@
+Simulated load: all Airfield America aircraft prereq Object/Science empty.
+Buildable=Ignore_Prerequisites on all Airfield-produced units.
+BuildCost / MaxSimultaneousOfType unchanged vs base BIG.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

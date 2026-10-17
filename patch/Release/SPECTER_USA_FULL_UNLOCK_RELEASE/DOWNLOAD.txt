@@ -1,0 +1,25 @@
+SPECTER_USA_FULL_UNLOCK_RELEASE — PUBLIC DOWNLOAD
+====================================================
+
+Public download (verified anonymous GET):
+https://gofile.io/d/FAdYOk
+
+Branch: cursor/usa-full-unlock-no-upgrades-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  ba8e9762723a04cb06a0f2e39e9642c9c1639cfa1e27f3345a57657c887ffa8f
+SHA256 DATA: 55d4c62f84365a0a9bebee328885d7b1ed2f2ff4b6176465aa05efbf1b765e96
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA fully unlocked from game start (no upgrade progression):
+  AmericaCommandCenter silently GrantUpgradeCreate for USA research upgrades
+  USA building CommandSets: PLAYER_UPGRADE purchase buttons removed
+  Airfield production slots kept (upgrade button slots cleared only)
+  Strategy Center battle plans / CIA / Sell kept; upgrade buttons removed
+  Aircraft Objects / Weapon / Draw / Cost / Limit / AI untouched
+  Other factions untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

@@ -1,0 +1,9 @@
+RUSSIA UI AIRBASE UPDATE
+
+Icons remapped to donor ART TGAs (native sizes). Su-47 + Su-75 on Large AirBase.
+Aircraft Objects / weapons / OCL unchanged.
+
+DATA SHA256 = 273acc1b411261669c66ae9b8aea95e21d280a68136f804007c05dd67cea8f92
+ART  SHA256 = 4a45ee3f88c472034abebbe1a83337961c597eeab5eb4daa7483975f3bc64d3a
+ZIP SHA256  = e8ee6c2908aa5333ca2d8f13b4203d3231d4831e432fb1c5f886d50551ec1f2c
+PATH = /workspace/patch/Release/SPECTER_MASTER_RUSSIA_UI_AIRBASE/Russia_UI_Airbase_Update.zip

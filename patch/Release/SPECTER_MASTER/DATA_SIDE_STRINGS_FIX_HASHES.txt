@@ -1,0 +1,33 @@
+SIDE STRINGS FIX = PASS
+
+SIDE:SaudiArabia added = YES
+SIDE:UAE added = YES
+SIDE:India added = YES
+SIDE:Syria added = YES
+
+Active STR file = Data\English\generals.csf (CSF binary, not .str text)
+Active BIG = _SPEC_DATA_ONE.big
+Encoding preserved = YES (appended 4 LBL/RTS entries; magic/version/XOR-UTF16LE unchanged; body prefix byte-identical)
+
+Canonical template = SIDE:Pakistan -> "Pakistan Armed Forces" (tag RTS)
+
+Verified values:
+  SIDE:Pakistan = 'Pakistan Armed Forces'
+  SIDE:SaudiArabia = 'Saudi Arabia Armed Forces'
+  SIDE:UAE = 'United Arab Emirates Armed Forces'
+  SIDE:India = 'Indian Armed Forces'
+  SIDE:Syria = 'Syrian Armed Forces'
+Each key count = 1
+
+PlayerTemplate changed = NO
+CommandSet changed = NO
+CommandButton changed = NO
+ControlBarScheme changed = NO
+Objects changed = NO
+ART changed = NO
+
+before_sha=abd7a7731a8c9351a5a7275b15c67f31693bec1dc6597f8eb790c143a8f6b209
+after_sha=f68348c514e5ffb9af5f5372818d0029deba26b30c858691973fc2c8ab2f1b34
+csf_before_sha=c1a28f44b8d46898489657ef29f626c9f9a0ede23bbd20a5be29f1bd308ea60e
+csf_after_sha=e95047c06744e4ec7e59131347463ba5d4b02a43efd8bc9a6aa9cfcc4956cecc
+zip_sha=90c1c7adf1e24079cb271fd53d17aedce95b59dfd5567c847a61ff601111109f

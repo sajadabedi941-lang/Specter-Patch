@@ -1,0 +1,20 @@
+SPECTER — Egypt TheAirPort Large AirBase
+
+Object: Egypt_LargeAirBase
+Primary W3D: TheAirPort.W3D
+Imported W3Ds: Art\W3D\TheAirPort.W3D
+Imported textures: Art\Textures\CJJCWUJUN.dds
+Parking bones used: Runway1-4 Parking1-4 (+ ParkHan + Prep)
+Configured capacity: 16 (NumRows=4 x NumCols=4)
+Runway bones: RunwayStart1-4, RunwayEnd1-4
+CommandSet: Egypt_AirfieldCommandSet
+Construct button: Command_ConstructEgypt_Airfield_T -> Egypt_LargeAirBase
+HXUSABigAirPort: NOT imported (reserved for Egypt_HeavyAirBase)
+
+DATA BIG changed: YES
+ART BIG changed: YES
+OTHER FACTIONS UNTOUCHED: YES
+
+_SPEC_DATA_ONE.big sha256=cf8e0bc257c8215a3c7cab566cbf2ef0bfbf559772ab3083e0b3343e77270b1c size=350652683
+_SPEC_ART_ONE.big  sha256=0c0838b6877417fbbc1f3c1bcf28eb900e17faea9ef3afe9228d408672587c2e size=446449896
+ZIP: SPECTER_MASTER_EGYPT_THEAIRPORT_LARGE_AIRBASE.zip

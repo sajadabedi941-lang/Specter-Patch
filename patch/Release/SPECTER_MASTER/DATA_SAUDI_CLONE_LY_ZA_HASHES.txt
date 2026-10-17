@@ -1,0 +1,216 @@
+REPORT LIBYA:
+PlayerTemplate = FactionLibya
+Side = Libya
+DisplayName = INI:FactionLibya
+ControlBar = Libya8x6
+CommandCenter = Libya_CommandCenter
+Dozer = Libya_Dozer
+Dozer CommandSet = LibyaDozerCommandSet
+WarFactory = Libya_WarFactory_T
+Barracks = Libya_Barracks
+LargeAirBase = Libya_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = Libya_HeavyAirBase
+Nuclear = Libya_Lgm30
+Artillery = Libya_FireBase
+C-RAM = Libya_CRAM
+PurchaseScience validation = REUSES SCIENCE_Pakistan_CommandSetRank* + SpecialPowerShortcutPakistanSystem (same as Saudi; no invented country sciences)
+SIDE string = SIDE:Libya => Libyan Armed Forces
+PLAYABLE = YES
+LIBYA CLONE = PASS
+
+REPORT SOUTHAFRICA:
+PlayerTemplate = FactionSouthAfrica
+Side = SouthAfrica
+DisplayName = INI:FactionSouthAfrica
+ControlBar = SouthAfrica8x6
+CommandCenter = SouthAfrica_CommandCenter
+Dozer = SouthAfrica_Dozer
+Dozer CommandSet = SouthAfricaDozerCommandSet
+WarFactory = SouthAfrica_WarFactory_T
+Barracks = SouthAfrica_Barracks
+LargeAirBase = SouthAfrica_LargeAirBase
+LargeAirBase capacity = 16
+HeavyAirBase = SouthAfrica_HeavyAirBase
+Nuclear = SouthAfrica_Lgm30
+Artillery = SouthAfrica_FireBase
+C-RAM = SouthAfrica_CRAM
+PurchaseScience validation = REUSES SCIENCE_Pakistan_CommandSetRank* + SpecialPowerShortcutPakistanSystem (same as Saudi; no invented country sciences)
+SIDE string = SIDE:SouthAfrica => South African National Defence Force
+PLAYABLE = YES
+SOUTHAFRICA CLONE = PASS
+
+MISSING SIDE STRINGS = 0
+UNRESOLVED PURCHASESCIENCE BUTTONS = 0
+UNRESOLVED SCIENCES = 0
+UNRESOLVED COMMAND BUTTONS = 0
+UNRESOLVED COMMANDSETS = 0
+
+SAUDI ARABIA FUNCTIONALLY CHANGED = NO
+PAKISTAN CHANGED = NO
+UAE CHANGED = NO
+INDIA CHANGED = NO
+SYRIA CHANGED = NO
+NATO CHANGED = NO
+GERMANY CHANGED = NO
+FRANCE CHANGED = NO
+BRITAIN CHANGED = NO
+ITALY CHANGED = NO
+SWEDEN CHANGED = NO
+UKRAINE CHANGED = NO
+TURKEY CHANGED = NO
+EGYPT CHANGED = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\PlayerTemplate.ini
+- Data\INI\ControlBarScheme.ini
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\English\generals.csf
+- Data\INI\Weapon_Libya.ini
+- Data\INI\Upgrade_Libya.ini
+- Data\INI\SpecialPower_Libya.ini
+- Data\INI\Weapon_SouthAfrica.ini
+- Data\INI\Upgrade_SouthAfrica.ini
+- Data\INI\SpecialPower_SouthAfrica.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense Sites\SamSite.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Roland3K.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_AntiDrone.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_MD.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_SAM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_SHORAD.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\ZSU23.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_F16Blk52.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_Mi-8.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_Mig-29A.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_MirageF1-Bq.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Airforce\Libya_Su-25K.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\APC\BTR90.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Abbas.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Airfield_T.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Barracks.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CommandCenter.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CRAM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_FireBase.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_HeavyAirBase.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_LargeAirBase.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_Lgm30.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_MIC.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_MilitaryHQ.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_PowerPlant.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_RadarStation.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_SupplyCenter.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_WarFactory.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Drones\Libya_CombatDrone.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Drones\Libya_HeavyUAV.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Drones\Libya_LoiteringDrone.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\IFV\Bmp1P.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\AntiAir.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Antitank.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\HeavySniper.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Rifleman.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Libya_EliteSSG.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\Libya_Worker.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Infantry\SpecialForces.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Ababeel_Projectile.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Babur_Cruise_Projectile.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Babur_Projectile.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_ADSAM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_AlKhalid_ATGM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_AntiDrone.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_ATGM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_Cruise.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_MD.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_MLRS.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_MLRSShort.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_Nuclear.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_PL15_J10C.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_SAM.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_SHORAD.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Projectile_Tank.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Projectiles\Libya_Shaheen_Projectile.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Libya_Systems.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\ScienceObjects\IL-76.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Tracked\Libya_AlKhalid.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Tracked\Libya_Dozer.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Tracked\T72M1.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Tracked\VT72B.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\AbbasLauncher.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_AbabeelTEL.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_BM-21.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_ShaheenTEL.ini
+- Data\INI\Object\Specter\Libyan Armed Forces\Wheeled\Libya_Ural375_Supply.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense Sites\SamSite.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\Roland3K.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_AntiDrone.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_MD.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_SAM.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_SHORAD.ini
+- Data\INI\Object\Specter\South African National Defence Force\AirDefense\ZSU23.ini
+- Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_F16Blk52.ini
+- Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_Mi-8.ini
+- Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_Mig-29A.ini
+- Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_MirageF1-Bq.ini
+- Data\INI\Object\Specter\South African National Defence Force\Airforce\SouthAfrica_Su-25K.ini
+- Data\INI\Object\Specter\South African National Defence Force\APC\BTR90.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Abbas.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Airfield_T.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Barracks.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CommandCenter.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CRAM.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_FireBase.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_HeavyAirBase.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_LargeAirBase.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_Lgm30.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_MIC.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_MilitaryHQ.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_PowerPlant.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_RadarStation.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_SupplyCenter.ini
+- Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_WarFactory.ini
+- Data\INI\Object\Specter\South African National Defence Force\Drones\SouthAfrica_CombatDrone.ini
+- Data\INI\Object\Specter\South African National Defence Force\Drones\SouthAfrica_HeavyUAV.ini
+- Data\INI\Object\Specter\South African National Defence Force\Drones\SouthAfrica_LoiteringDrone.ini
+- Data\INI\Object\Specter\South African National Defence Force\IFV\Bmp1P.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\AntiAir.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\Antitank.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\HeavySniper.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\Rifleman.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\SouthAfrica_EliteSSG.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\SouthAfrica_Worker.ini
+- Data\INI\Object\Specter\South African National Defence Force\Infantry\SpecialForces.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Ababeel_Projectile.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Babur_Cruise_Projectile.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Babur_Projectile.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_ADSAM.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_AlKhalid_ATGM.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_AntiDrone.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_ATGM.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_Cruise.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_MD.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_MLRS.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_MLRSShort.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_Nuclear.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_PL15_J10C.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_SAM.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_SHORAD.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Projectile_Tank.ini
+- Data\INI\Object\Specter\South African National Defence Force\Projectiles\SouthAfrica_Shaheen_Projectile.ini
+- Data\INI\Object\Specter\South African National Defence Force\SouthAfrica_Systems.ini
+- Data\INI\Object\Specter\South African National Defence Force\ScienceObjects\IL-76.ini
+- Data\INI\Object\Specter\South African National Defence Force\Tracked\SouthAfrica_AlKhalid.ini
+- Data\INI\Object\Specter\South African National Defence Force\Tracked\SouthAfrica_Dozer.ini
+- Data\INI\Object\Specter\South African National Defence Force\Tracked\T72M1.ini
+- Data\INI\Object\Specter\South African National Defence Force\Tracked\VT72B.ini
+- Data\INI\Object\Specter\South African National Defence Force\Wheeled\AbbasLauncher.ini
+- Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_AbabeelTEL.ini
+- Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_BM-21.ini
+- Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_ShaheenTEL.ini
+- Data\INI\Object\Specter\South African National Defence Force\Wheeled\SouthAfrica_Ural375_Supply.ini
+
+DATA sha256 = 0413e349f1cabe322f8da425f2665c74940c0178dd87010c32b20a424b53e99e
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = a757eb784f6162110dcf09456563561291e17249c1c2990ac4c3b40b5e0d72a3
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_SAUDI_CLONE_LY_ZA.zip
+ZIP size    = 306218718
+DOWNLOAD = https://litter.catbox.moe/m6nd1g.zip

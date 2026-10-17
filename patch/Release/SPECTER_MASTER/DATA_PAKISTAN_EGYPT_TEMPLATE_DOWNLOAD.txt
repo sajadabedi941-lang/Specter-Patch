@@ -1,0 +1,13 @@
+SPECTER DATA — Pakistan rebuilt from Egypt golden template
+
+Egypt untouched (byte-identical). No other country added.
+
+Pakistan_CommandCenter: cloned from working Egypt_CommandCenter module layout
+(removed old OCLSpecialPower/SpectreGunship crash modules).
+Pakistan_Worker: cloned from working Egypt_Worker.
+PlayerTemplate aligned to Egypt pattern (OldFaction=No).
+SIDE:Pakistan = Pakistan Armed Forces
+
+Download: https://gofile.io/d/LSizUH7P
+ZIP root: _SPEC_DATA_ONE.big only
+ART unchanged

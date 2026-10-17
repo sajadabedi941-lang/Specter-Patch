@@ -1,0 +1,17 @@
+_SPEC_DATA_ONE.big sha256=ac15ae44783f8ec3c117f82d3a3de0d7a80624bfec02e51bd72567cb5bffabde
+_SPEC_ART_ONE.big sha256=74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ART match = True
+NK barracks bytes unchanged = True
+NK construct Object = Iraq_Barracks (unchanged)
+OVERALL = PASS
+
+Files changed inside DATA BIG:
+  Data\INI\Object\Specter\South Korean Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Iraq_Barracks.ini
+  Data\INI\CommandSet.ini
+  Data\INI\CommandButton.ini
+
+Japan: Object Japan_Barracks Side=Japan CS=Japan_BarracksCommandSet Construct->Japan_Barracks count=1 PARSE=PASS
+SouthKorea: Object SouthKorea_Barracks Side=SouthKorea CS=SouthKorea_BarracksCommandSet Construct->SouthKorea_Barracks count=1 PARSE=PASS
+Vietnam: Object Vietnam_Barracks Side=Vietnam CS=Vietnam_BarracksCommandSet Construct->Vietnam_Barracks count=1 PARSE=PASS

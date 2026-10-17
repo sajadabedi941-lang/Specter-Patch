@@ -1,0 +1,2 @@
+990b57d0a5fa722e493a65562ebe4dff0ef06f61753dfdc67efa0dc7733e4258  /workspace/patch/Release/SPECTER_MASTER_DATA_RUSSIA_WO_FIX.zip
+8a11b85dea851257d16da76d1a421164ca2cc5db072687ae59904deb3d7d1f37  /workspace/patch/Release/SPECTER_MASTER/_SPEC_DATA_ONE.big

@@ -1,0 +1,50 @@
+NORTH KOREA TWO-AIRBASE CONVERSION = PASS
+
+North Korea Side identifier = NorthKorea
+
+OLD AIRFIELD:
+Object = NorthKorea_Airfield
+ConstructButton = Command_ConstructNorthKorea_Airfield
+Builder slot = 5 (NorthKorea_VT72BCommandSet)
+
+NEW LARGE AIRBASE:
+Object = NorthKorea_LargeAirBase
+ConstructButton = Command_ConstructNorthKorea_LargeAirBase
+CommandSet = NorthKorea_AirfieldCommandSet
+W3D = TheAirPort.W3D
+Capacity = 16 (NumRows=4 x NumCols=4)
+Aircraft roster = Command_ConstructNorthKoreaAir_WZ10ME, Command_ConstructNorthKoreaAir_Mig29S, Command_ConstructNorthKoreaAir_J10B, Command_ConstructNorthKoreaAir_Mig31K, Command_ConstructNorthKoreaAir_Su25T, Command_ConstructNorthKoreaAir_J20B, Command_ConstructNorthKoreaAir_Mi28N, Command_ConstructNorthKoreaAir_Ka52M
+
+OLD SAM2:
+Object = NorthKorea_Sam2
+ConstructButton = Command_ConstructNorthKorea_Sam2_SAFE
+Builder slot = 9 (NorthKorea_VT72BCommandSet)
+
+NEW HEAVY AIRBASE:
+Object = NorthKorea_HeavyAirBase
+ConstructButton = Command_ConstructNorthKorea_HeavyAirBase
+CommandSet = NorthKorea_HeavyAirBaseCommandSet
+W3D = HXUSABigAirPort.W3D
+Capacity = 6 (NumRows=2 x NumCols=3)
+Heavy aircraft roster = Command_ConstructNorthKoreaAir_Su24M2, Command_ConstructNorthKoreaAir_JH7A, Command_ConstructNorthKoreaAir_Tu22M3M
+Prerequisite = NorthKorea_SupplyCenter (mirrors Pakistan_HeavyAirBase)
+
+NorthKoreaSam2 removed from builder palette = YES
+NorthKoreaSam2 globally deleted = NO
+
+Pakistan airbases changed = NO
+Other factions changed = NO
+
+ACTIVE FILES CHANGED:
+- Data\INI\CommandSet.ini
+- Data\INI\CommandButton.ini
+- Data\English\generals.csf
+- Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_LargeAirBase.ini (NEW)
+- Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_HeavyAirBase.ini (NEW)
+
+DATA sha256 = fada163a72c44b95f742aa660886c2633506194ada0700955b910927e9ea256b
+ART sha256  = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP sha256  = 0725dc04757ec1dffa516eb31d0225e8261e50d4aa2fb46c6021d5248a5ee0bc
+ZIP path    = /workspace/patch/Release/SPECTER_MASTER_DATA_NK_DUAL_AIRBASE.zip
+ZIP size    = 306220176
+DOWNLOAD = https://litter.catbox.moe/uz2ygv.zip

@@ -1,0 +1,35 @@
+SPECTER_MASTER_DATA_EGYPT_CC_IRAQ_REBUILD.zip
+
+Download: https://gofile.io/d/S9pqJwiU
+
+ROOT CAUSE / STRATEGY:
+Encoding sanitize was insufficient. Egypt_CommandCenter was a USA AmericaCommandCenter
+clone with extra USA-only modules + Egypt specials. No EA Generals/ZH C++ parser
+source is present in this environment to isolate the exact bad token.
+
+FIX:
+Rebuilt Egypt_CommandCenter from scratch using the CURRENT WORKING
+Iraq_CommandCenter as structural template (Egypt kit historically Iraq-based).
+Kept only core modules required to spawn/select/produce. Removed all specials,
+AWACS, FOAB, GrantScienceUpgrade, ObjectCreationUpgrade, FireWeaponWhenDead,
+BaseRegenerate, strobe Draw, AmericanRangerDebris.
+
+Also rebuilt Egypt_MilitaryHQ (StartingBuilding) to the same minimal Iraq-core
+pattern (US_Command art retained) so the skirmish boot chain matches.
+
+Egypt-specific remaining on CC:
+- Object Egypt_CommandCenter
+- Side Egypt
+- DisplayName OBJECT:Egypt_CommandCenter
+- CommandSet Egypt_CommandCenterCommandSet (Worker/VT72B/IL-76/Alhussaien)
+
+ART reused (no ART BIG change): us_commandcenter portrait + Irq_Command model/anim
+(same as working Iraq CC).
+
+Defs before/after: exactly 1 Object Egypt_CommandCenter
+
+CC SHA before-pack == after-reextract: 52c8894030c8148f50424a3e84ca69bf4b115b93ebdac8fc3ccaeb426b7161d7
+DATA SHA256: 8a5d58c1ca5c004acd95bb94d956d61a357d51fe926c90074a3c87b08d7242a0
+ZIP  SHA256: 118efba770d47c065795f96c1b634d3d8fccbe78281c1ac06a5299d362aaa167
+
+Install: replace only _SPEC_DATA_ONE.big; keep existing ART.

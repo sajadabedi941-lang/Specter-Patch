@@ -1,0 +1,45 @@
+Data\English\generals.csf
+Data\INI\Object\Specter\AI_IraqiArmy\CommandCenter.ini
+Data\INI\Object\Specter\AI_IraqiArmy\MIC.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Sam2.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini
+Data\INI\Object\Specter\AI_IraqiArmy\Warfactory.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Buildings\Kashtan.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\SamSite\S400_BDS_ABM_Site.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\SamSite\S400_BDS_Site.ini
+Data\INI\Object\Specter\Armed Forces Of Russian Federation\Tracked\Dozer.ini
+Data\INI\Object\Specter\Iranian Army\Airforce\Iran_Su22.ini
+Data\INI\Object\Specter\Iranian Army\Buildings\Command.ini
+Data\INI\Object\Specter\Iranian Army\Iran_WeaponObjects.ini
+Data\INI\Object\Specter\Iranian Army\Tracked\Dozer.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Mig-25BM.ini
+Data\INI\Object\Specter\Iraq Army\Airforce\Iraq_Su-22M3.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_PowerPlant.ini
+Data\INI\Object\Specter\Iraq Army\Infantry\Iraq_Worker.ini
+Data\INI\Object\Specter\Iraq Army\Iraq_Shells.ini
+Data\INI\Object\Specter\Iraq Army\Iraq_WeaponObjects.ini
+Data\INI\Object\Specter\Iraq Army\ScienceObjects\Mig25RB.ini
+Data\INI\Object\Specter\Israel Defense Forces\Israel_Systems.ini
+Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Dozer.ini
+Data\INI\Object\Specter\Israel Defense Forces\Wheeled\PULS PH_AI.ini
+Data\INI\Object\Specter\NATO\Buildings\StrategyCenter.ini
+Data\INI\Object\Specter\NATO\Wheleed\Dozer.ini
+Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CommandCenter.ini
+Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+Data\INI\Object\Specter\PLA\Chines_WeaponObjects.ini
+Data\INI\Object\Specter\PLA\Tracked\Dozer.ini
+Data\INI\Object\Specter\PLA\Wheeled\DF41.ini
+Data\INI\Object\Specter\PLA\Wheeled\DF41_AI.ini
+Data\INI\Object\Specter\PLA\Wheeled\GJ11_Launcher.ini
+Data\INI\Object\Specter\United States Of America\Airforce\F16CM_BLK50_AA.ini
+Data\INI\Object\Specter\United States Of America\Airforce\F35C_AA.ini
+Data\INI\Object\Specter\United States Of America\Buildings\C-RAM.ini
+Data\INI\Object\Specter\United States Of America\Buildings\ShipYard.ini
+Data\INI\Object\Specter\United States Of America\Buildings\StrategyCenter.ini
+Data\INI\Object\Specter\United States Of America\Buildings\StrategyCenter_AI.ini
+Data\INI\Object\Specter\United States Of America\Infantry\NavySeals.ini
+Data\INI\Object\Specter\United States Of America\Infantry\Rifleman_M4.ini
+Data\INI\Object\Specter\United States Of America\USA_System.ini
+Data\INI\Object\Specter\United States Of America\USA_WeaponObjects.ini
+Data\INI\Object\Specter\United States Of America\Wheeled\Dozer.ini

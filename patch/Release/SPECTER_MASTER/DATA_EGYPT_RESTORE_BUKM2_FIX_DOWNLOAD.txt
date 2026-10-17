@@ -1,0 +1,99 @@
+SPECTER_MASTER_DATA_EGYPT_RESTORE_BUKM2_FIX.zip
+
+Download: https://gofile.io/d/Mw3v1ZX7
+
+=== 31 STUBBED FILES (UNDONE — ALL RESTORED) ===
+  01. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense Sites\SamSite.ini
+  02. Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9K317.ini
+  03. Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9S19M2.ini
+  04. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_MD.ini
+  05. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SAM.ini
+  06. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SHORAD.ini
+  07. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Roland3K.ini
+  08. Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\S300VM.ini
+  09. Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\ZSU23.ini
+  10. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\AH64D.ini
+  11. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\CH47F.ini
+  12. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_F16C.ini
+  13. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mi-8.ini
+  14. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mig-29A.ini
+  15. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mig29M2.ini
+  16. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_MirageF1-Bq.ini
+  17. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Rafale.ini
+  18. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Su-25K.ini
+  19. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\F16C.ini
+  20. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Ka52.ini
+  21. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Mi17.ini
+  22. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Mig29M2.ini
+  23. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Rafale_DM.ini
+  24. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Rafale_DM_AA.ini
+  25. Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Su35BM.ini
+  26. Data\INI\Object\Specter\Egyptian Armed Forces\APC\BTR90.ini
+  27. Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Camp.ini
+  28. Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Abbas.ini
+  29. Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_AdvancedAirBase.ini
+  30. Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Airfield_T.ini
+  31. Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Barracks.ini
+
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense Sites\SamSite.ini (5520 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9K317.ini (6488 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9S19M2.ini (23781 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_MD.ini (8690 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SAM.ini (6358 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SHORAD.ini (7221 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Roland3K.ini (7273 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\S300VM.ini (31583 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\ZSU23.ini (7187 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\AH64D.ini (12722 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\CH47F.ini (10011 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_F16C.ini (12656 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mi-8.ini (10458 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mig-29A.ini (14982 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Mig29M2.ini (12620 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_MirageF1-Bq.ini (12049 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Rafale.ini (12151 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Egypt_Su-25K.ini (12560 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\F16C.ini (12350 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Ka52.ini (20442 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Mi17.ini (8609 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Mig29M2.ini (12276 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Rafale_DM.ini (11806 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Rafale_DM_AA.ini (11725 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Airforce\Su35BM.ini (12261 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\APC\BTR90.ini (7452 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Camp.ini (5522 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Abbas.ini (7611 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_AdvancedAirBase.ini (271 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Airfield_T.ini (8768 bytes)
+  RESTORED Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_Barracks.ini (5447 bytes)
+
+Confirmation: NONE of the 31 files remain comment-only stubs in the final BIG.
+Egypt_AdvancedAirBase.ini remains intentionally empty (pre-existing REMOVED stub, not from our disable pass).
+
+=== EGYPT COMMAND CENTER ===
+Kept Iraq_CommandCenter structural core WITHOUT Iraq-only specials/AWACS.
+Object Egypt_CommandCenter / Side=Egypt / Egypt_CommandCenterCommandSet
+ART: us_commandcenter + US_Command
+Defs: exactly 1
+
+=== BUKM2 ROOT CAUSE ===
+egypt_weaponobjects.ini Object BukM2_MissileObject used:
+  Locomotor = SET_NORMAL 9M317MissileLocomotor   (ASCII M)
+but stock Locomotor.ini only defines:
+  Locomotor 9М317MissileLocomotor               (Cyrillic М)
+Same class of bug as the Russia WO crash. Previous Object (9M82MMissile_ABM) Ends cleanly.
+
+FIX: changed BukM2 locomotor reference to Cyrillic 9М317MissileLocomotor to match
+Locomotor.ini and working Russia 9M317_MissileObject. Object NOT deleted.
+DisplayName OBJECT:9M317 left ASCII (CSF key).
+
+Objects checked in egypt_weaponobjects.ini: 6
+Cyrillic/ASCII mismatch found: YES (BukM2 locomotor) — fixed
+Russia 9M317/Buk chain untouched and still Cyrillic-correct
+
+WO SHA before-pack == after-reextract: a70e666f71123e6344da15f8a539ad53ab57e1bf1220c742db2d53e588658a30
+DATA SHA256: 8a2171298b77be9c72045d4f4bbd248ff13054527b53b41a9287e5295c99d061
+ZIP  SHA256: ab041d8f34e0d370ab20c9ac527e8b10d304e16e0882ab385256a616acf01d86
+CC  SHA256: eb43adc03c5725af7b509d91ba44f4cfe27622d7b32b83e9f02edae4a4dcf79e
+
+Install: replace only _SPEC_DATA_ONE.big; keep existing ART.

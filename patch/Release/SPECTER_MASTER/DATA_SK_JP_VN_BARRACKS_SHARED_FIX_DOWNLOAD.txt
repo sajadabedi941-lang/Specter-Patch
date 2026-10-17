@@ -1,0 +1,8 @@
+SHARED Japan/SouthKorea/Vietnam Barracks clone-bug fix (DATA-only)
+
+ROOT CAUSE = NK Barracks Texture=IraqiFlag.tga DPRK_Flag.tga (parse risk when loaded under Data\INI\Object) + missing/fragile country Barracks CommandSets; prior clones carried Iraq comment/texture identity.
+
+DATA sha256 = e9a9930eee1bd3f427407c92d417f8897d92fb8d39f5735362e3ab84fab3fb9b
+ART  sha256 = 74a411b72c19fafaafcd48a45d2aa76731d8dbd13e919e4f73f8b989e90d4822 (UNCHANGED)
+ZIP  sha256 = 960ac2965d55aa6ef855bbd7a76a902d8d3eaa1f9726202ad5fd3fc1f7f6cc1d
+DOWNLOAD = https://litter.catbox.moe/806t5y.zip

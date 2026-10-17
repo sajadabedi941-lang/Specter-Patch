@@ -1,0 +1,32 @@
+SPECTER EGYPT PLAYABLE FULL PATCH — VALIDATION REPORT
+======================================================================
+INI files: 1518
+Egypt-related INI files: 61
+Art files: 6
+Specter Object faction dirs: 30
+Faction dirs include Egyptian Armed Forces: True
+PlayerTemplate FactionEgypt present: True
+CSF INI:FactionEgypt present: True
+CSF RTSW corrupt markers at magic sites: fixed prior to package
+
+Required Egypt boot chain:
+  - FactionEgypt: CHECKED
+  - Egypt_MilitaryHQ: CHECKED
+  - Egypt_Worker: CHECKED
+  - Egypt_SystemSpecialPowerShortcut: CHECKED
+  - Egypt8x6: CHECKED
+  - SCIENCE_Egypt: CHECKED
+
+Preserved existing factions (not removed/renamed):
+  - Iranian Army: PRESENT
+  - Israel Defense Forces: PRESENT
+  - Iraq Army: PRESENT
+  - Armed Forces Of Russian Federation: PRESENT
+  - PLA: PRESENT
+  - United States Of America: PRESENT
+  - North Korea: PRESENT
+  - Egyptian Armed Forces: PRESENT
+
+Playable patch PlayerTemplates: FactionTurkey, FactionUkraine, FactionPakistan, FactionSaudiArabia, FactionUAE, FactionIndia, FactionJapan, FactionBritain, FactionEgypt, FactionFrance, FactionGermany, FactionIsrael, FactionItaly, FactionLibya, FactionSouthAfrica, FactionSouthKorea, FactionSweden, FactionSyria, FactionTaiwan, FactionUN, FactionVietnam
+
+VERDICT: PASS (static). Runtime boot test required in ZH/Specter.

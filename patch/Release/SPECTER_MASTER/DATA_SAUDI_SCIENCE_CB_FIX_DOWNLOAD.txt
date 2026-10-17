@@ -1,0 +1,41 @@
+SPECTER_MASTER_DATA_SAUDI_SCIENCE_CB_FIX.zip
+
+Contains ONLY: _SPEC_DATA_ONE.big
+
+BROKEN COMMAND = Command_PurchaseScienceSaudiArabiaGeneralAirPower
+  (user string GenralAirpower: 0 hits in archive; canonical id is GeneralAirPower)
+
+ROOT CAUSE = Saudi PurchaseScience/Upgrade/shortcut CommandButtons were registered in ACTIVE
+  Data\INI\CommandButton.ini and referenced SCIENCE_SaudiArabia_* / Upgrade_SaudiArabia_*
+  that do NOT exist in ACTIVE Science.ini / Upgrade.ini (helper-only overlays).
+  SCIENCE_SaudiArabia_CommandSetRank* in ACTIVE CommandSet.ini kept that broken chain in
+  the parse graph. Pakistan keeps the equivalent purchase-science chain OUT of active CB/CS.
+
+CommandButton active before = YES
+CommandButton active after = NO (removed; FactionSaudiArabia PT already uses Pakistan science CS names)
+Science referenced before = SCIENCE_SaudiArabia_GeneralAirPower (+ 16 other Saudi sciences)
+Science referenced after = N/A (Saudi purchase-science buttons removed from active CB)
+Science exists in active Science.ini = NO
+
+Saudi purchase-science buttons audited = 17
+Additional broken Saudi science buttons fixed =
+  - 17x Command_PurchaseScienceSaudiArabia*
+  - 8x Command_UpgradeSaudiArabia_*
+  - 7x Command_SaudiArabia*FromShortcut (Science-gated)
+  - removed SCIENCE_SaudiArabia_CommandSetRank1/3/8
+  - emptied SpecialPowerShortcutSaudiArabiaSystem
+
+Same pattern detected in UAE = YES
+Same pattern detected in India = YES
+Same pattern detected in Syria = YES
+
+PAKISTAN CHANGED = NO
+UAE CHANGED = NO
+INDIA CHANGED = NO
+SYRIA CHANGED = NO
+EGYPT CHANGED = NO
+
+DATA sha256 = 7c0a910dc931989ba6fe7dad8bce0b5a3110de02c31a850f0f1b5ffb10caa9ab
+ZIP sha256  = 90129e4c743389d318a2b7079e4fdc3931412a0ddede5639e239e754d5a867b1
+
+Download: https://litter.catbox.moe/7y82t7.zip

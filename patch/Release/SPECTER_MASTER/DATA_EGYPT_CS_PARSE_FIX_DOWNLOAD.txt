@@ -1,0 +1,32 @@
+ROOT CAUSE:
+Egypt_WorkerCommandSet was inserted into active Data\INI\CommandSet.ini during LargeAirBase
+wiring, but 9 referenced construct CommandButtons were never registered in active
+Data\INI\CommandButton.ini. Generals aborts INI parse at CommandSet Egypt_WorkerCommandSet
+when any referenced CommandButton is undefined.
+
+CommandSet block itself was structurally valid (exactly one definition; preceding
+Pakistan_AbbasCommandSet closed with End; Worker block closed with End).
+
+MISSING BUTTONS (the actual parse break):
+  Command_ConstructEgypt_PowerPlant
+  Command_ConstructEgypt_MilitaryHQ
+  Command_ConstructEgypt_SupplyCenter
+  Command_ConstructEgypt_WarFactory_T
+  Command_ConstructEgypt_MIC
+  Command_ConstructEgypt_RadarStation
+  Command_ConstructEgypt_Sam2
+  Command_ConstructEgypt_Barracks
+  Command_ConstructEgypt_Abbas
+
+CORRECTION:
+Registered those 9 buttons into active CommandButton.ini (canonical defs from
+CommandButton_FactionExpansion_Armies.ini / CommandButton_PhaseF_Systems.ini).
+Egypt_WorkerCommandSet body unchanged vs helper CommandSet_Egypt.ini (0 line diffs).
+Command_ConstructEgypt_Airfield_T still Object=Egypt_LargeAirBase.
+Egypt_LargeAirBase / TheAirPort preserved. ART untouched.
+
+Egypt_WorkerCommandSet count before: 1
+Egypt_WorkerCommandSet count after: 1
+_SPEC_DATA_ONE.big sha256=db47827eeb2ef00aaf12513eb5949918d2ecf761dce6f19d5a0063e12f366c79
+ART sha256 unchanged=0c0838b6877417fbbc1f3c1bcf28eb900e17faea9ef3afe9228d408672587c2e
+ZIP: SPECTER_MASTER_DATA_EGYPT_CS_PARSE_FIX.zip (DATA only)

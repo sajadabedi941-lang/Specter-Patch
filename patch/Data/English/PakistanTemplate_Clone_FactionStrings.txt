@@ -1,0 +1,26 @@
+; SPECTER - Pakistan-template clones: SaudiArabia / UAE / India / Syria
+
+INI:FactionSaudiArabia = Saudi Arabia Armed Forces
+Side:SaudiArabia = Saudi Arabia Armed Forces
+FACTION:SaudiArabia = Saudi Arabia Armed Forces
+TOOLTIP:BioStrategyLong_SaudiArabia = Saudi Arabia Armed Forces - Pakistan-template combined-arms clone.
+GUI:BioFeatures_SaudiArabia = Armor, airpower, dual airbases, nuclear, artillery, C-RAM.
+
+INI:FactionUAE = United Arab Emirates Armed Forces
+Side:UAE = United Arab Emirates Armed Forces
+FACTION:UAE = United Arab Emirates Armed Forces
+TOOLTIP:BioStrategyLong_UAE = United Arab Emirates Armed Forces - Pakistan-template combined-arms clone.
+GUI:BioFeatures_UAE = Armor, airpower, dual airbases, nuclear, artillery, C-RAM.
+
+INI:FactionIndia = Indian Armed Forces
+Side:India = Indian Armed Forces
+FACTION:India = Indian Armed Forces
+TOOLTIP:BioStrategyLong_India = Indian Armed Forces - Pakistan-template combined-arms clone.
+GUI:BioFeatures_India = Armor, airpower, dual airbases, nuclear, artillery, C-RAM.
+
+INI:FactionSyria = Syrian Armed Forces
+Side:Syria = Syrian Armed Forces
+FACTION:Syria = Syrian Armed Forces
+TOOLTIP:BioStrategyLong_Syria = Syrian Armed Forces - Pakistan-template combined-arms clone.
+GUI:BioFeatures_Syria = Armor, airpower, dual airbases, nuclear, artillery, C-RAM.
+

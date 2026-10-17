@@ -1,0 +1,2 @@
+Extracted packed CommandSet.ini: T==T1==T2==T3 PASS
+Runtime path AmericaAirfield_T -> AmericaAirfieldCommandSet_T PASS

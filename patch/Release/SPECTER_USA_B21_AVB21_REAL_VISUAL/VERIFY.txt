@@ -1,0 +1,39 @@
+SPECTER_USA_B21_AVB21_REAL_VISUAL — VERIFY
+============================================================
+CommandSet.ini unchanged = PASS
+Airfield E3 token in CommandSet = PASS
+War Factory T3 present = PASS
+B-21 production route = PASS
+AmericaJetB21Clean Model AVB21_A = PASS
+US_B1R removed from B-21 Draw = PASS
+AVB3bmbr removed from B-21 Draw = PASS
+Real B-21 W3D packed = PASS
+Real B-21 textures packed = PASS
+Gameplay DESIGN block unchanged vs E3 = PASS
+B-2 unchanged = PASS
+THAAD unchanged = PASS
+M1075I unchanged = PASS
+
+B-21 Object = AmericaJetB21Clean
+Original donor Object = AmericaJetB21
+Original donor INI = B21_Rider.ini
+Normal model = AVB21_A.W3D
+Damaged / ReallyDamaged model = AVB21_A_D.W3D
+ReallyDamaged+afterburner / rubble AB = AVB21_D.W3D
+Dead model (TEOD B21DeadHull ref) = AVB21_E.W3D
+Debris model (TEOD OCL) = AVB21_E1.W3D
+Textures = B-21.dds, B-21_D.dds, B-21_E.dds (+ housecolor2.dds already in ART)
+Button icon = B21_L (US-Icons03.tga)
+Original TEOD Scale = (none)
+Final AmericaJetB21Clean Scale = (none)
+Command routing = Command_ConstructAmericaJetE3AWACS -> AmericaJetB21Clean
+
+DATA sha256 = d10172a2ec47913fa5f9437e7c145d4e48cb072ad75877733df0264323291018
+ART  sha256 = 2820116bf6ded94c88057adcc4388c9d0a53d66de342ae00bcb813c7838bb740
+ZIP  sha256 = 155993c92db4a97e00495910a53c01b45849696dc6ff92b50c8d46a9ec4bedcf
+Download = https://litter.catbox.moe/csu0qp.zip
+
+TEOD Geometry (NOT applied; gameplay geometry kept):
+  GeometryMajorRadius=20.0 GeometryMinorRadius=30.0 GeometryHeight=5.0
+AmericaJetB21Clean Geometry (kept):
+  GeometryMajorRadius=14.0 GeometryMinorRadius=7.0 GeometryHeight=5.0

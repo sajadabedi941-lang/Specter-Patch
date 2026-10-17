@@ -1,0 +1,20 @@
+PARSE CRASH FIX REPORT
+======================
+
+Exact bad line (CommandSet.ini, immediately before AmericaAirfieldCommandSet):
+  ; USA Airfield — final runtime roster (Countermeasures cleared).
+  (byte sequence E2 80 94 = UTF-8 em-dash U+2014)
+
+Exact reason:
+  Generals Zero Hour INI parser rejects non-ASCII. Parser stops and reports
+  error at the following block header:
+    CommandSet AmericaAirfieldCommandSet
+  Previous CommandSet (Command_ScriptedA10ThunderboltStrike) already had valid End.
+  AmericaAirfieldCommandSet* slot syntax was already valid.
+
+Exact correction:
+  Comment changed to ASCII:
+    ; USA Airfield - final runtime roster (Countermeasures cleared).
+  Same em-dash comments sanitized in:
+    ZZZZZZZZ_ZZZZZZ_ZZZZZZZZ_ZZ_ZZ_AIRFIELD_RUNTIME_ROSTER.ini
+  Roster / slot assignments unchanged (14 aircraft preserved).

@@ -1,0 +1,16 @@
+AVB21 evidence extracted from TEOD donor:
+  Source: /workspace/New folder.zip (multivolume) → !TEOD_W3D.big / !TEOD_Textures.big / !TEOD_INI.big
+
+Files:
+  AVB21.W3D
+  AVB21_A.W3D          (primary Draw model for AmericaJetB21)
+  AVB21_A_D.W3D
+  AVB21_D.W3D
+  AVB21_E.W3D
+  AVB21_E1.W3D
+  B-21.dds
+  B-21_D.dds
+  B-21_E.dds
+  B21_Rider.ini        (TEOD Object AmericaJetB21 reference)
+
+Forensics only — not wired into Specter gameplay/ART yet.

@@ -1,0 +1,25 @@
+Number of packed E3 button definitions = 2
+
+Actual old winning file = Data/INI/CommandButton.ini
+Old effective Object = AmericaJetE3AWACS
+
+Modified winning file = Data/INI/CommandButton.ini
+New effective Object = AmericaJetB21Clean
+
+Final TextLabel = CONTROLBAR:ConstructAmericaJetB21
+Final DescriptLabel = CONTROLBAR:ToolTipAmericaJetB21
+Final ButtonImage = us_b1r
+
+Any later E3 override remaining = NO
+(both packed defs now Object = AmericaJetB21Clean)
+
+CommandSet.ini unchanged = PASS
+Airfield unlock = PASS
+War Factory unlock = PASS
+THAAD = PASS
+M1075I = PASS
+B-2 unchanged = PASS
+B-52H unchanged = PASS
+
+Proof: in-game produced AmericaJetE3AWACS matching FIRST packed def in CommandButton.ini.
+HeavyAircraft late override does not win for CommandButtons. Fixed first-wins block directly.

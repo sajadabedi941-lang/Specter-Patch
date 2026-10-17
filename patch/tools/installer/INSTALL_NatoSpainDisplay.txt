@@ -21,15 +21,15 @@ SHA-256 (SPECTER_SPEC_ART_DATA.SHA256.txt, recalculated here):
   _SPEC_ART_TWO.big   a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
   _SPEC_DATA_ONE.big  169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8
 
-This installer/launcher does not download archives. Put the three official
-SPEC BIGs next to Install_SpecterPatch.bat, or keep an already-correct
-_SPEC_ART_TWO.big beside generals.exe from the original SPECTER extract.
-Install_SpecterPatch.bat and Launch_Specter.bat now copy ART_TWO when it
-is next to the bat, and they refuse to finish if it is missing from the
-game folder. They reject a wrong-size overlay (1608985) and wrong-size
-DATA_ONE / ART_ONE / ART_TWO, then re-check those four sizes in the
-game folder after copy. Byte size is not a SHA-256. Verify hashes with
-certutil before play if the download is untrusted.
+This installer/launcher does not download archives. Put all four BIGs
+next to Install_SpecterPatch.bat (overlay + DATA_ONE + ART_ONE + ART_TWO).
+A leftover ART_TWO beside generals.exe does not replace a missing source.
+
+Verify_SpecterArchives.bat hashes each file with certutil SHA-256. If
+certutil is missing, install stops. Source is checked before any copy.
+Destination size and SHA-256 are checked after copy. Failure never prints
+SUCCESS. Overlay SHA-256:
+  a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d
 
 What the overlay first-wins
 ---------------------------

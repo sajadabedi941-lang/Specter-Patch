@@ -1,0 +1,418 @@
+FORENSIC SECTIONS 2–7
+======================================================================
+
+########## DATASET: VENDOR_SPEC entries=2887 ##########
+
+SECTION 2: DUPLICATE OBJECT CHECK
+----------------------------------------------------------------------
+Egypt_CommandCenter: defs=1
+  - Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+AmericaCommandCenter: defs=1
+  - Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+Iraq_CommandCenter: defs=1
+  - Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+Object Egypt_CommandCenter occurrences: 1
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini:18: Object Egypt_CommandCenter
+
+SECTION 3: EGYPT_COMMANDCENTER REFERENCE CHECK
+----------------------------------------------------------------------
+Path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+SHA256: 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+  L18: Object Egypt_CommandCenter
+  L25:   SelectPortrait         = irq_comndcntr
+  L26:   ButtonImage            = irq_comndcntr
+  L29:   Draw                   = W3DModelDraw ModuleTag_0981
+  L35:       Model              = Irq_Command
+  L41:       Model              = Irq_Command
+  L46:       Model              = Irq_Command
+  L56:   Side                = Egypt
+  L58:   BuildCost           = 1615
+  L61:   CommandSet          = Egypt_CommandCenterCommandSet
+  L83:   KindOf              = PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY
+  L84:   Body                = StructureBody ModuleTag_0984
+  L85:     MaxHealth         = 2000.0
+  L94:   Behavior = AutoDepositUpdate ModuleTag_PatchOilIncome
+  L99:   Behavior = PreorderCreate ModuleTag_PreorderCreate
+  L102:   Behavior = ProductionUpdate ModuleTag_30985
+  L109:   Behavior = DefaultProductionExitUpdate ModuleTag_12306
+  L113:   Behavior             = DestroyDie ModuleTag_10988
+  L116:   Behavior             = CreateObjectDie ModuleTag_09849
+  L117:     CreationList  = OCL_LargeStructureDebris
+  L119:   Behavior             = FXListDie ModuleTag_1120
+  L122:   Behavior = GrantUpgradeCreate ModuleTag_ICBMBK
+  L123:     UpgradeToGrant = Upgrade_ICBM_BoosterKiller
+  L126:   Behavior           = OCLSpecialPower ModuleTag_Insertion
+  L127:     SpecialPowerTemplate = SuperweaponEgyptSFInsertion
+  L128:     OCL                  = SUPERWEAPON_IraqiSFInsertion
+  L133:   Behavior           = OCLSpecialPower ModuleTag_173
+  L134:     SpecialPowerTemplate = SuperweaponEgyptTu22CruiseMissileStrike
+  L135:     OCL                  = SUPERWEAPON_Tu22CruiseMissileStrike
+  L139:   Behavior = SpecialAbility ModuleTag_Adnan1SP
+  L140:     SpecialPowerTemplate = SuperweaponEgyptAWACS
+  L144:   Behavior = SpectreGunshipDeploymentUpdate ModuleTag_Adnan1
+  L145:     SpecialPowerTemplate = SuperweaponEgyptAWACS
+  L146:     GunshipTemplateName = Iraq_Adnan1
+  L151:   Behavior           = OCLSpecialPower ModuleTag_2432
+  L152:     SpecialPowerTemplate = SuperweaponEgyptParadrop
+  L153:     OCL                  = SUPERWEAPON_IraqiParadrop
+  L157:   Behavior           = OCLSpecialPower ModuleTag_286
+  L158:     SpecialPowerTemplate = SuperweaponEgyptCruiseStrike
+  L159:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike3 SUPERWEAPON_IraqiCruiseStrike3
+  L160:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike2 SUPERWEAPON_IraqiCruiseStrike2
+  L161:     OCL                  = SUPERWEAPON_IraqiCruiseStrike1
+  L165:   Behavior           = OCLSpecialPower ModuleTag_143
+  L166:     SpecialPowerTemplate = SuperweaponEgyptFOAB
+  L167:     OCL                  = SUPERWEAPON_FOAB
+  L170:   Behavior           = OCLSpecialPower ModuleTag_213f3w
+  L171:     SpecialPowerTemplate = SuperweaponEgyptReconnaissance
+  L172:     OCL                  = SUPERWEAPON_IraqReconnaissance
+  L176:   Behavior = FlammableUpdate ModuleTag_149
+  L182:   Behavior = TransitionDamageFX ModuleTag_620
+  L191:   Geometry            = BOX
+  L192:   GeometryMajorRadius = 65.0
+  L193:   GeometryMinorRadius = 65.0
+  L194:   GeometryHeight      = 54.0
+  L196:   GeometryIsSmall     = No
+  [OK] L61 CommandSet=Egypt_CommandCenterCommandSet
+  [OK] L127 SpecialPower=SuperweaponEgyptSFInsertion
+  [OK] L134 SpecialPower=SuperweaponEgyptTu22CruiseMissileStrike
+  [OK] L140 SpecialPower=SuperweaponEgyptAWACS
+  [OK] L145 SpecialPower=SuperweaponEgyptAWACS
+  [OK] L152 SpecialPower=SuperweaponEgyptParadrop
+  [OK] L158 SpecialPower=SuperweaponEgyptCruiseStrike
+  [OK] L166 SpecialPower=SuperweaponEgyptFOAB
+  [OK] L171 SpecialPower=SuperweaponEgyptReconnaissance
+  [OK] L117 OCL=OCL_LargeStructureDebris
+  [OK] L128 OCL=SUPERWEAPON_IraqiSFInsertion
+  [OK] L135 OCL=SUPERWEAPON_Tu22CruiseMissileStrike
+  [OK] L153 OCL=SUPERWEAPON_IraqiParadrop
+  [OK] L161 OCL=SUPERWEAPON_IraqiCruiseStrike1
+  [OK] L167 OCL=SUPERWEAPON_FOAB
+  [OK] L172 OCL=SUPERWEAPON_IraqReconnaissance
+  [OK] L146 Object/Gunship=Iraq_Adnan1
+  [OK] L123 Upgrade=Upgrade_ICBM_BoosterKiller
+  [OK] L66 Armor=StructureArmorTough
+  [OK] L67 DamageFX=StructureDamageFXNoShake
+  [OK] L120 FXList=FX_StructureMediumDeath
+  [OK] L159 UpgradeOCL Science=SCIENCE_Egypt_CruiseStrike3
+  [OK] L159 UpgradeOCL OCL=SUPERWEAPON_IraqiCruiseStrike3
+  [OK] L160 UpgradeOCL Science=SCIENCE_Egypt_CruiseStrike2
+  [OK] L160 UpgradeOCL OCL=SUPERWEAPON_IraqiCruiseStrike2
+  SpecialPower RequiredScience chain:
+    SP SuperweaponEgyptSFInsertion in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_SFInsertion exists=True
+    SP SuperweaponEgyptTu22CruiseMissileStrike in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Tu22CruiseMissileStrike exists=True
+    SP SuperweaponEgyptAWACS in Data\INI\SpecialPower_Egypt.ini
+      Enum=AIRF_SPECIAL_SPECTRE_GUNSHIP RequiredScience=SCIENCE_Egypt_AWACS exists=True
+    SP SuperweaponEgyptAWACS in Data\INI\SpecialPower_Egypt.ini
+      Enum=AIRF_SPECIAL_SPECTRE_GUNSHIP RequiredScience=SCIENCE_Egypt_AWACS exists=True
+    SP SuperweaponEgyptParadrop in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Paradrop exists=True
+    SP SuperweaponEgyptCruiseStrike in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_ARTILLERY_BARRAGE RequiredScience=SCIENCE_Egypt_CruiseStrike1 exists=True
+    SP SuperweaponEgyptFOAB in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_FOAB exists=True
+    SP SuperweaponEgyptReconnaissance in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Reconnaissance exists=True
+  CommandSet Egypt_CommandCenterCommandSet:
+    defined in Data\INI\CommandSet_Egypt.ini
+    [OK] slot 1=Command_ConstructEgypt_Worker
+      [OK] Command_ConstructEgypt_Worker Object=Egypt_Worker
+    [OK] slot 2=Command_ConstructEgypt_VT72B
+      [OK] Command_ConstructEgypt_VT72B Object=Egypt_VT72B
+    [OK] slot 12=Command_ConstructEgypt_IL-76
+      [OK] Command_ConstructEgypt_IL-76 Object=Egypt_IL-76
+    [OK] slot 13=Command_SetRallyPoint
+    [OK] slot 14=Command_Sell
+    [OK] slot 15=Command_ConstructEgypt_Alhussaien
+      [OK] Command_ConstructEgypt_Alhussaien Object=Egypt_Alhussaien
+  MISSING REF COUNT for this CC: 0
+  Iraq/irq code contamination hits: 15
+    >>   SelectPortrait         = irq_comndcntr
+    >>   ButtonImage            = irq_comndcntr
+    >>       Model              = Irq_Command
+    >>       Animation          = Irq_Command.Irq_Command
+    >>       Model              = Irq_Command
+    >>       Animation          = Irq_Command.Irq_Command
+    >>       Model              = Irq_Command
+    >>       Animation          = Irq_Command.Irq_Command
+    >>     OCL                  = SUPERWEAPON_IraqiSFInsertion
+    >>     GunshipTemplateName = Iraq_Adnan1
+    >>     OCL                  = SUPERWEAPON_IraqiParadrop
+    >> = SCIENCE_Egypt_CruiseStrike3 SUPERWEAPON_IraqiCruiseStrike3
+    >> = SCIENCE_Egypt_CruiseStrike2 SUPERWEAPON_IraqiCruiseStrike2
+    >>     OCL                  = SUPERWEAPON_IraqiCruiseStrike1
+    >>     OCL                  = SUPERWEAPON_IraqReconnaissance
+
+SECTION 4: COMPARE WITH USA AmericaCommandCenter
+----------------------------------------------------------------------
+USA path: Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+USA Behaviors (28): ['PreorderCreate:ModuleTag_PreorderCreate', 'ProductionUpdate:ModuleTag_11', 'DefaultProductionExitUpdate:ModuleTag_13', 'BaseRegenerateUpdate:ModuleTag_14', 'DestroyDie:ModuleTag_15', 'CreateObjectDie:ModuleTag_16', 'CreateObjectDie:ModuleTag_17', 'FXListDie:ModuleTag_18', 'OCLSpecialPower:ModuleTag_bgm', 'OCLSpecialPower:ModuleTag_20', 'OCLSpecialPower:ModuleTag_21', 'OCLSpecialPower:ModuleTag_22', 'OCLSpecialPower:ModuleTag_24', 'OCLSpecialPower:ModuleTag_25', 'OCLSpecialPower:ModuleTag_26', 'OCLSpecialPower:ModuleTag_27', 'SpecialAbility:ModuleTag_E3G', 'SpectreGunshipDeploymentUpdate:ModuleTag_E3GS', 'GrantUpgradeCreate:ModuleTag_ICBMBK', 'ObjectCreationUpgrade:ModuleTag_MMT', 'FlammableUpdate:ModuleTag_30', 'TransitionDamageFX:ModuleTag_31', 'SpecialAbility:ModuleTag_32', 'SpectreGunshipDeploymentUpdate:ModuleTag_33', 'OCLSpecialPower:ModuleTag_34', 'GrantScienceUpgrade:ModuleTag_Science', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker2']
+Egypt Behaviors (18): ['AutoDepositUpdate:ModuleTag_PatchOilIncome', 'PreorderCreate:ModuleTag_PreorderCreate', 'ProductionUpdate:ModuleTag_30985', 'DefaultProductionExitUpdate:ModuleTag_12306', 'DestroyDie:ModuleTag_10988', 'CreateObjectDie:ModuleTag_09849', 'FXListDie:ModuleTag_1120', 'GrantUpgradeCreate:ModuleTag_ICBMBK', 'OCLSpecialPower:ModuleTag_Insertion', 'OCLSpecialPower:ModuleTag_173', 'SpecialAbility:ModuleTag_Adnan1SP', 'SpectreGunshipDeploymentUpdate:ModuleTag_Adnan1', 'OCLSpecialPower:ModuleTag_2432', 'OCLSpecialPower:ModuleTag_286', 'OCLSpecialPower:ModuleTag_143', 'OCLSpecialPower:ModuleTag_213f3w', 'FlammableUpdate:ModuleTag_149', 'TransitionDamageFX:ModuleTag_620']
+Behavior types only in USA: ['BaseRegenerateUpdate', 'FireWeaponWhenDeadBehavior', 'GrantScienceUpgrade', 'ObjectCreationUpgrade']
+Behavior types only in Egypt: ['AutoDepositUpdate']
+USA has SpecialAbility: True
+Egypt has SpecialAbility: True
+USA has SpectreGunshipDeploymentUpdate: True
+Egypt has SpectreGunshipDeploymentUpdate: True
+  KindOf: USA=PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY | Egypt=PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY
+  Geometry: USA=BOX | Egypt=BOX
+  GeometryMajorRadius: USA=110.0 | Egypt=65.0
+  GeometryMinorRadius: USA=90.0 | Egypt=65.0
+  GeometryHeight: USA=49.0 | Egypt=54.0
+  CommandSet: USA=AmericaCommandCenterCommandSet | Egypt=Egypt_CommandCenterCommandSet
+  Side: USA=America | Egypt=Egypt
+  BuildCost: USA=2000 | Egypt=1615
+  MaxHealth: USA=5000.0 | Egypt=2000.0
+USA models: []
+Egypt models: []
+
+SECTION 5: ART / MODEL / AUDIO CHECK
+----------------------------------------------------------------------
+Models referenced: ['Irq_Command']
+Portraits: ['irq_comndcntr']
+Audio: ['BuildingDamagedStateLight', 'BuildingDestroy', 'CommandCenterGLASelect']
+  Model Irq_Command: ART hits=1 sample=['art\\w3d\\irq_command.w3d']
+  Portrait irq_comndcntr: ART hits=0 sample=[]
+
+SECTION 6: FACTION CONNECTION CHECK
+----------------------------------------------------------------------
+PlayerTemplate FactionEgypt @ Data\INI\PlayerTemplate_SpecterPatch.ini:294
+  [OK] L294 Side=Egypt
+  [OK] L295 BaseSide=Egypt
+  [OK] L300 IntrinsicSciences=SCIENCE_Egypt
+  [OK] L301 PurchaseScienceCommandSetRank1=SCIENCE_Egypt_CommandSetRank1
+  [OK] L302 PurchaseScienceCommandSetRank3=SCIENCE_Egypt_CommandSetRank3
+  [OK] L303 PurchaseScienceCommandSetRank8=SCIENCE_Egypt_CommandSetRank8
+  [OK] L304 SpecialPowerShortcutCommandSet=SpecialPowerShortcutEgyptSystem
+  [OK] L308 StartingBuilding=Egypt_MilitaryHQ
+  [OK] L309 StartingUnit0=Egypt_Worker
+  [OK] L310 StartingUnit1=Egypt_SystemSpecialPowerShortcut
+Science*Egypt count=20 sample=['SCIENCE_Egypt', 'SCIENCE_Egypt_AWACS', 'SCIENCE_Egypt_Alhussien', 'SCIENCE_Egypt_CruiseStrike1', 'SCIENCE_Egypt_CruiseStrike2', 'SCIENCE_Egypt_CruiseStrike3', 'SCIENCE_Egypt_DoctrineAirSuperiority', 'SCIENCE_Egypt_DoctrineArmoredWarfare', 'SCIENCE_Egypt_FOAB', 'SCIENCE_Egypt_GeneralAirAssault', 'SCIENCE_Egypt_GeneralAirPower', 'SCIENCE_Egypt_GeneralStrategic', 'SCIENCE_Egypt_Paradrop', 'SCIENCE_Egypt_Reconnaissance', 'SCIENCE_Egypt_SFInsertion']
+Upgrade*Egypt count=13 sample=['Upgrade_EgyptArmy', 'Upgrade_Egypt_AircraftCountermeasures', 'Upgrade_Egypt_AircraftWeapons', 'Upgrade_Egypt_Armor', 'Upgrade_Egypt_ArmorDoctrine', 'Upgrade_Egypt_DoctrineAirSuperiority', 'Upgrade_Egypt_DoctrineArmoredWarfare', 'Upgrade_Egypt_F16Block52', 'Upgrade_Egypt_RafaleUpgrade', 'Upgrade_Egypt_TechAirIntegration']
+CommandSet*Egypt count=34 sample=['EgyptAirfieldCommandSet', 'EgyptCampCommandSet', 'EgyptDozerCommandSet', 'EgyptIndustryPlanetCommandSet', 'EgyptWarFactoryCommandSet', 'Egypt_AbbasCommandSet', 'Egypt_AdvancedAirBaseCommandSet', 'Egypt_AirfieldCommandSet', 'Egypt_AirfieldCommandSet1', 'Egypt_AirfieldCommandSet2', 'Egypt_AirfieldCommandSet3', 'Egypt_AlhussaienArmedCommandSet', 'Egypt_AlhussaienCommandSet', 'Egypt_BarracksCommandSet', 'Egypt_CommandCenterCommandSet']
+
+SECTION 7: PARSER CHECK
+----------------------------------------------------------------------
+Egypt_CommandCenter parser depth_final=0 hard_extra_End=False events=[]
+Parser: PASS
+
+########## DATASET: FULL_MERGED entries=2892 ##########
+
+SECTION 2: DUPLICATE OBJECT CHECK
+----------------------------------------------------------------------
+Egypt_CommandCenter: defs=1
+  - Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+AmericaCommandCenter: defs=1
+  - Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+Iraq_CommandCenter: defs=1
+  - Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+Object Egypt_CommandCenter occurrences: 1
+  Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini:11: Object Egypt_CommandCenter
+
+SECTION 3: EGYPT_COMMANDCENTER REFERENCE CHECK
+----------------------------------------------------------------------
+Path: Data\INI\Object\Specter\Egyptian Armed Forces\Buildings\Egypt_CommandCenter.ini
+SHA256: 81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+  L11: Object Egypt_CommandCenter
+  L16:   SelectPortrait         = us_commandcenter
+  L17:   ButtonImage            = us_commandcenter
+  L20:   Draw = W3DModelDraw ModuleTag_01
+  L24:       Model              = US_Command
+  L29:       Model              = US_Command
+  L34:       Model              = US_Command
+  L43:   Draw                = W3DModelDraw ModuleTag_03
+  L45:       Model           = US_COM_Strb
+  L54:       Model           = US_COM_Strb
+  L63:       Model           = US_COM_Strb
+  L74:   Side                  = Egypt
+  L76:   BuildCost             = 2000
+  L79:   CommandSet            = Egypt_CommandCenterCommandSet
+  L100:   KindOf              = PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY
+  L101:   Body                = StructureBody ModuleTag_08
+  L102:     MaxHealth         = 5000.0
+  L112:   Behavior = PreorderCreate ModuleTag_PreorderCreate
+  L114:   Behavior = ProductionUpdate ModuleTag_11
+  L121:   Behavior = DefaultProductionExitUpdate ModuleTag_13
+  L125:   Behavior = BaseRegenerateUpdate ModuleTag_14
+  L128:   Behavior             = DestroyDie ModuleTag_15
+  L131:   Behavior             = CreateObjectDie ModuleTag_16
+  L132:     CreationList  = OCL_LargeStructureDebris
+  L134:   Behavior             = CreateObjectDie ModuleTag_17
+  L135:     CreationList  = OCL_AmericanRangerDebris10
+  L138:   Behavior             = FXListDie ModuleTag_18
+  L143:   Behavior           = OCLSpecialPower ModuleTag_EgyptInsertion
+  L144:     SpecialPowerTemplate = SuperweaponEgyptSFInsertion
+  L145:     OCL                  = SUPERWEAPON_Paradrop1
+  L149:   Behavior           = OCLSpecialPower ModuleTag_EgyptTu22
+  L150:     SpecialPowerTemplate = SuperweaponEgyptTu22CruiseMissileStrike
+  L151:     OCL                  = SUPERWEAPON_Tu22CruiseMissileStrike
+  L154:   Behavior           = OCLSpecialPower ModuleTag_EgyptParadrop
+  L155:     SpecialPowerTemplate = SuperweaponEgyptParadrop
+  L156:     OCL                  = SUPERWEAPON_Paradrop1
+  L160:   Behavior           = OCLSpecialPower ModuleTag_EgyptCruise
+  L161:     SpecialPowerTemplate = SuperweaponEgyptCruiseStrike
+  L162:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike3 SUPERWEAPON_US_CruiseMissileStrike_3
+  L163:     UpgradeOCL           = SCIENCE_Egypt_CruiseStrike2 SUPERWEAPON_US_CruiseMissileStrike_2
+  L164:     OCL                  = SUPERWEAPON_AmericaTomahawkStrike1
+  L167:   Behavior           = OCLSpecialPower ModuleTag_EgyptFOAB
+  L168:     SpecialPowerTemplate = SuperweaponEgyptFOAB
+  L169:     OCL                  = SUPERWEAPON_FOAB
+  L172:   Behavior           = OCLSpecialPower ModuleTag_EgyptRecon
+  L173:     SpecialPowerTemplate = SuperweaponEgyptReconnaissance
+  L174:     OCL                  = SUPERWEAPON_SpySatellite
+  L179:   Behavior = SpecialAbility ModuleTag_EgyptAWACS_Ability
+  L180:     SpecialPowerTemplate = SuperweaponEgyptAWACS
+  L183:   Behavior = SpectreGunshipDeploymentUpdate ModuleTag_EgyptAWACS
+  L184:     SpecialPowerTemplate = SuperweaponEgyptAWACS
+  L185:     GunshipTemplateName = US_E3G_AWACS
+  L190:   Behavior = GrantUpgradeCreate ModuleTag_ICBMBK
+  L191:     UpgradeToGrant = Upgrade_ICBM_BoosterKiller
+  L193:   Behavior                  = ObjectCreationUpgrade ModuleTag_MMT
+  L194:     UpgradeObject           = OCL_USBTD
+  L195:     TriggeredBy             = Upgrade_ICBM_BoosterKiller
+  L198:   Behavior = FlammableUpdate ModuleTag_30
+  L204:   Behavior = TransitionDamageFX ModuleTag_31
+  L211:   Behavior = GrantScienceUpgrade ModuleTag_Science
+  L212:     GrantScience = SCIENCE_MOAB
+  L213:     TriggeredBy = Upgrade_AmericaMOAB
+  L215:   Behavior = FireWeaponWhenDeadBehavior ModuleTag_KillMarker
+  L216:     DeathWeapon  = GenericTargetMarkerKiller
+  L219:   Behavior          = FireWeaponWhenDeadBehavior ModuleTag_KillMarker2
+  L220:     DeathWeapon     = GenericTargetMarkerKiller
+  L225:   Geometry            = BOX
+  L226:   GeometryMajorRadius = 110.0
+  L227:   GeometryMinorRadius = 90.0
+  L228:   GeometryHeight      = 49.0
+  L229:   GeometryIsSmall     = No
+  [OK] L79 CommandSet=Egypt_CommandCenterCommandSet
+  [OK] L144 SpecialPower=SuperweaponEgyptSFInsertion
+  [OK] L150 SpecialPower=SuperweaponEgyptTu22CruiseMissileStrike
+  [OK] L155 SpecialPower=SuperweaponEgyptParadrop
+  [OK] L161 SpecialPower=SuperweaponEgyptCruiseStrike
+  [OK] L168 SpecialPower=SuperweaponEgyptFOAB
+  [OK] L173 SpecialPower=SuperweaponEgyptReconnaissance
+  [OK] L180 SpecialPower=SuperweaponEgyptAWACS
+  [OK] L184 SpecialPower=SuperweaponEgyptAWACS
+  [OK] L132 OCL=OCL_LargeStructureDebris
+  [OK] L135 OCL=OCL_AmericanRangerDebris10
+  [OK] L145 OCL=SUPERWEAPON_Paradrop1
+  [OK] L151 OCL=SUPERWEAPON_Tu22CruiseMissileStrike
+  [OK] L156 OCL=SUPERWEAPON_Paradrop1
+  [OK] L164 OCL=SUPERWEAPON_AmericaTomahawkStrike1
+  [OK] L169 OCL=SUPERWEAPON_FOAB
+  [OK] L174 OCL=SUPERWEAPON_SpySatellite
+  [OK] L194 OCL=OCL_USBTD
+  [OK] L185 Object/Gunship=US_E3G_AWACS
+  [OK] L191 Upgrade=Upgrade_ICBM_BoosterKiller
+  [OK] L195 Upgrade=Upgrade_ICBM_BoosterKiller
+  [OK] L213 Upgrade=Upgrade_AmericaMOAB
+  [OK] L212 Science=SCIENCE_MOAB
+  [OK] L216 Weapon=GenericTargetMarkerKiller
+  [OK] L220 Weapon=GenericTargetMarkerKiller
+  [OK] L84 Armor=StructureArmorTough
+  [OK] L85 DamageFX=StructureDamageFXNoShake
+  [OK] L139 FXList=FX_StructureMediumDeath
+  [OK] L162 UpgradeOCL Science=SCIENCE_Egypt_CruiseStrike3
+  [OK] L162 UpgradeOCL OCL=SUPERWEAPON_US_CruiseMissileStrike_3
+  [OK] L163 UpgradeOCL Science=SCIENCE_Egypt_CruiseStrike2
+  [OK] L163 UpgradeOCL OCL=SUPERWEAPON_US_CruiseMissileStrike_2
+  SpecialPower RequiredScience chain:
+    SP SuperweaponEgyptSFInsertion in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_SFInsertion exists=True
+    SP SuperweaponEgyptTu22CruiseMissileStrike in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Tu22CruiseMissileStrike exists=True
+    SP SuperweaponEgyptParadrop in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Paradrop exists=True
+    SP SuperweaponEgyptCruiseStrike in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_ARTILLERY_BARRAGE RequiredScience=SCIENCE_Egypt_CruiseStrike1 exists=True
+    SP SuperweaponEgyptFOAB in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_FOAB exists=True
+    SP SuperweaponEgyptReconnaissance in Data\INI\SpecialPower_Egypt.ini
+      Enum=SPECIAL_PARADROP_AMERICA RequiredScience=SCIENCE_Egypt_Reconnaissance exists=True
+    SP SuperweaponEgyptAWACS in Data\INI\SpecialPower_Egypt.ini
+      Enum=AIRF_SPECIAL_SPECTRE_GUNSHIP RequiredScience=SCIENCE_Egypt_AWACS exists=True
+    SP SuperweaponEgyptAWACS in Data\INI\SpecialPower_Egypt.ini
+      Enum=AIRF_SPECIAL_SPECTRE_GUNSHIP RequiredScience=SCIENCE_Egypt_AWACS exists=True
+  CommandSet Egypt_CommandCenterCommandSet:
+    defined in Data\INI\CommandSet_Egypt.ini
+    [OK] slot 1=Command_ConstructEgypt_Worker
+      [OK] Command_ConstructEgypt_Worker Object=Egypt_Worker
+    [OK] slot 2=Command_ConstructEgypt_VT72B
+      [OK] Command_ConstructEgypt_VT72B Object=Egypt_VT72B
+    [OK] slot 12=Command_ConstructEgypt_IL-76
+      [OK] Command_ConstructEgypt_IL-76 Object=Egypt_IL-76
+    [OK] slot 13=Command_SetRallyPoint
+    [OK] slot 14=Command_Sell
+    [OK] slot 15=Command_ConstructEgypt_Alhussaien
+      [OK] Command_ConstructEgypt_Alhussaien Object=Egypt_Alhussaien
+  MISSING REF COUNT for this CC: 0
+  Iraq/irq code contamination hits: 0
+
+SECTION 4: COMPARE WITH USA AmericaCommandCenter
+----------------------------------------------------------------------
+USA path: Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+USA Behaviors (28): ['PreorderCreate:ModuleTag_PreorderCreate', 'ProductionUpdate:ModuleTag_11', 'DefaultProductionExitUpdate:ModuleTag_13', 'BaseRegenerateUpdate:ModuleTag_14', 'DestroyDie:ModuleTag_15', 'CreateObjectDie:ModuleTag_16', 'CreateObjectDie:ModuleTag_17', 'FXListDie:ModuleTag_18', 'OCLSpecialPower:ModuleTag_bgm', 'OCLSpecialPower:ModuleTag_20', 'OCLSpecialPower:ModuleTag_21', 'OCLSpecialPower:ModuleTag_22', 'OCLSpecialPower:ModuleTag_24', 'OCLSpecialPower:ModuleTag_25', 'OCLSpecialPower:ModuleTag_26', 'OCLSpecialPower:ModuleTag_27', 'SpecialAbility:ModuleTag_E3G', 'SpectreGunshipDeploymentUpdate:ModuleTag_E3GS', 'GrantUpgradeCreate:ModuleTag_ICBMBK', 'ObjectCreationUpgrade:ModuleTag_MMT', 'FlammableUpdate:ModuleTag_30', 'TransitionDamageFX:ModuleTag_31', 'SpecialAbility:ModuleTag_32', 'SpectreGunshipDeploymentUpdate:ModuleTag_33', 'OCLSpecialPower:ModuleTag_34', 'GrantScienceUpgrade:ModuleTag_Science', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker2']
+Egypt Behaviors (23): ['PreorderCreate:ModuleTag_PreorderCreate', 'ProductionUpdate:ModuleTag_11', 'DefaultProductionExitUpdate:ModuleTag_13', 'BaseRegenerateUpdate:ModuleTag_14', 'DestroyDie:ModuleTag_15', 'CreateObjectDie:ModuleTag_16', 'CreateObjectDie:ModuleTag_17', 'FXListDie:ModuleTag_18', 'OCLSpecialPower:ModuleTag_EgyptInsertion', 'OCLSpecialPower:ModuleTag_EgyptTu22', 'OCLSpecialPower:ModuleTag_EgyptParadrop', 'OCLSpecialPower:ModuleTag_EgyptCruise', 'OCLSpecialPower:ModuleTag_EgyptFOAB', 'OCLSpecialPower:ModuleTag_EgyptRecon', 'SpecialAbility:ModuleTag_EgyptAWACS_Ability', 'SpectreGunshipDeploymentUpdate:ModuleTag_EgyptAWACS', 'GrantUpgradeCreate:ModuleTag_ICBMBK', 'ObjectCreationUpgrade:ModuleTag_MMT', 'FlammableUpdate:ModuleTag_30', 'TransitionDamageFX:ModuleTag_31', 'GrantScienceUpgrade:ModuleTag_Science', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker', 'FireWeaponWhenDeadBehavior:ModuleTag_KillMarker2']
+Behavior types only in USA: []
+Behavior types only in Egypt: []
+USA has SpecialAbility: True
+Egypt has SpecialAbility: True
+USA has SpectreGunshipDeploymentUpdate: True
+Egypt has SpectreGunshipDeploymentUpdate: True
+  KindOf: USA=PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY | Egypt=PRELOAD STRUCTURE SELECTABLE IMMOBILE COMMANDCENTER SCORE CAPTURABLE FS_FACTORY AUTO_RALLYPOINT MP_COUNT_FOR_VICTORY
+  Geometry: USA=BOX | Egypt=BOX
+  GeometryMajorRadius: USA=110.0 | Egypt=110.0
+  GeometryMinorRadius: USA=90.0 | Egypt=90.0
+  GeometryHeight: USA=49.0 | Egypt=49.0
+  CommandSet: USA=AmericaCommandCenterCommandSet | Egypt=Egypt_CommandCenterCommandSet
+  Side: USA=America | Egypt=Egypt
+  BuildCost: USA=2000 | Egypt=2000
+  MaxHealth: USA=5000.0 | Egypt=5000.0
+USA models: []
+Egypt models: []
+
+SECTION 5: ART / MODEL / AUDIO CHECK
+----------------------------------------------------------------------
+Models referenced: ['US_COM_Strb', 'US_Command']
+Portraits: ['us_commandcenter']
+Audio: ['BuildingDamagedStateLight', 'BuildingDestroy', 'CommandCenterUSASelect']
+  Model US_Command: ART hits=1 sample=['art\\w3d\\us_command.w3d']
+  Model US_COM_Strb: ART hits=1 sample=['art\\w3d\\us_com_strb.w3d']
+  Portrait us_commandcenter: ART hits=0 sample=[]
+
+SECTION 6: FACTION CONNECTION CHECK
+----------------------------------------------------------------------
+PlayerTemplate FactionEgypt @ Data\INI\PlayerTemplate_SpecterPatch.ini:294
+  [OK] L294 Side=Egypt
+  [OK] L295 BaseSide=Egypt
+  [OK] L299 IntrinsicSciences=SCIENCE_Egypt
+  [OK] L300 PurchaseScienceCommandSetRank1=SCIENCE_Egypt_CommandSetRank1
+  [OK] L301 PurchaseScienceCommandSetRank3=SCIENCE_Egypt_CommandSetRank3
+  [OK] L302 PurchaseScienceCommandSetRank8=SCIENCE_Egypt_CommandSetRank8
+  [OK] L303 SpecialPowerShortcutCommandSet=SpecialPowerShortcutEgyptSystem
+  [OK] L307 StartingBuilding=Egypt_MilitaryHQ
+  [OK] L308 StartingUnit0=Egypt_Worker
+  [OK] L309 StartingUnit1=Egypt_SystemSpecialPowerShortcut
+Science*Egypt count=20 sample=['SCIENCE_Egypt', 'SCIENCE_Egypt_AWACS', 'SCIENCE_Egypt_Alhussien', 'SCIENCE_Egypt_CruiseStrike1', 'SCIENCE_Egypt_CruiseStrike2', 'SCIENCE_Egypt_CruiseStrike3', 'SCIENCE_Egypt_DoctrineAirSuperiority', 'SCIENCE_Egypt_DoctrineArmoredWarfare', 'SCIENCE_Egypt_FOAB', 'SCIENCE_Egypt_GeneralAirAssault', 'SCIENCE_Egypt_GeneralAirPower', 'SCIENCE_Egypt_GeneralStrategic', 'SCIENCE_Egypt_Paradrop', 'SCIENCE_Egypt_Reconnaissance', 'SCIENCE_Egypt_SFInsertion']
+Upgrade*Egypt count=13 sample=['Upgrade_EgyptArmy', 'Upgrade_Egypt_AircraftCountermeasures', 'Upgrade_Egypt_AircraftWeapons', 'Upgrade_Egypt_Armor', 'Upgrade_Egypt_ArmorDoctrine', 'Upgrade_Egypt_DoctrineAirSuperiority', 'Upgrade_Egypt_DoctrineArmoredWarfare', 'Upgrade_Egypt_F16Block52', 'Upgrade_Egypt_RafaleUpgrade', 'Upgrade_Egypt_TechAirIntegration']
+CommandSet*Egypt count=34 sample=['EgyptAirfieldCommandSet', 'EgyptCampCommandSet', 'EgyptDozerCommandSet', 'EgyptIndustryPlanetCommandSet', 'EgyptWarFactoryCommandSet', 'Egypt_AbbasCommandSet', 'Egypt_AdvancedAirBaseCommandSet', 'Egypt_AirfieldCommandSet', 'Egypt_AirfieldCommandSet1', 'Egypt_AirfieldCommandSet2', 'Egypt_AirfieldCommandSet3', 'Egypt_AlhussaienArmedCommandSet', 'Egypt_AlhussaienCommandSet', 'Egypt_BarracksCommandSet', 'Egypt_CommandCenterCommandSet']
+
+SECTION 7: PARSER CHECK
+----------------------------------------------------------------------
+Egypt_CommandCenter parser depth_final=0 hard_extra_End=False events=[]
+Parser: PASS
+
+======================================================================
+SYNTHESIS / CRASH CAUSE CANDIDATES
+======================================================================
+C1) Vendor SPEC Egypt_CommandCenter.ini sha 1b559b9e… uses Iraq donor assets:
+    L?: SelectPortrait/ButtonImage = irq_comndcntr
+    L?: Model = Irq_Command
+    L?: GunshipTemplateName = Iraq_Adnan1
+    L?: OCL = SUPERWEAPON_Iraqi* / SUPERWEAPON_IraqReconnaissance
+    These resolve during Object Egypt_CommandCenter init → Uncaught Exception.
+C2) Install still using vendor/broken _SPEC_DATA_ONE.big (or a package that still embeds 1b559b9e).
+C3) Even with case-insensitive overlay win, if ONLY broken SPEC is installed, crash remains.
+C4) Duplicate Object Egypt_CommandCenter across BIGs is OK if one wins; duplicate INSIDE one BIG would be fatal — check defs count==1 per dataset.

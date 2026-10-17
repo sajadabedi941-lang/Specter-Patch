@@ -1,0 +1,21 @@
+EGYPT ROOT CAUSE FIXED — PACKAGE SUMMARY
+========================================
+
+Forensic conclusion (see CRASH_FORENSIC_VERDICT.txt):
+  Vendor _SPEC_DATA_ONE.big embeds broken Iraq-donor Egypt_CommandCenter.ini
+  SHA 1b559b9e0d4eb1400e76934196eb71205c1ff21317e610d717c1da1dc7870b61
+  Exact broken refs at L25-26 irq_comndcntr, L35 Irq_Command, L146 Iraq_Adnan1,
+  L128/153/159-161/172 SUPERWEAPON_Iraqi* / SUPERWEAPON_IraqReconnaissance
+
+This package:
+  Drop-in _SPEC_DATA_ONE.big (full Specter content retained)
+  Egypt_CommandCenter = USA AmericaCommandCenter donor (Side=Egypt)
+  Egypt_CommandCenter SHA 81dd3fcd672bf68d3d7a965e1d8b30195301b7ac198582fc8d28bbc5d963e00c
+  BIG SHA 6152f44c6ed0358e8a3a9eb8c377529300363ccacbaf1f3e8912078190fd3289
+  Validation: PASS
+
+INSTALL:
+  1. Backup Data\_SPEC_DATA_ONE.big
+  2. Copy this _SPEC_DATA_ONE.big over Data\_SPEC_DATA_ONE.big
+  3. Keep _SPEC_ART_ONE.big
+  4. DELETE every other Specter Data BIG / overlay

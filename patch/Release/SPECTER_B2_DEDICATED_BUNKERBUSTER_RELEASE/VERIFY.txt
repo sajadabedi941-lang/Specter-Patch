@@ -1,0 +1,9 @@
+VERIFY — AmericaJetB2 dedicated bunker-buster payload
+PRIMARY Weapon: America_Weapon_B2_BunkerBuster
+ClipSize: 10
+AutoReloadsClip: RETURN_TO_BASE
+Projectile: MK-84
+DamageType: ARMOR_PIERCING (heavy structure / bunker role)
+InnateStealth: Yes (kept)
+Draw/Model/Airfield/CommandSet/Production/AI/Locomotor: untouched
+ZIP: _SPEC_DATA_ONE.big + _SPEC_ART_ONE.big only

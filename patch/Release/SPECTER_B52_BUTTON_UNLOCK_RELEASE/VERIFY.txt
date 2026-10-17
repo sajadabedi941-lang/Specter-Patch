@@ -1,0 +1,4 @@
+Simulated load: AmericaJetB52H prereq_objs=[] (StrategyCenter cleared at Heavy_Runway source).
+Buildable=Ignore_Prerequisites BuildCost=8500 MaxSimultaneousOfType=3.
+All AmericaAirfieldCommandSet* B-52 slots = Command_ConstructAmericaJetB52H.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

@@ -1,0 +1,59 @@
+B-21 VISUAL ASSET SEARCH — NO RELEASE
+
+Current wrong B-1 model = US_B1R
+Previous wrong B-2 model = AVB3bmbr
+
+REAL B-21 W3D found in original patch = NOT FOUND
+REAL B-21 texture(s) = NOT FOUND
+Original source/object that uses it = N/A
+
+REAL B-21 W3D != US_B1R = FAIL (no candidate found)
+REAL B-21 W3D != AVB3bmbr = FAIL (no candidate found)
+
+PROOF
+------
+Original ART source inspected:
+  /tmp/specter_full_base/_SPEC_ART_ONE.big
+  sha256 = 227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+  Total W3D entries = 1247
+
+Also compared:
+  /tmp/SPECTER_PR253_STABLE_RELEASE/_SPEC_ART_ONE.big (same ART sha)
+  /tmp/SPECTER_B2_B52_B21_STABLE_FULL_BIG/_SPEC_ART_ONE.big
+    (only +6 Turkey UI textures; no new W3D)
+
+USA bomber W3Ds present in original ART:
+  US_B1R.W3D          -> B-1 look (rejected in-game)
+  AVB3bmbr.W3D/_d/_d1 -> B-2 look (rejected in-game)
+  US_B52H.W3D         -> B-52
+
+W3D basenames matching B21/Raider/USB21/USAB21/B21R:
+  (none)
+
+ASCII ".W3D" strings inside entire ART BIG matching B21/Raider:
+  (none)
+
+INI TRACE (original/current packed DATA)
+  AmericaJetB21 (Airforce/B21.ini) Draw Model = US_B1R
+  Patch_America_B21 Draw Model = US_B1R
+  AmericaJetB1R Draw Model = US_B1R
+  AmericaJetB2 / Patch_America_B2 Draw Model = AVB3bmbr
+  Later ZZZZ B21 "visual" overlays forced AmericaJetB21 -> AVB3bmbr
+    with comments admitting: "No dedicated B-21 / Raider W3D in ART BIG"
+
+Git origin of AmericaJetB21:
+  commit 4001fa7f / c6f6f48a
+  "Add AmericaJetB21 Raider via B1R clone Airfield pipeline"
+  Added INI/strings only — NO new W3D/texture art files.
+
+CONCLUSION
+----------
+Within every original/imported ART package available in this environment,
+there is no third distinct B-21 Raider mesh separate from US_B1R and AVB3bmbr.
+
+Per release condition: DO NOT RELEASE.
+
+BLOCKER
+-------
+Need the user to provide the exact B-21 W3D + textures they saw, or the
+exact archive path outside this ART BIG that contains them.

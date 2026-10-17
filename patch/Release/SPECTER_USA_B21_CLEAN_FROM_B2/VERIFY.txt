@@ -1,0 +1,28 @@
+B-2 template Object = AmericaJetB2
+B-2 source file = Data/INI/Object/Specter/United States Of America/TEOD_AmericaJetB2.ini
+
+NEW B-21 Object = AmericaJetB21Clean
+NEW B-21 source file = Data/INI/Object/Specter/United States Of America/AmericaJetB21Clean.ini
+
+B-21 W3D = AVB3bmbr / AVB3bmbr_D / AVB3bmbr_D1
+B-21 texture(s) = avb3bmbr.dds / avb3bmbr_d.dds
+
+Airfield slot token = Command_ConstructAmericaJetE3AWACS
+
+Effective button source file = Data/INI/CommandButton_ZZZZZ_USA_HeavyAircraft_Unlock_Final.ini
+Effective button Object = AmericaJetB21Clean
+TextLabel = CONTROLBAR:ConstructAmericaJetB21
+DescriptLabel = CONTROLBAR:ToolTipAmericaJetB21
+ButtonImage = us_b1r
+
+CommandSet.ini byte-identical to PR #295 = PASS
+War Factory unchanged = PASS
+THAAD unlocked = PASS
+M1075I unlocked = PASS
+B-2 unchanged = PASS
+B-52H unchanged = PASS
+No later E3 button override = PASS
+B-21 assets present in packed ART BIG = PASS
+
+Runtime chain:
+AmericaAirfield_T -> AmericaAirfieldCommandSet_* (PR#295 CommandSet.ini unchanged) -> Command_ConstructAmericaJetE3AWACS -> AmericaJetB21Clean

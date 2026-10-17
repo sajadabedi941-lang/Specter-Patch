@@ -1,21 +1,20 @@
 SPECTER — Spanish Armed Forces name and flag (draft overlay)
 ============================================================
 
-PR #685 is a draft and is NOT on main. The GitHub Release built from main
-(specter-spec-art-data) does NOT contain this overlay. If that package is
-what is installed, the faction still shows as NATO Armies with USA identity
-images. This 0_ BIG must sit beside generals.exe.
+PR #685 is a draft and is NOT on main. GitHub Release specter-spec-art-data
+was built from main and does NOT contain this overlay. Installing that
+Release alone still shows NATO Armies with USA identity images.
+
+This 0_ BIG must sit beside generals.exe. Do not rename it to zz_.
+Do not put BIG files inside Data\ or Art\.
 
 Required files next to generals.exe
 -----------------------------------
-  0_SPECTER_NatoSpainDisplay.big          <-- this overlay; name must start with 0_
+  0_SPECTER_NatoSpainDisplay.big
   _SPEC_DATA_ONE.big
-  _SPEC_ART_ONE.big                       <-- textures; without it buildings are black/pink
-  _SPEC_ART_TWO.big                       <-- W3D models (original SPECTER art set)
-
-Do not rename 0_SPECTER_NatoSpainDisplay.big to zz_.
-Do not put BIG files inside Data\ or Art\.
-Run Install_SpecterPatch.bat or Launch_Specter.bat from this folder.
+  _SPEC_ART_ONE.big     textures; without it buildings are black/pink
+  _SPEC_ART_TWO.big     W3D models (original SPECTER art set; installer
+                        on main does not copy this file)
 
 What this overlay first-wins
 ----------------------------
@@ -23,29 +22,27 @@ What this overlay first-wins
       INI:FactionNatoForces / SIDE:Nato = Spanish Armed Forces
   Data\INI\PlayerTemplate.ini
       FactionNato only: WatermarkSpain, SSObserverSpain, GameinfoSpain, Spain_Logo
-      FactionAmerica unchanged (WatermarkUSA / SSObserverUSA / GameinfoAMRCA)
+      FactionAmerica unchanged
   Art\Textures\ES_Flag.tga
-      Spanish national flag (red-yellow-red, coat of arms)
-  Art\W3D\NT__NTFlag_Hs{CP,CU,PP,SC,WF}.W3D
-      Existing NATO Flag_Hs meshes; texture name NT_Flag.tga -> ES_Flag.tga
-      Command Center, Camp, Power Station, Supply Center, War Factory only
+      Spanish flag for unique Spain mapped images
+  Art\Textures\NT_Flag.tga
+      Same Spanish flag pixels. NT__NTFlag_* building Flag_Hs W3Ds in
+      ART_TWO already sample this filename. The overlay does not pack
+      or rewrite those W3Ds.
 
-Black / magenta buildings
--------------------------
-NATO Command Center model is still US_Command.W3D with US_BUILDINGS.dds in
-_SPEC_ART_ONE.big. This overlay does not replace those files.
+Black / magenta buildings (not caused by this overlay's DATA)
+-------------------------------------------------------------
+NATO Command Center is still US_Command.W3D + US_BUILDINGS.dds in the
+accepted ART packs. This overlay does not replace those files.
 
-Solid-black silhouettes plus one magenta mesh is the engine missing-texture
-look when W3Ds load from _SPEC_ART_TWO.big but textures from _SPEC_ART_ONE.big
-do not. Confirm _SPEC_ART_ONE.big is beside generals.exe, ~2.0 GB, SHA-256
+Solid-black silhouettes plus a magenta mesh is the engine missing-texture
+look when W3Ds load from ART_TWO but ART_ONE textures are not beside
+generals.exe. Confirm ART_ONE is ~2.0 GB, SHA-256
 9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8.
-
-The magenta mesh on the Command Center is the Flag_Hs draw (NT__NTFlag_HsCU)
-when its flag TGA is missing. With this overlay loaded it uses ES_Flag.tga.
 
 Not included
 ------------
 Missile cooldown / warhead changes (draft PR #684).
-No GitHub Release is produced with this fix.
+No GitHub Release is produced with this overlay.
 
 Internal identifiers FactionNato and Side=Nato are unchanged.

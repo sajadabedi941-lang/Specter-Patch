@@ -1,7 +1,7 @@
 {
   "overlay": "0_SPECTER_NatoSpainDisplay.big",
-  "overlay_sha256": "ee95be18c717ee0d773785cc11bd14a36770d21916140705c9487a0db3996e77",
-  "overlay_bytes": 1678051,
+  "overlay_sha256": "a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d",
+  "overlay_bytes": 1608985,
   "source_data_big": "/tmp/sp_work/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big",
   "source_data_sha256": "169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8",
   "csf_path": "Data\\English\\generals.csf",
@@ -22,24 +22,14 @@
     "GeneralImage": "Spain_Logo -> ES_Flag center 64x64",
     "LoadScreenImage": "SAFactionLogoPage_US (shared EU load page; Britain/France/Italy use the same)",
     "ScoreScreenImage": "America_ScoreScreen (shared EU score page; unchanged)",
-    "NT_Flag.tga": "NATO compass rose; unused by PlayerTemplate; building Flag_Hs W3Ds retargeted to ES_Flag.tga",
-    "building_flag_w3ds": [
-      "Art\\W3D\\NT__NTFlag_HsCP.W3D",
-      "Art\\W3D\\NT__NTFlag_HsCU.W3D",
-      "Art\\W3D\\NT__NTFlag_HsPP.W3D",
-      "Art\\W3D\\NT__NTFlag_HsSC.W3D",
-      "Art\\W3D\\NT__NTFlag_HsWF.W3D"
-    ],
+    "NT_Flag.tga": "First-wins ART_ONE's NATO compass rose. Same 128x64 TGA as ES_Flag. Existing NT__NTFlag_* W3Ds keep sampling NT_Flag.tga.",
+    "building_flag_w3ds": "not packed; ART_TWO originals keep NT_Flag.tga",
     "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo",
     "black_magenta_note": "US_Command.W3D and US_BUILDINGS.dds remain in _SPEC_ART_TWO / _SPEC_ART_ONE. This overlay does not replace building models or USA textures. Solid-black silhouettes with one magenta mesh match ART_ONE textures not loaded (W3Ds still present). _SPEC_ART_ONE.big must sit beside generals.exe."
   },
   "overlay_files": [
     "Art\\Textures\\ES_Flag.tga",
-    "Art\\W3D\\NT__NTFlag_HsCP.W3D",
-    "Art\\W3D\\NT__NTFlag_HsCU.W3D",
-    "Art\\W3D\\NT__NTFlag_HsPP.W3D",
-    "Art\\W3D\\NT__NTFlag_HsSC.W3D",
-    "Art\\W3D\\NT__NTFlag_HsWF.W3D",
+    "Art\\Textures\\NT_Flag.tga",
     "Data\\English\\generals.csf",
     "Data\\INI\\MappedImages\\HandCreated\\Spain_FactionImages.INI",
     "Data\\INI\\PlayerTemplate.ini"

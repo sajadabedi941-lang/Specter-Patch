@@ -1,0 +1,38 @@
+Iraq unlock from the newly uploaded _SPEC.part*.rar working DATA baseline.
+
+Built directly from the newly uploaded _SPEC.part*.rar working DATA baseline.
+
+DO NOT USE any SPECTER.part*.rar, SPECTER1.part*.rar, PR #473-#479, or reconstructed INI tree as this pack's source. The source DATA is:
+
+  _SPEC.part01.rar -> _SPEC.part15.rar
+  _SPEC_DATA_ONE.big
+  384197258 bytes
+  SHA256 a10d001a5857490fc66eb478859b0e7c15f2ecec97285ca48a38e5701cc834ca
+  2836 packed files
+  UNTOUCHED_REPACK_BYTE_IDENTICAL = YES
+
+WHAT CHANGED
+1. Iraq Mirage F1.EQ (Iraq_MirageF1_Bq) — Radar production lock removed. Available when the airfield exists.
+2. Iraq Su-24MK — Radar and MIC production locks removed.
+3. Iraq Su-24MR — MIC production lock removed.
+4. Iraq Tu-22M3 — SCIENCE_Tu-22 and MIC locks removed. Draw model/animation switched to the working Russian asset RUS_TU22M3M. Default bomb racks now use Kab1500_LeaserGuidedBomb. Starting airfield command set is the T3 roster, which includes Command_ConstructIraq_Tu-22M3.
+5. Russia Tu-22M3M (RussiaJetTu22M3M) — default FAB-500 racks replaced with the same existing Kab1500_LeaserGuidedBomb chain. Upgrade weapon set unchanged.
+6. Iraq WarFactory_T now starts on Iraq_WarFactoryCommandSet_T3. Tier CommandSetUpgrade modules also keep T3, so the final combat roster is available as soon as the factory exists.
+7. Iraq MIC starting command set now includes Karrar-2, B340, and Fahad-3. MICCommandSet3 also keeps Karrar-2 so later tier switches do not drop it.
+8. Iraq combat-unit Science / Radar / MIC / research-object production gates removed from tanks, launchers, air-defense vehicles, drones, and barracks combat infantry. Supply-only building-chain prereqs on a few units were left in place.
+
+NOT IN THIS DATA
+- No Iraq L-159 / Tucano object exists in this _SPEC DATA. Bomb-count change was not applied. IRAQ_L159_GUIDED_BOMB_COUNT = FAIL.
+- No Iraq MiG-21 object exists in this _SPEC DATA. Scale was not applied. IRAQ_MIG21_SCALE = ABSENT.
+
+NOT CHANGED
+- ART. No _SPEC_ART_ONE.big was in the archive. ART_CHANGED = NO.
+- Unrelated countries. USA, Iran, Saudi Arabia, UAE, India, Pakistan, Japan, South Korea, Vietnam, South Africa, NATO, North Korea, and others were not edited.
+- CommandButton.ini, PlayerTemplate.ini, Science.ini, Armor.ini, Locomotor.ini, Weapon.ini, CSF.
+- Abbas building construction (still requires AbbasResearchObject).
+- Power / Supply / factory / airfield / radar / MIC building construction chain.
+
+INSTALL
+Replace the game's _SPEC_DATA_ONE.big with the file from this ZIP. Do not replace ART.
+
+INGAME_TESTED = NO. Static packed audit only.

@@ -1,0 +1,26 @@
+SPECTER_USA_GENERALSTAR_AIR_UPGRADES_RELEASE — PUBLIC DOWNLOAD
+================================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/bdcjbr.zip
+
+Branch: cursor/usa-generalstar-air-upgrades-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  fbfd7f034e8b2bdce0eccc2bbc772a1f7257a04ff3151d14619495fbca76d230
+SHA256 DATA: 64fe32cd85b96e5200d4883454b24818c3439ab70bf7a0d6a6a6c0e3dc629ede
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+USA General Star = aircraft upgrades only (no active powers):
+  Rank1 (1-Star Tier 1): F22, F35, F16, Countermeasures, Stealth
+  Rank3 (3-Star Tier 2): B2/B21 advanced stealth, B52H payload, AWACS, Advanced weapons
+  Rank8 (5-Star Tier 3): Heavy bomber, Deep strike, Max air tech
+  SpecialPowerShortcutUSA + AmericaSpecialPowerCommandSet emptied
+  Strategy Center air upgrades removed (MTS/F15EX/AdvancedTraining/MOAB)
+  Prior at-start GrantUpgradeCreate air grants neutralized
+  Airfield CommandSets / aircraft Objects / Weapon / Draw / Cost / Limit untouched
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

@@ -1,0 +1,24 @@
+SPECTER_B2_GAMEPLAY_STEALTH_AMMO_RELEASE — PUBLIC DOWNLOAD
+========================================================
+
+Public download (no login; verified anonymous browser-like GET):
+https://litter.catbox.moe/wc6rfy.zip
+
+Commit: 0d249bf9
+Branch: cursor/b2-gameplay-stealth-payload-b985
+
+Contents (only):
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+SHA256 ZIP:  dbe4a9a941ac248e17cba28f7ee2beeca7133402f164c5e9d6beffb5ed799089
+SHA256 DATA: d8de327c2d2025392939bb2583af18c4ed03bcd1c225f8be3b7d6877f1956cbe
+SHA256 ART:  227413f6e3466715bd97fce2d56b63979316ab5ba959cd08406c10a0905a8b7b
+
+Gameplay:
+  Stealth: InnateStealth + RadarPriority LOCAL_UNIT_ONLY
+  Payload: ClipSize 10 bunker busters, AutoReloadsClip RETURN_TO_BASE
+
+Visual unchanged (AVB3bmbr / Scale 0.85).
+
+Install: replace both BIGs in GameRoot, then delete Generals.dat / Maps.dat.

@@ -1,0 +1,5 @@
+CommandSets identical to base (B21 airfield last-wins).
+16 Construct buttons unchanged; no Science/Upgrade on buttons.
+24 Airfield-related Objects: Buildable=Ignore_Prerequisites, empty prereqs.
+B2/B52/B21 cost/limit + B21 AVB3bmbr intact.
+Anonymous litterbox GET verified ZIP magic + SHA256 + contents.

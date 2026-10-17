@@ -145,6 +145,63 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
 echo   Active BIGs ready in game folder.
 echo.
 
+echo [3b/4] Installing live USA CommandSet overlay (loads after INIZH.big)...
+echo.
+REM INIZH.big wins Data\INI\CommandSet.ini and CommandButton.ini over
+REM _SPEC_DATA_ONE.big. INIZHZ.big sorts after INIZH.big so the real
+REM AmericaCommandCenterCommandSet / AmericaAirfieldCommandSet used by
+REM FactionBuilding.ini can receive extra visible slots. Loose Data\INI
+REM files beat every BIG.
+
+if exist "%PATCH_DIR%INIZHZ.big" (
+  copy /Y "%PATCH_DIR%INIZHZ.big" "%GAME_ROOT%INIZHZ.big" >nul
+  if errorlevel 1 (
+    echo.
+    echo ERROR: Failed to copy INIZHZ.big into game folder.
+    echo.
+    pause
+    exit /b 1
+  )
+  echo   OK: copied INIZHZ.big
+) else if exist "%PATCH_DIR%usa_live\INIZHZ.big" (
+  copy /Y "%PATCH_DIR%usa_live\INIZHZ.big" "%GAME_ROOT%INIZHZ.big" >nul
+  echo   OK: copied INIZHZ.big
+) else (
+  echo   WARN: INIZHZ.big not next to launcher - USA extra buttons will not appear.
+)
+
+if not exist "%GAME_ROOT%Data\INI" mkdir "%GAME_ROOT%Data\INI"
+
+set "LIVE_INI="
+if exist "%PATCH_DIR%Data\INI\CommandSet.ini" set "LIVE_INI=%PATCH_DIR%Data\INI"
+if not defined LIVE_INI if exist "%PATCH_DIR%usa_live\Data\INI\CommandSet.ini" set "LIVE_INI=%PATCH_DIR%usa_live\Data\INI"
+
+if defined LIVE_INI (
+  copy /Y "%LIVE_INI%\CommandSet.ini" "%GAME_ROOT%Data\INI\CommandSet.ini" >nul
+  copy /Y "%LIVE_INI%\CommandButton.ini" "%GAME_ROOT%Data\INI\CommandButton.ini" >nul
+  echo   OK: loose Data\INI\CommandSet.ini
+  echo   OK: loose Data\INI\CommandButton.ini
+) else (
+  echo   WARN: live CommandSet.ini not found next to launcher.
+)
+
+(
+  echo SPECTER USA LIVE COMMANDSET
+  echo Game folder: %GAME_ROOT%
+  echo INIZHZ.big: %GAME_ROOT%INIZHZ.big
+  echo Loose CommandSet.ini: %GAME_ROOT%Data\INI\CommandSet.ini
+  echo Loose CommandButton.ini: %GAME_ROOT%Data\INI\CommandButton.ini
+  echo Building AmericaCommandCenter -^> AmericaCommandCenterCommandSet
+  echo   slot 3 = Command_UpgradeAmerica_AirForceBombs
+  echo Building AmericaAirfield -^> AmericaAirfieldCommandSet
+  echo   slot 5 = Command_ConstructAmericaJetF35C_AA
+  echo   slot 6 = Command_ConstructAmerica_AuterF22
+  echo Building America_LargeAirBase -^> America_LargeAirBaseCommandSet
+  echo   slot 9 = Command_ConstructAmerica_B21A
+) > "%GAME_ROOT%SPECTER_USA_COMMANDSET_DEBUG.txt"
+echo   Wrote SPECTER_USA_COMMANDSET_DEBUG.txt
+echo.
+
 echo [4/4] Launching generals.exe...
 echo.
 echo   %GENEXE%

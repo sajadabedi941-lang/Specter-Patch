@@ -1,0 +1,71 @@
+SPECTER — overlay آزمایشی پدافند ضدبالستیک
+==========================================
+
+این بسته یک overlay آزمایشی است. رفتار شلیک داخل بازی هنوز تأیید نشده است.
+دانلود یا نصب موفق به‌معنای رهگیری در بازی نیست.
+
+فایل overlay
+------------
+  0_SPECTER_ABMDedicatedRadar.big
+  اندازه: 19892 بایت
+  SHA-256:
+    0382b7819242107397bccb9aabbb2f1815bed4d72640cdfc7dd0fb061c3e4121
+  (همین مقدار در 0_SPECTER_ABMDedicatedRadar.big.sha256 هم هست)
+
+پیش‌نیاز
+--------
+نصب کامل Zero Hour / SPECTER در پوشهٔ حاوی generals.exe با:
+
+  generals.exe
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+  آرشیوهای اصلی بازی مثل INIZH.big
+
+این فایل جایگزین DATA/ART اصلی نیست.
+
+نصب
+---
+این فایل را کنار generals.exe بگذارید، نه داخل Data\ یا Art\:
+
+  <پوشهٔ بازی>\generals.exe
+  <پوشهٔ بازی>\0_SPECTER_ABMDedicatedRadar.big
+  <پوشهٔ بازی>\_SPEC_DATA_ONE.big
+  <پوشهٔ بازی>\_SPEC_ART_ONE.big
+  <پوشهٔ بازی>\_SPEC_ART_TWO.big
+
+1. بازی را ببندید.
+2. از _SPEC_*.big و 0_SPECTER_*.big نسخهٔ پشتیبان بگیرید.
+3. فقط 0_SPECTER_ABMDedicatedRadar.big را کنار generals.exe بگذارید.
+4. داخل Data\ یا Art\ نگذارید. پیشوند 0_ را عوض نکنید.
+5. آرشیوهای _SPEC_* را حذف یا جایگزین نکنید.
+
+ترتیب بارگذاری
+--------------
+موتور Win32BIGFileSystem با overwrite=FALSE آرشیوها را به ترتیب _stricmp
+ثبت می‌کند. پیشوند 0_ باعث می‌شود این overlay قبل از INIZH و _SPEC_ ثبت شود.
+
+مسیر تکراری را اولین آرشیو نگه می‌دارد. این overlay از مسیرهای یکتا استفاده
+می‌کند تا Weapon.ini و ObjectCreationList.ini اصلی SPEC را مخفی نکند:
+
+  Data\INI\Object\zzzz_SpecterABMDedicatedRadar\ABM_FCS.ini
+  Data\INI\Object_ZZZZ_SpecterABMDedicatedRadar.ini
+  Data\INI\Weapon_SpecterABMDedicatedRadar.ini
+  Data\INI\ObjectCreationList_SpecterABMDedicatedRadar.ini
+
+این همان الگوی فایل‌های extra در SPEC است (Object\Specter\PatchSystems\،
+Weapon_Egypt.ini، ObjectCreationList_ZZZZ_*.ini). پوشهٔ Data\INI\zzz_*
+بارگذاری نمی‌شود و دیگر استفاده نمی‌شود.
+
+حذف
+---
+فقط 0_SPECTER_ABMDedicatedRadar.big را از پوشهٔ generals.exe حذف کنید.
+فایل‌های DATA/ART اصلی را حذف نکنید.
+
+محدوده
+------
+این بازسازی S-400 و HQ-9 را last-win نمی‌کند.
+سلاح‌های ABM سامانهٔ THAAD / Arrow / S-500 از Hq9_AA_Missile_ABM
+و S-300 از 4x_MRSAM_9M83ME_ACM استفاده می‌کنند (هر دو CRUSH و در Weapon.ini).
+آمار سلاح‌های A–J و پدافند کوتاه‌برد دست نخورده است.
+تست داخل بازی باید توسط کاربر تکرار شود. شلیک داخل بازی هنوز تأیید نشده است.

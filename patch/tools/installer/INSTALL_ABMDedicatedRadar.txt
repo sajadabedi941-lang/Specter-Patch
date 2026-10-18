@@ -7,9 +7,9 @@ SPECTER — overlay آزمایشی پدافند ضدبالستیک
 فایل overlay
 ------------
   0_SPECTER_ABMDedicatedRadar.big
-  اندازه: 19892 بایت
+  اندازه: 28077 بایت
   SHA-256:
-    0382b7819242107397bccb9aabbb2f1815bed4d72640cdfc7dd0fb061c3e4121
+    875dac1e2f4a8eb4e7b88adabff2bde428ad241665d35d6263159e113b113e9b
   (همین مقدار در 0_SPECTER_ABMDedicatedRadar.big.sha256 هم هست)
 
 پیش‌نیاز
@@ -64,8 +64,8 @@ Weapon_Egypt.ini، ObjectCreationList_ZZZZ_*.ini). پوشهٔ Data\INI\zzz_*
 
 محدوده
 ------
-این بازسازی S-400 و HQ-9 را last-win نمی‌کند.
-سلاح‌های ABM سامانهٔ THAAD / Arrow / S-500 از Hq9_AA_Missile_ABM
-و S-300 از 4x_MRSAM_9M83ME_ACM استفاده می‌کنند (هر دو CRUSH و در Weapon.ini).
+این بازسازی Objectهای S-400 و HQ-9 را last-win نمی‌کند.
+Deploy ضدبالستیک S-500 / THAAD / Arrow / S-300 همان FCS شاهد S-400
+(S400R_FireControlSystem_AUM با 4x_MRSAM_9M96E2 / CRUSH) را هم می‌سازد.
 آمار سلاح‌های A–J و پدافند کوتاه‌برد دست نخورده است.
 تست داخل بازی باید توسط کاربر تکرار شود. شلیک داخل بازی هنوز تأیید نشده است.

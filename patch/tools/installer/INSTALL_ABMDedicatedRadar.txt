@@ -1,71 +1,37 @@
-SPECTER — overlay آزمایشی پدافند ضدبالستیک
-==========================================
+SPECTER — بازگرداندن overlay ضدبالستیک پس از regression نسخه v4
+==============================================================
 
-این بسته یک overlay آزمایشی است. رفتار شلیک داخل بازی هنوز تأیید نشده است.
-دانلود یا نصب موفق به‌معنای رهگیری در بازی نیست.
+نسخه AUM Spawn v4 در آزمایش واقعی بازی HQ-9 و S-400 را خراب کرد.
+این بسته آن last-winها را برمی‌دارد. شلیک داخل بازی هنوز دوباره تأیید نشده است.
+
+آخرین وضعیت تأییدشده توسط کاربر
+--------------------------------
+بدون این overlay (یا قبل از v4): HQ-9 و S-400 به موشک بالستیک شلیک می‌کردند.
+S-500، THAAD، Arrow و S-300 شلیک نمی‌کردند.
+این بسته چهار سامانه را «درست» نمی‌کند.
 
 فایل overlay
 ------------
   0_SPECTER_ABMDedicatedRadar.big
-  اندازه: 28077 بایت
+  اندازه: 1352 بایت
   SHA-256:
-    875dac1e2f4a8eb4e7b88adabff2bde428ad241665d35d6263159e113b113e9b
-  (همین مقدار در 0_SPECTER_ABMDedicatedRadar.big.sha256 هم هست)
+    9d41c1b74da0454b27ffb6d68e8741472b281633f354898713af8b70ea2982b5
 
-پیش‌نیاز
---------
-نصب کامل Zero Hour / SPECTER در پوشهٔ حاوی generals.exe با:
-
-  generals.exe
-  _SPEC_DATA_ONE.big
-  _SPEC_ART_ONE.big
-  _SPEC_ART_TWO.big
-  آرشیوهای اصلی بازی مثل INIZH.big
-
-این فایل جایگزین DATA/ART اصلی نیست.
-
-نصب
----
-این فایل را کنار generals.exe بگذارید، نه داخل Data\ یا Art\:
-
-  <پوشهٔ بازی>\generals.exe
-  <پوشهٔ بازی>\0_SPECTER_ABMDedicatedRadar.big
-  <پوشهٔ بازی>\_SPEC_DATA_ONE.big
-  <پوشهٔ بازی>\_SPEC_ART_ONE.big
-  <پوشهٔ بازی>\_SPEC_ART_TWO.big
-
+نصب / جایگزینی v4
+-----------------
 1. بازی را ببندید.
-2. از _SPEC_*.big و 0_SPECTER_*.big نسخهٔ پشتیبان بگیرید.
-3. فقط 0_SPECTER_ABMDedicatedRadar.big را کنار generals.exe بگذارید.
-4. داخل Data\ یا Art\ نگذارید. پیشوند 0_ را عوض نکنید.
-5. آرشیوهای _SPEC_* را حذف یا جایگزین نکنید.
+2. فایل v4 به‌نام 0_SPECTER_ABMDedicatedRadar.big را کنار generals.exe
+   با فایل همین بسته جایگزین کنید (همان نام).
+3. داخل Data\ یا Art\ نگذارید. پیشوند 0_ را عوض نکنید.
+4. _SPEC_DATA_ONE.big و _SPEC_ART_*.big را جایگزین نکنید.
 
-ترتیب بارگذاری
---------------
-موتور Win32BIGFileSystem با overwrite=FALSE آرشیوها را به ترتیب _stricmp
-ثبت می‌کند. پیشوند 0_ باعث می‌شود این overlay قبل از INIZH و _SPEC_ ثبت شود.
+حذف کامل overlay
+----------------
+اگر می‌خواهید هیچ فایل ABMDedicatedRadar نباشد، همین BIG را از پوشهٔ
+generals.exe حذف کنید. رفتار HQ-9/S-400 باید همان SPEC باشد.
 
-مسیر تکراری را اولین آرشیو نگه می‌دارد. این overlay از مسیرهای یکتا استفاده
-می‌کند تا Weapon.ini و ObjectCreationList.ini اصلی SPEC را مخفی نکند:
-
-  Data\INI\Object\zzzz_SpecterABMDedicatedRadar\ABM_FCS.ini
-  Data\INI\Object_ZZZZ_SpecterABMDedicatedRadar.ini
-  Data\INI\Weapon_SpecterABMDedicatedRadar.ini
-  Data\INI\ObjectCreationList_SpecterABMDedicatedRadar.ini
-
-این همان الگوی فایل‌های extra در SPEC است (Object\Specter\PatchSystems\،
-Weapon_Egypt.ini، ObjectCreationList_ZZZZ_*.ini). پوشهٔ Data\INI\zzz_*
-بارگذاری نمی‌شود و دیگر استفاده نمی‌شود.
-
-حذف
----
-فقط 0_SPECTER_ABMDedicatedRadar.big را از پوشهٔ generals.exe حذف کنید.
-فایل‌های DATA/ART اصلی را حذف نکنید.
-
-محدوده
-------
-این بازسازی Objectهای S-400 و HQ-9 را last-win نمی‌کند.
-Deploy ضدبالستیک S-500 / THAAD / Arrow / S-300 همان FCS شاهد S-400
-(S400R_FireControlSystem_AUM با 4x_MRSAM_9M96E2 / CRUSH) را هم می‌سازد.
-آمار سلاح‌های A–J و پدافند کوتاه‌برد دست نخورده است.
-تست داخل بازی باید توسط کاربر تکرار شود. شلیک داخل بازی هنوز تأیید نشده است.
+این فایل چه کاری نمی‌کند
+------------------------
+هیچ Object/OCL/Weapon موجود در SPEC را last-win نمی‌کند.
+FCS سامانهٔ S-400 را روی سامانه‌های دیگر کپی نمی‌کند.
+آمار سلاح، A–J، پدافند کوتاه‌برد و ART را عوض نمی‌کند.

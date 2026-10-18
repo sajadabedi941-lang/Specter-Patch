@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
-"""Pack 0_SPECTER_ABMDedicatedRadar.big on paths the engine actually parses.
+"""Pack 0_SPECTER_ABMDedicatedRadar.big as a restore overlay.
 
-The previous pack used Data\\INI\\zzz_SpecterABMDedicatedRadar\\ which is not
-under Object\\ and is not a Data\\INI root extra file. SPEC and working
-overlays in this repo load:
-
-  Data\\INI\\Object\\**          (ThingFactory InitPath)
-  Data\\INI\\Weapon_*.ini        (root extra weapons, same pattern as Weapon_Egypt.ini)
-  Data\\INI\\ObjectCreationList_*.ini  (root extra OCL, same pattern as ObjectCreationList_ZZZZ_*)
-
-0_ first-wins duplicate PATHS only. Unique filenames do not hide SPEC
-Weapon.ini / ObjectCreationList.ini.
+v4 last-won existing OCL/FCS names and in-game broke HQ-9 and S-400.
+This pack only ships a unique unused marker on the same Object paths
+v4 used, so replacing the BIG drops those last-wins. It does not pack
+Weapon_* or ObjectCreationList_* extras.
 """
 from __future__ import annotations
 
@@ -22,7 +16,6 @@ REPO = Path("/workspace")
 SRC = REPO / "patch/Data/INI"
 OUT = REPO / "patch/tools/installer/0_SPECTER_ABMDedicatedRadar.big"
 SHA_OUT = Path(str(OUT) + ".sha256")
-# zzzz_ sorts after Object\Specter\United States Of America\ so THAAD last-wins.
 OBJ = r"Data\INI\Object\zzzz_SpecterABMDedicatedRadar"
 
 
@@ -53,17 +46,12 @@ def build_big(file_map: dict[str, bytes]) -> bytes:
 
 
 def main() -> None:
-    fcs = (SRC / "Object/Specter/PatchSystems/ABMDedicatedRadar/ABM_FCS.ini").read_bytes()
+    marker = (
+        SRC / "Object/Specter/PatchSystems/ABMDedicatedRadar/ABM_FCS.ini"
+    ).read_bytes()
     files: dict[str, bytes] = {
-        rf"{OBJ}\ABM_FCS.ini": fcs,
-        # Root extra Object_ZZZZ_ pattern (SPEC GlobalStore last-wins).
-        r"Data\INI\Object_ZZZZ_SpecterABMDedicatedRadar.ini": fcs,
-        r"Data\INI\Weapon_SpecterABMDedicatedRadar.ini": (
-            SRC / "Weapon_SpecterABMDedicatedRadar.ini"
-        ).read_bytes(),
-        r"Data\INI\ObjectCreationList_SpecterABMDedicatedRadar.ini": (
-            SRC / "ObjectCreationList_SpecterABMDedicatedRadar.ini"
-        ).read_bytes(),
+        rf"{OBJ}\ABM_FCS.ini": marker,
+        r"Data\INI\Object_ZZZZ_SpecterABMDedicatedRadar.ini": marker,
     }
     blob = build_big(files)
     OUT.write_bytes(blob)

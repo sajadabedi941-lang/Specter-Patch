@@ -1,0 +1,57 @@
+نسخه: WORLD_WAR_III2027-Full-Release
+مخزن: sajadabedi941-lang/Specter-Patch
+شاخه ساخت: cursor/full-release-2c93
+Commit مبنا (main): aac7ffc1
+Commit محتوای DATA: bf42408c (شامل زنجیره پذیرفته‌شده 2c93)
+
+این بسته، آخرین نسخه پذیرفته‌شده WORLD_WAR_III2027 است. فایل‌های SPE مرجع
+(SPE.part001.rar تا SPE.part058.rar) و فایل‌های اصلی بازی را تغییر ندهید.
+
+روش نصب
+--------
+1. از پوشه بازی که generals.exe در آن است نسخه پشتیبان بگیرید.
+2. این چهار فایل را در همان پوشه generals.exe کپی کنید (نه داخل Data و نه داخل Art).
+   نام فایل‌ها را عوض نکنید.
+
+   _SPEC_DATA_ONE.big
+   _SPEC_ART_ONE.big
+   0_SPECTER_NatoSpainDisplay.big
+   0_SPECTER_CountrySupplyIncome.big
+
+3. فایل‌های اصلی بازی را نگه دارید؛ از جمله:
+   generals.exe، INIZH.big، INIZHZ.big، AudioZH.big، _SPEC_ART_TWO.big
+
+4. پس از جایگزینی، بازی را از روی generals.exe اجرا کنید.
+
+ترتیب بارگذاری
+--------------
+Zero Hour آرشیوها را با overwrite=FALSE ثبت می‌کند. پیشوند 0_ overlayها را
+قبل از INIZH و SPEC قرار می‌دهد:
+
+  0_SPECTER_CountrySupplyIncome.big
+  0_SPECTER_NatoSpainDisplay.big
+  INIZH.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+  _SPEC_DATA_ONE.big
+
+محتوای پذیرفته‌شده این نسخه
+---------------------------
+- ادغام اسپانیا (نمایش نام و پرچم از overlay پذیرفته‌شده)
+- درآمد تأمین کشورهای 0_SPECTER_CountrySupplyIncome
+- پدافند Global Market و رهگیری ABM داخل DATA
+- اتصال رادار 92N6E به S-400 و HT-233 به HQ-9
+- رادار عراق بدون Spy Satellite و بدون خرابی نقشه هنگام ساخت
+- تصاویر دکمه‌های ساخت (Global Market، پدافند، رادارها، چهار پهپاد)
+- فهرست خرید Supply Centre فرانسه، آمریکا، چین و روسیه (PR #694)
+
+این بسته شامل PRهای باز تأییدنشده نیست (از جمله زوم دوربین، حذف اتحاد عربی،
+و overlay آزمایشی رادار ABM).
+
+بررسی‌ها
+--------
+تمام بررسی‌های این نسخه ایستا هستند: ساختار BIGF، هش SHA-256، Last-Wins
+داخل INI، ارجاع CommandSet/CommandButton/Object، و وجود TGA دکمه‌های ساخت.
+
+هیچ تست داخل بازی برای این Release انجام نشده است.
+EOF

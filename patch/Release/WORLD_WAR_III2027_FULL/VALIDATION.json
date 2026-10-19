@@ -1,0 +1,45 @@
+{
+  "release": "WORLD_WAR_III2027-Full-Release",
+  "main_commit": "aac7ffc1e9e2a8541e2abc3d185e97a24c66cb61",
+  "content_commit": "bf42408cd8ec12eefdacadc99527ccbf5ce43046",
+  "included_open_prs_explicitly_requested": [690, 691, 692, 693, 694],
+  "excluded_open_prs": "other unmerged PRs (camera zoom, Arabic Alliance removal, DF-41, etc.)",
+  "in_game_tested": false,
+  "static_checks": {
+    "bigf_header_size_match": true,
+    "duplicate_internal_paths": 0,
+    "data_entries": 3563,
+    "art_entries": 2702,
+    "iraq_radar_spy_satellite": false,
+    "iraq_radar_p30_spawn": false,
+    "france_supply_ch47": true,
+    "america_supply_chinook_usa": true,
+    "china_supply_truck": true,
+    "russia_supply_truck_and_mi8": true,
+    "construct_tgas_present": 19,
+    "spain_nato_supply_center": true,
+    "gm_mic_s400_buttonimage": "specbtn_mic_s400"
+  },
+  "files": {
+    "_SPEC_DATA_ONE.big": {
+      "size": 373955679,
+      "sha256": "be2f27b7c0d2ce233789909b029d24f2d14a34a6540fed4a71186c3c46095cd4"
+    },
+    "_SPEC_ART_ONE.big": {
+      "size": 447200634,
+      "sha256": "e796fadcae1d0184a1e79e95e32a986782562c8040c13720873916a98fe9631f"
+    },
+    "0_SPECTER_NatoSpainDisplay.big": {
+      "size": 1608985,
+      "sha256": "a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d"
+    },
+    "0_SPECTER_CountrySupplyIncome.big": {
+      "size": 642560,
+      "sha256": "cdcf9e7be40683be7ee0e4ae79b357a6d9c366de00010de7718243436d14cc81"
+    },
+    "WORLD_WAR_III2027-Full-Release.zip": {
+      "size": 823411154,
+      "sha256": "cb40f3795a4b377e3b580d5d747615cd68270687dc0b1b31e570b90f38301edb"
+    }
+  }
+}

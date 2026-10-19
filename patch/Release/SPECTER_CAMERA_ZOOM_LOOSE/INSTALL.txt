@@ -1,0 +1,136 @@
+SPECTER Camera Zoom - loose GameData.ini
+=========================================
+
+This package places one loose file at:
+
+    Data\INI\GameData.ini
+
+relative to the folder that contains the SPECTER generals.exe.
+The file is the complete GameData.ini from this installation's INIZH.big.
+The only changed line is:
+
+    MaxCameraHeight = 620.0
+
+CameraHeight, MinCameraHeight, CameraPitch, and CameraAdjustSpeed are unchanged.
+The file is not inside a BIG archive.
+
+Package file
+------------
+    Data\INI\GameData.ini
+    size: 21181 bytes
+    SHA-256: 35b1ee7cbdd38949900d10e4fe9fe090f60db5f589cb86428032da0152c96fd4
+
+Original INIZH.big entry Data\INI\GameData.ini
+    size: 21181 bytes
+    SHA-256: da7ab8448b91a04cedb6affe1f6acda28960b82e643b4e94f843df4e511319cd
+
+The two files differ at two bytes: 310.0 became 620.0. Every other byte matches.
+
+How to install
+--------------
+1. Extract this package to its own folder. Leave the Data folder inside it.
+2. Remove z_SPECTER_CameraZoom.big from the game folder if you installed the
+   earlier overlay. That archive's later INI can rewrite MaxCameraHeight after
+   GameData.ini is read. This test should have only the loose file as the new
+   camera input.
+3. Run Install_Loose_GameData.bat
+   The installer looks for generals.exe in this package folder, then in the
+   parent folder. You can also pass the runtime folder:
+
+       Install_Loose_GameData.bat "D:\Games\SPECTER FINAL (GeneralsMode.com)"
+
+4. Start the game with Launch_Specter.bat and test maximum zoom-out.
+
+If Data\INI\GameData.ini already exists and this package has not been
+installed there before, the installer copies it to:
+
+    Data\INI\GameData.ini.specter-zoom-backup
+
+and records action=replaced in:
+
+    Data\INI\SPECTER_CameraZoom_install.txt
+
+If no loose file existed, the installer writes the new file and records
+action=created. This snapshot's Data\INI directory is empty, so a clean
+extract of the 59 volumes follows the created path.
+
+How to uninstall
+----------------
+Run Uninstall_Loose_GameData.bat from this package. Pass the same runtime
+folder if the package does not sit next to generals.exe.
+
+action=created
+    Deletes only Data\INI\GameData.ini and the install record.
+    The game reads GameData.ini from the archives again.
+
+action=replaced
+    Copies GameData.ini.specter-zoom-backup back over Data\INI\GameData.ini,
+    then deletes the backup and the install record.
+
+No install record
+    The uninstaller does not delete a loose GameData.ini.
+
+Which folder is the runtime folder
+----------------------------------
+Launch_Specter.bat prints a line labeled Game folder, enters that folder, and
+starts the generals.exe inside it. That working directory is the runtime folder.
+In this snapshot it contains all of the following:
+
+    generals.exe    98,304 bytes    SHA-256
+                    91604d9f8498bf421c8d990dcea687fed9c023a2ac30911e5cbceeb51a6a4389
+                    This is the launcher stub dated 2003-09-18.
+
+    game.dat        6,483,968 bytes SHA-256
+                    28957a8014580a3c021932faf53475988e18dcc9c1ea64f7a92ba4d7f03acdbc
+                    This is the Zero Hour engine dated 2005-03-10.
+
+    INIZH.big
+
+Put Data\INI\GameData.ini in the working directory of the process that loads
+game.dat. A shortcut whose Start in folder differs from the exe folder uses
+that Start in folder. The Generals registry InstallPath is consulted by this
+game.dat when it loads extra *.big files. The loose INI path is relative, so
+it follows the working directory.
+
+Loading evidence from this installation's game.dat
+---------------------------------------------------
+The engine binary shipped in this snapshot was disassembled. That load path
+is the reason for a loose file.
+
+FileSystem::openFile at VA 0x4465d0 reads TheLocalFileSystem (global 0xA2BE60)
+and calls virtual open at vtable+0x18. It calls TheArchiveFileSystem
+(global 0xA2BA00, vtable+0x24) only when the local open returns null.
+A loose Data\INI\GameData.ini is the file that gets parsed.
+The copy inside INIZH.big stays unopened while the loose file exists.
+
+GameEngine init at VA 0x40E2F0 initializes TheLocalFileSystem, then
+TheArchiveFileSystem, and after that TheWritableGlobalData. Archive init at
+VA 0x777F70 loads *.big from the working directory with overwrite disabled,
+then loads *.big from the registry InstallPath, also with overwrite disabled.
+The first registered Data\INI\GameData.ini stays in force among archives.
+In this snapshot that first copy is INIZH.big (MaxCameraHeight = 310.0).
+_SPEC_DATA_ONE.big contains a different GameData.ini (MaxCameraHeight = 780,
+plus different CameraHeight, CameraPitch, and MinCameraHeight). That archive
+copy does not replace the INIZH copy, and the loose file is built from the
+INIZH copy.
+
+INI load at VA 0x41EFB0 calls the subsystem init, then INI::loadFileDirectory
+at VA 0x41A5C0 for Data\INI\Default\GameData.ini and again for
+Data\INI\GameData.ini. The load type pushed for both paths is 1 (overwrite
+listed fields). loadFileDirectory opens the named INI through prepFile at
+VA 0x41A4B0, which calls openFile. Directory INI files under Data\INI\GameData\
+are parsed after that named file.
+
+What was validated, and what was not
+------------------------------------
+Validated on the snapshot files, without launching the game:
+
+- INIZH.big's Data\INI\GameData.ini was extracted and hashed.
+- The packaged file is that complete INI with one line changed.
+- Structure remains one GameData block ending in End, CRLF line endings, no tabs.
+- The package keeps the relative path Data\INI\GameData.ini.
+- SHA-256 values above.
+
+The game was not launched. Maximum zoom-out was not measured.
+This package is ready to test. A higher zoom-out limit is confirmed only
+after a launch from this runtime folder.

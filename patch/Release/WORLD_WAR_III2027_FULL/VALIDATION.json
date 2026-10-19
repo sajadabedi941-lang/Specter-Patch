@@ -46,6 +46,10 @@
     "0_SPECTER_CountrySupplyIncome.big": {
       "size": 642560,
       "sha256": "cdcf9e7be40683be7ee0e4ae79b357a6d9c366de00010de7718243436d14cc81"
+    },
+    "WORLD_WAR_III2027-Full-Release.zip": {
+      "size": 1130666485,
+      "sha256": "e1d12c33d7ca4816970f068941e7184e5c49efbc5aeb40fbdf38aa7c332d89f9"
     }
   }
 }

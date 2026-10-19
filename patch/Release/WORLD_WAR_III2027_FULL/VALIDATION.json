@@ -2,23 +2,29 @@
   "release": "WORLD_WAR_III2027-Full-Release",
   "main_commit": "aac7ffc1e9e2a8541e2abc3d185e97a24c66cb61",
   "content_commit": "bf42408cd8ec12eefdacadc99527ccbf5ce43046",
-  "included_open_prs_explicitly_requested": [690, 691, 692, 693, 694],
-  "excluded_open_prs": "other unmerged PRs (camera zoom, Arabic Alliance removal, DF-41, etc.)",
   "in_game_tested": false,
+  "load_order_source": "specter-complete-spain-supply-income-v1 (overwrite=FALSE, first registered path wins)",
+  "load_order": [
+    "0_SPECTER_CountrySupplyIncome.big",
+    "0_SPECTER_NatoSpainDisplay.big",
+    "INIZH.big",
+    "_SPEC_ART_ONE.big",
+    "_SPEC_ART_TWO.big",
+    "_SPEC_DATA_ONE.big"
+  ],
+  "art_two_source": "SPE.part001-058 / SPECTER FINAL (GeneralsMode.com)/_SPEC_ART_TWO.big unmodified",
   "static_checks": {
-    "bigf_header_size_match": true,
-    "duplicate_internal_paths": 0,
-    "data_entries": 3563,
-    "art_entries": 2702,
+    "data_bigf_ok": true,
+    "art_one_bigf_ok": true,
+    "art_two_bigf_ok": true,
+    "art_one_entries": 2702,
+    "art_two_entries": 2684,
+    "art_two_w3d_only": true,
+    "overlap_w3d_paths": 1207,
+    "art_two_unique_w3d": 1477,
+    "construct_tgas_in_art_one": 19,
     "iraq_radar_spy_satellite": false,
-    "iraq_radar_p30_spawn": false,
-    "france_supply_ch47": true,
-    "america_supply_chinook_usa": true,
-    "china_supply_truck": true,
-    "russia_supply_truck_and_mi8": true,
-    "construct_tgas_present": 19,
-    "spain_nato_supply_center": true,
-    "gm_mic_s400_buttonimage": "specbtn_mic_s400"
+    "france_supply_ch47": true
   },
   "files": {
     "_SPEC_DATA_ONE.big": {
@@ -29,6 +35,10 @@
       "size": 447200634,
       "sha256": "e796fadcae1d0184a1e79e95e32a986782562c8040c13720873916a98fe9631f"
     },
+    "_SPEC_ART_TWO.big": {
+      "size": 307254782,
+      "sha256": "a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af"
+    },
     "0_SPECTER_NatoSpainDisplay.big": {
       "size": 1608985,
       "sha256": "a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d"
@@ -36,10 +46,6 @@
     "0_SPECTER_CountrySupplyIncome.big": {
       "size": 642560,
       "sha256": "cdcf9e7be40683be7ee0e4ae79b357a6d9c366de00010de7718243436d14cc81"
-    },
-    "WORLD_WAR_III2027-Full-Release.zip": {
-      "size": 823411154,
-      "sha256": "cb40f3795a4b377e3b580d5d747615cd68270687dc0b1b31e570b90f38301edb"
     }
   }
 }

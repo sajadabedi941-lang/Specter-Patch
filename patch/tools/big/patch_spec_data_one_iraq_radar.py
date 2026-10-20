@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Patch _SPEC_DATA_ONE.big: Iraq radar Spy Satellite off + map spawn fix.
+"""Patch _SPEC_DATA_ONE.big: grant Iraq radar/minimap and detach Spy Satellite.
 
-Spy Satellite on Iraq_RadarStation comes from CommandSet_ZZZZ_SpySatelliteRadar.ini
-(Command_SpySatelliteScan + Command_SpecterSpySatelliteFee) plus OCLSpecialPower
-ModuleTag_SSC (SpecialPowerSpySatellite / SUPERWEAPON_SpySatellite) on SPEC copies.
-SpecialPowerSpySatellite and SpecialPowerIraqiRadarSearch share Enum
-SPECIAL_SPY_SATELLITE.
+Why PR #692 / release iraq-radar-spy-map-2c93 did not fix these two bugs:
 
-Map break: FireWeaponUpdate P30_Radar_Deploy_St -> OCL_P30_DeployViaSt spawns
-IraqRadarP30 (RebuildHoleExposeDie structure) on top of the station.
+1. Radar/Minimap never granted
+   RadarUpgrade on the last-win Object Iraq_RadarStation had only
+   DisableProof = No. Working stations in this same BIG (Egypt, India, …)
+   pair GrantUpgradeCreate Upgrade_AmericaRadar with
+   RadarUpgrade { TriggeredBy = Upgrade_AmericaRadar }. Without TriggeredBy
+   the ZH upgrade module never runs, so the player radar/minimap stays off.
+   #692 left that module unchanged and only removed P30 spawn / SSC.
 
-Starts from the 92N6E/HT-233 radar-link BIG. Does not edit interceptor weapons
-or other countries' CommandSets.
+2. Spy Satellite still on Iraq radar
+   #692 last-won CommandSet slot 1 to Command_IraqiRadarSearch and kept
+   OCLSpecialPower SpecialPowerIraqiRadarSearch. That button is Spy Satellite
+   (CONTROLBAR:SpySatellite, SSSpySat, SPECIAL_SPY_SATELLITE) and the
+   SpecialPower uses the same enum as SpecialPowerSpySatellite.
+
+This rebuild updates the two existing last-win files already inside the BIG
+(no new overlay / no new INI path). Other countries' Spy Satellite
+CommandSets, Command_SpySatelliteScan, SpecialPowerSpySatellite, and
+SUPERWEAPON_SpySatellite are not edited.
 """
 from __future__ import annotations
 
@@ -20,6 +29,24 @@ import hashlib
 import re
 import struct
 from pathlib import Path
+
+
+CS_PATH = r"Data\INI\CommandSet_ZZZZ_ZZZIraqRadar.ini"
+OBJ_PATH = r"Data\INI\Object\zzzzz_SpecterIraqRadar\Iraq_RadarStation.ini"
+
+SPY_BUTTONS = (
+    "Command_SpySatelliteScan",
+    "Command_SpecterSpySatelliteFee",
+    "Command_IraqiRadarSearch",
+)
+SPY_OBJECT_TOKENS = (
+    "SpecialPowerSpySatellite",
+    "SUPERWEAPON_SpySatellite",
+    "SpecialPowerIraqiRadarSearch",
+    "SUPERWEAPON_IraqiRadarScan",
+    "ModuleTag_SSC",
+    "ModuleTag_RadarSearch",
+)
 
 
 def read_big(path: Path) -> tuple[list[tuple[str, int, int]], bytes]:
@@ -88,13 +115,17 @@ def last_win_block(file_map: dict[str, bytes], kind: str, name: str) -> tuple[st
     return src, last
 
 
-COMMANDSET_ZZZZ = r"""
+def crlf(body: str) -> bytes:
+    return body.replace("\r\n", "\n").replace("\n", "\r\n").encode("latin1")
+
+
+COMMANDSET_ZZZZ = """\
 ; SPECTER last-win inside _SPEC_DATA_ONE.big.
-; Sorts after CommandSet_ZZZZ_SpySatelliteRadar.ini so Iraq radar loses Spy Satellite
-; buttons without editing other countries' radar CommandSets in that file.
+; Sorts after CommandSet_ZZZZ_SpySatelliteRadar.ini so Iraq radar loses every
+; Spy Satellite button (including Command_IraqiRadarSearch, which is the same
+; SPECIAL_SPY_SATELLITE control) without editing other countries' CommandSets.
 
 CommandSet Iraq_RadarStationCommandSet
-  1 = Command_IraqiRadarSearch
   3 = Command_IraqiCamoflage
   4 = Command_Upgrade_MTS
   5 = Command_ConstructIraq_Sarab3
@@ -109,13 +140,15 @@ CommandSet Iraq_RadarStationCommandSet
 End
 """
 
-OBJECT_ZZZZ = r"""
-; SPECTER last-win. Path sorts after Object\zzzz_SPECTER_CountryScans.ini
-; (0_SPECTER_NoGeneralSpySatellite overlay) and after Specter\Vietnam*\Iraq_RadarStation.ini.
-; Spy Satellite module removed. P30_Radar_Deploy_St spawn removed (map/rebuild-hole).
-; RadarUpgrade + existing Upgrade_AmericaRadar grant kept (ZH minimap / fog radar).
-; Iraqi country scan kept. IraqiRadarScan defined here so SUPERWEAPON_IraqiRadarScan
-; is not a missing object if the overlay is absent.
+OBJECT_ZZZZ = """\
+; SPECTER last-win. Path sorts after Object\\zzzz_SPECTER_CountryScans.ini
+; and after Specter copies of Iraq_RadarStation.ini.
+; Radar/minimap: GrantUpgradeCreate Upgrade_AmericaRadar + RadarUpgrade
+; TriggeredBy = Upgrade_AmericaRadar (same pair as Egypt/India stations).
+; DisableProof = No so sell / die / unpowered drop player radar.
+; Spy Satellite fully detached: no SSC, no IraqiRadarSearch OCLSpecialPower.
+; P30_Radar_Deploy_St spawn stays omitted. IraqiRadarScan remains defined so
+; leftover SUPERWEAPON_IraqiRadarScan refs are not a missing Thing.
 
 Object Iraq_RadarStation
 Scale 0.9
@@ -174,11 +207,6 @@ Scale 0.9
     SubdualDamageHealRate   = 500
     SubdualDamageHealAmount = 100
   End
-  Behavior           = OCLSpecialPower ModuleTag_RadarSearch
-    SpecialPowerTemplate = SpecialPowerIraqiRadarSearch
-    OCL                  = SUPERWEAPON_IraqiRadarScan
-    CreateLocation       = CREATE_AT_LOCATION
-  End
   Behavior = ProductionUpdate ModuleTag_0595
   End
   Behavior = FireWeaponCollide ModuleTag_KillRadar
@@ -207,6 +235,7 @@ Scale 0.9
     ExemptStatus      = UNDER_CONSTRUCTION
   End
   Behavior        = RadarUpgrade ModuleTag_0d995
+    TriggeredBy   = Upgrade_AmericaRadar
     DisableProof  = No
   End
   Behavior = ProductionUpdate ModuleTag_12b56
@@ -277,61 +306,82 @@ End
 """
 
 
+def _require(cond: bool, msg: str) -> None:
+    if not cond:
+        raise SystemExit(msg)
+
+
 def validate(file_map: dict[str, bytes]) -> None:
     cs_src, cs = last_win_block(file_map, "CommandSet", "Iraq_RadarStationCommandSet")
-    if not cs:
-        raise SystemExit("Iraq_RadarStationCommandSet missing")
-    if "Command_SpySatelliteScan" in cs or "Command_SpecterSpySatelliteFee" in cs:
-        raise SystemExit(f"Iraq radar CommandSet still has Spy Satellite ({cs_src})")
-    if "Command_IraqiRadarSearch" not in cs:
-        raise SystemExit("Iraq radar lost Command_IraqiRadarSearch")
+    _require(bool(cs), "Iraq_RadarStationCommandSet missing")
+    _require(cs_src == CS_PATH, f"Iraq CommandSet last-win moved to {cs_src}")
+    for btn in SPY_BUTTONS:
+        _require(btn not in cs, f"Iraq radar CommandSet still has {btn} ({cs_src})")
+    _require("Command_Sell" in cs, "Iraq radar lost Command_Sell")
+    _require("Command_IraqiCamoflage" in cs, "Iraq radar lost Command_IraqiCamoflage")
 
     obj_src, obj = last_win_block(file_map, "Object", "Iraq_RadarStation")
-    if not obj:
-        raise SystemExit("Object Iraq_RadarStation missing")
-    if "SpecialPowerSpySatellite" in obj or "SUPERWEAPON_SpySatellite" in obj:
-        raise SystemExit(f"Iraq_RadarStation still has Spy Satellite module ({obj_src})")
-    if "P30_Radar_Deploy_St" in obj:
-        raise SystemExit(f"Iraq_RadarStation still spawns P30 ({obj_src})")
-    if "RadarUpgrade" not in obj:
-        raise SystemExit("Iraq_RadarStation lost RadarUpgrade")
-    if "Upgrade_AmericaRadar" not in obj:
-        raise SystemExit("Iraq_RadarStation lost existing radar grant")
-    if "SpecialPowerIraqiRadarSearch" not in obj:
-        raise SystemExit("Iraq_RadarStation lost Iraqi radar search")
-    if "ShroudClearingRange = 280" not in obj:
-        raise SystemExit("Iraq_RadarStation ShroudClearingRange changed")
+    _require(bool(obj), "Object Iraq_RadarStation missing")
+    _require(obj_src == OBJ_PATH, f"Iraq_RadarStation last-win moved to {obj_src}")
+    for tok in SPY_OBJECT_TOKENS:
+        _require(tok not in obj, f"Iraq_RadarStation still has {tok} ({obj_src})")
+    _require("P30_Radar_Deploy_St" not in obj, f"Iraq_RadarStation still spawns P30 ({obj_src})")
+    _require("RadarUpgrade" in obj, "Iraq_RadarStation lost RadarUpgrade")
+    _require("TriggeredBy" in obj and "Upgrade_AmericaRadar" in obj, "Iraq_RadarStation RadarUpgrade missing TriggeredBy = Upgrade_AmericaRadar")
+    ru = re.search(r"Behavior\s*=\s*RadarUpgrade.*?End", obj, re.S)
+    _require(bool(ru), "Iraq_RadarStation RadarUpgrade block missing")
+    _require("TriggeredBy" in ru.group(0) and "Upgrade_AmericaRadar" in ru.group(0), "RadarUpgrade block lacks TriggeredBy = Upgrade_AmericaRadar")
+    _require("DisableProof" in ru.group(0) and "No" in ru.group(0), "RadarUpgrade lost DisableProof = No")
+    guc = re.search(r"Behavior\s*=\s*GrantUpgradeCreate.*?End", obj, re.S)
+    _require(bool(guc) and "Upgrade_AmericaRadar" in guc.group(0), "Iraq_RadarStation lost GrantUpgradeCreate Upgrade_AmericaRadar")
+    _require("ExemptStatus" in guc.group(0) and "UNDER_CONSTRUCTION" in guc.group(0), "GrantUpgradeCreate lost ExemptStatus UNDER_CONSTRUCTION")
+    _require("RequiredStatus = SOLD" in obj, "Iraq_RadarStation lost sell teardown")
+    _require("FireWeaponWhenDeadBehavior" in obj, "Iraq_RadarStation lost death teardown")
+    _require("ShroudClearingRange = 280" in obj, "Iraq_RadarStation ShroudClearingRange changed")
+    _require("CommandSet          = Iraq_RadarStationCommandSet" in obj or "CommandSet = Iraq_RadarStationCommandSet" in obj, "Iraq_RadarStation lost CommandSet link")
 
     scan_src, scan = last_win_block(file_map, "Object", "IraqiRadarScan")
-    if not scan:
-        raise SystemExit("Object IraqiRadarScan missing")
-    if "DynamicShroudClearingRangeUpdate" not in scan:
-        raise SystemExit(f"IraqiRadarScan missing shroud ping ({scan_src})")
+    _require(bool(scan), "Object IraqiRadarScan missing")
+    _require("DynamicShroudClearingRangeUpdate" in scan, f"IraqiRadarScan missing shroud ping ({scan_src})")
 
-    # Other buildings keep Spy Satellite.
-    usa_src, usa = last_win_block(file_map, "Object", "AmericaCommandCenter")
-    # May be named differently; check Command_SpySatelliteScan button still exists.
     btn_src, btn = last_win_block(file_map, "CommandButton", "Command_SpySatelliteScan")
-    if not btn or "SpecialPowerSpySatellite" not in btn:
-        raise SystemExit("Command_SpySatelliteScan must remain for other buildings")
+    _require(bool(btn) and "SpecialPowerSpySatellite" in btn, "Command_SpySatelliteScan must remain for other buildings")
 
     ocl_src, ocl = last_win_block(file_map, "ObjectCreationList", "SUPERWEAPON_SpySatellite")
-    if not ocl or "SpySatellitePing" not in ocl:
-        raise SystemExit("SUPERWEAPON_SpySatellite must remain for other buildings")
+    _require(bool(ocl) and "SpySatellitePing" in ocl, "SUPERWEAPON_SpySatellite must remain for other buildings")
 
-    # Prior S-400 / HQ-9 radar-link last-wins must stay.
+    sp_src, sp = last_win_block(file_map, "SpecialPower", "SpecialPowerSpySatellite")
+    _require(bool(sp) and "SPECIAL_SPY_SATELLITE" in sp, "SpecialPowerSpySatellite must remain")
+
+    up_src, up = last_win_block(file_map, "Upgrade", "Upgrade_AmericaRadar")
+    _require(bool(up) and "ACT_UPGRADE_RADAR" in up, "Upgrade_AmericaRadar missing")
+
+    # Other countries keep Spy Satellite buttons.
+    for other_cs in (
+        "AmericaRadarStationCommandSet",
+        "ChinaRadarStationCommandSet",
+        "RussiaRadarStationCommandSet",
+        "IranExpandedRadarCommandSet",
+        "Japan_RadarStationCommandSet",
+    ):
+        src, body = last_win_block(file_map, "CommandSet", other_cs)
+        _require(bool(body), f"{other_cs} missing")
+        _require("Command_SpySatelliteScan" in body, f"{other_cs} lost Command_SpySatelliteScan ({src})")
+
+    egypt_src, egypt = last_win_block(file_map, "Object", "Egypt_RadarStation")
+    _require(bool(egypt) and "TriggeredBy" in egypt and "Upgrade_AmericaRadar" in egypt, f"Egypt_RadarStation radar pair changed ({egypt_src})")
+
+    # Prior accepted last-wins must stay.
     _, dl = last_win_block(file_map, "Weapon", "92N6R_FireControlDataLink")
-    if not dl or "DamageDealtAtSelfPosition = Yes" not in dl:
-        raise SystemExit("92N6R_FireControlDataLink last-win lost")
+    _require(bool(dl) and "DamageDealtAtSelfPosition = Yes" in dl, "92N6R_FireControlDataLink last-win lost")
     _, htdl = last_win_block(file_map, "Weapon", "HT233_FireControlDataLink")
-    if not htdl or "DamageDealtAtSelfPosition = Yes" not in htdl:
-        raise SystemExit("HT233_FireControlDataLink last-win lost")
+    _require(bool(htdl) and "DamageDealtAtSelfPosition = Yes" in htdl, "HT233_FireControlDataLink last-win lost")
     _, hq = last_win_block(file_map, "ObjectCreationList", "OCL_HQ9_Deployed")
-    if not hq or "HQ9_FireControlSystem" not in hq:
-        raise SystemExit("OCL_HQ9_Deployed last-win lost")
+    _require(bool(hq) and "HQ9_FireControlSystem" in hq, "OCL_HQ9_Deployed last-win lost")
     _, s400abm = last_win_block(file_map, "Weapon", "3x_LRSAM_40N6KMissile_ABM")
-    if not s400abm or "CRUSH" not in s400abm:
-        raise SystemExit("S-400 ABM interceptor changed")
+    _require(bool(s400abm) and "CRUSH" in s400abm, "S-400 ABM interceptor changed")
+    _, fr = last_win_block(file_map, "CommandSet", "FranceSupplyCenterCommandSet")
+    _require(bool(fr) and "Command_ConstructFranceHelicopterCH47F" in fr, "France Supply Centre last-win lost")
 
 
 def main() -> int:
@@ -346,15 +396,20 @@ def main() -> int:
         file_map[name] = raw[off : off + size]
 
     extras = {
-        r"Data\INI\CommandSet_ZZZZ_ZZZIraqRadar.ini": COMMANDSET_ZZZZ,
-        r"Data\INI\Object\zzzzz_SpecterIraqRadar\Iraq_RadarStation.ini": OBJECT_ZZZZ,
+        CS_PATH: COMMANDSET_ZZZZ,
+        OBJ_PATH: OBJECT_ZZZZ,
     }
     changed = []
     for name, body in extras.items():
-        if name in file_map:
-            raise SystemExit(f"already present: {name}")
-        file_map[name] = body.replace("\n", "\r\n").encode("latin1")
-        changed.append(name)
+        if name not in file_map:
+            raise SystemExit(f"expected existing last-win missing: {name}")
+        encoded = crlf(body)
+        if file_map[name] != encoded:
+            file_map[name] = encoded
+            changed.append(name)
+
+    if not changed:
+        raise SystemExit("no last-win content changed")
 
     validate(file_map)
 
@@ -372,7 +427,7 @@ def main() -> int:
     out_sha = sha256(args.out_big)
     print(f"SRC  size={args.src_big.stat().st_size} sha256={src_sha}")
     print(f"OUT  size={args.out_big.stat().st_size} sha256={out_sha} entries={len(file_map)}")
-    print("Added:")
+    print("Updated:")
     for c in changed:
         print(f"  {c}")
     Path(str(args.out_big) + ".sha256").write_text(out_sha + "\n")

@@ -1,0 +1,47 @@
+نسخه: WORLD_WAR_III2027-Full-Release
+مخزن: sajadabedi941-lang/Specter-Patch
+Commit مبنا روی main: aac7ffc1
+Commit محتوای DATA: bf42408c
+
+سه BIG اصلی از فایل‌های واقعی پروژه:
+
+  _SPEC_DATA_ONE.big   373955679 بایت
+  _SPEC_ART_ONE.big    2145283309 بایت  (مرجع SPE ۲۱۴۴۹۷۲۰۱۳ بایت / حدود ۲۰۹۴۷۰۰ کیلوبایت؛ فقط ۱۹ TGA دکمه ساخت جایگزین شد)
+  _SPEC_ART_TWO.big    307254782 بایت   (مرجع SPE بدون تغییر / حدود ۳۰۰۰۵۴ کیلوبایت)
+
+ART ONE و ART TWO مستقل‌اند. ART ONE فقط بافت TGA/DDS است. ART TWO فقط مدل W3D است.
+آن‌ها را ادغام یا با آرشیو ۴۴۷ مگابایتی اشتباه نگیرید.
+
+روش نصب
+--------
+1. از پوشه generals.exe نسخه پشتیبان بگیرید.
+2. این فایل‌ها را با همین نام در همان پوشه کپی کنید (نه داخل Data یا Art):
+
+   _SPEC_DATA_ONE.big
+   _SPEC_ART_ONE.big
+   _SPEC_ART_TWO.big
+   0_SPECTER_NatoSpainDisplay.big
+   0_SPECTER_CountrySupplyIncome.big
+
+3. فایل‌های اصلی بازی را نگه دارید: generals.exe، INIZH.big، INIZHZ.big، AudioZH.big
+4. SPE.part001–058 را حذف یا تغییر ندهید.
+
+ترتیب بارگذاری (از Release پذیرفته‌شده specter-complete-spain-supply-income-v1)
+------------------------------------------------------------------------------
+Zero Hour آرشیوها را با overwrite=FALSE ثبت می‌کند؛ اولین مسیر داخلی برنده است:
+
+  0_SPECTER_CountrySupplyIncome.big
+  0_SPECTER_NatoSpainDisplay.big
+  INIZH.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+  _SPEC_DATA_ONE.big
+
+محتوای پذیرفته‌شده
+------------------
+Supply Centre فرانسه/آمریکا/چین/روسیه (PR #694)، تصاویر دکمه‌ها، پهپادها،
+پدافند Global Market، رادار 92N6E و HT-233، رادار عراق، ادغام اسپانیا.
+
+PRهای باز تأییدنشده وارد نشده‌اند.
+
+بررسی‌ها ایستا هستند. تست داخل بازی انجام نشده است.

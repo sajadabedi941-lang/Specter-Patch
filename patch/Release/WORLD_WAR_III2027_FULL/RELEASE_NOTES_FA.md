@@ -1,12 +1,9 @@
 # WORLD_WAR_III2027-Full-Release
 
-نسخه یکپارچه با هر سه BIG اصلی:
+سه BIG واقعی SPE روی main:
 
-- `_SPEC_DATA_ONE.big`
-- `_SPEC_ART_ONE.big`
-- `_SPEC_ART_TWO.big`
+- DATA 373955679
+- ART ONE 2145283309 (پایه SPE 2144972013 ≈ 2094700 KiB؛ ۱۹ TGA دکمه ساخت)
+- ART TWO 307254782 ≈ 300054 KiB بدون تغییر
 
-- Commit مبنا روی `main`: `aac7ffc1`
-- Commit محتوای DATA: `bf42408c`
-- ART_TWO بدون تغییر از SPE روی main
-- بررسی‌ها ایستا هستند. تست داخل بازی انجام نشده است.
+آرشیو ۴۴۷ مگابایتی ART ONE استفاده نشد. تست داخل بازی انجام نشده است.

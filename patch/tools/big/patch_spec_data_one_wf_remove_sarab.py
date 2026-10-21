@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
-"""Retarget 7 country War Factories onto unique CommandSets without missiles.
+"""Restore seven War Factory CommandSets to names that CommandSet.ini actually binds.
 
-Why the previous extra CommandSet_*.ini last-win failed in-game:
-  CommandSet.ini (INIZH first-wins that path, or the first parsed
-  CommandSet.ini) already defines SaudiArabia_WarFactoryCommandSet etc.
-  with slot 9 = Sarab7 and slot 13 = R11ScudB/9P117. Redefining those
-  SAME names in a later CommandSet_ZZZZ_*.ini does not replace the
-  in-game bar. The building still reads the first-loaded name.
+Empty-bar cause (wf-fix-commandset-crash):
+  Objects last-won onto *_WarFactoryCommandSet_NoSarab. Those names exist
+  only in Data\\INI\\CommandSet_ZZZZ_ZZZZZWfDetach.ini. SPECTER's live
+  command bar binds CommandSet.ini (INIZH first-wins that path; extra
+  CommandSet_ZZZZ_*.ini files do not attach new names). A missing
+  CommandSet name yields an empty production bar. The same failure mode
+  as Supply Centre *_CountryIncome names.
 
-Why wf-detach-sarab7-9p117-alabbas crashed on launch:
-  Unique CommandSet BLOCKS were packed under
-  Data\\INI\\Object\\zzzzz_SpecterWfRemoveSarab\\CommandSets.ini.
-  Object\\ files are parsed as Object INI. In that context CommandSet
-  is a field (CommandSet = Name), not a block (CommandSet Name).
-  The Object parser consumes CommandSet SaudiArabia and leaves
-  _WarFactoryCommandSet_NoSarab — the crash token
-  _warfactorycommandset_nosarab.
+  Object\\ CommandSet BLOCKS crash ZH. Extra CommandSet_*.ini last-wins
+  of already-defined names do not change the in-game bar. Unique names
+  that are not in CommandSet.ini do not appear either.
 
-This rebuild keeps the War Factory OBJECT last-wins (Object/ is parsed)
-pointing at the same unique names, and defines those names in
-Data\\INI\\CommandSet_ZZZZ_ZZZZZWfDetach.ini. The crashing Object-folder
-CommandSets.ini is removed from the BIG. Object / Weapon / button
-definitions are unchanged.
+This rebuild strips the WF overlay files from the installable DATA BIG
+so each *_WarFactory_T again uses its packed CommandSet.ini name.
+Trusted content matches HT233_92N6E_TPY2_CUE (last DATA before the
+empty-bar overlays). No CommandSet blocks are placed in Object\\.
 """
 from __future__ import annotations
 
@@ -35,11 +30,11 @@ from pathlib import Path
 CS_IRAQ = r"Data\INI\CommandSet_ZZZZ_ZZZIraqRadar.ini"
 CS_SUPPLY = r"Data\INI\CommandSet_ZZZZ_ZZZZZSupplyCentreBuyButtons.ini"
 CS_DETACH = r"Data\INI\CommandSet_ZZZZ_ZZZZZWfDetach.ini"
+CS_REMOVE = r"Data\INI\CommandSet_ZZZZ_ZZZZZWfRemoveSarab.ini"
 OBJ_IRAQ = r"Data\INI\Object\zzzzz_SpecterIraqRadar\Iraq_RadarStation.ini"
 OBJ_RADAR = r"Data\INI\Object\zzzzz_SpecterRadarTpy2Cue"
 OBJ_SUPPLY = r"Data\INI\Object\zzzzz_SpecterSupplyCentreBuy"
 OBJ_WF = r"Data\INI\Object\zzzzz_SpecterWfRemoveSarab"
-OBJ_WF_CRASH = rf"{OBJ_WF}\CommandSets.ini"
 WPN_TPY = r"Data\INI\Weapon_ZZZZ_ZZZZTpy2RadarCue.ini"
 
 COUNTRIES = (
@@ -52,12 +47,10 @@ COUNTRIES = (
     "Libya",
 )
 IRAQ_CLONE = ("SaudiArabia", "UAE", "Syria", "SouthAfrica", "Libya")
-BANNED_RE = re.compile(
-    r"(?i)(Sarab7|R11ScudB|AlAbbas|9P117|CB_MISSILE_[DEG]|ConstructIraq_Abbas)"
-)
 CS_PAT = re.compile(r"(?m)^CommandSet\s+(\S+)\s*(.*?)(?=^CommandSet\s|\Z)", re.S)
 SLOT_PAT = re.compile(r"(?m)^\s*(\d+)\s*=\s*(\S+)")
 OBJ_CS = re.compile(r"(?im)^\s*CommandSet\s*=\s*(\S+)")
+BTN_PAT = re.compile(r"(?m)^CommandButton\s+(\S+)")
 CS_BLOCK = re.compile(r"(?m)^CommandSet\s+([A-Za-z_][A-Za-z0-9_]*)")
 
 
@@ -110,10 +103,6 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-def crlf(body: str) -> bytes:
-    return body.replace("\r\n", "\n").replace("\n", "\r\n").encode("latin1")
-
-
 def last_win_block(file_map: dict[str, bytes], kind: str, name: str) -> tuple[str | None, str | None]:
     pat = re.compile(
         rf"(?m)^{kind}\s+{re.escape(name)}\b.*?(?=^(?:Object|Weapon|Armor|CommandButton|CommandSet|ObjectCreationList|Upgrade|SpecialPower)\s|\Z)",
@@ -131,22 +120,21 @@ def last_win_block(file_map: dict[str, bytes], kind: str, name: str) -> tuple[st
     return src, last
 
 
-def merged_slots(file_map: dict[str, bytes], name: str) -> dict[int, str]:
-    slots: dict[int, str] = {}
-    for path, raw in sorted(file_map.items(), key=lambda kv: kv[0].lower()):
-        if not path.lower().endswith(".ini"):
-            continue
-        for m in CS_PAT.finditer(raw.decode("latin1")):
-            if m.group(1) != name:
-                continue
-            for a, b in SLOT_PAT.findall(m.group(2)):
-                slots[int(a)] = b
-    return slots
+def first_cs_in_commandset_ini(file_map: dict[str, bytes], name: str) -> dict[int, str]:
+    raw = file_map.get(r"Data\INI\CommandSet.ini", b"").decode("latin1")
+    for m in CS_PAT.finditer(raw):
+        if m.group(1) == name:
+            return {int(a): b for a, b in SLOT_PAT.findall(m.group(2))}
+    return {}
 
 
 def _req(cond: bool, msg: str) -> None:
     if not cond:
         raise SystemExit(msg)
+
+
+def _norm(path: str | None) -> str:
+    return (path or "").replace("\\", "").replace("/", "").lower()
 
 
 def fcrl_block(body: str | None) -> str:
@@ -158,96 +146,69 @@ def fcrl_block(body: str | None) -> str:
     return m.group(0) if m else ""
 
 
-def _norm(path: str | None) -> str:
-    return (path or "").replace("\\", "").replace("/", "").lower()
+def command_buttons(file_map: dict[str, bytes]) -> set[str]:
+    names: set[str] = set()
+    for path, raw in file_map.items():
+        if "commandbutton" in path.lower() and path.lower().endswith(".ini"):
+            names.update(BTN_PAT.findall(raw.decode("latin1")))
+    return names
 
 
-def validate(file_map: dict[str, bytes]) -> None:
-    _req(OBJ_WF_CRASH not in file_map, f"crashing Object-folder CommandSets.ini still packed ({OBJ_WF_CRASH})")
+def drop_wf_overlays(file_map: dict[str, bytes]) -> list[str]:
+    removed = []
+    for name in list(file_map):
+        low = name.lower().replace("/", "\\")
+        if "zzzzz_specterwfremovesarab" in low or low.endswith("commandset_zzzz_zzzzzwfdetach.ini") or low.endswith("commandset_zzzz_zzzzzwfremovesarab.ini"):
+            del file_map[name]
+            removed.append(name)
+    return removed
+
+
+def validate(file_map: dict[str, bytes]) -> dict[str, dict[int, str]]:
     for path in file_map:
-        _req(
-            "commandsets.ini" not in path.lower() or "wfremovesarab" not in path.lower(),
-            f"crashing CommandSets.ini still packed as {path}",
-        )
+        low = path.lower().replace("/", "\\")
+        _req("zzzzz_specterwfremovesarab" not in low, f"WF overlay still packed: {path}")
+        _req("commandset_zzzz_zzzzzwfdetach.ini" not in low, f"Detach extra CS still packed: {path}")
+        _req("commandset_zzzz_zzzzzwfremovesarab.ini" not in low, f"Remove extra CS still packed: {path}")
         if _norm(OBJ_WF) in _norm(path) and path.lower().endswith(".ini"):
-            text = file_map[path].decode("latin1")
-            blocks = CS_BLOCK.findall(text)
+            blocks = CS_BLOCK.findall(file_map[path].decode("latin1"))
             _req(not blocks, f"Object folder still has CommandSet blocks in {path}: {blocks}")
 
-    _req(CS_DETACH in file_map, f"{CS_DETACH} missing from BIG")
-
+    buttons = command_buttons(file_map)
+    restored: dict[str, dict[int, str]] = {}
     for country in COUNTRIES:
         obj = f"{country}_WarFactory_T"
         src, body = last_win_block(file_map, "Object", obj)
-        _req(_norm(OBJ_WF) in _norm(src), f"{obj} last-win not {OBJ_WF} ({src})")
+        _req(bool(body), f"{obj} missing")
+        _req(_norm(OBJ_WF) not in _norm(src), f"{obj} still last-wins from overlay {src}")
         css = OBJ_CS.findall(body or "")
-        unique = f"{country}_WarFactoryCommandSet_NoSarab"
-        _req(unique in css, f"{obj} CommandSet is {css}, expected {unique}")
-        _req(f"{country}_WarFactoryCommandSet" not in css, f"{obj} still points at the old shared CommandSet {css}")
+        live = f"{country}_WarFactoryCommandSet"
+        _req(live in css, f"{obj} CommandSet is {css}, expected {live}")
+        _req(not any(name.endswith("_NoSarab") for name in css), f"{obj} still points at unique empty name {css}")
         _req("ProductionUpdate" in (body or ""), f"{obj} lost ProductionUpdate")
         _req("RepairDockUpdate" in (body or ""), f"{obj} lost RepairDock")
-        _req(f"Side             = {country}" in (body or "") or f"Side             = {country}\r" in (body or ""), f"{obj} Side changed")
 
-        cs_src, cs_body = last_win_block(file_map, "CommandSet", unique)
-        _req(cs_src == CS_DETACH, f"{unique} last-win not {CS_DETACH} ({cs_src})")
-        _req(_norm(OBJ_WF) not in _norm(cs_src), f"{unique} still last-wins from Object folder ({cs_src})")
-        slots = merged_slots(file_map, unique)
-        _req(bool(slots), f"{unique} has no slots")
-        for slot, btn in slots.items():
-            _req(not BANNED_RE.search(btn), f"{unique} slot {slot} still {btn}")
-        _req("Command_Sell" in slots.values(), f"{unique} lost Sell")
+        slots = first_cs_in_commandset_ini(file_map, live)
+        _req(bool(slots), f"{live} missing from packed CommandSet.ini")
+        _req("Command_Sell" in slots.values(), f"{live} lost Sell")
+        vehicle = [btn for slot, btn in sorted(slots.items()) if btn != "Command_Sell"]
+        _req(len(vehicle) >= 12, f"{live} has only {len(vehicle)} production buttons")
+        missing = [btn for btn in slots.values() if btn not in buttons]
+        _req(not missing, f"{live} buttons missing from CommandButton.ini: {missing}")
         if country in IRAQ_CLONE:
-            _req(slots.get(1) == "Command_ConstructIraq_T-72", f"{unique} lost T-72")
-            _req(slots.get(9) == f"Command_Construct{country}_AlKhalid", f"{unique} slot 9 not country AlKhalid")
-            _req(slots.get(13) == f"Command_Construct{country}_CombatDrone", f"{unique} slot 13 not country CombatDrone")
-            _req(slots.get(10) == "Command_ConstructIraq_Alhussaien", f"{unique} lost Alhussaien")
-            _req(len({slots[i] for i in (9, 10, 11, 12, 13)}) == 5, f"{unique} has duplicate production buttons in 9-13")
+            _req(slots.get(1) == "Command_ConstructIraq_T-72", f"{live} lost T-72")
         else:
-            _req(slots.get(1) == "Command_ConstructAmericaTankCrusader", f"{unique} India/Pakistan roster changed")
+            _req(slots.get(1) == "Command_ConstructAmericaTankCrusader", f"{live} lost Crusader")
+        restored[country] = slots
 
-        # Unique names must not exist in first-loaded CommandSet.ini.
-        packed_cs = file_map.get(r"Data\INI\CommandSet.ini", b"").decode("latin1")
-        _req(
-            f"CommandSet {unique}" not in packed_cs,
-            f"CommandSet.ini already defines {unique}; extra-file definition would not be first",
-        )
-        if country in IRAQ_CLONE:
-            _req(
-                f"CommandSet {country}_WarFactoryCommandSet" in packed_cs
-                and "Command_ConstructIraq_Sarab7" in packed_cs,
-                f"CommandSet.ini lost the leftover {country} / Sarab7 definition we detach from",
-            )
-
-    # No last-win WF object for these countries may still assign a banned button.
-    for country in COUNTRIES:
-        src, body = last_win_block(file_map, "Object", f"{country}_WarFactory_T")
-        assigned = OBJ_CS.findall(body or "")
-        for csname in assigned:
-            slots = merged_slots(file_map, csname)
-            for slot, btn in slots.items():
-                _req(not BANNED_RE.search(btn), f"{country} active CS {csname} slot {slot}={btn}")
+        unique = f"{country}_WarFactoryCommandSet_NoSarab"
+        usrc, _ = last_win_block(file_map, "CommandSet", unique)
+        _req(usrc is None, f"{unique} still defined in {usrc}")
 
     _, al_fahd = last_win_block(file_map, "CommandSet", "Iraq_AlFahdMissileFactoryCommandSet")
     _req("CB_MISSILE_D" in (al_fahd or ""), "AlAbbas lost from Iraq missile factory")
     _req("CB_MISSILE_E" in (al_fahd or ""), "Sarab7 lost from Iraq missile factory")
     _req("CB_MISSILE_G" in (al_fahd or ""), "9P117 lost from Iraq missile factory")
-
-    for country in COUNTRIES:
-        src, body = last_win_block(file_map, "CommandSet", f"{country}_MissileFactoryCommandSet")
-        _req(bool(body), f"{country} MissileFactory missing")
-        _req(_norm(OBJ_WF) not in _norm(src) and _norm(CS_DETACH) not in _norm(src), f"{country} MissileFactory rewritten")
-
-    for obj in ("Iraq_Sarab7", "Iraq_R11ScudB", "Iraq_AlAbbas"):
-        src, body = last_win_block(file_map, "Object", obj)
-        _req(bool(body), f"Object {obj} missing")
-        _req(_norm(OBJ_WF) not in _norm(src), f"{obj} last-win moved to {src}")
-
-    _, btn = last_win_block(file_map, "CommandButton", "Command_ConstructIraq_Sarab7")
-    _req("Iraq_Sarab7" in (btn or ""), "Sarab7 construct button changed")
-    _, btn = last_win_block(file_map, "CommandButton", "Command_ConstructIraq_R11ScudB")
-    _req("irq_9p117" in (btn or ""), "9P117 ButtonImage changed")
-    _, btn = last_win_block(file_map, "CommandButton", "CB_MISSILE_D")
-    _req("Iraq_AlAbbas" in (btn or ""), "CB_MISSILE_D no longer builds AlAbbas")
 
     irq_src, _ = last_win_block(file_map, "CommandSet", "Iraq_WarFactoryCommandSet_T3")
     _req(irq_src == r"Data\INI\CommandSet_ZZZZ_IraqMicToWf.ini", f"Iraq WF T3 last-win moved to {irq_src}")
@@ -272,47 +233,26 @@ def validate(file_map: dict[str, bytes]) -> None:
         _req("FireControlRadarDataLink" in fcrl_block(body), f"{obj_name} FCRL not TPY-2")
     wsrc, _ = last_win_block(file_map, "Weapon", "92N6R_FireControlDataLink")
     _req(wsrc == WPN_TPY, f"92N6R DataLink last-win moved to {wsrc}")
+    return restored
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--src-big", type=Path, required=True)
     ap.add_argument("--out-big", type=Path, required=True)
-    ap.add_argument(
-        "--objects",
-        type=Path,
-        default=Path("patch/Data/INI/Object/zzzzz_SpecterWfRemoveSarab"),
-    )
-    ap.add_argument(
-        "--commandset",
-        type=Path,
-        default=Path("patch/Data/INI/CommandSet_ZZZZ_ZZZZZWfDetach.ini"),
-    )
+    ap.add_argument("--trusted-ref", type=Path, default=None)
     args = ap.parse_args()
 
     fm = read_big(args.src_big)
-    extras: dict[str, bytes] = {}
-    for ini in sorted(args.objects.glob("*.ini")):
-        if ini.name.lower() == "commandsets.ini":
-            raise SystemExit(f"do not pack CommandSet blocks from Object folder: {ini}")
-        extras[rf"{OBJ_WF}\{ini.name}"] = crlf(ini.read_text(encoding="latin1"))
-    extras[CS_DETACH] = crlf(args.commandset.read_text(encoding="latin1"))
+    removed = drop_wf_overlays(fm)
 
-    changed = []
-    removed = []
-    crash_keys = [name for name in list(fm) if name.lower().endswith("commandsets.ini") and "wfremovesarab" in name.lower()]
-    crash_keys.append(OBJ_WF_CRASH)
-    for name in dict.fromkeys(crash_keys):
-        if name in fm:
-            del fm[name]
-            removed.append(name)
+    if args.trusted_ref:
+        trusted = read_big(args.trusted_ref)
+        _req(set(fm) == set(trusted), f"restored entry set != trusted ref (+{sorted(set(fm)-set(trusted))} -{sorted(set(trusted)-set(fm))})")
+        for name in fm:
+            _req(fm[name] == trusted[name], f"content mismatch vs trusted ref: {name}")
 
-    for name, body in extras.items():
-        prev = fm.get(name)
-        fm[name] = body
-        changed.append(("update" if prev is not None else "add", name))
-
-    validate(fm)
+    restored = validate(fm)
 
     args.out_big.parent.mkdir(parents=True, exist_ok=True)
     blob = build_big(fm)
@@ -326,8 +266,10 @@ def main() -> int:
     print(f"OUT  size={args.out_big.stat().st_size} sha256={digest} entries={len(fm)}")
     for name in removed:
         print(f"  remove {name}")
-    for op, name in changed:
-        print(f"  {op} {name}")
+    for country, slots in restored.items():
+        print(f"  {country} {country}_WarFactoryCommandSet buttons={len(slots)}")
+        for slot, btn in sorted(slots.items()):
+            print(f"    {slot:2d} = {btn}")
     return 0
 
 

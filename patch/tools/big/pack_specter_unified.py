@@ -26,6 +26,13 @@ SRC_GS = ROOT / "Release/GS_CAMEO_RESTORE/0_SPECTER_GlobalStoreCameos.big"
 SRC_GS_SHA = "1ac22af21f78515b7a3eafdf72b2f8ecdb2c15f1ed196963ff9c3cc0706c59fc"
 SRC_MS = ROOT / "Release/MISSILE_JLMN_BUTTONS/0_SPECTER_MissileJLMNCameos.big"
 SRC_MS_SHA = "618c6dabb192b8033f074a005e5141af2a756182be746d71f2c2fdda125fbfae"
+SRC_ART2 = Path("/tmp/full-release-art/_SPEC_ART_TWO.big")
+SRC_ART2_SHA = "a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af"
+SRC_ART2_SIZE = 307254782
+SRC_ART1 = Path("/tmp/full-release-art/_SPEC_ART_ONE.big")
+SRC_ART1_SHA = "15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66"
+SRC_ART1_SIZE = 2145283309
+GITHUB_ASSET_MAX = 2147483648  # 2 GiB
 OUT = ROOT / "Release/SPECTER_UNIFIED"
 ZIP_NAME = "SPECTER_UNIFIED_INSTALL.zip"
 
@@ -72,6 +79,7 @@ def main() -> None:
         SRC_CB: SRC_CB_SHA,
         SRC_GS: SRC_GS_SHA,
         SRC_MS: SRC_MS_SHA,
+        SRC_ART2: SRC_ART2_SHA,
     }
     for path, expect in files.items():
         require(path.is_file(), f"missing {path}")
@@ -164,8 +172,24 @@ def main() -> None:
     require("Iraq_AlFahdMissileFactoryCommandSet" in cs_txt, "Iraq factory")
 
     OUT.mkdir(parents=True, exist_ok=True)
+    def magic4(path: Path) -> bytes:
+        with path.open("rb") as fh:
+            return fh.read(4)
+
+    require(SRC_ART2.stat().st_size == SRC_ART2_SIZE, "ART TWO size")
+    require(magic4(SRC_ART2) == b"BIGF", "ART TWO not BIGF")
+    if SRC_ART1.is_file():
+        require(SRC_ART1.stat().st_size == SRC_ART1_SIZE, "ART ONE size")
+        require(sha256(SRC_ART1) == SRC_ART1_SHA, "ART ONE sha")
+        require(magic4(SRC_ART1) == b"BIGF", "ART ONE not BIGF")
+    both_art_plus_data = SRC_ART1_SIZE + SRC_ART2_SIZE + SRC_DATA.stat().st_size
+    require(both_art_plus_data > GITHUB_ASSET_MAX, "math: both ART+DATA should exceed 2GiB")
+    require(SRC_ART1_SIZE + SRC_ART2_SIZE > GITHUB_ASSET_MAX, "math: both ART exceed 2GiB")
+    require(SRC_ART1_SIZE < GITHUB_ASSET_MAX, "ART ONE must fit as its own GitHub asset")
+
     copies = {
         "_SPEC_DATA_ONE.big": SRC_DATA,
+        "_SPEC_ART_TWO.big": SRC_ART2,
         "CommandSet.ini": SRC_CS,
         "CommandButton.ini": SRC_CB,
         "0_SPECTER_GlobalStoreCameos.big": SRC_GS,
@@ -186,6 +210,7 @@ def main() -> None:
     zip_path = OUT / ZIP_NAME
     payload = [
         "_SPEC_DATA_ONE.big",
+        "_SPEC_ART_TWO.big",
         "CommandSet.ini",
         "CommandButton.ini",
         "0_SPECTER_GlobalStoreCameos.big",
@@ -193,17 +218,36 @@ def main() -> None:
         "Install_SpecterUnified.bat",
         "Restore_SpecterUnifiedBackup.bat",
         "README_INSTALL.txt",
+        "ART_ONE_REQUIRED.txt",
         "SHA256SUMS.txt",
         "UNIFIED_RELEASE_REPORT.md",
     ]
-    # installer/readme may be written after this script; zip in a second pass if missing
     present = [n for n in payload if (OUT / n).is_file()]
+    require("_SPEC_ART_TWO.big" in present, "ART TWO missing from zip payload")
+    require("_SPEC_ART_ONE.big" not in present, "ART ONE must not enter the ZIP")
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, allowZip64=True) as zf:
         for name in present:
             print("zip", name)
             zf.write(OUT / name, arcname=f"SPECTER_UNIFIED_INSTALL/{name}")
-    print("ZIP", zip_path.stat().st_size, sha256(zip_path))
-    (OUT / f"{ZIP_NAME}.sha256").write_text(sha256(zip_path) + "\n", encoding="ascii")
+    zsize = zip_path.stat().st_size
+    zdigest = sha256(zip_path)
+    require(zsize < GITHUB_ASSET_MAX, f"ZIP {zsize} exceeds GitHub 2GiB")
+    print("ZIP", zsize, zdigest)
+    (OUT / f"{ZIP_NAME}.sha256").write_text(zdigest + "\n", encoding="ascii")
+
+    man = ["name\tuncompressed\tcompressed\tsha256"]
+    with zipfile.ZipFile(zip_path, "r") as zf:
+        names = zf.namelist()
+        require(all(not n.endswith("_SPEC_ART_ONE.big") for n in names), "ART ONE leaked into ZIP")
+        require(any(n.endswith("_SPEC_ART_TWO.big") for n in names), "ART TWO not in ZIP")
+        for info in zf.infolist():
+            raw = zf.read(info.filename)
+            man.append(
+                f"{info.filename}\t{info.file_size}\t{info.compress_size}\t{hashlib.sha256(raw).hexdigest()}"
+            )
+    man.append(f"{ZIP_NAME}\t{zsize}\t{zsize}\t{zdigest}")
+    (OUT / "ZIP_MANIFEST.txt").write_text("\n".join(man) + "\n", encoding="ascii")
+    print("\n".join(man))
 
 
 if __name__ == "__main__":

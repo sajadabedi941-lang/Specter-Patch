@@ -45,7 +45,12 @@ if exist "%~dp00_SPECTER_MissileJLMNCameos.big" (
   if exist "%GAME_ROOT%0_SPECTER_MissileJLMNCameos.big" del /F /Q "%GAME_ROOT%0_SPECTER_MissileJLMNCameos.big"
 )
 
-echo Restore finished. ART ONE/TWO were not changed.
+rem ART is restored only when this backup contains a copy the installer replaced.
+if exist "%~dp0_SPEC_ART_ONE.big" copy /Y "%~dp0_SPEC_ART_ONE.big" "%GAME_ROOT%_SPEC_ART_ONE.big" >nul
+if exist "%~dp0_SPEC_ART_TWO.big" copy /Y "%~dp0_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+
+echo Restore finished.
+echo Canonical Full Release ART is left in place unless this backup had a replaced copy.
 pause
 endlocal
 exit /b 0

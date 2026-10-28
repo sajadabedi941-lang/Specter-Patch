@@ -1,14 +1,18 @@
 SPECTER Unified Install
 =======================
 
-This pack is the current compatible DATA/INI/overlay set. It is NOT a stack of
-old _SPEC_DATA_ONE.big files. It does not replace _SPEC_ART_ONE.big or
-_SPEC_ART_TWO.big.
+This pack is the current compatible DATA/INI/overlay set plus original
+Full Release _SPEC_ART_TWO.big. It is NOT a stack of old DATA BIGs.
 
-Zero Hour was not run in the build environment. Static checks are not in-game proof.
+It is NOT a standalone complete install: GitHub's 2 GiB asset limit
+cannot hold original _SPEC_ART_ONE.big and _SPEC_ART_TWO.big in one ZIP.
+See ART_ONE_REQUIRED.txt.
 
-What is included
-----------------
+Zero Hour was not run in the build environment. Static checks are not
+in-game proof.
+
+What is in this ZIP
+-------------------
 _SPEC_DATA_ONE.big
   Final DATA (from missile-jlmn-buttons / PR #722). Carries:
   - War Factory strip of RS-24 / DF-41 / Khorramshahr on live RU/CN/IR factories (#718)
@@ -19,12 +23,12 @@ _SPEC_DATA_ONE.big
   - Missile factory K/L/M/N objects and Iran Fire CommandSets
   - J/L/M/N ButtonImage mapping (Neon / Futuristic / Nuclear / pla_df41)
 
-CommandSet.ini
-  Same bytes as inside DATA. Must be loose at Data\INI\CommandSet.ini
-  (ControlBar first-wins this path over archives).
+_SPEC_ART_TWO.big
+  Original Full Release ART TWO. Not rebuilt.
 
-CommandButton.ini
-  Same bytes as inside DATA. Must be loose at Data\INI\CommandButton.ini.
+CommandSet.ini / CommandButton.ini
+  Same bytes as inside DATA. Must be loose at Data\INI\
+  (ControlBar first-wins these paths over archives).
 
 0_SPECTER_GlobalStoreCameos.big
   PR #721 original Global Store / MIC shop TGA. Keep the 0_ prefix.
@@ -32,20 +36,40 @@ CommandButton.ini
 0_SPECTER_MissileJLMNCameos.big
   PR #722 specter_missile_j/l/m TGA. Keep the 0_ prefix.
 
+What you must add
+-----------------
+_SPEC_ART_ONE.big  (original Full Release, 2145283309 bytes)
+  SHA-256 15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/WORLD_WAR_III2027-Full-Release/_SPEC_ART_ONE.big
+
+If that file is already next to generals.exe and the size matches, the
+installer keeps it. Do not replace it with a 447 MB ART.
+
 Install (one shot)
 ------------------
 1. Close Zero Hour.
 2. Unzip SPECTER_UNIFIED_INSTALL.zip.
-3. Copy the unzipped folder into the game directory (next to generals.exe)
-   or into a folder beside it.
-4. Run Install_SpecterUnified.bat.
-5. Confirm it found generals.exe and copied five files.
-6. Keep your existing _SPEC_ART_ONE.big and _SPEC_ART_TWO.big.
+3. Download _SPEC_ART_ONE.big from the links above into the unzipped
+   folder or into the game folder (next to generals.exe), unless it is
+   already there with the canonical size.
+4. Copy the unzipped folder into the game directory or a folder beside it.
+5. Run Install_SpecterUnified.bat.
+6. Confirm it found generals.exe, copied DATA/INI/overlays, and either
+   installed or preserved canonical ART ONE and ART TWO.
+
+Load order
+----------
+game.dat lists *.big with case-insensitive sort; first archive that owns
+a path wins. Names starting 0_ sort before _SPEC_ART_ONE.big, so the two
+overlay BIGs first-win their Art\Textures TGA without replacing ART.
 
 Manual install
 --------------
 Place next to generals.exe:
   _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big          (canonical Full Release only)
+  _SPEC_ART_TWO.big          (from this ZIP)
   0_SPECTER_GlobalStoreCameos.big
   0_SPECTER_MissileJLMNCameos.big
 
@@ -58,18 +82,19 @@ CommandButton.ini from #710-#721 after this pack.
 
 Backup / restore
 ----------------
-The installer copies any replaced files into
+The installer copies replaced DATA/INI/overlay files into
   Backup_SPECTER_UNIFIED_<date>_<time>\
-inside the game folder. Run Restore_SpecterUnifiedBackup.bat from that
-backup folder to put those files back. ART ONE/TWO are never copied.
+inside the game folder. Canonical ART is preserved in place. ART is
+backed up only when the installer has to replace a non-canonical file.
+Run Restore_SpecterUnifiedBackup.bat from that backup folder to undo.
 
 Do not install
 --------------
 - Older _SPEC_DATA_ONE.big from #718-#721
-- Full-release ART substitutes
+- Truncated ART (construct-button 447 MB, repo split zip, s-art-split-2gib)
 - Loose PNG/DDS
 - Extra CommandSet_*.ini or 0_ overlays other than the two named above
 
 SHA-256
 -------
-See SHA256SUMS.txt next to these files.
+See SHA256SUMS.txt and ZIP_MANIFEST.txt next to these files.

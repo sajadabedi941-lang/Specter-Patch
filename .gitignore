@@ -3,3 +3,8 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Rebuilt SPE DATA BIG is a GitHub Release asset, not a git blob (file >100MB)
+patch/Release/MISSILE_FACTORY_M_RS24/_SPEC_DATA_ONE.big
+patch/Release/IRAQ_FACTORY_CS_CRASH/_SPEC_DATA_ONE.big
+patch/Release/DF41_FACTORY_BALLISTIC/_SPEC_DATA_ONE.big

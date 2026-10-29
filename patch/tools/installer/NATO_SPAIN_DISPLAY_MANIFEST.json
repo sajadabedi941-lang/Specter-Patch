@@ -1,0 +1,83 @@
+{
+  "overlay": "0_SPECTER_NatoSpainDisplay.big",
+  "overlay_sha256": "a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d",
+  "overlay_bytes": 1608985,
+  "source_data_big": "/tmp/sp_work/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big",
+  "source_data_sha256": "169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8",
+  "csf_path": "Data\\English\\generals.csf",
+  "csf_labels": 10977,
+  "display_name": "Spanish Armed Forces",
+  "language_convention": "Packed DATA ships English generals.csf only. Peer country names use 'X Armed Forces' (British/French/Italian). Espa\u00f1a is not used because there is no Spanish-language CSF pack.",
+  "internal_ids_preserved": [
+    "PlayerTemplate FactionNato",
+    "Side = Nato",
+    "BaseSide = Nato",
+    "DisplayName = INI:FactionNatoForces (key unchanged)",
+    "Nato* objects, CommandSets, sciences, weapons"
+  ],
+  "identity_art": {
+    "FlagWaterMark": "WatermarkSpain -> ES_Flag (full 128x64)",
+    "EnabledImage": "SSObserverSpain -> ES_Flag center 64x64",
+    "SideIconImage": "GameinfoSpain -> ES_Flag center 64x64",
+    "GeneralImage": "Spain_Logo -> ES_Flag center 64x64",
+    "LoadScreenImage": "SAFactionLogoPage_US (shared EU load page; Britain/France/Italy use the same)",
+    "ScoreScreenImage": "America_ScoreScreen (shared EU score page; unchanged)",
+    "NT_Flag.tga": "First-wins ART_ONE's NATO compass rose. Same 128x64 TGA as ES_Flag. Existing NT__NTFlag_* W3Ds keep sampling NT_Flag.tga.",
+    "building_flag_w3ds": "not packed; ART_TWO originals keep NT_Flag.tga",
+    "FactionAmerica": "still WatermarkUSA / SSObserverUSA / GameinfoAMRCA / USA_Logo",
+            "black_magenta_note": "US_Command.W3D exists only in _SPEC_ART_TWO.big. US_BUILDINGS.dds is in _SPEC_ART_ONE.big. This overlay does not replace those files. Installer/launcher now require ART_TWO beside generals.exe and reject truncated ART_ONE (2144972013 bytes)."
+  },
+  "overlay_files": [
+    "Art\\Textures\\ES_Flag.tga",
+    "Art\\Textures\\NT_Flag.tga",
+    "Data\\English\\generals.csf",
+    "Data\\INI\\MappedImages\\HandCreated\\Spain_FactionImages.INI",
+    "Data\\INI\\PlayerTemplate.ini"
+  ],
+  "changed": [
+    {
+      "label": "INI:FactionNatoForces",
+      "from": "NATO Armies",
+      "to": "Spanish Armed Forces"
+    },
+    {
+      "label": "SIDE:Nato",
+      "from": "Nato Armies",
+      "to": "Spanish Armed Forces"
+    },
+    {
+      "label": "GUI:BioFeatures_Nato",
+      "from": "all of europe armies in one, backed by USA\n\n\n Manpower : 1.800.000\n Budget      : 200B$\n",
+      "to": "Spanish Armed Forces\n\n\n Manpower : 1.800.000\n Budget      : 200B$\n"
+    },
+    {
+      "label": "TOOLTIP:BioStrategyLong_Nato",
+      "from": "High Tech Weapons, AIR,LAND,SEA",
+      "to": "Spanish Armed Forces - High Tech Weapons, AIR,LAND,SEA"
+    }
+  ],
+  "already_applied": [],
+  "intentionally_retained_nato_country_names": [
+    {
+      "label": "GUI:BioNameEntry_Pos5",
+      "value": "NATO Forces",
+      "reason": "Challenge Laser General bio slot, not FactionNato"
+    },
+    {
+      "label": "SIDE:AmericaLaserGeneral",
+      "value": "NATO Forces",
+      "reason": "USA Laser General side string, not FactionNato"
+    },
+    {
+      "label": "SIDE:AmericaSuperWeaponGeneral",
+      "value": "NATO",
+      "reason": "USA SuperWeapon General side string, not FactionNato"
+    },
+    {
+      "label": "INI:FactionAmericaSuperWeaponGeneral",
+      "value": "NATO Alliance",
+      "reason": "USA SuperWeapon General display name, not FactionNato"
+    }
+  ],
+  "load_order_note": "Win32BIGFileSystem overwrite=FALSE; first registered duplicate internal path wins. 0_SPECTER_NatoSpainDisplay.big sorts before _SPEC_DATA_ONE.big and INIZH.big, so this CSF is used from new-game faction selection onward. Internal identifiers are unchanged."
+}

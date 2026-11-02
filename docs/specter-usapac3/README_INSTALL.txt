@@ -1,36 +1,45 @@
-USAPAC3 ART packing — ART ONE + ART TWO
+USAPAC3 — America Command Center slot 6
 =======================================
 
-Canonical SPECTER ART is two archives, not one:
+CAUSE
+-----
+America's live Command Center is Object AmericaCommandCenter
+(CommandSet = AmericaCommandCenterCommandSet in Data\INI\CommandSet.ini).
+FactionAmerica starts with that building.
 
-  _SPEC_ART_ONE.big   2,145,283,309 bytes   textures (Art\Textures\, Art\Terrain\)
-  _SPEC_ART_TWO.big     307,254,782 bytes   W3D models (Art\W3D\)
+USAPAC3 was previously wired only to America_MilitaryHQCommandSet.
+Object America_MilitaryHQ is not in live DATA, so that slot never appears.
+_SPECTER_PATCH_FINAL.big being deleted does not change this. ControlBar
+first-wins loose Data\INI\CommandSet.ini.
 
-ART ONE has only 2,200,339 bytes left before the 2 GiB GitHub/asset cap.
-The 16 USAPAC3 art files are 5,723,261 bytes, so they do not fit in ART ONE.
-ART ONE is left byte-identical. All 16 files were added to ART TWO
-(6 W3D + 10 textures, paths Art\W3D\ and Art\Textures\). No previous
-ART TWO entries were removed.
+FIX
+---
+AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3.
+Slots 1, 12-18 unchanged. THAAD / Patriot / NASAMS / other countries
+untouched. Button, object, and ART TWO models were already valid.
 
 INSTALL
 -------
 1. Close Generals / Specter.
-2. Keep your existing canonical _SPEC_ART_ONE.big next to generals.exe
-   (2,145,283,309 bytes). Do not replace it with the 524 MB repo zip.
-3. Replace:
+2. Keep canonical _SPEC_ART_ONE.big next to generals.exe
+   (2,145,283,309 bytes). Do not replace it with a 524 MB repo zip.
+3. Replace / copy next to generals.exe:
      _SPEC_DATA_ONE.big
      _SPEC_ART_TWO.big
-4. Delete _SPECTER_USAPAC3.big if present.
-5. Run Launch_Specter.bat — it now copies DATA, ART ONE, and ART TWO
-   next to generals.exe.
+     Launch_Specter.bat
+     CommandSet.ini
+4. Run Launch_Specter.bat — it copies the BIGs and installs
+   CommandSet.ini to Data\INI\CommandSet.ini (ControlBar first-win).
+5. Keep _SPECTER_PATCH_FINAL.big and _SPECTER_USAPAC3.big deleted.
 
 ART ONE download (unchanged original):
 https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
 
+The construct button is locked until SCIENCE_Rank3 (same as THAAD).
+The slot itself is visible on America's Command Center.
+
 ROLLBACK
 --------
-Restore the three originals:
-
   ART ONE  15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
   ART TWO  a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
   DATA     c775c5cc5ae7ca1a4cb717b061c387ad044a737a19989b15496b88f6172da8ac

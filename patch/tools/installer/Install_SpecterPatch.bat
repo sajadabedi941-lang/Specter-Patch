@@ -21,6 +21,15 @@ echo   %PATCH_DIR%
 echo.
 
 echo [1/5] Checking patch files...
+if not exist "%PATCH_DIR%CommandSet.ini" (
+  echo.
+  echo ERROR: Missing CommandSet.ini
+  echo Put CommandSet.ini next to Install_SpecterPatch.bat
+  echo This is the live America Command Center bar. Slot 6 is USAPAC3.
+  echo.
+  pause
+  exit /b 1
+)
 if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
   echo.
   echo ERROR: Missing patch file _SPEC_DATA_ONE.big
@@ -45,6 +54,7 @@ if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
   pause
   exit /b 1
 )
+echo   Found CommandSet.ini
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
 echo   Found _SPEC_ART_TWO.big
@@ -138,6 +148,20 @@ if exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
 ) else (
   echo   No existing _SPEC_ART_TWO.big to backup
 )
+
+if not exist "%BACKUP%\Data\INI\" mkdir "%BACKUP%\Data\INI"
+if exist "%GAME_ROOT%Data\INI\CommandSet.ini" (
+  echo   Backing up old Data\INI\CommandSet.ini ...
+  copy /Y "%GAME_ROOT%Data\INI\CommandSet.ini" "%BACKUP%\Data\INI\CommandSet.ini" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for CommandSet.ini
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing Data\INI\CommandSet.ini to backup
+)
 echo   Backup folder:
 echo   %BACKUP%
 echo.
@@ -183,6 +207,23 @@ if errorlevel 1 (
 )
 echo   OK
 
+if not exist "%GAME_ROOT%Data\INI\" mkdir "%GAME_ROOT%Data\INI"
+if errorlevel 1 (
+  echo ERROR: Cannot create Data\INI
+  echo Backup is in: %BACKUP%
+  pause
+  exit /b 1
+)
+echo   Copying CommandSet.ini to Data\INI\ ...
+copy /Y "%PATCH_DIR%CommandSet.ini" "%GAME_ROOT%Data\INI\CommandSet.ini" >nul
+if errorlevel 1 (
+  echo ERROR: Failed to copy CommandSet.ini
+  echo Backup is in: %BACKUP%
+  pause
+  exit /b 1
+)
+echo   OK
+
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
   echo ERROR: _SPEC_DATA_ONE.big missing after install.
   pause
@@ -203,7 +244,8 @@ if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
   echo   WARNING: Delete _SPECTER_USAPAC3.big. USAPAC3 is inside _SPEC_* BIGs.
 )
 if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
-  echo   WARNING: _SPECTER_PATCH_FINAL.big can hide America HQ slot 6.
+  echo   WARNING: Keep _SPECTER_PATCH_FINAL.big deleted. Live America CC
+  echo   is AmericaCommandCenterCommandSet in Data\INI\CommandSet.ini.
 )
 echo.
 

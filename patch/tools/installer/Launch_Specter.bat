@@ -26,7 +26,16 @@ echo Launcher folder:
 echo   %PATCH_DIR%
 echo.
 
-echo [1/4] Checking patch BIG files...
+echo [1/4] Checking patch files...
+if not exist "%PATCH_DIR%CommandSet.ini" (
+  echo.
+  echo ERROR: Missing CommandSet.ini
+  echo Put CommandSet.ini next to Launch_Specter.bat
+  echo This file is the live America Command Center bar.
+  echo.
+  pause
+  exit /b 1
+)
 if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
   echo.
   echo ERROR: Missing _SPEC_DATA_ONE.big
@@ -52,6 +61,7 @@ if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
   pause
   exit /b 1
 )
+echo   OK: CommandSet.ini
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
 echo   OK: _SPEC_ART_TWO.big
@@ -105,6 +115,8 @@ echo.
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Zero Hour loads every .big next to generals.exe, not from Data\.
+echo   ControlBar first-wins loose Data\INI\CommandSet.ini.
+echo   America Command Center = AmericaCommandCenterCommandSet slot 6 USAPAC3.
 echo   USAPAC3 DATA is inside _SPEC_DATA_ONE.big.
 echo   USAPAC3 ART is inside _SPEC_ART_TWO.big. Canonical _SPEC_ART_ONE.big
 echo   is left unchanged ^(2,145,283,309 bytes; no room for the 16 models^).
@@ -152,6 +164,35 @@ if errorlevel 1 (
 )
 echo   OK: copied _SPEC_ART_TWO.big
 
+REM ControlBar first-wins loose Data\INI\CommandSet.ini over every BIG.
+REM America Command Center reads AmericaCommandCenterCommandSet from that file.
+if not exist "%PATCH_DIR%CommandSet.ini" (
+  echo.
+  echo ERROR: Missing CommandSet.ini next to Launch_Specter.bat
+  echo This is the live America Command Center bar. Slot 6 is USAPAC3.
+  echo.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%Data\INI\" mkdir "%GAME_ROOT%Data\INI"
+if errorlevel 1 (
+  echo.
+  echo ERROR: Cannot create Data\INI in the game folder.
+  echo.
+  pause
+  exit /b 1
+)
+echo   Copying CommandSet.ini to Data\INI\ ...
+copy /Y "%PATCH_DIR%CommandSet.ini" "%GAME_ROOT%Data\INI\CommandSet.ini" >nul
+if errorlevel 1 (
+  echo.
+  echo ERROR: Failed to copy CommandSet.ini into Data\INI.
+  echo.
+  pause
+  exit /b 1
+)
+echo   OK: copied Data\INI\CommandSet.ini
+
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
   echo.
   echo   WARNING: _SPECTER_USAPAC3.big is still in the game folder.
@@ -160,9 +201,9 @@ if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
 )
 if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
   echo.
-  echo   WARNING: _SPECTER_PATCH_FINAL.big last-wins
-  echo   Data\INI\CommandSet_FactionExpansion_Armies.ini
-  echo   and can hide America HQ slot 6. Remove or replace that overlay.
+  echo   WARNING: Keep _SPECTER_PATCH_FINAL.big deleted.
+  echo   Live America Command Center is AmericaCommandCenterCommandSet
+  echo   in Data\INI\CommandSet.ini, which this launcher just installed.
   echo.
 )
 
@@ -226,6 +267,7 @@ echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_TWO.big
+echo   %GAME_ROOT%Data\INI\CommandSet.ini
 echo.
 echo You can close this window.
 echo.

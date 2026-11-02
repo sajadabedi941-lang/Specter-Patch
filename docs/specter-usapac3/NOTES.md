@@ -30,5 +30,11 @@ Full Release / specter-unified). ART TWO originals: 2684 kept, 16 added,
 ## DATA
 
 USAPAC3 objects/weapons/CommandSet/CSF were merged into the live unified
-`_SPEC_DATA_ONE.big` (374,075,482 → 374,096,090). America HQ slot 6 =
-USAPAC3, slot 12 = NASAMS. THAAD/Patriot objects were not edited.
+`_SPEC_DATA_ONE.big` (374,075,482 → 374,096,090). That merge put slot 6 on
+`America_MilitaryHQCommandSet`. Live FactionAmerica starts
+`AmericaCommandCenter` / `AmericaCommandCenterCommandSet` (CommandSet.ini).
+MilitaryHQ is not in live DATA. Slot 6 was then added to the live CC set
+(DATA 374,096,123). THAAD/Patriot/NASAMS objects were not edited.
+
+ControlBar first-wins loose `Data\INI\CommandSet.ini`. Launch_Specter.bat
+copies the packed CommandSet.ini to that path.

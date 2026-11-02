@@ -1,0 +1,13 @@
+8a92ad6137aec91efe5b904bad3c1f1915046d29a555ea9635e851a251b130da     374096123  /workspace/docs/specter-usapac3/merged/_SPEC_DATA_ONE.big
+f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42     312978611  /workspace/docs/specter-usapac3/merged/_SPEC_ART_TWO.big
+f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223        450860  /workspace/docs/specter-usapac3/merged/CommandSet.ini
+f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223        450860  /workspace/patch/tools/installer/CommandSet.ini
+55ad029c201ad5d745693d16614add85498814566bb4da9e5271d13e5ceb41e1          7311  /workspace/patch/tools/installer/Launch_Specter.bat
+2da82259ee7550a59f87a84d4373875d3a32af09995172d60cb1eb6e127aae70          7100  /workspace/patch/tools/installer/Install_SpecterPatch.bat
+55ad029c201ad5d745693d16614add85498814566bb4da9e5271d13e5ceb41e1          7311  /workspace/patch/Release/docs/Launch_Specter_REAL.bat
+e8a0b4ea26a15cdef24918678d437d005f5f0b4c1d6bde539e118d477055658a        227209  /workspace/patch/Data/INI/CommandSet.ini
+126421b39214721b960865fff2e901b856dfc6775216d69986c558d817ccc74f          1755  /workspace/docs/specter-usapac3/README_INSTALL.txt
+ab6fbd4795b80a98ebbdf2d6a28f4b6ecd5e842a8661eb9419ede4d07cdd7fa6          4604  /workspace/docs/specter-usapac3/DIAGNOSIS_CC_SLOT6.md
+730a0604dd1ef270ea2a4f93b0c3cfa555643cdb5105939da984320528f97df8          1441  /workspace/docs/specter-usapac3/NOTES.md
+7ad55f6b01a5fa5d0241bbd9b84055e28bd8c3357727a6dddbaa8caa01c89151          7800  /workspace/docs/specter-usapac3/patch_cc_slot6.py
+15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66      2145283309  _SPEC_ART_ONE.big (unchanged canonical)

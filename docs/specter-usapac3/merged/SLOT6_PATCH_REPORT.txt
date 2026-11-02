@@ -1,0 +1,6 @@
+DATA bytes=374096123 sha256=8a92ad6137aec91efe5b904bad3c1f1915046d29a555ea9635e851a251b130da entries=3588
+CommandSet.ini bytes=450860 sha256=f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223
+AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3
+other CC slots unchanged: [(1, 'Command_ConstructAmericaDozer'), (12, 'Command_ConstructAmericaVehicleUH60'), (13, 'Command_ConstructAmericaVehicleM2A3BuskIIIMech'), (14, 'Command_Sell'), (15, 'Command_ConstructSpecterAI_CZDropMarker'), (16, 'Command_ConstrucAmericaDronesMq9AI'), (17, 'Command_ConstructAmericaHelicopterCh47F_AI'), (18, 'Command_ConstructAmericaDroneMQ4AI')]
+THAAD/Patriot/NASAMS object files not modified
+STATIC_OK

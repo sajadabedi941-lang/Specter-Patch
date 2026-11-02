@@ -1,0 +1,35 @@
+DATA original entries=2539 bytes=361695340 sha256=c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05
+DATA merged   entries=2547 bytes=361715948 sha256=ecdbbf4d2d875a968d3dcdcfac2b62acebe9f79edaffa1915866d9db835ed17f
+DATA added:
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
+  + Data\INI\Weapon_USAPAC3.ini
+  + Data\INI\CommandButton_USAPAC3.ini
+  + Data\INI\CommandSet_FactionExpansion_Armies.ini
+  + Data\INI\CommandSet_ZZZZ_USAPAC3.ini
+  + Data\INI\MappedImages\HandCreated\USAPAC3_Images.INI
+  + Data\English\FactionExpansion_USAPAC3_Strings.txt
+DATA updated:
+  ~ Data\English\generals.csf
+ART original entries=2787 bytes=524800955 sha256=bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7
+ART merged   entries=2803 bytes=530524784 sha256=b40939864c337180760421c39a92d817d3f19d42cf8d9928944493787ad9fc05
+ART added:
+  + Art\W3D\UsaPac3Car.W3D
+  + Art\W3D\UsaPac3Car_d.W3D
+  + Art\W3D\UsaPac3Car_w.W3D
+  + Art\W3D\UsaPac3F.W3D
+  + Art\W3D\UsaPac3F_d.W3D
+  + Art\W3D\pac3mis_m.W3D
+  + Art\Textures\usaPAC3TRUCKmap.dds
+  + Art\Textures\usaPAC3TRUCKmap_d.dds
+  + Art\Textures\ampac3map.dds
+  + Art\Textures\ampac3map_d.dds
+  + Art\Textures\ampac3mapBaCK.dds
+  + Art\Textures\pac3missilemap.dds
+  + Art\Textures\ABNPatriot02.dds
+  + Art\Textures\ABNPatriot02_d.tga
+  + Art\Textures\USAPAC3.tga
+  + Art\Textures\USAPAC3TB.tga
+ART updated:
+STATIC_OK
+INGAME_ZH: not executed

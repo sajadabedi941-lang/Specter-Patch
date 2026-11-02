@@ -162,29 +162,11 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   exit /b 1
 )
 
-echo   Copying _SPECTER_*.big overlay archives ...
-set "OVERLAY_COPIED=0"
-for %%F in ("%PATCH_DIR%_SPECTER_*.big") do (
-  if exist "%%F" (
-    copy /Y "%%F" "%GAME_ROOT%%%~nxF" >nul
-    if errorlevel 1 (
-      echo ERROR: Failed to copy %%~nxF
-      echo Backup is in: %BACKUP%
-      pause
-      exit /b 1
-    )
-    echo   OK: copied %%~nxF
-    set "OVERLAY_COPIED=1"
-  )
-)
-if "%OVERLAY_COPIED%"=="0" (
-  echo   No _SPECTER_*.big found next to Install_SpecterPatch.bat
-)
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
-  echo   OK: _SPECTER_USAPAC3.big is in the game folder
-) else (
-  echo   NOTE: _SPECTER_USAPAC3.big was not installed. Place it next to
-  echo   generals.exe ^(not in Data\^) if you need the PAC-3 overlay.
+  echo   WARNING: Delete _SPECTER_USAPAC3.big. USAPAC3 is inside _SPEC_* BIGs.
+)
+if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
+  echo   WARNING: _SPECTER_PATCH_FINAL.big can hide America HQ slot 6.
 )
 echo.
 

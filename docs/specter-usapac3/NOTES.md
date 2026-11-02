@@ -1,34 +1,38 @@
-# USAPAC3 load-path fix
+# USAPAC3 merged into main SPECTER BIGs
 
 Zero Hour was not run. In-game Command Center clicks were not tested.
 
-## Diagnosis
+Independent `_SPECTER_USAPAC3.big` is not the install method.
 
-The overlay BIG format was valid (same BIGF layout as `_SPECTER_PATCH_FINAL.big`).
-The unit did not appear because it was **not applied on the live CommandSet path**.
+## Why the sidecar never showed up
 
-1. **Wrong install target / launcher skip**
-   `Launch_Specter.bat` only copied `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big`
-   into the folder next to `generals.exe`. `_SPECTER_USAPAC3.big` was never copied.
-   Zero Hour loads `*.big` next to `generals.exe`, not from `Data\`.
+`Launch_Specter.bat` only copies `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big`
+next to `generals.exe`. America HQ CommandSet is
+`Data\INI\CommandSet_FactionExpansion_Armies.ini`. A separate overlay BIG
+was not on that load path.
 
-2. **CommandSet override used a new filename**
-   Live America HQ set lives at `Data\INI\CommandSet_FactionExpansion_Armies.ini`
-   inside the working SPECTER overlay BIG. The sidecar only added
-   `CommandSet_ZZZZ_USAPAC3.ini`. A second `CommandSet America_MilitaryHQCommandSet`
-   in a later file is not a same-path archive override, so HQ slot 6 stayed NASAMS.
+## What this merge does
 
-Not the cause: BIG header, Art\W3D paths, or THAAD/Patriot object files.
+Adds USAPAC3 ART to `_SPEC_ART_ONE.big` (`Art\W3D\`, `Art\Textures\`).
+Adds USAPAC3 DATA to `_SPEC_DATA_ONE.big` and writes America HQ slots on
+the original CommandSet path:
 
-## Fix (load only)
+- slot 6 = USAPAC3
+- slot 12 = NASAMS (moved, not deleted)
+- slots 1–5, 7–11, 13–14 unchanged
 
-- Sidecar now packs the **same path** `Data\INI\CommandSet_FactionExpansion_Armies.ini`
-  with America slot 6 = USAPAC3 and NASAMS moved to empty slot 12.
-  Other-country CommandSets in that file are unchanged.
-- `Launch_Specter.bat` / `Install_SpecterPatch.bat` copy every `_SPECTER_*.big`
-  next to the launcher into the game folder.
-- Install: put `_SPECTER_USAPAC3.big` next to `generals.exe`, not in `Data\`.
+CSF strings were appended to the packed `Data\English\generals.csf`
+(8151 → 8155 labels). Overlay CSF was not used as a replacement.
 
-## Unchanged
+America_AD_THAAD, America_AD_Patriot, America_AD_NASAMS objects were not
+edited. Stock Weapon.ini / CommandSet.ini / CommandButton.ini were not
+replaced.
 
-America_AD_THAAD, America_AD_Patriot, America_AD_NASAMS objects, other countries.
+## Rollback
+
+Original stock BIGs were not overwritten in place. Hashes:
+
+- DATA `c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05`
+- ART  `bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7`
+
+Copies: `/tmp/usapac3-original-backup/`

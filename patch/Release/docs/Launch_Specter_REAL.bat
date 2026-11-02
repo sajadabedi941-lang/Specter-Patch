@@ -112,23 +112,11 @@ if errorlevel 1 (
 echo   Loaded _SPEC_ART_ONE.big into game folder
 echo.
 
-echo   Copying _SPECTER_*.big overlay archives ...
-for %%F in ("%PATCH_DIR%_SPECTER_*.big") do (
-  if exist "%%F" (
-    copy /Y "%%F" "%GAME_ROOT%%%~nxF" >nul
-    if errorlevel 1 (
-      echo ERROR: Failed to copy %%~nxF into game folder.
-      pause
-      exit /b 1
-    )
-    echo   Loaded %%~nxF into game folder
-  )
-)
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
-  echo   OK: _SPECTER_USAPAC3.big is in the game folder
-) else (
-  echo   WARNING: _SPECTER_USAPAC3.big is NOT in the game folder.
-  echo   Put it next to generals.exe, not inside Data\.
+  echo   WARNING: Delete _SPECTER_USAPAC3.big. USAPAC3 is inside _SPEC_* BIGs.
+)
+if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
+  echo   WARNING: _SPECTER_PATCH_FINAL.big can hide America HQ slot 6.
 )
 echo.
 
@@ -150,7 +138,6 @@ echo   Command: generals.exe
 echo   Active patch BIGs:
 echo     %GAME_ROOT%_SPEC_DATA_ONE.big
 echo     %GAME_ROOT%_SPEC_ART_ONE.big
-if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" echo     %GAME_ROOT%_SPECTER_USAPAC3.big
 echo.
 
 REM Enter game folder so ArchiveFileSystem finds the SPEC BIGs, then launch.

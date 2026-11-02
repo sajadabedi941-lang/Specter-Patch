@@ -95,8 +95,8 @@ echo.
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Zero Hour loads every .big next to generals.exe, not from Data\.
-echo   This launcher copies _SPEC_*.big and any _SPECTER_*.big overlays
-echo   into that game folder, then starts generals.exe from there.
+echo   USAPAC3 is inside _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big.
+echo   Do not install _SPECTER_USAPAC3.big.
 echo.
 
 set "SAME=0"
@@ -129,24 +129,18 @@ if "%SAME%"=="1" (
   echo   OK: copied _SPEC_ART_ONE.big
 )
 
-echo   Copying _SPECTER_*.big overlay archives ...
-set "OVERLAY_COPIED=0"
-for %%F in ("%PATCH_DIR%_SPECTER_*.big") do (
-  if exist "%%F" (
-    copy /Y "%%F" "%GAME_ROOT%%%~nxF" >nul
-    if errorlevel 1 (
-      echo.
-      echo ERROR: Failed to copy %%~nxF into game folder.
-      echo.
-      pause
-      exit /b 1
-    )
-    echo   OK: copied %%~nxF
-    set "OVERLAY_COPIED=1"
-  )
+if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
+  echo.
+  echo   WARNING: _SPECTER_USAPAC3.big is still in the game folder.
+  echo   Delete it. USAPAC3 now lives inside the main _SPEC_* BIGs.
+  echo.
 )
-if "%OVERLAY_COPIED%"=="0" (
-  echo   No _SPECTER_*.big found next to Launch_Specter.bat
+if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
+  echo.
+  echo   WARNING: _SPECTER_PATCH_FINAL.big last-wins
+  echo   Data\INI\CommandSet_FactionExpansion_Armies.ini
+  echo   and can hide America HQ slot 6. Remove or replace that overlay.
+  echo.
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -164,15 +158,6 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   exit /b 1
 )
 echo   Active BIGs ready in game folder.
-if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
-  echo   OK: _SPECTER_USAPAC3.big is in the game folder and will load.
-) else (
-  echo.
-  echo   WARNING: _SPECTER_USAPAC3.big is NOT in the game folder.
-  echo   Put it next to generals.exe ^(same folder as _SPEC_DATA_ONE.big^),
-  echo   not inside Data\. Then run this launcher again.
-  echo.
-)
 echo.
 
 echo [4/4] Launching generals.exe...
@@ -210,7 +195,6 @@ echo.
 echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
-if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" echo   %GAME_ROOT%_SPECTER_USAPAC3.big
 echo.
 echo You can close this window.
 echo.

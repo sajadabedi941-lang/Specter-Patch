@@ -1,0 +1,45 @@
+ART_ONE unchanged bytes=2145283309 sha256=15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
+ART_ONE 2GiB remaining=2200339 USAPAC3_art=5723261 -> all 16 files in ART_TWO
+ART_TWO original entries=2684 bytes=307254782 sha256=a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+ART_TWO merged   entries=2700 bytes=312978611 sha256=f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42
+ART_TWO added (none overwritten):
+  + Art\W3D\UsaPac3Car.W3D
+  + Art\W3D\UsaPac3Car_d.W3D
+  + Art\W3D\UsaPac3Car_w.W3D
+  + Art\W3D\UsaPac3F.W3D
+  + Art\W3D\UsaPac3F_d.W3D
+  + Art\W3D\pac3mis_m.W3D
+  + Art\Textures\usaPAC3TRUCKmap.dds
+  + Art\Textures\usaPAC3TRUCKmap_d.dds
+  + Art\Textures\ampac3map.dds
+  + Art\Textures\ampac3map_d.dds
+  + Art\Textures\ampac3mapBaCK.dds
+  + Art\Textures\pac3missilemap.dds
+  + Art\Textures\ABNPatriot02.dds
+  + Art\Textures\ABNPatriot02_d.tga
+  + Art\Textures\USAPAC3.tga
+  + Art\Textures\USAPAC3TB.tga
+DATA original entries=3580 bytes=374075482 sha256=c775c5cc5ae7ca1a4cb717b061c387ad044a737a19989b15496b88f6172da8ac
+DATA merged   entries=3588 bytes=374096090 sha256=38ae8035abc1f159876a967b20275a6118bb1d169936fbd639b15640328608be
+DATA added:
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
+  + Data\INI\Weapon_USAPAC3.ini
+  + Data\INI\CommandButton_USAPAC3.ini
+  + Data\INI\CommandSet_FactionExpansion_Armies.ini
+  + Data\INI\CommandSet_ZZZZ_USAPAC3.ini
+  + Data\INI\MappedImages\HandCreated\USAPAC3_Images.INI
+  + Data\English\FactionExpansion_USAPAC3_Strings.txt
+DATA updated:
+  ~ Data\English\generals.csf
+STATIC_OK
+INGAME_ZH: not executed
+
+SLOT6 PATCH (AmericaCommandCenterCommandSet only)
+DATA bytes=374096123 sha256=8a92ad6137aec91efe5b904bad3c1f1915046d29a555ea9635e851a251b130da
+CommandSet.ini bytes=450860 sha256=f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223
+AmericaCommandCenterCommandSet 6 = Command_ConstructUSAPAC3
+slots 1,12-18 unchanged
+THAAD/Patriot/NASAMS objects not modified
+ART TWO unchanged sha256=f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42
+ART ONE unchanged sha256=15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66

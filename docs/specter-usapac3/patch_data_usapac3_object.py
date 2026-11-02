@@ -75,10 +75,10 @@ def main() -> int:
         fail("missing merged DATA")
     new = PATCH_OBJ.read_bytes()
     txt = new.decode("latin-1")
-    if "AttachToBoneInAnotherModule" in txt:
-        fail("overlay still has AttachToBoneInAnotherModule")
-    if "ParticlesAttachedToAnimatedBones" in txt:
-        fail("overlay still has ParticlesAttachedToAnimatedBones")
+    if "AttachToBoneInAnotherModule" in txt or "UsaPac3Car_w" in txt:
+        fail("overlay still has attach or UsaPac3Car_w")
+    if "PRISTINE_BONE_POS_IN_FINAL_FRAME" in txt or "WeaponLaunchBone" in txt:
+        fail("overlay still has pristine/launch-bone Draw")
     if "BuildCost           = 3876" not in txt or "BuildTime           = 18.6" not in txt:
         fail("cost/time changed")
     if txt.count("Object USAPAC3\n") + txt.count("Object USAPAC3\r\n") != 1:

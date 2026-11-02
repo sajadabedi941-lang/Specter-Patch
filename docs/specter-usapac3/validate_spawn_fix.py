@@ -121,8 +121,16 @@ def main() -> int:
         fail("overlay object count")
     if "AttachToBoneInAnotherModule" in overlay:
         fail("attach still present")
-    if "ParticlesAttachedToAnimatedBones" in overlay:
-        fail("particles-on-tracks still present")
+    if "ModuleTag_TracksDraw" in overlay or "UsaPac3Car_w" in overlay:
+        fail("second truck Draw / UsaPac3Car_w still on spawn path")
+    if "PRISTINE_BONE_POS_IN_FINAL_FRAME" in overlay:
+        fail("pristine bone flag still present")
+    if "WeaponLaunchBone" in overlay or "Turret            =" in overlay or "TurretPitch" in overlay:
+        fail("turret/launch bones still in Draw")
+    if overlay.count("Draw = W3DTruckDraw") != 1:
+        fail("expected exactly one W3DTruckDraw")
+    if "AnimationMode     = ONCE_BACKWARDS" not in overlay or "Flags             = START_FRAME_FIRST" not in overlay:
+        fail("US_THAAD default animation flags missing")
     if "BuildCost           = 3876" not in overlay:
         fail("cost")
     if "BuildTime           = 18.6" not in overlay:

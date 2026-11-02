@@ -1,29 +1,18 @@
-راهنمای نصب USAPAC3 (رفع کرش هنگام ساخت)
-========================================
+راهنمای نصب USAPAC3 (رفع کرش Spawn — هم‌تراز با US_THAAD)
+=======================================================
 
-گزارش داخل بازی: دکمه در Command Center آمریکا دیده می‌شود، بدون
-پیش‌نیاز ساخته می‌شود و تایمر تمام می‌شود؛ بازی دقیقاً وقتی Object
-ایجاد می‌شود Crash می‌کند.
+گزارش داخل بازی پس از specter-usapac3-spawnfix: بازی همچنان در لحظهٔ
+اتمام ساخت Crash می‌کند.
 
-رفع: مدل UsaPac3Car یک خودروی کامل است. مدل UsaPac3Car_w فقط دو چرخ
-اضافی است. Draw دوم دیگر به استخوان CORE وصل نمی‌شود.
+علت: Draw واحد با خودروی زندهٔ آمریکا (Object US_THAAD در US_M1120.ini)
+یکی نبود. مدل UsaPac3F و UsaPac3Car_w هنگام ایجاد واحد بارگذاری
+می‌شدند؛ Turret و PRISTINE_BONE_POS هم روی DefaultConditionState بودند.
 
 نصب
 ---
-1. بازی را کامل ببندید.
-2. فایل ZIP را در پوشهٔ Specter / Zero Hour (همان پوشه‌ای که
-   generals.exe دارد) باز کنید.
-3. این فایل‌ها باید کنار Launch_Specter.bat باشند:
-   - _SPEC_DATA_ONE.big
-   - _SPEC_ART_TWO.big
-   - CommandSet.ini
-   - CommandButton.ini
-   - Launch_Specter.bat
-   - Install_SpecterPatch.bat
-4. فایل _SPEC_ART_ONE.big اصلی را جایگزین نکنید.
-5. Launch_Specter.bat را اجرا کنید.
+1. بازی را ببندید.
+2. ZIP را در پوشهٔ generals.exe باز کنید.
+3. Launch_Specter.bat را اجرا کنید.
+4. _SPEC_ART_ONE.big اصلی را عوض نکنید.
 
-هزینه، زمان ساخت، اسلات ۶، THAAD، Patriot و NASAMS تغییر نکرده‌اند.
-
-اگر _SPEC_ART_ONE.big را ندارید:
-https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
+اسلات ۶، هزینه و زمان ساخت تغییر نکرده است.

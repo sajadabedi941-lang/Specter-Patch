@@ -1,18 +1,10 @@
-USAPAC3 — America Command Center slot 6 (Rank 3 lock)
-=====================================================
+USAPAC3 — America Command Center slot 6 (no prerequisites)
+==========================================================
 
-Object USAPAC3 already had Prerequisites Science = SCIENCE_Rank3
-(same placement as overlay America_AD_THAAD). That Object gate is not
-what ControlBar uses for UNIT_BUILD on the Command Center.
-
-Command_ConstructUSAPAC3 had no Science line, so the button stayed
-enabled. Live Specter rank-gates UNIT_BUILD with:
-
-  Science = SCIENCE_Rank3
-
-on the CommandButton (same field Command_US_Tier3 / overlay China
-UNIT_BUILD buttons use). That line is now on Command_ConstructUSAPAC3.
-Object cost, time, weapons, models, and CC slot 6 are unchanged.
+Command_ConstructUSAPAC3 has no Science / Rank / Upgrade / Prerequisites.
+Object USAPAC3 has no Prerequisites block. Slot 6 on
+AmericaCommandCenterCommandSet is unchanged. Cost, time, weapons, models
+unchanged.
 
 INSTALL
 -------

@@ -1,0 +1,29 @@
+راهنمای نصب USAPAC3 (رفع کرش هنگام ساخت)
+========================================
+
+گزارش داخل بازی: دکمه در Command Center آمریکا دیده می‌شود، بدون
+پیش‌نیاز ساخته می‌شود و تایمر تمام می‌شود؛ بازی دقیقاً وقتی Object
+ایجاد می‌شود Crash می‌کند.
+
+رفع: مدل UsaPac3Car یک خودروی کامل است. مدل UsaPac3Car_w فقط دو چرخ
+اضافی است. Draw دوم دیگر به استخوان CORE وصل نمی‌شود.
+
+نصب
+---
+1. بازی را کامل ببندید.
+2. فایل ZIP را در پوشهٔ Specter / Zero Hour (همان پوشه‌ای که
+   generals.exe دارد) باز کنید.
+3. این فایل‌ها باید کنار Launch_Specter.bat باشند:
+   - _SPEC_DATA_ONE.big
+   - _SPEC_ART_TWO.big
+   - CommandSet.ini
+   - CommandButton.ini
+   - Launch_Specter.bat
+   - Install_SpecterPatch.bat
+4. فایل _SPEC_ART_ONE.big اصلی را جایگزین نکنید.
+5. Launch_Specter.bat را اجرا کنید.
+
+هزینه، زمان ساخت، اسلات ۶، THAAD، Patriot و NASAMS تغییر نکرده‌اند.
+
+اگر _SPEC_ART_ONE.big را ندارید:
+https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big

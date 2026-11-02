@@ -1,10 +1,12 @@
-USAPAC3 — America Command Center slot 6 (no prerequisites)
-==========================================================
+USAPAC3 — spawn crash fix (America Command Center slot 6)
+=========================================================
 
-Command_ConstructUSAPAC3 has no Science / Rank / Upgrade / Prerequisites.
-Object USAPAC3 has no Prerequisites block. Slot 6 on
-AmericaCommandCenterCommandSet is unchanged. Cost, time, weapons, models
-unchanged.
+ساخت USAPAC3 بدون پیش‌نیاز است و دکمه در اسلات ۶ Command Center آمریکا
+باقی می‌ماند. این بسته فقط crash هنگام ایجاد Object را اصلاح می‌کند.
+
+علت: Draw دوم مدل UsaPac3Car_w (فقط دو چرخ) با
+AttachToBoneInAnotherModule=CORE به W3DTruckDraw وصل شده بود. این ترکیب
+در SPECTER روی هیچ خودروی سالمی نیست و در لحظهٔ Spawn کرش می‌کند.
 
 INSTALL
 -------
@@ -14,3 +16,5 @@ INSTALL
 4. Run Launch_Specter.bat.
 
 ART ONE: https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
+
+Zero Hour was not run here; the spawn crash is not verified in-game in this environment.

@@ -1,38 +1,34 @@
-# USAPAC3 merged into main SPECTER BIGs
+# USAPAC3 — ART ONE vs ART TWO packing
 
-Zero Hour was not run. In-game Command Center clicks were not tested.
+Zero Hour was not run.
 
-Independent `_SPECTER_USAPAC3.big` is not the install method.
+## Live ART layout
 
-## Why the sidecar never showed up
+| Archive | Bytes | Files | Role |
+|---|---:|---:|---|
+| `_SPEC_ART_ONE.big` | 2,145,283,309 | 3025 | `Art\Textures\`, `Art\Terrain\` |
+| `_SPEC_ART_TWO.big` | 307,254,782 | 2684 | `Art\W3D\` only |
 
-`Launch_Specter.bat` only copies `_SPEC_DATA_ONE.big` and `_SPEC_ART_ONE.big`
-next to `generals.exe`. America HQ CommandSet is
-`Data\INI\CommandSet_FactionExpansion_Armies.ini`. A separate overlay BIG
-was not on that load path.
+None of the 16 USAPAC3 files were in either archive before this pack.
+The previous merge put them in a **truncated** 524 MB ART ONE from
+`art_data.part*.rar`. That is not the live Full Release ART ONE.
 
-## What this merge does
+## Capacity
 
-Adds USAPAC3 ART to `_SPEC_ART_ONE.big` (`Art\W3D\`, `Art\Textures\`).
-Adds USAPAC3 DATA to `_SPEC_DATA_ONE.big` and writes America HQ slots on
-the original CommandSet path:
+2 GiB = 2,147,483,648. ART ONE remaining = 2,200,339 bytes.
+USAPAC3 art total = 5,723,261 bytes. Does not fit in ART ONE.
 
-- slot 6 = USAPAC3
-- slot 12 = NASAMS (moved, not deleted)
-- slots 1–5, 7–11, 13–14 unchanged
+All 16 files go in ART TWO. ART ONE is unchanged (same SHA-256 as
+Full Release / specter-unified). ART TWO originals: 2684 kept, 16 added,
+0 removed.
 
-CSF strings were appended to the packed `Data\English\generals.csf`
-(8151 → 8155 labels). Overlay CSF was not used as a replacement.
+## Launcher
 
-America_AD_THAAD, America_AD_Patriot, America_AD_NASAMS objects were not
-edited. Stock Weapon.ini / CommandSet.ini / CommandButton.ini were not
-replaced.
+`Launch_Specter.bat` previously copied only ART ONE. It now copies
+`_SPEC_ART_TWO.big` as well.
 
-## Rollback
+## DATA
 
-Original stock BIGs were not overwritten in place. Hashes:
-
-- DATA `c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05`
-- ART  `bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7`
-
-Copies: `/tmp/usapac3-original-backup/`
+USAPAC3 objects/weapons/CommandSet/CSF were merged into the live unified
+`_SPEC_DATA_ONE.big` (374,075,482 → 374,096,090). America HQ slot 6 =
+USAPAC3, slot 12 = NASAMS. THAAD/Patriot objects were not edited.

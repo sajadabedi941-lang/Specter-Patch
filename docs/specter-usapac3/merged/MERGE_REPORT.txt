@@ -1,19 +1,8 @@
-DATA original entries=2539 bytes=361695340 sha256=c7062a4ab12677a2e797d1a98324b14fcefd0a0cbdbbcec0a2e527553e377c05
-DATA merged   entries=2547 bytes=361715948 sha256=ecdbbf4d2d875a968d3dcdcfac2b62acebe9f79edaffa1915866d9db835ed17f
-DATA added:
-  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
-  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
-  + Data\INI\Weapon_USAPAC3.ini
-  + Data\INI\CommandButton_USAPAC3.ini
-  + Data\INI\CommandSet_FactionExpansion_Armies.ini
-  + Data\INI\CommandSet_ZZZZ_USAPAC3.ini
-  + Data\INI\MappedImages\HandCreated\USAPAC3_Images.INI
-  + Data\English\FactionExpansion_USAPAC3_Strings.txt
-DATA updated:
-  ~ Data\English\generals.csf
-ART original entries=2787 bytes=524800955 sha256=bb5d15325e227bad247450dc379bbf85b8bbd620beacc9b2f8db89976b1989d7
-ART merged   entries=2803 bytes=530524784 sha256=b40939864c337180760421c39a92d817d3f19d42cf8d9928944493787ad9fc05
-ART added:
+ART_ONE unchanged bytes=2145283309 sha256=15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
+ART_ONE 2GiB remaining=2200339 USAPAC3_art=5723261 -> all 16 files in ART_TWO
+ART_TWO original entries=2684 bytes=307254782 sha256=a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+ART_TWO merged   entries=2700 bytes=312978611 sha256=f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42
+ART_TWO added (none overwritten):
   + Art\W3D\UsaPac3Car.W3D
   + Art\W3D\UsaPac3Car_d.W3D
   + Art\W3D\UsaPac3Car_w.W3D
@@ -30,6 +19,18 @@ ART added:
   + Art\Textures\ABNPatriot02_d.tga
   + Art\Textures\USAPAC3.tga
   + Art\Textures\USAPAC3TB.tga
-ART updated:
+DATA original entries=3580 bytes=374075482 sha256=c775c5cc5ae7ca1a4cb717b061c387ad044a737a19989b15496b88f6172da8ac
+DATA merged   entries=3588 bytes=374096090 sha256=38ae8035abc1f159876a967b20275a6118bb1d169936fbd639b15640328608be
+DATA added:
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+  + Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
+  + Data\INI\Weapon_USAPAC3.ini
+  + Data\INI\CommandButton_USAPAC3.ini
+  + Data\INI\CommandSet_FactionExpansion_Armies.ini
+  + Data\INI\CommandSet_ZZZZ_USAPAC3.ini
+  + Data\INI\MappedImages\HandCreated\USAPAC3_Images.INI
+  + Data\English\FactionExpansion_USAPAC3_Strings.txt
+DATA updated:
+  ~ Data\English\generals.csf
 STATIC_OK
 INGAME_ZH: not executed

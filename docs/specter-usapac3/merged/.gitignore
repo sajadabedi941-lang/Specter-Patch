@@ -1,3 +1,4 @@
 # Merged SPEC BIGs are GitHub Release artifacts, not git objects.
 _SPEC_DATA_ONE.big
 _SPEC_ART_ONE.big
+_SPEC_ART_TWO.big

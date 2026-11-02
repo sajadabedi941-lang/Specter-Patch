@@ -43,8 +43,18 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: Missing _SPEC_ART_TWO.big
+  echo Put _SPEC_ART_TWO.big next to Launch_Specter.bat
+  echo Canonical ART TWO is required. USAPAC3 models live in this archive.
+  echo.
+  pause
+  exit /b 1
+)
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
+echo   OK: _SPEC_ART_TWO.big
 echo.
 
 echo [2/4] Checking generals.exe...
@@ -95,7 +105,9 @@ echo.
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Zero Hour loads every .big next to generals.exe, not from Data\.
-echo   USAPAC3 is inside _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big.
+echo   USAPAC3 DATA is inside _SPEC_DATA_ONE.big.
+echo   USAPAC3 ART is inside _SPEC_ART_TWO.big. Canonical _SPEC_ART_ONE.big
+echo   is left unchanged ^(2,145,283,309 bytes; no room for the 16 models^).
 echo   Do not install _SPECTER_USAPAC3.big.
 echo.
 
@@ -129,6 +141,17 @@ if "%SAME%"=="1" (
   echo   OK: copied _SPEC_ART_ONE.big
 )
 
+echo   Copying _SPEC_ART_TWO.big ...
+copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+if errorlevel 1 (
+  echo.
+  echo ERROR: Failed to copy _SPEC_ART_TWO.big into game folder.
+  echo.
+  pause
+  exit /b 1
+)
+echo   OK: copied _SPEC_ART_TWO.big
+
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
   echo.
   echo   WARNING: _SPECTER_USAPAC3.big is still in the game folder.
@@ -153,6 +176,13 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo.
   echo ERROR: _SPEC_ART_ONE.big is not in the game folder.
+  echo.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: _SPEC_ART_TWO.big is not in the game folder.
   echo.
   pause
   exit /b 1
@@ -195,6 +225,7 @@ echo.
 echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
 echo.
 echo You can close this window.
 echo.

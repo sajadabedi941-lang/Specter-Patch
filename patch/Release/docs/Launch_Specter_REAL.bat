@@ -36,8 +36,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
+  echo.
+  echo ERROR: Missing _SPEC_ART_TWO.big
+  echo Put _SPEC_ART_TWO.big next to Launch_Specter.bat
+  echo.
+  pause
+  exit /b 1
+)
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
+echo   Found _SPEC_ART_TWO.big
 echo.
 
 echo [2/4] Detecting game folder with generals.exe...
@@ -86,9 +95,10 @@ echo.
 echo [3/4] Loading Specter BIG patch into game folder...
 echo.
 echo   Zero Hour loads .big archives from the game folder automatically.
-echo   Specter Ultimate Expansion needs BOTH files active:
+echo   Specter Ultimate Expansion needs these files active:
 echo     _SPEC_DATA_ONE.big
 echo     _SPEC_ART_ONE.big
+echo     _SPEC_ART_TWO.big
 echo.
 echo   Note: ZH "-mod file.big" supports only ONE mod archive, so it cannot
 echo   enable both Specter BIGs. The correct method is placing both BIGs
@@ -110,6 +120,14 @@ if errorlevel 1 (
   exit /b 1
 )
 echo   Loaded _SPEC_ART_ONE.big into game folder
+
+copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+if errorlevel 1 (
+  echo ERROR: Failed to load _SPEC_ART_TWO.big into game folder.
+  pause
+  exit /b 1
+)
+echo   Loaded _SPEC_ART_TWO.big into game folder
 echo.
 
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
@@ -130,6 +148,11 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo ERROR: _SPEC_ART_TWO.big not present in game folder after load.
+  pause
+  exit /b 1
+)
 
 echo [4/4] Starting Command and Conquer Generals Zero Hour...
 echo.
@@ -138,6 +161,7 @@ echo   Command: generals.exe
 echo   Active patch BIGs:
 echo     %GAME_ROOT%_SPEC_DATA_ONE.big
 echo     %GAME_ROOT%_SPEC_ART_ONE.big
+echo     %GAME_ROOT%_SPEC_ART_TWO.big
 echo.
 
 REM Enter game folder so ArchiveFileSystem finds the SPEC BIGs, then launch.

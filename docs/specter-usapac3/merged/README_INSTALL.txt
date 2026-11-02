@@ -1,15 +1,18 @@
-USAPAC3 — spawn Draw aligned to live US_THAAD
-============================================
+USAPAC3 — spawn isolate stage 2 (empty DEPLOYED animation)
+==========================================================
 
-Release قبلی (specter-usapac3-spawnfix) فقط Attach را برداشت؛ Draw دوم
-UsaPac3Car_w، فلگ PRISTINE_BONE_POS و Turret/LaunchBone روی DefaultState
-هنوز در لحظهٔ Spawn بارگذاری می‌شدند.
+After specter-usapac3-spawnfix the game still crashed when construction
+finished. Attach-on-UsaPac3Car_w was not the cause.
 
-این بسته Draw را با Object زندهٔ US_THAAD (US_M1120.ini داخل DATA) یکی
-می‌کند: یک W3DTruckDraw، بدون Draw دوم، بدون Turret/LaunchBone.
-UsaPac3Car مدل کامل TEL است؛ UsaPac3Car_w دیگر در Spawn نیست.
+Packed USAPAC3 still named Animation = UsaPac3F.UsaPac3F at object create.
+UsaPac3F.W3D had a 101-frame animation header and zero channels. Live
+US_THAAD deployed model US_M1120_A has no animation blob at all.
 
-اسلات ۶، هزینه ۳۸۷۶، زمان ۱۸.۶، سلاح، THAAD/Patriot/NASAMS بدون تغییر.
+This package:
+- keeps the approved UsaPac3F model on DEPLOYED
+- removes that empty Animation= from Draw
+- strips the empty ANIMATION chunk from UsaPac3F / UsaPac3F_d
+- does not change slot 6, cost 3876, time 18.6, weapons, THAAD/Patriot/NASAMS
 
 INSTALL
 -------

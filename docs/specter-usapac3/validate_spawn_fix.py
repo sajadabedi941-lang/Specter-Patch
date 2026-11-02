@@ -129,6 +129,10 @@ def main() -> int:
         fail("turret/launch bones still in Draw")
     if overlay.count("Draw = W3DTruckDraw") != 1:
         fail("expected exactly one W3DTruckDraw")
+    if "Animation         = UsaPac3F" in overlay or "Animation         = UsaPac3F_d" in overlay:
+        fail("empty UsaPac3F animation still named in Draw")
+    if "Model             = UsaPac3F" not in overlay:
+        fail("DEPLOYED must keep approved UsaPac3F model")
     if "AnimationMode     = ONCE_BACKWARDS" not in overlay or "Flags             = START_FRAME_FIRST" not in overlay:
         fail("US_THAAD default animation flags missing")
     if "BuildCost           = 3876" not in overlay:
@@ -220,13 +224,23 @@ def main() -> int:
         bones, anims, textures, meshes = parse_w3d(art_map[key][1])
         if meshes < 1:
             fail(f"{model} has no meshes")
-        if not anims:
-            fail(f"{model} has no animation header")
-        if anims[0][0] != model.upper().replace("USAPAC3", "USAPAC3"):
-            # UsaPac3Car -> USAPAC3CAR
+        # Live deployed TELs (US_M1120_A, Irq_Fahad3_A) have no ANIMATION
+        # chunk. UsaPac3F used to ship a 101-frame header with 0 channels;
+        # that clip is the spawn-crash isolate and must stay stripped.
+        if model in ("UsaPac3F", "UsaPac3F_d"):
+            if anims:
+                fail(f"{model} still has animation header {anims[0]}")
+        else:
+            if not anims:
+                fail(f"{model} has no animation header")
             expect = model.upper()
             if anims[0][0] != expect:
                 fail(f"{model} anim name {anims[0][0]} != {expect}")
+        # packed W3D for F models must match overlay files
+        if model in ("UsaPac3F", "UsaPac3F_d"):
+            src = PATCH / f"Art/W3D/{model}.W3D"
+            if src.read_bytes() != art_map[key][1]:
+                fail(f"packed {model} != overlay W3D")
         for bone in needed_bones.get(model, ()):
             if bone not in bones:
                 fail(f"{model} missing bone {bone}")

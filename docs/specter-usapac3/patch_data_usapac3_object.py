@@ -79,6 +79,8 @@ def main() -> int:
         fail("overlay still has attach or UsaPac3Car_w")
     if "PRISTINE_BONE_POS_IN_FINAL_FRAME" in txt or "WeaponLaunchBone" in txt:
         fail("overlay still has pristine/launch-bone Draw")
+    if "Animation         = UsaPac3F" in txt or "Animation         = UsaPac3F_d" in txt:
+        fail("overlay still names empty UsaPac3F animation")
     if "BuildCost           = 3876" not in txt or "BuildTime           = 18.6" not in txt:
         fail("cost/time changed")
     if txt.count("Object USAPAC3\n") + txt.count("Object USAPAC3\r\n") != 1:

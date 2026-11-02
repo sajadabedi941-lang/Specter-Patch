@@ -94,8 +94,9 @@ echo.
 
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
-echo   Specter loads _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from
-echo   the game folder automatically when generals.exe starts.
+echo   Zero Hour loads every .big next to generals.exe, not from Data\.
+echo   This launcher copies _SPEC_*.big and any _SPECTER_*.big overlays
+echo   into that game folder, then starts generals.exe from there.
 echo.
 
 set "SAME=0"
@@ -103,7 +104,7 @@ if /I "%PATCH_DIR%"=="%GAME_ROOT%" set "SAME=1"
 
 if "%SAME%"=="1" (
   echo   Launcher is already inside the game folder.
-  echo   BIG files are already in place - no copy needed.
+  echo   Core BIGs are already in place - overlay copy still runs.
 ) else (
   echo   Copying _SPEC_DATA_ONE.big ...
   copy /Y "%PATCH_DIR%_SPEC_DATA_ONE.big" "%GAME_ROOT%_SPEC_DATA_ONE.big" >nul
@@ -128,6 +129,26 @@ if "%SAME%"=="1" (
   echo   OK: copied _SPEC_ART_ONE.big
 )
 
+echo   Copying _SPECTER_*.big overlay archives ...
+set "OVERLAY_COPIED=0"
+for %%F in ("%PATCH_DIR%_SPECTER_*.big") do (
+  if exist "%%F" (
+    copy /Y "%%F" "%GAME_ROOT%%%~nxF" >nul
+    if errorlevel 1 (
+      echo.
+      echo ERROR: Failed to copy %%~nxF into game folder.
+      echo.
+      pause
+      exit /b 1
+    )
+    echo   OK: copied %%~nxF
+    set "OVERLAY_COPIED=1"
+  )
+)
+if "%OVERLAY_COPIED%"=="0" (
+  echo   No _SPECTER_*.big found next to Launch_Specter.bat
+)
+
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
   echo.
   echo ERROR: _SPEC_DATA_ONE.big is not in the game folder.
@@ -143,6 +164,15 @@ if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   exit /b 1
 )
 echo   Active BIGs ready in game folder.
+if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
+  echo   OK: _SPECTER_USAPAC3.big is in the game folder and will load.
+) else (
+  echo.
+  echo   WARNING: _SPECTER_USAPAC3.big is NOT in the game folder.
+  echo   Put it next to generals.exe ^(same folder as _SPEC_DATA_ONE.big^),
+  echo   not inside Data\. Then run this launcher again.
+  echo.
+)
 echo.
 
 echo [4/4] Launching generals.exe...
@@ -180,6 +210,7 @@ echo.
 echo Active files:
 echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
+if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" echo   %GAME_ROOT%_SPECTER_USAPAC3.big
 echo.
 echo You can close this window.
 echo.

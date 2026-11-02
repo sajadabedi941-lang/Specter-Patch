@@ -84,6 +84,14 @@ def main() -> int:
         fail("THAAD file damaged")
     print("OK   America_AD_THAAD unchanged identity")
 
+    fe = (PATCH / "Data/INI/CommandSet_FactionExpansion_Armies.ini").read_text(encoding="latin-1")
+    if "6 = Command_ConstructUSAPAC3" not in fe:
+        fail("FactionExpansion slot 6 is not USAPAC3")
+    if "12 = Command_ConstructAmerica_AD_NASAMS" not in fe:
+        fail("FactionExpansion did not keep NASAMS on slot 12")
+    # Same-path overwrite of the live overlay CommandSet file (not a new ZZZZ-only name).
+    if "CommandSet Russia_MilitaryHQCommandSet" not in fe or "CommandSet China_MilitaryHQCommandSet" not in fe:
+        fail("FactionExpansion lost other-country CommandSets")
     lw = last_wins_cmdset()
     if lw is None or lw.name != "CommandSet_ZZZZ_USAPAC3.ini":
         fail(f"last-wins HQ set is {lw}")
@@ -96,7 +104,7 @@ def main() -> int:
         fail("THAAD slot 5 dropped")
     if "4 = Command_ConstructAmerica_AD_Patriot" not in cs:
         fail("Patriot slot 4 dropped")
-    print("OK   HQ slot 6=USAPAC3 slot 12=NASAMS last-wins", lw.name)
+    print("OK   HQ slot 6=USAPAC3 same-path FactionExpansion + last-wins", lw.name)
 
     required_art = [
         "Art/W3D/UsaPac3Car.W3D",
@@ -121,6 +129,7 @@ def main() -> int:
         PATCH / "Data/INI/Object/Specter/PatchSystems/AirDefense/USAPAC3_Projectile.ini",
         PATCH / "Data/INI/Weapon_USAPAC3.ini",
         PATCH / "Data/INI/CommandButton_USAPAC3.ini",
+        PATCH / "Data/INI/CommandSet_FactionExpansion_Armies.ini",
         PATCH / "Data/INI/CommandSet_ZZZZ_USAPAC3.ini",
         PATCH / "Data/INI/MappedImages/HandCreated/USAPAC3_Images.INI",
         PATCH / "Data/English/FactionExpansion_USAPAC3_Strings.txt",

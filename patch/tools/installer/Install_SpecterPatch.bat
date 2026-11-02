@@ -30,6 +30,15 @@ if not exist "%PATCH_DIR%CommandSet.ini" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%CommandButton.ini" (
+  echo.
+  echo ERROR: Missing CommandButton.ini
+  echo Put CommandButton.ini next to Install_SpecterPatch.bat
+  echo Command_ConstructUSAPAC3 must be in this file or CommandSet.ini crashes.
+  echo.
+  pause
+  exit /b 1
+)
 if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
   echo.
   echo ERROR: Missing patch file _SPEC_DATA_ONE.big
@@ -55,6 +64,7 @@ if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
   exit /b 1
 )
 echo   Found CommandSet.ini
+echo   Found CommandButton.ini
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
 echo   Found _SPEC_ART_TWO.big
@@ -162,6 +172,18 @@ if exist "%GAME_ROOT%Data\INI\CommandSet.ini" (
 ) else (
   echo   No existing Data\INI\CommandSet.ini to backup
 )
+if exist "%GAME_ROOT%Data\INI\CommandButton.ini" (
+  echo   Backing up old Data\INI\CommandButton.ini ...
+  copy /Y "%GAME_ROOT%Data\INI\CommandButton.ini" "%BACKUP%\Data\INI\CommandButton.ini" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for CommandButton.ini
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing Data\INI\CommandButton.ini to backup
+)
 echo   Backup folder:
 echo   %BACKUP%
 echo.
@@ -218,6 +240,15 @@ echo   Copying CommandSet.ini to Data\INI\ ...
 copy /Y "%PATCH_DIR%CommandSet.ini" "%GAME_ROOT%Data\INI\CommandSet.ini" >nul
 if errorlevel 1 (
   echo ERROR: Failed to copy CommandSet.ini
+  echo Backup is in: %BACKUP%
+  pause
+  exit /b 1
+)
+echo   OK
+echo   Copying CommandButton.ini to Data\INI\ ...
+copy /Y "%PATCH_DIR%CommandButton.ini" "%GAME_ROOT%Data\INI\CommandButton.ini" >nul
+if errorlevel 1 (
+  echo ERROR: Failed to copy CommandButton.ini
   echo Backup is in: %BACKUP%
   pause
   exit /b 1

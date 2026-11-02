@@ -36,6 +36,15 @@ if not exist "%PATCH_DIR%CommandSet.ini" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%CommandButton.ini" (
+  echo.
+  echo ERROR: Missing CommandButton.ini
+  echo Put CommandButton.ini next to Launch_Specter.bat
+  echo Command_ConstructUSAPAC3 must be in this file or CommandSet.ini crashes.
+  echo.
+  pause
+  exit /b 1
+)
 if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
   echo.
   echo ERROR: Missing _SPEC_DATA_ONE.big
@@ -62,6 +71,7 @@ if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
   exit /b 1
 )
 echo   OK: CommandSet.ini
+echo   OK: CommandButton.ini
 echo   OK: _SPEC_DATA_ONE.big
 echo   OK: _SPEC_ART_ONE.big
 echo   OK: _SPEC_ART_TWO.big
@@ -115,8 +125,9 @@ echo.
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Zero Hour loads every .big next to generals.exe, not from Data\.
-echo   ControlBar first-wins loose Data\INI\CommandSet.ini.
+echo   ControlBar first-wins loose Data\INI\CommandSet.ini and CommandButton.ini.
 echo   America Command Center = AmericaCommandCenterCommandSet slot 6 USAPAC3.
+echo   Command_ConstructUSAPAC3 is inside CommandButton.ini so CommandSet.ini can load.
 echo   USAPAC3 DATA is inside _SPEC_DATA_ONE.big.
 echo   USAPAC3 ART is inside _SPEC_ART_TWO.big. Canonical _SPEC_ART_ONE.big
 echo   is left unchanged ^(2,145,283,309 bytes; no room for the 16 models^).
@@ -192,6 +203,16 @@ if errorlevel 1 (
   exit /b 1
 )
 echo   OK: copied Data\INI\CommandSet.ini
+echo   Copying CommandButton.ini to Data\INI\ ...
+copy /Y "%PATCH_DIR%CommandButton.ini" "%GAME_ROOT%Data\INI\CommandButton.ini" >nul
+if errorlevel 1 (
+  echo.
+  echo ERROR: Failed to copy CommandButton.ini into Data\INI.
+  echo.
+  pause
+  exit /b 1
+)
+echo   OK: copied Data\INI\CommandButton.ini
 
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
   echo.
@@ -268,6 +289,7 @@ echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
 echo   %GAME_ROOT%_SPEC_ART_TWO.big
 echo   %GAME_ROOT%Data\INI\CommandSet.ini
+echo   %GAME_ROOT%Data\INI\CommandButton.ini
 echo.
 echo You can close this window.
 echo.

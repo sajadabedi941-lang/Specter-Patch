@@ -1,0 +1,22 @@
+مرحله ظاهر PAC-3 (مدل TEL)
+==========================
+
+واحد USAPAC3 و حالت CombatMode اکنون از مدل آرشیو PAC-3 استفاده می‌کنند:
+UsaPac3Car برای حالت بسته‌شده و UsaPac3F برای حالت استقرار.
+CommandSet، سلاح، OCL، Deploy/Pack و FireControlSystem نسبت به
+specter-usapac3-commandset-fix تغییر نکرده‌اند.
+
+UsaPac3Car_w استفاده نشده است. موشک در پرواز هنوز هنر پرتابه THAAD است.
+
+نصب
+---
+1. بازی را ببندید.
+2. ZIP را کنار generals.exe باز کنید.
+3. هر دو فایل _SPEC_DATA_ONE.big و _SPEC_ART_TWO.big را جایگزین کنید.
+4. فایل اصلی _SPEC_ART_ONE.big را عوض نکنید.
+5. Launch_Specter.bat را اجرا کنید.
+
+Releaseهای قبلی GitHub حذف نشده‌اند.
+
+Zero Hour در محیط ساخت برای این مرحله ظاهر اجرا نشد. این گزارش فقط
+اعتبارسنجی استاتیک است، نه تست داخل بازی.

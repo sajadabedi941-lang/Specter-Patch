@@ -40,7 +40,7 @@ if not exist "%PATCH_DIR%CommandButton.ini" (
   echo.
   echo ERROR: Missing CommandButton.ini
   echo Put CommandButton.ini next to Launch_Specter.bat
-  echo Command_ConstructUSAPAC3 must be in this file or CommandSet.ini crashes.
+  echo CommandButton.ini is the live ControlBar button table.
   echo.
   pause
   exit /b 1
@@ -65,7 +65,7 @@ if not exist "%PATCH_DIR%_SPEC_ART_TWO.big" (
   echo.
   echo ERROR: Missing _SPEC_ART_TWO.big
   echo Put _SPEC_ART_TWO.big next to Launch_Specter.bat
-  echo Canonical ART TWO is required. USAPAC3 models live in this archive.
+  echo Canonical ART TWO is required.
   echo.
   pause
   exit /b 1
@@ -126,12 +126,7 @@ echo [3/4] Loading Specter BIG files into game folder...
 echo.
 echo   Zero Hour loads every .big next to generals.exe, not from Data\.
 echo   ControlBar first-wins loose Data\INI\CommandSet.ini and CommandButton.ini.
-echo   America Command Center = AmericaCommandCenterCommandSet slot 6 USAPAC3.
-echo   Command_ConstructUSAPAC3 is inside CommandButton.ini so CommandSet.ini can load.
-echo   USAPAC3 DATA is inside _SPEC_DATA_ONE.big.
-echo   USAPAC3 ART is inside _SPEC_ART_TWO.big. Canonical _SPEC_ART_ONE.big
-echo   is left unchanged ^(2,145,283,309 bytes; no room for the 16 models^).
-echo   Do not install _SPECTER_USAPAC3.big.
+echo   America Command Center = AmericaCommandCenterCommandSet.
 echo.
 
 set "SAME=0"
@@ -180,7 +175,7 @@ REM America Command Center reads AmericaCommandCenterCommandSet from that file.
 if not exist "%PATCH_DIR%CommandSet.ini" (
   echo.
   echo ERROR: Missing CommandSet.ini next to Launch_Specter.bat
-  echo This is the live America Command Center bar. Slot 6 is USAPAC3.
+  echo This is the live America Command Center bar.
   echo.
   pause
   exit /b 1
@@ -216,8 +211,8 @@ echo   OK: copied Data\INI\CommandButton.ini
 
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
   echo.
-  echo   WARNING: _SPECTER_USAPAC3.big is still in the game folder.
-  echo   Delete it. USAPAC3 now lives inside the main _SPEC_* BIGs.
+  echo   WARNING: leftover _SPECTER_USAPAC3.big is still in the game folder.
+  echo   Delete it. That sidecar is not part of SPECTER.
   echo.
 )
 if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (

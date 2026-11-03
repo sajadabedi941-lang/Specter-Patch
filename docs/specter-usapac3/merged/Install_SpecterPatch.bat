@@ -25,7 +25,7 @@ if not exist "%PATCH_DIR%CommandSet.ini" (
   echo.
   echo ERROR: Missing CommandSet.ini
   echo Put CommandSet.ini next to Install_SpecterPatch.bat
-  echo This is the live America Command Center bar. Slot 6 is USAPAC3.
+  echo This is the live America Command Center bar.
   echo.
   pause
   exit /b 1
@@ -34,7 +34,7 @@ if not exist "%PATCH_DIR%CommandButton.ini" (
   echo.
   echo ERROR: Missing CommandButton.ini
   echo Put CommandButton.ini next to Install_SpecterPatch.bat
-  echo Command_ConstructUSAPAC3 must be in this file or CommandSet.ini crashes.
+  echo CommandButton.ini is the live ControlBar button table.
   echo.
   pause
   exit /b 1
@@ -272,7 +272,7 @@ if not exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
 )
 
 if exist "%GAME_ROOT%_SPECTER_USAPAC3.big" (
-  echo   WARNING: Delete _SPECTER_USAPAC3.big. USAPAC3 is inside _SPEC_* BIGs.
+  echo   WARNING: Delete leftover _SPECTER_USAPAC3.big. That sidecar is not part of SPECTER.
 )
 if exist "%GAME_ROOT%_SPECTER_PATCH_FINAL.big" (
   echo   WARNING: Keep _SPECTER_PATCH_FINAL.big deleted. Live America CC

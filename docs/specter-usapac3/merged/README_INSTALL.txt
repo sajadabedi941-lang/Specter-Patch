@@ -1,27 +1,30 @@
-USAPAC3 — spawn isolate stage 2 (empty DEPLOYED animation)
-==========================================================
+USAPAC3 stage 1 — base unit cloned from live packed Object US_THAAD
+==================================================================
 
-After specter-usapac3-spawnfix the game still crashed when construction
-finished. Attach-on-UsaPac3Car_w was not the cause.
+This is NOT the final PAC-3 look. New Donor models are not included.
+The unit uses live SPECTER THAAD Draw (US_M1120 / US_M1120_A).
 
-Packed USAPAC3 still named Animation = UsaPac3F.UsaPac3F at object create.
-UsaPac3F.W3D had a 101-frame animation header and zero channels. Live
-US_THAAD deployed model US_M1120_A has no animation blob at all.
-
-This package:
-- keeps the approved UsaPac3F model on DEPLOYED
-- removes that empty Animation= from Draw
-- strips the empty ANIMATION chunk from UsaPac3F / UsaPac3F_d
-- does not change slot 6, cost 3876, time 18.6, weapons, THAAD/Patriot/NASAMS
+Object: USAPAC3
+Cost / time: 3876 / 18.6 s
+Built from: AmericaCommandCenter slot 6
+Science / Rank / Upgrade / Prerequisite: none
+Weapon: USAPAC3_Weapon + USAPAC3_Weapon_ABM (clones of S400R_Deploy / _ABM)
+Projectile: none (THAAD deploy weapons have no ProjectileObject)
 
 INSTALL
 -------
 1. Close Generals / Specter.
-2. Extract the ZIP next to Launch_Specter.bat.
+2. Extract this ZIP next to generals.exe (or next to Launch_Specter.bat).
 3. Do not replace canonical _SPEC_ART_ONE.big (2,145,283,309 bytes).
+   Download it from:
+   https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
 4. Run Launch_Specter.bat.
+5. America Command Center slot 6 builds USAPAC3. It should look like THAAD.
 
-ART ONE:
-https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
+This package replaces _SPEC_DATA_ONE.big, _SPEC_ART_TWO.big, and the loose
+Data\INI\CommandSet.ini + CommandButton.ini. Previous GitHub Releases are
+not deleted.
 
-Zero Hour was not run here; spawn crash is not verified in-game in this environment.
+Zero Hour was not run in the build environment. In-game spawn is not verified
+here. Stage 1 is only successful when the unit actually builds in ZH without
+crashing at construction complete.

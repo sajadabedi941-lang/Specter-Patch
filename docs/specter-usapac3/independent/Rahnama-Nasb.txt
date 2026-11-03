@@ -1,0 +1,24 @@
+USAPAC3 مرحله استقلال فرمان‌ها — مرحله ۱ کارکردی
+================================================
+
+CommandSet، Deploy، OCL و FireControlSystem دیگر از THAAD جدا هستند.
+ظاهر هنوز Draw زنده THAAD (US_M1120) است. هنر New Donor وارد نشده.
+
+نام: USAPAC3
+هزینه / زمان: ۳۸۷۶ / ۱۸.۶ ثانیه
+ساخت: AmericaCommandCenter اسلات ۶
+بدون Science، Rank، Upgrade و Prerequisite
+
+نصب
+---
+1. بازی را ببندید.
+2. ZIP را کنار generals.exe باز کنید.
+3. فایل اصلی _SPEC_ART_ONE.big را عوض نکنید.
+4. ART TWO نسبت به نسخه base-thaad تغییر نکرده است.
+5. Launch_Specter.bat را اجرا کنید.
+6. از اسلات ۶ ستاد آمریکا واحد را بسازید.
+
+Releaseهای قبلی GitHub حذف نشده‌اند.
+
+Zero Hour در محیط ساخت اجرا نشد. این گزارش فقط اعتبارسنجی استاتیک است،
+نه تست داخل بازی.

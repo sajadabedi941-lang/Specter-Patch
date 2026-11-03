@@ -1,0 +1,5 @@
+3527ea062da9ab27c9902665238398ae0f29d985b6d342617449784a51bdda1a     374081161  _SPEC_DATA_ONE.big (USAPAC3 removed)
+2a65d89d60db9696a2b3a69df5a1c7cb173e10de027e7be6aedb6ba3cb47ae38     308844919  _SPEC_ART_TWO.big (USAPAC3-only art removed)
+a23df0bc1d6995dadfe3844fffed36e0c12821c1a985f7c03b0d88dc5b795a87        450828  CommandSet.ini (CC slot 6 restored empty)
+d012daf5578f468da904e25008cc0f186de320f0b3ae6349fe4e8c2d3a6f4b36       1337471  CommandButton.ini (ConstructUSAPAC3 removed)
+15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66    2145283309  _SPEC_ART_ONE.big (unchanged)

@@ -1,231 +1,168 @@
-SPECTER — America mobile Patriot rebuild (THAAD clone + New Donor art)
-======================================================================
-Static validation only. Generals / Zero Hour was not launched.
+SPECTER — America PAC-3 rebuild v5 (New Donor deploy + THAAD combat)
+====================================================================
+Static validation only. Generals / Zero Hour was not launched on this
+machine. A static pass is not an in-game pass.
 
-1. What was removed from packed DATA (USAPAC3-only)
----------------------------------------------------
-Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
-  Old Object USAPAC3 (New Donor Draw + incomplete USAPAC3_Weapon).
-Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
-  Old projectile object.
-Data\INI\Weapon_USAPAC3.ini
-  Weapon USAPAC3_Weapon.
-Data\INI\CommandSet_ZZZZ_USAPAC3.ini
-  USAPAC3CommandSet / _AA / _ABM, plus a last-wins copy of
-  America_MilitaryHQCommandSet. Military HQ slot 6 already exists in
-  packed CommandSet_FactionExpansion_Armies.ini and was left there.
-  New unit uses shared S400ECommandSet* (same as US_THAAD).
+0. What this pack changes
+-------------------------
+Previous packs (v1–v4) cloned THAAD’s suicide/OCL swap onto the PAC-3
+truck. That is the wrong architecture. v5 restores New Donor’s single
+object DeployStyle unpack/pack on Object USAPAC3, then attaches THAAD
+intercept weapons to that same object. No CombatMode, PackMode, or
+FCS object is created. S400R_Deploy / S400R_Pack are not used.
 
-Not removed (shared / still required):
-  Command_ConstructUSAPAC3, AmericaCommandCenterCommandSet slot 6,
-  MappedImage USAPAC3, FactionExpansion_USAPAC3_Strings.txt,
-  New Donor W3D/textures, THAAD / Iron Dome / other AD, loose Data\.
+Buy button and name are unchanged:
+  Command_ConstructUSAPAC3  Object = USAPAC3
+  AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3
+Loose Data\INI is not edited. Object US_THAAD (US_M1120.ini) is
+byte-identical to v4/ss1.
 
-2. New object name
-------------------
-Spawn / buy object name is still USAPAC3.
-Reason: Command_ConstructUSAPAC3 lives in loose Data\INI\CommandButton.ini
-and America CC slot 6 lives in loose Data\INI\CommandSet.ini. Renaming
-the object would require editing those loose files. This pack does not
-edit loose Data. The unique definition is now packed at:
+1. New Donor source (not guessed)
+---------------------------------
+INI: New donor.part001.rar → Data\INI\object\America.ini
+     Object USAPAC3 at line 24933.
+Art: DONOR_Art.part001.rar → Art\w3d\UsaPac3Car.W3D / Car_d / Car_w
+     / UsaPac3F.W3D / F_d / pac3mis_m.W3D / pac3_sudarb.W3D
+Parsed with Generals W3D IDs (HIERARCHY 0x100, ANIMATION 0x200,
+CHANNEL 0x202). Earlier SPECTER notes that Car “only had BIT_CHANNEL”
+were from a wrong chunk-id parser / from the v2-stripped ART files.
 
-  Data\INI\Object\Specter\United States Of America\AirDefense\US_PAC3.ini
+2. New Donor Deploy / Pack chain (single object)
+------------------------------------------------
+Object USAPAC3 is one vehicle. There is no OCL swap.
 
-Companion objects (independent of US_THAAD):
-  US_PAC3_CombatMode
-  US_PAC3_PackMode
-  US_PAC3_FireControlSystem
-  US_PAC3_FireControlSystem_ABM
-  US_PAC3_AA_OBJECT
-  US_PAC3_ABM_OBJECT
+AI: DeployStyleAIUpdate
+    PackTime / UnpackTime = 1111
+    TurretsFunctionOnlyWhenDeployed = Yes
+    TurretsMustCenterBeforePacking = Yes
+    ResetTurretBeforePacking = Yes
+    AutoAcquireEnemiesWhenIdle = Yes
+    Turret Turret01 / TurretEL01, InitiallyDisabled = Yes
+Locomotor: ChinaVehicleDozerLocomotor
+Draw: W3DTruckDraw UsaPac3Car + second W3DTruckDraw UsaPac3Car_w
+      on bone CORE (TIRE09/TIRE10).
 
-3. THAAD gameplay kept (Object US_THAAD / US_M1120.ini not edited)
-------------------------------------------------------------------
-DeployStyleAIUpdate Pack/Unpack 5000, Generic8x8Locomotor,
-KindOf / cost 3000 / time 22 / MaxSimultaneousOfType 3 / Geometry BOX,
-CommandSet S400ECommandSet + AA/ABM upgrades,
-WeaponSet SECONDARY S400R_Deploy / TERTIARY S400R_Deploy_ABM,
-SlowDeath SPLATTED / EXTRA_8 -> independent OCL_US_PAC3_*,
-CombatMode pack via S400R_Pack, FCS AutoAcquire, 8-shot LRSAM numbers
-cloned from 8x_LRSAM_THAAD / THAADMissile_ABM (those weapons untouched),
-shared FX_LargeSamMissilesTubeOut / FX_HeavyAAMImpact / Thaad_fire,
-shared locos THAADMissileLocomotor1 / THAAD_ABM_MissileLocomotor,
-shared AirdefenseLinkRestarter, shared THAAD_FCS draw for the FCS object
-(WEAPONA bones exist on that model).
+Engine state → Donor ConditionState (comments vs flags are inverted
+relative to THAAD; this pack keeps Donor wiring):
 
-Deploy explosion (v3 confirmed in-game; v4 cause from EA ZH source)
---------------------------------------------------------------------
-Observed blast is Object USAPAC3 SlowDeath ModuleTag_L8F09
-(DeathTypes ALL -SPLATTED -EXTRA_8):
-  FX_CrusaderCatchFire + FX_GenericFreeFallBombsExplosion
-  + OCL_ThaadDeathEffect
-That module cannot run if S400R_Deploy applied DeathType SPLATTED.
+  UNPACKING  Model=UsaPac3Car  Animation=UsaPac3Car.UsaPac3Car
+             ONCE_BACKWARDS START_FRAME_LAST
+             Jack clip: named USAPAC3CAR, 101 frames @ 30 fps,
+             two CHANNEL tracks, flags=Z, pivot 1 (YYG08) and
+             pivot 44 (YYG01). YYG01 children YYG02–YYG07 follow.
+  PACKING    Model=UsaPac3F    Animation=UsaPac3F.UsaPac3F MANUAL
+  DEPLOYED   Model=UsaPac3F    same MANUAL clip
+  MOVING / Default = packed Car mesh + jack clip
 
-Proven command chain (shared buttons / weapon, not edited):
-  Command_AADS_AA_Mode -> S400ECommandSet_AA
-  Command_ADSCombatMode
-    Command = FIRE_WEAPON, WeaponSlot = SECONDARY, MaxShotsToFire = 1
-  ControlBarCommandProcessing.cpp
-    -> GameMessage::MSG_DO_WEAPON
-  GameLogicDispatch.cpp MSG_DO_WEAPON
-    -> setWeaponLock(SECONDARY, LOCKED_TEMPORARILY)
-    -> groupAttackPosition(NULL)  // NULL = attack own position
-  AIGroup.cpp
-    -> aiAttackPosition(self pos, 1)
-  DeployStyleAIUpdate.cpp update()
-    current weapon = S400R_Deploy (AttackRange default 0)
-    isWithinAttackRange(self, self pos): distSqr 0 <= 0 -> in range
-    READY_TO_MOVE + in range -> setMyState(DEPLOY)
-    MODELCONDITION_UNPACKING for UnpackTime 5000, then DEPLOYED
-    only then parent AI is allowed to fire
-  Weapon S400R_Deploy (if it actually fires)
-    DamageType EXPLOSION, DeathType SPLATTED
-    RadiusDamageAffects = SELF SUICIDE, PrimaryDamage 10000
-    SlowDeath NONE +SPLATTED -> OCL_US_PAC3_Deployed
-      US_PAC3_FireControlSystem + AirdefenseLinkRestarter
-      + US_PAC3_CombatMode (Model UsaPac3F, no Animation=)
+Native Donor buttons: GLAVehicleRocketBuggyCommandSet.
+Attack → DeployStyle unpacks then fires PRIMARY.
+Move   → DeployStyle packs then moves.
+There is no FIRE_WEAPON Deploy/Pack button in Donor.
 
-S400R_Deploy is therefore NOT the first thing the engine does.
-Unpack runs first. TurretsFunctionOnlyWhenDeployed and
-ManualDeployAnimations do not skip that (v3 in-game still exploded;
-source confirms those flags only toggle turrets / animation frames).
+3. What is NOT in Donor (reported, not invented)
+------------------------------------------------
+- TURRET01 / TURRETEL01 have zero animation channels on Car and F.
+  “Launcher goes vertical” is a model swap to UsaPac3F rest pose,
+  not a transform clip. Do not invent a raise animation.
+- UsaPac3F.UsaPac3F is a 101-frame header with 0 channels (52-byte
+  ANIMATION container). Donor uses AnimationMode=MANUAL. Playing it
+  as ONCE is what crashed SPECTER when the header was stripped.
+- CWCusHC_B (Donor housecolor spinner Draw) is not in SPECTER
+  _SPEC_ART_TWO.big. That Draw is omitted. Not guessed into ART.
+- pac3_sudarb.W3D is already in ART TWO and has a 96-frame clip on
+  many bones, but Donor Object USAPAC3 does not reference it. Unused.
+- Donor weapons AIGUOZHEWeapon / FUCHOUZHE are Chinese-mod SAMs, not
+  THAAD. Replaced by THAAD-cloned combat on PRIMARY only.
 
-THAAD difference that actually matters:
-  US_THAAD keeps DeployStyleAIUpdate AND Draw UNPACKING/DEPLOYED
-  with a real US_M1120.US_M1120 clip, so unpack completes and
-  S400R_Deploy can fire SPLATTED.
-  US_THAAD_CombatMode already uses AIUpdateInterface for the same
-  FIRE_WEAPON suicide (S400R_Pack) and does not unpack first.
-  USAPAC3 Draw has no UNPACKING/DEPLOYED ConditionState and no
-  unpack clip, so the DeployStyle gate never reaches SPLATTED.
+4. v4 USAPAC3 vs this pack
+--------------------------
+v4 (wrong): THAAD suicide chain on the PAC-3 truck.
+  Weapon SECONDARY S400R_Deploy / TERTIARY S400R_Deploy_ABM
+  SlowDeath SPLATTED → OCL_US_PAC3_Deployed
+    (US_PAC3_CombatMode + FireControlSystem + AirdefenseLinkRestarter)
+  SlowDeath L8F09 (ALL -SPLATTED -EXTRA_8) = explosion when unpack
+  failed. v4 switched to AIUpdateInterface so the suicide fired
+  without unpack. That still is not New Donor deploy.
 
-v4 fix (US_PAC3.ini only; ART TWO unchanged from v2):
-  Object USAPAC3 / US_PAC3_PackMode
-    DeployStyleAIUpdate -> AIUpdateInterface
-    (same as US_THAAD_CombatMode / US_PAC3_CombatMode)
-  FIRE_WEAPON now fires S400R_Deploy immediately.
-  S400R_* / FCS / OCL_US_PAC3_* / slot 6 / THAAD untouched.
+v5 (this pack): one Object USAPAC3.
+  Deleted from DATA: ObjectCreationList_US_PAC3.ini
+    (OCL_US_PAC3_Deployed / _ABM / _Pack)
+  Removed objects: US_PAC3_CombatMode, PackMode,
+    FireControlSystem, FireControlSystem_ABM
+  Kept objects: USAPAC3, US_PAC3_AA_OBJECT, US_PAC3_ABM_OBJECT
+  ART: restored original Donor Car / Car_d / Car_w / F / F_d W3Ds
+    (jack Z channels). pac3mis_m left as v2-stripped (empty clip
+    header removed; projectile PRELOAD of an empty named clip crashed).
+  KindOf omits PRELOAD (Donor had PRELOAD; SPECTER spawn crash was
+    PRELOAD + empty clips). Draw still names the real Car clip.
 
-Crash fix (v2) — why the first pack still crashed
--------------------------------------------------
-W3DTruckDraw on Object USAPAC3 (KindOf PRELOAD) preloads every Model
-and Animation named in the Draw module at game start / spawn.
-UsaPac3Car.UsaPac3Car is a 101-frame clip with only BIT_CHANNEL tracks
-(not a THAAD-style deploy transform). The previous USAPAC3 already
-crashed after the empty UsaPac3F Animation= was stripped; the remaining
-preload was this Car clip plus W3DTruckDraw tire setup. v1 also added a
-second W3DTruckDraw (UsaPac3Car_w) with ConditionState=NONE and no
-DefaultConditionState.
+5. THAAD combat dependencies (US_THAAD not edited)
+--------------------------------------------------
+From packed US_M1120.ini / Weapon.ini (read-only):
+  Modes: Upgrade_AADS_AA_Mode / Upgrade_AADS_ABM_Mode / Upgrade_AIM-120C
+  CommandSets: S400ECommandSet, _AA, _ABM, _Deployed
+  Buttons (loose CommandButton.ini, not edited):
+    Command_ADSCombatMode     FIRE_WEAPON SECONDARY
+    Command_ADS_ABM_CombatMode FIRE_WEAPON TERTIARY
+    Command_FireControlPack    FIRE_WEAPON SECONDARY
+  FCS objects fire 8x_LRSAM_THAAD / THAADMissile_ABM with
+    AutoAcquireEnemiesWhenIdle=Yes, MoodAttackCheckRate=1
+  Projectiles THAAD_AA_OBJECT / THAAD_ABM_OBJECT, locos
+    THAADMissileLocomotor1 / THAAD_ABM_MissileLocomotor
+  Shared FX: FX_LargeSamMissilesTubeOut, FX_HeavyAAMImpact, Thaad_fire
+  Shared OCL: OCL_48N6TargetLock, OCL_40N6STargetLock
 
-v2 changes (TEL objects only; US_THAAD untouched):
-  Draw = W3DModelDraw, model-only Car / Car_d / deployed F / F_d
-  no Animation= lines
-  no second tire Draw
-  PRELOAD removed from USAPAC3 / CombatMode / PackMode KindOf
-  ART: delete 0x200 chunks from UsaPac3Car, UsaPac3Car_d, pac3mis_m,
-       UsaPac3Car_w
+Cloned onto USAPAC3 PRIMARY (not as extra FCS objects):
+  Weapon US_PAC3_LRSAM        = 8x_LRSAM_THAAD numbers, projectile pac3mis_m
+  Weapon US_PAC3Missile_ABM   = THAADMissile_ABM numbers, DamageType CRUSH
+  AutoAcquire + MoodAttackCheckRate 1 on DeployStyleAIUpdate
+  TurretsFunctionOnlyWhenDeployed = Yes  (no fire while packed)
 
-Fire chain, slot 6, and loose Data\INI are unchanged. Still not an
-in-game test.
+6. Join map (no suicide)
+------------------------
+  1. Build USAPAC3 → packed Car, CommandSet S400ECommandSet
+     (AA / ABM / MTS buttons). PRIMARY is LRSAM but turrets are
+     disabled until deployed.
+  2. AA → CommandSetUpgrade S400ECommandSet_AA
+     ABM → CommandSetUpgrade S400ECommandSet_ABM
+           + WeaponSetUpgrade PLAYER_UPGRADE → US_PAC3Missile_ABM
+     MTS → CommandSetUpgrade S400ECommandSet_AA (Deploy button).
+           ZH WeaponSetUpgrade only sets WEAPONSET_PLAYER_UPGRADE
+           (one bit), so MTS cannot have a third exclusive weapon
+           set. MTS keeps the AA LRSAM set.
+  3. Deploy button FIRE_WEAPON SECONDARY or TERTIARY.
+     Both slots are Weapon US_PAC3_DeployCue:
+       PrimaryDamage 0, DeathType NORMAL, no SELF SUICIDE, no FireOCL.
+     DeployStyleAIUpdate unpacks first (Car jack clip), then the
+     dummy fires. The truck stays Object USAPAC3.
+  4. After DEPLOYED, model is UsaPac3F (launcher-up rest pose).
+     TurretsFunctionOnlyWhenDeployed allows PRIMARY. AutoAcquire
+     starts THAAD intercept (AA or ABM by weaponset).
+  5. Missiles are US_PAC3_AA_OBJECT / US_PAC3_ABM_OBJECT (pac3mis_m).
+  6. Pack: native DeployStyle pack on a move order (Donor). Combat
+     turrets disable while packing/packed.
+     Command_FireControlPack is FIRE_WEAPON SECONDARY and the engine
+     always unpacks before a FIRE_WEAPON shot, so that button cannot
+     pack a DeployStyle unit. This object is therefore not given
+     S400ECommandSet_Deployed. Pack is Move. That is an engine limit
+     of the uneditable loose buttons, not a missing INI line.
 
-4. New Donor art / animations transferred (already in ss1 ART TWO)
-------------------------------------------------------------------
-Models kept in ART TWO (not rebuilt, names unchanged):
-  UsaPac3Car.W3D / UsaPac3Car_d.W3D   travel mesh + 101-frame clip
-  UsaPac3F.W3D / UsaPac3F_d.W3D       deployed mesh, no animation blob
-  UsaPac3Car_w.W3D                    extra axle TIRE09 / TIRE10
-  pac3mis_m.W3D                       missile (FL001 trail bone)
-
-Textures already present: ampac3map*.dds, usaPAC3TRUCKmap*.dds,
-ABNPatriot02.dds, pac3missilemap.dds, USAPAC3.tga / USAPAC3TB.tga.
-
-W3D hierarchy inspected (not guessed). UsaPac3Car / F bones include
-ROOTTRANSFORM, CHASSIS, TIRE01-08, TURRET01, TURRETEL01, FIREPOINT01-04,
-FIREFX01-04, YYG01-08, CORE. Car clip USAPAC3CAR is 101 frames @ 30 fps
-with two BIT_CHANNEL tracks on pivot 2 (TIRE02 visibility), not a full
-jack/launcher transform animation. Deployed pose is the separate
-UsaPac3F mesh (same pattern as live US_M1120_A: model-only, no named
-empty Animation=). No donor fire-exit transform clip exists on these
-files; FIREPOINT/FIREFX bones are present but unused by the THAAD FCS
-chain (missiles spawn from THAAD_FCS WEAPONA + projectile pac3mis_m).
-
-ART TWO patches in this pack: strip the empty 101-frame / 0-channel
-ANIMATION headers from pac3mis_m.W3D and UsaPac3Car_w.W3D (preload of
-an empty named clip crashed the previous USAPAC3 spawn).
-
-5. Fire / missile implementation
+7. Static validation (this pack)
 --------------------------------
-Gameplay weapons are new clones, not the old USAPAC3_Weapon:
-  Weapon US_PAC3_LRSAM      -> ProjectileObject US_PAC3_AA_OBJECT
-  Weapon US_PAC3Missile_ABM -> ProjectileObject US_PAC3_ABM_OBJECT
-Numbers, AntiAir / AntiBallistic flags, clip 8, ranges, FireOCL
-OCL_48N6TargetLock / OCL_40N6STargetLock match THAAD. Projectile Draw
-Model = pac3mis_m, ParticleSysBone = FL001 (bone exists). Empty anim
-stripped from that W3D. Donor projectile AI/weapon was not substituted
-for the THAAD chain.
+DATA SHA-256  e02352f1e8321e1560bcceaecae0c76a3f2446fa69f328ecdaa73deddb7c4325
+ART  SHA-256  d884382dcf6ee7508a9e0253d9e8c546e7a565e05a896f04b58a7e6fc9dec60a
+Compared to v4 ZIP BIGs: unrelated DATA/ART entries byte-identical.
+US_M1120.ini identical. pac3mis_m identical to v2/v4 stripped file.
+Packed US_PAC3.ini byte-identical to ini/US_PAC3.ini.
+Objects in US_PAC3.ini: USAPAC3, US_PAC3_AA_OBJECT, US_PAC3_ABM_OBJECT.
+UsaPac3Car.W3D restored: clip USAPAC3CAR, 2 Z channels, pivots 1 and 44.
+Construct button in packed CommandButton.ini still Object=USAPAC3.
+Packed CommandSet.ini AmericaCommandCenterCommandSet slot 6 still
+Command_ConstructUSAPAC3 (loose CommandSet.ini still first-wins).
 
-6. Packed files changed
------------------------
-_SPEC_DATA_ONE.big
-  - 4 USAPAC3-only INI files
-  + 3 US_PAC3 INI files
-  0 other entries modified
-_SPEC_ART_TWO.big
-  patched Art\W3D\UsaPac3Car.W3D
-  patched Art\W3D\UsaPac3Car_d.W3D
-  patched Art\W3D\pac3mis_m.W3D
-  patched Art\W3D\UsaPac3Car_w.W3D
-  0 other entries modified
-_SPEC_ART_ONE.big not touched.
-Loose Data\ not touched. CommandSet.ini / CommandButton.ini packed
-copies are byte-identical to ss1.
+Not run: generals.exe / Zero Hour. Do not treat this as an in-game pass.
 
-7. SHA-256
-----------
-ss1 _SPEC_DATA_ONE.big
-  7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
-v3 _SPEC_DATA_ONE.big  374106540 bytes
-  6c97c63df1be3b0491bdb61e804f27f4dda80342edcb005e36f3f8da935c1389
-this pack _SPEC_DATA_ONE.big  374106424 bytes
-  20fa43d9de8329c21baee2bdb6952ae08d725b248362eb18f5ad94a57553a486
-ss1 _SPEC_ART_TWO.big
-  81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
-this pack _SPEC_ART_TWO.big  312976571 bytes
-  c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d
-this pack USA_PAC3_THAAD_DONOR.zip  405772889 bytes
-  48c6c4dc2c2d70a571b6dbbb1ab933816f1bfec20c4d5688b510c662d6dd6da7
-
-8. Static validation
---------------------
-PASS unique Object USAPAC3 in US_PAC3.ini
-PASS no Weapon USAPAC3_Weapon / USAPAC3CommandSet leftovers
-PASS INI bone names TIRE01-10 / FL001 exist in the W3D files they use
-PASS no Animation= on Patriot models; no W3DTruckDraw; no PRELOAD on TEL
-PASS no DeployStyleAIUpdate on USAPAC3 / US_PAC3_PackMode (AIUpdateInterface)
-PASS US_THAAD still DeployStyleAIUpdate; US_M1120.ini byte-identical to v3
-PASS packed US_M1120.ini / THAAD W3D / CommandSet / CommandButton unchanged
-PASS AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3
-PASS other CC slots unchanged
-PASS OCL_US_PAC3_* spawn US_PAC3_* not US_THAAD_*
-PASS texture names referenced by the W3Ds exist in ART TWO
-NOT an in-game test. Generals.exe was not run in this environment.
-
-9. Still needs a real game session
-----------------------------------
-- Spawn from America Command Center slot 6 (does Object::create survive).
-- Drive, stop, UNPACKING Car clip, DEPLOYED swap to UsaPac3F.
-- AA / ABM mode, S400R_Deploy suicide -> CombatMode + FCS + missiles.
-- pac3mis_m in flight and impact FX.
-- Pack back to PackMode / mobile Car.
-- Confirm US_THAAD and other AD still play.
-- Extra axle Draw (UsaPac3Car_w) alignment on the tractor.
-- Donor has no jack/launcher transform animation; deployed look is the
-  F mesh swap only. Confirm that is acceptable in-game.
-
-Install / restore
------------------
-Install_USA_PAC3_THAAD_DONOR.bat
-  Hash-gates ss1 or this pack only. Backs up to
-  SpecterBackup_USA_PAC3_THAAD_DONOR before any replace.
-Restore_USA_PAC3_THAAD_DONOR.bat
-  Copies that backup back with fc /b. Does not write Data\INI.
+8. Installer
+------------
+Accepts ss1, v1, v2, v3, v4, or this pack hashes.
+Does not write Data\. Restore copies this pack’s backup back.

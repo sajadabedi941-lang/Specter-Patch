@@ -1,3 +1,55 @@
+SPECTER — America PAC-3 rebuild v7 (Deploy button unlock)
+========================================================
+Static validation only. Generals / Zero Hour was not launched on this
+machine. A static pass is not an in-game pass.
+
+v7 Deploy-button lock after AA/ABM (proven, then minimal DATA fix)
+-----------------------------------------------------------------
+Symptom: unit builds, AA or ABM can be selected, then Deploy is grey.
+
+Not the CommandButton. Command_ADSCombatMode is FIRE_WEAPON
+SECONDARY, Command_ADS_ABM_CombatMode is FIRE_WEAPON TERTIARY. No
+NEED_UPGRADE / science Options. Same buttons US_THAAD uses.
+
+Not a missing CommandSet. S400ECommandSet has the mode upgrades.
+CommandSetUpgrade then switches to S400ECommandSet_AA (slot 6 =
+Command_ADSCombatMode) or _ABM (slot 6 = Command_ADS_ABM_CombatMode).
+That is why Deploy appears after the mode click.
+
+Not Prerequisites / UnitSpecificSounds. Construct Prerequisites stay
+empty from v6. Sounds match THAAD. New Donor has no FIRE_WEAPON
+Deploy button (GLAVehicleRocketBuggyCommandSet).
+
+The lock was Object USAPAC3 DeployStyle turret ownership:
+  ControlledWeaponSlots = PRIMARY SECONDARY TERTIARY
+  InitiallyDisabled     = Yes
+  TurretsFunctionOnlyWhenDeployed = Yes
+SECONDARY/TERTIARY are US_PAC3_DeployCue, the FIRE_WEAPON payload.
+A disabled turret that owns those slots makes the slots unusable
+while packed. Deploy is what would enable the turret. Chicken-and-egg.
+
+Working comparison — packed Object US_THAAD (US_M1120.ini, not edited):
+  Same Command_ADSCombatMode / S400ECommandSet_AA path
+  Weapon SECONDARY S400R_Deploy, TERTIARY S400R_Deploy_ABM
+  DeployStyleAIUpdate with TurretsFunctionOnlyWhenDeployed = Yes
+  but NO Turret block, so the Deploy weapon is not turret-gated
+  Deploy is clickable (then suicide-unpacks; that is THAAD, not PAC-3)
+
+v3/v4 PAC-3 also had a clickable Deploy (then exploded) because they
+used S400R_Deploy with no turret wrapping SECONDARY.
+
+New Donor put combat SECONDARY on that turret. SPECTER cannot: the
+loose Deploy buttons are FIRE_WEAPON SECONDARY/TERTIARY.
+
+v7 change: ControlledWeaponSlots = PRIMARY only. Combat stays
+turret-gated (no packed fire). DeployCue is a body weapon like THAAD.
+LRSAM / ABM templates, Draw, ART, and v6 Prerequisites are unchanged.
+
+DATA SHA-256  67dd91760a7dc2edcff20674ec86a9789ce471c7a2469ddea64c8b1a21dc4cd8
+ART  SHA-256  d884382dcf6ee7508a9e0253d9e8c546e7a565e05a896f04b58a7e6fc9dec60a
+              (identical to v5/v6)
+
+--------------------------------------------------------------------
 SPECTER — America PAC-3 rebuild v6 (CC construct unlock)
 ========================================================
 Static validation only. Generals / Zero Hour was not launched on this

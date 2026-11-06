@@ -16,6 +16,14 @@ every start). This pack does not edit, replace, or delete that file.
 Slot 6 already builds Object USAPAC3. The packed object definition
 behind that name is what changed.
 
+v7 Deploy unlock
+----------------
+After AA/ABM, Deploy was grey because the DeployStyle turret owned
+SECONDARY/TERTIARY (the FIRE_WEAPON Deploy slots) while
+InitiallyDisabled / TurretsFunctionOnlyWhenDeployed. THAAD’s packed
+unit uses the same Deploy buttons without putting those slots on a
+turret. v7 sets ControlledWeaponSlots = PRIMARY only.
+
 v6 construct unlock
 -------------------
 v5 greyed the PAC-3 button because Object USAPAC3 required

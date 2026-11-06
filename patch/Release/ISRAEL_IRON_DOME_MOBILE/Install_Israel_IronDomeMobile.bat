@@ -18,6 +18,11 @@ echo  Installer folder:
 echo    %PATCH_DIR%
 echo.
 
+if not exist "%PATCH_DIR%Data\INI\CommandSet.ini" (
+  echo ERROR: Missing Data\INI\CommandSet.ini
+  pause
+  exit /b 1
+)
 if not exist "%PATCH_DIR%Data\INI\CommandSet_SpecterPatch.ini" (
   echo ERROR: Missing Data\INI\CommandSet_SpecterPatch.ini
   pause
@@ -80,12 +85,15 @@ if not exist "%GAME_ROOT%Art\W3D" mkdir "%GAME_ROOT%Art\W3D"
 if not exist "%GAME_ROOT%Art\Textures" mkdir "%GAME_ROOT%Art\Textures"
 
 echo Copying INI...
+copy /Y "%PATCH_DIR%Data\INI\CommandSet.ini" "%GAME_ROOT%Data\INI\CommandSet.ini" >nul
 copy /Y "%PATCH_DIR%Data\INI\CommandSet_SpecterPatch.ini" "%GAME_ROOT%Data\INI\CommandSet_SpecterPatch.ini" >nul
 copy /Y "%PATCH_DIR%Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini" "%GAME_ROOT%Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini" >nul
 copy /Y "%PATCH_DIR%Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini" "%GAME_ROOT%Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini" >nul
 copy /Y "%PATCH_DIR%Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini" "%GAME_ROOT%Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini" >nul
 
 echo Copying English strings...
+REM ss1 has no loose generals.csf. This file is the winning ss1 CSF
+REM from _SPEC_DATA_ONE.big plus three Iron Dome Mobile labels only.
 copy /Y "%PATCH_DIR%Data\English\generals.csf" "%GAME_ROOT%Data\English\generals.csf" >nul
 
 echo Copying model and textures...
@@ -94,6 +102,8 @@ copy /Y "%PATCH_DIR%Art\Textures\*.tga" "%GAME_ROOT%Art\Textures\" >nul
 
 echo.
 echo Installed:
+echo   Data\INI\CommandSet.ini
+echo     AirF_AmericaCommandCenterCommandSet slot 11 = Iron Dome Mobile
 echo   Data\INI\CommandSet_SpecterPatch.ini
 echo     Israel_CommandCenterCommandSet slot 1 = Iron Dome Mobile
 echo   Object Israel_VehicleIronDomeMobile

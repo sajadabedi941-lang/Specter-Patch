@@ -37,12 +37,20 @@ _SPEC_DATA_ONE.big
   Weapon.ini, ObjectCreationList.ini.
 
 _SPEC_ART_TWO.big
-  Stripped empty 101-frame / 0-channel ANIMATION chunks from:
-    Art\W3D\pac3mis_m.W3D
-    Art\W3D\UsaPac3Car_w.W3D
+  Stripped ANIMATION chunks from:
+    Art\W3D\UsaPac3Car.W3D / UsaPac3Car_d.W3D  (BIT_CHANNEL-only clips)
+    Art\W3D\pac3mis_m.W3D / UsaPac3Car_w.W3D   (empty 101-frame clips)
   All other ART TWO entries are byte-identical to ss1, including
-  US_M1120*.W3D, THAAD_FCS.W3D, and the New Donor UsaPac3Car / UsaPac3F
-  models and textures (already present; not rebuilt).
+  US_M1120*.W3D, THAAD_FCS.W3D, and the New Donor meshes/textures.
+
+Crash fix (v2)
+--------------
+The first pack still crashed: W3DTruckDraw preloaded UsaPac3Car's
+BIT_CHANNEL clip (and a second tire Draw without DefaultConditionState)
+at object create / PRELOAD. This pack uses W3DModelDraw, no Animation=
+lines, no extra Draw, and drops PRELOAD on the TEL objects. THAAD
+gameplay (S400R_Deploy / FCS / missiles) is unchanged. Generals.exe
+was still not launched here.
 
 This pack does not write files under Data\.
 

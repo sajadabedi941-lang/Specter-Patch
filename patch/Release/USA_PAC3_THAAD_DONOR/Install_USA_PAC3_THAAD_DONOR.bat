@@ -10,11 +10,13 @@ if errorlevel 1 (
 )
 set "PATCH_DIR=%~dp0"
 
-REM ss1 originals — replace only these hashes, or this pack's hashes.
+REM ss1 originals, previous pack (v1 crash), or this pack.
 set "HASH_SS1_DATA=7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343"
-set "HASH_NEW_DATA=1abaa9fa831ceb9b2278343d984fee92d4d454e31dbb3e405be09a58623aa990"
+set "HASH_V1_DATA=1abaa9fa831ceb9b2278343d984fee92d4d454e31dbb3e405be09a58623aa990"
+set "HASH_NEW_DATA=51d5b0a51218accecc494bcc635bcc26872a6b11cca02791193d34a4facc3e02"
 set "HASH_SS1_ART=81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
-set "HASH_NEW_ART=292dc82fdeaf34645e749d3eb9df09bf469a83549e238104d19514353f55af42"
+set "HASH_V1_ART=292dc82fdeaf34645e749d3eb9df09bf469a83549e238104d19514353f55af42"
+set "HASH_NEW_ART=c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d"
 
 echo.
 echo ============================================================
@@ -106,10 +108,10 @@ if defined SKIP_BACKUP (
   echo.
 )
 
-echo [2/2] Hash-check then install BIGs ^(ss1 or this pack only^)
-call :install_hashed "%GAME_ROOT%_SPEC_DATA_ONE.big" "%PATCH_DIR%_SPEC_DATA_ONE.big" "_SPEC_DATA_ONE.big" "%HASH_SS1_DATA%" "%HASH_NEW_DATA%"
+echo [2/2] Hash-check then install BIGs ^(ss1, previous pack, or this pack^)
+call :install_hashed "%GAME_ROOT%_SPEC_DATA_ONE.big" "%PATCH_DIR%_SPEC_DATA_ONE.big" "_SPEC_DATA_ONE.big" "%HASH_SS1_DATA%" "%HASH_NEW_DATA%" "%HASH_V1_DATA%"
 if errorlevel 1 goto FAIL
-call :install_hashed "%GAME_ROOT%_SPEC_ART_TWO.big" "%PATCH_DIR%_SPEC_ART_TWO.big" "_SPEC_ART_TWO.big" "%HASH_SS1_ART%" "%HASH_NEW_ART%"
+call :install_hashed "%GAME_ROOT%_SPEC_ART_TWO.big" "%PATCH_DIR%_SPEC_ART_TWO.big" "_SPEC_ART_TWO.big" "%HASH_SS1_ART%" "%HASH_NEW_ART%" "%HASH_V1_ART%"
 if errorlevel 1 goto FAIL
 echo   _SPEC_ART_ONE.big was not replaced.
 echo   Loose Data\INI was not touched.
@@ -158,7 +160,7 @@ echo   Verified byte-for-byte: %~3
 exit /b 0
 
 :install_hashed
-REM %1 dest  %2 src  %3 label  %4 allowed-original  %5 allowed-patched
+REM %1 dest  %2 src  %3 label  %4 ss1  %5 this pack  %6 previous pack (optional)
 if not exist "%~1" (
   echo   Skip missing %~3
   exit /b 0
@@ -172,11 +174,15 @@ if /I "!HASH256!"=="%~5" (
   echo   Already this pack: %~3
   exit /b 0
 )
-if /I not "!HASH256!"=="%~4" (
-  echo ERROR: %~3 is not the ss1 original and not this pack. Not replaced.
+set "ALLOW="
+if /I "!HASH256!"=="%~4" set "ALLOW=1"
+if not "%~6"=="" if /I "!HASH256!"=="%~6" set "ALLOW=1"
+if not defined ALLOW (
+  echo ERROR: %~3 is not ss1, the previous pack, or this pack. Not replaced.
   echo   SHA-256: !HASH256!
   echo   Expected ss1: %~4
-  echo   Expected pack: %~5
+  echo   Expected previous pack: %~6
+  echo   Expected this pack: %~5
   exit /b 1
 )
 copy /Y "%~2" "%~1" >nul

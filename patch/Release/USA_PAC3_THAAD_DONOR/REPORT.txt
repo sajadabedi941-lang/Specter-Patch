@@ -53,6 +53,28 @@ shared locos THAADMissileLocomotor1 / THAAD_ABM_MissileLocomotor,
 shared AirdefenseLinkRestarter, shared THAAD_FCS draw for the FCS object
 (WEAPONA bones exist on that model).
 
+Crash fix (v2) — why the first pack still crashed
+-------------------------------------------------
+W3DTruckDraw on Object USAPAC3 (KindOf PRELOAD) preloads every Model
+and Animation named in the Draw module at game start / spawn.
+UsaPac3Car.UsaPac3Car is a 101-frame clip with only BIT_CHANNEL tracks
+(not a THAAD-style deploy transform). The previous USAPAC3 already
+crashed after the empty UsaPac3F Animation= was stripped; the remaining
+preload was this Car clip plus W3DTruckDraw tire setup. v1 also added a
+second W3DTruckDraw (UsaPac3Car_w) with ConditionState=NONE and no
+DefaultConditionState.
+
+v2 changes (TEL objects only; US_THAAD untouched):
+  Draw = W3DModelDraw, model-only Car / Car_d / deployed F / F_d
+  no Animation= lines
+  no second tire Draw
+  PRELOAD removed from USAPAC3 / CombatMode / PackMode KindOf
+  ART: delete 0x200 chunks from UsaPac3Car, UsaPac3Car_d, pac3mis_m,
+       UsaPac3Car_w
+
+Fire chain, slot 6, and loose Data\INI are unchanged. Still not an
+in-game test.
+
 4. New Donor art / animations transferred (already in ss1 ART TWO)
 ------------------------------------------------------------------
 Models kept in ART TWO (not rebuilt, names unchanged):
@@ -96,6 +118,8 @@ _SPEC_DATA_ONE.big
   + 3 US_PAC3 INI files
   0 other entries modified
 _SPEC_ART_TWO.big
+  patched Art\W3D\UsaPac3Car.W3D
+  patched Art\W3D\UsaPac3Car_d.W3D
   patched Art\W3D\pac3mis_m.W3D
   patched Art\W3D\UsaPac3Car_w.W3D
   0 other entries modified
@@ -107,19 +131,19 @@ copies are byte-identical to ss1.
 ----------
 ss1 _SPEC_DATA_ONE.big
   7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
-this pack _SPEC_DATA_ONE.big  374112446 bytes
-  1abaa9fa831ceb9b2278343d984fee92d4d454e31dbb3e405be09a58623aa990
+this pack _SPEC_DATA_ONE.big  374106791 bytes
+  51d5b0a51218accecc494bcc635bcc26872a6b11cca02791193d34a4facc3e02
 ss1 _SPEC_ART_TWO.big
   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
-this pack _SPEC_ART_TWO.big  312978371 bytes
-  292dc82fdeaf34645e749d3eb9df09bf469a83549e238104d19514353f55af42
+this pack _SPEC_ART_TWO.big  312976571 bytes
+  c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d
 
 8. Static validation
 --------------------
 PASS unique Object USAPAC3 in US_PAC3.ini
 PASS no Weapon USAPAC3_Weapon / USAPAC3CommandSet leftovers
 PASS INI bone names TIRE01-10 / FL001 exist in the W3D files they use
-PASS no Animation= UsaPac3F (empty clip not named)
+PASS no Animation= on Patriot models; no W3DTruckDraw; no PRELOAD on TEL
 PASS packed US_M1120.ini / THAAD W3D / CommandSet / CommandButton unchanged
 PASS AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3
 PASS other CC slots unchanged

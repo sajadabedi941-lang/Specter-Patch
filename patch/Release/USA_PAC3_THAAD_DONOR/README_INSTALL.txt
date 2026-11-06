@@ -47,10 +47,24 @@ Crash fix (v2)
 --------------
 The first pack still crashed: W3DTruckDraw preloaded UsaPac3Car's
 BIT_CHANNEL clip (and a second tire Draw without DefaultConditionState)
-at object create / PRELOAD. This pack uses W3DModelDraw, no Animation=
-lines, no extra Draw, and drops PRELOAD on the TEL objects. THAAD
-gameplay (S400R_Deploy / FCS / missiles) is unchanged. Generals.exe
-was still not launched here.
+at object create / PRELOAD. v2 uses W3DModelDraw, no Animation=
+lines, no extra Draw, and drops PRELOAD on the TEL objects.
+
+Deploy explosion fix (v3)
+-------------------------
+In-game: unit built, look OK, AA/ABM/MTS selectable; clicking Deploy
+exploded at unpack start. Command_ADSCombatMode is FIRE_WEAPON
+SECONDARY = S400R_Deploy (SELF SUICIDE, DeathType SPLATTED ->
+OCL_US_PAC3_Deployed / UsaPac3F CombatMode). THAAD gates that shot
+behind DeployStyleAIUpdate unpack because US_M1120 has a real unpack
+clip. UsaPac3Car does not (only BIT_CHANNEL, stripped). Forced unpack
+never fired SPLATTED; SlowDeath L8F09 ran instead
+(FX_GenericFreeFallBombsExplosion + OCL_ThaadDeathEffect).
+
+v3: TurretsFunctionOnlyWhenDeployed = No, ManualDeployAnimations = No
+on USAPAC3 / PackMode. UsaPac3F is only the CombatMode model (new
+object, no Animation=). ART TWO is unchanged from v2. THAAD INI/W3D
+untouched. Generals.exe was not launched here.
 
 This pack does not write files under Data\.
 

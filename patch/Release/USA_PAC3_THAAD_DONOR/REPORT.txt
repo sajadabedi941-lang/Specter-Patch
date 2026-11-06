@@ -53,6 +53,43 @@ shared locos THAADMissileLocomotor1 / THAAD_ABM_MissileLocomotor,
 shared AirdefenseLinkRestarter, shared THAAD_FCS draw for the FCS object
 (WEAPONA bones exist on that model).
 
+Deploy explosion (v3) — confirmed in-game, cause from packed INI/W3D
+--------------------------------------------------------------------
+Path (same buttons as THAAD, not edited):
+  Command_AADS_AA_Mode / Command_AADS_ABM_Mode
+    -> CommandSet S400ECommandSet_AA / _ABM
+  Command_ADSCombatMode
+    Command = FIRE_WEAPON, WeaponSlot = SECONDARY
+  Weapon S400R_Deploy
+    DamageType EXPLOSION, DeathType SPLATTED
+    RadiusDamageAffects = SELF SUICIDE, PrimaryDamage 10000
+  SlowDeath NONE +SPLATTED -> OCL_US_PAC3_Deployed
+    THAAD_FireControlSystem clone + AirdefenseLinkRestarter
+    + US_PAC3_CombatMode (Model UsaPac3F, no Animation=)
+  SlowDeath ALL -SPLATTED -EXTRA_8 = L8F09
+    FX_CrusaderCatchFire + FX_GenericFreeFallBombsExplosion
+    + OCL_ThaadDeathEffect   <-- this is the observed explosion
+
+THAAD difference that matters:
+  US_THAAD DeployStyleAIUpdate
+    TurretsFunctionOnlyWhenDeployed = Yes
+    ManualDeployAnimations = Yes
+    Draw UNPACKING plays US_M1120.US_M1120 (151-frame clip, real)
+  USAPAC3 v2 copied those Yes flags, but UsaPac3Car has no unpack
+  transform clip (W3D: BIT_CHANNEL only, stripped in v2; no UNPACKING
+  ConditionState). Engine started unpack for the Deploy button and
+  never reached S400R_Deploy; L8F09 ran instead.
+
+Not the cause: missing UsaPac3F bones (F has TIRE01-08 / TURRET01;
+CombatMode names none). Not a THAAD Object/OCL/Weapon edit.
+
+v3 fix (US_PAC3.ini only; ART TWO unchanged from v2):
+  TurretsFunctionOnlyWhenDeployed = No
+  TurretsMustCenterBeforePacking = No
+  ManualDeployAnimations = No
+  mobile Draw stays UsaPac3Car; UsaPac3F only on CombatMode
+  S400R_* / FCS / OCL_US_PAC3_* / slot 6 unchanged
+
 Crash fix (v2) — why the first pack still crashed
 -------------------------------------------------
 W3DTruckDraw on Object USAPAC3 (KindOf PRELOAD) preloads every Model
@@ -131,8 +168,8 @@ copies are byte-identical to ss1.
 ----------
 ss1 _SPEC_DATA_ONE.big
   7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
-this pack _SPEC_DATA_ONE.big  374106791 bytes
-  51d5b0a51218accecc494bcc635bcc26872a6b11cca02791193d34a4facc3e02
+this pack _SPEC_DATA_ONE.big  374106540 bytes
+  6c97c63df1be3b0491bdb61e804f27f4dda80342edcb005e36f3f8da935c1389
 ss1 _SPEC_ART_TWO.big
   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
 this pack _SPEC_ART_TWO.big  312976571 bytes

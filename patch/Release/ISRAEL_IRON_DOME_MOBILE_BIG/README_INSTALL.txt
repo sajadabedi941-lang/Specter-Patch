@@ -4,6 +4,38 @@ Israel Iron Dome Mobile  (BIG install)
 This pack patches SPECTER FINAL archives. It does not copy extra INI
 files into Data\INI for the game to run.
 
+Why the previous Israel_CommandCenter slot 3 patch did not show
+---------------------------------------------------------------
+The selected building in-game is not Object Israel_CommandCenter.
+
+In-game slots:
+  1  Dozer
+  10 Spy Satellite
+  13 Rally Point
+  14 Sell
+
+That layout is AirF_AmericaCommandCenterCommandSet.
+
+The object is AirF_AmericaCommandCenter in
+  Data\INI\Object\Specter\Israel Defense Forces\Buildings\HQ.ini
+  CommandSet = AirF_AmericaCommandCenterCommandSet
+  DisplayName = OBJECT:CommandCenter
+  Model = Isr_Command, portrait isi_hq
+
+FactionIsrael starts with Israel_MilitaryHQ. The Israel dozer slot 8
+builds AirF_AmericaCommandCenter (AirF_Command_ConstructAmericaCommandCenter).
+
+Israel_CommandCenterCommandSet has no Dozer and no Spy Satellite, so
+edits in CommandSet_SpecterPatch.ini cannot appear on this panel.
+
+ss1 also ships a loose Data\INI\CommandSet.ini. SAGE uses that file
+instead of the same path inside _SPEC_DATA_ONE.big. Slot 11 added only
+inside the BIG therefore never reached the live AirF set.
+
+This pack puts slot 3 on AirF_AmericaCommandCenterCommandSet in the BIG
+CommandSet.ini, and also in unique INI paths that load before and after
+CommandSet.ini so the override is not hidden by the loose file.
+
 Install
 -------
 1. Extract this folder into SPECTER FINAL (the folder with generals.exe).
@@ -39,50 +71,41 @@ Restore
 -------
 Run Restore_Israel_IronDomeMobile.bat.
 
-It puts the three backed-up BIGs back (ART_ONE only if it was backed
-up), copies the ss1 CommandSet.ini backup back to Data\INI\CommandSet.ini
-after hashing it, and removes v2 loose files only when SHA-256 matches
-the v2 installer files listed in KNOWN_HASHES.txt.
-
 What is inside the patched DATA BIG
 -----------------------------------
 Updated:
   Data\INI\CommandSet.ini
-    AirF_AmericaCommandCenterCommandSet slot 11
+    AirF_AmericaCommandCenterCommandSet slot 3 added
+    slot 11 line left as it was
+    slots 1, 10, 13, 14 unchanged
   Data\INI\CommandSet_SpecterPatch.ini
-    Israel_CommandCenterCommandSet slot 3 added
-    (slot 1 already had the same button; slots 1, 2, 13, 14 kept)
+    Israel_CommandCenterCommandSet (not the in-game CC panel)
   Data\English\generals.csf
-    ss1 strings plus three Iron Dome Mobile labels
 
 Added:
+  Data\INI\AA_IsraelIronDomeMobile_AirFCC.ini
+    same AirF set + slot 3 (loads before CommandSet.ini)
+  Data\INI\CommandSet_ZZZZ_ZZZZZZIsraelIronDomeMobile.ini
+    same AirF set + slot 3 (loads last among CommandSet files)
   Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini
   Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini
   Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini
 
 What is inside the patched ART TWO BIG
 --------------------------------------
-Added:
-  Art\W3D\BONDKS.W3D
-  Art\Textures\T_M978_D01.tga
-  Art\Textures\T_M978_D02.tga
-  Art\Textures\T_M978_D03.tga
-  Art\Textures\concrete_wall_02_D.tga
-  Art\Textures\texture_0006.tga
-  Art\Textures\texture_0007.tga
-  Art\Textures\texture_0008.tga
+Unchanged in this pass. Still contains BONDKS.W3D and the purchased TGAs.
 
 Unchanged
 ---------
 Israel_AD_IronDome, Israel_AD_Barak8, Israel_MilitaryHQ, Israel dozer,
-Israel_CommandCenter.ini, _SPEC_ART_ONE.big.
+Israel_CommandCenter.ini, HQ.ini, CommandButton, Object, ART BIGs.
 
 Buy path
 --------
-Israel_CommandCenter uses Israel_CommandCenterCommandSet.
-Slot 3 is Command_ConstructIsraelVehicleIronDomeMobile
+Build AirF_AmericaCommandCenter with the Israel dozer (slot 8).
+That building uses AirF_AmericaCommandCenterCommandSet.
+Slot 3 = Command_ConstructIsraelVehicleIronDomeMobile
   -> Object Israel_VehicleIronDomeMobile.
-AirF_AmericaCommandCenterCommandSet slot 11 is unchanged.
 
 In-game test
 ------------

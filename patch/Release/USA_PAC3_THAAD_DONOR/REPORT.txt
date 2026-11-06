@@ -1,3 +1,40 @@
+SPECTER — America PAC-3 rebuild v6 (CC construct unlock)
+========================================================
+Static validation only. Generals / Zero Hour was not launched on this
+machine. A static pass is not an in-game pass.
+
+v6 construct-button lock (proven, then minimal DATA fix)
+--------------------------------------------------------
+Symptom: America Command Center slot 6 PAC-3 button greyed / unusable.
+
+Not the CommandButton. Packed and loose Command_ConstructUSAPAC3 is a
+clean UNIT_BUILD, Object=USAPAC3, no NEED_UPGRADE / science Options.
+Same shape as Command_ConstructAmericaDozer.
+
+Not the CommandSet. AmericaCommandCenterCommandSet slot 6 is already
+Command_ConstructUSAPAC3 (packed CommandSet.ini and ss1 loose
+CommandSet.ini). America_MilitaryHQCommandSet slot 6 is the same
+button. Loose Data was not edited.
+
+The lock was Object USAPAC3 Prerequisites:
+  Object = AmericaStrategyCenter AmericaStrategyCenter_T
+That gate was copied from US_THAAD combat in v1–v5. BuildAssistant
+greys a UNIT_BUILD button until every Object prerequisite exists.
+
+Same Command Center, unlocked units:
+  Slot 1  AmericaVehicleDozer          no Prerequisites
+  Slot 13 AmericaVehicleM2A3BuskIIIMech empty Prerequisites block
+  Slot 12 AmericaHelicopterUH60        AmericaSupplyCenter only
+New Donor Object USAPAC3 also had an empty Prerequisites block.
+
+v6 change: Prerequisites End (empty). DeployStyle, weapons, Draw,
+animations, and ART TWO are unchanged from v5.
+
+DATA SHA-256  2e5a4ef9c139f4b11ef0809f0d9d0ff25d16c5e504b2f7731854d3cd7e1affa7
+ART  SHA-256  d884382dcf6ee7508a9e0253d9e8c546e7a565e05a896f04b58a7e6fc9dec60a
+              (identical to v5)
+
+--------------------------------------------------------------------
 SPECTER — America PAC-3 rebuild v5 (New Donor deploy + THAAD combat)
 ====================================================================
 Static validation only. Generals / Zero Hour was not launched on this

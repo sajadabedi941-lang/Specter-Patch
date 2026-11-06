@@ -16,8 +16,15 @@ every start). This pack does not edit, replace, or delete that file.
 Slot 6 already builds Object USAPAC3. The packed object definition
 behind that name is what changed.
 
-What is in this pack (v5)
--------------------------
+v6 construct unlock
+-------------------
+v5 greyed the PAC-3 button because Object USAPAC3 required
+AmericaStrategyCenter. Other Command Center units (Dozer, M2A3) do
+not. v6 clears that Prerequisites block only. Deploy/pack, THAAD
+weapons, and ART are unchanged.
+
+What is in this pack (v5 architecture + v6 unlock)
+--------------------------------------------------
 _SPEC_DATA_ONE.big
   Object USAPAC3 is a single New Donor truck (DeployStyle unpack/pack,
   UsaPac3Car jack clip, UsaPac3F deployed mesh). THAAD intercept

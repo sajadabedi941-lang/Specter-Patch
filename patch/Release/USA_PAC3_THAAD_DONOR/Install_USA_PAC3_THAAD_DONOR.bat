@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
-title Install America mobile Patriot (THAAD gameplay, New Donor art)
+title Install America PAC-3 (New Donor deploy, THAAD combat)
 
 cd /d "%~dp0"
 if errorlevel 1 (
@@ -10,20 +10,24 @@ if errorlevel 1 (
 )
 set "PATCH_DIR=%~dp0"
 
-REM ss1 originals, previous packs (v1 spawn / v2 crash-draw / v3 flags), or this pack.
+REM ss1 originals, previous packs (v1-v6), or this pack (v7 Deploy button unlock).
 set "HASH_SS1_DATA=7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343"
 set "HASH_V1_DATA=1abaa9fa831ceb9b2278343d984fee92d4d454e31dbb3e405be09a58623aa990"
 set "HASH_V2_DATA=51d5b0a51218accecc494bcc635bcc26872a6b11cca02791193d34a4facc3e02"
 set "HASH_V3_DATA=6c97c63df1be3b0491bdb61e804f27f4dda80342edcb005e36f3f8da935c1389"
-set "HASH_NEW_DATA=20fa43d9de8329c21baee2bdb6952ae08d725b248362eb18f5ad94a57553a486"
+set "HASH_V4_DATA=20fa43d9de8329c21baee2bdb6952ae08d725b248362eb18f5ad94a57553a486"
+set "HASH_V5_DATA=e02352f1e8321e1560bcceaecae0c76a3f2446fa69f328ecdaa73deddb7c4325"
+set "HASH_V6_DATA=2e5a4ef9c139f4b11ef0809f0d9d0ff25d16c5e504b2f7731854d3cd7e1affa7"
+set "HASH_NEW_DATA=67dd91760a7dc2edcff20674ec86a9789ce471c7a2469ddea64c8b1a21dc4cd8"
 set "HASH_SS1_ART=81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
 set "HASH_V1_ART=292dc82fdeaf34645e749d3eb9df09bf469a83549e238104d19514353f55af42"
-set "HASH_NEW_ART=c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d"
+set "HASH_V2_ART=c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d"
+set "HASH_NEW_ART=d884382dcf6ee7508a9e0253d9e8c546e7a565e05a896f04b58a7e6fc9dec60a"
 
 echo.
 echo ============================================================
-echo  America Command Center slot 6  -  mobile Patriot rebuild
-echo  Object USAPAC3  (THAAD fire chain, New Donor art)
+echo  America Command Center slot 6  -  mobile Patriot
+echo  Object USAPAC3  (New Donor deploy, THAAD combat on the same truck)
 echo ============================================================
 echo.
 
@@ -182,7 +186,11 @@ if not "%~6"=="" if /I "!HASH256!"=="%~6" set "ALLOW=1"
 if /I "!HASH256!"=="%HASH_V1_DATA%" set "ALLOW=1"
 if /I "!HASH256!"=="%HASH_V2_DATA%" set "ALLOW=1"
 if /I "!HASH256!"=="%HASH_V3_DATA%" set "ALLOW=1"
+if /I "!HASH256!"=="%HASH_V4_DATA%" set "ALLOW=1"
+if /I "!HASH256!"=="%HASH_V5_DATA%" set "ALLOW=1"
+if /I "!HASH256!"=="%HASH_V6_DATA%" set "ALLOW=1"
 if /I "!HASH256!"=="%HASH_V1_ART%" set "ALLOW=1"
+if /I "!HASH256!"=="%HASH_V2_ART%" set "ALLOW=1"
 if not defined ALLOW (
   echo ERROR: %~3 is not ss1, the previous pack, or this pack. Not replaced.
   echo   SHA-256: !HASH256!

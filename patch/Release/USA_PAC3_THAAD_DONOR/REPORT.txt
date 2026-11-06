@@ -53,42 +53,58 @@ shared locos THAADMissileLocomotor1 / THAAD_ABM_MissileLocomotor,
 shared AirdefenseLinkRestarter, shared THAAD_FCS draw for the FCS object
 (WEAPONA bones exist on that model).
 
-Deploy explosion (v3) — confirmed in-game, cause from packed INI/W3D
+Deploy explosion (v3 confirmed in-game; v4 cause from EA ZH source)
 --------------------------------------------------------------------
-Path (same buttons as THAAD, not edited):
-  Command_AADS_AA_Mode / Command_AADS_ABM_Mode
-    -> CommandSet S400ECommandSet_AA / _ABM
+Observed blast is Object USAPAC3 SlowDeath ModuleTag_L8F09
+(DeathTypes ALL -SPLATTED -EXTRA_8):
+  FX_CrusaderCatchFire + FX_GenericFreeFallBombsExplosion
+  + OCL_ThaadDeathEffect
+That module cannot run if S400R_Deploy applied DeathType SPLATTED.
+
+Proven command chain (shared buttons / weapon, not edited):
+  Command_AADS_AA_Mode -> S400ECommandSet_AA
   Command_ADSCombatMode
-    Command = FIRE_WEAPON, WeaponSlot = SECONDARY
-  Weapon S400R_Deploy
+    Command = FIRE_WEAPON, WeaponSlot = SECONDARY, MaxShotsToFire = 1
+  ControlBarCommandProcessing.cpp
+    -> GameMessage::MSG_DO_WEAPON
+  GameLogicDispatch.cpp MSG_DO_WEAPON
+    -> setWeaponLock(SECONDARY, LOCKED_TEMPORARILY)
+    -> groupAttackPosition(NULL)  // NULL = attack own position
+  AIGroup.cpp
+    -> aiAttackPosition(self pos, 1)
+  DeployStyleAIUpdate.cpp update()
+    current weapon = S400R_Deploy (AttackRange default 0)
+    isWithinAttackRange(self, self pos): distSqr 0 <= 0 -> in range
+    READY_TO_MOVE + in range -> setMyState(DEPLOY)
+    MODELCONDITION_UNPACKING for UnpackTime 5000, then DEPLOYED
+    only then parent AI is allowed to fire
+  Weapon S400R_Deploy (if it actually fires)
     DamageType EXPLOSION, DeathType SPLATTED
     RadiusDamageAffects = SELF SUICIDE, PrimaryDamage 10000
-  SlowDeath NONE +SPLATTED -> OCL_US_PAC3_Deployed
-    THAAD_FireControlSystem clone + AirdefenseLinkRestarter
-    + US_PAC3_CombatMode (Model UsaPac3F, no Animation=)
-  SlowDeath ALL -SPLATTED -EXTRA_8 = L8F09
-    FX_CrusaderCatchFire + FX_GenericFreeFallBombsExplosion
-    + OCL_ThaadDeathEffect   <-- this is the observed explosion
+    SlowDeath NONE +SPLATTED -> OCL_US_PAC3_Deployed
+      US_PAC3_FireControlSystem + AirdefenseLinkRestarter
+      + US_PAC3_CombatMode (Model UsaPac3F, no Animation=)
 
-THAAD difference that matters:
-  US_THAAD DeployStyleAIUpdate
-    TurretsFunctionOnlyWhenDeployed = Yes
-    ManualDeployAnimations = Yes
-    Draw UNPACKING plays US_M1120.US_M1120 (151-frame clip, real)
-  USAPAC3 v2 copied those Yes flags, but UsaPac3Car has no unpack
-  transform clip (W3D: BIT_CHANNEL only, stripped in v2; no UNPACKING
-  ConditionState). Engine started unpack for the Deploy button and
-  never reached S400R_Deploy; L8F09 ran instead.
+S400R_Deploy is therefore NOT the first thing the engine does.
+Unpack runs first. TurretsFunctionOnlyWhenDeployed and
+ManualDeployAnimations do not skip that (v3 in-game still exploded;
+source confirms those flags only toggle turrets / animation frames).
 
-Not the cause: missing UsaPac3F bones (F has TIRE01-08 / TURRET01;
-CombatMode names none). Not a THAAD Object/OCL/Weapon edit.
+THAAD difference that actually matters:
+  US_THAAD keeps DeployStyleAIUpdate AND Draw UNPACKING/DEPLOYED
+  with a real US_M1120.US_M1120 clip, so unpack completes and
+  S400R_Deploy can fire SPLATTED.
+  US_THAAD_CombatMode already uses AIUpdateInterface for the same
+  FIRE_WEAPON suicide (S400R_Pack) and does not unpack first.
+  USAPAC3 Draw has no UNPACKING/DEPLOYED ConditionState and no
+  unpack clip, so the DeployStyle gate never reaches SPLATTED.
 
-v3 fix (US_PAC3.ini only; ART TWO unchanged from v2):
-  TurretsFunctionOnlyWhenDeployed = No
-  TurretsMustCenterBeforePacking = No
-  ManualDeployAnimations = No
-  mobile Draw stays UsaPac3Car; UsaPac3F only on CombatMode
-  S400R_* / FCS / OCL_US_PAC3_* / slot 6 unchanged
+v4 fix (US_PAC3.ini only; ART TWO unchanged from v2):
+  Object USAPAC3 / US_PAC3_PackMode
+    DeployStyleAIUpdate -> AIUpdateInterface
+    (same as US_THAAD_CombatMode / US_PAC3_CombatMode)
+  FIRE_WEAPON now fires S400R_Deploy immediately.
+  S400R_* / FCS / OCL_US_PAC3_* / slot 6 / THAAD untouched.
 
 Crash fix (v2) — why the first pack still crashed
 -------------------------------------------------
@@ -168,12 +184,16 @@ copies are byte-identical to ss1.
 ----------
 ss1 _SPEC_DATA_ONE.big
   7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
-this pack _SPEC_DATA_ONE.big  374106540 bytes
+v3 _SPEC_DATA_ONE.big  374106540 bytes
   6c97c63df1be3b0491bdb61e804f27f4dda80342edcb005e36f3f8da935c1389
+this pack _SPEC_DATA_ONE.big  374106424 bytes
+  20fa43d9de8329c21baee2bdb6952ae08d725b248362eb18f5ad94a57553a486
 ss1 _SPEC_ART_TWO.big
   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
 this pack _SPEC_ART_TWO.big  312976571 bytes
   c4bb3c9837ee688c5cf8ff31529ca503f3d79b5b62e81474e349a967e63efe6d
+this pack USA_PAC3_THAAD_DONOR.zip  405772889 bytes
+  48c6c4dc2c2d70a571b6dbbb1ab933816f1bfec20c4d5688b510c662d6dd6da7
 
 8. Static validation
 --------------------
@@ -181,6 +201,8 @@ PASS unique Object USAPAC3 in US_PAC3.ini
 PASS no Weapon USAPAC3_Weapon / USAPAC3CommandSet leftovers
 PASS INI bone names TIRE01-10 / FL001 exist in the W3D files they use
 PASS no Animation= on Patriot models; no W3DTruckDraw; no PRELOAD on TEL
+PASS no DeployStyleAIUpdate on USAPAC3 / US_PAC3_PackMode (AIUpdateInterface)
+PASS US_THAAD still DeployStyleAIUpdate; US_M1120.ini byte-identical to v3
 PASS packed US_M1120.ini / THAAD W3D / CommandSet / CommandButton unchanged
 PASS AmericaCommandCenterCommandSet slot 6 = Command_ConstructUSAPAC3
 PASS other CC slots unchanged

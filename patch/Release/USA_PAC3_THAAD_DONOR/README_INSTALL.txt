@@ -62,9 +62,32 @@ never fired SPLATTED; SlowDeath L8F09 ran instead
 (FX_GenericFreeFallBombsExplosion + OCL_ThaadDeathEffect).
 
 v3: TurretsFunctionOnlyWhenDeployed = No, ManualDeployAnimations = No
-on USAPAC3 / PackMode. UsaPac3F is only the CombatMode model (new
-object, no Animation=). ART TWO is unchanged from v2. THAAD INI/W3D
-untouched. Generals.exe was not launched here.
+on USAPAC3 / PackMode. In-game still exploded. Those flags do not skip
+unpack-before-fire in DeployStyleAIUpdate.cpp.
+
+Deploy explosion fix (v4)
+-------------------------
+Proven engine path (EA Zero Hour source, not a guess):
+  Command_ADSCombatMode
+    -> MSG_DO_WEAPON SECONDARY, MaxShots=1
+    -> lock S400R_Deploy, groupAttackPosition(self)
+    -> DeployStyleAIUpdate sees attack-in-range and setMyState(DEPLOY)
+    -> MODELCONDITION_UNPACKING for UnpackTime 5000, then DEPLOYED
+    -> only then can S400R_Deploy fire (DeathType SPLATTED)
+
+S400R_Deploy AttackRange defaults to 0, so own-position is in range.
+TurretsFunctionOnlyWhenDeployed / ManualDeployAnimations never skip
+that unpack. Object USAPAC3 Draw has no UNPACKING/DEPLOYED states
+(unlike US_THAAD). The observed blast is SlowDeath ModuleTag_L8F09
+on Object USAPAC3 (ALL -SPLATTED -EXTRA_8): FX_CrusaderCatchFire +
+FX_GenericFreeFallBombsExplosion + OCL_ThaadDeathEffect. That module
+only runs when S400R_Deploy's SPLATTED death did not.
+
+v4: USAPAC3 and US_PAC3_PackMode use AIUpdateInterface, same as
+US_THAAD_CombatMode for FIRE_WEAPON S400R_Pack. FIRE_WEAPON then
+fires S400R_Deploy immediately with no unpack. THAAD, ART TWO,
+missiles, and other AD are not edited. Generals.exe was not launched
+here.
 
 This pack does not write files under Data\.
 

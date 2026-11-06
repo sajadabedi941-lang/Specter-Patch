@@ -1,5 +1,6 @@
 ('DATA', 'update', 'Data\\INI\\CommandSet.ini', 450860, 450912)
-('DATA', 'update', 'Data\\INI\\CommandSet_SpecterPatch.ini', 907, 1067)
+('DATA', 'update', 'Data\\INI\\CommandSet_SpecterPatch.ini', 907, 1119)
+('DATA', 'slot3', 'Israel_CommandCenterCommandSet 3 = Command_ConstructIsraelVehicleIronDomeMobile')
 ('DATA', 'update', 'Data\\English\\generals.csf', 1498928, 1499259)
 ('DATA', 'add', 'Data\\INI\\CommandButton_Israel_VehicleIronDomeMobile.ini', 0, 565)
 ('DATA', 'add', 'Data\\INI\\CommandSet_Israel_VehicleIronDomeMobile.ini', 0, 241)

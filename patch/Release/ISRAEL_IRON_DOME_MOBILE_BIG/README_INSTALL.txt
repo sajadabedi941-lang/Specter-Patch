@@ -50,7 +50,8 @@ Updated:
   Data\INI\CommandSet.ini
     AirF_AmericaCommandCenterCommandSet slot 11
   Data\INI\CommandSet_SpecterPatch.ini
-    Israel_CommandCenterCommandSet slot 1 (kept)
+    Israel_CommandCenterCommandSet slot 3 added
+    (slot 1 already had the same button; slots 1, 2, 13, 14 kept)
   Data\English\generals.csf
     ss1 strings plus three Iron Dome Mobile labels
 
@@ -78,8 +79,10 @@ Israel_CommandCenter.ini, _SPEC_ART_ONE.big.
 
 Buy path
 --------
-FactionIsrael dozer builds AirF_AmericaCommandCenter.
-Select that Command Center. Slot 11 is Iron Dome Mobile.
+Israel_CommandCenter uses Israel_CommandCenterCommandSet.
+Slot 3 is Command_ConstructIsraelVehicleIronDomeMobile
+  -> Object Israel_VehicleIronDomeMobile.
+AirF_AmericaCommandCenterCommandSet slot 11 is unchanged.
 
 In-game test
 ------------

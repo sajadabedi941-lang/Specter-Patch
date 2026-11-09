@@ -1,0 +1,91 @@
+SPECTER USA Patriot ABM damage fix
+==================================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. Baseline
+-----------
+Continue from specter-usa-patriot-new-donor-thaad-test (commit 21c73d7e).
+ss1 DATA 7f8c7f63...  ART TWO 81d9a4aa...
+previous pack DATA 3d65ac0d...  ART TWO f9c32a05...
+PAC-3 v1–v8 ignored. Patriot not rebuilt. New Donor look/Guard/AA kept.
+
+1. Fire-to-damage chain (evidence)
+----------------------------------
+Launcher Object USAPAC3 WeaponSet:
+  PRIMARY   8x_LRSAM_THAAD           -> THAAD_AA_OBJECT   (AA, unchanged)
+  SECONDARY was THAADMissile_ABM     -> THAAD_ABM_OBJECT  (ABM, no kill)
+
+Stock weapon (loose Data\INI\Weapon.ini first-wins the whole file):
+  Weapon THAADMissile_ABM
+    DamageType        = FALLING
+    ProjectileObject  = THAAD_ABM_OBJECT
+    AntiBallisticMissile = Yes
+  Packed Weapon.ini has the same weapon as CRUSH, but loose FALLING wins.
+
+Stock projectile (USA_WeaponObjects.ini Object THAAD_ABM_OBJECT):
+  FireWeaponUpdate Generic_ABM_Missile_Fuze  DamageType=WATER  AttackRange=1200
+  FireWeaponUpdate AMW_KintecEnergyDamage    DamageType=FALLING AttackRange=150
+  FireWeaponUpdate AMW_KintecEnergyDamageSelf HACK @ 3500ms (self-kill)
+  Extra End before Geometry orphans Box 2/1/1 — no collision on the object.
+  No DistanceToTargetForLock. KindOf has no CAN_ATTACK.
+
+SPECTER ballistic armor (Armor.ini):
+  BallisticMissileArmor / SRBMArmor / Heavy:
+    FALLING=0%  WATER=0%  PENALTY=0%  CRUSH=100%
+  BallisticMissileArmor_Super: CRUSH=0% (not the Patriot target class).
+
+So Patriot can detect/fire (AntiBallisticMissile + PreferredAgainst
+BALLISTIC_MISSILE). The visible intercept is the WATER/FALLING fuze
+firing near the target. Applied damage vs BM armor is 0. Parent CRUSH
+(packed) never lands because geometry is orphaned and loose DamageType
+is FALLING anyway.
+
+2. Working ABM comparison in this project
+-----------------------------------------
+Hq9_AA_Missile_ABM (Weapon.ini):
+  DamageType=CRUSH  ProjectileObject=Hq9_Missile_ABM
+  AntiBallisticMissile=Yes
+Hq9_Missile_ABM:
+  KindOf includes CAN_ATTACK
+  DistanceToTargetForLock=100
+  Geometry Box 25/22/6 INSIDE the Object (no extra End)
+  No WATER/FALLING fuze
+
+4x_MRSAM_9M96E2 (S-400):
+  DamageType=CRUSH  ProjectileCollidesWith=ENEMIES
+  Projectile 9M96E2_AUM_Missile has geometry inside the Object
+
+3. Fix (Patriot-local only)
+---------------------------
+In USAPAC3.ini (ThingFactory Object file; same file already parsed
+ObjectCreationList, so Weapon/Object blocks in this file register):
+  Weapon USAPAC3_ABM_Fuze              CRUSH, AntiBallisticMissile
+  Weapon USAPAC3_THAADMissile_ABM      copy of THAADMissile_ABM with
+                                       DamageType=CRUSH,
+                                       ProjectileObject=USAPAC3_THAAD_ABM_OBJECT,
+                                       ProjectileCollidesWith=ENEMIES
+  Object USAPAC3_THAAD_ABM_OBJECT      PAC-3 model, THAAD_ABM_MissileLocomotor,
+                                       DetonateCallsKill, DistanceToTargetForLock=100,
+                                       CAN_ATTACK, geometry inside Box 25/22/6,
+                                       fuze USAPAC3_ABM_Fuze (CRUSH)
+  WeaponSet SECONDARY                  USAPAC3_THAADMissile_ABM
+
+Not edited: US_THAAD, THAAD_ABM_OBJECT, THAADMissile_ABM, Weapon.ini,
+CommandSet.ini, other AD, ART TWO, Draw, DeployStyle, locomotor,
+GLAVehicleRocketBuggyCommandSet, FIREPOINT/FIREFX, PRIMARY AA.
+
+4. DATA / ART delta vs previous pack
+------------------------------------
+DATA CHANGED (1):
+  Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+  previous 15216 bytes -> this pack 20317 bytes
+ART: unchanged (not in this ZIP)
+Entry count unchanged (3587).
+
+5. This pack hashes
+-------------------
+_SPEC_DATA_ONE.big  374106871  3f9cd7fa1eb34194f0297fa191c190dc395b441bd7c2cd46f096d538af07e1a4
+_SPEC_ART_TWO.big   312978611  f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42  (not in ZIP)
+ini/USAPAC3.ini     20317  dd3f7142c4e452e1e9ed4f1dbf6e4596163c0e0afb2fbac44b2e90bd07e2b201
+
+Generals.exe was not run.

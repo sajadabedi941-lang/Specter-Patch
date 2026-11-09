@@ -16,13 +16,22 @@ every start). This pack does not edit, replace, or delete that file.
 Slot 6 already builds Object USAPAC3. The packed object definition
 behind that name is what changed.
 
-v7 Deploy unlock
+v8 Deploy unlock
 ----------------
-After AA/ABM, Deploy was grey because the DeployStyle turret owned
-SECONDARY/TERTIARY (the FIRE_WEAPON Deploy slots) while
-InitiallyDisabled / TurretsFunctionOnlyWhenDeployed. THAAD’s packed
-unit uses the same Deploy buttons without putting those slots on a
-turret. v7 sets ControlledWeaponSlots = PRIMARY only.
+v7 still greys Deploy after AA/ABM. ControlBar FIRE_WEAPON does not
+check turret state. It greys the button when the slot weapon is
+missing. TheWeaponStore loads only Data\INI\Weapon.ini; the sidecar
+Data\INI\Weapon_US_PAC3.ini is never opened, so US_PAC3_DeployCue
+was NULL. v8 puts those Weapon templates at the top of the packed
+Object file (Data\INI\Object\...\US_PAC3.ini), which ThingFactory
+does load. Cue ClipReloadTime is omitted (ZH default 0), matching
+S400R_Deploy. ControlledWeaponSlots stays PRIMARY so the packed
+cue is a body shot, not turret-gated. Combat PRIMARY is unchanged.
+
+v7 turret change (did not unlock the button)
+--------------------------------------------
+v7 set ControlledWeaponSlots = PRIMARY only. That is kept for the
+packed cue shot. It was not the ControlBar grey-out.
 
 v6 construct unlock
 -------------------

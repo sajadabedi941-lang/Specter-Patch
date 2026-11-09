@@ -1,3 +1,68 @@
+SPECTER — America PAC-3 rebuild v8 (DeployCue load path)
+========================================================
+Static validation only. Generals / Zero Hour was not launched on this
+machine. A static pass is not an in-game pass.
+
+v8 Deploy-button lock after AA/ABM (re-traced, then minimal DATA fix)
+--------------------------------------------------------------------
+Symptom on v7: unit builds, Multi Target / AA / ABM can be selected,
+then Deploy is grey for all three modes.
+
+Command chain is present. After Upgrade_AADS_AA_Mode / Upgrade_AIM-120C
+the live CommandSet is S400ECommandSet_AA slot 6 = Command_ADSCombatMode
+(FIRE_WEAPON SECONDARY). After Upgrade_AADS_ABM_Mode it is
+S400ECommandSet_ABM slot 6 = Command_ADS_ABM_CombatMode (FIRE_WEAPON
+TERTIARY). Neither button has NEED_UPGRADE. That is why the next panel
+appears with a grey Deploy.
+
+ControlBar::getCommandAvailability FIRE_WEAPON (ControlBarCommand.cpp):
+  1. no AI -> COMMAND_RESTRICTED
+  2. w = getWeaponInWeaponSlot(button.WeaponSlot)  // no turret check
+  3. if w && getClipReloadTime(obj)==0 -> COMMAND_AVAILABLE
+  4. if w==NULL -> COMMAND_RESTRICTED
+  5. else READY_TO_FIRE / now-1 flicker clock
+
+getWeaponInWeaponSlot returns m_weapons[slot] only. TurretAI
+InitiallyDisabled / TurretsFunctionOnlyWhenDeployed is not consulted
+for greying. v7 ControlledWeaponSlots=PRIMARY therefore could not
+unlock the button. It is still correct for packed *execution*: the
+cue is a body weapon, combat PRIMARY stays turret-gated like Donor.
+
+TheWeaponStore is inited with only Data\INI\Weapon.ini
+(GameEngine.cpp). ThingFactory then scans Data\INI\Object.
+Data\INI\Weapon_US_PAC3.ini is packed but never opened. INI::parseWeapon
+looks up the template at parse time; missing name -> NULL slot.
+
+v3/v4 SECONDARY/TERTIARY = S400R_Deploy from Weapon.ini (loaded,
+ClipReloadTime default 0) -> button available, then suicide fire.
+v5 replaced that with US_PAC3_DeployCue in the unloaded sidecar.
+That is the first version whose Deploy button stays grey.
+
+Packed US_THAAD (US_M1120.ini, not edited): same CommandButtons,
+SECONDARY S400R_Deploy from Weapon.ini, DeployStyle with
+TurretsFunctionOnlyWhenDeployed=Yes and no Turret block.
+New Donor USAPAC3 has no FIRE_WEAPON Deploy; unpack is DeployStyle
+on attack. SPECTER keeps the THAAD buttons and Donor unpack/pack.
+
+v8 change (DATA only, Object USAPAC3 file):
+  Weapon US_PAC3_DeployCue / US_PAC3_LRSAM / US_PAC3Missile_ABM
+  are defined at the top of the packed Object file, before Object
+  USAPAC3, so ThingFactory registers them then fills the WeaponSet.
+  Cue ClipReloadTime omitted (default 0), matching S400R_Deploy.
+  ControlledWeaponSlots remains PRIMARY.
+  Empty Prerequisites from v6, slot 6 construct, ART TWO unchanged.
+
+Click path once the slot exists: ControlBarCommandProcessing sends
+MSG_DO_WEAPON(slot, MaxShots=1). WeaponSet::setWeaponLock fails if
+that slot is NULL. With the cue present, lock + attack drives
+DeployStyleAIUpdate to unpack (Donor jack clip / F mesh), not
+S400R_Deploy suicide.
+
+DATA SHA-256  980db568ab6449954afae0fa10c7ae949cec73f3eab12d9402835f5a9709eaed
+ART  SHA-256  d884382dcf6ee7508a9e0253d9e8c546e7a565e05a896f04b58a7e6fc9dec60a
+              (identical to v5/v6/v7)
+
+--------------------------------------------------------------------
 SPECTER — America PAC-3 rebuild v7 (Deploy button unlock)
 ========================================================
 Static validation only. Generals / Zero Hour was not launched on this

@@ -1,0 +1,260 @@
+{
+  "src": "patch/Release/CONSTRUCT_BUTTON_IMAGES/_SPEC_DATA_ONE.big",
+  "dst": "patch/Release/SUPPLY_CENTRE_BUY_LIST/_SPEC_DATA_ONE.big",
+  "src_entries": 3559,
+  "dst_entries": 3563,
+  "size": 373955679,
+  "sha256": "be2f27b7c0d2ce233789909b029d24f2d14a34a6540fed4a71186c3c46095cd4",
+  "art_untouched": true,
+  "countries": {
+    "France": {
+      "building_src": "Data\\INI\\Object\\Specter\\French Armed Forces\\Buildings\\SupplyCenter.ini",
+      "building_commandset": "FranceSupplyCenterCommandSet",
+      "commandsets": {
+        "FranceSupplyCenterCommandSet": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructFranceHelicopterCH47F"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ]
+          ]
+        }
+      },
+      "buttons": {
+        "Command_ConstructFranceHelicopterCH47F": {
+          "button_src": "Data\\INI\\CommandButton.ini",
+          "button_object": "FranceHelicopterCH47F",
+          "object_src": "Data\\INI\\Object\\Specter\\French Armed Forces\\Rotary\\CH47F.ini",
+          "object_defined": true
+        }
+      }
+    },
+    "America": {
+      "building_src": "Data\\INI\\Object\\Specter\\United States Of America\\Buildings\\SupplyCenter.ini",
+      "building_commandset": "AmericaSupplyCenterCommandSet",
+      "commandsets": {
+        "AmericaSupplyCenterCommandSet": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructAmericaSupplyChinook_USA"
+            ],
+            [
+              "13",
+              "Command_SetRallyPoint"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ],
+            [
+              "16",
+              "Command_ConstructAmericaVehicleM-ATV_AI"
+            ]
+          ]
+        },
+        "AmericaSupplyCenterCommandSet_CountryIncome": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructAmericaSupplyChinook_USA"
+            ],
+            [
+              "13",
+              "Command_SetRallyPoint"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ],
+            [
+              "16",
+              "Command_ConstructAmericaVehicleM-ATV_AI"
+            ]
+          ]
+        }
+      },
+      "buttons": {
+        "Command_ConstructAmericaSupplyChinook_USA": {
+          "button_src": "Data\\INI\\CommandButton_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "button_object": "AmericaSupplyChinook_USA",
+          "object_src": "Data\\INI\\Object\\zzzzz_SpecterSupplyCentreBuy\\AmericaSupplyChinook_USA.ini",
+          "object_defined": true
+        },
+        "Command_ConstructAmericaVehicleM-ATV_AI": {
+          "button_src": "Data\\INI\\CommandButton.ini",
+          "button_object": "AmericaVehicleM-ATV_AI",
+          "object_src": "Data\\INI\\Object\\Specter\\United States Of America\\Wheeled\\M-ATV_AI.ini",
+          "object_defined": true
+        }
+      }
+    },
+    "China": {
+      "building_src": "Data\\INI\\Object\\Specter\\PLA\\Buildings\\SupplyCenter.ini",
+      "building_commandset": "ChinaSupplyCenterCommandSet",
+      "commandsets": {
+        "ChinaSupplyCenterCommandSet": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructChinaVehicleSupplyTruck"
+            ],
+            [
+              "13",
+              "Command_SetRallyPoint"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ]
+          ]
+        },
+        "ChinaSupplyCenterCommandSet_CountryIncome": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructChinaVehicleSupplyTruck"
+            ],
+            [
+              "13",
+              "Command_SetRallyPoint"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ]
+          ]
+        }
+      },
+      "buttons": {
+        "Command_ConstructChinaVehicleSupplyTruck": {
+          "button_src": "Data\\INI\\CommandButton.ini",
+          "button_object": "ChinaVehicleSupplyTruck",
+          "object_src": "Data\\INI\\Object\\ChinaVehicle.ini",
+          "object_defined": true
+        }
+      }
+    },
+    "Russia": {
+      "building_src": "Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Buildings\\SupplyCenter.ini",
+      "building_commandset": "RussiaSupplyCenterCommandSet",
+      "commandsets": {
+        "RussiaSupplyCenterCommandSet": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructRussiaSupplyTruck_CountryIncome"
+            ],
+            [
+              "2",
+              "Command_ConstructRussiaHelicopterMi8AMTSh"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ]
+          ]
+        },
+        "RussiaSupplyCenterCommandSet_CountryIncome": {
+          "src": "Data\\INI\\CommandSet_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "slots": [
+            [
+              "1",
+              "Command_ConstructRussiaSupplyTruck_CountryIncome"
+            ],
+            [
+              "2",
+              "Command_ConstructRussiaHelicopterMi8AMTSh"
+            ],
+            [
+              "14",
+              "Command_Sell"
+            ]
+          ]
+        }
+      },
+      "buttons": {
+        "Command_ConstructRussiaSupplyTruck_CountryIncome": {
+          "button_src": "Data\\INI\\CommandButton_ZZZZ_ZZZZSupplyCentreBuy.ini",
+          "button_object": "RussiaSupplyTruck_CountryIncome",
+          "object_src": "Data\\INI\\Object\\zzzzz_SpecterSupplyCentreBuy\\RussiaSupplyTruck_CountryIncome.ini",
+          "object_defined": true
+        },
+        "Command_ConstructRussiaHelicopterMi8AMTSh": {
+          "button_src": "Data\\INI\\CommandButton.ini",
+          "button_object": "RussiaHelicopterMi8AMTSh",
+          "object_src": "Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Airforce\\Mi8AMTSh.ini",
+          "object_defined": true
+        }
+      }
+    }
+  },
+  "preserved": {
+    "Iraq_RadarStationCommandSet": {
+      "src": "Data\\INI\\CommandSet_ZZZZ_ZZZIraqRadar.ini",
+      "dst": "Data\\INI\\CommandSet_ZZZZ_ZZZIraqRadar.ini",
+      "same": true
+    },
+    "Iraq_RadarStation": {
+      "src": "Data\\INI\\Object\\zzzzz_SpecterIraqRadar\\Iraq_RadarStation.ini",
+      "dst": "Data\\INI\\Object\\zzzzz_SpecterIraqRadar\\Iraq_RadarStation.ini",
+      "same": true
+    },
+    "Command_ConstructRussian_92N6E": {
+      "src": "Data\\INI\\CommandButton_ZZZZ_ZZZZConstructCameos.ini",
+      "dst": "Data\\INI\\CommandButton_ZZZZ_ZZZZConstructCameos.ini",
+      "same": true
+    },
+    "Command_ConstructChinaVehicleHT233": {
+      "src": "Data\\INI\\CommandButton_ZZZZ_ZZZZConstructCameos.ini",
+      "dst": "Data\\INI\\CommandButton_ZZZZ_ZZZZConstructCameos.ini",
+      "same": true
+    },
+    "Command_ConstructSpecterRadarHeron": {
+      "src": "Data\\INI\\CommandButton.ini",
+      "dst": "Data\\INI\\CommandButton.ini",
+      "same": true
+    },
+    "Command_ConstructIraq_MIC_S400": {
+      "src": "Data\\INI\\CommandButton_ZZZZ_IraqMicRadarAd.ini",
+      "dst": "Data\\INI\\CommandButton_ZZZZ_IraqMicRadarAd.ini",
+      "same": true
+    },
+    "Command_ConstructAmerica_MIC_S400": {
+      "src": null,
+      "dst": null,
+      "same": true
+    },
+    "BritainSupplyCenterCommandSet": {
+      "src": "Data\\INI\\CommandSet.ini",
+      "dst": "Data\\INI\\CommandSet.ini",
+      "same": true
+    },
+    "GermanySupplyCenterCommandSet": {
+      "src": "Data\\INI\\CommandSet.ini",
+      "dst": "Data\\INI\\CommandSet.ini",
+      "same": true
+    },
+    "IranSupplyCenterCommandSet": {
+      "src": "Data\\INI\\CommandSet.ini",
+      "dst": "Data\\INI\\CommandSet.ini",
+      "same": true
+    },
+    "Iraq_SupplyCenterCommandSet": {
+      "src": "Data\\INI\\CommandSet.ini",
+      "dst": "Data\\INI\\CommandSet.ini",
+      "same": true
+    }
+  },
+  "errors": []
+}

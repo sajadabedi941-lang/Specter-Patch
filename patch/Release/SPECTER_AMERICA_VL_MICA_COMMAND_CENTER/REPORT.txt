@@ -1,0 +1,48 @@
+SPECTER America VL MICA Command Center
+=====================================
+Static validation only. Generals.exe was not launched.
+
+0. Proven live America chain (packed _SPEC_DATA_ONE.big)
+-------------------------------------------------------
+PlayerTemplate FactionAmerica
+  StartingBuilding = AmericaCommandCenter
+Object Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini
+  Object AmericaCommandCenter
+  Side = America
+  CommandSet = AmericaCommandCenterCommandSet
+CommandSet Data\INI\CommandSet.ini  AmericaCommandCenterCommandSet
+  slot 6 already UNIT_BUILD Object USAPAC3 (working in SPECTER)
+CommandButton Data\INI\CommandButton.ini
+  Command_ConstructUSAPAC3 UNIT_BUILD Object=USAPAC3
+
+Overlay patch/Data/INI/CommandSet.ini AmericaCommandCenterCommandSet does NOT
+contain USAPAC3, so it is not the live bar. This pack edits the packed
+CommandSet.ini / CommandButton.ini, the same files USAPAC3 uses.
+
+AirF / SupW / Lazr AmericaCommandCenterCommandSet blocks were not edited.
+
+1. America object
+-----------------
+Object America_VL_MICA
+  Side = America
+  KindOf = PRELOAD SELECTABLE CAN_ATTACK ATTACK_NEEDS_LINE_OF_SIGHT
+           CAN_CAST_REFLECTIONS VEHICLE SCORE
+  (USAPAC3-style; no FS_BASE_DEFENSE / POWERED)
+  Model = LSFziyuan / d / k  Deploy = RiderChangeContain RIDER1/RIDER2
+  Weapon = America_VL_MICA_TEL (New Donor CWCruTEL stats)
+
+No Vietnam names, no Side=Vietnam.
+
+2. Command Center button
+------------------------
+Empty visible slot 2 used. Slots 1/6/12/13/14 untouched.
+Command_ConstructAmerica_VL_MICA injected into packed CommandButton.ini.
+
+3. Not changed
+--------------
+Vietnam_VL_MICA.ini, CommandSet_Vietnam.ini, USAPAC3.ini,
+AirF/Lazr/SupW Command Centers, Patriot objects.
+
+4. Hashes
+---------
+See HASHES.txt. unzip -t. Generals.exe was not run.

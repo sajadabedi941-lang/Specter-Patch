@@ -3,3 +3,10 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Rebuilt SPE DATA BIG is a GitHub Release asset, not a git blob (file >100MB)
+patch/Release/GM_AD_ABM_FIX/_SPEC_DATA_ONE.big
+patch/Release/S400_HQ9_RADAR_LINK/_SPEC_DATA_ONE.big
+patch/Release/RS24_DF41_WF_CRASH/_SPEC_DATA_ONE.big
+patch/Release/RS24_DF41_SPAWN_CRASH/_SPEC_DATA_ONE.big
+patch/Release/RS24_DF41_LOCO_CRASH/_SPEC_DATA_ONE.big

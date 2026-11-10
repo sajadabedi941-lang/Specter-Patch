@@ -1,0 +1,60 @@
+SPECTER USA Patriot ABM startup crash fix
+========================================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. Compare
+----------
+Healthy: specter-usa-patriot-new-donor-thaad-test  DATA 3d65ac0d...
+Broken:  specter-usa-patriot-abm-fix-test          DATA 3f9cd7fa...
+Only packed entry that differs in both cases:
+  Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+
+1. Crash cause
+--------------
+ThingTemplate ClientUpdate uses parseModuleName -> ModuleFactory
+newModuleDataFromINI -> createDataProc -> ini->initFromINI until End.
+Same for Draw / Behavior / Body.
+
+Broken projectile (abm-fix-test):
+  ClientUpdate = AnimatedParticleSysBoneClientUpdate ModuleTag_08
+  Geometry            = BOX
+  ...
+End
+  Object USAPAC3
+
+The Geometry...End block was consumed as ClientUpdate module data.
+Object USAPAC3 never started as its own block; its Draw ModuleTag_01 was
+applied to USAPAC3_THAAD_ABM_OBJECT. Duplicate module tags throw
+INI_INVALID_DATA in the engine ("must be unique among all modules").
+That is an Uncaught Exception during initialization, before the game world.
+
+Working THAAD projectiles in this project (USA_WeaponObjects.ini):
+  ClientUpdate = AnimatedParticleSysBoneClientUpdate ModuleTag_08
+End
+  Geometry = Box
+  ...
+End
+
+The extra End closes ClientUpdate, not the Object. Geometry stays on the
+Object. HQ-9 has no ClientUpdate, so it does not need that End; copying
+HQ-9 geometry placement onto a THAAD ClientUpdate object was invalid.
+
+2. Fix
+------
+Insert End after ClientUpdate. No other logic change. Weapon /
+projectile / CRUSH fuze / SECONDARY name from the ABM pack are kept.
+PRIMARY 8x_LRSAM_THAAD, Donor Draw/DeployStyle/CommandSet/FIREPOINT,
+US_THAAD, Weapon.ini untouched.
+
+3. Delta
+--------
+vs crashing ABM pack: [('CHANGED', 'Data\\INI\\Object\\Specter\\PatchSystems\\AirDefense\\USAPAC3.ini', 20317, 20295)]
+vs last good pack:    [('CHANGED', 'Data\\INI\\Object\\Specter\\PatchSystems\\AirDefense\\USAPAC3.ini', 15216, 20295)]
+Entry count 3587. ART TWO unchanged, not in ZIP.
+
+4. Hashes
+---------
+_SPEC_DATA_ONE.big  374106849  e9558d268eadbac09795762c2356e2bfe63e47f7f2f11aed26182d98383b2965
+ini/USAPAC3.ini     20295  c3ba9b3332fc125d8804a068be87906b7763ed3775d295445d67ae21f4e6f289
+
+Generals.exe was not run.

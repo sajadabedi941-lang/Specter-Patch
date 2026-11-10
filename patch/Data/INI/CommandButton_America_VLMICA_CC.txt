@@ -1,0 +1,31 @@
+; Injected into packed Data\INI\CommandButton.ini (live America construct file).
+; Same file/pattern as Command_ConstructUSAPAC3.
+
+CommandButton Command_ConstructAmerica_VL_MICA
+  Command            = UNIT_BUILD
+  Object             = America_VL_MICA
+  TextLabel          = CONTROLBAR:ConstructAmerica_VL_MICA
+  ButtonImage        = America_VL_MICA
+  ButtonBorderType   = BUILD
+  DescriptLabel      = CONTROLBAR:ToolTipConstructAmerica_VL_MICA
+End
+
+CommandButton Command_America_VL_MICA_Deploy
+  Command = SPECIAL_POWER
+  SpecialPower = SpecialAbilityAmerica_VL_MICA_Unpack
+  Options = NEED_SPECIAL_POWER_SCIENCE OK_FOR_MULTI_SELECT
+  TextLabel = CONTROLBAR:America_VL_MICA_Deploy
+  ButtonImage = America_VL_MICA_Deploy
+  ButtonBorderType = SYSTEM
+  DescriptLabel = CONTROLBAR:ToolTipAmerica_VL_MICA_Deploy
+End
+
+CommandButton Command_America_VL_MICA_Relocate
+  Command = SPECIAL_POWER
+  SpecialPower = SpecialAbilityAmerica_VL_MICA_Pack
+  Options = NEED_SPECIAL_POWER_SCIENCE OK_FOR_MULTI_SELECT
+  TextLabel = CONTROLBAR:America_VL_MICA_Relocate
+  ButtonImage = America_VL_MICA_Relocate
+  ButtonBorderType = SYSTEM
+  DescriptLabel = CONTROLBAR:ToolTipAmerica_VL_MICA_Relocate
+End

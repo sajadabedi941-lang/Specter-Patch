@@ -1,0 +1,89 @@
+SPECTER Vietnam VL MICA Command Center button fix
+=================================================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. Live Object
+--------------
+Packed Object:
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+  Object Vietnam_CommandCenter
+  Side = Vietnam
+  CommandSet = Vietnam_CommandCenterCommandSet
+
+1. What the game actually loaded (why the previous pack had no UI)
+------------------------------------------------------------------
+CommandSet is last-win in this SPECTER tree (see the comment on
+CommandSet_ZZZZ_CommandCenterMatchStart.ini).
+
+Alphabetical load of the Vietnam CC name:
+
+  CommandSet.ini
+    1 = VT72B
+    2 = VL MICA          <-- previous pack patched THIS file
+    13 = Rally
+    14 = Sell
+    (no Worker / IL-76 / Alhussaien)
+
+  CommandSet_Vietnam.ini
+    NOT packed in specter-vietnam-vl-mica-test.
+    Loose SPECTER overlay Data\INI\CommandSet_Vietnam.ini still existed
+    from the base install (Worker / VT72B / IL-76 / Rally / Sell /
+    Alhussaien, no VL MICA). Same path as a packed file would use, so
+    the loose original last-won that filename.
+
+  CommandSet_ZZZZ_CommandCenterMatchStart.ini
+    SPECTER last-win for constructible Command Centers.
+    Had Saudi / UAE / Syria / India / Pakistan / SouthAfrica / Libya
+    with Worker + VT72B + IL-76 + Rally + Sell + Alhussaien.
+    Vietnam was omitted, so Vietnam kept falling through to
+    CommandSet_Vietnam.ini.
+
+Player-visible buttons therefore came from CommandSet_Vietnam.ini
+(the full CC), not from packed CommandSet.ini. Patching CommandSet.ini
+never reached the UI. CommandButton_Vietnam_VLMICA.ini was already
+valid and packed.
+
+2. Fix (this pack)
+------------------
+Packed into _SPEC_DATA_ONE.big:
+
+  Data\INI\CommandSet_Vietnam.ini
+    slot 3 = Command_ConstructVietnam_VL_MICA
+    slots 1 Worker, 2 VT72B, 12 IL-76, 13 Rally, 14 Sell, 15 Alhussaien
+
+  Data\INI\CommandSet_ZZZZ_CommandCenterMatchStart.ini
+    Vietnam_CommandCenterCommandSet added with the same slots.
+    Other countries in that file keep the same buttons.
+
+  Data\INI\CommandSet_ZZZZ_ZZZZZZVietnam_VL_MICA_CC.ini
+    Vietnam-only last-win; loads after MatchStart and after a leftover
+    loose CommandSet_Vietnam.ini.
+
+Winning CommandSet after this pack:
+  CommandSet_ZZZZ_ZZZZZZVietnam_VL_MICA_CC.ini
+  CommandSet Vietnam_CommandCenterCommandSet
+
+3. CommandButton (unchanged, already correct)
+---------------------------------------------
+CommandButton Command_ConstructVietnam_VL_MICA
+  Command          = UNIT_BUILD
+  Object           = Vietnam_VL_MICA
+  TextLabel        = CONTROLBAR:ConstructVietnam_VL_MICA
+  ButtonImage      = Vietnam_VL_MICA
+  ButtonBorderType = BUILD
+  DescriptLabel    = CONTROLBAR:ToolTipConstructVietnam_VL_MICA
+
+SPECTER construct buttons use TextLabel, not ButtonText
+(same as Command_ConstructVietnam_Worker / VT72B). Side = Vietnam.
+Prerequisites on Object Vietnam_VL_MICA are empty.
+
+4. Not changed
+--------------
+Object Vietnam_VL_MICA (sha 310213d0...)
+USAPAC3.ini (sha 296a2c6b...)
+ART TWO, weapons, damage, deploy, model, texture
+Other countries' Command Center slots
+
+5. Hashes
+---------
+See HASHES.txt. unzip -t on the ZIP. Generals.exe was not run.

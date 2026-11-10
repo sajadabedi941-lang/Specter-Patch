@@ -1,7 +1,8 @@
 OBJECT:America_VL_MICA = VL MICA
+OBJECT:America_VL_MICA_Missile = VL MICA Interceptor
 CONTROLBAR:ConstructAmerica_VL_MICA = VL MICA
-CONTROLBAR:ToolTipConstructAmerica_VL_MICA = America VL MICA air defense. New Donor launcher; deploy to fire against aircraft and ballistic missiles.
+CONTROLBAR:ToolTipConstructAmerica_VL_MICA = America VL MICA. New Donor launcher; THAAD interceptor fire after deploy.
 CONTROLBAR:America_VL_MICA_Deploy = Deploy
-CONTROLBAR:ToolTipAmerica_VL_MICA_Deploy = Deploy VL MICA and enable the interceptor.
+CONTROLBAR:ToolTipAmerica_VL_MICA_Deploy = Deploy VL MICA (New Donor rider unpack).
 CONTROLBAR:America_VL_MICA_Relocate = Relocate
 CONTROLBAR:ToolTipAmerica_VL_MICA_Relocate = Pack VL MICA so it can move.

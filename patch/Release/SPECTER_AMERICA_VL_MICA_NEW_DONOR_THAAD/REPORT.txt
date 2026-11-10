@@ -1,0 +1,35 @@
+SPECTER America VL MICA New Donor rebuild
+========================================
+Static validation only. Generals.exe was not launched.
+
+Cleanup
+-------
+Removed previous Vietnam_VL_MICA and America Tomahawk/CC hybrid objects,
+weapons, locos, OCLs, specials, mapped images, strings, and CC buttons.
+
+Source
+------
+New Donor Object FranceVlmica (00PMBeta993 France.ini):
+  LSFziyuan Draw / RiderChangeContain / INFANTRY riders / OCLSpecialPower
+  KindOf FS_BASE_DEFENSE POWERED PRELOAD ...
+  InitialPayload left commented (as in New Donor)
+  CWCruS300 locos (unique America names)
+
+Fire chain (THAAD only)
+-----------------------
+Copied from live packed USAPAC3.ini:
+  Weapon America_VL_MICA_THAAD  <- USAPAC3_THAADMissile_ABM
+  Object America_VL_MICA_Missile <- USAPAC3_THAAD_ABM_OBJECT
+  Weapon America_VL_MICA_ABM_Fuze
+  Locomotor THAAD_ABM_MissileLocomotor (shared, not duplicated)
+AntiAirborneVehicle=Yes kept from New Donor CWCruTEL so RIDER2
+PreferredAgainst AIRCRAFT still has a legal AA shot.
+
+Command Center
+--------------
+Packed CommandSet.ini AmericaCommandCenterCommandSet slot 2
+= Command_ConstructAmerica_VL_MICA (UNIT_BUILD, same file as USAPAC3).
+Slot 6 USAPAC3 unchanged. AirF / Lazr / SupW unchanged.
+Vietnam CC VL MICA button removed.
+
+Generals.exe was not run.

@@ -260,8 +260,19 @@ def main() -> int:
         raise SystemExit("RiderChangeContain missing")
     if "OCLSpecialPower" not in otxt:
         raise SystemExit("New Donor OCLSpecialPower deploy missing")
-    if "KindOf = CAN_ATTACK CAN_CAST_REFLECTIONS DONT_AUTO_CRUSH_INFANTRY FS_BASE_DEFENSE HUGE_VEHICLE POWERED PRELOAD SCORE SELECTABLE VEHICLE" not in otxt:
-        raise SystemExit("New Donor KindOf missing")
+    vehicle_kindof = re.search(
+        r"(?ms)^Object America_VL_MICA\s*\n.*?\n  KindOf = ([^\r\n]+)",
+        otxt,
+    )
+    if not vehicle_kindof:
+        raise SystemExit("America_VL_MICA KindOf missing")
+    if vehicle_kindof.group(1) != (
+        "CAN_ATTACK CAN_CAST_REFLECTIONS DONT_AUTO_CRUSH_INFANTRY "
+        "HUGE_VEHICLE PRELOAD SCORE SELECTABLE VEHICLE"
+    ):
+        raise SystemExit(f"America_VL_MICA KindOf mismatch: {vehicle_kindof.group(1)!r}")
+    if "FS_BASE_DEFENSE" in vehicle_kindof.group(1) or "POWERED" in vehicle_kindof.group(1):
+        raise SystemExit("America_VL_MICA KindOf still has FS_BASE_DEFENSE or POWERED")
     if "InitialPayload = America_VL_MICA_RiderPacked 1" in otxt.replace(";", ""):
         # commented payload in donor must stay commented
         pass
@@ -328,7 +339,7 @@ Source
 ------
 New Donor Object FranceVlmica (00PMBeta993 France.ini):
   LSFziyuan Draw / RiderChangeContain / INFANTRY riders / OCLSpecialPower
-  KindOf FS_BASE_DEFENSE POWERED PRELOAD ...
+  KindOf New Donor minus FS_BASE_DEFENSE POWERED (America CC UNIT_BUILD)
   InitialPayload left commented (as in New Donor)
   CWCruS300 locos (unique America names)
 

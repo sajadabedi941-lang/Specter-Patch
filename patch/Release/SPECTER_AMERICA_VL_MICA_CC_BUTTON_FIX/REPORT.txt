@@ -1,0 +1,22 @@
+SPECTER America VL MICA CC button KindOf fix
+===========================================
+Static validation only. Generals.exe was not launched.
+
+Changed
+-------
+Object America_VL_MICA KindOf only:
+  before: ... FS_BASE_DEFENSE HUGE_VEHICLE POWERED PRELOAD ...
+  after:  CAN_ATTACK CAN_CAST_REFLECTIONS DONT_AUTO_CRUSH_INFANTRY
+          HUGE_VEHICLE PRELOAD SCORE SELECTABLE VEHICLE
+
+Unchanged
+---------
+CommandSet.ini AmericaCommandCenterCommandSet slot 2 and slot 6
+CommandButton.ini Command_ConstructAmerica_VL_MICA UNIT_BUILD
+USAPAC3.ini
+THAAD fire (America_VL_MICA_THAAD / missile / fuze)
+New Donor Draw / Geometry / RiderChangeContain / OCL / locos
+AirF / Lazr / SupW CommandSets
+ART BIG
+
+Generals.exe was not run.

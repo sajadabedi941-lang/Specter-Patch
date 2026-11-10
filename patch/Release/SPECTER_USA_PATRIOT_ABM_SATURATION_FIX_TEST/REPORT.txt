@@ -1,0 +1,87 @@
+SPECTER USA Patriot ABM saturation fix
+=====================================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. Baseline
+-----------
+specter-usa-patriot-abm-startup-crash-fix-test
+  DATA  e9558d26...  374106849
+In-game: intercept/damage work; 5 Patriots vs 10 near-simultaneous BMs ~4/10.
+
+Only packed entry changed:
+  Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+  20295 -> 21021
+
+1. Cause (engine + INI evidence)
+--------------------------------
+ZH AIUpdateInterface: one current victim until that object is dead.
+Projectile in flight does not idle the launcher. Auto-acquire's
+getNextMoodTarget is the idle path (AIIdleState LOOK_FOR_TARGETS).
+findClosestEnemy: a battery of Patriots all pick the same closest BM.
+
+Default MoodAttackCheckRate = 2 seconds (LOGICFRAMES_PER_SECOND * 2)
+when the field is omitted. After BM1 dies the battery waits ~2s, then
+all five lock BM2. Sequential waves, not five parallel targets.
+
+DelayBetweenShots=800 / ClipSize=8: during a ~2–3s intercept each
+Patriot dumps extra interceptors into that one BM. Clip empties after
+a few sequential waves, then ClipReloadTime=8500. Matches ~4 kills
+then silence. HQ-9/THAAD ABM use 800 because hidden FCS objects
+(MoodAttackCheckRate=1) plus optional STATUS MASKED lock spread fire.
+Patriot has one DeployStyleAIUpdate, no FCS, no lock weapon.
+
+FiresWhileTurning=No with AcceptableAimDelta=360: turret must finish
+slewing before the next shot even though the weapon already accepts
+any aim delta.
+
+VisionRange=1200 vs AttackRange=1700: human auto-acquire uses
+WITHIN_ATTACK_RANGE but findClosestEnemy still searches vision. Outer
+500 of the ABM envelope was not auto-acquired.
+
+RequestAssistRange=10 needs AssistedTargetingUpdate (Patriot has none).
+Weapon slots remain PRIMARY 8x_LRSAM_THAAD / SECONDARY ABM. One AI
+cannot hold two victims; TERTIARY/FCS were not added.
+
+MASKED lock (THAAD_MT_LockControl_ABM) would spread targets but needs
+a new weapon/object. STATUS MASKED has no duration in WeaponTemplate;
+a miss would leave the BM untargetable. Not used.
+
+2. Fix (Object USAPAC3 only)
+----------------------------
+MoodAttackCheckRate = 1
+  Same as working SPECTER ABM FCS. Idle reacquire is 1 frame, not 2s.
+
+FiresWhileTurning = Yes
+  Removes turret-hold between sequential BMs. Guard pack/unpack,
+  InitiallyDisabled, TurretsFunctionOnlyWhenDeployed unchanged.
+
+DelayBetweenShots = 2500  (was 800)
+  About one interceptor per intercept window so ClipSize=8 lasts
+  across more sequential BMs instead of dumping into BM1–BM4.
+  PRIMARY 8x_LRSAM_THAAD stays 800.
+
+VisionRange = 1700  (was 1200)
+  Auto-acquire envelope matches ABM AttackRange.
+
+Unchanged: CRUSH fuze/warhead, ClientUpdate End, DistanceToTargetForLock,
+ClipSize, ClipReloadTime, MinimumAttackRange, projectile locomotor/Draw/
+FIREPOINT, KindOf, CommandSet, US_THAAD, Weapon.ini, other AD.
+
+3. Engine limit (not guaranteed)
+--------------------------------
+Five Patriots can still all choose the same closest BM. This pack
+shortens the cycle to the next BM and stops the clip dump. It does
+not create independent fire channels. Real 10/10 would need FCS
+children or a timed lock, which this pack does not add.
+Do not claim a guaranteed intercept rate.
+
+4. Delta / hashes
+-----------------
+vs crash-fix pack:
+  [('CHANGED', 'Data\\INI\\Object\\Specter\\PatchSystems\\AirDefense\\USAPAC3.ini', 20295, 21021)]
+Entry count 3587. ART TWO unchanged, not in ZIP.
+
+_SPEC_DATA_ONE.big  374107575  c9cb8d22544cdf09f407021c0723c797e33950fe2d41de552c9dec53a93e3bbb
+ini/USAPAC3.ini     21021  296a2c6bfb4191cb9440db6b31e85f4a07401c0a1bdfda599018d55a1034e7a2
+
+Generals.exe was not run.

@@ -3,3 +3,34 @@ __pycache__/
 
 # Vendor Specter archives — never modify; distribute unchanged alongside patch/
 # (tracked copies in repo must remain byte-identical across clients)
+
+# Rebuilt SPE DATA BIG is a GitHub Release asset, not a git blob (file >100MB)
+patch/Release/MISSILE_FACTORY_M_RS24/_SPEC_DATA_ONE.big
+patch/Release/IRAQ_FACTORY_CS_CRASH/_SPEC_DATA_ONE.big
+patch/Release/DF41_FACTORY_BALLISTIC/_SPEC_DATA_ONE.big
+patch/Release/AD_MAX_THREE/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SHAHED_RANGE/_SPEC_DATA_ONE.big
+patch/Release/WF_REMOVE_RS24_DF41_KHORMSHAR/_SPEC_DATA_ONE.big
+patch/Release/RADAR_NO_SPY_SAT/_SPEC_DATA_ONE.big
+patch/Release/CC_VT72B_NK_HWASONG/_SPEC_DATA_ONE.big
+patch/Release/MISSILE_JLMN_BUTTONS/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SHAHED_FIRE/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SHAHED_FIRE/RADAR_SHAHED_FIRE_INSTALL.zip
+patch/Release/VIETNAM_RADAR_MINIMAP/_SPEC_DATA_ONE.big
+patch/Release/VIETNAM_RADAR_MINIMAP/VIETNAM_RADAR_MINIMAP_INSTALL.zip
+patch/Release/REMOVE_ARABIC_ALLIANCE/_SPEC_DATA_ONE.big
+patch/Release/REMOVE_ARABIC_ALLIANCE/REMOVE_ARABIC_ALLIANCE_INSTALL.zip
+patch/Release/AA_COMBO_HIDE/_SPEC_DATA_ONE.big
+patch/Release/AA_COMBO_HIDE/AA_COMBO_HIDE_INSTALL.zip
+patch/Release/ISRAEL_GS/_SPEC_DATA_ONE.big
+patch/Release/ISRAEL_GS/ISRAEL_GS_INSTALL.zip
+patch/Release/INDIA_NO_DRONES/_SPEC_DATA_ONE.big
+patch/Release/INDIA_NO_DRONES/INDIA_NO_DRONES_INSTALL.zip
+patch/Release/ISRAEL_INDIA_FIXES/_SPEC_DATA_ONE.big
+patch/Release/ISRAEL_INDIA_FIXES/SPECTER_ISRAEL_INDIA_FIXES_INSTALL.zip
+patch/Release/RADAR_SARAB_LAMINA/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SARAB_LAMINA/SPECTER_RADAR_SARAB_LAMINA_INSTALL.zip
+patch/Release/RADAR_SARAB_LAMINA_19/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SARAB_LAMINA_19/SPECTER_RADAR_SARAB_LAMINA_19_INSTALL.zip
+patch/Release/RADAR_SHAHED_FIRE/_SPEC_DATA_ONE.big
+patch/Release/RADAR_SHAHED_FIRE/RADAR_SHAHED_FIRE_INSTALL.zip

@@ -1,0 +1,27 @@
+SPECTER America VL MICA TomahawkTEL crash fix
+============================================
+Static validation only. Generals.exe was not launched.
+
+Cause (PR #768)
+---------------
+America_VL_MICA mixed USAPAC3 KindOf (ATTACK_NEEDS_LINE_OF_SIGHT) with
+New Donor INFANTRY riders and no InitialPayload.
+
+Fix
+---
+Object America_VL_MICA only:
+  KindOf / DeployStyleAIUpdate from America_TomahawkTEL
+  RiderChangeContain InitialPayload + AllowInsideKindOf = PRELOAD
+  GenericFakeRider copies with Geometry
+  WeaponSet PRIMARY America_VL_MICA_TEL (None/RIDER1/RIDER2)
+  LSFziyuan packed/DEPLOYED animations kept
+
+Not changed
+-----------
+AmericaCommandCenterCommandSet slot 2
+CommandButton.ini construct button
+USAPAC3.ini
+Vietnam files
+AirF / Lazr / SupW CommandSets
+
+Generals.exe was not run.

@@ -1,0 +1,16 @@
+CONSTRUCT_BUTTON_IMAGES release assets (exact validated BIGs)
+
+_SPEC_DATA_ONE.big
+  size    373937384
+  sha256  afc804de8a92cb4ba4b527d07f84898f26704b39a548c2b2f0e6c6bb3be08b07
+
+_SPEC_ART_ONE.big
+  size    447200634
+  sha256  e796fadcae1d0184a1e79e95e32a986782562c8040c13720873916a98fe9631f
+
+Install: copy both files into the Specter game folder, replacing the existing
+_SPEC_DATA_ONE.big and _SPEC_ART_ONE.big. Do not install loose PNG/DDS/INI.
+Both BIGs are required. ART-only leaves native factory ButtonImage names
+unchanged; DATA-only leaves the new TGA files missing.
+
+In-game UI was not tested in this environment.

@@ -1,0 +1,7 @@
+baseline specter-vietnam-vl-mica-test + command-button-fix diagnosis
+  previous DATA (button-fix)  374142421  4843a5579a5dfaf2780a73bce0c3bf744b40b9de91fac8faf63456ed965399fd
+this pack _SPEC_DATA_ONE.big  374141406  9b8c109732e7d0b69b76177f32287d8e149225b3c7361bfd50b45811eef90181
+Data/INI/CommandSet_Vietnam.ini  8614  c931d9dad316aa4df165308b0fc082b46a203e7531fc3f6dd5498b3b48fd50e9
+USAPAC3.ini (unchanged)  21021  296a2c6bfb4191cb9440db6b31e85f4a07401c0a1bdfda599018d55a1034e7a2
+Vietnam_VL_MICA.ini (unchanged)  12267  310213d0a3d80fe852c6101d5d1dd20d9e8ad3d27bac4c716b880c70abea9ba6
+ZIP SPECTER_VIETNAM_VL_MICA_FINAL_BUTTON_FIX.zip  307476469  7defde6bc042d8aebfb7181790fdd068af118cfe4d74df2bd94ea59d7c758ccb

@@ -1,0 +1,3 @@
+OBJECT:AmericaVehiclePatriotMPQ65 = AN/MPQ-65 Mobile Radar
+CONTROLBAR:ConstructAmericaVehiclePatriotMPQ65 = AN/MPQ-65 Radar
+CONTROLBAR:ToolTipConstructAmericaVehiclePatriotMPQ65 = Mobile Patriot fire-control radar. Detects aircraft and missiles.

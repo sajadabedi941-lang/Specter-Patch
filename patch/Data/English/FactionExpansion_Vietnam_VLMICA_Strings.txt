@@ -1,0 +1,7 @@
+OBJECT:Vietnam_VL_MICA = VL MICA
+CONTROLBAR:ConstructVietnam_VL_MICA = VL MICA
+CONTROLBAR:ToolTipConstructVietnam_VL_MICA = Vietnam VL MICA air defense. New Donor launcher; deploy to fire against aircraft and ballistic missiles.
+CONTROLBAR:Vietnam_VL_MICA_Deploy = Deploy
+CONTROLBAR:ToolTipVietnam_VL_MICA_Deploy = Deploy VL MICA and enable the interceptor.
+CONTROLBAR:Vietnam_VL_MICA_Relocate = Relocate
+CONTROLBAR:ToolTipVietnam_VL_MICA_Relocate = Pack VL MICA so it can move.

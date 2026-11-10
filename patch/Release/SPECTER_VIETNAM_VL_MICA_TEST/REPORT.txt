@@ -1,0 +1,78 @@
+SPECTER Vietnam VL MICA
+=======================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. Source (New Donor)
+---------------------
+There is no Taiwan Object named VL MICA in New Donor TaiWan.ini.
+The only complete, buildable VL MICA is Object FranceVlmica:
+  SelectPortrait/ButtonImage = Vlmica
+  Model = LSFziyuan / LSFziyuand / LSFziyuank
+  Bones = WEAPONA / WEAPONFX, wheels WHEEL01-06
+  Deploy = RiderChangeContain (packed RIDER1, deployed RIDER2)
+  Weapon = CWCruTEL (JET_MISSILES, AntiAirborneVehicle + AntiBallisticMissile)
+  Projectile = CWCruS300Missile (model CWCruS300_m)
+  CommandSet = CWCruS300CommandSet / Deployed
+  Built in New Donor by SupW_AmericaWarFactoryCommandSet slot 8
+    (comment: France or Taiwan) -> Object FranceVlmica
+
+That is the unit transferred. Taiwan originals were not edited.
+
+1. Vietnam clone (unique names)
+-------------------------------
+Object Vietnam_VL_MICA
+Object Vietnam_VL_MICA_Missile
+Object Vietnam_VL_MICA_RiderPacked
+Object Vietnam_VL_MICA_RiderDeployed
+Weapon Vietnam_VL_MICA_TEL          (CWCruTEL stats)
+Weapon Vietnam_VL_MICA_Suicide
+Locomotor Vietnam_VL_MICA_*
+Armor Vietnam_VL_MICA_RiderArmor
+CommandButton Command_ConstructVietnam_VL_MICA  UNIT_BUILD
+CommandSet Vietnam_VL_MICA_PackedCommandSet / DeployedCommandSet
+SpecialPower SpecialAbilityVietnam_VL_MICA_Pack / Unpack
+
+Side = Vietnam. Not added to Taiwan or other CCs.
+
+2. SPECTER compatibility (documented)
+-------------------------------------
+CWC FX/audio (FX_CWCruS300MissileLaunch, WeaponFX_CWCgenLargeAntiAirMissileDetonation,
+CWCruS300MissileFlare, CWCruSS20Launch) are not in SPECTER DATA.
+Substituted with existing SPECTER FX:
+  FireFX = FX_LargeSamMissilesTubeOut
+  ProjectileDetonationFX = FX_HeavyAAMImpact
+  IgnitionFX = FX_TubedMissileLaunchIgnition_HotLaunch
+  ParticleSysBone = LargeSAMMissileTrail2
+Weapon damage, range, clip, delay, locomotor, deploy, models unchanged.
+
+3. Command Center
+-----------------
+Live packed CommandSet.ini (first-wins) was:
+  1  = Command_ConstructVietnam_VT72B
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+Now also:
+  2  = Command_ConstructVietnam_VL_MICA
+Existing buttons kept. Loose CommandSet_Vietnam.ini slot 3 added the
+same button without removing Worker / VT72B / IL-76 / Alhussaien.
+
+4. ART
+------
+From New Donor 00PMBeta993.big + DONOR_Art:
+  LSFziyuan.W3D / LSFziyuand.W3D / LSFziyuank.W3D
+  LSFKAISA.dds / LSFKAISAd.dds
+  LSFziyuan.tga / d / k
+  Vlmica.tga / VlmicaTB.tga
+  CWCruS300_m.W3D + .dds
+  CWCusHC_B.W3D
+  CWCusCameos_Command02.tga
+PAC-3 ART TWO entries kept.
+
+5. Patriot / ABM
+----------------
+Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+unchanged sha256 296a2c6bfb4191cb9440db6b31e85f4a07401c0a1bdfda599018d55a1034e7a2
+
+6. Hashes
+---------
+See HASHES.txt. unzip -t on the ZIP. Generals.exe was not run.

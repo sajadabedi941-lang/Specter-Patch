@@ -1,0 +1,105 @@
+SPECTER Vietnam VL MICA final button fix — load-order diagnosis
+==============================================================
+Static validation only. Generals.exe was not launched.
+
+0. Live chain (packed DATA, then overlay)
+-----------------------------------------
+Packed PlayerTemplate.ini:
+  PlayerTemplate FactionVietnam
+  StartingBuilding = Vietnam_CommandCenter
+
+Packed Object:
+  Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CommandCenter.ini
+  Object Vietnam_CommandCenter
+  Side = Vietnam
+  CommandSet = Vietnam_CommandCenterCommandSet
+
+Overlay (unique path, not in INIZH):
+  PlayerTemplate_SpecterPatch.ini FactionVietnam
+  StartingBuilding = Vietnam_MilitaryHQ
+  Object Vietnam_MilitaryHQ
+  CommandSet = Vietnam_MilitaryHQCommandSet
+  (Vietnam_MilitaryHQ.ini is NOT packed in _SPEC_DATA_ONE.big)
+
+Visible buttons reported in-game:
+  Worker, VT72B, IL-76, Rally, Sell, Alhussaien
+match BOTH:
+  CommandSet_Vietnam.ini  Vietnam_CommandCenterCommandSet  (original, no VL MICA)
+  CommandSet_Vietnam.ini  Vietnam_MilitaryHQCommandSet     (slot 3 empty)
+and do NOT match packed CommandSet.ini (VT72B + VL MICA + Rally + Sell only).
+
+1. Real load order (SPECTER_BASELINE_REPORT + this tree)
+--------------------------------------------------------
+Zero Hour loads every *.big in the game folder, case-insensitive
+alphabetical order. Later same-path wins. Loose Data\ beats every BIG.
+
+Typical SPECTER folder:
+  _SPEC_ART_ONE.big -> _SPEC_DATA_ONE.big -> ... -> INIZH.big
+INIZH.big wins the stock paths:
+  Data\INI\CommandSet.ini
+  Data\INI\CommandButton.ini
+
+Consequences proven here:
+- Packed CommandSet.ini inside _SPEC_DATA_ONE.big is NOT the live
+  Vietnam bar. Pack 1 put VL MICA there; the UI never showed that
+  minimal CC (no Worker / IL-76 / Alhussaien).
+- CommandSet / CommandButton names must not be redefined in a second
+  file (already defined). Unique-path files may ADD new names.
+  ZZZZ last-win files that re-declare Vietnam_CommandCenterCommandSet
+  are ignored (first definition wins) and are not packed in this ZIP.
+- Unique path Data\INI\CommandSet_Vietnam.ini is the SPECTER file
+  that actually defines Vietnam_CommandCenterCommandSet and
+  Vietnam_MilitaryHQCommandSet. INIZH does not own that filename.
+- If a loose Data\INI\CommandSet_Vietnam.ini exists (SPECTER overlay),
+  it replaces the packed file of the same path. Pack 2 packed the
+  updated CommandSet_Vietnam.ini and told the user not to copy loose
+  INI, so the original loose overlay (no VL MICA) stayed in front.
+
+2. Why the two previous packs had no UI
+---------------------------------------
+Pack specter-vietnam-vl-mica-test:
+  Edited packed CommandSet.ini (INIZH-owned path, wrong/minimal CC)
+  and added slot 3 on CommandCenter inside repo CommandSet_Vietnam.ini
+  but did not pack that file. README said replace BIGs only.
+
+Pack specter-vietnam-vl-mica-command-button-fix:
+  Packed CommandSet_Vietnam.ini (CommandCenter slot 3 only) and added
+  ZZZZ last-win files. Loose overlay still beat the packed unique path.
+  Vietnam_MilitaryHQCommandSet slot 3 was still empty. ZZZZ redefines
+  were not the winning CommandSet.
+
+3. This pack
+------------
+Single source of truth:
+  Data\INI\CommandSet_Vietnam.ini
+
+  CommandSet Vietnam_CommandCenterCommandSet
+    1 Worker  2 VT72B  3 VL MICA  12 IL-76  13 Rally  14 Sell  15 Alhussaien
+
+  CommandSet Vietnam_MilitaryHQCommandSet
+    1 Worker  2 VT72B  3 VL MICA  12 IL-76  13 Rally  14 Sell  15 Alhussaien
+
+Shipped twice so either VFS winner is covered:
+  - loose  Data\INI\CommandSet_Vietnam.ini   (beats BIG)
+  - packed Data\INI\CommandSet_Vietnam.ini   inside _SPEC_DATA_ONE.big
+
+No new ZZZZ CommandSet files.
+
+4. CommandButton (unchanged, already packed)
+--------------------------------------------
+CommandButton Command_ConstructVietnam_VL_MICA
+  Command = UNIT_BUILD
+  Object = Vietnam_VL_MICA
+  TextLabel / ButtonImage / ButtonBorderType=BUILD / DescriptLabel
+SPECTER construct buttons use TextLabel, not ButtonText.
+Object Vietnam_VL_MICA Side=Vietnam, empty Prerequisites.
+
+5. Not changed
+--------------
+Object Vietnam_VL_MICA, art, weapons, deploy, Patriot/ABM.
+USAPAC3.ini sha 296a2c6b...
+ControlBar shows slots 1-14; slot 3 is empty and visible.
+
+6. Hashes
+---------
+See HASHES.txt. unzip -t. Generals.exe was not run.

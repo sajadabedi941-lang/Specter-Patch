@@ -1,0 +1,7 @@
+DATA bytes=374096177 sha256=f046fe0258360d124f425beab00d72bafe5aacd5d12847a828004dcd98033b80 entries=3587
+CommandSet.ini unchanged sha256=f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223
+CommandButton.ini bytes=1337810 sha256=4eb2c95a9415d081bb5fbf508f25883c5afe598448f4ca70bbc6dac8b2ef6b2d
+appended Command_ConstructUSAPAC3 Object=USAPAC3 once
+removed Data\INI\CommandButton_USAPAC3.ini to avoid already-defined
+ART TWO unchanged sha256=f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42
+STATIC_OK

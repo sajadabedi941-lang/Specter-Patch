@@ -333,21 +333,40 @@ def close_fxlist_blocks(text: str) -> str:
     return "".join(out)
 
 
+def split_kind_blocks(kind: str, text: str) -> list[tuple[str, str]]:
+    """Split one INI blob into column-0 `{kind} Name` blocks. `Armor =` rows stay inside bodies."""
+    header = re.compile(rf"^{re.escape(kind)}\s+(?![=])(\S+)", re.I | re.M)
+    matches = list(header.finditer(text))
+    if not matches:
+        return []
+    out: list[tuple[str, str]] = []
+    for i, m in enumerate(matches):
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        out.append((m.group(1), text[m.start() : end].rstrip() + "\n"))
+    return out
+
+
 def dedupe_named_blocks(kind: str, chunks: list[str]) -> list[str]:
-    """Keep the first Armor/FXList/etc. body per name."""
+    """Keep the first Armor/FXList/etc. body per name.
+
+    A single chunk may contain several defs (Weapon_SilentDeath.ini). Matching
+    only the first header used to drop later unique Armor/ParticleSystem names
+    when two objects shared an earlier renamed def.
+    """
     seen: set[str] = set()
     out: list[str] = []
-    header = re.compile(rf"^{re.escape(kind)}\s+(\S+)", re.I | re.M)
     for chunk in chunks:
-        m = header.search(chunk)
-        if not m:
-            out.append(chunk)
+        blocks = split_kind_blocks(kind, chunk)
+        if not blocks:
+            if chunk.strip():
+                out.append(chunk)
             continue
-        key = m.group(1).lower()
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(chunk)
+        for name, block in blocks:
+            key = name.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(block)
     return out
 
 

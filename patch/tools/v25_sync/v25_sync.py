@@ -37,14 +37,15 @@ def main(argv: list[str] | None = None) -> int:
             "preflight",
             "e2e",
             "ready-pack",
+            "first-transfer",
             "selftest",
             "apply",
         ],
-        help="ss1-layout/catalog=SS1-rule engine; ready-pack=experimental READY DATA copy; apply is refused",
+        help="ss1-layout/catalog=SS1-rule engine; first-transfer=independent READY DATA+ART pack; apply is refused",
     )
     p.add_argument("--root", type=Path, default=ROOT, help="Specter-Patch repo root")
     p.add_argument("--object", help="Object name for plan-object")
-    p.add_argument("--out", type=Path, help="experimental output directory for pack-sample / ready-pack")
+    p.add_argument("--out", type=Path, help="experimental output directory for pack-sample / ready-pack / first-transfer")
     p.add_argument("--json", action="store_true", help="print JSON summary to stdout")
     args = p.parse_args(argv)
 
@@ -104,6 +105,8 @@ def main(argv: list[str] | None = None) -> int:
         result = eng.run_e2e()
     elif args.command == "ready-pack":
         result = eng.run_ready_pack(out_dir=args.out)
+    elif args.command == "first-transfer":
+        result = eng.run_first_transfer(out_dir=args.out)
     elif args.command in ("dry-run", "plan", "validate"):
         eng.health_report()
         result = eng.dry_run()

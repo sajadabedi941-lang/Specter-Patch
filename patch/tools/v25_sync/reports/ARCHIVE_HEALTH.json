@@ -1,0 +1,45 @@
+{
+  "generated_at_utc": "2026-11-11T01:28:52Z",
+  "generated_at_tehran": "2026-11-11 04:58 Asia/Tehran",
+  "volumes": {
+    "count": 159,
+    "min": 0,
+    "max": 158,
+    "expected_volumes": 158,
+    "missing_expected": [],
+    "extra_volumes": [
+      158
+    ],
+    "complete_for_7z": true,
+    "bytes": 4000501468
+  },
+  "volume_count": 159,
+  "expected_158_complete": true,
+  "missing_expected": [],
+  "extra_volumes": [
+    158
+  ],
+  "z62_present": true,
+  "archive_test": {
+    "ok": true,
+    "returncode": 0,
+    "tail": "\n7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20\n 64-bit locale=en_US.UTF-8 Threads:4 OPEN_MAX:524288\n\nScanning the drive for archives:\n1 file, 24301276 bytes (24 MiB)\n\nTesting archive: /tmp/v25_src/V25.zip\n--\nPath = /tmp/v25_src/V25.zip\nType = zip\nPhysical Size = 24301276\nEmbedded Stub Size = 4\nTotal Physical Size = 3975335644\nMultivolume = +\nVolume Index = 157\nVolumes = 158\n\nEverything is Ok\n\nFolders: 237\nFiles: 12361\nSize:       7633881130\nCompressed: 3975335644"
+  },
+  "listing_tail": "2025-10-31 18:08:56 ....A     60329984     20005874  Generals Silent Death V25/WYS/generalszh.pdb\n2003-01-17 11:53:50 ....A      7655905       577852  Generals Silent Death V25/WYS/INI.big\n2003-01-17 11:53:10 ....A     23306524     13841675  Generals Silent Death V25/WYS/Maps.big\n2004-09-25 21:38:50 ....A      7875539      7202218  Generals Silent Death V25/WYS/Music.big\n2004-04-26 15:51:54 ....A        81523        11137  Generals Silent Death V25/WYS/register.REG\n2003-01-12 19:03:30 ....A     13479230     12094029  Generals Silent Death V25/WYS/Speech.big\n2003-01-12 19:02:56 ....A    269104188    239187621  Generals Silent Death V25/WYS/SpeechEnglish.big\n2003-01-12 18:59:36 ....A     48342856     40855622  Generals Silent Death V25/WYS/Terrain.big\n2003-01-12 19:01:18 ....A    333031108    156537125  Generals Silent Death V25/WYS/Textures.big\n2003-01-12 19:00:42 ....A    184549391     76145631  Generals Silent Death V25/WYS/W3D.big\n2003-01-13 04:38:06 ....A      7944716       173551  Generals Silent Death V25/WYS/Window.big\n2025-10-31 18:08:56 ....A      7225344      2997941  Generals Silent Death V25/WYS/WorldBuilderZH.exe\n2025-10-31 18:08:56 ....A     64057344     22529278  Generals Silent Death V25/WYS/WorldBuilderZH.pdb\n2025-05-13 20:47:06 ....A       735616       367310  Generals Silent Death V25/xaudio2_9redist.dll\n2025-05-29 15:10:36 ....A        78848        45649  Generals Silent Death V25/zlib1.dll\n2011-01-18 20:41:16 ....A          120          101  Generals Silent Death V25/\u4f7f\u7528\u65b9\u6cd5.txt\n------------------- ----- ------------ ------------  ------------------------\n2026-11-10 15:32:00         7633881130   3972637644  12361 files, 237 folders\n\n------------------- ----- ------------ ------------  ------------------------\n2026-11-10 15:32:00         7633881130   3972637644  12361 files, 237 folders\n\nArchives: 1\nVolumes: 158\nTotal archives size: 3975335644",
+  "specter_baseline": {
+    "folder": "/tmp/ss1/SPECTER FINAL (GeneralsMode.com)",
+    "present": true,
+    "_SPEC_DATA_ONE.big": {
+      "bytes": 374093201,
+      "sha256": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343"
+    },
+    "_SPEC_ART_TWO.big": {
+      "bytes": 312978491,
+      "sha256": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+    },
+    "_SPEC_ART_ONE.big": "not in SPECTER FINAL overlay folder",
+    "loose_CommandSet.ini": true,
+    "loose_CommandButton.ini": true
+  },
+  "stage1_writes_game_bigs": false
+}

@@ -1,0 +1,1898 @@
+{
+  "generated_at_tehran": "2026-11-11 04:59 Asia/Tehran",
+  "game_bigs_modified": false,
+  "generals_exe_run": false,
+  "archive_complete": true,
+  "objects_scanned": 6207,
+  "missing_refs": {
+    "MappedImage": 64794,
+    "AudioEvent": 1346,
+    "Object": 7593,
+    "ObjectCreationList": 3868,
+    "FXList": 1505,
+    "ParticleSystem": 473,
+    "CommandSet": 17,
+    "CommandButton": 11
+  },
+  "collisions": {
+    "unique_v25": 5374,
+    "collision_rename": 628,
+    "shared_identical": 205
+  },
+  "incomplete_sample": [
+    {
+      "object": "AdmiralkuznetsovAP",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AH6",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AirF_adswAmericaJetRaptorawdwa",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaAirfield",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaBarracks",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
+      ]
+    },
+    {
+      "object": "AirF_AmericaCommandCenter",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "Object:SDGowind"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryColonelBurton",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryColonelBurtonsadas",
+      "missing": [
+        "Object:FRADeltaDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryMissileDefender",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryPathfinder",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:KORSniperDeathRider2"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryPilot",
+      "missing": [
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma"
+      ]
+    },
+    {
+      "object": "AirF_AmericaInfantryRanger",
+      "missing": [
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:KDeathRider2",
+        "Object:KDeathRider3"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetA10Thunderbolt",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetAurora",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetB52",
+      "missing": [
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetCargoPlane",
+      "missing": [
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetRaptor",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship1",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship2",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship3",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaJetStealthFighter",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AirF_AmericaParticleCannonUplink",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3"
+      ]
+    },
+    {
+      "object": "AirF_AmericaStrategyCenter",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AirF_AmericaSupplyDropZone",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AirF_AmericaTankAvenger",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaTankAvengerawdaswd",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaTankMicrowavedfszdf",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleBattleDrone",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleChinook",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleComanche",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleDozer",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "Object:SDGowind"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleHumveedasdwa",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "Object:Lazr_OCL_AmericanBattleDrone"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleSentryDronedwdas",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleTomahawk",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleTomahawksss",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_AmericaWarFactory",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AirF_asdAmericaVehicleComancheasd",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "Algeria2K12",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "Algeria2S1",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AlgeriaAirfield",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaANKA",
+      "missing": [
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaBarracks",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
+      ]
+    },
+    {
+      "object": "AlgeriaBukM",
+      "missing": [
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris"
+      ]
+    },
+    {
+      "object": "AlgeriaCommandCenter",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaDog",
+      "missing": [
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma"
+      ]
+    },
+    {
+      "object": "AlgeriaDozer",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3",
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3",
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KOREngineerDeathRider2",
+        "Object:KORInfMedicDeathRider2",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaDZJetCargoPlane",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3"
+      ]
+    },
+    {
+      "object": "AlgeriaEngineer",
+      "missing": [
+        "Object:KOREngineerDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AlgeriaHeavyAssault",
+      "missing": [
+        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AlgeriaMedic",
+      "missing": [
+        "Object:KORInfMedicDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AlgeriaMIG29",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaMoratar",
+      "missing": [
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ToxicInfantryBeta"
+      ]
+    },
+    {
+      "object": "AlgeriaRPGSoldier",
+      "missing": [
+        "Object:KAntiTankDeathRider2",
+        "Object:KAntiTankDeathRider3"
+      ]
+    },
+    {
+      "object": "AlgeriaSealforces",
+      "missing": [
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma"
+      ]
+    },
+    {
+      "object": "AlgeriaSniper",
+      "missing": [
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AlgeriaSoldier",
+      "missing": [
+        "Object:KDeathRider2",
+        "Object:KDeathRider3"
+      ]
+    },
+    {
+      "object": "AlgeriaSpecialForces",
+      "missing": [
+        "FXList:FX_CWCgenInfDeathNoRevive"
+      ]
+    },
+    {
+      "object": "AlgeriaSpecialPilot",
+      "missing": [
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
+      ]
+    },
+    {
+      "object": "AlgeriaStrategyCenter",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaSU24",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AlgeriaSU30",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AlgeriaSU30JetAurora",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AlgeriaTORM",
+      "missing": [
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris"
+      ]
+    },
+    {
+      "object": "AlgeriaTos",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails"
+      ]
+    },
+    {
+      "object": "AlgeriaWarFactory",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris"
+      ]
+    },
+    {
+      "object": "AlgeriaWarFactoryII",
+      "missing": [
+        "ObjectCreationList:OCL_TankDeathTrails",
+        "FXList:FX_GenericTankDeathExplosionHuge",
+        "ObjectCreationList:OCL_ChinaTanknoDebris"
+      ]
+    },
+    {
+      "object": "AlgeriaWingLong",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AmericaA10",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AmericaAircraftCarrier",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding"
+      ]
+    },
+    {
+      "object": "AmericaAircraftCarrierCVNNormal",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AmericaAirCraftHelix",
+      "missing": [
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaAirfield",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AmericaB2",
+      "missing": [
+        "Object:AircraftBomSubduer"
+      ]
+    },
+    {
+      "object": "AmericaBarracks",
+      "missing": [
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
+      ]
+    },
+    {
+      "object": "AmericaBattleShipALBOK",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaBattleShipDDG1000",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaBattleShipLCS1",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaBattleShipLCS2",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaBornACship",
+      "missing": [
+        "Object:AircraftBomSubduerBuilding",
+        "Object:AircraftBomSubduer",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3",
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "ObjectCreationList:OCL_hkmj2"
+      ]
+    },
+    {
+      "object": "AmericaC17JetCargoPlane",
+      "missing": [
+        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAEngineerDeathRider2",
+        "Object:USADeltaDeathRider2",
+        "Object:ToxicInfantryBeta",
+        "Object:ToxicInfantryGamma",
+        "Object:USAInfMedicDeathRider2",
+        "Object:USASniperDeathRider2",
+        "FXList:FX_InfantryDieGib",
+        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
+        "Object:ElectricDog",
+        "Object:ToxicDog",
+        "Object:ToxicDogGamma",
+        "ObjectCreationList:OCL_FlamingInfantryUSA",
+        "ObjectCreationList:OCL_RadiationInfantry",
+        "ObjectCreationList:OCL_InfantryMineExplode",
+        "ObjectCreationList:OCL_ToxicInfantryFrightening",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
+        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
+        "Object:USADeathRider2",
+        "Object:USADeathRider3"
+      ]
+    }
+  ],
+  "impact_sample": [
+    {
+      "object": "1000DollarCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_1000DollarCrate and rewrite every ref. SPECTER original 1000DollarCrate stays."
+    },
+    {
+      "object": "100DollarCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_100DollarCrate and rewrite every ref. SPECTER original 100DollarCrate stays."
+    },
+    {
+      "object": "100DollarCrateForBuildings",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_100DollarCrateForBuildings and rewrite every ref. SPECTER original 100DollarCrateForBuildings stays."
+    },
+    {
+      "object": "1500DollarCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_1500DollarCrate and rewrite every ref. SPECTER original 1500DollarCrate stays."
+    },
+    {
+      "object": "200DollarCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_200DollarCrate and rewrite every ref. SPECTER original 200DollarCrate stays."
+    },
+    {
+      "object": "2500DollarCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_2500DollarCrate and rewrite every ref. SPECTER original 2500DollarCrate stays."
+    },
+    {
+      "object": "2FreeCrusadersCrate",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_2FreeCrusadersCrate and rewrite every ref. SPECTER original 2FreeCrusadersCrate stays."
+    },
+    {
+      "object": "AFG_AmericaVehicleChinook",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AFG_AmericaVehicleChinook and rewrite every ref. SPECTER original AFG_AmericaVehicleChinook stays."
+    },
+    {
+      "object": "AirF_AmericaAirfield",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaAirfield and rewrite every ref. SPECTER original AirF_AmericaAirfield stays."
+    },
+    {
+      "object": "AirF_AmericaBarracks",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaBarracks and rewrite every ref. SPECTER original AirF_AmericaBarracks stays."
+    },
+    {
+      "object": "AirF_AmericaCommandCenter",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaCommandCenter and rewrite every ref. SPECTER original AirF_AmericaCommandCenter stays."
+    },
+    {
+      "object": "AirF_AmericaCrateParachute",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaCrateParachute and rewrite every ref. SPECTER original AirF_AmericaCrateParachute stays."
+    },
+    {
+      "object": "AirF_AmericaFireBase",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaFireBase and rewrite every ref. SPECTER original AirF_AmericaFireBase stays."
+    },
+    {
+      "object": "AirF_AmericaInfantryColonelBurton",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaInfantryColonelBurton and rewrite every ref. SPECTER original AirF_AmericaInfantryColonelBurton stays."
+    },
+    {
+      "object": "AirF_AmericaInfantryMissileDefender",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaInfantryMissileDefender and rewrite every ref. SPECTER original AirF_AmericaInfantryMissileDefender stays."
+    },
+    {
+      "object": "AirF_AmericaInfantryPathfinder",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaInfantryPathfinder and rewrite every ref. SPECTER original AirF_AmericaInfantryPathfinder stays."
+    },
+    {
+      "object": "AirF_AmericaInfantryPilot",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaInfantryPilot and rewrite every ref. SPECTER original AirF_AmericaInfantryPilot stays."
+    },
+    {
+      "object": "AirF_AmericaInfantryRanger",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaInfantryRanger and rewrite every ref. SPECTER original AirF_AmericaInfantryRanger stays."
+    },
+    {
+      "object": "AirF_AmericaJetA10Thunderbolt",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetA10Thunderbolt and rewrite every ref. SPECTER original AirF_AmericaJetA10Thunderbolt stays."
+    },
+    {
+      "object": "AirF_AmericaJetAurora",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetAurora and rewrite every ref. SPECTER original AirF_AmericaJetAurora stays."
+    },
+    {
+      "object": "AirF_AmericaJetB3",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetB3 and rewrite every ref. SPECTER original AirF_AmericaJetB3 stays."
+    },
+    {
+      "object": "AirF_AmericaJetB52",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetB52 and rewrite every ref. SPECTER original AirF_AmericaJetB52 stays."
+    },
+    {
+      "object": "AirF_AmericaJetCargoPlane",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetCargoPlane and rewrite every ref. SPECTER original AirF_AmericaJetCargoPlane stays."
+    },
+    {
+      "object": "AirF_AmericaJetRaptor",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetRaptor and rewrite every ref. SPECTER original AirF_AmericaJetRaptor stays."
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship1",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetSpectreGunship1 and rewrite every ref. SPECTER original AirF_AmericaJetSpectreGunship1 stays."
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship2",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetSpectreGunship2 and rewrite every ref. SPECTER original AirF_AmericaJetSpectreGunship2 stays."
+    },
+    {
+      "object": "AirF_AmericaJetSpectreGunship3",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetSpectreGunship3 and rewrite every ref. SPECTER original AirF_AmericaJetSpectreGunship3 stays."
+    },
+    {
+      "object": "AirF_AmericaJetStealthFighter",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaJetStealthFighter and rewrite every ref. SPECTER original AirF_AmericaJetStealthFighter stays."
+    },
+    {
+      "object": "AirF_AmericaParachute",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaParachute and rewrite every ref. SPECTER original AirF_AmericaParachute stays."
+    },
+    {
+      "object": "AirF_AmericaParticleCannonUplink",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaParticleCannonUplink and rewrite every ref. SPECTER original AirF_AmericaParticleCannonUplink stays."
+    },
+    {
+      "object": "AirF_AmericaPatriotBattery",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaPatriotBattery and rewrite every ref. SPECTER original AirF_AmericaPatriotBattery stays."
+    },
+    {
+      "object": "AirF_AmericaPowerPlant",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaPowerPlant and rewrite every ref. SPECTER original AirF_AmericaPowerPlant stays."
+    },
+    {
+      "object": "AirF_AmericaStrategyCenter",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaStrategyCenter and rewrite every ref. SPECTER original AirF_AmericaStrategyCenter stays."
+    },
+    {
+      "object": "AirF_AmericaSupplyCenter",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaSupplyCenter and rewrite every ref. SPECTER original AirF_AmericaSupplyCenter stays."
+    },
+    {
+      "object": "AirF_AmericaSupplyDropZone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaSupplyDropZone and rewrite every ref. SPECTER original AirF_AmericaSupplyDropZone stays."
+    },
+    {
+      "object": "AirF_AmericaTankAvenger",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaTankAvenger and rewrite every ref. SPECTER original AirF_AmericaTankAvenger stays."
+    },
+    {
+      "object": "AirF_AmericaTankAvengerLaserTurret",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaTankAvengerLaserTurret and rewrite every ref. SPECTER original AirF_AmericaTankAvengerLaserTurret stays."
+    },
+    {
+      "object": "AirF_AmericaTankMicrowave",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaTankMicrowave and rewrite every ref. SPECTER original AirF_AmericaTankMicrowave stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleBattleDrone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleBattleDrone and rewrite every ref. SPECTER original AirF_AmericaVehicleBattleDrone stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleComanche",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleComanche and rewrite every ref. SPECTER original AirF_AmericaVehicleComanche stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleDozer",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleDozer and rewrite every ref. SPECTER original AirF_AmericaVehicleDozer stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleHellfireDrone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleHellfireDrone and rewrite every ref. SPECTER original AirF_AmericaVehicleHellfireDrone stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleHumvee",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleHumvee and rewrite every ref. SPECTER original AirF_AmericaVehicleHumvee stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleMedic",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleMedic and rewrite every ref. SPECTER original AirF_AmericaVehicleMedic stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleScoutDrone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleScoutDrone and rewrite every ref. SPECTER original AirF_AmericaVehicleScoutDrone stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleSentryDrone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleSentryDrone and rewrite every ref. SPECTER original AirF_AmericaVehicleSentryDrone stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleSpyDrone",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleSpyDrone and rewrite every ref. SPECTER original AirF_AmericaVehicleSpyDrone stays."
+    },
+    {
+      "object": "AirF_AmericaVehicleTomahawk",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaVehicleTomahawk and rewrite every ref. SPECTER original AirF_AmericaVehicleTomahawk stays."
+    },
+    {
+      "object": "AirF_AmericaWarFactory",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AmericaWarFactory and rewrite every ref. SPECTER original AirF_AmericaWarFactory stays."
+    },
+    {
+      "object": "AirF_AuroraBomb",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_AuroraBomb and rewrite every ref. SPECTER original AirF_AuroraBomb stays."
+    },
+    {
+      "object": "AirF_ComancheBlades",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_ComancheBlades and rewrite every ref. SPECTER original AirF_ComancheBlades stays."
+    },
+    {
+      "object": "AirF_LargeParachute",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_LargeParachute and rewrite every ref. SPECTER original AirF_LargeParachute stays."
+    },
+    {
+      "object": "AirF_SpectreGunshipHowitzer",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirF_SpectreGunshipHowitzer and rewrite every ref. SPECTER original AirF_SpectreGunshipHowitzer stays."
+    },
+    {
+      "object": "AirfieldHanger01",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirfieldHanger01 and rewrite every ref. SPECTER original AirfieldHanger01 stays."
+    },
+    {
+      "object": "AirfieldHanger02",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AirfieldHanger02 and rewrite every ref. SPECTER original AirfieldHanger02 stays."
+    },
+    {
+      "object": "AmericaAircraftCarrier",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaAircraftCarrier and rewrite every ref. SPECTER original AmericaAircraftCarrier stays."
+    },
+    {
+      "object": "AmericaAirfield",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaAirfield and rewrite every ref. SPECTER original AmericaAirfield stays."
+    },
+    {
+      "object": "AmericaBarracks",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaBarracks and rewrite every ref. SPECTER original AmericaBarracks stays."
+    },
+    {
+      "object": "AmericaCheckpoint",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaCheckpoint and rewrite every ref. SPECTER original AmericaCheckpoint stays."
+    },
+    {
+      "object": "AmericaCommandCenter",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaCommandCenter and rewrite every ref. SPECTER original AmericaCommandCenter stays."
+    },
+    {
+      "object": "AmericaCrateParachute",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaCrateParachute and rewrite every ref. SPECTER original AmericaCrateParachute stays."
+    },
+    {
+      "object": "AmericaFireBase",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaFireBase and rewrite every ref. SPECTER original AmericaFireBase stays."
+    },
+    {
+      "object": "AmericaInfantryBiohazardTech",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryBiohazardTech and rewrite every ref. SPECTER original AmericaInfantryBiohazardTech stays."
+    },
+    {
+      "object": "AmericaInfantryCIAOfficer",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryCIAOfficer and rewrite every ref. SPECTER original AmericaInfantryCIAOfficer stays."
+    },
+    {
+      "object": "AmericaInfantryColonelBurton",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryColonelBurton and rewrite every ref. SPECTER original AmericaInfantryColonelBurton stays."
+    },
+    {
+      "object": "AmericaInfantryMissileDefender",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryMissileDefender and rewrite every ref. SPECTER original AmericaInfantryMissileDefender stays."
+    },
+    {
+      "object": "AmericaInfantryOfficer",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryOfficer and rewrite every ref. SPECTER original AmericaInfantryOfficer stays."
+    },
+    {
+      "object": "AmericaInfantryPathfinder",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryPathfinder and rewrite every ref. SPECTER original AmericaInfantryPathfinder stays."
+    },
+    {
+      "object": "AmericaInfantryPilot",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryPilot and rewrite every ref. SPECTER original AmericaInfantryPilot stays."
+    },
+    {
+      "object": "AmericaInfantryRanger",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantryRanger and rewrite every ref. SPECTER original AmericaInfantryRanger stays."
+    },
+    {
+      "object": "AmericaInfantrySecretService",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaInfantrySecretService and rewrite every ref. SPECTER original AmericaInfantrySecretService stays."
+    },
+    {
+      "object": "AmericaJetA10Thunderbolt",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetA10Thunderbolt and rewrite every ref. SPECTER original AmericaJetA10Thunderbolt stays."
+    },
+    {
+      "object": "AmericaJetAircraftCarrierRaptor",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetAircraftCarrierRaptor and rewrite every ref. SPECTER original AmericaJetAircraftCarrierRaptor stays."
+    },
+    {
+      "object": "AmericaJetAurora",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetAurora and rewrite every ref. SPECTER original AmericaJetAurora stays."
+    },
+    {
+      "object": "AmericaJetB3",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetB3 and rewrite every ref. SPECTER original AmericaJetB3 stays."
+    },
+    {
+      "object": "AmericaJetB52",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetB52 and rewrite every ref. SPECTER original AmericaJetB52 stays."
+    },
+    {
+      "object": "AmericaJetCargoPlane",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetCargoPlane and rewrite every ref. SPECTER original AmericaJetCargoPlane stays."
+    },
+    {
+      "object": "AmericaJetEA18G",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetEA18G and rewrite every ref. SPECTER original AmericaJetEA18G stays."
+    },
+    {
+      "object": "AmericaJetRaptor",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetRaptor and rewrite every ref. SPECTER original AmericaJetRaptor stays."
+    },
+    {
+      "object": "AmericaJetSpectreGunship",
+      "risk": "name collision with SPECTER Object; future apply must rename to SD25_AmericaJetSpectreGunship and rewrite every ref. SPECTER original AmericaJetSpectreGunship stays."
+    }
+  ],
+  "impact_count": 628,
+  "protected_hits_sample": [
+    {
+      "object": "00qsnOffice01",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice02",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice03",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice04",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice05",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice06",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice07",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice08",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice09",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice10",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice11",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "00qsnOffice12",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "BattleMasterTankGun",
+      "planned": "SD25_BattleMasterTankGun"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "HellfireMissileWeapon",
+      "planned": "SD25_HellfireMissileWeapon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "HumveeGun",
+      "planned": "SD25_HumveeGun"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "ListeningOutpostUpgradedDummyWeapon",
+      "planned": "SD25_ListeningOutpostUpgradedDummyWeapon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "ScorpionTankGun",
+      "planned": "SD25_ScorpionTankGun"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "SmallRadiationFieldWeapon",
+      "planned": "SD25_SmallRadiationFieldWeapon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Weapon",
+      "name": "TechnicalMachineGunWeapon",
+      "planned": "SD25_TechnicalMachineGunWeapon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "AntiAirVehicle",
+      "planned": "SD25_AntiAirVehicle"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "AssaultCrawlerArmor",
+      "planned": "SD25_AssaultCrawlerArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "BallisticMissileArmor",
+      "planned": "SD25_BallisticMissileArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "ComancheArmor",
+      "planned": "SD25_ComancheArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "CountermeasuresComancheArmor",
+      "planned": "SD25_CountermeasuresComancheArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "DozerArmor",
+      "planned": "SD25_DozerArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "HazardousMaterialArmor",
+      "planned": "SD25_HazardousMaterialArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "HazMatHumanArmor",
+      "planned": "SD25_HazMatHumanArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "HumveeArmor",
+      "planned": "SD25_HumveeArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "InfGen_HumanArmor",
+      "planned": "SD25_InfGen_HumanArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "InvulnerableAllArmor",
+      "planned": "SD25_InvulnerableAllArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "ProjectileArmor",
+      "planned": "SD25_ProjectileArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "StructureArmor",
+      "planned": "SD25_StructureArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Armor",
+      "name": "TankArmor",
+      "planned": "SD25_TankArmor"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "FXList",
+      "name": "WeaponFX_JetMissileDetonation",
+      "planned": "SD25_WeaponFX_JetMissileDetonation"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "FXList",
+      "name": "WeaponFX_RocketBuggyMissileDetonation",
+      "planned": "SD25_WeaponFX_RocketBuggyMissileDetonation"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "ObjectCreationList",
+      "name": "OCL_AmericanBattleDrone",
+      "planned": "SD25_OCL_AmericanBattleDrone"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "ObjectCreationList",
+      "name": "OCL_AmericanHellfireDrone",
+      "planned": "SD25_OCL_AmericanHellfireDrone"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "ObjectCreationList",
+      "name": "OCL_InitialListeningOutpostDebris",
+      "planned": "SD25_OCL_InitialListeningOutpostDebris"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "AmericaSupplyCenterCommandSet",
+      "planned": "SD25_AmericaSupplyCenterCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "AmericaVehicleChinookCommandSet",
+      "planned": "SD25_AmericaVehicleChinookCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "AmericaVehicleHumveeCommandSet",
+      "planned": "SD25_AmericaVehicleHumveeCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "AmericaWarFactoryCommandSet",
+      "planned": "SD25_AmericaWarFactoryCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaPropagandaCenterCommandSet",
+      "planned": "SD25_ChinaPropagandaCenterCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaPropagandaCenterCommandSetUpgrade",
+      "planned": "SD25_ChinaPropagandaCenterCommandSetUpgrade"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaSupplyCenterCommandSet",
+      "planned": "SD25_ChinaSupplyCenterCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaSupplyCenterCommandSetUpgrade",
+      "planned": "SD25_ChinaSupplyCenterCommandSetUpgrade"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaTroopCrawlerCommandSet",
+      "planned": "SD25_ChinaTroopCrawlerCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "ChinaWarFactoryCommandSet",
+      "planned": "SD25_ChinaWarFactoryCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "Infa_ChinaTroopCrawlerCommandSet",
+      "planned": "SD25_Infa_ChinaTroopCrawlerCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandSet",
+      "name": "SupW_AmericaTankAvengerCommandSet",
+      "planned": "SD25_SupW_AmericaTankAvengerCommandSet"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_AttackMove",
+      "planned": "SD25_Command_AttackMove"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ChinookUnload",
+      "planned": "SD25_Command_ChinookUnload"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_CombatDrop",
+      "planned": "SD25_Command_CombatDrop"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructAmericaTankCrusader",
+      "planned": "SD25_Command_ConstructAmericaTankCrusader"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructAmericaVehicleAvenger",
+      "planned": "SD25_Command_ConstructAmericaVehicleAvenger"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructAmericaVehicleMedic",
+      "planned": "SD25_Command_ConstructAmericaVehicleMedic"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructAmericaVehicleMicrowave",
+      "planned": "SD25_Command_ConstructAmericaVehicleMicrowave"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructAmericaVehicleTomahawk",
+      "planned": "SD25_Command_ConstructAmericaVehicleTomahawk"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaTankBattleMaster",
+      "planned": "SD25_Command_ConstructChinaTankBattleMaster"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaTankDragon",
+      "planned": "SD25_Command_ConstructChinaTankDragon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaTankGattling",
+      "planned": "SD25_Command_ConstructChinaTankGattling"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaTankOverlord",
+      "planned": "SD25_Command_ConstructChinaTankOverlord"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleHelix",
+      "planned": "SD25_Command_ConstructChinaVehicleHelix"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleInfernoCannon",
+      "planned": "SD25_Command_ConstructChinaVehicleInfernoCannon"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleListeningOutpost",
+      "planned": "SD25_Command_ConstructChinaVehicleListeningOutpost"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleNukeLauncher",
+      "planned": "SD25_Command_ConstructChinaVehicleNukeLauncher"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleSupplyTruck",
+      "planned": "SD25_Command_ConstructChinaVehicleSupplyTruck"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaVehicleTroopCrawler",
+      "planned": "SD25_Command_ConstructChinaVehicleTroopCrawler"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_EmptyCrawler",
+      "planned": "SD25_Command_EmptyCrawler"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_Evacuate",
+      "planned": "SD25_Command_Evacuate"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_Guard",
+      "planned": "SD25_Command_Guard"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_Sell",
+      "planned": "SD25_Command_Sell"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_SetRallyPoint",
+      "planned": "SD25_Command_SetRallyPoint"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_Stop",
+      "planned": "SD25_Command_Stop"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_TransportExit",
+      "planned": "SD25_Command_TransportExit"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_UpgradeAmericaCountermeasures",
+      "planned": "SD25_Command_UpgradeAmericaCountermeasures"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_UpgradeAmericaLaserMissiles",
+      "planned": "SD25_Command_UpgradeAmericaLaserMissiles"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "CommandButton",
+      "name": "Command_UpgradeComancheRocketPods",
+      "planned": "SD25_Command_UpgradeComancheRocketPods"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Upgrade",
+      "name": "Upgrade_AmericaCountermeasures",
+      "planned": "SD25_Upgrade_AmericaCountermeasures"
+    },
+    {
+      "object": "07BZCG",
+      "kind": "Upgrade",
+      "name": "Upgrade_AmericaLaserMissiles",
+      "planned": "SD25_Upgrade_AmericaLaserMissiles"
+    }
+  ],
+  "protected_hits": 93968,
+  "validation": {
+    "missing_refs_scanned": true,
+    "name_collisions_scanned": true,
+    "incomplete_deps_scanned": true,
+    "object_weapon_ocl_fx_scanned": true,
+    "output_big_not_written": true,
+    "before_after_diff": "no game files changed; diff is empty by design",
+    "specter_behavior_impact_if_applied_later": "Colliding names would be renamed to SD25_* so original SPECTER defs stay. Public CommandSet.ini / CommandButton.ini / Weapon.ini / Armor.ini are blocked. Future apply must use unique-path INI only."
+  }
+}

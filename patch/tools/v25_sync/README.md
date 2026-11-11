@@ -27,6 +27,7 @@ python3 patch/tools/v25_sync/v25_sync.py selftest
 python3 patch/tools/v25_sync/v25_sync.py ss1-layout --json
 python3 patch/tools/v25_sync/v25_sync.py catalog --json
 python3 patch/tools/v25_sync/v25_sync.py e2e --json
+python3 patch/tools/v25_sync/v25_sync.py ready-pack --out /tmp/v25_ready_pack --json
 python3 patch/tools/v25_sync/v25_sync.py health --json
 python3 patch/tools/v25_sync/v25_sync.py dry-run --json
 python3 patch/tools/v25_sync/v25_sync.py resolve --json
@@ -36,7 +37,7 @@ python3 patch/tools/v25_sync/v25_sync.py pack-sample --out /tmp/v25_stage5_pack 
 python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
 ```
 
-Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `pack-sample`, `plan-object`, `ss1-layout`, `catalog`, `preflight`, `e2e`.  
+Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `pack-sample`, `plan-object`, `ss1-layout`, `catalog`, `preflight`, `e2e`, `ready-pack`.  
 `apply` always exits with an error. See `ENGINE.md`.
 
 Cache/extract live under `/tmp/v25_src`, `/tmp/v25_extract`, `/tmp/ss1` — not inside the repo.
@@ -53,6 +54,7 @@ Written to `patch/tools/v25_sync/reports/`:
 | `MANIFEST.json` | Stage-1 bundle metadata (no game files) |
 | `DRY_RUN.md` / `.json` | Full scan, collisions, incomplete trees, impact notes |
 | `STAGE5_PACK.md` / `.json` | Experimental DATA+ART BIG pack report (hashes, slots, limitations) |
+| `READY_PACK.md` / `.json` | Byte Ready Gate experimental DATA copy (small READY group, dry-run) |
 | `STAGE5_INSTALL.txt` / `STAGE5_REVERT.txt` | Install / revert for the experimental ZIP |
 
 ## SPECTER protection

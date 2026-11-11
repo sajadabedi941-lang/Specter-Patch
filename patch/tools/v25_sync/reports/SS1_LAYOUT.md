@@ -41,6 +41,25 @@
 - `PlayerTemplate_*`
 - `ControlBarScheme_*`
 
+## Proven root kinds (stock table + extra root loader)
+
+- Extra root INI: **157**
+- `Armor`: stock `Armor.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `Locomotor`: stock `Locomotor.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `FXList`: stock `FXList.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `DamageFX`: stock `DamageFX.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `CrateData`: stock `Crate.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `CrateTemplate`: stock `Crate.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `ParticleSystem`: stock `ParticleSystem.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `AudioEvent`: stock `SoundEffects.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `Weapon`: stock `Weapon.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `CommandSet`: stock `CommandSet.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `CommandButton`: stock `CommandButton.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `ObjectCreationList`: stock `ObjectCreationList.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `SpecialPower`: stock `SpecialPower.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `Upgrade`: stock `Upgrade.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+- `Science`: stock `Science.ini` is at Data\INI root with 157 extra root INI (including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token.
+
 ## Emit paths (SS1-safe)
 
 - Object: `Data\INI\Object\SilentDeath\{Side}\{Name}.ini`

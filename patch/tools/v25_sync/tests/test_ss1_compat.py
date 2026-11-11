@@ -24,6 +24,12 @@ class LayoutTests(unittest.TestCase):
         self.assertTrue(got["loaded"])
         self.assertEqual(got["confidence"], "proven")
 
+    def test_armor_extra_is_proven_same_loader_as_weapon(self):
+        got = ss1_layout.path_loadable(r"Data\INI\Armor_SilentDeath.ini")
+        self.assertTrue(got["loaded"])
+        self.assertEqual(got["confidence"], "proven")
+        self.assertNotEqual(got["confidence"], "likely")
+
     def test_flat_weapon_dir_file_is_proven(self):
         got = ss1_layout.path_loadable(r"Data\INI\Weapon\Weapon_China_Missiles.ini")
         self.assertTrue(got["loaded"])

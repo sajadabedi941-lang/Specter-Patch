@@ -1,0 +1,89 @@
+{
+  "mode": "ready-pack-dry-run",
+  "generated_at_tehran": "2026-11-11 17:10 Asia/Tehran",
+  "applies_to_original_specter": false,
+  "game_bigs_modified": false,
+  "original_hashes_unchanged": true,
+  "original_hashes": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "generals_exe_run": false,
+  "loose_ini_written": false,
+  "equipment_imported": false,
+  "catalog_counts": {
+    "unique_import_ready": 3304,
+    "ready_for_safe_transfer": 3908,
+    "rename_or_reuse": 604,
+    "needs_fix": 1392,
+    "MANUAL_REBUILD": 689,
+    "blocked": 218
+  },
+  "ready_selected": [
+    "TomahawkMissile",
+    "ScudStormMissile",
+    "AuroraBomb",
+    "PatriotMissile"
+  ],
+  "objects": [
+    {
+      "object": "TomahawkMissile",
+      "planned_name": "SD25_TomahawkMissile",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_TomahawkMissile.ini",
+      "side": "Unmapped",
+      "needs_normalize": false
+    },
+    {
+      "object": "ScudStormMissile",
+      "planned_name": "SD25_ScudStormMissile",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_ScudStormMissile.ini",
+      "side": "Unmapped",
+      "needs_normalize": false
+    },
+    {
+      "object": "AuroraBomb",
+      "planned_name": "AuroraBomb",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\AuroraBomb.ini",
+      "side": "America",
+      "needs_normalize": false
+    },
+    {
+      "object": "PatriotMissile",
+      "planned_name": "PatriotMissile",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\PatriotMissile.ini",
+      "side": "Unmapped",
+      "needs_normalize": false
+    }
+  ],
+  "added_names": [
+    "Data\\INI\\Armor_SilentDeath.ini",
+    "Data\\INI\\Locomotor_SilentDeath.ini",
+    "Data\\INI\\Object\\SilentDeath\\America\\AuroraBomb.ini",
+    "Data\\INI\\Object\\SilentDeath\\Unmapped\\PatriotMissile.ini",
+    "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_ScudStormMissile.ini",
+    "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_TomahawkMissile.ini",
+    "Data\\INI\\SpecialPower_SilentDeath.ini",
+    "Data\\INI\\Weapon_SilentDeath.ini"
+  ],
+  "experimental_dest": "/tmp/v25_ready_pack/_SPEC_DATA_ONE.big",
+  "experimental_sha256": "4a4a992a92ddc811373d9db14f31d3b88eb2a2e6e65da8775588f2e228e73a15",
+  "preflight_ok": true,
+  "proven_root_kinds": [
+    "Armor",
+    "Locomotor",
+    "FXList",
+    "DamageFX",
+    "CrateData",
+    "CrateTemplate",
+    "ParticleSystem",
+    "AudioEvent",
+    "Weapon",
+    "CommandSet",
+    "CommandButton",
+    "ObjectCreationList",
+    "SpecialPower",
+    "Upgrade",
+    "Science"
+  ],
+  "note": "Independent DATA copy of a small Ready-Gate group. Original SS1 BIGs untouched. No loose INI. Generals.exe was not run."
+}

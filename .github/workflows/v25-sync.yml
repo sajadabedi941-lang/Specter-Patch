@@ -1,6 +1,6 @@
 # Independent CI for the Silent Death V25 → SPECTER planner.
 # Never writes SPECTER BIGs. apply stays refused.
-# Full clone of this repo is ~21GiB of packs; CI uses a sparse shallow checkout.
+# This repo's git pack is ~21GiB; do not use a full actions/checkout.
 name: V25 sync engine
 
 on:
@@ -27,18 +27,29 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout (sparse)
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          filter: blob:none
-          sparse-checkout: |
-            .github
-            patch/tools/v25_sync
-          sparse-checkout-cone-mode: true
+      - name: Sparse fetch engine only
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git version
+          git init
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --local gc.auto 0
+          git config --local advice.detachedHead false
+          git sparse-checkout init --cone
+          git sparse-checkout set .github patch/tools/v25_sync
+          echo "Fetching ${GITHUB_SHA} with blob:none"
+          git fetch --no-tags --depth=1 --filter=blob:none origin "${GITHUB_SHA}"
+          git checkout --force FETCH_HEAD
+          test -f patch/tools/v25_sync/ci_github.py
+          test -f .github/workflows/v25-sync.yml
+          echo "Workspace files:" && find patch/tools/v25_sync .github -type f | wc -l
 
       - name: Fetch PR base commit (names only)
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: git fetch --no-tags --depth=1 --filter=blob:none origin ${{ github.event.pull_request.base.sha }}
 
       - name: Python 3.12

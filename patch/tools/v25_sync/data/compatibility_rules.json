@@ -1,0 +1,91 @@
+{
+  "comment": "Stage 2 compatibility rules. New equipment uses independent defs. SPECTER public Armor/Weapon/CommandSet are never rewritten to make a V25 unit fit.",
+  "pinned_reuse_command_buttons": [
+    "Command_Stop",
+    "Command_Guard",
+    "Command_AttackMove",
+    "Command_Capture",
+    "Command_CombatDrop",
+    "Command_DisarmMines"
+  ],
+  "blocked_kinds": ["PlayerTemplate", "AIData", "Rank"],
+  "blocked_object_sides": [
+    "AmericaAirForceGeneral",
+    "AmericaLaserGeneral",
+    "AmericaSuperWeaponGeneral",
+    "ChinaTankGeneral",
+    "ChinaInfantryGeneral",
+    "ChinaNukeGeneral",
+    "GLAToxinGeneral",
+    "GLADemolitionGeneral",
+    "GLAStealthGeneral",
+    "Boss"
+  ],
+  "cwc_behavior_manual_rebuild": [
+    "RiderChangeContain",
+    "DeployStyleAIUpdate",
+    "OCLSpecialPower",
+    "WeaponBonusUpdate"
+  ],
+    "cwc_behavior_independent_add": [
+    "RadarUpdate",
+    "AutoDepositUpdate",
+    "FireWeaponUpdate",
+    "SpecialAbilityUpdate"
+  ],
+  "stock_sage_behaviors": [
+    "AIUpdateInterface",
+    "PhysicsBehavior",
+    "DestroyDie",
+    "FXListDie",
+    "CreateObjectDie",
+    "CreateCrateDie",
+    "SlowDeathBehavior",
+    "TransitionDamageFX",
+    "FlammableUpdate",
+    "StealthDetectorUpdate",
+    "HeightDieUpdate",
+    "InstantDeathBehavior",
+    "DumbProjectileBehavior",
+    "LifetimeUpdate",
+    "MissileAIUpdate",
+    "JetAIUpdate",
+    "DeliverPayloadAIUpdate",
+    "AssaultTransportAIUpdate",
+    "WorkerAIUpdate",
+    "SupplyTruckAIUpdate",
+    "HackInternetAIUpdate",
+    "ActiveBody",
+    "HighlanderBody",
+    "StructureBody",
+    "ParkingPlaceBehavior",
+    "ProductionUpdate",
+    "QueueProductionExitUpdate",
+    "SpawnBehavior",
+    "OpenContain",
+    "TransportContain",
+    "HealContain",
+    "BoneFXDamage",
+    "BoneFXUpdate",
+    "CostModifierUpgrade",
+    "WeaponSetUpgrade",
+    "UnpauseSpecialPowerUpgrade",
+    "SpecialPower"
+  ],
+  "specter_targeting": {
+    "comment": "V25 weapons must keep their own Anti* flags. SPECTER aircraft/missiles are already KindOf AIRCRAFT / SMALL_MISSILE / BALLISTIC_MISSILE. Do not patch SPECTER Armor to accept new DamageTypes; the new weapon must use a DamageType already present on SPECTER target Armor, or declare INDEPENDENT_ADD.",
+    "air_flags": [
+      "AntiAirborneVehicle",
+      "AntiAirborneInfantry",
+      "AntiBallisticMissile",
+      "AntiSmallMissile"
+    ],
+    "ground_flags": ["AntiGround"],
+    "known_specter_damage_types_must_come_from_live_armor": true
+  },
+  "rename_prefix": "SD25_",
+  "unique_object_dir": "Data\\INI\\Object\\SilentDeath\\{Side}\\",
+  "unique_weapon_dir": "Data\\INI\\Weapon\\SilentDeath\\",
+  "unique_art_dest": "_SPEC_ART_TWO.big (future apply only)",
+  "unique_data_dest": "_SPEC_DATA_ONE.big unique path only (future apply only)"
+}

@@ -1,0 +1,720 @@
+{
+  "object": "ChinaCSSA1",
+  "found_in_vfs": true,
+  "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle.ini",
+  "meta": {
+    "kindof": [
+      "ATTACK_NEEDS_LINE_OF_SIGHT",
+      "CAN_ATTACK",
+      "CAN_CAST_REFLECTIONS",
+      "PRELOAD",
+      "SCORE",
+      "SELECTABLE",
+      "VEHICLE"
+    ],
+    "side": "China",
+    "specter_side": "China",
+    "display": "China_CS/SA1",
+    "bucket": "vehicle",
+    "is_equipment": true
+  },
+  "readiness": "manual_rebuild",
+  "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
+  "build_buttons": [
+    "Command_ConstructChinaCSSA1"
+  ],
+  "build_commandsets": [
+    "ChinaSupplyCenterCommandSet"
+  ],
+  "action_counts": {
+    "IMPORT_UNIQUE": 21,
+    "RECOVER_FROM_V25": 7,
+    "RENAME_AND_REWRITE": 2,
+    "REUSE_NATIVE": 29,
+    "CYCLE": 13,
+    "MANUAL_REBUILD": 4
+  },
+  "deps": [
+    {
+      "kind": "Object",
+      "name": "ChinaCSSA1",
+      "action": "IMPORT_UNIQUE",
+      "planned": "ChinaCSSA1",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "MappedImage",
+      "name": "CSSA1TB",
+      "action": "RECOVER_FROM_V25",
+      "planned": "CSSA1TB",
+      "source": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
+      "reason": "Missing from parsed INI VFS; matching filename exists in the V25 archive.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CSSA1TB.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "Weapon",
+      "name": "SA22G",
+      "action": "IMPORT_UNIQUE",
+      "planned": "SA22G",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Weapon.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "LSF2C6MG",
+      "action": "IMPORT_UNIQUE",
+      "planned": "LSF2C6MG",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/SoundEffects.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "FXList",
+      "name": "WeaponFX_CWCgenHeavyMachineCannon",
+      "action": "IMPORT_UNIQUE",
+      "planned": "WeaponFX_CWCgenHeavyMachineCannon",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "FXList",
+      "name": "WeaponFX_CWCgenGattlingCannonDetonation",
+      "action": "IMPORT_UNIQUE",
+      "planned": "WeaponFX_CWCgenGattlingCannonDetonation",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "Object",
+      "name": "CWCgenExplosiveShell",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCgenExplosiveShell",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/WeaponObjects.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "Armor",
+      "name": "ProjectileArmor",
+      "action": "RENAME_AND_REWRITE",
+      "planned": "SD25_ProjectileArmor",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Armor.ini",
+      "reason": "Same name, different effective behavior. SPECTER original stays; V25 copy becomes SD25_ProjectileArmor with a full reference rewrite."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_NukeGLA",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_NukeGLA",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_GenericMissileDisintegrate",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_GenericMissileDisintegrate",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_GenericMissileDeath",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_GenericMissileDeath",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "ObjectCreationList",
+      "name": "OCL_GenericMissileDisintegrate",
+      "action": "REUSE_NATIVE",
+      "planned": "OCL_GenericMissileDisintegrate",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CWCgenExpTracer",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCgenExpTracer",
+      "source": null,
+      "reason": "Art stem present in parsed V25 BIGs."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "HeightDieUpdate",
+      "action": "REUSE_NATIVE",
+      "planned": "HeightDieUpdate",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "InstantDeathBehavior",
+      "action": "REUSE_NATIVE",
+      "planned": "InstantDeathBehavior",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "PhysicsBehavior",
+      "action": "REUSE_NATIVE",
+      "planned": "PhysicsBehavior",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "DumbProjectileBehavior",
+      "action": "REUSE_NATIVE",
+      "planned": "DumbProjectileBehavior",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "DamageType",
+      "name": "GATTLING",
+      "action": "REUSE_NATIVE",
+      "planned": "GATTLING",
+      "source": null,
+      "reason": "DamageType exists on SPECTER Armor tables."
+    },
+    {
+      "kind": "Weapon",
+      "name": "SA22AIR",
+      "action": "IMPORT_UNIQUE",
+      "planned": "SA22AIR",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Weapon.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "LSF2C6MG",
+      "action": "CYCLE",
+      "planned": "LSF2C6MG",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "FXList",
+      "name": "WeaponFX_CWCgenHeavyMachineCannon",
+      "action": "CYCLE",
+      "planned": "WeaponFX_CWCgenHeavyMachineCannon",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "Object",
+      "name": "CWCgenExplosiveShellAir",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCgenExplosiveShellAir",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/WeaponObjects.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CWCgenExpTracer",
+      "action": "CYCLE",
+      "planned": "CWCgenExpTracer",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CWCgenExpTracer.CWCgenExpTracer",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCgenExpTracer.CWCgenExpTracer",
+      "source": null,
+      "reason": "Art stem present in parsed V25 BIGs."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "PhysicsBehavior",
+      "action": "CYCLE",
+      "planned": "PhysicsBehavior",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "DumbProjectileBehavior",
+      "action": "CYCLE",
+      "planned": "DumbProjectileBehavior",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "InstantDeathBehavior",
+      "action": "CYCLE",
+      "planned": "InstantDeathBehavior",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "DamageType",
+      "name": "GATTLING",
+      "action": "CYCLE",
+      "planned": "GATTLING",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "Armor",
+      "name": "TankArmor",
+      "action": "RENAME_AND_REWRITE",
+      "planned": "SD25_TankArmor",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Armor.ini",
+      "reason": "Same name, different effective behavior. SPECTER original stays; V25 copy becomes SD25_TankArmor with a full reference rewrite."
+    },
+    {
+      "kind": "FXList",
+      "name": "TankDamageFX",
+      "action": "MANUAL_REBUILD",
+      "planned": "TankDamageFX",
+      "source": null,
+      "reason": "Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing.",
+      "missing_from": "archive_and_vfs"
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_CarCrush",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_CarCrush",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_BattleMasterExplosionOneFinal",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_BattleMasterExplosionOneFinal",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_BattleMasterDamageTransition",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_BattleMasterDamageTransition",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "CommandSet",
+      "name": "ChinaVehicleBattleMasterCommandSet",
+      "action": "REUSE_NATIVE",
+      "planned": "ChinaVehicleBattleMasterCommandSet",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandSet.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "CommandButton",
+      "name": "Command_AttackMove",
+      "action": "REUSE_NATIVE",
+      "planned": "Command_AttackMove",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+    },
+    {
+      "kind": "MappedImage",
+      "name": "SSAttackMove2",
+      "action": "IMPORT_UNIQUE",
+      "planned": "SSAttackMove2",
+      "source": "INIZH.big:Data\\INI\\MappedImages\\TextureSize_512\\SSUserInterface512.INI",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "SSUserInterface512_001.tga",
+      "action": "IMPORT_UNIQUE",
+      "planned": "SSUserInterface512_001.tga",
+      "source": null,
+      "reason": "Art stem present in parsed V25 BIGs."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "SSAttackMove2",
+      "action": "MANUAL_REBUILD",
+      "planned": "SSAttackMove2",
+      "source": null,
+      "reason": "Art stem not in parsed VFS, SPECTER, or V25 zip listing."
+    },
+    {
+      "kind": "CommandButton",
+      "name": "Command_Guard",
+      "action": "REUSE_NATIVE",
+      "planned": "Command_Guard",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+    },
+    {
+      "kind": "MappedImage",
+      "name": "SDGuard",
+      "action": "RECOVER_FROM_V25",
+      "planned": "SDGuard",
+      "source": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
+      "reason": "Missing from parsed INI VFS; matching filename exists in the V25 archive.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDGuard.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "SDGuard",
+      "action": "RECOVER_FROM_V25",
+      "planned": "SDGuard",
+      "source": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
+      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDGuard.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "CommandButton",
+      "name": "Command_Stop",
+      "action": "REUSE_NATIVE",
+      "planned": "Command_Stop",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+    },
+    {
+      "kind": "MappedImage",
+      "name": "SDStop",
+      "action": "RECOVER_FROM_V25",
+      "planned": "SDStop",
+      "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+      "reason": "Missing from parsed INI VFS; matching filename exists in the V25 archive.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDStop.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "SDStop",
+      "action": "RECOVER_FROM_V25",
+      "planned": "SDStop",
+      "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDStop.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceSelect",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceSelect",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceMove",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceMove",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceGuard",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceGuard",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceAttack",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceAttack",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceAttackAir",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceAttackAir",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "AudioEvent",
+      "name": "CWCruShilkaVoiceCreate",
+      "action": "IMPORT_UNIQUE",
+      "planned": "CWCruShilkaVoiceCreate",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "Locomotor",
+      "name": "ChunmaLocomotor",
+      "action": "IMPORT_UNIQUE",
+      "planned": "ChunmaLocomotor",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Locomotor.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "CrateTemplate",
+      "name": "SalvageCrateData",
+      "action": "MANUAL_REBUILD",
+      "planned": "SalvageCrateData",
+      "source": null,
+      "reason": "Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing.",
+      "missing_from": "archive_and_vfs"
+    },
+    {
+      "kind": "ObjectCreationList",
+      "name": "OCL_ChinaTankBattleMasterDebris",
+      "action": "REUSE_NATIVE",
+      "planned": "OCL_ChinaTankBattleMasterDebris",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "Object",
+      "name": "ChinaVehicleBattleMasterDeadHull",
+      "action": "IMPORT_UNIQUE",
+      "planned": "ChinaVehicleBattleMasterDeadHull",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/Hulk.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "ParticleSystem",
+      "name": "SmokeSmallContinuous01",
+      "action": "REUSE_NATIVE",
+      "planned": "SmokeSmallContinuous01",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "NVBtmstr_D1",
+      "action": "MANUAL_REBUILD",
+      "planned": "NVBtmstr_D1",
+      "source": null,
+      "reason": "Art stem not in parsed VFS, SPECTER, or V25 zip listing."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "LifetimeUpdate",
+      "action": "REUSE_NATIVE",
+      "planned": "LifetimeUpdate",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "SlowDeathBehavior",
+      "action": "REUSE_NATIVE",
+      "planned": "SlowDeathBehavior",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "TransitionDamageFX",
+      "action": "REUSE_NATIVE",
+      "planned": "TransitionDamageFX",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "ParticleSystem",
+      "name": "SmokeSmallContinuous01",
+      "action": "CYCLE",
+      "planned": "SmokeSmallContinuous01",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CSSA1TB",
+      "action": "RECOVER_FROM_V25",
+      "planned": "CSSA1TB",
+      "source": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
+      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CSSA1TB.tga"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CHCSSA1",
+      "action": "RECOVER_FROM_V25",
+      "planned": "CHCSSA1",
+      "source": "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D",
+      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D"
+      ],
+      "missing_from": "extract_vfs"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "EXTireTrack.tga",
+      "action": "REUSE_NATIVE",
+      "planned": "EXTireTrack.tga",
+      "source": null,
+      "reason": "Stock ZH EX* texture; expected in base Generals ART, not in the SPECTER overlay or V25 zip listing."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "AIUpdateInterface",
+      "action": "REUSE_NATIVE",
+      "planned": "AIUpdateInterface",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "DestroyDie",
+      "action": "REUSE_NATIVE",
+      "planned": "DestroyDie",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "FXListDie",
+      "action": "REUSE_NATIVE",
+      "planned": "FXListDie",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "CreateObjectDie",
+      "action": "REUSE_NATIVE",
+      "planned": "CreateObjectDie",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "CreateCrateDie",
+      "action": "REUSE_NATIVE",
+      "planned": "CreateCrateDie",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "SlowDeathBehavior",
+      "action": "CYCLE",
+      "planned": "SlowDeathBehavior",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "TransitionDamageFX",
+      "action": "CYCLE",
+      "planned": "TransitionDamageFX",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "FlammableUpdate",
+      "action": "REUSE_NATIVE",
+      "planned": "FlammableUpdate",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "StealthDetectorUpdate",
+      "action": "REUSE_NATIVE",
+      "planned": "StealthDetectorUpdate",
+      "source": null,
+      "reason": "Stock SAGE module; keep on the unique Object."
+    },
+    {
+      "kind": "CommandButton",
+      "name": "Command_ConstructChinaCSSA1",
+      "action": "IMPORT_UNIQUE",
+      "planned": "Command_ConstructChinaCSSA1",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
+      "reason": "Name is free in SPECTER FINAL; unique-path import."
+    },
+    {
+      "kind": "Object",
+      "name": "ChinaCSSA1",
+      "action": "CYCLE",
+      "planned": "ChinaCSSA1",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "MappedImage",
+      "name": "CSSA1TB",
+      "action": "CYCLE",
+      "planned": "CSSA1TB",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CSSA1TB",
+      "action": "CYCLE",
+      "planned": "CSSA1TB",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    }
+  ],
+  "rewrite_map": {
+    "ProjectileArmor": "SD25_ProjectileArmor",
+    "TankArmor": "SD25_TankArmor"
+  },
+  "compatibility_notes": [
+    {
+      "rule": "damage_type_present_on_specter_armor",
+      "weapon": "SA22G",
+      "damage_type": "GATTLING",
+      "decision": "REUSE_NATIVE",
+      "reason": "DamageType GATTLING already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified."
+    },
+    {
+      "rule": "damage_type_present_on_specter_armor",
+      "weapon": "SA22AIR",
+      "damage_type": "GATTLING",
+      "decision": "REUSE_NATIVE",
+      "reason": "DamageType GATTLING already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified."
+    },
+    {
+      "rule": "stealth_detector_filter",
+      "extra_required_kindof": [
+        "AIRCRAFT"
+      ],
+      "decision": "REUSE_NATIVE",
+      "reason": "StealthDetector ExtraRequiredKindOf uses stock KindOf tokens already on SPECTER aircraft."
+    },
+    {
+      "rule": "antiair_flags_present",
+      "decision": "KEEP_V25_FLAGS",
+      "reason": "Weapon already sets AntiAirborneVehicle and/or anti-missile flags. SPECTER aircraft/missiles keep their KindOf; no SPECTER rewrite."
+    },
+    {
+      "rule": "antiground_flags_present",
+      "decision": "KEEP_V25_FLAGS",
+      "reason": "Weapon already sets AntiGround=Yes. SPECTER ground Armor is not rewritten."
+    }
+  ],
+  "rewritten_preview": {
+    "note": "Preview only; not written to disk.",
+    "rewritten_head": "Object ChinaCSSA1\n\n  ; *** ART Parameters ***\n  SelectPortrait         = CSSA1TB\n  ButtonImage            = CSSA1TB\n  \n  Draw = W3DTruckDraw ModuleTag_01\n\n    DefaultConditionState\n      Model               = CHCSSA1\n      Turret              = TURRET\n      AltTurret              = TURRET\n      AltTurretPitch        = TURRETHEL\n      WeaponFireFXBone = PRIMARY GUN_FIRE\n      WeaponLaunchBone = PRIMARY GUN_FIRE\n      WeaponFireFXBone = SECONDARY GUN_FIRE\n      WeaponLaunchBone = SECONDARY GUN_FIRE\n\n    End\n    ConditionState       = REALLYDAMAGED\n      Model               = CHCSSA1\n      Turret              = TURRET\n      AltTurret              = TURRET\n      AltTurretPitch        = TURRETHEL\n      WeaponFireFXBone = PRIMARY GUN_FIRE\n      WeaponLaunchBone = PRIMARY GUN_FIRE\n      WeaponFir"
+  },
+  "applies_to_game": false
+}

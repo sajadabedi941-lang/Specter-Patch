@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-11T01:29:12Z",
-  "generated_at_tehran": "2026-11-11 04:59 Asia/Tehran",
+  "generated_at_utc": "2026-11-11T09:33:34Z",
+  "generated_at_tehran": "2026-11-11 13:03 Asia/Tehran",
   "v25_root": "/tmp/v25_extract/Generals Silent Death V25",
   "specter_root": "/tmp/ss1/SPECTER FINAL (GeneralsMode.com)",
   "objects_v25": 6207,
@@ -176,19 +176,20 @@
     }
   },
   "missing_ref_kinds": {
+    "FXList": 8811,
     "MappedImage": 64794,
-    "AudioEvent": 1346,
+    "AudioEvent": 1372,
+    "CrateTemplate": 1608,
     "Object": 7593,
     "ObjectCreationList": 3868,
-    "FXList": 1505,
     "ParticleSystem": 473,
     "CommandSet": 17,
     "CommandButton": 11
   },
-  "incomplete_objects": 1501,
-  "incomplete_hard_deps": 1501,
+  "incomplete_objects": 3592,
+  "incomplete_hard_deps": 3592,
   "soft_image_or_audio_gaps_are_separate": true,
-  "protected_dep_collisions": 93968,
+  "protected_dep_collisions": 93991,
   "art_stems_v25": 5056,
   "art_stems_specter": 2747,
   "rules": {

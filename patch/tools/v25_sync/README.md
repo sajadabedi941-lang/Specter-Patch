@@ -1,8 +1,10 @@
-# V25 → SPECTER sync engine (stage 1)
+# V25 → SPECTER sync engine (stage 2 resolver)
 
 Independent planner for moving **Generals Silent Death V25** equipment into **SPECTER FINAL**.
 
-This stage **does not import** Objects, Weapons, CommandSets, CommandButtons, or ART into the game. Original SPECTER BIGs stay untouched. `apply` is refused.
+Stage 2 adds a **Dependency Resolver** and **Transfer Planner**. It still **does not import** Objects, Weapons, CommandSets, CommandButtons, or ART into the game. Original SPECTER BIGs stay untouched. `apply` is refused.
+
+See `STAGE2.md` for what stage 1 actually implemented vs what was only described.
 
 ## What this is
 
@@ -21,8 +23,11 @@ A dry-run engine that:
 From the repo root (7z required):
 
 ```bash
+python3 patch/tools/v25_sync/v25_sync.py selftest
 python3 patch/tools/v25_sync/v25_sync.py health --json
 python3 patch/tools/v25_sync/v25_sync.py dry-run --json
+python3 patch/tools/v25_sync/v25_sync.py resolve --json
+python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
 ```
 
 Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`.  

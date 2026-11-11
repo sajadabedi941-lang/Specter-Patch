@@ -26,6 +26,7 @@ From the repo root (7z required):
 python3 patch/tools/v25_sync/v25_sync.py selftest
 python3 patch/tools/v25_sync/v25_sync.py ss1-layout --json
 python3 patch/tools/v25_sync/v25_sync.py catalog --json
+python3 patch/tools/v25_sync/v25_sync.py e2e --json
 python3 patch/tools/v25_sync/v25_sync.py health --json
 python3 patch/tools/v25_sync/v25_sync.py dry-run --json
 python3 patch/tools/v25_sync/v25_sync.py resolve --json
@@ -35,7 +36,7 @@ python3 patch/tools/v25_sync/v25_sync.py pack-sample --out /tmp/v25_stage5_pack 
 python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
 ```
 
-Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `pack-sample`, `plan-object`, `ss1-layout`, `catalog`, `preflight`.  
+Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `pack-sample`, `plan-object`, `ss1-layout`, `catalog`, `preflight`, `e2e`.  
 `apply` always exits with an error. See `ENGINE.md`.
 
 Cache/extract live under `/tmp/v25_src`, `/tmp/v25_extract`, `/tmp/ss1` — not inside the repo.

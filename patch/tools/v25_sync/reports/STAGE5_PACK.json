@@ -1,0 +1,903 @@
+{
+  "stage": 5,
+  "applies_to_original_specter": false,
+  "generals_exe_run": false,
+  "original_hashes_unchanged": true,
+  "original_hashes": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "experimental_dir": "/tmp/v25_stage5_pack",
+  "experimental_hashes": {
+    "_SPEC_DATA_ONE.big": "2198049d286f7295f9bdd8abfd7cc3f251a105e976672d718370de75112e34c2",
+    "_SPEC_ART_TWO.big": "bce126e0943ca771bcf5a13cf222c5a41a590b10b244ea6812d2a770a62dacd5"
+  },
+  "data_big": {
+    "dest": "/tmp/v25_stage5_pack/_SPEC_DATA_ONE.big",
+    "original_entries": 3587,
+    "added": 21,
+    "total_entries": 3608,
+    "bytes": 375100426,
+    "added_names": [
+      "Data\\Audio\\Sounds\\LSF2C6gun.wav",
+      "Data\\Audio\\Sounds\\S400Triumf.wav",
+      "Data\\INI\\Armor_SilentDeath.ini",
+      "Data\\INI\\CommandButton_SilentDeath.ini",
+      "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini",
+      "Data\\INI\\Crate_SilentDeath.ini",
+      "Data\\INI\\DamageFX_SilentDeath.ini",
+      "Data\\INI\\FXList_SilentDeath.ini",
+      "Data\\INI\\Locomotor_SilentDeath.ini",
+      "Data\\INI\\MappedImages\\SilentDeath\\SilentDeathMappedImages.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaCSSA1.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaHQ11.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaVehicleBattleMasterDeadHull.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenExplosiveShell.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenExplosiveShellAir.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenTreesOnFire.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCruS300Missile.ini",
+      "Data\\INI\\ObjectCreationList_SilentDeath.ini",
+      "Data\\INI\\ParticleSystem_SilentDeath.ini",
+      "Data\\INI\\SoundEffects_SilentDeath.ini",
+      "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+    ]
+  },
+  "art_big": {
+    "dest": "/tmp/v25_stage5_pack/_SPEC_ART_TWO.big",
+    "original_entries": 2700,
+    "added": 23,
+    "total_entries": 2723,
+    "bytes": 327825676,
+    "added_names": [
+      "Art\\Textures\\CHCSSA1B.dds",
+      "Art\\Textures\\CHCSSA1T.dds",
+      "Art\\Textures\\CHHQ11B.dds",
+      "Art\\Textures\\CHHQ11F.dds",
+      "Art\\Textures\\CHHQ11G.dds",
+      "Art\\Textures\\CHHQ11N.dds",
+      "Art\\Textures\\CHHQ11R.dds",
+      "Art\\Textures\\CHHQ11T.dds",
+      "Art\\Textures\\CHHQ11TB.tga",
+      "Art\\Textures\\CSSA1TB.tga",
+      "Art\\Textures\\extiretrack.dds",
+      "Art\\Textures\\Glass1.tga",
+      "Art\\Textures\\nvbtmstr_d1.dds",
+      "Art\\Textures\\pmbarrel01.dds",
+      "Art\\Textures\\pmconsup01.dds",
+      "Art\\Textures\\pmcrates04.dds",
+      "Art\\Textures\\pmcrates04_l.dds",
+      "Art\\Textures\\SDNSM04.dds",
+      "Art\\W3D\\CHCSSA1.W3D",
+      "Art\\W3D\\HQ11.W3D",
+      "Art\\W3D\\HQ11RD.W3D",
+      "Art\\W3D\\NVBtMstr_D1.W3D",
+      "Art\\W3D\\PMJnkCrate.W3D"
+    ]
+  },
+  "china_build_location": {
+    "object": "ChinaWarFactory",
+    "commandset": "PLAWarFactoryCommandSet",
+    "source": "_SPEC_DATA_ONE.big:Data\\INI\\Object\\Specter\\PLA\\Buildings\\Warfactory.ini",
+    "extracted_empty_slots": [
+      "4",
+      "7"
+    ],
+    "ChinaCSSA1_slot": "4",
+    "ChinaHQ11_slot": "7",
+    "command_type": "UNIT_BUILD",
+    "note": "SPECTER ChinaWarFactory uses PLAWarFactoryCommandSet, not ChinaWarFactoryCommandSet. ChinaSupplyCenter only builds the supply truck. Dozer places buildings (HQ-9 site), not this TEL."
+  },
+  "rename_map": {
+    "ChinaCSSA1": "SD25_ChinaCSSA1",
+    "SA22G": "SD25_SA22G",
+    "LSF2C6MG": "SD25_LSF2C6MG",
+    "WeaponFX_CWCgenHeavyMachineCannon": "SD25_WeaponFX_CWCgenHeavyMachineCannon",
+    "WeaponFX_CWCgenGattlingCannonDetonation": "SD25_WeaponFX_CWCgenGattlingCannonDetonation",
+    "CWCgenExplosiveShell": "SD25_CWCgenExplosiveShell",
+    "ProjectileArmor": "SD25_ProjectileArmor",
+    "SA22AIR": "SD25_SA22AIR",
+    "CWCgenExplosiveShellAir": "SD25_CWCgenExplosiveShellAir",
+    "TankArmor": "SD25_TankArmor",
+    "TankDamageFX": "SD25_TankDamageFX",
+    "CWCruShilkaVoiceSelect": "SD25_CWCruShilkaVoiceSelect",
+    "CWCruShilkaVoiceMove": "SD25_CWCruShilkaVoiceMove",
+    "CWCruShilkaVoiceGuard": "SD25_CWCruShilkaVoiceGuard",
+    "CWCruShilkaVoiceAttack": "SD25_CWCruShilkaVoiceAttack",
+    "CWCruShilkaVoiceAttackAir": "SD25_CWCruShilkaVoiceAttackAir",
+    "CWCruShilkaVoiceCreate": "SD25_CWCruShilkaVoiceCreate",
+    "ChunmaLocomotor": "SD25_ChunmaLocomotor",
+    "SalvageCrateData": "SD25_SalvageCrateData",
+    "ChinaVehicleBattleMasterDeadHull": "SD25_ChinaVehicleBattleMasterDeadHull",
+    "ChinaHQ11": "SD25_ChinaHQ11",
+    "HumveeArmor": "SD25_HumveeArmor",
+    "TruckDamageFX": "SD25_TruckDamageFX",
+    "HQ11MissileWeapon": "SD25_HQ11MissileWeapon",
+    "S400TriumfSOU": "SD25_S400TriumfSOU",
+    "FX_CWCruS300MissileLaunch": "SD25_FX_CWCruS300MissileLaunch",
+    "WeaponFX_CWCgenLargeAntiAirMissileDetonation": "SD25_WeaponFX_CWCgenLargeAntiAirMissileDetonation",
+    "CWCgenExhaustLargeMissile": "SD25_CWCgenExhaustLargeMissile",
+    "CWCruS300Missile": "SD25_CWCruS300Missile",
+    "CWCruS300MissileLocomotor": "SD25_CWCruS300MissileLocomotor",
+    "CWCgenVehicleExplodeWeapon": "SD25_CWCgenVehicleExplodeWeapon",
+    "OCL_CWCgenProjectileTreeImpact": "SD25_OCL_CWCgenProjectileTreeImpact",
+    "CWCgenTreesOnFire": "SD25_CWCgenTreesOnFire",
+    "InvulnerableAllArmor": "SD25_InvulnerableAllArmor",
+    "CWCruSA10RadarWeapon": "SD25_CWCruSA10RadarWeapon",
+    "CWCruS300Locomotor": "SD25_CWCruS300Locomotor",
+    "CWCruS300DeployedLocomotor": "SD25_CWCruS300DeployedLocomotor",
+    "OCL_CWCgenTankDeathTrails": "SD25_OCL_CWCgenTankDeathTrails",
+    "CWCgenTankDeathSmokeDamaged": "SD25_CWCgenTankDeathSmokeDamaged",
+    "CWCgenTankDeathSmokeReallyDamaged": "SD25_CWCgenTankDeathSmokeReallyDamaged",
+    "CWCgenTankDeathSmokeRubble": "SD25_CWCgenTankDeathSmokeRubble",
+    "FX_CWCgenTankDamageTransition": "SD25_FX_CWCgenTankDamageTransition",
+    "FX_CWCgenTankDeathRubble1": "SD25_FX_CWCgenTankDeathRubble1",
+    "FX_CWCgenTankDeathRubble2": "SD25_FX_CWCgenTankDeathRubble2",
+    "SD25_ChinaHQ11CommandSet": "SD25_ChinaHQ11CommandSet"
+  },
+  "emitted": [
+    {
+      "kind": "Object",
+      "from": "ChinaCSSA1",
+      "to": "SD25_ChinaCSSA1",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Weapon",
+      "from": "SA22G",
+      "to": "SD25_SA22G",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "LSF2C6MG",
+      "to": "SD25_LSF2C6MG",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "WeaponFX_CWCgenHeavyMachineCannon",
+      "to": "SD25_WeaponFX_CWCgenHeavyMachineCannon",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "WeaponFX_CWCgenGattlingCannonDetonation",
+      "to": "SD25_WeaponFX_CWCgenGattlingCannonDetonation",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Object",
+      "from": "CWCgenExplosiveShell",
+      "to": "SD25_CWCgenExplosiveShell",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Armor",
+      "from": "ProjectileArmor",
+      "to": "SD25_ProjectileArmor",
+      "action": "RENAME_AND_REWRITE"
+    },
+    {
+      "kind": "Weapon",
+      "from": "SA22AIR",
+      "to": "SD25_SA22AIR",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Object",
+      "from": "CWCgenExplosiveShellAir",
+      "to": "SD25_CWCgenExplosiveShellAir",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Armor",
+      "from": "TankArmor",
+      "to": "SD25_TankArmor",
+      "action": "RENAME_AND_REWRITE"
+    },
+    {
+      "kind": "DamageFX",
+      "from": "TankDamageFX",
+      "to": "SD25_TankDamageFX",
+      "action": "INDEPENDENT_ADD"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceSelect",
+      "to": "SD25_CWCruShilkaVoiceSelect",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceMove",
+      "to": "SD25_CWCruShilkaVoiceMove",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceGuard",
+      "to": "SD25_CWCruShilkaVoiceGuard",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceAttack",
+      "to": "SD25_CWCruShilkaVoiceAttack",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceAttackAir",
+      "to": "SD25_CWCruShilkaVoiceAttackAir",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "CWCruShilkaVoiceCreate",
+      "to": "SD25_CWCruShilkaVoiceCreate",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Locomotor",
+      "from": "ChunmaLocomotor",
+      "to": "SD25_ChunmaLocomotor",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "CrateData",
+      "from": "SalvageCrateData",
+      "to": "SD25_SalvageCrateData",
+      "action": "INDEPENDENT_ADD"
+    },
+    {
+      "kind": "Object",
+      "from": "ChinaVehicleBattleMasterDeadHull",
+      "to": "SD25_ChinaVehicleBattleMasterDeadHull",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Object",
+      "from": "ChinaHQ11",
+      "to": "SD25_ChinaHQ11",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Armor",
+      "from": "HumveeArmor",
+      "to": "SD25_HumveeArmor",
+      "action": "RENAME_AND_REWRITE"
+    },
+    {
+      "kind": "DamageFX",
+      "from": "TruckDamageFX",
+      "to": "SD25_TruckDamageFX",
+      "action": "INDEPENDENT_ADD"
+    },
+    {
+      "kind": "Weapon",
+      "from": "HQ11MissileWeapon",
+      "to": "SD25_HQ11MissileWeapon",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "AudioEvent",
+      "from": "S400TriumfSOU",
+      "to": "SD25_S400TriumfSOU",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "FX_CWCruS300MissileLaunch",
+      "to": "SD25_FX_CWCruS300MissileLaunch",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "WeaponFX_CWCgenLargeAntiAirMissileDetonation",
+      "to": "SD25_WeaponFX_CWCgenLargeAntiAirMissileDetonation",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ParticleSystem",
+      "from": "CWCgenExhaustLargeMissile",
+      "to": "SD25_CWCgenExhaustLargeMissile",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Object",
+      "from": "CWCruS300Missile",
+      "to": "SD25_CWCruS300Missile",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Armor",
+      "from": "ProjectileArmor",
+      "to": "SD25_ProjectileArmor",
+      "action": "RENAME_AND_REWRITE"
+    },
+    {
+      "kind": "Locomotor",
+      "from": "CWCruS300MissileLocomotor",
+      "to": "SD25_CWCruS300MissileLocomotor",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Weapon",
+      "from": "CWCgenVehicleExplodeWeapon",
+      "to": "SD25_CWCgenVehicleExplodeWeapon",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ObjectCreationList",
+      "from": "OCL_CWCgenProjectileTreeImpact",
+      "to": "SD25_OCL_CWCgenProjectileTreeImpact",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Object",
+      "from": "CWCgenTreesOnFire",
+      "to": "SD25_CWCgenTreesOnFire",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Armor",
+      "from": "InvulnerableAllArmor",
+      "to": "SD25_InvulnerableAllArmor",
+      "action": "RENAME_AND_REWRITE"
+    },
+    {
+      "kind": "Weapon",
+      "from": "CWCruSA10RadarWeapon",
+      "to": "SD25_CWCruSA10RadarWeapon",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Locomotor",
+      "from": "CWCruS300Locomotor",
+      "to": "SD25_CWCruS300Locomotor",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "Locomotor",
+      "from": "CWCruS300DeployedLocomotor",
+      "to": "SD25_CWCruS300DeployedLocomotor",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ObjectCreationList",
+      "from": "OCL_CWCgenTankDeathTrails",
+      "to": "SD25_OCL_CWCgenTankDeathTrails",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ParticleSystem",
+      "from": "CWCgenTankDeathSmokeDamaged",
+      "to": "SD25_CWCgenTankDeathSmokeDamaged",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ParticleSystem",
+      "from": "CWCgenTankDeathSmokeReallyDamaged",
+      "to": "SD25_CWCgenTankDeathSmokeReallyDamaged",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ParticleSystem",
+      "from": "CWCgenTankDeathSmokeRubble",
+      "to": "SD25_CWCgenTankDeathSmokeRubble",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "FX_CWCgenTankDamageTransition",
+      "to": "SD25_FX_CWCgenTankDamageTransition",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "FX_CWCgenTankDeathRubble1",
+      "to": "SD25_FX_CWCgenTankDeathRubble1",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "FXList",
+      "from": "FX_CWCgenTankDeathRubble2",
+      "to": "SD25_FX_CWCgenTankDeathRubble2",
+      "action": "IMPORT_UNIQUE"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "PMJnkCrate",
+      "to": "Art\\W3D\\PMJnkCrate.W3D",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "PMCONSUP01.tga",
+      "to": "Art\\Textures\\pmconsup01.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "PMBarrel01.tga",
+      "to": "Art\\Textures\\pmbarrel01.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "PMCrates04.tga",
+      "to": "Art\\Textures\\pmcrates04.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "PMCrates04_L.tga",
+      "to": "Art\\Textures\\pmcrates04_l.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "NVBtmstr_D1",
+      "to": "Art\\W3D\\NVBtMstr_D1.W3D",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "NVBtMstr_D1.tga",
+      "to": "Art\\Textures\\nvbtmstr_d1.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CSSA1TB",
+      "to": "Art\\Textures\\CSSA1TB.tga",
+      "action": "CYCLE"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHCSSA1",
+      "to": "Art\\W3D\\CHCSSA1.W3D",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "SDNSM04.DDS",
+      "to": "Art\\Textures\\SDNSM04.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHCSSA1T.DDS",
+      "to": "Art\\Textures\\CHCSSA1T.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHCSSA1B.DDS",
+      "to": "Art\\Textures\\CHCSSA1B.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "EXTireTrack.tga",
+      "to": "Art\\Textures\\extiretrack.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11TB",
+      "to": "Art\\Textures\\CHHQ11TB.tga",
+      "action": "CYCLE"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "HQ11",
+      "to": "Art\\W3D\\HQ11.W3D",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "GLASS1.TGA",
+      "to": "Art\\Textures\\Glass1.tga",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11B.DDS",
+      "to": "Art\\Textures\\CHHQ11B.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11N.DDS",
+      "to": "Art\\Textures\\CHHQ11N.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11G.DDS",
+      "to": "Art\\Textures\\CHHQ11G.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11F.DDS",
+      "to": "Art\\Textures\\CHHQ11F.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11T.DDS",
+      "to": "Art\\Textures\\CHHQ11T.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "CHHQ11R.DDS",
+      "to": "Art\\Textures\\CHHQ11R.dds",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "HQ11RD",
+      "to": "Art\\W3D\\HQ11RD.W3D",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "LSF2C6gun",
+      "to": "Data\\Audio\\Sounds\\LSF2C6gun.wav",
+      "action": "RECOVER_FROM_V25"
+    },
+    {
+      "kind": "ArtFile",
+      "from": "S400Triumf",
+      "to": "Data\\Audio\\Sounds\\S400Triumf.wav",
+      "action": "RECOVER_FROM_V25"
+    }
+  ],
+  "warnings": [
+    "ART not recovered (exact stem only): CWCgenExpTracer",
+    "ART not recovered (exact stem only): CWCruS300_m",
+    "audio wav not recovered: CWCgenRadioStart01",
+    "audio wav not recovered: CWCgenRadioStart02",
+    "audio wav not recovered: CWCgenRadioStart03",
+    "audio wav not recovered: CWCgenRadioStart04",
+    "audio wav not recovered: CWCgenRadioStart05",
+    "audio wav not recovered: CWCgenRadioStart06",
+    "audio wav not recovered: CWCruShilka_MA_sel_01",
+    "audio wav not recovered: CWCruShilka_MA_sel_02",
+    "audio wav not recovered: CWCruShilka_MA_sel_03",
+    "audio wav not recovered: CWCruShilka_MA_sel_04",
+    "audio wav not recovered: CWCgenRadioEnd01",
+    "audio wav not recovered: CWCgenRadioEnd02",
+    "audio wav not recovered: CWCgenRadioEnd03",
+    "audio wav not recovered: CWCgenRadioEnd04",
+    "audio wav not recovered: CWCgenRadioEnd05",
+    "audio wav not recovered: CWCgenRadioEnd06",
+    "audio wav not recovered: CWCruShilka_MA_mov_01",
+    "audio wav not recovered: CWCruShilka_MA_mov_02",
+    "audio wav not recovered: CWCruShilka_MA_mov_03",
+    "audio wav not recovered: CWCruShilka_MA_mov_04",
+    "audio wav not recovered: CWCruShilka_MA_gua_01",
+    "audio wav not recovered: CWCruShilka_MA_gua_02",
+    "audio wav not recovered: CWCruShilka_MA_gua_03",
+    "audio wav not recovered: CWCruShilka_MA_gua_04",
+    "audio wav not recovered: CWCruShilka_MA_gro_01",
+    "audio wav not recovered: CWCruShilka_MA_gro_02",
+    "audio wav not recovered: CWCruShilka_MA_gro_03",
+    "audio wav not recovered: CWCruShilka_MA_gro_04",
+    "audio wav not recovered: CWCruShilka_MA_int_01",
+    "audio wav not recovered: CWCruShilka_MA_int_02",
+    "audio wav not recovered: CWCruShilka_MA_int_03",
+    "audio wav not recovered: CWCruShilka_MA_int_04",
+    "audio wav not recovered: CWCruShilka_MA_cre_01",
+    "audio wav not recovered: CWCruShilka_MA_cre_02",
+    "audio wav not recovered: CWCruShilka_MA_cre_03",
+    "audio wav not recovered: CWCruShilka_MA_cre_04"
+  ],
+  "loose_ini_written": false,
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "header_count": 52,
+    "headers": [
+      {
+        "kind": "Object",
+        "name": "SD25_ChinaCSSA1",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaCSSA1.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_CWCgenExplosiveShell",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenExplosiveShell.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_CWCgenExplosiveShellAir",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenExplosiveShellAir.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_ChinaVehicleBattleMasterDeadHull",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaVehicleBattleMasterDeadHull.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_ChinaHQ11",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaHQ11.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_CWCruS300Missile",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCruS300Missile.ini"
+      },
+      {
+        "kind": "Object",
+        "name": "SD25_CWCgenTreesOnFire",
+        "path": "Data\\INI\\Object\\SilentDeath\\China\\SD25_CWCgenTreesOnFire.ini"
+      },
+      {
+        "kind": "CommandButton",
+        "name": "SD25_Command_ConstructChinaCSSA1",
+        "path": "Data\\INI\\CommandButton_SilentDeath.ini"
+      },
+      {
+        "kind": "CommandButton",
+        "name": "SD25_Command_ConstructChinaHQ11",
+        "path": "Data\\INI\\CommandButton_SilentDeath.ini"
+      },
+      {
+        "kind": "CommandButton",
+        "name": "SD25_Command_ChinaHQ11Deploy",
+        "path": "Data\\INI\\CommandButton_SilentDeath.ini"
+      },
+      {
+        "kind": "CommandSet",
+        "name": "PLAWarFactoryCommandSet",
+        "path": "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini"
+      },
+      {
+        "kind": "CommandSet",
+        "name": "SD25_ChinaHQ11CommandSet",
+        "path": "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini"
+      },
+      {
+        "kind": "Weapon",
+        "name": "SD25_SA22G",
+        "path": "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+      },
+      {
+        "kind": "Weapon",
+        "name": "SD25_SA22AIR",
+        "path": "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+      },
+      {
+        "kind": "Weapon",
+        "name": "SD25_HQ11MissileWeapon",
+        "path": "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+      },
+      {
+        "kind": "Weapon",
+        "name": "SD25_CWCgenVehicleExplodeWeapon",
+        "path": "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+      },
+      {
+        "kind": "Weapon",
+        "name": "SD25_CWCruSA10RadarWeapon",
+        "path": "Data\\INI\\Weapon\\SilentDeath\\SD25_Weapons.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_LSF2C6MG",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceSelect",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceMove",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceGuard",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceAttack",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceAttackAir",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_CWCruShilkaVoiceCreate",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "AudioEvent",
+        "name": "SD25_S400TriumfSOU",
+        "path": "Data\\INI\\SoundEffects_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_WeaponFX_CWCgenHeavyMachineCannon",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_WeaponFX_CWCgenGattlingCannonDetonation",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_FX_CWCruS300MissileLaunch",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_WeaponFX_CWCgenLargeAntiAirMissileDetonation",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_FX_CWCgenTankDamageTransition",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_FX_CWCgenTankDeathRubble1",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "FXList",
+        "name": "SD25_FX_CWCgenTankDeathRubble2",
+        "path": "Data\\INI\\FXList_SilentDeath.ini"
+      },
+      {
+        "kind": "Armor",
+        "name": "SD25_ProjectileArmor",
+        "path": "Data\\INI\\Armor_SilentDeath.ini"
+      },
+      {
+        "kind": "Armor",
+        "name": "SD25_TankArmor",
+        "path": "Data\\INI\\Armor_SilentDeath.ini"
+      },
+      {
+        "kind": "Armor",
+        "name": "SD25_HumveeArmor",
+        "path": "Data\\INI\\Armor_SilentDeath.ini"
+      },
+      {
+        "kind": "Armor",
+        "name": "SD25_ProjectileArmor",
+        "path": "Data\\INI\\Armor_SilentDeath.ini"
+      },
+      {
+        "kind": "Armor",
+        "name": "SD25_InvulnerableAllArmor",
+        "path": "Data\\INI\\Armor_SilentDeath.ini"
+      },
+      {
+        "kind": "DamageFX",
+        "name": "SD25_TankDamageFX",
+        "path": "Data\\INI\\DamageFX_SilentDeath.ini"
+      },
+      {
+        "kind": "DamageFX",
+        "name": "SD25_TruckDamageFX",
+        "path": "Data\\INI\\DamageFX_SilentDeath.ini"
+      },
+      {
+        "kind": "Locomotor",
+        "name": "SD25_ChunmaLocomotor",
+        "path": "Data\\INI\\Locomotor_SilentDeath.ini"
+      },
+      {
+        "kind": "Locomotor",
+        "name": "SD25_CWCruS300MissileLocomotor",
+        "path": "Data\\INI\\Locomotor_SilentDeath.ini"
+      },
+      {
+        "kind": "Locomotor",
+        "name": "SD25_CWCruS300Locomotor",
+        "path": "Data\\INI\\Locomotor_SilentDeath.ini"
+      },
+      {
+        "kind": "Locomotor",
+        "name": "SD25_CWCruS300DeployedLocomotor",
+        "path": "Data\\INI\\Locomotor_SilentDeath.ini"
+      },
+      {
+        "kind": "CrateData",
+        "name": "SD25_SalvageCrateData",
+        "path": "Data\\INI\\Crate_SilentDeath.ini"
+      },
+      {
+        "kind": "ParticleSystem",
+        "name": "SD25_CWCgenExhaustLargeMissile",
+        "path": "Data\\INI\\ParticleSystem_SilentDeath.ini"
+      },
+      {
+        "kind": "ParticleSystem",
+        "name": "SD25_CWCgenTankDeathSmokeDamaged",
+        "path": "Data\\INI\\ParticleSystem_SilentDeath.ini"
+      },
+      {
+        "kind": "ParticleSystem",
+        "name": "SD25_CWCgenTankDeathSmokeReallyDamaged",
+        "path": "Data\\INI\\ParticleSystem_SilentDeath.ini"
+      },
+      {
+        "kind": "ParticleSystem",
+        "name": "SD25_CWCgenTankDeathSmokeRubble",
+        "path": "Data\\INI\\ParticleSystem_SilentDeath.ini"
+      },
+      {
+        "kind": "ObjectCreationList",
+        "name": "SD25_OCL_CWCgenProjectileTreeImpact",
+        "path": "Data\\INI\\ObjectCreationList_SilentDeath.ini"
+      },
+      {
+        "kind": "ObjectCreationList",
+        "name": "SD25_OCL_CWCgenTankDeathTrails",
+        "path": "Data\\INI\\ObjectCreationList_SilentDeath.ini"
+      },
+      {
+        "kind": "MappedImage",
+        "name": "CSSA1TB",
+        "path": "Data\\INI\\MappedImages\\SilentDeath\\SilentDeathMappedImages.ini"
+      },
+      {
+        "kind": "MappedImage",
+        "name": "CHHQ11TB",
+        "path": "Data\\INI\\MappedImages\\SilentDeath\\SilentDeathMappedImages.ini"
+      }
+    ]
+  },
+  "capabilities_kept": [
+    "ChinaCSSA1 UNIT_BUILD from ChinaWarFactory / PLAWarFactoryCommandSet slot 4",
+    "ChinaHQ11 UNIT_BUILD from ChinaWarFactory / PLAWarFactoryCommandSet slot 7",
+    "HQ11 pack/unpack via stock DeployStyleAIUpdate",
+    "HQ11 fire only when deployed (WeaponSet Conditions = DEPLOYED + TurretsFunctionOnlyWhenDeployed)",
+    "Original W3D/texture/animation filenames (not SD25-prefixed)",
+    "Unique AudioEvent names; wav stems unchanged"
+  ],
+  "limitations": [
+    "Runtime CommandSet swap (packed vs deployed labels) is not available on stock Generals.exe",
+    "SET_SLUGGISH crawl-while-deployed is not bound; unit packs then moves on SET_NORMAL",
+    "PackTime/UnpackTime = 2000 copied from V25 SDSR5, not measured CWC rider timing",
+    "Shilka CWC voice wavs may be missing if they live only in WYS/Audio.big",
+    "Generals.exe was not run",
+    "Projectile W3D stems CWCgenExpTracer and CWCruS300_m are not in the V25 zip or nested BIGs (exact stem only; no substitute)",
+    "CWC Shilka / radio voice wavs are not in WYS/Audio.big or loose Data/Audio/Sounds (LSF2C6gun and S400Triumf fire sounds were recovered)"
+  ],
+  "original_hashes_before": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "original_hashes_after": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "install_zip": {
+    "name": "SPECTER_V25_SD25_ChinaCSSA1_ChinaHQ11_experimental.zip",
+    "sha256": "3e4d0e5ffdcff34e74a63e3ad936187912b2760442c67a82e8cd56942e805afb",
+    "members": [
+      "_SPEC_DATA_ONE.big",
+      "_SPEC_ART_TWO.big",
+      "INSTALL.txt",
+      "REVERT.txt",
+      "SHA256SUMS.txt"
+    ]
+  }
+}

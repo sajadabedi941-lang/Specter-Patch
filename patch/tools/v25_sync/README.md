@@ -1,8 +1,8 @@
-# V25 → SPECTER sync engine (stage 2 resolver)
+# V25 → SPECTER sync engine (stage 3 nested ART + CWC)
 
 Independent planner for moving **Generals Silent Death V25** equipment into **SPECTER FINAL**.
 
-Stage 2 adds a **Dependency Resolver** and **Transfer Planner**. It still **does not import** Objects, Weapons, CommandSets, CommandButtons, or ART into the game. Original SPECTER BIGs stay untouched. `apply` is refused.
+Stage 3 adds nested-BIG ART recovery and CWC rebuild plans on top of the stage-2 resolver. It still **does not import** Objects, Weapons, CommandSets, CommandButtons, or ART into the game. Original SPECTER BIGs stay untouched. `apply` is refused.
 
 See `STAGE2.md` for what stage 1 actually implemented vs what was only described.
 
@@ -27,11 +27,12 @@ python3 patch/tools/v25_sync/v25_sync.py selftest
 python3 patch/tools/v25_sync/v25_sync.py health --json
 python3 patch/tools/v25_sync/v25_sync.py dry-run --json
 python3 patch/tools/v25_sync/v25_sync.py resolve --json
+python3 patch/tools/v25_sync/v25_sync.py art-cwc --json
 python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
 ```
 
-Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`.  
-`apply` always exits with an error in stage 1.
+Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `plan-object`.  
+`apply` always exits with an error.
 
 Cache/extract live under `/tmp/v25_src`, `/tmp/v25_extract`, `/tmp/ss1` — not inside the repo.
 

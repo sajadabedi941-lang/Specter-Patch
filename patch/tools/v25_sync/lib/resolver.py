@@ -3,8 +3,25 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 
-from . import compat
+from . import compat, cwc
 from .rewrite import independent_name, rewrite_text
+
+DATA_KINDS = {
+    "Object",
+    "Weapon",
+    "ObjectCreationList",
+    "FXList",
+    "Armor",
+    "Locomotor",
+    "CommandSet",
+    "CommandButton",
+    "SpecialPower",
+    "Upgrade",
+    "ParticleSystem",
+    "CrateTemplate",
+    "BehaviorModule",
+}
+ART_KINDS = {"ArtFile", "MappedImage"}
 
 ACTIONS = (
     "REUSE_NATIVE",
@@ -33,10 +50,12 @@ HARD_KINDS = {
 
 
 class Resolver:
-    def __init__(self, engine, rules: dict, archive_index):
+    def __init__(self, engine, rules: dict, archive_index, art_index=None, cwc_recipes=None):
         self.eng = engine
         self.rules = rules
         self.archive = archive_index
+        self.art = art_index
+        self.cwc_recipes = cwc_recipes or {}
         self.v25 = engine.inventory_v25()
         self.spec = engine.inventory_specter()
         self.spec_damage = compat.specter_damage_types(self.spec)
@@ -84,7 +103,10 @@ class Resolver:
     def _resolve_node(self, kind: str, name: str) -> dict:
         rec = self.lookup_v25(kind, name)
         spec = self.lookup_spec(kind, name)
-        archive_hits = self.archive.find_stem(name) if self.archive else []
+        art_hits = self.art.find(name) if self.art else []
+        archive_hits = [self._art_loc_str(h) for h in art_hits] or (
+            self.archive.find_stem(name) if self.archive else []
+        )
         source = rec.get("source") if rec else None
 
         if kind == "DamageType":
@@ -108,29 +130,23 @@ class Resolver:
             return self._row(kind, name, "INDEPENDENT_ADD", name, source, "Unknown behavior kept on the unique Object; not deleted.")
 
         if kind == "ArtFile":
-            stem = name.lower().rsplit(".", 1)[0]
-            in_v = stem in self.eng._v25_art
-            in_s = stem in self.eng._spec_art
-            if stem.startswith("ex") and name.lower().endswith((".tga", ".dds")) or stem.startswith("ex"):
-                # EXTireTrack / EXTnkTrack live in vanilla ZH ART, not the SPECTER overlay.
-                if not in_v and not archive_hits:
-                    return self._row(
-                        kind, name, "REUSE_NATIVE", name, source,
-                        "Stock ZH EX* texture; expected in base Generals ART, not in the SPECTER overlay or V25 zip listing.",
-                    )
-            if in_v and in_s:
-                return self._row(kind, name, "REUSE_NATIVE", name, source, "Same art stem in SPECTER ART BIG.")
-            if in_v:
-                return self._row(kind, name, "IMPORT_UNIQUE", name, source, "Art stem present in parsed V25 BIGs.")
-            if archive_hits:
+            stem = name.replace("\\", "/").rsplit("/", 1)[-1]
+            if "." in stem:
+                stem = stem.rsplit(".", 1)[0]
+            stem = stem.lower()
+            mi = self.lookup_v25("MappedImage", name)
+            if mi and not art_hits and stem not in self.eng._v25_art and stem not in self.eng._spec_art:
+                # MappedImage identifiers are INI names; the pixel file is Texture=.
                 return self._row(
-                    kind, name, "RECOVER_FROM_V25", name, archive_hits[0],
-                    "Not in parsed extract/BIGs; file exists in the V25 zip.",
-                    extra={"archive_paths": archive_hits[:8], "missing_from": "extract_vfs"},
+                    "ArtFile",
+                    name,
+                    "IMPORT_UNIQUE" if not self.lookup_spec("MappedImage", name) else "REUSE_NATIVE",
+                    name,
+                    mi.get("source"),
+                    "MappedImage identifier, not a standalone texture file. Pixel data is the Texture= atlas; no similar file was substituted.",
+                    extra={"found_in": "mapped_image", "missing_from": "not_a_file_stem"},
                 )
-            if in_s:
-                return self._row(kind, name, "REUSE_NATIVE", name, source, "Art stem already in SPECTER.")
-            return self._row(kind, name, "MANUAL_REBUILD", name, source, "Art stem not in parsed VFS, SPECTER, or V25 zip listing.")
+            return self._resolve_art(name, source, art_hits, archive_hits)
 
         if kind in (self.rules.get("blocked_kinds") or []):
             if rec and spec:
@@ -172,6 +188,76 @@ class Resolver:
             f"{planned} with a full reference rewrite.",
         )
 
+    def _art_loc_str(self, rec: dict) -> str:
+        if rec.get("container") == "nested_big":
+            return f"{rec.get('source_big') or rec.get('path')}::{rec.get('inner')}"
+        return rec.get("path") or rec.get("inner") or ""
+
+    def _resolve_art(self, name, source, art_hits, archive_hits) -> dict:
+        stem = name.lower().rsplit(".", 1)[0]
+        in_v = stem in self.eng._v25_art
+        in_s = stem in self.eng._spec_art
+        extra = {}
+        if art_hits:
+            extra["archive_paths"] = [self._art_loc_str(h) for h in art_hits[:8]]
+            extra["art_locations"] = art_hits[:8]
+            if self.art:
+                tex = self.art.textures_in_w3d(name)
+                anim = self.art.animations_in_w3d(name)
+                if tex:
+                    extra["w3d_textures"] = tex
+                if anim:
+                    extra["w3d_anims"] = anim
+            nested = [h for h in art_hits if h.get("container") == "nested_big"]
+            if nested:
+                extra["missing_from"] = "extract_vfs"
+                extra["found_in"] = "nested_big"
+                return self._row(
+                    "ArtFile",
+                    name,
+                    "RECOVER_FROM_V25",
+                    name,
+                    extra["archive_paths"][0],
+                    "Exact stem found inside a nested V25 BIG. Not substituted.",
+                    extra=extra,
+                )
+            extra["missing_from"] = "extract_vfs"
+            extra["found_in"] = "zip"
+            return self._row(
+                "ArtFile",
+                name,
+                "RECOVER_FROM_V25",
+                name,
+                extra["archive_paths"][0],
+                "Exact stem found as a loose zip member. Not substituted.",
+                extra=extra,
+            )
+        if in_v and in_s:
+            return self._row("ArtFile", name, "REUSE_NATIVE", name, source, "Same art stem in SPECTER ART BIG.")
+        if in_v:
+            return self._row("ArtFile", name, "IMPORT_UNIQUE", name, source, "Art stem present in parsed V25 BIGs.")
+        if in_s:
+            return self._row("ArtFile", name, "REUSE_NATIVE", name, source, "Art stem already in SPECTER.")
+        if archive_hits:
+            return self._row(
+                "ArtFile",
+                name,
+                "RECOVER_FROM_V25",
+                name,
+                archive_hits[0],
+                "Exact stem found in the V25 zip listing.",
+                extra={"archive_paths": archive_hits[:8], "missing_from": "extract_vfs"},
+            )
+        return self._row(
+            "ArtFile",
+            name,
+            "MANUAL_REBUILD",
+            name,
+            source,
+            "Exact art stem not in parsed VFS, SPECTER, zip, or nested BIGs. No similar-name substitute.",
+            extra={"missing_from": "archive_and_vfs"},
+        )
+
     def _row(self, kind, name, action, planned, source, reason, extra=None) -> dict:
         row = {
             "kind": kind,
@@ -188,21 +274,23 @@ class Resolver:
     def children_of(self, kind: str, name: str) -> list[tuple[str, str]]:
         rec = self.lookup_v25(kind, name)
         out: list[tuple[str, str]] = []
-        if rec is None:
-            return out
-        for nkind, names in (rec.get("named_refs") or {}).items():
-            for n in names:
-                out.append((nkind, n))
-        for a in rec.get("art_refs") or []:
-            out.append(("ArtFile", a))
-        if kind == "Weapon":
-            for dt in rec.get("damage_types") or []:
-                out.append(("DamageType", dt))
-        for b in rec.get("behaviors") or []:
-            out.append(("BehaviorModule", b))
-        if kind == "Object":
-            for btn in self.incoming_buttons().get(name.lower(), []):
-                out.append(("CommandButton", btn))
+        if rec is not None:
+            for nkind, names in (rec.get("named_refs") or {}).items():
+                for n in names:
+                    out.append((nkind, n))
+            for a in rec.get("art_refs") or []:
+                out.append(("ArtFile", a))
+            if kind == "Weapon":
+                for dt in rec.get("damage_types") or []:
+                    out.append(("DamageType", dt))
+            for b in rec.get("behaviors") or []:
+                out.append(("BehaviorModule", b))
+            if kind == "Object":
+                for btn in self.incoming_buttons().get(name.lower(), []):
+                    out.append(("CommandButton", btn))
+        if kind == "ArtFile" and self.art:
+            for tex in self.art.textures_in_w3d(name):
+                out.append(("ArtFile", tex))
         # Do not walk factory CommandSets: that would pull every other buildable unit.
         return out
 
@@ -262,6 +350,31 @@ class Resolver:
                     return "ready_transfer"
         return "auto_fixable"
 
+    def track_status(self, rows: list[dict], kinds: set[str]) -> str:
+        """READY_FOR_TRANSFER_PLAN | AUTO_RECOVERABLE | MANUAL_REBUILD | BLOCKED"""
+        subset = [r for r in rows if r["kind"] in kinds and r["action"] != "CYCLE"]
+        if not subset:
+            return "READY_FOR_TRANSFER_PLAN"
+        acts = {r["action"] for r in subset}
+        if "BLOCKED" in acts:
+            return "BLOCKED"
+        if any(r["action"] == "MANUAL_REBUILD" for r in subset):
+            return "MANUAL_REBUILD"
+        if kinds is DATA_KINDS or "BehaviorModule" in kinds:
+            if any(
+                r["kind"] == "BehaviorModule"
+                and r["action"] == "MANUAL_REBUILD"
+                for r in rows
+            ) and "BehaviorModule" in kinds:
+                return "MANUAL_REBUILD"
+        if "RECOVER_FROM_V25" in acts or "RENAME_AND_REWRITE" in acts:
+            return "AUTO_RECOVERABLE"
+        if "INDEPENDENT_ADD" in acts and kinds is DATA_KINDS:
+            # Independent module on unique INI is still a plan, not a hard ART gap.
+            if any(r["kind"] != "BehaviorModule" and r["action"] == "INDEPENDENT_ADD" for r in subset):
+                return "MANUAL_REBUILD"
+        return "READY_FOR_TRANSFER_PLAN"
+
     def plan_object(self, name: str) -> dict:
         rec = self.lookup_v25("Object", name)
         found = rec is not None
@@ -294,7 +407,12 @@ class Resolver:
                 "rewritten_head": rewrite_text(rec.get("body") or "", rewrite)[:800],
             }
         ready = self.readiness(rows)
+        data_status = self.track_status(rows, DATA_KINDS)
+        art_status = self.track_status(rows, ART_KINDS)
         counts = Counter(r["action"] for r in rows)
+        cwc_info = []
+        if rec and self.cwc_recipes:
+            cwc_info = cwc.inspect_object(rec, self.cwc_recipes)
         buttons = self.incoming_buttons().get(name.lower(), [])
         dest_side = self.eng.faction_map["side_to_specter"].get(meta.get("side") or "", meta.get("side"))
         planned_obj = next((r["planned"] for r in rows if r["kind"] == "Object"), name)
@@ -304,6 +422,9 @@ class Resolver:
             "source": rec.get("source") if rec else None,
             "meta": meta,
             "readiness": ready,
+            "data_status": data_status,
+            "art_status": art_status,
+            "cwc": cwc_info,
             "dest_ini": (
                 f"Data\\INI\\Object\\SilentDeath\\{dest_side or 'Unmapped'}\\{planned_obj}.ini"
                 if found

@@ -1,6 +1,6 @@
 """Read SAGE BIGF archives without loading every payload into RAM.
 
-Write is intentionally omitted in stage 1.
+write_big is for tests and nested-BIG fixtures only. Never used on SPECTER game BIGs.
 """
 from __future__ import annotations
 
@@ -59,6 +59,22 @@ def read_big(path: Path, suffixes: tuple[str, ...] | None = (".ini",)) -> dict[s
         if blob is not None:
             out[name] = blob
     return out
+
+
+def write_big(path: Path, files: dict[str, bytes]) -> None:
+    """Minimal BIGF writer for tests. Not used on SPECTER game BIGs."""
+    items = list(files.items())
+    index = b""
+    payload = b""
+    index_size = sum(8 + len(name.encode("latin1")) + 1 for name, _ in items)
+    off = 16 + index_size
+    for name, blob in items:
+        index += struct.pack(">II", off, len(blob))
+        index += name.encode("latin1") + b"\x00"
+        payload += blob
+        off += len(blob)
+    total = 16 + len(index) + len(payload)
+    path.write_bytes(b"BIGF" + struct.pack(">III", total, len(items), 16 + len(index)) + index + payload)
 
 
 def list_names(path: Path) -> list[str]:

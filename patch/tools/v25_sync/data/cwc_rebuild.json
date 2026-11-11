@@ -1,0 +1,92 @@
+{
+  "comment": "CWC modules seen in Silent Death V25. SPECTER uses stock ZH Generals.exe. Do not patch SPECTER public INI. Capabilities are not dropped.",
+  "modules": {
+    "RiderChangeContain": {
+      "origin": "CWC.exe (not stock ZH)",
+      "specter_exe": "unsafe_on_stock_zh",
+      "what_it_does": "Hides rider objects inside a vehicle and swaps ModelCondition, WeaponSet, ObjectStatus, CommandSet, and Locomotor per RiderN slot. Used as deploy (stand vs prone) for TELs/AD.",
+      "keys": ["Rider1", "Rider2", "Slots", "AllowInsideKindOf", "ScuttleDelay", "OrientLikeContainerOnExit"],
+      "v25_example": "ChinaHQ11 uses CWCruFakeRider_Inf_Stand / _Prone with CWCruS300CommandSet vs DeployedCommandSet.",
+      "rebuild": {
+        "action": "MANUAL_REBUILD",
+        "keep_capability": "deployed vs undeployed weapon set, command set, and locomotor",
+        "specter_safe": [
+          "Unique Object keeps two WeaponSet blocks with conditions UNPACKING/DEPLOYED if the art supports those ModelConditions.",
+          "Use stock DeployStyleAIUpdate (ZH module) with PackTime/UnpackTime for turret lock while packing.",
+          "Do not spawn CWC fake-rider infantry. Encode the visual in ConditionState PACKING/DEPLOYED on the vehicle Draw.",
+          "Map RIDER1 (packed / cannot fire) to the default ConditionState and RIDER2 (prone / missiles live) to DEPLOYED.",
+          "CommandSet override becomes a unique last-win CommandSet_ZZZZ file swapped via Upgrade or a second CommandSet on the deployed WeaponSet if the engine allows; otherwise one CommandSet that already contains both fire and undeploy.",
+          "Payload rider templates stay as unique hidden Objects only if still referenced; otherwise they are not imported."
+        ]
+      }
+    },
+    "OCLSpecialPower": {
+      "origin": "Stock ZH module; CWC templates/OCLs are custom",
+      "specter_exe": "module_ok_templates_must_be_unique",
+      "what_it_does": "Fires a SpecialPower that creates objects via OCL. CWC uses it to apply fake-rider deploy/undeploy and also for smoke grenades.",
+      "keys": ["SpecialPowerTemplate", "OCL", "CreateLocation"],
+      "v25_example": "ChinaHQ11 SpecialAbilityCWCruFakeRider_Inf_Stand + OCL_CWCruSpecialAbilityFakeRider_Inf_Stand",
+      "rebuild": {
+        "action": "MANUAL_REBUILD",
+        "keep_capability": "button that switches deployed state and/or spawns support objects",
+        "specter_safe": [
+          "Keep OCLSpecialPower on the unique Object only with a unique SpecialPower template (not SPECIAL_CIA_INTELLIGENCE hijack) and a unique OCL path.",
+          "If the OCL only exists to swap CWC riders, replace the button with DeployStyleAIUpdate pack/unpack instead of importing the fake-rider OCL.",
+          "Smoke-grenade OCLSpecialPower copies are INDEPENDENT_ADD on the unique Object with unique OCL/SpecialPower names.",
+          "Do not rewrite SPECTER SpecialPower.ini; add Data\\INI\\SpecialPower_SilentDeath.ini unique-path later."
+        ]
+      }
+    },
+    "DeployStyleAIUpdate": {
+      "origin": "Stock ZH",
+      "specter_exe": "keep_on_unique_object",
+      "what_it_does": "PackTime/UnpackTime, turret only when deployed, recenter before packing.",
+      "keys": ["PackTime", "UnpackTime", "TurretsFunctionOnlyWhenDeployed", "TurretsMustCenterBeforePacking", "ResetTurretBeforePacking"],
+      "v25_example": "China Overlord-style vehicles in ChinaVehicle.ini; ChinaHQ11 does not use this module (it uses riders instead).",
+      "rebuild": {
+        "action": "INDEPENDENT_ADD",
+        "keep_capability": "pack/unpack deploy",
+        "specter_safe": [
+          "Copy the module onto the unique Object INI. Do not patch SPECTER AIUpdate tables.",
+          "Requires Draw ConditionState for PACKING/UNPACKING/DEPLOYED if those anims exist on the W3D.",
+          "This is the SPECTER-safe replacement for RiderChangeContain stand/prone."
+        ]
+      }
+    },
+    "EnemyNearUpdate": {
+      "origin": "CWC house-color helper (not required on stock ZH)",
+      "specter_exe": "optional",
+      "what_it_does": "Empty module in V25 (house color / nearby-enemy hook). No gameplay keys.",
+      "rebuild": {
+        "action": "INDEPENDENT_ADD",
+        "keep_capability": "house-color / nearby-enemy hook if the exe honors it",
+        "specter_safe": [
+          "Keep on the unique Object. If stock Generals.exe ignores it, drop only the module class, never the rest of the unit."
+        ]
+      }
+    },
+    "FireWeaponUpdate": {
+      "origin": "Stock ZH module used by CWC as a radar/search weapon ticker",
+      "specter_exe": "keep_on_unique_object",
+      "what_it_does": "Periodically fires a Weapon (ChinaHQ11 uses CWCruSA10RadarWeapon).",
+      "keys": ["Weapon", "ExclusiveWeaponDelay"],
+      "rebuild": {
+        "action": "INDEPENDENT_ADD",
+        "keep_capability": "passive radar / search weapon",
+        "specter_safe": [
+          "Keep on the unique Object with a unique Weapon path. Do not retarget SPECTER radar tables."
+        ]
+      }
+    }
+  },
+  "pack_unpack": {
+    "comment": "V25 pack/unpack is not always DeployStyleAIUpdate. ChinaHQ11 encodes packed vs deployed as RIDER1 vs RIDER2 ModelConditions, WeaponSet WEAPON_RIDER1/2, CommandSet override, and SET_NORMAL vs SET_SLUGGISH locomotor.",
+    "specter_rebuild": [
+      "ConditionState default = packed (no primary missile).",
+      "ConditionState DEPLOYED = HQ11.HQ11 once-forward with WeaponLaunchBone PRIMARY MISSILE_C.",
+      "WeaponSet None vs HQ11MissileWeapon.",
+      "Locomotor SET_NORMAL vs a slower deployed locomotor copied as a unique Locomotor def.",
+      "CommandSet one unique file that contains both fire and undeploy, or two unique CommandSets swapped only if a stock Upgrade/WeaponSet path can do it without CWC.exe."
+    ]
+  }
+}

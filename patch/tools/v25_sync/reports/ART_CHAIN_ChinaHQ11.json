@@ -1,0 +1,567 @@
+{
+  "object": "ChinaHQ11",
+  "art_status": "AUTO_RECOVERABLE",
+  "data_status": "MANUAL_REBUILD",
+  "files": [
+    {
+      "name": "CWCruS300_m",
+      "action": "IMPORT_UNIQUE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "BUSHUtb.tga",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/BUSHUtb.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/BUSHUtb.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/BUSHUtb.tga",
+          "inner": null,
+          "filename": "BUSHUtb.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "BUSHU",
+      "action": "IMPORT_UNIQUE",
+      "source": "00LSF0118.big:Data\\ini\\MappedImages\\TextureSize_512\\leesf.INI",
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "mapped_image"
+    },
+    {
+      "name": "SDStop",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDStop.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+          "inner": null,
+          "filename": "SDStop.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11TB",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11TB.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11TB.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11TB.tga",
+          "inner": null,
+          "filename": "CHHQ11TB.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "HQ11",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/W3D/HQ11.W3D",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/HQ11.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/HQ11.W3D",
+          "inner": null,
+          "filename": "HQ11.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "SDNSM04.DDS",
+        "GLASS1.TGA",
+        "CHHQ11B.DDS",
+        "CHHQ11N.DDS",
+        "CHHQ11G.DDS",
+        "CHHQ11F.DDS",
+        "CHHQ11T.DDS",
+        "CHHQ11R.DDS"
+      ],
+      "w3d_anims": [
+        "HQ11.WHEEL08",
+        "HQ11.WHEEL07",
+        "HQ11.WHEEL06",
+        "HQ11.WHEEL05",
+        "HQ11.WHEEL04",
+        "HQ11.WHEEL03",
+        "HQ11.WHEEL02",
+        "HQ11.WHEEL01",
+        "HQ11.VEHICLE_X_",
+        "HQ11.VEHICLE_X5",
+        "HQ11.VEHICLE_X3",
+        "HQ11.VEHICLE_X2",
+        "HQ11.VEHICLE_X1",
+        "HQ11.VEHICLE_X0",
+        "HQ11.VEHICLE_R4",
+        "HQ11.VEHICLE_R3",
+        "HQ11.VEHICLE_R2",
+        "HQ11.VEHICLE_R1",
+        "HQ11.VEHICLE_HA",
+        "HQ11.VEHICLE_H3",
+        "HQ11.VEHICLE_H2",
+        "HQ11.VEHICLE_H1",
+        "HQ11.VEHICLE_H0",
+        "HQ11.VEHICLE_GU",
+        "HQ11.VEHICLE_EX",
+        "HQ11.VEHICLE_E8",
+        "HQ11.VEHICLE_E7",
+        "HQ11.VEHICLE_E6",
+        "HQ11.VEHICLE_E5",
+        "HQ11.VEHICLE_E4",
+        "HQ11.VEHICLE_E3",
+        "HQ11.VEHICLE_E2",
+        "HQ11.VEHICLE_E1",
+        "HQ11.VEHICLE_E0",
+        "HQ11.VEHICLE_BO",
+        "HQ11.VEHICLE_B3",
+        "HQ11.VEHICLE_B2",
+        "HQ11.VEHICLE_B0",
+        "HQ11.VEHICLE_AN",
+        "HQ11.VEHICLE_A0"
+      ],
+      "found_in": "zip"
+    },
+    {
+      "name": "SDNSM04.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDNSM04.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+          "inner": null,
+          "filename": "SDNSM04.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "GLASS1.TGA",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/Glass1.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/Glass1.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/Glass1.tga",
+          "inner": null,
+          "filename": "Glass1.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11B.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11B.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11B.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11B.dds",
+          "inner": null,
+          "filename": "CHHQ11B.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11N.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11N.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11N.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11N.dds",
+          "inner": null,
+          "filename": "CHHQ11N.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11G.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11G.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11G.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11G.dds",
+          "inner": null,
+          "filename": "CHHQ11G.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11F.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11F.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11F.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11F.dds",
+          "inner": null,
+          "filename": "CHHQ11F.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11T.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11T.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11T.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11T.dds",
+          "inner": null,
+          "filename": "CHHQ11T.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11R.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHHQ11R.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHHQ11R.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHHQ11R.dds",
+          "inner": null,
+          "filename": "CHHQ11R.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "HQ11.HQ11",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/W3D/HQ11.W3D",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/HQ11.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/HQ11.W3D",
+          "inner": null,
+          "filename": "HQ11.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "SDNSM04.DDS",
+        "GLASS1.TGA",
+        "CHHQ11B.DDS",
+        "CHHQ11N.DDS",
+        "CHHQ11G.DDS",
+        "CHHQ11F.DDS",
+        "CHHQ11T.DDS",
+        "CHHQ11R.DDS"
+      ],
+      "w3d_anims": [
+        "HQ11.WHEEL08",
+        "HQ11.WHEEL07",
+        "HQ11.WHEEL06",
+        "HQ11.WHEEL05",
+        "HQ11.WHEEL04",
+        "HQ11.WHEEL03",
+        "HQ11.WHEEL02",
+        "HQ11.WHEEL01",
+        "HQ11.VEHICLE_X_",
+        "HQ11.VEHICLE_X5",
+        "HQ11.VEHICLE_X3",
+        "HQ11.VEHICLE_X2",
+        "HQ11.VEHICLE_X1",
+        "HQ11.VEHICLE_X0",
+        "HQ11.VEHICLE_R4",
+        "HQ11.VEHICLE_R3",
+        "HQ11.VEHICLE_R2",
+        "HQ11.VEHICLE_R1",
+        "HQ11.VEHICLE_HA",
+        "HQ11.VEHICLE_H3",
+        "HQ11.VEHICLE_H2",
+        "HQ11.VEHICLE_H1",
+        "HQ11.VEHICLE_H0",
+        "HQ11.VEHICLE_GU",
+        "HQ11.VEHICLE_EX",
+        "HQ11.VEHICLE_E8",
+        "HQ11.VEHICLE_E7",
+        "HQ11.VEHICLE_E6",
+        "HQ11.VEHICLE_E5",
+        "HQ11.VEHICLE_E4",
+        "HQ11.VEHICLE_E3",
+        "HQ11.VEHICLE_E2",
+        "HQ11.VEHICLE_E1",
+        "HQ11.VEHICLE_E0",
+        "HQ11.VEHICLE_BO",
+        "HQ11.VEHICLE_B3",
+        "HQ11.VEHICLE_B2",
+        "HQ11.VEHICLE_B0",
+        "HQ11.VEHICLE_AN",
+        "HQ11.VEHICLE_A0"
+      ],
+      "found_in": "zip"
+    },
+    {
+      "name": "SDNSM04.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "GLASS1.TGA",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11B.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11N.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11G.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11F.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11T.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CHHQ11R.DDS",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "EXTireTrack.tga",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\extiretrack.dds",
+          "filename": "extiretrack.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "nested_big"
+    },
+    {
+      "name": "HQ11RD",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/W3D/HQ11RD.W3D",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/HQ11RD.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/HQ11RD.W3D",
+          "inner": null,
+          "filename": "HQ11RD.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "CHHQ11T.DDS"
+      ],
+      "w3d_anims": [
+        "HQ11RD.VEHICLE_RO",
+        "HQ11RD.VEHICLE_R5",
+        "HQ11RD.VEHICLE_A1",
+        "HQ11RD.VEHICLE_B4"
+      ],
+      "found_in": "zip"
+    },
+    {
+      "name": "HQ11RD.HQ11RD",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/W3D/HQ11RD.W3D",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/HQ11RD.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/HQ11RD.W3D",
+          "inner": null,
+          "filename": "HQ11RD.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "CHHQ11T.DDS"
+      ],
+      "w3d_anims": [
+        "HQ11RD.VEHICLE_RO",
+        "HQ11RD.VEHICLE_R5",
+        "HQ11RD.VEHICLE_A1",
+        "HQ11RD.VEHICLE_B4"
+      ],
+      "found_in": "zip"
+    },
+    {
+      "name": "CHHQ11TB",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    }
+  ]
+}

@@ -1093,6 +1093,191 @@ class Engine:
         )
         return summary
 
+    def run_ready_pack(self, out_dir: Path | None = None, limit: int = 4) -> dict:
+        """Pack a small READY group into an independent DATA copy. Dry-run only."""
+        import gzip
+
+        from . import catalog as catalog_mod
+        from . import cwc, pack_ready, ss1_layout
+
+        orig_data = self.ss1 / "_SPEC_DATA_ONE.big"
+        orig_art = self.ss1 / "_SPEC_ART_TWO.big"
+        before = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        dest_root = Path(out_dir) if out_dir else Path("/tmp/v25_ready_pack")
+        dest_root.mkdir(parents=True, exist_ok=True)
+        dest_data = dest_root / "_SPEC_DATA_ONE.big"
+        if dest_data.resolve() == orig_data.resolve():
+            raise SystemExit("ready-pack refused: dest is the original SPECTER DATA BIG")
+
+        rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        recipes = cwc.load_recipes(self.data)
+        v25 = self.inventory_v25()
+        spec = self.inventory_specter()
+        cat = catalog_mod.catalog_objects(v25, spec, rules, recipes)
+        group = pack_ready.select_ready_group(cat.get("objects") or [], limit=limit)
+        spec_idx = catalog_mod._index(spec)
+        assembled = pack_ready.assemble_ready_payloads(group, v25, spec, spec_idx, {}) if group else {
+            "payloads": {},
+            "objects": [],
+            "preflight_ok": True,
+            "generals_exe_run": False,
+        }
+        protected = {p.replace("/", "\\").lower() for p in (self.protected.get("ini_paths") or [])}
+        pack_info = None
+        if orig_data.is_file() and assembled["payloads"]:
+            pack_info = pack_ready.write_experimental_data(
+                orig_data, dest_data, assembled["payloads"], protected
+            )
+        after = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        layout = ss1_layout.discover(orig_data) if orig_data.is_file() else {}
+        if orig_data.is_file():
+            (self.reports / "SS1_LAYOUT.json").write_text(
+                json.dumps(layout, indent=2) + "\n", encoding="utf-8"
+            )
+            (self.reports / "SS1_LAYOUT.md").write_text(ss1_layout.layout_markdown(layout), encoding="utf-8")
+        (self.reports / "V25_CATALOG.json.gz").write_bytes(
+            gzip.compress(json.dumps(cat, default=str).encode("utf-8"), compresslevel=6)
+        )
+        (self.reports / "V25_CATALOG.md").write_text(
+            catalog_mod.catalog_markdown(cat, tehran_now()), encoding="utf-8"
+        )
+        report = {
+            "mode": "ready-pack-dry-run",
+            "generated_at_tehran": tehran_now(),
+            "applies_to_original_specter": False,
+            "game_bigs_modified": False,
+            "original_hashes_unchanged": before == after,
+            "original_hashes": after,
+            "generals_exe_run": False,
+            "loose_ini_written": False,
+            "equipment_imported": False,
+            "catalog_counts": cat.get("counts"),
+            "ready_selected": [r["object"] for r in group],
+            "objects": assembled.get("objects") or [],
+            "added_names": (pack_info or {}).get("added_names") or [],
+            "experimental_dest": str(dest_data) if pack_info else None,
+            "experimental_sha256": sha256_file(dest_data) if dest_data.is_file() else None,
+            "preflight_ok": assembled.get("preflight_ok"),
+            "proven_root_kinds": layout.get("proven_root_kinds") or [],
+            "note": (
+                "Independent DATA copy of a small Ready-Gate group. Original SS1 BIGs "
+                "untouched. No loose INI. Generals.exe was not run."
+            ),
+        }
+        (self.reports / "ENGINE_AUDIT.json").write_text(
+            json.dumps(
+                {
+                    **{k: report[k] for k in (
+                        "mode",
+                        "generated_at_tehran",
+                        "game_bigs_modified",
+                        "original_hashes_unchanged",
+                        "original_hashes",
+                        "generals_exe_run",
+                        "loose_ini_written",
+                        "equipment_imported",
+                    )},
+                    "catalog_counts": cat.get("counts"),
+                    "object_count": cat.get("object_count"),
+                    "ss1_layout": {
+                        "root_ini": layout.get("root_ini_count"),
+                        "object_recursive": (layout.get("object") or {}).get("recursive"),
+                        "weapon_dir_recursive": (layout.get("weapon_dir") or {}).get("recursive"),
+                        "weapon_nested_files": (layout.get("weapon_dir") or {}).get("nested_files"),
+                        "mappedimage_subdirs": (layout.get("mappedimages") or {}).get("subdirs"),
+                        "proven_root_kinds": layout.get("proven_root_kinds"),
+                        "extra_root_ini_count": layout.get("extra_root_ini_count"),
+                    },
+                },
+                indent=2,
+                default=str,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        (self.reports / "ENGINE_AUDIT.md").write_text(
+            catalog_mod.engine_audit_markdown(
+                {
+                    "generated_at_tehran": report["generated_at_tehran"],
+                    "mode": report["mode"],
+                    "game_bigs_modified": False,
+                    "original_hashes_unchanged": report["original_hashes_unchanged"],
+                    "original_hashes": after,
+                    "equipment_imported": False,
+                    "loose_ini_written": False,
+                    "generals_exe_run": False,
+                },
+                layout,
+                cat,
+            ),
+            encoding="utf-8",
+        )
+        (self.reports / "READY_PACK.json").write_text(
+            json.dumps(report, indent=2, default=str) + "\n", encoding="utf-8"
+        )
+        lines = [
+            "# Experimental READY DATA pack (dry-run)",
+            "",
+            f"- Generated: {report['generated_at_tehran']}",
+            f"- Applies to original SPECTER: **{report['applies_to_original_specter']}**",
+            f"- Original SPECTER BIGs unchanged: **{report['original_hashes_unchanged']}**",
+            f"- Loose INI written: **{report['loose_ini_written']}**",
+            f"- Equipment imported: **{report['equipment_imported']}**",
+            f"- Generals.exe run: **{report['generals_exe_run']}**",
+            "",
+            "## Selected READY objects",
+            "",
+        ]
+        if not group:
+            lines.append("- (none — Ready Gate produced an empty group)")
+        for row in assembled.get("objects") or []:
+            lines.append(
+                f"- `{row.get('object')}` → `{row.get('dest_ini')}` planned=`{row.get('planned_name')}` "
+                f"normalize={row.get('needs_normalize')}"
+            )
+        lines += [
+            "",
+            "## Experimental DATA",
+            "",
+            f"- dest: `{report.get('experimental_dest')}`",
+            f"- SHA256: `{report.get('experimental_sha256')}`",
+            f"- Original DATA: `{after.get('_SPEC_DATA_ONE.big')}`",
+            "",
+            "## Added members",
+            "",
+        ]
+        for n in report.get("added_names") or ["(none)"]:
+            lines.append(f"- `{n}`")
+        lines += [
+            "",
+            "## Proven root kinds (live DATA BIG)",
+            "",
+        ]
+        for k in report.get("proven_root_kinds") or []:
+            lines.append(f"- `{k}`")
+        (self.reports / "READY_PACK.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        if dest_root.is_dir():
+            (dest_root / "README.txt").write_text(
+                "\n".join(
+                    [
+                        "SPECTER FINAL — Silent Death V25 experimental READY DATA pack.",
+                        "Independent copy. Original SPECTER FINAL is not modified.",
+                        "Generals.exe was NOT run. This is not an in-game test report.",
+                        "Do not add loose Data\\INI files. This pack is BIG-only.",
+                        "Do not copy this BIG over the original install as a release.",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+        return report
+
     def run_stage4(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
         from . import archive as archive_mod
         from . import cwc, stage3_reports, stage4_reports

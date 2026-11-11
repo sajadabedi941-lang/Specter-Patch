@@ -48,26 +48,29 @@ def _run_suite(mod) -> tuple[int, int, int]:
 
 
 def stage3_and_stage2_unit_tests() -> dict:
-    from tests import test_art_cwc, test_data_rebuild, test_pack_sample, test_resolver
+    from tests import test_art_cwc, test_data_rebuild, test_pack_sample, test_ready_gate, test_resolver
 
     s5_ran, s5_fail, s5_rc = _run_suite(test_pack_sample)
     s4_ran, s4_fail, s4_rc = _run_suite(test_data_rebuild)
     s3_ran, s3_fail, s3_rc = _run_suite(test_art_cwc)
     s2_ran, s2_fail, s2_rc = _run_suite(test_resolver)
+    rg_ran, rg_fail, rg_rc = _run_suite(test_ready_gate)
     selftest = subprocess.run(
         [sys.executable, str(TOOL / "v25_sync.py"), "selftest"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
     )
-    combined = s5_ran + s4_ran + s3_ran + s2_ran
+    combined = s5_ran + s4_ran + s3_ran + s2_ran + rg_ran
     ok = (
         s5_rc == 0
         and s4_rc == 0
         and s3_rc == 0
         and s2_rc == 0
+        and rg_rc == 0
         and selftest.returncode == 0
         and combined >= 44
+        and rg_fail == 0
     )
     return {
         "name": "unit_tests",
@@ -80,6 +83,8 @@ def stage3_and_stage2_unit_tests() -> dict:
         "stage3_module_failures": s3_fail,
         "stage2_resolver_tests": s2_ran,
         "stage2_resolver_failures": s2_fail,
+        "ready_gate_tests": rg_ran,
+        "ready_gate_failures": rg_fail,
         "combined_selftest_count": combined,
         "v25_sync_selftest_returncode": selftest.returncode,
         "note": (
@@ -309,6 +314,30 @@ def specter_bigs_unchanged() -> dict:
     }
 
 
+def ready_pack_report_checks() -> dict:
+    p = REPORTS / "READY_PACK.json"
+    if not p.is_file():
+        return {"name": "ready_pack_report", "ok": True, "skipped": True, "note": "READY_PACK.json not in this checkout"}
+    rp = json.loads(p.read_text(encoding="utf-8"))
+    errors = []
+    if rp.get("applies_to_original_specter") is not False:
+        errors.append("READY_PACK.applies_to_original_specter must be false")
+    if rp.get("generals_exe_run") is not False:
+        errors.append("READY_PACK.generals_exe_run must be false")
+    if rp.get("loose_ini_written") is not False:
+        errors.append("READY_PACK.loose_ini_written must be false")
+    if rp.get("equipment_imported") is not False:
+        errors.append("READY_PACK.equipment_imported must be false")
+    if rp.get("original_hashes_unchanged") is not True:
+        errors.append("READY_PACK.original_hashes_unchanged must be true")
+    orig = rp.get("original_hashes") or {}
+    if orig.get("_SPEC_DATA_ONE.big") and orig.get("_SPEC_DATA_ONE.big") != EXPECTED_DATA:
+        errors.append("READY_PACK original DATA hash mismatch")
+    if orig.get("_SPEC_ART_TWO.big") and orig.get("_SPEC_ART_TWO.big") != EXPECTED_ART_TWO:
+        errors.append("READY_PACK original ART TWO hash mismatch")
+    return {"name": "ready_pack_report", "ok": not errors, "errors": errors}
+
+
 def stage5_report_checks() -> dict:
     p = REPORTS / "STAGE5_PACK.json"
     if not p.is_file():
@@ -342,6 +371,7 @@ def main() -> int:
         stage1_report_checks(),
         resolver_report_checks(),
         stage5_report_checks(),
+        ready_pack_report_checks(),
         apply_still_blocked(),
         specter_bigs_unchanged(),
     ]

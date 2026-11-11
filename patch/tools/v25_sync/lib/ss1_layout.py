@@ -54,6 +54,43 @@ PROTECTED_BASENAMES = {
     "aidata.ini",
 }
 
+# Stock tables that live as Data\\INI\\<Name>.ini in SPECTER FINAL (from live BIG).
+STOCK_ROOT_KIND_FILES = {
+    "Armor": "Armor.ini",
+    "Locomotor": "Locomotor.ini",
+    "FXList": "FXList.ini",
+    "DamageFX": "DamageFX.ini",
+    "CrateData": "Crate.ini",
+    "CrateTemplate": "Crate.ini",
+    "ParticleSystem": "ParticleSystem.ini",
+    "AudioEvent": "SoundEffects.ini",
+    "Weapon": "Weapon.ini",
+    "CommandSet": "CommandSet.ini",
+    "CommandButton": "CommandButton.ini",
+    "ObjectCreationList": "ObjectCreationList.ini",
+    "SpecialPower": "SpecialPower.ini",
+    "Upgrade": "Upgrade.ini",
+    "Science": "Science.ini",
+}
+
+PREFIX_TO_KIND = {
+    "Armor_": "Armor",
+    "Locomotor_": "Locomotor",
+    "FXList_": "FXList",
+    "DamageFX_": "DamageFX",
+    "Crate_": "CrateData",
+    "ParticleSystem_": "ParticleSystem",
+    "SoundEffects_": "AudioEvent",
+    "Weapon_": "Weapon",
+    "CommandSet_": "CommandSet",
+    "CommandButton_": "CommandButton",
+    "ObjectCreationList_": "ObjectCreationList",
+    "Object_": "Object",
+    "SpecialPower_": "SpecialPower",
+    "Upgrade_": "Upgrade",
+    "Science_": "Science",
+}
+
 KIND_ROOT_FILE = {
     "Weapon": r"Data\INI\Weapon_SilentDeath.ini",
     "Armor": r"Data\INI\Armor_SilentDeath.ini",
@@ -73,6 +110,12 @@ KIND_ROOT_FILE = {
 
 def nkey(name: str) -> str:
     return name.replace("/", "\\").lower()
+
+
+def extra_root_count(layout: dict | None) -> str:
+    if layout and layout.get("extra_root_ini_count") is not None:
+        return str(layout["extra_root_ini_count"])
+    return "N"
 
 
 def discover(data_big: Path) -> dict:
@@ -104,10 +147,31 @@ def discover(data_big: Path) -> dict:
             mapped_sub[parts[3]] += 1
 
     prefixes = Counter()
+    stock_basenames = set()
+    extra_root = 0
     for p in root_ini:
         base = p.rsplit("\\", 1)[-1]
         if "_" in base:
             prefixes[base.split("_", 1)[0] + "_"] += 1
+            extra_root += 1
+        else:
+            stock_basenames.add(base.lower())
+
+    proven_root_kinds = []
+    proven_evidence = {}
+    for kind, stock in STOCK_ROOT_KIND_FILES.items():
+        if stock.lower() in stock_basenames and extra_root:
+            proven_root_kinds.append(kind)
+            proven_evidence[kind] = (
+                f"stock `{stock}` is at Data\\INI root with {extra_root} extra root INI "
+                f"(including Weapon_/CommandSet_ extras). Same loadDirectory; kind is first-token."
+            )
+
+    unproven = [
+        p
+        for p, kind in PREFIX_TO_KIND.items()
+        if kind not in proven_root_kinds and p not in PROVEN_ROOT_PREFIXES
+    ]
 
     return {
         "source": str(data_big),
@@ -138,15 +202,10 @@ def discover(data_big: Path) -> dict:
             "reason": "SS1 only contains HandCreated and TextureSize_512 under MappedImages.",
         },
         "proven_root_prefixes": [p for p in PROVEN_ROOT_PREFIXES if prefixes.get(p)],
-        "unproven_root_kinds": [
-            "Armor_",
-            "FXList_",
-            "DamageFX_",
-            "Crate_",
-            "Locomotor_",
-            "ParticleSystem_",
-            "SoundEffects_",
-        ],
+        "proven_root_kinds": proven_root_kinds,
+        "proven_root_kind_evidence": proven_evidence,
+        "extra_root_ini_count": extra_root,
+        "unproven_root_kinds": unproven,
         "emit": dict(KIND_ROOT_FILE),
         "object_emit": r"Data\INI\Object\SilentDeath\{Side}\{Name}.ini",
         "audio_emit": r"Data\Audio\Sounds\{stem}.wav",
@@ -167,9 +226,8 @@ def path_loadable(path: str, layout: dict | None = None) -> dict:
     """Whether SS1's VFS load pattern will parse this member as INI.
 
     Confidence:
-      proven — SS1 already has the same class of path
-      likely — same loadDirectory as a proven class (root first-token) but no extra of this kind
-      unlikely — contradicts SS1 topology
+      proven — SS1 already has the same class of path, or stock root table + extra root loader
+      unlikely — contradicts SS1 topology (never treat likely as loadable)
     """
     k = nkey(path)
     if k.endswith(".wav"):
@@ -202,13 +260,29 @@ def path_loadable(path: str, layout: dict | None = None) -> dict:
                 "confidence": "proven",
                 "reason": f"SS1 already loads extra {prefix}*.ini at Data\\INI root",
             }
+        kind = PREFIX_TO_KIND.get(prefix)
+        proven_kinds = (layout or {}).get("proven_root_kinds")
+        if proven_kinds is None:
+            # No live layout: stock table at root + extra root loader (Weapon_/CommandSet_).
+            proven_kinds = list(STOCK_ROOT_KIND_FILES)
+        if kind and kind in proven_kinds:
+            return {
+                "path": path,
+                "loaded": True,
+                "confidence": "proven",
+                "reason": (
+                    f"SS1 stock `{STOCK_ROOT_KIND_FILES.get(kind)}` is a root INI; "
+                    f"{extra_root_count(layout)} extra root INI prove the folder loader. "
+                    f"Unique `{prefix}*.ini` is the same class as Weapon_*.ini."
+                ),
+            }
         return {
             "path": path,
-            "loaded": True,
-            "confidence": "likely",
+            "loaded": False,
+            "confidence": "unlikely",
             "reason": (
-                "Data\\INI root is loadDirectory(subdirs=False); first-token block type "
-                "should parse, but SS1 has no extra file of this kind"
+                "no SS1 extra of this prefix and no stock root table of this kind; "
+                "do not emit"
             ),
         }
     top = parts[0]
@@ -314,6 +388,15 @@ def layout_markdown(layout: dict) -> str:
     ]
     for p in layout.get("proven_root_prefixes") or []:
         lines.append(f"- `{p}*`")
+    lines += [
+        "",
+        "## Proven root kinds (stock table + extra root loader)",
+        "",
+        f"- Extra root INI: **{layout.get('extra_root_ini_count')}**",
+    ]
+    for kind in layout.get("proven_root_kinds") or []:
+        ev = (layout.get("proven_root_kind_evidence") or {}).get(kind, "")
+        lines.append(f"- `{kind}`: {ev}")
     lines += [
         "",
         "## Emit paths (SS1-safe)",

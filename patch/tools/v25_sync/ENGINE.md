@@ -62,19 +62,25 @@ be the only objects the engine understands.
 - Public INI basenames (`Weapon.ini`, `Armor.ini`, `CommandSet.ini`, …) are
   protected: loaded, never overwritten.
 
-Unproven extra kinds (`Armor_`, `Locomotor_`, `FXList_`, `DamageFX_`,
-`ParticleSystem_`, `SoundEffects_`, `Crate_`) sit at Data\INI root so the
-same non-recursive loader *should* parse them, but SS1 has no extra file of
-those kinds. Preflight records `unproven_root_kind` warnings. They are not
-proof of in-game load.
+Proven extra kinds at Data\INI root (same `loadDirectory(..., subdirs=False)`
+as the live `Weapon_*.ini` extras, with the stock table present):
+`Armor_`, `Locomotor_`, `FXList_`, `DamageFX_`, `Crate_`, `ParticleSystem_`,
+`SoundEffects_`. Unique `Armor_SilentDeath.ini` is the analogue of
+`Weapon_SilentDeath.ini`. Unknown prefixes stay unloadable.
 
 ## What the engine does now
 
 - `ss1-layout` — read-only scan of SS1 DATA member names; emit-path table.
 - `catalog` — every V25 Object, full Weapon/Projectile/OCL/FXList chain,
   dest loadability, CWC rebuild, collision with SS1. Ready ≠ file exists.
+- **Ready Gate** — READY only after actual payload bytes, parse-fatal deps,
+  proven dest path, rewritten names, and no duplicate/broken refs. Output-only
+  normalize closes FXList Ends and Locomotor `;` comments. Object missing End
+  is detected, never auto-fixed. CWC RiderChangeContain / OCLSpecialPower stay
+  `MANUAL_REBUILD` with required capabilities documented.
 - `preflight` — Stage 5 crash classes + missing parse-fatal refs + protected
   paths. Wired into `validate_added_defs` so pack-sample cannot ship them.
+- `ready-pack` — small READY group into an independent DATA copy (dry-run).
 - `selftest` — discovers all `tests/test_*.py`, including Stage 5 regressions.
 - `apply` — refused. No SPECTER BIG write. No loose INI. No bulk transfer.
 
@@ -84,6 +90,8 @@ proof of in-game load.
 python3 patch/tools/v25_sync/v25_sync.py selftest
 python3 patch/tools/v25_sync/v25_sync.py ss1-layout --json
 python3 patch/tools/v25_sync/v25_sync.py catalog --json
+python3 patch/tools/v25_sync/v25_sync.py e2e --json
+python3 patch/tools/v25_sync/v25_sync.py ready-pack --out /tmp/v25_ready_pack --json
 python3 patch/tools/v25_sync/v25_sync.py apply   # must error
 ```
 
@@ -92,24 +100,25 @@ Full per-object JSON: `reports/V25_CATALOG.json.gz`.
 
 ## Live catalog (this run)
 
-Against SPECTER FINAL DATA `7f8c7f63…81343` and the full V25 extract. Generated 2026-11-11 16:29 Asia/Tehran. Generals.exe was not run.
+Against SPECTER FINAL DATA `7f8c7f63…81343` and the full V25 extract. Generated 2026-11-11 17:10 Asia/Tehran. Generals.exe was not run.
 
 | Class | Objects |
 |---|---|
 | Total V25 Objects | 6207 |
-| Ready for safe transfer | 4027 |
-| Name in SS1 (rewrite plan required) | 709 |
-| Needs CWC rebuild | 689 |
-| Needs fix (missing parse-fatal refs) | 564 |
+| Ready for safe transfer (byte gate) | 3908 |
+| unique_import_ready | 3304 |
+| Name in SS1 (rewrite plan required) | 604 |
+| MANUAL_REBUILD (CWC kept) | 689 |
+| Needs fix (parse-fatal / missing End / dest) | 1392 |
 | Blocked sides | 218 |
 
 SS1 DATA: 3587 members, 192 Data\\INI root files, Weapon\\ nested subdir files = **0**, MappedImages only HandCreated (35) + TextureSize_512 (4).
 
-73 unit tests, including Stage 5 crash-class regressions.
+All prior unit tests plus Ready Gate / proven-path / experimental pack tests.
+Generals.exe was not run.
 
 ## Success criterion
 
-The engine can classify the entire V25 archive against real SS1 rules and
-refuse an unsafe payload **before** packing. It is not "two sample units in
-the game". Grouped transfer stays blocked until a later stage packs only
-`ready_for_safe_transfer` rows that also pass preflight on the actual bytes.
+No object with a parse-fatal defect or missing parse-fatal dependency is
+READY. Grouped transfer into original SPECTER FINAL stays blocked. The
+experimental DATA pack is an independent copy of a small READY group only.

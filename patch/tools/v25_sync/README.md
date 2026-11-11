@@ -1,8 +1,8 @@
-# V25 → SPECTER sync engine (stage 4 independent DATA rebuild)
+# V25 → SPECTER sync engine (stage 5 experimental sample pack)
 
 Independent planner for moving **Generals Silent Death V25** equipment into **SPECTER FINAL**.
 
-Stage 4 completes DATA rebuild plans for `ChinaCSSA1` and `ChinaHQ11` (unique-path DamageFX / CrateData, proven DeployStyleAIUpdate mapping). It still **does not import** Objects, Weapons, CommandSets, CommandButtons, or ART into the game. Original SPECTER BIGs stay untouched. `apply` is refused.
+Stage 5 packs `ChinaCSSA1` and `ChinaHQ11` into an **experimental copy** of SPECTER `_SPEC_DATA_ONE.big` + `_SPEC_ART_TWO.big` (unique SD25 defs, no public INI rewrite). Original SPECTER FINAL stays untouched. `apply` is refused. See `STAGE5.md`.
 
 See `STAGE2.md` for what stage 1 actually implemented vs what was only described.
 
@@ -29,10 +29,11 @@ python3 patch/tools/v25_sync/v25_sync.py dry-run --json
 python3 patch/tools/v25_sync/v25_sync.py resolve --json
 python3 patch/tools/v25_sync/v25_sync.py art-cwc --json
 python3 patch/tools/v25_sync/v25_sync.py data-rebuild --json
+python3 patch/tools/v25_sync/v25_sync.py pack-sample --out /tmp/v25_stage5_pack --json
 python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
 ```
 
-Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `plan-object`.  
+Commands: `health`, `extract`, `inventory`, `dry-run`, `plan`, `validate`, `resolve`, `art-cwc`, `data-rebuild`, `pack-sample`, `plan-object`.  
 `apply` always exits with an error.
 
 Cache/extract live under `/tmp/v25_src`, `/tmp/v25_extract`, `/tmp/ss1` — not inside the repo.
@@ -48,6 +49,8 @@ Written to `patch/tools/v25_sync/reports/`:
 | `MAPPING.json.gz` / `MAPPING.md` | Per-object dest, deps, art, missing refs (`gunzip` the JSON; `dry-run` regenerates it) |
 | `MANIFEST.json` | Stage-1 bundle metadata (no game files) |
 | `DRY_RUN.md` / `.json` | Full scan, collisions, incomplete trees, impact notes |
+| `STAGE5_PACK.md` / `.json` | Experimental DATA+ART BIG pack report (hashes, slots, limitations) |
+| `STAGE5_INSTALL.txt` / `STAGE5_REVERT.txt` | Install / revert for the experimental ZIP |
 
 ## SPECTER protection
 

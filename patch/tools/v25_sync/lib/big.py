@@ -61,6 +61,74 @@ def read_big(path: Path, suffixes: tuple[str, ...] | None = (".ini",)) -> dict[s
     return out
 
 
+def copy_big_with_adds(
+    src: Path,
+    dest: Path,
+    adds: dict[str, bytes],
+    protected_nkeys: set[str] | None = None,
+) -> dict:
+    """Copy a BIG and append unique-path files. Never overwrites an existing path."""
+    protected = {n.replace("/", "\\").lower() for n in (protected_nkeys or set())}
+    entries = _read_index(src)
+    existing = {nkey(n): n for n, _, _ in entries}
+    collisions = []
+    protected_hits = []
+    for name in adds:
+        k = nkey(name)
+        if k in protected:
+            protected_hits.append(name)
+        if k in existing:
+            collisions.append(f"{name} -> {existing[k]}")
+    if protected_hits:
+        raise ValueError("refusing to overwrite protected BIG paths: " + ", ".join(protected_hits))
+    if collisions:
+        raise ValueError("unique-path add collides with existing BIG member: " + "; ".join(collisions))
+
+    add_items = sorted(adds.items(), key=lambda kv: kv[0].replace("/", "\\").lower())
+    header_size = 16
+    for name, _, _ in entries:
+        header_size += 8 + len(name.encode("latin1")) + 1
+    for name, _blob in add_items:
+        header_size += 8 + len(name.encode("latin1")) + 1
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(dest.suffix + ".tmp")
+    with src.open("rb") as inf, tmp.open("wb") as out:
+        out.write(b"\x00" * header_size)
+        new_index: list[tuple[str, int, int]] = []
+        for name, off, size in entries:
+            inf.seek(off)
+            payload_off = out.tell()
+            left = size
+            while left:
+                chunk = inf.read(min(1 << 20, left))
+                if not chunk:
+                    break
+                out.write(chunk)
+                left -= len(chunk)
+            new_index.append((name, payload_off, size))
+        for name, blob in add_items:
+            payload_off = out.tell()
+            out.write(blob)
+            new_index.append((name, payload_off, len(blob)))
+        total = out.tell()
+        out.seek(0)
+        out.write(b"BIGF" + struct.pack(">III", total, len(new_index), header_size))
+        for name, off, size in new_index:
+            out.write(struct.pack(">II", off, size))
+            out.write(name.encode("latin1") + b"\x00")
+    tmp.replace(dest)
+    return {
+        "source": str(src),
+        "dest": str(dest),
+        "original_entries": len(entries),
+        "added": len(add_items),
+        "total_entries": len(entries) + len(add_items),
+        "bytes": dest.stat().st_size,
+        "added_names": [n for n, _ in add_items],
+    }
+
+
 def write_big(path: Path, files: dict[str, bytes]) -> None:
     """Minimal BIGF writer for tests. Not used on SPECTER game BIGs."""
     items = list(files.items())

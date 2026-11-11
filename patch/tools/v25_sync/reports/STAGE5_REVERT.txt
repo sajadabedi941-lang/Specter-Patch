@@ -1,0 +1,11 @@
+Revert experimental pack — restore SPECTER FINAL originals.
+
+  1. Quit the game.
+  2. Restore the backups made during INSTALL:
+       copy /Y _SPEC_DATA_ONE.big.bak _SPEC_DATA_ONE.big
+       copy /Y _SPEC_ART_TWO.big.bak  _SPEC_ART_TWO.big
+  3. If backups are missing, recopy SPECTER FINAL from the unmodified install.
+  4. Original hashes that must match after revert:
+       _SPEC_DATA_ONE.big  7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+       _SPEC_ART_TWO.big   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+  5. Delete any leftover experimental ZIP files. There are no loose INI to remove.

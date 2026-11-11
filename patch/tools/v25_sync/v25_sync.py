@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Silent Death V25 → SPECTER sync engine (stage 4: independent DATA rebuild; no game writes)."""
+"""Silent Death V25 → SPECTER sync engine (stage 5: experimental sample pack; original BIGs untouched)."""
 from __future__ import annotations
 
 import argparse
@@ -16,7 +16,7 @@ from lib.engine import Engine  # noqa: E402
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        description="V25 → SPECTER sync engine (stage 4 DATA rebuild; no game writes)"
+        description="V25 → SPECTER sync engine (stage 5 experimental pack; original BIGs untouched)"
     )
     p.add_argument(
         "command",
@@ -31,13 +31,15 @@ def main(argv: list[str] | None = None) -> int:
             "plan-object",
             "art-cwc",
             "data-rebuild",
+            "pack-sample",
             "selftest",
             "apply",
         ],
-        help="data-rebuild=ChinaCSSA1/ChinaHQ11 independent DATA plans; apply is refused",
+        help="pack-sample=experimental DATA+ART BIGs for ChinaCSSA1/HQ11; apply is refused",
     )
     p.add_argument("--root", type=Path, default=ROOT, help="Specter-Patch repo root")
     p.add_argument("--object", help="Object name for plan-object")
+    p.add_argument("--out", type=Path, help="experimental output directory for pack-sample")
     p.add_argument("--json", action="store_true", help="print JSON summary to stdout")
     args = p.parse_args(argv)
 
@@ -85,6 +87,8 @@ def main(argv: list[str] | None = None) -> int:
         result = eng.run_stage3()
     elif args.command == "data-rebuild":
         result = eng.run_stage4()
+    elif args.command == "pack-sample":
+        result = eng.run_stage5(out_dir=args.out)
     elif args.command == "resolve":
         result = eng.run_stage2()
     elif args.command in ("dry-run", "plan", "validate"):

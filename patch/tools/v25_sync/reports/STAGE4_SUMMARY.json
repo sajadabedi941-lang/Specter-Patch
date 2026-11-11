@@ -1,0 +1,44 @@
+{
+  "generated_at_tehran": "2026-11-11 14:31 Asia/Tehran",
+  "stage": 4,
+  "applies_to_game": false,
+  "generals_exe_run": false,
+  "focus": [
+    {
+      "object": "ChinaCSSA1",
+      "found": true,
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
+      "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": false,
+      "public_ini_leaks": [],
+      "cwc_modules": []
+    },
+    {
+      "object": "ChinaHQ11",
+      "found": true,
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
+      "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": true,
+      "public_ini_leaks": [],
+      "cwc_modules": [
+        "RiderChangeContain",
+        "OCLSpecialPower",
+        "EnemyNearUpdate",
+        "FireWeaponUpdate"
+      ]
+    }
+  ],
+  "tests": {
+    "selftest": "python3 patch/tools/v25_sync/v25_sync.py selftest",
+    "generals_exe_run": false
+  },
+  "note": "No Object, Weapon, CommandSet, CommandButton, or ART was imported into SPECTER.",
+  "public_ini_untouched": [
+    "Data\\INI\\DamageFX.ini",
+    "Data\\INI\\Crate.ini",
+    "Data\\INI\\FXList.ini",
+    "Data\\INI\\SpecialPower.ini"
+  ]
+}

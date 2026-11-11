@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 
-from . import compat, cwc
+from . import compat, cwc, data_rebuild
 from .rewrite import independent_name, rewrite_text
 
 DATA_KINDS = {
@@ -11,6 +11,7 @@ DATA_KINDS = {
     "Weapon",
     "ObjectCreationList",
     "FXList",
+    "DamageFX",
     "Armor",
     "Locomotor",
     "CommandSet",
@@ -18,8 +19,18 @@ DATA_KINDS = {
     "SpecialPower",
     "Upgrade",
     "ParticleSystem",
+    "CrateData",
     "CrateTemplate",
     "BehaviorModule",
+}
+# Unique-path independent clones / stock modules kept on the unique Object.
+INDEPENDENT_OK_KINDS = {
+    "BehaviorModule",
+    "DamageFX",
+    "CrateData",
+    "CrateTemplate",
+    "CommandSet",
+    "CommandButton",
 }
 ART_KINDS = {"ArtFile", "MappedImage"}
 
@@ -157,8 +168,15 @@ class Resolver:
                 return self._row(kind, name, "REUSE_NATIVE", name, source, f"Use SPECTER {kind}; V25 has no override in VFS.")
 
         pinned = {x.lower() for x in self.rules.get("pinned_reuse_command_buttons") or []}
-        if kind == "CommandButton" and name.lower() in pinned and spec:
-            return self._row(kind, name, "REUSE_NATIVE", name, source, "Pinned public command; V25 variant is not copied over SPECTER.")
+        if kind == "CommandButton" and name.lower() in pinned:
+            return self._row(
+                kind,
+                name,
+                "REUSE_NATIVE",
+                name,
+                (spec or {}).get("source") if spec else "stock-zh",
+                "Pinned public command; never imported, SPECTER/stock button stays.",
+            )
 
         if rec is None:
             if spec:
@@ -168,6 +186,28 @@ class Resolver:
                     kind, name, "RECOVER_FROM_V25", name, archive_hits[0],
                     "Missing from parsed INI VFS; matching filename exists in the V25 archive.",
                     extra={"archive_paths": archive_hits[:8], "missing_from": "extract_vfs"},
+                )
+            # ArmorSet DamageFX / CreateCrateDie CrateData were previously mis-typed as FXList.
+            if kind == "FXList" and name in data_rebuild.INDEPENDENT_DAMAGEFX:
+                return self._row(
+                    "DamageFX",
+                    name,
+                    "INDEPENDENT_ADD",
+                    data_rebuild.INDEPENDENT_DAMAGEFX[name]["planned"],
+                    None,
+                    "Name is a DamageFX table, not an FXList. Independent unique-path clone.",
+                    extra={"unique_path": data_rebuild.INDEPENDENT_DAMAGEFX[name]["unique_path"]},
+                )
+            if kind in ("CrateTemplate", "FXList") and name in data_rebuild.INDEPENDENT_CRATE:
+                spec_c = data_rebuild.INDEPENDENT_CRATE[name]
+                return self._row(
+                    "CrateData",
+                    name,
+                    "INDEPENDENT_ADD",
+                    spec_c["planned"],
+                    None,
+                    spec_c["reason"],
+                    extra={"unique_path": spec_c["unique_path"]},
                 )
             return self._row(
                 kind, name, "MANUAL_REBUILD", name, None,
@@ -294,10 +334,20 @@ class Resolver:
         # Do not walk factory CommandSets: that would pull every other buildable unit.
         return out
 
-    def walk(self, kind: str, name: str, seen: set | None = None, depth: int = 0) -> list[dict]:
+    def walk(
+        self,
+        kind: str,
+        name: str,
+        seen: set | None = None,
+        depth: int = 0,
+        skip: set | None = None,
+    ) -> list[dict]:
         if seen is None:
             seen = set()
+        skip = skip or set()
         nid = self.node_id(kind, name)
+        if (kind.lower(), name.lower()) in skip:
+            return []
         if nid in seen:
             return [self._row(kind, name, "CYCLE", name, None, "Cyclic reference; node already visited.")]
         if depth > 16:
@@ -306,7 +356,9 @@ class Resolver:
         node = self.resolve_node(kind, name)
         rows = [node]
         for ck, cn in self.children_of(kind, name):
-            rows.extend(self.walk(ck, cn, seen, depth + 1))
+            if (ck.lower(), cn.lower()) in skip:
+                continue
+            rows.extend(self.walk(ck, cn, seen, depth + 1, skip))
         return rows
 
     def uniqueness(self, rows: list[dict]) -> list[dict]:
@@ -329,7 +381,7 @@ class Resolver:
             hard_manual = [
                 r
                 for r in rows
-                if r["action"] in ("MANUAL_REBUILD", "INDEPENDENT_ADD")
+                if r["action"] == "MANUAL_REBUILD"
                 and r["kind"] in HARD_KINDS
             ]
             # DamageType INDEPENDENT_ADD is a targeting gap vs SPECTER units.
@@ -367,11 +419,27 @@ class Resolver:
                 for r in rows
             ) and "BehaviorModule" in kinds:
                 return "MANUAL_REBUILD"
+        if kinds is DATA_KINDS:
+            leftover = [
+                r
+                for r in subset
+                if r["action"] == "INDEPENDENT_ADD" and r["kind"] not in INDEPENDENT_OK_KINDS
+            ]
+            if leftover:
+                return "MANUAL_REBUILD"
+            # Unique-path rename is the transfer plan, not a DATA gap.
+            if "RECOVER_FROM_V25" in acts:
+                return "AUTO_RECOVERABLE"
+            return "READY_FOR_TRANSFER_PLAN"
         if "RECOVER_FROM_V25" in acts or "RENAME_AND_REWRITE" in acts:
             return "AUTO_RECOVERABLE"
         if "INDEPENDENT_ADD" in acts and kinds is DATA_KINDS:
-            # Independent module on unique INI is still a plan, not a hard ART gap.
-            if any(r["kind"] != "BehaviorModule" and r["action"] == "INDEPENDENT_ADD" for r in subset):
+            leftover = [
+                r
+                for r in subset
+                if r["action"] == "INDEPENDENT_ADD" and r["kind"] not in INDEPENDENT_OK_KINDS
+            ]
+            if leftover:
                 return "MANUAL_REBUILD"
         return "READY_FOR_TRANSFER_PLAN"
 
@@ -379,9 +447,19 @@ class Resolver:
         rec = self.lookup_v25("Object", name)
         found = rec is not None
         meta = self.eng.object_meta(rec) if rec else {}
-        rows = self.uniqueness(self.walk("Object", name)) if found else [
+        proof = data_rebuild.prove_rider_deploy(
+            rec,
+            lookup_v25=self.lookup_v25,
+            inventory=self.v25,
+        ) if rec else None
+        skip = {(k.lower(), n.lower()) for k, n in ((proof or {}).get("skip_refs") or [])}
+        rows = self.uniqueness(self.walk("Object", name, skip=skip)) if found else [
             self._row("Object", name, "MANUAL_REBUILD", name, None, "Object not in V25 VFS.")
         ]
+        rows = data_rebuild.overlay_independent_rows(rows)
+        if proof:
+            rows = data_rebuild.apply_deploy_overlay(rows, proof)
+            rows = self.uniqueness(rows)
         weapons = []
         for r in rows:
             if r["kind"] == "Weapon" and r["action"] != "CYCLE":
@@ -399,7 +477,7 @@ class Resolver:
                     0,
                     self._row("Object", name, "BLOCKED", name, rec.get("source"), "ZH general / boss side is not imported as a SPECTER faction."),
                 )
-        rewrite = {r["name"]: r["planned"] for r in rows if r["action"] == "RENAME_AND_REWRITE"}
+        rewrite = data_rebuild.rewrite_map_from_rows(rows)
         sample_body = None
         if rec and rewrite:
             sample_body = {
@@ -413,9 +491,50 @@ class Resolver:
         cwc_info = []
         if rec and self.cwc_recipes:
             cwc_info = cwc.inspect_object(rec, self.cwc_recipes)
+            if proof:
+                for row in cwc_info:
+                    reb = (proof.get("rebuild_for") or {}).get(row.get("module"))
+                    if reb:
+                        row["rebuild"] = reb
+                        row["proof_summary"] = proof.get("summary")
         buttons = self.incoming_buttons().get(name.lower(), [])
         dest_side = self.eng.faction_map["side_to_specter"].get(meta.get("side") or "", meta.get("side"))
         planned_obj = next((r["planned"] for r in rows if r["kind"] == "Object"), name)
+        dest_ini = (
+            f"Data\\INI\\Object\\SilentDeath\\{dest_side or 'Unmapped'}\\{planned_obj}.ini"
+            if found
+            else None
+        )
+        unique_files = data_rebuild.unique_data_files(rows, dest_ini)
+        clones = []
+        if rec:
+            for r in rows:
+                if r.get("kind") == "DamageFX" and r.get("action") == "INDEPENDENT_ADD":
+                    src = self.lookup_v25("DamageFX", r["name"])
+                    clones.append(
+                        {
+                            "kind": "DamageFX",
+                            "from": r["name"],
+                            "to": r["planned"],
+                            "unique_path": r.get("unique_path"),
+                            "preview": data_rebuild.clone_def_preview(
+                                "DamageFX", r["name"], r["planned"], (src or {}).get("body") or ""
+                            )[:2000],
+                        }
+                    )
+                if r.get("kind") in ("CrateData", "CrateTemplate") and r.get("action") == "INDEPENDENT_ADD":
+                    src = self.lookup_v25("CrateData", r["name"]) or self.lookup_v25("CrateTemplate", r["name"])
+                    clones.append(
+                        {
+                            "kind": "CrateData",
+                            "from": r["name"],
+                            "to": r["planned"],
+                            "unique_path": r.get("unique_path"),
+                            "preview": data_rebuild.clone_def_preview(
+                                "CrateData", r["name"], r["planned"], (src or {}).get("body") or ""
+                            )[:2000],
+                        }
+                    )
         return {
             "object": name,
             "found_in_vfs": found,
@@ -425,11 +544,11 @@ class Resolver:
             "data_status": data_status,
             "art_status": art_status,
             "cwc": cwc_info,
-            "dest_ini": (
-                f"Data\\INI\\Object\\SilentDeath\\{dest_side or 'Unmapped'}\\{planned_obj}.ini"
-                if found
-                else None
-            ),
+            "deploy_proof": proof,
+            "independent_clones": clones,
+            "unique_data_files": unique_files,
+            "public_ini_leaks": data_rebuild.public_ini_leaks(unique_files),
+            "dest_ini": dest_ini,
             "build_buttons": buttons,
             "build_commandsets": [
                 cs for b in buttons for cs in self.incoming_commandsets().get(b.lower(), [])
@@ -439,7 +558,9 @@ class Resolver:
             "rewrite_map": rewrite,
             "compatibility_notes": notes,
             "rewritten_preview": sample_body,
+            "independent_module_preview": (proof or {}).get("independent_modules") if proof else None,
             "applies_to_game": False,
+            "generals_exe_run": False,
         }
 
     def plan_all(self, object_names: list[str] | None = None) -> dict:

@@ -1,24 +1,28 @@
 {
-  "stage": 3,
-  "mode": "art-cwc-plan",
+  "stage": 4,
+  "mode": "data-rebuild-plan",
   "applies_to_game": false,
   "generals_exe_run": false,
-  "generated_at_tehran": "2026-11-11 13:30 Asia/Tehran",
+  "generated_at_tehran": "2026-11-11 14:31 Asia/Tehran",
   "focus": [
     {
       "object": "ChinaCSSA1",
       "found": true,
-      "readiness": "manual_rebuild",
-      "data_status": "MANUAL_REBUILD",
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
       "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": false,
+      "public_ini_leaks": [],
       "cwc_modules": []
     },
     {
       "object": "ChinaHQ11",
       "found": true,
-      "readiness": "manual_rebuild",
-      "data_status": "MANUAL_REBUILD",
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
       "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": true,
+      "public_ini_leaks": [],
       "cwc_modules": [
         "RiderChangeContain",
         "OCLSpecialPower",

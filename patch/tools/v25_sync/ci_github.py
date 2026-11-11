@@ -32,6 +32,10 @@ FORBIDDEN_INI = {
     "data/ini/armor.ini",
     "data/ini/locomotor.ini",
     "data/ini/playertemplate.ini",
+    "data/ini/damagefx.ini",
+    "data/ini/crate.ini",
+    "data/ini/fxlist.ini",
+    "data/ini/specialpower.ini",
 }
 
 
@@ -44,10 +48,10 @@ def _run_suite(mod) -> tuple[int, int, int]:
 
 
 def stage3_and_stage2_unit_tests() -> dict:
-    from tests import test_art_cwc, test_resolver
+    from tests import test_art_cwc, test_data_rebuild, test_resolver
 
+    s4_ran, s4_fail, s4_rc = _run_suite(test_data_rebuild)
     s3_ran, s3_fail, s3_rc = _run_suite(test_art_cwc)
-    # test_art_cwc.main() also loads stage-2 resolver tests; run resolver alone too.
     s2_ran, s2_fail, s2_rc = _run_suite(test_resolver)
     selftest = subprocess.run(
         [sys.executable, str(TOOL / "v25_sync.py"), "selftest"],
@@ -55,11 +59,13 @@ def stage3_and_stage2_unit_tests() -> dict:
         capture_output=True,
         text=True,
     )
-    combined = s3_ran + s2_ran
-    ok = s3_rc == 0 and s2_rc == 0 and selftest.returncode == 0 and combined >= 29
+    combined = s4_ran + s3_ran + s2_ran
+    ok = s4_rc == 0 and s3_rc == 0 and s2_rc == 0 and selftest.returncode == 0 and combined >= 36
     return {
         "name": "unit_tests",
         "ok": ok,
+        "stage4_module_tests": s4_ran,
+        "stage4_module_failures": s4_fail,
         "stage3_module_tests": s3_ran,
         "stage3_module_failures": s3_fail,
         "stage2_resolver_tests": s2_ran,
@@ -67,7 +73,7 @@ def stage3_and_stage2_unit_tests() -> dict:
         "combined_selftest_count": combined,
         "v25_sync_selftest_returncode": selftest.returncode,
         "note": (
-            "v25_sync.py selftest loads test_art_cwc + test_resolver (29 tests). "
+            "v25_sync.py selftest loads test_data_rebuild + test_art_cwc + test_resolver. "
             "Modules are also executed separately so each stage is visible."
         ),
     }
@@ -114,6 +120,7 @@ def stage1_report_checks() -> dict:
 def resolver_report_checks() -> dict:
     summary = json.loads((REPORTS / "RESOLVER_SUMMARY.json").read_text(encoding="utf-8"))
     s3 = json.loads((REPORTS / "STAGE3_SUMMARY.json").read_text(encoding="utf-8"))
+    s4 = json.loads((REPORTS / "STAGE4_SUMMARY.json").read_text(encoding="utf-8"))
     errors = []
     if summary.get("applies_to_game") is not False:
         errors.append("RESOLVER_SUMMARY.applies_to_game must be false")
@@ -141,6 +148,23 @@ def resolver_report_checks() -> dict:
             "BLOCKED",
         }:
             errors.append(f"{name} art_status invalid")
+    if s4.get("applies_to_game") is not False:
+        errors.append("STAGE4_SUMMARY.applies_to_game must be false")
+    if s4.get("generals_exe_run") is not False:
+        errors.append("STAGE4_SUMMARY.generals_exe_run must be false")
+    focus4 = {row["object"]: row for row in (s4.get("focus") or [])}
+    for name in ("ChinaCSSA1", "ChinaHQ11"):
+        if name not in focus4:
+            errors.append(f"{name} missing from STAGE4_SUMMARY.focus")
+        else:
+            if focus4[name].get("data_status") != "READY_FOR_TRANSFER_PLAN":
+                errors.append(f"{name} DATA is not READY_FOR_TRANSFER_PLAN ({focus4[name].get('data_status')})")
+            if focus4[name].get("public_ini_leaks"):
+                errors.append(f"{name} unique-path list leaks public INI")
+    if focus4.get("ChinaHQ11") and not focus4["ChinaHQ11"].get("use_deploy_style"):
+        errors.append("ChinaHQ11 did not use proven DeployStyleAIUpdate mapping")
+    if focus4.get("ChinaCSSA1") and focus4["ChinaCSSA1"].get("use_deploy_style"):
+        errors.append("ChinaCSSA1 must not invent DeployStyleAIUpdate")
     return {
         "name": "resolver_reports",
         "ok": not errors,

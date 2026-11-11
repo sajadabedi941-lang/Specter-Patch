@@ -189,7 +189,32 @@ def specter_bigs_unchanged() -> dict:
     changed: list[str] = []
     if base and all(c == "0" for c in base):
         base = ""
-    if base:
+    pr = (os.environ.get("V25_CI_PR") or "").strip()
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
+    repo = os.environ.get("GITHUB_REPOSITORY") or ""
+    if pr and token and repo:
+        import urllib.request
+
+        page = 1
+        while True:
+            url = f"https://api.github.com/repos/{repo}/pulls/{pr}/files?per_page=100&page={page}"
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "Accept": "application/vnd.github+json",
+                    "User-Agent": "v25-sync-ci",
+                },
+            )
+            with urllib.request.urlopen(req) as resp:
+                batch = json.load(resp)
+            if not batch:
+                break
+            changed.extend(f["filename"] for f in batch if f.get("filename"))
+            if len(batch) < 100:
+                break
+            page += 1
+    elif base:
         diff = subprocess.run(
             ["git", "diff", "--name-only", f"{base}...HEAD"],
             cwd=str(ROOT),
@@ -199,7 +224,7 @@ def specter_bigs_unchanged() -> dict:
         changed = [ln.strip() for ln in (diff.stdout or "").splitlines() if ln.strip()]
         if diff.returncode != 0:
             errors.append(f"git diff failed: {(diff.stderr or '')[:200]}")
-    else:
+    elif (ROOT / ".git").is_dir():
         diff = subprocess.run(
             ["git", "diff", "--name-only", "HEAD"],
             cwd=str(ROOT),

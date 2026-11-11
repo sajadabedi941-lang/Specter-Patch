@@ -2,6 +2,7 @@
 """Stage 5 experimental pack tests. Never writes SPECTER FINAL BIGs."""
 from __future__ import annotations
 
+import re
 import sys
 import tempfile
 import unittest
@@ -18,7 +19,12 @@ from lib.pack_sample import (  # noqa: E402
     SPECTER_CHINA_FACTORY_COMMANDSET,
     SPECTER_CHINA_FACTORY_OBJECT,
     build_rename_map,
+    close_fxlist_blocks,
+    dedupe_named_blocks,
     factory_overlay_text,
+    map_rider2_draw_to_deployed,
+    repair_armor_file,
+    repair_stage5_payloads,
     transform_hq11_body,
     unique_def_name,
     validate_added_defs,
@@ -58,6 +64,26 @@ class BigCopyTests(unittest.TestCase):
                     {r"Data\INI\CommandSet.ini": b"NO"},
                     protected_nkeys={"data\\ini\\commandset.ini"},
                 )
+
+    def test_rewrite_replaces_only_named_member(self):
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            src = td / "orig.big"
+            big.write_big(
+                src,
+                {
+                    r"Data\INI\Keep.ini": b"KEEP",
+                    r"Data\INI\FXList_SilentDeath.ini": b"OLD",
+                },
+            )
+            dest = td / "copy.big"
+            big.rewrite_big_members(src, dest, {r"Data\INI\FXList_SilentDeath.ini": b"NEW"})
+            self.assertEqual(src.read_bytes(), Path(src).read_bytes())
+            got = {}
+            for name, blob in big.iter_big(dest):
+                got[name] = blob
+            self.assertEqual(got[r"Data\INI\Keep.ini"], b"KEEP")
+            self.assertEqual(got[r"Data\INI\FXList_SilentDeath.ini"], b"NEW")
 
 
 class NamingTests(unittest.TestCase):
@@ -127,6 +153,118 @@ class Hq11TransformTests(unittest.TestCase):
         self.assertIn("ConditionState = DEPLOYED", out)
         self.assertIn("SET_SLUGGISH deployed locomotor not bound", out)
         self.assertIn("TurretsFunctionOnlyWhenDeployed = Yes", out)
+        last_end = None
+        for i, line in enumerate(out.splitlines()):
+            if line.strip().lower() == "end":
+                last_end = i
+        after = [ln.strip() for ln in out.splitlines()[last_end + 1 :] if ln.strip()]
+        self.assertEqual(after, [])
+        self.assertLess(out.lower().rfind("conditionstate = deployed"), out.lower().rfind("\nend"))
+        deployed_idx = out.lower().find("conditionstate = deployed")
+        deployed_end = out.lower().find("\n  end", deployed_idx)
+        self.assertIn("model = hq11", out.lower()[deployed_idx:deployed_end])
+
+
+class FxListCloseTests(unittest.TestCase):
+    def test_adds_column0_end_without_changing_effects(self):
+        src = (
+            "FXList SD25_WeaponFX_CWCgenHeavyMachineCannon\n"
+            "  LightPulse\n"
+            "    Radius = 10\n"
+            "  End\n"
+            "\n"
+            "FXList SD25_FX_CWCruS300MissileLaunch\n"
+            "  ViewShake\n"
+            "    Type = NORMAL\n"
+            "  End\n"
+        )
+        out = close_fxlist_blocks(src)
+        self.assertEqual(out.count("LightPulse"), 1)
+        self.assertEqual(out.count("Radius = 10"), 1)
+        self.assertEqual(len(re.findall(r"(?im)^FXList\s+", out)), 2)
+        self.assertEqual(len(re.findall(r"(?im)^End\s*$", out)), 2)
+
+
+class ArmorDedupeTests(unittest.TestCase):
+    def test_keeps_first_projectile_armor_only(self):
+        chunks = [
+            "Armor SD25_ProjectileArmor\n  Armor = DEFAULT 25%\nEnd\n",
+            "Armor SD25_TankArmor\n  Armor = CRUSH 50%\nEnd\n",
+            "Armor SD25_ProjectileArmor\n  Armor = DEFAULT 25%\nEnd\n",
+        ]
+        out = dedupe_named_blocks("Armor", chunks)
+        names = re.findall(r"(?im)^Armor\s+(?![=])(\S+)", "\n".join(out))
+        self.assertEqual(names, ["SD25_ProjectileArmor", "SD25_TankArmor"])
+
+
+class Stage5RepairTests(unittest.TestCase):
+    def test_hq11_orphans_move_inside_draw_with_model(self):
+        src = (
+            "Object SD25_ChinaHQ11\n"
+            "    ConditionState = RIDER2\n"
+            "      Model = HQ11\n"
+            "      Animation = HQ11.HQ11\n"
+            "    End\n"
+            "    AliasConditionState = RIDER2 MOVING\n"
+            "    TrackMarks = EXTireTrack.tga\n"
+            "  End\n"
+            "  ArmorSet\n"
+            "    Armor = SD25_HumveeArmor\n"
+            "  End\n"
+            "End\n"
+            "    ConditionState = DEPLOYED\n"
+            "    AliasConditionState = DEPLOYED MOVING\n"
+        )
+        out = map_rider2_draw_to_deployed(src)
+        last_end = [i for i, ln in enumerate(out.splitlines()) if re.match(r"^End\s*$", ln, re.I)][-1]
+        after = [ln.strip() for ln in out.splitlines()[last_end + 1 :] if ln.strip()]
+        self.assertEqual(after, [])
+        self.assertIn("ConditionState = DEPLOYED", out)
+        self.assertIn("AliasConditionState = DEPLOYED MOVING", out)
+        self.assertLess(out.find("ConditionState = DEPLOYED"), out.find("TrackMarks"))
+        self.assertIn("Animation = HQ11.HQ11", out[out.find("ConditionState = DEPLOYED"):])
+
+    def test_repair_payloads_keeps_fx_names_and_drops_dup_armor(self):
+        fx = (
+            "FXList SD25_WeaponFX_CWCgenHeavyMachineCannon\n"
+            "  LightPulse\n"
+            "    Radius = 10\n"
+            "  End\n"
+        )
+        armor = (
+            "Armor SD25_ProjectileArmor\n  Armor = DEFAULT 25%\nEnd\n"
+            "Armor SD25_TankArmor\n  Armor = CRUSH 50%\nEnd\n"
+            "Armor SD25_ProjectileArmor\n  Armor = DEFAULT 25%\nEnd\n"
+            "Armor SD25_HumveeArmor\n  Armor = SMALL_ARMS 50%\nEnd\n"
+        )
+        hq = (
+            "Object SD25_ChinaHQ11\n"
+            "    ConditionState = RIDER2\n"
+            "      Model = HQ11\n"
+            "    End\n"
+            "End\n"
+            "    ConditionState = DEPLOYED\n"
+        )
+        fixed = repair_stage5_payloads(
+            {
+                r"Data\INI\FXList_SilentDeath.ini": fx.encode(),
+                r"Data\INI\Armor_SilentDeath.ini": armor.encode(),
+                r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini": hq.encode(),
+            }
+        )
+        fx_out = fixed[r"Data\INI\FXList_SilentDeath.ini"].decode()
+        self.assertIn("FXList SD25_WeaponFX_CWCgenHeavyMachineCannon", fx_out)
+        self.assertIn("LightPulse", fx_out)
+        self.assertIn("Radius = 10", fx_out)
+        self.assertEqual(len(re.findall(r"(?im)^End\s*$", fx_out)), 1)
+        armor_out = repair_armor_file(armor)
+        names = re.findall(r"(?im)^Armor\s+(?![=])(\S+)", armor_out)
+        self.assertEqual(names, ["SD25_ProjectileArmor", "SD25_TankArmor", "SD25_HumveeArmor"])
+        hq_out = fixed[r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini"].decode()
+        self.assertTrue(hq_out.strip().endswith("End"))
+        self.assertIn("ConditionState = DEPLOYED", hq_out.split("End\n")[0] if False else hq_out)
+        last_end = [i for i, ln in enumerate(hq_out.splitlines()) if re.match(r"^End\s*$", ln, re.I)][-1]
+        self.assertEqual([ln.strip() for ln in hq_out.splitlines()[last_end + 1 :] if ln.strip()], [])
 
 
 class FactoryOverlayTests(unittest.TestCase):
@@ -174,6 +312,14 @@ class ValidateDefsTests(unittest.TestCase):
         )
         hq11 = (
             "Object SD25_ChinaHQ11\n"
+            "  Draw = W3DTruckDraw ModuleTag_01\n"
+            "    ConditionState = DEPLOYED\n"
+            "      Model = HQ11\n"
+            "    End\n"
+            "  End\n"
+            "  ArmorSet\n"
+            "    Armor = SD25_HumveeArmor\n"
+            "  End\n"
             "  Behavior = DeployStyleAIUpdate ModuleTag_SD25_Deploy\n"
             "    PackTime = 2000\n"
             "    TurretsFunctionOnlyWhenDeployed = Yes\n"
@@ -184,7 +330,13 @@ class ValidateDefsTests(unittest.TestCase):
             "  End\n"
             "End\n"
         )
-        cssa = "Object SD25_ChinaCSSA1\nEnd\n"
+        cssa = (
+            "Object SD25_ChinaCSSA1\n"
+            "  ArmorSet\n"
+            "    Armor = SD25_TankArmor\n"
+            "  End\n"
+            "End\n"
+        )
         good = {
             r"Data\INI\CommandSet_ZZZZ_SilentDeath_China.ini": overlay.encode(),
             r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini": hq11.encode(),
@@ -212,6 +364,12 @@ class ValidateDefsTests(unittest.TestCase):
         )
         hq11 = (
             "Object SD25_ChinaHQ11\n"
+            "  ConditionState = DEPLOYED\n"
+            "    Model = HQ11\n"
+            "  End\n"
+            "  ArmorSet\n"
+            "    Armor = SD25_HumveeArmor\n"
+            "  End\n"
             "  Behavior = DeployStyleAIUpdate ModuleTag_SD25_Deploy\n"
             "    TurretsFunctionOnlyWhenDeployed = Yes\n"
             "  End\n"
@@ -222,7 +380,9 @@ class ValidateDefsTests(unittest.TestCase):
         added = {
             r"Data\INI\CommandSet_ZZZZ_SilentDeath_China.ini": overlay.encode(),
             r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini": hq11.encode(),
-            r"Data\INI\Object\SilentDeath\China\SD25_ChinaCSSA1.ini": b"Object SD25_ChinaCSSA1\nEnd\n",
+            r"Data\INI\Object\SilentDeath\China\SD25_ChinaCSSA1.ini": (
+                b"Object SD25_ChinaCSSA1\n  ArmorSet\n    Armor = SD25_TankArmor\n  End\nEnd\n"
+            ),
             r"Data\INI\Armor_SilentDeath.ini": armor.encode(),
         }
         result = validate_added_defs(added, {})

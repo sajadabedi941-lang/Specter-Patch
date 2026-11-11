@@ -1,0 +1,16 @@
+{
+  "stage": "5-ini-fix",
+  "mode": "experimental-data-rewrite",
+  "applies_to_original_specter": false,
+  "generals_exe_run": false,
+  "loose_ini_written": false,
+  "generated_at_tehran": "2026-11-11 15:39 Asia/Tehran",
+  "original_hashes_unchanged": true,
+  "fixed_data_sha256": "c9d1b6ac805d9d9edd18d643f945bf740b822d88bf07d6e280129aa204f2880c",
+  "zip_sha256": "641618e790d9e2b4ed1a566d19b8006e184e3e1d4cba3c4b7ce756627efaf773",
+  "replaced_members": [
+    "Data\\INI\\FXList_SilentDeath.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaHQ11.ini",
+    "Data\\INI\\Armor_SilentDeath.ini"
+  ]
+}

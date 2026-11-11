@@ -190,16 +190,8 @@ def transform_hq11_body(body: str, deployed_weapon: str) -> str:
     else:
         text = weapon_blocks + text
 
-    # Duplicate RIDER2 visual states as DEPLOYED so DeployStyleAIUpdate can use them.
-    extra = []
-    for line in text.splitlines():
-        stripped = line.strip()
-        if stripped.lower().startswith("conditionstate = rider2"):
-            extra.append(re.sub(r"RIDER2", "DEPLOYED", line, flags=re.I))
-        elif stripped.lower().startswith("aliasconditionstate = rider2"):
-            extra.append(re.sub(r"RIDER2", "DEPLOYED", line, flags=re.I))
-    if extra:
-        text = text.rstrip() + "\n" + "\n".join(extra) + "\n"
+    # Duplicate complete RIDER2 ConditionState groups as DEPLOYED inside the Draw.
+    text = map_rider2_draw_to_deployed(text)
 
     text = re.sub(
         r"^\s*Locomotor\s*=\s*SET_SLUGGISH\s+\S+\s*$",
@@ -215,6 +207,148 @@ def transform_hq11_body(body: str, deployed_weapon: str) -> str:
         count=1,
     )
     return text
+
+
+def strip_after_object_end(text: str) -> str:
+    """Drop tokens that leaked past the Object's column-0 End."""
+    lines = text.splitlines()
+    last = None
+    for i, line in enumerate(lines):
+        if re.match(r"^End\s*$", line, re.I):
+            last = i
+    if last is None:
+        return text if text.endswith("\n") else text + "\n"
+    return "\n".join(lines[: last + 1]) + "\n"
+
+
+def map_rider2_draw_to_deployed(text: str) -> str:
+    """Copy complete RIDER2 ConditionState groups as DEPLOYED inside the same Draw.
+
+    Never leaves ConditionState/AliasConditionState after the Object End.
+    """
+    text = strip_after_object_end(text)
+    lines = text.splitlines()
+    extra: list[str] = []
+    last_rider = None
+    i = 0
+    while i < len(lines):
+        if re.match(r"^\s*ConditionState\s*=\s*.*\bRIDER2\b", lines[i], re.I):
+            block = [re.sub(r"\bRIDER2\b", "DEPLOYED", lines[i], flags=re.I)]
+            i += 1
+            while i < len(lines) and not re.match(r"^\s*End\s*$", lines[i], re.I):
+                block.append(lines[i])
+                i += 1
+            if i < len(lines):
+                block.append(lines[i])
+                i += 1
+            while i < len(lines) and re.match(
+                r"^\s*AliasConditionState\s*=\s*.*\bRIDER2\b", lines[i], re.I
+            ):
+                block.append(re.sub(r"\bRIDER2\b", "DEPLOYED", lines[i], flags=re.I))
+                i += 1
+            extra.extend(block)
+            extra.append("")
+            last_rider = i - 1
+            continue
+        if re.search(r"\bRIDER2\b", lines[i], re.I):
+            last_rider = i
+        i += 1
+    inside = "\n".join(lines)
+    already = re.search(r"(?im)^\s*ConditionState\s*=\s*DEPLOYED\b", inside)
+    if extra and last_rider is not None and not already:
+        lines = lines[: last_rider + 1] + extra + lines[last_rider + 1 :]
+    return "\n".join(lines) + "\n"
+
+
+def insert_lines_after_last_rider2(text: str, extra: list[str]) -> str:
+    """Keep extra Draw lines inside the same Draw as RIDER2, before Object End."""
+    lines = text.splitlines()
+    last = None
+    for i, line in enumerate(lines):
+        if re.search(r"\bRIDER2\b", line, re.I):
+            last = i
+    if last is None:
+        for i in range(len(lines) - 1, -1, -1):
+            if re.match(r"^End\s*$", lines[i], re.I):
+                last = i - 1
+                break
+    if last is None:
+        last = len(lines) - 1
+    return "\n".join(lines[: last + 1] + extra + lines[last + 1 :]) + "\n"
+
+
+def split_named_blocks(kind: str, text: str) -> list[str]:
+    return re.split(rf"(?=^{re.escape(kind)}\s+(?![=])\S+)", text, flags=re.I | re.M)
+
+
+def repair_armor_file(text: str) -> str:
+    return "".join(dedupe_named_blocks("Armor", split_named_blocks("Armor", text)))
+
+
+STAGE5_FXLIST_PATH = r"Data\INI\FXList_SilentDeath.ini"
+STAGE5_HQ11_PATH = r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini"
+STAGE5_ARMOR_PATH = r"Data\INI\Armor_SilentDeath.ini"
+
+
+def repair_stage5_payloads(payloads: dict[str, bytes]) -> dict[str, bytes]:
+    """Fix the three diagnosed Stage 5 INI payloads. Names and FX effect bodies stay."""
+    by_key = {big.nkey(n): (n, blob) for n, blob in payloads.items()}
+    out: dict[str, bytes] = {}
+    fx_key = big.nkey(STAGE5_FXLIST_PATH)
+    hq_key = big.nkey(STAGE5_HQ11_PATH)
+    ar_key = big.nkey(STAGE5_ARMOR_PATH)
+    if fx_key in by_key:
+        name, blob = by_key[fx_key]
+        out[name] = close_fxlist_blocks(blob.decode("latin1", errors="replace")).encode("latin1", errors="replace")
+    if hq_key in by_key:
+        name, blob = by_key[hq_key]
+        out[name] = map_rider2_draw_to_deployed(blob.decode("latin1", errors="replace")).encode(
+            "latin1", errors="replace"
+        )
+    if ar_key in by_key:
+        name, blob = by_key[ar_key]
+        out[name] = repair_armor_file(blob.decode("latin1", errors="replace")).encode("latin1", errors="replace")
+    missing = [p for p, k in (
+        (STAGE5_FXLIST_PATH, fx_key),
+        (STAGE5_HQ11_PATH, hq_key),
+        (STAGE5_ARMOR_PATH, ar_key),
+    ) if k not in by_key]
+    if missing:
+        raise ValueError("repair_stage5_payloads missing: " + ", ".join(missing))
+    return out
+
+
+def close_fxlist_blocks(text: str) -> str:
+    """SPECTER FXList.ini uses nested End plus a column-0 End per FXList."""
+    chunks = re.split(r"(?=^FXList\s+\S+)", text, flags=re.I | re.M)
+    out: list[str] = []
+    for chunk in chunks:
+        if not re.match(r"^FXList\s+\S+", chunk.lstrip(), re.I):
+            out.append(chunk)
+            continue
+        body = chunk.rstrip() + "\n"
+        if not re.search(r"(?m)^End\s*$", body):
+            body = body.rstrip() + "\nEnd\n"
+        out.append(body)
+    return "".join(out)
+
+
+def dedupe_named_blocks(kind: str, chunks: list[str]) -> list[str]:
+    """Keep the first Armor/FXList/etc. body per name."""
+    seen: set[str] = set()
+    out: list[str] = []
+    header = re.compile(rf"^{re.escape(kind)}\s+(\S+)", re.I | re.M)
+    for chunk in chunks:
+        m = header.search(chunk)
+        if not m:
+            out.append(chunk)
+            continue
+        key = m.group(1).lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(chunk)
+    return out
 
 
 def factory_overlay_text(specter_cs: dict, cssa1_btn: str, hq11_btn: str) -> str:
@@ -370,6 +504,35 @@ def validate_added_defs(added_data: dict[str, bytes], added_art: dict[str, bytes
     cssa = added_data.get(object_ini_path("China", "SD25_ChinaCSSA1"), b"").decode("latin1", errors="replace")
     if "Object SD25_ChinaCSSA1" not in cssa:
         errors.append("SD25_ChinaCSSA1 object missing")
+    if cssa and not re.search(r"(?i)Armor\s*=\s*SD25_TankArmor\b", cssa):
+        errors.append("SD25_ChinaCSSA1 must keep Armor = SD25_TankArmor")
+    if hq11 and not re.search(r"(?i)Armor\s*=\s*SD25_HumveeArmor\b", hq11):
+        errors.append("SD25_ChinaHQ11 must keep Armor = SD25_HumveeArmor")
+    if hq11:
+        last_end = None
+        for i, line in enumerate(hq11.splitlines()):
+            if re.match(r"^End\s*$", line, re.I):
+                last_end = i
+        if last_end is not None:
+            after = [ln.strip() for ln in hq11.splitlines()[last_end + 1 :] if ln.strip() and not ln.strip().startswith(";")]
+            if after:
+                errors.append("SD25_ChinaHQ11 has tokens after Object End: " + "; ".join(after[:6]))
+        if "ConditionState = DEPLOYED" not in hq11:
+            errors.append("SD25_ChinaHQ11 missing DEPLOYED draw ConditionState")
+    fx = added_data.get(r"Data\INI\FXList_SilentDeath.ini", b"").decode("latin1", errors="replace")
+    if fx.strip():
+        n_lists = len(re.findall(r"(?im)^FXList\s+\S+", fx))
+        n_end = len(re.findall(r"(?im)^End\s*$", fx))
+        if n_lists and n_end < n_lists:
+            errors.append(f"FXList_SilentDeath.ini missing column-0 End ({n_end} End for {n_lists} FXList)")
+    armor = added_data.get(r"Data\INI\Armor_SilentDeath.ini", b"").decode("latin1", errors="replace")
+    armor_names = re.findall(r"(?im)^Armor\s+(?![=])(\S+)", armor)
+    seen_a: dict[str, int] = {}
+    for n in armor_names:
+        seen_a[n.lower()] = seen_a.get(n.lower(), 0) + 1
+    dups = [n for n, c in seen_a.items() if c > 1]
+    if dups:
+        errors.append("duplicate Armor defs: " + ", ".join(dups))
     for path in added_art:
         n = big.nkey(path)
         if n.endswith(".wav"):
@@ -449,7 +612,14 @@ class SamplePacker:
         for kind, chunks in bundles.items():
             path = KIND_BUNDLE.get(kind)
             if path and chunks:
-                blob = "\n".join(chunks).encode("latin1", errors="replace")
+                if kind == "Armor":
+                    chunks = dedupe_named_blocks("Armor", chunks)
+                if kind == "FXList":
+                    chunks = [close_fxlist_blocks(c) for c in chunks]
+                    joined = close_fxlist_blocks("\n".join(chunks))
+                else:
+                    joined = "\n".join(chunks)
+                blob = joined.encode("latin1", errors="replace")
                 if path in self.added_data:
                     self.added_data[path] += b"\n" + blob
                 else:

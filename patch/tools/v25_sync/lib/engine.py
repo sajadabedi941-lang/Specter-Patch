@@ -1093,6 +1093,95 @@ class Engine:
         )
         return summary
 
+    def run_first_transfer(self, out_dir: Path | None = None) -> dict:
+        """Independent DATA+ART pack of 2–3 READY objects with proven W3D/textures."""
+        import gzip
+
+        from . import archive as archive_mod
+        from . import catalog as catalog_mod
+        from . import cwc
+        from .art_index import ArtIndex
+        from .pack_transfer import FirstTransfer
+
+        orig_data = self.ss1 / "_SPEC_DATA_ONE.big"
+        orig_art = self.ss1 / "_SPEC_ART_TWO.big"
+        before = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        gz = self.reports / "V25_CATALOG.json.gz"
+        if gz.is_file():
+            cat = json.loads(gzip.decompress(gz.read_bytes()))
+        else:
+            rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+            recipes = cwc.load_recipes(self.data)
+            cat = catalog_mod.catalog_objects(self.inventory_v25(), self.inventory_specter(), rules, recipes)
+        vols = self.find_volumes()
+        zip_path = archive_mod.stage_volumes(vols, self.v25_src) if vols else None
+        art = ArtIndex(zip_path, self.cache, extract_root=None)
+        dest = Path(out_dir) if out_dir else Path("/tmp/v25_first_transfer")
+        packer = FirstTransfer(self, art, zip_path, dest)
+        report = packer.run(cat.get("objects") or [])
+        after = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        report["original_hashes_unchanged"] = before == after
+        report["generated_at_tehran"] = tehran_now()
+        (self.reports / "FIRST_TRANSFER.json").write_text(
+            json.dumps(report, indent=2, default=str) + "\n", encoding="utf-8"
+        )
+        lines = [
+            "# First V25 → SS1 transfer (independent DATA+ART)",
+            "",
+            f"- Generated: {report['generated_at_tehran']}",
+            f"- Applies to original SPECTER: **{report.get('applies_to_original_specter')}**",
+            f"- Original hashes unchanged: **{report.get('original_hashes_unchanged')}**",
+            f"- Install-ready: **{report.get('install_ready')}**",
+            f"- Loose INI: **{report.get('loose_ini_written')}**",
+            f"- Generals.exe run: **{report.get('generals_exe_run')}**",
+            "",
+            "## Objects",
+            "",
+        ]
+        for obj in report.get("objects") or []:
+            lines.append(
+                f"- V25 `{obj.get('v25_object')}` → SS1 `{obj.get('ss1_name')}` "
+                f"dest=`{obj.get('dest_ini')}` normalize={obj.get('needs_normalize')} rename={obj.get('rename')}"
+            )
+            for a in obj.get("art") or []:
+                lines.append(
+                    f"  - ART `{a.get('from')}` → `{a.get('to')}` {a.get('action')} bytes={a.get('bytes')}"
+                )
+            lines.append(f"  - DATA deps: {', '.join(obj.get('data_deps') or [])}")
+        lines += ["", "## Skipped", ""]
+        for s in report.get("skipped") or ["none"]:
+            lines.append(
+                f"- `{s}`" if not isinstance(s, dict) else f"- `{s.get('object')}` {s.get('reason')} {s.get('missing') or ''}"
+            )
+        lines += ["", "## Factories", ""]
+        for fac in report.get("factories") or []:
+            lines.append(f"- {fac.get('side')} `{fac.get('commandset')}` slots {fac.get('slots')}")
+        lines += ["", "## Experimental BIGs", ""]
+        exp = report.get("experimental_hashes") or {}
+        orig = report.get("original_hashes") or {}
+        lines.append(f"- dest `{report.get('experimental_dest')}`")
+        lines.append(f"- DATA `{exp.get('_SPEC_DATA_ONE.big')}` (original `{orig.get('_SPEC_DATA_ONE.big')}`)")
+        lines.append(f"- ART TWO `{exp.get('_SPEC_ART_TWO.big')}` (original `{orig.get('_SPEC_ART_TWO.big')}`)")
+        lines += ["", "## Added DATA", ""]
+        for n in report.get("added_data_names") or []:
+            lines.append(f"- `{n}`")
+        lines += ["", "## Added ART", ""]
+        for n in report.get("added_art_names") or []:
+            lines.append(f"- `{n}`")
+        lines += ["", "## Validation", ""]
+        val = report.get("validation") or {}
+        lines.append(f"- ok: **{val.get('ok')}**")
+        for err in val.get("errors") or []:
+            lines.append(f"- error: {err}")
+        (self.reports / "FIRST_TRANSFER.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return report
+
     def run_ready_pack(self, out_dir: Path | None = None, limit: int = 4) -> dict:
         """Pack a small READY group into an independent DATA copy. Dry-run only."""
         import gzip

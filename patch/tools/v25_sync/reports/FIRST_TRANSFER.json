@@ -1,0 +1,705 @@
+{
+  "mode": "first-transfer",
+  "applies_to_original_specter": false,
+  "game_bigs_modified": false,
+  "original_hashes_unchanged": true,
+  "original_hashes": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "experimental_hashes": {
+    "_SPEC_DATA_ONE.big": "ea06b2f731cfcd907df2ddcbaa6d7bbdaaf9649702173283099f869cc84c0f33",
+    "_SPEC_ART_TWO.big": "b335e92749e124272d11499ed05071a4c5bd9fd5a031533d00b3564b906f151b"
+  },
+  "generals_exe_run": false,
+  "loose_ini_written": false,
+  "equipment_imported": false,
+  "install_ready": true,
+  "objects": [
+    {
+      "v25_object": "ChinaS75",
+      "ss1_name": "ChinaS75",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaS75.ini",
+      "side": "China",
+      "needs_normalize": true,
+      "rename": false,
+      "art": [
+        {
+          "from": "CHS75TB",
+          "to": "Art\\Textures\\CHS75TB.tga",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 99330,
+          "kind": "model_or_texture",
+          "filename": "CHS75TB.tga",
+          "loadable": true
+        },
+        {
+          "from": "CHS75",
+          "to": "Art\\W3D\\CHS75.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 218392,
+          "kind": "model_or_texture",
+          "filename": "CHS75.W3D",
+          "loadable": true
+        },
+        {
+          "from": "CHS75m",
+          "to": "Art\\W3D\\CHS75m.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 81185,
+          "kind": "model_or_texture",
+          "filename": "CHS75m.W3D",
+          "loadable": true
+        },
+        {
+          "from": "CHS75.tga",
+          "to": "Art\\Textures\\CHS75.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 699192,
+          "kind": "w3d_texture",
+          "filename": "CHS75.dds",
+          "loadable": true
+        }
+      ],
+      "missing_art": [],
+      "data_deps": [
+        "Object:ChinaS75",
+        "ParticleSystem:CWCnatBombLightSmokeMiddle",
+        "ParticleSystem:CWCnatBombFire",
+        "ParticleSystem:CWCnatBombLightSmokeBig",
+        "ParticleSystem:BuildingDust",
+        "ParticleSystem:BuildUpSmoke",
+        "ParticleSystem:BuildingSnowDust",
+        "ParticleSystem:BuildUpSnowSmoke",
+        "ParticleSystem:BuildingNightSnowDust",
+        "ParticleSystem:BuildUpNightSnowSmoke",
+        "ParticleSystem:StructureTransitionTinySmoke",
+        "ParticleSystem:StructureTransitionTinyExplosion",
+        "ParticleSystem:StructureTransitionTinyShockwave",
+        "Weapon:ChinaS75Launcher",
+        "AudioEvent:CWCruTEL",
+        "FXList:FX_CWCruS300MissileLaunch",
+        "FXList:WeaponFX_CWCgenLargeAntiAirMissileDetonation",
+        "ParticleSystem:CWCgenExhaustMediumMissile",
+        "Object:ChinaS75Missile",
+        "ParticleSystem:CWCruS300MissileFlare",
+        "Armor:ProjectileArmor",
+        "FXList:WeaponFX_CWCgenLargeMissileIgnition",
+        "Locomotor:ChinaHQ2MissileLocomotor",
+        "Armor:BaseDefenseArmor",
+        "DamageFX:StructureDamageFXNoShake",
+        "FXList:FX_StructureDamagedNoShake",
+        "FXList:FX_StructureDamagedFlameNoShake",
+        "CommandSet:HAWKCommandSet",
+        "CommandButton:Command_Stop",
+        "CommandButton:Command_Sell",
+        "AudioEvent:GattlingCannonSelect",
+        "AudioEvent:BuildingDestroy",
+        "FXList:FX_StructureTinyDeath"
+      ]
+    },
+    {
+      "v25_object": "ChinaZFB05",
+      "ss1_name": "ChinaZFB05",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaZFB05.ini",
+      "side": "China",
+      "needs_normalize": true,
+      "rename": false,
+      "art": [
+        {
+          "from": "ZFB05TB",
+          "to": "Art\\Textures\\ZFB05TB.tga",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 175198,
+          "kind": "model_or_texture",
+          "filename": "ZFB05TB.tga",
+          "loadable": true
+        },
+        {
+          "from": "SDZFB05",
+          "to": "Art\\W3D\\SDZFB05.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 1316796,
+          "kind": "model_or_texture",
+          "filename": "SDZFB05.W3D",
+          "loadable": true
+        },
+        {
+          "from": "EXTireTrack.tga",
+          "to": "Art\\Textures\\extiretrack.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 1520,
+          "kind": "model_or_texture",
+          "filename": "extiretrack.dds",
+          "loadable": true
+        },
+        {
+          "from": "PMJnkCrate",
+          "to": "Art\\W3D\\PMJnkCrate.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 14609,
+          "kind": "model_or_texture",
+          "filename": "PMJnkCrate.W3D",
+          "loadable": true
+        },
+        {
+          "from": "SDZFB05B.DDS",
+          "to": "Art\\Textures\\SDZFB05B.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 262272,
+          "kind": "w3d_texture",
+          "filename": "SDZFB05B.dds",
+          "loadable": true
+        },
+        {
+          "from": "GLASS1.TGA",
+          "to": "Art\\Textures\\Glass1.tga",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 274,
+          "kind": "w3d_texture",
+          "filename": "Glass1.tga",
+          "loadable": true
+        },
+        {
+          "from": "SDZFB05P.DDS",
+          "to": "Art\\Textures\\SDZFB05P.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 262272,
+          "kind": "w3d_texture",
+          "filename": "SDZFB05P.dds",
+          "loadable": true
+        },
+        {
+          "from": "SDZFB05T.DDS",
+          "to": "Art\\Textures\\SDZFB05T.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 262272,
+          "kind": "w3d_texture",
+          "filename": "SDZFB05T.dds",
+          "loadable": true
+        },
+        {
+          "from": "SDZFB05L.DDS",
+          "to": "Art\\Textures\\SDZFB05L.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 174904,
+          "kind": "w3d_texture",
+          "filename": "SDZFB05L.dds",
+          "loadable": true
+        },
+        {
+          "from": "PMCONSUP01.tga",
+          "to": "Art\\Textures\\pmconsup01.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 22000,
+          "kind": "w3d_texture",
+          "filename": "pmconsup01.dds",
+          "loadable": true
+        },
+        {
+          "from": "PMBarrel01.tga",
+          "to": "Art\\Textures\\pmbarrel01.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 2872,
+          "kind": "w3d_texture",
+          "filename": "pmbarrel01.dds",
+          "loadable": true
+        },
+        {
+          "from": "PMCrates04.tga",
+          "to": "Art\\Textures\\pmcrates04.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 2872,
+          "kind": "w3d_texture",
+          "filename": "pmcrates04.dds",
+          "loadable": true
+        },
+        {
+          "from": "PMCrates04_L.tga",
+          "to": "Art\\Textures\\pmcrates04_l.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 2872,
+          "kind": "w3d_texture",
+          "filename": "pmcrates04_l.dds",
+          "loadable": true
+        }
+      ],
+      "missing_art": [],
+      "data_deps": [
+        "Object:ChinaZFB05",
+        "Weapon:HumveeGun",
+        "AudioEvent:HumveeWeapon",
+        "FXList:WeaponFX_CWCusInfM60MG_Stand",
+        "FXList:WeaponFX_CWCgenSmallArmsGroundImpact",
+        "Object:CWCgenMachineGunBullet",
+        "Armor:ProjectileArmor",
+        "Weapon:CWCgenVehicleExplodeWeapon",
+        "ObjectCreationList:OCL_CWCgenProjectileTreeImpact",
+        "Object:CWCgenTreesOnFire",
+        "Armor:InvulnerableAllArmor",
+        "Weapon:CWCgenTreeFlameWeapon",
+        "Armor:TankArmor",
+        "DamageFX:TankDamageFX",
+        "FXList:FX_DamageTankStruck",
+        "FXList:FX_HeroicDamageTankStruck",
+        "FXList:FX_DamageTankStruckSmallArms",
+        "FXList:FX_HeroicDamageTankStruckSmallArms",
+        "FXList:FX_DamageDisableVehicle",
+        "FXList:FX_HeroicDamageDisableVehicle",
+        "CommandSet:UEKBEAR",
+        "CommandButton:Command_TransportExit",
+        "CommandButton:Command_Evacuate",
+        "CommandButton:Command_AttackMove",
+        "CommandButton:Command_Guard",
+        "CommandButton:Command_Stop",
+        "AudioEvent:KAYMAN_S",
+        "AudioEvent:KAYMAN_M",
+        "AudioEvent:KAYMAN_A",
+        "AudioEvent:HumveeEnter",
+        "AudioEvent:HumveeExit",
+        "Locomotor:UEK_MEDIUM_ENGINE",
+        "FXList:FX_CWCgenTankDeathRubble2",
+        "FXList:FX_LimoExplode",
+        "FXList:FX_BattleMasterDamageTransition",
+        "ObjectCreationList:OCL_CWCgenTankDeathTrails",
+        "CrateData:SalvageCrateData",
+        "Object:SalvageCrate",
+        "Science:SCIENCE_GLA",
+        "ParticleSystem:SmallLightSmokeColumn"
+      ]
+    },
+    {
+      "v25_object": "AGS17GrenadeLauncher",
+      "ss1_name": "AGS17GrenadeLauncher",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Russia\\AGS17GrenadeLauncher.ini",
+      "side": "Russia",
+      "needs_normalize": true,
+      "rename": false,
+      "art": [
+        {
+          "from": "AGS17LNCHRTB",
+          "to": "Art\\Textures\\AGS17LNCHRTB.tga",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 118855,
+          "kind": "model_or_texture",
+          "filename": "AGS17LNCHRTB.tga",
+          "loadable": true
+        },
+        {
+          "from": "SDAGS17",
+          "to": "Art\\W3D\\SDAGS17.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 228988,
+          "kind": "model_or_texture",
+          "filename": "SDAGS17.W3D",
+          "loadable": true
+        },
+        {
+          "from": "SKK4Gren_M",
+          "to": "Art\\W3D\\SKK4Gren_M.W3D",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 3431,
+          "kind": "model_or_texture",
+          "filename": "SKK4Gren_M.W3D",
+          "loadable": true
+        },
+        {
+          "from": "SDAGS17B.DDS",
+          "to": "Art\\Textures\\SDAGS17B.dds",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 32896,
+          "kind": "w3d_texture",
+          "filename": "SDAGS17B.dds",
+          "loadable": true
+        },
+        {
+          "from": "SKK4Gren_M.tga",
+          "to": "Art\\Textures\\SKK4Gren_M.tga",
+          "action": "RECOVER_FROM_V25",
+          "bytes": 492119,
+          "kind": "w3d_texture",
+          "filename": "SKK4Gren_M.tga",
+          "loadable": true
+        }
+      ],
+      "missing_art": [],
+      "data_deps": [
+        "Object:AGS17GrenadeLauncher",
+        "Weapon:K4GrenadeLauncherWeaponNew",
+        "Object:K4GrenadeLauncherShell",
+        "Armor:ProjectileArmor",
+        "FXList:WeaponFX_CWCgenLightMachineGun",
+        "FXList:K4GrenadeLauncherDetonation",
+        "AudioEvent:K4GrenadeFireWeapon",
+        "Armor:StructureArmorWatchTower",
+        "DamageFX:StructureDamageFXNoShake",
+        "FXList:FX_StructureDamagedNoShake",
+        "FXList:FX_StructureDamagedFlameNoShake",
+        "CommandSet:USRADCommandSet",
+        "CommandButton:Command_Guard",
+        "CommandButton:Command_Stop",
+        "AudioEvent:PatriotBatterySelect",
+        "AudioEvent:BuildingDestroy",
+        "FXList:FX_StructureTinyDeath",
+        "ParticleSystem:StructureTransitionTinySmoke",
+        "ParticleSystem:StructureTransitionTinyExplosion",
+        "ParticleSystem:StructureTransitionTinyShockwave"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "object": "SX250Transport",
+      "reason": "incomplete_art",
+      "missing": [
+        "Tex_0022_1.dds"
+      ]
+    }
+  ],
+  "added_data_names": [
+    "Data\\INI\\Armor_SilentDeath.ini",
+    "Data\\INI\\CommandButton_SilentDeath.ini",
+    "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini",
+    "Data\\INI\\CommandSet_ZZZZ_SilentDeath_Russia.ini",
+    "Data\\INI\\DamageFX_SilentDeath.ini",
+    "Data\\INI\\FXList_SilentDeath.ini",
+    "Data\\INI\\Locomotor_SilentDeath.ini",
+    "Data\\INI\\MappedImages\\HandCreated\\SilentDeathMappedImages.ini",
+    "Data\\INI\\ObjectCreationList_SilentDeath.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\CWCgenMachineGunBullet.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\CWCgenTreesOnFire.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaS75.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaS75Missile.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaZFB05.ini",
+    "Data\\INI\\Object\\SilentDeath\\China\\SD25_SalvageCrate.ini",
+    "Data\\INI\\Object\\SilentDeath\\Russia\\AGS17GrenadeLauncher.ini",
+    "Data\\INI\\Object\\SilentDeath\\Russia\\K4GrenadeLauncherShell.ini",
+    "Data\\INI\\ParticleSystem_SilentDeath.ini",
+    "Data\\INI\\SoundEffects_SilentDeath.ini",
+    "Data\\INI\\Weapon_SilentDeath.ini"
+  ],
+  "added_art_names": [
+    "Art\\Textures\\AGS17LNCHRTB.tga",
+    "Art\\Textures\\CHS75.dds",
+    "Art\\Textures\\CHS75TB.tga",
+    "Art\\Textures\\Glass1.tga",
+    "Art\\Textures\\SDAGS17B.dds",
+    "Art\\Textures\\SDZFB05B.dds",
+    "Art\\Textures\\SDZFB05L.dds",
+    "Art\\Textures\\SDZFB05P.dds",
+    "Art\\Textures\\SDZFB05T.dds",
+    "Art\\Textures\\SKK4Gren_M.tga",
+    "Art\\Textures\\ZFB05TB.tga",
+    "Art\\Textures\\extiretrack.dds",
+    "Art\\Textures\\pmbarrel01.dds",
+    "Art\\Textures\\pmconsup01.dds",
+    "Art\\Textures\\pmcrates04.dds",
+    "Art\\Textures\\pmcrates04_l.dds",
+    "Art\\W3D\\CHS75.W3D",
+    "Art\\W3D\\CHS75m.W3D",
+    "Art\\W3D\\PMJnkCrate.W3D",
+    "Art\\W3D\\SDAGS17.W3D",
+    "Art\\W3D\\SDZFB05.W3D",
+    "Art\\W3D\\SKK4Gren_M.W3D"
+  ],
+  "emitted": [
+    {
+      "from": "CHS75TB",
+      "to": "Art\\Textures\\CHS75TB.tga",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 99330,
+      "kind": "model_or_texture",
+      "filename": "CHS75TB.tga",
+      "loadable": true
+    },
+    {
+      "from": "CHS75",
+      "to": "Art\\W3D\\CHS75.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 218392,
+      "kind": "model_or_texture",
+      "filename": "CHS75.W3D",
+      "loadable": true
+    },
+    {
+      "from": "CHS75m",
+      "to": "Art\\W3D\\CHS75m.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 81185,
+      "kind": "model_or_texture",
+      "filename": "CHS75m.W3D",
+      "loadable": true
+    },
+    {
+      "from": "CHS75.tga",
+      "to": "Art\\Textures\\CHS75.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 699192,
+      "kind": "w3d_texture",
+      "filename": "CHS75.dds",
+      "loadable": true
+    },
+    {
+      "from": "ZFB05TB",
+      "to": "Art\\Textures\\ZFB05TB.tga",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 175198,
+      "kind": "model_or_texture",
+      "filename": "ZFB05TB.tga",
+      "loadable": true
+    },
+    {
+      "from": "SDZFB05",
+      "to": "Art\\W3D\\SDZFB05.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 1316796,
+      "kind": "model_or_texture",
+      "filename": "SDZFB05.W3D",
+      "loadable": true
+    },
+    {
+      "from": "EXTireTrack.tga",
+      "to": "Art\\Textures\\extiretrack.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 1520,
+      "kind": "model_or_texture",
+      "filename": "extiretrack.dds",
+      "loadable": true
+    },
+    {
+      "from": "PMJnkCrate",
+      "to": "Art\\W3D\\PMJnkCrate.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 14609,
+      "kind": "model_or_texture",
+      "filename": "PMJnkCrate.W3D",
+      "loadable": true
+    },
+    {
+      "from": "SDZFB05B.DDS",
+      "to": "Art\\Textures\\SDZFB05B.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 262272,
+      "kind": "w3d_texture",
+      "filename": "SDZFB05B.dds",
+      "loadable": true
+    },
+    {
+      "from": "GLASS1.TGA",
+      "to": "Art\\Textures\\Glass1.tga",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 274,
+      "kind": "w3d_texture",
+      "filename": "Glass1.tga",
+      "loadable": true
+    },
+    {
+      "from": "SDZFB05P.DDS",
+      "to": "Art\\Textures\\SDZFB05P.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 262272,
+      "kind": "w3d_texture",
+      "filename": "SDZFB05P.dds",
+      "loadable": true
+    },
+    {
+      "from": "SDZFB05T.DDS",
+      "to": "Art\\Textures\\SDZFB05T.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 262272,
+      "kind": "w3d_texture",
+      "filename": "SDZFB05T.dds",
+      "loadable": true
+    },
+    {
+      "from": "SDZFB05L.DDS",
+      "to": "Art\\Textures\\SDZFB05L.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 174904,
+      "kind": "w3d_texture",
+      "filename": "SDZFB05L.dds",
+      "loadable": true
+    },
+    {
+      "from": "PMCONSUP01.tga",
+      "to": "Art\\Textures\\pmconsup01.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 22000,
+      "kind": "w3d_texture",
+      "filename": "pmconsup01.dds",
+      "loadable": true
+    },
+    {
+      "from": "PMBarrel01.tga",
+      "to": "Art\\Textures\\pmbarrel01.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 2872,
+      "kind": "w3d_texture",
+      "filename": "pmbarrel01.dds",
+      "loadable": true
+    },
+    {
+      "from": "PMCrates04.tga",
+      "to": "Art\\Textures\\pmcrates04.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 2872,
+      "kind": "w3d_texture",
+      "filename": "pmcrates04.dds",
+      "loadable": true
+    },
+    {
+      "from": "PMCrates04_L.tga",
+      "to": "Art\\Textures\\pmcrates04_l.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 2872,
+      "kind": "w3d_texture",
+      "filename": "pmcrates04_l.dds",
+      "loadable": true
+    },
+    {
+      "from": "AGS17LNCHRTB",
+      "to": "Art\\Textures\\AGS17LNCHRTB.tga",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 118855,
+      "kind": "model_or_texture",
+      "filename": "AGS17LNCHRTB.tga",
+      "loadable": true
+    },
+    {
+      "from": "SDAGS17",
+      "to": "Art\\W3D\\SDAGS17.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 228988,
+      "kind": "model_or_texture",
+      "filename": "SDAGS17.W3D",
+      "loadable": true
+    },
+    {
+      "from": "SKK4Gren_M",
+      "to": "Art\\W3D\\SKK4Gren_M.W3D",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 3431,
+      "kind": "model_or_texture",
+      "filename": "SKK4Gren_M.W3D",
+      "loadable": true
+    },
+    {
+      "from": "SDAGS17B.DDS",
+      "to": "Art\\Textures\\SDAGS17B.dds",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 32896,
+      "kind": "w3d_texture",
+      "filename": "SDAGS17B.dds",
+      "loadable": true
+    },
+    {
+      "from": "SKK4Gren_M.tga",
+      "to": "Art\\Textures\\SKK4Gren_M.tga",
+      "action": "RECOVER_FROM_V25",
+      "bytes": 492119,
+      "kind": "w3d_texture",
+      "filename": "SKK4Gren_M.tga",
+      "loadable": true
+    }
+  ],
+  "validation": {
+    "ok": true,
+    "errors": []
+  },
+  "factories": [
+    {
+      "side": "China",
+      "object": "ChinaWarFactory",
+      "commandset": "PLAWarFactoryCommandSet",
+      "slots": [
+        "4",
+        "7"
+      ],
+      "fills": {
+        "4": "SD25_Command_ConstructChinaS75",
+        "7": "SD25_Command_ConstructChinaZFB05"
+      }
+    },
+    {
+      "side": "Russia",
+      "object": "RussiaWarFactory",
+      "commandset": "RussiaWarFactoryCommandSet",
+      "slots": [
+        "13"
+      ],
+      "fills": {
+        "13": "SD25_Command_ConstructAGS17GrenadeLauncher"
+      }
+    }
+  ],
+  "data_big": {
+    "source": "/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big",
+    "dest": "/tmp/v25_first_transfer/_SPEC_DATA_ONE.big",
+    "original_entries": 3587,
+    "added": 20,
+    "total_entries": 3607,
+    "bytes": 374150049,
+    "added_names": [
+      "Data\\INI\\Armor_SilentDeath.ini",
+      "Data\\INI\\CommandButton_SilentDeath.ini",
+      "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini",
+      "Data\\INI\\CommandSet_ZZZZ_SilentDeath_Russia.ini",
+      "Data\\INI\\DamageFX_SilentDeath.ini",
+      "Data\\INI\\FXList_SilentDeath.ini",
+      "Data\\INI\\Locomotor_SilentDeath.ini",
+      "Data\\INI\\MappedImages\\HandCreated\\SilentDeathMappedImages.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\ChinaS75.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\ChinaS75Missile.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\ChinaZFB05.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\CWCgenMachineGunBullet.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\CWCgenTreesOnFire.ini",
+      "Data\\INI\\Object\\SilentDeath\\China\\SD25_SalvageCrate.ini",
+      "Data\\INI\\Object\\SilentDeath\\Russia\\AGS17GrenadeLauncher.ini",
+      "Data\\INI\\Object\\SilentDeath\\Russia\\K4GrenadeLauncherShell.ini",
+      "Data\\INI\\ObjectCreationList_SilentDeath.ini",
+      "Data\\INI\\ParticleSystem_SilentDeath.ini",
+      "Data\\INI\\SoundEffects_SilentDeath.ini",
+      "Data\\INI\\Weapon_SilentDeath.ini"
+    ]
+  },
+  "art_big": {
+    "source": "/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/_SPEC_ART_TWO.big",
+    "dest": "/tmp/v25_first_transfer/_SPEC_ART_TWO.big",
+    "original_entries": 2700,
+    "added": 22,
+    "total_entries": 2722,
+    "bytes": 317454339,
+    "added_names": [
+      "Art\\Textures\\AGS17LNCHRTB.tga",
+      "Art\\Textures\\CHS75.dds",
+      "Art\\Textures\\CHS75TB.tga",
+      "Art\\Textures\\extiretrack.dds",
+      "Art\\Textures\\Glass1.tga",
+      "Art\\Textures\\pmbarrel01.dds",
+      "Art\\Textures\\pmconsup01.dds",
+      "Art\\Textures\\pmcrates04.dds",
+      "Art\\Textures\\pmcrates04_l.dds",
+      "Art\\Textures\\SDAGS17B.dds",
+      "Art\\Textures\\SDZFB05B.dds",
+      "Art\\Textures\\SDZFB05L.dds",
+      "Art\\Textures\\SDZFB05P.dds",
+      "Art\\Textures\\SDZFB05T.dds",
+      "Art\\Textures\\SKK4Gren_M.tga",
+      "Art\\Textures\\ZFB05TB.tga",
+      "Art\\W3D\\CHS75.W3D",
+      "Art\\W3D\\CHS75m.W3D",
+      "Art\\W3D\\PMJnkCrate.W3D",
+      "Art\\W3D\\SDAGS17.W3D",
+      "Art\\W3D\\SDZFB05.W3D",
+      "Art\\W3D\\SKK4Gren_M.W3D"
+    ]
+  },
+  "experimental_dest": "/tmp/v25_first_transfer",
+  "note": "Independent DATA+ART copy of a small Ready-Gate group with proven W3D/textures. Original SS1 BIGs untouched. Generals.exe was not run.",
+  "generated_at_tehran": "2026-11-11 18:01 Asia/Tehran",
+  "zip_sha256": {
+    "SPECTER_V25_SS1_FIRST_TRANSFER.zip": "987bb011bede71e7a8d0c0b6d8498d71b73a52ee4f1d660aae5954dd2cb1bcb2",
+    "SPECTER_V25_SS1_FIRST_TRANSFER_ENGINE.zip": "cd27cdeb167cbce23e16cc7af45290919a46d4389b88796f00dde890687a9f27"
+  },
+  "install_zip": "SPECTER_V25_SS1_FIRST_TRANSFER.zip"
+}

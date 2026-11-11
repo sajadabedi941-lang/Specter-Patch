@@ -341,7 +341,17 @@ class ValidateDefsTests(unittest.TestCase):
             r"Data\INI\CommandSet_ZZZZ_SilentDeath_China.ini": overlay.encode(),
             r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini": hq11.encode(),
             r"Data\INI\Object\SilentDeath\China\SD25_ChinaCSSA1.ini": cssa.encode(),
-            r"Data\INI\MappedImages\SilentDeath\SilentDeathMappedImages.ini": (
+            r"Data\INI\Armor_SilentDeath.ini": (
+                b"Armor SD25_TankArmor\n  Armor = DEFAULT 100%\nEnd\n"
+                b"Armor SD25_HumveeArmor\n  Armor = DEFAULT 100%\nEnd\n"
+            ),
+            r"Data\INI\Weapon_SilentDeath.ini": b"Weapon SD25_HQ11MissileWeapon\nEnd\n",
+            r"Data\INI\CommandButton_SilentDeath.ini": (
+                b"CommandButton SD25_Command_ConstructChinaCSSA1\nEnd\n"
+                b"CommandButton SD25_Command_ConstructChinaHQ11\nEnd\n"
+                b"CommandButton SD25_Command_ChinaHQ11Deploy\nEnd\n"
+            ),
+            r"Data\INI\MappedImages\HandCreated\SilentDeathMappedImages.ini": (
                 b"MappedImage CSSA1TB\n  Texture = CSSA1TB.tga\nEnd\n"
                 b"MappedImage CHHQ11TB\n  Texture = CHHQ11TB.tga\nEnd\n"
             ),
@@ -376,7 +386,10 @@ class ValidateDefsTests(unittest.TestCase):
             "  WeaponSet\n    Conditions = DEPLOYED\n  End\n"
             "End\n"
         )
-        armor = "Armor SD25_TankArmor\n  Armor = DEFAULT 100%\nEnd\n"
+        armor = (
+            "Armor SD25_TankArmor\n  Armor = DEFAULT 100%\nEnd\n"
+            "Armor SD25_HumveeArmor\n  Armor = DEFAULT 100%\nEnd\n"
+        )
         added = {
             r"Data\INI\CommandSet_ZZZZ_SilentDeath_China.ini": overlay.encode(),
             r"Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini": hq11.encode(),
@@ -384,11 +397,15 @@ class ValidateDefsTests(unittest.TestCase):
                 b"Object SD25_ChinaCSSA1\n  ArmorSet\n    Armor = SD25_TankArmor\n  End\nEnd\n"
             ),
             r"Data\INI\Armor_SilentDeath.ini": armor.encode(),
+            r"Data\INI\CommandButton_SilentDeath.ini": (
+                b"CommandButton SD25_Command_ConstructChinaCSSA1\nEnd\n"
+                b"CommandButton SD25_Command_ConstructChinaHQ11\nEnd\n"
+            ),
         }
         result = validate_added_defs(added, {})
         self.assertTrue(result["ok"], result["errors"])
         names = [h["name"] for h in result["headers"] if h["kind"].lower() == "armor"]
-        self.assertEqual(names, ["SD25_TankArmor"])
+        self.assertEqual(names, ["SD25_TankArmor", "SD25_HumveeArmor"])
 
 
 def main():

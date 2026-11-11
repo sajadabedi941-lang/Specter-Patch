@@ -656,7 +656,7 @@ class Resolver:
                     "method": "delete unique-path SilentDeath INI/ART added by the batch; never restore by rewriting SPECTER public INI",
                     "paths_pattern": [
                         "Data\\INI\\Object\\SilentDeath\\**",
-                        "Data\\INI\\Weapon\\SilentDeath\\**",
+                        "Data\\INI\\Weapon_SilentDeath.ini",
                         "Data\\INI\\CommandSet_ZZZZ_SilentDeath_*.ini",
                     ],
                 },

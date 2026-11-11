@@ -96,7 +96,9 @@
   },
   "rename_prefix": "SD25_",
   "unique_object_dir": "Data\\INI\\Object\\SilentDeath\\{Side}\\",
-  "unique_weapon_dir": "Data\\INI\\Weapon\\SilentDeath\\",
+  "unique_weapon_dir": "Data\\INI\\Weapon_SilentDeath.ini",
+  "unique_mappedimage": "Data\\INI\\MappedImages\\HandCreated\\SilentDeathMappedImages.ini",
+  "ss1_emit_comment": "Weapon extras are root Weapon_*.ini like SS1 Weapon_USAPAC3.ini, never Weapon\\SilentDeath\\. MappedImages only HandCreated or TextureSize_512.",
   "unique_art_dest": "_SPEC_ART_TWO.big (future apply only)",
   "unique_data_dest": "_SPEC_DATA_ONE.big unique path only (future apply only)"
 }

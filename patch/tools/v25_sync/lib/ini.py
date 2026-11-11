@@ -152,6 +152,12 @@ NAMED_KEYS = {
     "crateobject": "Object",
     "firesweapon": "Weapon",
     "weaponstouse": "Weapon",
+    "deathweapon": "Weapon",
+    "ignitionfx": "FXList",
+    "particlesysbone": "ParticleSystem",
+    "crushweapon": "Weapon",
+    "fireweapon": "Weapon",
+    "requiredscience": "Science",
 }
 DAMAGEFX_FX_KEYS = {
     "majorfx",
@@ -341,6 +347,9 @@ def classify_refs(
         if not kind and re.fullmatch(r"rider\d+", kl):
             kind = "Object"
             tokens = tokens[:1]
+        if kl == "particlesysbone" and tokens:
+            # ParticleSysBone = <bone> <ParticleSystem>
+            tokens = tokens[-1:]
         if not kind:
             continue
         # Armor tables are `Armor = 50% SMALL_ARMS`, not nested Armor defs.

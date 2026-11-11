@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Silent Death V25 → SPECTER sync engine (stage 2: resolve / plan; no game writes)."""
+"""Silent Death V25 → SPECTER sync engine (stage 3: nested ART + CWC; no game writes)."""
 from __future__ import annotations
 
 import argparse
@@ -16,7 +16,7 @@ from lib.engine import Engine  # noqa: E402
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        description="V25 → SPECTER sync engine (stage 2 resolve/dry-run; no game writes)"
+        description="V25 → SPECTER sync engine (stage 3 nested ART + CWC; no game writes)"
     )
     p.add_argument(
         "command",
@@ -29,10 +29,11 @@ def main(argv: list[str] | None = None) -> int:
             "validate",
             "resolve",
             "plan-object",
+            "art-cwc",
             "selftest",
             "apply",
         ],
-        help="resolve=full dependency resolver; apply is refused",
+        help="art-cwc=nested BIG ART + CWC plans; apply is refused",
     )
     p.add_argument("--root", type=Path, default=ROOT, help="Specter-Patch repo root")
     p.add_argument("--object", help="Object name for plan-object")
@@ -40,7 +41,7 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
 
     if args.command == "selftest":
-        from tests.test_resolver import main as tests_main
+        from tests.test_art_cwc import main as tests_main
 
         return tests_main()
 
@@ -65,16 +66,22 @@ def main(argv: list[str] | None = None) -> int:
     elif args.command == "plan-object":
         if not args.object:
             p.error("--object is required for plan-object")
-        from lib.archive_index import ArchiveIndex
-        from lib.resolver import Resolver
         from lib import archive as archive_mod
+        from lib import cwc
+        from lib.archive_index import ArchiveIndex
+        from lib.art_index import ArtIndex
+        from lib.resolver import Resolver
 
         vols = eng.find_volumes()
         zip_path = archive_mod.stage_volumes(vols, eng.v25_src)
         aidx = ArchiveIndex(zip_path, eng.cache)
+        art = ArtIndex(zip_path, eng.cache)
         rules = json.loads((eng.data / "compatibility_rules.json").read_text(encoding="utf-8"))
-        plan = Resolver(eng, rules, aidx).plan_object(args.object)
+        recipes = cwc.load_recipes(eng.data)
+        plan = Resolver(eng, rules, aidx, art_index=art, cwc_recipes=recipes).plan_object(args.object)
         result = plan
+    elif args.command == "art-cwc":
+        result = eng.run_stage3()
     elif args.command == "resolve":
         result = eng.run_stage2()
     elif args.command in ("dry-run", "plan", "validate"):

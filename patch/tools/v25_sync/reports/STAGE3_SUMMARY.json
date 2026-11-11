@@ -1,0 +1,40 @@
+{
+  "generated_at_tehran": "2026-11-11 13:31 Asia/Tehran",
+  "stage": 3,
+  "applies_to_game": false,
+  "generals_exe_run": false,
+  "nested_bigs_indexed": 9,
+  "art_stems": 22415,
+  "focus": [
+    {
+      "object": "ChinaCSSA1",
+      "data_status": "MANUAL_REBUILD",
+      "art_status": "AUTO_RECOVERABLE",
+      "readiness": "manual_rebuild",
+      "cwc_modules": [],
+      "data_gaps": ["FXList:TankDamageFX", "CrateTemplate:SalvageCrateData"],
+      "art_note": "CHCSSA1.W3D + CHCSSA1B/T.DDS + SDNSM04.DDS + EXTireTrack (nested Textures.big) + NVBtmstr_D1 (nested W3D.big)"
+    },
+    {
+      "object": "ChinaHQ11",
+      "data_status": "MANUAL_REBUILD",
+      "art_status": "AUTO_RECOVERABLE",
+      "readiness": "manual_rebuild",
+      "cwc_modules": ["RiderChangeContain", "OCLSpecialPower", "EnemyNearUpdate", "FireWeaponUpdate"],
+      "data_gaps": ["FXList:TruckDamageFX", "BehaviorModule:RiderChangeContain", "BehaviorModule:OCLSpecialPower"],
+      "art_note": "HQ11.W3D 8 textures + HQ11RD + EXTireTrack nested BIG"
+    }
+  ],
+  "tested": [
+    "29 unit tests in tests/test_art_cwc.py and tests/test_resolver.py",
+    "nested BIG index of live V25 WYS/Textures.big and WYS/W3D.big",
+    "ChinaCSSA1 and ChinaHQ11 plan regeneration",
+    "apply refused",
+    "SPECTER BIG hashes unchanged"
+  ],
+  "analysis_only": [
+    "CWC RiderChangeContain independent rebuild onto DeployStyleAIUpdate",
+    "stock ZH TankDamageFX/SalvageCrateData presence in vanilla Generals",
+    "Generals.exe / in-game spawn"
+  ]
+}

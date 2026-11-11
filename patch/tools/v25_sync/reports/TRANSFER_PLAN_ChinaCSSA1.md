@@ -1,13 +1,15 @@
-# Transfer plan: `ChinaCSSA1`
+# Transfer plan: `ChinaCSSA1` (stage 3 ART + CWC)
 
-- Generated: 2026-11-11 13:05 Asia/Tehran
+- Generated: 2026-11-11 13:30 Asia/Tehran
 - Found in V25 VFS: **True**
 - Source: `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle.ini`
-- Readiness: **manual_rebuild**
+- Resolver readiness: **manual_rebuild**
+- DATA completeness: **MANUAL_REBUILD**
+- ART completeness: **AUTO_RECOVERABLE**
 - Dest INI (future apply only): `Data\INI\Object\SilentDeath\China\ChinaCSSA1.ini`
 - Build buttons: ['Command_ConstructChinaCSSA1']
 - CommandSets holding those buttons: ['ChinaSupplyCenterCommandSet']
-- Action counts: `{'IMPORT_UNIQUE': 21, 'RECOVER_FROM_V25': 7, 'RENAME_AND_REWRITE': 2, 'REUSE_NATIVE': 29, 'CYCLE': 13, 'MANUAL_REBUILD': 4}`
+- Action counts: `{'IMPORT_UNIQUE': 21, 'RECOVER_FROM_V25': 14, 'RENAME_AND_REWRITE': 2, 'REUSE_NATIVE': 28, 'CYCLE': 14, 'MANUAL_REBUILD': 2}`
 - Game writes: **False**
 
 ## Object meta
@@ -16,6 +18,19 @@
 - SPECTER side map: China
 - Bucket: vehicle
 - KindOf: `['ATTACK_NEEDS_LINE_OF_SIGHT', 'CAN_ATTACK', 'CAN_CAST_REFLECTIONS', 'PRELOAD', 'SCORE', 'SELECTABLE', 'VEHICLE']`
+
+## Completeness
+
+DATA and ART are scored separately. Neither score imports anything into SPECTER.
+
+| Track | Status |
+|---|---|
+| DATA | `MANUAL_REBUILD` |
+| ART | `AUTO_RECOVERABLE` |
+
+## CWC / pack-unpack
+
+No catalogued CWC module on this Object.
 
 ## Compatibility notes (reasoned from INI flags, not guessed)
 
@@ -65,14 +80,14 @@
 | CommandSet | `ChinaVehicleBattleMasterCommandSet` | REUSE_NATIVE | `ChinaVehicleBattleMasterCommandSet` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandSet.ini` |
 | CommandButton | `Command_AttackMove` | REUSE_NATIVE | `Command_AttackMove` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
 | MappedImage | `SSAttackMove2` | IMPORT_UNIQUE | `SSAttackMove2` | Name is free in SPECTER FINAL; unique-path import. | `INIZH.big:Data\INI\MappedImages\TextureSize_512\SSUserInterface512.INI` |
-| ArtFile | `SSUserInterface512_001.tga` | IMPORT_UNIQUE | `SSUserInterface512_001.tga` | Art stem present in parsed V25 BIGs. | `` |
-| ArtFile | `SSAttackMove2` | MANUAL_REBUILD | `SSAttackMove2` | Art stem not in parsed VFS, SPECTER, or V25 zip listing. | `` |
+| ArtFile | `SSUserInterface512_001.tga` | RECOVER_FROM_V25 | `SSUserInterface512_001.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\ssuserinterface512_0...` |
+| ArtFile | `SSAttackMove2` | IMPORT_UNIQUE | `SSAttackMove2` | MappedImage identifier, not a standalone texture file. Pixel data is the Texture= atlas; no similar file was substituted. | `INIZH.big:Data\INI\MappedImages\TextureSize_512\SSUserInterface512.INI` |
 | CommandButton | `Command_Guard` | REUSE_NATIVE | `Command_Guard` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
 | MappedImage | `SDGuard` | RECOVER_FROM_V25 | `SDGuard` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/SDGuard.tga` |
-| ArtFile | `SDGuard` | RECOVER_FROM_V25 | `SDGuard` | Not in parsed extract/BIGs; file exists in the V25 zip. | `Generals Silent Death V25/Art/Textures/SDGuard.tga` |
+| ArtFile | `SDGuard` | RECOVER_FROM_V25 | `SDGuard` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDGuard.tga` |
 | CommandButton | `Command_Stop` | REUSE_NATIVE | `Command_Stop` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
 | MappedImage | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
-| ArtFile | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Not in parsed extract/BIGs; file exists in the V25 zip. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
+| ArtFile | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
 | AudioEvent | `CWCruShilkaVoiceSelect` | IMPORT_UNIQUE | `CWCruShilkaVoiceSelect` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | AudioEvent | `CWCruShilkaVoiceMove` | IMPORT_UNIQUE | `CWCruShilkaVoiceMove` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | AudioEvent | `CWCruShilkaVoiceGuard` | IMPORT_UNIQUE | `CWCruShilkaVoiceGuard` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
@@ -84,14 +99,19 @@
 | ObjectCreationList | `OCL_ChinaTankBattleMasterDebris` | REUSE_NATIVE | `OCL_ChinaTankBattleMasterDebris` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini` |
 | Object | `ChinaVehicleBattleMasterDeadHull` | IMPORT_UNIQUE | `ChinaVehicleBattleMasterDeadHull` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/Hulk.ini` |
 | ParticleSystem | `SmokeSmallContinuous01` | REUSE_NATIVE | `SmokeSmallContinuous01` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini` |
-| ArtFile | `NVBtmstr_D1` | MANUAL_REBUILD | `NVBtmstr_D1` | Art stem not in parsed VFS, SPECTER, or V25 zip listing. | `` |
+| ArtFile | `NVBtmstr_D1` | RECOVER_FROM_V25 | `NVBtmstr_D1` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\nvbtmstr_d1.dds` |
+| ArtFile | `NVBtMstr_D1.tga` | RECOVER_FROM_V25 | `NVBtMstr_D1.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\nvbtmstr_d1.dds` |
+| ArtFile | `NVBtMstr_D1.tga` | CYCLE | `NVBtMstr_D1.tga` | Cyclic reference; node already visited. | `` |
 | BehaviorModule | `LifetimeUpdate` | REUSE_NATIVE | `LifetimeUpdate` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `SlowDeathBehavior` | REUSE_NATIVE | `SlowDeathBehavior` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `TransitionDamageFX` | REUSE_NATIVE | `TransitionDamageFX` | Stock SAGE module; keep on the unique Object. | `` |
 | ParticleSystem | `SmokeSmallContinuous01` | CYCLE | `SmokeSmallContinuous01` | Cyclic reference; node already visited. | `` |
-| ArtFile | `CSSA1TB` | RECOVER_FROM_V25 | `CSSA1TB` | Not in parsed extract/BIGs; file exists in the V25 zip. | `Generals Silent Death V25/Art/Textures/CSSA1TB.tga` |
-| ArtFile | `CHCSSA1` | RECOVER_FROM_V25 | `CHCSSA1` | Not in parsed extract/BIGs; file exists in the V25 zip. | `Generals Silent Death V25/Art/W3D/CHCSSA1.W3D` |
-| ArtFile | `EXTireTrack.tga` | REUSE_NATIVE | `EXTireTrack.tga` | Stock ZH EX* texture; expected in base Generals ART, not in the SPECTER overlay or V25 zip listing. | `` |
+| ArtFile | `CSSA1TB` | RECOVER_FROM_V25 | `CSSA1TB` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/CSSA1TB.tga` |
+| ArtFile | `CHCSSA1` | RECOVER_FROM_V25 | `CHCSSA1` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/W3D/CHCSSA1.W3D` |
+| ArtFile | `SDNSM04.DDS` | RECOVER_FROM_V25 | `SDNSM04.DDS` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDNSM04.dds` |
+| ArtFile | `CHCSSA1T.DDS` | RECOVER_FROM_V25 | `CHCSSA1T.DDS` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/CHCSSA1T.dds` |
+| ArtFile | `CHCSSA1B.DDS` | RECOVER_FROM_V25 | `CHCSSA1B.DDS` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/CHCSSA1B.dds` |
+| ArtFile | `EXTireTrack.tga` | RECOVER_FROM_V25 | `EXTireTrack.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\extiretrack.dds` |
 | BehaviorModule | `AIUpdateInterface` | REUSE_NATIVE | `AIUpdateInterface` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `DestroyDie` | REUSE_NATIVE | `DestroyDie` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `FXListDie` | REUSE_NATIVE | `FXListDie` | Stock SAGE module; keep on the unique Object. | `` |
@@ -106,22 +126,57 @@
 | MappedImage | `CSSA1TB` | CYCLE | `CSSA1TB` | Cyclic reference; node already visited. | `` |
 | ArtFile | `CSSA1TB` | CYCLE | `CSSA1TB` | Cyclic reference; node already visited. | `` |
 
-## Archive recoveries (in zip, not in parsed extract)
+## ART recoveries (exact stem; no similar-name substitute)
 
-- `MappedImage:CSSA1TB` →
+- `MappedImage:CSSA1TB` found_in=`None`
   - `Generals Silent Death V25/Art/Textures/CSSA1TB.tga`
-- `MappedImage:SDGuard` →
+- `ArtFile:SSUserInterface512_001.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\ssuserinterface512_001.tga`
+  - container=`nested_big` file=`ssuserinterface512_001.tga` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\ssuserinterface512_001.tga`
+- `MappedImage:SDGuard` found_in=`None`
   - `Generals Silent Death V25/Art/Textures/SDGuard.tga`
-- `ArtFile:SDGuard` →
+- `ArtFile:SDGuard` found_in=`zip`
   - `Generals Silent Death V25/Art/Textures/SDGuard.tga`
-- `MappedImage:SDStop` →
+  - container=`zip` file=`SDGuard.tga` source_big=`None` inner=`None`
+- `MappedImage:SDStop` found_in=`None`
   - `Generals Silent Death V25/Art/Textures/SDStop.tga`
-- `ArtFile:SDStop` →
+- `ArtFile:SDStop` found_in=`zip`
   - `Generals Silent Death V25/Art/Textures/SDStop.tga`
-- `ArtFile:CSSA1TB` →
+  - container=`zip` file=`SDStop.tga` source_big=`None` inner=`None`
+- `ArtFile:NVBtmstr_D1` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\nvbtmstr_d1.dds`
+  - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\NVBtMstr_D1.W3D`
+  - container=`nested_big` file=`nvbtmstr_d1.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\nvbtmstr_d1.dds`
+  - container=`nested_big` file=`NVBtMstr_D1.W3D` source_big=`Generals Silent Death V25/WYS/W3D.big` inner=`Art\W3D\NVBtMstr_D1.W3D`
+  - W3D textures: ['NVBtMstr_D1.tga']
+  - W3D anims (inside model, not separate files): ['NVBTMSTR_D1.CHASSIS']
+- `ArtFile:NVBtMstr_D1.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\nvbtmstr_d1.dds`
+  - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\NVBtMstr_D1.W3D`
+  - container=`nested_big` file=`nvbtmstr_d1.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\nvbtmstr_d1.dds`
+  - container=`nested_big` file=`NVBtMstr_D1.W3D` source_big=`Generals Silent Death V25/WYS/W3D.big` inner=`Art\W3D\NVBtMstr_D1.W3D`
+  - W3D textures: ['NVBtMstr_D1.tga']
+  - W3D anims (inside model, not separate files): ['NVBTMSTR_D1.CHASSIS']
+- `ArtFile:CSSA1TB` found_in=`zip`
   - `Generals Silent Death V25/Art/Textures/CSSA1TB.tga`
-- `ArtFile:CHCSSA1` →
+  - container=`zip` file=`CSSA1TB.tga` source_big=`None` inner=`None`
+- `ArtFile:CHCSSA1` found_in=`zip`
   - `Generals Silent Death V25/Art/W3D/CHCSSA1.W3D`
+  - container=`zip` file=`CHCSSA1.W3D` source_big=`None` inner=`None`
+  - W3D textures: ['SDNSM04.DDS', 'CHCSSA1T.DDS', 'CHCSSA1B.DDS']
+  - W3D anims (inside model, not separate files): ['CHCSSA1.TIRE02', 'CHCSSA1.TIRE01', 'CHCSSA1.TIRE08', 'CHCSSA1.TIRE07', 'CHCSSA1.TIRE06', 'CHCSSA1.TIRE05', 'CHCSSA1.TURRETHEL', 'CHCSSA1.TURRET', 'CHCSSA1.CHASSIS']
+- `ArtFile:SDNSM04.DDS` found_in=`zip`
+  - `Generals Silent Death V25/Art/Textures/SDNSM04.dds`
+  - container=`zip` file=`SDNSM04.dds` source_big=`None` inner=`None`
+- `ArtFile:CHCSSA1T.DDS` found_in=`zip`
+  - `Generals Silent Death V25/Art/Textures/CHCSSA1T.dds`
+  - container=`zip` file=`CHCSSA1T.dds` source_big=`None` inner=`None`
+- `ArtFile:CHCSSA1B.DDS` found_in=`zip`
+  - `Generals Silent Death V25/Art/Textures/CHCSSA1B.dds`
+  - container=`zip` file=`CHCSSA1B.dds` source_big=`None` inner=`None`
+- `ArtFile:EXTireTrack.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\extiretrack.dds`
+  - container=`nested_big` file=`extiretrack.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\extiretrack.dds`
 
 ## Planned rewrites (not applied)
 

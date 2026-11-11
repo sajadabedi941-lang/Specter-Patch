@@ -1,0 +1,32 @@
+{
+  "comment": "SPECTER FINAL paths the V25 sync engine must never overwrite. Unique-path files may be added later; these exact paths are blocked.",
+  "ini_paths": [
+    "Data\\INI\\CommandSet.ini",
+    "Data\\INI\\CommandButton.ini",
+    "Data\\INI\\Weapon.ini",
+    "Data\\INI\\Armor.ini",
+    "Data\\INI\\Locomotor.ini",
+    "Data\\INI\\PlayerTemplate.ini",
+    "Data\\INI\\ObjectCreationList.ini",
+    "Data\\INI\\FXList.ini",
+    "Data\\INI\\SpecialPower.ini",
+    "Data\\INI\\Science.ini",
+    "Data\\INI\\Upgrade.ini",
+    "Data\\INI\\ParticleSystem.ini",
+    "Data\\INI\\SoundEffects.ini",
+    "Data\\INI\\Voice.ini",
+    "Data\\INI\\Eva.ini",
+    "Data\\INI\\GameData.ini",
+    "Data\\INI\\AIData.ini",
+    "Data\\INI\\MappedImages\\HandCreated\\HandCreatedMappedImages.ini"
+  ],
+  "specter_bigs": [
+    "_SPEC_DATA_ONE.big",
+    "_SPEC_ART_ONE.big",
+    "_SPEC_ART_TWO.big"
+  ],
+  "loose_overlay": [
+    "Data\\INI\\CommandSet.ini",
+    "Data\\INI\\CommandButton.ini"
+  ]
+}

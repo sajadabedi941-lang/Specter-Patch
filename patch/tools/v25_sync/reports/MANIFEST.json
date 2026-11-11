@@ -1,0 +1,12 @@
+{
+  "stage": 1,
+  "mode": "dry-run",
+  "applies_to_game": false,
+  "generated_at_tehran": "2026-11-11 04:59 Asia/Tehran",
+  "equipment_count": 6207,
+  "unique_ok": 5374,
+  "rename_needed": 628,
+  "reuse_identical": 205,
+  "incomplete": 1501,
+  "note": "No Object, Weapon, CommandSet, CommandButton, or ART was imported into SPECTER."
+}

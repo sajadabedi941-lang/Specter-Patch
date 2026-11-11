@@ -1,5 +1,6 @@
 # Independent CI for the Silent Death V25 → SPECTER planner.
 # Never writes SPECTER BIGs. apply stays refused.
+# Full clone of this repo is ~21GiB of packs; CI uses a sparse shallow checkout.
 name: V25 sync engine
 
 on:
@@ -26,14 +27,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout (sparse)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          sparse-checkout: |
+            .github
+            patch/tools/v25_sync
+          sparse-checkout-cone-mode: true
 
-      - name: Fetch PR base commit
+      - name: Fetch PR base commit (names only)
         if: github.event_name == 'pull_request'
-        run: git fetch --no-tags origin ${{ github.event.pull_request.base.sha }}
+        run: git fetch --no-tags --depth=1 --filter=blob:none origin ${{ github.event.pull_request.base.sha }}
 
       - name: Python 3.12
         uses: actions/setup-python@v5

@@ -9,6 +9,8 @@
     "Data\\INI\\PlayerTemplate.ini",
     "Data\\INI\\ObjectCreationList.ini",
     "Data\\INI\\FXList.ini",
+    "Data\\INI\\DamageFX.ini",
+    "Data\\INI\\Crate.ini",
     "Data\\INI\\SpecialPower.ini",
     "Data\\INI\\Science.ini",
     "Data\\INI\\Upgrade.ini",

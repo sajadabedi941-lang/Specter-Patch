@@ -432,6 +432,14 @@ class Engine:
         rec = bucket.get(name)
         if rec is None:
             rec = next((v for k, v in bucket.items() if k.lower() == name.lower()), None)
+        if rec is None:
+            for alias in ini.KIND_ALIASES.get(kind) or ():
+                abucket = vfs.get(alias) or {}
+                rec = abucket.get(name) or next(
+                    (v for k, v in abucket.items() if k.lower() == name.lower()), None
+                )
+                if rec is not None:
+                    break
         self._lookup_cache[key] = rec
         return rec
 
@@ -873,9 +881,168 @@ class Engine:
 
     def refuse_apply(self) -> None:
         raise SystemExit(
-            "stage 3: apply is disabled. This engine plans and validates only. "
+            "stage 4: apply is disabled. This engine plans and validates only. "
             "SPECTER FINAL BIGs stay untouched."
         )
+
+    def run_stage4(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
+        from . import archive as archive_mod
+        from . import cwc, stage3_reports, stage4_reports
+        from .archive_index import ArchiveIndex
+        from .art_index import ArtIndex
+        from .resolver import Resolver
+
+        vols = self.find_volumes()
+        zip_path = archive_mod.stage_volumes(vols, self.v25_src)
+        aidx = ArchiveIndex(zip_path, self.cache)
+        art = ArtIndex(zip_path, self.cache, extract_root=None)
+        rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        recipes = cwc.load_recipes(self.data)
+        resolver = Resolver(self, rules, aidx, art_index=art, cwc_recipes=recipes)
+        focus_ok = []
+        for name in focus:
+            plan = resolver.plan_object(name)
+            safe = name.replace("/", "_")
+            (self.reports / f"TRANSFER_PLAN_{safe}.json").write_text(
+                json.dumps(plan, indent=2, default=str) + "\n", encoding="utf-8"
+            )
+            stage4_reports.write_object_plan_md(plan, self.reports / f"TRANSFER_PLAN_{safe}.md")
+            art_rows = [d for d in plan.get("deps") or [] if d["kind"] == "ArtFile"]
+            (self.reports / f"ART_CHAIN_{safe}.json").write_text(
+                json.dumps(
+                    {
+                        "object": name,
+                        "art_status": plan.get("art_status"),
+                        "data_status": plan.get("data_status"),
+                        "files": [
+                            {
+                                "name": d["name"],
+                                "action": d["action"],
+                                "source": d.get("source"),
+                                "archive_paths": d.get("archive_paths"),
+                                "art_locations": d.get("art_locations"),
+                                "w3d_textures": d.get("w3d_textures"),
+                                "w3d_anims": d.get("w3d_anims"),
+                                "found_in": d.get("found_in"),
+                            }
+                            for d in art_rows
+                        ],
+                    },
+                    indent=2,
+                    default=str,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            proof = plan.get("deploy_proof") or {}
+            (self.reports / f"DATA_REBUILD_{safe}.json").write_text(
+                json.dumps(
+                    {
+                        "object": name,
+                        "data_status": plan.get("data_status"),
+                        "unique_data_files": plan.get("unique_data_files"),
+                        "public_ini_leaks": plan.get("public_ini_leaks"),
+                        "independent_clones": [
+                            {k: v for k, v in c.items() if k != "preview"}
+                            for c in (plan.get("independent_clones") or [])
+                        ],
+                        "deploy_proof": {
+                            "use_deploy_style": proof.get("use_deploy_style"),
+                            "use_deployed_weaponset": proof.get("use_deployed_weaponset"),
+                            "summary": proof.get("summary"),
+                            "proven": proof.get("proven"),
+                            "limitations": proof.get("limitations"),
+                            "fail_reasons": proof.get("fail_reasons"),
+                            "skip_refs": proof.get("skip_refs"),
+                        },
+                    },
+                    indent=2,
+                    default=str,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            focus_ok.append(
+                {
+                    "object": name,
+                    "found": plan["found_in_vfs"],
+                    "readiness": plan["readiness"],
+                    "data_status": plan.get("data_status"),
+                    "art_status": plan.get("art_status"),
+                    "use_deploy_style": bool(proof.get("use_deploy_style")),
+                    "public_ini_leaks": plan.get("public_ini_leaks") or [],
+                    "cwc_modules": [c.get("module") for c in (plan.get("cwc") or [])],
+                }
+            )
+        (self.reports / "CWC_BEHAVIORS.json").write_text(
+            json.dumps({"generated_at_tehran": tehran_now(), "recipes": recipes, "focus": focus_ok}, indent=2)
+            + "\n",
+            encoding="utf-8",
+        )
+        cwc_md = [
+            "# CWC behaviors discovered in V25 (SPECTER-safe rebuild)",
+            "",
+            f"- Generated: {tehran_now()}",
+            "",
+            "SPECTER runs stock Generals.exe. CWC.exe-only modules are never copied as-is.",
+            "Capabilities are kept via independent unique-path INI, not by rewriting SPECTER core.",
+            "",
+        ]
+        for mod, recipe in (recipes.get("modules") or {}).items():
+            reb = recipe.get("rebuild") or {}
+            cwc_md += [
+                f"## `{mod}`",
+                "",
+                f"- Origin: {recipe.get('origin')}",
+                f"- SPECTER exe: {recipe.get('specter_exe')}",
+                f"- {recipe.get('what_it_does')}",
+                f"- Rebuild: **{reb.get('action')}** — keep `{reb.get('keep_capability')}`",
+                "",
+            ]
+            for step in reb.get("specter_safe") or []:
+                cwc_md.append(f"- {step}")
+            cwc_md.append("")
+        pack = recipes.get("pack_unpack") or {}
+        cwc_md += ["## Pack / Unpack (not always DeployStyleAIUpdate)", "", pack.get("comment") or "", ""]
+        for step in pack.get("specter_rebuild") or []:
+            cwc_md.append(f"- {step}")
+        cwc_md.append("")
+        (self.reports / "CWC_BEHAVIORS.md").write_text("\n".join(cwc_md) + "\n", encoding="utf-8")
+        (self.reports / "MANIFEST.json").write_text(
+            json.dumps(
+                {
+                    "stage": 4,
+                    "mode": "data-rebuild-plan",
+                    "applies_to_game": False,
+                    "generals_exe_run": False,
+                    "generated_at_tehran": tehran_now(),
+                    "focus": focus_ok,
+                    "nested_bigs": art.nested_bigs_indexed,
+                    "art_stems": len(art.stems),
+                    "note": "No Object, Weapon, CommandSet, CommandButton, or ART was imported into SPECTER.",
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        # Keep stage-3 summary beside stage-4 so previous CI keys still parse.
+        stage3_reports.write_stage3_summary(focus_ok, {"note": "regenerated during stage 4"}, self.reports / "STAGE3_SUMMARY.json", self.reports / "STAGE3_SUMMARY.md")
+        stage4_reports.write_stage4_summary(
+            focus_ok,
+            {"selftest": "python3 patch/tools/v25_sync/v25_sync.py selftest", "generals_exe_run": False},
+            self.reports / "STAGE4_SUMMARY.json",
+            self.reports / "STAGE4_SUMMARY.md",
+        )
+        return {
+            "mode": "data-rebuild",
+            "game_bigs_modified": False,
+            "generals_exe_run": False,
+            "nested_bigs": art.nested_bigs_indexed,
+            "art_stems": len(art.stems),
+            "focus": focus_ok,
+            "reports": str(self.reports),
+        }
 
     def run_stage3(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
         from . import archive as archive_mod

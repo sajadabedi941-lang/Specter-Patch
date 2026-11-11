@@ -1,0 +1,91 @@
+{
+  "object": "ChinaHQ11",
+  "data_status": "READY_FOR_TRANSFER_PLAN",
+  "unique_data_files": [
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaHQ11.ini",
+    "Data\\INI\\DamageFX_SilentDeath.ini",
+    "Data\\INI\\CommandSet_ZZZZ_SilentDeath_China.ini"
+  ],
+  "public_ini_leaks": [],
+  "independent_clones": [
+    {
+      "kind": "DamageFX",
+      "from": "TruckDamageFX",
+      "to": "SD25_TruckDamageFX",
+      "unique_path": "Data\\INI\\DamageFX_SilentDeath.ini"
+    }
+  ],
+  "deploy_proof": {
+    "use_deploy_style": true,
+    "use_deployed_weaponset": true,
+    "summary": "RiderChangeContain + rider-only OCLSpecialPower is proven equivalent to stock DeployStyleAIUpdate + WeaponSet Conditions = DEPLOYED for pack/unpack and fire-only-when-deployed. CommandSet swap and SET_SLUGGISH-while-deployed are not.",
+    "proven": [
+      "Two rider slots encode packed vs deployed weapon flags.",
+      "Draw RIDER1 = packed, RIDER2 = deployed.",
+      "Packed uses SET_NORMAL; deployed uses SET_SLUGGISH (CWC-only switch).",
+      "WeaponSet WEAPON_RIDER1 PRIMARY None / WEAPON_RIDER2 PRIMARY HQ11MissileWeapon maps 1:1 onto stock Conditions = None vs DEPLOYED.",
+      "HQ11.HQ11 ONCE_BACKWARDS (packed) vs ONCE with MISSILE_C (deployed) stays on the same W3D.",
+      "OCL_CWCruSpecialAbilityFakeRider_Inf_Stand: OCL only injects the fake rider inside the vehicle",
+      "SpecialAbilityCWCruFakeRider_Inf_Stand uses SPECIAL_CIA_INTELLIGENCE; it must not be imported (would hijack CIA intel).",
+      "OCL_CWCruSpecialAbilityFakeRider_Inf_Prone: OCL only injects the fake rider inside the vehicle",
+      "SpecialAbilityCWCruFakeRider_Inf_Prone uses SPECIAL_CIA_INTELLIGENCE; it must not be imported (would hijack CIA intel).",
+      "OCLSpecialPower exists only to inject fake riders; stock Command_Deploy replaces it.",
+      "V25 itself already authors DeployStyleAIUpdate (e.g. SDSR5) in the same vehicle INI."
+    ],
+    "limitations": [
+      {
+        "capability": "Runtime CommandSet swap (packed vs deployed button labels)",
+        "v25": "RiderChangeContain overrides CommandSet per rider (CWCruS300CommandSet vs DeployedCommandSet).",
+        "stock": "DeployStyleAIUpdate does not swap CommandSet. One unique CommandSet with Command_Deploy + Command_Stop.",
+        "kept": "State swap (pack/unpack) stays. Separate SHIFANG/BUSHU labels collapse to one Deploy toggle."
+      },
+      {
+        "capability": "SET_SLUGGISH locomotor while deployed",
+        "v25": "Rider2 binds SET_SLUGGISH CWCruS300DeployedLocomotor so the TEL can crawl while unpacked.",
+        "stock": "DeployStyleAIUpdate does not switch LocomotorSet. The unit packs, then moves on SET_NORMAL.",
+        "kept": "Settled firing posture is kept. Slow-move-while-deployed is not available on stock Generals.exe."
+      },
+      {
+        "capability": "Pack / unpack duration",
+        "v25": "CWC rider swap timing is not an INI PackTime; ScuttleDelay=1500 is TOPPLED scuttle, not pack.",
+        "stock": "PackTime = UnpackTime = 2000 copied from V25 SDSR5 DeployStyleAIUpdate in the same ChinaVehicle.ini.",
+        "kept": "Pack/unpack exists. Exact CWC millisecond timing is not claimed."
+      }
+    ],
+    "fail_reasons": [],
+    "skip_refs": [
+      [
+        "ObjectCreationList",
+        "OCL_CWCruSpecialAbilityFakeRider_Inf_Stand"
+      ],
+      [
+        "SpecialPower",
+        "SpecialAbilityCWCruFakeRider_Inf_Stand"
+      ],
+      [
+        "ObjectCreationList",
+        "OCL_CWCruSpecialAbilityFakeRider_Inf_Prone"
+      ],
+      [
+        "SpecialPower",
+        "SpecialAbilityCWCruFakeRider_Inf_Prone"
+      ],
+      [
+        "Object",
+        "CWCruFakeRider_Inf_Prone"
+      ],
+      [
+        "Object",
+        "CWCruFakeRider_Inf_Stand"
+      ],
+      [
+        "CommandSet",
+        "CWCruS300CommandSet"
+      ],
+      [
+        "CommandSet",
+        "CWCruS300DeployedCommandSet"
+      ]
+    ]
+  }
+}

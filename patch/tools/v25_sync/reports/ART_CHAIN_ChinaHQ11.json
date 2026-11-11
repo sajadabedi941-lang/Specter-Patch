@@ -1,7 +1,7 @@
 {
   "object": "ChinaHQ11",
   "art_status": "AUTO_RECOVERABLE",
-  "data_status": "MANUAL_REBUILD",
+  "data_status": "READY_FOR_TRANSFER_PLAN",
   "files": [
     {
       "name": "CWCruS300_m",
@@ -12,58 +12,6 @@
       "w3d_textures": null,
       "w3d_anims": null,
       "found_in": null
-    },
-    {
-      "name": "BUSHUtb.tga",
-      "action": "RECOVER_FROM_V25",
-      "source": "Generals Silent Death V25/Art/Textures/BUSHUtb.tga",
-      "archive_paths": [
-        "Generals Silent Death V25/Art/Textures/BUSHUtb.tga"
-      ],
-      "art_locations": [
-        {
-          "container": "zip",
-          "path": "Generals Silent Death V25/Art/Textures/BUSHUtb.tga",
-          "inner": null,
-          "filename": "BUSHUtb.tga",
-          "source_big": null,
-          "local_path": null
-        }
-      ],
-      "w3d_textures": null,
-      "w3d_anims": null,
-      "found_in": "zip"
-    },
-    {
-      "name": "BUSHU",
-      "action": "IMPORT_UNIQUE",
-      "source": "00LSF0118.big:Data\\ini\\MappedImages\\TextureSize_512\\leesf.INI",
-      "archive_paths": null,
-      "art_locations": null,
-      "w3d_textures": null,
-      "w3d_anims": null,
-      "found_in": "mapped_image"
-    },
-    {
-      "name": "SDStop",
-      "action": "RECOVER_FROM_V25",
-      "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
-      "archive_paths": [
-        "Generals Silent Death V25/Art/Textures/SDStop.tga"
-      ],
-      "art_locations": [
-        {
-          "container": "zip",
-          "path": "Generals Silent Death V25/Art/Textures/SDStop.tga",
-          "inner": null,
-          "filename": "SDStop.tga",
-          "source_big": null,
-          "local_path": null
-        }
-      ],
-      "w3d_textures": null,
-      "w3d_anims": null,
-      "found_in": "zip"
     },
     {
       "name": "CHHQ11TB",

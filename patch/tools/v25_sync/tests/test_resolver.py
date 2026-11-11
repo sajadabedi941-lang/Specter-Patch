@@ -48,6 +48,13 @@ class StubEngine:
         for k, v in (vfs.get(kind) or {}).items():
             if k.lower() == name.lower():
                 return v
+        for alias in ini.KIND_ALIASES.get(kind) or ():
+            rec = (vfs.get(alias) or {}).get(name)
+            if rec:
+                return rec
+            for k, v in (vfs.get(alias) or {}).items():
+                if k.lower() == name.lower():
+                    return v
         return None
 
     def object_meta(self, rec):

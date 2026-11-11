@@ -1,0 +1,33 @@
+{
+  "object": "ChinaCSSA1",
+  "data_status": "READY_FOR_TRANSFER_PLAN",
+  "unique_data_files": [
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
+    "Data\\INI\\DamageFX_SilentDeath.ini",
+    "Data\\INI\\Crate_SilentDeath.ini"
+  ],
+  "public_ini_leaks": [],
+  "independent_clones": [
+    {
+      "kind": "DamageFX",
+      "from": "TankDamageFX",
+      "to": "SD25_TankDamageFX",
+      "unique_path": "Data\\INI\\DamageFX_SilentDeath.ini"
+    },
+    {
+      "kind": "CrateData",
+      "from": "SalvageCrateData",
+      "to": "SD25_SalvageCrateData",
+      "unique_path": "Data\\INI\\Crate_SilentDeath.ini"
+    }
+  ],
+  "deploy_proof": {
+    "use_deploy_style": false,
+    "use_deployed_weaponset": false,
+    "summary": "No RiderChangeContain; DeployStyle mapping is not required.",
+    "proven": [],
+    "limitations": [],
+    "fail_reasons": null,
+    "skip_refs": []
+  }
+}

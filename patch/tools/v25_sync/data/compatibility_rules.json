@@ -6,7 +6,8 @@
     "Command_AttackMove",
     "Command_Capture",
     "Command_CombatDrop",
-    "Command_DisarmMines"
+    "Command_DisarmMines",
+    "Command_Deploy"
   ],
   "blocked_kinds": ["PlayerTemplate", "AIData", "Rank"],
   "blocked_object_sides": [

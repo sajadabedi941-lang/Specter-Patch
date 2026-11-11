@@ -1,5 +1,5 @@
 {
-  "generated_at_tehran": "2026-11-11 13:30 Asia/Tehran",
+  "generated_at_tehran": "2026-11-11 14:31 Asia/Tehran",
   "recipes": {
     "comment": "CWC modules seen in Silent Death V25. SPECTER uses stock ZH Generals.exe. Do not patch SPECTER public INI. Capabilities are not dropped.",
     "modules": {
@@ -19,13 +19,13 @@
         "rebuild": {
           "action": "MANUAL_REBUILD",
           "keep_capability": "deployed vs undeployed weapon set, command set, and locomotor",
+          "comment": "Default is MANUAL. ChinaHQ11-style two-rider packed/deployed with rider-only OCLs is proven INDEPENDENT_ADD via DeployStyleAIUpdate + DEPLOYED. Other RiderChangeContain units stay MANUAL until proven.",
           "specter_safe": [
-            "Unique Object keeps two WeaponSet blocks with conditions UNPACKING/DEPLOYED if the art supports those ModelConditions.",
-            "Use stock DeployStyleAIUpdate (ZH module) with PackTime/UnpackTime for turret lock while packing.",
-            "Do not spawn CWC fake-rider infantry. Encode the visual in ConditionState PACKING/DEPLOYED on the vehicle Draw.",
-            "Map RIDER1 (packed / cannot fire) to the default ConditionState and RIDER2 (prone / missiles live) to DEPLOYED.",
-            "CommandSet override becomes a unique last-win CommandSet_ZZZZ file swapped via Upgrade or a second CommandSet on the deployed WeaponSet if the engine allows; otherwise one CommandSet that already contains both fire and undeploy.",
-            "Payload rider templates stay as unique hidden Objects only if still referenced; otherwise they are not imported."
+            "Do not copy RiderChangeContain; it is CWC.exe-only.",
+            "Use stock DeployStyleAIUpdate only when prove_rider_deploy() succeeds (exactly two riders, WEAPON_RIDER1 None vs WEAPON_RIDER2 missile, Draw RIDER2, OCLs that only inject those fake riders).",
+            "Map RIDER1 packed to DefaultConditionState/PACKING and RIDER2 to DEPLOYED. WeaponSet Conditions = None vs DEPLOYED.",
+            "CommandSet swap and SET_SLUGGISH-while-deployed are NOT proven on stock ZH and must be listed as limitations.",
+            "Do not spawn CWC fake-rider infantry."
           ]
         }
       },
@@ -42,11 +42,12 @@
         "rebuild": {
           "action": "MANUAL_REBUILD",
           "keep_capability": "button that switches deployed state and/or spawns support objects",
+          "comment": "ChinaHQ11 fake-rider OCLs are replaced by Command_Deploy (INDEPENDENT_ADD). Any OCL that spawns a real payload stays MANUAL until a unique SpecialPower (not CIA intel) is planned.",
           "specter_safe": [
-            "Keep OCLSpecialPower on the unique Object only with a unique SpecialPower template (not SPECIAL_CIA_INTELLIGENCE hijack) and a unique OCL path.",
-            "If the OCL only exists to swap CWC riders, replace the button with DeployStyleAIUpdate pack/unpack instead of importing the fake-rider OCL.",
-            "Smoke-grenade OCLSpecialPower copies are INDEPENDENT_ADD on the unique Object with unique OCL/SpecialPower names.",
-            "Do not rewrite SPECTER SpecialPower.ini; add Data\\INI\\SpecialPower_SilentDeath.ini unique-path later."
+            "Never import SPECIAL_CIA_INTELLIGENCE hijacks.",
+            "If the OCL only injects fake riders, replace OCLSpecialPower with stock Command_Deploy. Do not keep the module.",
+            "Smoke-grenade or other real payloads: unique SpecialPower + unique OCL on the unique Object; do not patch SPECTER SpecialPower.ini.",
+            "Do not rewrite SPECTER SpecialPower.ini."
           ]
         }
       },
@@ -116,17 +117,21 @@
     {
       "object": "ChinaCSSA1",
       "found": true,
-      "readiness": "manual_rebuild",
-      "data_status": "MANUAL_REBUILD",
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
       "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": false,
+      "public_ini_leaks": [],
       "cwc_modules": []
     },
     {
       "object": "ChinaHQ11",
       "found": true,
-      "readiness": "manual_rebuild",
-      "data_status": "MANUAL_REBUILD",
+      "readiness": "auto_fixable",
+      "data_status": "READY_FOR_TRANSFER_PLAN",
       "art_status": "AUTO_RECOVERABLE",
+      "use_deploy_style": true,
+      "public_ini_leaks": [],
       "cwc_modules": [
         "RiderChangeContain",
         "OCLSpecialPower",

@@ -232,6 +232,31 @@ class PreflightStage5Regressions(unittest.TestCase):
         self.assertTrue(row["ready_for_safe_transfer"], row)
         self.assertFalse(any("MissingUnit" in r for r in row["missing_parse_refs"]))
 
+    def test_missing_command_button_is_not_ready(self):
+        v25 = {
+            "Object": {
+                "FooFactory": {
+                    "keys": [("Side", "China")],
+                    "named_refs": {"CommandSet": ["FooFactorySet"]},
+                    "behaviors": [],
+                    "body": "Object FooFactory\nEnd\n",
+                }
+            },
+            "CommandSet": {
+                "FooFactorySet": {
+                    "named_refs": {"CommandButton": ["Command_Missing"]},
+                    "keys": [],
+                    "behaviors": [],
+                    "body": "CommandSet FooFactorySet\n  1 = Command_Missing\nEnd\n",
+                }
+            },
+        }
+        got = catalog.catalog_objects(v25, {"Object": {}, "CommandSet": {}, "CommandButton": {}}, {"blocked_object_sides": []})
+        row = got["objects"][0]
+        self.assertFalse(row["ready_for_safe_transfer"])
+        self.assertEqual(row["status"], "needs_fix")
+        self.assertTrue(any("Command_Missing" in r for r in row["missing_parse_refs"]), row)
+
     def test_validate_rejects_nested_weapon_dir(self):
         added = {
             r"Data\INI\Weapon\SilentDeath\SD25_Weapons.ini": b"Weapon SD25_Gun\nEnd\n",

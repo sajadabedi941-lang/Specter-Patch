@@ -35,6 +35,7 @@ def main(argv: list[str] | None = None) -> int:
             "ss1-layout",
             "catalog",
             "preflight",
+            "e2e",
             "selftest",
             "apply",
         ],
@@ -98,6 +99,8 @@ def main(argv: list[str] | None = None) -> int:
         result = eng.run_stage2()
     elif args.command in ("ss1-layout", "catalog", "preflight"):
         result = eng.run_compat_infra()
+    elif args.command == "e2e":
+        result = eng.run_e2e()
     elif args.command in ("dry-run", "plan", "validate"):
         eng.health_report()
         result = eng.dry_run()

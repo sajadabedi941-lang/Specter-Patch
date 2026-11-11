@@ -1041,6 +1041,58 @@ class Engine:
         )
         return report
 
+    def run_e2e(self) -> dict:
+        """Role-sample + catalog-ready byte recheck. Dry-run only. No BIG writes."""
+        import gzip
+
+        from . import e2e as e2e_mod
+
+        orig_data = self.ss1 / "_SPEC_DATA_ONE.big"
+        orig_art = self.ss1 / "_SPEC_ART_TWO.big"
+        before = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        report = e2e_mod.run_e2e(self)
+        after = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        report["original_hashes_unchanged"] = before == after
+        report["original_hashes"] = after
+        report["game_bigs_modified"] = False
+        (self.reports / "E2E.json.gz").write_bytes(
+            gzip.compress(json.dumps(report, indent=2, default=str).encode("utf-8"), compresslevel=6)
+        )
+        (self.reports / "E2E.md").write_text(e2e_mod.e2e_markdown(report), encoding="utf-8")
+        summary = {
+            "mode": report.get("mode"),
+            "generated_at_tehran": report.get("generated_at_tehran"),
+            "game_bigs_modified": False,
+            "original_hashes_unchanged": report.get("original_hashes_unchanged"),
+            "generals_exe_run": False,
+            "equipment_imported": False,
+            "loose_ini_written": False,
+            "summary": report.get("summary"),
+            "engine_gaps": report.get("engine_gaps"),
+            "next_stage": report.get("next_stage"),
+            "syntax_audit": report.get("syntax_audit"),
+            "sample_objects": [
+                {
+                    "role": r.get("role"),
+                    "object": r.get("object"),
+                    "status": r.get("status"),
+                    "dest_ini": r.get("dest_ini"),
+                    "reasons": r.get("reasons"),
+                }
+                for r in report.get("samples") or []
+            ],
+        }
+        (self.reports / "E2E_SUMMARY.json").write_text(
+            json.dumps(summary, indent=2, default=str) + "\n", encoding="utf-8"
+        )
+        return summary
+
     def run_stage4(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
         from . import archive as archive_mod
         from . import cwc, stage3_reports, stage4_reports

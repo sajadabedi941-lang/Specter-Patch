@@ -27,9 +27,9 @@ NO_WALK_KINDS = {
     "DialogEvent",
     "Locomotor",
     "ParticleSystem",
-    # CommandSet/CommandButton must exist (parse-fatal) but their Object=
-    # slots are other units, not this object's projectile/weapon chain.
-    "CommandSet",
+    # CommandButton Object= slots are other units (factory build lists), not
+    # this object's projectile/weapon chain. CommandSet itself IS walked so
+    # its CommandButton names are existence-checked (parse-fatal).
     "CommandButton",
     "Science",
     "Upgrade",

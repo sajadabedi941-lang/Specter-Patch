@@ -1,0 +1,50 @@
+# Independent CI for the Silent Death V25 → SPECTER planner.
+# Never writes SPECTER BIGs. apply stays refused.
+name: V25 sync engine
+
+on:
+  pull_request:
+    paths:
+      - "patch/tools/v25_sync/**"
+      - ".github/workflows/v25-sync.yml"
+  push:
+    paths:
+      - "patch/tools/v25_sync/**"
+      - ".github/workflows/v25-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v25-sync-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  v25-sync:
+    name: Stage 1–3 tests and guards
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch PR base commit
+        if: github.event_name == 'pull_request'
+        run: git fetch --no-tags origin ${{ github.event.pull_request.base.sha }}
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install 7-Zip
+        run: sudo apt-get update && sudo apt-get install -y p7zip-full
+
+      - name: Run V25 CI
+        env:
+          V25_CI_BASE: ${{ github.event.pull_request.base.sha }}
+          V25_CI_EVENT: ${{ github.event_name }}
+        run: python3 patch/tools/v25_sync/ci_github.py

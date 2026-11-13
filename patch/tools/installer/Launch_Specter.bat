@@ -17,6 +17,7 @@ if errorlevel 1 (
 )
 
 set "PATCH_DIR=%~dp0"
+set "VERIFY=%~dp0Verify_SpecterArchives.bat"
 echo.
 echo ============================================================
 echo  SPECTER ULTIMATE EXPANSION LAUNCHER
@@ -26,25 +27,27 @@ echo Launcher folder:
 echo   %PATCH_DIR%
 echo.
 
-echo [1/4] Checking patch BIG files...
-if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
-  echo.
-  echo ERROR: Missing _SPEC_DATA_ONE.big
-  echo Put _SPEC_DATA_ONE.big next to Launch_Specter.bat
+if not exist "%VERIFY%" (
+  echo ERROR: Missing Verify_SpecterArchives.bat
+  echo Put it next to Launch_Specter.bat
   echo.
   pause
   exit /b 1
 )
-if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
+
+echo [1/4] Checking source archives + SHA-256...
+echo.
+echo   All four official files must sit next to this launcher.
+echo   A leftover _SPEC_ART_TWO.big beside generals.exe is not enough.
+echo.
+call "%VERIFY%" "%PATCH_DIR%"
+if errorlevel 1 (
   echo.
-  echo ERROR: Missing _SPEC_ART_ONE.big
-  echo Put _SPEC_ART_ONE.big next to Launch_Specter.bat
+  echo ERROR: Source archive check failed.
   echo.
   pause
   exit /b 1
 )
-echo   OK: _SPEC_DATA_ONE.big
-echo   OK: _SPEC_ART_ONE.big
 echo.
 
 echo [2/4] Checking generals.exe...
@@ -94,8 +97,10 @@ echo.
 
 echo [3/4] Loading Specter BIG files into game folder...
 echo.
-echo   Specter loads _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big from
-echo   the game folder automatically when generals.exe starts.
+echo   Specter loads 0_SPECTER_NatoSpainDisplay.big, _SPEC_ART_ONE.big,
+echo   _SPEC_ART_TWO.big, and _SPEC_DATA_ONE.big from the game folder.
+echo   First-wins named files: overlay before ART_ONE before ART_TWO
+echo   before DATA_ONE. ART_TWO holds US_Command.W3D.
 echo.
 
 set "SAME=0"
@@ -103,7 +108,7 @@ if /I "%PATCH_DIR%"=="%GAME_ROOT%" set "SAME=1"
 
 if "%SAME%"=="1" (
   echo   Launcher is already inside the game folder.
-  echo   BIG files are already in place - no copy needed.
+  echo   Source files are the destination files. No copy.
 ) else (
   echo   Copying _SPEC_DATA_ONE.big ...
   copy /Y "%PATCH_DIR%_SPEC_DATA_ONE.big" "%GAME_ROOT%_SPEC_DATA_ONE.big" >nul
@@ -126,18 +131,37 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK: copied _SPEC_ART_ONE.big
+
+  echo   Copying _SPEC_ART_TWO.big ...
+  copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo.
+    echo ERROR: Failed to copy _SPEC_ART_TWO.big into game folder.
+    echo.
+    pause
+    exit /b 1
+  )
+  echo   OK: copied _SPEC_ART_TWO.big
+
+  echo   Copying 0_SPECTER_NatoSpainDisplay.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" >nul
+  if errorlevel 1 (
+    echo.
+    echo ERROR: Failed to copy 0_SPECTER_NatoSpainDisplay.big into game folder.
+    echo.
+    pause
+    exit /b 1
+  )
+  echo   OK: copied 0_SPECTER_NatoSpainDisplay.big
 )
 
-if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
+echo.
+echo   Re-checking destination archives + SHA-256...
+call "%VERIFY%" "%GAME_ROOT%"
+if errorlevel 1 (
   echo.
-  echo ERROR: _SPEC_DATA_ONE.big is not in the game folder.
-  echo.
-  pause
-  exit /b 1
-)
-if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
-  echo.
-  echo ERROR: _SPEC_ART_ONE.big is not in the game folder.
+  echo ERROR: Destination archive check failed.
+  echo Game will NOT be launched.
   echo.
   pause
   exit /b 1
@@ -178,8 +202,10 @@ echo.
 echo SUCCESS: Game launch requested with Specter patch BIGs loaded.
 echo.
 echo Active files:
-echo   %GAME_ROOT%_SPEC_DATA_ONE.big
+echo   %GAME_ROOT%0_SPECTER_NatoSpainDisplay.big
 echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
+echo   %GAME_ROOT%_SPEC_DATA_ONE.big
 echo.
 echo You can close this window.
 echo.

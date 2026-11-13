@@ -37,8 +37,17 @@ if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
   pause
   exit /b 1
 )
+if not exist "%PATCH_DIR%0_SPECTER_MissileCooldown.big" (
+  echo.
+  echo ERROR: Missing patch file 0_SPECTER_MissileCooldown.big
+  echo Put 0_SPECTER_MissileCooldown.big next to Install_SpecterPatch.bat
+  echo.
+  pause
+  exit /b 1
+)
 echo   Found _SPEC_DATA_ONE.big
 echo   Found _SPEC_ART_ONE.big
+echo   Found 0_SPECTER_MissileCooldown.big
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -116,6 +125,19 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
 ) else (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
+
+if exist "%GAME_ROOT%0_SPECTER_MissileCooldown.big" (
+  echo   Backing up old 0_SPECTER_MissileCooldown.big ...
+  copy /Y "%GAME_ROOT%0_SPECTER_MissileCooldown.big" "%BACKUP%\0_SPECTER_MissileCooldown.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for 0_SPECTER_MissileCooldown.big
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing 0_SPECTER_MissileCooldown.big to backup
+)
 echo   Backup folder:
 echo   %BACKUP%
 echo.
@@ -149,6 +171,16 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK
+
+  echo   Copying 0_SPECTER_MissileCooldown.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_MissileCooldown.big" "%GAME_ROOT%0_SPECTER_MissileCooldown.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Failed to copy 0_SPECTER_MissileCooldown.big
+    echo Backup is in: %BACKUP%
+    pause
+    exit /b 1
+  )
+  echo   OK
 )
 
 if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
@@ -158,6 +190,11 @@ if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
 )
 if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
   echo ERROR: _SPEC_ART_ONE.big missing after install.
+  pause
+  exit /b 1
+)
+if not exist "%GAME_ROOT%0_SPECTER_MissileCooldown.big" (
+  echo ERROR: 0_SPECTER_MissileCooldown.big missing after install.
   pause
   exit /b 1
 )

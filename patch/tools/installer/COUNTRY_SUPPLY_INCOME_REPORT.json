@@ -1,0 +1,932 @@
+{
+  "ValuePerSupplyBox": 25,
+  "formula": "cash_per_full_dump = MaxBoxes * ValuePerSupplyBox",
+  "source_data_big": "/tmp/specter_accepted_release/_SPEC_DATA_ONE.big",
+  "source_data_sha256": "169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8",
+  "countries": [
+    {
+      "country": "USA",
+      "target_per_delivery": 1000,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 40,
+      "effective_per_delivery": 1000,
+      "center_object": "AmericaSupplyCenter",
+      "spawn": "AmericaSupplyChinook_USA",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 50900,
+      "income_per_minute_no_travel": 1178.8,
+      "gatherers": [
+        {
+          "objects": [
+            "AmericaSupplyChinook_USA"
+          ],
+          "MaxBoxes": [
+            40
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "AmericaSupplyChinook_USA"
+        }
+      ]
+    },
+    {
+      "country": "China",
+      "target_per_delivery": 950,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 38,
+      "effective_per_delivery": 950,
+      "center_object": "ChinaSupplyCenter",
+      "spawn": "ChinaVehicleSupplyTruck",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 400,
+      "load_unload_ms_no_travel": 38400,
+      "income_per_minute_no_travel": 1484.4,
+      "gatherers": [
+        {
+          "objects": [
+            "ChinaVehicleSupplyTruck"
+          ],
+          "MaxBoxes": [
+            38
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            400
+          ],
+          "label": "ChinaVehicleSupplyTruck"
+        }
+      ]
+    },
+    {
+      "country": "Germany",
+      "target_per_delivery": 900,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 36,
+      "effective_per_delivery": 900,
+      "center_object": "GermanySupplyCenter",
+      "spawn": "GermanyHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 46100,
+      "income_per_minute_no_travel": 1171.4,
+      "gatherers": [
+        {
+          "objects": [
+            "GermanyHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            36
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Japan",
+      "target_per_delivery": 875,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 35,
+      "effective_per_delivery": 875,
+      "center_object": "Japan_SupplyCenter",
+      "spawn": "Japan_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 35500,
+      "income_per_minute_no_travel": 1478.9,
+      "gatherers": [
+        {
+          "objects": [
+            "Japan_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            35
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Japan_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "Britain",
+      "target_per_delivery": 850,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 34,
+      "effective_per_delivery": 850,
+      "center_object": "BritainSupplyCenter",
+      "spawn": "BritainHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 43700,
+      "income_per_minute_no_travel": 1167.0,
+      "gatherers": [
+        {
+          "objects": [
+            "BritainHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            34
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "India",
+      "target_per_delivery": 825,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 33,
+      "effective_per_delivery": 825,
+      "center_object": "India_SupplyCenter",
+      "spawn": "India_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 33500,
+      "income_per_minute_no_travel": 1477.6,
+      "gatherers": [
+        {
+          "objects": [
+            "India_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            33
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "India_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "India_Mi-8T"
+          ],
+          "MaxBoxes": [
+            33
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "India_Mi-8.ini"
+        }
+      ]
+    },
+    {
+      "country": "France",
+      "target_per_delivery": 800,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 32,
+      "effective_per_delivery": 800,
+      "center_object": "FranceSupplyCenter",
+      "spawn": "FranceHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 41300,
+      "income_per_minute_no_travel": 1162.2,
+      "gatherers": [
+        {
+          "objects": [
+            "FranceHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            32
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Russia",
+      "target_per_delivery": 775,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 31,
+      "effective_per_delivery": 775,
+      "center_object": "RussiaSupplyCenter",
+      "spawn": "RussiaSupplyTruck_CountryIncome",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 400,
+      "load_unload_ms_no_travel": 31400,
+      "income_per_minute_no_travel": 1480.9,
+      "gatherers": [
+        {
+          "objects": [
+            "RussiaSupplyTruck_CountryIncome"
+          ],
+          "MaxBoxes": [
+            31
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            400
+          ],
+          "label": "RussiaSupplyTruck_CountryIncome"
+        }
+      ]
+    },
+    {
+      "country": "Italy",
+      "target_per_delivery": 750,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 30,
+      "effective_per_delivery": 750,
+      "center_object": "ItalySupplyCenter",
+      "spawn": "ItalyHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 38900,
+      "income_per_minute_no_travel": 1156.8,
+      "gatherers": [
+        {
+          "objects": [
+            "ItalyHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            30
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Spain",
+      "target_per_delivery": 725,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 29,
+      "effective_per_delivery": 725,
+      "center_object": "NatoSupplyCenter",
+      "spawn": "NatoHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 37700,
+      "income_per_minute_no_travel": 1153.8,
+      "gatherers": [
+        {
+          "objects": [
+            "NatoHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            29
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "South Korea",
+      "target_per_delivery": 700,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 28,
+      "effective_per_delivery": 700,
+      "center_object": "SouthKorea_SupplyCenter",
+      "spawn": "SouthKorea_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 28500,
+      "income_per_minute_no_travel": 1473.7,
+      "gatherers": [
+        {
+          "objects": [
+            "SouthKorea_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            28
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "SouthKorea_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "Turkey",
+      "target_per_delivery": 675,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 27,
+      "effective_per_delivery": 675,
+      "center_object": "TurkeySupplyCenter",
+      "spawn": "TurkeyHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 35300,
+      "income_per_minute_no_travel": 1147.3,
+      "gatherers": [
+        {
+          "objects": [
+            "TurkeyHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            27
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Saudi Arabia",
+      "target_per_delivery": 650,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 26,
+      "effective_per_delivery": 650,
+      "center_object": "SaudiArabia_SupplyCenter",
+      "spawn": "SaudiArabia_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 26500,
+      "income_per_minute_no_travel": 1471.7,
+      "gatherers": [
+        {
+          "objects": [
+            "SaudiArabia_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            26
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "SaudiArabia_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "SaudiArabia_Mi-8T"
+          ],
+          "MaxBoxes": [
+            26
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "SaudiArabia_Mi-8.ini"
+        }
+      ]
+    },
+    {
+      "country": "Sweden",
+      "target_per_delivery": 625,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 25,
+      "effective_per_delivery": 625,
+      "center_object": "SwedenSupplyCenter",
+      "spawn": "SwedenHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 32900,
+      "income_per_minute_no_travel": 1139.8,
+      "gatherers": [
+        {
+          "objects": [
+            "SwedenHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            25
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Israel",
+      "target_per_delivery": 600,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 24,
+      "effective_per_delivery": 600,
+      "center_object": "AirF_AmericaSupplyCenter",
+      "spawn": "AFG_AmericaVehicleChinook",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 31700,
+      "income_per_minute_no_travel": 1135.6,
+      "gatherers": [
+        {
+          "objects": [
+            "AFG_AmericaVehicleChinook"
+          ],
+          "MaxBoxes": [
+            24
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "UH60.ini"
+        }
+      ]
+    },
+    {
+      "country": "UAE",
+      "target_per_delivery": 575,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 23,
+      "effective_per_delivery": 575,
+      "center_object": "UAE_SupplyCenter",
+      "spawn": "UAE_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 23500,
+      "income_per_minute_no_travel": 1468.1,
+      "gatherers": [
+        {
+          "objects": [
+            "UAE_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            23
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "UAE_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "UAE_Mi-8T"
+          ],
+          "MaxBoxes": [
+            23
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "UAE_Mi-8.ini"
+        }
+      ]
+    },
+    {
+      "country": "Vietnam",
+      "target_per_delivery": 550,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 22,
+      "effective_per_delivery": 550,
+      "center_object": "Vietnam_SupplyCenter",
+      "spawn": "Vietnam_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 22500,
+      "income_per_minute_no_travel": 1466.7,
+      "gatherers": [
+        {
+          "objects": [
+            "Vietnam_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            22
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Vietnam_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "South Africa",
+      "target_per_delivery": 525,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 21,
+      "effective_per_delivery": 525,
+      "center_object": "SouthAfrica_SupplyCenter",
+      "spawn": "SouthAfrica_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 21500,
+      "income_per_minute_no_travel": 1465.1,
+      "gatherers": [
+        {
+          "objects": [
+            "SouthAfrica_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            21
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "SouthAfrica_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "Pakistan",
+      "target_per_delivery": 500,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 20,
+      "effective_per_delivery": 500,
+      "center_object": "Pakistan_SupplyCenter",
+      "spawn": "Pakistan_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 20500,
+      "income_per_minute_no_travel": 1463.4,
+      "gatherers": [
+        {
+          "objects": [
+            "Pakistan_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            20
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Pakistan_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "Pakistan_Mi-8T"
+          ],
+          "MaxBoxes": [
+            20
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "Pakistan_Mi-8.ini"
+        }
+      ]
+    },
+    {
+      "country": "Iran",
+      "target_per_delivery": 475,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 19,
+      "effective_per_delivery": 475,
+      "center_object": "IranSupplyCenter",
+      "spawn": "IranVehicleUral375",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 400,
+      "load_unload_ms_no_travel": 19400,
+      "income_per_minute_no_travel": 1469.1,
+      "gatherers": [
+        {
+          "objects": [
+            "IranVehicleUral375"
+          ],
+          "MaxBoxes": [
+            19
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            400
+          ],
+          "label": "Ural.ini"
+        }
+      ]
+    },
+    {
+      "country": "Iraq",
+      "target_per_delivery": 450,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 18,
+      "effective_per_delivery": 450,
+      "center_object": "Iraq_SupplyCenter",
+      "spawn": "Iraq_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 18500,
+      "income_per_minute_no_travel": 1459.5,
+      "gatherers": [
+        {
+          "objects": [
+            "Iraq_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            18
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Iraq_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "Iraq_Mi-8T"
+          ],
+          "MaxBoxes": [
+            18
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "Iraq_Mi-8.ini"
+        }
+      ]
+    },
+    {
+      "country": "Ukraine",
+      "target_per_delivery": 425,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 17,
+      "effective_per_delivery": 425,
+      "center_object": "UkraineSupplyCenter",
+      "spawn": "UkraineHelicopterCH47F",
+      "warehouse_delay_ms_per_box": 1200,
+      "center_unload_ms": 2900,
+      "load_unload_ms_no_travel": 23300,
+      "income_per_minute_no_travel": 1094.4,
+      "gatherers": [
+        {
+          "objects": [
+            "UkraineHelicopterCH47F"
+          ],
+          "MaxBoxes": [
+            17
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "CH47F.ini"
+        }
+      ]
+    },
+    {
+      "country": "Libya",
+      "target_per_delivery": 400,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 16,
+      "effective_per_delivery": 400,
+      "center_object": "Libya_SupplyCenter",
+      "spawn": "Libya_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 16500,
+      "income_per_minute_no_travel": 1454.5,
+      "gatherers": [
+        {
+          "objects": [
+            "Libya_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            16
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Libya_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "North Korea",
+      "target_per_delivery": 350,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 14,
+      "effective_per_delivery": 350,
+      "center_object": "NorthKorea_SupplyCenter",
+      "spawn": "NorthKorea_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 14500,
+      "income_per_minute_no_travel": 1448.3,
+      "gatherers": [
+        {
+          "objects": [
+            "NorthKorea_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            14
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "NorthKorea_Ural375_Supply.ini"
+        }
+      ]
+    },
+    {
+      "country": "Syria",
+      "target_per_delivery": 300,
+      "ValuePerSupplyBox": 25,
+      "MaxBoxes": 12,
+      "effective_per_delivery": 300,
+      "center_object": "Syria_SupplyCenter",
+      "spawn": "Syria_Ural375_Supply",
+      "warehouse_delay_ms_per_box": 1000,
+      "center_unload_ms": 500,
+      "load_unload_ms_no_travel": 12500,
+      "income_per_minute_no_travel": 1440.0,
+      "gatherers": [
+        {
+          "objects": [
+            "Syria_Ural375_Supply"
+          ],
+          "MaxBoxes": [
+            12
+          ],
+          "WarehouseDelayMS": [
+            1000
+          ],
+          "CenterDelayMS": [
+            500
+          ],
+          "label": "Syria_Ural375_Supply.ini"
+        },
+        {
+          "objects": [
+            "Syria_Mi-8T"
+          ],
+          "MaxBoxes": [
+            12
+          ],
+          "WarehouseDelayMS": [
+            1200
+          ],
+          "CenterDelayMS": [
+            2900
+          ],
+          "label": "Syria_Mi-8.ini"
+        }
+      ]
+    }
+  ],
+  "files": [
+    "Data\\INI\\CommandButton_CountrySupplyIncome.ini",
+    "Data\\INI\\CommandSet_CountrySupplyIncome.ini",
+    "Data\\INI\\GameData.ini",
+    "Data\\INI\\Object\\Specter\\Armed Forces Of Russian Federation\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\British Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\British Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Airforce\\Egypt_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Infantry\\Egypt_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Egyptian Armed Forces\\Wheeled\\Egypt_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\French Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\French Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\German Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\German Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\Indian Armed Forces\\Airforce\\India_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Indian Armed Forces\\Buildings\\India_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Indian Armed Forces\\Infantry\\India_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Indian Armed Forces\\Wheeled\\India_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\Iranian Army\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Iranian Army\\Wheeled\\Ural.ini",
+    "Data\\INI\\Object\\Specter\\Iraq Army\\Airforce\\Iraq_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Iraq Army\\Buildings\\Iraq_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Iraq Army\\Infantry\\Iraq_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Iraq Army\\Wheeled\\Iraq_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\Israel Defense Forces\\Airforce\\UH60.ini",
+    "Data\\INI\\Object\\Specter\\Israel Defense Forces\\Buildings\\Supply.ini",
+    "Data\\INI\\Object\\Specter\\Italian Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Italian Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\Japan Self-Defense Forces\\Buildings\\Iraq_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Japan Self-Defense Forces\\Buildings\\Japan_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Japan Self-Defense Forces\\Wheeled\\Japan_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\Libyan Armed Forces\\Buildings\\Libya_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Libyan Armed Forces\\Infantry\\Libya_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Libyan Armed Forces\\Wheeled\\Libya_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\NATO\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\NATO\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\North Korea\\Buildings\\NorthKorea_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\North Korea\\Wheeled\\NorthKorea_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\PLA\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Pakistan Armed Forces\\Airforce\\Pakistan_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Pakistan Armed Forces\\Buildings\\Pakistan_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Pakistan Armed Forces\\Infantry\\Pakistan_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Pakistan Armed Forces\\Wheeled\\Pakistan_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\AmericaSupplyChinook_USA.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\ChinaVehicleSupplyTruck.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\RussiaSupplyTruck_CountryIncome.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\SupplyDock.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\SupplyPile.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\SupplyPileSmall.ini",
+    "Data\\INI\\Object\\Specter\\PatchSystems\\Economy\\CountrySupplyIncome\\SupplyWarehouse.ini",
+    "Data\\INI\\Object\\Specter\\Saudi Arabia Armed Forces\\Airforce\\SaudiArabia_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Saudi Arabia Armed Forces\\Buildings\\SaudiArabia_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Saudi Arabia Armed Forces\\Infantry\\SaudiArabia_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Saudi Arabia Armed Forces\\Wheeled\\SaudiArabia_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\South African National Defence Force\\Buildings\\SouthAfrica_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\South African National Defence Force\\Infantry\\SouthAfrica_Worker.ini",
+    "Data\\INI\\Object\\Specter\\South African National Defence Force\\Wheeled\\SouthAfrica_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\South Korean Armed Forces\\Buildings\\Iraq_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\South Korean Armed Forces\\Buildings\\SouthKorea_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\South Korean Armed Forces\\Wheeled\\SouthKorea_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\Swedish Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Swedish Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\Syrian Armed Forces\\Airforce\\Syria_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\Syrian Armed Forces\\Buildings\\Syria_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Syrian Armed Forces\\Infantry\\Syria_Worker.ini",
+    "Data\\INI\\Object\\Specter\\Syrian Armed Forces\\Wheeled\\Syria_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\Turkish Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Turkish Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\Ukrainian Armed Forces\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Ukrainian Armed Forces\\Rotary\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\United Arab Emirates Armed Forces\\Airforce\\UAE_Mi-8.ini",
+    "Data\\INI\\Object\\Specter\\United Arab Emirates Armed Forces\\Buildings\\UAE_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\United Arab Emirates Armed Forces\\Infantry\\UAE_Worker.ini",
+    "Data\\INI\\Object\\Specter\\United Arab Emirates Armed Forces\\Wheeled\\UAE_Ural375_Supply.ini",
+    "Data\\INI\\Object\\Specter\\United States Of America\\Airforce\\CH47F.ini",
+    "Data\\INI\\Object\\Specter\\United States Of America\\Buildings\\SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Vietnam People's Armed Forces\\Buildings\\Iraq_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Vietnam People's Armed Forces\\Buildings\\Vietnam_SupplyCenter.ini",
+    "Data\\INI\\Object\\Specter\\Vietnam People's Armed Forces\\Wheeled\\Vietnam_Ural375_Supply.ini"
+  ],
+  "overlay_big": "/workspace/patch/tools/installer/0_SPECTER_CountrySupplyIncome.big",
+  "overlay_bytes": 642560,
+  "overlay_sha256": "cdcf9e7be40683be7ee0e4ae79b357a6d9c366de00010de7718243436d14cc81",
+  "overlay_entries": 78
+}

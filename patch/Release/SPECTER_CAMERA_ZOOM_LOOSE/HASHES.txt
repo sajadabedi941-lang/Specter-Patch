@@ -1,0 +1,9 @@
+Data/INI/GameData.ini
+size=21181
+sha256=35b1ee7cbdd38949900d10e4fe9fe090f60db5f589cb86428032da0152c96fd4
+
+source=INIZH.big:Data\INI\GameData.ini
+source_size=21181
+source_sha256=da7ab8448b91a04cedb6affe1f6acda28960b82e643b4e94f843df4e511319cd
+changed_line=MaxCameraHeight = 620.0
+unchanged=CameraHeight = 232.0, MinCameraHeight = 120.0, CameraPitch = 37.5, CameraAdjustSpeed = 0.3

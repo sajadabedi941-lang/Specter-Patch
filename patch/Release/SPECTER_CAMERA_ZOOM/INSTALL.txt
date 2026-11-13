@@ -1,0 +1,7 @@
+Replace z_SPECTER_CameraZoom.big in the SPECTER game folder, next to generals.exe and INIZH.big.
+
+The engine reads MaxCameraHeight from Data\INI\GameData\ZZZZZZZZ_SPECTER_CameraZoom.ini inside this archive. That file is applied after INIZH.big's Data\INI\GameData.ini, which remains the first copy of that path and still contains MaxCameraHeight = 310.0. Do not edit INIZH.big or _SPEC_DATA_ONE.big.
+
+The previous archive with the same name stored a replacement Data\INI\GameData.ini. Zero Hour keeps the first archive's copy of an existing path, so that replacement was never opened and the zoom limit stayed 310.0.
+
+Static load simulation: INIZH.big supplies GameData.ini (310.0); this archive then sets MaxCameraHeight = 620.0. The game itself was not launched.

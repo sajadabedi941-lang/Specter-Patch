@@ -1,0 +1,47 @@
+# Iraq_AlFahd500 fire + flying-missile flag
+
+Live s baselines: missile-factory-button DATA + missile-factory-tga24 ART.
+Missile Factory / missile_factory.tga / R11ScudB / GENERIC-MISSILES.dds untouched.
+
+## Root cause (fire)
+TheWeaponStore loads Data\INI\Weapon.ini and Data\INI\Weapon\*.ini.
+Weapon_Iraq_AlFahd500 lived at Data\INI\Weapon_Iraq_AlFahd500.ini and was never parsed.
+PRIMARY was empty, so Command_FireMainWeapon (FIRE_WEAPON) stayed inactive.
+Fix: define Weapon_Iraq_AlFahd500 at the end of Weapon.ini; drop the unloaded file.
+
+## Root cause (flag)
+The flag was pasted onto unused atlas space; Irq_AlFahd500M body UVs missed it.
+Fix: dedicated Irq_AlFahd500P.tga (yellow + large IraqiFlag.dds) and remap projectile UVs.
+Launcher still uses Irq_AlFahd500M.tga. Flying model Irq_AlFahd500M.W3D uses Irq_AlFahd500P.tga.
+
+## Root cause (9P117 visual contamination)
+Original Irq_9P117.W3D / Irq_R11_M.W3D / textures were NOT byte-modified.
+Al-Fahd clones still registered globally as IRQ_9P117 / IRQ_R11_M, so ZH last-wins
+overwrote the original 9P117/R11 visuals at runtime with the black/yellow copies.
+Fix: rename Al-Fahd internals to IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M and point
+Al-Fahd INI animations at Irq_AlFahd500.IRQ_AF500. Original 9P117 files left intact.
+
+- DATA size: 366368616
+- DATA SHA256: aed109b44177bcf6c03cff56b42106f985115404f0ace80811ae262e999b9cc0
+- DATA files: 2913
+- ART size: 1263069228
+- ART SHA256: 0fa219d868ad1e6f6ddc8d0c955910cdd627b353869cae1459e3b969ece91a65
+- ART files: 4604
+- projectile TGA: type=2 bpp=24 alpha=0 desc=0x00 512x512
+
+- DATA files vs live: 2913 (was 2914)
+- ART files vs live: 4604 (was 4603)
+
+## VALIDATION PASS (static / packed last-wins)
+- Weapon_Iraq_AlFahd500 defined once, inside Weapon.ini
+- unloaded Data\INI\Weapon_Iraq_AlFahd500.ini removed
+- Iraq_AlFahd500 PRIMARY -> Weapon_Iraq_AlFahd500 -> Projectile_Iraq_AlFahd500 -> Irq_AlFahd500M -> Irq_AlFahd500P.tga
+- body UVs overlap the Iraqi flag region of the dedicated sheet
+- CommandSet unchanged; no slot > 18; factory intact
+- GENERIC-MISSILES.dds / IraqiFlag.dds / original 9P117 W3D+DDS / missile_factory.tga unchanged
+- Al-Fahd W3Ds use IRQ_AF500 / IRQ_AF500D / IRQ_ALF_M (no IRQ_9P117 / IRQ_R11_M)
+- Al-Fahd INI animations no longer reference Irq_9P117.W3D
+- old 8-missile project not restored
+
+RUNTIME_TEST=NOT RUN
+

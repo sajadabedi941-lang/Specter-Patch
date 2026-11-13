@@ -1,0 +1,30 @@
+Primary package (DATA + ART together):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-queue-slots/SPECTER_IRAQ_MISSILE_QUEUE_SLOTS.zip
+
+Or place both complete replacement files in the game folder:
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-queue-slots/_SPEC_DATA_ONE.big
+  SIZE=366376372
+  SHA256=a794a57a028aae4ec2e6adcb7a96030f34e21935181c0c02962923fea9dd0cd1
+  FILES=2914
+
+ART:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-missile-queue-slots/_SPEC_ART_ONE.big
+  SIZE=1267067968
+  SHA256=5fdc19145769b81bce2cddaeeb91701d6c9ce0f4e288e0d55baa03cbfdb33ea9
+  FILES=4616
+
+QUEUE_MECHANISM=Object Iraq_AlFahd500 ButtonImage+SelectPortrait
+OLD_QUEUE_ICON=irq_9p117
+NEW_QUEUE_ICON=specter_missile_a
+COMMANDBUTTONS=CB_MISSILE_A..L
+BUTTONIMAGE_A=specter_missile_a
+COMMANDSET=Iraq_AlFahdMissileFactoryCommandSet slot 1 = CB_MISSILE_A (2-12 reserved, 13 Rally, 14 Sell)
+MAPPING=موشک A -> Iraq_AlFahd500
+
+TAG=s-iraq-missile-queue-slots
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-missile-queue-slots
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/571
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

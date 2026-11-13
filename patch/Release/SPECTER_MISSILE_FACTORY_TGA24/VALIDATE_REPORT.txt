@@ -1,0 +1,30 @@
+# missile_factory.tga 24-bit RGB recode (ART-only)
+
+DATA not modified. Known-good Al-Fahd ART + one corrected TGA.
+
+## Corrected TGA
+- width: 128
+- height: 128
+- type: 2
+- bpp: 24
+- alpha bits: 0
+- descriptor: 0x00
+- origin: bottom
+- file size: 49196
+- compared to F14TB.tga / JIAN11TB.tga / FEIBAOtb.tga (type 2, 24 bpp, desc 0x00)
+
+- ART size: 1262282712
+- ART SHA256: 77ea62f6e28ad356e7c6ac6f46f6c69b2b9736999a46d89988ee333db3610e33
+- ART files: 4603
+- deleted: 0
+- modified existing: 0
+- added: ['Art\\Textures\\missile_factory.tga']
+
+## VALIDATION PASS (static / packed last-wins)
+- DELETED FILES = 0
+- MODIFIED EXISTING FILES = 0
+- ADDED FILES = 1 Art\Textures\missile_factory.tga
+- DDS/W3D counts unchanged; existing TGA/W3D/DDS byte-identical
+- BIG header/index valid; no overlap
+
+RUNTIME_TEST=NOT RUN

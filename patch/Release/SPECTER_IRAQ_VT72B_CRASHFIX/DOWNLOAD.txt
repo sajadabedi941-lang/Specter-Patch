@@ -1,0 +1,5 @@
+Complete replacement DATA (do not use a partial patch ZIP):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-vt72b-commandset-fix/_SPEC_DATA_ONE.big
+  SIZE=366368023
+  SHA256=a9edfd222bf1964a34423bf882fb730bdf9dc7f46d064cb9325eeee7d9e675dd
+  TAG=s-iraq-vt72b-commandset-fix

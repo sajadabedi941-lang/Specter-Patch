@@ -1,0 +1,37 @@
+SS2 tunnel loaders as Data-folder Loose files (no BIG)
+backup CommandSet.ini     593f541674b5917715a189c2aedf462c079233bbd4e21a11f24299b85ab32240
+backup CommandButton.ini  16ac5b9a306f9ec58cbee944b1b36eb577aed1f3e43bea38f14de16a440be918
+SHA-256 CommandSet.ini    de535a47e8a27c652bfc689fc938c90cd96e690122b6fdd145d73cffe56a6534
+SHA-256 CommandButton.ini 45697a3d76902b435088b6403bf8128baa3c003546f60155f7b14f4a06196b8c
+SHA-256 ZIP               680923408360887d5b6e1142444d585b73aa4c29d11969285e95c8b55613a7ae
+ZIP patch/Release/SPECTER_SS2_TUNNEL_LOADER_DATA_FOLDER/SPECTER_SS2_TUNNEL_LOADER_DATA_FOLDER.zip 283027 members=54
+No BIG files were written.
+In-game test was not run.
+
+Side                     CS file              slot object path
+Iraq                     CommandSet.ini        4    Object/Specter/Iraq Army/Tracked/Iraq_VehicleDozerm.ini
+NorthKorea               CommandSet.ini        4    Object/Specter/North Korea/Tracked/NorthKorea_VehicleDozerm.ini
+America                  CommandSet.ini        4    Object/Specter/United States Of America/Wheeled/AmericaVehicleDozerm.ini
+Russia                   CommandSet.ini        8    Object/Specter/Armed Forces Of Russian Federation/Tracked/RussiaVehicleDozerm.ini
+China                    CommandSet.ini        4    Object/Specter/PLA/Tracked/ChinaVehicleDozerm.ini
+GLA                      CommandSet.ini        8    Object/Specter/Arabic Alliance/Wheeled/GLAVehicleDozerm.ini
+Boss                     CommandSet.ini        4    Object/Boss_VehicleDozerm.ini
+AmericaAirForceGeneral   CommandSet.ini        3    Object/Specter/Israel Defense Forces/Wheeled/AirF_AmericaVehicleDozerm.ini
+Nato                     CommandSet.ini        4    Object/Specter/NATO/Wheleed/NatoVehicleDozerm.ini
+Iran                     CommandSet.ini        9    Object/Specter/Iranian Army/Tracked/IranVehicleDozerm.ini
+Pakistan                 CommandSet.ini        4    Object/Specter/Pakistan Armed Forces/Tracked/Pakistan_VehicleDozerm.ini
+SaudiArabia              CommandSet.ini        4    Object/Specter/Saudi Arabia Armed Forces/Tracked/SaudiArabia_VehicleDozerm.ini
+UAE                      CommandSet.ini        4    Object/Specter/United Arab Emirates Armed Forces/Tracked/UAE_VehicleDozerm.ini
+India                    CommandSet.ini        4    Object/Specter/Indian Armed Forces/Tracked/India_VehicleDozerm.ini
+Syria                    CommandSet.ini        4    Object/Specter/Syrian Armed Forces/Tracked/Syria_VehicleDozerm.ini
+Germany                  CommandSet.ini        4    Object/Specter/German Armed Forces/Wheleed/GermanyVehicleDozerm.ini
+France                   CommandSet.ini        4    Object/Specter/French Armed Forces/Wheleed/FranceVehicleDozerm.ini
+Britain                  CommandSet.ini        4    Object/Specter/British Armed Forces/Wheleed/BritainVehicleDozerm.ini
+Italy                    CommandSet.ini        4    Object/Specter/Italian Armed Forces/Wheleed/ItalyVehicleDozerm.ini
+Sweden                   CommandSet.ini        4    Object/Specter/Swedish Armed Forces/Wheleed/SwedenVehicleDozerm.ini
+Ukraine                  CommandSet.ini        4    Object/Specter/Ukrainian Armed Forces/Wheleed/UkraineVehicleDozerm.ini
+Libya                    CommandSet.ini        4    Object/Specter/Libyan Armed Forces/Tracked/Libya_VehicleDozerm.ini
+SouthAfrica              CommandSet.ini        4    Object/Specter/South African National Defence Force/Tracked/SouthAfrica_VehicleDozerm.ini
+SouthKorea               CommandSet.ini        4    Object/Specter/South Korean Armed Forces/Tracked/SouthKorea_VehicleDozerm.ini
+Japan                    CommandSet.ini        4    Object/Specter/Japan Self-Defense Forces/Tracked/Japan_VehicleDozerm.ini
+Vietnam                  CommandSet.ini        4    Object/Specter/Vietnam People's Armed Forces/Tracked/Vietnam_VehicleDozerm.ini

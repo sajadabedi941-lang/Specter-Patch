@@ -1,0 +1,6 @@
+SPECTER WEAPON PARSER STARTUP FIX V1
+
+Copy _SPEC_DATA_ONE.big and _SPEC_ART_ONE.big into the game folder.
+ART is unchanged from airforce-repair-pass-3-v1.
+DATA repairs invalid DamageType=GUN in Weapon.ini.
+USER RUNTIME BOOT TEST REQUIRED. Cursor cannot launch Zero Hour.

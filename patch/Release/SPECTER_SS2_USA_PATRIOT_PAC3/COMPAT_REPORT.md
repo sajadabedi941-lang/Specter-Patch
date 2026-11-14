@@ -1,61 +1,25 @@
-# America MIM-104F Patriot PAC-3 — V25 → SS2
+# America Patriot PAC-3 — V25 hull, SS2 THAAD fire
 
-## V25 source (America)
+## Crash (#787)
 
-| Piece | V25 name | File |
+See `CRASH_REPORT.md`. #787 put `W3DTruckDraw`+TrackMarks on `US_MIM104F_L` and `FS_BASE_DEFENSE` on a CC vehicle. Live THAAD/USAPAC3 do not.
+
+## V25 appearance used
+
+From `AmericaPATRIO`: BOX 25×9×15, health 240, turret 180/180, scan 360, side America, CC UNIT_BUILD.
+SS2 art: `US_MIM104F_L` + missile `PAC-3` (`_SPEC_ART_TWO.big`). V25 `USPAC3`/`PAC3MSE` W3Ds are absent; they were not referenced.
+
+## THAAD fire cloned (unique names, THAAD files untouched)
+
+| Role | Live THAAD | Patriot clone |
 |---|---|---|
-| Launcher | `AmericaPATRIO` | `object/AmericaVehicle.ini` model `USPAC3` |
-| MSE variant | `AmericaPAC3MSE` | same file, model `PAC3MSE` |
-| Weapon | `PAC3Weapon` / `PAC3MSEWeapon` | `Weapon.ini` |
-| Projectile | `AIGUOZHEDAODAN` | CWC |
-| Bones | `TURRET01`, `TURRETEL`, `WeaponA` | USPAC3 |
-| CC button | `Command_ConstructAmericaPAC3MSE` slot 12 | `CommandSet.ini` |
+| AA weapon | `8x_LRSAM_THAAD` PENALTY, `THAAD_AA_OBJECT` | `AmericaPatriotPAC3_AA` → `AmericaPatriotPAC3_AA_Object` |
+| ABM weapon | `THAADMissile_ABM` CRUSH + `AntiSmallMissile` | `AmericaPatriotPAC3_ABM` |
+| ABM projectile | `THAAD_ABM_OBJECT` (WATER/FALLING fuze, 0% vs BM) | `AmericaPatriotPAC3_ABM_Object` + `AmericaPatriotPAC3_ABM_Fuze` CRUSH (USAPAC3 path) |
+| FX/OCL/sound | `FX_LargeSamMissilesTubeOut`, `Thaad_fire`, `OCL_48N6TargetLock` / `OCL_40N6STargetLock` | same live names, not copied |
 
-V25 fires one weapon with `AntiAirborneVehicle=Yes` and `AntiBallisticMissile=Yes`, `DamageType=JET_MISSILES`.
+AirplaneArmor takes PENALTY. BallisticMissileArmor / CruiseMissileArmor take CRUSH, not PENALTY/FALLING/WATER.
 
-## SS2 engine load map (destination)
+## Wiring
 
-ControlBar opens only `Data/INI/CommandSet.ini` and `Data/INI/CommandButton.ini`.
-ThingFactory globs `Data/INI/Object/**/*.ini`. Weapon blocks inside those Object files are parsed.
-`Weapon_*.ini` at INI root is **not** loaded. No BIG members are written.
-
-Live America CC (`AmericaCommandCenterCommandSet` in `CommandSet.ini`):
-
-- Slot 1 dozer (kept)
-- Slot 6 `USAPAC3` (kept, not this unit)
-- Slot 10 free → new Patriot
-- `Command_ConstructAmerica_MIM104F` already exists but is **not** on the live CC (only extra `CommandSet_*.ini` files, which ControlBar does not open)
-
-## Incompatible V25 pieces (not imported)
-
-| V25 | Why | SS2 replacement |
-|---|---|---|
-| Models `USPAC3`, `PAC3MSE` | Not in `_SPEC_ART_ONE.big` / `_SPEC_ART_TWO.big` | `US_MIM104F_L` + missile `PAC-3` (ART TWO) |
-| `CWCruS300Locomotor` | Missing | `Generic8x8Locomotor` |
-| Projectile `AIGUOZHEDAODAN` | Missing | Unique `AmericaVehiclePatriotPAC3_*_Object` |
-| `OCL_Pac3Hull`, CWC FX, `CWCruSA10RadarWeapon`, `Upgrade_CWCgenAntiRadarDrone` | Missing | SS2 SlowDeath / Avenger voice / no CWC radar drone |
-| `DamageType=JET_MISSILES` | AirplaneArmor 25%; CruiseMissileArmor 0% | AA `PENALTY` (AirplaneArmor 80%); ABM `CRUSH` |
-| One weapon for air + ballistic | SS2 BM armor `PENALTY=0%` `CRUSH=100%`; cruise also needs `CRUSH` | Two WeaponSet slots |
-
-Unknown CWC modules were not copied.
-
-## SS2 armor (THAAD lesson)
-
-- `AirplaneArmor`: PENALTY 80%, CRUSH 0%, JET_MISSILES 25%
-- `BallisticMissileArmor` / `SRBMArmor`: PENALTY 0%, FALLING 0%, WATER 0%, **CRUSH 100%**
-- `CruiseMissileArmor`: DEFAULT 0%, PENALTY 0%, **CRUSH 100%**
-
-Stock `THAADMissile_ABM` / `PAC3_ABM_Object` either use FALLING/WATER fuzes or have no CRUSH fuze. This unit’s ABM projectile has `FireWeaponUpdate` fuze `DamageType=CRUSH` (same working path as `USAPAC3_THAAD_ABM_OBJECT`). `US_THAAD` is not edited.
-
-## Two missions
-
-1. **AA (PRIMARY)** `AmericaVehiclePatriotPAC3_AA` — PENALTY, `AntiAirborneVehicle`, `AntiAirborneInfantry`, not anti-BM. Fighters/bombers.
-2. **ABM + cruise (SECONDARY)** `AmericaVehiclePatriotPAC3_ABM` — CRUSH, `AntiBallisticMissile`, `AntiSmallMissile`, plus CRUSH proximity fuze. Ballistic and cruise missiles.
-
-## Files written
-
-- `Data/INI/CommandSet.ini` — America CC slot 10 + unique unit CommandSet
-- `Data/INI/CommandButton.ini` — unique `Command_ConstructAmericaVehiclePatriotPAC3`
-- `Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehiclePatriotPAC3.ini`
-
-Turkey, GLA, Iran factory, THAAD, missile factories, SS1, ART, and other countries are unchanged.
+`AmericaCommandCenterCommandSet` slot 10 = `Command_ConstructAmericaVehiclePatriotPAC3`. Slot 1 dozer and slot 6 `USAPAC3` kept. Unit CommandSet = live `GLAVehicleRocketBuggyCommandSet`. Turkey, GLA, Iran factory, `US_THAAD` unchanged.

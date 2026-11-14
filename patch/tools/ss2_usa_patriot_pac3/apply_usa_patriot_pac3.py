@@ -31,15 +31,6 @@ CommandButton Command_ConstructAmericaVehiclePatriotPAC3
 End
 """.strip() + "\n"
 
-SET_BLOCK = """
-CommandSet AmericaVehiclePatriotPAC3CommandSet
-  11 = Command_AttackMove
-  13 = Command_Guard
-  14 = Command_Stop
-End
-""".strip() + "\n"
-
-
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     h.update(path.read_bytes())
@@ -96,10 +87,8 @@ def main() -> int:
     cb_blocks = parse_blocks(src_cb, "CommandButton")
     if BTN in cb_blocks:
         raise SystemExit("button already exists")
-    if "AmericaVehiclePatriotPAC3CommandSet" in cs_blocks:
-        raise SystemExit("unit CommandSet already exists")
-    if OBJ in parse_blocks(obj_text, "Object"):
-        pass
+    if "GLAVehicleRocketBuggyCommandSet" not in cs_blocks:
+        raise SystemExit("missing GLAVehicleRocketBuggyCommandSet")
     live = slots_of(cs_blocks[CS_NAME])
     if live.get(1) != "Command_ConstructAmericaDozer":
         raise SystemExit(f"America slot 1 is {live.get(1)}")
@@ -112,8 +101,7 @@ def main() -> int:
             raise SystemExit(f"missing {other}")
 
     new_cs = patch_slot(src_cs, CS_NAME, SLOT, BTN)
-    new_cs = new_cs.rstrip() + "\n\n; SPECTER SS2 America MIM-104F Patriot PAC-3 unique CommandSet.\n\n" + SET_BLOCK
-    new_cb = src_cb.rstrip() + "\n\n; SPECTER SS2 America MIM-104F Patriot PAC-3 unique CommandButton.\n\n" + BTN_BLOCK
+    new_cb = src_cb.rstrip() + "\n\n; SPECTER SS2 America Patriot PAC-3 unique CommandButton.\n\n" + BTN_BLOCK
 
     new_cs_blocks = parse_blocks(new_cs, "CommandSet")
     new_cb_blocks = parse_blocks(new_cb, "CommandButton")
@@ -137,24 +125,28 @@ def main() -> int:
         raise SystemExit("button object mismatch")
     obj_blocks = parse_blocks(obj_text, "Object")
     wep_blocks = parse_blocks(obj_text, "Weapon")
-    for name in (OBJ, "AmericaVehiclePatriotPAC3_AA_Object", "AmericaVehiclePatriotPAC3_ABM_Object"):
+    for name in (OBJ, "AmericaPatriotPAC3_AA_Object", "AmericaPatriotPAC3_ABM_Object"):
         if name not in obj_blocks:
             raise SystemExit(f"missing object {name}")
-    for name in ("AmericaVehiclePatriotPAC3_AA", "AmericaVehiclePatriotPAC3_ABM", "AmericaVehiclePatriotPAC3_ABM_Fuze"):
+    for name in ("AmericaPatriotPAC3_AA", "AmericaPatriotPAC3_ABM", "AmericaPatriotPAC3_ABM_Fuze"):
         if name not in wep_blocks:
             raise SystemExit(f"missing weapon {name}")
-    if "DamageType                  = PENALTY" not in wep_blocks["AmericaVehiclePatriotPAC3_AA"]:
-        raise SystemExit("AA is not PENALTY")
-    if "DamageType                  = CRUSH" not in wep_blocks["AmericaVehiclePatriotPAC3_ABM"]:
-        raise SystemExit("ABM is not CRUSH")
-    if "AntiBallisticMissile        = Yes" not in wep_blocks["AmericaVehiclePatriotPAC3_ABM"]:
-        raise SystemExit("ABM missing AntiBallisticMissile")
-    if "AntiSmallMissile            = Yes" not in wep_blocks["AmericaVehiclePatriotPAC3_ABM"]:
+    if "PENALTY" not in wep_blocks["AmericaPatriotPAC3_AA"] or "AntiAirborneVehicle" not in wep_blocks["AmericaPatriotPAC3_AA"]:
+        raise SystemExit("AA is not THAAD-style PENALTY")
+    if "CRUSH" not in wep_blocks["AmericaPatriotPAC3_ABM"] or "AntiBallisticMissile" not in wep_blocks["AmericaPatriotPAC3_ABM"]:
+        raise SystemExit("ABM is not THAAD-style CRUSH")
+    if "AntiSmallMissile" not in wep_blocks["AmericaPatriotPAC3_ABM"]:
         raise SystemExit("ABM missing AntiSmallMissile")
-    if "Weapon = AmericaVehiclePatriotPAC3_ABM_Fuze" not in obj_blocks["AmericaVehiclePatriotPAC3_ABM_Object"]:
+    if "Weapon = AmericaPatriotPAC3_ABM_Fuze" not in obj_blocks["AmericaPatriotPAC3_ABM_Object"]:
         raise SystemExit("ABM projectile missing CRUSH fuze")
-    if "US_THAAD" in obj_text:
-        raise SystemExit("THAAD object referenced")
+    if re.search(r"(?m)^\s*Draw\s*=\s*W3DTruckDraw", obj_blocks[OBJ]):
+        raise SystemExit("launcher still uses W3DTruckDraw")
+    if re.search(r"(?m)^\s*TrackMarks\s*=", obj_blocks[OBJ]) or re.search(r"(?m)^\s*KindOf\s*=.*FS_BASE_DEFENSE", obj_blocks[OBJ]):
+        raise SystemExit("PR787 crash fields still present")
+    if "CommandSet         = GLAVehicleRocketBuggyCommandSet" not in obj_blocks[OBJ]:
+        raise SystemExit("unit CommandSet must reuse live GLAVehicleRocketBuggyCommandSet")
+    if re.search(r"(?m)^Object US_THAAD", obj_text):
+        raise SystemExit("THAAD object redefined")
 
     out_ini = OUT_DIR / "Data" / "INI"
     (out_ini / Path(OBJ_REL).parent).mkdir(parents=True, exist_ok=True)
@@ -188,9 +180,9 @@ SHA-256 Object INI        {sha256(out_ini / OBJ_REL)}
 SHA-256 ZIP               {sha256(zip_path)}
 ZIP {zip_path} {zip_path.stat().st_size} members={len(zip_names)}
 America CC slot {SLOT} = {BTN} -> {OBJ}
-AA DamageType=PENALTY AntiAirborneVehicle. ABM DamageType=CRUSH + fuze CRUSH.
-No BIG files. Turkey/GLA/THAAD/Iran factory unchanged.
-In-game test was not run.
+Draw=W3DModelDraw US_MIM104F_L. AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
+No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
+In-game test was not run. Crash fix is not in-game verified.
 """
     (OUT_DIR / "BUILD_REPORT.txt").write_text(report, encoding="utf-8")
     (OUT_DIR / "SPECTER_SS2_USA_PATRIOT_PAC3.zip.sha256").write_text(

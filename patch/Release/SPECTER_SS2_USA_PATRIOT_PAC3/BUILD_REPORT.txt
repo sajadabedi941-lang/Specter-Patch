@@ -1,12 +1,12 @@
 SS2 America MIM-104F Patriot PAC-3 (Loose Data, no BIG)
 backup CommandSet.ini     593f541674b5917715a189c2aedf462c079233bbd4e21a11f24299b85ab32240
 backup CommandButton.ini  16ac5b9a306f9ec58cbee944b1b36eb577aed1f3e43bea38f14de16a440be918
-SHA-256 CommandSet.ini    4f953ba2e29eea5d21ef814bb9f76cff3e9d5a081569771f561c1bedddde7c3e
-SHA-256 CommandButton.ini 79271816a045a1edeeabf8e3c3d5c7f6c9a7643b1c6e9cd8918f9ff505d35c22
-SHA-256 Object INI        e61a92c9f94f817dedb61ef9ae22acabb34f7c5c297b784f79f09bcf635c3e0c
-SHA-256 ZIP               b9a239b43fe2b4ef0f01392c37caa7bc59ba2ab568e1c49e2ebd6c2c75d4b5e7
-ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 141795 members=3
+SHA-256 CommandSet.ini    94e17a13df08bd1bf042da4ecbffbd33ff1c4a5064b4d5f8d1bdf1d52752beb3
+SHA-256 CommandButton.ini 24548700347743912824c6ce81a562aeb93fd84b5f20f3724803c8f4aadfb20b
+SHA-256 Object INI        60695674cd51e88ae09113777951f06b366668b86a81d9795ed84db1d3da6043
+SHA-256 ZIP               1e723204b182b2e016fe631207003a87353fa514cd07d94e4a9c594e05af2498
+ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 141647 members=3
 America CC slot 10 = Command_ConstructAmericaVehiclePatriotPAC3 -> AmericaVehiclePatriotPAC3
-AA DamageType=PENALTY AntiAirborneVehicle. ABM DamageType=CRUSH + fuze CRUSH.
-No BIG files. Turkey/GLA/THAAD/Iran factory unchanged.
-In-game test was not run.
+Draw=W3DModelDraw US_MIM104F_L. AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
+No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
+In-game test was not run. Crash fix is not in-game verified.

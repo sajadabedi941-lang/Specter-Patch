@@ -1,0 +1,41 @@
+SS2 tunnel loader transfer
+base BIG: /tmp/ss2/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big
+out BIG:  patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/_SPEC_DATA_ONE.big  374774541
+SHA-256 BIG: 13d5806ff24f3e517d096c6c80ca42525f97ce31787df05bb2354670d08ff98b
+SHA-256 ZIP: bf828cb2139499fb89b9c3e5eaa143c9a76b8a1e7da387240c7bbf1376f54dd9
+ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip  374774675
+
+Side                     CC                               slot slot1 kept                               loader / tunnel
+Iraq                     Iraq_CommandCenter               4    Command_ConstructIraq_VT72B              Iraq_VehicleDozerm / Iraq_PowerStationm
+NorthKorea               NorthKorea_CommandCenter         4    Command_ConstructNorthKorea_VT72B        NorthKorea_VehicleDozerm / NorthKorea_PowerStationm
+America                  AmericaCommandCenter             4    Command_ConstructAmericaDozer            AmericaVehicleDozerm / AmericaPowerStationm
+Russia                   RussiaCommandCenter              8    Command_ConstructRussiaVehicleDozer      RussiaVehicleDozerm / RussiaPowerStationm
+China                    ChinaCommandCenter               4    Command_ConstructChinaDozer              ChinaVehicleDozerm / ChinaPowerStationm
+GLA                      GLACommandCenter                 8    Command_ConstructGLAWorker               GLAVehicleDozerm / GLAPowerStationm
+Boss                     Boss_CommandCenter               4    Boss_Command_ConstructChinaDozer         Boss_VehicleDozerm / Boss_PowerStationm
+AmericaAirForceGeneral   AirF_AmericaCommandCenter        3    AirF_Command_ConstructAmericaDozer       AirF_AmericaVehicleDozerm / AirF_AmericaPowerStationm
+Nato                     NatoCommandCenter                4    Command_ConstructNatoVehicleDozer        NatoVehicleDozerm / NatoPowerStationm
+Iran                     IranCommandCenter                15   Command_ConstructIranVehicleDozer        IranVehicleDozerm / IranPowerStationm
+Pakistan                 Pakistan_CommandCenter           4    Command_ConstructPakistan_Worker         Pakistan_VehicleDozerm / Pakistan_PowerStationm
+SaudiArabia              SaudiArabia_CommandCenter        4    Command_ConstructSaudiArabia_Worker      SaudiArabia_VehicleDozerm / SaudiArabia_PowerStationm
+UAE                      UAE_CommandCenter                4    Command_ConstructUAE_Worker              UAE_VehicleDozerm / UAE_PowerStationm
+India                    India_CommandCenter              4    Command_ConstructIndia_Worker            India_VehicleDozerm / India_PowerStationm
+Syria                    Syria_CommandCenter              4    Command_ConstructSyria_Worker            Syria_VehicleDozerm / Syria_PowerStationm
+Germany                  GermanyCommandCenter             4    Command_ConstructGermanyVehicleDozer     GermanyVehicleDozerm / GermanyPowerStationm
+France                   FranceCommandCenter              4    Command_ConstructFranceVehicleDozer      FranceVehicleDozerm / FrancePowerStationm
+Britain                  BritainCommandCenter             4    Command_ConstructBritainVehicleDozer     BritainVehicleDozerm / BritainPowerStationm
+Italy                    ItalyCommandCenter               4    Command_ConstructItalyVehicleDozer       ItalyVehicleDozerm / ItalyPowerStationm
+Sweden                   SwedenCommandCenter              4    Command_ConstructSwedenVehicleDozer      SwedenVehicleDozerm / SwedenPowerStationm
+Ukraine                  UkraineCommandCenter             4    Command_ConstructUkraineVehicleDozer     UkraineVehicleDozerm / UkrainePowerStationm
+Libya                    Libya_CommandCenter              4    Command_ConstructLibya_Worker            Libya_VehicleDozerm / Libya_PowerStationm
+SouthAfrica              SouthAfrica_CommandCenter        4    Command_ConstructSouthAfrica_Worker      SouthAfrica_VehicleDozerm / SouthAfrica_PowerStationm
+SouthKorea               SouthKorea_CommandCenter         4    Command_ConstructSouthKorea_VT72B        SouthKorea_VehicleDozerm / SouthKorea_PowerStationm
+Japan                    Japan_CommandCenter              4    Command_ConstructJapan_VT72B             Japan_VehicleDozerm / Japan_PowerStationm
+Vietnam                  Vietnam_CommandCenter            4    Command_ConstructVietnam_VT72B           Vietnam_VehicleDozerm / Vietnam_PowerStationm
+
+Reconstruct ZIP from git split parts:
+  cat split/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.part0* > SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip
+
+ZIP contains only _SPEC_DATA_ONE.big at archive root.
+ART ONE / ART TWO were not modified.
+In-game test was not run.

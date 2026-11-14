@@ -147,6 +147,12 @@ def main() -> int:
         raise SystemExit("deploy states not allowed")
     if "Generic8x8Locomotor" not in obj_blocks[OBJ]:
         raise SystemExit("missing wheeled locomotor")
+    if re.search(r"(?m)^\s*AttachToBoneInAnotherModule\s*=", obj_blocks[OBJ]):
+        raise SystemExit("TracksDraw/AttachToBone is not valid with Generic8x8Locomotor")
+    if re.search(r"(?m)^\s*(LeftFrontTireBone|RightFrontTireBone)\s*=\s*TIRE09", obj_blocks[OBJ]):
+        raise SystemExit("second 2-bone wheel draw is not valid with Generic8x8Locomotor")
+    if re.search(r"(?m)^\s*Model\s*=\s*UsaPac3Car_w\b", obj_blocks[OBJ]):
+        raise SystemExit("second 2-bone wheel draw is not valid with Generic8x8Locomotor")
     if re.search(r"(?m)^\s*KindOf\s*=.*FS_BASE_DEFENSE", obj_blocks[OBJ]):
         raise SystemExit("FS_BASE_DEFENSE not allowed")
     if "CommandSet         = GLAVehicleRocketBuggyCommandSet" not in obj_blocks[OBJ]:
@@ -186,7 +192,7 @@ SHA-256 Object INI        {sha256(out_ini / OBJ_REL)}
 SHA-256 ZIP               {sha256(zip_path)}
 ZIP {zip_path} {zip_path.stat().st_size} members={len(zip_names)}
 America CC slot {SLOT} = {BTN} -> {OBJ}
-Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no deploy.
+Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no TracksDraw, no deploy.
 AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
 No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
 In-game test was not run. Crash fix is not in-game verified.

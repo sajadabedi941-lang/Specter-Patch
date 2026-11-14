@@ -1,0 +1,51 @@
+SS2 Turkey second dozer — 3D appearance only
+
+Name mapping
+  User name "Dozer"                    = Object TurkeyVehicleDozer
+  User name "ConstructNATOVehicleDozer"= Object TurkeyVehicleDozerm
+      (CommandButton Command_ConstructTurkeyVehicleDozerm,
+       TextLabel CONTROLBAR:ConstructNatoVehicleDozerm,
+       Turkey CC slot 4)
+
+Destination model
+  AmericaVehicleDozer Draw Model/Animation = Irq_VT72B
+  W3D already in _SPEC_ART_TWO.big: Art\W3D\Irq_VT72B.W3D
+  Textures already in _SPEC_ART_ONE.big:
+    Art\Textures\T-72_IRQ.dds
+    Art\Textures\iraqi_tanktracks.dds
+  ART BIGs were not modified.
+
+Changed BIG
+  _SPEC_DATA_ONE.big only
+  Member: Data\INI\Object\Specter\Turkish Armed Forces\Wheleed\Dozer.ini
+  All other 3586 members byte-identical.
+
+TurkeyVehicleDozer (regular)
+  First 7152 bytes of the member are byte-identical to the original SS2 BIG.
+  Still AVCONSTDOZ_A / AVCONSTDOZ_AD. Side, CommandSet, modules unchanged.
+
+TurkeyVehicleDozerm (second dozer) before -> after
+  Only Model and Animation lines changed:
+    AVCONSTDOZ_A              -> Irq_VT72B
+    AVCONSTDOZ_A.AVCONSTDOZ_A -> Irq_VT72B.Irq_VT72B
+    AVCONSTDOZ_AD             -> Irq_VT72B
+    AVCONSTDOZ_AD.AVCONSTDOZ_AD -> Irq_VT72B.Irq_VT72B
+  Every non-Model/non-Animation line is identical, including:
+    Object name, ModuleTag_01 W3DTruckDraw, all other ModuleTags,
+    DozerAIUpdate, CommandSet=TurkeyDozermCommandSet, BuildCost/Time,
+    Armor, Health, Sounds, FX, Geometry, KindOf, Locomotor.
+
+Bone note
+  Irq_VT72B pivots are CHASSIS / TRACKS / BOX / CYLINDER.
+  It has no TIRE01-04. AmericaVehicleDozer already uses this W3D with the
+  same W3DTruckDraw PREATTACK_A digging states. Functional modules were
+  not changed to retarget bones.
+
+ZIP
+  SPECTER_SS2_TURKEY_DOZERM_VT72B.zip contains only _SPEC_DATA_ONE.big
+
+SHA-256
+  _SPEC_DATA_ONE.big
+    38889170b124f2cf57af9e6c5978dfc328117da297a53099cd5fdf9e1a8e909f
+  SPECTER_SS2_TURKEY_DOZERM_VT72B.zip
+    3d29dc08422757c6bc6b6e5544e86afc90d460092e687f2a54f52933d6b1eb7f

@@ -1,9 +1,19 @@
 SS2 tunnel loader transfer
 base BIG: /tmp/ss2/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big
-out BIG:  patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/_SPEC_DATA_ONE.big  374774541
-SHA-256 BIG: 13d5806ff24f3e517d096c6c80ca42525f97ce31787df05bb2354670d08ff98b
-SHA-256 ZIP: bf828cb2139499fb89b9c3e5eaa143c9a76b8a1e7da387240c7bbf1376f54dd9
-ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip  374774675
+out BIG:  patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/_SPEC_DATA_ONE.big  374774495
+SHA-256 BIG: 4d34778b5a412e42333c6486bb016d14d292cbada67e5d3119eb37d0d63c792e
+SHA-256 ZIP: 94606fc244f4e8f28bd59e5dc8b6fa0f3f03892124ce58f7c62edf27c70da433
+ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip  374774629
+
+Iran CC slot fix
+  Live CommandSet of IranCommandCenter: IranExpandedHQCommandSet
+  Overlay set: IranExpandedHQCommandSet_SpecterSS2TunnelLoader
+  Replaced CC slot 9 Command_ConstructIranVehicleKhormshar (Object IranVehicleKhormshar)
+    with Command_ConstructIranVehicleDozerm
+  Slot 15 loader button removed
+  Slot 1 Command_ConstructIranVehicleDozer unchanged
+  IranVehicleDozerm / IranPowerStationm objects unchanged
+  Iran_MissileFactoryCommandSet / CB_IRAN_MISSILE_G (Object Iran_Khorram) unchanged
 
 Side                     CC                               slot slot1 kept                               loader / tunnel
 Iraq                     Iraq_CommandCenter               4    Command_ConstructIraq_VT72B              Iraq_VehicleDozerm / Iraq_PowerStationm
@@ -15,7 +25,7 @@ GLA                      GLACommandCenter                 8    Command_Construct
 Boss                     Boss_CommandCenter               4    Boss_Command_ConstructChinaDozer         Boss_VehicleDozerm / Boss_PowerStationm
 AmericaAirForceGeneral   AirF_AmericaCommandCenter        3    AirF_Command_ConstructAmericaDozer       AirF_AmericaVehicleDozerm / AirF_AmericaPowerStationm
 Nato                     NatoCommandCenter                4    Command_ConstructNatoVehicleDozer        NatoVehicleDozerm / NatoPowerStationm
-Iran                     IranCommandCenter                15   Command_ConstructIranVehicleDozer        IranVehicleDozerm / IranPowerStationm
+Iran                     IranCommandCenter                9    Command_ConstructIranVehicleDozer        IranVehicleDozerm / IranPowerStationm
 Pakistan                 Pakistan_CommandCenter           4    Command_ConstructPakistan_Worker         Pakistan_VehicleDozerm / Pakistan_PowerStationm
 SaudiArabia              SaudiArabia_CommandCenter        4    Command_ConstructSaudiArabia_Worker      SaudiArabia_VehicleDozerm / SaudiArabia_PowerStationm
 UAE                      UAE_CommandCenter                4    Command_ConstructUAE_Worker              UAE_VehicleDozerm / UAE_PowerStationm

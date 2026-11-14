@@ -435,7 +435,15 @@ def main() -> int:
         slot1 = next((b for n, b in sl if n == 1), None)
         if not slot1:
             raise SystemExit(f"{fac['side']} CommandSet {orig_cs} has no slot 1")
-        slot = choose_slot(used)
+        iran_replace = None
+        if fac["side"] == "Iran":
+            khorm = [n for n, b in sl if b == "Command_ConstructIranVehicleKhormshar"]
+            if not khorm:
+                raise SystemExit("Iran CC has no Khormshar construct button to replace")
+            iran_replace = khorm[0]
+            slot = iran_replace
+        else:
+            slot = choose_slot(used)
         loader_btn = f"Command_Construct{fac['loader']}"
         tunnel_btn = f"Command_Construct{fac['tunnel']}"
         loader_cs = f"{fac['loader']}CommandSet"
@@ -475,23 +483,38 @@ def main() -> int:
 
         cs_parts.append(emit_commandset(loader_cs, [f"  1   = {tunnel_btn}"]))
         copied = original_slot_lines(block)
-        copied.append(f"  {slot} = {loader_btn}")
+        if iran_replace is not None:
+            replaced = False
+            rewritten = []
+            for line in copied:
+                m = re.match(r"^\s*(\d+)\s*=\s*(\S+)", line)
+                if m and int(m.group(1)) == iran_replace and m.group(2) == "Command_ConstructIranVehicleKhormshar":
+                    rewritten.append(f"  {iran_replace} = {loader_btn}")
+                    replaced = True
+                else:
+                    rewritten.append(line)
+            if not replaced:
+                raise SystemExit("failed to replace Iran Khormshar CC slot")
+            copied = rewritten
+        else:
+            copied.append(f"  {slot} = {loader_btn}")
         copied_nums = [int(re.match(r"\s*(\d+)", line).group(1)) for line in copied]
         if copied_nums.count(slot) != 1:
             raise SystemExit(f"{fac['side']} slot {slot} not unique after insert")
         if 1 not in copied_nums:
             raise SystemExit(f"{fac['side']} lost slot 1")
-        # Existing buttons except the newly added loader button must remain.
-        orig_pairs = [(n, b) for n, b in sl]
-        for n, b in orig_pairs:
-            if (n, b) not in [(int(re.match(r"\s*(\d+)", line).group(1)), line.split("=")[1].strip()) for line in copied[:-1]]:
-                # allow last-wins of duplicate slot numbers inside original
-                pass
         orig_buttons = [b for _, b in sl]
         new_buttons = [line.split("=", 1)[1].strip() for line in copied]
+        allowed_drop = {"Command_ConstructIranVehicleKhormshar"} if iran_replace is not None else set()
         for b in orig_buttons:
-            if b not in new_buttons:
+            if b not in new_buttons and b not in allowed_drop:
                 raise SystemExit(f"{fac['side']} dropped button {b}")
+        if iran_replace is not None:
+            if "Command_ConstructIranVehicleKhormshar" in new_buttons:
+                raise SystemExit("Iran Khormshar CC button was not removed")
+            if "15" in {str(n) for n in copied_nums if n == 15}:
+                # slot 15 must not be used for the loader; original Iran HQ has no 15
+                pass
         if new_buttons.count(loader_btn) != 1:
             raise SystemExit(f"{fac['side']} loader button missing")
         cs_parts.append(emit_commandset(cc_cs, copied))

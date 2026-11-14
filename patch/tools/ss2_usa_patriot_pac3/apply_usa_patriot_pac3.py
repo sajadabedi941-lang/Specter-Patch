@@ -139,10 +139,16 @@ def main() -> int:
         raise SystemExit("ABM missing AntiSmallMissile")
     if "Weapon = AmericaPatriotPAC3_ABM_Fuze" not in obj_blocks["AmericaPatriotPAC3_ABM_Object"]:
         raise SystemExit("ABM projectile missing CRUSH fuze")
-    if re.search(r"(?m)^\s*Draw\s*=\s*W3DTruckDraw", obj_blocks[OBJ]):
-        raise SystemExit("launcher still uses W3DTruckDraw")
-    if re.search(r"(?m)^\s*TrackMarks\s*=", obj_blocks[OBJ]) or re.search(r"(?m)^\s*KindOf\s*=.*FS_BASE_DEFENSE", obj_blocks[OBJ]):
-        raise SystemExit("PR787 crash fields still present")
+    if not re.search(r"(?m)^\s*Draw\s*=\s*W3DTruckDraw", obj_blocks[OBJ]):
+        raise SystemExit("vehicle must use W3DTruckDraw")
+    if "TIRE01" not in obj_blocks[OBJ] or "UsaPac3Car" not in obj_blocks[OBJ]:
+        raise SystemExit("wheel bones/model missing")
+    if "DeployStyleAIUpdate" in obj_blocks[OBJ] or re.search(r"(?m)^\s*ConditionState\s*=\s*DEPLOYED", obj_blocks[OBJ]):
+        raise SystemExit("deploy states not allowed")
+    if "Generic8x8Locomotor" not in obj_blocks[OBJ]:
+        raise SystemExit("missing wheeled locomotor")
+    if re.search(r"(?m)^\s*KindOf\s*=.*FS_BASE_DEFENSE", obj_blocks[OBJ]):
+        raise SystemExit("FS_BASE_DEFENSE not allowed")
     if "CommandSet         = GLAVehicleRocketBuggyCommandSet" not in obj_blocks[OBJ]:
         raise SystemExit("unit CommandSet must reuse live GLAVehicleRocketBuggyCommandSet")
     if re.search(r"(?m)^Object US_THAAD", obj_text):
@@ -180,7 +186,8 @@ SHA-256 Object INI        {sha256(out_ini / OBJ_REL)}
 SHA-256 ZIP               {sha256(zip_path)}
 ZIP {zip_path} {zip_path.stat().st_size} members={len(zip_names)}
 America CC slot {SLOT} = {BTN} -> {OBJ}
-Draw=W3DModelDraw US_MIM104F_L. AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
+Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no deploy.
+AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
 No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
 In-game test was not run. Crash fix is not in-game verified.
 """

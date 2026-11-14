@@ -1,0 +1,42 @@
+SS2 tunnel loaders via Turkey method (live CommandSet.ini / CommandButton.ini)
+source CommandSet.ini:    /tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandSet.ini  593f541674b5917715a189c2aedf462c079233bbd4e21a11f24299b85ab32240
+source CommandButton.ini: /tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButton.ini  16ac5b9a306f9ec58cbee944b1b36eb577aed1f3e43bea38f14de16a440be918
+out CommandSet.ini:       patch/Release/SPECTER_SS2_TUNNEL_LOADER_TURKEY_METHOD/Data/INI/CommandSet.ini  4ed7976ecfd12195ad935848416b930a779befc2d1f893eb3cd64d9671b26139
+out CommandButton.ini:    patch/Release/SPECTER_SS2_TUNNEL_LOADER_TURKEY_METHOD/Data/INI/CommandButton.ini  cf40aeb258c3217a6bcbfa6f260e427295c6a0fb9dd38877b84a7002fca87ddb
+out Object glob:          patch/Release/SPECTER_SS2_TUNNEL_LOADER_TURKEY_METHOD/Data/INI/Object/zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini  ad6e7466ea86c4156db5a6e1a39788a3e94785102245bb2a4faec355f6ca6cd6
+SHA-256 ZIP: ee88edaab2e2fbeebc259ed980e5675e90bc0bc8decf83e08966ae3140e55186
+ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_TURKEY_METHOD/SPECTER_SS2_TUNNEL_LOADER_TURKEY_METHOD.zip  151640
+ZIP members: Data/INI/CommandButton.ini, Data/INI/CommandSet.ini, Data/INI/Object/zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+
+Backup the original Loose Data/INI/CommandSet.ini and CommandButton.ini before unzip.
+Turkey CC, GLA worker slot 1, Iran missile factory, ART, SS1 were not edited.
+No extra CommandSet_*.ini / CommandButton_*.ini files were created.
+In-game test was not run.
+
+Side                     live CS                                    slot slot1 kept                                 loader button
+Iraq                     Iraq_CommandCenterCommandSet               4    Command_ConstructIraq_VT72B                Command_ConstructIraq_VehicleDozerm
+NorthKorea               NorthKorea_CommandCenterCommandSet         4    Command_ConstructNorthKorea_VT72B          Command_ConstructNorthKorea_VehicleDozerm
+America                  AmericaCommandCenterCommandSet             4    Command_ConstructAmericaDozer              Command_ConstructAmericaVehicleDozerm
+Russia                   RussiaCommandCenterCommandSet              8    Command_ConstructRussiaVehicleDozer        Command_ConstructRussiaVehicleDozerm
+China                    ChinaCommandCenterCommandSet               4    Command_ConstructChinaDozer                Command_ConstructChinaVehicleDozerm
+GLA                      GLACommandCenterCommandSet                 8    Command_ConstructGLAWorker                 Command_ConstructGLAVehicleDozerm
+Boss                     Boss_ChinaCommandCenterCommandSet          4    Boss_Command_ConstructChinaDozer           Command_ConstructBoss_VehicleDozerm
+AmericaAirForceGeneral   AirF_AmericaCommandCenterCommandSet        3    AirF_Command_ConstructAmericaDozer         Command_ConstructAirF_AmericaVehicleDozerm
+Nato                     NatoCommandCenterCommandSet                4    Command_ConstructNatoVehicleDozer          Command_ConstructNatoVehicleDozerm
+Iran                     IranExpandedHQCommandSet                   9    Command_ConstructIranVehicleDozer          Command_ConstructIranVehicleDozerm
+Pakistan                 Pakistan_CommandCenterCommandSet           4    Command_ConstructPakistan_Dozer            Command_ConstructPakistan_VehicleDozerm
+SaudiArabia              SaudiArabia_CommandCenterCommandSet        4    Command_ConstructSaudiArabia_Dozer         Command_ConstructSaudiArabia_VehicleDozerm
+UAE                      UAE_CommandCenterCommandSet                4    Command_ConstructUAE_Dozer                 Command_ConstructUAE_VehicleDozerm
+India                    India_CommandCenterCommandSet              4    Command_ConstructIndia_Dozer               Command_ConstructIndia_VehicleDozerm
+Syria                    Syria_CommandCenterCommandSet              4    Command_ConstructSyria_Dozer               Command_ConstructSyria_VehicleDozerm
+Germany                  GermanyCommandCenterCommandSet             4    Command_ConstructGermanyVehicleDozer       Command_ConstructGermanyVehicleDozerm
+France                   FranceCommandCenterCommandSet              4    Command_ConstructFranceVehicleDozer        Command_ConstructFranceVehicleDozerm
+Britain                  BritainCommandCenterCommandSet             4    Command_ConstructBritainVehicleDozer       Command_ConstructBritainVehicleDozerm
+Italy                    ItalyCommandCenterCommandSet               4    Command_ConstructItalyVehicleDozer         Command_ConstructItalyVehicleDozerm
+Sweden                   SwedenCommandCenterCommandSet              4    Command_ConstructSwedenVehicleDozer        Command_ConstructSwedenVehicleDozerm
+Ukraine                  UkraineCommandCenterCommandSet             4    Command_ConstructUkraineVehicleDozer       Command_ConstructUkraineVehicleDozerm
+Libya                    Libya_CommandCenterCommandSet              4    Command_ConstructLibya_Dozer               Command_ConstructLibya_VehicleDozerm
+SouthAfrica              SouthAfrica_CommandCenterCommandSet        4    Command_ConstructSouthAfrica_Dozer         Command_ConstructSouthAfrica_VehicleDozerm
+SouthKorea               SouthKorea_CommandCenterCommandSet         4    Command_ConstructSouthKorea_VT72B          Command_ConstructSouthKorea_VehicleDozerm
+Japan                    Japan_CommandCenterCommandSet              4    Command_ConstructJapan_VT72B               Command_ConstructJapan_VehicleDozerm
+Vietnam                  Vietnam_CommandCenterCommandSet            4    Command_ConstructVietnam_VT72B             Command_ConstructVietnam_VehicleDozerm

@@ -5,7 +5,10 @@ Adds three unique-path INI members to SS2 _SPEC_DATA_ONE.big:
 
   Data\\INI\\CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
   Data\\INI\\CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
-  Data\\INI\\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+  Data\\INI\\Object\\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+
+CommandSet file last-wins the live CommandCenter CommandSet names.
+Object file is ThingFactory Object-glob only (loaders + tunnels, no CC stubs).
 
 Does not modify CommandSet.ini, CommandButton.ini, MatchStart, OCL,
 Turkey Dozer.ini, or Turkey PowerStation.ini.
@@ -25,7 +28,13 @@ GEN_DIR = Path("patch/tools/ss2_tunnel_loader/generated")
 
 CB_MEMBER = r"Data\INI\CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
 CS_MEMBER = r"Data\INI\CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
-OBJ_MEMBER = r"Data\INI\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+OBJ_MEMBER = r"Data\INI\Object\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+OLD_OBJ_MEMBER = r"Data\INI\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+MISSILE_FACTORY_SETS = {
+    "Iran_MissileFactoryCommandSet",
+    "AmericaMissileFactoryCommandSet",
+    "Israel_MissileFactoryCommandSet",
+}
 
 FORBIDDEN_MEMBERS = (
     r"Data\INI\CommandSet.ini",
@@ -129,19 +138,16 @@ def load_winning_commandsets() -> dict[str, str]:
 
 def find_object_commandset(obj_name: str) -> str:
     hits = []
-    for path in (ROOT / "Data/INI/Object").rglob("*.ini"):
+    obj_root = ROOT / "Data/INI/Object"
+    paths = sorted(obj_root.rglob("*.ini"), key=lambda p: str(p).replace("\\", "/").lower())
+    for path in paths:
         text = path.read_text("latin1", "replace")
-        i = text.find(f"Object {obj_name}")
-        if i < 0:
-            continue
-        first = text[i : text.find("\n", i)].split()
-        if first[:2] != ["Object", obj_name]:
-            continue
-        nxt = text.find("\nObject ", i + 1)
-        chunk = text[i : nxt if nxt > 0 else None]
-        m = re.search(r"(?m)^\s*CommandSet\s*=\s*(\S+)", chunk)
-        if m:
-            hits.append(m.group(1))
+        for m in re.finditer(rf"(?m)^Object {re.escape(obj_name)}\s*$", text):
+            nxt = text.find("\nObject ", m.start() + 1)
+            chunk = text[m.start() : nxt if nxt > 0 else None]
+            cm = re.search(r"(?m)^\s*CommandSet\s*=\s*(\S+)", chunk)
+            if cm:
+                hits.append(cm.group(1))
     if not hits:
         raise SystemExit(f"CommandSet not found for {obj_name}")
     return hits[-1]
@@ -389,8 +395,9 @@ def main() -> int:
         "",
     ]
     cs_parts = [
-        "; SPECTER SS2 tunnel-loader CommandSets. Unique names only.",
-        "; Sorts after CommandSet_ZZZZ_ZZZZZSupplyCentreBuyButtons.ini.",
+        "; SPECTER SS2 tunnel-loader CommandSets.",
+        "; Last-wins live CommandCenter CommandSet names after MatchStart/ZZZZ files.",
+        "; Loader CommandSets are unique. Missile-factory CommandSets are not here.",
         "",
         "CommandSet SpecterSS2TunnelNetworkCommandSet",
         "  1  = Command_StructureExit",
@@ -411,9 +418,9 @@ def main() -> int:
     ]
     new_names["CommandSet"].add("SpecterSS2TunnelNetworkCommandSet")
     obj_parts = [
-        "; SPECTER SS2 tunnel-loader objects and Command Center CommandSet overlays.",
-        "; Unique Object names. CC overlays merge CommandSet onto existing templates.",
-        "; This filename sorts after Data\\INI\\Object\\ and after ZZZZZZZZ_* overlays.",
+        "; SPECTER SS2 tunnel-loader objects. Unique loader and tunnel names only.",
+        "; ThingFactory Object-glob: Data\\INI\\Object\\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini",
+        "; Sorts after Object\\zzzz_SPECTER_CountryScans.ini. No CommandCenter stubs.",
         "",
     ]
 
@@ -447,14 +454,22 @@ def main() -> int:
         loader_btn = f"Command_Construct{fac['loader']}"
         tunnel_btn = f"Command_Construct{fac['tunnel']}"
         loader_cs = f"{fac['loader']}CommandSet"
-        cc_cs = f"{orig_cs}_SpecterSS2TunnelLoader"
+        cc_cs = orig_cs
+        if orig_cs in MISSILE_FACTORY_SETS:
+            raise SystemExit(f"refused to last-win missile factory set {orig_cs}")
+        if orig_cs.startswith("Turkey") or "Turkey" in orig_cs:
+            raise SystemExit(f"refused to last-win Turkey CommandSet {orig_cs}")
+        if orig_cs not in existing["CommandSet"]:
+            raise SystemExit(f"live CommandSet missing, cannot last-win: {orig_cs}")
+        if cc_cs in new_names["CommandSet"]:
+            raise SystemExit(f"duplicate live CommandSet last-win {cc_cs}")
+        new_names["CommandSet"].add(cc_cs)
         for kind, name in (
             ("Object", fac["loader"]),
             ("Object", fac["tunnel"]),
             ("CommandButton", loader_btn),
             ("CommandButton", tunnel_btn),
             ("CommandSet", loader_cs),
-            ("CommandSet", cc_cs),
         ):
             if name in existing[kind] or name in new_names[kind]:
                 raise SystemExit(f"name collision {kind} {name}")
@@ -521,10 +536,6 @@ def main() -> int:
 
         obj_parts.append(loader_object(fac["side"], fac["loader"], loader_cs))
         obj_parts.append(tunnel_object(fac["side"], fac["tunnel"]))
-        obj_parts.append(f"Object {fac['cc']}")
-        obj_parts.append(f"  CommandSet = {cc_cs}")
-        obj_parts.append("End")
-        obj_parts.append("")
 
         plan.append(
             {
@@ -562,7 +573,10 @@ def main() -> int:
 
     (GEN_DIR / "CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini").write_bytes(crlf(cb_text))
     (GEN_DIR / "CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini").write_bytes(crlf(cs_text))
-    (GEN_DIR / "zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini").write_bytes(crlf(obj_text))
+    (GEN_DIR / "Object_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini").write_bytes(crlf(obj_text))
+    old_gen = GEN_DIR / "zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+    if old_gen.exists():
+        old_gen.unlink()
 
     # Load-order guarantees (case-insensitive Windows/ZH).
     def k(s: str) -> str:
@@ -574,16 +588,17 @@ def main() -> int:
     if not (k(CS_MEMBER) > k(last_loose_cs)):
         raise SystemExit("CommandSet file would not sort after MatchStart/ZZZZ sets")
     usa_cc = r"Data\INI\Object\Specter\United States Of America\Buildings\CommandCenter.ini"
-    zzzz_obj = r"Data\INI\ZZZZZZZZ_America_StrategyCenter_Restore.ini"
-    if not (k(OBJ_MEMBER) > k(usa_cc) and k(OBJ_MEMBER) > k(zzzz_obj)):
-        raise SystemExit("Object overlay would not sort after live CC definitions")
+    country_scans = r"Data\INI\Object\zzzz_SPECTER_CountryScans.ini"
+    if not k(OBJ_MEMBER).startswith("data/ini/object/"):
+        raise SystemExit("Object member is outside ThingFactory Object glob")
+    if not (k(OBJ_MEMBER) > k(usa_cc) and k(OBJ_MEMBER) > k(country_scans)):
+        raise SystemExit("Object file would not sort after live CC / CountryScans")
 
     original = SRC_BIG.read_bytes()
     items = list(iter_big_members(original))
     orig_map = {name: blob for name, blob in items}
-    for member in (CB_MEMBER, CS_MEMBER, OBJ_MEMBER):
-        if any(n.replace("\\", "/").lower() == member.replace("\\", "/").lower() for n, _ in items):
-            raise SystemExit(f"{member} already in DATA BIG")
+    drop = {OLD_OBJ_MEMBER.replace("\\", "/").lower(), *(m.replace("\\", "/").lower() for m in (CB_MEMBER, CS_MEMBER, OBJ_MEMBER))}
+    items = [(n, b) for n, b in items if n.replace("\\", "/").lower() not in drop]
     new_items = items + [
         (CB_MEMBER, crlf(cb_text)),
         (CS_MEMBER, crlf(cs_text)),
@@ -605,26 +620,59 @@ def main() -> int:
     ):
         if packed_map.get(member) != blob:
             raise SystemExit(f"packed member mismatch {member}")
-    if len(packed_map) != len(orig_map) + 3:
-        raise SystemExit("unexpected member count")
+    if len(packed_map) != len(items) + 3:
+        raise SystemExit(f"unexpected member count {len(packed_map)} vs {len(items)+3}")
+    if OLD_OBJ_MEMBER in packed_map:
+        raise SystemExit("old non-Object-glob overlay is still packed")
 
     # Reference check inside generated files.
     defined_buttons = set(parse_blocks(cb_text, "CommandButton")) | existing["CommandButton"] | reserved_buttons
-    for name, block in parse_blocks(cs_text, "CommandSet").items():
+    cs_blocks = parse_blocks(cs_text, "CommandSet")
+    for name, block in cs_blocks.items():
+        if name in MISSILE_FACTORY_SETS:
+            raise SystemExit(f"missile factory CommandSet leaked: {name}")
+        if name.startswith("Turkey") or "TurkeyCommandCenter" in name:
+            raise SystemExit(f"Turkey CommandSet leaked: {name}")
+        if name.endswith("_SpecterSS2TunnelLoader"):
+            raise SystemExit(f"orphan unique CommandSet still present: {name}")
         for _, btn in slots_of(block):
             if btn not in defined_buttons:
                 raise SystemExit(f"CommandSet {name} refs missing button {btn}")
+    obj_blocks = parse_blocks(obj_text, "Object")
+    if any(name.endswith("CommandCenter") or name == "IranCommandCenter" for name in obj_blocks):
+        raise SystemExit("CommandCenter stub leaked into Object file")
+    if len(obj_blocks) != 52:
+        raise SystemExit(f"expected 52 loader+tunnel objects, got {len(obj_blocks)}")
     for fac in plan:
+        if fac["orig_cs"] not in cs_blocks:
+            raise SystemExit(f"live CommandSet not last-won: {fac['orig_cs']}")
+        if fac["cc"] in obj_blocks:
+            raise SystemExit(f"CC object stub present: {fac['cc']}")
+        if fac["loader"] not in obj_blocks:
+            raise SystemExit(f"loader object missing {fac['loader']}")
+        if fac["tunnel"] not in obj_blocks:
+            raise SystemExit(f"tunnel object missing {fac['tunnel']}")
         if f"Side                = {fac['side']}" not in obj_text and not re.search(
             rf"Object {fac['loader']}.*?Side\s*=\s*{fac['side']}", obj_text, re.S
         ):
             raise SystemExit(f"loader Side mismatch {fac['side']}")
-        if f"Object {fac['tunnel']}" not in obj_text:
-            raise SystemExit(f"tunnel object missing {fac['tunnel']}")
-        if f"Object {fac['cc']}\r\n  CommandSet = {fac['new_cs']}" not in crlf(obj_text).decode("latin1") and (
-            f"Object {fac['cc']}\n  CommandSet = {fac['new_cs']}" not in obj_text
-        ):
-            raise SystemExit(f"CC overlay missing {fac['cc']}")
+        if not re.search(rf"(?m)^CommandButton {re.escape(fac['loader_btn'])}\s*$", cb_text):
+            raise SystemExit(f"loader button missing {fac['loader_btn']}")
+        if not re.search(rf"Object\s+=\s+{re.escape(fac['loader'])}", cb_text):
+            raise SystemExit(f"loader button object mismatch {fac['loader']}")
+        won_slots = slots_of(cs_blocks[fac["orig_cs"]])
+        if (fac["slot"], fac["loader_btn"]) not in won_slots:
+            raise SystemExit(f"{fac['side']} live set missing loader at slot {fac['slot']}")
+        if next(b for n, b in won_slots if n == 1) != fac["slot1"]:
+            raise SystemExit(f"{fac['side']} lost slot 1 dozer/worker")
+    iran_won = slots_of(cs_blocks["IranExpandedHQCommandSet"])
+    if (9, "Command_ConstructIranVehicleDozerm") not in iran_won:
+        raise SystemExit("Iran slot 9 is not the tunnel loader")
+    if any(b == "Command_ConstructIranVehicleKhormshar" for _, b in iran_won):
+        raise SystemExit("Iran CC still has Khormshar construct button")
+    gla_won = slots_of(cs_blocks["GLACommandCenterCommandSet"])
+    if not any(b == "Command_ConstructGLAWorker" for _, b in gla_won):
+        raise SystemExit("GLA worker button dropped")
 
     zip_path = OUT_DIR / "SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_STORED) as zf:
@@ -641,10 +689,13 @@ def main() -> int:
     report.append(f"SHA-256 ZIP: {sha256(zip_path)}")
     report.append(f"ZIP: {zip_path}  {zip_path.stat().st_size}")
     report.append("")
-    report.append(f"{'Side':24s} {'CC':32s} {'slot':4s} {'slot1 kept':40s} loader / tunnel")
+    report.append("Fix: last-win live CommandSet names; Object-glob loaders/tunnels; no CC stubs.")
+    report.append("In-game test was not run.")
+    report.append("")
+    report.append(f"{'Side':24s} {'CC':32s} {'live CS last-won':42s} {'slot':4s} {'slot1 kept':40s} loader / tunnel")
     for fac in plan:
         report.append(
-            f"{fac['side']:24s} {fac['cc']:32s} {fac['slot']:<4d} {fac['slot1']:40s} {fac['loader']} / {fac['tunnel']}"
+            f"{fac['side']:24s} {fac['cc']:32s} {fac['orig_cs']:42s} {fac['slot']:<4d} {fac['slot1']:40s} {fac['loader']} / {fac['tunnel']}"
         )
     (OUT_DIR / "BUILD_REPORT.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
     print("\n".join(report))

@@ -1,11 +1,15 @@
 SS2 tunnel loader transfer
 base BIG: /tmp/ss2/SPECTER FINAL (GeneralsMode.com)/_SPEC_DATA_ONE.big
-out BIG:  patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/_SPEC_DATA_ONE.big  374771226
-SHA-256 BIG: 785be0e1222f4029e287c7c7f30af6118fd73a5f791ea2ebe655e1fd5595928c
-SHA-256 ZIP: d847a47782ed4c7545d3e9e79fd7fc631c2846be9ecab83e80da37dc511703f2
-ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip  374771360
+out BIG:  patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/_SPEC_DATA_ONE.big  374741950
+SHA-256 BIG: 526afad56a43d713e6474f9310b4e57700eae6815f1b4788f46229ebec384fd4
+SHA-256 CommandButton loose: 3b59b2d3997b2d73ba6cf661f06281e239b1d319f719ef41ec0a05aec1505f04
+SHA-256 CommandSet loose: 69f0ec56f13717b33fd6de35b51737faba363d6cf6554b289963b942b88098db
+SHA-256 ZIP: 660576aa18300dbd35df6ec741ac4b4ccb20e4f4b8d897b07c77eba5e992e942
+ZIP: patch/Release/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip  374771781
+ZIP members: _SPEC_DATA_ONE.big, Data/INI/CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini, Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
 
-Fix: last-win live CommandSet names; Object-glob loaders/tunnels; no CC stubs.
+Loose extra CommandSet/CommandButton last-win; Object-glob loaders/tunnels in DATA BIG.
+CommandSet.ini / CommandButton.ini were not edited.
 In-game test was not run.
 
 Side                     CC                               live CS last-won                           slot slot1 kept                               loader / tunnel
@@ -35,22 +39,3 @@ SouthAfrica              SouthAfrica_CommandCenter        SouthAfrica_CommandCen
 SouthKorea               SouthKorea_CommandCenter         SouthKorea_CommandCenterCommandSet         4    Command_ConstructSouthKorea_VT72B        SouthKorea_VehicleDozerm / SouthKorea_PowerStationm
 Japan                    Japan_CommandCenter              Japan_CommandCenterCommandSet              4    Command_ConstructJapan_VT72B             Japan_VehicleDozerm / Japan_PowerStationm
 Vietnam                  Vietnam_CommandCenter            Vietnam_CommandCenterCommandSet            4    Command_ConstructVietnam_VT72B           Vietnam_VehicleDozerm / Vietnam_PowerStationm
-
-Members packed (only these 3 added; original members unchanged):
-  Data\INI\CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
-  Data\INI\CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
-  Data\INI\Object\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
-Old unused overlay Data\INI\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini is not in this BIG.
-
-Iran:
-  IranCommandCenter still uses IranExpandedHQCommandSet (live Object).
-  That set is last-won here: slot 9 = Command_ConstructIranVehicleDozerm.
-  Slot 1 Command_ConstructIranVehicleDozer unchanged.
-  Iran_MissileFactoryCommandSet / CB_IRAN_MISSILE_G / Iran_Khorram not in this pack.
-
-Reconstruct ZIP from git split parts:
-  cat split/SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.part0* > SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip
-
-ZIP contains only _SPEC_DATA_ONE.big at archive root.
-ART ONE / ART TWO were not modified.
-In-game test was not run.

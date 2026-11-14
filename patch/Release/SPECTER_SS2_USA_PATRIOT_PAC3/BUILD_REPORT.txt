@@ -3,11 +3,11 @@ backup CommandSet.ini     593f541674b5917715a189c2aedf462c079233bbd4e21a11f24299
 backup CommandButton.ini  16ac5b9a306f9ec58cbee944b1b36eb577aed1f3e43bea38f14de16a440be918
 SHA-256 CommandSet.ini    94e17a13df08bd1bf042da4ecbffbd33ff1c4a5064b4d5f8d1bdf1d52752beb3
 SHA-256 CommandButton.ini 24548700347743912824c6ce81a562aeb93fd84b5f20f3724803c8f4aadfb20b
-SHA-256 Object INI        eb7ab858b4e7c605238178a934c1c12b4f7f41baa22724f36d8e31dc09f33677
-SHA-256 ZIP               39519dd42b085ae43d7669da0dc713f7e27e0f70be7158ecac09e2f36c75c9cf
-ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 142003 members=3
+SHA-256 Object INI        4fbbd8c2b4add923295978f7c235570332bafb7866b9b22d043cfa535ac7c0ff
+SHA-256 ZIP               307f4324ee083cf1fc680972f3eb20b6a827fcf0d90347dac7ca14117dbcf64f
+ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 141991 members=3
 America CC slot 10 = Command_ConstructAmericaVehiclePatriotPAC3 -> AmericaVehiclePatriotPAC3
-Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no deploy.
+Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no TracksDraw, no deploy.
 AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
 No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
 In-game test was not run. Crash fix is not in-game verified.

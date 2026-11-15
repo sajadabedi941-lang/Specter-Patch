@@ -43,7 +43,7 @@ CC_SYSTEMS = [
     {"slot": 18, "btn": "Command_ConstructRussiaVehicleV25S500", "obj": "RussiaVehicleV25S500", "ini": "RussiaVehicleV25S500.ini", "model": "RUS500", "image": "RUS500TB", "w3d": "RUS500.W3D", "need": [b"MISSILE_C", b"MUZZLEFX"], "draw": "W3DTruckDraw", "label": "S-500 Prometey", "v25_obj": "RussiaS500", "v25_btn": "Nuke_Command_ConstructRussiaS500", "building": "CC"},
 ]
 WF_SYSTEMS = [
-    {"slot": 1, "btn": "Command_ConstructRussiaVehicleV25Tunguska", "obj": "RussiaVehicleV25Tunguska", "ini": "RussiaVehicleV25Tunguska.ini", "model": "INTGSK", "image": "URTGSKTB", "w3d": "INTGSK.W3D", "need": [b"CORE", b"TURRET", b"TURRETEL", b"BARRELFX", b"MISSILE"], "draw": "W3DTankDraw", "label": "Tunguska", "extra_w3d": ("INTGSKw.W3D", [b"CORE", b"WHEEL02", b"WHEEL09"]), "v25_obj": "Ukrania2K22", "v25_btn": "Command_ConstructUkrania2K22", "building": "WF2"},
+    {"slot": 1, "btn": "Command_ConstructRussiaVehicleV25Tunguska", "obj": "RussiaVehicleV25Tunguska", "ini": "RussiaVehicleV25Tunguska.ini", "model": "RUTGSK", "image": "TGSK", "w3d": "RUTGSK.W3D", "need": [b"CORE", b"TURRET", b"TURRETEL", b"BARRELFX", b"MISSILE"], "draw": "W3DTankDraw", "label": "Tunguska", "extra_w3d": ("RUTGSKw.W3D", [b"CORE", b"WHEEL02", b"WHEEL09"]), "v25_obj": "Nuke_ChinaTankGattling", "v25_btn": "Nuke_Command_ConstructChinaTankGattling", "building": "WF2"},
     {"slot": 2, "btn": "Command_ConstructRussiaVehicleV25BalE", "obj": "RussiaVehicleV25BalE", "ini": "RussiaVehicleV25BalE.ini", "model": "RUBALE", "image": "BALETB", "w3d": "RUBALE.W3D", "need": [b"WEAPONA", b"WHEEL01"], "draw": "W3DTruckDraw", "label": "Bal-E", "v25_obj": "RussiaCoastal", "v25_btn": "Nuke_Command_ConstructRussiaCoastal", "building": "WF2"},
     {"slot": 3, "btn": "Command_ConstructRussiaVehicleV259K33", "obj": "RussiaVehicleV259K33", "ini": "RussiaVehicleV259K33.ini", "model": "RU9K33", "image": "9K33TB", "w3d": "RU9K33.W3D", "need": [b"TURRET", b"TURRETEL", b"FIREFX", b"TIRE01"], "draw": "W3DTruckDraw", "label": "9K33 Osa", "v25_obj": "RussiaTankT64", "v25_btn": "RU9K33", "building": "WF2"},
     {"slot": 4, "btn": "Command_ConstructRussiaVehicleV2530N6E", "obj": "RussiaVehicleV2530N6E", "ini": "RussiaVehicleV2530N6E.ini", "model": "30N6EFL", "image": "30N6EFLTB", "w3d": "30N6EFL.W3D", "need": [b"WHEEL01", b"WHEEL08"], "draw": "W3DTruckDraw", "label": "30N6E Flap Lid", "no_pitch": True, "radar": True, "v25_obj": "30N6EFLAPLID", "v25_btn": "Nuke_Command_Construct30N6EFLAPLID", "building": "WF2"},
@@ -51,7 +51,7 @@ WF_SYSTEMS = [
     {"slot": 6, "btn": "Command_ConstructRussiaVehicleV25Shilka", "obj": "RussiaVehicleV25Shilka", "ini": "RussiaVehicleV25Shilka.ini", "model": "NKZSU23", "image": "RUZSU4TB", "w3d": "NKZSU23.W3D", "need": [b"CORE", b"TURRET01", b"TURRETEL01", b"MUZZLE"], "draw": "W3DTankDraw", "label": "Shilka", "extra_w3d": ("NKZSU23w.W3D", [b"CORE", b"TIRE01"]), "v25_obj": "RussiaShilka", "v25_btn": "Command_ConstructRussiaShilka", "building": "WF2"},
     {"slot": 7, "btn": "Command_ConstructRussiaVehicleV259A52", "obj": "RussiaVehicleV259A52", "ini": "RussiaVehicleV259A52.ini", "model": "RU9A52", "image": "9A52TB", "w3d": "RU9A52.W3D", "need": [b"TURRET01", b"TURRETEL02", b"WEAPONA", b"WHEEL01"], "draw": "W3DTruckDraw", "label": "9A52-4 Tornado", "v25_obj": "RussiaUragan", "v25_btn": "Nuke_Command_ConstructRussiaUragan", "building": "WF2"},
     {"slot": 8, "btn": "Command_ConstructRussiaVehicleV25BukM3", "obj": "RussiaVehicleV25BukM3", "ini": "RussiaVehicleV25BukM3.ini", "model": "BUKMM3", "image": "Bukmm3TB", "w3d": "BUKMM3.W3D", "need": [b"CORE", b"TURRET01", b"TURRETEL01", b"MISSILE"], "draw": "W3DTankDraw", "label": "Russia Buk-M3", "extra_w3d": ("BUKMM3w.W3D", [b"CORE", b"TIRE01", b"TIRE08"]), "v25_obj": "RussiaBukMM3", "v25_btn": "Nuke_Command_ConstructRussiaBukMM3", "building": "WF2"},
-    {"slot": 9, "btn": "Command_ConstructRussiaVehicleV25Strela10", "obj": "RussiaVehicleV25Strela10", "ini": "RussiaVehicleV25Strela10.ini", "model": "RUMTLB", "image": "RussiaV25StrelaTB", "w3d": "RUMTLB.W3D", "need": [b"CORE", b"TURRET", b"TURRETEL", b"MUZZLE"], "draw": "W3DTankDraw", "label": "9K35 Strela-10", "extra_w3d": ("RUMTLBw.W3D", [b"CORE", b"TIRE01", b"TIRE08"]), "v25_obj": "RussiaMTLB", "v25_btn": "Nuke_Command_ConstructRussiaMTLB", "building": "WF2"},
+    {"slot": 9, "btn": "Command_ConstructRussiaVehicleV25Strela10", "obj": "RussiaVehicleV25Strela10", "ini": "RussiaVehicleV25Strela10.ini", "model": "RUMTLB", "image": "RUMTLBTB2", "w3d": "RUMTLB.W3D", "need": [b"CORE", b"TURRET", b"TURRETEL", b"MUZZLE"], "draw": "W3DTankDraw", "label": "9K35 Strela-10", "extra_w3d": ("RUMTLBw.W3D", [b"CORE", b"TIRE01", b"TIRE08"]), "v25_obj": "RussiaMTLB", "v25_btn": "Nuke_Command_ConstructRussiaMTLB", "building": "WF2"},
     {"slot": 10, "btn": "Command_ConstructRussiaVehicleV25Bastion", "obj": "RussiaVehicleV25Bastion", "ini": "RussiaVehicleV25Bastion.ini", "model": "RUK300", "image": "RUK300TB", "w3d": "RUK300.W3D", "need": [b"MISS", b"WHEEL01"], "draw": "W3DTruckDraw", "label": "K-300P Bastion-P", "v25_obj": "RussiaBastion", "v25_btn": "Nuke_Command_ConstructRussiaBastion", "building": "WF2"},
 ]
 SYSTEMS = CC_SYSTEMS + WF_SYSTEMS
@@ -125,19 +125,19 @@ LABELS = {
     "Command_ConstructRussiaVehicleV2550N6A": "Russia_50N6A",
     "Command_ConstructRussiaVehicleV25S300V1": "Ukraine_S300V1",
     "Command_ConstructRussiaVehicleV259S32": "Russia_9S32-Radar",
-    "Command_ConstructRussiaVehicleV259S119M1": "Egypt_9S18M1",
+    "Command_ConstructRussiaVehicleV259S119M1": "Russia_9S119M1",
     "Command_ConstructRussiaVehicleV25S400": "Russia_S400",
     "Command_ConstructRussiaVehicleV2540V6MD": "Russia_40V6MD",
     "Command_ConstructRussiaVehicleV25S500": "Russia_S500",
-    "Command_ConstructRussiaVehicleV25Tunguska": "CONTROLBAR:TGSK",
+    "Command_ConstructRussiaVehicleV25Tunguska": "OBJECT:TGSK",
     "Command_ConstructRussiaVehicleV25BalE": "Russia_BAL_E",
     "Command_ConstructRussiaVehicleV259K33": "Russia_9K33",
     "Command_ConstructRussiaVehicleV2530N6E": "Russia_30N6EFlapLid",
-    "Command_ConstructRussiaVehicleV259K31": "Egypt_9K31",
-    "Command_ConstructRussiaVehicleV25Shilka": "Iran_Shilka",
+    "Command_ConstructRussiaVehicleV259K31": "Russia_9K31",
+    "Command_ConstructRussiaVehicleV25Shilka": "Russia_Shilka",
     "Command_ConstructRussiaVehicleV259A52": "Russia_9A52",
     "Command_ConstructRussiaVehicleV25BukM3": "Russia_BukMM3",
-    "Command_ConstructRussiaVehicleV25Strela10": "Russia_MTLB",
+    "Command_ConstructRussiaVehicleV25Strela10": "Russia_Strela10",
     "Command_ConstructRussiaVehicleV25Bastion": "Russia_K300Bastion",
 }
 

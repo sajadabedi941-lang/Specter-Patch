@@ -1,0 +1,26 @@
+SS2 America MIM-104 PAC-3 MSE (Loose Data, no BIG)
+V25 source               AmericaWarFactory2 / AmericafakeWarFactoryCommandSet slot 12
+V25 object               AmericaPAC3MSE
+V25 button               Command_ConstructAmericaPAC3MSE
+Appearance               Model PAC3MSE.W3D
+Source ControlBar        #795 Patriot pack (loaders + Patriot slot 10)
+SHA-256 CommandSet.ini    67d199aabebaa55d50ddb2f066f7ca59a4532eecc209cc9dc873591119cc790e
+SHA-256 CommandButton.ini cacb42a4b0a54188c7bc59aeffb00d2314203126b52a89d41b3aebaa48a3a01f
+SHA-256 Object INI        4b6cac17ce53d3814d3d486452a6cc526a127534f8210f650ace5c701658fcb7
+SHA-256 MappedImage       a00c13602bcb0604a8a451f66d8ee211aa22e7dd27ac3a343d364b9ba7b09ccf
+SHA-256 Art/W3D/PAC3MSE.W3D                      6e788d2d48aac7e8b4f5f4a994236f9f92da513990d097b262ede9a7eeac17a7
+SHA-256 Art/Textures/PAC3MSEH.dds                e9e6bdb2a4e7d2290aaf7a4e43c71d6c69150124e8f1607dae623b81a15b6694
+SHA-256 Art/Textures/PAC3MSEL.dds                173334480c235a66a21ded01755422d54a3c8c13868e1779b8d18ef5812ca886
+SHA-256 Art/Textures/PAC3MSET.dds                1bba3e334e6e69c5ddb2a0d0463f754df5b2ca2db4bea9114f3f2e269d8ed3b5
+SHA-256 Art/Textures/PAC3MSEW.dds                277c55f4aed46e736ce249f8300fdd6b563888df686a0847a4bff3c966aeb7c8
+SHA-256 Art/Textures/PAC3MSETB.tga               b3288fead5dd7068d0aae0db216d87876544c28ada7e51b65dfb75a10c12998a
+SHA-256 Art/Textures/JPPAC01.dds                 7103d31699445531ae8170c2a22306172e606531135aa96b955c30830af3f8fa
+SHA-256 Art/Textures/Glass1.tga                  21a40bd0d2d7754d84fd37d938b9ce4c3193a3148928306a8a183a4c7c3bf8ed
+SHA-256 ZIP               05551e76c7bc94935837e73e82bb6c94f5eedff6b57f8a885751c7e39d33772e
+ZIP patch/Release/SPECTER_SS2_USA_PAC3_MSE/SPECTER_SS2_USA_PAC3_MSE.zip 1906244 members=12
+America CC slot 11 = Command_ConstructAmericaVehiclePatriotPAC3MSE -> AmericaVehiclePatriotPAC3MSE
+Slots 1 Dozer, 4 tunnel loader, 6 USAPAC3, 10 Patriot kept.
+26-country tunnel loaders preserved. No duplicate CommandSet names.
+#672 Iraq radar not touched. V25 PAC3MSEWeapon/AIGUOZHEDAODAN not imported.
+Vehicle has no Shadow line (V25 AmericaPAC3MSE has none).
+In-game test was not run. Do not treat crash or appearance as play-verified.

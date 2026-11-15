@@ -1,0 +1,17 @@
+V25 Patriot PAC-3 art is not on this machine.
+V25 install tree is Data/INI only (no Art, no W3D BIG).
+SS2 _SPEC_ART_ONE.big / _SPEC_ART_TWO.big / W3DZH.big have 0 USPAC3 members.
+Required files that were searched and not found:
+USPAC3.W3D
+USPAC3.w3d
+Art/W3D/USPAC3.W3D
+Data/Art/W3D/USPAC3.W3D
+AmPatriotVeh.tga
+Art/Textures/AmPatriotVeh.tga
+Data/Art/Textures/AmPatriotVeh.tga
+V25 INI reference (Data/INI/object/AmericaVehicle.ini Object AmericaPATRIO):
+  Model = USPAC3
+  bones: TURRET01, TURRETEL, WeaponA, CAB, TRAILER, Wheel01-08
+  SelectPortrait/ButtonImage = AmPatriotVeh -> AmPatriotVeh.tga
+  TrackMarks = EXTireTrack.tga (this TGA exists in SS2; the W3D does not)
+Object Draw was not rewritten to USPAC3 and was not replaced with another stand-in.

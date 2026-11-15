@@ -1,0 +1,13 @@
+SPECTER SS2 America Patriot PAC-3 diagnostic pack
+Change: delete vehicle line Shadow = SHADOW_VOLUME only
+Original #795 INI not modified
+ZIP members: 1
+  Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehiclePatriotPAC3.ini
+
+SHA-256 INI  6e8abaf97e5ed80dd63e9f193333f38a80ade488aec03b36fb145c08b63fc111
+SHA-256 ZIP  f27da25a5378f2c176c06476f8b3a6a9bd59799dbd9ab4bb647426565e0d0e16
+SHA-256 #795 INI (unchanged) c9530d2036dea373c4c2ffcc5554f2ba462a7965c5fcbb6cb12e27f987d62a77
+
+Projectile Shadow lines kept.
+ShadowSizeX kept.
+In-game test: not run. Do not treat crash as fixed.

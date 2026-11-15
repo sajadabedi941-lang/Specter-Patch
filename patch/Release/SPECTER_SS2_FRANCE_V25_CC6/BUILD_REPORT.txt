@@ -1,0 +1,47 @@
+SS2 France V25 six-system Command Center pack (Loose Data, no BIG)
+Merge base               Iran V25 CC6 CS/CB (America + China 12 + Iran 6 + loaders)
+France CC CommandSet     FranceCommandCenterCommandSet (live FranceCommandCenter)
+France CC keeps          1=ConstructFranceVehicleDozer, 2=ConstructFranceTankPumaMech, 3=FranceAWACS, 4=ConstructFranceVehicleDozerm, 14=Sell, 15=ConstructFranceDronesMq9_AI, 16=ConstructFranceDroneSwitchblade600, 17=ConstructFranceDroneRQ4AI
+
+  France CC slot  5 = Command_ConstructFranceVehicleV25Roland -> FranceVehicleV25Roland  (Roland)  [V25 Command_ConstructFranceRolland / FranceRolland]
+  France CC slot  6 = Command_ConstructFranceVehicleV25Arabel -> FranceVehicleV25Arabel  (Arabel Radar)  [V25 SupW_Command_ConstructAmericaVehicleSentryDrone / SupW_AmericaVehicleSentryDrone]
+  France CC slot  7 = Command_ConstructFranceVehicleV25Aster30 -> FranceVehicleV25Aster30  (Aster 30 Mamba)  [V25 SupW_Command_ConstructZiYuan / FranceZiYuan]
+  France CC slot  8 = Command_ConstructFranceVehicleV25Crotale -> FranceVehicleV25Crotale  (Crotale)  [V25 SupW_Command_ConstructAmericaVehicleAvenger / SupW_AmericaTankAvenger]
+  France CC slot  9 = Command_ConstructFranceVehicleV25Mephisto -> FranceVehicleV25Mephisto  (VAB Mephisto)  [V25 Command_ConstructFranceAMX10P / FranceAMX10P]
+  France CC slot 10 = Command_ConstructFranceVehicleV25VPM81 -> FranceVehicleV25VPM81  (VAB VPM 81)  [V25 Command_ConstructFranceVPM81 / SupW_AmericaTankCrusader]
+
+Identity notes
+- Roland is FranceRolland / SDGRRLD + SDGRRLDw, not a substitute SAM.
+- Arabel is Arabel.W3D from the France WF SentryDrone slot, not AMX-10 / Italy / Ukraine.
+- Aster 30 is FranceZiYuan / FRAster, not ItalyAster30 / UkraineAster30.
+- Crotale is FRCrotal from the France WF Avenger slot, not SS2 FranceVehicleCortaleMK3.
+- VAB Mephisto is FranceAMX10P / VABHOT (France_VAB-Hot), not FranceVAB / SDFRVab.
+- VAB VPM 81 is VPM81 from the France WF Crusader slot, not AmericaTankCrusader.
+
+SHA-256 CommandSet.ini               7b3f6c29c854fe1b75f3e42d0de21725015ab0269ccb7287650e290c44b30f47
+SHA-256 CommandButton.ini            880b38aefe89f369432f5d90bc8f99decd942e744c3babf7e33d85bd753962b8
+SHA-256 MappedImage                  6282235cff495613fec70249792d612f5412a9cb39429aeec35e5bfa6150e893
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceV25CC6_Weapons.ini a5a0b4291b64b76e0b00d8c431a23379cc98a024af6714495e6ceb7a93cb5266
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25Roland.ini e0f0f811237ebc57d53abad6cc421645b4be63e48a123c7045ab7f91a23d4dec
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25Arabel.ini f2b46eacfa9cd2375593788ae5c4635cbf3b75d4cde839b1ef696e1c5f500b88
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25Aster30.ini c3d64a746d521c8e9acbc4c18d7fa19d230979654e20846458e17d971e4364b9
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25Crotale.ini bd375de821935dea90c56a58a42b45707d1f37063f5cd6925282f9f0ff76cc48
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25Mephisto.ini 06992b628a742ed6ef2e6e8e94c08bfde1fddb571c376cd38f7dc471f3d1f8f3
+SHA-256 Data/INI/Object/Specter/French Armed Forces/V25CommandCenter/FranceVehicleV25VPM81.ini 9d9b943fabae02cdce483adaa376c564dc11cb8384f4d3f86f0f3ccc53fb70b5
+SHA-256 Art/W3D/SDGRRLD.W3D                          112ba4f8b1b69d6c59df822885d64a71505a7521f24c01258bbd166dfcf90308
+SHA-256 Art/W3D/SDGRRLDw.W3D                         4a7f01900625db000016b3454b5a3a2cbdb9679ecc32bc7474b6c709b4ac012c
+SHA-256 Art/W3D/Arabel.W3D                           2c26dd80c11891b4cc4d14ba01b26d122fb332758f6d38ef740e37e0ab205000
+SHA-256 Art/W3D/FRAster.W3D                          77eac72d5d53c87c88f0aa3ec4062143e17343285ccdd7bca012885ae2231189
+SHA-256 Art/W3D/FRCrotal.W3D                         7bac3475ca3d79176926cd9986fddc467d6ff084125a0518f4a0d64498d44c33
+SHA-256 Art/W3D/VABHOT.W3D                           a87354713b4b3702343180958c2a3f47b5bd25f28ef8e167633d72c7e4756003
+SHA-256 Art/W3D/VPM81.W3D                            fa00c5ac8dab7a68321ae4b041c9e32746a247a681275bbe7b7a2ca8f965a566
+SHA-256 Art/Textures/FRRLDTB.tga                     f62c39b59bc1b7d7b82a257831bb4112db0d2833eaf146311d233d32a1cbeb3f
+SHA-256 Art/Textures/FranceV25ArabelTB.tga           522227986f680ab87e0debfadb67ad30d2616f97d2c22e94588cc42e60a179bb
+SHA-256 Art/Textures/FranceV25AsterTB.tga            9570ee20a15d9c1960d10f3b33cc8211fdf6b338b5b96bb6b02c8a527a141dee
+SHA-256 Art/Textures/LSFFSATB.tga                    b90d103e81e166ab5804d135e1157fdb84126650e3925b0d4aabaf56c8642bf7
+SHA-256 Art/Textures/VABHOTTB.tga                    b5939a4ce665de8ef3eca19e4f9c55f563cb65220f87cc8609da65e3516cf773
+SHA-256 Art/Textures/VPM81TB.tga                     096eac3de8e5347776beb0ca56bab7504967c095d780c57fba3cb7739c7ad904
+SHA-256 ZIP                          8d02adc896c7fa3d2898a6874ed640f8f2f710b75d5bc7e0062995e3c21f00ba
+ZIP patch/Release/SPECTER_SS2_FRANCE_V25_CC6/SPECTER_SS2_FRANCE_V25_CC6.zip 4268041 members=35
+26-country tunnel loaders preserved. America, China, Iran CC unchanged. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

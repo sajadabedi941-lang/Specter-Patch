@@ -1,0 +1,61 @@
+SS2 England V25 eight-system Command Center pack (Loose Data, no BIG)
+Live England CC          BritainCommandCenter / BritainCommandCenterCommandSet
+                         (EnglandCommandCenterCommandSet does not exist in SS2)
+Merge base               France V25 CC6 CS/CB (America + China + Iran + France + loaders)
+Britain CC keeps         1 Dozer, 2 Puma, 3 AWACS, 4 Dozerm, 14 Sell, 15-17 AI drones
+
+  Britain CC slot  5 = Command_ConstructBritainVehicleV25SkySabre -> BritainVehicleV25SkySabre  (Sky Sabre)  [V25 Command_ConstructUKSkySabre / UKSkySabre]
+  Britain CC slot  6 = Command_ConstructBritainVehicleV25Giraffe -> BritainVehicleV25Giraffe  (Giraffe Radar)  [V25 Command_ConstructUKGiraffe / UKGiraffe]
+  Britain CC slot  7 = Command_ConstructBritainVehicleV25CRAM -> BritainVehicleV25CRAM  (C-RAM)  [V25 Command_ConstructUKPhlanx / UKPhlanx]
+  Britain CC slot  8 = Command_ConstructBritainVehicleV25Cougar -> BritainVehicleV25Cougar  (Cougar MRAP)  [V25 Lazr_Command_ConstructAmericaTankCrusader / Lazr_AmericaTankCrusader]
+  Britain CC slot  9 = Command_ConstructBritainVehicleV25Challenger -> BritainVehicleV25Challenger  (Challenger)  [V25 Command_ConstructUKChallenger3 / UKChallenger3]
+  Britain CC slot 10 = Command_ConstructBritainVehicleV25Rapier -> BritainVehicleV25Rapier  (Tracked Rapier 49KB23)  [V25 Command_ConstructUK49KB23 / UK49KB23]
+  Britain CC slot 11 = Command_ConstructBritainVehicleV25Stormer -> BritainVehicleV25Stormer  (Alvis Stormer)  [V25 Lazr_Command_ConstructAmericaVehicleAvenger / Lazr_AmericaTankAvenger]
+  Britain CC slot 12 = Command_ConstructBritainVehicleV25FV432S -> BritainVehicleV25FV432S  (FV432S)  [V25 Command_ConstructUKFV432S / UKFV432S]
+
+Identity notes
+- Sky Sabre is UKSkySabre / SkySabre.W3D, not SS2 BritainSkySabre / Spec_SamIriCnfg.
+- Giraffe is UKGiraffe / SKYSRBR.
+- C-RAM is UKPhlanx / SDUKPX, not AmericaVehicleCRAM / SDCRAM.
+- Cougar MRAP is UKCougar from the Laser Crusader slot.
+- Challenger is UKChallenger3 / UKCHNGR3, not SS2 BritainTankChallenger2 / LSFChallenger2.
+- Tracked Rapier is UK49KB23 / 49KB23.
+- Alvis Stormer is UKStormer from the Laser Avenger slot.
+- FV432S is UKFV432S / FV432 + FV432w.
+
+SHA-256 CommandSet.ini               714e2959f6fc074694bafae53a7d09fccfee8123be6445fe7c972c9cd91a6c46
+SHA-256 CommandButton.ini            920fa59db19cc0afc3782bfb285236dfcdf92752dff8b4616b2fc898ebb9f33a
+SHA-256 MappedImage                  08e93b1d85751410bba0d036059498feb29045df8adc59f8e5dc9b2775a62965
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainV25CC8_Weapons.ini  61a9029b0d7bb9538906600a5451b1f720786f58be87dbfe149c7e24b626a613
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25SkySabre.ini d9e8e15194e5da6d93c5652720ca4c0ddd2ce148223a4f25fd4f5686c272c266
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25Giraffe.ini c7ab5812944d7996102ec453393c0325e5ad05de9d1c4ccf8cf9aefd2a60b630
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25CRAM.ini  cb61ef8a3ff66d6ca8564a7af02df0cd56b56c73d12eda29d340096d281e3b80
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25Cougar.ini a7916d48b6d66c34b8150319e81e81d5eecb8f670dd72ea533b488be030211ba
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25Challenger.ini bae2686a3ef6f1e3efad9e497a1f0cf61f884c958813d4f11b5d326bfc215234
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25Rapier.ini d75c126b8392904b8b10af596d19f6837a17ed318308908b1476683599e112be
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25Stormer.ini 170bae5782965a11c232b5d5099f45baf07e57f9c66ae004596be868a570771a
+SHA-256 Data/INI/Object/Specter/British Armed Forces/V25CommandCenter/BritainVehicleV25FV432S.ini c8404664f402e16e105a31d2078c291ac5623fbf02510c582daddb389649faf1
+SHA-256 Art/W3D/49KB23.W3D                           26c633cd08fb1cb0962b6cba87f8ffa310932ea03ae7f8810799637ee843ee5f
+SHA-256 Art/W3D/FV432.W3D                            0309968e1d3dacee212d2393fb74c47899e18f44989ff5938099a4123a97f8c9
+SHA-256 Art/W3D/FV432w.W3D                           40708079bead68db5984c681efdcf93577956db42da167ee4d7c8daec5ee6267
+SHA-256 Art/W3D/SDUKPX.W3D                           4696d07aff46e9f60ebb86a14eefc730bd6007331c5261d1ba92a2ea1893578a
+SHA-256 Art/W3D/SKYSRBR.W3D                          802810a11bb04bcfe5b0fbcf4b4078978f27628dfd74d006ae15cab84e005c58
+SHA-256 Art/W3D/SkySabre.W3D                         39a6a27c56f539bbb51309e2eef98aed54065631beb6bf6dfd0a66c4da5c38da
+SHA-256 Art/W3D/UKCHNGR3.W3D                         c8129df6c9a36ac7fb4df97d20ac4d9a2ae10e0f49f1b5370d87e7500b64ffc5
+SHA-256 Art/W3D/UKCHNGR3w.W3D                        7c810d84f46e28bb533f6eb147fcc7f2e2440f7839edbd348b6c46f1ef1da162
+SHA-256 Art/W3D/UKCougar.W3D                         8835718b9476c9e09fecc4e2cd44b2eb1057e929ac4c1047b0d9a369404234ec
+SHA-256 Art/W3D/UKStormer.W3D                        0664f6e077f24dfd2aa8f0d984d92d38e50258d2998059aa62d809fecac16fe1
+SHA-256 Art/W3D/UKStormerw.W3D                       4e442f9c0be9244dd24adae4c8c554a9372f7338f13381ea8b4831f332dde99b
+SHA-256 Art/Textures/49KB23TB.tga                    42c39e1798280359cf71ccba8d3616414d6ae0f5b9b29d13f66bde7a9b903d76
+SHA-256 Art/Textures/AmericaPhlanx.tga               bd9f27bdc60bef51e4b98a348ee6cc5ff4d6be781f85d92d4f61f9c71298dec2
+SHA-256 Art/Textures/EgyMrap.tga                     21d8ae777365d0621bc52544320e2b0b397839031c0e1dc883ef93bbae70c628
+SHA-256 Art/Textures/LSFXGTTB.tga                    2176c9d588de7dc7f9067f30e529b2bddd870b4f09641c345d8e290d5ddf426d
+SHA-256 Art/Textures/SKYSBRRTB.tga                   580f9f6bf4c5b7d8afa8aac25dbaa21388458e609dd7d03546f9410301bbe995
+SHA-256 Art/Textures/SKYSBRTB.tga                    705c56e1439e7d2194f0b47be38a79b4dc2ec28263c645844915e439f0237f8c
+SHA-256 Art/Textures/UKCHLNGR3TB.tga                 6564d80b5a4cdc1dbd58165a6871fbefdf314d244fe24bcd8a23f55080f28ad5
+SHA-256 Art/Textures/UKFV432TB.tga                   5548fd659fe493519b0687ac33937b6168587850b93f0bb0ffbd2c9070191319
+SHA-256 ZIP                          f26de8fee1a3d982261b39e9e0be9f313c9e6a19cf821c6ff7bc5c00766cde4d
+ZIP patch/Release/SPECTER_SS2_ENGLAND_V25_CC8/SPECTER_SS2_ENGLAND_V25_CC8.zip 12182208 members=56
+Copy patch/Release/SPECTER_SS2_ENGLAND_V25_CC8.zip
+26-country tunnel loaders preserved. America, China, Iran, France CC unchanged. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

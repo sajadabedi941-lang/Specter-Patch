@@ -1,0 +1,50 @@
+SS2 Iran V25 six-system Command Center pack (Loose Data, no BIG)
+Merge base               China V25 CC12 CS/CB (America packs + China 12 + loaders)
+Iran CC CommandSet       IranExpandedHQCommandSet (live IranCommandCenter)
+Iran CC keeps            1 Dozer, 6 Bavar, 7 Meraj, 8 BTR60, 9 Tunnel Loader,
+                         10 Jeep Toophan, 11 Jeep 105, 13 Majid
+Iran CC slot 14          Noor replaces Sell on this CommandSet only
+Hoveyzeh                 Command_ConstructIranVehicleHoveyzeh / IranVehicleHoveyzeh
+                         moved CC slot 12 -> War Factory slot 9 (same object/button)
+
+  Iran CC slot  2 = Command_ConstructIranVehicleV25Sayyad2 -> IranVehicleV25Sayyad2  (Sayyad-2)
+  Iran CC slot  3 = Command_ConstructIranVehicleV251S91 -> IranVehicleV251S91  (1S91 Radar)
+  Iran CC slot  4 = Command_ConstructIranVehicleV25SAM6 -> IranVehicleV25SAM6  (SAM-6)
+  Iran CC slot  5 = Command_ConstructIranVehicleV25Raad -> IranVehicleV25Raad  (Raad)
+  Iran CC slot 12 = Command_ConstructIranVehicleV25Kolchuga -> IranVehicleV25Kolchuga  (Kolchuga)
+  Iran CC slot 14 = Command_ConstructIranVehicleV25Noor -> IranVehicleV25Noor  (Noor)
+  Iran WF slot  9 = Command_ConstructIranVehicleHoveyzeh -> IranVehicleHoveyzeh  (moved, not duplicated)
+
+Identity notes
+- SAM-6 is IranSAM6 / IR2K12, not IranShilka / IRZSU.
+- Raad is V25 IranBukM / IRBUKM; V25 has no object named Raad. Not SS2 IranRaadM2EK.
+- Kolchuga is unique vs live SS2 GLAVehicleRadarVan.
+
+SHA-256 CommandSet.ini               64d1e3eec88cbee583e9e29afb033f8a9b940e70479a2fe2ac662a900d5ac992
+SHA-256 CommandButton.ini            1cd2e96f0c2b80ab09a6bcf8e9504a8ac508899cc540d76373f96abf44b75d75
+SHA-256 MappedImage                  3833ae27a302c09e41b2e9b4c843b5443bf58d2f673cbdd992dc47782422b9d3
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranV25CC6_Weapons.ini 9c76d506e5581b4d20f3eca6386c5b0bb40c94668f63adab221bf278b4915242
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV25Sayyad2.ini 7017b412b6bf7e2ab3b73916833f0bcbea802e3d3ba0a0a7f58952af174533f8
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV251S91.ini 4623e9bbc228fb6c01cbf421e17f19dc61f761c9db0f2370805364ee1b90475c
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV25SAM6.ini 2dae9035025162cffd4ea53d7613ff63fb3ef6752cc4657b5ddce2297767de43
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV25Raad.ini d6b090b7d4495a45313df315765aad0307d994eea6eeadccf255730b8d83d086
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV25Kolchuga.ini d383f416544327850987ecfc746947a3cc160d2ba9cd3193e648dabbbf4fe905
+SHA-256 Data/INI/Object/Specter/Iranian Army/V25CommandCenter/IranVehicleV25Noor.ini cab902f106c3c115f34ebaaa7d06fdfd0bfd71b3210bdaaf06743e3469d15bba
+SHA-256 Art/W3D/Sayyad.W3D                           2eddde4daf08a64f1080c5f948fc03f00eb86dd7b9f5206684b364b70e3f05f9
+SHA-256 Art/W3D/2K12RD.W3D                           432c5accab430ac3fc59140a23d409201806f2702a45875d0a86ba194d9692b0
+SHA-256 Art/W3D/2K12RDw.W3D                          6806ff11356a5ba8732b51258d0e36ae26119e7878a2f2e26a9506e24fc76fe1
+SHA-256 Art/W3D/IR2K12.W3D                           33711700a6d0ef6060fe511bc01dbf14aae5ca38162324a0d8fd258c025038e5
+SHA-256 Art/W3D/IR2K12w.W3D                          d3c6fd954b53bfb6d39d9cd6c34b617b15001e8873dd14838169dc6cb783b0fe
+SHA-256 Art/W3D/IRBUKM.W3D                           7f81f87f470a51e7ccfb5f5387df8001fa9a3870596201e9677ffcb4a157c5ad
+SHA-256 Art/W3D/Kolchuga.W3D                         f680bc31e24ea321bf6d334329e04ebffe2525079be2ac8828270b4505f20847
+SHA-256 Art/W3D/SDNoor.W3D                           a3417d868d2318967f4a21a1d8320b830d1de4520b556131c18b7310b6cb7fc8
+SHA-256 Art/Textures/SayyadTB.tga                    12630a50eb9db9e8f50097d5fda18bbac40340b49a74d1dcc583c650fd9477b0
+SHA-256 Art/Textures/2K12RDTB.tga                    ae97428a3668b54752372f15a39483e3afe1c16562f79150fd6ca49ddf15814e
+SHA-256 Art/Textures/IR2K12TB.tga                    a5dd5af0fa1fa442c8aa422fdb64a5bad3267896154dd3c2d7712100741e30f5
+SHA-256 Art/Textures/IRBUKMTB.tga                    6105e40e46491aa9862dd9a60a8e0c163222d163bfc8f0f173878e51045f6ce5
+SHA-256 Art/Textures/KolchugaTB.tga                  d8aca69d2a4313074a05b32ec9f5e47df20fed8cf93c59d6dcf71c3e607a1bdd
+SHA-256 Art/Textures/NoorTB.tga                      35b40f0181c418b6728f9d89b0631f945ef2832e42db2a0999704770985e0fa9
+SHA-256 ZIP                          2f9bd90369f12a67b594fe9f0bb26ea0f5018e08654ad5fcb5950786c3ec3443
+ZIP patch/Release/SPECTER_SS2_IRAN_V25_CC6/SPECTER_SS2_IRAN_V25_CC6.zip 5957047 members=40
+26-country tunnel loaders preserved. America and China CC unchanged. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

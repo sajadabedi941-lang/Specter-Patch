@@ -1,0 +1,18 @@
+SS2 MEADS Radar visual fix (Loose Data, no BIG)
+
+Cause
+  UsRadar.W3D is the truck chassis (WHEEL01-06 + CORE). The rotating radar
+  array lives in a second W3D: UsRadarh.W3D (TURRET01, MESH_0066, MESH_0067,
+  MESH_0033). The previous CC6 pack omitted UsRadarh, so in-game MEADS showed
+  only the incomplete truck.
+
+Fix
+  Restore V25 ModuleTag_BrakeDraw (UsRadarh LOOP, attach to CORE).
+  ExtraPublicBone CORE on the truck draw. Do not copy truck AttachToBone,
+  CWCruHC_B, KJ2000 lasers, Shadow, or CommandSet/CommandButton.
+
+SHA-256 AmericaVehicleMeadsRadar.ini  d4c61efaa144de38869dba6917adaac8ce1b18212a2bdcd999134376b83af948
+SHA-256 Art/W3D/UsRadarh.W3D           c41d77c21ee7f3347ac21255d282224527ed28c01e3aba1dd1969535f7af12b5
+SHA-256 ZIP                            580a37849f521bdd065d5181ba6e27a197392a205c150f021f546390d8a0f94d
+ZIP /agent/repos/Specter-Patch/patch/Release/SPECTER_SS2_USA_MEADS_VISUAL/SPECTER_SS2_USA_MEADS_VISUAL.zip 49524 members=2
+In-game test was not run.

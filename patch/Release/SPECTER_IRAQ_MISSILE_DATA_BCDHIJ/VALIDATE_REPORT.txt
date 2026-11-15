@@ -1,0 +1,27 @@
+# SPECTER Iraq missile DATA activation B/C/D/H/I/J + English Al-Fahd tooltip
+
+MOTHER / Iraq_R11ScudB / 9P117 — NOT MODIFIED
+Al-Fahd500 gameplay / ART / animation — NOT MODIFIED (English tooltip only)
+ART skins B/C/D/H/I/J rebuilt unchanged from SPECTER_IRAQ_MISSILE_SKINS_BCDHIJ
+
+- DATA size: 366469264
+- DATA SHA256: 87ce408d2fa679b82f9fad22b515b10a9b993aa4453cc32175e2af093410a126
+- DATA files: 2929
+- ART size: 1292294758
+- ART SHA256: e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART files: 4628
+
+## VALIDATION PASS (static)
+- Objects: Iraq_AlHusseinII, Iraq_AlSamoudII, Iraq_AlAbbas, Iraq_AlBasrah, Iraq_AlNasir, Iraq_AlMansour
+- CB_MISSILE_B/C/D/H/I/J resolve to those Objects
+- Factory slots 1=A 2=B 3=C 4=D 8=H 9=I 10=J 13=Rally 14=Sell; E/F/G/K/L empty
+- Projectile Models: Irq_AlHussein2M / Irq_AlSamoud2M / Irq_AlAbbas2M / Irq_AlBasrahM / Irq_AlNasirM / Irq_AlMansourM
+- Queue ButtonImage/SelectPortrait = specter_missile_b/c/d/h/i/j
+- Al-Fahd tooltip English; no Persian; no Damage line
+- 50% OBJECT_UPGRADE rebuild cost + ReplaceObjectUpgrade + AutoReloadsClip No
+- MOTHER and Al-Fahd gameplay byte-identical vs DATA baseline
+- ART identity rebuild of dedicated skins package
+- no ZZZZ override
+
+RUNTIME_TEST=NOT RUN
+

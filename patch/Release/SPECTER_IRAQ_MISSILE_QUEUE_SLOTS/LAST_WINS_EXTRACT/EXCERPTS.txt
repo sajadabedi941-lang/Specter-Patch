@@ -1,0 +1,116 @@
+=== Iraq_AlFahd500 UI cameo (queue/countdown) ===
+  ; Queue/countdown/selected portrait follow Object ButtonImage, not CommandButton.
+  SelectPortrait         = specter_missile_a
+  ButtonImage            = specter_missile_a
+
+=== 9P117 UI cameo (must remain irq_9p117) ===
+  SelectPortrait         = irq_9p117
+  ButtonImage            = irq_9p117
+
+=== Iraq_AlFahdMissileFactoryCommandSet ===
+CommandSet Iraq_AlFahdMissileFactoryCommandSet
+  1  = CB_MISSILE_A
+  ; 2-12 reserved for CB_MISSILE_B .. CB_MISSILE_L once each has a real Object.
+  ; UNIT_BUILD with a null Object is unsafe to show on the factory bar.
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+End
+
+=== CB_MISSILE_A .. L ===
+CommandButton CB_MISSILE_A
+  Command       = UNIT_BUILD
+  Object        = Iraq_AlFahd500
+  TextLabel     = CONTROLBAR:SpecterMissileA
+  ButtonImage   = specter_missile_a
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileA
+End
+
+CommandButton CB_MISSILE_B
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileB
+  ButtonImage   = specter_missile_b
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileB
+End
+
+CommandButton CB_MISSILE_C
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileC
+  ButtonImage   = specter_missile_c
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileC
+End
+
+CommandButton CB_MISSILE_D
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileD
+  ButtonImage   = specter_missile_d
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileD
+End
+
+CommandButton CB_MISSILE_E
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileE
+  ButtonImage   = specter_missile_e
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileE
+End
+
+CommandButton CB_MISSILE_F
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileF
+  ButtonImage   = specter_missile_f
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileF
+End
+
+CommandButton CB_MISSILE_G
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileG
+  ButtonImage   = specter_missile_g
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileG
+End
+
+CommandButton CB_MISSILE_H
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileH
+  ButtonImage   = specter_missile_h
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileH
+End
+
+CommandButton CB_MISSILE_I
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileI
+  ButtonImage   = specter_missile_i
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileI
+End
+
+CommandButton CB_MISSILE_J
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileJ
+  ButtonImage   = specter_missile_j
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileJ
+End
+
+CommandButton CB_MISSILE_K
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileK
+  ButtonImage   = specter_missile_k
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileK
+End
+
+CommandButton CB_MISSILE_L
+  Command       = UNIT_BUILD
+  TextLabel     = CONTROLBAR:SpecterMissileL
+  ButtonImage   = specter_missile_l
+  ButtonBorderType = BUILD
+  DescriptLabel = CONTROLBAR:ToolTipSpecterMissileL
+End
+

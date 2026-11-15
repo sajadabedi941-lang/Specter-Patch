@@ -1,0 +1,29 @@
+# SPECTER missile factory queue icon + universal slots A-L
+
+QUEUE MECHANISM: Object Iraq_AlFahd500 ButtonImage / SelectPortrait
+OLD QUEUE ICON: irq_9p117 (9P117 Scud cameo inherited on Al-Fahd)
+NEW QUEUE ICON: specter_missile_a (same as CB_MISSILE_A order button)
+
+- DATA size: 366376372
+- DATA SHA256: a794a57a028aae4ec2e6adcb7a96030f34e21935181c0c02962923fea9dd0cd1
+- DATA files: 2914
+- ART size: 1267067968
+- ART SHA256: 5fdc19145769b81bce2cddaeeb91701d6c9ce0f4e288e0d55baa03cbfdb33ea9
+- ART files: 4616
+- Slot A TGA: type=2 bpp=24 alpha=0 128x128
+
+## VALIDATION PASS (static)
+- Order button CB_MISSILE_A ButtonImage = specter_missile_a
+- Queue/countdown Iraq_AlFahd500 ButtonImage = specter_missile_a
+- Queue/countdown Iraq_AlFahd500 SelectPortrait = specter_missile_a
+- CB_MISSILE_A Object = Iraq_AlFahd500
+- CB_MISSILE_B..L defined, no Object, not on factory CommandSet
+- Iraq_AlFahdMissileFactoryCommandSet 1=A, 13=Rally, 14=Sell
+- 9P117 / irq_9p117 / Al-Fahd W3D / flag / weapon unchanged
+- no ZZZZ override of missile slots
+
+RUNTIME_TEST=NOT RUN
+
+COMMANDSET LIMIT: slots 2-12 are free (max 18; 13-14 used). B-L are
+not wired because UNIT_BUILD requires a valid Object.
+

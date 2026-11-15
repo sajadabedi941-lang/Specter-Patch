@@ -1,0 +1,70 @@
+SS2 China V25 twelve-system Command Center pack (Loose Data, no BIG)
+Merge base               America V25 CC6 CS/CB (loaders + Patriot/MSE/six USA systems)
+China CC keeps           slot 1 Dozer, slot 4 Tunnel Loader
+China CC replaces        slot 13 Rally and slot 14 Sell only (this CommandSet)
+Command_Sell / Rally     button definitions unchanged; other factions unchanged
+
+  China CC slot  2 = Command_ConstructChinaVehicleV25FK2000 -> ChinaVehicleV25FK2000  (FK-2000)
+  China CC slot  3 = Command_ConstructChinaVehicleV25AFT10 -> ChinaVehicleV25AFT10  (AFT-10)
+  China CC slot  5 = Command_ConstructChinaVehicleV25HQ11 -> ChinaVehicleV25HQ11  (HQ-11)
+  China CC slot  6 = Command_ConstructChinaVehicleV25LD2000 -> ChinaVehicleV25LD2000  (LD-2000)
+  China CC slot  7 = Command_ConstructChinaVehicleV25HQ9 -> ChinaVehicleV25HQ9  (HQ-9)
+  China CC slot  8 = Command_ConstructChinaVehicleV25HT233 -> ChinaVehicleV25HT233  (HT-233 Radar)
+  China CC slot  9 = Command_ConstructChinaVehicleV25HQ16 -> ChinaVehicleV25HQ16  (HQ-16)
+  China CC slot 10 = Command_ConstructChinaVehicleV25HQ7B -> ChinaVehicleV25HQ7B  (HQ-7B)
+  China CC slot 11 = Command_ConstructChinaVehicleV25HQ7BRadar -> ChinaVehicleV25HQ7BRadar  (HQ-7B Radar)
+  China CC slot 12 = Command_ConstructChinaVehicleV25YJ62A -> ChinaVehicleV25YJ62A  (YJ-62A)
+  China CC slot 13 = Command_ConstructChinaVehicleV25CJ10 -> ChinaVehicleV25CJ10  (CJ-10)
+  China CC slot 14 = Command_ConstructChinaVehicleV25WS3 -> ChinaVehicleV25WS3  (WS-3)
+
+Identity notes
+- WS-3 is ChinaTanksy400rocket / SDCHWS2 / WS3TB, not ChinaTankWS3 (PHL-03).
+- CJ-10 is ChinaTankYJ62 / SDCJ10 / CJ10TB, not ChinaYJ62A.
+- HT-233 is ChinaVehicleListeningOutpost / SDHT233, unique vs SS2 ChinaVehicleHT233.
+- HQ-9 is ChinaHQ9 / SDCHH9, unique vs SS2 ChinaVehicleHQ9.
+- FK-2000/AFT-10/HQ-11 come from V25 China Supply Center, not a substitute WF unit.
+
+SHA-256 CommandSet.ini               c51b716e0554f56583860668333a2f7090ddb53890f9b33f505cb2a04c43ff3f
+SHA-256 CommandButton.ini            679203edc650ad56e782529c1ba5d254eaf9d01a9139e538491df39b822ec947
+SHA-256 MappedImage                  7c13929e2ff68ceee03829d57e9fda99b371d622e8cc11619dd04b17d04151ed
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaV25CC12_Weapons.ini 68fb19663071dc304cb6f16fe93c9cef54f80fff6bc911d98e36ee14103f3818
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25FK2000.ini 55afb75b808555e30931bfd9834da4e5c9a8a8c37fd6f4b8f2a7c756f456cb77
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25AFT10.ini 5610d2b7072240db4b18c58a638b65e6afcb635d11759708207c93403ae85b1d
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HQ11.ini bad7afa54c374e0cc294a42ad3c429f3022910c23951f2fa1e49fb13fbc0adb4
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25LD2000.ini 1adbe9593f1fcca29307805ff732c613a5c2433cac3512f0578a9e406419e5f2
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HQ9.ini a6b2a12c2fd6c42a4d89eb8430f507728a663ae5392b9eb003c5dc96502d0698
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HT233.ini 40cf903448f4e5914859b34a8a3fb34dc072ebacd32f380b3954e8e62cce1155
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HQ16.ini 22c18011a4e07afb54f542b2e7e1817a7ad54a511fc4af6fb8234889bc6fe41a
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HQ7B.ini 5eb171f206454404ec0bbf3d13a0e1c5bdc89ec838b8b11ba65607c633ef544d
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25HQ7BRadar.ini 24f44d10bb74c79ed08f204a0dcb577363eea5d98cc47ab99ebaf43fab23e404
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25YJ62A.ini 4184c381d60cee957ea77aaaa69dbdc87f368b04ceebb82b6530402ae577daef
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25CJ10.ini 036c4c9a95d68425ff2c2a2abd5c67a23c8be88f96fcb032eb54d37a435f7c2c
+SHA-256 Data/INI/Object/Specter/PLA/V25CommandCenter/ChinaVehicleV25WS3.ini 7073c79f0ccba4b814f0696335e92d2ac11cd8d05ee16b37459b0bf44c01ae45
+SHA-256 Art/W3D/FK2000.W3D                           3820f7447cbace39c2d9d8b7abd4a50a53b6813d9ab8a0d5c4476e2fe2c994f2
+SHA-256 Art/W3D/CHAFT10.W3D                          08181a593c5c1ad638d848cde835d5bd2f3a743ac0b8a0e57b1620a3a1b656ca
+SHA-256 Art/W3D/HQ11.W3D                             2ca0674e275c28ca0b593d623ffa4d75a82312de01d0f18f2461c5639c4f645a
+SHA-256 Art/W3D/SDLD2000.W3D                         3ad4436fa2b5c53adb6943574ab933e72c996352cfba25ecca0e2497ad3d467e
+SHA-256 Art/W3D/SDCHH9.W3D                           7624fc8f8d27dd89afe73fdbc874b50a7b9082f73131fa4eefc82cca63e7d551
+SHA-256 Art/W3D/SDHT233.W3D                          ea89d46f765ff562e6a3a366d07f979b72fd91e43dc4726307a2665624abd2cf
+SHA-256 Art/W3D/SDHQ16.W3D                           2e8d7b91d1c5012823de85db50881dd69c4b34667478048d70073a134121b561
+SHA-256 Art/W3D/SDHQ7.W3D                            01af2a09a470371efca5e42e4b20493fd43e8bbe68201bd59e3a21f5850f209e
+SHA-256 Art/W3D/HQ7RD.W3D                            2f340bef9a0487c040817eaaa5907d41eecd4dfadb6b1d076a39b89472d06d7d
+SHA-256 Art/W3D/SDYJ62A.W3D                          d688618a592763822741cbb277a327b44daf2d3d518cb143515dd4d65452f170
+SHA-256 Art/W3D/SDCJ10.W3D                           4918cd887c7cf51ae61e95e76e7f0fe263c5442925a714e151ad4d67d413850f
+SHA-256 Art/W3D/SDCHWS2.W3D                          eba0b6e9422ed5ff40ef3710c8e790c568a83810d192b2c34676dde79dbc45a7
+SHA-256 Art/Textures/FK2000TB.tga                    faca38d8093b88634f732b6b9971c9f4fdf7243f568138cd9fc2abcb55984508
+SHA-256 Art/Textures/AFT10TB.tga                     7d92968287f48e31376def3f095e46f2837875d43f24215b5690034aaddc25a5
+SHA-256 Art/Textures/CHHQ11TB.tga                    77070178fcaa9ffd7a47a12ed884db8ea99146f27d8fa4f5a82772072629553e
+SHA-256 Art/Textures/LD2000TB.tga                    001290fd3e68d07487699e51b8badd9f24fd5930929d5c674e6ddf0ff0f29826
+SHA-256 Art/Textures/HQ9TB.tga                       fd6be61315c89d11ebfa32b3b65ded22ae6c91bbd49c0de839d2333a80badb72
+SHA-256 Art/Textures/ZZM88.tga                       cd2d34ba25db8a75df9afdbd80c2d450446c4c71eaab080337fd7dcd8a2ec24c
+SHA-256 Art/Textures/HQ16TB.tga                      a976b19a1076f4158001f2ad80b3a0e0b49f625c714865905b590f07c27d86e9
+SHA-256 Art/Textures/HQ7BTB.tga                      947f75e995d9e8d8e124a6f945417b990764d1093c0f1c7379492f622bf82822
+SHA-256 Art/Textures/HQ7BRD.tga                      76c42892d805897146120e021ab7c8a613b5cb6f83dbab9e2e584f1f1d25652b
+SHA-256 Art/Textures/YJ62ATB.tga                     102245f10adce5119b02d8e2ade7417a48c30166a5c838cf594a8cae0f4ee0a5
+SHA-256 Art/Textures/CJ10TB.tga                      2f2444184eba8c6d582c918867883944ad185d5adc0b6734f7a8792dd642b41e
+SHA-256 Art/Textures/WS3TB.tga                       0a96e5d1985f0a370e4f043881d22cf823d3860cc10eaa5c3d20bd6d82606b00
+SHA-256 ZIP                          6b3529ff3931eef04f8f9bbad42672558c1641ab1dc042d937df0f4ae1b3f627
+ZIP patch/Release/SPECTER_SS2_CHINA_V25_CC12/SPECTER_SS2_CHINA_V25_CC12.zip 12420741 members=62
+26-country tunnel loaders preserved. America CC unchanged. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

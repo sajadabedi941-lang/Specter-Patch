@@ -1,0 +1,111 @@
+SS2 Russia V25 Command Center + independent War Factory 2 pack (Loose Data, no BIG)
+Live Russia CC           RussiaCommandCenter / RussiaCommandCenterCommandSet
+Merge base               North Korea V25 CC9 CS/CB (USA + China + Iran + France + England + NK + loaders)
+Russia CC keeps          1 Dozer, 2 TorM2M, 3 9K317, 4 55K6E, 5 PantsirS1M, 6 S400, 7 S500, 8 Dozerm, 10 BTR82A, 14 Sell
+Empty used               9, 11, 12, 13, 15, 16, 17, 18
+New loader               RussiaVehicleDozerm
+Tunnel                   RussiaPowerStationm / Command_ConstructRussiaPowerStationm (dozerm slot 1, unchanged)
+Old War Factory          RussiaWarFactory / Command_ConstructRussiaWarFactory (old dozer slot 9, unchanged)
+New War Factory          RussiaWarFactoryV25 / Command_ConstructRussiaWarFactoryV25 (dozerm slot 2)
+New WF CommandSet        RussiaWarFactoryV25CommandSet
+New WF model             StructureHamVhe (V25 RussiaWarFactory3)
+
+  CC  slot  9 = Command_ConstructRussiaVehicleV25S350 -> RussiaVehicleV25S350  (S-350 Vityaz)  [V25 Nuke_Command_ConstructRussiaS350 / RussiaS350]
+  CC  slot 11 = Command_ConstructRussiaVehicleV2550N6A -> RussiaVehicleV2550N6A  (50N6A Radar)  [V25 Nuke_Command_ConstructRussia50N6A / Russia50N6A]
+  CC  slot 12 = Command_ConstructRussiaVehicleV25S300V1 -> RussiaVehicleV25S300V1  (S-300V1)  [V25 Nuke_Command_ConstructRussiaS300VM / RussiaS300VM]
+  CC  slot 13 = Command_ConstructRussiaVehicleV259S32 -> RussiaVehicleV259S32  (Russia 9S32 Radar)  [V25 Nuke_Command_ConstructRussia9S32 / Russia9S32]
+  CC  slot 15 = Command_ConstructRussiaVehicleV259S119M1 -> RussiaVehicleV259S119M1  (9S119M1)  [V25 Command_ConstructRussia9S18M1 / Russia9S18M1]
+  CC  slot 16 = Command_ConstructRussiaVehicleV25S400 -> RussiaVehicleV25S400  (S-400 Triumph)  [V25 Nuke_Command_ConstructRussiaS400 / russias400]
+  CC  slot 17 = Command_ConstructRussiaVehicleV2540V6MD -> RussiaVehicleV2540V6MD  (40V6MD Radar)  [V25 Nuke_Command_ConstructRussianRadar / RussianRadar]
+  CC  slot 18 = Command_ConstructRussiaVehicleV25S500 -> RussiaVehicleV25S500  (S-500 Prometey)  [V25 Nuke_Command_ConstructRussiaS500 / RussiaS500]
+  WF2 slot  1 = Command_ConstructRussiaVehicleV25Tunguska -> RussiaVehicleV25Tunguska  (Tunguska)  [V25 Command_ConstructUkrania2K22 / Ukrania2K22]
+  WF2 slot  2 = Command_ConstructRussiaVehicleV25BalE -> RussiaVehicleV25BalE  (Bal-E)  [V25 Nuke_Command_ConstructRussiaCoastal / RussiaCoastal]
+  WF2 slot  3 = Command_ConstructRussiaVehicleV259K33 -> RussiaVehicleV259K33  (9K33 Osa)  [V25 RU9K33 / RussiaTankT64]
+  WF2 slot  4 = Command_ConstructRussiaVehicleV2530N6E -> RussiaVehicleV2530N6E  (30N6E Flap Lid)  [V25 Nuke_Command_Construct30N6EFLAPLID / 30N6EFLAPLID]
+  WF2 slot  5 = Command_ConstructRussiaVehicleV259K31 -> RussiaVehicleV259K31  (9K31 Strela-1)  [V25 Command_ConstructRussia9K31 / Russia9K31]
+  WF2 slot  6 = Command_ConstructRussiaVehicleV25Shilka -> RussiaVehicleV25Shilka  (Shilka)  [V25 Command_ConstructRussiaShilka / RussiaShilka]
+  WF2 slot  7 = Command_ConstructRussiaVehicleV259A52 -> RussiaVehicleV259A52  (9A52-4 Tornado)  [V25 Nuke_Command_ConstructRussiaUragan / RussiaUragan]
+  WF2 slot  8 = Command_ConstructRussiaVehicleV25BukM3 -> RussiaVehicleV25BukM3  (Russia Buk-M3)  [V25 Nuke_Command_ConstructRussiaBukMM3 / RussiaBukMM3]
+  WF2 slot  9 = Command_ConstructRussiaVehicleV25Strela10 -> RussiaVehicleV25Strela10  (9K35 Strela-10)  [V25 Nuke_Command_ConstructRussiaMTLB / RussiaMTLB]
+  WF2 slot 10 = Command_ConstructRussiaVehicleV25Bastion -> RussiaVehicleV25Bastion  (K-300P Bastion-P)  [V25 Nuke_Command_ConstructRussiaBastion / RussiaBastion]
+
+Identity notes
+- S-400/S-500 V25 ports use RussiaVehicleV25S400/S500, not live SS2 RussiaVehicleS400/S500.
+- 9S119M1 maps to V25 Russia9S18M1 / UR9S18M1 (Buk Snow Drift); V25 has no 9S119M1 object.
+- Tunguska is V25 Ukrania2K22 / INTGSK, the only Tunguska 2K22 in V25.
+- 9K33 Osa is ported once from V25 RussiaTankT64 / RU9K33.
+- Strela-10 is V25 RussiaMTLB / RUMTLB, unique object vs NorthKoreaVehicleV25Strela10.
+- Independent WF2 does not replace RussiaWarFactory or RussiaWarFactory_T.
+
+SHA-256 CommandSet.ini               f6f4c05926c41f5ce4b36d222b74c3783bcfb0b87884748354f19814781fe7ff
+SHA-256 CommandButton.ini            4302e2206ec45529e0bf6b6283416669e16de886989f7429125cf8243cf4c591
+SHA-256 MappedImage                  a1aed970ae50af876de9a7e0189a79ff2cc7e84d696da2029f510845bb53e731
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaV25CCWF_Weapons.ini 541cb5d944d7cf2e366a3656050f3ce2df761e3bf367f5a7039591826c9f5de8
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25S350.ini 7060703caaa430b3fa9b70afaa92130d5cd0ff9ae52872e14a4b1e4c16f17237
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV2550N6A.ini b965c4abd2132c52cc139b2a28f210482e7ab2961a2cbb243361b49bd4ae4cfa
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25S300V1.ini b40c02ab2108ff7a383d1f7498ae6654c9283eb7bcb32c2eb6a47ac74a786863
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV259S32.ini 0bdf690f30017d7fd0e9f81476676cc7a816d51afae123ad47da872d1ec0b3ba
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV259S119M1.ini 99271af6878013d90911d194275b1099856dc87bd523708e929bc67a55585d81
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25S400.ini 1928ea9f50f86345cbca016ed4839ebc57669dce46831a8d73f954fa3df87a51
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV2540V6MD.ini 68733b99da26e9f52bed7d99e7db646d93c76fa57eb61c443c5c334f5befd23a
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25S500.ini 614cc0a36947d143025398d9dccc4c70d0812996863e6df54996d59f1899400e
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25Tunguska.ini 526841c0778bce7671a1b54119b5528d1fcf585d43a1df227d4a255549cfc2af
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25BalE.ini e148b0780e60fc7095be64c772ed796922f39e24ca80ccfac87107e0191696e8
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV259K33.ini e2526f12ebe8839f7ca3c96ff4074b5ddaa78d389bd820c46c1e1a769c5d5fa6
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV2530N6E.ini b16b6e39f3a61630f305771e224beb9c382adc0585f8de97723b833bb96dd187
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV259K31.ini 2ee796c4e15aa6ac3bfdd84f31f7f78740cabd28068f4cdbfd22bb4eac74c690
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25Shilka.ini eb7cfb79906ee6d6df0cdf7ea6709c368efb43483d178364c19254508b0626b0
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV259A52.ini 1d04a999eca469d68220f1283ce112bbd6958541e17f6df117f847ed69ae614e
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25BukM3.ini 41f5b42870da5a9e2e097655b11b5789265a1017992b46142c210cfd05e9fd6a
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25Strela10.ini 2add363ef7e568d91272d6d336898f074059281e513ccea626ac6e81413c639d
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaVehicleV25Bastion.ini b0fe2207370fc7a834dd09ffcac35cc9fe75426a55bd9797efdf9fdeed183354
+SHA-256 Data/INI/Object/Specter/Armed Forces Of Russian Federation/V25CommandCenter/RussiaWarFactoryV25.ini a69152f78b9fcb60d97ff66625b0d8220a9d5801ba89baf4c6b6c126d5920363
+SHA-256 Art/W3D/RUS350.W3D                           77279701373e675913e49dd1062c4bbe6d4f124054344ccdcfcad0afbde42135
+SHA-256 Art/W3D/RUS350RD.W3D                         b51d4e87d25597db648d8f3d3722e1d191cacb715c11f57f4affe489d7539f54
+SHA-256 Art/W3D/URS300V.W3D                          7c588a3b6ccff702058051ebae253eb9ada3f34440fe86c81b291018735433cb
+SHA-256 Art/W3D/URS300Vw.W3D                         5785f75b4b1e20d1255208f3c0ef39e71ef2521ce906c15cf5c41f8bcc7ddd46
+SHA-256 Art/W3D/UR9S32.W3D                           49e8123c3d787e339a0e9cef61cf1efbb1964fcb4b63fdeae9f2624e0263d3a0
+SHA-256 Art/W3D/UR9S32w.W3D                          7c658fbc47a1738295efeec09b37a5cffc7dadf806bfe447b19eb3a63df96e47
+SHA-256 Art/W3D/UR9S18M1.W3D                         f64c7da171b1031e73fd9ebbf0f3c1cc5968b509ada38338af55fc901632de1c
+SHA-256 Art/W3D/UR9S18M1w.W3D                        80768980553739fe010b46fcdb6449ee3b888ab36ee957ec6f27c623cf9574a9
+SHA-256 Art/W3D/RUS400.W3D                           80aee48061ffd0954c1b981823c7570aa978a00a14be376769fa162ed78f7f2c
+SHA-256 Art/W3D/SD40V6MD.W3D                         05d1bb7b0e6631584b26fbe0d2832ad11f0073b67e94a2e3e32220a96114be99
+SHA-256 Art/W3D/RUS500.W3D                           478b5f852c34b3a0dc85fcff6f0bca13569cac7644568ac6f7f7e7ff52aac35a
+SHA-256 Art/W3D/INTGSK.W3D                           13822266324efe750ba991a0bdb375e19acc783c9d631696c45ecfbed376c141
+SHA-256 Art/W3D/INTGSKw.W3D                          8ff24be257dda65c1690e3ddd03f8c5d621525c9b91e4ff435f64264c0172ebe
+SHA-256 Art/W3D/RUBALE.W3D                           3909ba4449c75321c6529f9369d68d1fc76b6b70ca30e383447af3de48c5d80a
+SHA-256 Art/W3D/RU9K33.W3D                           d421b80717122763fa72dbce181ab0855d4e54673922f84a8bf47b6b89a87b07
+SHA-256 Art/W3D/30N6EFL.W3D                          46f17171bfb0a5e52d0c320f0906e84d10b4c96d0ec1ccc5590d7522f47a6a22
+SHA-256 Art/W3D/UR9K31.W3D                           1bff6189f22b86df09606a59c4b744c9514b7d6b9033505492303501d4eeb466
+SHA-256 Art/W3D/NKZSU23.W3D                          21f0359166c70138ff763014f4e6154d1a04877e610e6c2a39c6457c6d48be90
+SHA-256 Art/W3D/NKZSU23w.W3D                         9387adbc3bf0f6ad204fa7bba661ff9cabad0c9885ad71209ae8b1d15f5bcf61
+SHA-256 Art/W3D/RU9A52.W3D                           7a4de8e0f54a07ac648e8ba349959bd929765af8abc046a2041010c5c23eb398
+SHA-256 Art/W3D/BUKMM3.W3D                           6ade79faf77c280582acd57bcf7156c27f29708de0732fb7c1a11573ac22c404
+SHA-256 Art/W3D/BUKMM3w.W3D                          8d049519fd0cb00d52c0436c1e06c8778fafbf554611a969227beec416a9a773
+SHA-256 Art/W3D/RUMTLB.W3D                           8982a592a877c6e90a5bfd4cb555a41ac3532875252b25f88169efbda2444dc5
+SHA-256 Art/W3D/RUMTLBw.W3D                          f7370b3f096ff97ff62eccef2ee7758193fc09a39aee2874c613ea97166ae929
+SHA-256 Art/W3D/RUK300.W3D                           f5858d864d154a090df9107e3b4ae1423226e5e3039bf9c7e4d8765b75fb3811
+SHA-256 Art/W3D/StructureHamVhe.W3D                  b6635be4469de1dca2c4b9f50d505a7ab9340ee9f3c80e6fcbee82fb054d7cc6
+SHA-256 Art/Textures/30N6EFLTB.tga                   538921e65dc76022c93cc4290f6cc2c928d953204315f4dabb3f83edd5f48c7e
+SHA-256 Art/Textures/40V6MDTB.tga                    cc3242bb3135b5a635ba386e51c620ec22280624c789226b4d844d177d1995f2
+SHA-256 Art/Textures/50N6ATB.tga                     dbe30817a36d56f1098c07c01b710b23406435652efab08526ee7a6328288c11
+SHA-256 Art/Textures/9A52TB.tga                      c67aff7d59e2af8105e875298470de9922576b0b13e15a1bac20ab18cf920977
+SHA-256 Art/Textures/9K33TB.tga                      70753d0ca463d2ef717e33bd379789968f098a9cf7ad06fd50fb66f212e04716
+SHA-256 Art/Textures/9S32TB.tga                      b036f20241a12dd977fc109b149f55491c650f9e5ed2d5fea6c08724c7dad8c8
+SHA-256 Art/Textures/BALETB.tga                      f4a9dcfb2c12c7e227c88244472ef56037efe98dee2b51a0b92ab79de6bd34b5
+SHA-256 Art/Textures/Bukmm3TB.tga                    11b14bbe130fa501e084994d93c9239d9f5d87fb272ffd3bef9602106f37bf32
+SHA-256 Art/Textures/RU9S18M1TB.tga                  dc2e614cd4f0dd57a553a7ae66819f640a461d1695af91443a8464fc5588d63e
+SHA-256 Art/Textures/RUK300TB.tga                    3ce571d0eb70f944ed7b8faa30af6718375b08d847fe85a11e46273b4fb103b2
+SHA-256 Art/Textures/RUS300VMTB.tga                  5bfac5cd09365f662e38ac4e00ee1c47edea583e214710aae58650c2ab61f067
+SHA-256 Art/Textures/RUS350TB.tga                    a240b15fb50b68fbe9a9da4b23dd5858a853356c1eb0b039acdebcb970213cc4
+SHA-256 Art/Textures/RUS400TB.tga                    381857d964d30ffe07b391d585286b7b79344fb6ec5d436620e179d3fe1c78f4
+SHA-256 Art/Textures/RUS500TB.tga                    c66998203b4203375ea35a6306d078283e3c3a0c0b95158f8ea5e064b0d2f71c
+SHA-256 Art/Textures/RUWARFCIII.tga                  bc006c37914b03b466b8d6a4d70516c92a49a52c334daffed1b156ff449a6dfd
+SHA-256 Art/Textures/RUZSU4TB.tga                    55564c49ba5e905b88f68c48f98d97248158184ddc0aac6075a52b4b9222a822
+SHA-256 Art/Textures/RY9K31TB.tga                    e289c5c8c0f6c7bc5076978c8a9f3c309736b7e7ae54182431268d40d2894873
+SHA-256 Art/Textures/URTGSKTB.tga                    706f401707d5ca74d76a2def79f76b1c14ca7794df8c6248ebead83eb0fd2e53
+SHA-256 ZIP                          3fd0a13773b353f33b8814ae6f9fa3dc04fb0bceefb0622440f60ef655d255e0
+ZIP patch/Release/SPECTER_SS2_RUSSIA_V25_CC_WF/SPECTER_SS2_RUSSIA_V25_CC_WF.zip 24539077 members=126
+Copy patch/Release/SPECTER_SS2_RUSSIA_V25_CC_WF.zip
+26-country tunnel loaders preserved. America, China, Iran, France, England, NK CC unchanged.
+Old Russia War Factory unchanged. Vehicles have no Shadow line. In-game test was not run.

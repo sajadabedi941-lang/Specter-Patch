@@ -1,0 +1,67 @@
+SS2 North Korea V25 nine-system Command Center pack (Loose Data, no BIG)
+Live NK CC               NorthKorea_CommandCenter / NorthKorea_CommandCenterCommandSet
+Merge base               England V25 CC8 CS/CB (America + China + Iran + France + England + loaders)
+NK CC keeps              1 VT72B, 4 Dozerm, 7 Hwasong15BB, 13 Rally, 14 Sell
+Empty remaining          15, 16, 17, 18
+
+  NK CC slot  2 = Command_ConstructNorthKoreaVehicleV25Strela10 -> NorthKoreaVehicleV25Strela10  (9K35 Strela-10)  [V25 Command_ConstructNkoreaStrella10 / NkoreaStrella10]
+  NK CC slot  3 = Command_ConstructNorthKoreaVehicleV251S91 -> NorthKoreaVehicleV251S91  (1S91 Radar)  [V25 Infa_Command_ConstructChinaVehicleListeningOutpost / Infa_ChinaVehicleListeningOutpost]
+  NK CC slot  5 = Command_ConstructNorthKoreaVehicleV25SAM6 -> NorthKoreaVehicleV25SAM6  (SAM-6)  [V25 Infa_Command_ConstructNKTSA6 / NKoreaSA6]
+  NK CC slot  6 = Command_ConstructNorthKoreaVehicleV25Shilka -> NorthKoreaVehicleV25Shilka  (Shilka)  [V25 Infa_Command_ConstructChinaTankGattling / Infa_ChinaTankGattling]
+  NK CC slot  8 = Command_ConstructNorthKoreaVehicleV25VTT323 -> NorthKoreaVehicleV25VTT323  (VTT-323)  [V25 Command_ConstructNkoreaVTTMC / NkoreaVTTMC]
+  NK CC slot  9 = Command_ConstructNorthKoreaVehicleV25KN25 -> NorthKoreaVehicleV25KN25  (KN-25)  [V25 Command_ConstructNorthKoreaKN25 / NorthKoreaKN25]
+  NK CC slot 10 = Command_ConstructNorthKoreaVehicleV25KN400 -> NorthKoreaVehicleV25KN400  (KN-400)  [V25 Command_ConstructNorthKoreaKN400 / NorthKoreaKN400]
+  NK CC slot 11 = Command_ConstructNorthKoreaVehicleV25M1973 -> NorthKoreaVehicleV25M1973  (M1973)  [V25 Infa_Command_ConstructChinaTankECM / Infa_ChinaTankECM]
+  NK CC slot 12 = Command_ConstructNorthKoreaVehicleV25BM24 -> NorthKoreaVehicleV25BM24  (BM-24)  [V25 Command_ConstructNkoreaBM24 / NkoreaBM24]
+
+Identity notes
+- Strela-10 is NkoreaStrella10 / RUMTLB, not a substitute SAM.
+- 1S91 is Infa_ChinaVehicleListeningOutpost / 2K12RD (NK Infantry-General slot).
+- SAM-6 is NKoreaSA6 / IR2K12 with NK2K12TB, unique from IranVehicleV25SAM6.
+- Shilka is Infa_ChinaTankGattling / NKZSU23.
+- VTT-323 is NkoreaVTTMC / NKVTTMC, not SS2 NorthKorea_VTT323.
+- KN-25 is NorthKoreaKN25 / NKKN25.
+- KN-400 is NorthKoreaKN400 / NKKN400; rider-deploy omitted.
+- M1973 is Infa_ChinaTankECM / SDM1973. V25 cameo TGA NKM1973TB.tga is absent from the V25 Art archive.
+- BM-24 is NkoreaBM24 / NKBM24.
+
+SHA-256 CommandSet.ini               050b7de53cb2ed2b4be06c70351da53c96abba4390346f8d836d4dada591f156
+SHA-256 CommandButton.ini            80a08e2b0cceb063a5706842eaab20a7904e83ac3b48b53f53bb6b1d35225e66
+SHA-256 MappedImage                  57288a02cce3a4c600fce7b19033fe519e162f5a5c42ee25265a2ecb1d9bd318
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaV25CC9_Weapons.ini        ba2d5d0b3492ae63bd573709a3a1cece1178bdd48638a9f144d4cdb2576439bb
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25Strela10.ini    991f2fe99fa4d824c2dcc7072360c539b13890a88fcfc36108307ce1a5f0f258
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV251S91.ini        409efe57f4bf85a641dfd9c2af7012f3fcb461bdfbb27d932ea52d438da88015
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25SAM6.ini        99f2339b06c846312f6ab4fb8f3e37801172fd1dd3441842da264a8da17dd6cb
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25Shilka.ini      af4edda5cc70fa2a7ab7ee33d7f21025b5d88d9737174308a0c44ec89231399d
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25VTT323.ini      09cbd97234982494d1472b91deadd18184595305fdd215ab34bbd7600cfa677b
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25KN25.ini        a2458da1a664e8bd2055939121a689ba77676915488b2ee295c7bc343e8efcc7
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25KN400.ini       265e1254b728ab57534159ed5b7e27f901792991971a4fec276dec69dab583de
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25M1973.ini       ebf25e6511beb2f6a11267a4d9b198c9aca1babd12de8741c1d00bd37fbb0c3f
+SHA-256 Data/INI/Object/Specter/North Korea/V25CommandCenter/NorthKoreaVehicleV25BM24.ini        d501b88eb057652b3c1c6da0cf9b1540c6239f3621ee7a61fa7a0af095c2933f
+SHA-256 Art/W3D/2K12RD.W3D                           432c5accab430ac3fc59140a23d409201806f2702a45875d0a86ba194d9692b0
+SHA-256 Art/W3D/2K12RDw.W3D                          6806ff11356a5ba8732b51258d0e36ae26119e7878a2f2e26a9506e24fc76fe1
+SHA-256 Art/W3D/IR2K12.W3D                           33711700a6d0ef6060fe511bc01dbf14aae5ca38162324a0d8fd258c025038e5
+SHA-256 Art/W3D/IR2K12w.W3D                          d3c6fd954b53bfb6d39d9cd6c34b617b15001e8873dd14838169dc6cb783b0fe
+SHA-256 Art/W3D/NKBM24.W3D                           5f691ea62dadaef73560fefca4dac77be26bddcc5b1185614a69124771c81801
+SHA-256 Art/W3D/NKKN25.W3D                           c98819baa0cce57ab5128d07ec255759de6f519d90063625858417b2689cbc8d
+SHA-256 Art/W3D/NKKN400.W3D                          e9a956212a0207c3b23b7d3fa8419dfdb73c7ff141346e581effb0136b609e6e
+SHA-256 Art/W3D/NKVTTMC.W3D                          9866c8a93b9dce04ab2b9555248613296e2d5dd475899b7a81663c071af76f47
+SHA-256 Art/W3D/NKVTTMCw.W3D                         9f482bf51bf874b075b11645920c81cea703ca9b9bc526e20c937319dc0e97d1
+SHA-256 Art/W3D/NKZSU23.W3D                          21f0359166c70138ff763014f4e6154d1a04877e610e6c2a39c6457c6d48be90
+SHA-256 Art/W3D/NKZSU23w.W3D                         9387adbc3bf0f6ad204fa7bba661ff9cabad0c9885ad71209ae8b1d15f5bcf61
+SHA-256 Art/W3D/RUMTLB.W3D                           8982a592a877c6e90a5bfd4cb555a41ac3532875252b25f88169efbda2444dc5
+SHA-256 Art/W3D/RUMTLBw.W3D                          f7370b3f096ff97ff62eccef2ee7758193fc09a39aee2874c613ea97166ae929
+SHA-256 Art/W3D/SDM1973.W3D                          bdf877f658d5cb735fd757b95897d8cc414d50cc04b0b450916c73d4bddd83b3
+SHA-256 Art/W3D/SDM1973w.W3D                         3310d7f07d3337aa2ffd514fca817ed5d5c9a46dd523253065828f299da83f09
+SHA-256 Art/Textures/2K12RDTB.tga                    ae97428a3668b54752372f15a39483e3afe1c16562f79150fd6ca49ddf15814e
+SHA-256 Art/Textures/KN25TB.tga                      cbfed03e2bfca785e5a205fda75fb5fdd0a393a59bcbfd546050e30723ccf855
+SHA-256 Art/Textures/KN400TB.tga                     fbcee3a2e38ce08470a62f3e2b8779242b0092fd42029d8cd193a82f31cde8d8
+SHA-256 Art/Textures/NK2K12TB.tga                    ac2bd874e9a0a73f732b34702052327219c55bbcd38eed1d5ba34b0bcb022cb3
+SHA-256 Art/Textures/NKBM24TB.tga                    5b6a0361302f08954d57544298f1de972c0ace1db62fd0b7b17e6e6438c268f4
+SHA-256 Art/Textures/Shilkatb.tga                    f87cbc2395d5ac01412a202701f385fcd5558403706df67fb87bbf61b261761b
+SHA-256 Art/Textures/VTTMCTB.tga                     814c16a43110c1a661b4c516b53f75834d07513f9a5093cf4f8d6915938c0972
+SHA-256 ZIP                          714716e2dc92afb7d7674c579fde17db5af9d3f2561352d8127733dd2ec343eb
+ZIP patch/Release/SPECTER_SS2_NORTHKOREA_V25_CC9/SPECTER_SS2_NORTHKOREA_V25_CC9.zip 5360151 members=58
+Copy patch/Release/SPECTER_SS2_NORTHKOREA_V25_CC9.zip
+26-country tunnel loaders preserved. America, China, Iran, France, England CC unchanged. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

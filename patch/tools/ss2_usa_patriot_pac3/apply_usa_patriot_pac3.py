@@ -28,23 +28,28 @@ SLOT = 10
 BTN = "Command_ConstructAmericaVehiclePatriotPAC3"
 OBJ = "AmericaVehiclePatriotPAC3"
 OBJ_REL = "Object/Specter/United States Of America/AirDefense/AmericaVehiclePatriotPAC3.ini"
-V25_MODEL = "USPAC3"
-V25_MISSING = [
-    "USPAC3.W3D",
-    "USPAC3.w3d",
-    "Art/W3D/USPAC3.W3D",
-    "Data/Art/W3D/USPAC3.W3D",
-    "AmPatriotVeh.tga",
-    "Art/Textures/AmPatriotVeh.tga",
-    "Data/Art/Textures/AmPatriotVeh.tga",
+MAP_REL = "MappedImages/HandCreated/AmericaPatriotPAC3_Images.ini"
+SRC_MAP = Path(__file__).resolve().parent / "AmericaPatriotPAC3_Images.ini"
+ART_SRC = Path(__file__).resolve().parent / "art"
+ART_FILES = [
+    ("W3D/USPAC3.W3D", "Art/W3D/USPAC3.W3D"),
+    ("Textures/SDUSPAC3.dds", "Art/Textures/SDUSPAC3.dds"),
+    ("Textures/SDPAC302.dds", "Art/Textures/SDPAC302.dds"),
+    ("Textures/SDNSM02.dds", "Art/Textures/SDNSM02.dds"),
+    ("Textures/SDNSM04.dds", "Art/Textures/SDNSM04.dds"),
+    ("Textures/SDUSCNDS.dds", "Art/Textures/SDUSCNDS.dds"),
+    ("Textures/AmPatriotVeh.tga", "Art/Textures/AmPatriotVeh.tga"),
 ]
+V25_MODEL = "USPAC3"
+W3D_REQUIRED = [b"WHEEL01", b"WHEEL06", b"TURRET01", b"WEAPONA01", b"WEAPONA16", b"CAB", b"TRAILER"]
+W3D_FORBIDDEN = [b"WHEEL07", b"WHEEL08", b"TURRETEL"]
 
 BTN_BLOCK = """
 CommandButton Command_ConstructAmericaVehiclePatriotPAC3
   Command            = UNIT_BUILD
   Object             = AmericaVehiclePatriotPAC3
   TextLabel          = CONTROLBAR:ConstructAmerica_MIM104F
-  ButtonImage        = us_mim104e
+  ButtonImage        = AmPatriotVeh
   ButtonBorderType   = BUILD
   DescriptLabel      = CONTROLBAR:ToolTipUSAAmerica_MIM104F
 End
@@ -99,23 +104,14 @@ def unique_count(names: list[str], label: str) -> None:
         raise SystemExit(f"duplicate {label}: {dups}")
 
 
-def v25_art_present() -> list[str]:
-    found: list[str] = []
-    needles = {"uspac3.w3d", "ampatriotveh.tga"}
-    candidates = [
-        Path("/tmp/v25/Generals Silent Death V25/Art/W3D/USPAC3.W3D"),
-        Path("/tmp/v25/Generals Silent Death V25/Data/Art/W3D/USPAC3.W3D"),
-        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Art/W3D/USPAC3.W3D"),
-        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Data/Art/W3D/USPAC3.W3D"),
-        Path("patch/Art/W3D/USPAC3.W3D"),
-        Path("/tmp/v25/Generals Silent Death V25/Art/Textures/AmPatriotVeh.tga"),
-        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Art/Textures/AmPatriotVeh.tga"),
-        Path("patch/Art/Textures/AmPatriotVeh.tga"),
-    ]
-    for p in candidates:
-        if p.is_file() and p.name.lower() in needles:
-            found.append(str(p))
-    return found
+def verify_w3d(path: Path) -> None:
+    data = path.read_bytes().upper()
+    missing = [n.decode() for n in W3D_REQUIRED if n not in data]
+    extra = [n.decode() for n in W3D_FORBIDDEN if n in data]
+    if missing:
+        raise SystemExit(f"{path.name} missing bones {missing}")
+    if extra:
+        raise SystemExit(f"{path.name} has unexpected bones {extra}")
 
 
 def main() -> int:
@@ -252,10 +248,6 @@ def main() -> int:
         raise SystemExit("missing wheeled locomotor")
     if re.search(r"(?m)^\s*AttachToBoneInAnotherModule\s*=", obj_blocks[OBJ]):
         raise SystemExit("TracksDraw/AttachToBone is not valid with Generic8x8Locomotor")
-    if re.search(r"(?m)^\s*(LeftFrontTireBone|RightFrontTireBone)\s*=\s*TIRE09", obj_blocks[OBJ]):
-        raise SystemExit("second 2-bone wheel draw is not valid with Generic8x8Locomotor")
-    if re.search(r"(?m)^\s*Model\s*=\s*UsaPac3Car_w\b", obj_blocks[OBJ]):
-        raise SystemExit("second 2-bone wheel draw is not valid with Generic8x8Locomotor")
     if re.search(r"(?m)^\s*KindOf\s*=.*FS_BASE_DEFENSE", obj_blocks[OBJ]):
         raise SystemExit("FS_BASE_DEFENSE not allowed")
     if "CommandSet         = GLAVehicleRocketBuggyCommandSet" not in obj_blocks[OBJ]:
@@ -264,60 +256,90 @@ def main() -> int:
         raise SystemExit("THAAD object redefined")
     if re.search(r"(?m)^Object Iraq", obj_text):
         raise SystemExit("Iraq / #672 objects must not be in this file")
+    if "UsaPac3Car" in obj_blocks[OBJ] or "TIRE01" in obj_blocks[OBJ]:
+        raise SystemExit("SPECTER UsaPac3Car stand-in must not remain")
+    if not re.search(rf"(?m)^\s*Model\s*=\s*{V25_MODEL}\b", obj_blocks[OBJ]):
+        raise SystemExit("Object Draw must use Model USPAC3")
+    if re.search(r"(?m)^\s*TurretPitch\s*=", obj_blocks[OBJ]):
+        raise SystemExit("TurretPitch is invalid; USPAC3 has no TURRETEL")
+    if re.search(r"(?m)^\s*AllowsPitch\s*=\s*Yes", obj_blocks[OBJ]):
+        raise SystemExit("AllowsPitch must be No without TURRETEL")
+    if re.search(r"(?m)^\s*\S+TireBone\s*=\s*Wheel0[78]\b", obj_blocks[OBJ]):
+        raise SystemExit("Wheel07/Wheel08 must not be mapped")
+    for bone in ("Wheel01", "Wheel02", "Wheel03", "Wheel04", "Wheel05", "Wheel06"):
+        if bone not in obj_blocks[OBJ]:
+            raise SystemExit(f"missing wheel bone {bone}")
+    if "WeaponA" not in obj_blocks[OBJ] or "TURRET01" not in obj_blocks[OBJ]:
+        raise SystemExit("missing WeaponA prefix or TURRET01")
+    if "PAC3Weapon" in obj_text or "AIGUOZHEDAODAN" in obj_text:
+        raise SystemExit("V25 weapon/projectile must not replace SPECTER AA/ABM")
+    btn_image = re.search(r"(?m)^\s*ButtonImage\s*=\s*(\S+)", new_cb_blocks[BTN]).group(1)
+    if btn_image != "AmPatriotVeh":
+        raise SystemExit(f"button image is {btn_image}")
+    if "MappedImage AmPatriotVeh" not in SRC_MAP.read_text("latin1"):
+        raise SystemExit("MappedImage AmPatriotVeh missing")
 
-    art = v25_art_present()
-    appearance_note = (
-        "V25 appearance NOT applied. Real Patriot PAC-3 art is missing; "
-        "UsaPac3Car was not substituted in this rebuild. Object Draw is unchanged."
-        if not art
-        else f"V25 art found: {art}"
-    )
-    if art:
-        raise SystemExit(f"V25 art unexpectedly present; wire USPAC3 instead of leaving Object unchanged: {art}")
-    if re.search(rf"(?m)^\s*Model\s*=\s*{V25_MODEL}\b", obj_blocks[OBJ]):
-        raise SystemExit("Object claims USPAC3 but V25 W3D is not on disk")
+    art_copied: list[tuple[str, Path]] = []
+    for rel_src, rel_dst in ART_FILES:
+        src = ART_SRC / rel_src
+        if not src.is_file():
+            raise SystemExit(f"missing V25 art {src}")
+        dst = OUT_DIR / rel_dst
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+        art_copied.append((rel_dst, dst))
+    verify_w3d(OUT_DIR / "Art/W3D/USPAC3.W3D")
 
     out_ini = OUT_DIR / "Data" / "INI"
     (out_ini / Path(OBJ_REL).parent).mkdir(parents=True, exist_ok=True)
+    (out_ini / Path(MAP_REL).parent).mkdir(parents=True, exist_ok=True)
     (out_ini / "CommandSet.ini").write_bytes(crlf(new_cs))
     (out_ini / "CommandButton.ini").write_bytes(crlf(new_cb))
     (out_ini / OBJ_REL).write_bytes(crlf(obj_text if obj_text.endswith("\n") else obj_text + "\n"))
+    map_text = SRC_MAP.read_text("latin1").replace("\r\n", "\n")
+    (out_ini / MAP_REL).write_bytes(crlf(map_text if map_text.endswith("\n") else map_text + "\n"))
 
     zip_names = [
+        "Art/W3D/USPAC3.W3D",
+        "Art/Textures/AmPatriotVeh.tga",
+        "Art/Textures/SDNSM02.dds",
+        "Art/Textures/SDNSM04.dds",
+        "Art/Textures/SDPAC302.dds",
+        "Art/Textures/SDUSCNDS.dds",
+        "Art/Textures/SDUSPAC3.dds",
         "Data/INI/CommandButton.ini",
         "Data/INI/CommandSet.ini",
+        "Data/INI/" + MAP_REL,
         "Data/INI/" + OBJ_REL,
     ]
     zip_path = OUT_DIR / "SPECTER_SS2_USA_PATRIOT_PAC3.zip"
-    mapping = {
-        zip_names[0]: out_ini / "CommandButton.ini",
-        zip_names[1]: out_ini / "CommandSet.ini",
-        zip_names[2]: out_ini / OBJ_REL,
-    }
+    mapping = {name: OUT_DIR / name for name in zip_names}
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for name in zip_names:
             zf.write(mapping[name], name)
         if zf.namelist() != zip_names:
             raise SystemExit(zf.namelist())
 
+    art_sha = "\n".join(f"SHA-256 {name:40} {sha256(path)}" for name, path in art_copied)
     report = f"""SS2 America MIM-104F Patriot PAC-3 (Loose Data, no BIG)
 Source ControlBar        healthy tunnel-loader pack (PR #786)
+Appearance               V25 AmericaPATRIO Model USPAC3.W3D
 backup CommandSet.ini     {sha256(bak / 'CommandSet.ini')}
 backup CommandButton.ini  {sha256(bak / 'CommandButton.ini')}
 SHA-256 CommandSet.ini    {sha256(out_ini / 'CommandSet.ini')}
 SHA-256 CommandButton.ini {sha256(out_ini / 'CommandButton.ini')}
 SHA-256 Object INI        {sha256(out_ini / OBJ_REL)}
+SHA-256 MappedImage       {sha256(out_ini / MAP_REL)}
+{art_sha}
 SHA-256 ZIP               {sha256(zip_path)}
 ZIP {zip_path} {zip_path.stat().st_size} members={len(zip_names)}
 America CC slot {SLOT} = {BTN} -> {OBJ}
 America CC slot 4 loader kept. Slot 1 Dozer and slot 6 USAPAC3 kept.
 26-country tunnel loaders preserved. No duplicate CommandSet names.
 #672 Iraq radar not touched. US_THAAD/Turkey/GLA/Iran factory unchanged.
-{appearance_note}
-Missing V25 art files:
-{chr(10).join('  - ' + n for n in V25_MISSING)}
-  plus any textures named inside USPAC3.W3D (cannot be listed without the W3D).
-In-game test was not run. Do not treat this as in-game verified.
+SPECTER AA/ABM weapons kept. No V25 PAC3Weapon/AIGUOZHEDAODAN.
+Draw=W3DTruckDraw USPAC3 Wheel01-06 TURRET01 WeaponA CAB/TRAILER, no TurretPitch, no deploy.
+In-game test was not run. Do not treat appearance as play-verified.
 """
     (OUT_DIR / "BUILD_REPORT.txt").write_text(report, encoding="utf-8")
     (OUT_DIR / "LOADER_MERGE_REPORT.txt").write_text(
@@ -326,20 +348,9 @@ In-game test was not run. Do not treat this as in-game verified.
         + "\n",
         encoding="utf-8",
     )
-    (OUT_DIR / "MISSING_V25_ART.txt").write_text(
-        "V25 Patriot PAC-3 art is not on this machine.\n"
-        "V25 install tree is Data/INI only (no Art, no W3D BIG).\n"
-        "SS2 _SPEC_ART_ONE.big / _SPEC_ART_TWO.big / W3DZH.big have 0 USPAC3 members.\n"
-        "Required files that were searched and not found:\n"
-        + "\n".join(V25_MISSING)
-        + "\nV25 INI reference (Data/INI/object/AmericaVehicle.ini Object AmericaPATRIO):\n"
-        "  Model = USPAC3\n"
-        "  bones: TURRET01, TURRETEL, WeaponA, CAB, TRAILER, Wheel01-08\n"
-        "  SelectPortrait/ButtonImage = AmPatriotVeh -> AmPatriotVeh.tga\n"
-        "  TrackMarks = EXTireTrack.tga (this TGA exists in SS2; the W3D does not)\n"
-        "Object Draw was not rewritten to USPAC3 and was not replaced with another stand-in.\n",
-        encoding="utf-8",
-    )
+    missing_note = OUT_DIR / "MISSING_V25_ART.txt"
+    if missing_note.exists():
+        missing_note.unlink()
     (OUT_DIR / "SPECTER_SS2_USA_PATRIOT_PAC3.zip.sha256").write_text(
         f"{sha256(zip_path)}  SPECTER_SS2_USA_PATRIOT_PAC3.zip\n", encoding="ascii"
     )

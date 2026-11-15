@@ -1,24 +1,25 @@
 SS2 America MIM-104F Patriot PAC-3 (Loose Data, no BIG)
 Source ControlBar        healthy tunnel-loader pack (PR #786)
+Appearance               V25 AmericaPATRIO Model USPAC3.W3D
 backup CommandSet.ini     de535a47e8a27c652bfc689fc938c90cd96e690122b6fdd145d73cffe56a6534
 backup CommandButton.ini  45697a3d76902b435088b6403bf8128baa3c003546f60155f7b14f4a06196b8c
 SHA-256 CommandSet.ini    2c4492a7cbbaf529638557b096ca129ba72621c931bd8aa04cca183b3be88c1d
-SHA-256 CommandButton.ini 050e28558d75270a7f15d69b67067873ea5ca65588cbf47ccf8c13477e126365
-SHA-256 Object INI        4fbbd8c2b4add923295978f7c235570332bafb7866b9b22d043cfa535ac7c0ff
-SHA-256 ZIP               e0b1e9019144b5a7ad8037d6c275b09128bbada40afd9ce4af13a0b19107b2a1
-ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 143175 members=3
+SHA-256 CommandButton.ini 9f04325df8f104faaeab6f1a9edfd86bfd1b9cceb61fee4ff35eca3f5c6bda29
+SHA-256 Object INI        c9530d2036dea373c4c2ffcc5554f2ba462a7965c5fcbb6cb12e27f987d62a77
+SHA-256 MappedImage       4fa5984dd8eeb0325480ed8b0f7766d1e5171e44a0a56645f2bc1cc78c90f656
+SHA-256 Art/W3D/USPAC3.W3D                       2d22e78b61b8a38acee06c6c8b44cb55887a04a5e718b095d3fa03de178fe6a0
+SHA-256 Art/Textures/SDUSPAC3.dds                207cff47cec0d22855b4ba51c1e0019d50830b2665b0a70090895a998db926a7
+SHA-256 Art/Textures/SDPAC302.dds                e70ccae4228830e4c31b39c6c3d11b6924021ea72fe6d5be43d2f0bf4d5538c6
+SHA-256 Art/Textures/SDNSM02.dds                 186085b659f80209a9752ae48f57867e00ced2e991b1152a203b94c884b1b4be
+SHA-256 Art/Textures/SDNSM04.dds                 1071e663c88a5452e42bcff76d849a8d6baa66bb199fab9548ad2f83a053ee64
+SHA-256 Art/Textures/SDUSCNDS.dds                7e0d99a2ca4dc584ca34c0a5c93d801c79e2ef4c9752ba00420df2af197929f0
+SHA-256 Art/Textures/AmPatriotVeh.tga            49abf104f1e5c48814d4e2a268a4ac5912b5b3b1a6e94b88686d1cf6454526ea
+SHA-256 ZIP               8a068929852ed2199ff9e9ed061be41cafcebccc30fd929f8968993b0426de9b
+ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 1632580 members=11
 America CC slot 10 = Command_ConstructAmericaVehiclePatriotPAC3 -> AmericaVehiclePatriotPAC3
 America CC slot 4 loader kept. Slot 1 Dozer and slot 6 USAPAC3 kept.
 26-country tunnel loaders preserved. No duplicate CommandSet names.
 #672 Iraq radar not touched. US_THAAD/Turkey/GLA/Iran factory unchanged.
-V25 appearance NOT applied. Real Patriot PAC-3 art is missing; UsaPac3Car was not substituted in this rebuild. Object Draw is unchanged.
-Missing V25 art files:
-  - USPAC3.W3D
-  - USPAC3.w3d
-  - Art/W3D/USPAC3.W3D
-  - Data/Art/W3D/USPAC3.W3D
-  - AmPatriotVeh.tga
-  - Art/Textures/AmPatriotVeh.tga
-  - Data/Art/Textures/AmPatriotVeh.tga
-  plus any textures named inside USPAC3.W3D (cannot be listed without the W3D).
-In-game test was not run. Do not treat this as in-game verified.
+SPECTER AA/ABM weapons kept. No V25 PAC3Weapon/AIGUOZHEDAODAN.
+Draw=W3DTruckDraw USPAC3 Wheel01-06 TURRET01 WeaponA CAB/TRAILER, no TurretPitch, no deploy.
+In-game test was not run. Do not treat appearance as play-verified.

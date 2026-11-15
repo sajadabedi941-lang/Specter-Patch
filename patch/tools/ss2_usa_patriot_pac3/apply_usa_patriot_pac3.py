@@ -1,16 +1,25 @@
 #!/usr/bin/env python3
-"""America MIM-104F Patriot PAC-3 as Loose Data files only (no BIG)."""
+"""America MIM-104F Patriot PAC-3 as Loose Data files only (no BIG).
+
+Merges the Patriot America CC slot onto the healthy tunnel-loader
+CommandSet.ini / CommandButton.ini. Does not snapshot live ControlBar files
+that lack the 26-country loaders (that is what wiped them in earlier packs).
+"""
 from __future__ import annotations
 
 import hashlib
 import re
 import shutil
+import sys
 import zipfile
 from pathlib import Path
 
-ROOT = Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)")
-SRC_CS = ROOT / "Data/INI/CommandSet.ini"
-SRC_CB = ROOT / "Data/INI/CommandButton.ini"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ss2_tunnel_loader"))
+from apply_turkey_method import FACTIONS  # noqa: E402
+
+TUNNEL_INI = Path("patch/Release/SPECTER_SS2_TUNNEL_LOADER_DATA_FOLDER/Data/INI")
+SRC_CS = TUNNEL_INI / "CommandSet.ini"
+SRC_CB = TUNNEL_INI / "CommandButton.ini"
 SRC_OBJ = Path(__file__).resolve().parent / "AmericaVehiclePatriotPAC3.ini"
 OUT_DIR = Path("patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3")
 BACKUP_DIR = OUT_DIR / "backup"
@@ -19,6 +28,16 @@ SLOT = 10
 BTN = "Command_ConstructAmericaVehiclePatriotPAC3"
 OBJ = "AmericaVehiclePatriotPAC3"
 OBJ_REL = "Object/Specter/United States Of America/AirDefense/AmericaVehiclePatriotPAC3.ini"
+V25_MODEL = "USPAC3"
+V25_MISSING = [
+    "USPAC3.W3D",
+    "USPAC3.w3d",
+    "Art/W3D/USPAC3.W3D",
+    "Data/Art/W3D/USPAC3.W3D",
+    "AmPatriotVeh.tga",
+    "Art/Textures/AmPatriotVeh.tga",
+    "Data/Art/Textures/AmPatriotVeh.tga",
+]
 
 BTN_BLOCK = """
 CommandButton Command_ConstructAmericaVehiclePatriotPAC3
@@ -30,6 +49,7 @@ CommandButton Command_ConstructAmericaVehiclePatriotPAC3
   DescriptLabel      = CONTROLBAR:ToolTipUSAAmerica_MIM104F
 End
 """.strip() + "\n"
+
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -73,7 +93,35 @@ def patch_slot(cs: str, set_name: str, slot: int, button: str) -> str:
     return new
 
 
+def unique_count(names: list[str], label: str) -> None:
+    if len(names) != len(set(names)):
+        dups = [n for n in set(names) if names.count(n) > 1]
+        raise SystemExit(f"duplicate {label}: {dups}")
+
+
+def v25_art_present() -> list[str]:
+    found: list[str] = []
+    needles = {"uspac3.w3d", "ampatriotveh.tga"}
+    candidates = [
+        Path("/tmp/v25/Generals Silent Death V25/Art/W3D/USPAC3.W3D"),
+        Path("/tmp/v25/Generals Silent Death V25/Data/Art/W3D/USPAC3.W3D"),
+        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Art/W3D/USPAC3.W3D"),
+        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Data/Art/W3D/USPAC3.W3D"),
+        Path("patch/Art/W3D/USPAC3.W3D"),
+        Path("/tmp/v25/Generals Silent Death V25/Art/Textures/AmPatriotVeh.tga"),
+        Path("/tmp/ss2/SPECTER FINAL (GeneralsMode.com)/Art/Textures/AmPatriotVeh.tga"),
+        Path("patch/Art/Textures/AmPatriotVeh.tga"),
+    ]
+    for p in candidates:
+        if p.is_file() and p.name.lower() in needles:
+            found.append(str(p))
+    return found
+
+
 def main() -> int:
+    if not SRC_CS.is_file() or not SRC_CB.is_file():
+        raise SystemExit(f"healthy tunnel-loader ControlBar missing: {SRC_CS} {SRC_CB}")
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     bak = BACKUP_DIR / "Data" / "INI"
     bak.mkdir(parents=True, exist_ok=True)
@@ -85,6 +133,8 @@ def main() -> int:
     obj_text = SRC_OBJ.read_text("latin1").replace("\r\n", "\n")
     cs_blocks = parse_blocks(src_cs, "CommandSet")
     cb_blocks = parse_blocks(src_cb, "CommandButton")
+    unique_count(list(cs_blocks), "source CommandSet.ini")
+    unique_count(list(cb_blocks), "source CommandButton.ini")
     if BTN in cb_blocks:
         raise SystemExit("button already exists")
     if "GLAVehicleRocketBuggyCommandSet" not in cs_blocks:
@@ -94,17 +144,55 @@ def main() -> int:
         raise SystemExit(f"America slot 1 is {live.get(1)}")
     if live.get(6) != "Command_ConstructUSAPAC3":
         raise SystemExit("USAPAC3 slot 6 missing")
+    if live.get(4) != "Command_ConstructAmericaVehicleDozerm":
+        raise SystemExit("tunnel source missing America loader slot 4")
     if SLOT in live:
         raise SystemExit(f"slot {SLOT} occupied by {live[SLOT]}")
+
+    missing_loader_sets = []
+    for fac in FACTIONS:
+        if fac["cs"] not in cs_blocks:
+            raise SystemExit(f"tunnel CommandSet missing {fac['cs']}")
+        occupied = slots_of(cs_blocks[fac["cs"]])
+        loader_btn = f"Command_Construct{fac['loader']}"
+        tunnel_btn = f"Command_Construct{fac['tunnel']}"
+        if occupied.get(fac["slot"]) != loader_btn:
+            raise SystemExit(
+                f"{fac['side']} {fac['cs']} slot {fac['slot']} is {occupied.get(fac['slot'])}, expected {loader_btn}"
+            )
+        if loader_btn not in cb_blocks or tunnel_btn not in cb_blocks:
+            raise SystemExit(f"tunnel CommandButton missing {loader_btn}/{tunnel_btn}")
+        loader_cs = f"{fac['loader']}CommandSet"
+        if loader_cs not in cs_blocks:
+            missing_loader_sets.append(loader_cs)
+    if "SpecterSS2TunnelNetworkCommandSet" not in cs_blocks:
+        missing_loader_sets.append("SpecterSS2TunnelNetworkCommandSet")
+    if missing_loader_sets:
+        raise SystemExit(f"tunnel unique CommandSets missing: {missing_loader_sets}")
+    if len(FACTIONS) != 26:
+        raise SystemExit(f"expected 26 factions, got {len(FACTIONS)}")
+
     for other in ("TurkeyCommandCenterCommandSet", "GLACommandCenterCommandSet", "Iran_MissileFactoryCommandSet"):
         if other not in cs_blocks:
             raise SystemExit(f"missing {other}")
+
+    turkey_before = cs_blocks["TurkeyCommandCenterCommandSet"]
+    gla_before = cs_blocks["GLACommandCenterCommandSet"]
+    iran_factory_before = cs_blocks["Iran_MissileFactoryCommandSet"]
+    iran_cc_before = cs_blocks["IranExpandedHQCommandSet"]
 
     new_cs = patch_slot(src_cs, CS_NAME, SLOT, BTN)
     new_cb = src_cb.rstrip() + "\n\n; SPECTER SS2 America Patriot PAC-3 unique CommandButton.\n\n" + BTN_BLOCK
 
     new_cs_blocks = parse_blocks(new_cs, "CommandSet")
     new_cb_blocks = parse_blocks(new_cb, "CommandButton")
+    unique_count(list(new_cs_blocks), "patched CommandSet.ini")
+    unique_count(list(new_cb_blocks), "patched CommandButton.ini")
+    if set(new_cs_blocks) != set(cs_blocks):
+        raise SystemExit("CommandSet names were added or removed; refuse duplicate/redefine")
+    if set(new_cb_blocks) - set(cb_blocks) != {BTN}:
+        raise SystemExit(f"unexpected CommandButton delta: {set(new_cb_blocks) - set(cb_blocks)}")
+
     won = slots_of(new_cs_blocks[CS_NAME])
     if won[SLOT] != BTN:
         raise SystemExit("slot patch failed")
@@ -112,17 +200,34 @@ def main() -> int:
         raise SystemExit("dozer lost")
     if won[6] != "Command_ConstructUSAPAC3":
         raise SystemExit("USAPAC3 lost")
-    if new_cs_blocks["TurkeyCommandCenterCommandSet"] != cs_blocks["TurkeyCommandCenterCommandSet"]:
+    if won[4] != "Command_ConstructAmericaVehicleDozerm":
+        raise SystemExit("America tunnel loader lost")
+    if new_cs_blocks["TurkeyCommandCenterCommandSet"] != turkey_before:
         raise SystemExit("Turkey CC changed")
-    if new_cs_blocks["GLACommandCenterCommandSet"] != cs_blocks["GLACommandCenterCommandSet"]:
+    if new_cs_blocks["GLACommandCenterCommandSet"] != gla_before:
         raise SystemExit("GLA CC changed")
-    if new_cs_blocks["Iran_MissileFactoryCommandSet"] != cs_blocks["Iran_MissileFactoryCommandSet"]:
+    if new_cs_blocks["Iran_MissileFactoryCommandSet"] != iran_factory_before:
         raise SystemExit("Iran factory changed")
+    if new_cs_blocks["IranExpandedHQCommandSet"] != iran_cc_before:
+        raise SystemExit("Iran CC changed after America slot patch")
     if "Command_ConstructAmericaVehicleTHAAD" in won.values():
         raise SystemExit("THAAD unexpectedly on America CC")
     btn_obj = re.search(r"(?m)^\s*Object\s*=\s*(\S+)", new_cb_blocks[BTN]).group(1)
     if btn_obj != OBJ:
         raise SystemExit("button object mismatch")
+
+    loader_lines = []
+    for fac in FACTIONS:
+        occupied = slots_of(new_cs_blocks[fac["cs"]])
+        loader_btn = f"Command_Construct{fac['loader']}"
+        if occupied.get(fac["slot"]) != loader_btn:
+            raise SystemExit(f"loader wiped on {fac['side']}")
+        if loader_btn not in new_cb_blocks:
+            raise SystemExit(f"loader button wiped {loader_btn}")
+        loader_lines.append(
+            f"{fac['side']:22} {fac['cs']} slot {fac['slot']} = {loader_btn}"
+        )
+
     obj_blocks = parse_blocks(obj_text, "Object")
     wep_blocks = parse_blocks(obj_text, "Weapon")
     for name in (OBJ, "AmericaPatriotPAC3_AA_Object", "AmericaPatriotPAC3_ABM_Object"):
@@ -141,8 +246,6 @@ def main() -> int:
         raise SystemExit("ABM projectile missing CRUSH fuze")
     if not re.search(r"(?m)^\s*Draw\s*=\s*W3DTruckDraw", obj_blocks[OBJ]):
         raise SystemExit("vehicle must use W3DTruckDraw")
-    if "TIRE01" not in obj_blocks[OBJ] or "UsaPac3Car" not in obj_blocks[OBJ]:
-        raise SystemExit("wheel bones/model missing")
     if "DeployStyleAIUpdate" in obj_blocks[OBJ] or re.search(r"(?m)^\s*ConditionState\s*=\s*DEPLOYED", obj_blocks[OBJ]):
         raise SystemExit("deploy states not allowed")
     if "Generic8x8Locomotor" not in obj_blocks[OBJ]:
@@ -159,6 +262,20 @@ def main() -> int:
         raise SystemExit("unit CommandSet must reuse live GLAVehicleRocketBuggyCommandSet")
     if re.search(r"(?m)^Object US_THAAD", obj_text):
         raise SystemExit("THAAD object redefined")
+    if re.search(r"(?m)^Object Iraq", obj_text):
+        raise SystemExit("Iraq / #672 objects must not be in this file")
+
+    art = v25_art_present()
+    appearance_note = (
+        "V25 appearance NOT applied. Real Patriot PAC-3 art is missing; "
+        "UsaPac3Car was not substituted in this rebuild. Object Draw is unchanged."
+        if not art
+        else f"V25 art found: {art}"
+    )
+    if art:
+        raise SystemExit(f"V25 art unexpectedly present; wire USPAC3 instead of leaving Object unchanged: {art}")
+    if re.search(rf"(?m)^\s*Model\s*=\s*{V25_MODEL}\b", obj_blocks[OBJ]):
+        raise SystemExit("Object claims USPAC3 but V25 W3D is not on disk")
 
     out_ini = OUT_DIR / "Data" / "INI"
     (out_ini / Path(OBJ_REL).parent).mkdir(parents=True, exist_ok=True)
@@ -184,6 +301,7 @@ def main() -> int:
             raise SystemExit(zf.namelist())
 
     report = f"""SS2 America MIM-104F Patriot PAC-3 (Loose Data, no BIG)
+Source ControlBar        healthy tunnel-loader pack (PR #786)
 backup CommandSet.ini     {sha256(bak / 'CommandSet.ini')}
 backup CommandButton.ini  {sha256(bak / 'CommandButton.ini')}
 SHA-256 CommandSet.ini    {sha256(out_ini / 'CommandSet.ini')}
@@ -192,12 +310,36 @@ SHA-256 Object INI        {sha256(out_ini / OBJ_REL)}
 SHA-256 ZIP               {sha256(zip_path)}
 ZIP {zip_path} {zip_path.stat().st_size} members={len(zip_names)}
 America CC slot {SLOT} = {BTN} -> {OBJ}
-Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no TracksDraw, no deploy.
-AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
-No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
-In-game test was not run. Crash fix is not in-game verified.
+America CC slot 4 loader kept. Slot 1 Dozer and slot 6 USAPAC3 kept.
+26-country tunnel loaders preserved. No duplicate CommandSet names.
+#672 Iraq radar not touched. US_THAAD/Turkey/GLA/Iran factory unchanged.
+{appearance_note}
+Missing V25 art files:
+{chr(10).join('  - ' + n for n in V25_MISSING)}
+  plus any textures named inside USPAC3.W3D (cannot be listed without the W3D).
+In-game test was not run. Do not treat this as in-game verified.
 """
     (OUT_DIR / "BUILD_REPORT.txt").write_text(report, encoding="utf-8")
+    (OUT_DIR / "LOADER_MERGE_REPORT.txt").write_text(
+        "Tunnel loaders after Patriot merge\n"
+        + "\n".join(loader_lines)
+        + "\n",
+        encoding="utf-8",
+    )
+    (OUT_DIR / "MISSING_V25_ART.txt").write_text(
+        "V25 Patriot PAC-3 art is not on this machine.\n"
+        "V25 install tree is Data/INI only (no Art, no W3D BIG).\n"
+        "SS2 _SPEC_ART_ONE.big / _SPEC_ART_TWO.big / W3DZH.big have 0 USPAC3 members.\n"
+        "Required files that were searched and not found:\n"
+        + "\n".join(V25_MISSING)
+        + "\nV25 INI reference (Data/INI/object/AmericaVehicle.ini Object AmericaPATRIO):\n"
+        "  Model = USPAC3\n"
+        "  bones: TURRET01, TURRETEL, WeaponA, CAB, TRAILER, Wheel01-08\n"
+        "  SelectPortrait/ButtonImage = AmPatriotVeh -> AmPatriotVeh.tga\n"
+        "  TrackMarks = EXTireTrack.tga (this TGA exists in SS2; the W3D does not)\n"
+        "Object Draw was not rewritten to USPAC3 and was not replaced with another stand-in.\n",
+        encoding="utf-8",
+    )
     (OUT_DIR / "SPECTER_SS2_USA_PATRIOT_PAC3.zip.sha256").write_text(
         f"{sha256(zip_path)}  SPECTER_SS2_USA_PATRIOT_PAC3.zip\n", encoding="ascii"
     )

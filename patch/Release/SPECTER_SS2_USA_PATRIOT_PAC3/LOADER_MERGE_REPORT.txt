@@ -1,0 +1,27 @@
+Tunnel loaders after Patriot merge
+Iraq                   Iraq_CommandCenterCommandSet slot 4 = Command_ConstructIraq_VehicleDozerm
+NorthKorea             NorthKorea_CommandCenterCommandSet slot 4 = Command_ConstructNorthKorea_VehicleDozerm
+America                AmericaCommandCenterCommandSet slot 4 = Command_ConstructAmericaVehicleDozerm
+Russia                 RussiaCommandCenterCommandSet slot 8 = Command_ConstructRussiaVehicleDozerm
+China                  ChinaCommandCenterCommandSet slot 4 = Command_ConstructChinaVehicleDozerm
+GLA                    GLACommandCenterCommandSet slot 8 = Command_ConstructGLAVehicleDozerm
+Boss                   Boss_ChinaCommandCenterCommandSet slot 4 = Command_ConstructBoss_VehicleDozerm
+AmericaAirForceGeneral AirF_AmericaCommandCenterCommandSet slot 3 = Command_ConstructAirF_AmericaVehicleDozerm
+Nato                   NatoCommandCenterCommandSet slot 4 = Command_ConstructNatoVehicleDozerm
+Iran                   IranExpandedHQCommandSet slot 9 = Command_ConstructIranVehicleDozerm
+Pakistan               Pakistan_CommandCenterCommandSet slot 4 = Command_ConstructPakistan_VehicleDozerm
+SaudiArabia            SaudiArabia_CommandCenterCommandSet slot 4 = Command_ConstructSaudiArabia_VehicleDozerm
+UAE                    UAE_CommandCenterCommandSet slot 4 = Command_ConstructUAE_VehicleDozerm
+India                  India_CommandCenterCommandSet slot 4 = Command_ConstructIndia_VehicleDozerm
+Syria                  Syria_CommandCenterCommandSet slot 4 = Command_ConstructSyria_VehicleDozerm
+Germany                GermanyCommandCenterCommandSet slot 4 = Command_ConstructGermanyVehicleDozerm
+France                 FranceCommandCenterCommandSet slot 4 = Command_ConstructFranceVehicleDozerm
+Britain                BritainCommandCenterCommandSet slot 4 = Command_ConstructBritainVehicleDozerm
+Italy                  ItalyCommandCenterCommandSet slot 4 = Command_ConstructItalyVehicleDozerm
+Sweden                 SwedenCommandCenterCommandSet slot 4 = Command_ConstructSwedenVehicleDozerm
+Ukraine                UkraineCommandCenterCommandSet slot 4 = Command_ConstructUkraineVehicleDozerm
+Libya                  Libya_CommandCenterCommandSet slot 4 = Command_ConstructLibya_VehicleDozerm
+SouthAfrica            SouthAfrica_CommandCenterCommandSet slot 4 = Command_ConstructSouthAfrica_VehicleDozerm
+SouthKorea             SouthKorea_CommandCenterCommandSet slot 4 = Command_ConstructSouthKorea_VehicleDozerm
+Japan                  Japan_CommandCenterCommandSet slot 4 = Command_ConstructJapan_VehicleDozerm
+Vietnam                Vietnam_CommandCenterCommandSet slot 4 = Command_ConstructVietnam_VehicleDozerm

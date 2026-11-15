@@ -1,13 +1,24 @@
 SS2 America MIM-104F Patriot PAC-3 (Loose Data, no BIG)
-backup CommandSet.ini     593f541674b5917715a189c2aedf462c079233bbd4e21a11f24299b85ab32240
-backup CommandButton.ini  16ac5b9a306f9ec58cbee944b1b36eb577aed1f3e43bea38f14de16a440be918
-SHA-256 CommandSet.ini    94e17a13df08bd1bf042da4ecbffbd33ff1c4a5064b4d5f8d1bdf1d52752beb3
-SHA-256 CommandButton.ini 24548700347743912824c6ce81a562aeb93fd84b5f20f3724803c8f4aadfb20b
+Source ControlBar        healthy tunnel-loader pack (PR #786)
+backup CommandSet.ini     de535a47e8a27c652bfc689fc938c90cd96e690122b6fdd145d73cffe56a6534
+backup CommandButton.ini  45697a3d76902b435088b6403bf8128baa3c003546f60155f7b14f4a06196b8c
+SHA-256 CommandSet.ini    2c4492a7cbbaf529638557b096ca129ba72621c931bd8aa04cca183b3be88c1d
+SHA-256 CommandButton.ini 050e28558d75270a7f15d69b67067873ea5ca65588cbf47ccf8c13477e126365
 SHA-256 Object INI        4fbbd8c2b4add923295978f7c235570332bafb7866b9b22d043cfa535ac7c0ff
-SHA-256 ZIP               307f4324ee083cf1fc680972f3eb20b6a827fcf0d90347dac7ca14117dbcf64f
-ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 141991 members=3
+SHA-256 ZIP               e0b1e9019144b5a7ad8037d6c275b09128bbada40afd9ce4af13a0b19107b2a1
+ZIP patch/Release/SPECTER_SS2_USA_PATRIOT_PAC3/SPECTER_SS2_USA_PATRIOT_PAC3.zip 143175 members=3
 America CC slot 10 = Command_ConstructAmericaVehiclePatriotPAC3 -> AmericaVehiclePatriotPAC3
-Draw=W3DTruckDraw UsaPac3Car TIRE01-08, Generic8x8Locomotor, no TracksDraw, no deploy.
-AA=THAAD PENALTY clone. ABM=THAAD CRUSH+fuze clone.
-No BIG files. US_THAAD/Turkey/GLA/Iran factory unchanged.
-In-game test was not run. Crash fix is not in-game verified.
+America CC slot 4 loader kept. Slot 1 Dozer and slot 6 USAPAC3 kept.
+26-country tunnel loaders preserved. No duplicate CommandSet names.
+#672 Iraq radar not touched. US_THAAD/Turkey/GLA/Iran factory unchanged.
+V25 appearance NOT applied. Real Patriot PAC-3 art is missing; UsaPac3Car was not substituted in this rebuild. Object Draw is unchanged.
+Missing V25 art files:
+  - USPAC3.W3D
+  - USPAC3.w3d
+  - Art/W3D/USPAC3.W3D
+  - Data/Art/W3D/USPAC3.W3D
+  - AmPatriotVeh.tga
+  - Art/Textures/AmPatriotVeh.tga
+  - Data/Art/Textures/AmPatriotVeh.tga
+  plus any textures named inside USPAC3.W3D (cannot be listed without the W3D).
+In-game test was not run. Do not treat this as in-game verified.

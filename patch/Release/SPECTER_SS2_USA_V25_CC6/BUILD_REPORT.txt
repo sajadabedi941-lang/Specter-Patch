@@ -1,0 +1,93 @@
+SS2 America V25 six-system Command Center pack (Loose Data, no BIG)
+Merge base               PAC-3 MSE pack CS/CB (#795 Patriot + slot 11 MSE + 26 loaders)
+V25 is art/object source only. Destination is SPECTER SS2 Loose Data/Art.
+
+Per-system identity
+1. MEADS Radar
+   V25 Object/Button     AmericaMeadsRadar / Command_ConstructAmericaMeadsRadar
+   V25 production        AmericaWarFactory2 / AmericafakeWarFactoryCommandSet slot 11
+   SS2 Object/Button     AmericaVehicleMeadsRadar / Command_ConstructAmericaVehicleMeadsRadar
+   Model                 usradar (UsRadar.W3D) wheels WHEEL01-06
+   Not imported          UsRadarh AttachToBone, CWCruHC_B, KJ2000 lasers
+2. AN/TPY-2
+   V25 Object/Button     AmericaTPY2Radar / Command_ConstructAmericaTPY2Radar
+   V25 production        AmericaWarFactory2 slot 13
+   SS2 Object/Button     AmericaVehicleTPY2Radar / Command_ConstructAmericaVehicleTPY2Radar
+   Model                 USTPY2RD CAB+TRAILER Wheel01-10
+   Not reused            live SS2 US_AN_TPY2 / Command_ConstructAmericaVehicleAN_TPY2
+3. AN/TPQ-53
+   V25 Object/Button     AmericaANTPQ53 / Command_ConstructAmericaANTPQ53
+   V25 production        AmericaWarFactory slot 13
+   SS2 Object/Button     AmericaVehicleANTPQ53 / Command_ConstructAmericaVehicleANTPQ53
+   Model                 USTPQ53 Wheel01-06 (Wheel07/08 absent from W3D, not mapped)
+4. C-RAM
+   V25 Object/Button     AmericaCRAM / Command_ConstructAmericaCRAM (DOZER_CONSTRUCT)
+   V25 production        AmericaGAZ_66 slot 9 (not War Factory Phalanx)
+   SS2 Object/Button     AmericaVehicleCRAM / Command_ConstructAmericaVehicleCRAM
+   Model                 SDCRAM TURRET/TURRETEL/MUZZLE
+   Not substituted       AmericaPhlanx
+5. IFPC Increment 2-L
+   V25 Object/Button     AmericaIFPC / Command_ConstructAmericaIFPC
+   V25 production        AmericaWarFactory slot 10
+   SS2 Object/Button     AmericaVehicleIFPC / Command_ConstructAmericaVehicleIFPC
+   Model                 IFPC2 PaoTa/PAOGUAN WEAPONA01-15 WHEEL01-06
+   Weapons               unique AmericaIFPC_AA (PENALTY) / AmericaIFPC_ABM (CRUSH)
+6. Rogue Fires
+   V25 Object/Button     AmericaRougeFire / Command_ConstructAmericaRougeFire
+   V25 production        AmericaWarFactoryIII slot 8
+   SS2 Object/Button     AmericaVehicleRougeFire / Command_ConstructAmericaVehicleRougeFire
+   Model                 RougeFire TURRET01/TURRETEL01 WEAPONM WHEEL01/05/08/11
+   Weapon                unique AmericaRogueFires_NSM (SS2 TomahawkMissile)
+
+America Command Center slots after merge
+  America CC slot  2 = Command_ConstructAmericaVehicleMeadsRadar -> AmericaVehicleMeadsRadar  (MEADS Radar)
+  America CC slot  3 = Command_ConstructAmericaVehicleTPY2Radar -> AmericaVehicleTPY2Radar  (AN/TPY-2)
+  America CC slot  5 = Command_ConstructAmericaVehicleANTPQ53 -> AmericaVehicleANTPQ53  (AN/TPQ-53)
+  America CC slot  7 = Command_ConstructAmericaVehicleCRAM -> AmericaVehicleCRAM  (C-RAM)
+  America CC slot  8 = Command_ConstructAmericaVehicleIFPC -> AmericaVehicleIFPC  (IFPC Increment 2-L)
+  America CC slot  9 = Command_ConstructAmericaVehicleRougeFire -> AmericaVehicleRougeFire  (Rogue Fires)
+  Kept: 1 Dozer, 4 Tunnel Loader, 6 USAPAC3, 10 Patriot PAC-3, 11 PAC-3 MSE,
+        12 UH60, 13 M2A3, 14 Sell, 15-18 AI drones/helos.
+
+SHA-256 CommandSet.ini               8a508fd23cfd2f1fc03b0d1ca595cf9efb34d0414126b599cf18fc1a6566de24
+SHA-256 CommandButton.ini            47fab26aaa312bcdc0782ff808873f03e0d648c6e61ffa568848a7c8ac58237b
+SHA-256 MappedImage                  66bc4391c31a08147f895715a907f543784e4d8c160e216c50ec1d3b9c462030
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleMeadsRadar.ini 80c2f3b1464095bcbfa1eae3f3cfdf018c931e8686e1c47fc07f232f3c493f87
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleTPY2Radar.ini 02497a103c9189b6714c0a7d1d629e3781ec7e5350b0596248e3a12fe57cba03
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleANTPQ53.ini 83e233812d4ac0aa613cd4b164bea3cbad0351d7dc57f2f601f16ffa0432061a
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleCRAM.ini b6bc8601f00991335aa606a729de2c74b0ef30491dda45c2568202e0c4d92465
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleIFPC.ini 0a0fd1bebfd99d6f2a0519c9278f186dfda4b673754d13737f32e28814870c59
+SHA-256 Data/INI/Object/Specter/United States Of America/AirDefense/AmericaVehicleRougeFire.ini 5ccca61e257dc5544f21bc3d5d80042e1b375aae574cd125711a7823eccf9e6d
+SHA-256 Art/W3D/UsRadar.W3D                          e7eeaab1a349d0214c83b9cae311f394d229056e681d2964366bde34379c4744
+SHA-256 Art/W3D/USTPY2RD.W3D                         236188b51700004a097b6980e0b6c3aafd59b002ec531378328d668ceea5cb92
+SHA-256 Art/W3D/USTPQ53.W3D                          ca7cfe214bd27d6fc132af4608a8128948a26a2e41ba0c5b0187993ce9d61651
+SHA-256 Art/W3D/SDCRAM.W3D                           a399f2bcbe1283a38d47d3c3798866e97774464b859fd03ba662b930d9fe8320
+SHA-256 Art/W3D/IFPC2.W3D                            63af9a7737bf7c86890de67cbac0072a9974602b8d35ec6a9fcd6450dd531432
+SHA-256 Art/W3D/RougeFire.W3D                        b8b4f52904357e00274b4b27046e8fad0259b3cc4429b4b73a0cf49d0a863ceb
+SHA-256 Art/Textures/USMDSRDTB.tga                   25de34fc877ba62a01896eece46a8eece9f926d9e654dec4f5551de592303174
+SHA-256 Art/Textures/USTPY2TB.tga                    2ef3433abf94d00b9134891f247aaa63c741c12ffb32565bbaa65a4034cfacb8
+SHA-256 Art/Textures/ANTPQ53TB.tga                   32def438acc6a158b73708b0b177f4e5e5d076860745c4195434f4311183df9a
+SHA-256 Art/Textures/CRAMTB.tga                      7d0c4abf8e5af35130cc05c246be1c5c82adcb4469c52e6dec7c3ed500b2027e
+SHA-256 Art/Textures/IFBCTB.tga                      0c3057e416eefa74507680166459f19ecd5110dca4151aded75bacd5f3aca252
+SHA-256 Art/Textures/RougeFireTB.tga                 1b8e4bbae3cdda91f11e3603ad6b0d3a7f31cbc9872bbbeb64a2dfcf7679cb62
+SHA-256 Art/Textures/SDAMRDWD.dds                    c3f909cc496c218b2e6ed51764401a0e4815b3ea016622206429643c9ba1b291
+SHA-256 Art/Textures/Tex_0006_01321.dds              c97477aabe5ab7de4e579324e2010ecc6cfd2922af4be17a776ad6abdcd860ad
+SHA-256 Art/Textures/USTPY2RD.dds                    6353795dc55eec458e3022b6340892067413292f286183634d55a51ed5d9d42f
+SHA-256 Art/Textures/TPYRDHMT.dds                    e3a4f58de8e29443a690cdcf50e0afae59b9492948fded23be66cfc1c829e105
+SHA-256 Art/Textures/T14A1CM.dds                     8c622545c219371de2a4c9d4910dc9d2041b91b06216f269347d1f4a03af2599
+SHA-256 Art/Textures/SDNSM04.dds                     1071e663c88a5452e42bcff76d849a8d6baa66bb199fab9548ad2f83a053ee64
+SHA-256 Art/Textures/USTPQ01.dds                     88df4e5a82d83705847739e85c660076d9ce587bfc21704930f3789db1158346
+SHA-256 Art/Textures/USTPQ02.dds                     e8044361c5527f52c3dc34b600448488903dbdc895f233b300836f37ae829f51
+SHA-256 Art/Textures/USTPQ03.dds                     7ebee04fdeae0fadc575e1c4bcef5bb92e7475f906dfaf64888301cfe9f9457d
+SHA-256 Art/Textures/Glass1.tga                      21a40bd0d2d7754d84fd37d938b9ce4c3193a3148928306a8a183a4c7c3bf8ed
+SHA-256 Art/Textures/RUA222W.dds                     10f84d957717201312ff13f2a436679aae06fe4dea0c6b4b5e52a16107e97f92
+SHA-256 Art/Textures/SDCRAMB.dds                     81357a3b71900d4a5632f8b3e46dca6c136bff93e763fa002362837d1c7e1192
+SHA-256 Art/Textures/SDCRAMC.dds                     c2aa46649d49adf4504f8900cea2403fc6b7e743553846634ac1eb8f60f28b51
+SHA-256 Art/Textures/IFBCCM01.dds                    88df4e5a82d83705847739e85c660076d9ce587bfc21704930f3789db1158346
+SHA-256 Art/Textures/IFBCCM02.dds                    e8044361c5527f52c3dc34b600448488903dbdc895f233b300836f37ae829f51
+SHA-256 Art/Textures/USRGFRL.dds                     407f83b3dac5258f135215a6b7e77adea470c575752e0f69c52770ec03aac78b
+SHA-256 Art/Textures/USRGFRB.dds                     fa0cd9ae8d4b0eff17c3cdd1edb668739ba0ac1d630db5372a87a3e5ff7b71cf
+SHA-256 ZIP                          04c1c338f31c54b494d07253e8aede2237d111b2ce6ce63e47406244a0d971f3
+ZIP patch/Release/SPECTER_SS2_USA_V25_CC6/SPECTER_SS2_USA_V25_CC6.zip 6244015 members=38
+26-country tunnel loaders preserved. No duplicate CommandSet names. No BIG.
+Vehicles have no Shadow line. In-game test was not run.

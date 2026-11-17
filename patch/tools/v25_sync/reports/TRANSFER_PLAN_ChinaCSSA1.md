@@ -1,15 +1,15 @@
-# Transfer plan: `ChinaCSSA1` (stage 3 ART + CWC)
+# Transfer plan: `ChinaCSSA1` (stage 4 DATA rebuild)
 
-- Generated: 2026-11-11 13:30 Asia/Tehran
+- Generated: 2026-11-11 14:31 Asia/Tehran
 - Found in V25 VFS: **True**
 - Source: `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle.ini`
-- Resolver readiness: **manual_rebuild**
-- DATA completeness: **MANUAL_REBUILD**
+- Resolver readiness: **auto_fixable**
+- DATA completeness: **READY_FOR_TRANSFER_PLAN**
 - ART completeness: **AUTO_RECOVERABLE**
 - Dest INI (future apply only): `Data\INI\Object\SilentDeath\China\ChinaCSSA1.ini`
 - Build buttons: ['Command_ConstructChinaCSSA1']
 - CommandSets holding those buttons: ['ChinaSupplyCenterCommandSet']
-- Action counts: `{'IMPORT_UNIQUE': 21, 'RECOVER_FROM_V25': 14, 'RENAME_AND_REWRITE': 2, 'REUSE_NATIVE': 28, 'CYCLE': 14, 'MANUAL_REBUILD': 2}`
+- Action counts: `{'IMPORT_UNIQUE': 21, 'RECOVER_FROM_V25': 19, 'RENAME_AND_REWRITE': 2, 'REUSE_NATIVE': 35, 'CYCLE': 17, 'INDEPENDENT_ADD': 4}`
 - Game writes: **False**
 
 ## Object meta
@@ -25,7 +25,7 @@ DATA and ART are scored separately. Neither score imports anything into SPECTER.
 
 | Track | Status |
 |---|---|
-| DATA | `MANUAL_REBUILD` |
+| DATA | `READY_FOR_TRANSFER_PLAN` |
 | ART | `AUTO_RECOVERABLE` |
 
 ## CWC / pack-unpack
@@ -73,19 +73,22 @@ No catalogued CWC module on this Object.
 | BehaviorModule | `InstantDeathBehavior` | CYCLE | `InstantDeathBehavior` | Cyclic reference; node already visited. | `` |
 | DamageType | `GATTLING` | CYCLE | `GATTLING` | Cyclic reference; node already visited. | `` |
 | Armor | `TankArmor` | RENAME_AND_REWRITE | `SD25_TankArmor` | Same name, different effective behavior. SPECTER original stays; V25 copy becomes SD25_TankArmor with a full reference rewrite. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Armor.ini` |
-| FXList | `TankDamageFX` | MANUAL_REBUILD | `TankDamageFX` | Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing. | `` |
-| FXList | `FX_CarCrush` | REUSE_NATIVE | `FX_CarCrush` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
-| FXList | `FX_BattleMasterExplosionOneFinal` | REUSE_NATIVE | `FX_BattleMasterExplosionOneFinal` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
-| FXList | `FX_BattleMasterDamageTransition` | REUSE_NATIVE | `FX_BattleMasterDamageTransition` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| DamageFX | `TankDamageFX` | INDEPENDENT_ADD | `SD25_TankDamageFX` | ArmorSet DamageFX is a DamageFX table, not an FXList. Clone V25 DamageFX.ini TankDamageFX onto a unique path so SPECTER DamageFX.ini is not patched. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/DamageFX.ini` |
+| FXList | `FX_DamageTankStruck` | REUSE_NATIVE | `FX_DamageTankStruck` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageTankStruck` | REUSE_NATIVE | `FX_HeroicDamageTankStruck` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageTankStruckSmallArms` | REUSE_NATIVE | `FX_DamageTankStruckSmallArms` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageTankStruckSmallArms` | REUSE_NATIVE | `FX_HeroicDamageTankStruckSmallArms` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageDisableVehicle` | REUSE_NATIVE | `FX_DamageDisableVehicle` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageDisableVehicle` | REUSE_NATIVE | `FX_HeroicDamageDisableVehicle` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
 | CommandSet | `ChinaVehicleBattleMasterCommandSet` | REUSE_NATIVE | `ChinaVehicleBattleMasterCommandSet` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandSet.ini` |
-| CommandButton | `Command_AttackMove` | REUSE_NATIVE | `Command_AttackMove` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
+| CommandButton | `Command_AttackMove` | REUSE_NATIVE | `Command_AttackMove` | Pinned public command; never imported, SPECTER/stock button stays. | `specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButto...` |
 | MappedImage | `SSAttackMove2` | IMPORT_UNIQUE | `SSAttackMove2` | Name is free in SPECTER FINAL; unique-path import. | `INIZH.big:Data\INI\MappedImages\TextureSize_512\SSUserInterface512.INI` |
 | ArtFile | `SSUserInterface512_001.tga` | RECOVER_FROM_V25 | `SSUserInterface512_001.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\ssuserinterface512_0...` |
 | ArtFile | `SSAttackMove2` | IMPORT_UNIQUE | `SSAttackMove2` | MappedImage identifier, not a standalone texture file. Pixel data is the Texture= atlas; no similar file was substituted. | `INIZH.big:Data\INI\MappedImages\TextureSize_512\SSUserInterface512.INI` |
-| CommandButton | `Command_Guard` | REUSE_NATIVE | `Command_Guard` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
+| CommandButton | `Command_Guard` | REUSE_NATIVE | `Command_Guard` | Pinned public command; never imported, SPECTER/stock button stays. | `specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButto...` |
 | MappedImage | `SDGuard` | RECOVER_FROM_V25 | `SDGuard` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/SDGuard.tga` |
 | ArtFile | `SDGuard` | RECOVER_FROM_V25 | `SDGuard` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDGuard.tga` |
-| CommandButton | `Command_Stop` | REUSE_NATIVE | `Command_Stop` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
+| CommandButton | `Command_Stop` | REUSE_NATIVE | `Command_Stop` | Pinned public command; never imported, SPECTER/stock button stays. | `specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButto...` |
 | MappedImage | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
 | ArtFile | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
 | AudioEvent | `CWCruShilkaVoiceSelect` | IMPORT_UNIQUE | `CWCruShilkaVoiceSelect` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
@@ -95,7 +98,21 @@ No catalogued CWC module on this Object.
 | AudioEvent | `CWCruShilkaVoiceAttackAir` | IMPORT_UNIQUE | `CWCruShilkaVoiceAttackAir` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | AudioEvent | `CWCruShilkaVoiceCreate` | IMPORT_UNIQUE | `CWCruShilkaVoiceCreate` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | Locomotor | `ChunmaLocomotor` | IMPORT_UNIQUE | `ChunmaLocomotor` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Locomotor.ini` |
-| CrateTemplate | `SalvageCrateData` | MANUAL_REBUILD | `SalvageCrateData` | Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing. | `` |
+| FXList | `FX_CarCrush` | REUSE_NATIVE | `FX_CarCrush` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_BattleMasterExplosionOneFinal` | REUSE_NATIVE | `FX_BattleMasterExplosionOneFinal` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_BattleMasterDamageTransition` | REUSE_NATIVE | `FX_BattleMasterDamageTransition` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| CrateData | `SalvageCrateData` | INDEPENDENT_ADD | `SD25_SalvageCrateData` | CrateData (not CrateTemplate) table cloned unique-path. CrateObject SalvageCrate stays a native Generals object when SPECTER/stock already has it. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Crate.ini` |
+| Object | `SalvageCrate` | REUSE_NATIVE | `SalvageCrate` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Crate.ini` |
+| ArtFile | `PMJnkCrate` | RECOVER_FROM_V25 | `PMJnkCrate` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/W3D.big::Art\W3D\PMJnkCrate.W3D` |
+| ArtFile | `PMCONSUP01.tga` | RECOVER_FROM_V25 | `PMCONSUP01.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/Art/Textures/pmconsup01.dds` |
+| ArtFile | `PMCONSUP01.tga` | CYCLE | `PMCONSUP01.tga` | Cyclic reference; node already visited. | `` |
+| ArtFile | `PMBarrel01.tga` | RECOVER_FROM_V25 | `PMBarrel01.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmbarrel01.dds` |
+| ArtFile | `PMBarrel01.tga` | CYCLE | `PMBarrel01.tga` | Cyclic reference; node already visited. | `` |
+| ArtFile | `PMCrates04.tga` | RECOVER_FROM_V25 | `PMCrates04.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmcrates04.dds` |
+| ArtFile | `PMCrates04.tga` | CYCLE | `PMCrates04.tga` | Cyclic reference; node already visited. | `` |
+| ArtFile | `PMCrates04_L.tga` | RECOVER_FROM_V25 | `PMCrates04_L.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmcrates04_l.dds` |
+| BehaviorModule | `SalvageCrateCollide` | INDEPENDENT_ADD | `SalvageCrateCollide` | Unknown behavior kept on the unique Object; not deleted. | `` |
+| BehaviorModule | `DeletionUpdate` | INDEPENDENT_ADD | `DeletionUpdate` | Unknown behavior kept on the unique Object; not deleted. | `` |
 | ObjectCreationList | `OCL_ChinaTankBattleMasterDebris` | REUSE_NATIVE | `OCL_ChinaTankBattleMasterDebris` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini` |
 | Object | `ChinaVehicleBattleMasterDeadHull` | IMPORT_UNIQUE | `ChinaVehicleBattleMasterDeadHull` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/Hulk.ini` |
 | ParticleSystem | `SmokeSmallContinuous01` | REUSE_NATIVE | `SmokeSmallContinuous01` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini` |
@@ -143,6 +160,38 @@ No catalogued CWC module on this Object.
 - `ArtFile:SDStop` found_in=`zip`
   - `Generals Silent Death V25/Art/Textures/SDStop.tga`
   - container=`zip` file=`SDStop.tga` source_big=`None` inner=`None`
+- `ArtFile:PMJnkCrate` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\PMJnkCrate.W3D`
+  - `Generals Silent Death V25/TexturesZH.big::Art\Textures\pmjnkcrate.dds`
+  - container=`nested_big` file=`PMJnkCrate.W3D` source_big=`Generals Silent Death V25/WYS/W3D.big` inner=`Art\W3D\PMJnkCrate.W3D`
+  - container=`nested_big` file=`pmjnkcrate.dds` source_big=`Generals Silent Death V25/TexturesZH.big` inner=`Art\Textures\pmjnkcrate.dds`
+  - W3D textures: ['PMCONSUP01.tga', 'PMBarrel01.tga', 'PMCrates04.tga', 'PMCrates04_L.tga']
+  - W3D anims (inside model, not separate files): ['PMJNKCRATE.CYLINDER04', 'PMJNKCRATE.CYLINDER03', 'PMJNKCRATE.CYLINDER02', 'PMJNKCRATE.CYLINDER01', 'PMJNKCRATE.BOX01', 'PMJNKCRATE.PMJNKCRATE1']
+- `ArtFile:PMCONSUP01.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/Art/Textures/pmconsup01.dds`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmconsup01.dds`
+  - `Generals Silent Death V25/TexturesZH.big::Art\Textures\pmconsup01.dds`
+  - `Generals Silent Death V25/W3DZH.big::Art\W3D\PMCONSUP01.W3D`
+  - container=`zip` file=`pmconsup01.dds` source_big=`None` inner=`None`
+  - container=`nested_big` file=`pmconsup01.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\pmconsup01.dds`
+  - container=`nested_big` file=`pmconsup01.dds` source_big=`Generals Silent Death V25/TexturesZH.big` inner=`Art\Textures\pmconsup01.dds`
+  - container=`nested_big` file=`PMCONSUP01.W3D` source_big=`Generals Silent Death V25/W3DZH.big` inner=`Art\W3D\PMCONSUP01.W3D`
+  - W3D textures: ['PMCONSUP01.tga']
+- `ArtFile:PMBarrel01.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmbarrel01.dds`
+  - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\PMBarrel01.W3D`
+  - container=`nested_big` file=`pmbarrel01.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\pmbarrel01.dds`
+  - container=`nested_big` file=`PMBarrel01.W3D` source_big=`Generals Silent Death V25/WYS/W3D.big` inner=`Art\W3D\PMBarrel01.W3D`
+  - W3D textures: ['PMBarrel01.tga']
+- `ArtFile:PMCrates04.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmcrates04.dds`
+  - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\PMCrates04.W3D`
+  - container=`nested_big` file=`pmcrates04.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\pmcrates04.dds`
+  - container=`nested_big` file=`PMCrates04.W3D` source_big=`Generals Silent Death V25/WYS/W3D.big` inner=`Art\W3D\PMCrates04.W3D`
+  - W3D textures: ['PMCrates04.tga']
+- `ArtFile:PMCrates04_L.tga` found_in=`nested_big`
+  - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\pmcrates04_l.dds`
+  - container=`nested_big` file=`pmcrates04_l.dds` source_big=`Generals Silent Death V25/WYS/Textures.big` inner=`Art\Textures\pmcrates04_l.dds`
 - `ArtFile:NVBtmstr_D1` found_in=`nested_big`
   - `Generals Silent Death V25/WYS/Textures.big::Art\Textures\nvbtmstr_d1.dds`
   - `Generals Silent Death V25/WYS/W3D.big::Art\W3D\NVBtMstr_D1.W3D`
@@ -182,6 +231,8 @@ No catalogued CWC module on this Object.
 
 - `ProjectileArmor` → `SD25_ProjectileArmor`
 - `TankArmor` → `SD25_TankArmor`
+- `TankDamageFX` → `SD25_TankDamageFX`
+- `SalvageCrateData` → `SD25_SalvageCrateData`
 
 ```
 Object ChinaCSSA1
@@ -214,4 +265,74 @@ Object ChinaCSSA1
 ```
 
 This is a plan only. No Object/Weapon/CommandSet/ART was imported.
+
+## Stage 4 — independent DATA rebuild
+
+SPECTER public DamageFX.ini / Crate.ini / FXList.ini / SpecialPower.ini are never written.
+CWC.exe is not used. Previews are not imported into the game.
+
+### Unique DATA files (future apply only)
+
+- `Data\INI\Object\SilentDeath\China\ChinaCSSA1.ini`
+- `Data\INI\DamageFX_SilentDeath.ini`
+- `Data\INI\Crate_SilentDeath.ini`
+
+### Public INI leak check
+
+**PASS — no public SPECTER INI in the unique-path list.**
+
+### Independent clones
+
+#### `DamageFX` `TankDamageFX` → `SD25_TankDamageFX`
+
+- Unique path: `Data\INI\DamageFX_SilentDeath.ini`
+
+```
+; Independent unique-path clone of DamageFX TankDamageFX. Preview only; SPECTER public INI is not written.
+DamageFX SD25_TankDamageFX
+
+  ; this means, "when doing damagefx of the same type, wait at least this many milliseconds
+  ; between repeated fx." this is used to prevent overwhelming the system with fx when
+  ; groups of things are attacking a single object. example: 8 rangers attacking a tank
+  ; would produce a ton of particle effects if we did one for every ranger, every time they
+  ; attack, but with this in place, we only do (at most) one every 500 msec.
+  ThrottleTime = DEFAULT 100
+  
+  AmountForMajorFX  = DEFAULT           2.0
+  MajorFX           = DEFAULT           FX_DamageTankStruck
+  VeterancyMajorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck
+  MinorFX           = DEFAULT           FX_DamageTankStruck
+  VeterancyMinorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck
+
+; DEMO HACK  -- The minor effect should actually be a smaller version of the major effect.
+  MajorFX           = SMALL_ARMS        FX_DamageTankStruckSmallArms
+  VeterancyMajorFX  = HEROIC SMALL_ARMS FX_HeroicDamageTankStruckSmallArms
+  MinorFX           = SMALL_ARMS        FX_DamageTankStruckSmallA
+```
+
+#### `CrateData` `SalvageCrateData` → `SD25_SalvageCrateData`
+
+- Unique path: `Data\INI\Crate_SilentDeath.ini`
+
+```
+; Independent unique-path clone of CrateData SalvageCrateData. Preview only; SPECTER public INI is not written.
+CrateData SD25_SalvageCrateData
+  CreationChance = 1.0
+  KilledByType = SALVAGER
+  KillerScience = SCIENCE_GLA ; Killed by a salvager unit owned by a GLA player
+
+  CrateObject = SalvageCrate 1.0
+End
+
+```
+
+
+### DeployStyleAIUpdate compatibility proof
+
+No RiderChangeContain on this Object. DeployStyle mapping is not required.
+
+## Tested vs analysis-only
+
+- **Tested:** unit tests (`tests/test_data_rebuild.py`, existing resolver/ART tests).
+- **Not tested:** Generals.exe, in-game spawn, packing SPECTER BIGs, apply.
 

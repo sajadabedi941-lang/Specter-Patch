@@ -18,10 +18,53 @@
     "bucket": "vehicle",
     "is_equipment": true
   },
-  "readiness": "manual_rebuild",
-  "data_status": "MANUAL_REBUILD",
+  "readiness": "auto_fixable",
+  "data_status": "READY_FOR_TRANSFER_PLAN",
   "art_status": "AUTO_RECOVERABLE",
   "cwc": [],
+  "deploy_proof": {
+    "compatible": false,
+    "use_deploy_style": false,
+    "use_deployed_weaponset": false,
+    "skip_refs": [],
+    "limitations": [],
+    "proven": [],
+    "rebuild_for": {},
+    "summary": "No RiderChangeContain; DeployStyle mapping is not required.",
+    "pack_ms": 2000,
+    "unpack_ms": 2000,
+    "riders": [],
+    "weaponsets": {
+      "NONE": "SA22G"
+    },
+    "ocl_powers": [],
+    "has_rider_contain": false,
+    "has_ocl_special": false,
+    "has_draw_rider2": false,
+    "stock_deploy_in_v25": true
+  },
+  "independent_clones": [
+    {
+      "kind": "DamageFX",
+      "from": "TankDamageFX",
+      "to": "SD25_TankDamageFX",
+      "unique_path": "Data\\INI\\DamageFX_SilentDeath.ini",
+      "preview": "; Independent unique-path clone of DamageFX TankDamageFX. Preview only; SPECTER public INI is not written.\nDamageFX SD25_TankDamageFX\n\n  ; this means, \"when doing damagefx of the same type, wait at least this many milliseconds\n  ; between repeated fx.\" this is used to prevent overwhelming the system with fx when\n  ; groups of things are attacking a single object. example: 8 rangers attacking a tank\n  ; would produce a ton of particle effects if we did one for every ranger, every time they\n  ; attack, but with this in place, we only do (at most) one every 500 msec.\n  ThrottleTime = DEFAULT 100\n  \n  AmountForMajorFX  = DEFAULT           2.0\n  MajorFX           = DEFAULT           FX_DamageTankStruck\n  VeterancyMajorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck\n  MinorFX           = DEFAULT           FX_DamageTankStruck\n  VeterancyMinorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck\n\n; DEMO HACK  -- The minor effect should actually be a smaller version of the major effect.\n  MajorFX           = SMALL_ARMS        FX_DamageTankStruckSmallArms\n  VeterancyMajorFX  = HEROIC SMALL_ARMS FX_HeroicDamageTankStruckSmallArms\n  MinorFX           = SMALL_ARMS        FX_DamageTankStruckSmallArms\n  VeterancyMinorFX  = HEROIC SMALL_ARMS FX_HeroicDamageTankStruckSmallArms\n\n  MajorFX           = COMANCHE_VULCAN         FX_DamageTankStruckSmallArms\n  VeterancyMajorFX  = HEROIC COMANCHE_VULCAN  FX_HeroicDamageTankStruckSmallArms\n  MinorFX           = COMANCHE_VULCAN         FX_DamageTankStruckSmallArms\n  VeterancyMinorFX  = HEROIC COMANCHE_VULCAN  FX_HeroicDamageTankStruckSmallArms\n\n  MajorFX           = KILL_PILOT          FX_DamageDisableVehicle\n  VeterancyMajorFX  = HEROIC KILL_PILOT   FX_HeroicDamageDisableVehicle\n  MinorFX           = KILL_PILOT          FX_DamageDisableVehicle\n  VeterancyMinorFX  = HEROIC KILL_PILOT   FX_HeroicDamageDisableVehicle\n\n  MajorFX           = SNIPER              FX_DamageTankStruckSmallArms\n  VeterancyMajorFX  = HEROIC SNIPER       FX_HeroicDamageTa"
+    },
+    {
+      "kind": "CrateData",
+      "from": "SalvageCrateData",
+      "to": "SD25_SalvageCrateData",
+      "unique_path": "Data\\INI\\Crate_SilentDeath.ini",
+      "preview": "; Independent unique-path clone of CrateData SalvageCrateData. Preview only; SPECTER public INI is not written.\nCrateData SD25_SalvageCrateData\n  CreationChance = 1.0\n  KilledByType = SALVAGER\n  KillerScience = SCIENCE_GLA ; Killed by a salvager unit owned by a GLA player\n\n  CrateObject = SalvageCrate 1.0\nEnd\n"
+    }
+  ],
+  "unique_data_files": [
+    "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
+    "Data\\INI\\DamageFX_SilentDeath.ini",
+    "Data\\INI\\Crate_SilentDeath.ini"
+  ],
+  "public_ini_leaks": [],
   "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
   "build_buttons": [
     "Command_ConstructChinaCSSA1"
@@ -31,11 +74,11 @@
   ],
   "action_counts": {
     "IMPORT_UNIQUE": 21,
-    "RECOVER_FROM_V25": 14,
+    "RECOVER_FROM_V25": 19,
     "RENAME_AND_REWRITE": 2,
-    "REUSE_NATIVE": 28,
-    "CYCLE": 14,
-    "MANUAL_REBUILD": 2
+    "REUSE_NATIVE": 35,
+    "CYCLE": 17,
+    "INDEPENDENT_ADD": 4
   },
   "deps": [
     {
@@ -275,35 +318,63 @@
       "reason": "Same name, different effective behavior. SPECTER original stays; V25 copy becomes SD25_TankArmor with a full reference rewrite."
     },
     {
-      "kind": "FXList",
+      "kind": "DamageFX",
       "name": "TankDamageFX",
-      "action": "MANUAL_REBUILD",
-      "planned": "TankDamageFX",
-      "source": null,
-      "reason": "Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing.",
-      "missing_from": "archive_and_vfs"
+      "action": "INDEPENDENT_ADD",
+      "planned": "SD25_TankDamageFX",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/DamageFX.ini",
+      "reason": "ArmorSet DamageFX is a DamageFX table, not an FXList. Clone V25 DamageFX.ini TankDamageFX onto a unique path so SPECTER DamageFX.ini is not patched.",
+      "unique_path": "Data\\INI\\DamageFX_SilentDeath.ini",
+      "never_patch": [
+        "Data\\INI\\DamageFX.ini",
+        "Data\\INI\\FXList.ini"
+      ]
     },
     {
       "kind": "FXList",
-      "name": "FX_CarCrush",
+      "name": "FX_DamageTankStruck",
       "action": "REUSE_NATIVE",
-      "planned": "FX_CarCrush",
+      "planned": "FX_DamageTankStruck",
       "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
       "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
     },
     {
       "kind": "FXList",
-      "name": "FX_BattleMasterExplosionOneFinal",
+      "name": "FX_HeroicDamageTankStruck",
       "action": "REUSE_NATIVE",
-      "planned": "FX_BattleMasterExplosionOneFinal",
+      "planned": "FX_HeroicDamageTankStruck",
       "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
       "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
     },
     {
       "kind": "FXList",
-      "name": "FX_BattleMasterDamageTransition",
+      "name": "FX_DamageTankStruckSmallArms",
       "action": "REUSE_NATIVE",
-      "planned": "FX_BattleMasterDamageTransition",
+      "planned": "FX_DamageTankStruckSmallArms",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_HeroicDamageTankStruckSmallArms",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_HeroicDamageTankStruckSmallArms",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_DamageDisableVehicle",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_DamageDisableVehicle",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_HeroicDamageDisableVehicle",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_HeroicDamageDisableVehicle",
       "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
       "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
     },
@@ -320,8 +391,8 @@
       "name": "Command_AttackMove",
       "action": "REUSE_NATIVE",
       "planned": "Command_AttackMove",
-      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
-      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+      "source": "specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; never imported, SPECTER/stock button stays."
     },
     {
       "kind": "MappedImage",
@@ -369,8 +440,8 @@
       "name": "Command_Guard",
       "action": "REUSE_NATIVE",
       "planned": "Command_Guard",
-      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
-      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+      "source": "specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; never imported, SPECTER/stock button stays."
     },
     {
       "kind": "MappedImage",
@@ -412,8 +483,8 @@
       "name": "Command_Stop",
       "action": "REUSE_NATIVE",
       "planned": "Command_Stop",
-      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini",
-      "reason": "Pinned public command; V25 variant is not copied over SPECTER."
+      "source": "specter-loose:/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/Data/INI/CommandButton.ini",
+      "reason": "Pinned public command; never imported, SPECTER/stock button stays."
     },
     {
       "kind": "MappedImage",
@@ -507,13 +578,280 @@
       "reason": "Name is free in SPECTER FINAL; unique-path import."
     },
     {
-      "kind": "CrateTemplate",
+      "kind": "FXList",
+      "name": "FX_CarCrush",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_CarCrush",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_BattleMasterExplosionOneFinal",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_BattleMasterExplosionOneFinal",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "FXList",
+      "name": "FX_BattleMasterDamageTransition",
+      "action": "REUSE_NATIVE",
+      "planned": "FX_BattleMasterDamageTransition",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "CrateData",
       "name": "SalvageCrateData",
-      "action": "MANUAL_REBUILD",
-      "planned": "SalvageCrateData",
+      "action": "INDEPENDENT_ADD",
+      "planned": "SD25_SalvageCrateData",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Crate.ini",
+      "reason": "CrateData (not CrateTemplate) table cloned unique-path. CrateObject SalvageCrate stays a native Generals object when SPECTER/stock already has it.",
+      "unique_path": "Data\\INI\\Crate_SilentDeath.ini",
+      "never_patch": [
+        "Data\\INI\\Crate.ini"
+      ]
+    },
+    {
+      "kind": "Object",
+      "name": "SalvageCrate",
+      "action": "REUSE_NATIVE",
+      "planned": "SalvageCrate",
+      "source": "loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Crate.ini",
+      "reason": "Effective gameplay fingerprint matches SPECTER; reuse, do not copy."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMJnkCrate",
+      "action": "RECOVER_FROM_V25",
+      "planned": "PMJnkCrate",
+      "source": "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\PMJnkCrate.W3D",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\PMJnkCrate.W3D",
+        "Generals Silent Death V25/TexturesZH.big::Art\\Textures\\pmjnkcrate.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\PMJnkCrate.W3D",
+          "filename": "PMJnkCrate.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/TexturesZH.big",
+          "inner": "Art\\Textures\\pmjnkcrate.dds",
+          "filename": "pmjnkcrate.dds",
+          "source_big": "Generals Silent Death V25/TexturesZH.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/TexturesZH.big"
+        }
+      ],
+      "w3d_textures": [
+        "PMCONSUP01.tga",
+        "PMBarrel01.tga",
+        "PMCrates04.tga",
+        "PMCrates04_L.tga"
+      ],
+      "w3d_anims": [
+        "PMJNKCRATE.CYLINDER04",
+        "PMJNKCRATE.CYLINDER03",
+        "PMJNKCRATE.CYLINDER02",
+        "PMJNKCRATE.CYLINDER01",
+        "PMJNKCRATE.BOX01",
+        "PMJNKCRATE.PMJNKCRATE1"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMCONSUP01.tga",
+      "action": "RECOVER_FROM_V25",
+      "planned": "PMCONSUP01.tga",
+      "source": "Generals Silent Death V25/Art/Textures/pmconsup01.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/pmconsup01.dds",
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmconsup01.dds",
+        "Generals Silent Death V25/TexturesZH.big::Art\\Textures\\pmconsup01.dds",
+        "Generals Silent Death V25/W3DZH.big::Art\\W3D\\PMCONSUP01.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/pmconsup01.dds",
+          "inner": null,
+          "filename": "pmconsup01.dds",
+          "source_big": null,
+          "local_path": null
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\pmconsup01.dds",
+          "filename": "pmconsup01.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/TexturesZH.big",
+          "inner": "Art\\Textures\\pmconsup01.dds",
+          "filename": "pmconsup01.dds",
+          "source_big": "Generals Silent Death V25/TexturesZH.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/TexturesZH.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/W3DZH.big",
+          "inner": "Art\\W3D\\PMCONSUP01.W3D",
+          "filename": "PMCONSUP01.W3D",
+          "source_big": "Generals Silent Death V25/W3DZH.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/W3DZH.big"
+        }
+      ],
+      "w3d_textures": [
+        "PMCONSUP01.tga"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMCONSUP01.tga",
+      "action": "CYCLE",
+      "planned": "PMCONSUP01.tga",
       "source": null,
-      "reason": "Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing.",
-      "missing_from": "archive_and_vfs"
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMBarrel01.tga",
+      "action": "RECOVER_FROM_V25",
+      "planned": "PMBarrel01.tga",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmbarrel01.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmbarrel01.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\PMBarrel01.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\pmbarrel01.dds",
+          "filename": "pmbarrel01.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\PMBarrel01.W3D",
+          "filename": "PMBarrel01.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "PMBarrel01.tga"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMBarrel01.tga",
+      "action": "CYCLE",
+      "planned": "PMBarrel01.tga",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMCrates04.tga",
+      "action": "RECOVER_FROM_V25",
+      "planned": "PMCrates04.tga",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmcrates04.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmcrates04.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\PMCrates04.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\pmcrates04.dds",
+          "filename": "pmcrates04.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\PMCrates04.W3D",
+          "filename": "PMCrates04.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "PMCrates04.tga"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMCrates04.tga",
+      "action": "CYCLE",
+      "planned": "PMCrates04.tga",
+      "source": null,
+      "reason": "Cyclic reference; node already visited."
+    },
+    {
+      "kind": "ArtFile",
+      "name": "PMCrates04_L.tga",
+      "action": "RECOVER_FROM_V25",
+      "planned": "PMCrates04_L.tga",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmcrates04_l.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\pmcrates04_l.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\pmcrates04_l.dds",
+          "filename": "pmcrates04_l.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "SalvageCrateCollide",
+      "action": "INDEPENDENT_ADD",
+      "planned": "SalvageCrateCollide",
+      "source": null,
+      "reason": "Unknown behavior kept on the unique Object; not deleted."
+    },
+    {
+      "kind": "BehaviorModule",
+      "name": "DeletionUpdate",
+      "action": "INDEPENDENT_ADD",
+      "planned": "DeletionUpdate",
+      "source": null,
+      "reason": "Unknown behavior kept on the unique Object; not deleted."
     },
     {
       "kind": "ObjectCreationList",
@@ -916,7 +1254,9 @@
   ],
   "rewrite_map": {
     "ProjectileArmor": "SD25_ProjectileArmor",
-    "TankArmor": "SD25_TankArmor"
+    "TankArmor": "SD25_TankArmor",
+    "TankDamageFX": "SD25_TankDamageFX",
+    "SalvageCrateData": "SD25_SalvageCrateData"
   },
   "compatibility_notes": [
     {
@@ -956,5 +1296,7 @@
     "note": "Preview only; not written to disk.",
     "rewritten_head": "Object ChinaCSSA1\n\n  ; *** ART Parameters ***\n  SelectPortrait         = CSSA1TB\n  ButtonImage            = CSSA1TB\n  \n  Draw = W3DTruckDraw ModuleTag_01\n\n    DefaultConditionState\n      Model               = CHCSSA1\n      Turret              = TURRET\n      AltTurret              = TURRET\n      AltTurretPitch        = TURRETHEL\n      WeaponFireFXBone = PRIMARY GUN_FIRE\n      WeaponLaunchBone = PRIMARY GUN_FIRE\n      WeaponFireFXBone = SECONDARY GUN_FIRE\n      WeaponLaunchBone = SECONDARY GUN_FIRE\n\n    End\n    ConditionState       = REALLYDAMAGED\n      Model               = CHCSSA1\n      Turret              = TURRET\n      AltTurret              = TURRET\n      AltTurretPitch        = TURRETHEL\n      WeaponFireFXBone = PRIMARY GUN_FIRE\n      WeaponLaunchBone = PRIMARY GUN_FIRE\n      WeaponFir"
   },
-  "applies_to_game": false
+  "independent_module_preview": null,
+  "applies_to_game": false,
+  "generals_exe_run": false
 }

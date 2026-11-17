@@ -1,15 +1,15 @@
-# Transfer plan: `ChinaHQ11` (stage 3 ART + CWC)
+# Transfer plan: `ChinaHQ11` (stage 4 DATA rebuild)
 
-- Generated: 2026-11-11 13:30 Asia/Tehran
+- Generated: 2026-11-11 14:31 Asia/Tehran
 - Found in V25 VFS: **True**
 - Source: `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle.ini`
-- Resolver readiness: **manual_rebuild**
-- DATA completeness: **MANUAL_REBUILD**
+- Resolver readiness: **auto_fixable**
+- DATA completeness: **READY_FOR_TRANSFER_PLAN**
 - ART completeness: **AUTO_RECOVERABLE**
 - Dest INI (future apply only): `Data\INI\Object\SilentDeath\China\ChinaHQ11.ini`
 - Build buttons: ['Command_ConstructChinaHQ11']
 - CommandSets holding those buttons: ['ChinaSupplyCenterCommandSet']
-- Action counts: `{'IMPORT_UNIQUE': 36, 'RECOVER_FROM_V25': 18, 'RENAME_AND_REWRITE': 3, 'MANUAL_REBUILD': 3, 'REUSE_NATIVE': 21, 'CYCLE': 23, 'INDEPENDENT_ADD': 5}`
+- Action counts: `{'IMPORT_UNIQUE': 23, 'RECOVER_FROM_V25': 15, 'RENAME_AND_REWRITE': 3, 'INDEPENDENT_ADD': 8, 'REUSE_NATIVE': 27, 'CYCLE': 13}`
 - Game writes: **False**
 
 ## Object meta
@@ -25,7 +25,7 @@ DATA and ART are scored separately. Neither score imports anything into SPECTER.
 
 | Track | Status |
 |---|---|
-| DATA | `MANUAL_REBUILD` |
+| DATA | `READY_FOR_TRANSFER_PLAN` |
 | ART | `AUTO_RECOVERABLE` |
 
 ## CWC / pack-unpack
@@ -35,16 +35,15 @@ DATA and ART are scored separately. Neither score imports anything into SPECTER.
 - Origin: CWC.exe (not stock ZH)
 - SPECTER exe: unsafe_on_stock_zh
 - What it does: Hides rider objects inside a vehicle and swaps ModelCondition, WeaponSet, ObjectStatus, CommandSet, and Locomotor per RiderN slot. Used as deploy (stand vs prone) for TELs/AD.
-- Rebuild action: **MANUAL_REBUILD** (capability kept: deployed vs undeployed weapon set, command set, and locomotor)
+- Rebuild action: **INDEPENDENT_ADD** (capability kept: packed vs deployed weapon and draw; pack/unpack)
 - Keys: `{'Slots': '1', 'AllowInsideKindOf': 'INFANTRY'}`
 - Riders: `[{'slot': 'Rider1', 'value': 'CWCruFakeRider_Inf_Stand RIDER1 WEAPON_RIDER1 STATUS_RIDER1 CWCruS300CommandSet SET_NORMAL'}, {'slot': 'Rider2', 'value': 'CWCruFakeRider_Inf_Prone RIDER2 WEAPON_RIDER2 STATUS_RIDER2 CWCruS300DeployedCommandSet SET_SLUGGISH'}]`
 
-- Unique Object keeps two WeaponSet blocks with conditions UNPACKING/DEPLOYED if the art supports those ModelConditions.
-- Use stock DeployStyleAIUpdate (ZH module) with PackTime/UnpackTime for turret lock while packing.
-- Do not spawn CWC fake-rider infantry. Encode the visual in ConditionState PACKING/DEPLOYED on the vehicle Draw.
-- Map RIDER1 (packed / cannot fire) to the default ConditionState and RIDER2 (prone / missiles live) to DEPLOYED.
-- CommandSet override becomes a unique last-win CommandSet_ZZZZ file swapped via Upgrade or a second CommandSet on the deployed WeaponSet if the engine allows; otherwise one CommandSet that already contains both fire and undeploy.
-- Payload rider templates stay as unique hidden Objects only if still referenced; otherwise they are not imported.
+- Do not copy RiderChangeContain onto SPECTER. It is CWC.exe-only.
+- Replace with DeployStyleAIUpdate on the unique Object (PackTime/UnpackTime 2000, TurretsFunctionOnlyWhenDeployed = Yes, TurretsMustCenterBeforePacking = Yes, ResetTurretBeforePacking = Yes).
+- Map Draw RIDER1 → DefaultConditionState / PACKING; RIDER2 → DEPLOYED / UNPACKING.
+- Map WeaponSet WEAPON_RIDER1 → Conditions = None PRIMARY None; WEAPON_RIDER2 → Conditions = DEPLOYED PRIMARY <missile>.
+- Do not spawn fake-rider infantry.
 
 ```
 Behavior = RiderChangeContain ModuleTag_Deployment99
@@ -62,14 +61,13 @@ Behavior = RiderChangeContain ModuleTag_Deployment99
 - Origin: Stock ZH module; CWC templates/OCLs are custom
 - SPECTER exe: module_ok_templates_must_be_unique
 - What it does: Fires a SpecialPower that creates objects via OCL. CWC uses it to apply fake-rider deploy/undeploy and also for smoke grenades.
-- Rebuild action: **MANUAL_REBUILD** (capability kept: button that switches deployed state and/or spawns support objects)
+- Rebuild action: **INDEPENDENT_ADD** (capability kept: button that switches packed/deployed state)
 - Keys: `{'SpecialPowerTemplate': 'SpecialAbilityCWCruFakeRider_Inf_Stand', 'OCL': 'OCL_CWCruSpecialAbilityFakeRider_Inf_Stand'}`
 - Riders: `[]`
 
-- Keep OCLSpecialPower on the unique Object only with a unique SpecialPower template (not SPECIAL_CIA_INTELLIGENCE hijack) and a unique OCL path.
-- If the OCL only exists to swap CWC riders, replace the button with DeployStyleAIUpdate pack/unpack instead of importing the fake-rider OCL.
-- Smoke-grenade OCLSpecialPower copies are INDEPENDENT_ADD on the unique Object with unique OCL/SpecialPower names.
-- Do not rewrite SPECTER SpecialPower.ini; add Data\INI\SpecialPower_SilentDeath.ini unique-path later.
+- Do not import OCLSpecialPower, the CIA-intel SpecialPower templates, or the fake-rider OCLs.
+- Replace both buttons with stock Command_Deploy on one unique CommandSet (plus Command_Stop).
+- SPECIAL_CIA_INTELLIGENCE must not be reused; it would hijack SPECTER CIA intel.
 
 ```
 Behavior = OCLSpecialPower ModuleTag_Deployment98
@@ -119,7 +117,6 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 - **REUSE_NATIVE** `damage_type_present_on_specter_armor`: DamageType JET_MISSILES already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified.
 - **REUSE_NATIVE** `damage_type_present_on_specter_armor`: DamageType EXPLOSION already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified.
 - **REUSE_NATIVE** `damage_type_present_on_specter_armor`: DamageType MICROWAVE already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified.
-- **REUSE_NATIVE** `damage_type_present_on_specter_armor`: DamageType HACK already appears in SPECTER Armor tables, so this unique weapon can injure SPECTER units that use those tables. SPECTER Armor.ini is not modified.
 - **REUSE_NATIVE** `stealth_detector_filter`: StealthDetector ExtraRequiredKindOf uses stock KindOf tokens already on SPECTER aircraft.
 - **KEEP_V25_FLAGS** `antiair_flags_present`: Weapon already sets AntiAirborneVehicle and/or anti-missile flags. SPECTER aircraft/missiles keep their KindOf; no SPECTER rewrite.
 
@@ -130,10 +127,16 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 | Object | `ChinaHQ11` | IMPORT_UNIQUE | `ChinaHQ11` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/ChinaVehicle...` |
 | MappedImage | `CHHQ11TB` | RECOVER_FROM_V25 | `CHHQ11TB` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/CHHQ11TB.tga` |
 | Armor | `HumveeArmor` | RENAME_AND_REWRITE | `SD25_HumveeArmor` | Same name, different effective behavior. SPECTER original stays; V25 copy becomes SD25_HumveeArmor with a full reference rewrite. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Armor.ini` |
-| FXList | `TruckDamageFX` | MANUAL_REBUILD | `TruckDamageFX` | Not in parsed V25 VFS, not in SPECTER, and no filename in the V25 zip listing. | `` |
-| FXList | `FX_CWCgenTankDamageTransition` | IMPORT_UNIQUE | `FX_CWCgenTankDamageTransition` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
-| FXList | `FX_CWCgenTankDeathRubble1` | IMPORT_UNIQUE | `FX_CWCgenTankDeathRubble1` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
-| FXList | `FX_CWCgenTankDeathRubble2` | IMPORT_UNIQUE | `FX_CWCgenTankDeathRubble2` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| DamageFX | `TruckDamageFX` | INDEPENDENT_ADD | `SD25_TruckDamageFX` | Independent unique-path clone of V25 DamageFX TruckDamageFX. SPECTER public DamageFX.ini is not rewritten. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/DamageFX.ini` |
+| FXList | `FX_DamageTankStruck` | REUSE_NATIVE | `FX_DamageTankStruck` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageTankStruck` | REUSE_NATIVE | `FX_HeroicDamageTankStruck` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageSmallTankStruckSmallArms` | REUSE_NATIVE | `FX_DamageSmallTankStruckSmallArms` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageTankStruckSmallArms` | REUSE_NATIVE | `FX_HeroicDamageTankStruckSmallArms` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageTankStruckSmallArms` | REUSE_NATIVE | `FX_DamageTankStruckSmallArms` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageDisableVehicle` | REUSE_NATIVE | `FX_DamageDisableVehicle` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_HeroicDamageDisableVehicle` | REUSE_NATIVE | `FX_HeroicDamageDisableVehicle` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageMajorArmorPiercing` | REUSE_NATIVE | `FX_DamageMajorArmorPiercing` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_DamageMinorArmorPiercing` | REUSE_NATIVE | `FX_DamageMinorArmorPiercing` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
 | Weapon | `HQ11MissileWeapon` | IMPORT_UNIQUE | `HQ11MissileWeapon` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Weapon.ini` |
 | AudioEvent | `S400TriumfSOU` | IMPORT_UNIQUE | `S400TriumfSOU` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/SoundEffects.ini` |
 | FXList | `WeaponFX_JetMissileDetonation` | REUSE_NATIVE | `WeaponFX_JetMissileDetonation` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
@@ -161,15 +164,6 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 | DamageType | `EXPLOSION` | REUSE_NATIVE | `EXPLOSION` | DamageType exists on SPECTER Armor tables. | `` |
 | Weapon | `CWCruSA10RadarWeapon` | IMPORT_UNIQUE | `CWCruSA10RadarWeapon` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Weapon.ini` |
 | DamageType | `MICROWAVE` | REUSE_NATIVE | `MICROWAVE` | DamageType exists on SPECTER Armor tables. | `` |
-| CommandSet | `CWCruS300CommandSet` | IMPORT_UNIQUE | `CWCruS300CommandSet` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandSet.ini` |
-| CommandButton | `Command_S300_Prone` | IMPORT_UNIQUE | `Command_S300_Prone` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
-| SpecialPower | `SpecialAbilityCWCruFakeRider_Inf_Prone` | IMPORT_UNIQUE | `SpecialAbilityCWCruFakeRider_Inf_Prone` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/SpecialPower.ini` |
-| MappedImage | `BUSHU` | IMPORT_UNIQUE | `BUSHU` | Name is free in SPECTER FINAL; unique-path import. | `00LSF0118.big:Data\ini\MappedImages\TextureSize_512\leesf.INI` |
-| ArtFile | `BUSHUtb.tga` | RECOVER_FROM_V25 | `BUSHUtb.tga` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/BUSHUtb.tga` |
-| ArtFile | `BUSHU` | IMPORT_UNIQUE | `BUSHU` | MappedImage identifier, not a standalone texture file. Pixel data is the Texture= atlas; no similar file was substituted. | `00LSF0118.big:Data\ini\MappedImages\TextureSize_512\leesf.INI` |
-| CommandButton | `Command_Stop` | REUSE_NATIVE | `Command_Stop` | Pinned public command; V25 variant is not copied over SPECTER. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
-| MappedImage | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Missing from parsed INI VFS; matching filename exists in the V25 archive. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
-| ArtFile | `SDStop` | RECOVER_FROM_V25 | `SDStop` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDStop.tga` |
 | AudioEvent | `AvengerVoiceSelect` | REUSE_NATIVE | `AvengerVoiceSelect` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | AudioEvent | `AvengerVoiceMove` | REUSE_NATIVE | `AvengerVoiceMove` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | AudioEvent | `AvengerVoicePaint` | REUSE_NATIVE | `AvengerVoicePaint` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
@@ -177,33 +171,13 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 | AudioEvent | `AvengerVoiceCreate` | REUSE_NATIVE | `AvengerVoiceCreate` | Effective gameplay fingerprint matches SPECTER; reuse, do not copy. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Voice.ini` |
 | Locomotor | `CWCruS300Locomotor` | IMPORT_UNIQUE | `CWCruS300Locomotor` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Locomotor.ini` |
 | Locomotor | `CWCruS300DeployedLocomotor` | IMPORT_UNIQUE | `CWCruS300DeployedLocomotor` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Locomotor.ini` |
-| Object | `CWCruFakeRider_Inf_Stand` | IMPORT_UNIQUE | `CWCruFakeRider_Inf_Stand` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/FakeRiders.ini` |
-| Armor | `CWCgenFakeRider_Inf_Armor` | IMPORT_UNIQUE | `CWCgenFakeRider_Inf_Armor` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Armor.ini` |
-| Locomotor | `CWCgenFakeRiderLocomotor` | IMPORT_UNIQUE | `CWCgenFakeRiderLocomotor` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Locomotor.ini` |
-| Weapon | `CWCgenSuicideWeapon` | IMPORT_UNIQUE | `CWCgenSuicideWeapon` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/Weapon.ini` |
-| DamageType | `HACK` | REUSE_NATIVE | `HACK` | DamageType exists on SPECTER Armor tables. | `` |
-| BehaviorModule | `AIUpdateInterface` | REUSE_NATIVE | `AIUpdateInterface` | Stock SAGE module; keep on the unique Object. | `` |
-| BehaviorModule | `FireWeaponUpdate` | INDEPENDENT_ADD | `FireWeaponUpdate` | Module class is kept on the unique Object; SPECTER core is not patched. | `` |
-| BehaviorModule | `SlavedUpdate` | INDEPENDENT_ADD | `SlavedUpdate` | Unknown behavior kept on the unique Object; not deleted. | `` |
-| BehaviorModule | `DestroyDie` | REUSE_NATIVE | `DestroyDie` | Stock SAGE module; keep on the unique Object. | `` |
-| Object | `CWCruFakeRider_Inf_Prone` | IMPORT_UNIQUE | `CWCruFakeRider_Inf_Prone` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/object/FakeRiders.ini` |
-| Armor | `CWCgenFakeRider_Inf_Armor` | CYCLE | `CWCgenFakeRider_Inf_Armor` | Cyclic reference; node already visited. | `` |
-| Locomotor | `CWCgenFakeRiderLocomotor` | CYCLE | `CWCgenFakeRiderLocomotor` | Cyclic reference; node already visited. | `` |
-| Weapon | `CWCgenSuicideWeapon` | CYCLE | `CWCgenSuicideWeapon` | Cyclic reference; node already visited. | `` |
-| BehaviorModule | `AIUpdateInterface` | CYCLE | `AIUpdateInterface` | Cyclic reference; node already visited. | `` |
-| BehaviorModule | `FireWeaponUpdate` | CYCLE | `FireWeaponUpdate` | Cyclic reference; node already visited. | `` |
-| BehaviorModule | `SlavedUpdate` | CYCLE | `SlavedUpdate` | Cyclic reference; node already visited. | `` |
-| BehaviorModule | `DestroyDie` | CYCLE | `DestroyDie` | Cyclic reference; node already visited. | `` |
-| SpecialPower | `SpecialAbilityCWCruFakeRider_Inf_Stand` | IMPORT_UNIQUE | `SpecialAbilityCWCruFakeRider_Inf_Stand` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/SpecialPower.ini` |
-| SpecialPower | `SpecialAbilityCWCruFakeRider_Inf_Prone` | CYCLE | `SpecialAbilityCWCruFakeRider_Inf_Prone` | Cyclic reference; node already visited. | `` |
-| ObjectCreationList | `OCL_CWCruSpecialAbilityFakeRider_Inf_Stand` | IMPORT_UNIQUE | `OCL_CWCruSpecialAbilityFakeRider_Inf_Stand` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini` |
-| Object | `CWCruFakeRider_Inf_Stand` | CYCLE | `CWCruFakeRider_Inf_Stand` | Cyclic reference; node already visited. | `` |
-| ObjectCreationList | `OCL_CWCruSpecialAbilityFakeRider_Inf_Prone` | IMPORT_UNIQUE | `OCL_CWCruSpecialAbilityFakeRider_Inf_Prone` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini` |
-| Object | `CWCruFakeRider_Inf_Prone` | CYCLE | `CWCruFakeRider_Inf_Prone` | Cyclic reference; node already visited. | `` |
 | ObjectCreationList | `OCL_CWCgenTankDeathTrails` | IMPORT_UNIQUE | `OCL_CWCgenTankDeathTrails` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ObjectCreationList.ini` |
 | ParticleSystem | `CWCgenTankDeathSmokeDamaged` | IMPORT_UNIQUE | `CWCgenTankDeathSmokeDamaged` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini` |
 | ParticleSystem | `CWCgenTankDeathSmokeReallyDamaged` | IMPORT_UNIQUE | `CWCgenTankDeathSmokeReallyDamaged` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini` |
 | ParticleSystem | `CWCgenTankDeathSmokeRubble` | IMPORT_UNIQUE | `CWCgenTankDeathSmokeRubble` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/ParticleSystem.ini` |
+| FXList | `FX_CWCgenTankDamageTransition` | IMPORT_UNIQUE | `FX_CWCgenTankDamageTransition` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_CWCgenTankDeathRubble1` | IMPORT_UNIQUE | `FX_CWCgenTankDeathRubble1` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
+| FXList | `FX_CWCgenTankDeathRubble2` | IMPORT_UNIQUE | `FX_CWCgenTankDeathRubble2` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/FXList.ini` |
 | ArtFile | `CHHQ11TB` | RECOVER_FROM_V25 | `CHHQ11TB` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/CHHQ11TB.tga` |
 | ArtFile | `HQ11` | RECOVER_FROM_V25 | `HQ11` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/W3D/HQ11.W3D` |
 | ArtFile | `SDNSM04.DDS` | RECOVER_FROM_V25 | `SDNSM04.DDS` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/Textures/SDNSM04.dds` |
@@ -226,29 +200,24 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 | ArtFile | `EXTireTrack.tga` | RECOVER_FROM_V25 | `EXTireTrack.tga` | Exact stem found inside a nested V25 BIG. Not substituted. | `Generals Silent Death V25/WYS/Textures.big::Art\Textures\extiretrack.dds` |
 | ArtFile | `HQ11RD` | RECOVER_FROM_V25 | `HQ11RD` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/W3D/HQ11RD.W3D` |
 | ArtFile | `HQ11RD.HQ11RD` | RECOVER_FROM_V25 | `HQ11RD.HQ11RD` | Exact stem found as a loose zip member. Not substituted. | `Generals Silent Death V25/Art/W3D/HQ11RD.W3D` |
-| BehaviorModule | `RiderChangeContain` | MANUAL_REBUILD | `RiderChangeContain` | CWC module needs a SPECTER-style rebuild; capability is not dropped. | `` |
-| BehaviorModule | `OCLSpecialPower` | MANUAL_REBUILD | `OCLSpecialPower` | CWC module needs a SPECTER-style rebuild; capability is not dropped. | `` |
+| BehaviorModule | `AIUpdateInterface` | REUSE_NATIVE | `AIUpdateInterface` | Stock SAGE module; keep on the unique Object. | `` |
+| BehaviorModule | `RiderChangeContain` | INDEPENDENT_ADD | `RiderChangeContain` | RiderChangeContain + rider-only OCLSpecialPower is proven equivalent to stock DeployStyleAIUpdate + WeaponSet Conditions = DEPLOYED for pack/unpack and fire-only-when-deployed. CommandSet swap and SET_SLUGGISH-while-deployed are not. | `` |
+| BehaviorModule | `OCLSpecialPower` | INDEPENDENT_ADD | `OCLSpecialPower` | RiderChangeContain + rider-only OCLSpecialPower is proven equivalent to stock DeployStyleAIUpdate + WeaponSet Conditions = DEPLOYED for pack/unpack and fire-only-when-deployed. CommandSet swap and SET_SLUGGISH-while-deployed are not. | `` |
 | BehaviorModule | `EnemyNearUpdate` | INDEPENDENT_ADD | `EnemyNearUpdate` | Module class is kept on the unique Object; SPECTER core is not patched. | `` |
 | BehaviorModule | `StealthDetectorUpdate` | REUSE_NATIVE | `StealthDetectorUpdate` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `TransitionDamageFX` | REUSE_NATIVE | `TransitionDamageFX` | Stock SAGE module; keep on the unique Object. | `` |
 | BehaviorModule | `SlowDeathBehavior` | REUSE_NATIVE | `SlowDeathBehavior` | Stock SAGE module; keep on the unique Object. | `` |
+| BehaviorModule | `FireWeaponUpdate` | INDEPENDENT_ADD | `FireWeaponUpdate` | Module class is kept on the unique Object; SPECTER core is not patched. | `` |
 | CommandButton | `Command_ConstructChinaHQ11` | IMPORT_UNIQUE | `Command_ConstructChinaHQ11` | Name is free in SPECTER FINAL; unique-path import. | `loose:/tmp/v25_extract/Generals Silent Death V25/Data/INI/CommandButton.ini` |
 | Object | `ChinaHQ11` | CYCLE | `ChinaHQ11` | Cyclic reference; node already visited. | `` |
 | MappedImage | `CHHQ11TB` | CYCLE | `CHHQ11TB` | Cyclic reference; node already visited. | `` |
 | ArtFile | `CHHQ11TB` | CYCLE | `CHHQ11TB` | Cyclic reference; node already visited. | `` |
+| CommandSet | `SD25_ChinaHQ11CommandSet` | INDEPENDENT_ADD | `SD25_ChinaHQ11CommandSet` | One unique CommandSet with stock Command_Deploy + Command_Stop. CWC packed/deployed sets are not imported. | `stage4-independent` |
 
 ## ART recoveries (exact stem; no similar-name substitute)
 
 - `MappedImage:CHHQ11TB` found_in=`None`
   - `Generals Silent Death V25/Art/Textures/CHHQ11TB.tga`
-- `ArtFile:BUSHUtb.tga` found_in=`zip`
-  - `Generals Silent Death V25/Art/Textures/BUSHUtb.tga`
-  - container=`zip` file=`BUSHUtb.tga` source_big=`None` inner=`None`
-- `MappedImage:SDStop` found_in=`None`
-  - `Generals Silent Death V25/Art/Textures/SDStop.tga`
-- `ArtFile:SDStop` found_in=`zip`
-  - `Generals Silent Death V25/Art/Textures/SDStop.tga`
-  - container=`zip` file=`SDStop.tga` source_big=`None` inner=`None`
 - `ArtFile:CHHQ11TB` found_in=`zip`
   - `Generals Silent Death V25/Art/Textures/CHHQ11TB.tga`
   - container=`zip` file=`CHHQ11TB.tga` source_big=`None` inner=`None`
@@ -303,6 +272,7 @@ Behavior = FireWeaponUpdate ModuleTag_Radar
 ## Planned rewrites (not applied)
 
 - `HumveeArmor` → `SD25_HumveeArmor`
+- `TruckDamageFX` → `SD25_TruckDamageFX`
 - `ProjectileArmor` → `SD25_ProjectileArmor`
 - `InvulnerableAllArmor` → `SD25_InvulnerableAllArmor`
 
@@ -341,4 +311,127 @@ Object ChinaHQ11
 ```
 
 This is a plan only. No Object/Weapon/CommandSet/ART was imported.
+
+## Stage 4 — independent DATA rebuild
+
+SPECTER public DamageFX.ini / Crate.ini / FXList.ini / SpecialPower.ini are never written.
+CWC.exe is not used. Previews are not imported into the game.
+
+### Unique DATA files (future apply only)
+
+- `Data\INI\Object\SilentDeath\China\ChinaHQ11.ini`
+- `Data\INI\DamageFX_SilentDeath.ini`
+- `Data\INI\CommandSet_ZZZZ_SilentDeath_China.ini`
+
+### Public INI leak check
+
+**PASS — no public SPECTER INI in the unique-path list.**
+
+### Independent clones
+
+#### `DamageFX` `TruckDamageFX` → `SD25_TruckDamageFX`
+
+- Unique path: `Data\INI\DamageFX_SilentDeath.ini`
+
+```
+; Independent unique-path clone of DamageFX TruckDamageFX. Preview only; SPECTER public INI is not written.
+DamageFX SD25_TruckDamageFX
+
+  ; this means, "when doing damagefx of the same type, wait at least this many milliseconds
+  ; between repeated fx." this is used to prevent overwhelming the system with fx when
+  ; groups of things are attacking a single object. example: 8 rangers attacking a tank
+  ; would produce a ton of particle effects if we did one for every ranger, every time they
+  ; attack, but with this in place, we only do (at most) one every 500 msec.
+  ThrottleTime = DEFAULT 100
+
+
+  MajorFX           = DEFAULT           FX_DamageTankStruck
+  VeterancyMajorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck
+  MinorFX           = DEFAULT           FX_DamageTankStruck
+  VeterancyMinorFX  = HEROIC DEFAULT    FX_HeroicDamageTankStruck
+
+  MajorFX           = SMALL_ARMS        FX_DamageSmallTankStruckSmallArms
+  VeterancyMajorFX  = HEROIC SMALL_ARMS FX_HeroicDamageTankStruckSmallArms
+  MinorFX           = SMALL_ARMS        FX_DamageSmallTankStruckSmallArms
+  VeterancyMinorFX  = HEROIC SMALL_ARMS FX_HeroicDamageTankStruckSmallArms
+
+  MajorFX           = COMANCHE_VULCAN       
+```
+
+
+### DeployStyleAIUpdate compatibility proof
+
+- Use DeployStyleAIUpdate: **True**
+- Use WeaponSet Conditions = DEPLOYED: **True**
+- PackTime/UnpackTime (ms): `2000`
+- Summary: RiderChangeContain + rider-only OCLSpecialPower is proven equivalent to stock DeployStyleAIUpdate + WeaponSet Conditions = DEPLOYED for pack/unpack and fire-only-when-deployed. CommandSet swap and SET_SLUGGISH-while-deployed are not.
+
+Proven:
+
+- Two rider slots encode packed vs deployed weapon flags.
+- Draw RIDER1 = packed, RIDER2 = deployed.
+- Packed uses SET_NORMAL; deployed uses SET_SLUGGISH (CWC-only switch).
+- WeaponSet WEAPON_RIDER1 PRIMARY None / WEAPON_RIDER2 PRIMARY HQ11MissileWeapon maps 1:1 onto stock Conditions = None vs DEPLOYED.
+- HQ11.HQ11 ONCE_BACKWARDS (packed) vs ONCE with MISSILE_C (deployed) stays on the same W3D.
+- OCL_CWCruSpecialAbilityFakeRider_Inf_Stand: OCL only injects the fake rider inside the vehicle
+- SpecialAbilityCWCruFakeRider_Inf_Stand uses SPECIAL_CIA_INTELLIGENCE; it must not be imported (would hijack CIA intel).
+- OCL_CWCruSpecialAbilityFakeRider_Inf_Prone: OCL only injects the fake rider inside the vehicle
+- SpecialAbilityCWCruFakeRider_Inf_Prone uses SPECIAL_CIA_INTELLIGENCE; it must not be imported (would hijack CIA intel).
+- OCLSpecialPower exists only to inject fake riders; stock Command_Deploy replaces it.
+- V25 itself already authors DeployStyleAIUpdate (e.g. SDSR5) in the same vehicle INI.
+
+Limitations (exact CWC behavior not available on stock Generals.exe):
+
+- **Runtime CommandSet swap (packed vs deployed button labels)**
+  - V25: RiderChangeContain overrides CommandSet per rider (CWCruS300CommandSet vs DeployedCommandSet).
+  - Stock: DeployStyleAIUpdate does not swap CommandSet. One unique CommandSet with Command_Deploy + Command_Stop.
+  - Kept: State swap (pack/unpack) stays. Separate SHIFANG/BUSHU labels collapse to one Deploy toggle.
+- **SET_SLUGGISH locomotor while deployed**
+  - V25: Rider2 binds SET_SLUGGISH CWCruS300DeployedLocomotor so the TEL can crawl while unpacked.
+  - Stock: DeployStyleAIUpdate does not switch LocomotorSet. The unit packs, then moves on SET_NORMAL.
+  - Kept: Settled firing posture is kept. Slow-move-while-deployed is not available on stock Generals.exe.
+- **Pack / unpack duration**
+  - V25: CWC rider swap timing is not an INI PackTime; ScuttleDelay=1500 is TOPPLED scuttle, not pack.
+  - Stock: PackTime = UnpackTime = 2000 copied from V25 SDSR5 DeployStyleAIUpdate in the same ChinaVehicle.ini.
+  - Kept: Pack/unpack exists. Exact CWC millisecond timing is not claimed.
+
+Independent module preview (not written):
+
+```
+; Independent unique-path preview for ChinaHQ11 DATA. Not written to disk.
+; SPECTER public INI / CWC.exe are not used.
+
+  WeaponSet
+    Conditions = None
+    Weapon = PRIMARY None
+  End
+  WeaponSet
+    Conditions = DEPLOYED
+    Weapon = PRIMARY HQ11MissileWeapon
+    AutoChooseSources = PRIMARY FROM_PLAYER FROM_AI FROM_SCRIPT
+    PreferredAgainst = PRIMARY BALLISTIC_MISSILE AIRCRAFT
+  End
+  CommandSet = SD25_ChinaHQ11CommandSet
+
+  Behavior = DeployStyleAIUpdate ModuleTag_Deploy
+    AutoAcquireEnemiesWhenIdle = Yes Stealthed
+    PackTime = 2000
+    UnpackTime = 2000
+    TurretsFunctionOnlyWhenDeployed = Yes
+    TurretsMustCenterBeforePacking = Yes
+    ResetTurretBeforePacking = Yes
+  End
+  Locomotor = SET_NORMAL CWCruS300Locomotor
+  ; SET_SLUGGISH CWCruS300DeployedLocomotor is NOT bound: stock DeployStyle cannot switch locomotor sets.
+
+  ; Removed (CWC.exe / CIA hijack — capability kept via DeployStyle + Command_Deploy):
+  ;   RiderChangeContain, OCLSpecialPower x2, fake-rider Objects, SpecialAbilityCWCruFakeRider_*
+
+```
+
+
+## Tested vs analysis-only
+
+- **Tested:** unit tests (`tests/test_data_rebuild.py`, existing resolver/ART tests).
+- **Not tested:** Generals.exe, in-game spawn, packing SPECTER BIGs, apply.
 

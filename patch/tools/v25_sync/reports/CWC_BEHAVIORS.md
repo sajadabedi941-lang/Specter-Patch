@@ -1,6 +1,6 @@
 # CWC behaviors discovered in V25 (SPECTER-safe rebuild)
 
-- Generated: 2026-11-11 13:30 Asia/Tehran
+- Generated: 2026-11-11 14:31 Asia/Tehran
 
 SPECTER runs stock Generals.exe. CWC.exe-only modules are never copied as-is.
 Capabilities are kept via independent unique-path INI, not by rewriting SPECTER core.
@@ -12,12 +12,11 @@ Capabilities are kept via independent unique-path INI, not by rewriting SPECTER 
 - Hides rider objects inside a vehicle and swaps ModelCondition, WeaponSet, ObjectStatus, CommandSet, and Locomotor per RiderN slot. Used as deploy (stand vs prone) for TELs/AD.
 - Rebuild: **MANUAL_REBUILD** — keep `deployed vs undeployed weapon set, command set, and locomotor`
 
-- Unique Object keeps two WeaponSet blocks with conditions UNPACKING/DEPLOYED if the art supports those ModelConditions.
-- Use stock DeployStyleAIUpdate (ZH module) with PackTime/UnpackTime for turret lock while packing.
-- Do not spawn CWC fake-rider infantry. Encode the visual in ConditionState PACKING/DEPLOYED on the vehicle Draw.
-- Map RIDER1 (packed / cannot fire) to the default ConditionState and RIDER2 (prone / missiles live) to DEPLOYED.
-- CommandSet override becomes a unique last-win CommandSet_ZZZZ file swapped via Upgrade or a second CommandSet on the deployed WeaponSet if the engine allows; otherwise one CommandSet that already contains both fire and undeploy.
-- Payload rider templates stay as unique hidden Objects only if still referenced; otherwise they are not imported.
+- Do not copy RiderChangeContain; it is CWC.exe-only.
+- Use stock DeployStyleAIUpdate only when prove_rider_deploy() succeeds (exactly two riders, WEAPON_RIDER1 None vs WEAPON_RIDER2 missile, Draw RIDER2, OCLs that only inject those fake riders).
+- Map RIDER1 packed to DefaultConditionState/PACKING and RIDER2 to DEPLOYED. WeaponSet Conditions = None vs DEPLOYED.
+- CommandSet swap and SET_SLUGGISH-while-deployed are NOT proven on stock ZH and must be listed as limitations.
+- Do not spawn CWC fake-rider infantry.
 
 ## `OCLSpecialPower`
 
@@ -26,10 +25,10 @@ Capabilities are kept via independent unique-path INI, not by rewriting SPECTER 
 - Fires a SpecialPower that creates objects via OCL. CWC uses it to apply fake-rider deploy/undeploy and also for smoke grenades.
 - Rebuild: **MANUAL_REBUILD** — keep `button that switches deployed state and/or spawns support objects`
 
-- Keep OCLSpecialPower on the unique Object only with a unique SpecialPower template (not SPECIAL_CIA_INTELLIGENCE hijack) and a unique OCL path.
-- If the OCL only exists to swap CWC riders, replace the button with DeployStyleAIUpdate pack/unpack instead of importing the fake-rider OCL.
-- Smoke-grenade OCLSpecialPower copies are INDEPENDENT_ADD on the unique Object with unique OCL/SpecialPower names.
-- Do not rewrite SPECTER SpecialPower.ini; add Data\INI\SpecialPower_SilentDeath.ini unique-path later.
+- Never import SPECIAL_CIA_INTELLIGENCE hijacks.
+- If the OCL only injects fake riders, replace OCLSpecialPower with stock Command_Deploy. Do not keep the module.
+- Smoke-grenade or other real payloads: unique SpecialPower + unique OCL on the unique Object; do not patch SPECTER SpecialPower.ini.
+- Do not rewrite SPECTER SpecialPower.ini.
 
 ## `DeployStyleAIUpdate`
 

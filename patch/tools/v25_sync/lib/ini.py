@@ -18,6 +18,7 @@ DEFINE_KINDS = (
     "Locomotor",
     "ObjectCreationList",
     "FXList",
+    "DamageFX",
     "ParticleSystem",
     "SpecialPower",
     "Upgrade",
@@ -27,10 +28,16 @@ DEFINE_KINDS = (
     "AudioEvent",
     "DialogEvent",
     "EvaEvent",
+    "CrateData",
     "CrateTemplate",
     "Rank",
     "AIData",
 )
+# SAGE uses CrateData; some docs say CrateTemplate. Lookup treats them as one table.
+KIND_ALIASES = {
+    "CrateData": ("CrateTemplate",),
+    "CrateTemplate": ("CrateData",),
+}
 DEFINE_RE = re.compile(
     r"^(" + "|".join(DEFINE_KINDS) + r")\s+(\S+)",
     re.I,
@@ -135,11 +142,22 @@ NAMED_KEYS = {
     "voiceattackair": "AudioEvent",
     "voicecreate": "AudioEvent",
     "deathfx": "FXList",
-    "damagefx": "FXList",
+    "damagefx": "DamageFX",
+    "majorfx": "FXList",
+    "minorfx": "FXList",
+    "veterancymajorfx": "FXList",
+    "veterancyminorfx": "FXList",
     "projectileexhaust": "ParticleSystem",
-    "cratedata": "CrateTemplate",
+    "cratedata": "CrateData",
+    "crateobject": "Object",
     "firesweapon": "Weapon",
     "weaponstouse": "Weapon",
+}
+DAMAGEFX_FX_KEYS = {
+    "majorfx",
+    "minorfx",
+    "veterancymajorfx",
+    "veterancyminorfx",
 }
 
 ART_KEYS = {
@@ -313,6 +331,12 @@ def classify_refs(
             for t in tokens:
                 if t.lower() not in SKIP_NAMED_VALUES and not t.replace(".", "", 1).isdigit():
                     art.append(t)
+        # DamageFX tables: last token is the FXList; earlier tokens are DamageType / veterancy.
+        if parent_kind == "DamageFX" and kl in DAMAGEFX_FX_KEYS:
+            last = tokens[-1] if tokens else ""
+            if last and last.lower() not in SKIP_NAMED_VALUES:
+                named.setdefault("FXList", []).append(last)
+            continue
         kind = NAMED_KEYS.get(kl)
         if not kind and re.fullmatch(r"rider\d+", kl):
             kind = "Object"

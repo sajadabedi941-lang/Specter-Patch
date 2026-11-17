@@ -1,0 +1,54 @@
+{
+  "release": "WORLD_WAR_III2027-Full-Release",
+  "main_commit": "aac7ffc1e9e2a8541e2abc3d185e97a24c66cb61",
+  "content_commit_data": "bf42408cd8ec12eefdacadc99527ccbf5ce43046",
+  "in_game_tested": false,
+  "user_reported_art_sizes": {
+    "ART_ONE": 2094700,
+    "ART_TWO": 300054,
+    "match": "Windows/KiB rounding of SPE.part001-058 BIGs on main",
+    "SPE_ART_ONE_bytes": 2144972013,
+    "SPE_ART_ONE_KiB": 2094699.2314453125,
+    "SPE_ART_TWO_bytes": 307254782,
+    "SPE_ART_TWO_KiB": 300053.498046875,
+    "rejected_447mb_art_one": "patch construct-button ART ONE (447200634) is a reduced mixed archive, not the SPE ART ONE texture pack"
+  },
+  "load_order_source": "specter-complete-spain-supply-income-v1",
+  "load_order": [
+    "0_SPECTER_CountrySupplyIncome.big",
+    "0_SPECTER_NatoSpainDisplay.big",
+    "INIZH.big",
+    "_SPEC_ART_ONE.big",
+    "_SPEC_ART_TWO.big",
+    "_SPEC_DATA_ONE.big"
+  ],
+  "art_one": {
+    "base": "SPE SPECTER FINAL (GeneralsMode.com)/_SPEC_ART_ONE.big unmodified except 19 construct TGAs",
+    "entries": 3025,
+    "kinds": "tga/dds/tg0/tg1/tg2 only (no W3D)",
+    "replaced_tgas": 19
+  },
+  "art_two": {
+    "base": "SPE SPECTER FINAL (GeneralsMode.com)/_SPEC_ART_TWO.big unmodified",
+    "entries": 2684,
+    "kinds": "W3D only"
+  },
+  "files": {
+    "_SPEC_DATA_ONE.big": {
+      "size": 373955679,
+      "sha256": "be2f27b7c0d2ce233789909b029d24f2d14a34a6540fed4a71186c3c46095cd4"
+    },
+    "_SPEC_ART_ONE.big": {
+      "size": 2145283309,
+      "sha256": "15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66"
+    },
+    "_SPEC_ART_TWO.big": {
+      "size": 307254782,
+      "sha256": "a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af"
+    },
+    "WORLD_WAR_III2027-Full-Release.zip": {
+      "size": 889858870,
+      "sha256": "a011f9087fde4a7dd8247c8dae9459f51316dc8c75ed94015536406a16a13954"
+    }
+  }
+}

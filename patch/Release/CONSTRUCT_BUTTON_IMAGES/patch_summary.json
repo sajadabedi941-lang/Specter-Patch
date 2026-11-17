@@ -1,0 +1,663 @@
+{
+  "src_data_size": 373920910,
+  "src_art_size": 445953809,
+  "out_data_size": 373937384,
+  "out_art_size": 447200634,
+  "out_data_sha256": "afc804de8a92cb4ba4b527d07f84898f26704b39a548c2b2f0e6c6bb3be08b07",
+  "out_art_sha256": "e796fadcae1d0184a1e79e95e32a986782562c8040c13720873916a98fe9631f",
+  "data_extra": "Data\\INI\\CommandButton_ZZZZ_ZZZZConstructCameos.ini",
+  "native_buttonimage_lastwins": [
+    {
+      "command_button": "Command_ConstructAmericaVehicleAN_TPY2",
+      "object": "US_AN_TPY2",
+      "old_buttonimage": "us_tpy2",
+      "new_buttonimage": "specbtn_mic_ustpy2",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructAmericaVehicleTHAAD",
+      "object": "US_THAAD",
+      "old_buttonimage": "us_thaad",
+      "new_buttonimage": "specbtn_mic_thaad",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructAmericaVehicleTHAAD_AI",
+      "object": "US_THAAD_Site_AI",
+      "old_buttonimage": "us_thaad",
+      "new_buttonimage": "specbtn_mic_thaad",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructArab_Krasukha-4",
+      "object": "Arab_Krasukha-4",
+      "old_buttonimage": "arb_krasukha4e",
+      "new_buttonimage": "specbtn_mic_krasukha",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructArb_92N6E",
+      "object": "Arb_92N6E",
+      "old_buttonimage": "irq_92N6E",
+      "new_buttonimage": "specbtn_mic_92n6r",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructArb_Pantsir",
+      "object": "Arb_Pantsir",
+      "old_buttonimage": "arb_pantsirs1",
+      "new_buttonimage": "specbtn_mic_pantsir",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructBritainVehicleIRIST",
+      "object": "BritainVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructBritainVehicleTRML4D",
+      "object": "BritainVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructChinaVehicleHQ9",
+      "object": "ChinaVehicleHQ9",
+      "old_buttonimage": "pla_hq9b",
+      "new_buttonimage": "specbtn_mic_hq9",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructChinaVehicleHT233",
+      "object": "ChinaVehicleHT233",
+      "old_buttonimage": "pla_ht233",
+      "new_buttonimage": "specbtn_mic_ht233",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructChinaVehicleKrasukha4",
+      "object": "ChinaVehicleKrasukha4",
+      "old_buttonimage": "rus_krasukha4",
+      "new_buttonimage": "specbtn_mic_krasukha",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructFranceVehicleIRIST",
+      "object": "FranceVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructFranceVehicleTRML4D",
+      "object": "FranceVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructGermanyVehicleIRIST",
+      "object": "GermanyVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructGermanyVehicleTRML4D",
+      "object": "GermanyVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructIranVehiclePantsirS1M",
+      "object": "IranVehiclePantsirS1M",
+      "old_buttonimage": "irn_pantsir",
+      "new_buttonimage": "specbtn_mic_pantsir",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructIsrael_AN_TPY2",
+      "object": "Israel_AN_TPY2",
+      "old_buttonimage": "isi_tpy2",
+      "new_buttonimage": "specbtn_mic_tpy2",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructIsrael_Arrow",
+      "object": "Israel_Arrow",
+      "old_buttonimage": "isi_arrow",
+      "new_buttonimage": "specbtn_mic_arrow",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructItalyVehicleIRIST",
+      "object": "ItalyVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructItalyVehicleTRML4D",
+      "object": "ItalyVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructNatoVehicleIRIST",
+      "object": "NatoVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructNatoVehicleTRML4D",
+      "object": "NatoVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehicle92N6R",
+      "object": "RussiaVehicle92N6R",
+      "old_buttonimage": "rus_92n6r",
+      "new_buttonimage": "specbtn_mic_92n6r",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehicle96L6TSP",
+      "object": "RussiaVehicle96L6TSP",
+      "old_buttonimage": "rus_96l6tsp",
+      "new_buttonimage": "specbtn_mic_96l6tsp",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehicleKrasukha4",
+      "object": "RussiaVehicleKrasukha4",
+      "old_buttonimage": "rus_krasukha4",
+      "new_buttonimage": "specbtn_mic_krasukha",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehiclePantsirS1M",
+      "object": "RussiaVehiclePantsirS1M",
+      "old_buttonimage": "rus_pantsirs1m",
+      "new_buttonimage": "specbtn_mic_pantsir",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehicleS400",
+      "object": "RussiaVehicleS400",
+      "old_buttonimage": "rus_s400r",
+      "new_buttonimage": "specbtn_mic_s400",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussiaVehicleS500",
+      "object": "RussiaVehicleS500",
+      "old_buttonimage": "rus_s400r",
+      "new_buttonimage": "specbtn_mic_s500",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussia_Krasukha-4",
+      "object": "Russia_Krasukha-4",
+      "old_buttonimage": "rus_krasukha4",
+      "new_buttonimage": "specbtn_mic_krasukha",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussian_92N6E",
+      "object": "RussiaVehicle92N6R",
+      "old_buttonimage": "rus_92n6r",
+      "new_buttonimage": "specbtn_mic_92n6r",
+      "prior_src": "Data\\INI\\CommandButton_ZZZZ_ZZZ92N6E.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussian_92N6E_AI",
+      "object": "RussiaVehicle92N6R",
+      "old_buttonimage": "rus_92n6r",
+      "new_buttonimage": "specbtn_mic_92n6r",
+      "prior_src": "Data\\INI\\CommandButton_ZZZZ_ZZZ92N6E.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussian_PantsirS1M",
+      "object": "Russia_PantsirS1M",
+      "old_buttonimage": "rus_pantsirs1m",
+      "new_buttonimage": "specbtn_mic_pantsir",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussian_S400",
+      "object": "Russia_S400_Real",
+      "old_buttonimage": "rus_s400r",
+      "new_buttonimage": "specbtn_mic_s400",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructRussian_S400_AI",
+      "object": "Russia_S400_AI",
+      "old_buttonimage": "rus_s400r",
+      "new_buttonimage": "specbtn_mic_s400",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructSpecterEU5_IRIST",
+      "object": "Specter_EU5_IRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructSpecterEU5_TRML4D",
+      "object": "Specter_EU5_TRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructSwedenVehicleIRIST",
+      "object": "SwedenVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructSwedenVehicleTRML4D",
+      "object": "SwedenVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructTurkeyVehicleIRIST",
+      "object": "TurkeyVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructTurkeyVehicleTRML4D",
+      "object": "TurkeyVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructUAEVehiclePantsir",
+      "object": "UAEVehiclePantsir",
+      "old_buttonimage": "us_m6",
+      "new_buttonimage": "specbtn_mic_pantsir",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructUkraineVehicleIRIST",
+      "object": "UkraineVehicleIRIST",
+      "old_buttonimage": "Nat_irist",
+      "new_buttonimage": "specbtn_mic_irist",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    },
+    {
+      "command_button": "Command_ConstructUkraineVehicleTRML4D",
+      "object": "UkraineVehicleTRML4D",
+      "old_buttonimage": "Nat_trml4d",
+      "new_buttonimage": "specbtn_mic_trml4d",
+      "prior_src": "Data\\INI\\CommandButton.ini"
+    }
+  ],
+  "packed_tga": [
+    "Button_GlobalMarket.tga",
+    "specbtn_heron.tga",
+    "specbtn_mic_92n6r.tga",
+    "specbtn_mic_96l6tsp.tga",
+    "specbtn_mic_arrow.tga",
+    "specbtn_mic_hq9.tga",
+    "specbtn_mic_ht233.tga",
+    "specbtn_mic_irist.tga",
+    "specbtn_mic_krasukha.tga",
+    "specbtn_mic_pantsir.tga",
+    "specbtn_mic_s400.tga",
+    "specbtn_mic_s500.tga",
+    "specbtn_mic_thaad.tga",
+    "specbtn_mic_tpy2.tga",
+    "specbtn_mic_trml4d.tga",
+    "specbtn_mic_ustpy2.tga",
+    "specbtn_mq4.tga",
+    "specbtn_orlan10.tga",
+    "specbtn_shahedlnchr.tga"
+  ],
+  "replaced_art": [],
+  "validation": {
+    "drone_commandsets": [
+      {
+        "commandset": "BritainGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "FranceGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "GermanyGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "India_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Iraq_RadarStationCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_ZZZIraqRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "ItalyGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Japan_RadarStationCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Libya_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Pakistan_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "SaudiArabia_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "SouthAfrica_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "SouthKorea_RadarStationCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "SwedenGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Syria_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "TurkeyGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "UAE_RadarCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "UkraineGM406CommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      },
+      {
+        "commandset": "Vietnam_RadarStationCommandSet",
+        "src": "Data\\INI\\CommandSet_ZZZZ_SpySatelliteRadar.ini",
+        "buttons": [
+          "Command_ConstructSpecterRadarHeron",
+          "Command_ConstructSpecterRadarMQ4",
+          "Command_ConstructSpecterRadarOrlan10",
+          "Command_ConstructSpecterRadarShahedLauncher"
+        ]
+      }
+    ],
+    "gm_construct_buttons": [
+      "Command_ConstructAmerica_GlobalStore",
+      "Command_ConstructBritain_GlobalStore",
+      "Command_ConstructChina_GlobalStore",
+      "Command_ConstructFrance_GlobalStore",
+      "Command_ConstructGermany_GlobalStore",
+      "Command_ConstructIndia_GlobalStore",
+      "Command_ConstructIran_GlobalStore",
+      "Command_ConstructIraq_MIC",
+      "Command_ConstructIsrael_GlobalStore",
+      "Command_ConstructItaly_GlobalStore",
+      "Command_ConstructJapan_GlobalStore",
+      "Command_ConstructLibya_GlobalStore",
+      "Command_ConstructNato_GlobalStore",
+      "Command_ConstructNorthKorea_GlobalStore",
+      "Command_ConstructPakistan_GlobalStore",
+      "Command_ConstructRussia_GlobalStore",
+      "Command_ConstructSaudiArabia_GlobalStore",
+      "Command_ConstructSouthAfrica_GlobalStore",
+      "Command_ConstructSouthKorea_GlobalStore",
+      "Command_ConstructSweden_GlobalStore",
+      "Command_ConstructSyria_GlobalStore",
+      "Command_ConstructTurkey_GlobalStore",
+      "Command_ConstructUAE_GlobalStore",
+      "Command_ConstructUkraine_GlobalStore",
+      "Command_ConstructVietnam_GlobalStore"
+    ],
+    "mappedimages": {
+      "Button_GlobalMarket": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\IraqConstructFix_Images.INI",
+        "texture": "Button_GlobalMarket.tga",
+        "art_entry": "Art\\Textures\\Button_GlobalMarket.tga"
+      },
+      "specbtn_heron": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_heron.tga",
+        "art_entry": "Art\\Textures\\specbtn_heron.tga"
+      },
+      "specbtn_mq4": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mq4.tga",
+        "art_entry": "Art\\Textures\\specbtn_mq4.tga"
+      },
+      "specbtn_orlan10": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_orlan10.tga",
+        "art_entry": "Art\\Textures\\specbtn_orlan10.tga"
+      },
+      "specbtn_shahedlnchr": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_shahedlnchr.tga",
+        "art_entry": "Art\\Textures\\specbtn_shahedlnchr.tga"
+      },
+      "specbtn_mic_arrow": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_arrow.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_arrow.tga"
+      },
+      "specbtn_mic_tpy2": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_tpy2.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_tpy2.tga"
+      },
+      "specbtn_mic_92n6r": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_92n6r.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_92n6r.tga"
+      },
+      "specbtn_mic_s400": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_s400.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_s400.tga"
+      },
+      "specbtn_mic_pantsir": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_pantsir.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_pantsir.tga"
+      },
+      "specbtn_mic_krasukha": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_krasukha.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_krasukha.tga"
+      },
+      "specbtn_mic_96l6tsp": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_96l6tsp.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_96l6tsp.tga"
+      },
+      "specbtn_mic_s500": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_s500.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_s500.tga"
+      },
+      "specbtn_mic_hq9": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_hq9.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_hq9.tga"
+      },
+      "specbtn_mic_ht233": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_ht233.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_ht233.tga"
+      },
+      "specbtn_mic_trml4d": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_trml4d.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_trml4d.tga"
+      },
+      "specbtn_mic_irist": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_irist.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_irist.tga"
+      },
+      "specbtn_mic_ustpy2": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_ustpy2.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_ustpy2.tga"
+      },
+      "specbtn_mic_thaad": {
+        "src": "Data\\INI\\MappedImages\\HandCreated\\SpecterUavMicCameos_Images.INI",
+        "texture": "specbtn_mic_thaad.tga",
+        "art_entry": "Art\\Textures\\specbtn_mic_thaad.tga"
+      }
+    },
+    "tga_sha256": {
+      "specbtn_heron.tga": "0fef2e1b48463985631aa82b53b49f339ce2f21bee420f310337970da5469e96",
+      "specbtn_mq4.tga": "eb760fc26db47c43e88eafd9cd89d954f2f978ffa919d93f0a4d206de9371a66",
+      "specbtn_orlan10.tga": "e4ac992a1b7d43e395106ac1f60b61766ff83476d72a3ba765f845c602d7dcb5",
+      "specbtn_shahedlnchr.tga": "96a7e45249bc70d5ca08dbb6f997794a7c3608d5963ef438732c64f5984fdb30",
+      "specbtn_mic_arrow.tga": "9f4dfeb5924a00b35c7756636a633c0bee7b071284338253c861141e79164d13",
+      "specbtn_mic_tpy2.tga": "6229ef20c46d835b3e51d9744ae901e44189a03e446710e5f045f41cbd2fb7a9",
+      "specbtn_mic_92n6r.tga": "a762194ea112cf18ab93ecbef8f611e953a6e47064f9238f33638193738f55e3",
+      "specbtn_mic_s400.tga": "aebb83becf17371be41ae9dfd74a3ad2b497cbd605eac9cfd39e87c7a3894685",
+      "specbtn_mic_pantsir.tga": "776fc513fd79772d1efbf4f36b03fbdcce5ee88ada4bf5ca4335c24b797e93ac",
+      "specbtn_mic_krasukha.tga": "acc132cb002cc6e8f5dc20123bc97d41698713d95c0779c499cd782e0b33dec2",
+      "specbtn_mic_96l6tsp.tga": "f27e4ab82dae4d6a9c06ad18fceb3f2aa6e586b24ee63b3b917bb801d514eb42",
+      "specbtn_mic_s500.tga": "75ec9f846bd1238f9337987e29c20391eb75621d05c56c804d8c79270f04c0a9",
+      "specbtn_mic_hq9.tga": "b6fa58cd67732350852158eb085968820ad6941a1d05c2b3c1b78349e36e7a35",
+      "specbtn_mic_ht233.tga": "cac6932f9131383a6d44be25ad463363b761c59cc87c2987c23d64421bef5b19",
+      "specbtn_mic_trml4d.tga": "d906533cbf522c7bc6daedeeee38f8891a1d60ff406f5423f984377050dcb166",
+      "specbtn_mic_irist.tga": "a8db9b1dee0e705d15de70bef8a1a9a815810ffe795a8a41e24789dae55932f1",
+      "specbtn_mic_ustpy2.tga": "aed2eb9371cdfdef999d2699e41e61e268963ab5f70efe5607b05444d075b0b8",
+      "specbtn_mic_thaad.tga": "ff53f9b1a9f34cb566506b78db3ae3bc2534ac089476d8e1d3caf31a4f18fd52",
+      "Button_GlobalMarket.tga": "52c397c18b6b53c5673efe48f487a6bb326fb2d2795a333758ba1c261c3f7c99"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "mode": "ss1-compat-infra",
+  "generated_at_tehran": "2026-11-11 16:29 Asia/Tehran",
+  "game_bigs_modified": false,
+  "original_hashes_unchanged": true,
+  "original_hashes": {
+    "_SPEC_DATA_ONE.big": "7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343",
+    "_SPEC_ART_TWO.big": "81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf"
+  },
+  "generals_exe_run": false,
+  "loose_ini_written": false,
+  "equipment_imported": false,
+  "ss1_layout": {
+    "root_ini": 192,
+    "object_recursive": true,
+    "weapon_dir_recursive": false,
+    "weapon_nested_files": 0,
+    "mappedimage_subdirs": {
+      "HandCreated": 35,
+      "TextureSize_512": 4
+    }
+  },
+  "catalog_counts": {
+    "unique_import_ready": 4027,
+    "ready_for_safe_transfer": 4027,
+    "rename_or_reuse": 709,
+    "needs_rebuild": 689,
+    "needs_fix": 564,
+    "blocked": 218
+  },
+  "object_count": 6207,
+  "preflight_sample_rejects_nested_weapon": true,
+  "preflight_sample_rejects_mappedimages_silentdeath": true
+}

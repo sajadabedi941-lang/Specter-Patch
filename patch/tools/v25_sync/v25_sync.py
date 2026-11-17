@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Silent Death V25 → SPECTER sync engine (stage 5: experimental sample pack; original BIGs untouched)."""
+"""Silent Death V25 → SPECTER SS1 sync engine. Original BIGs untouched. apply refused."""
 from __future__ import annotations
 
 import argparse
@@ -32,10 +32,13 @@ def main(argv: list[str] | None = None) -> int:
             "art-cwc",
             "data-rebuild",
             "pack-sample",
+            "ss1-layout",
+            "catalog",
+            "preflight",
             "selftest",
             "apply",
         ],
-        help="pack-sample=experimental DATA+ART BIGs for ChinaCSSA1/HQ11; apply is refused",
+        help="ss1-layout/catalog=SS1-rule engine; pack-sample=experimental copy only; apply is refused",
     )
     p.add_argument("--root", type=Path, default=ROOT, help="Specter-Patch repo root")
     p.add_argument("--object", help="Object name for plan-object")
@@ -44,9 +47,11 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
 
     if args.command == "selftest":
-        from tests.test_data_rebuild import main as tests_main
+        import unittest
 
-        return tests_main()
+        suite = unittest.defaultTestLoader.discover(str(TOOL_DIR / "tests"), pattern="test_*.py")
+        result = unittest.TextTestRunner(verbosity=1).run(suite)
+        return 0 if result.wasSuccessful() else 1
 
     eng = Engine(args.root.resolve())
     if args.command == "apply":
@@ -91,6 +96,8 @@ def main(argv: list[str] | None = None) -> int:
         result = eng.run_stage5(out_dir=args.out)
     elif args.command == "resolve":
         result = eng.run_stage2()
+    elif args.command in ("ss1-layout", "catalog", "preflight"):
+        result = eng.run_compat_infra()
     elif args.command in ("dry-run", "plan", "validate"):
         eng.health_report()
         result = eng.dry_run()

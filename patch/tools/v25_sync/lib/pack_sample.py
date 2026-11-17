@@ -55,7 +55,7 @@ SKIP_ART_STEMS = {
 
 KIND_BUNDLE = {
     "Object": None,  # per-object unique path
-    "Weapon": r"Data\INI\Weapon\SilentDeath\SD25_Weapons.ini",
+    "Weapon": r"Data\INI\Weapon_SilentDeath.ini",
     "Armor": r"Data\INI\Armor_SilentDeath.ini",
     "Locomotor": r"Data\INI\Locomotor_SilentDeath.ini",
     "FXList": r"Data\INI\FXList_SilentDeath.ini",
@@ -65,7 +65,7 @@ KIND_BUNDLE = {
     "ObjectCreationList": r"Data\INI\ObjectCreationList_SilentDeath.ini",
     "ParticleSystem": r"Data\INI\ParticleSystem_SilentDeath.ini",
     "AudioEvent": r"Data\INI\SoundEffects_SilentDeath.ini",
-    "MappedImage": r"Data\INI\MappedImages\SilentDeath\SilentDeathMappedImages.ini",
+    "MappedImage": r"Data\INI\MappedImages\HandCreated\SilentDeathMappedImages.ini",
 }
 
 PORTRAIT_IMAGES = {"cssa1tb", "chhq11tb"}
@@ -469,7 +469,11 @@ def skip_ref_set(plans: dict) -> set[tuple[str, str]]:
     return out
 
 
-def validate_added_defs(added_data: dict[str, bytes], added_art: dict[str, bytes]) -> dict:
+def validate_added_defs(
+    added_data: dict[str, bytes],
+    added_art: dict[str, bytes],
+    native_defs: dict[str, set[str]] | None = None,
+) -> dict:
     errors: list[str] = []
     headers: list[dict] = []
     for path, blob in added_data.items():
@@ -533,6 +537,15 @@ def validate_added_defs(added_data: dict[str, bytes], added_art: dict[str, bytes
     dups = [n for n, c in seen_a.items() if c > 1]
     if dups:
         errors.append("duplicate Armor defs: " + ", ".join(dups))
+    from .preflight import preflight_payloads
+
+    pf = preflight_payloads(added_data, native_defs=native_defs)
+    for err in pf.get("errors") or []:
+        errors.append("{code} {path} {ref}".format(
+            code=err.get("code"),
+            path=err.get("path"),
+            ref=err.get("ref") or err.get("detail") or "",
+        ))
     for path in added_art:
         n = big.nkey(path)
         if n.endswith(".wav"):
@@ -640,7 +653,13 @@ class SamplePacker:
         self.added_data = data_adds
         self.added_art = art_adds
 
-        validation = validate_added_defs(self.added_data, self.added_art)
+        from .preflight import native_def_index
+
+        validation = validate_added_defs(
+            self.added_data,
+            self.added_art,
+            native_defs=native_def_index(self.eng.inventory_specter()),
+        )
         if not validation["ok"]:
             raise RuntimeError("experimental pack validation failed: " + "; ".join(validation["errors"]))
 

@@ -949,9 +949,97 @@ class Engine:
 
     def refuse_apply(self) -> None:
         raise SystemExit(
-            "stage 5: apply is disabled. pack-sample writes an experimental copy only. "
-            "SPECTER FINAL BIGs stay untouched."
+            "SS1 compat engine: apply is disabled. No SPECTER FINAL BIG is written. "
+            "No equipment is imported in this stage."
         )
+
+    def run_compat_infra(self) -> dict:
+        """Discover SS1 load rules, catalog all V25 objects, preflight emit paths.
+
+        Does not pack BIGs, does not import units, does not run Generals.exe.
+        """
+        import gzip
+
+        from . import catalog as catalog_mod
+        from . import cwc
+        from . import ss1_layout
+        from .preflight import native_def_index, preflight_payloads
+
+        orig_data = self.ss1 / "_SPEC_DATA_ONE.big"
+        orig_art = self.ss1 / "_SPEC_ART_TWO.big"
+        before = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        layout = ss1_layout.discover(orig_data)
+        (self.reports / "SS1_LAYOUT.json").write_text(
+            json.dumps(layout, indent=2) + "\n", encoding="utf-8"
+        )
+        (self.reports / "SS1_LAYOUT.md").write_text(ss1_layout.layout_markdown(layout), encoding="utf-8")
+
+        rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        recipes = cwc.load_recipes(self.data)
+        v25 = self.inventory_v25()
+        spec = self.inventory_specter()
+        cat = catalog_mod.catalog_objects(v25, spec, rules, recipes)
+        counts = cat["counts"]
+        (self.reports / "V25_CATALOG.json.gz").write_bytes(
+            gzip.compress(json.dumps(cat, default=str).encode("utf-8"), compresslevel=6)
+        )
+
+        emit_samples = {
+            ss1_layout.emit_path("Weapon", "SD25_x"): b"Weapon SD25_x\nEnd\n",
+            ss1_layout.emit_path("Object", "SD25_ChinaCSSA1", "China"): (
+                b"Object SD25_ChinaCSSA1\n  ArmorSet\n    Armor = SD25_TankArmor\n  End\nEnd\n"
+            ),
+            r"Data\INI\Weapon\SilentDeath\SD25_Weapons.ini": b"Weapon SD25_Bad\nEnd\n",
+            r"Data\INI\MappedImages\SilentDeath\x.ini": b"MappedImage X\nEnd\n",
+        }
+        native = native_def_index(spec)
+        native.setdefault("armor", set()).add("sd25_tankarmor")
+        sample_pf = preflight_payloads(emit_samples, native_defs=native, layout=layout)
+
+        after = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        report = {
+            "mode": "ss1-compat-infra",
+            "generated_at_tehran": tehran_now(),
+            "game_bigs_modified": False,
+            "original_hashes_unchanged": before == after,
+            "original_hashes": after,
+            "generals_exe_run": False,
+            "loose_ini_written": False,
+            "equipment_imported": False,
+            "ss1_layout": {
+                "root_ini": layout["root_ini_count"],
+                "object_recursive": layout["object"]["recursive"],
+                "weapon_dir_recursive": layout["weapon_dir"]["recursive"],
+                "weapon_nested_files": layout["weapon_dir"]["nested_files"],
+                "mappedimage_subdirs": layout["mappedimages"]["subdirs"],
+            },
+            "catalog_counts": counts,
+            "object_count": cat["object_count"],
+            "preflight_sample_rejects_nested_weapon": any(
+                e.get("code") == "unloadable_path" and "Weapon\\SilentDeath" in str(e.get("path"))
+                for e in sample_pf.get("errors") or []
+            ),
+            "preflight_sample_rejects_mappedimages_silentdeath": any(
+                e.get("code") == "unloadable_path" and "MappedImages\\SilentDeath" in str(e.get("path"))
+                for e in sample_pf.get("errors") or []
+            ),
+        }
+        (self.reports / "ENGINE_AUDIT.json").write_text(
+            json.dumps(report, indent=2, default=str) + "\n", encoding="utf-8"
+        )
+        (self.reports / "ENGINE_AUDIT.md").write_text(
+            catalog_mod.engine_audit_markdown(report, layout, cat), encoding="utf-8"
+        )
+        (self.reports / "V25_CATALOG.md").write_text(
+            catalog_mod.catalog_markdown(cat, tehran_now()), encoding="utf-8"
+        )
+        return report
 
     def run_stage4(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
         from . import archive as archive_mod

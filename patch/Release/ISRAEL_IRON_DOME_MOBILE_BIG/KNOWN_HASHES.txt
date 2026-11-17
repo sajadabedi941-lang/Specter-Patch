@@ -1,0 +1,50 @@
+Known SHA-256 hashes used by Install and Restore.
+Do not delete a loose file unless its hash matches one of these.
+
+ss1 Data\INI\CommandSet.ini (loose and inside original _SPEC_DATA_ONE.big)
+SHA256 f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223
+SIZE 450860
+
+Iron Dome Mobile v2 loose leftovers (exact files from that installer)
+Data\INI\CommandSet.ini
+SHA256 dee09bd21cf8f398ffdf8e79f7b07a0f3c3e3563d538eb8ae14dfe4fe8d4a7f4
+Data\INI\CommandSet_SpecterPatch.ini
+SHA256 d46708f22538a5c010025f958be87c3c375e057374c8ddab250ec7409d3bcbe1
+Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini
+SHA256 6ce652ec590fc4865e5899f1d0c3f20011ba94ce0b72c283d94c67899cfefdde
+Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini
+SHA256 a9ab0802996424f8698a583c7a2482277d69ab735cac720d0e0c247d2567b5fe
+Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini
+SHA256 fd9e7dabbb4161b070df2881fa7c76fce1ba8db5752dbd9b5de5f41f3f852553
+Data\English\generals.csf
+SHA256 fea7f9a69ba97d12106bddf746ed5456da83da02a68037a6d1c74c74d715bb23
+Art\W3D\BONDKS.W3D
+SHA256 32d85b6aef50ef1a10eb95613d98ecb3bde2859b6aa6d9ab94f30416933d3dc4
+Art\Textures\T_M978_D01.tga
+SHA256 949cdee2c8f08554cd63fb032e891b34237039bff02bb2f5e5083f9308a32fa7
+Art\Textures\T_M978_D02.tga
+SHA256 8d7a88931bfeb30ee2d4aba81c062bfd8f3cc5b9553685aa52aa40f6674b64a8
+Art\Textures\T_M978_D03.tga
+SHA256 e3bcd558aae7ff3f5f8f75ed6141f71cc737a30fb953f5024532f7f743156b29
+Art\Textures\concrete_wall_02_D.tga
+SHA256 82abd77b603d308569dcc33472892c30f1eb04e763b575356e36290e1ee30609
+Art\Textures\texture_0006.tga
+SHA256 ed671df6f064d9b35467185fc9b785abd67b5320eb80f2ed4ef71aef1f9543a1
+Art\Textures\texture_0007.tga
+SHA256 abc1853a4f67c8cb10fd3ae915ca37c75fc72291f306ea6b0990d03363b1e937
+Art\Textures\texture_0008.tga
+SHA256 c57c265d99e7d4b7e447bd1288cafa122d7d3253864e9c1a7f0f14739c96f2ef
+
+ss1 archives (not replaced unless listed as patched)
+_SPEC_DATA_ONE.big original
+SHA256 7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+_SPEC_ART_ONE.big (not modified by this pack)
+SHA256 15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
+_SPEC_ART_TWO.big original
+SHA256 81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+
+patched archives in this pack
+_SPEC_DATA_ONE.big
+SHA256 896a47f333a60a60ab016de68d89c5c77d210abddbc7c75acd99bfb2b0803f38
+_SPEC_ART_TWO.big
+SHA256 c9a723443c321b689870d116a7b3c0d941516850d1db16c0254ed70218960787

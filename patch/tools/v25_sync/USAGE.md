@@ -1,27 +1,23 @@
-# راهنمای اجرا — مرحلهٔ ۴
+# راهنمای اجرا — مرحلهٔ ۵
 
-مرحلهٔ ۴ DATA دو نمونه را مستقل بازسازی می‌کند. هیچ BIG بازی نوشته نمی‌شود.
+بستهٔ آزمایشی مستقل برای `ChinaCSSA1` و `ChinaHQ11`. نسخهٔ اصلی SPECTER FINAL دست‌نخورده می‌ماند.
 
 ## پیش‌نیاز
 
-همان مرحلهٔ ۱: `python3`، `7z`، آرشیو ۱۵۸ جلدی V25 (با `z62`)، SPECTER FINAL در `/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/`.
+`python3`، `7z`، آرشیو ۱۵۸ جلدی V25 (با `z62`)، SPECTER FINAL در `/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/`.
 
 ## دستورها
 
 ```bash
 python3 patch/tools/v25_sync/v25_sync.py selftest
-python3 patch/tools/v25_sync/v25_sync.py data-rebuild --json
-python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaHQ11 --json
+python3 patch/tools/v25_sync/v25_sync.py pack-sample --out /tmp/v25_stage5_pack --json
 python3 patch/tools/v25_sync/v25_sync.py apply   # باید خطا بدهد
 ```
 
-## وضعیت کامل بودن (جدا برای DATA و ART)
+خروجی فقط زیر `--out` نوشته می‌شود. هیچ INI لوس و هیچ تغییر روی BIGهای نصب اصلی ایجاد نمی‌شود.
 
-| وضعیت | معنی |
-|---|---|
-| READY_FOR_TRANSFER_PLAN | زنجیره بدون شکاف سخت؛ هنوز وارد بازی نشده |
-| AUTO_RECOVERABLE | فایل در zip یا BIG تو‌در‌تو با stem دقیق پیدا شد |
-| MANUAL_REBUILD | stem گمشده، یا CWC که الگوی استقرارش اثبات نشده |
-| BLOCKED | جدول عمومی / ژنرال ZH |
+محل ساخت در SPECTER (استخراج‌شده، نه حدس):
 
-`DeployStyleAIUpdate` فقط پس از اثبات سازگاری packed/deployed استفاده می‌شود. محدودیت‌ها در Transfer Plan نوشته می‌شوند.
+- ساختمان: `ChinaWarFactory` → `PLAWarFactoryCommandSet`
+- `SD25_ChinaCSSA1`: UNIT_BUILD اسلات **۴**
+- `SD25_ChinaHQ11`: UNIT_BUILD اسلات **۷**

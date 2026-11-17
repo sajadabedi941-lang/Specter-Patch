@@ -48,8 +48,9 @@ def _run_suite(mod) -> tuple[int, int, int]:
 
 
 def stage3_and_stage2_unit_tests() -> dict:
-    from tests import test_art_cwc, test_data_rebuild, test_resolver
+    from tests import test_art_cwc, test_data_rebuild, test_pack_sample, test_resolver
 
+    s5_ran, s5_fail, s5_rc = _run_suite(test_pack_sample)
     s4_ran, s4_fail, s4_rc = _run_suite(test_data_rebuild)
     s3_ran, s3_fail, s3_rc = _run_suite(test_art_cwc)
     s2_ran, s2_fail, s2_rc = _run_suite(test_resolver)
@@ -59,11 +60,20 @@ def stage3_and_stage2_unit_tests() -> dict:
         capture_output=True,
         text=True,
     )
-    combined = s4_ran + s3_ran + s2_ran
-    ok = s4_rc == 0 and s3_rc == 0 and s2_rc == 0 and selftest.returncode == 0 and combined >= 36
+    combined = s5_ran + s4_ran + s3_ran + s2_ran
+    ok = (
+        s5_rc == 0
+        and s4_rc == 0
+        and s3_rc == 0
+        and s2_rc == 0
+        and selftest.returncode == 0
+        and combined >= 44
+    )
     return {
         "name": "unit_tests",
         "ok": ok,
+        "stage5_module_tests": s5_ran,
+        "stage5_module_failures": s5_fail,
         "stage4_module_tests": s4_ran,
         "stage4_module_failures": s4_fail,
         "stage3_module_tests": s3_ran,
@@ -73,7 +83,7 @@ def stage3_and_stage2_unit_tests() -> dict:
         "combined_selftest_count": combined,
         "v25_sync_selftest_returncode": selftest.returncode,
         "note": (
-            "v25_sync.py selftest loads test_data_rebuild + test_art_cwc + test_resolver. "
+            "v25_sync.py selftest loads test_data_rebuild + test_pack_sample + test_art_cwc + test_resolver. "
             "Modules are also executed separately so each stage is visible."
         ),
     }
@@ -299,11 +309,39 @@ def specter_bigs_unchanged() -> dict:
     }
 
 
+def stage5_report_checks() -> dict:
+    p = REPORTS / "STAGE5_PACK.json"
+    if not p.is_file():
+        return {"name": "stage5_pack_report", "ok": True, "skipped": True, "note": "STAGE5_PACK.json not in this checkout"}
+    s5 = json.loads(p.read_text(encoding="utf-8"))
+    errors = []
+    if s5.get("applies_to_original_specter") is not False:
+        errors.append("STAGE5_PACK.applies_to_original_specter must be false")
+    if s5.get("generals_exe_run") is not False:
+        errors.append("STAGE5_PACK.generals_exe_run must be false")
+    if s5.get("loose_ini_written") is not False:
+        errors.append("STAGE5_PACK.loose_ini_written must be false")
+    if s5.get("original_hashes_unchanged") is not True:
+        errors.append("STAGE5_PACK.original_hashes_unchanged must be true")
+    orig = s5.get("original_hashes") or {}
+    if orig.get("_SPEC_DATA_ONE.big") != EXPECTED_DATA:
+        errors.append("STAGE5 original DATA hash mismatch")
+    if orig.get("_SPEC_ART_TWO.big") != EXPECTED_ART_TWO:
+        errors.append("STAGE5 original ART TWO hash mismatch")
+    loc = s5.get("china_build_location") or {}
+    if loc.get("commandset") != "PLAWarFactoryCommandSet":
+        errors.append("China factory CommandSet is not PLAWarFactoryCommandSet")
+    if str(loc.get("ChinaCSSA1_slot")) != "4" or str(loc.get("ChinaHQ11_slot")) != "7":
+        errors.append("China factory slots must be 4 (CSSA1) and 7 (HQ11)")
+    return {"name": "stage5_pack_report", "ok": not errors, "errors": errors}
+
+
 def main() -> int:
     checks = [
         stage3_and_stage2_unit_tests(),
         stage1_report_checks(),
         resolver_report_checks(),
+        stage5_report_checks(),
         apply_still_blocked(),
         specter_bigs_unchanged(),
     ]

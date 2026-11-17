@@ -1,0 +1,32 @@
+SPECTER FINAL — Silent Death V25 experimental pack (stage 5)
+ChinaCSSA1 + ChinaHQ11. Independent copy. Original install is not modified by the packer.
+
+Generals.exe was NOT run. This is not an in-game test report.
+
+Install (replace the two BIGs in the SPECTER FINAL folder):
+  1. Quit the game.
+  2. Backup the originals:
+       copy _SPEC_DATA_ONE.big _SPEC_DATA_ONE.big.bak
+       copy _SPEC_ART_TWO.big _SPEC_ART_TWO.big.bak
+  3. Copy these files from this ZIP over the SPECTER FINAL folder:
+       _SPEC_DATA_ONE.big
+       _SPEC_ART_TWO.big
+  4. Do not add loose Data\INI files. This pack is BIG-only.
+
+Where to build (China / PLA war factory):
+  Building Object: ChinaWarFactory
+  CommandSet: PLAWarFactoryCommandSet
+  SD25_ChinaCSSA1 UNIT_BUILD slot 4
+  SD25_ChinaHQ11 UNIT_BUILD slot 7
+
+Expected original SHA256 (before replace):
+  _SPEC_DATA_ONE.big  7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+  _SPEC_ART_TWO.big   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+
+This pack SHA256:
+  _SPEC_DATA_ONE.big  2198049d286f7295f9bdd8abfd7cc3f251a105e976672d718370de75112e34c2
+  _SPEC_ART_TWO.big   bce126e0943ca771bcf5a13cf222c5a41a590b10b244ea6812d2a770a62dacd5
+
+Install ZIP SHA256:
+  SPECTER_V25_SD25_ChinaCSSA1_ChinaHQ11_experimental.zip
+  3e4d0e5ffdcff34e74a63e3ad936187912b2760442c67a82e8cd56942e805afb

@@ -124,6 +124,74 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def write_stage5_install_docs(dest: Path, report: dict) -> None:
+    orig = report.get("original_hashes") or {}
+    exp = report.get("experimental_hashes") or {}
+    loc = report.get("china_build_location") or {}
+    dest.mkdir(parents=True, exist_ok=True)
+    (dest / "INSTALL.txt").write_text(
+        "\n".join(
+            [
+                "SPECTER FINAL — Silent Death V25 experimental pack (stage 5)",
+                "ChinaCSSA1 + ChinaHQ11. Independent copy. Original install is not modified by the packer.",
+                "",
+                "Generals.exe was NOT run. This is not an in-game test report.",
+                "",
+                "Install (replace the two BIGs in the SPECTER FINAL folder):",
+                "  1. Quit the game.",
+                "  2. Backup the originals:",
+                "       copy _SPEC_DATA_ONE.big _SPEC_DATA_ONE.big.bak",
+                "       copy _SPEC_ART_TWO.big _SPEC_ART_TWO.big.bak",
+                "  3. Copy these files from this ZIP over the SPECTER FINAL folder:",
+                "       _SPEC_DATA_ONE.big",
+                "       _SPEC_ART_TWO.big",
+                "  4. Do not add loose Data\\INI files. This pack is BIG-only.",
+                "",
+                "Where to build (China / PLA war factory):",
+                f"  Building Object: {loc.get('object')}",
+                f"  CommandSet: {loc.get('commandset')}",
+                f"  SD25_ChinaCSSA1 UNIT_BUILD slot {loc.get('ChinaCSSA1_slot')}",
+                f"  SD25_ChinaHQ11 UNIT_BUILD slot {loc.get('ChinaHQ11_slot')}",
+                "",
+                "Expected original SHA256 (before replace):",
+                f"  _SPEC_DATA_ONE.big  {orig.get('_SPEC_DATA_ONE.big')}",
+                f"  _SPEC_ART_TWO.big   {orig.get('_SPEC_ART_TWO.big')}",
+                "",
+                "This pack SHA256:",
+                f"  _SPEC_DATA_ONE.big  {exp.get('_SPEC_DATA_ONE.big')}",
+                f"  _SPEC_ART_TWO.big   {exp.get('_SPEC_ART_TWO.big')}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    (dest / "REVERT.txt").write_text(
+        "\n".join(
+            [
+                "Revert experimental pack — restore SPECTER FINAL originals.",
+                "",
+                "  1. Quit the game.",
+                "  2. Restore the backups made during INSTALL:",
+                "       copy /Y _SPEC_DATA_ONE.big.bak _SPEC_DATA_ONE.big",
+                "       copy /Y _SPEC_ART_TWO.big.bak  _SPEC_ART_TWO.big",
+                "  3. If backups are missing, recopy SPECTER FINAL from the unmodified install.",
+                "  4. Original hashes that must match after revert:",
+                f"       _SPEC_DATA_ONE.big  {orig.get('_SPEC_DATA_ONE.big')}",
+                f"       _SPEC_ART_TWO.big   {orig.get('_SPEC_ART_TWO.big')}",
+                "  5. Delete any leftover experimental ZIP files. There are no loose INI to remove.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    sums = []
+    for name in ("_SPEC_DATA_ONE.big", "_SPEC_ART_TWO.big", "INSTALL.txt", "REVERT.txt"):
+        p = dest / name
+        if p.is_file():
+            sums.append(f"{sha256_file(p)}  {name}")
+    (dest / "SHA256SUMS.txt").write_text("\n".join(sums) + "\n", encoding="utf-8")
+
+
 def tehran_now() -> str:
     # Report times in Asia/Tehran (UTC+3:30).
     from datetime import timedelta
@@ -881,7 +949,7 @@ class Engine:
 
     def refuse_apply(self) -> None:
         raise SystemExit(
-            "stage 4: apply is disabled. This engine plans and validates only. "
+            "stage 5: apply is disabled. pack-sample writes an experimental copy only. "
             "SPECTER FINAL BIGs stay untouched."
         )
 
@@ -1043,6 +1111,100 @@ class Engine:
             "focus": focus_ok,
             "reports": str(self.reports),
         }
+
+    def run_stage5(self, out_dir: Path | None = None) -> dict:
+        from . import archive as archive_mod
+        from . import cwc
+        from .archive_index import ArchiveIndex
+        from .art_index import ArtIndex
+        from .pack_sample import SamplePacker
+        from .resolver import Resolver
+
+        orig_data = self.ss1 / "_SPEC_DATA_ONE.big"
+        orig_art = self.ss1 / "_SPEC_ART_TWO.big"
+        before = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        vols = self.find_volumes()
+        zip_path = archive_mod.stage_volumes(vols, self.v25_src)
+        aidx = ArchiveIndex(zip_path, self.cache)
+        art = ArtIndex(zip_path, self.cache, extract_root=None)
+        rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        recipes = cwc.load_recipes(self.data)
+        resolver = Resolver(self, rules, aidx, art_index=art, cwc_recipes=recipes)
+        dest = Path(out_dir) if out_dir else Path("/tmp/v25_stage5_pack")
+        packer = SamplePacker(self, resolver, art, zip_path, dest)
+        report = packer.run()
+        after = {
+            "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,
+            "_SPEC_ART_TWO.big": sha256_file(orig_art) if orig_art.is_file() else None,
+        }
+        report["original_hashes_before"] = before
+        report["original_hashes_after"] = after
+        report["original_hashes_unchanged"] = before == after
+        (self.reports / "STAGE5_PACK.json").write_text(
+            json.dumps(report, indent=2, default=str) + "\n", encoding="utf-8"
+        )
+        lines = [
+            "# Stage 5 — experimental DATA+ART BIG pack (ChinaCSSA1, ChinaHQ11)",
+            "",
+            f"- Generated: {tehran_now()}",
+            f"- Original SPECTER BIGs unchanged: **{report['original_hashes_unchanged']}**",
+            f"- Loose INI written: **{report.get('loose_ini_written')}**",
+            f"- Generals.exe run: **{report.get('generals_exe_run')}**",
+            "",
+            "## China build location (extracted from SPECTER Objects, not guessed)",
+            "",
+        ]
+        loc = report.get("china_build_location") or {}
+        lines += [
+            f"- Building Object: `{loc.get('object')}`",
+            f"- CommandSet: `{loc.get('commandset')}`",
+            f"- Source: `{loc.get('source')}`",
+            f"- ChinaCSSA1 UNIT_BUILD slot: `{loc.get('ChinaCSSA1_slot')}`",
+            f"- ChinaHQ11 UNIT_BUILD slot: `{loc.get('ChinaHQ11_slot')}`",
+            f"- {loc.get('note')}",
+            "",
+            "## Experimental BIGs",
+            "",
+            f"- `{dest / '_SPEC_DATA_ONE.big'}` SHA256 `{report['experimental_hashes']['_SPEC_DATA_ONE.big']}`",
+            f"- `{dest / '_SPEC_ART_TWO.big'}` SHA256 `{report['experimental_hashes']['_SPEC_ART_TWO.big']}`",
+            "",
+            "## Warnings",
+            "",
+        ]
+        for w in report.get("warnings") or ["none"]:
+            lines.append(f"- {w}")
+        for cap in report.get("capabilities_kept") or []:
+            lines.append(f"- kept: {cap}")
+        lines += ["", "## Limitations", ""]
+        for lim in report.get("limitations") or []:
+            lines.append(f"- {lim}")
+        lines += ["", "## Added DATA members", ""]
+        for n in (report.get("data_big") or {}).get("added_names") or []:
+            lines.append(f"- `{n}`")
+        lines += ["", "## Added ART members", ""]
+        for n in (report.get("art_big") or {}).get("added_names") or []:
+            lines.append(f"- `{n}`")
+        (self.reports / "STAGE5_PACK.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        write_stage5_install_docs(dest, report)
+        (self.reports / "MANIFEST_STAGE5.json").write_text(
+            json.dumps(
+                {
+                    "stage": 5,
+                    "mode": "experimental-pack",
+                    "applies_to_original_specter": False,
+                    "generals_exe_run": False,
+                    "generated_at_tehran": tehran_now(),
+                    "original_hashes_unchanged": report["original_hashes_unchanged"],
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        return report
 
     def run_stage3(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11")) -> dict:
         from . import archive as archive_mod

@@ -371,8 +371,9 @@ def main():
     loader = unittest.defaultTestLoader
     suite = unittest.TestSuite()
     suite.addTests(loader.loadTestsFromModule(sys.modules[__name__]))
-    from tests import test_art_cwc, test_resolver
+    from tests import test_art_cwc, test_pack_sample, test_resolver
 
+    suite.addTests(loader.loadTestsFromModule(test_pack_sample))
     suite.addTests(loader.loadTestsFromModule(test_art_cwc))
     suite.addTests(loader.loadTestsFromModule(test_resolver))
     result = unittest.TextTestRunner(verbosity=2).run(suite)

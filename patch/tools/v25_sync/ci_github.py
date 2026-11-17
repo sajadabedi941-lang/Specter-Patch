@@ -48,29 +48,32 @@ def _run_suite(mod) -> tuple[int, int, int]:
 
 
 def stage3_and_stage2_unit_tests() -> dict:
-    from tests import test_art_cwc, test_data_rebuild, test_pack_sample, test_ready_gate, test_resolver
+    from tests import test_art_cwc, test_data_rebuild, test_first_transfer, test_pack_sample, test_ready_gate, test_resolver
 
     s5_ran, s5_fail, s5_rc = _run_suite(test_pack_sample)
     s4_ran, s4_fail, s4_rc = _run_suite(test_data_rebuild)
     s3_ran, s3_fail, s3_rc = _run_suite(test_art_cwc)
     s2_ran, s2_fail, s2_rc = _run_suite(test_resolver)
     rg_ran, rg_fail, rg_rc = _run_suite(test_ready_gate)
+    ft_ran, ft_fail, ft_rc = _run_suite(test_first_transfer)
     selftest = subprocess.run(
         [sys.executable, str(TOOL / "v25_sync.py"), "selftest"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
     )
-    combined = s5_ran + s4_ran + s3_ran + s2_ran + rg_ran
+    combined = s5_ran + s4_ran + s3_ran + s2_ran + rg_ran + ft_ran
     ok = (
         s5_rc == 0
         and s4_rc == 0
         and s3_rc == 0
         and s2_rc == 0
         and rg_rc == 0
+        and ft_rc == 0
         and selftest.returncode == 0
         and combined >= 44
         and rg_fail == 0
+        and ft_fail == 0
     )
     return {
         "name": "unit_tests",
@@ -85,6 +88,8 @@ def stage3_and_stage2_unit_tests() -> dict:
         "stage2_resolver_failures": s2_fail,
         "ready_gate_tests": rg_ran,
         "ready_gate_failures": rg_fail,
+        "first_transfer_tests": ft_ran,
+        "first_transfer_failures": ft_fail,
         "combined_selftest_count": combined,
         "v25_sync_selftest_returncode": selftest.returncode,
         "note": (
@@ -338,6 +343,32 @@ def ready_pack_report_checks() -> dict:
     return {"name": "ready_pack_report", "ok": not errors, "errors": errors}
 
 
+def first_transfer_report_checks() -> dict:
+    p = REPORTS / "FIRST_TRANSFER.json"
+    if not p.is_file():
+        return {"name": "first_transfer_report", "ok": True, "skipped": True, "note": "FIRST_TRANSFER.json not in this checkout"}
+    ft = json.loads(p.read_text(encoding="utf-8"))
+    errors = []
+    if ft.get("applies_to_original_specter") is not False:
+        errors.append("FIRST_TRANSFER.applies_to_original_specter must be false")
+    if ft.get("generals_exe_run") is not False:
+        errors.append("FIRST_TRANSFER.generals_exe_run must be false")
+    if ft.get("loose_ini_written") is not False:
+        errors.append("FIRST_TRANSFER.loose_ini_written must be false")
+    if ft.get("equipment_imported") is not False:
+        errors.append("FIRST_TRANSFER.equipment_imported must be false")
+    if ft.get("original_hashes_unchanged") is not True:
+        errors.append("FIRST_TRANSFER.original_hashes_unchanged must be true")
+    orig = ft.get("original_hashes") or {}
+    if orig.get("_SPEC_DATA_ONE.big") and orig.get("_SPEC_DATA_ONE.big") != EXPECTED_DATA:
+        errors.append("FIRST_TRANSFER original DATA hash mismatch")
+    if orig.get("_SPEC_ART_TWO.big") and orig.get("_SPEC_ART_TWO.big") != EXPECTED_ART_TWO:
+        errors.append("FIRST_TRANSFER original ART TWO hash mismatch")
+    if ft.get("install_ready") and not (ft.get("experimental_hashes") or {}).get("_SPEC_ART_TWO.big"):
+        errors.append("install_ready requires experimental ART TWO hash")
+    return {"name": "first_transfer_report", "ok": not errors, "errors": errors}
+
+
 def stage5_report_checks() -> dict:
     p = REPORTS / "STAGE5_PACK.json"
     if not p.is_file():
@@ -372,6 +403,7 @@ def main() -> int:
         resolver_report_checks(),
         stage5_report_checks(),
         ready_pack_report_checks(),
+        first_transfer_report_checks(),
         apply_still_blocked(),
         specter_bigs_unchanged(),
     ]

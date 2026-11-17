@@ -1,0 +1,62 @@
+SPECTER USA Patriot PAC-3 from New Donor (ss1 baseline)
+=======================================================
+Static validation only. Generals / Zero Hour was not launched.
+
+0. ss1 baseline confirmed
+-------------------------
+GitHub commit 84e4b946 (2026-11-06 15:47:54 +0330, "Add files via upload")
+added ss1.zip. main HEAD 116820aa is the same snapshot plus remaining volumes.
+ss1 SPECTER FINAL BIGs:
+  _SPEC_DATA_ONE.big  374093201  7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+  _SPEC_ART_TWO.big   312978491  81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+These match the previously recorded ss1 hashes. Previous PAC-3 v1–v8 packs
+were not used as input.
+
+1. New Donor Patriot (kept)
+---------------------------
+Source: DONOR_INI.rar → INI/object/America.ini Object USAPAC3.
+  Draw W3DTruckDraw UsaPac3Car jack clip + UsaPac3Car_w tracks + UsaPac3F
+  WeaponLaunchBone PRIMARY/SECONDARY FIREPOINT (bones FIREPOINT01-04)
+  DeployStyleAIUpdate Pack/UnpackTime=1111, turret InitiallyDisabled,
+    TurretsFunctionOnlyWhenDeployed, ControlledWeaponSlots PRIMARY SECONDARY
+  Locomotor ChinaVehicleDozerLocomotor
+  CommandSet GLAVehicleRocketBuggyCommandSet (AttackMove/Guard/Stop)
+  Empty Prerequisites. Side America.
+
+2. THAAD missiles only (ss1 existing templates)
+-----------------------------------------------
+PRIMARY   8x_LRSAM_THAAD      -> THAAD_AA_OBJECT
+SECONDARY THAADMissile_ABM    -> THAAD_ABM_OBJECT
+Both already in ss1 Data\INI\Weapon.ini and USA_WeaponObjects.ini.
+AutoChoose both slots. No new Weapon / projectile Object names.
+No THAAD suicide-deploy weapon. No THAAD CommandSet / mode upgrades.
+
+3. ART
+------
+UsaPac3Car / Car_d / Car_w / textures already byte-identical to Donor in ss1.
+UsaPac3F / F_d in ss1 were smaller stripped copies; restored from DONOR_Art.
+Housecolor overlay CWCusHC_B omitted: ss1 ART TWO has no CWCusHousecolor.tga.
+pac3mis_m left unused (missiles are THAAD objects).
+
+4. Integration
+--------------
+ss1 loose Data\INI\CommandSet.ini AmericaCommandCenterCommandSet slot 6 =
+Command_ConstructUSAPAC3. CommandButton already Object=USAPAC3.
+This pack does not edit those files. Packed CommandSet.ini / Weapon.ini /
+US_M1120.ini (Object US_THAAD) are byte-identical to ss1.
+
+5. DATA / ART delta vs ss1
+--------------------------
+DATA CHANGED (1):
+  Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+ART CHANGED (2):
+  Art\W3D\UsaPac3F.W3D
+  Art\W3D\UsaPac3F_d.W3D
+Entry counts unchanged (DATA 3587, ART 2700). Other AirDefense INIs unchanged.
+
+6. This pack hashes
+-------------------
+_SPEC_DATA_ONE.big  374101770  3d65ac0d91cbbaed06b1314d53d2b57f30e41d4022510716668cd1621f8b21f1
+_SPEC_ART_TWO.big   312978611  f9c32a05a71d9773965755c9f96e07f779060e38af90d479c3b23eda40225b42
+
+Generals.exe was not run.

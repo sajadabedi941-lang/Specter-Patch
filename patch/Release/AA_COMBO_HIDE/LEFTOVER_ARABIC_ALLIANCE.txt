@@ -1,0 +1,5 @@
+Data\INI\CommandButton_ArabicAllianceUnlock.ini
+Data\INI\CommandSet_ArabicAllianceUnlock.ini
+Data\INI\Object\Specter\Arabic Alliance\Airforce\F16C_B60.ini
+Data\INI\Object\Specter\Arabic Alliance\Wheeled\Jiny.ini
+Data\INI\Science_ArabicAllianceUnlock.ini

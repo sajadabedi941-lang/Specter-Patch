@@ -10,6 +10,7 @@
 
 ```bash
 python3 patch/tools/v25_sync/v25_sync.py selftest
+python3 patch/tools/v25_sync/v25_sync.py ready-pack --out /tmp/v25_ready_pack --json
 python3 patch/tools/v25_sync/v25_sync.py pack-sample --out /tmp/v25_stage5_pack --json
 python3 patch/tools/v25_sync/v25_sync.py apply   # باید خطا بدهد
 ```

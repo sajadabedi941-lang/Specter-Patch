@@ -7,6 +7,7 @@ rebuildable. Generals.exe is not run.
 """
 from __future__ import annotations
 
+import sys
 from collections import Counter, defaultdict
 
 from .ini import KIND_ALIASES
@@ -148,25 +149,40 @@ def classify_object(name: str, rec: dict, v25: dict, spec_idx: dict, rules: dict
 
     status = "unique_import_ready"
     reasons = []
+    required = []
     if side.lower() in blocked_sides:
         status = "blocked"
         reasons.append(f"blocked_side:{side}")
     elif cwc_hits and not (proof and proof.get("compatible")):
-        status = "needs_rebuild"
+        status = "MANUAL_REBUILD"
         reasons.append("cwc:" + ",".join(cwc_hits))
+        if "riderchangecontain" in behaviors:
+            required.append(
+                "RiderChangeContain: CWC packed/deployed riders. Stock analogue is "
+                "DeployStyleAIUpdate only when prove_rider_deploy is compatible. "
+                "Do not strip this module without a proven mapping."
+            )
+        if "oclspecialpower" in behaviors:
+            required.append(
+                "OCLSpecialPower: CWC pack/unpack OCL. Keep the V25 capability; "
+                "import only after an independent SpecialPower+OCL unique-path rebuild."
+            )
+        if "weaponbonusupdate" in behaviors:
+            required.append("WeaponBonusUpdate: unique INI; do not patch SPECTER core tables.")
     elif missing_fatal:
         status = "needs_fix"
         reasons.append("missing_parse_ref")
-    elif not load.get("loaded"):
+    elif not load.get("loaded") or load.get("confidence") != "proven":
         status = "needs_fix"
-        reasons.append("unloadable_dest")
+        reasons.append("unloadable_or_unproven_dest")
     elif name.lower() in spec_idx.get("object", set()):
         status = "rename_or_reuse"
         reasons.append("name_in_ss1")
 
-    ready = status == "unique_import_ready" and not missing_fatal and load.get("loaded")
+    # Byte gate (catalog_objects) sets ready_for_safe_transfer. File existence is never enough.
+    ready = False
     if status == "rename_or_reuse":
-        reasons.append("not_ready_until_rewrite_plan")
+        reasons.append("rewrite_required")
 
     return {
         "object": name,
@@ -178,22 +194,58 @@ def classify_object(name: str, rec: dict, v25: dict, spec_idx: dict, rules: dict
         "status": status,
         "ready_for_safe_transfer": bool(ready),
         "reasons": reasons,
+        "required_capabilities": required,
         "missing_parse_refs": missing_fatal[:20],
         "missing_runtime_refs": missing_soft[:12],
         "dep_count": len(chain.get("visited") or []),
         "cwc_behaviors": cwc_hits,
         "behaviors": rec.get("behaviors") or [],
+        "bytes_validated": False,
     }
 
 
 def catalog_objects(v25: dict, spec: dict, rules: dict, recipes: dict | None = None) -> dict:
+    from .payloads import byte_gate
+
     spec_idx = _index(spec)
     objects = v25.get("Object") or {}
     rows = []
     counts: Counter = Counter()
     cache: dict = {}
-    for name, rec in objects.items():
+    total = len(objects)
+    for i, (name, rec) in enumerate(objects.items(), 1):
+        if total >= 50 and (i == 1 or i % 250 == 0 or i == total):
+            sys.stderr.write(f"catalog Ready Gate {i}/{total}\n")
+            sys.stderr.flush()
         row = classify_object(name, rec, v25, spec_idx, rules, recipes or {}, cache)
+        if row["status"] in {"unique_import_ready", "rename_or_reuse"}:
+            side = row.get("side") or "Unmapped"
+            gate = byte_gate(name, rec, v25, spec, spec_idx, cache, side)
+            row["bytes_validated"] = True
+            row["needs_normalize"] = bool((not gate["preflight"].get("ok")) and gate["preflight_normalized"].get("ok"))
+            if gate.get("missing_end_objects"):
+                row["status"] = "needs_fix"
+                row["reasons"] = list(row["reasons"]) + ["object_missing_end"]
+                row["ready_for_safe_transfer"] = False
+            elif gate.get("missing_parse_refs"):
+                row["status"] = "needs_fix"
+                row["reasons"] = list(row["reasons"]) + ["missing_parse_ref"]
+                row["missing_parse_refs"] = gate["missing_parse_refs"]
+                row["ready_for_safe_transfer"] = False
+            elif gate.get("unloadable") or gate.get("unproven_dests"):
+                row["status"] = "needs_fix"
+                row["reasons"] = list(row["reasons"]) + ["unloadable_or_unproven_dest"]
+                row["ready_for_safe_transfer"] = False
+            elif not gate["preflight_normalized"].get("ok"):
+                row["status"] = "needs_fix"
+                row["reasons"] = list(row["reasons"]) + ["preflight_bytes"]
+                row["ready_for_safe_transfer"] = False
+            else:
+                row["ready_for_safe_transfer"] = True
+                row["planned_name"] = gate["assembled"].get("planned_object") or row["planned_name"]
+                row["dest_ini"] = gate["assembled"].get("dest_ini") or row["dest_ini"]
+                if row["needs_normalize"]:
+                    row["reasons"] = list(row["reasons"]) + ["normalized_in_output_only"]
         rows.append(row)
         counts[row["status"]] += 1
         if row["ready_for_safe_transfer"]:
@@ -203,9 +255,9 @@ def catalog_objects(v25: dict, spec: dict, rules: dict, recipes: dict | None = N
         "object_count": len(rows),
         "counts": dict(counts),
         "note": (
-            "ready_for_safe_transfer requires SS1-loadable dest, no parse-fatal missing refs "
-            "anywhere on the Weapon/Projectile/OCL/FXList chain, and no CWC manual rebuild. "
-            "It is not 'Object INI exists'. Generals.exe was not run."
+            "READY requires proven SS1 dest, parse-fatal chain, and byte preflight of the "
+            "normalized unique-path payloads. Object INI existence is never enough. "
+            "Normalize is output-only. Generals.exe was not run."
         ),
         "objects": rows,
     }
@@ -226,18 +278,18 @@ def catalog_markdown(cat: dict, generated_at: str) -> str:
         f"- Ready for safe transfer: **{counts.get('ready_for_safe_transfer', 0)}**",
         f"- unique_import_ready: **{counts.get('unique_import_ready', 0)}**",
         f"- needs_fix (parse refs / dest): **{counts.get('needs_fix', 0)}**",
-        f"- needs_rebuild (CWC): **{counts.get('needs_rebuild', 0)}**",
+        f"- MANUAL_REBUILD (CWC): **{counts.get('MANUAL_REBUILD', 0)}**",
         f"- blocked: **{counts.get('blocked', 0)}**",
         f"- rename_or_reuse (name in SS1): **{counts.get('rename_or_reuse', 0)}**",
         "",
         cat.get("note") or "",
         "",
-        "Generals.exe was **not** run. Static catalog only.",
+        "Generals.exe was **not** run. READY requires byte preflight of normalized unique-path payloads.",
         "",
     ]
     for status, title in (
         ("needs_fix", "Needs fix (sample)"),
-        ("needs_rebuild", "Needs rebuild (sample)"),
+        ("MANUAL_REBUILD", "Manual rebuild (CWC, sample)"),
         ("blocked", "Blocked (sample)"),
         ("rename_or_reuse", "Name in SS1 (sample)"),
         ("unique_import_ready", "Unique import ready (sample)"),
@@ -291,7 +343,7 @@ def engine_audit_markdown(report: dict, layout: dict, cat: dict) -> str:
         lines.append(f"- `{p}*`")
     lines += [
         "",
-        "Unproven extra root kinds (root `loadDirectory` should still parse first-token blocks):",
+        "Prefixes still without a stock root table or extra (do not emit):",
         "",
     ]
     for p in layout.get("unproven_root_kinds") or []:
@@ -311,7 +363,7 @@ def engine_audit_markdown(report: dict, layout: dict, cat: dict) -> str:
         f"- Ready for safe transfer: **{counts.get('ready_for_safe_transfer', 0)}**",
         f"- unique_import_ready: **{counts.get('unique_import_ready', 0)}**",
         f"- needs_fix: **{counts.get('needs_fix', 0)}**",
-        f"- needs_rebuild: **{counts.get('needs_rebuild', 0)}**",
+        f"- MANUAL_REBUILD: **{counts.get('MANUAL_REBUILD', 0)}**",
         f"- blocked: **{counts.get('blocked', 0)}**",
         f"- rename_or_reuse: **{counts.get('rename_or_reuse', 0)}**",
         "",
@@ -333,7 +385,7 @@ def engine_audit_markdown(report: dict, layout: dict, cat: dict) -> str:
         "",
         "- Not a Generals.exe boot test",
         "- Not an install pack and not a bulk transfer",
-        "- Unproven root kinds (Armor_/Locomotor_/FXList_ extras) are warnings, not proof they load",
+        "- Armor_/Locomotor_/FXList_/DamageFX_/Crate_/ParticleSystem_/SoundEffects_ extras are proven as the same Data\\INI root loader as Weapon_*.ini",
         "- ART/W3D integrity is not a parse-fatal INI check",
         "",
         "Do not start grouped equipment transfer until ready_for_safe_transfer rows are packed",

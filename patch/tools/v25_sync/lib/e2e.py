@@ -6,13 +6,11 @@ the actual V25 INI bytes. Never writes SPECTER BIGs or loose INI.
 """
 from __future__ import annotations
 
-import hashlib
 from collections import Counter, defaultdict
 
-import re
-
 from . import catalog
-from .pack_sample import close_fxlist_blocks, rewrite_header
+from .normalize import normalize_payloads
+from .payloads import assemble_payloads
 from .preflight import (
     check_duplicate_named_blocks,
     check_fxlist_ends,
@@ -21,8 +19,7 @@ from .preflight import (
     native_def_index,
     preflight_payloads,
 )
-from .rewrite import independent_name, rewrite_text
-from .ss1_layout import emit_path, path_loadable
+from .ss1_layout import path_loadable
 
 ROLES = ("tank", "air_defense", "structure", "missile", "aircraft", "mobile")
 
@@ -75,10 +72,6 @@ PREFERRED = {
 PER_ROLE = 5
 READY_RECHECK_CAP = 400
 
-LOCO_TAIL = re.compile(
-    r"^(\s*GroupMovementPriority\s*=\s*\S+)(\s+)(?!;|\s*$)(.*)$",
-    re.I,
-)
 SYNTAX_CODES = {
     "fxlist_missing_column0_end",
     "locomotor_uncommented_tail",
@@ -109,14 +102,6 @@ def object_role(name: str, rec: dict, meta: dict | None = None) -> str | None:
     return None
 
 
-def _lookup(inv: dict, kind: str, name: str) -> dict | None:
-    return catalog._lookup_rec(inv, kind, name)
-
-
-def _body_hash(rec: dict | None) -> str:
-    return hashlib.sha256(((rec or {}).get("body") or "").encode("utf-8", errors="replace")).hexdigest()
-
-
 def syntax_audit_v25(v25: dict) -> dict:
     """Scan V25 def bodies for Stage 5 syntax classes. No dest files."""
     counts: Counter = Counter()
@@ -142,119 +127,6 @@ def syntax_audit_v25(v25: dict) -> dict:
                 if len(samples[code]) < 8:
                     samples[code].append(path)
     return {"error_counts": dict(counts), "samples": dict(samples), "generals_exe_run": False}
-
-
-def fix_locomotor_text(text: str) -> str:
-    lines = []
-    for line in text.splitlines():
-        m = LOCO_TAIL.match(line)
-        if m:
-            comment = (m.group(3) or "").strip()
-            line = f"{m.group(1)}; {comment}".rstrip()
-        lines.append(line)
-    return "\n".join(lines) + ("\n" if text.endswith("\n") else "")
-
-
-def normalize_payloads(payloads: dict[str, str]) -> dict[str, str]:
-    """In-memory SS1 syntax repairs. Not written to disk."""
-    out: dict[str, str] = {}
-    for path, text in payloads.items():
-        npath = path.replace("/", "\\").lower()
-        t = text
-        if "fxlist" in npath or re.search(r"(?im)^FXList\s+\S+", t):
-            t = close_fxlist_blocks(t)
-        if "locomotor" in npath or re.search(r"(?im)^Locomotor\s+\S+", t):
-            t = fix_locomotor_text(t)
-        out[path] = t
-    return out
-
-
-def emit_kind_for(kind: str) -> str:
-    if kind == "CrateTemplate":
-        return "CrateData"
-    return kind
-
-
-def assemble_payloads(
-    name: str,
-    rec: dict,
-    v25: dict,
-    spec: dict,
-    spec_idx: dict,
-    cache: dict,
-    side: str,
-) -> dict:
-    """Build unique-path dest payloads in memory. Nothing is written."""
-    chain = catalog.walk_object_chain("Object", name, v25, spec_idx, cache)
-    rename: dict[str, str] = {}
-    pending: list[tuple[str, str, str, dict]] = []
-    dests: list[dict] = []
-    visited = chain.get("visited") or [f"Object:{name}"]
-    seen_emit: set[tuple[str, str]] = set()
-
-    for item in visited:
-        if ":" not in item:
-            continue
-        kind, dep = item.split(":", 1)
-        vrec = _lookup(v25, kind, dep)
-        if vrec is None:
-            dests.append({"kind": kind, "name": dep, "action": "REUSE_NATIVE_OR_MISSING", "dest": None})
-            continue
-        srec = _lookup(spec, kind, dep)
-        action = "IMPORT_UNIQUE"
-        new = dep
-        if srec is not None:
-            if _body_hash(vrec) == _body_hash(srec):
-                dests.append(
-                    {
-                        "kind": kind,
-                        "name": dep,
-                        "action": "REUSE_NATIVE",
-                        "dest": None,
-                        "planned": dep,
-                    }
-                )
-                continue
-            action = "RENAME_AND_REWRITE"
-            new = independent_name(dep)
-            rename[dep] = new
-        out_kind = emit_kind_for(kind)
-        key = (out_kind.lower(), new.lower())
-        if key in seen_emit:
-            continue
-        seen_emit.add(key)
-        dest = emit_path(out_kind, new, side or "Unmapped")
-        dests.append(
-            {
-                "kind": out_kind,
-                "name": dep,
-                "planned": new,
-                "action": action,
-                "dest": dest,
-                "dest_loadable": bool(path_loadable(dest).get("loaded")),
-                "dest_confidence": path_loadable(dest).get("confidence"),
-            }
-        )
-        pending.append((out_kind, new, dest, vrec))
-
-    payloads: dict[str, list[str]] = defaultdict(list)
-    for out_kind, new, dest, vrec in pending:
-        payloads[dest].append(rewrite_header(out_kind, new, rewrite_text(vrec.get("body") or "", rename)))
-
-    planned_obj = rename.get(name, name)
-    obj_dest = emit_path("Object", planned_obj, side or "Unmapped")
-    joined = {path: "\n".join(chunks) for path, chunks in payloads.items()}
-    if rec.get("body") is not None and obj_dest not in joined:
-        joined[obj_dest] = rewrite_header("Object", planned_obj, rewrite_text(rec.get("body") or "", rename))
-
-    return {
-        "payloads": joined,
-        "dests": dests,
-        "rename": rename,
-        "chain": chain,
-        "planned_object": planned_obj,
-        "dest_ini": obj_dest,
-    }
 
 
 def capabilities(rec: dict) -> list[str]:
@@ -300,7 +172,7 @@ def verdict_from(
     if cat_row.get("status") == "blocked" or any(str(r).startswith("blocked_side") for r in reasons):
         status = "blocked"
         reasons.append("blocked_side")
-    elif cat_row.get("status") == "needs_rebuild":
+    elif cat_row.get("status") in ("needs_rebuild", "MANUAL_REBUILD"):
         status = "blocked"
         reasons.append("cwc_rebuild_required")
     elif missing:
@@ -446,12 +318,12 @@ def engine_gaps(syntax: dict, summary: dict) -> list[str]:
     gaps = [
         "Generals.exe is not run; pass is static INI/VFS only.",
         "ART/W3D/texture bytes are inventoried as stems, not opened or packed.",
-        "Unproven SS1 root extras (Armor_/Locomotor_/FXList_/ParticleSystem_/SoundEffects_) remain likely, not proven.",
+        "Armor_/Locomotor_/FXList_/DamageFX_/Crate_/ParticleSystem_/SoundEffects_ extras are proven as the same Data\\INI root first-token loader as Weapon_*.ini (live stock table + extra root INI).",
         "Bulk CommandSet factory-slot overlay is not planned (Stage 5 did PLAWarFactory slots 4/7 only).",
         "Audio wav recovery from V25 volumes is not part of this dry-run.",
         "Catalog CommandButton existence is now walked from CommandSet; factory Object= slots stay unwalked on purpose.",
         "Shared-name rewrite is planned in memory; it is not applied to a BIG.",
-        "Do not start grouped transfer until false_ready is 0 on the byte recheck and unproven root kinds are proven or isolated.",
+        "Do not start grouped transfer until false_ready is 0 on the byte Ready Gate. Experimental DATA pack is dry-run only.",
     ]
     if syntax.get("error_counts"):
         gaps.insert(
@@ -580,12 +452,11 @@ def run_e2e(engine) -> dict:
         "roles": dict(Counter(r.get("role") for r in sample_rows)),
     }
     next_stage = (
-        "Do not start grouped equipment transfer. Next: fold FXList End + Locomotor semicolon "
-        "normalize into the unique-path rewriter, keep catalog from marking ready until byte "
-        "preflight passes, prove or isolate unproven root INI kinds, then pack one role-group "
-        "as an experimental DATA copy only."
-        if false_ready or syn.get("error_counts") or counts.get("fail")
-        else "Byte recheck matched catalog on this sample. Next still is not bulk import: prove unproven root kinds and ART recovery, then one experimental role-group pack."
+        "Do not start grouped equipment transfer. Ready Gate + output-only normalize + proven "
+        "root kinds are in this stage; experimental DATA pack is dry-run only and does not "
+        "import equipment into original SPECTER FINAL."
+        if false_ready or counts.get("fail")
+        else "Ready Gate matched byte preflight on this sample. Next still is not bulk import: ART recovery, then a larger experimental role-group pack."
     )
     after = {
         "_SPEC_DATA_ONE.big": sha256_file(orig_data) if orig_data.is_file() else None,

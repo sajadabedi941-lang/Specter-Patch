@@ -1,6 +1,6 @@
 {
-  "mode": "ss1-compat-infra",
-  "generated_at_tehran": "2026-11-11 16:29 Asia/Tehran",
+  "mode": "ready-pack-dry-run",
+  "generated_at_tehran": "2026-11-11 17:10 Asia/Tehran",
   "game_bigs_modified": false,
   "original_hashes_unchanged": true,
   "original_hashes": {
@@ -10,6 +10,15 @@
   "generals_exe_run": false,
   "loose_ini_written": false,
   "equipment_imported": false,
+  "catalog_counts": {
+    "unique_import_ready": 3304,
+    "ready_for_safe_transfer": 3908,
+    "rename_or_reuse": 604,
+    "needs_fix": 1392,
+    "MANUAL_REBUILD": 689,
+    "blocked": 218
+  },
+  "object_count": 6207,
   "ss1_layout": {
     "root_ini": 192,
     "object_recursive": true,
@@ -18,17 +27,24 @@
     "mappedimage_subdirs": {
       "HandCreated": 35,
       "TextureSize_512": 4
-    }
-  },
-  "catalog_counts": {
-    "unique_import_ready": 4027,
-    "ready_for_safe_transfer": 4027,
-    "rename_or_reuse": 709,
-    "needs_rebuild": 689,
-    "needs_fix": 564,
-    "blocked": 218
-  },
-  "object_count": 6207,
-  "preflight_sample_rejects_nested_weapon": true,
-  "preflight_sample_rejects_mappedimages_silentdeath": true
+    },
+    "proven_root_kinds": [
+      "Armor",
+      "Locomotor",
+      "FXList",
+      "DamageFX",
+      "CrateData",
+      "CrateTemplate",
+      "ParticleSystem",
+      "AudioEvent",
+      "Weapon",
+      "CommandSet",
+      "CommandButton",
+      "ObjectCreationList",
+      "SpecialPower",
+      "Upgrade",
+      "Science"
+    ],
+    "extra_root_ini_count": 157
+  }
 }

@@ -1,7 +1,7 @@
 # SS1 compatibility engine audit
 
-- Generated: 2026-11-11 16:29 Asia/Tehran
-- Mode: `ss1-compat-infra`
+- Generated: 2026-11-11 17:10 Asia/Tehran
+- Mode: `ready-pack-dry-run`
 - Original SPECTER BIGs modified: **False**
 - Original hashes unchanged: **True**
 - Equipment imported: **False**
@@ -34,15 +34,8 @@ Proven extra root prefixes:
 - `PlayerTemplate_*`
 - `ControlBarScheme_*`
 
-Unproven extra root kinds (root `loadDirectory` should still parse first-token blocks):
+Prefixes still without a stock root table or extra (do not emit):
 
-- `Armor_*`
-- `FXList_*`
-- `DamageFX_*`
-- `Crate_*`
-- `Locomotor_*`
-- `ParticleSystem_*`
-- `SoundEffects_*`
 
 ## Emit paths (SS1-safe)
 
@@ -54,12 +47,12 @@ Unproven extra root kinds (root `loadDirectory` should still parse first-token b
 ## Catalog (entire V25 Object table)
 
 - Objects: **6207**
-- Ready for safe transfer: **4027**
-- unique_import_ready: **4027**
-- needs_fix: **564**
-- needs_rebuild: **689**
+- Ready for safe transfer: **3908**
+- unique_import_ready: **3304**
+- needs_fix: **1392**
+- MANUAL_REBUILD: **689**
 - blocked: **218**
-- rename_or_reuse: **709**
+- rename_or_reuse: **604**
 
 ## Stage 5 crash classes now gated by preflight
 
@@ -72,14 +65,14 @@ Unproven extra root kinds (root `loadDirectory` should still parse first-token b
 - Duplicate named Armor/Weapon/FXList
 - Object file existence is not readiness
 
-- Preflight rejects nested Weapon: **True**
-- Preflight rejects MappedImages\SilentDeath: **True**
+- Preflight rejects nested Weapon: **None**
+- Preflight rejects MappedImages\SilentDeath: **None**
 
 ## What this engine still is not
 
 - Not a Generals.exe boot test
 - Not an install pack and not a bulk transfer
-- Unproven root kinds (Armor_/Locomotor_/FXList_ extras) are warnings, not proof they load
+- Armor_/Locomotor_/FXList_/DamageFX_/Crate_/ParticleSystem_/SoundEffects_ extras are proven as the same Data\INI root loader as Weapon_*.ini
 - ART/W3D integrity is not a parse-fatal INI check
 
 Do not start grouped equipment transfer until ready_for_safe_transfer rows are packed

@@ -1,0 +1,4 @@
+OBJECT:USAPAC3 = PAC-3 Patriot
+OBJECT:USAPAC3_Projectile = PAC-3 Missile
+CONTROLBAR:ConstructUSAPAC3 = PAC-3 Patriot
+CONTROLBAR:ToolTipConstructUSAPAC3 = Mobile Patriot PAC-3 battery. THAAD-class intercept vs aircraft and ballistic missiles.

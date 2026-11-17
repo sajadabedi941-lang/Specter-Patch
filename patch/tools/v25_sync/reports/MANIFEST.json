@@ -1,13 +1,43 @@
 {
-  "stage": 2,
-  "mode": "resolve-dry-run",
+  "stage": 3,
+  "mode": "art-cwc-plan",
   "applies_to_game": false,
-  "generated_at_tehran": "2026-11-11 13:05 Asia/Tehran",
-  "ready_transfer": 624,
-  "auto_fixable": 1079,
-  "manual_rebuild": 4224,
-  "blocked": 218,
-  "reuse_only": 62,
-  "objects_planned": 6207,
+  "generals_exe_run": false,
+  "generated_at_tehran": "2026-11-11 13:30 Asia/Tehran",
+  "focus": [
+    {
+      "object": "ChinaCSSA1",
+      "found": true,
+      "readiness": "manual_rebuild",
+      "data_status": "MANUAL_REBUILD",
+      "art_status": "AUTO_RECOVERABLE",
+      "cwc_modules": []
+    },
+    {
+      "object": "ChinaHQ11",
+      "found": true,
+      "readiness": "manual_rebuild",
+      "data_status": "MANUAL_REBUILD",
+      "art_status": "AUTO_RECOVERABLE",
+      "cwc_modules": [
+        "RiderChangeContain",
+        "OCLSpecialPower",
+        "EnemyNearUpdate",
+        "FireWeaponUpdate"
+      ]
+    }
+  ],
+  "nested_bigs": [
+    "Generals Silent Death V25/WYS/Textures.big",
+    "Generals Silent Death V25/WYS/W3D.big",
+    "Generals Silent Death V25/WYS/Window.big",
+    "Generals Silent Death V25/TexturesZH.big",
+    "Generals Silent Death V25/W3DZH.big",
+    "Generals Silent Death V25/W3DEnglishZH.big",
+    "Generals Silent Death V25/WindowZH.big",
+    "Generals Silent Death V25/TerrainZH.big",
+    "Generals Silent Death V25/WYS/Terrain.big"
+  ],
+  "art_stems": 22415,
   "note": "No Object, Weapon, CommandSet, CommandButton, or ART was imported into SPECTER."
 }

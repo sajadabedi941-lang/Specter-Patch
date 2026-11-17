@@ -314,6 +314,9 @@ def classify_refs(
                 if t.lower() not in SKIP_NAMED_VALUES and not t.replace(".", "", 1).isdigit():
                     art.append(t)
         kind = NAMED_KEYS.get(kl)
+        if not kind and re.fullmatch(r"rider\d+", kl):
+            kind = "Object"
+            tokens = tokens[:1]
         if not kind:
             continue
         # Armor tables are `Armor = 50% SMALL_ARMS`, not nested Armor defs.

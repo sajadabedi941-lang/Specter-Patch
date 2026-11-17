@@ -1,0 +1,338 @@
+{
+  "object": "ChinaCSSA1",
+  "art_status": "AUTO_RECOVERABLE",
+  "data_status": "MANUAL_REBUILD",
+  "files": [
+    {
+      "name": "CWCgenExpTracer",
+      "action": "IMPORT_UNIQUE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CWCgenExpTracer",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CWCgenExpTracer.CWCgenExpTracer",
+      "action": "IMPORT_UNIQUE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "SSUserInterface512_001.tga",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\ssuserinterface512_001.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\ssuserinterface512_001.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\ssuserinterface512_001.tga",
+          "filename": "ssuserinterface512_001.tga",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "nested_big"
+    },
+    {
+      "name": "SSAttackMove2",
+      "action": "IMPORT_UNIQUE",
+      "source": "INIZH.big:Data\\INI\\MappedImages\\TextureSize_512\\SSUserInterface512.INI",
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "mapped_image"
+    },
+    {
+      "name": "SDGuard",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDGuard.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
+          "inner": null,
+          "filename": "SDGuard.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "SDStop",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDStop.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+          "inner": null,
+          "filename": "SDStop.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "NVBtmstr_D1",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\NVBtMstr_D1.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\nvbtmstr_d1.dds",
+          "filename": "nvbtmstr_d1.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\NVBtMstr_D1.W3D",
+          "filename": "NVBtMstr_D1.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "NVBtMstr_D1.tga"
+      ],
+      "w3d_anims": [
+        "NVBTMSTR_D1.CHASSIS"
+      ],
+      "found_in": "nested_big"
+    },
+    {
+      "name": "NVBtMstr_D1.tga",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\NVBtMstr_D1.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\nvbtmstr_d1.dds",
+          "filename": "nvbtmstr_d1.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\NVBtMstr_D1.W3D",
+          "filename": "NVBtMstr_D1.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "NVBtMstr_D1.tga"
+      ],
+      "w3d_anims": [
+        "NVBTMSTR_D1.CHASSIS"
+      ],
+      "found_in": "nested_big"
+    },
+    {
+      "name": "NVBtMstr_D1.tga",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    },
+    {
+      "name": "CSSA1TB",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CSSA1TB.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
+          "inner": null,
+          "filename": "CSSA1TB.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHCSSA1",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D",
+          "inner": null,
+          "filename": "CHCSSA1.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "SDNSM04.DDS",
+        "CHCSSA1T.DDS",
+        "CHCSSA1B.DDS"
+      ],
+      "w3d_anims": [
+        "CHCSSA1.TIRE02",
+        "CHCSSA1.TIRE01",
+        "CHCSSA1.TIRE08",
+        "CHCSSA1.TIRE07",
+        "CHCSSA1.TIRE06",
+        "CHCSSA1.TIRE05",
+        "CHCSSA1.TURRETHEL",
+        "CHCSSA1.TURRET",
+        "CHCSSA1.CHASSIS"
+      ],
+      "found_in": "zip"
+    },
+    {
+      "name": "SDNSM04.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDNSM04.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+          "inner": null,
+          "filename": "SDNSM04.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHCSSA1T.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds",
+          "inner": null,
+          "filename": "CHCSSA1T.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "CHCSSA1B.DDS",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds",
+          "inner": null,
+          "filename": "CHCSSA1B.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "zip"
+    },
+    {
+      "name": "EXTireTrack.tga",
+      "action": "RECOVER_FROM_V25",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\extiretrack.dds",
+          "filename": "extiretrack.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": "nested_big"
+    },
+    {
+      "name": "CSSA1TB",
+      "action": "CYCLE",
+      "source": null,
+      "archive_paths": null,
+      "art_locations": null,
+      "w3d_textures": null,
+      "w3d_anims": null,
+      "found_in": null
+    }
+  ]
+}

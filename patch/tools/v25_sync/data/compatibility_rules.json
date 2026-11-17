@@ -23,17 +23,27 @@
   ],
   "cwc_behavior_manual_rebuild": [
     "RiderChangeContain",
-    "DeployStyleAIUpdate",
     "OCLSpecialPower",
     "WeaponBonusUpdate"
   ],
-    "cwc_behavior_independent_add": [
+  "cwc_behavior_independent_add": [
     "RadarUpdate",
     "AutoDepositUpdate",
     "FireWeaponUpdate",
-    "SpecialAbilityUpdate"
+    "SpecialAbilityUpdate",
+    "EnemyNearUpdate",
+    "FireWeaponWhenDeadBehavior",
+    "NeutronMissileSlowDeathBehavior",
+    "AssistedTargetingUpdate",
+    "HordeUpdate",
+    "LockWeaponCreate",
+    "FlightDeckBehavior",
+    "OverlordContain",
+    "PropagandaTowerBehavior",
+    "PointDefenseLaserUpdate"
   ],
   "stock_sage_behaviors": [
+    "DeployStyleAIUpdate",
     "AIUpdateInterface",
     "PhysicsBehavior",
     "DestroyDie",

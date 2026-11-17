@@ -19,6 +19,9 @@
     "is_equipment": true
   },
   "readiness": "manual_rebuild",
+  "data_status": "MANUAL_REBUILD",
+  "art_status": "AUTO_RECOVERABLE",
+  "cwc": [],
   "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
   "build_buttons": [
     "Command_ConstructChinaCSSA1"
@@ -28,11 +31,11 @@
   ],
   "action_counts": {
     "IMPORT_UNIQUE": 21,
-    "RECOVER_FROM_V25": 7,
+    "RECOVER_FROM_V25": 14,
     "RENAME_AND_REWRITE": 2,
-    "REUSE_NATIVE": 29,
-    "CYCLE": 13,
-    "MANUAL_REBUILD": 4
+    "REUSE_NATIVE": 28,
+    "CYCLE": 14,
+    "MANUAL_REBUILD": 2
   },
   "deps": [
     {
@@ -331,18 +334,35 @@
     {
       "kind": "ArtFile",
       "name": "SSUserInterface512_001.tga",
-      "action": "IMPORT_UNIQUE",
+      "action": "RECOVER_FROM_V25",
       "planned": "SSUserInterface512_001.tga",
-      "source": null,
-      "reason": "Art stem present in parsed V25 BIGs."
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\ssuserinterface512_001.tga",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\ssuserinterface512_001.tga"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\ssuserinterface512_001.tga",
+          "filename": "ssuserinterface512_001.tga",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
     },
     {
       "kind": "ArtFile",
       "name": "SSAttackMove2",
-      "action": "MANUAL_REBUILD",
+      "action": "IMPORT_UNIQUE",
       "planned": "SSAttackMove2",
-      "source": null,
-      "reason": "Art stem not in parsed VFS, SPECTER, or V25 zip listing."
+      "source": "INIZH.big:Data\\INI\\MappedImages\\TextureSize_512\\SSUserInterface512.INI",
+      "reason": "MappedImage identifier, not a standalone texture file. Pixel data is the Texture= atlas; no similar file was substituted.",
+      "found_in": "mapped_image",
+      "missing_from": "not_a_file_stem"
     },
     {
       "kind": "CommandButton",
@@ -370,11 +390,22 @@
       "action": "RECOVER_FROM_V25",
       "planned": "SDGuard",
       "source": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
-      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
       "archive_paths": [
         "Generals Silent Death V25/Art/Textures/SDGuard.tga"
       ],
-      "missing_from": "extract_vfs"
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDGuard.tga",
+          "inner": null,
+          "filename": "SDGuard.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
     },
     {
       "kind": "CommandButton",
@@ -402,11 +433,22 @@
       "action": "RECOVER_FROM_V25",
       "planned": "SDStop",
       "source": "Generals Silent Death V25/Art/Textures/SDStop.tga",
-      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
       "archive_paths": [
         "Generals Silent Death V25/Art/Textures/SDStop.tga"
       ],
-      "missing_from": "extract_vfs"
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDStop.tga",
+          "inner": null,
+          "filename": "SDStop.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
     },
     {
       "kind": "AudioEvent",
@@ -500,10 +542,86 @@
     {
       "kind": "ArtFile",
       "name": "NVBtmstr_D1",
-      "action": "MANUAL_REBUILD",
+      "action": "RECOVER_FROM_V25",
       "planned": "NVBtmstr_D1",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\NVBtMstr_D1.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\nvbtmstr_d1.dds",
+          "filename": "nvbtmstr_d1.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\NVBtMstr_D1.W3D",
+          "filename": "NVBtMstr_D1.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "NVBtMstr_D1.tga"
+      ],
+      "w3d_anims": [
+        "NVBTMSTR_D1.CHASSIS"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "NVBtMstr_D1.tga",
+      "action": "RECOVER_FROM_V25",
+      "planned": "NVBtMstr_D1.tga",
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\nvbtmstr_d1.dds",
+        "Generals Silent Death V25/WYS/W3D.big::Art\\W3D\\NVBtMstr_D1.W3D"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\nvbtmstr_d1.dds",
+          "filename": "nvbtmstr_d1.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        },
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/W3D.big",
+          "inner": "Art\\W3D\\NVBtMstr_D1.W3D",
+          "filename": "NVBtMstr_D1.W3D",
+          "source_big": "Generals Silent Death V25/WYS/W3D.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/W3D.big"
+        }
+      ],
+      "w3d_textures": [
+        "NVBtMstr_D1.tga"
+      ],
+      "w3d_anims": [
+        "NVBTMSTR_D1.CHASSIS"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "NVBtMstr_D1.tga",
+      "action": "CYCLE",
+      "planned": "NVBtMstr_D1.tga",
       "source": null,
-      "reason": "Art stem not in parsed VFS, SPECTER, or V25 zip listing."
+      "reason": "Cyclic reference; node already visited."
     },
     {
       "kind": "BehaviorModule",
@@ -543,11 +661,22 @@
       "action": "RECOVER_FROM_V25",
       "planned": "CSSA1TB",
       "source": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
-      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
       "archive_paths": [
         "Generals Silent Death V25/Art/Textures/CSSA1TB.tga"
       ],
-      "missing_from": "extract_vfs"
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CSSA1TB.tga",
+          "inner": null,
+          "filename": "CSSA1TB.tga",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
     },
     {
       "kind": "ArtFile",
@@ -555,19 +684,130 @@
       "action": "RECOVER_FROM_V25",
       "planned": "CHCSSA1",
       "source": "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D",
-      "reason": "Not in parsed extract/BIGs; file exists in the V25 zip.",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
       "archive_paths": [
         "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D"
       ],
-      "missing_from": "extract_vfs"
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/W3D/CHCSSA1.W3D",
+          "inner": null,
+          "filename": "CHCSSA1.W3D",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "w3d_textures": [
+        "SDNSM04.DDS",
+        "CHCSSA1T.DDS",
+        "CHCSSA1B.DDS"
+      ],
+      "w3d_anims": [
+        "CHCSSA1.TIRE02",
+        "CHCSSA1.TIRE01",
+        "CHCSSA1.TIRE08",
+        "CHCSSA1.TIRE07",
+        "CHCSSA1.TIRE06",
+        "CHCSSA1.TIRE05",
+        "CHCSSA1.TURRETHEL",
+        "CHCSSA1.TURRET",
+        "CHCSSA1.CHASSIS"
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "SDNSM04.DDS",
+      "action": "RECOVER_FROM_V25",
+      "planned": "SDNSM04.DDS",
+      "source": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/SDNSM04.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/SDNSM04.dds",
+          "inner": null,
+          "filename": "SDNSM04.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CHCSSA1T.DDS",
+      "action": "RECOVER_FROM_V25",
+      "planned": "CHCSSA1T.DDS",
+      "source": "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHCSSA1T.dds",
+          "inner": null,
+          "filename": "CHCSSA1T.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
+    },
+    {
+      "kind": "ArtFile",
+      "name": "CHCSSA1B.DDS",
+      "action": "RECOVER_FROM_V25",
+      "planned": "CHCSSA1B.DDS",
+      "source": "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds",
+      "reason": "Exact stem found as a loose zip member. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "zip",
+          "path": "Generals Silent Death V25/Art/Textures/CHCSSA1B.dds",
+          "inner": null,
+          "filename": "CHCSSA1B.dds",
+          "source_big": null,
+          "local_path": null
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "zip"
     },
     {
       "kind": "ArtFile",
       "name": "EXTireTrack.tga",
-      "action": "REUSE_NATIVE",
+      "action": "RECOVER_FROM_V25",
       "planned": "EXTireTrack.tga",
-      "source": null,
-      "reason": "Stock ZH EX* texture; expected in base Generals ART, not in the SPECTER overlay or V25 zip listing."
+      "source": "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds",
+      "reason": "Exact stem found inside a nested V25 BIG. Not substituted.",
+      "archive_paths": [
+        "Generals Silent Death V25/WYS/Textures.big::Art\\Textures\\extiretrack.dds"
+      ],
+      "art_locations": [
+        {
+          "container": "nested_big",
+          "path": "Generals Silent Death V25/WYS/Textures.big",
+          "inner": "Art\\Textures\\extiretrack.dds",
+          "filename": "extiretrack.dds",
+          "source_big": "Generals Silent Death V25/WYS/Textures.big",
+          "local_path": "/tmp/v25_sync_cache/nested_bigs/Generals Silent Death V25/WYS/Textures.big"
+        }
+      ],
+      "missing_from": "extract_vfs",
+      "found_in": "nested_big"
     },
     {
       "kind": "BehaviorModule",

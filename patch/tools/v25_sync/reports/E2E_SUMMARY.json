@@ -1,0 +1,418 @@
+{
+  "mode": "ss1-e2e-dry-run",
+  "generated_at_tehran": "2026-11-11 16:48 Asia/Tehran",
+  "game_bigs_modified": false,
+  "original_hashes_unchanged": true,
+  "generals_exe_run": false,
+  "equipment_imported": false,
+  "loose_ini_written": false,
+  "summary": {
+    "samples": 31,
+    "ready_rechecked": 400,
+    "pass": 154,
+    "repairable": 160,
+    "fail": 108,
+    "blocked": 9,
+    "false_ready": 97,
+    "roles": {
+      "tank": 5,
+      "air_defense": 6,
+      "structure": 5,
+      "missile": 5,
+      "aircraft": 5,
+      "mobile": 5
+    }
+  },
+  "engine_gaps": [
+    "97 catalog-ready objects failed byte preflight \u2014 catalog must not be the pack gate.",
+    "V25 source INI contains Stage 5 syntax classes (FXList End / Object orphan / Locomotor tail / dupes); bulk copy of raw V25 bodies is unsafe: {'fxlist_missing_column0_end': 568, 'locomotor_uncommented_tail': 21, 'object_missing_end': 37}",
+    "Generals.exe is not run; pass is static INI/VFS only.",
+    "ART/W3D/texture bytes are inventoried as stems, not opened or packed.",
+    "Unproven SS1 root extras (Armor_/Locomotor_/FXList_/ParticleSystem_/SoundEffects_) remain likely, not proven.",
+    "Bulk CommandSet factory-slot overlay is not planned (Stage 5 did PLAWarFactory slots 4/7 only).",
+    "Audio wav recovery from V25 volumes is not part of this dry-run.",
+    "Catalog CommandButton existence is now walked from CommandSet; factory Object= slots stay unwalked on purpose.",
+    "Shared-name rewrite is planned in memory; it is not applied to a BIG.",
+    "Do not start grouped transfer until false_ready is 0 on the byte recheck and unproven root kinds are proven or isolated."
+  ],
+  "next_stage": "Do not start grouped equipment transfer. Next: fold FXList End + Locomotor semicolon normalize into the unique-path rewriter, keep catalog from marking ready until byte preflight passes, prove or isolate unproven root INI kinds, then pack one role-group as an experimental DATA copy only.",
+  "syntax_audit": {
+    "error_counts": {
+      "fxlist_missing_column0_end": 568,
+      "locomotor_uncommented_tail": 21,
+      "object_missing_end": 37
+    },
+    "samples": {
+      "fxlist_missing_column0_end": [
+        "FXList:FX_TankDeathRubble1",
+        "FXList:FX_TankDamageTransition",
+        "FXList:FX_TankDeathRubble2",
+        "FXList:WeaponFX_ToxinShellWeapon",
+        "FXList:FX_CarOverlappedByCrusher",
+        "FXList:FX_DieByFireUSA",
+        "FXList:WeaponFX_CWCgenLargeMissileIgnition",
+        "FXList:WeaponFX_CWCgenSmallMissileIgnition"
+      ],
+      "locomotor_uncommented_tail": [
+        "Locomotor:HumveeLocomotor",
+        "Locomotor:M1151Locomotor",
+        "Locomotor:M1046Locomotor",
+        "Locomotor:CWCruUralLocomotor",
+        "Locomotor:CWCruUralLocomotor_Convoy",
+        "Locomotor:CWCruUralLocomotor_CWCusMission02",
+        "Locomotor:CWCusM939Locomotor",
+        "Locomotor:CWCusM939Locomotor_Convoy"
+      ],
+      "object_missing_end": [
+        "Object:AirF_AmericaJetSpectreGunship1",
+        "Object:AirF_AmericaJetSpectreGunship2",
+        "Object:AirF_AmericaJetSpectreGunship3",
+        "Object:AirF_AmericaVehicleSpyDrone",
+        "Object:AmericaJetSpectreGunship",
+        "Object:AmericaVehicleSpyDrone",
+        "Object:UsaM109Gun",
+        "Object:Boss_JetSpectreGunship"
+      ]
+    },
+    "generals_exe_run": false
+  },
+  "sample_objects": [
+    {
+      "role": "tank",
+      "object": "ChinaTankOverlord",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaTankOverlord.ini",
+      "reasons": [
+        "cwc:OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "tank",
+      "object": "ChinaTankBattleMaster",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaTankBattleMaster.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "fxlist_missing_column0_end",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "tank",
+      "object": "AmericaTankCrusader",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaTankCrusader.ini",
+      "reasons": [
+        "cwc:OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "tank",
+      "object": "ChinaTankGattling",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaTankGattling.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "fxlist_missing_column0_end",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "tank",
+      "object": "ChinaCSSA1",
+      "status": "repairable",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaCSSA1.ini",
+      "reasons": [
+        "raw_bytes_need_syntax_normalize",
+        "fxlist_missing_column0_end"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "ChinaS400",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaS400.ini",
+      "reasons": [
+        "cwc:RiderChangeContain,OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "ChinaHQ9",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaHQ9.ini",
+      "reasons": [
+        "cwc:RiderChangeContain,OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "AmericaPatriotBattery",
+      "status": "repairable",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaPatriotBattery.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "raw_bytes_need_syntax_normalize",
+        "fxlist_missing_column0_end"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "AmericaThaad",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\AmericaThaad.ini",
+      "reasons": [
+        "cwc:RiderChangeContain,OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "ChinaHQ11",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaHQ11.ini",
+      "reasons": [
+        "cwc:RiderChangeContain,OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "air_defense",
+      "object": "AmericaIronDome",
+      "status": "repairable",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\AmericaIronDome.ini",
+      "reasons": [
+        "raw_bytes_need_syntax_normalize",
+        "fxlist_missing_column0_end"
+      ]
+    },
+    {
+      "role": "structure",
+      "object": "ChinaWarFactory",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaWarFactory.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "structure",
+      "object": "ChinaCommandCenter",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaCommandCenter.ini",
+      "reasons": [
+        "cwc:OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "structure",
+      "object": "AmericaWarFactory",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaWarFactory.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "structure",
+      "object": "ChinaBarracks",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaBarracks.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "structure",
+      "object": "ChinaAirfield",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaAirfield.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "missile",
+      "object": "TomahawkMissile",
+      "status": "pass",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_TomahawkMissile.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "rewrite_planned"
+      ]
+    },
+    {
+      "role": "missile",
+      "object": "ScudStormMissile",
+      "status": "pass",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\SD25_ScudStormMissile.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "rewrite_planned"
+      ]
+    },
+    {
+      "role": "missile",
+      "object": "AuroraBomb",
+      "status": "pass",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\AuroraBomb.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "rewrite_planned"
+      ]
+    },
+    {
+      "role": "missile",
+      "object": "PatriotMissile",
+      "status": "pass",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Unmapped\\PatriotMissile.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "rewrite_planned"
+      ]
+    },
+    {
+      "role": "missile",
+      "object": "CWCusUH60MinigunMissile",
+      "status": "pass",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\CWCusUH60MinigunMissile.ini",
+      "reasons": []
+    },
+    {
+      "role": "aircraft",
+      "object": "AmericaJetRaptor",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaJetRaptor.ini",
+      "reasons": [
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "aircraft",
+      "object": "AmericaJetAurora",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaJetAurora.ini",
+      "reasons": [
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "aircraft",
+      "object": "AmericaVehicleComanche",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaVehicleComanche.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "fxlist_missing_column0_end",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "aircraft",
+      "object": "AirF_asdAmericaVehicleComancheasd",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Korea\\AirF_asdAmericaVehicleComancheasd.ini",
+      "reasons": [
+        "preflight_bytes",
+        "fxlist_missing_column0_end",
+        "missing_parse_ref",
+        "catalog_false_ready"
+      ]
+    },
+    {
+      "role": "aircraft",
+      "object": "AirF_AmericaVehicleChinook",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\Korea\\AirF_AmericaVehicleChinook.ini",
+      "reasons": [
+        "preflight_bytes",
+        "missing_parse_ref",
+        "catalog_false_ready"
+      ]
+    },
+    {
+      "role": "mobile",
+      "object": "AmericaVehicleHumvee",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaVehicleHumvee.ini",
+      "reasons": [
+        "cwc:OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "mobile",
+      "object": "ChinaVehicleTroopCrawler",
+      "status": "blocked",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\ChinaVehicleTroopCrawler.ini",
+      "reasons": [
+        "cwc:OCLSpecialPower",
+        "cwc_rebuild_required"
+      ]
+    },
+    {
+      "role": "mobile",
+      "object": "AmericaVehicleDozer",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaVehicleDozer.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    },
+    {
+      "role": "mobile",
+      "object": "ChinaVehicleSupplyTruck",
+      "status": "repairable",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\China\\SD25_ChinaVehicleSupplyTruck.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "raw_bytes_need_syntax_normalize",
+        "fxlist_missing_column0_end"
+      ]
+    },
+    {
+      "role": "mobile",
+      "object": "AmericaVehicleChinook",
+      "status": "fail",
+      "dest_ini": "Data\\INI\\Object\\SilentDeath\\America\\SD25_AmericaVehicleChinook.ini",
+      "reasons": [
+        "name_in_ss1",
+        "not_ready_until_rewrite_plan",
+        "preflight_bytes",
+        "missing_parse_ref"
+      ]
+    }
+  ]
+}

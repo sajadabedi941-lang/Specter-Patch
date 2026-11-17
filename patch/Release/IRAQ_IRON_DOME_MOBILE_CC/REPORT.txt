@@ -1,0 +1,141 @@
+Iraq Command Center — Iron Dome Mobile
+Evidence, changed files, SHA-256
+================================
+
+Valid baseline
+--------------
+ss1 SPECTER FINAL:
+  _SPEC_DATA_ONE.big
+    SHA-256 7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+    size    374093201
+  _SPEC_ART_TWO.big
+    SHA-256 81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+    size    312978491
+  Data\INI\CommandSet.ini (loose / inside DATA BIG, identical)
+    SHA-256 f6d9616febbf4eeb2720f6029a7089e7ce1f3d31a576d4f097c738348be9d223
+    size    450860
+  Data\English\generals.csf (inside DATA BIG)
+    SHA-256 5ef0a74fc65372adf7201cca488da4eeaa3a444f0cc747c980856afeb3071487
+    size    1498928
+
+Stage 1 — Iraq Command Center that the game uses
+------------------------------------------------
+PlayerTemplate FactionIraq in Data\INI\PlayerTemplate.ini
+  Side             = Iraq
+  PlayableSide     = Yes
+  StartingBuilding = Iraq_CommandCenter
+  StartingUnit0    = Iraq_VT72B
+
+Object Iraq_CommandCenter
+  File: Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_CommandCenter.ini
+  Unique Object name. Other files named Iraq_CommandCenter.ini under
+  Japan / South Korea / Vietnam define UnusedIraqOverride objects with
+  Side = Neutral and are not FactionIraq's starting building.
+  DisplayName = OBJECT:CommandCenter
+  Side        = Iraq
+  Model       = Irq_Command
+  CommandSet  = Iraq_CommandCenterCommandSet
+
+CommandSet load path
+  Comment at the top of CommandSet.ini and Launch_Specter.bat:
+  ControlBar reads only loose Data\INI\CommandSet.ini.
+  Launch_Specter.bat copies game-root CommandSet.ini onto that path
+  every start. Same-path entries inside _SPEC_DATA_ONE.big lose to
+  that loose file.
+
+Duplicate CommandSet Iraq_CommandCenterCommandSet
+  Inside ss1 _SPEC_DATA_ONE.big: exactly one definition, in
+  Data\INI\CommandSet.ini. No CommandSet_ZZZZ / AA_ / sidecar file
+  redefines this name.
+
+ss1 Iraq_CommandCenterCommandSet
+  1  = Command_ConstructIraq_VT72B
+  12 = Command_ConstructIraqDronesAbabil200Recon
+  13 = Command_SetRallyPoint
+  14 = Command_Sell
+  15 = Command_ConstructIraq_Sarab7
+  16 = Command_ConstructIraq_R11ScudB
+  17 = Command_ConstructIraq_Sarab3
+  17 = Command_ConstructIraqDroneQuds5_AI
+Empty slots: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 18
+Slot 3 was empty, so the buy button was written there.
+Duplicate slot 17 was not edited.
+
+Stage 2 — existing Iron Dome Mobile (not recreated)
+---------------------------------------------------
+CommandButton Command_ConstructIsraelVehicleIronDomeMobile
+  File: Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini
+  Command = UNIT_BUILD
+  Object  = Israel_VehicleIronDomeMobile
+  SHA-256 6ce652ec590fc4865e5899f1d0c3f20011ba94ce0b72c283d94c67899cfefdde
+
+Object Israel_VehicleIronDomeMobile
+  File: Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini
+  Side = Israel
+  CommandSet = Israel_VehicleIronDomeMobileCommandSet
+  Model = BONDKS
+  Geometry = BOX
+  Weapon PRIMARY = IroneDome_AA
+  No Prerequisites block
+  SHA-256 9e510c0e72a29f09721f74f1ed499908bc436383d8813480e19439937c419860
+
+CommandSet Israel_VehicleIronDomeMobileCommandSet
+  File: Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini
+  Selected-unit bar only (AttackMove / Guard / Stop). Not a CC set.
+  SHA-256 a9ab0802996424f8698a583c7a2482277d69ab735cac720d0e0c247d2567b5fe
+
+Side = Israel vs Iraq buy
+  UNIT_BUILD buttons produce the named Object. Player build checks
+  Buildable / prerequisites / science, not Object Side vs player Side.
+  This object has no Prerequisites and default Buildable. Side was
+  not changed. If in-game Iraq still cannot queue it, the next
+  change would need confirmation (do not duplicate the Object).
+
+What this pack changes
+----------------------
+_SPEC_DATA_ONE.big
+  SHA-256 f456aaa65d1d1e1b0bfb749fafd54a2ae96014d4faf3fd53026bb732f25f350c
+  size    374099711
+  Updated:
+    Data\INI\CommandSet.ini
+      SHA-256 ca435e520ac23c4e294395557b3a7e6866d7707844b82f4bcd9af7cfbb092206
+      size    450912
+      Only Iraq_CommandCenterCommandSet slot 3 added.
+      AirF_AmericaCommandCenterCommandSet identical to ss1.
+      AmericaCommandCenterCommandSet identical to ss1.
+      Israel_CommandCenterCommandSet still absent (ss1 has none).
+    Data\English\generals.csf
+      SHA-256 fea7f9a69ba97d12106bddf746ed5456da83da02a68037a6d1c74c74d715bb23
+      size    1499259
+      Existing Iron Dome Mobile CSF labels only.
+  Added (existing unique files, not new names):
+    Data\INI\CommandButton_Israel_VehicleIronDomeMobile.ini
+    Data\INI\CommandSet_Israel_VehicleIronDomeMobile.ini
+    Data\INI\Object\Specter\Israel Defense Forces\Wheeled\Israel_VehicleIronDomeMobile.ini
+  Identical to ss1 (spot-checked):
+    Iraq_CommandCenter.ini
+    Israel_AD_IronDome.ini
+    Israel_AD_Barak8.ini
+    Israel_MilitaryHQ.ini
+    Israel dozer
+    Israel_CommandCenter.ini
+    HQ.ini
+
+_SPEC_ART_TWO.big
+  SHA-256 c9a723443c321b689870d116a7b3c0d941516850d1db16c0254ed70218960787
+  size    317174173
+  ss1 ART TWO plus existing BONDKS.W3D and purchased TGAs.
+  No ss1 art entry changed or removed.
+
+Live CommandSet.ini (same bytes as inside DATA BIG)
+  SHA-256 ca435e520ac23c4e294395557b3a7e6866d7707844b82f4bcd9af7cfbb092206
+
+Not done
+--------
+No in-game launch of SPECTER. File validation is not an in-game test.
+No Israel Command Center CommandSet edit.
+No new CommandSet / Object / CommandButton names.
+No new loose sidecars to bypass load order.
+No installer force-replace of unknown hashes.
+Restore copies this pack's backup only; it does not delete
+CommandSet.ini or unknown files.

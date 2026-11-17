@@ -1,0 +1,40 @@
+_SPEC_ART_ONE.big is NOT inside this ZIP
+=======================================
+
+This pack is NOT a standalone complete install by itself.
+
+GitHub rejects a single release asset larger than 2 GiB
+(2,147,483,648 bytes). The original files add up to:
+
+  _SPEC_ART_ONE.big   2,145,283,309
+  _SPEC_ART_TWO.big     307,254,782
+  _SPEC_DATA_ONE.big    374,075,482
+  --------------------------------
+  total                 2,826,613,573  (~2.63 GiB)
+
+ART ONE + ART TWO alone is already 2,452,538,091 bytes (~2.28 GiB).
+A ZIP that contains both original ART files cannot be published on
+GitHub. ART was not rebuilt, truncated, or substituted.
+
+This ZIP does include the original Full Release _SPEC_ART_TWO.big.
+
+Obtain original _SPEC_ART_ONE.big separately (same bytes, two URLs):
+
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/specter-unified/_SPEC_ART_ONE.big
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/WORLD_WAR_III2027-Full-Release/_SPEC_ART_ONE.big
+
+  bytes    2145283309
+  SHA-256  15ffb0dcbf6e0a02e8ece6421efac1331c391b48d8afa6b108550df89653df66
+
+Put that file:
+  - next to Install_SpecterUnified.bat, or
+  - next to generals.exe
+
+The installer keeps an already-installed canonical ART ONE / ART TWO
+and refuses truncated substitutes (447 MB construct-button ART,
+repo split zip, s-art-split-2gib).
+
+Do not use:
+  construct-button-images-2c93  _SPEC_ART_ONE.big  447200634   e796fadc...
+  s-art-split-2gib              _SPEC_ART_ONE.big  2144061050  dd53835d...
+  specter-spec-art-data         _SPEC_ART_ONE.big  2144972013  9dc4524c...

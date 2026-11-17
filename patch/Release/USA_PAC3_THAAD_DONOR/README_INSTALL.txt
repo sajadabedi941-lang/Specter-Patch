@@ -1,0 +1,113 @@
+America Command Center — mobile Patriot rebuild (slot 6)
+=======================================================
+
+This pack replaces the broken USAPAC3 implementation inside the
+packed DATA BIG with a new independent THAAD clone that keeps the
+New Donor Patriot truck / launcher / missile art.
+
+Buy button (unchanged, not rewritten by this installer)
+-------------------------------------------------------
+CommandButton Command_ConstructUSAPAC3
+  Command = UNIT_BUILD
+  Object  = USAPAC3
+
+CommandSet AmericaCommandCenterCommandSet
+  6 = Command_ConstructUSAPAC3
+
+ControlBar still reads the existing loose file Data\INI\CommandSet.ini
+(Launch_Specter.bat copies the game-root CommandSet.ini onto that path
+every start). This pack does not edit, replace, or delete that file.
+Slot 6 already builds Object USAPAC3. The packed object definition
+behind that name is what changed.
+
+What is in this pack
+--------------------
+_SPEC_DATA_ONE.big
+  Removed (USAPAC3-only):
+    Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3.ini
+    Data\INI\Object\Specter\PatchSystems\AirDefense\USAPAC3_Projectile.ini
+    Data\INI\Weapon_USAPAC3.ini
+    Data\INI\CommandSet_ZZZZ_USAPAC3.ini
+  Added:
+    Data\INI\Object\Specter\United States Of America\AirDefense\US_PAC3.ini
+    Data\INI\Weapon_US_PAC3.ini
+    Data\INI\ObjectCreationList_US_PAC3.ini
+  Unrelated packed files are byte-identical to ss1, including
+  US_M1120.ini (Object US_THAAD), CommandSet.ini, CommandButton.ini,
+  Weapon.ini, ObjectCreationList.ini.
+
+_SPEC_ART_TWO.big
+  Stripped ANIMATION chunks from:
+    Art\W3D\UsaPac3Car.W3D / UsaPac3Car_d.W3D  (BIT_CHANNEL-only clips)
+    Art\W3D\pac3mis_m.W3D / UsaPac3Car_w.W3D   (empty 101-frame clips)
+  All other ART TWO entries are byte-identical to ss1, including
+  US_M1120*.W3D, THAAD_FCS.W3D, and the New Donor meshes/textures.
+
+Crash fix (v2)
+--------------
+The first pack still crashed: W3DTruckDraw preloaded UsaPac3Car's
+BIT_CHANNEL clip (and a second tire Draw without DefaultConditionState)
+at object create / PRELOAD. v2 uses W3DModelDraw, no Animation=
+lines, no extra Draw, and drops PRELOAD on the TEL objects.
+
+Deploy explosion fix (v3)
+-------------------------
+In-game: unit built, look OK, AA/ABM/MTS selectable; clicking Deploy
+exploded at unpack start. Command_ADSCombatMode is FIRE_WEAPON
+SECONDARY = S400R_Deploy (SELF SUICIDE, DeathType SPLATTED ->
+OCL_US_PAC3_Deployed / UsaPac3F CombatMode). THAAD gates that shot
+behind DeployStyleAIUpdate unpack because US_M1120 has a real unpack
+clip. UsaPac3Car does not (only BIT_CHANNEL, stripped). Forced unpack
+never fired SPLATTED; SlowDeath L8F09 ran instead
+(FX_GenericFreeFallBombsExplosion + OCL_ThaadDeathEffect).
+
+v3: TurretsFunctionOnlyWhenDeployed = No, ManualDeployAnimations = No
+on USAPAC3 / PackMode. In-game still exploded. Those flags do not skip
+unpack-before-fire in DeployStyleAIUpdate.cpp.
+
+Deploy explosion fix (v4)
+-------------------------
+Proven engine path (EA Zero Hour source, not a guess):
+  Command_ADSCombatMode
+    -> MSG_DO_WEAPON SECONDARY, MaxShots=1
+    -> lock S400R_Deploy, groupAttackPosition(self)
+    -> DeployStyleAIUpdate sees attack-in-range and setMyState(DEPLOY)
+    -> MODELCONDITION_UNPACKING for UnpackTime 5000, then DEPLOYED
+    -> only then can S400R_Deploy fire (DeathType SPLATTED)
+
+S400R_Deploy AttackRange defaults to 0, so own-position is in range.
+TurretsFunctionOnlyWhenDeployed / ManualDeployAnimations never skip
+that unpack. Object USAPAC3 Draw has no UNPACKING/DEPLOYED states
+(unlike US_THAAD). The observed blast is SlowDeath ModuleTag_L8F09
+on Object USAPAC3 (ALL -SPLATTED -EXTRA_8): FX_CrusaderCatchFire +
+FX_GenericFreeFallBombsExplosion + OCL_ThaadDeathEffect. That module
+only runs when S400R_Deploy's SPLATTED death did not.
+
+v4: USAPAC3 and US_PAC3_PackMode use AIUpdateInterface, same as
+US_THAAD_CombatMode for FIRE_WEAPON S400R_Pack. FIRE_WEAPON then
+fires S400R_Deploy immediately with no unpack. THAAD, ART TWO,
+missiles, and other AD are not edited. Generals.exe was not launched
+here.
+
+This pack does not write files under Data\.
+
+Install
+-------
+1. Extract this folder into SPECTER FINAL (the folder with generals.exe).
+2. Run Install_USA_PAC3_THAAD_DONOR.bat
+3. The installer backs up into SpecterBackup_USA_PAC3_THAAD_DONOR
+   and verifies each copy with fc /b before any replace.
+4. It replaces a file only when SHA-256 is the ss1 original or already
+   this pack. Any other hash is left in place and install stops.
+5. Loose Data\INI is not touched.
+
+Restore
+-------
+Run Restore_USA_PAC3_THAAD_DONOR.bat.
+It copies this pack's backup back and checks fc /b.
+It does not delete CommandSet.ini, CSF, or unknown files.
+
+In-game test
+------------
+Not run. Checks in this pack are archive, hash, INI/W3D parse, and
+installer-script only. This is not an in-game pass.

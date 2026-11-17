@@ -1,0 +1,3 @@
+# BIGs and the install ZIP belong on the GitHub Release, not in git
+*.big
+*.zip

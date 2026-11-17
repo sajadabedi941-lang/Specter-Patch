@@ -1,0 +1,249 @@
+side	name	old_max	old_link	cost	path
+America	AmericaInfantryMarinesStinger	-	-	525	Data\INI\Object\Specter\United States Of America\Infantry\StingerSoldier.ini
+America	AmericaMobileSamSiteMIM104F	-	-	2000	Data\INI\Object\Specter\United States Of America\Wheeled\MIM104F.ini
+America	AmericaPatriotBattery	-	-	1000	Data\INI\Object\Specter\United States Of America\Buildings\C-RAM.ini
+America	AmericaTankAvenger	-	-	700	Data\INI\Object\Specter\United States Of America\AirDefense\M6.ini
+America	AmericaVehicleM1126_M1_Shorad	-	-	800	Data\INI\Object\Specter\United States Of America\AirDefense\M1126_M1.ini
+America	America_MIM104F	3	-	2000	Data\INI\Object\Specter\United States Of America\AirDefense Installation\MIM104F_Site.ini
+America	US_AN_TPY2	-	-	2600	Data\INI\Object\Specter\United States Of America\AirDefense\US_AN_TPY2.ini
+America	US_THAAD	-	-	3000	Data\INI\Object\Specter\United States Of America\AirDefense\US_M1120.ini
+America	US_THAAD_Site_AI	-	-	2000	Data\INI\Object\Specter\United States Of America\AirDefense Installation\M1120AI_Installation.ini
+Britain	BritainDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\British Armed Forces\Nato_Systems.ini
+Britain	BritainIRISTSamSite	-	-	1200	Data\INI\Object\Specter\British Armed Forces\SamSite\IRIST_Site.ini
+Britain	BritainMantis	-	-	1200	Data\INI\Object\Specter\British Armed Forces\Buildings\Mantis.ini
+Britain	BritainNASAMSIII	4	-	1800	Data\INI\Object\Specter\British Armed Forces\Nato_Systems.ini
+Britain	BritainSAMPTNG	3	-	3000	Data\INI\Object\Specter\British Armed Forces\Nato_Systems.ini
+Britain	BritainVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\British Armed Forces\Airdefense\CortaleMK3.ini
+Britain	BritainVehicleIRIST	-	-	1700	Data\INI\Object\Specter\British Armed Forces\Airdefense\IRIST_SLX.ini
+Britain	BritainVehicleStormer	-	-	800	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Britain	BritainVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\British Armed Forces\Airdefense\TRML4D.ini
+China	ChinaGattlingCannon	-	-	1200	Data\INI\Object\Specter\PLA\Buildings\LD2000.ini
+China	ChinaTankGattling	-	-	800	Data\INI\Object\ChinaVehicle.ini
+China	ChinaTankPGZ04	-	-	1000	Data\INI\Object\Specter\PLA\AirDefense\PGZ04.ini
+China	ChinaTankTorM2	-	-	1600	Data\INI\Object\Specter\PLA\AirDefense\Tor-M2.ini
+China	ChinaVehicleHQ9	-	-	3200	Data\INI\Object\Specter\PLA\AirDefense\HQ9B.ini
+China	ChinaVehicleHT233	-	-	2200	Data\INI\Object\Specter\PLA\AirDefense\HT233.ini
+China	China_Hq9_Site	-	-	1500	Data\INI\Object\Specter\PLA\AirDefense Sites\Hq9_AI_Site.ini
+China	RussiaInfantryIgla	-	-	350	Data\INI\Object\Specter\PLA\Infantry\Rifleman_Igla.ini
+ChinaInfantryGeneral	Infa_ChinaGattlingCannon	-	-	1200	Data\INI\Object\InfantryGeneral.ini
+ChinaTankGeneral	Infa_ChinaTankGattling	-	-	800	Data\INI\Object\InfantryGeneral.ini
+Egypt	Egypt_AD_MD	10	Patch_AirDefense	1941	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_MD.ini
+Egypt	Egypt_AD_SAM	10	Patch_AirDefense	1235	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SAM.ini
+Egypt	Egypt_AD_SHORAD	10	Patch_AirDefense	794	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Egypt_AD_SHORAD.ini
+Egypt	Egypt_Sam2	10	Patch_AirDefense	882	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense Sites\SamSite.ini
+Egypt	Egypt_VehicleRoland3K	10	Patch_AirDefense	794	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\Roland3K.ini
+Egypt	Egypt_ZSU-23-4	10	Patch_AirDefense	706	Data\INI\Object\Specter\Egyptian Armed Forces\AirDefense\ZSU23.ini
+France	FranceDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\French Armed Forces\Nato_Systems.ini
+France	FranceIRISTSamSite	-	-	1200	Data\INI\Object\Specter\French Armed Forces\SamSite\IRIST_Site.ini
+France	FranceMantis	-	-	1200	Data\INI\Object\Specter\French Armed Forces\Buildings\Mantis.ini
+France	FranceNASAMSIII	4	-	1800	Data\INI\Object\Specter\French Armed Forces\Nato_Systems.ini
+France	FranceSAMPTNG	3	-	3000	Data\INI\Object\Specter\French Armed Forces\Nato_Systems.ini
+France	FranceVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\French Armed Forces\Airdefense\CortaleMK3.ini
+France	FranceVehicleIRIST	-	-	1700	Data\INI\Object\Specter\French Armed Forces\Airdefense\IRIST_SLX.ini
+France	FranceVehicleSAMPT	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+France	FranceVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\French Armed Forces\Airdefense\TRML4D.ini
+GLA	Arab_Tor1M	-	-	1100	Data\INI\Object\Specter\Arabic Alliance\AirDefense\Tor1M.ini
+GLA	Arabic_S300PMU2	-	-	2000	Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_S300.ini
+GLA	Arabic_StingerSoldier	-	-	600	Data\INI\Object\Specter\Arabic Alliance\Infantry\StingerSoldier.ini
+GLA	Arb_30N6E	-	-	1200	Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_30N6E.ini
+GLA	Arb_Pantsir	-	-	900	Data\INI\Object\Specter\Arabic Alliance\AirDefense\Arb_Pantsir.ini
+GLA	Arb_S300PMU2AI_Installation	-	-	1200	Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\S300PMU2_Site.ini
+GLA	EgyptIRISTSamSite	-	-	1400	Data\INI\Object\Specter\Egyptian Armed Forces\SamSite\IRIST_Site.ini
+GLA	EgyptVehicle9K317	-	-	1000	Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9K317.ini
+GLA	EgyptVehicle9S19M2	-	-	1400	Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\9S19M2.ini
+GLA	EgyptVehicleS300VM	-	-	1800	Data\INI\Object\Specter\Egyptian Armed Forces\Airdefense\S300VM.ini
+GLA	GLAStingerSite	-	-	2100	Data\INI\Object\Specter\Arabic Alliance\AirDefense Installation\MIM104F_Site.ini
+GLA	GLAStingerSiteNoHole	-	-	900	Data\INI\Object\FactionBuilding.ini
+GLA	GLAVehicleQuadCannon	-	-	1100	Data\INI\Object\Specter\Arabic Alliance\AirDefense\2K22M1.ini
+GLAStealthGeneral	Slth_GLAStingerSite	-	-	4000	Data\INI\Object\Specter\AI_IraqiArmy\Sam2.ini
+GLAStealthGeneral	Slth_GLAVehicleQuadCannon	-	-	800	Data\INI\Object\Specter\AI_IraqiArmy\Vehicles.ini
+Germany	GermanyDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\German Armed Forces\Nato_Systems.ini
+Germany	GermanyIRISTSamSite	-	-	1200	Data\INI\Object\Specter\German Armed Forces\SamSite\IRIST_Site.ini
+Germany	GermanyMantis	-	-	1200	Data\INI\Object\Specter\German Armed Forces\Buildings\Mantis.ini
+Germany	GermanyNASAMSIII	4	-	1800	Data\INI\Object\Specter\German Armed Forces\Nato_Systems.ini
+Germany	GermanySAMPTNG	3	-	3000	Data\INI\Object\Specter\German Armed Forces\Nato_Systems.ini
+Germany	GermanyVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\German Armed Forces\Airdefense\CortaleMK3.ini
+Germany	GermanyVehicleIRIST	-	-	1700	Data\INI\Object\Specter\German Armed Forces\Airdefense\IRIST_SLX.ini
+Germany	GermanyVehicleTRML	-	-	2000	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Germany	GermanyVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\German Armed Forces\Airdefense\TRML4D.ini
+India	India_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\India_AD_AntiDrone.ini
+India	India_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\India_AD_MD.ini
+India	India_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\India_AD_SAM.ini
+India	India_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\India_AD_SHORAD.ini
+India	India_CRAM	-	-	1000	Data\INI\Object\Specter\Indian Armed Forces\Buildings\India_CRAM.ini
+India	India_RepublicanGuardIgla	-	-	259	Data\INI\Object\Specter\Indian Armed Forces\Infantry\AntiAir.ini
+India	India_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\Indian Armed Forces\AirDefense Sites\SamSite.ini
+India	India_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\Roland3K.ini
+India	India_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\Indian Armed Forces\AirDefense\ZSU23.ini
+Iran	IranBavarSiteAI	-	-	1100	Data\INI\Object\Specter\Iranian Army\SamSites\BavarAI.ini
+Iran	IranKhordad15SamSite	-	-	1500	Data\INI\Object\Specter\Iranian Army\SamSites\SamSite.ini
+Iran	IranRaadM2EK	-	-	1000	Data\INI\Object\Specter\Iranian Army\AirDefense\RaadM2EK.ini
+Iran	IranTankTor1M	-	-	1400	Data\INI\Object\Specter\Iranian Army\AirDefense\Tor1M.ini
+Iran	IranVehicleMajid	6	-	1000	Data\INI\Object\Specter\Iranian Army\Iran_System.ini
+Iran	IranVehiclePantsirS1M	-	-	1500	Data\INI\Object\Specter\Iranian Army\AirDefense\Pantsir.ini
+Iran	IranVehicleRaadBaran	3	-	1800	Data\INI\Object\Specter\Iranian Army\Iran_System.ini
+Iran	IranVehicleRaadSPG	-	-	1600	Data\INI\Object\Specter\Iranian Army\Tracked\Iran_Raad.ini
+Iran	Iran_Bavar	-	-	2300	Data\INI\Object\Specter\Iranian Army\AirDefense\Bavar.ini
+Iran	Iran_Meraj	-	-	2300	Data\INI\Object\Specter\Iranian Army\AirDefense\Meraj.ini
+Iraq	IraqFahad3SamSite	-	-	1000	Data\INI\Object\Specter\Iraq Army\AirDefense Sites\Fahad3_AI.ini
+Iraq	IraqVehicleB340	-	-	1200	Data\INI\Object\Specter\Iraq Army\AirDefense\B340.ini
+Iraq	IraqVehicleFahad3	-	-	2000	Data\INI\Object\Specter\Iraq Army\AirDefense\Fahad3.ini
+Iraq	IraqVehicleRoland3K	-	-	900	Data\INI\Object\Specter\Iraq Army\AirDefense\Roland3K.ini
+Iraq	Iraq_DefenseSite	-	-	1000	Data\INI\Object\Specter\Iraq Army\AirDefense Sites\DefenseSite.ini
+Iraq	Iraq_MIC_92N6R	-	-	6000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_96L6TSP	-	-	15000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_AN_TPY2	-	-	6000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_Arrow	-	-	8000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_HQ9	-	-	8000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_HT233	-	-	5000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_IRIST	-	-	7000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_PantsirS1M	-	-	4000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_S400	-	-	8000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_S500	2	-	15000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_THAAD	-	-	15000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_TRML4D	-	-	5000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_MIC_US_AN_TPY2	-	-	10000	Data\INI\Object\Specter\Iraq Army\AirDefense\Iraq_MIC_RadarAdCopies.ini
+Iraq	Iraq_RepublicanGuardIgla	-	-	600	Data\INI\Object\Specter\Iraq Army\Infantry\AntiAir.ini
+Iraq	Iraq_SA-6	-	-	1000	Data\INI\Object\Specter\Iraq Army\AirDefense\2K12.ini
+Iraq	Iraq_Sam2	-	-	1000	Data\INI\Object\Specter\Iraq Army\AirDefense Sites\SamSite.ini
+Iraq	Iraq_Sam8	-	-	1200	Data\INI\Object\Specter\Iraq Army\AirDefense\9K33.ini
+Iraq	Iraq_ZSU-23-4	-	-	800	Data\INI\Object\Specter\Iraq Army\AirDefense\ZSU23.ini
+Israel	AirF_AmericaPatriotBattery	4	-	1400	Data\INI\Object\Specter\Israel Defense Forces\AirDefense Sites\IroneDomeSite.ini
+Israel	AirF_AmericaTankAvenger	-	-	720	Data\INI\Object\Specter\Israel Defense Forces\Airdefense\NamerAA.ini
+Israel	IsraelInfantryStingerSoldier	-	-	550	Data\INI\Object\Specter\Israel Defense Forces\Infantry\Stinger.ini
+Israel	Israel_AD_Barak8	10	Patch_AirDefense	1688	Data\INI\Object\Specter\Israel Defense Forces\AirDefense\Israel_AD_Barak8.ini
+Israel	Israel_AD_IronDome	10	Patch_AirDefense	1582	Data\INI\Object\Specter\Israel Defense Forces\AirDefense\Israel_AD_IronDome.ini
+Israel	Israel_AN_TPY2	-	-	2600	Data\INI\Object\Specter\Israel Defense Forces\Airdefense\AN_TPY2.ini
+Israel	Israel_Arrow	-	-	3200	Data\INI\Object\Specter\Israel Defense Forces\Airdefense\Arrow.ini
+Italy	ItalyDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\Italian Armed Forces\Nato_Systems.ini
+Italy	ItalyIRISTSamSite	-	-	1200	Data\INI\Object\Specter\Italian Armed Forces\SamSite\IRIST_Site.ini
+Italy	ItalyMantis	-	-	1200	Data\INI\Object\Specter\Italian Armed Forces\Buildings\Mantis.ini
+Italy	ItalyNASAMSIII	4	-	1800	Data\INI\Object\Specter\Italian Armed Forces\Nato_Systems.ini
+Italy	ItalySAMPTNG	3	-	3000	Data\INI\Object\Specter\Italian Armed Forces\Nato_Systems.ini
+Italy	ItalyVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\Italian Armed Forces\Airdefense\CortaleMK3.ini
+Italy	ItalyVehicleIRIST	-	-	1700	Data\INI\Object\Specter\Italian Armed Forces\Airdefense\IRIST_SLX.ini
+Italy	ItalyVehicleSAMPT	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Italy	ItalyVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\Italian Armed Forces\Airdefense\TRML4D.ini
+Japan	Japan_CRAM	-	-	1000	Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_CRAM.ini
+Japan	Japan_DefenseSite	-	-	1000	Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Systems.ini
+Japan	Japan_Hq9_Site	-	-	1500	Data\INI\Object\Specter\Japan Self-Defense Forces\Buildings\Japan_Hq9_Site.ini
+Japan	Japan_Sam2	-	-	1000	Data\INI\Object\Specter\Japan Self-Defense Forces\Japan_Systems.ini
+Libya	Libya_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_AntiDrone.ini
+Libya	Libya_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_MD.ini
+Libya	Libya_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_SAM.ini
+Libya	Libya_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Libya_AD_SHORAD.ini
+Libya	Libya_CRAM	-	-	1000	Data\INI\Object\Specter\Libyan Armed Forces\Buildings\Libya_CRAM.ini
+Libya	Libya_RepublicanGuardIgla	-	-	259	Data\INI\Object\Specter\Libyan Armed Forces\Infantry\AntiAir.ini
+Libya	Libya_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense Sites\SamSite.ini
+Libya	Libya_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\Roland3K.ini
+Libya	Libya_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\Libyan Armed Forces\AirDefense\ZSU23.ini
+Nato	NatoDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\NATO\Nato_Systems.ini
+Nato	NatoIRISTSamSite	-	-	1200	Data\INI\Object\Specter\NATO\SamSite\IRIST_Site.ini
+Nato	NatoMantis	-	-	1200	Data\INI\Object\Specter\NATO\Buildings\Mantis.ini
+Nato	NatoNASAMSIII	4	-	1800	Data\INI\Object\Specter\NATO\Nato_Systems.ini
+Nato	NatoSAMPTNG	3	-	3000	Data\INI\Object\Specter\NATO\Nato_Systems.ini
+Nato	NatoVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\NATO\Airdefense\CortaleMK3.ini
+Nato	NatoVehicleIRIST	-	-	1700	Data\INI\Object\Specter\NATO\Airdefense\IRIST_SLX.ini
+Nato	NatoVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\NATO\Airdefense\TRML4D.ini
+NorthKorea	NorthKorea_CRAM	-	-	1000	Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_CRAM.ini
+NorthKorea	NorthKorea_DefenseSite	-	-	1000	Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+NorthKorea	NorthKorea_Hq9_Site	-	-	1500	Data\INI\Object\Specter\North Korea\Buildings\NorthKorea_Hq9_Site.ini
+NorthKorea	NorthKorea_Sam2	-	-	1000	Data\INI\Object\Specter\North Korea\NorthKorea_Systems.ini
+Pakistan	PakistanVehicleHQ9P	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Pakistan	Pakistan_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\Pakistan_AD_AntiDrone.ini
+Pakistan	Pakistan_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\Pakistan_AD_MD.ini
+Pakistan	Pakistan_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\Pakistan_AD_SAM.ini
+Pakistan	Pakistan_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\Pakistan_AD_SHORAD.ini
+Pakistan	Pakistan_CRAM	-	-	1000	Data\INI\Object\Specter\Pakistan Armed Forces\Buildings\Pakistan_CRAM.ini
+Pakistan	Pakistan_RepublicanGuardIgla	-	-	259	Data\INI\Object\Specter\Pakistan Armed Forces\Infantry\AntiAir.ini
+Pakistan	Pakistan_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense Sites\SamSite.ini
+Pakistan	Pakistan_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\Roland3K.ini
+Pakistan	Pakistan_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\Pakistan Armed Forces\AirDefense\ZSU23.ini
+Russia	RussiaS400Site_AI	-	-	1600	Data\INI\Object\Specter\Armed Forces Of Russian Federation\SamSite\S400_AI_Site.ini
+Russia	RussiaTankTorM2M	-	-	1100	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\TorM2M.ini
+Russia	RussiaVehicle55K6E	-	-	5000	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\55K6E.ini
+Russia	RussiaVehicle92N6R	-	-	2200	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\92N6R.ini
+Russia	RussiaVehicle96L6TSP	-	-	5000	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\96L6TSP.ini
+Russia	RussiaVehicle9K317	-	-	1000	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\9K317.ini
+Russia	RussiaVehiclePantsirS1M	-	-	800	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\Pantsir.ini
+Russia	RussiaVehicleS400	-	-	3200	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\S400.ini
+Russia	RussiaVehicleS500	2	-	6000	Data\INI\Object\Specter\Armed Forces Of Russian Federation\AirDefense\S500.ini
+Russia	Russia_92N6R	-	-	2200	Data\INI\Object\zzzz_Specter92N6Ht233\Russia_92N6R.ini
+SaudiArabia	SaudiArabiaVehicleAvenger	-	-	800	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+SaudiArabia	SaudiArabiaVehiclePatriot	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+SaudiArabia	SaudiArabiaVehiclePatriotBtry	-	-	2000	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+SaudiArabia	SaudiArabia_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\SaudiArabia_AD_AntiDrone.ini
+SaudiArabia	SaudiArabia_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\SaudiArabia_AD_MD.ini
+SaudiArabia	SaudiArabia_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\SaudiArabia_AD_SAM.ini
+SaudiArabia	SaudiArabia_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\SaudiArabia_AD_SHORAD.ini
+SaudiArabia	SaudiArabia_CRAM	-	-	1000	Data\INI\Object\Specter\Saudi Arabia Armed Forces\Buildings\SaudiArabia_CRAM.ini
+SaudiArabia	SaudiArabia_RepublicanGuardIgla	-	-	600	Data\INI\Object\Specter\Saudi Arabia Armed Forces\Infantry\AntiAir.ini
+SaudiArabia	SaudiArabia_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense Sites\SamSite.ini
+SaudiArabia	SaudiArabia_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\Roland3K.ini
+SaudiArabia	SaudiArabia_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\Saudi Arabia Armed Forces\AirDefense\ZSU23.ini
+SouthAfrica	SouthAfrica_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_AntiDrone.ini
+SouthAfrica	SouthAfrica_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_MD.ini
+SouthAfrica	SouthAfrica_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_SAM.ini
+SouthAfrica	SouthAfrica_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\South African National Defence Force\AirDefense\SouthAfrica_AD_SHORAD.ini
+SouthAfrica	SouthAfrica_CRAM	-	-	1000	Data\INI\Object\Specter\South African National Defence Force\Buildings\SouthAfrica_CRAM.ini
+SouthAfrica	SouthAfrica_RepublicanGuardIgla	-	-	600	Data\INI\Object\Specter\South African National Defence Force\Infantry\AntiAir.ini
+SouthAfrica	SouthAfrica_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\South African National Defence Force\AirDefense Sites\SamSite.ini
+SouthAfrica	SouthAfrica_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\South African National Defence Force\AirDefense\Roland3K.ini
+SouthAfrica	SouthAfrica_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\South African National Defence Force\AirDefense\ZSU23.ini
+SouthKorea	SouthKorea_CRAM	-	-	1000	Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_CRAM.ini
+SouthKorea	SouthKorea_DefenseSite	-	-	1000	Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+SouthKorea	SouthKorea_Hq9_Site	-	-	1500	Data\INI\Object\Specter\South Korean Armed Forces\Buildings\SouthKorea_Hq9_Site.ini
+SouthKorea	SouthKorea_Sam2	-	-	1000	Data\INI\Object\Specter\South Korean Armed Forces\SouthKorea_Systems.ini
+Sweden	SwedenDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\Swedish Armed Forces\Nato_Systems.ini
+Sweden	SwedenIRISTSamSite	-	-	1200	Data\INI\Object\Specter\Swedish Armed Forces\SamSite\IRIST_Site.ini
+Sweden	SwedenMantis	-	-	1200	Data\INI\Object\Specter\Swedish Armed Forces\Buildings\Mantis.ini
+Sweden	SwedenNASAMSIII	4	-	1800	Data\INI\Object\Specter\Swedish Armed Forces\Nato_Systems.ini
+Sweden	SwedenSAMPTNG	3	-	3000	Data\INI\Object\Specter\Swedish Armed Forces\Nato_Systems.ini
+Sweden	SwedenVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\CortaleMK3.ini
+Sweden	SwedenVehicleIRIST	-	-	1700	Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\IRIST_SLX.ini
+Sweden	SwedenVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\Swedish Armed Forces\Airdefense\TRML4D.ini
+Syria	Syria_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Syria_AD_AntiDrone.ini
+Syria	Syria_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Syria_AD_MD.ini
+Syria	Syria_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Syria_AD_SAM.ini
+Syria	Syria_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Syria_AD_SHORAD.ini
+Syria	Syria_CRAM	-	-	1000	Data\INI\Object\Specter\Syrian Armed Forces\Buildings\Syria_CRAM.ini
+Syria	Syria_RepublicanGuardIgla	-	-	259	Data\INI\Object\Specter\Syrian Armed Forces\Infantry\AntiAir.ini
+Syria	Syria_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense Sites\SamSite.ini
+Syria	Syria_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\Roland3K.ini
+Syria	Syria_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\Syrian Armed Forces\AirDefense\ZSU23.ini
+Turkey	TurkeyDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\Turkish Armed Forces\Nato_Systems.ini
+Turkey	TurkeyIRISTSamSite	-	-	1200	Data\INI\Object\Specter\Turkish Armed Forces\SamSite\IRIST_Site.ini
+Turkey	TurkeyMantis	-	-	1200	Data\INI\Object\Specter\Turkish Armed Forces\Buildings\Mantis.ini
+Turkey	TurkeyNASAMSIII	4	-	1800	Data\INI\Object\Specter\Turkish Armed Forces\Nato_Systems.ini
+Turkey	TurkeySAMPTNG	3	-	3000	Data\INI\Object\Specter\Turkish Armed Forces\Nato_Systems.ini
+Turkey	TurkeyVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\CortaleMK3.ini
+Turkey	TurkeyVehicleHisar	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Turkey	TurkeyVehicleIRIST	-	-	1700	Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\IRIST_SLX.ini
+Turkey	TurkeyVehicleKorkut	-	-	800	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Turkey	TurkeyVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\Turkish Armed Forces\Airdefense\TRML4D.ini
+UAE	UAEVehiclePantsir	-	-	800	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+UAE	UAEVehiclePatriot	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+UAE	UAE_AD_AntiDrone	10	Patch_AirDefense	605	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\UAE_AD_AntiDrone.ini
+UAE	UAE_AD_MD	10	Patch_AirDefense	1359	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\UAE_AD_MD.ini
+UAE	UAE_AD_SAM	10	Patch_AirDefense	865	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\UAE_AD_SAM.ini
+UAE	UAE_AD_SHORAD	10	Patch_AirDefense	556	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\UAE_AD_SHORAD.ini
+UAE	UAE_CRAM	-	-	1000	Data\INI\Object\Specter\United Arab Emirates Armed Forces\Buildings\UAE_CRAM.ini
+UAE	UAE_RepublicanGuardIgla	-	-	600	Data\INI\Object\Specter\United Arab Emirates Armed Forces\Infantry\AntiAir.ini
+UAE	UAE_Sam2	10	Patch_AirDefense	618	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense Sites\SamSite.ini
+UAE	UAE_VehicleRoland3K	10	Patch_AirDefense	556	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\Roland3K.ini
+UAE	UAE_ZSU-23-4	10	Patch_AirDefense	494	Data\INI\Object\Specter\United Arab Emirates Armed Forces\AirDefense\ZSU23.ini
+Ukraine	Specter_EU5_IRIST	-	-	1700	Data\INI\Object\Specter\EU5Unlock\Specter_EU5WFUnlock.ini
+Ukraine	Specter_EU5_TRML4D	-	-	2200	Data\INI\Object\Specter\EU5Unlock\Specter_EU5WFUnlock.ini
+Ukraine	UkraineDroneMantisWingman	3	-	2800	Data\INI\Object\Specter\Ukrainian Armed Forces\Nato_Systems.ini
+Ukraine	UkraineIRISTSamSite	-	-	1200	Data\INI\Object\Specter\Ukrainian Armed Forces\SamSite\IRIST_Site.ini
+Ukraine	UkraineMantis	-	-	1200	Data\INI\Object\Specter\Ukrainian Armed Forces\Buildings\Mantis.ini
+Ukraine	UkraineNASAMSIII	4	-	1800	Data\INI\Object\Specter\Ukrainian Armed Forces\Nato_Systems.ini
+Ukraine	UkraineSAMPTNG	3	-	3000	Data\INI\Object\Specter\Ukrainian Armed Forces\Nato_Systems.ini
+Ukraine	UkraineVehicleCortaleMK3	-	-	1200	Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\CortaleMK3.ini
+Ukraine	UkraineVehicleIRIST	-	-	1700	Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\IRIST_SLX.ini
+Ukraine	UkraineVehicleTRML4D	-	-	2200	Data\INI\Object\Specter\Ukrainian Armed Forces\Airdefense\TRML4D.ini
+Vietnam	VietnamVehicleS300	-	-	2200	Data\INI\Object\Specter\NationalGround\NationalGroundForces.ini
+Vietnam	Vietnam_CRAM	-	-	1000	Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_CRAM.ini
+Vietnam	Vietnam_DefenseSite	-	-	1000	Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_Systems.ini
+Vietnam	Vietnam_Hq9_Site	-	-	1500	Data\INI\Object\Specter\Vietnam People's Armed Forces\Buildings\Vietnam_Hq9_Site.ini
+Vietnam	Vietnam_Sam2	-	-	1000	Data\INI\Object\Specter\Vietnam People's Armed Forces\Vietnam_Systems.ini

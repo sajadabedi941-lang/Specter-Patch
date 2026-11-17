@@ -414,9 +414,11 @@ class Engine:
                 bucket = "aircraft"
             elif "infantry" in src:
                 bucket = "infantry"
+        specter_side = self.faction_map["side_to_specter"].get(side or "")
         return {
             "kindof": sorted(kinds),
             "side": side,
+            "specter_side": specter_side,
             "display": display,
             "bucket": bucket,
             "is_equipment": bool(kinds.intersection(EQUIPMENT_KINDS)) or bucket not in ("other",),
@@ -871,6 +873,78 @@ class Engine:
 
     def refuse_apply(self) -> None:
         raise SystemExit(
-            "stage 1: apply is disabled. This engine plans and validates only. "
+            "stage 2: apply is disabled. This engine plans and validates only. "
             "SPECTER FINAL BIGs stay untouched."
         )
+
+    def run_stage2(self, focus: tuple[str, ...] = ("ChinaCSSA1", "ChinaHQ11"), rerun_dry: bool = True) -> dict:
+        from . import archive as archive_mod
+        from .archive_index import ArchiveIndex
+        from .resolver import Resolver
+        from . import stage2_reports
+
+        baseline_path = self.reports / "STAGE1_BASELINE.json"
+        if not baseline_path.is_file() and (self.reports / "DRY_RUN.json").is_file():
+            baseline_path.write_text((self.reports / "DRY_RUN.json").read_text(encoding="utf-8"), encoding="utf-8")
+        stage1_dry = json.loads(baseline_path.read_text(encoding="utf-8")) if baseline_path.is_file() else {}
+
+        if rerun_dry:
+            dry_pack = self.dry_run()
+            stage2_dry = dry_pack["dry"]
+        elif (self.reports / "DRY_RUN.json").is_file():
+            stage2_dry = json.loads((self.reports / "DRY_RUN.json").read_text(encoding="utf-8"))
+        else:
+            stage2_dry = {}
+
+        vols = self.find_volumes()
+        zip_path = archive_mod.stage_volumes(vols, self.v25_src)
+        aidx = ArchiveIndex(zip_path, self.cache)
+        rules = json.loads((self.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        resolver = Resolver(self, rules, aidx)
+        result = resolver.plan_all()
+        slim = {k: v for k, v in result.items() if k != "plans"}
+        stage2_reports.write_summary(result, self.reports, stage1_dry)
+        batch = resolver.batch_plan(result["plans"])
+        (self.reports / "BATCH_TRANSFER_PLAN.json").write_text(
+            json.dumps({"generated_at_tehran": tehran_now(), "groups": batch}, default=str) + "\n",
+            encoding="utf-8",
+        )
+        focus_ok = []
+        for name in focus:
+            plan = resolver.plan_object(name)
+            safe = name.replace("/", "_")
+            (self.reports / f"TRANSFER_PLAN_{safe}.json").write_text(
+                json.dumps(plan, indent=2, default=str) + "\n", encoding="utf-8"
+            )
+            stage2_reports.write_object_plan_md(plan, self.reports / f"TRANSFER_PLAN_{safe}.md")
+            focus_ok.append({"object": name, "found": plan["found_in_vfs"], "readiness": plan["readiness"]})
+        stage2_reports.write_delta_md(stage1_dry, stage2_dry, slim, self.reports / "DRY_RUN_DELTA.md")
+        (self.reports / "MANIFEST.json").write_text(
+            json.dumps(
+                {
+                    "stage": 2,
+                    "mode": "resolve-dry-run",
+                    "applies_to_game": False,
+                    "generated_at_tehran": tehran_now(),
+                    "ready_transfer": result["ready_transfer"],
+                    "auto_fixable": result["auto_fixable"],
+                    "manual_rebuild": result["manual_rebuild"],
+                    "blocked": result["blocked"],
+                    "reuse_only": result["reuse_only"],
+                    "objects_planned": result["objects_planned"],
+                    "note": "No Object, Weapon, CommandSet, CommandButton, or ART was imported into SPECTER.",
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        return {
+            "mode": "resolve",
+            "game_bigs_modified": False,
+            "generals_exe_run": False,
+            "archive_stems": aidx.file_count,
+            "resolver": slim,
+            "focus": focus_ok,
+            "reports": str(self.reports),
+        }

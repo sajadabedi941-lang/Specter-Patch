@@ -1,11 +1,11 @@
 # V25 ↔ SPECTER compatibility (stage 1, no import)
 
-- Generated: 2026-11-11 04:59 Asia/Tehran
+- Generated: 2026-11-11 13:03 Asia/Tehran
 - V25 Objects: **6207**
 - SPECTER Objects: **5450**
 - Object status: `{'unique_v25': 5374, 'collision_rename': 628, 'shared_identical': 205}`
-- Incomplete dependency trees: **1501**
-- Protected-kind collisions (unique Weapon/CommandSet/Armor/… names): **810** (occurrence count across objects is higher; originals stay)
+- Incomplete dependency trees: **3592**
+- Protected-kind collisions (Weapon/CommandSet/Armor/…): **93991**
 - V25 ART stems: 5056
 - SPECTER ART stems: 2747
 
@@ -56,14 +56,14 @@
 - GLAStealthGeneral: 36 → SPECTER `UNMAPPED — independent add required`
 - GLAToxinGeneral: 34 → SPECTER `UNMAPPED — independent add required`
 - Flag: 33 → SPECTER `UNMAPPED — independent add required`
-- USA: 27 → SPECTER `UNMAPPED — independent add required`
-- IranRebels: 23 → SPECTER `UNMAPPED — independent add required`
+- USA: 27 → SPECTER `America`
+- IranRebels: 23 → SPECTER `Iran`
 - CG: 14 → SPECTER `UNMAPPED — independent add required`
 - Boss: 13 → SPECTER `UNMAPPED — independent add required`
 - GLADemolitionGeneral: 12 → SPECTER `UNMAPPED — independent add required`
 - Human: 11 → SPECTER `UNMAPPED — independent add required`
 - UK: 9 → SPECTER `Britain`
-- TaiWan: 8 → SPECTER `UNMAPPED — independent add required`
+- TaiWan: 8 → SPECTER `Taiwan`
 - All: 6 → SPECTER `UNMAPPED — independent add required`
 - SouthAfrica: 5 → SPECTER `SouthAfrica`
 - PremiumHull: 4 → SPECTER `UNMAPPED — independent add required`
@@ -74,8 +74,8 @@
 - SDCivilian: 2 → SPECTER `UNMAPPED — independent add required`
 - system: 2 → SPECTER `UNMAPPED — independent add required`
 - CWCruT80UK: 1 → SPECTER `UNMAPPED — independent add required`
-- Kazakhstan: 1 → SPECTER `UNMAPPED — independent add required`
-- Vietnam: 1 → SPECTER `UNMAPPED — independent add required`
+- Kazakhstan: 1 → SPECTER `Kazakhstan`
+- Vietnam: 1 → SPECTER `Vietnam`
 - lgeria: 1 → SPECTER `UNMAPPED — independent add required`
 
 ## Named-definition overlap

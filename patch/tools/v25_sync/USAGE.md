@@ -1,48 +1,33 @@
-# راهنمای اجرای موتور همگام‌سازی V25 → SPECTER
+# راهنمای اجرا — مرحلهٔ ۲
 
-مرحلهٔ ۱ فقط بررسی و برنامه‌ریزی است. هیچ BIG بازی نوشته نمی‌شود.
+مرحلهٔ ۲ Transfer Plan می‌سازد. هیچ BIG بازی نوشته نمی‌شود.
 
 ## پیش‌نیاز
 
-- `python3`
-- `7z`
-- آرشیو Silent Death V25: `V25.zip` و جلدهای `V25.z01` تا `V25.z157` (جلد `V25.z62` الزامی است). نام فایل روی GitHub ممکن است با فاصلهٔ ابتدایی باشد.
-- نسخهٔ سالم SPECTER FINAL در `/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/` یا مسیر معادل با `_SPEC_DATA_ONE.big` و `_SPEC_ART_TWO.big`.
+همان مرحلهٔ ۱: `python3`، `7z`، آرشیو ۱۵۸ جلدی V25 (با `z62`)، SPECTER FINAL در `/tmp/ss1/SPECTER FINAL (GeneralsMode.com)/`.
 
 ## دستورها
 
-از ریشهٔ مخزن:
-
 ```bash
-python3 patch/tools/v25_sync/v25_sync.py health --json
-python3 patch/tools/v25_sync/v25_sync.py extract --json
-python3 patch/tools/v25_sync/v25_sync.py inventory --json
-python3 patch/tools/v25_sync/v25_sync.py dry-run --json
+python3 patch/tools/v25_sync/v25_sync.py selftest
+python3 patch/tools/v25_sync/v25_sync.py resolve --json
+python3 patch/tools/v25_sync/v25_sync.py plan-object --object ChinaCSSA1 --json
+python3 patch/tools/v25_sync/dep_checker.py ChinaCSSA1
+python3 patch/tools/v25_sync/v25_sync.py apply   # باید خطا بدهد
 ```
 
-`plan` و `validate` همان dry-run هستند.
+`dry-run` همان اسکن مرحلهٔ ۱ است (هش بدنه). `resolve` طبقه‌بندی مؤثر + بازیابی از zip را اضافه می‌کند.
 
-بررسی یک تجهیز:
+## وضعیت Resolver
 
-```bash
-python3 patch/tools/v25_sync/dep_checker.py AmericaPatriotBattery
-```
+| وضعیت | معنی |
+|---|---|
+| REUSE_NATIVE | تعریف SPECTER سازگار است |
+| IMPORT_UNIQUE | نام آزاد است؛ مسیر یکتا |
+| RENAME_AND_REWRITE | تداخل؛ `SD25_` و اصلاح ارجاع |
+| RECOVER_FROM_V25 | در extract/VFS نیست، در zip هست |
+| INDEPENDENT_ADD | قابلیت بدون معادل؛ تعریف مستقل |
+| MANUAL_REBUILD | نیاز به بازسازی دستی (مثلاً CWC) |
+| BLOCKED | PlayerTemplate / ژنرال ZH |
 
-`apply` در این مرحله خطا می‌دهد و عمداً غیرفعال است.
-
-## خروجی
-
-گزارش‌ها در `patch/tools/v25_sync/reports/`:
-
-- سلامت آرشیو ۱۵۸ جلدی
-- سازگاری V25 و SPECTER
-- Manifest و Mapping هر Object
-- فهرست دسته‌ها برای انتقال گروهی بعدی (`BATCH_INDEX.json`)
-- Dry Run کامل بدون تغییر BIG
-
-## قوانین
-
-- Object / Weapon / Armor / CommandSet عمومی SPECTER بازنویسی نمی‌شوند.
-- تداخل نام → `SD25_<name>` و اصلاح تمام ارجاعات (فقط در برنامهٔ مرحلهٔ بعد).
-- قابلیت بدون معادل در SPECTER حذف نمی‌شود؛ به‌صورت تعریف مستقل علامت می‌خورد.
-- بستهٔ برگشت‌پذیر برای هر دسته در مرحلهٔ بعد ساخته می‌شود، نه در این مرحله.
+`ready_transfer` با تعداد Object یکتا یکی گرفته نمی‌شود.

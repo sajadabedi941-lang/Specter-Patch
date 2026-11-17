@@ -1,15 +1,16 @@
 {
-  "generated_at_tehran": "2026-11-11 04:59 Asia/Tehran",
+  "generated_at_tehran": "2026-11-11 13:03 Asia/Tehran",
   "game_bigs_modified": false,
   "generals_exe_run": false,
   "archive_complete": true,
   "objects_scanned": 6207,
   "missing_refs": {
+    "FXList": 8811,
     "MappedImage": 64794,
-    "AudioEvent": 1346,
+    "AudioEvent": 1372,
+    "CrateTemplate": 1608,
     "Object": 7593,
     "ObjectCreationList": 3868,
-    "FXList": 1505,
     "ParticleSystem": 473,
     "CommandSet": 17,
     "CommandButton": 11
@@ -21,21 +22,244 @@
   },
   "incomplete_sample": [
     {
+      "object": "00qsnOffice01",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice02",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice03",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice04",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice05",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice06",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice07",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice08",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice09",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice10",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice11",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "00qsnOffice12",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "07BZCG",
+      "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
+        "FXList:InfantryDamageFX",
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "150mmchina",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "150mmegypt",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "150mmIsrael",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "150mmusa",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "30DXHull",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "30N6EFLAPLID",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "59N6ERadar",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "88BCG",
+      "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
+        "FXList:InfantryDamageFX",
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "8X8ZCG",
+      "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
+        "FXList:InfantryDamageFX",
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "92BZCG",
+      "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
+        "FXList:InfantryDamageFX",
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "AalgeriaFUCHS",
+      "missing": [
+        "FXList:TruckDamageFX"
+      ]
+    },
+    {
+      "object": "ADAHull",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "AdmiralGorshkov",
+      "missing": [
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "Admiralkuznetsov",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
       "object": "AdmiralkuznetsovAP",
       "missing": [
-        "Object:AircraftBomSubduerBuilding"
+        "Object:AircraftBomSubduerBuilding",
+        "FXList:DefaultDamageFX",
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "AFG_AmericaVehicleChinook",
+      "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "AGS17GrenadeLauncher",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "AGS30GrenadeLauncher",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
       ]
     },
     {
       "object": "AH6",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
         "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
+        "Object:AircraftBomSubduer",
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
+      "object": "AircraftCessna",
+      "missing": [
+        "FXList:CrushableCarDamageFX"
+      ]
+    },
+    {
+      "object": "AircraftCropDuster",
+      "missing": [
+        "FXList:CrushableCarDamageFX"
       ]
     },
     {
       "object": "AirF_adswAmericaJetRaptorawdwa",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -44,6 +268,11 @@
     {
       "object": "AirF_AmericaAirfield",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -52,15 +281,21 @@
     {
       "object": "AirF_AmericaBarracks",
       "missing": [
+        "FXList:InfantryDamageFX",
         "Object:KDeathRider2",
         "Object:KDeathRider3",
+        "FXList:StructureDamageFXNoShake",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -82,15 +317,20 @@
     {
       "object": "AirF_AmericaCommandCenter",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:KDeathRider2",
         "Object:KDeathRider3",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
         "FXList:FX_InfantryDieGib",
         "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
@@ -107,21 +347,33 @@
         "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
         "FXList:FX_GenericTankDeathExplosionHuge",
         "ObjectCreationList:OCL_ChinaTanknoDebris",
+        "FXList:SmallTankDamageFX",
         "Object:SDGowind"
+      ]
+    },
+    {
+      "object": "AirF_AmericaFireBase",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
       ]
     },
     {
       "object": "AirF_AmericaInfantryColonelBurton",
       "missing": [
+        "FXList:InfantryDamageFX",
         "Object:KDeathRider2",
         "Object:KDeathRider3",
+        "FXList:StructureDamageFXNoShake",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
+        "FXList:TruckDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -143,21 +395,27 @@
     {
       "object": "AirF_AmericaInfantryColonelBurtonsadas",
       "missing": [
-        "Object:FRADeltaDeathRider2",
+        "FXList:InfantryDamageFX",
         "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive"
+        "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:FRADeltaDeathRider2"
       ]
     },
     {
       "object": "AirF_AmericaInfantryMissileDefender",
       "missing": [
+        "FXList:InfantryDamageFX",
         "Object:KDeathRider2",
         "Object:KDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:StructureDamageFXNoShake",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
+        "FXList:TruckDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -181,15 +439,20 @@
     {
       "object": "AirF_AmericaInfantryPathfinder",
       "missing": [
+        "FXList:InfantryDamageFX",
+        "FXList:FX_CWCgenInfDeath",
+        "FXList:FX_CWCgenInfDeathNoRevive",
         "Object:KDeathRider2",
         "Object:KDeathRider3",
+        "FXList:StructureDamageFXNoShake",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
         "Object:KORHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
+        "FXList:TruckDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -212,6 +475,7 @@
     {
       "object": "AirF_AmericaInfantryPilot",
       "missing": [
+        "FXList:InfantryDamageFX",
         "Object:ToxicInfantryBeta",
         "Object:ToxicInfantryGamma"
       ]
@@ -219,13 +483,18 @@
     {
       "object": "AirF_AmericaInfantryRanger",
       "missing": [
+        "FXList:InfantryDamageFX",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
+        "FXList:StructureDamageFXNoShake",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
+        "FXList:TruckDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -249,6 +518,11 @@
     {
       "object": "AirF_AmericaJetA10Thunderbolt",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -261,12 +535,23 @@
       ]
     },
     {
+      "object": "AirF_AmericaJetB3",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaJetB52",
       "missing": [
-        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:TankDamageFX",
+        "FXList:InfantryDamageFX",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAHeavyAssaultDeathRider2",
         "Object:USAEngineerDeathRider2",
+        "FXList:DefaultDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
         "Object:USADeltaDeathRider2",
         "Object:ToxicInfantryBeta",
         "Object:ToxicInfantryGamma",
@@ -290,10 +575,15 @@
     {
       "object": "AirF_AmericaJetCargoPlane",
       "missing": [
-        "Object:USAHeavyAssaultDeathRider2",
+        "FXList:TankDamageFX",
+        "FXList:InfantryDamageFX",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAHeavyAssaultDeathRider2",
         "Object:USAEngineerDeathRider2",
+        "FXList:DefaultDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TruckDamageFX",
         "Object:USADeltaDeathRider2",
         "Object:ToxicInfantryBeta",
         "Object:ToxicInfantryGamma",
@@ -323,6 +613,11 @@
     {
       "object": "AirF_AmericaJetSpectreGunship1",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -331,6 +626,11 @@
     {
       "object": "AirF_AmericaJetSpectreGunship2",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -339,6 +639,11 @@
     {
       "object": "AirF_AmericaJetSpectreGunship3",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -353,13 +658,19 @@
     {
       "object": "AirF_AmericaParticleCannonUplink",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
-        "Object:USAHeavyAssaultDeathRider2",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:USAHeavyAssaultDeathRider2",
         "Object:USAEngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:USADeltaDeathRider2",
         "Object:ToxicInfantryBeta",
         "Object:ToxicInfantryGamma",
@@ -381,16 +692,48 @@
       ]
     },
     {
+      "object": "AirF_AmericaPatriotBattery",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
+      "object": "AirF_AmericaPowerPlant",
+      "missing": [
+        "FXList:StructureDamageFXNoShake"
+      ]
+    },
+    {
       "object": "AirF_AmericaStrategyCenter",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer"
       ]
     },
     {
+      "object": "AirF_AmericaSupplyCenter",
+      "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaSupplyDropZone",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer"
@@ -399,6 +742,11 @@
     {
       "object": "AirF_AmericaTankAvenger",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -407,14 +755,30 @@
     {
       "object": "AirF_AmericaTankAvengerawdaswd",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
       ]
     },
     {
+      "object": "AirF_AmericaTankMicrowave",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaTankMicrowavedfszdf",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -423,6 +787,11 @@
     {
       "object": "AirF_AmericaVehicleBattleDrone",
       "missing": [
+        "FXList:SmallTankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -431,6 +800,11 @@
     {
       "object": "AirF_AmericaVehicleChinook",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -439,6 +813,11 @@
     {
       "object": "AirF_AmericaVehicleComanche",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -447,6 +826,11 @@
     {
       "object": "AirF_AmericaVehicleDozer",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "ObjectCreationList:OCL_TankDeathTrails",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
@@ -454,10 +838,11 @@
         "Object:KDeathRider3",
         "Object:KAntiTankDeathRider2",
         "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
         "FXList:FX_CWCgenInfDeath",
         "FXList:FX_CWCgenInfDeathNoRevive",
+        "Object:KORHeavyAssaultDeathRider2",
         "Object:KOREngineerDeathRider2",
+        "FXList:DefaultDamageFX",
         "Object:KORInfMedicDeathRider2",
         "FXList:FX_InfantryDieGib",
         "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
@@ -478,8 +863,28 @@
       ]
     },
     {
+      "object": "AirF_AmericaVehicleHellfireDrone",
+      "missing": [
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleHumvee",
+      "missing": [
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaVehicleHumveedasdwa",
       "missing": [
+        "FXList:TruckDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails",
@@ -487,16 +892,50 @@
       ]
     },
     {
+      "object": "AirF_AmericaVehicleMedic",
+      "missing": [
+        "FXList:TruckDamageFX"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleScoutDrone",
+      "missing": [
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
+      "object": "AirF_AmericaVehicleSentryDrone",
+      "missing": [
+        "FXList:TankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaVehicleSentryDronedwdas",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
       ]
     },
     {
+      "object": "AirF_AmericaVehicleSpyDrone",
+      "missing": [
+        "FXList:SmallTankDamageFX"
+      ]
+    },
+    {
       "object": "AirF_AmericaVehicleTomahawk",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -505,6 +944,11 @@
     {
       "object": "AirF_AmericaVehicleTomahawksss",
       "missing": [
+        "FXList:TankDamageFX",
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
@@ -513,570 +957,14 @@
     {
       "object": "AirF_AmericaWarFactory",
       "missing": [
+        "FXList:StructureDamageFXNoShake",
+        "FXList:InfantryDamageFX",
+        "FXList:TruckDamageFX",
+        "FXList:SmallTankDamageFX",
+        "FXList:TankDamageFX",
         "Object:AircraftBomSubduerBuilding",
         "Object:AircraftBomSubduer",
         "ObjectCreationList:OCL_TankDeathTrails"
-      ]
-    },
-    {
-      "object": "AirF_asdAmericaVehicleComancheasd",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "ObjectCreationList:OCL_TankDeathTrails"
-      ]
-    },
-    {
-      "object": "Algeria2K12",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails"
-      ]
-    },
-    {
-      "object": "Algeria2S1",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails"
-      ]
-    },
-    {
-      "object": "AlgeriaAirfield",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaANKA",
-      "missing": [
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaBarracks",
-      "missing": [
-        "Object:KDeathRider2",
-        "Object:KDeathRider3",
-        "Object:KAntiTankDeathRider2",
-        "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:KOREngineerDeathRider2",
-        "Object:KORInfMedicDeathRider2",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
-      ]
-    },
-    {
-      "object": "AlgeriaBukM",
-      "missing": [
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris"
-      ]
-    },
-    {
-      "object": "AlgeriaCommandCenter",
-      "missing": [
-        "Object:KDeathRider2",
-        "Object:KDeathRider3",
-        "Object:KAntiTankDeathRider2",
-        "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:KOREngineerDeathRider2",
-        "Object:KORInfMedicDeathRider2",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_TankDeathTrails",
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris",
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaDog",
-      "missing": [
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma"
-      ]
-    },
-    {
-      "object": "AlgeriaDozer",
-      "missing": [
-        "Object:KDeathRider2",
-        "Object:KDeathRider3",
-        "Object:KAntiTankDeathRider2",
-        "Object:KAntiTankDeathRider3",
-        "Object:KORHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:KOREngineerDeathRider2",
-        "Object:KORInfMedicDeathRider2",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_TankDeathTrails",
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris",
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaDZJetCargoPlane",
-      "missing": [
-        "Object:KDeathRider2",
-        "Object:KDeathRider3"
-      ]
-    },
-    {
-      "object": "AlgeriaEngineer",
-      "missing": [
-        "Object:KOREngineerDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive"
-      ]
-    },
-    {
-      "object": "AlgeriaHeavyAssault",
-      "missing": [
-        "Object:KORHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive"
-      ]
-    },
-    {
-      "object": "AlgeriaMedic",
-      "missing": [
-        "Object:KORInfMedicDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive"
-      ]
-    },
-    {
-      "object": "AlgeriaMIG29",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaMoratar",
-      "missing": [
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ToxicInfantryBeta"
-      ]
-    },
-    {
-      "object": "AlgeriaRPGSoldier",
-      "missing": [
-        "Object:KAntiTankDeathRider2",
-        "Object:KAntiTankDeathRider3"
-      ]
-    },
-    {
-      "object": "AlgeriaSealforces",
-      "missing": [
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma"
-      ]
-    },
-    {
-      "object": "AlgeriaSniper",
-      "missing": [
-        "FXList:FX_CWCgenInfDeathNoRevive"
-      ]
-    },
-    {
-      "object": "AlgeriaSoldier",
-      "missing": [
-        "Object:KDeathRider2",
-        "Object:KDeathRider3"
-      ]
-    },
-    {
-      "object": "AlgeriaSpecialForces",
-      "missing": [
-        "FXList:FX_CWCgenInfDeathNoRevive"
-      ]
-    },
-    {
-      "object": "AlgeriaSpecialPilot",
-      "missing": [
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
-      ]
-    },
-    {
-      "object": "AlgeriaStrategyCenter",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails",
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris",
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaSU24",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding"
-      ]
-    },
-    {
-      "object": "AlgeriaSU30",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AlgeriaSU30JetAurora",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding"
-      ]
-    },
-    {
-      "object": "AlgeriaTORM",
-      "missing": [
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris"
-      ]
-    },
-    {
-      "object": "AlgeriaTos",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails"
-      ]
-    },
-    {
-      "object": "AlgeriaWarFactory",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails",
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris"
-      ]
-    },
-    {
-      "object": "AlgeriaWarFactoryII",
-      "missing": [
-        "ObjectCreationList:OCL_TankDeathTrails",
-        "FXList:FX_GenericTankDeathExplosionHuge",
-        "ObjectCreationList:OCL_ChinaTanknoDebris"
-      ]
-    },
-    {
-      "object": "AlgeriaWingLong",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding"
-      ]
-    },
-    {
-      "object": "AmericaA10",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AmericaAircraftCarrier",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding"
-      ]
-    },
-    {
-      "object": "AmericaAircraftCarrierCVNNormal",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AmericaAirCraftHelix",
-      "missing": [
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaAirfield",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AmericaB2",
-      "missing": [
-        "Object:AircraftBomSubduer"
-      ]
-    },
-    {
-      "object": "AmericaBarracks",
-      "missing": [
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma"
-      ]
-    },
-    {
-      "object": "AmericaBattleShipALBOK",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaBattleShipDDG1000",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaBattleShipLCS1",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaBattleShipLCS2",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaBornACship",
-      "missing": [
-        "Object:AircraftBomSubduerBuilding",
-        "Object:AircraftBomSubduer",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3",
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "ObjectCreationList:OCL_hkmj2"
-      ]
-    },
-    {
-      "object": "AmericaC17JetCargoPlane",
-      "missing": [
-        "Object:USAHeavyAssaultDeathRider2",
-        "FXList:FX_CWCgenInfDeath",
-        "FXList:FX_CWCgenInfDeathNoRevive",
-        "Object:USAEngineerDeathRider2",
-        "Object:USADeltaDeathRider2",
-        "Object:ToxicInfantryBeta",
-        "Object:ToxicInfantryGamma",
-        "Object:USAInfMedicDeathRider2",
-        "Object:USASniperDeathRider2",
-        "FXList:FX_InfantryDieGib",
-        "ObjectCreationList:OCL_BloodPoolAndPiecesExplode",
-        "Object:ElectricDog",
-        "Object:ToxicDog",
-        "Object:ToxicDogGamma",
-        "ObjectCreationList:OCL_FlamingInfantryUSA",
-        "ObjectCreationList:OCL_RadiationInfantry",
-        "ObjectCreationList:OCL_InfantryMineExplode",
-        "ObjectCreationList:OCL_ToxicInfantryFrightening",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningBeta",
-        "ObjectCreationList:OCL_ToxicInfantryFrighteningGamma",
-        "Object:USADeathRider2",
-        "Object:USADeathRider3"
       ]
     }
   ],
@@ -1885,7 +1773,7 @@
       "planned": "SD25_Upgrade_AmericaLaserMissiles"
     }
   ],
-  "protected_hits": 93968,
+  "protected_hits": 93991,
   "validation": {
     "missing_refs_scanned": true,
     "name_collisions_scanned": true,

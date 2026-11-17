@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Silent Death V25 → SPECTER sync engine (stage 1: health / inventory / dry-run).
-
-Never writes SPECTER BIGs or public INI. Apply is refused.
-"""
+"""Silent Death V25 → SPECTER sync engine (stage 2: resolve / plan; no game writes)."""
 from __future__ import annotations
 
 import argparse
@@ -19,16 +16,33 @@ from lib.engine import Engine  # noqa: E402
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        description="V25 → SPECTER sync engine (stage 1 dry-run; no game writes)"
+        description="V25 → SPECTER sync engine (stage 2 resolve/dry-run; no game writes)"
     )
     p.add_argument(
         "command",
-        choices=["health", "extract", "inventory", "dry-run", "plan", "validate", "apply"],
-        help="health=volumes+7z; dry-run=full scan with no SPECTER writes",
+        choices=[
+            "health",
+            "extract",
+            "inventory",
+            "dry-run",
+            "plan",
+            "validate",
+            "resolve",
+            "plan-object",
+            "selftest",
+            "apply",
+        ],
+        help="resolve=full dependency resolver; apply is refused",
     )
     p.add_argument("--root", type=Path, default=ROOT, help="Specter-Patch repo root")
+    p.add_argument("--object", help="Object name for plan-object")
     p.add_argument("--json", action="store_true", help="print JSON summary to stdout")
     args = p.parse_args(argv)
+
+    if args.command == "selftest":
+        from tests.test_resolver import main as tests_main
+
+        return tests_main()
 
     eng = Engine(args.root.resolve())
     if args.command == "apply":
@@ -48,8 +62,22 @@ def main(argv: list[str] | None = None) -> int:
             "v25_weapons": len(v25.get("Weapon") or {}),
             "specter_weapons": len(spec.get("Weapon") or {}),
         }
+    elif args.command == "plan-object":
+        if not args.object:
+            p.error("--object is required for plan-object")
+        from lib.archive_index import ArchiveIndex
+        from lib.resolver import Resolver
+        from lib import archive as archive_mod
+
+        vols = eng.find_volumes()
+        zip_path = archive_mod.stage_volumes(vols, eng.v25_src)
+        aidx = ArchiveIndex(zip_path, eng.cache)
+        rules = json.loads((eng.data / "compatibility_rules.json").read_text(encoding="utf-8"))
+        plan = Resolver(eng, rules, aidx).plan_object(args.object)
+        result = plan
+    elif args.command == "resolve":
+        result = eng.run_stage2()
     elif args.command in ("dry-run", "plan", "validate"):
-        # validate/plan are aliases of dry-run in stage 1.
         eng.health_report()
         result = eng.dry_run()
         result = {
@@ -66,7 +94,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     if args.json:
-        print(json.dumps(result, indent=2, default=str))
+        print(json.dumps(result, indent=2, default=str)[:20000])
     else:
         print(json.dumps(result, indent=2, default=str)[:4000])
         print(f"\nReports: {eng.reports}")

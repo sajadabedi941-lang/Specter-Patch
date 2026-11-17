@@ -128,6 +128,18 @@ NAMED_KEYS = {
     "soundenter": "AudioEvent",
     "soundexit": "AudioEvent",
     "soundpromoted": "AudioEvent",
+    "firesound": "AudioEvent",
+    "firevoice": "AudioEvent",
+    "soundimpact": "AudioEvent",
+    "voiceguard": "AudioEvent",
+    "voiceattackair": "AudioEvent",
+    "voicecreate": "AudioEvent",
+    "deathfx": "FXList",
+    "damagefx": "FXList",
+    "projectileexhaust": "ParticleSystem",
+    "cratedata": "CrateTemplate",
+    "firesweapon": "Weapon",
+    "weaponstouse": "Weapon",
 }
 
 ART_KEYS = {
@@ -215,6 +227,8 @@ def parse_ini_text(text: str, source: str) -> dict[str, dict]:
             "keys": keys,
             "named_refs": named,
             "art_refs": art,
+            "behaviors": behavior_types(keys),
+            "damage_types": damage_types_from_keys(keys, current_kind),
         }
         current_kind = None
         current_name = None
@@ -291,6 +305,10 @@ def classify_refs(
                 t for t in tokens if t.lower() not in SKIP_NAMED_VALUES
             )
             continue
+        for m in re.finditer(r"PSys:(\S+)", v, re.I):
+            named.setdefault("ParticleSystem", []).append(m.group(1).rstrip(","))
+        for m in re.finditer(r"FXList:(\S+)", v, re.I):
+            named.setdefault("FXList", []).append(m.group(1).rstrip(","))
         if kl in ART_KEYS or kl.endswith("model") or kl.endswith("anim") or kl.endswith("animation"):
             for t in tokens:
                 if t.lower() not in SKIP_NAMED_VALUES and not t.replace(".", "", 1).isdigit():
@@ -343,6 +361,68 @@ def merge_vfs(*layers: dict[str, dict]) -> dict[str, dict]:
             for name, rec in defs.items():
                 bucket[name] = rec
     return out
+
+
+def behavior_types(keys: list[tuple[str, str]]) -> list[str]:
+    out = []
+    seen = set()
+    for k, v in keys:
+        if k.strip().lower() != "behavior":
+            continue
+        mod = v.split()[0] if v.strip() else ""
+        if mod and mod.lower() not in seen:
+            seen.add(mod.lower())
+            out.append(mod)
+    return out
+
+
+def damage_types_from_keys(keys: list[tuple[str, str]], parent_kind: str | None) -> list[str]:
+    out = []
+    seen = set()
+    for k, v in keys:
+        kl = k.strip().lower()
+        if parent_kind == "Weapon" and kl == "damagetype":
+            tok = v.split()[0] if v.strip() else ""
+            if tok and tok.lower() not in seen:
+                seen.add(tok.lower())
+                out.append(tok)
+        if parent_kind == "Armor" and kl == "armor":
+            # `INFANTRY_MISSILE   100%` or `100% EXPLOSION`
+            for tok in v.replace("%", " ").split():
+                if tok.replace(".", "", 1).isdigit():
+                    continue
+                if tok.lower() not in seen:
+                    seen.add(tok.lower())
+                    out.append(tok)
+    return out
+
+
+def gameplay_fingerprint(rec: dict) -> str:
+    """Effective behavior, not comments or ModuleTag numbers."""
+    named = rec.get("named_refs") or {}
+    parts = [
+        rec.get("kind") or "",
+        "kindof:" + " ".join(
+            sorted(
+                t.upper()
+                for k, v in rec.get("keys") or []
+                if k.strip().lower() == "kindof"
+                for t in v.split()
+            )
+        ),
+        "behaviors:" + ",".join(rec.get("behaviors") or []),
+        "damage:" + ",".join(rec.get("damage_types") or []),
+        "art:" + ",".join((rec.get("art_refs") or [])[:12]),
+    ]
+    for kind in sorted(named):
+        parts.append(kind + ":" + ",".join(named[kind]))
+    anti = []
+    for k, v in rec.get("keys") or []:
+        kl = k.strip().lower()
+        if kl.startswith("anti") and v.strip():
+            anti.append(f"{kl}={v.split()[0].lower()}")
+    parts.append("anti:" + ",".join(sorted(anti)))
+    return "\n".join(parts)
 
 
 def parse_file(path: Path, source: str | None = None) -> dict[str, dict]:

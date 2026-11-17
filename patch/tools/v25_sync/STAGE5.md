@@ -44,3 +44,9 @@ Writes experimental BIGs only under `--out` (default `/tmp/v25_stage5_pack`). Or
 ## Generals.exe
 
 This stage does **not** launch Generals.exe. Do not treat the pack as in-game tested.
+
+## INI parse fix (experimental DATA only)
+
+Three diagnosed load errors were repaired **inside** the experimental `_SPEC_DATA_ONE.big` (not as loose INI). ART TWO is unchanged. See `STAGE5_FIX.md`.
+
+Fixed DATA SHA256 `c9d1b6ac805d9d9edd18d643f945bf740b822d88bf07d6e280129aa204f2880c`. ZIP `SPECTER_V25_STAGE5_INI_FIX.zip` `641618e790d9e2b4ed1a566d19b8006e184e3e1d4cba3c4b7ce756627efaf773`.

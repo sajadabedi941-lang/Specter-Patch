@@ -129,6 +129,60 @@ def copy_big_with_adds(
     }
 
 
+def rewrite_big_members(src: Path, dest: Path, replacements: dict[str, bytes]) -> dict:
+    """Copy a BIG and replace existing member payloads. Does not add or delete names.
+
+    `src` is never opened for write. Replacements must match existing paths.
+    """
+    entries = _read_index(src)
+    existing = {nkey(n): (n, off, size) for n, off, size in entries}
+    missing = [name for name in replacements if nkey(name) not in existing]
+    if missing:
+        raise ValueError("rewrite_big_members: names not in BIG: " + ", ".join(missing))
+    repl = {nkey(name): blob for name, blob in replacements.items()}
+
+    header_size = 16
+    for name, _, _ in entries:
+        header_size += 8 + len(name.encode("latin1")) + 1
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(dest.suffix + ".tmp")
+    with src.open("rb") as inf, tmp.open("wb") as out:
+        out.write(b"\x00" * header_size)
+        new_index: list[tuple[str, int, int]] = []
+        for name, off, size in entries:
+            k = nkey(name)
+            payload_off = out.tell()
+            if k in repl:
+                blob = repl[k]
+                out.write(blob)
+                new_index.append((name, payload_off, len(blob)))
+            else:
+                inf.seek(off)
+                left = size
+                while left:
+                    chunk = inf.read(min(1 << 20, left))
+                    if not chunk:
+                        break
+                    out.write(chunk)
+                    left -= len(chunk)
+                new_index.append((name, payload_off, size))
+        total = out.tell()
+        out.seek(0)
+        out.write(b"BIGF" + struct.pack(">III", total, len(new_index), header_size))
+        for name, off, size in new_index:
+            out.write(struct.pack(">II", off, size))
+            out.write(name.encode("latin1") + b"\x00")
+    tmp.replace(dest)
+    return {
+        "source": str(src),
+        "dest": str(dest),
+        "replaced": sorted(replacements),
+        "total_entries": len(entries),
+        "bytes": dest.stat().st_size,
+    }
+
+
 def write_big(path: Path, files: dict[str, bytes]) -> None:
     """Minimal BIGF writer for tests. Not used on SPECTER game BIGs."""
     items = list(files.items())

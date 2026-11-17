@@ -1,0 +1,37 @@
+SPECTER FINAL — Silent Death V25 stage 5 INI fix
+ChinaCSSA1 + ChinaHQ11 experimental DATA BIG. Original SPECTER install is not modified by the packer.
+
+This ZIP replaces only the experimental DATA BIG from stage 5.
+ART TWO is unchanged from stage 5 and is not included.
+No loose INI.
+
+Generals.exe was NOT run. This is not an in-game test report.
+
+Diagnosed parse errors fixed inside the DATA BIG only:
+  1. Data\INI\FXList_SilentDeath.ini — column-0 End on each of 7 FXList blocks (SPECTER nested-End + outer End). Effect names and bodies unchanged.
+  2. Data\INI\Object\SilentDeath\China\SD25_ChinaHQ11.ini — DEPLOYED ConditionStates moved inside the W3DTruckDraw (RIDER2 visuals copied as DEPLOYED). Nothing after Object End. Pack/deploy WeaponSet + DeployStyleAIUpdate kept.
+  3. Data\INI\Armor_SilentDeath.ini — duplicate Armor SD25_ProjectileArmor removed. SD25_TankArmor / SD25_HumveeArmor / SD25_ProjectileArmor remain for CSSA1, HQ11, and projectiles.
+
+Install:
+  1. Quit the game.
+  2. If you already installed the stage 5 experimental pack, keep _SPEC_ART_TWO.big from that pack.
+  3. Backup the current DATA BIG:
+       copy _SPEC_DATA_ONE.big _SPEC_DATA_ONE.big.bak
+  4. Copy _SPEC_DATA_ONE.big from this ZIP over the SPECTER FINAL folder.
+  5. Do not add loose Data\INI files.
+
+Where to build (China / PLA war factory):
+  Building Object: ChinaWarFactory
+  CommandSet: PLAWarFactoryCommandSet
+  SD25_ChinaCSSA1 UNIT_BUILD slot 4
+  SD25_ChinaHQ11 UNIT_BUILD slot 7
+
+Expected original SPECTER SHA256 (untouched):
+  _SPEC_DATA_ONE.big  7f8c7f63e972652e8d178c2a43b1f0102904096d630538b010dbf2d081881343
+  _SPEC_ART_TWO.big   81d9a4aa10550ef8b3f4a58842f159fda3f54a1af32fcef37df185eb9b9995bf
+
+Stage 5 ART TWO (unchanged, not in this ZIP):
+  _SPEC_ART_TWO.big   bce126e0943ca771bcf5a13cf222c5a41a590b10b244ea6812d2a770a62dacd5
+
+This pack SHA256:
+  _SPEC_DATA_ONE.big  c9d1b6ac805d9d9edd18d643f945bf740b822d88bf07d6e280129aa204f2880c

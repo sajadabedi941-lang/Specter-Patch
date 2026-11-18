@@ -1,0 +1,27 @@
+SPECTER SS3 — South Korea KM-SAM standalone pack
+ZIP: SouthKorea_KM-SAM_SS3_Standalone.zip
+SHA-256: 5c9a29980a272943d0de2a465744083cd5f2d370aba9a6b7e4239897d0cb0e90
+
+Install on a clean SPECTER FINAL SS3 folder that already contains generals.exe.
+Unzip so Data/ and Art/ overlay the game folders. Do not replace BIG archives.
+
+Members (12):
+  Art/Textures/SKK239B.dds
+  Art/Textures/SKKMSAML.dds
+  Art/Textures/SKKMSAMTB.tga
+  Art/W3D/SKKMSAM.W3D
+  Data/INI/CommandButton.ini
+  Data/INI/CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+  Data/INI/CommandSet.ini
+  Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+  Data/INI/MappedImages/HandCreated/SouthKorea_KMSAM_Images.ini
+  Data/INI/Object/Specter/Republic of Korea Armed Forces/AirDefense/SouthKoreaKMSAM.ini
+  Data/INI/Object/Specter/Republic of Korea Armed Forces/Projectiles/SouthKorea_Projectile_SAM.ini
+  Data/INI/Weapon_SouthKorea_KMSAM.ini
+
+CommandButton.ini / CommandSet.ini / tunnel files are byte-identical to
+PR #807 (ss3-south-korea-km-sam-dozer-pattern). Slot 2 = KM-SAM. Slots 1/4/13/14 unchanged.
+
+The live Object uses Generic8x8Locomotor (already in SPECTER Locomotor.ini).
+The four V25 locomotors from LocomotorLoadFix are not referenced by this Object
+and are not in the ZIP.

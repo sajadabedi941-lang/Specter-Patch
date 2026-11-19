@@ -1,0 +1,63 @@
+SPECTER SS3 Japan_WarFactoryCommandSet slot-18 parse fix
+Drop Data/INI onto SPECTER FINAL (over Release 833).
+
+Changed files:
+  Data/INI/CommandSet.ini
+  Data/INI/CommandButton.ini   (full Release 830/831/832/833 file, unchanged)
+
+Japan_WarFactoryCommandSet illegal slots (commented, names preserved):
+  19 = Command_ConstructJapan_TankLeopard2A7Plus  (Japan_TankLeopard2A7Plus)
+  20 = Command_ConstructJapan_VehicleVBCI         (Japan_VehicleVBCI)
+  21 = Command_ConstructJapan_VehicleCentauroB2   (Japan_VehicleCentauroB2)
+  22 = Command_ConstructJapan_VehicleCaesar       (Japan_VehicleCaesar)
+  23 = Command_ConstructJapan_VehicleCortaleMK3   (Japan_VehicleCortaleMK3)
+  24 = Command_ConstructJapan_VehicleIRIST        (Japan_VehicleIRIST)
+  25 = Command_ConstructJapan_Type10              (Japan_Type10)
+  26 = Command_ConstructJapan_AD_SHORAD           (Japan_AD_SHORAD)
+  27 = Command_ConstructJapan_AD_SAM              (Japan_AD_SAM)
+  28 = Command_ConstructJapan_AD_MD               (Japan_AD_MD)
+  29 = Command_ConstructJapan_AD_Patriot          (Japan_AD_Patriot)
+  30 = Command_ConstructJapan_AD_Type03           (Japan_AD_Type03)
+
+Slots 1-18 unchanged. No CommandButton was deleted.
+CommandButton.ini was not edited.
+
+Live CommandButton.ini (ControlBar load path) defs for this block:
+  1-16 present (defs=1)
+  17 Command_ConstructJapan_Type12TEL            MISSING in live file
+  18 Command_ConstructJapan_CombatDrone          MISSING in live file
+  19-25                                          MISSING in live file
+  26-30 present (defs=1)
+Object names for 17-25 come from sibling CommandButton_Japan_PhaseB.ini
+(not on the ControlBar load path). Not registered in this pack.
+
+NOT edited in this pack:
+  Japan_BarracksCommandSet
+  Japan_CommandCenterCommandSet
+  Japan_WorkerCommandSet
+  Japan_MilitaryHQCommandSet
+  other Japan CommandSets
+  other countries
+
+Japan CommandSets after this pack (active slots >18):
+  none
+
+Already legal / already fixed:
+  Japan_BarracksCommandSet          max 14
+  Japan_CommandCenterCommandSet     max 18
+  Japan_WorkerCommandSet            max 18
+  Japan_MilitaryHQCommandSet        max 18
+  Japan_WarFactoryCommandSet        max 18 (this pack)
+  Japan_VT72BCommandSet             max 15
+  Japan_SupplyCenterCommandSet      max 14
+  Japan_RadarStationCommandSet      max 14
+  Japan_AlAbbasCommandSet           max 14
+  Japan_MICCommandSet               max 16
+  Japan_MICCommandSet2              max 14
+  Japan_MICCommandSet3              max 14
+  Japan_AirfieldCommandSet          max 14
+  Japan_HeavyAirBaseCommandSet      max 14
+  Japan_MissileFactoryCommandSet    max 14
+  Japan_VehicleDozermCommandSet     max 18
+
+Generals.exe was not run. This pack does not claim an in-game test.

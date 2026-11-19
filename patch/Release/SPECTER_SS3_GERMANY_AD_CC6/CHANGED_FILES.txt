@@ -1,0 +1,63 @@
+SPECTER SS3 Germany Command Center — V25 air-defense transfer
+Drop onto SPECTER FINAL (over Release 837 Spain). Only
+GermanyCommandCenterCommandSet slots 3, 5, 6, 7, 8, 9 are edited.
+All other Germany CC slots and all other countries/CommandSets unchanged.
+
+Live CommandCenter: GermanyCommandCenter + GermanyCommandCenterCommandSet
+(overlay Germany_CommandCenter / Germany_CommandCenterCommandSet is not live).
+
+Occupied-slot report (before this pack):
+  1  Command_ConstructGermanyVehicleDozer     unchanged
+  2  Command_ConstructGermanyTankPumaMech     unchanged
+  3  Command_GermanyAWACS                     OCCUPIED — replaced by
+                                               Command_ConstructGermanyMeadsRadar
+                                               (user-assigned slot 3).
+                                               Shortcut Command_GermanyAWACSFromShortcut
+                                               is not edited.
+  4  Command_ConstructGermanyVehicleDozerm    unchanged
+  5  empty                                    Command_ConstructGermanyRolland (new)
+  6  empty                                    Command_ConstructGermanySkynex (new)
+  7  empty                                    Command_ConstructGermanyWiesel2 (new)
+  8  empty                                    Command_ConstructGermanyGepard (new)
+  9  empty                                    Command_ConstructGermanyPatriotPAC3 (new)
+ 14  Command_Sell                             unchanged
+ 15-17 drones                                 unchanged
+Highest active slot = 17 (cap 18).
+
+Sources (V25 TankGeneral.ini / CommandButton.ini, Germany side only):
+  Slot 3  GermanyMeadsRadar     <- GermanyMeadsRadar
+          model GRMEADSRD, cameo GRMDSRDTB
+          Weapon PRIMARY NONE (radar)
+  Slot 5  GermanyRolland        <- GermanyRolland
+          model Rolland, cameo GRRLD
+          Weapon Italy_Weapon_SAM (live; V25 RollandMissileWeapon not on SS3)
+  Slot 6  GermanySkynex         <- Tank_ChinaVehicleListeningOutpost
+          (V25 DisplayName Germany_Skynex, model GRBXCRV, cameo BOXERAIRTB)
+          Weapons 30mm_2A38M / 30mm_2A38M_Air (live; CWC TGSKG/TGSKAIR not on SS3)
+  Slot 7  GermanyWiesel2        <- GermanyWiesel2
+          models SDWiesel2 + SDWiesel2w, cameo GRWS2
+          Weapon Italy_Weapon_SHORAD (live; V25 Wiesel2MissileLauncher not on SS3)
+  Slot 8  GermanyGepard         <- Tank_ChinaTankGattling
+          (V25 DisplayName Germany_Gepard, models SDGepard + SDGepardw, cameo GRGPR)
+          Unique name vs overlay Command_ConstructGermanyVehicleGepard /
+          GermanyVehicleGepard. Weapons 30mm_2A38M / 30mm_2A38M_Air /
+          Italy_Weapon_SHORAD (live; TGSKG/TGSKAIR/AH64Stinger not on SS3)
+  Slot 9  GermanyPatriotPAC3    <- GermanPATRIO
+          model SDPAC3, cameo AmPatriotVeh
+          Weapon PatriotMissileWeaponAir (live; V25 PAC3Weapon not on SS3)
+
+CommandButton.ini: six unique UNIT_BUILD buttons appended to the live
+ControlBar file (Release 837). No duplicates.
+Overlay Command_ConstructGermanyVehicleGepard and
+Command_ConstructGermanyVehicleWieselAT are not reused or redefined.
+
+MappedImages: Data/INI/MappedImages/HandCreated/Germany_V25_AD_Images.ini
+  GRMDSRDTB, GRRLD, BOXERAIRTB, GRWS2, GRGPR, AmPatriotVeh
+
+Side = Germany (playable faction is GermanyCommandCenter).
+
+CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini last-wins the same
+GermanyCommandCenterCommandSet slots so the tunnel loader cannot restore
+Command_GermanyAWACS on slot 3.
+
+Generals.exe was not run. This pack does not claim an in-game test.

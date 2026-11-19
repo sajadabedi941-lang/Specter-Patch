@@ -1,0 +1,42 @@
+SPECTER _SPEC_DATA_ONE.big camera zoom replacement
+==================================================
+
+Original archive
+----------------
+size=373898957
+sha256=169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8
+entries=3551
+
+Rebuilt archive
+---------------
+size=373899151
+sha256=3698546acd83ff8d557362097b7afdfb8a6dc934098c6847fd7741cca7da1aaa
+entries=3552
+
+Comparison
+----------
+removed=(none)
+changed=Data\INI\GameData.ini
+  only line: MaxCameraHeight = 780  ->  MaxCameraHeight = 620.0
+  CameraHeight, MinCameraHeight, CameraPitch, CameraAdjustSpeed unchanged in that file
+  old_sha256=86e61e6824d4bf1f4843f6bcd83625a580ed89a5269995285456bd97702f6584
+  new_sha256=0e2f9f9031791f49ba1656f6d13e180009c1fb65aa52f89fb882ae9c93aff63d
+added=Data\INI\Object\ZZZZZZZZ_SPECTER_CameraZoom.ini
+  sha256=226a7b202aa7badf10a272359e2b38ccb95c55410be04538581f044c34fa9cc4
+  sets only MaxCameraHeight = 620.0
+identical_other_entries=3550
+
+Why the extra file is required
+------------------------------
+This game.dat keeps the first Data\INI\GameData.ini. INIZH.big is mounted
+before _SPEC_DATA_ONE.big, so the GameData.ini inside this archive is not the
+opened file. GameData init does not scan Data\INI\GameData\. It does scan
+Data\INI\Object for *.ini in local files and archives, after GameData.ini,
+with overwrite. The added object INI is the path that can change the live value.
+
+Runtime
+-------
+The loose Data\INI\GameData.ini fix was confirmed by the user in-game.
+This rebuilt BIG was not launched here.
+static_archive_validation=PASS
+runtime_game_test=NOT_RUN

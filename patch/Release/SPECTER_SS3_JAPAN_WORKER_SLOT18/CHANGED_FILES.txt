@@ -1,0 +1,43 @@
+SPECTER SS3 Japan_WorkerCommandSet slot-18 parse fix
+Drop Data/INI onto SPECTER FINAL (over Release 831).
+
+Changed files:
+  Data/INI/CommandSet.ini
+  Data/INI/CommandButton.ini   (full Release 830/831 file, unchanged)
+
+Japan_WorkerCommandSet illegal slots (commented, names preserved):
+  19 = Command_ConstructJapan_PowerStation     (Japan_PowerStation)
+  20 = Command_ConstructJapan_StrategyCenter   (Japan_StrategyCenter)
+  21 = Command_ConstructJapan_BootCamp         (Japan_BootCamp)
+  22 = Command_ConstructJapan_RadarGM406       (Japan_RadarGM406)
+  23 = Command_ConstructJapan_Mantis           (Japan_Mantis)
+  24 = Command_ConstructJapan_MilitaryHQ       (Japan_MilitaryHQ)
+
+Slots 1-18 unchanged. Each of those 18 CommandButtons has exactly 1
+definition in live CommandButton.ini.
+
+NOT edited in this pack (report only — still have tokens >18):
+  Japan_MilitaryHQCommandSet  19-22  AD_MD, AD_Patriot, AD_Type03, AD_AntiDrone
+  Japan_WarFactoryCommandSet  19-30  Leopard2A7Plus, VBCI, CentauroB2, Caesar,
+                                     CortaleMK3, IRIST, Type10, AD_SHORAD,
+                                     AD_SAM, AD_MD, AD_Patriot, AD_Type03
+
+Already legal / already fixed:
+  Japan_BarracksCommandSet          max 14
+  Japan_CommandCenterCommandSet     max 18 (19-22 already commented in 831)
+  Japan_VT72BCommandSet             max 15
+  Japan_SupplyCenterCommandSet      max 14
+  Japan_RadarStationCommandSet      max 14
+  Japan_AlAbbasCommandSet           max 14
+  Japan_MICCommandSet               max 16
+  Japan_MICCommandSet2              max 14
+  Japan_MICCommandSet3              max 14
+  Japan_AirfieldCommandSet          max 14
+  Japan_HeavyAirBaseCommandSet      max 14
+  Japan_MissileFactoryCommandSet    max 14
+  Japan_VehicleDozermCommandSet     max 18
+
+Japan_BarracksCommandSet, Japan_CommandCenterCommandSet, and other
+countries are unchanged.
+
+Generals.exe was not run. This pack does not claim an in-game test.

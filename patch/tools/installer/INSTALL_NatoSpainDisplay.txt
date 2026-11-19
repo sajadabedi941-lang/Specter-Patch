@@ -1,0 +1,60 @@
+SPECTER — Spanish Armed Forces name and flag (draft overlay)
+============================================================
+
+PR #685 is a draft and is NOT on main. GitHub Release specter-spec-art-data
+was built from main and does NOT contain this overlay. Installing that
+Release alone still shows NATO Armies with USA identity images.
+
+This 0_ BIG must sit beside generals.exe. Do not rename it to zz_.
+Do not put BIG files inside Data\ or Art\.
+
+Required files next to generals.exe
+-----------------------------------
+  0_SPECTER_NatoSpainDisplay.big   this PR overlay (Spain name/flags)
+  _SPEC_DATA_ONE.big               official SPEC DATA, 373898957 bytes
+  _SPEC_ART_ONE.big                textures, 2144972013 bytes
+  _SPEC_ART_TWO.big                W3D models, 307254782 bytes
+                                   US_Command.W3D exists only here
+
+SHA-256 (SPECTER_SPEC_ART_DATA.SHA256.txt, recalculated here):
+  _SPEC_ART_ONE.big   9dc4524ccb44881fcd0149957d2fcce1d378db1483e6c458df67e07c86a86aa8
+  _SPEC_ART_TWO.big   a5a20d959d2835f12a4bf5431e011c4d45047f24ea3d88841c2281fc0a6c19af
+  _SPEC_DATA_ONE.big  169d07b3365817abdf9c2140644a2bf4ac68a4e367a57b48dbc1b347fbeb1ae8
+
+This installer/launcher does not download archives. Put all four BIGs
+next to Install_SpecterPatch.bat (overlay + DATA_ONE + ART_ONE + ART_TWO).
+A leftover ART_TWO beside generals.exe does not replace a missing source.
+
+Verify_SpecterArchives.bat hashes each file with certutil SHA-256. If
+certutil is missing, install stops. Source is checked before any copy.
+Destination size and SHA-256 are checked after copy. Failure never prints
+SUCCESS. Overlay SHA-256:
+  a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d
+
+What the overlay first-wins
+---------------------------
+  Data\English\generals.csf
+      INI:FactionNatoForces / SIDE:Nato = Spanish Armed Forces
+  Data\INI\PlayerTemplate.ini
+      FactionNato only: WatermarkSpain, SSObserverSpain, GameinfoSpain, Spain_Logo
+      FactionAmerica unchanged
+  Art\Textures\ES_Flag.tga
+      Spanish flag for unique Spain mapped images
+  Art\Textures\NT_Flag.tga
+      Same Spanish flag pixels. NT__NTFlag_* building Flag_Hs W3Ds in
+      ART_TWO already sample this filename. The overlay does not pack
+      or rewrite those W3Ds.
+
+Black / magenta buildings
+-------------------------
+NATO Command Center is US_Command.W3D (ART_TWO only) plus US_BUILDINGS.dds
+and peer textures (ART_ONE). Missing ART_TWO omits the model. Missing or
+truncated ART_ONE leaves loaded W3Ds untextured (black/magenta). This
+overlay does not replace those files.
+
+Not included
+------------
+Missile cooldown / warhead changes (draft PR #684).
+No GitHub Release is produced with this overlay.
+
+Internal identifiers FactionNato and Side=Nato are unchanged.

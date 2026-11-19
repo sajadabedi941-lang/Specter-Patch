@@ -1,0 +1,51 @@
+SPECTER complete Data folder - camera zoom fix
+=============================================
+
+Baseline
+--------
+Source: loose Data folder in the accepted SPECTER snapshot
+(SPECTER FINAL (GeneralsMode.com)/Data inside the 59 RAR volumes).
+This is the Data directory that sits next to generals.exe.
+_SPEC_DATA_ONE.big was not unpacked into this folder and is not in the ZIP.
+
+baseline_files=129
+baseline_bytes=297531519
+
+Output
+------
+The output is that baseline plus the user-confirmed loose GameData.ini.
+
+produced_files=130
+produced_uncompressed_bytes=297552700
+zip_entries=130
+zip_bytes=297570582
+zip_sha256=dc6ef56049c2638f9456af9a176723c5e9a0d36a068f03617d0bbda75dfebd0a
+
+Comparison against the baseline
+-------------------------------
+added:
+  INI/GameData.ini
+removed:
+  (none)
+changed:
+  (none)
+
+Every other Data file is byte-identical to the snapshot.
+
+GameData.ini
+------------
+path=Data/INI/GameData.ini
+size=21181
+sha256=35b1ee7cbdd38949900d10e4fe9fe090f60db5f589cb86428032da0152c96fd4
+source=INIZH.big Data\INI\GameData.ini
+source_sha256=da7ab8448b91a04cedb6affe1f6acda28960b82e643b4e94f843df4e511319cd
+only_change=MaxCameraHeight = 620.0
+unchanged=CameraHeight = 232.0, MinCameraHeight = 120.0, CameraPitch = 37.5, CameraAdjustSpeed = 0.3
+
+The ZIP root contains the Data folder. It does not contain Art, INIZH.big,
+_SPEC_DATA_ONE.big, RAR volumes, or a BIG camera overlay.
+
+Runtime
+-------
+The user confirmed the loose GameData.ini camera fix in-game.
+This package was not launched in the Cursor environment.

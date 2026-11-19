@@ -1,0 +1,95 @@
+{
+  "overlay": "0_SPECTER_MissileCooldown.big",
+  "sha256": "fee7b8ebfa5199cbe0178f3c39aede200f383a27ec21308c38dbd035d7558ac6",
+  "bytes": 4540157,
+  "csf_bytes": 1507512,
+  "tooltips_updated": 250,
+  "heavy_blast_tooltips": [
+    {
+      "label": "CONTROLBAR:ToolTipBritainMissileJ",
+      "weapon": "Weapon_Britain_Trafalgar",
+      "blast_radius": "175.2"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipChinaMissileJ",
+      "weapon": "Weapon_China_DF5B",
+      "blast_radius": "175.2"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipFranceMissileJ",
+      "weapon": "Weapon_France_Gaulle",
+      "blast_radius": "185.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipGermanyMissileJ",
+      "weapon": "Weapon_Germany_Walkure",
+      "blast_radius": "183.2"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipIndiaMissileJ",
+      "weapon": "Weapon_India_Agni5",
+      "blast_radius": "207.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipIranMissileJ",
+      "weapon": "Weapon_Iran_Simorgh",
+      "blast_radius": "179.3"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipLibyaMissileI",
+      "weapon": "Weapon_Libya_Orouba",
+      "blast_radius": "191.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipLibyaMissileJ",
+      "weapon": "Weapon_Libya_GreatManMadeRiver",
+      "blast_radius": "217.2"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipNorthKoreaMissileI",
+      "weapon": "Weapon_NorthKorea_Hwasong15",
+      "blast_radius": "191.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipNorthKoreaMissileJ",
+      "weapon": "Weapon_NorthKorea_Hwasong17",
+      "blast_radius": "225.8"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipRussiaMissileJ",
+      "weapon": "Weapon_Russia_Voevoda",
+      "blast_radius": "185.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipSouthKoreaMissileJ",
+      "weapon": "Weapon_SouthKorea_Cheonwang",
+      "blast_radius": "179.3"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipSpainMissileJ",
+      "weapon": "Weapon_Spain_Iberia",
+      "blast_radius": "184.4"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipUAEMissileI",
+      "weapon": "Weapon_UAE_Qamar",
+      "blast_radius": "185.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipUAEMissileJ",
+      "weapon": "Weapon_UAE_AlWatan",
+      "blast_radius": "207.7"
+    },
+    {
+      "label": "CONTROLBAR:ToolTipUkraineMissileJ",
+      "weapon": "Weapon_Ukraine_Tryzub",
+      "blast_radius": "180.6"
+    }
+  ],
+  "notes": [
+    "Re-fire: 300 sec is the production-button display of DelayBetweenShots = 300000.",
+    "Blast radius is last-wins PrimaryDamageRadius for warheads above 4000 kg.",
+    "Warhead kg / Range km / Accuracy / Radar Stealth lines were already correct and were kept.",
+    "Iraq K/L extra missiles and the pay-to-rebuild string were not changed."
+  ]
+}

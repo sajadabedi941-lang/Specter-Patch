@@ -1,0 +1,20 @@
+SPECTER SS3 Japan_BarracksCommandSet single-definition hotfix
+Drop Data/INI onto SPECTER FINAL (over the previous Japan CommandSet pack).
+
+Changed files:
+  Data/INI/CommandSet_Japan.ini
+  Data/INI/CommandSet_ZZZZ_JapanSKVietnam_Capture.ini
+
+Japan_BarracksCommandSet is defined once, in live Data/INI/CommandSet.ini
+(rifleman, NLAW, AA, sniper, mechanized, EliteSAT, Sell). That file is not in this ZIP.
+
+CommandSet_Japan.ini no longer redefines Japan_BarracksCommandSet.
+Worker / War Factory / Military HQ / other Japan CommandSets in that file are unchanged.
+
+CommandSet_ZZZZ_JapanSKVietnam_Capture.ini no longer redefines Japan_BarracksCommandSet.
+SouthKorea_BarracksCommandSet, Vietnam_BarracksCommandSet, and
+Vietnam_RepublicanGuardCommandSet are unchanged.
+
+Japan_Barracks.ini / Japan_Camp.ini still reference Japan_BarracksCommandSet.
+
+Generals.exe was not run. This pack does not claim an in-game test.

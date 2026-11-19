@@ -1,0 +1,10 @@
+SPECTER SS3 Japan BarracksCommandSet name/parse hotfix
+Drop Data/INI onto SPECTER FINAL.
+
+Changed files:
+  Data/INI/CommandSet.ini
+  Data/INI/CommandButton_Japan_PhaseB.ini
+
+CommandSet Japan_BarracksCommandSet is the exact name (no backslash, no trailing space).
+Command_ConstructJapan_InfantryRifleman is registered on the early CommandButton_Japan_PhaseB.ini load.
+No Generals.exe test is claimed.

@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """SS2: add Turkey-style tunnel loaders to every other playable faction.
 
-Adds three unique-path INI members to SS2 _SPEC_DATA_ONE.big:
+Loose (MatchStart pattern, not packed into the DATA BIG):
 
-  Data\\INI\\CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
-  Data\\INI\\CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+  Data/INI/CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+  Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+
+Packed into _SPEC_DATA_ONE.big (ThingFactory Object glob only):
+
   Data\\INI\\Object\\zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
 
 CommandSet file last-wins the live CommandCenter CommandSet names.
-Object file is ThingFactory Object-glob only (loaders + tunnels, no CC stubs).
-
 Does not modify CommandSet.ini, CommandButton.ini, MatchStart, OCL,
 Turkey Dozer.ini, or Turkey PowerStation.ini.
 """
@@ -391,12 +392,14 @@ def main() -> int:
 
     cb_parts = [
         "; SPECTER SS2 tunnel-loader CommandButtons. Unique names only.",
-        "; Loads before every CommandSet* file (CommandButton < CommandSet).",
+        "; Loose Data\\INI\\CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini",
+        "; Same extra-file glob as CommandButton_ZZZZ_*.ini. Do not pack this into the DATA BIG.",
         "",
     ]
     cs_parts = [
         "; SPECTER SS2 tunnel-loader CommandSets.",
-        "; Last-wins live CommandCenter CommandSet names after MatchStart/ZZZZ files.",
+        "; Loose Data\\INI\\CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini",
+        "; Same extra-file glob / last-win as CommandSet_ZZZZ_CommandCenterMatchStart.ini.",
         "; Loader CommandSets are unique. Missile-factory CommandSets are not here.",
         "",
         "CommandSet SpecterSS2TunnelNetworkCommandSet",
@@ -597,13 +600,14 @@ def main() -> int:
     original = SRC_BIG.read_bytes()
     items = list(iter_big_members(original))
     orig_map = {name: blob for name, blob in items}
-    drop = {OLD_OBJ_MEMBER.replace("\\", "/").lower(), *(m.replace("\\", "/").lower() for m in (CB_MEMBER, CS_MEMBER, OBJ_MEMBER))}
+    drop = {
+        OLD_OBJ_MEMBER.replace("\\", "/").lower(),
+        CB_MEMBER.replace("\\", "/").lower(),
+        CS_MEMBER.replace("\\", "/").lower(),
+        OBJ_MEMBER.replace("\\", "/").lower(),
+    }
     items = [(n, b) for n, b in items if n.replace("\\", "/").lower() not in drop]
-    new_items = items + [
-        (CB_MEMBER, crlf(cb_text)),
-        (CS_MEMBER, crlf(cs_text)),
-        (OBJ_MEMBER, crlf(obj_text)),
-    ]
+    new_items = items + [(OBJ_MEMBER, crlf(obj_text))]
     packed = build_big_ordered(new_items)
     out_big = OUT_DIR / "_SPEC_DATA_ONE.big"
     out_big.write_bytes(packed)
@@ -613,17 +617,25 @@ def main() -> int:
         if name in orig_map:
             if packed_map.get(name) != orig_map[name]:
                 raise SystemExit(f"forbidden member mutated: {name}")
-    for member, blob in (
-        (CB_MEMBER, crlf(cb_text)),
-        (CS_MEMBER, crlf(cs_text)),
-        (OBJ_MEMBER, crlf(obj_text)),
-    ):
-        if packed_map.get(member) != blob:
-            raise SystemExit(f"packed member mismatch {member}")
-    if len(packed_map) != len(items) + 3:
-        raise SystemExit(f"unexpected member count {len(packed_map)} vs {len(items)+3}")
+    if packed_map.get(OBJ_MEMBER) != crlf(obj_text):
+        raise SystemExit("packed Object member mismatch")
+    if CB_MEMBER in packed_map or CS_MEMBER in packed_map:
+        raise SystemExit("CommandSet/CommandButton extra files must stay Loose, not packed")
+    if len(packed_map) != len(items) + 1:
+        raise SystemExit(f"unexpected member count {len(packed_map)} vs {len(items)+1}")
     if OLD_OBJ_MEMBER in packed_map:
         raise SystemExit("old non-Object-glob overlay is still packed")
+
+    loose_dir = OUT_DIR / "Data" / "INI"
+    loose_dir.mkdir(parents=True, exist_ok=True)
+    loose_cb = loose_dir / "CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+    loose_cs = loose_dir / "CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini"
+    loose_cb.write_bytes(crlf(cb_text))
+    loose_cs.write_bytes(crlf(cs_text))
+    if (ROOT / "Data/INI/CommandSet.ini").read_bytes() == crlf(cs_text):
+        raise SystemExit("refused to replace CommandSet.ini")
+    if (ROOT / "Data/INI/CommandButton.ini").read_bytes() == crlf(cb_text):
+        raise SystemExit("refused to replace CommandButton.ini")
 
     # Reference check inside generated files.
     defined_buttons = set(parse_blocks(cb_text, "CommandButton")) | existing["CommandButton"] | reserved_buttons
@@ -675,21 +687,47 @@ def main() -> int:
         raise SystemExit("GLA worker button dropped")
 
     zip_path = OUT_DIR / "SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip"
+    zip_names = [
+        "_SPEC_DATA_ONE.big",
+        "Data/INI/CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini",
+        "Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini",
+    ]
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_STORED) as zf:
-        zf.write(out_big, "_SPEC_DATA_ONE.big")
+        zf.write(out_big, zip_names[0])
+        zf.write(loose_cb, zip_names[1])
+        zf.write(loose_cs, zip_names[2])
         names = zf.namelist()
-        if names != ["_SPEC_DATA_ONE.big"]:
+        if names != zip_names:
             raise SystemExit(f"ZIP contents {names}")
+
+    big_sha = sha256(out_big)
+    cb_sha = sha256(loose_cb)
+    cs_sha = sha256(loose_cs)
+    zip_sha = sha256(zip_path)
+    (OUT_DIR / "_SPEC_DATA_ONE.big.sha256").write_text(f"{big_sha}  _SPEC_DATA_ONE.big\n", encoding="ascii")
+    (OUT_DIR / "CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini.sha256").write_text(
+        f"{cb_sha}  CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini\n", encoding="ascii"
+    )
+    (OUT_DIR / "CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini.sha256").write_text(
+        f"{cs_sha}  CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini\n", encoding="ascii"
+    )
+    (OUT_DIR / "SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip.sha256").write_text(
+        f"{zip_sha}  SPECTER_SS2_TUNNEL_LOADER_ALL_FACTIONS.zip\n", encoding="ascii"
+    )
 
     report = []
     report.append("SS2 tunnel loader transfer")
     report.append(f"base BIG: {SRC_BIG}")
     report.append(f"out BIG:  {out_big}  {out_big.stat().st_size}")
-    report.append(f"SHA-256 BIG: {sha256(out_big)}")
-    report.append(f"SHA-256 ZIP: {sha256(zip_path)}")
+    report.append(f"SHA-256 BIG: {big_sha}")
+    report.append(f"SHA-256 CommandButton loose: {cb_sha}")
+    report.append(f"SHA-256 CommandSet loose: {cs_sha}")
+    report.append(f"SHA-256 ZIP: {zip_sha}")
     report.append(f"ZIP: {zip_path}  {zip_path.stat().st_size}")
+    report.append("ZIP members: " + ", ".join(zip_names))
     report.append("")
-    report.append("Fix: last-win live CommandSet names; Object-glob loaders/tunnels; no CC stubs.")
+    report.append("Loose extra CommandSet/CommandButton last-win; Object-glob loaders/tunnels in DATA BIG.")
+    report.append("CommandSet.ini / CommandButton.ini were not edited.")
     report.append("In-game test was not run.")
     report.append("")
     report.append(f"{'Side':24s} {'CC':32s} {'live CS last-won':42s} {'slot':4s} {'slot1 kept':40s} loader / tunnel")

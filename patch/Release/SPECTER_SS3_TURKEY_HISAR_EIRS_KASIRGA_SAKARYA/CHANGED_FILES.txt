@@ -1,0 +1,52 @@
+SPECTER SS3 Turkey HISAR-O / EIRS / TRG-300 Kasirga / T-122 Sakarya
+Drop onto SPECTER FINAL (over Release 835). Only TurkeyCommandCenterCommandSet
+slots 2, 5, 6, 7 are edited.
+
+Live Command Center bar:
+  1  Command_ConstructTurkeyVehicleDozer          unchanged
+  2  Turkey_Command_ConstructTurkeyHisarO        HISAR-O (new)
+  3  Command_ConstructTurkeyTankPumaMech         unchanged
+  4  Command_ConstructTurkeyVehicleDozerm        unchanged
+  5  Turkey_Command_ConstructTurkeyEIRS           EIRS (replaces Command_TurkeyAWACS
+                                                 on this bar only; Strategy Center
+                                                 slot 2 still has AWACS shortcut)
+  6  Turkey_Command_ConstructTurkeyT300          TRG-300 Kasirga (new)
+  7  Turkey_Command_ConstructTurkeyT122          T-122 Sakarya (new)
+  8  empty                                       unchanged
+ 14  Command_Sell                                unchanged
+ 15-17 drones                                    unchanged
+
+CommandButton.ini was NOT edited. All four buttons already exist once in the
+live ControlBar file (Release 830-835):
+  Turkey_Command_ConstructTurkeyHisarO  -> TurkeyHisarO
+  Turkey_Command_ConstructTurkeyEIRS    -> TurkeyEIRS
+  Turkey_Command_ConstructTurkeyT300    -> TurkeyT300
+  Turkey_Command_ConstructTurkeyT122    -> TurkeyT122
+
+Sources (existing project files, not invented):
+  HISAR-O  Object TurkeyHisarO
+    patch/Data/INI/Object/Specter/Turkey Armed Forces/AirDefense/TurkeyHisarO.ini
+    V25 model HISARO.W3D, cameo HisarOTB.tga
+    Weapon PatriotMissileWeaponAir (live Weapon.ini)
+    Independent of Turkey_HISAR_O / Command_ConstructTurkeyVehicleHisar
+  EIRS     Object TurkeyEIRS
+    .../AirDefense/TurkeyEIRS.ini
+    V25 model TRT122.W3D, cameo EIRSTB.tga
+    Weapon NONE (radar)
+  Kasirga  Object TurkeyT300
+    .../Artillery/TurkeyT300.ini
+    V25 model TRT300.W3D, cameo T300TB.tga
+    Weapon TomahawkMissileWeapon (live Weapon.ini)
+    Independent of Turkey_TRG300 / Command_ConstructTurkeyVehicleKasirga
+  Sakarya  Object TurkeyT122
+    .../Artillery/TurkeyT122.ini
+    V25 model IRHM20.W3D, cameo T122TB.tga
+    Weapon 122mm_M21OF_Grad_Salvo (live Weapon.ini)
+
+MappedImages: Data/INI/MappedImages/HandCreated/Turkey_V25_AD_Images.ini
+  HisarOTB, EIRSTB, T300TB, T122TB
+
+Not edited: other Turkey CommandSets, other countries, slots other than 2/5/6/7,
+CommandButton.ini. Max active slot on this bar is 17.
+
+Generals.exe was not run. This pack does not claim an in-game test.

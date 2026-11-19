@@ -1,0 +1,63 @@
+SPECTER SS3 Sweden Command Center — V25 transfer (7 systems)
+Drop onto SPECTER FINAL (over Release 838 Germany). Only
+SwedenCommandCenterCommandSet slots 3, 5, 6, 7, 8, 9, 10 are edited.
+Slots 11 and 12 are not written (remain empty). All other Sweden CC
+slots and all other countries/CommandSets unchanged.
+
+Live CommandCenter: SwedenCommandCenter + SwedenCommandCenterCommandSet
+(overlay Sweden_CommandCenter / Sweden_CommandCenterCommandSet is not live).
+
+Occupied-slot report (before this pack):
+  1  Command_ConstructSwedenVehicleDozer      unchanged
+  2  Command_ConstructSwedenTankPumaMech      unchanged
+  3  Command_SwedenAWACS                      OCCUPIED — replaced by
+                                               Command_ConstructSwedenM5359AAB
+                                               Shortcut Command_SwedenAWACSFromShortcut
+                                               is not edited.
+  4  Command_ConstructSwedenVehicleDozerm     unchanged
+  5  empty                                    Command_ConstructSwedenUran9
+  6  empty                                    Command_ConstructSwedenIglaUltra
+  7  empty                                    Command_ConstructSwedenRubezhME
+  8  empty                                    Command_ConstructSwedenMAARS
+  9  empty                                    Command_ConstructSwedenArcher
+  10 empty                                    Command_ConstructSwedenRBS15KA
+  11 empty                                    UNCHANGED (empty)
+  12 empty                                    UNCHANGED (empty)
+ 14  Command_Sell                             unchanged
+ 15-17 drones                                 unchanged
+Highest active slot = 17 (cap 18).
+
+Sources (V25, not invented):
+  Slot 3  SwedenM5359AAB    <- SerbiaM59Praga (only V25 M53/59 AA; model SRM53PRG)
+          Sweden BossGeneral has no M53/59 object. Cameo SRM59TB.
+          Weapons 30mm_2A38M / 30mm_2A38M_Air (live; TGSKG/TGSKAIR not on SS3)
+  Slot 5  SwedenUran9       <- PRMUran9 (V25 DisplayName Premium_Uran-9)
+          models SDURAN9 + SDURAN9w, cameo Uran9TB. Unique vs PRMUran9.
+          Weapons 30mm_2A38M / HellfireMissileWeapon / 9K38_Igla (live)
+  Slot 6  SwedenIglaUltra   <- PRMIGLAULTRA (Premium_IGLA-ULTRA / M113A2 Igla)
+          model IGLAULTRA, cameo IGLAULTRATB. Weapon 9K38_Igla (live;
+          CWC IglaMissile is not on SS3)
+  Slot 7  SwedenRubezhME    <- PRMRubezME (Premium_Rubez-ME)
+          model PRRubezM, cameo RubezMETB. Weapon TomahawkMissileWeapon
+          (live; V25 RubezMEMISSILEWEAPON not on SS3). LSFIskanderl
+          brake-light draw dropped (CWC particles).
+  Slot 8  SwedenMAARS       <- PRMMAARS (Premium_MAARS)
+          models SDMAARS + SDMAARSw, cameo MAARSTB. Unique vs PRMMAARS.
+          PRIMARY TechnicalMachineGunWeapon (live).
+          SECONDARY RangerFlashBangGrenadeWeapon (live; V25
+          MAARSGrenadeLauncherWeapon is not on SS3)
+  Slot 9  SwedenArcher      <- Boss_VehicleTomahawk (Side=Sweden, model SWArcher)
+          Unique vs UkraineArcher and SS3 Boss_VehicleTomahawk.
+          Weapon PaladinTankGun (live; same SS3 mapping as UkraineArcher)
+  Slot 10 SwedenRBS15KA     <- SwedenRBS15KA
+          model SW15KA, cameo RBS15KATB.
+          CWC RiderChangeContain dropped; DeployStyleAIUpdate.
+          Weapon TomahawkMissileWeapon (live; RBS15KAMISSILEWEAPON not on SS3)
+
+CommandButton.ini: seven unique UNIT_BUILD buttons appended. No duplicates.
+
+MappedImages: Data/INI/MappedImages/HandCreated/Sweden_V25_CC7_Images.ini
+
+Side = Sweden. Overlay Sweden army-kit files are not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

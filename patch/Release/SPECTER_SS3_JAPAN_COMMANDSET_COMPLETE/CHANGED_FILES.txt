@@ -1,0 +1,11 @@
+SPECTER SS3 Japan CommandSet complete fix
+Drop Data/INI onto SPECTER FINAL (over ss3.zip).
+Do not claim Generals.exe was tested; in-game verification is for the user.
+
+Changed files:
+  Data/INI/CommandButton_Japan_PhaseB.ini  (14120 bytes)
+  Data/INI/CommandSet.ini  (462620 bytes)
+  Data/INI/CommandSet_Japan.ini  (6040 bytes)
+  Data/INI/CommandSet_ZZZZ_JapanSKVietnam_Capture.ini  (1866 bytes)
+  Data/INI/CommandSet_ZZZZ_WarFactoryRebuild.ini  (33555 bytes)
+  Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini  (15540 bytes)

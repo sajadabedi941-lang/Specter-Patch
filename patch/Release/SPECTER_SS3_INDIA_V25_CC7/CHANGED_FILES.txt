@@ -1,0 +1,63 @@
+SPECTER SS3 India Command Center — V25 transfer (7 systems)
+Drop onto SPECTER FINAL (over Release 839 Sweden). Only
+India_CommandCenterCommandSet slots 2, 3, 5, 6, 7, 8, 9 are edited.
+Slot 10 is not written (remains empty). All other India CC slots
+and all other countries/CommandSets unchanged.
+
+Live CommandCenter: India_CommandCenter + India_CommandCenterCommandSet
+(overlay CommandSet_India.ini is not the live bar; tunnel last-wins is).
+
+Occupied-slot report (before this pack):
+  1  Command_ConstructIndia_Worker          unchanged
+  2  Command_ConstructIndia_VT72B           OCCUPIED — replaced by
+                                             Command_ConstructIndiaPrahaar
+                                             Object India_VT72B is not deleted.
+  3  empty                                  Command_ConstructIndia9K33
+  4  Command_ConstructIndia_VehicleDozerm   unchanged
+  5  empty                                  Command_ConstructIndiaSpyder
+  6  empty                                  Command_ConstructIndia1S91
+  7  empty                                  Command_ConstructIndiaTunguska
+  8  empty                                  Command_ConstructIndiaSAM6
+  9  empty                                  Command_ConstructIndiaBrahamus
+                                             (V25 Object IndiaBrahamus = Nirbhay)
+  10 empty                                  UNCHANGED (empty — required)
+  11 empty                                  UNCHANGED (empty)
+  12 Command_ConstructIndia_IL-76           unchanged
+  13 Command_SetRallyPoint                  unchanged
+  14 Command_Sell                           unchanged
+  15 Command_ConstructIndia_Alhussaien      unchanged
+Highest active slot = 15 (cap 18).
+
+Sources (V25, not invented):
+  Slot 2  IndiaPrahaar     <- IndiaPrahaar (StealthGeneral.ini), model INPRHRL,
+          cameo PrahaarTB. CWC RiderChangeContain / CWCruS300* /
+          PrahaarMissileWeapon replaced with live TomahawkMissileWeapon
+          + DeployStyleAIUpdate.
+  Slot 3  India9K33        <- India9K33, model IN9K33, cameo IN9K33TB.
+          StrellaMissileLauncher / CWCruSA11Locomotor replaced with live
+          StingerMissileWeaponAir + CrusaderLocomotor.
+  Slot 5  IndiaSpyder      <- IndiaSpyder, model SDAMCGR, cameo SpyderTB.
+          Independent from IsraelSpyderAIO. SpyderLauncher replaced with
+          live PatriotMissileWeaponAir. Packing kept.
+  Slot 6  India1S91        <- India has no native V25 1S91 Object.
+          Donor V25 FEIHU / dual-draw SDEgyRadar + SDSAM6Hull, cameo
+          India1S91TB -> SDYLC.tga. Independent from Iraq1S91.
+          CWC PDL / TransportAI / brake lights dropped.
+  Slot 7  IndiaTunguska    <- V25 India donor Slth_GLAVehicleQuadCannon,
+          models INTGSK + INTGSKw, cameo TGSKTB. Unique vs GLA QuadCannon.
+          CWC TGSKG/TGSKAIR/TGSK replaced with live 23mm_2A7_AZP23 /
+          23mm_2A7_AZP23_Air / PatriotMissileWeaponAir.
+  Slot 8  IndiaSAM6        <- V25 India has no native 2K12 Object.
+          Donor EgyptAntiAirSA6 art SDSAM6 + SDSAM6w, cameo IndiaSAM6TB
+          -> egyptsam6.tga. Independent from Iraq2K12 / Turkey_HISAR_O.
+          CWC SDIRA6MissileWeapon replaced with PatriotMissileWeaponAir.
+  Slot 9  IndiaBrahamus    <- V25 Object IndiaBrahamus (DisplayName
+          India_Nirbhay), model INNirbhay, cameo NirbhayTB.
+          CWC RiderChangeContain / NirbhayMissileweapon replaced with
+          live TomahawkMissileWeapon + DeployStyleAIUpdate.
+
+CommandButton.ini: seven unique UNIT_BUILD buttons. No duplicates.
+MappedImages: Data/INI/MappedImages/HandCreated/India_V25_AD_Images.ini
+Side = India. Overlay CommandSet_India.ini is not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

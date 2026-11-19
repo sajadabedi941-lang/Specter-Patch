@@ -1,0 +1,37 @@
+SPECTER SS3 Pakistan Command Center — V25 transfer (3 systems)
+Drop onto SPECTER FINAL (over Release 840 India). Only
+Pakistan_CommandCenterCommandSet slots 2, 3, 5 are edited.
+Slots 1, 4, and 6+ are unchanged.
+
+Live CommandCenter: Pakistan_CommandCenter + Pakistan_CommandCenterCommandSet
+(overlay CommandSet_Pakistan.ini is not the live bar; tunnel last-wins is).
+
+Occupied-slot report (before this pack):
+  1  Command_ConstructPakistan_Worker         unchanged
+  2  Command_ConstructPakistan_VT72B          OCCUPIED — replaced by
+                                               Command_ConstructPakistanHT233
+                                               Object Pakistan_VT72B is not deleted.
+  3  empty                                    Command_ConstructPakistanHQ9
+  4  Command_ConstructPakistan_VehicleDozerm  unchanged
+  5  empty                                    Command_ConstructPakistanHQ7B
+  6+ empty / IL-76 / Rally / Sell / Alhussaien unchanged
+Highest active slot = 15 (cap 18).
+
+Sources (V25, not invented):
+  Slot 2  PakistanHT233   <- PAKRadarVan (DemoGeneral.ini), model SDHT233,
+          cameo ZZM88. Unique vs PAKRadarVan. PRIMARY NONE.
+          CWC PDL / TransportAI / propaganda / CWCruUralLocomotor dropped.
+          Locomotor Generic8x8Locomotor (live).
+  Slot 3  PakistanHQ9     <- PakistanHQ9, model SDPKHQ9, cameo HQ9TB.
+          CWC RiderChangeContain / S300PMU / CWCruS300* replaced with
+          live PatriotMissileWeaponAir + DeployStyleAIUpdate.
+  Slot 5  PakistanHQ7B    <- Demo_GLAVehicleRadarVan (Side=Pakistan),
+          model PKHQ7, cameo PKHQ7TB. Unique vs GLA RadarVan.
+          XiangWeiSheSAM replaced with PatriotMissileWeaponAir.
+          AvengerLocomotor is live on SS3 and kept.
+
+CommandButton.ini: three unique UNIT_BUILD buttons. No duplicates.
+MappedImages: Data/INI/MappedImages/HandCreated/Pakistan_V25_CC3_Images.ini
+Side = Pakistan. Overlay CommandSet_Pakistan.ini is not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

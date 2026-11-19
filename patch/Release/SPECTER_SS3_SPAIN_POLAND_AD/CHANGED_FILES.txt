@@ -1,0 +1,47 @@
+SPECTER SS3 Spain Command Center — Poland V25 transfer
+Drop onto SPECTER FINAL (over Release 836). Only NatoCommandCenterCommandSet
+slots 3, 5, 6, 7 are edited. Slot 8 and all other Spain/NATO slots unchanged.
+Poland.ini and Poland CommandSets are not edited.
+
+Occupied-slot report (before this pack):
+  1  Command_ConstructNatoVehicleDozer          unchanged
+  2  Command_ConstructNatoTankPumaMech          unchanged
+  3  Command_NatoAWACS                          OCCUPIED — replaced by
+                                                 Command_ConstructSpainNewaSC
+                                                 (user-assigned slot 3).
+                                                 Shortcut Command_NatoAWACSFromShortcut
+                                                 remains on SpecialPowerShortcutNatoCommandSet
+                                                 slot 2.
+  4  Command_ConstructNatoVehicleDozerm         unchanged
+  5  empty                                      Command_ConstructSpainLiwiec (new)
+  6  empty                                      Command_ConstructSpainShilkaBiala (new)
+  7  empty                                      Command_ConstructSpainStrela10 (new)
+  8  empty                                      unchanged
+ 14  Command_Sell                               unchanged
+ 15-17 drones                                   unchanged
+
+Sources (V25 Poland.ini, not invented):
+  Slot 3  SpainNewaSC       <- PolandNewaSC
+          models NewaSC + NewaSCw, cameo PLNewaTB
+          Weapon Ukraine_Weapon_SAM (live; CWC NewaSCMissileWeapon not on SS3)
+  Slot 5  SpainLiwiec       <- PolandLiwiec
+          model PLLiwiec, cameo PLLIWCTB
+          Weapon PRIMARY NONE (radar)
+  Slot 6  SpainShilkaBiala  <- PolandShilka
+          models PLZSU23 + PLZSU23w, cameo PLZSU23TB
+          Weapons 23mm_2A7_AZP23 / 23mm_2A7_AZP23_Air (live)
+          Igla tertiary dropped (IglaMissile not on live SS3)
+  Slot 7  SpainStrela10     <- PolandSA13 (9K35 Strela-10 / MT-LB)
+          models PLMTLB + PLMTLBw, cameo PLSA13TB
+          Weapon PatriotMissileWeaponAir (live; CWC EG9K31MissileLauncher not on SS3)
+
+CommandButton.ini: four unique UNIT_BUILD buttons appended to the live
+ControlBar file (Release 835). No duplicates.
+
+MappedImages: Data/INI/MappedImages/HandCreated/Spain_V25_AD_Images.ini
+  PLNewaTB, PLLIWCTB, PLZSU23TB, PLSA13TB
+
+Side = Nato (playable Spain faction is NatoCommandCenter). Object names
+are Spain*. Poland CommandSets / equipment / structure unchanged.
+
+Generals.exe was not run. This pack does not claim an in-game test.

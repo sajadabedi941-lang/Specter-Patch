@@ -1,0 +1,59 @@
+SPECTER SS3 Japan_BarracksCommandSet CommandButton registration
+Drop Data/INI onto SPECTER FINAL (over Release 828 / previous Japan CommandSet packs).
+
+Changed files:
+  Data/INI/CommandButton.ini
+
+CommandSet.ini is NOT in this ZIP. Japan_BarracksCommandSet stays as-is:
+
+  CommandSet Japan_BarracksCommandSet
+    1 = Command_ConstructJapan_InfantryRifleman
+    2 = Command_ConstructJapan_InfantryNlawOperator
+    3 = Command_ConstructJapan_InfantryAntiAirOperator
+    4 = Command_ConstructJapan_InfantryHeavySniper
+    5 = Command_ConstructJapan_InfantryMechanized
+    6 = Command_ConstructJapan_EliteSAT
+    14 = Command_Sell
+  End
+
+Why this file:
+  ControlBar loads Data\INI\CommandButton.ini, then Data\INI\CommandSet.ini.
+  Sibling CommandButton_*.ini files (including CommandButton_Japan_PhaseB.ini)
+  are not on that path, so Release 827 did not stop the parse crash.
+
+Each CommandButton is defined once in this CommandButton.ini. Prefix of the
+live SS3 CommandButton.ini is unchanged; only the six Japan barracks buttons
+are appended.
+
+Dependency check (static):
+  Command_ConstructJapan_InfantryRifleman
+    Object Japan_InfantryRifleman
+      patch/Data/INI/Object/Specter/Japan Self-Defense Forces/Infantry/Japan_Rifleman_G36.ini
+    ButtonImage us_rifleman (stock ZH; America Ranger uses the same name)
+    UnitSpecificSound: none in source defs
+  Command_ConstructJapan_InfantryNlawOperator
+    Object Japan_InfantryNlawOperator
+      .../Infantry/Japan_ATGM_Team.ini
+    ButtonImage SACRaptor (source FactionExpansion / Japan_PhaseB)
+  Command_ConstructJapan_InfantryAntiAirOperator
+    Object Japan_InfantryAntiAirOperator
+      .../Infantry/Japan_AntiAirOperator.ini
+    ButtonImage SACRaptor
+  Command_ConstructJapan_InfantryHeavySniper
+    Object Japan_InfantryHeavySniper
+      .../Infantry/Japan_HeavySniper.ini
+    ButtonImage SACRaptor
+  Command_ConstructJapan_InfantryMechanized
+    Object Japan_InfantryMechanized
+      .../Infantry/Japan_Mechanized.ini
+    ButtonImage SACRaptor
+  Command_ConstructJapan_EliteSAT
+    Object Japan_EliteSAT
+      .../Infantry/Japan_EliteSAT.ini
+    ButtonImage SAAdvancedTraining (source CommandButton_PhaseF_Systems.ini)
+  Command_Sell
+    already present in live CommandButton.ini (1 definition)
+
+Other countries: not edited. Japan CommandSet slots: not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

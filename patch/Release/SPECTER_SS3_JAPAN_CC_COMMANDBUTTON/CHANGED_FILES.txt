@@ -1,0 +1,29 @@
+SPECTER SS3 Japan_CommandCenterCommandSet CommandButton registration
+Drop Data/INI onto SPECTER FINAL (over the Japan barracks CommandButton pack).
+
+Changed files:
+  Data/INI/CommandButton.ini
+
+CommandSet.ini is NOT in this ZIP. Japan_CommandCenterCommandSet stays as-is
+(slots 1-22, same order and names).
+
+Missing buttons now registered once in live CommandButton.ini:
+  Command_ConstructJapan_VehicleDozer     -> Japan_VehicleDozer
+  Command_ConstructJapan_TankPuma         -> Japan_TankPuma
+  Command_ConstructJapan_E3A              -> Japan_E3A
+  Command_ConstructJapan_AD_SHORAD        -> Japan_AD_SHORAD
+  Command_ConstructJapan_AD_SAM           -> Japan_AD_SAM
+  Command_ConstructJapan_AD_MD            -> Japan_AD_MD
+  Command_ConstructJapan_AD_Patriot       -> Japan_AD_Patriot
+  Command_ConstructJapan_AD_Type03        -> Japan_AD_Type03
+  Command_ConstructJapan_AD_AntiDrone     -> Japan_AD_AntiDrone
+
+Slots already present in live CommandButton.ini (unchanged):
+  1 VT72B, 2 Type03, 3 Type11, 4 VehicleDozerm, 5 Patriot,
+  6 ANMPQ53, 7 Type88, 8 Type81, 9 Type87, 10 Howk,
+  13 SetRallyPoint, 14 Sell, 16 VehicleRadar
+
+Japan barracks CommandButtons from the previous pack are kept (one definition each).
+Other countries: not edited. Japan_BarracksCommandSet: not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

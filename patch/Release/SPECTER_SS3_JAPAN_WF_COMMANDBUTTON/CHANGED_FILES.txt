@@ -1,0 +1,45 @@
+SPECTER SS3 Japan_WarFactoryCommandSet CommandButton registration
+Drop Data/INI onto SPECTER FINAL (over Release 834).
+
+Changed files:
+  Data/INI/CommandButton.ini
+  Data/INI/CommandSet.ini   (byte-identical to Release 834, not edited)
+
+Missing buttons now registered once in live CommandButton.ini:
+  Command_ConstructJapan_Type12TEL     -> Japan_Type12TEL
+    Object: Data/INI/Object/Specter/Japan Self-Defense Forces/Wheeled/Japan_Type12TEL.ini
+  Command_ConstructJapan_CombatDrone   -> Japan_CombatDrone
+    Object: Data/INI/Object/Specter/Japan Self-Defense Forces/Drones/Japan_CombatDrone.ini
+
+Source defs: CommandButton_Japan_PhaseB.ini (all original fields, unchanged).
+Each name has exactly 1 definition in live CommandButton.ini. No duplicates.
+
+Japan_WarFactoryCommandSet slots 1-18 vs live CommandButton.ini:
+   1 Command_ConstructJapanTankType10          defs=1  JapanTankType10
+   2 Command_ConstructJapanTankType90          defs=1  JapanTankType90
+   3 Command_ConstructJapanVehicleType16       defs=1  JapanVehicleType16
+   4 Command_ConstructJapanVehicleType89       defs=1  JapanVehicleType89
+   5 Command_ConstructJapanVehicleType96       defs=1  JapanVehicleType96
+   6 Command_ConstructJapanVehicleType87       defs=1  JapanVehicleType87
+   7 Command_ConstructJapanVehicleChuSAM       defs=1  JapanVehicleChuSAM
+   8 Command_ConstructJapanVehicleRadar        defs=1  JapanVehicleRadar
+   9 Command_ConstructJapanVehicleM270         defs=1  JapanVehicleM270
+  10 Command_ConstructJapanVehicleType12       defs=1  JapanVehicleType12
+  11 Command_ConstructJapanVehicleType99       defs=1  JapanVehicleType99
+  12 Command_ConstructJapanVehicleType16AT     defs=1  JapanVehicleType16AT
+  13 Command_ConstructJapanVehicleType11ARV    defs=1  JapanVehicleType11ARV
+  14 Command_Sell                              defs=1  (no Object)
+  15 Command_ConstructJapanVehicleType12Btry   defs=1  JapanVehicleType12Btry
+  16 Command_ConstructJapan_TankPuma           defs=1  Japan_TankPuma
+  17 Command_ConstructJapan_Type12TEL          defs=1  Japan_Type12TEL   (this pack)
+  18 Command_ConstructJapan_CombatDrone        defs=1  Japan_CombatDrone (this pack)
+
+Slots 19-30 remain commented (Release 834). Not restored.
+
+Preserved from earlier packs (defs=1 each):
+  six barracks infantry/elite buttons
+  Command Center extras (VehicleDozer, TankPuma, E3A, AD_SHORAD/SAM/MD/Patriot/Type03/AntiDrone)
+
+Other CommandSets and other countries: not edited.
+
+Generals.exe was not run. This pack does not claim an in-game test.

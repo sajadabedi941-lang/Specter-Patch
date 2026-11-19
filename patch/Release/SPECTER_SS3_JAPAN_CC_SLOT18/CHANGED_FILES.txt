@@ -1,0 +1,39 @@
+SPECTER SS3 Japan_CommandCenterCommandSet slot-18 parse fix
+Drop Data/INI onto SPECTER FINAL (over Release 830).
+
+Changed files:
+  Data/INI/CommandSet.ini
+  Data/INI/CommandButton.ini   (full Release 830 file, unchanged content)
+
+AUDIT (Release 830 CommandButton.ini vs 829):
+  830 is a byte-prefix of 829 plus nine CC buttons. No barracks defs removed.
+  6 barracks CommandButtons: exactly 1 definition each.
+  9 CC CommandButtons added in 830: exactly 1 definition each.
+  All 22 names referenced by Japan_CommandCenterCommandSet: exactly 1 definition each.
+  PhaseB field transfer: MATCH for all nine CC buttons.
+  CommandButton walk: no missing End / nested blocks.
+  Objects for the nine CC UNIT_BUILD buttons: present in SS3 Object INIs.
+
+REAL CAUSE:
+  All CommandButtons were valid. SAGE Zero Hour CommandSet field table is
+  tokens "1".."18" only (MAX_COMMANDS_PER_SET = 18).
+  Japan_CommandCenterCommandSet was the first set in live CommandSet.ini
+  to use tokens 19-22. Unknown field "19" throws INI_INVALID_DATA, which
+  SAGE reports as the block header:
+    CommandSet Japan_CommandCenterCommandSet
+
+FIX:
+  Slots 1-18 unchanged (same names, same order).
+  Slots 19-22 commented in this CommandSet only.
+  CommandButtons for AD_MD / AD_Patriot / AD_Type03 / AD_AntiDrone stay
+  registered in CommandButton.ini. Not deleted.
+
+  Japan_BarracksCommandSet: unchanged.
+  Other Japan CommandSets: unchanged.
+  Other countries: unchanged.
+
+NOTE (not changed in this pack):
+  Japan_WorkerCommandSet and Japan_WarFactoryCommandSet still contain
+  tokens 19+. They parse after this block. This pack does not edit them.
+
+Generals.exe was not run. This pack does not claim an in-game test.

@@ -1,0 +1,34 @@
+Art/Textures/ANMPQ53TB.tga
+Art/Textures/GRNPIN01.dds
+Art/Textures/GRNPIN02.dds
+Art/Textures/GreenPinTB.tga
+Art/Textures/IDFIRDM1.dds
+Art/Textures/IDFIRDM2.dds
+Art/Textures/IDFSPDRB.dds
+Art/Textures/IDFSPDRL.dds
+Art/Textures/IDFSPDRR.dds
+Art/Textures/IDFSPDRT.dds
+Art/Textures/ISARWTB.tga
+Art/Textures/ISLORA01.dds
+Art/Textures/ISLORA02.dds
+Art/Textures/ISPAC2TB.tga
+Art/Textures/ISSPYDRTB.tga
+Art/Textures/LORATB.tga
+Art/Textures/SDMIMP2L.dds
+Art/Textures/SDMIMP2R.dds
+Art/Textures/SDMIMP2T.dds
+Art/W3D/IDFARROW.W3D
+Art/W3D/IDFGRNPIN.W3D
+Art/W3D/IDFLORA.W3D
+Art/W3D/SDMIMP2.W3D
+Art/W3D/SDMIMP2R.W3D
+Art/W3D/SpyderAIO.W3D
+Data/INI/CommandSet.ini
+Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+Data/INI/MappedImages/HandCreated/Israel_V25_AD_Images.ini
+Data/INI/Object/Specter/Israel Defense Forces/AirDefense/IsraelANMPQ53.ini
+Data/INI/Object/Specter/Israel Defense Forces/AirDefense/IsraelArrow.ini
+Data/INI/Object/Specter/Israel Defense Forces/AirDefense/IsraelArrowRadar.ini
+Data/INI/Object/Specter/Israel Defense Forces/AirDefense/IsraelPatriotPac2.ini
+Data/INI/Object/Specter/Israel Defense Forces/AirDefense/IsraelSpyderAIO.ini
+Data/INI/Object/Specter/Israel Defense Forces/Artillery/IsraelLora.ini

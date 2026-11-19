@@ -11,6 +11,7 @@ if errorlevel 1 (
 )
 
 set "PATCH_DIR=%~dp0"
+set "VERIFY=%~dp0Verify_SpecterArchives.bat"
 echo.
 echo ============================================================
 echo  SPECTER PATCH INSTALLER
@@ -20,25 +21,29 @@ echo Installer folder:
 echo   %PATCH_DIR%
 echo.
 
-echo [1/5] Checking patch files...
-if not exist "%PATCH_DIR%_SPEC_DATA_ONE.big" (
-  echo.
-  echo ERROR: Missing patch file _SPEC_DATA_ONE.big
-  echo Put _SPEC_DATA_ONE.big next to Install_SpecterPatch.bat
+if not exist "%VERIFY%" (
+  echo ERROR: Missing Verify_SpecterArchives.bat
+  echo Put it next to Install_SpecterPatch.bat
   echo.
   pause
   exit /b 1
 )
-if not exist "%PATCH_DIR%_SPEC_ART_ONE.big" (
+
+echo [1/5] Checking source archives + SHA-256...
+echo.
+echo   All four official files must sit next to this installer.
+echo   A leftover _SPEC_ART_TWO.big beside generals.exe is not enough.
+echo.
+call "%VERIFY%" "%PATCH_DIR%"
+if errorlevel 1 (
   echo.
-  echo ERROR: Missing patch file _SPEC_ART_ONE.big
-  echo Put _SPEC_ART_ONE.big next to Install_SpecterPatch.bat
+  echo ERROR: Source archive check failed.
+  echo Official SPEC hashes are in SPECTER_SPEC_ART_DATA.SHA256.txt
+  echo Overlay SHA-256 a2558dd5ccea23b55189d96698a42a4ac91b82455db27b0d7511a366ea4b129d
   echo.
   pause
   exit /b 1
 )
-echo   Found _SPEC_DATA_ONE.big
-echo   Found _SPEC_ART_ONE.big
 echo.
 
 echo [2/5] Detecting game folder with generals.exe...
@@ -116,6 +121,32 @@ if exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
 ) else (
   echo   No existing _SPEC_ART_ONE.big to backup
 )
+
+if exist "%GAME_ROOT%_SPEC_ART_TWO.big" (
+  echo   Backing up old _SPEC_ART_TWO.big ...
+  copy /Y "%GAME_ROOT%_SPEC_ART_TWO.big" "%BACKUP%\_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for _SPEC_ART_TWO.big
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing _SPEC_ART_TWO.big to backup
+)
+
+if exist "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" (
+  echo   Backing up old 0_SPECTER_NatoSpainDisplay.big ...
+  copy /Y "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" "%BACKUP%\0_SPECTER_NatoSpainDisplay.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Backup failed for 0_SPECTER_NatoSpainDisplay.big
+    pause
+    exit /b 1
+  )
+  echo   OK
+) else (
+  echo   No existing 0_SPECTER_NatoSpainDisplay.big to backup
+)
 echo   Backup folder:
 echo   %BACKUP%
 echo.
@@ -128,7 +159,7 @@ if /I "%PATCH_DIR%"=="%GAME_ROOT%" set "SAME=1"
 
 if "%SAME%"=="1" (
   echo   Installer is already inside the game folder.
-  echo   BIG files are already in place.
+  echo   Source files are the destination files. No copy.
 ) else (
   echo   Copying _SPEC_DATA_ONE.big ...
   copy /Y "%PATCH_DIR%_SPEC_DATA_ONE.big" "%GAME_ROOT%_SPEC_DATA_ONE.big" >nul
@@ -149,15 +180,37 @@ if "%SAME%"=="1" (
     exit /b 1
   )
   echo   OK
+
+  echo   Copying _SPEC_ART_TWO.big ...
+  copy /Y "%PATCH_DIR%_SPEC_ART_TWO.big" "%GAME_ROOT%_SPEC_ART_TWO.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Failed to copy _SPEC_ART_TWO.big
+    echo Backup is in: %BACKUP%
+    pause
+    exit /b 1
+  )
+  echo   OK
+
+  echo   Copying 0_SPECTER_NatoSpainDisplay.big ...
+  copy /Y "%PATCH_DIR%0_SPECTER_NatoSpainDisplay.big" "%GAME_ROOT%0_SPECTER_NatoSpainDisplay.big" >nul
+  if errorlevel 1 (
+    echo ERROR: Failed to copy 0_SPECTER_NatoSpainDisplay.big
+    echo Backup is in: %BACKUP%
+    pause
+    exit /b 1
+  )
+  echo   OK
 )
 
-if not exist "%GAME_ROOT%_SPEC_DATA_ONE.big" (
-  echo ERROR: _SPEC_DATA_ONE.big missing after install.
-  pause
-  exit /b 1
-)
-if not exist "%GAME_ROOT%_SPEC_ART_ONE.big" (
-  echo ERROR: _SPEC_ART_ONE.big missing after install.
+echo.
+echo   Re-checking destination archives + SHA-256...
+call "%VERIFY%" "%GAME_ROOT%"
+if errorlevel 1 (
+  echo.
+  echo ERROR: Destination archive check failed.
+  echo Installation is NOT complete. No success.
+  echo Backup is in: %BACKUP%
+  echo.
   pause
   exit /b 1
 )
@@ -174,7 +227,18 @@ echo   %GAME_ROOT%
 echo Backup:
 echo   %BACKUP%
 echo.
+echo Active BIGs beside generals.exe:
+echo   %GAME_ROOT%0_SPECTER_NatoSpainDisplay.big
+echo   %GAME_ROOT%_SPEC_ART_ONE.big
+echo   %GAME_ROOT%_SPEC_ART_TWO.big
+echo   %GAME_ROOT%_SPEC_DATA_ONE.big
+echo.
+echo Load order ^(first-wins named files, _stricmp archive names^):
+echo   0_SPECTER_NatoSpainDisplay.big, _SPEC_ART_ONE.big,
+echo   _SPEC_ART_TWO.big, _SPEC_DATA_ONE.big
+echo.
 echo You can start the game with Launch_Specter.bat
 echo.
 pause
 endlocal
+exit /b 0

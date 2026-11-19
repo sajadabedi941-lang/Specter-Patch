@@ -1,0 +1,29 @@
+SPECTER — country-specific supply delivery income
+================================================
+
+Place 0_SPECTER_CountrySupplyIncome.big in the same folder as generals.exe,
+together with:
+
+  0_SPECTER_NatoSpainDisplay.big
+  0_SPECTER_CountrySupplyIncome.big
+  _SPEC_ART_ONE.big
+  _SPEC_ART_TWO.big
+  _SPEC_DATA_ONE.big
+
+Do not put this BIG inside Data\ or Art\. Do not rename the 0_ prefix.
+Zero Hour registers archives with overwrite=FALSE (first registered internal
+path wins). The 0_ name loads before INIZH.big and _SPEC_DATA_ONE.big.
+
+What it changes
+---------------
+GameData.ValuePerSupplyBox = 25 (global SAGE crate value).
+Each of the 25 playable countries dumps MaxBoxes * 25 dollars for one full
+equivalent gatherer load. Spawned trucks/chinooks are country-unique so a
+change for USA does not change Spain, Russia, or China.
+
+Map supply piles keep previous dollar totals (StartingBoxes * 3).
+Unique faction workers keep $75 trips (MaxBoxes 1 -> 3).
+
+This overlay does not change missiles, ART archives, or building art.
+Supply income passed static validation. In-game Zero Hour runtime testing
+has not been performed.

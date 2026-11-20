@@ -1,0 +1,31 @@
+Art/Textures/EGavanger.tga
+Art/Textures/EgyChaprral.tga
+Art/Textures/EgyptCrotal.tga
+Art/Textures/RUK300TB.tga
+Art/Textures/SDEGCRTL.dds
+Art/Textures/SDEGMUM2.dds
+Art/Textures/SDEGMUM3.dds
+Art/Textures/SDEGMUM4.tga
+Art/Textures/Sainai23.dds
+Art/Textures/Sainai23TB.tga
+Art/Textures/m113.dds
+Art/W3D/EgyM113w.W3D
+Art/W3D/SDCrotale.W3D
+Art/W3D/SDEGMIM48.W3D
+Art/W3D/SDEGMIM48w.W3D
+Art/W3D/SDSainai.W3D
+Data/INI/CommandButton.ini
+Data/INI/CommandButton_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+Data/INI/CommandSet.ini
+Data/INI/CommandSet_zzzzzzzzzz_SPECTER_SS2_TunnelLoader.ini
+Data/INI/MappedImages/HandCreated/UAE_Saudi_Egypt_V25_CC5_Images.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiEgyptAvenger.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiEgyptBastion.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiEgyptChaparral.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiEgyptCrotale.ini
+Data/INI/Object/Specter/Saudi Arabian Armed Forces/AirDefense/SaudiEgyptSinai23.ini
+Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAEEgyptAvenger.ini
+Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAEEgyptBastion.ini
+Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAEEgyptChaparral.ini
+Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAEEgyptCrotale.ini
+Data/INI/Object/Specter/United Arab Emirates/AirDefense/UAEEgyptSinai23.ini

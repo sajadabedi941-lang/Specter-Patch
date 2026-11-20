@@ -1,0 +1,50 @@
+# Iraq_VT72BCommandSet crash fix (DATA-only)
+
+Static validation of packed last-wins. The game was not launched.
+
+## Root cause
+
+The crash report name `Iraq_VT2BCommandSet` is the engine/dialog
+truncation of `Iraq_VT72BCommandSet`. No `Iraq_VT2B*` object or
+CommandSet exists in the live packed DATA.
+
+Live Al-Fahd added illegal CommandSet slot 19:
+  19 = Command_ConstructIraq_AlFahdMissileFactory
+
+Zero Hour `MAX_COMMANDS_PER_SET` is 18. Across the entire packed
+CommandSet.ini, every other set tops out at slot 18.
+`Iraq_VT72BCommandSet` was the only set with slot 19. Binding that
+set (Iraq start / select VT72B) overflows the command array.
+
+All 19 referenced CommandButtons existed in core CommandButton.ini.
+There was no missing button, no duplicate definition, no extra-file
+last-win, no casing mismatch, and no recursive CommandSet.
+The malformed/invalid entry was specifically slot 19.
+
+## Fix
+
+- Removed slot 19 from Iraq_VT72BCommandSet.
+- Slots 1-18 unchanged (slot 14 remains Command_DisarmMinesAtPosition).
+- Factory construct relocated to Iraq_WorkerCommandSet unused slot 12.
+- Worker slots 1-11 / 13-14 / Clear Mines unchanged.
+- Factory still produces Iraq_AlFahd500.
+- ART not rebuilt.
+
+- DATA size: 366368023
+- DATA SHA256: a9edfd222bf1964a34423bf882fb730bdf9dc7f46d064cb9325eeee7d9e675dd
+- DATA files: 2913
+- Files changed vs live Al-Fahd: Data\INI\CommandSet.ini only
+
+## VALIDATION PASS (static / packed last-wins)
+- exactly one authoritative Iraq_VT72BCommandSet
+- every referenced CommandButton exists in core CommandButton.ini
+- no recursive/self-reference
+- slot 14 remains Command_DisarmMinesAtPosition on VT72B and Worker
+- original Worker/VT72B slots 1-18 preserved on VT72B
+- factory access via Worker slot 12 (slot 19 was not a valid design)
+- Iraq_AlFahd500 still the only UNIT_BUILD on the factory CommandSet
+- no old 8-missile objects / no Object Iraq_MissileFactory
+- no packed CommandSet uses slot > 18
+- ART not touched
+
+RUNTIME_TEST=NOT RUN. Static PASS does not prove the in-game crash is gone.

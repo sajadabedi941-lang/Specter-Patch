@@ -1,0 +1,18 @@
+Complete DATA replacement (place in the game folder). Keep flag-text ART.
+
+DATA:
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd-launch-anim/_SPEC_DATA_ONE.big
+  SIZE=366368717
+  SHA256=b3ce190a555edc336006abfc763e1d44d11889233c79b72f159054d69b64d8f3
+  FILES=2913
+
+ART (unchanged, from s-iraq-alfahd-flag-text):
+  https://github.com/sajadabedi941-lang/Specter-Patch/releases/download/s-iraq-alfahd-flag-text/_SPEC_ART_ONE.big
+  SIZE=1266477100
+  SHA256=b242265f79404e0d07f2f1f52599becb0eb73e28a741e9b79f0ba67a6078bb34
+
+TAG=s-iraq-alfahd-launch-anim
+RELEASE=https://github.com/sajadabedi941-lang/Specter-Patch/releases/tag/s-iraq-alfahd-launch-anim
+PR=https://github.com/sajadabedi941-lang/Specter-Patch/pull/569
+STATIC_VALIDATION=PASS
+RUNTIME_TEST=NOT RUN

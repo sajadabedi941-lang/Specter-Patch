@@ -1,0 +1,289 @@
+SPECTER1 WORKING BASELINE AUDIT
+================================
+Mode: DISCOVERY / READ-ONLY
+Date: 2026-09-12
+Source: origin/main SPECTER1.part001.rar .. SPECTER1.part069.rar
+HEAD at fetch: 77aa5c3f (origin/main)
+This pass did NOT use PR #473, PR #474, old releases, or previously generated patches as baseline.
+
+ZERO gameplay files were modified.
+No DATA/ART rebuild.
+No ZZZZ overrides created.
+No donor import.
+No line-ending normalization.
+No duplicate removal.
+No rename.
+No Release.
+No Iraq implementation.
+
+--------------------------------------------------------------------------------
+1. MULTIPART COMPLETENESS
+--------------------------------------------------------------------------------
+Parts checked: SPECTER1.part001.rar through SPECTER1.part069.rar
+Location on disk for extract: /tmp/SPECTER1_PARTS/
+(Exported read-only from origin/main via git archive; working-tree game files were not used.)
+
+PRESENT 001-069: YES
+MISSING NUMBERS: NONE
+
+part001-part068 size: 20,971,520 bytes each
+part069 size:        16,159,219 bytes
+Total archive size:  1,442,222,579 bytes
+Volumes confirmed by 7-Zip: 69
+Archive format: RAR 5, volume 1 starts at SPECTER1.part001.rar
+
+--------------------------------------------------------------------------------
+2. EXTRACTION
+--------------------------------------------------------------------------------
+Command: unrar x SPECTER1.part001.rar  (started ONLY from part001)
+All 69 parts were in the same directory.
+Independent per-part extract was NOT used.
+
+Result: SUCCESS (unrar exit 0)
+Archive listing: 331 files, 16 folders, 2,935,110,731 uncompressed bytes
+Extracted files: 331
+Extracted folders: 17 (includes the new root /tmp/SPECTER1_WORKING_BASELINE)
+
+Root extracted directory:
+  /tmp/SPECTER1_WORKING_BASELINE/
+
+Game / mod root:
+  /tmp/SPECTER1_WORKING_BASELINE/SPECTER FINAL (GeneralsMode.com)/
+
+Inner archive folder name:
+  SPECTER FINAL (GeneralsMode.com)
+
+--------------------------------------------------------------------------------
+3. ACTIVE SPECTER DATA / ART PACKS
+--------------------------------------------------------------------------------
+Launch_Specter.bat in this install requires and copies:
+  _SPEC_DATA_ONE.big
+  _SPEC_ART_ONE.big
+
+These two are the live Specter DATA and ART packs.
+
+The install's own SHA256.txt records the same DATA hash computed below.
+
+Loose Data\INI\: EMPTY (0 files). No loose INI last-wins overlay.
+
+--------------------------------------------------------------------------------
+4. ALL .BIG FILES IN THE WORKING INSTALL
+--------------------------------------------------------------------------------
+Filename                         Bytes        Files     SHA256
+-------------------------------  -----------  --------  ----------------------------------------------------------------
+_SPEC_DATA_ONE.big                 364979021      2804  9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+_SPEC_ART_ONE.big                 1235909246      4411  2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+INIZH.big                           18764687       135  1a6d41a7a2cb31e67ad2f868aca9264ad069c275e0074f8a0d970a336071e9a0
+INIZHZ.big                            500450         2  5d637929d13433962c38752e8fc0ac0dba8a0a5cd089c895f6c9b5807b5fc4a8
+EnglishZH.big                       80472928        75  d3904216ac210a363d9e0e46980c6ef70232046ba713ea137e8a87cbd57a32d6
+PatchZH.big                           118822       n/a  450276fbabd19f79dc0143f70fe755e44a99b22c552bc00c5854fc810e615722
+AudioZH.big                         23965542       n/a  6fbd05e43491bfd5f56c9250c3f9c30fc3061cd5867cb912c46486fc78f5e8c7
+AudioEnglishZH.big                  58326522       n/a  85109b5cb4a5ef75c5fdd1fe1a66957d951f98f028e10e3729dddc2309402914
+SpeechZH.big                         6174552       n/a  4498097a3c294bc638e72e09e967bb417b0c9b171b4eee95e2c6c0bffef68fa2
+SpeechEnglishZH.big                254275694       n/a  5b3c8b1819b1ddfeaf6045a4a5dfb9cb47ad16a508dbf17c317e11b9d310a14f
+Music.big                             786724       n/a  3f2af9c6dcc2b35852556bdc020c95e43c2f43127c50dbff018e12a2bed6116f
+MusicZH.big                         34741916       n/a  5aa7b8408e5cf61fd53633f6e6310c76d79e74d75dd3286b6e9b9c718d9c5b5e
+MapsZH.big                          39749312       n/a  35cc8947f34f363d69f5045b9ac65f6ee164b8d5a382a1f7af213dbc2a744b96
+W3DZH.big                          189741064       n/a  e308c3aeb49d023ffd98b50400f24643a782a68ac4d2e53171c17fc45d73fdc6
+W3DEnglishZH.big                     2696872       n/a  f5d164d1e294f26744e2b87ecfbe13e68affaf5ceb4cf12f43005beb8f54defd
+TexturesZH.big                     222753036       n/a  aa975400abd70e45e13eacf4ab22505ea322941dfc492097c68245cd35d4b791
+TerrainZH.big                        8660432       n/a  501ef71d12e7a1398800231f2526d47e8e583607f843a2ebcb0c622e26fc73b3
+WindowZH.big                         8493653       n/a  68b519f28d012cd297fae2663d431a4b0e6e416aa7bb1a57a79e5500ebcc14b4
+gensecZH.big                          787464       n/a  ac2aaf5536a2f748dc99178aa431280f26d9d85179e6c2abedf5adfabc971b15
+ShadersZH.big                            996       n/a  6246a6906f93261669c8c19e021c8d3484a6f7449bd5e253c8e998c1a9d31d6e
+
+ACTIVE SPECTER DATA: _SPEC_DATA_ONE.big
+  SHA256 9629b6a092aaffb606a01af70e29b88d6c38c8dfc0958fe2d4c3a32c8d1da635
+  Size   364,979,021
+  Files  2804
+  Magic  BIGF
+  Packed path duplicates (case-insensitive): 0
+  Timestamp inside archive: 2026-09-09 22:56:18
+  Install SHA256.txt matches this DATA hash.
+
+ACTIVE SPECTER ART: _SPEC_ART_ONE.big
+  SHA256 2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761
+  Size   1,235,909,246
+  Files  4411
+  Magic  BIGF
+  Packed path duplicates (case-insensitive): 0
+  Timestamp inside archive: 2026-09-09 21:04:23
+
+Note (identity only, not used as baseline):
+  This ART SHA256 is byte-identical to the previously inherited
+  Specter_Aircraft_Global_Update_Final ART. That is an observation,
+  not a license to treat old releases as authoritative.
+
+--------------------------------------------------------------------------------
+5. RE-EXTRACT AUDIT FOLDERS (COPIES ONLY)
+--------------------------------------------------------------------------------
+DATA re-extract:  /tmp/SPECTER1_DATA_AUDIT/     (2804 files)
+ART  re-extract:  /tmp/SPECTER1_ART_AUDIT/      (4411 files)
+INIZH copy:       /tmp/SPECTER1_INIZH_AUDIT/    (135 files)
+INIZHZ copy:      /tmp/SPECTER1_INIZHZ_AUDIT/   (2 files)
+
+Source BIGs under /tmp/SPECTER1_WORKING_BASELINE/ were not rewritten.
+
+--------------------------------------------------------------------------------
+6. IMPORTANT ACTIVE INI / CSF PATHS
+--------------------------------------------------------------------------------
+Inside _SPEC_DATA_ONE.big (last packed occurrence = only occurrence):
+
+  Data\INI\CommandSet.ini       418,474 bytes  CRLF=13202  LF-only=0
+  Data\INI\CommandButton.ini  1,184,898 bytes  CRLF=30310  LF-only=18
+  Data\INI\Weapon.ini         2,219,478 bytes  CRLF=56467  LF-only=0
+  Data\INI\Armor.ini            189,603 bytes  CRLF=4123   LF-only=21
+  Data\INI\Locomotor.ini        663,412 bytes  CRLF=0      LF-only=12252
+  Data\INI\Science.ini           43,713 bytes  CRLF=93     LF-only=1423
+  Data\INI\PlayerTemplate.ini    43,744 bytes  CRLF=211    LF-only=779
+  Data\English\generals.csf   1,329,354 bytes
+
+Loose Data\INI\: none
+Loose CommandSet.ini / CommandButton.ini / Weapon.ini / Armor.ini /
+Locomotor.ini / Science.ini / PlayerTemplate.ini / generals.csf: none
+
+Game-root extra (NOT under Data\INI, so ZH will not treat it as an INI override):
+  NorthKoreaUAVSaetbyol.ini  (4,669 bytes, 2026-09-09 14:26)
+
+INIZH.big also contains the stock-sized cores:
+  Data\INI\CommandSet.ini      144,715
+  Data\INI\CommandButton.ini   351,817
+  plus Weapon.ini / Armor.ini / Locomotor.ini / Science.ini / PlayerTemplate.ini
+  and other stock INI (135 files total). No generals.csf.
+
+INIZHZ.big contains ONLY:
+  Data\INI\CommandSet.ini      145,419
+  Data\INI\CommandButton.ini   354,948
+
+EnglishZH.big contains:
+  Data\English\generals.csf    928,775  (smaller than SPEC DATA csf)
+
+Packed ZZZZ paths inside _SPEC_DATA_ONE.big: 0
+
+--------------------------------------------------------------------------------
+7. PACKED LAST-WINS COUNTS INSIDE _SPEC_DATA_ONE.big
+--------------------------------------------------------------------------------
+Definition kind     Unique last-wins names    Raw header occurrences
+------------------  ------------------------  ----------------------
+Object              4729                      4749
+CommandSet          1192                      1215
+CommandButton       3370                      3551
+Weapon              2648                      2656
+Armor               153                       153
+Locomotor           517                       520
+Science             309                       309
+PlayerTemplate      31                        31
+MappedImage         1127                      1144
+Upgrade             245                       247
+SpecialPower        283                       283
+
+PlayerTemplate FactionIraq is present.
+StartingBuilding = Iraq_CommandCenter
+StartingUnit0    = Iraq_VT72B
+
+Iraq CommandSets present in packed Data\INI\CommandSet.ini: 39
+  including Iraq_AirfieldCommandSet, Iraq_LargeAirBaseCommandSet,
+  Iraq_HeavyAirBaseCommandSet, Iraq_WarFactoryCommandSet_T / T1 / T2 / T3,
+  Iraq_MICCommandSet / 2 / 3.
+
+Iraq-related packed Object INI paths (filename contains "iraq", any faction folder): 188
+
+--------------------------------------------------------------------------------
+8. ART INVENTORY
+--------------------------------------------------------------------------------
+Packed inside _SPEC_ART_ONE.big:
+  W3D  1799
+  DDS  1358
+  TGA  1229
+  Total packed files 4411
+
+Loose Art/ next to the EXE (these beat packed ART for the same relative names):
+  73 files total
+  W3D 40
+  DDS 29
+  TGA  3
+  plus Art\W3D\REVOLUTION_AIRFIELD_USA_REQUIRED.txt
+
+Loose Art is AAB / Revolution airfield + B2 support textures/W3D, not a full ART pack.
+
+--------------------------------------------------------------------------------
+9. LAST-WINS DETERMINATION (STATIC)
+--------------------------------------------------------------------------------
+Zero Hour loads every *.big from the game folder, then loose files override BIGs.
+
+Observed INI-bearing BIG filename sort (case-insensitive ASCII):
+  EnglishZH.big
+  INIZH.big
+  INIZHZ.big
+  PatchZH.big
+  _SPEC_ART_ONE.big
+  _SPEC_DATA_ONE.big
+
+Underscore-prefixed Specter packs sort after letter-prefixed stock BIGs.
+Therefore, for a shared packed path such as Data\INI\CommandSet.ini,
+the last-wins copy is the one inside _SPEC_DATA_ONE.big
+(418,474 bytes, CRLF-only), not INIZH (144,715) or INIZHZ (145,419).
+
+Same rule for:
+  CommandButton.ini, Weapon.ini, Armor.ini, Locomotor.ini,
+  Science.ini, PlayerTemplate.ini, Data\English\generals.csf
+
+Launch_Specter.bat contains a comment claiming INIZH.big wins
+CommandSet.ini / CommandButton.ini over _SPEC_DATA_ONE.big, and that
+INIZHZ.big exists to overlay USA bars after INIZH. That comment is
+recorded here as installer text only. Statically, _SPEC_DATA_ONE.big
+is the later filename and contains the large Specter cores. This
+environment cannot launch Zero Hour to prove engine load order.
+
+Loose-file last-wins:
+  Data\INI is empty, so no loose INI override.
+  Loose Art\* overrides packed ART for those 73 names only.
+  Root NorthKoreaUAVSaetbyol.ini is not a Data\INI loose override.
+
+Inside _SPEC_DATA_ONE.big there are no duplicate packed paths, so
+in-pack last-wins == the single packed file for each path.
+Some INI files still contain later same-name Object/CommandButton
+blocks (raw header count > unique name count). Those in-file last
+definitions are the live names inside that file.
+
+--------------------------------------------------------------------------------
+10. OTHER LIVE GAME / MOD FILES (PRESENT, NOT MODIFIED)
+--------------------------------------------------------------------------------
+  generals.exe
+  game.dat
+  Launch_Specter.bat
+  Install_SpecterPatch.bat
+  Data\Scripts\Scripts.ini
+  Data\Scripts\*.scb
+  Data\Cursors\*
+  Data\English\Movies\*
+  Window\*.wnd
+  Art\Textures\* and Art\W3D\* (loose overlay set above)
+  plus stock ZH audio/maps/W3D/texture BIGs listed in section 4
+
+--------------------------------------------------------------------------------
+11. CONFIRMATION: ZERO GAMEPLAY FILES MODIFIED
+--------------------------------------------------------------------------------
+YES.
+
+Actions taken:
+  - listed / hashed / extracted copies under /tmp only
+  - wrote this audit report
+  - did not rewrite any file inside the extracted working install
+  - did not rebuild _SPEC_DATA_ONE.big or _SPEC_ART_ONE.big
+  - did not change the 69 RAR parts
+  - did not implement Iraq unlock / air-force changes
+
+Newest timestamps inside the extracted game tree remain the archive
+timestamps (latest 2026-09-09 23:03:39 WarFactory runtime docs /
+2026-09-09 22:56:18 DATA BIG). No post-extract rewrite.
+
+--------------------------------------------------------------------------------
+12. READY FLAG
+--------------------------------------------------------------------------------
+Multipart 001-069 complete: YES
+Extract success: YES
+Active DATA identified + hashed + re-extracted: YES
+Active ART identified + hashed + re-extracted: YES
+Gameplay files modified: NO
+Iraq changes implemented this pass: NO

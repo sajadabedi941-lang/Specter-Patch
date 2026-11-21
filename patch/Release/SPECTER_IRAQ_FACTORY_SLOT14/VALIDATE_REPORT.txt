@@ -1,0 +1,27 @@
+# Iraq VT72B: Clear Mines replaced by Missile Factory
+
+Static validation of packed last-wins. The game was not launched.
+
+Playable object: Iraq_VT72B
+CommandSet: Iraq_VT72BCommandSet (exactly one, no extra last-win)
+Old slot 14: Command_DisarmMinesAtPosition
+New slot 14: Command_ConstructIraq_AlFahdMissileFactory
+Slot 15 restored: Command_ConstructIraq_Abbas_AI
+CommandButton: Command_ConstructIraq_AlFahdMissileFactory
+Factory object: Iraq_AlFahdMissileFactory (produces Iraq_AlFahd500)
+No slot 19. No second factory button on VT72B. ART not rebuilt.
+
+- DATA size: 366368036
+- DATA SHA256: 281b68c4659d9181202783d9911e552ec3d3ffce5b51443ae8fef375505c5073
+- DATA files: 2913
+- Files changed: Data\INI\CommandSet.ini only
+
+## VALIDATION PASS (static / packed last-wins)
+- slot 14 factory; slot 15 Abbas_AI; Clear Mines gone from VT72B
+- factory CommandButton Object = Iraq_AlFahdMissileFactory
+- factory CommandSet still builds Iraq_AlFahd500
+- no CommandSet slot > 18; crash-fix slot 19 not reintroduced
+- no old 8-missile objects / no Object Iraq_MissileFactory
+- ART not touched
+
+RUNTIME_TEST=NOT RUN

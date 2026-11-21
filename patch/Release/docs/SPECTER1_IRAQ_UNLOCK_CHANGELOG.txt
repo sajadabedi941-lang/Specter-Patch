@@ -1,0 +1,39 @@
+SPECTER1 IRAQ COMPLETE UNLOCK + AIR FORCE
+=========================================
+Baseline: SPECTER1 working install (part001-part069)
+Pack: DATA-only. ART unchanged.
+
+Does not use PR #473, PR #474, old releases, or CommandSet_ZZZZ files.
+
+IRAQ FIGHTER / LARGE AIR
+- Mirage F1.EQ (Iraq_MirageF1_Bq) production Prerequisites emptied
+- Su-24MK (Iraq_Su-24MK) production Prerequisites emptied
+- Su-24MR (Iraq_Su-24MR) production Prerequisites emptied
+- L-159 / Tucano-class (IraqJetL159) bomb last-win:
+    old IraqJetL159_WpnBomb  ClipSize=6  Projectile=Fab-250
+    new IraqJetL159_WpnBomb  ClipSize=3  Projectile=GBU24_GuidedBombObject
+- Iraq MiG-21 (IraqJetMig21) Scale 0.82 -> 0.90
+
+IRAQ HEAVY / LARGE
+- Iraq Tu-22M3 rewritten onto the Russian Tu-22M3M architecture:
+    Object Iraq_Tu-22M3
+    Model  RUS_TU22M3M
+    Weapon Kab2500_LeaserGuidedBomb
+    Button Command_ConstructIraq_Tu-22M3
+    Heavy slot 3, Large slot 16
+
+RUSSIA (bomb only)
+- RussiaJetTu22M3M default WeaponSet FAB-500 racks replaced with
+  Kab2500_LeaserGuidedBomb
+- Model RUS_TU22M3M / CommandSet / airbase slots unchanged
+
+IRAQ PRODUCTION UNLOCK
+- Iraq_WarFactory_T starts on Iraq_WarFactoryCommandSet_T3
+- Iraq_MIC starts on Iraq_MICCommandSet3 (Karrar-2 on slot 2)
+- Production Prerequisites / Science gates stripped from Iraq units
+  on WarFactory, airfields, barracks, radar, MIC, and Command Center
+
+ART
+- _SPEC_ART_ONE.big was not rebuilt
+- SPECTER1 ART SHA256 remains
+  2eb2ff5bc4a762aa44702ecfbd67c7e21f9986c0026fcc3fccb85ea62a8bb761

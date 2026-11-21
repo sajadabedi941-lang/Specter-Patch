@@ -1,0 +1,59 @@
+# Iraq AL-Fahd 500 + new Missile Factory
+
+Static validation only. The game was not launched.
+
+- DATA size: 366368023
+- DATA SHA256: 358d9358fd37faadbb211920ec87a762570fadd01a7f0bd157fd3439a1b9ca71
+- DATA files: 2913
+- ART size: 1262233475
+- ART SHA256: d6ee44bbf52d9afba505c72e4e01fb0cbafb0b55f9483252fd645e9299dd58c0
+- ART files: 4602
+- ZIP size: 785307709
+- ZIP SHA256: 333c178de7966cf3fd2d7eff7b3a21d2b532e4b8106c1bf237c080af364a7ecc
+
+## New DATA files
+
+- Data\INI\Object\Specter\Iraq Army\Buildings\Iraq_AlFahdMissileFactory.ini
+- Data\INI\Object\Specter\Iraq Army\Iraq_AlFahd500_Projectile.ini
+- Data\INI\Object\Specter\Iraq Army\Wheeled\Iraq_AlFahd500.ini
+- Data\INI\Weapon_Iraq_AlFahd500.ini
+
+## New ART files
+
+- Art\Textures\Camo net.tga
+- Art\Textures\Camo netd.tga
+- Art\Textures\Camo netk.tga
+- Art\Textures\Irq_AlFahd500.tga
+- Art\Textures\Irq_AlFahd500D.tga
+- Art\Textures\Irq_AlFahd500M.tga
+- Art\Textures\LSFChinaBase.tga
+- Art\Textures\LSFChinaBased.tga
+- Art\Textures\LSFChinaBasee.tga
+- Art\Textures\LSFDF11M.tga
+- Art\Textures\LSFDF11Md.tga
+- Art\Textures\LSFDustPaoDao.tga
+- Art\Textures\LSFDustPaoDaod.tga
+- Art\Textures\LSFDustPaoDaoe.tga
+- Art\Textures\YILAKE.tga
+- Art\Textures\YILAKEd.tga
+- Art\W3D\Irq_AlFahd500.W3D
+- Art\W3D\Irq_AlFahd500D.W3D
+- Art\W3D\Irq_AlFahd500M.W3D
+- Art\W3D\Irq_FahdFac.W3D
+- Art\W3D\Irq_FahdFacD.W3D
+- Art\W3D\Irq_FahdFacE.W3D
+
+## Core DATA patches
+- CommandButton.ini: factory + AL-Fahd construct buttons
+- CommandSet.ini: VT72B slot 19 factory construct; new factory CommandSet
+- generals.csf: AL-Fahd / factory labels
+- Worker CommandSet unchanged; War Factory / 9P117 unchanged
+
+## VALIDATION PASS
+- Iraq_AlFahd500 exists; cost 3000; damage 4000; range 1720/800; build 17.0
+- fire/reload/deploy/locomotor match 9P117
+- Iraq_R11ScudB and SRBM_ALHIJARAH_HE unchanged (2000 damage)
+- factory produces only AL-Fahd 500; VT72B Clear Mines kept; Worker untouched
+- cloned W3D HLod names match Model=; textures resolve
+- donor 9P117 / Irq_R11_M / GENERIC-MISSILES byte-identical
+- no old 8-missile / Iraq_*_New / IQ_* residue

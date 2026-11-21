@@ -1,0 +1,23 @@
+# Iraq missile skins B/C/D/H/I/J
+
+ART-only. 9P117, Al-Fahd500, slot cameos A-L, GENERIC-MISSILES unchanged.
+Each skin is a dedicated Irq_R11_M clone: BOOSTER=middle body, MISSILE01=nose.
+
+- ART size: 1292294758
+- ART SHA256: e2024ec0e3130076b29c52beae3c495193e4c95136e64170724e082d40a856e4
+- ART files: 4628 (was 4616)
+- DATA changed: NO
+
+## VALIDATION PASS (static)
+- B Al-Hussein II: white body / red nose + AL-HUSSEIN II
+- C Al-Samoud II: black body / red nose + AL-SAMOUD II
+- D Al-Abbas: red body / white nose + AL-ABBAS
+- H Al-Basrah: white body / black nose + AL-BASRAH
+- I Al-Nasir: orange body / red nose + AL-NASIR
+- J Al-Mansour: yellow body / red nose + AL-MANSOUR
+- Small Iraqi flag + English stencil on middle BOOSTER UVs
+- Nose uses MISSILE01 UVs on a separate color band
+- 9P117 / Al-Fahd500 / specter_missile_a-l / GENERIC-MISSILES byte-identical
+
+RUNTIME_TEST=NOT RUN
+
